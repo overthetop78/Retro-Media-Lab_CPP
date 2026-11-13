@@ -1,0 +1,25 @@
+# Dossiers de compilation
+/build/
+/out/
+/cmake-build-*/
+
+# Fichiers produits par la compilation C++
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.pch
+
+# Fichiers locaux de Visual Studio
+.vs/
+*.suo
+*.user
+*.VC.db
+*.VC.opendb

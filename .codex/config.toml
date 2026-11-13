@@ -1,0 +1,75 @@
+# Configuration Codex locale au projet.
+
+developer_instructions = '''
+
+IMPORTANT :
+
+- Toujours suivre les règles !
+- Toujours repescter à la lettre les demandes de l'utilisateur (donc moi) et ne jamais sortir du cadre imposé par moi!
+- Ne jamais prendre en compte les données interne du modèle LLM qui utilise fréquemment des sources publiques non fiable et généralement servant de tests, de cours trop académique et inadapté ou encore de code débutant non fiable.
+- Toujours utiliser des sources sures sur internet.
+- Ne pas chercher plusieurs fois sur internet la même chose. Il faut récupérer les données et les mettres dans la doc pour éviter de refaire une recherche inutile sur internet.
+- Toujours maximiser le developpement en réduisant les requetes inutiles et faisant perdre du temps. Travailler vite et avec une organisation parfaite permettant de réduire le temps de développement.
+- Ne jamais extrapoler.
+- Toujours chercher la solution avant de demander et toujours notifier les réponses trouver dans un document.
+- Ne jamais inventer
+- Si aucune solution n'est trouvée nul part dans les documents ou sur internet, me poser la question. (sauf quand j'indique que je ne suis pas disponible)
+- Poser dès le départ toute question nécessaire sur les consignes de ce document si leur application est ambiguë. Sauf si j'ai indiqué ne plus pouvoir répondre aux questions (si je suis indisponible) continuer le travail ou passer à autre chose qui ne demande pas de réponse.
+
+Les taches :
+
+- Suivant ce que je demande tu dois réaliser les taches de différentes facons.
+- L'utilisateur précisera si l'exécution doit se faire par blocs ou strictement tâche par tâche. La migration de RML de C# vers C++ se fera par blocs pour gagner du temps ; pour un développement précis nécessitant un ordre strict, l'utilisateur le signalera.
+  - Soit comme ceci :
+    - Préparer une liste hiérarchique à cases à cocher : nom du point ou groupe de groupes de tâches, groupes de tâches, tâches définissant le travail attendu, puis sous-tâches définissant les actions concrètes. Le nombre de niveaux est illimité.
+    - Le dernier niveau est toujours une action concrète : créer, modifier, déplacer, renommer ou supprimer un fichier, avec son chemin et le contenu à écrire, modifier ou ajouter.
+    - Lire ou consulter un fichier seul ne constitue pas une action ; cette lecture peut faire partie d’une action produisant un résultat concret dans un fichier.
+    - Modifier ou Créer une doc n'est pas une tache à écrire dans les taches. elle se fait automatiquement suivant les règles.
+    - Si un travail nécessaire manque dans la liste, l’écrire avant de le réaliser et réorganiser la hiérarchie restante pour pouvoir le suivre dans l’ordre. Les nouvelles actions doivent se suivre après la dernière tâche cochée ; ne pas les insérer avant le travail terminé ni les exécuter hors liste
+  - Soit comme ceci :
+    - Préparer une liste hiérarchique à cases à cocher : nom du point ou groupe de groupes de tâches, groupes de tâches, tâches définissant le travail attendu, puis sous-tâches définissant les actions concrètes. Le nombre de niveaux est illimité.
+    - Le dernier niveau est toujours une action concrète : créer, modifier, déplacer, renommer ou supprimer un fichier, avec son chemin et le contenu à écrire, modifier ou ajouter.
+    - Lire ou consulter un fichier seul ne constitue pas une action ; cette lecture peut faire partie d’une action produisant un résultat concret dans un fichier.
+    - Modifier ou Créer une doc n'est pas une tache à écrire dans les taches. elle se fait automatiquement suivant les règles.
+    - Exécuter les sous-tâches une par une et dans l’ordre. Cocher chaque sous-tâche seulement après sa réalisation effective, jamais avant. Cocher une tâche après toutes ses sous-tâches, un groupe après toutes ses tâches, et ainsi de suite jusqu’au point principal.
+    - Si un travail nécessaire manque dans la liste, l’écrire avant de le réaliser et réorganiser la hiérarchie restante pour pouvoir le suivre dans l’ordre. Les nouvelles actions doivent se suivre après la dernière tâche cochée ; ne pas les insérer avant le travail terminé ni les exécuter hors liste.
+
+Les Tests :
+
+- Ne pas ajouter de tests inutiles.
+- Si nécessaire, prévoir un groupe de tests à la fin du groupe de tâches concerné ou du point complet.
+- Garder les tests utiles et autonomes, permettant d'etre réutiliser.
+- Les tests ajoutés qui créent des fichiers ou utilisent des fichiers, applications ou DLL externes doivent être supprimés après utilisation, avec leurs artefacts temporaires : prévoir cette suppression dans la liste.
+- Cela ne demande pas de supprimer les tests ou fichiers préexistants.
+- Exception pour les fichiers d'entrée : un test réutilisable peut être conservé s'il reçoit leur chemin en argument de commande, sans chemin de fichier existant fixé dans son code et sans embarquer ces fichiers dans le projet.
+- Ne pas créer pleins de fichier de tests. Il est préférable de regrouper un groupe de tests dans un seul fichier de tests pour éviter la multiplication de fichier de tests.
+- Les fichiers de tests ne doivent pas etre utiliser dans le workflow github
+
+La doc :
+
+- Créer des fichiers de documentations dans docs/ et les ranger correctement dans des sous-dossiers (ou sous-dossiers de sous-dossiers)
+- Utiliser docs/tasks pour créer des fichiers de taches en les rangeant correctement dans des sous-dossiers (ou sous dossiers de sous-dossiers)
+- Utiliser docs/references pour mettre toutes les données et documentations utiles se trouvant sur internet , dans des dossiers et sous dossiers . Ne pas mettre des documents inutiles ou trop volumineux mais seulement les documents utiles pour le developpement.
+
+Traductions:
+
+- Utiliser Argos, déjà installé et fonctionnel dans toutes les langues.
+- Ne pas vérifier de nouveau cette installation déclarée par l’utilisateur et ne pas utiliser Google Traduction.
+- Indiquer comment proceder dans une documentation.
+- Créer un script qui permettra de tout traduire rapidement (ou par boucle)
+- Utiliser des fichiers annexes au script et par langue qui contiendra les mots a ignorer dans une traduction de phrase (Les invariants dans les phrases par exemple)
+- Toujours vérifier les traductions (lecture rapide des fichiers) pour faire attention aux erreurs.
+- Séparer les fichiers de traduction dans des dossiers de langues et dans des fichiers différents pour éviter d'avoir des fichiers avec trop de lignes.
+- Ne pas traduire les invariants (ROM RAM, CD, marque, modèle, référence etc..) .
+- Construire les fichiers en-US sans invariant et utiliser celui ci pour traduire dans les autres langues.
+- La base étant déjà en anglais, en-US en sera une copie excluant les invariants isolés, mais conservant ceux présents dans les phrases. Le script pourra protéger ces derniers avec des paramètres ; le choix du mécanisme est laissé à Codex.
+
+Fonction :
+
+- Si une commande échoue, vérifier et corriger d’abord son invocation : les outils existants sont considérés comme fonctionnels. Si un outil nécessaire manque réellement, demander son installation à l’utilisateur au lieu de multiplier les tentatives ou les contournements.
+
+Il y aura d'autres directives a suivre plus tard dans des documents. ils seront tout aussi important que celui ci mais celui ci reste la base.
+
+Si il y a des choses ambigue entre les regles des documents , ce document est une base pour se référer , les autres documents sont généralement ciblé pour un developpement précis et donc hors de ce developpement c'est ce fichier qui est a prendre en compte et a respecter.
+
+'''
