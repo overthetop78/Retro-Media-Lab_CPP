@@ -1,6 +1,7 @@
 #include "ThemeConstants.h"
 #include "Hardware/HardwareConstants.h"
 #include "RetroMediaLabStyle.h"
+#include "DisplayDensity.h"
 #include <QPainter>
 #include <QStyleFactory>
 #include <QStyleOption>
@@ -35,19 +36,20 @@ void RetroMediaLabStyle::drawPrimitive(PrimitiveElement element, const QStyleOpt
 }
 QSize RetroMediaLabStyle::sizeFromContents(ContentsType type, const QStyleOption* option, const QSize& content, const QWidget* widget) const {
     auto size = QProxyStyle::sizeFromContents(type, option, content, widget);
+    const auto scaled = [widget](int value) { return qRound(value * DisplayDensity::factor(widget)); };
     if (type == CT_TabBarTab) {
         const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
-        size = QSize(tab->fontMetrics.horizontalAdvance(tab->text) + ThemeConstants::Style::TabIconExtent + ThemeConstants::Style::IconTextGap + data_->tabPaddingX * ThemeConstants::Style::TabUnderlineBottomInset + ThemeConstants::Style::TabUnderlineThickness,
-                     qMax(ThemeConstants::Style::TabIconExtent, tab->fontMetrics.height()) + data_->tabPaddingY * ThemeConstants::Style::TabUnderlineBottomInset);
+        size = QSize(tab->fontMetrics.horizontalAdvance(tab->text) + scaled(ThemeConstants::Style::TabIconExtent) + scaled(ThemeConstants::Style::IconTextGap) + scaled(data_->tabPaddingX) * ThemeConstants::Style::TabUnderlineBottomInset + ThemeConstants::Style::TabUnderlineThickness,
+                     qMax(scaled(ThemeConstants::Style::TabIconExtent), tab->fontMetrics.height()) + scaled(data_->tabPaddingY) * ThemeConstants::Style::TabUnderlineBottomInset);
     }
     if (type == CT_TabBarTab && widget && widget->objectName() == HardwareConstants::CategoryTabBar) {
         const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
-        size.setWidth(tab->fontMetrics.horizontalAdvance(tab->text) + HardwareConstants::CategoryTabPadding);
+        size.setWidth(tab->fontMetrics.horizontalAdvance(tab->text) + scaled(HardwareConstants::CategoryTabPadding));
     }
-    if (type == CT_MenuBarItem) size = content + QSize(ThemeConstants::Style::MenuBarHorizontalPadding, ThemeConstants::Style::MenuBarVerticalPadding);
-    if (type == CT_MenuItem) size.setHeight(option->fontMetrics.height() + ThemeConstants::Style::MenuItemVerticalPadding);
+    if (type == CT_MenuBarItem) size = content + QSize(scaled(ThemeConstants::Style::MenuBarHorizontalPadding), scaled(ThemeConstants::Style::MenuBarVerticalPadding));
+    if (type == CT_MenuItem) size.setHeight(option->fontMetrics.height() + scaled(ThemeConstants::Style::MenuItemVerticalPadding));
     if (type == CT_PushButton || type == CT_ComboBox || type == CT_LineEdit)
-        size.setHeight(qMax(size.height(), data_->controlHeight));
+        size.setHeight(qMax(size.height(), scaled(data_->controlHeight)));
     return size;
 }
 int RetroMediaLabStyle::styleHint(StyleHint hint, const QStyleOption* option, const QWidget* widget, QStyleHintReturn* result) const {
@@ -62,7 +64,16 @@ int RetroMediaLabStyle::pixelMetric(PixelMetric metric, const QStyleOption* opti
     if (metric == PM_TabBarBaseHeight || metric == PM_TabBarBaseOverlap) return 0;
     if (metric == PM_TabBarTabOverlap) return 0;
     if (metric == PM_MenuBarPanelWidth) return 0;
-    return QProxyStyle::pixelMetric(metric, option, widget);
+    const auto base = QProxyStyle::pixelMetric(metric, option, widget);
+    switch (metric) {
+    case PM_SmallIconSize: case PM_ButtonIconSize: case PM_ToolBarIconSize:
+    case PM_IndicatorWidth: case PM_IndicatorHeight:
+    case PM_ExclusiveIndicatorWidth: case PM_ExclusiveIndicatorHeight:
+    case PM_CheckBoxLabelSpacing: case PM_ScrollBarExtent:
+    case PM_SliderThickness: case PM_SliderLength: case PM_TabBarScrollButtonWidth:
+        return qMax(1, qRound(base * DisplayDensity::factor(widget)));
+    default: return base;
+    }
 }
 void RetroMediaLabStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const {
     if (element == CE_TabBarTabShape) {

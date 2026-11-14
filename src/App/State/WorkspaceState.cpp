@@ -59,4 +59,28 @@ WorkspaceState::DirectorySubscription WorkspaceState::subscribeToHardware(std::f
     hardwareObservers_.push_back(subscription);
     return subscription;
 }
+void WorkspaceState::setEngines(EngineSettings settings){
+    settings.validate();if(settings==engines_)return;engines_=std::move(settings);
+    const auto observers=engineObservers_;std::erase_if(engineObservers_,[](const auto& item){return item.expired();});
+    for(const auto& observer:observers)if(const auto live=observer.lock())(*live)();
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToEngines(std::function<void()> observer){
+    std::erase_if(engineObservers_,[](const auto& item){return item.expired();});
+    auto result=std::make_shared<const std::function<void()>>(std::move(observer));engineObservers_.push_back(result);return result;
+}
+void WorkspaceState::setInterfaceScale(int value) {
+    if (!DisplayConstants::supported(value)) throw std::invalid_argument(ErrorKeys::InvalidPreferencesFile);
+    if (value == interfaceScale_) return;
+    interfaceScale_ = value;
+    const auto observers = scaleObservers_;
+    std::erase_if(scaleObservers_, [](const auto& observer) { return observer.expired(); });
+    for (const auto& observer : observers) if (const auto live = observer.lock()) (*live)();
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToInterfaceScale(std::function<void()> observer) {
+    auto result = std::make_shared<const std::function<void()>>(std::move(observer));
+    std::erase_if(scaleObservers_, [](const auto& item) { return item.expired(); });
+    scaleObservers_.push_back(result);
+    return result;
+}
+
 }

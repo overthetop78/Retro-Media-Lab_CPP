@@ -1,9 +1,11 @@
 #pragma once
 #include <Constants/AppConstants.h>
+#include <Constants/DisplayConstants.h>
 #include "AppApi.h"
 #include "Logging/LogSettings.h"
 #include "Conversion/ConversionSettings.h"
 #include "Hardware/HardwareSettings.h"
+#include "Engines/EngineSettings.h"
 #include <RetroMediaLab/Infrastructure/HardwareDiscovery.h>
 #include <mutex>
 #include <QByteArray>
@@ -26,6 +28,7 @@ struct WorkspaceState {
     bool mainWindowMaximized = false;
     bool mainWindowOpen = true;
     QString logsDirectory;
+    QString engineCategory = EngineConstants::Greaseweazle;
     QString hardwareCategory = HardwareConstants::Floppy;
     QString selectedHardwareDeviceId;
     QMap<QString, Infrastructure::OpticalCapabilities> opticalCapabilities;
@@ -45,10 +48,20 @@ struct WorkspaceState {
     const ConversionSettings& conversion() const noexcept { return conversion_; }
     RETROMEDIALAB_APP_API void setConversion(ConversionSettings);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToConversion(std::function<void()>);
+    int interfaceScale() const noexcept { return interfaceScale_; }
+    RETROMEDIALAB_APP_API void setInterfaceScale(int);
+    RETROMEDIALAB_APP_API DirectorySubscription subscribeToInterfaceScale(std::function<void()>);
+    const EngineSettings& engines() const noexcept { return engines_; }
+    RETROMEDIALAB_APP_API void setEngines(EngineSettings);
+    RETROMEDIALAB_APP_API DirectorySubscription subscribeToEngines(std::function<void()>);
     const HardwareSettings& hardware() const noexcept { return hardware_; }
     RETROMEDIALAB_APP_API void setHardware(HardwareSettings);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToHardware(std::function<void()>);
 private:
+    int interfaceScale_ = DisplayConstants::DefaultPercent;
+    std::vector<std::weak_ptr<const std::function<void()>>> scaleObservers_;
+    EngineSettings engines_;
+    std::vector<std::weak_ptr<const std::function<void()>>> engineObservers_;
     HardwareSettings hardware_;
     std::vector<std::weak_ptr<const std::function<void()>>> hardwareObservers_;
     ConversionSettings conversion_;

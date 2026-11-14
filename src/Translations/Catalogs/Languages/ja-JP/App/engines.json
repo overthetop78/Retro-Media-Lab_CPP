@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "エンジン",
+    "Options.Engines.Description": "各操作で使用するエンジンを個別に選択します。",
+    "Options.Engines.Internal": "Retro Media Lab 内部エンジン",
+    "Options.Engines.StrictChoice": "選択したエンジンだけを使用します。処理できない場合、Retro Media Lab は別のエンジンへ暗黙に切り替えず、その旨を通知します。",
+    "Engines.HostTools": "Greaseweazle ホスト ツール",
+    "Engines.Read": "読む",
+    "Engines.Write": "書く",
+    "Engines.Conversion": "変換",
+    "Engines.Explorer": "ディスク エクスプローラー",
+    "Engines.InternalPending": "内部エンジンは使用できません。 この設定は、将来の使用を準備します。",
+    "Engines.MissingProvider": "利用できないエンジン:{0}"
+  }
+}

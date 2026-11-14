@@ -52,4 +52,5 @@ inline constexpr auto TranslationDomainNotFoundWithContext = "Errors.Translation
 inline constexpr auto UnexpectedApplicationException = "Errors.UnexpectedApplicationException";
 inline constexpr auto UnexpectedEventHandlerException = "Errors.UnexpectedEventHandlerException";
 inline constexpr auto UnsupportedPreferenceLanguage = "Errors.UnsupportedPreferenceLanguage";
+inline constexpr auto InvalidEngineSettings = "Errors.InvalidEngineSettings";
 }

@@ -15,6 +15,7 @@ class ThemeSettingsPage;
 class LogSettingsPage;
 class ConversionSettingsPage;
 class HardwareSettingsPage;
+class EngineSettingsPage;
 class PreferencesDialog final : public QDialog {
 public:
     PreferencesDialog(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
@@ -34,7 +35,11 @@ private:
     LogSettingsPage* logs_;
     ConversionSettingsPage* conversion_;
     HardwareSettingsPage* hardware_;
+    EngineSettingsPage* engines_;
     QComboBox* languages_;
+    QComboBox* interfaceSize_;
+    QLabel* interfaceSizeLabel_;
+    WorkspaceState::DirectorySubscription scaleSubscription_;
     QLineEdit* directory_;
     QLabel* directoryLabel_;
     QPushButton* browse_;

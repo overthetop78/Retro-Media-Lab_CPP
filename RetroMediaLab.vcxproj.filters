@@ -67,6 +67,9 @@
     <Filter Include="src\Infrastructure\Conversion">
       <UniqueIdentifier>{96EF2104-94E7-5AA7-A014-2D96E75C4CAB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Infrastructure\Engines">
+      <UniqueIdentifier>{B372A221-E127-518D-8152-7ADF73F3422A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Infrastructure\Hardware">
       <UniqueIdentifier>{2F7C8AE5-074C-5A4A-8AD9-73924DA38558}</UniqueIdentifier>
     </Filter>
@@ -966,6 +969,12 @@
     <None Include="src\App\Themes\RetroMediaLab\dark.json">
       <Filter>src\App\Themes\RetroMediaLab</Filter>
     </None>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\DisplayDensity.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\DisplayDensity.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
     <None Include="src\App\Themes\RetroMediaLab\icons.json">
       <Filter>src\App\Themes\RetroMediaLab</Filter>
     </None>
@@ -1023,6 +1032,12 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ConversionSettingsPage.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EngineSettingsPage.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EngineSettingsPage.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\FloppySettingsPage.cpp">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
@@ -1077,6 +1092,12 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ProfileSettingsPage.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ProfileSettingsPage.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\StatusBar.cpp">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
@@ -1116,6 +1137,9 @@
     <ClInclude Include="src\Common\Constants\AppConstants.h">
       <Filter>src\Common\Constants</Filter>
     </ClInclude>
+    <ClInclude Include="src\Common\Constants\DisplayConstants.h">
+      <Filter>src\Common\Constants</Filter>
+    </ClInclude>
     <ClInclude Include="src\Common\DiagnosticConstants.h">
       <Filter>src\Common</Filter>
     </ClInclude>
@@ -1151,6 +1175,15 @@
     </ClCompile>
     <ClInclude Include="src\Infrastructure\Conversion\ConversionSettings.h">
       <Filter>src\Infrastructure\Conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infrastructure\Engines\EngineConstants.h">
+      <Filter>src\Infrastructure\Engines</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Infrastructure\Engines\EngineSettings.cpp">
+      <Filter>src\Infrastructure\Engines</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Infrastructure\Engines\EngineSettings.h">
+      <Filter>src\Infrastructure\Engines</Filter>
     </ClInclude>
     <ClCompile Include="src\Infrastructure\Hardware\DiskProbe.cpp">
       <Filter>src\Infrastructure\Hardware</Filter>
@@ -1284,6 +1317,12 @@
     <None Include="src\Translations\Catalogs\Constants\App\conversion.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\App\display.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\engines.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\App\errors.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
@@ -1302,6 +1341,9 @@
     <None Include="src\Translations\Catalogs\Constants\App\preferences.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\App\status.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
@@ -1315,6 +1357,12 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\errors.json">
@@ -1335,6 +1383,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
@@ -1348,6 +1399,12 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\errors.json">
@@ -1368,6 +1425,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
@@ -1381,6 +1441,12 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\errors.json">
@@ -1401,6 +1467,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
@@ -1414,6 +1483,12 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\errors.json">
@@ -1434,6 +1509,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
@@ -1447,6 +1525,12 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\errors.json">
@@ -1467,6 +1551,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
@@ -1480,6 +1567,12 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\errors.json">
@@ -1500,6 +1593,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
@@ -1513,6 +1609,12 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\errors.json">
@@ -1533,6 +1635,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
@@ -1546,6 +1651,12 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\errors.json">
@@ -1566,6 +1677,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
@@ -1579,6 +1693,12 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\errors.json">
@@ -1599,6 +1719,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
@@ -1612,6 +1735,12 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\errors.json">
@@ -1632,6 +1761,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
@@ -1645,6 +1777,12 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\errors.json">
@@ -1665,6 +1803,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
@@ -1678,6 +1819,12 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\errors.json">
@@ -1698,6 +1845,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
@@ -1711,6 +1861,12 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\errors.json">
@@ -1731,6 +1887,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
@@ -1744,6 +1903,12 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\errors.json">
@@ -1764,6 +1929,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
@@ -1777,6 +1945,12 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\errors.json">
@@ -1797,6 +1971,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
@@ -1810,6 +1987,12 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\errors.json">
@@ -1830,6 +2013,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
@@ -1843,6 +2029,12 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\errors.json">
@@ -1863,6 +2055,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
@@ -1876,6 +2071,12 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\errors.json">
@@ -1896,6 +2097,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
@@ -1909,6 +2113,12 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\errors.json">
@@ -1929,6 +2139,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
@@ -1942,6 +2155,12 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\errors.json">
@@ -1962,6 +2181,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
@@ -1975,6 +2197,12 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\errors.json">
@@ -1995,6 +2223,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
@@ -2008,6 +2239,12 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\errors.json">
@@ -2028,6 +2265,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
@@ -2041,6 +2281,12 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\errors.json">
@@ -2061,6 +2307,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
@@ -2074,6 +2323,12 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\errors.json">
@@ -2094,6 +2349,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
@@ -2107,6 +2365,12 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\errors.json">
@@ -2127,6 +2391,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
@@ -2140,6 +2407,12 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\errors.json">
@@ -2160,6 +2433,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
@@ -2173,6 +2449,12 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\errors.json">
@@ -2193,6 +2475,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
@@ -2206,6 +2491,12 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\errors.json">
@@ -2226,6 +2517,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\preferences.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\profiles.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\status.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
@@ -2239,6 +2533,12 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\conversion.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\display.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\engines.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\errors.json">
@@ -2257,6 +2557,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\profiles.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\status.json">

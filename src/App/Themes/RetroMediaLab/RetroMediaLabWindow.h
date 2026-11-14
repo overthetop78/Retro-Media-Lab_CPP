@@ -5,6 +5,7 @@
 namespace RetroMediaLab {
 struct WorkspaceState;
 class PreferencesDialog;
+class DisplayDensity;
 class RetroMediaLabWindow final : public QMainWindow {
 public:
     RetroMediaLabWindow(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state);
@@ -19,6 +20,7 @@ private:
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     std::unique_ptr<PreferencesDialog> preferences_;
+    std::unique_ptr<DisplayDensity> density_;
     ThemeService::Subscription themeSubscription_;
     Translations::TranslationService::Subscription languageSubscription_;
 };

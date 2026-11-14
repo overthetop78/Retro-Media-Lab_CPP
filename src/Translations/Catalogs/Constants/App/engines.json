@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "Options.Engines": "Engines",
+    "Options.Engines.Description": "Choose the engine used independently for each operation.",
+    "Options.Engines.Internal": "Internal Retro Media Lab engine",
+    "Options.Engines.StrictChoice": "The selected engine is used strictly. If it cannot perform the operation, Retro Media Lab reports it instead of silently using the other engine.",
+    "Engines.HostTools": "Greaseweazle Host Tools",
+    "Engines.Read": "Read",
+    "Engines.Write": "Write",
+    "Engines.Conversion": "Conversion",
+    "Engines.Explorer": "Disk Explorer",
+    "Engines.InternalPending": "The internal engine is not available yet. This setting prepares its future use.",
+    "Engines.MissingProvider": "Unavailable engine: {0}",
+    "Engines.Greaseweazle": "Greaseweazle",
+    "Engines.KryoFlux": "KryoFlux"
+  },
+  "invariants": [
+    "Engines.Greaseweazle",
+    "Engines.KryoFlux"
+  ]
+}

@@ -4,6 +4,8 @@
 #include "LogSettingsPage.h"
 #include "ConversionSettingsPage.h"
 #include "HardwareSettingsPage.h"
+#include "EngineSettingsPage.h"
+#include "ProfileSettingsPage.h"
 #include "../ThemeIcons.h"
 #include "Shared/Controls/Card.h"
 #include <RetroMediaLab/Translations/LanguageCatalog.h>
@@ -16,6 +18,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include <QScreen>
+#include <QScrollArea>
 #include <QSignalBlocker>
 #include <QTabWidget>
 #include <QTimer>
@@ -33,6 +36,13 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     sections_ = new QTabWidget(this);
     sections_->setObjectName(ThemeConstants::PreferencesSections);
     sections_->setIconSize(QSize(ThemeConstants::PreferencesLayout::TabIconExtent, ThemeConstants::PreferencesLayout::TabIconExtent));
+    const auto addSection = [this](QWidget* page) {
+        auto* scroll = new QScrollArea(sections_);
+        scroll->setFrameShape(QFrame::NoFrame);
+        scroll->setWidgetResizable(true);
+        scroll->setWidget(page);
+        sections_->addTab(scroll, QString());
+    };
     auto* general = new QWidget(sections_);
     auto* generalLayout = new QVBoxLayout(general);
     generalLayout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
@@ -69,24 +79,45 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     row->addWidget(destinationCard, ThemeConstants::PreferencesLayout::DirectoryColumnWeight);
     row->addWidget(languageCard, ThemeConstants::PreferencesLayout::LanguageColumnWeight);
     generalLayout->addLayout(row);
+    auto* sizeCard = new Card(themes.data(), general);
+    sizeCard->setObjectName(DisplayConstants::Card);
+    auto* sizeLayout = new QVBoxLayout(sizeCard);
+    sizeLayout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
+    interfaceSizeLabel_ = new QLabel(sizeCard);
+    interfaceSize_ = new QComboBox(sizeCard);
+    interfaceSize_->setObjectName(DisplayConstants::Selector);
+    interfaceSizeLabel_->setBuddy(interfaceSize_);
+    sizeLayout->addWidget(interfaceSizeLabel_);
+    sizeLayout->addWidget(interfaceSize_);
+    generalLayout->addWidget(sizeCard);
+    connect(interfaceSize_, &QComboBox::currentIndexChanged, this, [this](int index) {
+        if (index >= 0) state_.setInterfaceScale(interfaceSize_->itemData(index).toInt());
+    });
+    scaleSubscription_ = state.subscribeToInterfaceScale([this] {
+        const QSignalBlocker block(interfaceSize_);
+        interfaceSize_->setCurrentIndex(interfaceSize_->findData(state_.interfaceScale()));
+    });
     generalLayout->addStretch();
-    sections_->addTab(general, QString());
+    addSection(general);
     auto* themePage = new ThemeSettingsPage(themes, translations, state, parent, sections_);
-    sections_->addTab(themePage, QString());
+    addSection(themePage);
     logs_=new LogSettingsPage(themes,translations,state,sections_);
-    sections_->addTab(logs_,QString());
+    addSection(logs_);
     conversion_ = new ConversionSettingsPage(themes, translations, state, sections_);
-    sections_->addTab(conversion_, QString());
+    addSection(conversion_);
     hardware_ = new HardwareSettingsPage(themes, translations, state, sections_);
-    sections_->addTab(hardware_, QString());
+    addSection(hardware_);
+    engines_ = new EngineSettingsPage(themes, translations, state, sections_);
+    addSection(engines_);
+    addSection(new ProfileSettingsPage(themes, translations, sections_));
     layout->addWidget(sections_, 1);
     close_ = new QPushButton(this);
     close_->setObjectName(ThemeConstants::ClosePreferences);
     close_->setMinimumWidth(ThemeConstants::PreferencesLayout::ActionMinimumWidth);
     layout->addWidget(close_, 0, Qt::AlignRight);
-    sections_->setCurrentIndex(state.preferencesSection == HardwareConstants::Section ? HardwareConstants::TabIndex : state.preferencesSection == ConversionConstants::Section ? ConversionConstants::TabIndex : state.preferencesSection == ThemeConstants::Logs ? ThemeConstants::LogPage::Index : state.preferencesSection == ThemeConstants::Themes ? 1 : 0);
+    sections_->setCurrentIndex(state.preferencesSection == ThemeConstants::ProfilesPage::Section ? ThemeConstants::ProfilesPage::Index : state.preferencesSection == EngineConstants::Section ? ThemeConstants::EnginesPage::Index : state.preferencesSection == HardwareConstants::Section ? HardwareConstants::TabIndex : state.preferencesSection == ConversionConstants::Section ? ConversionConstants::TabIndex : state.preferencesSection == ThemeConstants::Logs ? ThemeConstants::LogPage::Index : state.preferencesSection == ThemeConstants::Themes ? 1 : 0);
     connect(sections_, &QTabWidget::currentChanged, this, [this](int index) {
-        state_.preferencesSection = index == HardwareConstants::TabIndex ? HardwareConstants::Section : index == ConversionConstants::TabIndex ? ConversionConstants::Section : index == ThemeConstants::LogPage::Index ? ThemeConstants::Logs : index == 1 ? ThemeConstants::Themes : ThemeConstants::General;
+        state_.preferencesSection = index == ThemeConstants::ProfilesPage::Index ? ThemeConstants::ProfilesPage::Section : index == ThemeConstants::EnginesPage::Index ? EngineConstants::Section : index == HardwareConstants::TabIndex ? HardwareConstants::Section : index == ConversionConstants::TabIndex ? ConversionConstants::Section : index == ThemeConstants::LogPage::Index ? ThemeConstants::Logs : index == 1 ? ThemeConstants::Themes : ThemeConstants::General;
     });
     connect(languages_, &QComboBox::currentIndexChanged, this, [this](int index) {
         if (index >= 0) translations_.setLanguage(languages_->itemData(index).toString().toStdString());
@@ -129,7 +160,18 @@ void PreferencesDialog::refreshTexts() {
     sections_->setTabText(ThemeConstants::LogPage::Index,text(ThemeConstants::LogsTitle));
     sections_->setTabText(ConversionConstants::TabIndex, text(ConversionConstants::Title));
     sections_->setTabText(HardwareConstants::TabIndex, text(HardwareConstants::TitleKey));
+    sections_->setTabText(ThemeConstants::EnginesPage::Index, text(EngineConstants::TitleKey));
+    sections_->setTabText(ThemeConstants::ProfilesPage::Index, text(ThemeConstants::ProfilesPage::Title));
     languageLabel_->setText(text(ThemeConstants::WindowLanguage));
+    interfaceSizeLabel_->setText(text(DisplayConstants::Title));
+    interfaceSize_->setAccessibleName(interfaceSizeLabel_->text());
+    {
+        const QSignalBlocker block(interfaceSize_);
+        interfaceSize_->clear();
+        for (int percent : DisplayConstants::Percentages)
+            interfaceSize_->addItem(text(DisplayConstants::PercentLabel).replace(DisplayConstants::Argument, QString::number(percent)), percent);
+        interfaceSize_->setCurrentIndex(interfaceSize_->findData(state_.interfaceScale()));
+    }
     directoryLabel_->setText(text(ThemeConstants::PreferencesDefaultImageDirectory));
     directory_->setAccessibleName(directoryLabel_->text());
     browse_->setText(text(ThemeConstants::PreferencesBrowse));
@@ -144,6 +186,8 @@ void PreferencesDialog::refreshAppearance() {
     sections_->setTabIcon(ThemeConstants::LogPage::Index,themeIcon(ThemeConstants::LogsIcon,themes_.data()->color(ThemeConstants::MutedTextBrush)));
     sections_->setTabIcon(ConversionConstants::TabIndex, themeIcon(ConversionConstants::Icon, themes_.data()->color(ThemeConstants::MutedTextBrush)));
     sections_->setTabIcon(HardwareConstants::TabIndex, themeIcon(HardwareConstants::Icon, themes_.data()->color(ThemeConstants::MutedTextBrush)));
+    sections_->setTabIcon(ThemeConstants::EnginesPage::Index,themeIcon(ThemeConstants::EnginesPage::Icon,themes_.data()->color(ThemeConstants::MutedTextBrush)));
+    sections_->setTabIcon(ThemeConstants::ProfilesPage::Index, themeIcon(ThemeConstants::ProfilesPage::Icon, themes_.data()->color(ThemeConstants::MutedTextBrush)));
     Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.data()->dark,
         themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(),
         themes_.data()->nativeSystemColors);

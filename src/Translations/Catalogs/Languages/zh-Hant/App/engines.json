@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "引擎",
+    "Options.Engines.Description": "為每項操作分別選擇所使用的引擎。",
+    "Options.Engines.Internal": "Retro Media Lab 內部引擎",
+    "Options.Engines.StrictChoice": "嚴格使用所選引擎。如果無法執行操作，Retro Media Lab 會回報，而不會靜默改用另一個引擎。",
+    "Engines.HostTools": "Greaseweazle 主機工具",
+    "Engines.Read": "讀",
+    "Engines.Write": "寫",
+    "Engines.Conversion": "轉換",
+    "Engines.Explorer": "磁碟檔案總管",
+    "Engines.InternalPending": "內部引擎尚未提供。此設定用於準備未來的使用。",
+    "Engines.MissingProvider": "無法使用的引擎：{0}"
+  }
+}

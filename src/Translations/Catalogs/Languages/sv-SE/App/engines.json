@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "Motorer",
+    "Options.Engines.Description": "Välj oberoende vilken motor som används för varje åtgärd.",
+    "Options.Engines.Internal": "Intern Retro Media Lab-motor",
+    "Options.Engines.StrictChoice": "Den valda motorn används strikt. Om den inte kan utföra åtgärden rapporterar Retro Media Lab det utan att tyst använda den andra motorn.",
+    "Engines.HostTools": "Greaseweazle Värdverktyg",
+    "Engines.Read": "Läsa",
+    "Engines.Write": "Skriva",
+    "Engines.Conversion": "Omvandling",
+    "Engines.Explorer": "Diskutforskare",
+    "Engines.InternalPending": "Den interna motorn är inte tillgänglig ännu. Denna inställning förbereder sin framtida användning.",
+    "Engines.MissingProvider": "Otillgänglig motor: {0}"
+  }
+}

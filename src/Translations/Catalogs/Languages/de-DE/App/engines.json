@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "Motoren",
+    "Options.Engines.Description": "Wählen Sie die Engine für jeden Vorgang unabhängig aus.",
+    "Options.Engines.Internal": "Interne Retro Media Lab Motor",
+    "Options.Engines.StrictChoice": "Die ausgewählte Engine wird strikt verwendet. Kann sie den Vorgang nicht ausführen, meldet Retro Media Lab dies, ohne unbemerkt die andere Engine zu verwenden.",
+    "Engines.HostTools": "Greaseweazle Host-Tools",
+    "Engines.Read": "Lesen",
+    "Engines.Write": "Schreiben",
+    "Engines.Conversion": "Konvertierung",
+    "Engines.Explorer": "Datenträger-Explorer",
+    "Engines.InternalPending": "Der interne Motor ist noch nicht verfügbar. Diese Einstellung bereitet seine zukünftige Verwendung vor.",
+    "Engines.MissingProvider": "Nicht verfügbarer Motor: {0}"
+  }
+}

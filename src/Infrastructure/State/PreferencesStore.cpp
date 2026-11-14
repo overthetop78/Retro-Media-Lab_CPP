@@ -14,7 +14,9 @@ namespace RetroMediaLab {
 QString PreferencesStore::defaultPath(){return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+AppConstants::PreferencesJson;}
 namespace {
 void validate(const UserPreferences& value) {
+    if (!DisplayConstants::supported(value.interfaceScale)) throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
     value.logging.validate();
+    value.engines.validate();
     if (!Translations::isSupportedLanguage(value.language.toStdString()))
         throw std::runtime_error(ErrorKeys::UnsupportedPreferenceLanguage);
     for (auto it = value.themeSettings.begin(); it != value.themeSettings.end(); ++it)
@@ -36,7 +38,11 @@ UserPreferences PreferencesStore::load(const UserPreferences& defaults) const {
         || (version != AppConstants::PreferencesStoreValues::LegacySchemaVersion && version != AppConstants::PreferencesStoreValues::CurrentSchemaVersion) || !data.value(AppConstants::Language).isString())
         throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
     UserPreferences result = defaults;
+    const auto scale = data.value(DisplayConstants::Preference);
+    if (!scale.isUndefined() && (!scale.isDouble() || scale.toDouble() != scale.toInt())) throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
+    result.interfaceScale = scale.isUndefined() ? defaults.interfaceScale : scale.toInt();
     result.language = data.value(AppConstants::Language).toString();
+    result.engines = EngineSettings::fromJson(data.value(EngineConstants::Section));
     result.hardware = HardwareSettings::fromJson(data.value(HardwareConstants::Section));
     result.conversion = ConversionSettings::fromJson(data.value(ConversionConstants::Section));
     result.logging = LoggingSettings::fromJson(data.value(LogConstants::Logging));
@@ -67,6 +73,8 @@ void PreferencesStore::save(const UserPreferences& value) const {
         {LogConstants::Logging, value.logging.toJson()},
         {ConversionConstants::Section, value.conversion.toJson()},
         {HardwareConstants::Section, value.hardware.toJson()},
+        {EngineConstants::Section, value.engines.toJson()},
+        {DisplayConstants::Preference, value.interfaceScale},
         {AppConstants::DefaultImageDirectory, value.defaultImageDirectory}
     }).toJson();
     if (!file.open(QIODevice::WriteOnly) || file.write(bytes) != bytes.size() || !file.commit())

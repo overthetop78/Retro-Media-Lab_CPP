@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "Движки",
+    "Options.Engines.Description": "Независимо выберите движок для каждой операции.",
+    "Options.Engines.Internal": "Внутренний движок Retro Media Lab",
+    "Options.Engines.StrictChoice": "Выбранный движок используется строго. Если он не может выполнить операцию, Retro Media Lab сообщит об этом, не переключаясь незаметно на другой движок.",
+    "Engines.HostTools": "Greaseweazle Инструменты хоста",
+    "Engines.Read": "Читать",
+    "Engines.Write": "Писать",
+    "Engines.Conversion": "Конверсия",
+    "Engines.Explorer": "Проводник диска",
+    "Engines.InternalPending": "Внутренний двигатель пока не доступен. Эта установка готовит его будущее использование.",
+    "Engines.MissingProvider": "Недоступный двигатель: {0}"
+  }
+}

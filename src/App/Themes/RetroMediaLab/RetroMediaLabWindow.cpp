@@ -1,6 +1,7 @@
 #include "ThemeConstants.h"
 #include "RetroMediaLabWindow.h"
 #include "RetroMediaLabLayout.h"
+#include "DisplayDensity.h"
 #include "State/WorkspaceState.h"
 #include "Views/PreferencesDialog.h"
 #include <RetroMediaLab/Platform/WindowAppearance.h>
@@ -12,6 +13,7 @@
 namespace RetroMediaLab {
 RetroMediaLabWindow::RetroMediaLabWindow(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state)
     : themes_(themes), translations_(translations), state_(state) {
+    density_ = std::make_unique<DisplayDensity>(*this, state);
     setObjectName(ThemeConstants::RetroMediaLabWindow);
     setWindowTitle(QString::fromStdString(translations.text(ThemeConstants::AppTitle)));
     setWindowIcon(QIcon(QApplication::applicationDirPath() + ThemeConstants::AssetsAppIconIco));

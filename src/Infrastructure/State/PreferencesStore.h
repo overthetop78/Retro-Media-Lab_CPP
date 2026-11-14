@@ -1,7 +1,9 @@
 #pragma once
 #include <Constants/AppConstants.h>
+#include <Constants/DisplayConstants.h>
 #include "InfrastructureApi.h"
 #include "Logging/LogSettings.h"
+#include "Engines/EngineSettings.h"
 #include "Conversion/ConversionSettings.h"
 #include "Hardware/HardwareSettings.h"
 #include <QJsonObject>
@@ -15,6 +17,8 @@ struct UserPreferences {
     LoggingSettings logging;
     ConversionSettings conversion;
     HardwareSettings hardware;
+    EngineSettings engines;
+    int interfaceScale = DisplayConstants::DefaultPercent;
 };
 class PreferencesStore final {
 public:

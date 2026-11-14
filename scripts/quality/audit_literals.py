@@ -10,6 +10,8 @@ CONSTANT_HEADERS = {
     "src/Translations/include/RetroMediaLab/Translations/TranslationConstants.h",
     "src/Launcher/LauncherConstants.h", "src/Common/PlatformConstants.h",
     "src/Common/DiagnosticConstants.h", "src/Common/ErrorKeys.h",
+    "src/Infrastructure/Engines/EngineConstants.h",
+    "src/Common/Constants/DisplayConstants.h",
     "src/Common/ProcessConstants.h", "src/Common/StorageProbeConstants.h",
     "src/Infrastructure/Logging/LogConstants.h",
     "src/Infrastructure/Conversion/ConversionConstants.h",

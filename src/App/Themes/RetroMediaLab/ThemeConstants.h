@@ -285,4 +285,38 @@ inline constexpr auto Status = "Hardware.CapabilityStatus";
 inline constexpr auto Source = "Hardware.CapabilitySource";
 inline constexpr auto Detail = "Hardware.CapabilityDetails";
 }
+namespace EnginesPage {
+inline constexpr int Index = 5;
+inline constexpr int Padding = 12;
+inline constexpr int CardPadding = 16;
+inline constexpr int Gap = 12;
+inline constexpr int ComboMinimumWidth = 300;
+inline constexpr auto Page = "engineSettingsPage";
+inline constexpr auto Tabs = "engineBackendTabs";
+inline constexpr auto GreaseweazlePage = "greaseweazleEngineSettings";
+inline constexpr auto KryoFluxPage = "kryofluxEngineSettings";
+inline constexpr auto ChoicePrefix = "engineChoice_";
+inline constexpr auto Icon = "engines";
+}
+namespace ProfilesPage {
+inline constexpr int CategoryCount = 3;
+inline constexpr int Index = 6;
+inline constexpr int Padding = 18;
+inline constexpr int CardPadding = 14;
+inline constexpr int Gap = 12;
+inline constexpr auto Page = "profileSettingsPage";
+inline constexpr auto Section = "profiles";
+inline constexpr auto Title = "Profiles.Title";
+inline constexpr auto Icon = "profiles";
+inline constexpr const char* ListNames[] = {"readProfilesList", "writeProfilesList", "conversionProfilesList"};
+inline constexpr const char* LabelKeys[] = {"Profiles.Read", "Profiles.Write", "Profiles.Conversion"};
+}
+
+namespace Density {
+inline constexpr auto CompactFactor = 0.85;
+inline constexpr auto MinimumScreenFactor = 0.75;
+inline constexpr int ReferenceWidth = 1600;
+inline constexpr int ReferenceHeight = 900;
+}
+
 }

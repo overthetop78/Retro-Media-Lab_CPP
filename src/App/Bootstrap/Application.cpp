@@ -69,6 +69,8 @@ int Application::run(int argc, char** argv) {
     state.setLogging(selected.logging);
     state.setConversion(selected.conversion);
     state.setHardware(selected.hardware);
+    state.setEngines(selected.engines);
+    state.setInterfaceScale(selected.interfaceScale);
     state.setDefaultImageDirectory(selected.defaultImageDirectory);
     const auto savePreferences = [&] {
         selected.language = QString::fromStdString(translations.language());
@@ -77,6 +79,8 @@ int Application::run(int argc, char** argv) {
         selected.logging = state.logging();
         selected.conversion = state.conversion();
         selected.hardware = state.hardware();
+        selected.engines = state.engines();
+        selected.interfaceScale = state.interfaceScale();
         selected.themeSettings.insert(themes.id(), themes.settings());
         preferences.save(selected);
     };
@@ -84,6 +88,8 @@ int Application::run(int argc, char** argv) {
     const auto themePreference = themes.subscribe(savePreferences);
     const auto directoryPreference = state.subscribeToDefaultImageDirectory(savePreferences);
     const auto hardwarePreference = state.subscribeToHardware(savePreferences);
+    const auto displayPreference = state.subscribeToInterfaceScale(savePreferences);
+    const auto enginePreference = state.subscribeToEngines(savePreferences);
     const auto conversionPreference = state.subscribeToConversion(savePreferences);
     const auto loggingPreference = state.subscribeToLogging(savePreferences);
     app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.

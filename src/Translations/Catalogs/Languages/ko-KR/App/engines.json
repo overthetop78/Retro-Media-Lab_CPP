@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "엔진",
+    "Options.Engines.Description": "각 작업에 사용할 엔진을 개별적으로 선택합니다.",
+    "Options.Engines.Internal": "Retro Media Lab 내부 엔진",
+    "Options.Engines.StrictChoice": "선택한 엔진만 사용합니다. 작업을 수행할 수 없으면 Retro Media Lab가 다른 엔진으로 자동 전환하지 않고 이를 알립니다.",
+    "Engines.HostTools": "Greaseweazle 호스트 도구",
+    "Engines.Read": "읽다",
+    "Engines.Write": "쓰다",
+    "Engines.Conversion": "변환",
+    "Engines.Explorer": "디스크 탐색기",
+    "Engines.InternalPending": "내부 엔진은 아직 사용할 수 없습니다. 이 설정은 미래의 사용을 준비합니다.",
+    "Engines.MissingProvider": "사용할 수 없는 엔진: {0}"
+  }
+}

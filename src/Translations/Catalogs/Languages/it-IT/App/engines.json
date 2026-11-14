@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "Options.Engines": "Motori",
+    "Options.Engines.Description": "Scegli in modo indipendente il motore usato per ogni operazione.",
+    "Options.Engines.Internal": "Motore interno di Retro Media Lab",
+    "Options.Engines.StrictChoice": "Il motore selezionato viene usato rigorosamente. Se non può eseguire l’operazione, Retro Media Lab lo segnala senza usare silenziosamente l’altro motore.",
+    "Engines.HostTools": "Greaseweazle Strumenti dell'host",
+    "Engines.Read": "Leggere",
+    "Engines.Write": "Scrivere",
+    "Engines.Conversion": "Conversione",
+    "Engines.Explorer": "Esplora disco",
+    "Engines.InternalPending": "Il motore interno non è ancora disponibile. Questa impostazione prepara il suo uso futuro.",
+    "Engines.MissingProvider": "Motore non disponibile: {0}"
+  }
+}
