@@ -4,6 +4,8 @@ developer_instructions = '''
 
 IMPORTANT :
 
+- IMPORTANT — Dans toute l'application, toutes les bibliothèques, tous les modules et tous les tests : toujours libérer toutes les ressources possédées et décharger les composants chargés dont on est responsable, y compris les ressources graphiques et DWM, les fenêtres cachées ou non affichées, et les ressources initialisées même si aucune fenêtre n'a été ouverte. Prévoir le nettoyage dès leur acquisition, sur sortie normale, exception, échec d'initialisation partielle et arrêt provoqué par une exception de l'application, avec un mécanisme systématique équivalent à finally (RAII en C++). Cette règle s'applique aussi aux tests qui échouent ou sont interrompus ; ne jamais limiter le nettoyage au chemin de réussite.
+
 - Toujours suivre les règles !
 - Toujours repescter à la lettre les demandes de l'utilisateur (donc moi) et ne jamais sortir du cadre imposé par moi!
 - Ne jamais prendre en compte les données interne du modèle LLM qui utilise fréquemment des sources publiques non fiable et généralement servant de tests, de cours trop académique et inadapté ou encore de code débutant non fiable.
