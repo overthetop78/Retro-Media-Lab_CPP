@@ -1,6 +1,7 @@
 # Proposition du premier socle graphique C++
 
 Statut : premier socle implémenté le 14 novembre 2026 ; ce document conserve son découpage et les exigences des étapes suivantes.
+La sélection d'un thème et de ses paramètres ne modifie que l'aperçu. L'application et la sauvegarde attendent le clic sur Choisir. Les paramètres actifs restent distincts des paramètres provisoires ; fermer sans confirmer conserve l'interface active.
 Les choix déjà demandés sont RetroMediaLab Light/Dark, une fenêtre simple, Windows en premier, et l'émulation en dernier.
 
 Précision pour la page Thèmes : Système/Clair/Sombre sont exclusivement des paramètres de RetroMediaLab. Système reprend les couleurs de la plateforme et leurs changements ; chaque futur thème pourra définir des paramètres différents. ThemeService transmet des paramètres génériques à son contrôleur dans la DLL, et les préférences les conservent séparément par identifiant de thème. Voir [les références techniques](../../references/tooling/couleurs-systeme-et-reglages-themes.md) et [la validation de la page](../../validation/app/page-themes.md).

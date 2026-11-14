@@ -1,6 +1,9 @@
 #pragma once
 // Technical constants; displayed text is resolved through translation catalogs.
 namespace RetroMediaLab::ThemeConstants {
+inline constexpr auto ChooseTheme = "chooseTheme";
+inline constexpr auto ThemesChoose = "Themes.Choose";
+inline constexpr auto ChooseParameter = "{choose}";
 inline constexpr auto ThemesRetroMediaLabMetricsJson = ":/Themes/RetroMediaLab/metrics.json";
 inline constexpr auto FontSize = "fontSize";
 inline constexpr auto ControlHeight = "controlHeight";
@@ -111,7 +114,6 @@ inline constexpr auto AppearanceSystem = "appearanceSystem";
 inline constexpr auto AppearanceLight = "appearanceLight";
 inline constexpr auto AppearanceDark = "appearanceDark";
 inline constexpr auto ActiveTheme = "activeTheme";
-inline constexpr auto ChooseTheme = "chooseTheme";
 inline constexpr auto ThemesAvailable = "Themes.Available";
 inline constexpr auto ThemesSystem = "Themes.System";
 inline constexpr auto WindowLight = "Window.Light";
@@ -124,7 +126,6 @@ inline constexpr auto Space = " ";
 inline constexpr auto ThemesDescription = "Themes.Description";
 inline constexpr auto WindowTheme = "Window.Theme";
 inline constexpr auto ThemesPersisted = "Themes.Persisted";
-inline constexpr auto ThemesChoose = "Themes.Choose";
 inline constexpr auto ThemesPreview = "Themes.Preview";
 inline constexpr auto ThemesActive = "Themes.Active";
 inline constexpr auto Theme = "{theme}";
@@ -220,7 +221,6 @@ inline constexpr auto ListEntryHeight = 82;
 inline constexpr auto ListEntryHorizontalInset = 10;
 inline constexpr auto ListEntryVerticalInset = 8;
 inline constexpr auto HeadingFontSize = 20;
-inline constexpr auto ActionMinimumWidth = 120;
 }
 namespace Tabs {
 inline constexpr auto IconExtent = 17;

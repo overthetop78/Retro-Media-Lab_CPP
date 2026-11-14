@@ -39,9 +39,11 @@ RetroMediaLabConfiguration::RetroMediaLabConfiguration(ThemeService& service) : 
 #ifdef Q_OS_WIN
     metrics_.fontFamily = ThemeConstants::SegoeUI;
 #endif
-    qApp->installEventFilter(this);
-    connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
-        [this] { scheduleSystemRefresh(); });
+    if (!service_.isPreview()) {
+        qApp->installEventFilter(this);
+        connect(QGuiApplication::styleHints(), &QStyleHints::colorSchemeChanged, this,
+            [this] { scheduleSystemRefresh(); });
+    }
 }
 ThemeData RetroMediaLabConfiguration::paletteData(bool dark) const {
     auto data = metrics_;
@@ -63,7 +65,7 @@ void RetroMediaLabConfiguration::apply(const QJsonObject& values) {
         throw std::invalid_argument(ErrorKeys::InvalidRetroMediaLabAppearance);
     const QScopedValueRollback guard(applying_, true);
     if (appearance == ThemeConstants::System) {
-        QApplication::setPalette(QPalette()); // Remove application color overrides.
+        if (!service_.isPreview()) QApplication::setPalette(QPalette()); // Remove application color overrides only on confirmation.
         settings_ = {{ThemeConstants::Appearance, appearance}};
         refreshSystem();
         return;
@@ -88,7 +90,8 @@ void RetroMediaLabConfiguration::apply(const QJsonObject& values) {
     service_.publish(data, settings_, &palette);
 }
 void RetroMediaLabConfiguration::refreshSystem() {
-    const auto palette = QApplication::palette();
+    const auto palette = service_.isPreview() ? service_.systemPalette() : QApplication::palette();
+    if (!service_.isPreview()) service_.rememberSystemPalette(palette);
     auto data = paletteData(palette.color(QPalette::Window).lightnessF() < ThemeConstants::Configuration::DarkLightnessThreshold);
     data.nativeSystemColors = true;
     const auto set = [&](const char* role, QPalette::ColorRole source) { data.colors[role] = palette.color(source); };

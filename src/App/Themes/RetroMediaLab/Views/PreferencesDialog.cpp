@@ -68,7 +68,7 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     generalLayout->addLayout(row);
     generalLayout->addStretch();
     sections_->addTab(general, QString());
-    auto* themePage = new ThemeSettingsPage(themes, translations, parent, sections_);
+    auto* themePage = new ThemeSettingsPage(themes, translations, state, parent, sections_);
     sections_->addTab(themePage, QString());
     layout->addWidget(sections_, 1);
     close_ = new QPushButton(this);

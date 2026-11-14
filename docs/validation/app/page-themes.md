@@ -1,17 +1,16 @@
-# Page Thèmes — 14 novembre 2026
+# Page Thèmes — validation du 14 novembre 2026
 
-La page suit la composition fournie : liste à gauche, aperçu de la fenêtre courante à droite, nom et description, paramètres du thème, thème actif, indication de persistance et bouton Choisir. Un seul thème est présent : RetroMediaLab ; Choisir reste désactivé puisqu'il est déjà actif. L'aperçu reprend les vues effectivement réalisées dans le portage.
+Un seul thème est actuellement disponible : RetroMediaLab. La page présente la liste, l'image d'aperçu, les options Système/Clair/Sombre et le bouton Choisir. Le thème et l'apparence sélectionnés restent provisoires : seule l'image est rendue avec ces paramètres. Le libellé de thème actif conserve la sélection réellement appliquée. Choisir applique et enregistre ; fermer sans confirmer ne change pas l'application.
 
-Pour RetroMediaLab, Système utilise les couleurs de la plateforme, et Clair/Sombre les palettes embarquées. Les paramètres des autres thèmes pourront être différents : contrôleur et page sont propres au thème, sauvegarde séparée par identifiant.
+Contrôles effectués après cette correction :
 
-Vérifications effectuées :
+- Compilations Debug et Release réussies ; audit des constantes et contrôle des clés/paramètres des 29 catalogues du thème réussis.
+- Images Clair et Sombre différentes, inspectées hors écran. Le cadre de l'aperçu conserve les couleurs actives ; seul son contenu représente le choix provisoire.
+- Avant Choisir : paramètres et couleurs du service actif, palette globale et masque de résolution, police, fichier de préférences et libellé de thème actif inchangés. Aucun événement global ApplicationPaletteChange ou ApplicationFontChange, aucune publication du service actif, aucune sauvegarde.
+- Aperçu Système sans remise à zéro de la palette globale. Après confirmation, Système utilise réellement la palette native sans remplacement explicite (masque nul).
+- Choisir confirme Sombre puis Système avec une seule notification et une seule sauvegarde par confirmation. Le doublon de notification identique après l'application système est supprimé.
+- Prévisualisations répétées : nombre de fenêtres inchangé après chaque rendu, aucune modification du dossier ni de ses observateurs. Les objets temporaires de rendu sont détruits après chaque image.
+- Fermeture avec une apparence provisoire différente : thème actif et préférences inchangés. Page active, sortie de console et dossier conservés.
+- Le texte de confirmation a été traduit avec Argos, relu et corrigé dans les langues concernées sans régénérer les autres textes déjà relus. Le bouton Choisir réutilise sa traduction existante. Les paramètres nommés correspondent dans les 29 langues.
 
-- Compilations et déploiements Debug et Release avec Qt 6.12/MSVC 14.44 x64 réussis.
-- Contrôles Qt hors écran : liste avec une seule entrée, position gauche/droite, aperçu dimensionné et rendu, bouton Choisir désactivé, activation des trois apparences et sauvegarde/relecture.
-- Système retire les couleurs explicites de QApplication (masque de résolution nul). Les rôles du thème correspondent à sa palette ; une palette de test modifiée notifie et actualise Window, Button et Accent. Les modes explicites restent indépendants de ces notifications.
-- Un objet de paramètres arbitraires appartenant à un autre thème survit à la sauvegarde sans modification. Migration du fichier version 1 vers les paramètres RetroMediaLab vérifiée.
-- Reconstruction des vues : section Thèmes, page active, dossier et sortie de console conservés. Un paramètre d'apparence invalide est refusé sans perdre la sélection courante.
-- Les contrôles se retraduisent dans les 29 langues. Clés et paramètres nommés vérifiés ; en-US identique à la base traduisible. Argos a généré le seul nouveau catalogue themes.json ; les libellés équivalents du C# ont été repris et les erreurs manifestes relues/corrigées, notamment japonais, coréen, suédois, turc, vietnamien et chinois traditionnel. Cela ne constitue pas une certification linguistique native des 29 langues.
-- Rendu sombre inspecté en image hors écran avec Segoe UI chargée explicitement pour le backend de test. Aucun changement des préférences Windows de l'utilisateur n'a été effectué. Le basculement réel des réglages Windows et Linux/macOS n'est pas validé par cette simulation.
-
-Les tests temporaires sont regroupés sous build/verification-themes, puis supprimés avec leurs exécutables, journaux et images. Aucun test n'est ajouté au workflow GitHub. L'ensemble des fonctions métier et de l'émulation reste hors de ce bloc.
+Les tests et images sous build/verification-preview, ainsi que la génération partielle sous build/preview-translations, ont été supprimés après utilisation. Aucun test n'est intégré au workflow GitHub. Le comportement de la palette native pendant l'aperçu est décrit dans [la référence technique](../../references/tooling/apercu-themes.md). Les tests hors écran n'ont pas modifié les préférences personnelles ou la configuration de Windows.

@@ -95,6 +95,7 @@ std::string TranslationService::text(const std::string& key) const {
     return TranslationConstants::MissingKeyOpen + key + TranslationConstants::MissingKeyClose;
 }
 TranslationService::Subscription TranslationService::subscribe(std::function<void()> observer) {
+    std::erase_if(implementation_->observers, [](const auto& item) { return item.expired(); });
     auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
     implementation_->observers.push_back(subscription);
     return subscription;

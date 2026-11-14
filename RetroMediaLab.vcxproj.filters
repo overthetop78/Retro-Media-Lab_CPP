@@ -453,6 +453,12 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\StatusBar.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemePreview.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ThemePreview.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.cpp">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>

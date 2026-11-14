@@ -1,63 +1,20 @@
 #include "../ThemeConstants.h"
 #include "ThemeSettingsPage.h"
+#include "ThemePreview.h"
+#include <QPushButton>
 #include "Shared/Controls/Card.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QListWidget>
-#include <QPainter>
-#include <QPixmap>
-#include <QPointer>
-#include <QPushButton>
 #include <QRadioButton>
 #include <QSignalBlocker>
-#include <QTimer>
 #include <QVBoxLayout>
 #include <utility>
 namespace RetroMediaLab {
-class ThemePreview final : public QWidget {
-public:
-    ThemePreview(std::shared_ptr<const ThemeData> data, QWidget* source, QWidget* parent)
-        : QWidget(parent), data_(std::move(data)), source_(source) {
-        setObjectName(ThemeConstants::ThemePreview);
-        setMinimumHeight(ThemeConstants::ThemeSettings::PreviewMinimumHeight);
-        setMaximumHeight(ThemeConstants::ThemeSettings::PreviewMaximumHeight);
-        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    }
-    void refresh() {
-        if (scheduled_) return;
-        scheduled_ = true;
-        QTimer::singleShot(0, this, [this] {
-            scheduled_ = false;
-            if (source_) image_ = source_->grab();
-            update();
-        });
-    }
-protected:
-    void showEvent(QShowEvent* event) override {
-        QWidget::showEvent(event);
-        refresh();
-    }
-    void paintEvent(QPaintEvent*) override {
-        QPainter painter(this);
-        painter.setRenderHint(QPainter::Antialiasing);
-        painter.setBrush(data_->color(ThemeConstants::ControlBrush));
-        painter.setPen(data_->color(ThemeConstants::BorderBrush));
-        painter.drawRoundedRect(QRectF(rect()).adjusted(ThemeConstants::ThemeSettings::BorderInset, ThemeConstants::ThemeSettings::BorderInset, -ThemeConstants::ThemeSettings::BorderInset, -ThemeConstants::ThemeSettings::BorderInset), data_->cardRadius, data_->cardRadius);
-        if (image_.isNull()) return;
-        const auto room = size() - QSize(ThemeConstants::ThemeSettings::PreviewInset, ThemeConstants::ThemeSettings::PreviewInset);
-        auto scaled = image_.size();
-        scaled.scale(room, Qt::KeepAspectRatio);
-        painter.setRenderHint(QPainter::SmoothPixmapTransform);
-        painter.drawPixmap(QRect(QPoint((width() - scaled.width()) / ThemeConstants::ThemeSettings::CenterDivisor, (height() - scaled.height()) / ThemeConstants::ThemeSettings::CenterDivisor), scaled), image_);
-    }
-private:
-    std::shared_ptr<const ThemeData> data_;
-    QPointer<QWidget> source_;
-    QPixmap image_;
-    bool scheduled_ = false;
-};
 ThemeSettingsPage::ThemeSettingsPage(ThemeService& themes, Translations::TranslationService& translations,
-    QWidget* previewSource, QWidget* parent) : QWidget(parent), themes_(themes), translations_(translations) {
+    const WorkspaceState& state, QWidget* previewSource, QWidget* parent)
+    : QWidget(parent), themes_(themes), translations_(translations),
+      pendingAppearance_(themes.settings().value(ThemeConstants::Appearance).toString(ThemeConstants::Light)) {
     setObjectName(ThemeConstants::ThemeSettingsPage);
     auto* layout = new QHBoxLayout(this);
     layout->setContentsMargins(ThemeConstants::ThemeSettings::PagePadding, ThemeConstants::ThemeSettings::PagePadding, ThemeConstants::ThemeSettings::PagePadding, ThemeConstants::ThemeSettings::PagePadding);
@@ -94,7 +51,7 @@ ThemeSettingsPage::ThemeSettingsPage(ThemeService& themes, Translations::Transla
     layout->addWidget(listCard);
     auto* right = new QVBoxLayout;
     right->setSpacing(ThemeConstants::ThemeSettings::DetailSpacing);
-    preview_ = new ThemePreview(themes.data(), previewSource, this);
+    preview_ = new ThemePreview(themes, translations, state, previewSource, this);
     right->addWidget(preview_, 1);
     name_ = new QLabel(QString::fromStdString(translations.text(ThemeConstants::ThemeName)), this);
     auto heading = name_->font();
@@ -129,14 +86,20 @@ ThemeSettingsPage::ThemeSettingsPage(ThemeService& themes, Translations::Transla
     right->addStretch();
     choose_ = new QPushButton(this);
     choose_->setObjectName(ThemeConstants::ChooseTheme);
-    choose_->setMinimumWidth(ThemeConstants::ThemeSettings::ActionMinimumWidth);
-    choose_->setEnabled(false); // The only available theme is already active.
+    choose_->setMinimumWidth(ThemeConstants::PreferencesLayout::ActionMinimumWidth);
     right->addWidget(choose_, 0, Qt::AlignRight);
     layout->addLayout(right, 1);
+    connect(choose_, &QPushButton::clicked, this, [this] {
+        themes_.applySettings({{ThemeConstants::Appearance, pendingAppearance_}});
+    });
+    connect(available_, &QListWidget::currentRowChanged, this, [this] { refreshSelection(); });
     for (const auto& option : {std::pair{system_, ThemeConstants::System},
                               std::pair{light_, ThemeConstants::Light}, std::pair{dark_, ThemeConstants::Dark}}) {
         connect(option.first, &QRadioButton::toggled, this, [this, variant = option.second](bool checked) {
-            if (checked) themes_.applySettings({{ThemeConstants::Appearance, variant}});
+            if (checked) {
+                pendingAppearance_ = variant;
+                refreshSelection();
+            }
         });
     }
     languageSubscription_ = translations.subscribe([this] { refreshTexts(); });
@@ -156,22 +119,27 @@ void ThemeSettingsPage::refreshTexts() {
     available_->item(0)->setData(Qt::AccessibleTextRole, listName_->text() + ThemeConstants::Space + variants_->text());
     description_->setText(text(ThemeConstants::ThemesDescription));
     appearance_->setText(text(ThemeConstants::WindowTheme));
-    persistence_->setText(text(ThemeConstants::ThemesPersisted));
     choose_->setText(text(ThemeConstants::ThemesChoose));
+    persistence_->setText(text(ThemeConstants::ThemesPersisted).replace(ThemeConstants::ChooseParameter, choose_->text()));
     preview_->setAccessibleName(text(ThemeConstants::ThemesPreview));
     const auto appearance = themes_.settings().value(ThemeConstants::Appearance) == ThemeConstants::System ? system_->text()
         : themes_.settings().value(ThemeConstants::Appearance) == ThemeConstants::Dark ? dark_->text() : light_->text();
     active_->setText(text(ThemeConstants::ThemesActive).replace(ThemeConstants::Theme, name_->text()).replace(ThemeConstants::Appearance2, appearance));
-    preview_->refresh();
+    refreshSelection();
 }
 void ThemeSettingsPage::refreshAppearance() {
     const QSignalBlocker systemBlocked(system_), lightBlocked(light_), darkBlocked(dark_);
-    system_->setChecked(themes_.settings().value(ThemeConstants::Appearance) == ThemeConstants::System);
-    light_->setChecked(themes_.settings().value(ThemeConstants::Appearance) == ThemeConstants::Light);
-    dark_->setChecked(themes_.settings().value(ThemeConstants::Appearance) == ThemeConstants::Dark);
+    system_->setChecked(pendingAppearance_ == ThemeConstants::System);
+    light_->setChecked(pendingAppearance_ == ThemeConstants::Light);
+    dark_->setChecked(pendingAppearance_ == ThemeConstants::Dark);
     auto colors = available_->palette();
     colors.setColor(QPalette::Base, themes_.data()->color(ThemeConstants::CardBrush));
     available_->setPalette(colors);
     refreshTexts();
 }
+void ThemeSettingsPage::refreshSelection() {
+    choose_->setEnabled(pendingAppearance_ != themes_.settings().value(ThemeConstants::Appearance).toString());
+    preview_->setSettings({{ThemeConstants::Appearance, pendingAppearance_}});
+}
+
 }

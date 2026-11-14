@@ -80,7 +80,10 @@ ThemeModuleHandle ThemeService::loadModule(const QString& path) {
     return module;
 }
 ThemeService::ThemeService(ThemeModuleHandle module)
-    : module_(std::move(module)), data_(std::make_shared<ThemeData>()), configuration_(std::make_unique<Configuration>()) {
+    : ThemeService(std::move(module), false, QApplication::palette()) {}
+ThemeService::ThemeService(ThemeModuleHandle module, bool preview, const QPalette& systemPalette)
+    : module_(std::move(module)), data_(std::make_shared<ThemeData>()), preview_(preview),
+      systemPalette_(systemPalette), palette_(systemPalette), configuration_(std::make_unique<Configuration>()) {
     if (!module_) throw std::invalid_argument(ErrorKeys::MissingThemeModule);
     id_ = module_->id;
     char error[AppConstants::Service::ErrorBufferCapacity] = {};
@@ -109,16 +112,26 @@ void ThemeService::applySettings(const QJsonObject& values) {
         throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeConfigurationFailed);
 }
 void ThemeService::publish(const ThemeData& data, const QJsonObject& values, const QPalette* palette) {
+    const bool changed = *data_ != data || settings_ != values;
     *data_ = data;
     settings_ = values;
-    if (palette) QApplication::setPalette(*palette);
-    auto font = QApplication::font();
-    if (!data.fontFamily.isEmpty()) font.setFamily(data.fontFamily);
-    font.setPixelSize(data.fontSize);
-    QApplication::setFont(font);
+    palette_ = palette ? *palette : systemPalette_;
+    if (!preview_) {
+        if (palette) QApplication::setPalette(*palette);
+        auto font = QApplication::font();
+        if (!data.fontFamily.isEmpty()) font.setFamily(data.fontFamily);
+        font.setPixelSize(data.fontSize);
+        QApplication::setFont(font);
+    }
+    if (!changed) return;
     const auto observers = observers_;
     std::erase_if(observers_, [](const auto& observer) { return observer.expired(); });
     for (const auto& observer : observers) if (const auto live = observer.lock()) (*live)();
+}
+std::unique_ptr<ThemeService> ThemeService::createPreview(const QJsonObject& values) const {
+    auto result = std::unique_ptr<ThemeService>(new ThemeService(module_, true, systemPalette_));
+    result->applySettings(values);
+    return result;
 }
 ThemeService::Subscription ThemeService::subscribe(std::function<void()> observer) {
     auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));

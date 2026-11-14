@@ -27,6 +27,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/MainMenu.cpp
   Themes/RetroMediaLab/Views/PreferencesDialog.cpp
   Themes/RetroMediaLab/Views/ThemeSettingsPage.cpp
+  Themes/RetroMediaLab/Views/ThemePreview.cpp
   Themes/RetroMediaLab/Views/WorkspaceTabs.cpp
   Themes/RetroMediaLab/Views/StatusBar.cpp
   Themes/RetroMediaLab/RetroMediaLabStyle.cpp
