@@ -5,6 +5,6 @@
 namespace RetroMediaLab {
 class MainMenu final : public QMenuBar {
 public:
-    MainMenu(Translations::TranslationService&, std::function<void()> openPreferences, QWidget*);
+    MainMenu(Translations::TranslationService&, std::function<void()> openPreferences, std::function<void()> openGreaseweazle, QWidget*);
 };
 }

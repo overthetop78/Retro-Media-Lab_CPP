@@ -9,12 +9,12 @@
 #include <QVBoxLayout>
 namespace RetroMediaLab {
 RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::TranslationService& translations,
-    WorkspaceState& state, std::function<void()> openPreferences, QWidget* parent)
+    WorkspaceState& state, std::function<void()> openPreferences, std::function<void()> openGreaseweazle, QWidget* parent)
     : QWidget(parent), state_(state) {
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
-    layout->addWidget(new MainMenu(translations, std::move(openPreferences), this));
+    layout->addWidget(new MainMenu(translations, std::move(openPreferences), std::move(openGreaseweazle), this));
     auto* area = new QWidget(this);
     auto* areaLayout = new QVBoxLayout(area);
     areaLayout->setContentsMargins(ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::PagePadding, ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::ContentSpacing);

@@ -11,6 +11,7 @@
 #include <QLayout>
 #include <QGridLayout>
 #include <QAbstractButton>
+#include <QComboBox>
 #include <QAbstractItemView>
 #include <QTabWidget>
 #include <QTabBar>
@@ -64,6 +65,19 @@ qreal DisplayDensity::factor(const QWidget* widget) {
     const auto value = widget->window()->property(FactorProperty);
     return value.isValid() ? value.toReal() : Unit;
 }
+qreal DisplayDensity::tabFactor(const QWidget* widget) {
+    if (!qobject_cast<const QTabBar*>(widget)) return Unit;
+    int levels = 0;
+    bool workspace = false;
+    for (auto* parent = widget->parentWidget(); parent; parent = parent->parentWidget()) {
+        if (qobject_cast<const QTabWidget*>(parent)) {
+            ++levels;
+            if (parent->objectName() == ThemeConstants::WorkspaceTabs) workspace = true;
+        }
+    }
+    if (levels > 1) return NestedTabFactor;
+    return workspace ? Unit : SecondaryTabFactor;
+}
 DisplayDensity::DisplayDensity(QWidget& root, WorkspaceState& state)
     : QObject(&root), data_(std::make_unique<Data>(root, state)) {
     data_->subscription = state.subscribeToInterfaceScale([this] { schedule(); });
@@ -104,11 +118,15 @@ void DisplayDensity::refresh() {
             WidgetBaseline record{widget, widget->minimumSize(), widget->maximumSize(), {}, widget->font()};
             if (const auto* parent = widget->parentWidget()) {
                 qreal inherited = 0;
-                for (const auto* ancestor = parent; ancestor && inherited <= 0; ancestor = ancestor->parentWidget()) inherited = ancestor->property(AppliedProperty).toReal();
+                for (const auto* ancestor = parent; ancestor; ancestor = ancestor->parentWidget()) {
+                    inherited = ancestor->property(AppliedProperty).toReal();
+                    if (inherited > 0 || ancestor->isWindow()) break;
+                }
                 if (inherited > 0 && widget->font().pixelSize() == parent->font().pixelSize() && widget->font().pointSizeF() == parent->font().pointSizeF())
                     record.font = scaledFont(record.font, Unit / inherited);
             }
             if (auto* button = qobject_cast<QAbstractButton*>(widget)) record.icon = button->iconSize();
+            if (auto* combo = qobject_cast<QComboBox*>(widget)) record.icon = combo->iconSize();
             if (auto* tabs = qobject_cast<QTabWidget*>(widget)) record.icon = tabs->iconSize();
             if (auto* tabs = qobject_cast<QTabBar*>(widget)) record.icon = tabs->iconSize();
             if (auto* view = qobject_cast<QAbstractItemView*>(widget)) record.icon = view->iconSize();
@@ -132,14 +150,24 @@ void DisplayDensity::refresh() {
         if (!widget) continue;
         const auto scale = factorFor(widget->window()->screen()->availableGeometry().size(), data_->state.interfaceScale());
         widget->window()->setProperty(FactorProperty, scale);
-        widget->setFont(scaledFont(record.font, scale));
+        widget->setFont(scaledFont(record.font, scale * tabFactor(widget)));
         if (!widget->isWindow()) {
-            widget->setMinimumSize(size(record.minimum, scale));
-            widget->setMaximumSize(size(record.maximum, scale));
+            auto minimum = size(record.minimum, scale), maximum = size(record.maximum, scale);
+            if (widget->property(ContentHeightProperty).toBool()) {
+                minimum.setHeight(widget->minimumHeight()); maximum.setHeight(widget->maximumHeight());
+            }
+            widget->setMinimumSize(minimum);
+            widget->setMaximumSize(maximum);
         }
         if (auto* button = qobject_cast<QAbstractButton*>(widget); button && record.icon.isValid()) button->setIconSize(size(record.icon, scale));
+        if (auto* combo = qobject_cast<QComboBox*>(widget); combo && record.icon.isValid()) {
+            combo->setIconSize(size(record.icon, scale));
+            // FontChange only clears sizeHint; StyleChange also clears minimumSizeHint.
+            QEvent metricsChanged(QEvent::StyleChange);
+            QApplication::sendEvent(combo, &metricsChanged);
+        }
         if (auto* tabs = qobject_cast<QTabWidget*>(widget); tabs && record.icon.isValid()) tabs->setIconSize(size(record.icon, scale));
-        if (auto* tabs = qobject_cast<QTabBar*>(widget); tabs && record.icon.isValid()) tabs->setIconSize(size(record.icon, scale));
+        if (auto* tabs = qobject_cast<QTabBar*>(widget); tabs && record.icon.isValid()) tabs->setIconSize(size(record.icon, scale * tabFactor(widget)));
         if (auto* view = qobject_cast<QAbstractItemView*>(widget); view && record.icon.isValid()) view->setIconSize(size(record.icon, scale));
         if (auto* splitter = qobject_cast<QSplitter*>(widget)) splitter->setHandleWidth(metric(record.handle, scale));
         if (auto* header = qobject_cast<QHeaderView*>(widget)) { header->setMinimumSectionSize(metric(record.minimumSection, scale)); header->setDefaultSectionSize(metric(record.section, scale)); }

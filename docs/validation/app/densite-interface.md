@@ -8,7 +8,7 @@ Le thème RetroMediaLab adapte polices, contraintes des contrôles, icônes, mar
 
 Le contrôleur de densité appartient à la fenêtre : abonnement faible, connexions et rappels Qt liés à son contexte, suppression du filtre d’événements à sa destruction. Les références aux widgets et layouts sont des QPointer ; les objets détruits sont retirés des références conservées.
 
-## Validation du 14 novembre 2026
+## Validation initiale du 14 novembre 2026
 
 Banc temporaire unique, sans média ni matériel externe :
 
@@ -22,3 +22,7 @@ Banc temporaire unique, sans média ni matériel externe :
 - Traduction Argos des deux libellés dans les 29 langues, relecture et correction des traductions dégradées du mot interface et du symbole pourcentage.
 
 Ces essais simulent les écrans ; ils ne constituent pas un essai physique sur le portable 14 pouces de l’utilisateur. Aucun test n’est ajouté au workflow GitHub. Les compilations et déploiements locaux Debug/Release ont réussi. Le banc et ses artefacts ont été supprimés. Audit réussi : 133 fichiers C++, 56 clés d’erreur, 29 langues. git diff --check passe.
+
+## Correction de compacité et captures
+
+Le facteur de référence a ensuite été réduit de 85 % à 70 % des dimensions d’origine. Une compensation incorrecte des polices dans les nouveaux dialogues a été corrigée. La hiérarchie mesurée est de 30/26/23 pixels logiques pour les hauteurs des onglets principaux/préférences/imbriqués, avec des polices de 10/9/8 pixels. Voir [les captures 1080p et 800 × 600](captures/README.md) et [la validation de navigation](navigation-et-compacite.md).

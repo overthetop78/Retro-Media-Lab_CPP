@@ -12,7 +12,7 @@
 #include <QAbstractButton>
 #include <QMap>
 #include <QPushButton>
-#include <QScrollArea>
+#include "../ContentScrollArea.h"
 #include <QSignalBlocker>
 #include <QVBoxLayout>
 #include <algorithm>
@@ -35,8 +35,8 @@ FloppySettingsPage::FloppySettingsPage(ThemeService& themes,Translations::Transl
     for(const auto& edit:state.floppyReaderEdits)if(edit.id.isEmpty())drafts_.push_back(edit);
     auto* actions=controllerType;outer->addLayout(actions);scan_=new QPushButton(this);scan_->setObjectName(FloppyScan);add_=new QPushButton(this);add_->setObjectName(FloppyAdd);
     for(auto* button:{scan_,add_}){button->setAutoDefault(false);actions->addWidget(button);}controllers_=new QComboBox(this);controllers_->setObjectName(SelectedController);actions->addWidget(controllers_);actions->addStretch();
-    auto* scroll=new QScrollArea(this);readerScroll_=scroll;scroll->setWidgetResizable(true);scroll->setFrameShape(QFrame::NoFrame);scroll->setMaximumHeight(RowsMaximumHeight);scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    auto* host=new QWidget(scroll);rowsLayout_=new QVBoxLayout(host);rowsLayout_->setContentsMargins(0,0,0,0);scroll->setWidget(host);outer->addWidget(scroll);
+    auto* scroll=new ContentScrollArea(RowsMaximumHeight,this);readerScroll_=scroll;
+    auto* host=new QWidget(scroll);rowsLayout_=new QVBoxLayout(host);rowsLayout_->setContentsMargins(0,0,0,0);scroll->setContent(host);outer->addWidget(scroll);
     persistence_=new QLabel(this);persistence_->setWordWrap(true);outer->addWidget(persistence_);
     tools_=new HostToolsSettingsWidget(translations,state,this);outer->addWidget(tools_);
     kryoTools_=new KryoFluxSettingsWidget(translations,state,this);outer->addWidget(kryoTools_);
@@ -93,7 +93,7 @@ void FloppySettingsPage::rebuildRows(){
         connect(row->save,&QPushButton::clicked,this,[this,row]{saveReader(row);});connect(row->forget,&QPushButton::clicked,this,[this,row]{forgetReader(row);});
         rows_.push_back(row);layout->addWidget(card);
     }
-    layout->addStretch();refreshTexts();readerScroll_->setVisible(!rows_.isEmpty());readerScroll_->setFixedHeight(qMin(RowsMaximumHeight,layout->sizeHint().height()+Gap));
+    layout->addStretch();refreshTexts();readerScroll_->setVisible(!rows_.isEmpty());
 }
 void FloppySettingsPage::refreshTexts(){
     const auto text=[this](const char* key){return QString::fromStdString(translations_.text(key));};backendLabel_->setText(text(ControllerTypeKey));scan_->setText(text(ScanKey));add_->setText(text(AddDriveKey));persistence_->setText(text(PersistenceKey));

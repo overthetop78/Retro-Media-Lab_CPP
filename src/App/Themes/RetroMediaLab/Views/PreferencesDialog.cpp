@@ -129,7 +129,7 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     connect(close_, &QPushButton::clicked, this, [this] { reject(); });
     languageSubscription_ = translations.subscribe([this] { refreshTexts(); });
     themeSubscription_ = themes.subscribe([this] { refreshAppearance(); });
-    const auto room = screen()->availableGeometry().size() - QSize(ThemeConstants::PreferencesLayout::ScreenInset, ThemeConstants::PreferencesLayout::ScreenInset);
+    const auto room = parent->screen()->availableGeometry().size() - QSize(ThemeConstants::PreferencesLayout::ScreenInset, ThemeConstants::PreferencesLayout::ScreenInset);
     setMinimumSize(qMin(ThemeConstants::PreferencesLayout::MinimumWidth, room.width()), qMin(ThemeConstants::PreferencesLayout::MinimumHeight, room.height()));
     resize(qMin(ThemeConstants::PreferencesLayout::DefaultWidth, room.width()), qMin(ThemeConstants::PreferencesLayout::MinimumWidth, room.height()));
     if (!state.preferencesGeometry.isEmpty()) restoreGeometry(state.preferencesGeometry);

@@ -8,7 +8,7 @@ namespace RetroMediaLab {
 class TerminalView;
 class RetroMediaLabLayout final : public QWidget {
 public:
-    RetroMediaLabLayout(ThemeService&, Translations::TranslationService&, WorkspaceState&, std::function<void()>, QWidget*);
+    RetroMediaLabLayout(ThemeService&, Translations::TranslationService&, WorkspaceState&, std::function<void()>, std::function<void()>, QWidget*);
     void synchronizeState();
 protected:
     void showEvent(QShowEvent*) override;

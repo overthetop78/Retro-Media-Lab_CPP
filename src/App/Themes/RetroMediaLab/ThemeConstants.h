@@ -138,7 +138,7 @@ inline constexpr auto HardwareSelector = "statusHardwareSelector";
 inline constexpr auto HardwareIndicator = "statusHardwareIndicator";
 inline constexpr auto HardwareDriveChoice = "Hardware.DriveChoice";
 inline constexpr auto HardwareDisconnected = "Hardware.Disconnected";
-inline constexpr auto HardwareDetailSeparator = " · ";
+inline constexpr auto HardwareDetailSeparator = " Â· ";
 inline constexpr auto HardwareDisconnectedFormat = "%1 (%2)";
 inline constexpr auto HardwareField0 = "{0}";
 inline constexpr auto HardwareField1 = "{1}";
@@ -205,6 +205,8 @@ inline constexpr auto MinimumContentHeight = 110;
 inline constexpr auto MinimumConsoleHeight = 100;
 }
 namespace Style {
+inline constexpr int ControlVerticalPadding = 6;
+inline constexpr int ControlHorizontalPadding = 16;
 inline constexpr auto BorderInset = .5;
 inline constexpr auto TabFrameRadius = 9;
 inline constexpr auto ButtonBorderInset = 0.5;
@@ -271,7 +273,7 @@ namespace Tabs {
 inline constexpr auto IconExtent = 17;
 }
 namespace CapabilityTable {
-inline constexpr auto InformationMark = "—";
+inline constexpr auto InformationMark = "â€”";
 inline constexpr int Columns = 4;
 inline constexpr int StatusColumn = 1;
 inline constexpr int SourceColumn = 2;
@@ -313,10 +315,41 @@ inline constexpr const char* LabelKeys[] = {"Profiles.Read", "Profiles.Write", "
 }
 
 namespace Density {
-inline constexpr auto CompactFactor = 0.85;
+inline constexpr auto CompactFactor = 0.70;
+inline constexpr auto SecondaryTabFactor = 0.90;
+inline constexpr auto NestedTabFactor = 0.80;
 inline constexpr auto MinimumScreenFactor = 0.75;
 inline constexpr int ReferenceWidth = 1600;
 inline constexpr int ReferenceHeight = 900;
+}
+
+namespace GreaseweazleDialog {
+inline constexpr auto Title = "Greaseweazle.Title";
+inline constexpr auto DeviceSelector = "greaseweazleToolDevice";
+inline constexpr auto DeviceLabel = "Hardware.Floppy";
+inline constexpr auto DeviceFormat = "%1 Â· %2 Â· %3";
+inline constexpr auto FieldPrefix = "gwField_";
+inline constexpr auto CheckPrefix = "gwCheck_";
+inline constexpr auto ExecutePrefix = "gwExecute_";
+inline constexpr auto OutputPrefix = "gwOutput_";
+inline constexpr auto SummaryPrefix = "gwSummary_";
+inline constexpr auto CommandPrefix = "gwCommand_";
+inline constexpr auto Yes = "Common.Yes";
+inline constexpr auto No = "Common.No";
+inline constexpr auto InfoSeparator = " Â· ";
+inline constexpr int ParameterInputWidth = 150;
+inline constexpr int ParameterGap = 14;
+inline constexpr int ParametersMaximumHeight = 220;
+inline constexpr auto Action = "openGreaseweazleDialog";
+inline constexpr auto ObjectName = "greaseweazleDialog";
+inline constexpr auto Navigation = "greaseweazleToolsNavigation";
+inline constexpr auto Pages = "greaseweazleToolPages";
+inline constexpr int NavigationWidth = 250;
+inline constexpr int NavigationPadding = 8;
+inline constexpr int NavigationGap = 12;
+inline constexpr int NavigationRowHeight = 56;
+inline constexpr const char* Ids[] = {"info", "bandwidth", "rpm", "seek", "align", "pin", "reset", "delays", "update"};
+inline constexpr const char* Labels[] = {"Tool.Title.Info", "Tool.Title.Bandwidth", "Tool.Title.Rpm", "Tool.Title.Seek", "Tool.Title.Align", "Tool.Title.Pin", "Tool.Title.Reset", "Tool.Title.Delays", "Tool.Title.Update"};
 }
 
 }

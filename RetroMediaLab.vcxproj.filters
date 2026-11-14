@@ -85,6 +85,9 @@
     <Filter Include="src\Infrastructure\Logging">
       <UniqueIdentifier>{06846AE1-210D-5EB0-BCC4-6CB9589AB2C9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Infrastructure\Maintenance">
+      <UniqueIdentifier>{6B0DC31F-47B1-5FA2-B91E-03D02EE3C4F0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Infrastructure\State">
       <UniqueIdentifier>{9F523D0D-D670-55C1-BC87-973E04288ADA}</UniqueIdentifier>
     </Filter>
@@ -966,6 +969,12 @@
     <ClInclude Include="src\App\Themes\IThemePresentation.h">
       <Filter>src\App\Themes</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\ContentScrollArea.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\ContentScrollArea.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
     <None Include="src\App\Themes\RetroMediaLab\dark.json">
       <Filter>src\App\Themes\RetroMediaLab</Filter>
     </None>
@@ -973,6 +982,12 @@
       <Filter>src\App\Themes\RetroMediaLab</Filter>
     </ClCompile>
     <ClInclude Include="src\App\Themes\RetroMediaLab\DisplayDensity.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\FlowLayout.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\FlowLayout.h">
       <Filter>src\App\Themes\RetroMediaLab</Filter>
     </ClInclude>
     <None Include="src\App\Themes\RetroMediaLab\icons.json">
@@ -1042,6 +1057,18 @@
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\FloppySettingsPage.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\GreaseweazleDialog.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\GreaseweazleDialog.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\GreaseweazleToolPage.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\GreaseweazleToolPage.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\HardwareCapabilitiesTable.cpp">
@@ -1263,6 +1290,15 @@
     <ClInclude Include="src\Infrastructure\Logging\LogSettings.h">
       <Filter>src\Infrastructure\Logging</Filter>
     </ClInclude>
+    <ClCompile Include="src\Infrastructure\Maintenance\GreaseweazleTools.cpp">
+      <Filter>src\Infrastructure\Maintenance</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Infrastructure\Maintenance\GreaseweazleTools.h">
+      <Filter>src\Infrastructure\Maintenance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infrastructure\Maintenance\GwToolsConstants.h">
+      <Filter>src\Infrastructure\Maintenance</Filter>
+    </ClInclude>
     <ClCompile Include="src\Infrastructure\State\PreferencesStore.cpp">
       <Filter>src\Infrastructure\State</Filter>
     </ClCompile>
@@ -1326,6 +1362,9 @@
     <None Include="src\Translations\Catalogs\Constants\App\errors.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\App\hardware.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
@@ -1366,6 +1405,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\hardware.json">
@@ -1410,6 +1452,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
@@ -1450,6 +1495,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\hardware.json">
@@ -1494,6 +1542,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
@@ -1534,6 +1585,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\hardware.json">
@@ -1578,6 +1632,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
@@ -1618,6 +1675,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\hardware.json">
@@ -1662,6 +1722,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
@@ -1702,6 +1765,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\hardware.json">
@@ -1746,6 +1812,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
@@ -1786,6 +1855,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\hardware.json">
@@ -1830,6 +1902,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
@@ -1870,6 +1945,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\hardware.json">
@@ -1914,6 +1992,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
@@ -1954,6 +2035,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\hardware.json">
@@ -1998,6 +2082,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
@@ -2038,6 +2125,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\hardware.json">
@@ -2082,6 +2172,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
@@ -2122,6 +2215,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\hardware.json">
@@ -2166,6 +2262,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
@@ -2206,6 +2305,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\hardware.json">
@@ -2250,6 +2352,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
@@ -2290,6 +2395,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\hardware.json">
@@ -2334,6 +2442,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
@@ -2374,6 +2485,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\hardware.json">
@@ -2418,6 +2532,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
@@ -2458,6 +2575,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\hardware.json">
@@ -2502,6 +2622,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\errors.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\greaseweazle-tools.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\hardware.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
@@ -2542,6 +2665,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\hardware.json">

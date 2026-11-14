@@ -10,6 +10,7 @@ public:
     ~DisplayDensity() override;
     static qreal factorFor(const QSize& availableLogicalSize, int percent);
     static qreal factor(const QWidget*);
+    static qreal tabFactor(const QWidget*);
 protected:
     bool eventFilter(QObject*, QEvent*) override;
 private:

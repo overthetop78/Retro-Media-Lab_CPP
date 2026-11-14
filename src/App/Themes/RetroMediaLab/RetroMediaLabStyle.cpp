@@ -37,19 +37,23 @@ void RetroMediaLabStyle::drawPrimitive(PrimitiveElement element, const QStyleOpt
 QSize RetroMediaLabStyle::sizeFromContents(ContentsType type, const QStyleOption* option, const QSize& content, const QWidget* widget) const {
     auto size = QProxyStyle::sizeFromContents(type, option, content, widget);
     const auto scaled = [widget](int value) { return qRound(value * DisplayDensity::factor(widget)); };
+    const auto tabScaled = [widget](int value) { return qRound(value * DisplayDensity::factor(widget) * DisplayDensity::tabFactor(widget)); };
     if (type == CT_TabBarTab) {
         const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
-        size = QSize(tab->fontMetrics.horizontalAdvance(tab->text) + scaled(ThemeConstants::Style::TabIconExtent) + scaled(ThemeConstants::Style::IconTextGap) + scaled(data_->tabPaddingX) * ThemeConstants::Style::TabUnderlineBottomInset + ThemeConstants::Style::TabUnderlineThickness,
-                     qMax(scaled(ThemeConstants::Style::TabIconExtent), tab->fontMetrics.height()) + scaled(data_->tabPaddingY) * ThemeConstants::Style::TabUnderlineBottomInset);
-    }
-    if (type == CT_TabBarTab && widget && widget->objectName() == HardwareConstants::CategoryTabBar) {
-        const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
-        size.setWidth(tab->fontMetrics.horizontalAdvance(tab->text) + scaled(HardwareConstants::CategoryTabPadding));
+        auto font = widget ? widget->font() : QFont();
+        if (tab->state & State_Selected) font.setWeight(QFont::DemiBold);
+        const QFontMetrics metrics(font);
+        const auto icon = tab->icon.isNull() ? QSize(0, 0) : tab->iconSize;
+        const auto gap = icon.width() > 0 ? tabScaled(ThemeConstants::Style::IconTextGap) : 0;
+        size = QSize(metrics.horizontalAdvance(tab->text) + icon.width() + gap + tabScaled(data_->tabPaddingX) * ThemeConstants::Style::TabUnderlineBottomInset,
+            qMax(metrics.height(), icon.height()) + tabScaled(data_->tabPaddingY) * ThemeConstants::Style::TabUnderlineBottomInset);
     }
     if (type == CT_MenuBarItem) size = content + QSize(scaled(ThemeConstants::Style::MenuBarHorizontalPadding), scaled(ThemeConstants::Style::MenuBarVerticalPadding));
     if (type == CT_MenuItem) size.setHeight(option->fontMetrics.height() + scaled(ThemeConstants::Style::MenuItemVerticalPadding));
     if (type == CT_PushButton || type == CT_ComboBox || type == CT_LineEdit)
-        size.setHeight(qMax(size.height(), scaled(data_->controlHeight)));
+        size.setHeight(qMax(option->fontMetrics.height() + scaled(ThemeConstants::Style::ControlVerticalPadding), scaled(data_->controlHeight)));
+    if (type == CT_PushButton)
+        size.setWidth(content.width() + scaled(ThemeConstants::Style::ControlHorizontalPadding));
     return size;
 }
 int RetroMediaLabStyle::styleHint(StyleHint hint, const QStyleOption* option, const QWidget* widget, QStyleHintReturn* result) const {
@@ -69,6 +73,7 @@ int RetroMediaLabStyle::pixelMetric(PixelMetric metric, const QStyleOption* opti
     case PM_SmallIconSize: case PM_ButtonIconSize: case PM_ToolBarIconSize:
     case PM_IndicatorWidth: case PM_IndicatorHeight:
     case PM_ExclusiveIndicatorWidth: case PM_ExclusiveIndicatorHeight:
+    case PM_ButtonMargin: case PM_FocusFrameHMargin: case PM_FocusFrameVMargin:
     case PM_CheckBoxLabelSpacing: case PM_ScrollBarExtent:
     case PM_SliderThickness: case PM_SliderLength: case PM_TabBarScrollButtonWidth:
         return qMax(1, qRound(base * DisplayDensity::factor(widget)));
@@ -84,17 +89,39 @@ void RetroMediaLabStyle::drawControl(ControlElement element, const QStyleOption*
         painter->setPen(data_->color(ThemeConstants::BorderBrush));
         painter->drawRoundedRect(QRectF(option->rect).adjusted(ThemeConstants::Style::BorderInset,ThemeConstants::Style::BorderInset,-ThemeConstants::Style::TabRightInset,ThemeConstants::Style::TabBottomExtension),data_->tabRadius,data_->tabRadius);
         if(selected) {
-            painter->setPen(QPen(data_->color(ThemeConstants::AccentBrush),ThemeConstants::Style::TabUnderlineThickness));
-            painter->drawLine(option->rect.bottomLeft()+QPoint(ThemeConstants::Style::TabUnderlineInset,-ThemeConstants::Style::TabUnderlineBottomInset),option->rect.bottomRight()+QPoint(-ThemeConstants::Style::TabUnderlineInset,-ThemeConstants::Style::TabUnderlineBottomInset));
+            const auto scale = DisplayDensity::factor(widget) * DisplayDensity::tabFactor(widget);
+            const auto inset = ThemeConstants::Style::TabUnderlineInset * scale;
+            const auto bottom = ThemeConstants::Style::TabUnderlineBottomInset * scale;
+            painter->setPen(QPen(data_->color(ThemeConstants::AccentBrush), ThemeConstants::Style::TabUnderlineThickness * scale));
+            painter->drawLine(QPointF(option->rect.bottomLeft()) + QPointF(inset, -bottom), QPointF(option->rect.bottomRight()) + QPointF(-inset, -bottom));
         }
         painter->restore(); return;
     }
     if (element == CE_TabBarTabLabel) {
-        auto tab = *qstyleoption_cast<const QStyleOptionTab*>(option);
-        tab.palette.setColor(QPalette::WindowText,data_->color(tab.state & State_Selected ? ThemeConstants::AccentBrush : ThemeConstants::MutedTextBrush));
+        const auto& tab = *qstyleoption_cast<const QStyleOptionTab*>(option);
+        auto palette = tab.palette;
+        palette.setColor(QPalette::WindowText, data_->color(tab.state & State_Selected ? ThemeConstants::AccentBrush : ThemeConstants::MutedTextBrush));
+        auto font = widget ? widget->font() : painter->font();
+        if (tab.state & State_Selected) font.setWeight(QFont::DemiBold);
         painter->save();
-        if(tab.state & State_Selected) { auto font=painter->font(); font.setWeight(QFont::DemiBold); painter->setFont(font); }
-        QProxyStyle::drawControl(element,&tab,painter,widget); painter->restore(); return;
+        painter->setFont(font);
+        const QFontMetrics metrics(font);
+        const auto icon = tab.icon.isNull() ? QSize(0, 0) : tab.iconSize;
+        const auto scale = DisplayDensity::factor(widget) * DisplayDensity::tabFactor(widget);
+        const auto gap = icon.width() > 0 ? qRound(ThemeConstants::Style::IconTextGap * scale) : 0;
+        const auto textWidth = metrics.horizontalAdvance(tab.text);
+        const auto contentWidth = textWidth + icon.width() + gap;
+        const auto left = tab.rect.x() + (tab.rect.width() - contentWidth) / ThemeConstants::Style::TabUnderlineBottomInset;
+        if (!tab.icon.isNull()) {
+            QRect rect(left, tab.rect.y() + (tab.rect.height() - icon.height()) / ThemeConstants::Style::TabUnderlineBottomInset, icon.width(), icon.height());
+            rect = QStyle::visualRect(tab.direction, tab.rect, rect);
+            tab.icon.paint(painter, rect, Qt::AlignCenter, tab.state & State_Enabled ? QIcon::Normal : QIcon::Disabled);
+        }
+        QRect textRect(left + icon.width() + gap, tab.rect.y(), textWidth, tab.rect.height());
+        textRect = QStyle::visualRect(tab.direction, tab.rect, textRect);
+        drawItemText(painter, textRect, Qt::AlignVCenter | Qt::AlignLeft | Qt::TextShowMnemonic, palette, tab.state & State_Enabled, tab.text, QPalette::WindowText);
+        painter->restore();
+        return;
     }
     QProxyStyle::drawControl(element,option,painter,widget);
 }

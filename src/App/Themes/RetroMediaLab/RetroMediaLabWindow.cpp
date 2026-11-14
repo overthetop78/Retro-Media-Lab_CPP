@@ -4,6 +4,7 @@
 #include "DisplayDensity.h"
 #include "State/WorkspaceState.h"
 #include "Views/PreferencesDialog.h"
+#include "Views/GreaseweazleDialog.h"
 #include <RetroMediaLab/Platform/WindowAppearance.h>
 #include <QApplication>
 #include <QCloseEvent>
@@ -17,7 +18,7 @@ RetroMediaLabWindow::RetroMediaLabWindow(ThemeService& themes, Translations::Tra
     setObjectName(ThemeConstants::RetroMediaLabWindow);
     setWindowTitle(QString::fromStdString(translations.text(ThemeConstants::AppTitle)));
     setWindowIcon(QIcon(QApplication::applicationDirPath() + ThemeConstants::AssetsAppIconIco));
-    setCentralWidget(new RetroMediaLabLayout(themes, translations, state, [this] { openPreferences(); }, this));
+    setCentralWidget(new RetroMediaLabLayout(themes, translations, state, [this] { openPreferences(); }, [this] { openGreaseweazle(); }, this));
     const auto available = screen()->availableGeometry();
     const auto room = (available.size() - QSize(ThemeConstants::Window::ScreenInset, ThemeConstants::Window::ScreenInset)).expandedTo(QSize(1, 1));
     setMinimumSize(qMin(ThemeConstants::Window::MinimumWidth, room.width()), qMin(ThemeConstants::Window::MinimumHeight, room.height()));
@@ -44,6 +45,13 @@ void RetroMediaLabWindow::openPreferences() {
     preferences_->raise();
     preferences_->activateWindow();
 }
+void RetroMediaLabWindow::openGreaseweazle() {
+    if (!greaseweazle_) greaseweazle_ = std::make_unique<GreaseweazleDialog>(themes_, translations_, state_, this);
+    state_.greaseweazleOpen = true;
+    greaseweazle_->show();
+    greaseweazle_->raise();
+    greaseweazle_->activateWindow();
+}
 void RetroMediaLabWindow::showEvent(QShowEvent* event) {
     QMainWindow::showEvent(event);
     // Qt can reset native frame attributes while mapping the window.
@@ -53,9 +61,11 @@ void RetroMediaLabWindow::showEvent(QShowEvent* event) {
             themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(), themes_.data()->nativeSystemColors);
     });
     if (state_.preferencesOpen) openPreferences();
+    if (state_.greaseweazleOpen) openGreaseweazle();
 }
 void RetroMediaLabWindow::synchronizeState() {
     if (preferences_) preferences_->synchronizeState();
+    if (greaseweazle_) greaseweazle_->synchronizeState();
     static_cast<RetroMediaLabLayout*>(centralWidget())->synchronizeState();
     state_.mainWindowGeometry = saveGeometry();
     state_.mainWindowMaximized = isMaximized();

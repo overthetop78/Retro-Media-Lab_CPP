@@ -1,6 +1,7 @@
 add_library(RetroMediaLab.Infrastructure SHARED
   State/PreferencesStore.cpp
   Engines/EngineSettings.cpp
+  Maintenance/GreaseweazleTools.cpp
   Hardware/HardwareSettings.cpp
   Hardware/HardwareAvailability.cpp
   Hardware/GreaseweazleDiscovery.cpp

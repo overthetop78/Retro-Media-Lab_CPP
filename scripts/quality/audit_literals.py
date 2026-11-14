@@ -11,6 +11,7 @@ CONSTANT_HEADERS = {
     "src/Launcher/LauncherConstants.h", "src/Common/PlatformConstants.h",
     "src/Common/DiagnosticConstants.h", "src/Common/ErrorKeys.h",
     "src/Infrastructure/Engines/EngineConstants.h",
+    "src/Infrastructure/Maintenance/GwToolsConstants.h",
     "src/Common/Constants/DisplayConstants.h",
     "src/Common/ProcessConstants.h", "src/Common/StorageProbeConstants.h",
     "src/Infrastructure/Logging/LogConstants.h",

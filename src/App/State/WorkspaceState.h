@@ -16,12 +16,18 @@
 #include <memory>
 #include <vector>
 namespace RetroMediaLab {
+class GreaseweazleTools;
 // Session-owned state survives destruction of theme windows. Business models will live outside views.
 struct WorkspaceState {
     QStringList openPageIds{AppConstants::Read, AppConstants::Write, AppConstants::Convert, AppConstants::Visualize, AppConstants::Explorer, AppConstants::Tools, AppConstants::Emulation};
     QString activePageId = AppConstants::Read;
     ConsoleState console;
     bool preferencesOpen = false;
+    std::shared_ptr<GreaseweazleTools> greaseweazleTools;
+    bool greaseweazleOpen = false;
+    int greaseweazleTab = 0;
+    QString greaseweazleDeviceId;
+    QByteArray greaseweazleGeometry;
     QString preferencesSection = AppConstants::General;
     QByteArray preferencesGeometry;
     QByteArray mainWindowGeometry;

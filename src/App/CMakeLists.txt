@@ -21,12 +21,16 @@ target_link_libraries(RetroMediaLab.App PRIVATE RetroMediaLab.Gui PUBLIC Qt6::Wi
 install(TARGETS RetroMediaLab.App RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 
 add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
+  Themes/RetroMediaLab/ContentScrollArea.cpp
+  Themes/RetroMediaLab/FlowLayout.cpp
   Themes/RetroMediaLab/DisplayDensity.cpp
   Themes/RetroMediaLab/RetroMediaLabConfiguration.cpp
   Themes/RetroMediaLab/ThemeEntry.cpp
   Themes/RetroMediaLab/ThemeIcons.cpp
   Themes/RetroMediaLab/Views/MainMenu.cpp
   Themes/RetroMediaLab/Views/PreferencesDialog.cpp
+  Themes/RetroMediaLab/Views/GreaseweazleDialog.cpp
+  Themes/RetroMediaLab/Views/GreaseweazleToolPage.cpp
   Themes/RetroMediaLab/Views/HardwareSettingsPage.cpp
   Themes/RetroMediaLab/Views/EngineSettingsPage.cpp
   Themes/RetroMediaLab/Views/ProfileSettingsPage.cpp

@@ -31,7 +31,7 @@ void ThemePreview::refresh() {
         snapshot.console = state_.console;
         snapshot.setDefaultImageDirectory(state_.defaultImageDirectory());
         // Own a detached body only: no application window, DWM call or preferences dialog.
-        auto view = std::make_unique<RetroMediaLabLayout>(*preview, translations_, snapshot, [] {}, nullptr);
+        auto view = std::make_unique<RetroMediaLabLayout>(*preview, translations_, snapshot, [] {}, [] {}, nullptr);
         view->setAutoFillBackground(true);
         auto palette = preview->palette();
         // Resolve every local role explicitly, including a native palette with mask zero:

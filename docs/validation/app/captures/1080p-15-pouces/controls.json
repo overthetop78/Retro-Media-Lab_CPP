@@ -1,0 +1,927 @@
+[
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "defaultImageDirectory",
+                "outsideParent": false,
+                "width": 538
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "preferencesLanguage",
+                "outsideParent": false,
+                "width": 390
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "interfaceSizeSelector",
+                "outsideParent": false,
+                "width": 1022
+            }
+        ],
+        "page": "preferences-0",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+        ],
+        "page": "preferences-1",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "themeSettingsPage",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_read",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_write",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_convert",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_erase",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_clean",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_info",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_bandwidth",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_rpm",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_seek",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_pin",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_reset",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_delays",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_update",
+                "outsideParent": false,
+                "width": 50
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "logsMaximum_align",
+                "outsideParent": false,
+                "width": 50
+            }
+        ],
+        "page": "preferences-2",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "logSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 490,
+                "name": "",
+                "range": 10
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "conversionTagPreset",
+                "outsideParent": false,
+                "width": 511
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "conversionTagPattern",
+                "outsideParent": false,
+                "width": 511
+            }
+        ],
+        "page": "preferences-3",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "conversionSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 564,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "floppyBackendSelect",
+                "outsideParent": false,
+                "width": 85
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "floppySize",
+                "outsideParent": false,
+                "width": 48
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "floppyDensity",
+                "outsideParent": false,
+                "width": 55
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "floppyRpm",
+                "outsideParent": false,
+                "width": 63
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "hardwareGwPath",
+                "outsideParent": false,
+                "width": 987
+            }
+        ],
+        "page": "preferences-4",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 34,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "mediaDeviceSelection",
+                "outsideParent": false,
+                "width": 799
+            }
+        ],
+        "page": "hardware-1",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 434,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "mediaDeviceSelection",
+                "outsideParent": false,
+                "width": 883
+            }
+        ],
+        "page": "hardware-2",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 434,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "diskInterfaceSelection",
+                "outsideParent": false,
+                "width": 948
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "mediaDeviceSelection",
+                "outsideParent": false,
+                "width": 798
+            }
+        ],
+        "page": "hardware-3",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 408,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "mediaDeviceSelection",
+                "outsideParent": false,
+                "width": 883
+            }
+        ],
+        "page": "hardware-4",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 434,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "mediaDeviceSelection",
+                "outsideParent": false,
+                "width": 883
+            }
+        ],
+        "page": "hardware-5",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "hardwareSettingsPage",
+                "range": 0
+            },
+            {
+                "height": 434,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "engineChoice_read",
+                "outsideParent": false,
+                "width": 504
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "engineChoice_write",
+                "outsideParent": false,
+                "width": 504
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "engineChoice_conversion",
+                "outsideParent": false,
+                "width": 504
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "engineChoice_explorer",
+                "outsideParent": false,
+                "width": 504
+            }
+        ],
+        "page": "preferences-5",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "engineSettingsPage",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+        ],
+        "page": "preferences-6",
+        "scrolls": [
+            {
+                "height": 564,
+                "name": "profileSettingsPage",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_info",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-0",
+        "scrolls": [
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_bandwidth",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-1",
+        "scrolls": [
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_rpm-nr",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_rpm",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-2",
+        "scrolls": [
+            {
+                "height": 38,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_seek-cylinder",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_seek",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-3",
+        "scrolls": [
+            {
+                "height": 38,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-tracks",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-revs",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-reads",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-format",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-diskdefs",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-fake-index",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-adjust-speed",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-pll",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_align-densel",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_align",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-4",
+        "scrolls": [
+            {
+                "height": 96,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_pin-pin",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_pin",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-5",
+        "scrolls": [
+            {
+                "height": 38,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_reset",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-6",
+        "scrolls": [
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-select",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-step",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-settle",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-motor",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-watchdog",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-pre-write",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-post-write",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwField_delays-index-mask",
+                "outsideParent": false,
+                "width": 105
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_delays",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-7",
+        "scrolls": [
+            {
+                "height": 96,
+                "name": "",
+                "range": 0
+            }
+        ]
+    },
+    {
+        "fields": [
+            {
+                "fontHeight": 14,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "greaseweazleToolDevice",
+                "outsideParent": false,
+                "width": 1029
+            },
+            {
+                "fontHeight": 11,
+                "height": 20,
+                "hintHeight": 20,
+                "minHeight": 0,
+                "name": "gwCommand_update",
+                "outsideParent": false,
+                "width": 869
+            }
+        ],
+        "page": "gw-8",
+        "scrolls": [
+            {
+                "height": 19,
+                "name": "",
+                "range": 0
+            }
+        ]
+    }
+]

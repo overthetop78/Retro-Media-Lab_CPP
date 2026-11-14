@@ -11,6 +11,7 @@ inline constexpr auto Argument = "{0}";
 inline constexpr auto Card = "interfaceSizeCard";
 inline constexpr auto Selector = "interfaceSizeSelector";
 inline constexpr auto FactorProperty = "rmlDisplayDensity";
+inline constexpr auto ContentHeightProperty = "rmlContentHeightManaged";
 inline constexpr auto AppliedProperty = "rmlAppliedDensity";
 inline constexpr int UnboundedSize = 16777215;
 inline constexpr qreal Unit = 1.0;

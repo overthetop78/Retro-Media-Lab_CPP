@@ -4,7 +4,7 @@
 #include <QMenu>
 
 namespace RetroMediaLab {
-MainMenu::MainMenu(Translations::TranslationService& translations, std::function<void()> openPreferences, QWidget* parent)
+MainMenu::MainMenu(Translations::TranslationService& translations, std::function<void()> openPreferences, std::function<void()> openGreaseweazle, QWidget* parent)
     : QMenuBar(parent) {
     setObjectName(ThemeConstants::MainMenu);
     setNativeMenuBar(false);
@@ -35,14 +35,10 @@ MainMenu::MainMenu(Translations::TranslationService& translations, std::function
     for (const auto* key : {ThemeConstants::UpdatesTitle, ThemeConstants::LogsHistory})
         action(options, key);
     options->addSeparator();
-    auto* diagnostics = menu(ThemeConstants::MenuDiagnostics, options);
-    for (const auto* key : {ThemeConstants::MenuInformation, ThemeConstants::MenuBandwidth, ThemeConstants::MenuRpm, ThemeConstants::MenuSeek, ThemeConstants::MenuAlign})
-        action(diagnostics, key);
-    auto* hardware = menu(ThemeConstants::MenuHardware, options);
-    for (const auto* key : {ThemeConstants::MenuPins, ThemeConstants::MenuReset, ThemeConstants::MenuDelays})
-        action(hardware, key);
-    hardware->addSeparator();
-    action(hardware, ThemeConstants::MenuFirmware);
+    auto* greaseweazle = action(options, ThemeConstants::GreaseweazleDialog::Title);
+    greaseweazle->setObjectName(ThemeConstants::GreaseweazleDialog::Action);
+    greaseweazle->setEnabled(true);
+    connect(greaseweazle, &QAction::triggered, this, [openGreaseweazle = std::move(openGreaseweazle)] { openGreaseweazle(); });
     action(menu(ThemeConstants::MenuEmulation), ThemeConstants::MenuEmulationPreferences);
     auto* help = menu(ThemeConstants::MenuHelp);
     action(help, ThemeConstants::MenuDocumentation);
