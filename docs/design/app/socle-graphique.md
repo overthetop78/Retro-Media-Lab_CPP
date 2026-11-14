@@ -136,19 +136,23 @@ Dans la règle utilisateur, une erreur désigne une exception de l'application. 
 
 Références : [RAII Microsoft](../../references/tooling/cpp-resource-lifetime.md).
 
-Les réglages persistants et les répertoires utilisateur seront ajoutés avec leur fonctionnalité. La première fenêtre n'a pas besoin de reproduire le démarrage des outils, des mises à jour ou du matériel.
+PreferencesStore conserve maintenant la langue et la variante dans preferences.json, sous AppConfigLocation fourni par Qt. La sauvegarde atomique utilise QSaveFile. Ces données utilisateur sont distinctes de WorkspaceState, qui conserve la session en mémoire. Le démarrage des outils, des mises à jour et du matériel sera porté avec ces fonctionnalités.
+
+Dans Préférences > Général, le dossier d'images par défaut et la langue sont côte à côte : destination à gauche, langue à droite, proportions 3:2. Le dossier peut être saisi ou choisi avec Parcourir ; il est sauvegardé avec les autres préférences. Les anciens fichiers sans cette clé restent compatibles. La saisie est synchronisée avant reconstruction des vues.
+
+Le bloc des tags et modèles de noms de conversion ne doit pas être ajouté sous cette ligne. L'utilisateur a demandé de le placer ailleurs et de le présenter autrement ; ce choix reste à définir.
 
 ## Première fenêtre à réaliser à l'étape 3
 
 - Titre Retro Media Lab et icône reprise de l'application.
 - Taille initiale de référence 1360 × 820, ajustée à l'espace disponible et au DPI. Le minimum C# de 1280 × 720 est documenté, mais ne doit pas rendre cette première fenêtre inutilisable sur un espace de travail plus petit.
 - Cadre de fenêtre Windows normal, redimensionnement, réduction, agrandissement et fermeture.
-- Fond et carte centrale reprenant le thème RetroMediaLab.
-- Commandes discrètes Light/Dark et de langue appartenant à App, pour vérifier les changements à chaud.
-- Premier texte de présentation fourni par clé de traduction ; le titre invariant reste disponible dans la base, sans copie inutile dans en-US.
+- Fond, cadre central et navigation reprenant le thème RetroMediaLab.
+- Langue dans Préférences > Général ; variante dans Préférences > Thèmes. Aucun sélecteur dans la barre principale.
+- Textes fournis par clés de traduction ; le titre invariant reste disponible dans la base, sans copie inutile dans en-US.
 - Zone centrale contrôlée par App, prête à accueillir les futures vues. Ne pas afficher de faux module ni des commandes métier sans implémentation.
 
-Les sept onglets métier, le terminal complet, la barre de progression, les préférences complètes et les dialogues d'émulation ne font pas partie de cette fenêtre initiale.
+Le bloc suivant ajoute les sept pages encore vides, la console en lecture seule et les préférences nécessaires à la langue et à l'apparence. Les préférences métier, la progression des opérations et les dialogues d'émulation seront portés avec leurs fonctionnalités. Voir la validation de l'ossature et des préférences.
 
 ## Contrats à préserver pour la suite
 
@@ -170,7 +174,7 @@ Dans Catalogs, Constants remplace le nom 00-Base : il contient la base anglaise,
 
 Les textes traduisibles affichés sont résolus dans la DLL de langue choisie, y compris en anglais via en-US. Les JSON sous Catalogs/Languages sont leurs sources. Constants fournit les invariants et le repli lorsqu'une traduction manque, comme dans le C# ; une clé absente partout donne [clé]. La base anglaise source sert à générer en-US et les autres langues.
 
-Le script utilisera Argos, déclaré installé et fonctionnel. Ne pas vérifier son installation. Garder une base anglaise, copier vers en-US les textes traduisibles, protéger les invariants dans les phrases et utiliser les fichiers d'exclusion par langue. Pour cette première étape, limiter les catalogues aux textes réellement affichés, puis relire les résultats. La documentation d'utilisation du script sera écrite au moment de sa création.
+Le script utilise Argos, déclaré installé et fonctionnel. Garder une base anglaise, copier vers en-US les textes traduisibles puis traduire depuis en-US. Les invariants dans les phrases sont protégés par le fichier commun ignores/common.txt, identique pour toutes les langues et sans exception par langue. Seuls les textes nécessaires aux vues réalisées sont inclus ; les traductions sont relues après génération. Voir la documentation de traduction.
 
 Le script prépare les DLL Qt et leurs plugins sous lib/Qt6, les DLL DirectX sous lib/DirectX et Mesa/OpenGL sous lib/OpenGL. Les prérequis système suivront la politique utilisateur pour une future distribution publique : proposition à l'installation ou au démarrage de la distribution ZIP. Ce socle ne crée pas encore d'installateur ni de paquet de publication et ne doit pas être présenté comme une validation sur un poste vierge.
 

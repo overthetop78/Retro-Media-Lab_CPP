@@ -18,6 +18,7 @@ struct ThemeData {
     QMap<QString, QColor> colors;
     int fontSize = 14, controlHeight = 36, cardPadding = 18, cardRadius = 8, controlRadius = 4;
     bool dark = false;
+    int tabPaddingX = 22, tabPaddingY = 11, tabRadius = 9;
     RETROMEDIALAB_APP_API QColor color(const QString& key) const;
 };
 class ThemeService final {

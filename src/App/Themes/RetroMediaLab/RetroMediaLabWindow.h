@@ -4,14 +4,21 @@
 #include <QMainWindow>
 namespace RetroMediaLab {
 struct WorkspaceState;
+class PreferencesDialog;
 class RetroMediaLabWindow final : public QMainWindow {
 public:
     RetroMediaLabWindow(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state);
+    ~RetroMediaLabWindow() override;
     void synchronizeState();
 protected:
     void closeEvent(QCloseEvent* event) override;
+    void showEvent(QShowEvent*) override;
 private:
+    void openPreferences();
+    ThemeService& themes_;
+    Translations::TranslationService& translations_;
     WorkspaceState& state_;
+    std::unique_ptr<PreferencesDialog> preferences_;
     ThemeService::Subscription themeSubscription_;
     Translations::TranslationService::Subscription languageSubscription_;
 };

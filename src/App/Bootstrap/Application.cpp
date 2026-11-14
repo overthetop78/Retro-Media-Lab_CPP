@@ -2,11 +2,14 @@
 #include "Themes/ThemeService.h"
 #include "Windows/WindowCoordinator.h"
 #include "State/WorkspaceState.h"
+#include "State/PreferencesStore.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
+#include <RetroMediaLab/Translations/LanguageCatalog.h>
 #include <QApplication>
 #include <QDebug>
 #include <QLocale>
 #include <QFileInfo>
+#include <QStandardPaths>
 #include <exception>
 #include <filesystem>
 #include <stdexcept>
@@ -43,10 +46,20 @@ int Application::run(int argc, char** argv) {
     app.setQuitOnLastWindowClosed(false);
     const auto directory = QApplication::applicationDirPath();
     Translations::TranslationService translations(std::filesystem::path((directory + "/lib/Languages").toStdU16String()));
-    if (QLocale::system().name().startsWith("fr")) translations.setLanguage("fr-FR");
+    const PreferencesStore preferences(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + "/preferences.json");
+    const auto selected = preferences.load({QString::fromStdString(Translations::resolveLanguage(QLocale::system().name().toStdString())), ThemeVariant::Light});
+    translations.setLanguage(selected.language.toStdString());
     ThemeService themes(themeModule);
-    app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.
+    themes.setVariant(selected.variant);
     WorkspaceState state;
+    state.setDefaultImageDirectory(selected.defaultImageDirectory);
+    const auto savePreferences = [&] {
+        preferences.save({QString::fromStdString(translations.language()), themes.variant(), state.defaultImageDirectory()});
+    };
+    const auto languagePreference = translations.subscribe(savePreferences);
+    const auto themePreference = themes.subscribe(savePreferences);
+    const auto directoryPreference = state.subscribeToDefaultImageDirectory(savePreferences);
+    app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.
     WindowCoordinator windows([&] {
         return themes.createPresentation(translations, state);
     });

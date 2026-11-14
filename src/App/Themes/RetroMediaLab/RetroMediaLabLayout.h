@@ -1,21 +1,22 @@
 #pragma once
 #include "../ThemeService.h"
+#include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>
-class QLabel;
-class QComboBox;
+class QSplitter;
 namespace RetroMediaLab {
+class TerminalView;
 class RetroMediaLabLayout final : public QWidget {
 public:
-    RetroMediaLabLayout(ThemeService& themes, Translations::TranslationService& translations, QWidget* parent);
+    RetroMediaLabLayout(ThemeService&, Translations::TranslationService&, WorkspaceState&, std::function<void()>, QWidget*);
+    void synchronizeState();
+protected:
+    void showEvent(QShowEvent*) override;
 private:
-    void refreshTexts();
-    void refreshColors();
-    ThemeService& themes_;
-    Translations::TranslationService& translations_;
-    QLabel *themeLabel_, *languageLabel_, *welcome_, *description_, *ready_;
-    QComboBox *variants_, *languages_;
-    Translations::TranslationService::Subscription languageSubscription_;
+    WorkspaceState& state_;
+    QSplitter* splitter_;
+    TerminalView* terminal_;
+    bool restored_ = false;
     ThemeService::Subscription themeSubscription_;
 };
 }

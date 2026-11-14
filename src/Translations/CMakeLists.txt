@@ -1,10 +1,12 @@
 add_library(RetroMediaLab.Translations SHARED
   src/TranslationService.cpp
+  src/LanguageCatalog.cpp
 )
 target_compile_definitions(RetroMediaLab.Translations PRIVATE RETROMEDIALAB_TRANSLATIONS_BUILD)
 set_target_properties(RetroMediaLab.Translations PROPERTIES OUTPUT_NAME Translations)
 target_include_directories(RetroMediaLab.Translations PUBLIC include)
 target_link_libraries(RetroMediaLab.Translations PRIVATE Qt6::Core)
+qt_add_resources(RetroMediaLab.Translations LanguageMetadata PREFIX "/Translations" FILES Languages.json)
 install(TARGETS RetroMediaLab.Translations RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 
 find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)

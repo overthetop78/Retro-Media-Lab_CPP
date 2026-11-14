@@ -89,6 +89,9 @@ ThemeService::ThemeService(ThemeModuleHandle module) : module_(std::move(module)
     data_->cardPadding = metric("cardPadding");
     data_->cardRadius = metric("cardRadius");
     data_->controlRadius = metric("controlRadius");
+    data_->tabPaddingX = metric("tabPaddingX");
+    data_->tabPaddingY = metric("tabPaddingY");
+    data_->tabRadius = metric("tabRadius");
     setVariant(ThemeVariant::Light);
 }
 ThemeVariant ThemeService::variant() const noexcept { return data_->dark ? ThemeVariant::Dark : ThemeVariant::Light; }
@@ -115,7 +118,7 @@ void ThemeService::setVariant(ThemeVariant variant) {
         if (!it.value().isString() || !color.isValid()) throw std::runtime_error("Invalid theme color");
         next.colors.insert(it.key(), color);
     }
-    for (const auto* key : {"WindowBrush", "CardBrush", "ControlBrush", "TextBrush", "BorderBrush", "AccentBrush", "MutedTextBrush", "SelectedBrush", "HoverBrush"})
+    for (const auto* key : {"WindowBrush", "CardBrush", "ControlBrush", "TextBrush", "BorderBrush", "AccentBrush", "MutedTextBrush", "SelectedBrush", "HoverBrush", "StatusBrush", "TerminalBackground", "TerminalBorder", "TerminalText", "TerminalCommand", "TerminalPrompt", "CaptionBrush"})
         (void)next.color(key);
     *data_ = std::move(next);
     QPalette colors;

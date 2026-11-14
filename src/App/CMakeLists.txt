@@ -1,8 +1,13 @@
 set(app_sources
   Bootstrap/Application.cpp
   State/WorkspaceState.cpp
+  State/PreferencesStore.cpp
   Windows/WindowCoordinator.cpp
   Shared/Controls/Card.cpp
+  Shared/Controls/LocalizedAction.cpp
+  Shared/Controls/TerminalView.cpp
+  Shared/Controls/StatusIndicator.cpp
+  Shared/Navigation/WorkspacePages.cpp
   Themes/ThemeService.cpp
 )
 add_library(RetroMediaLab.Gui OBJECT ${app_sources})
@@ -17,6 +22,11 @@ install(TARGETS RetroMediaLab.App RUNTIME DESTINATION lib LIBRARY DESTINATION li
 
 add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/ThemeEntry.cpp
+  Themes/RetroMediaLab/ThemeIcons.cpp
+  Themes/RetroMediaLab/Views/MainMenu.cpp
+  Themes/RetroMediaLab/Views/PreferencesDialog.cpp
+  Themes/RetroMediaLab/Views/WorkspaceTabs.cpp
+  Themes/RetroMediaLab/Views/StatusBar.cpp
   Themes/RetroMediaLab/RetroMediaLabStyle.cpp
   Themes/RetroMediaLab/RetroMediaLabLayout.cpp
   Themes/RetroMediaLab/RetroMediaLabWindow.cpp
