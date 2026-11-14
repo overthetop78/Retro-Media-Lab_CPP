@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Журналы",
+    "Options.LogsDescription": "Каждое действие имеет собственный файл в папке Retro Media Lab Logs.",
+    "Options.EnableLogs": "Сохранение журналов",
+    "Options.LogMaximumSize": "Максимальный размер",
+    "Options.KeepLogArchives": "Сохраняйте предыдущие журналы",
+    "Options.LogUnlimitedHint": "0 = неограниченно",
+    "Options.OpenLogsFolder": "Открыть папку",
+    "Options.LogActionErase": "Стереть",
+    "Options.LogActionClean": "Чистые головы",
+    "Tool.Title.Info": "Информация о контроллере",
+    "Tool.Title.Bandwidth": "USB пропускная способность",
+    "Tool.Title.Rpm": "Скорость движения",
+    "Tool.Title.Seek": "Ищи голову",
+    "Tool.Title.Pin": "Аппаратные контакты",
+    "Tool.Title.Reset": "Сброс контроллера",
+    "Tool.Title.Delays": "Задержки",
+    "Tool.Title.Update": "Прошивка",
+    "Tool.Title.Align": "Диагностика центровки привода",
+    "Logs.OpenFolderError": "Не удалось открыть папку журналов.\n{detail}"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Loggar",
+    "Options.LogsDescription": "Varje åtgärd har sin egen fil i mappen Retro Media Lab Logs.",
+    "Options.EnableLogs": "Spara loggar",
+    "Options.LogMaximumSize": "Maximal storlek",
+    "Options.KeepLogArchives": "Spara tidigare loggar",
+    "Options.LogUnlimitedHint": "0 = obegränsat",
+    "Options.OpenLogsFolder": "Öppna mappen",
+    "Options.LogActionErase": "Radera",
+    "Options.LogActionClean": "Rengör huvuden",
+    "Tool.Title.Info": "Controllerinformation",
+    "Tool.Title.Bandwidth": "USB bandbredd",
+    "Tool.Title.Rpm": "Körhastighet",
+    "Tool.Title.Seek": "Sök huvud",
+    "Tool.Title.Pin": "Hårdvarustift",
+    "Tool.Title.Reset": "Återställ styrenheten",
+    "Tool.Title.Delays": "Förseningar",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Diagnostik för drivinriktning",
+    "Logs.OpenFolderError": "Kan inte öppna loggmappen.\n{detail}"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "日志",
+    "Options.LogsDescription": "每个操作在 Retro Media Lab Logs 文件夹中都有自己的文件。",
+    "Options.EnableLogs": "保存日志",
+    "Options.LogMaximumSize": "最大尺寸",
+    "Options.KeepLogArchives": "保留以前的日志",
+    "Options.LogUnlimitedHint": "0 = 无限制",
+    "Options.OpenLogsFolder": "打开文件夹",
+    "Options.LogActionErase": "擦除",
+    "Options.LogActionClean": "清洁头部",
+    "Tool.Title.Info": "控制器信息",
+    "Tool.Title.Bandwidth": "USB 带宽",
+    "Tool.Title.Rpm": "行驶速度",
+    "Tool.Title.Seek": "求头",
+    "Tool.Title.Pin": "硬件引脚",
+    "Tool.Title.Reset": "复位控制器",
+    "Tool.Title.Delays": "延误",
+    "Tool.Title.Update": "固件",
+    "Tool.Title.Align": "驱动器对准诊断",
+    "Logs.OpenFolderError": "无法打开日志文件夹 。\n{detail}"
+  }
+}

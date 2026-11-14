@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "予期しないアプリケーションエラーが発生しました。",
     "Errors.UnexpectedDetails": "予期しないアプリケーションエラーが発生しました。\n{detail}",
     "Errors.NativeFailure": "Windows エラー {code}。\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab — エラー"
+    "Errors.DialogTitle": "Retro Media Lab — エラー",
+    "Errors.InvalidLoggingSettings": "無効なログ設定",
+    "Errors.CannotResolveDataDirectory": "アプリケーションデータディレクトリを解決できません"
   }
 }

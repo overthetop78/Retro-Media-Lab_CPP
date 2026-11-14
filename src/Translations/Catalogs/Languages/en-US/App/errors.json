@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "An unexpected application error occurred.",
     "Errors.UnexpectedDetails": "An unexpected application error occurred.\n{detail}",
     "Errors.NativeFailure": "Windows error {code}.\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab — Error"
+    "Errors.DialogTitle": "Retro Media Lab — Error",
+    "Errors.InvalidLoggingSettings": "Invalid logging settings",
+    "Errors.CannotResolveDataDirectory": "Cannot resolve the application data directory"
   }
 }

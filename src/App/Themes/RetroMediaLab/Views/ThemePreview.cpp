@@ -61,14 +61,14 @@ void ThemePreview::showEvent(QShowEvent* event) {
     refresh();
 }
 void ThemePreview::paintEvent(QPaintEvent*) {
-    const auto data = themes_.data();
+    const auto theme = themes_.data();
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(data->color(ThemeConstants::ControlBrush));
-    painter.setPen(data->color(ThemeConstants::BorderBrush));
+    painter.setBrush(theme->color(ThemeConstants::ControlBrush));
+    painter.setPen(theme->color(ThemeConstants::BorderBrush));
     painter.drawRoundedRect(QRectF(rect()).adjusted(ThemeConstants::ThemeSettings::BorderInset,
         ThemeConstants::ThemeSettings::BorderInset, -ThemeConstants::ThemeSettings::BorderInset,
-        -ThemeConstants::ThemeSettings::BorderInset), data->cardRadius, data->cardRadius);
+        -ThemeConstants::ThemeSettings::BorderInset), theme->cardRadius, theme->cardRadius);
     if (image_.isNull()) return;
     auto scaled = image_.size();
     scaled.scale(size() - QSize(ThemeConstants::ThemeSettings::PreviewInset, ThemeConstants::ThemeSettings::PreviewInset), Qt::KeepAspectRatio);

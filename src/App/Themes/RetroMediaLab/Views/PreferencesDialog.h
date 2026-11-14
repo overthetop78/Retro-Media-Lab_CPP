@@ -12,6 +12,9 @@ class QLineEdit;
 class QFileDialog;
 namespace RetroMediaLab {
 class ThemeSettingsPage;
+class LogSettingsPage;
+class ConversionSettingsPage;
+class HardwareSettingsPage;
 class PreferencesDialog final : public QDialog {
 public:
     PreferencesDialog(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
@@ -28,6 +31,9 @@ private:
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     QTabWidget* sections_;
+    LogSettingsPage* logs_;
+    ConversionSettingsPage* conversion_;
+    HardwareSettingsPage* hardware_;
     QComboBox* languages_;
     QLineEdit* directory_;
     QLabel* directoryLabel_;

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Logs",
+    "Options.LogsDescription": "Each action has its own file in the Retro Media Lab Logs folder.",
+    "Options.EnableLogs": "Save logs",
+    "Options.LogMaximumSize": "Maximum size",
+    "Options.KeepLogArchives": "Keep previous logs",
+    "Options.LogUnlimitedHint": "0 = unlimited",
+    "Options.OpenLogsFolder": "Open folder",
+    "Options.LogActionErase": "Erase",
+    "Options.LogActionClean": "Clean heads",
+    "Tool.Title.Info": "Controller information",
+    "Tool.Title.Bandwidth": "USB bandwidth",
+    "Tool.Title.Rpm": "Drive speed",
+    "Tool.Title.Seek": "Seek head",
+    "Tool.Title.Pin": "Hardware pins",
+    "Tool.Title.Reset": "Reset controller",
+    "Tool.Title.Delays": "Delays",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Drive alignment diagnostic",
+    "Logs.OpenFolderError": "Cannot open the logs folder.\n{detail}"
+  }
+}

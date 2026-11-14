@@ -1,5 +1,7 @@
 #pragma once
 namespace RetroMediaLab::ErrorKeys {
+inline constexpr auto InvalidLoggingSettings = "Errors.InvalidLoggingSettings";
+inline constexpr auto CannotResolveDataDirectory = "Errors.CannotResolveDataDirectory";
 inline constexpr auto CannotCreatePreferencesDirectory = "Errors.CannotCreatePreferencesDirectory";
 inline constexpr auto CannotLoadThemeWithContext = "Errors.CannotLoadTheme\x1f";
 inline constexpr auto CannotLoadTranslationCatalogWithContext = "Errors.CannotLoadTranslationCatalog\x1f";

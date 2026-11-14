@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Logge",
+    "Options.LogsDescription": "Hver handling har sin egen fil i mappen Retro Media Lab Logs.",
+    "Options.EnableLogs": "Gem logfiler",
+    "Options.LogMaximumSize": "Maksimal størrelse",
+    "Options.KeepLogArchives": "Behold tidligere logfiler",
+    "Options.LogUnlimitedHint": "0 = ubegrænset",
+    "Options.OpenLogsFolder": "Åbn mappe",
+    "Options.LogActionErase": "Slette",
+    "Options.LogActionClean": "Rens hoveder",
+    "Tool.Title.Info": "Controller oplysninger",
+    "Tool.Title.Bandwidth": "USB båndbredde",
+    "Tool.Title.Rpm": "Kørehastighed",
+    "Tool.Title.Seek": "Søg hoved",
+    "Tool.Title.Pin": "Hardware stifter",
+    "Tool.Title.Reset": "Nulstil controller",
+    "Tool.Title.Delays": "Forsinkelser",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Diagnostik af drevjustering",
+    "Logs.OpenFolderError": "Kan ikke åbne logmappen.\n{detail}"
+  }
+}

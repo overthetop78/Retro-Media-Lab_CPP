@@ -1,6 +1,38 @@
 #pragma once
 // Technical constants; displayed text is resolved through translation catalogs.
 namespace RetroMediaLab::ThemeConstants {
+inline constexpr auto Logs = "logs";
+inline constexpr auto LogsTitle = "Options.Logs";
+inline constexpr auto LogsIcon = "logs";
+namespace LogPage {
+inline constexpr auto Page = "logSettingsPage";
+inline constexpr auto Scroll = "logOptionsScroll";
+inline constexpr auto EnabledPrefix = "logsEnabled_";
+inline constexpr auto MaximumPrefix = "logsMaximum_";
+inline constexpr auto ArchivesPrefix = "logsArchives_";
+inline constexpr auto Directory = "logsDirectory";
+inline constexpr auto OpenFolder = "openLogsDirectory";
+inline constexpr auto Description = "Options.LogsDescription";
+inline constexpr auto Enable = "Options.EnableLogs";
+inline constexpr auto Maximum = "Options.LogMaximumSize";
+inline constexpr auto KiB = "Options.Kilobytes";
+inline constexpr auto Archives = "Options.KeepLogArchives";
+inline constexpr auto UnlimitedHint = "Options.LogUnlimitedHint";
+inline constexpr auto OpenFolderLabel = "Options.OpenLogsFolder";
+inline constexpr auto OpenFolderError = "Logs.OpenFolderError";
+inline constexpr auto ErrorTitle = "Errors.DialogTitle";
+inline constexpr auto Detail = "{detail}";
+inline constexpr auto Digits = "[0-9]*";
+inline constexpr int ActionWidth = 190;
+inline constexpr int ToggleWidth = 210;
+inline constexpr int SizeWidth = 280;
+inline constexpr int InputWidth = 72;
+inline constexpr int Gap = 8;
+inline constexpr int UnitGap = 7;
+inline constexpr int RowGap = 6;
+inline constexpr int DescriptionGap = 10;
+inline constexpr int Index = 2;
+}
 inline constexpr auto ChooseTheme = "chooseTheme";
 inline constexpr auto ThemesChoose = "Themes.Choose";
 inline constexpr auto ChooseParameter = "{choose}";
@@ -102,6 +134,16 @@ inline constexpr auto StatusBar = "statusBar";
 inline constexpr auto ReadyStatus = "readyStatus";
 inline constexpr auto ToggleConsole = "toggleConsole";
 inline constexpr auto HardwareNotConfigured = "Hardware.NotConfigured";
+inline constexpr auto HardwareSelector = "statusHardwareSelector";
+inline constexpr auto HardwareIndicator = "statusHardwareIndicator";
+inline constexpr auto HardwareDriveChoice = "Hardware.DriveChoice";
+inline constexpr auto HardwareDisconnected = "Hardware.Disconnected";
+inline constexpr auto HardwareDetailSeparator = " · ";
+inline constexpr auto HardwareDisconnectedFormat = "%1 (%2)";
+inline constexpr auto HardwareField0 = "{0}";
+inline constexpr auto HardwareField1 = "{1}";
+inline constexpr auto HardwareField2 = "{2}";
+inline constexpr auto HardwareField3 = "{3}";
 inline constexpr auto StatusReadyShort = "Status.ReadyShort";
 inline constexpr auto CommonConsole = "Common.Console";
 inline constexpr auto Console = "console";
@@ -134,6 +176,7 @@ inline constexpr auto WorkspaceTabs = "workspaceTabs";
 namespace Menu {
 inline constexpr auto HorizontalInset = 3;
 inline constexpr auto VerticalInset = 2;
+inline constexpr auto CombinedVerticalInset = VerticalInset * 2;
 }
 namespace PreferencesLayout {
 inline constexpr auto OuterPadding = 16;
@@ -184,9 +227,11 @@ inline constexpr auto DefaultWidth = 1360;
 inline constexpr auto DefaultHeight = 820;
 }
 namespace StatusBarLayout {
+inline constexpr auto HardwareMaximumWidth = 480;
 inline constexpr auto BarHeight = 30;
 inline constexpr auto HorizontalInset = 8;
 inline constexpr auto VerticalInset = 2;
+inline constexpr auto CombinedVerticalInset = VerticalInset * 2;
 inline constexpr auto ToggleExtent = 22;
 inline constexpr auto ToggleIconSize = 20;
 }
@@ -224,5 +269,20 @@ inline constexpr auto HeadingFontSize = 20;
 }
 namespace Tabs {
 inline constexpr auto IconExtent = 17;
+}
+namespace CapabilityTable {
+inline constexpr auto InformationMark = "—";
+inline constexpr int Columns = 4;
+inline constexpr int StatusColumn = 1;
+inline constexpr int SourceColumn = 2;
+inline constexpr int DetailColumn = 3;
+inline constexpr int FrameMultiplier = 2;
+inline constexpr auto ObjectName = "hardwareCapabilitiesTable";
+inline constexpr auto Pass = "Hardware.Pass";
+inline constexpr auto Fail = "Hardware.Fail";
+inline constexpr auto Capability = "Hardware.Capability";
+inline constexpr auto Status = "Hardware.CapabilityStatus";
+inline constexpr auto Source = "Hardware.CapabilitySource";
+inline constexpr auto Detail = "Hardware.CapabilityDetails";
 }
 }

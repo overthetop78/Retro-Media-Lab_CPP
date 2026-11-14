@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "Beklenmeyen bir uygulama hatası meydana geldi.",
     "Errors.UnexpectedDetails": "Beklenmeyen bir uygulama hatası meydana geldi.\n{detail}",
     "Errors.NativeFailure": "Windows hatası {code}.\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab - Hata"
+    "Errors.DialogTitle": "Retro Media Lab - Hata",
+    "Errors.InvalidLoggingSettings": "Geçersiz günlük dosyası ayarları",
+    "Errors.CannotResolveDataDirectory": "Uygulama veri dizini belirlenemedi"
   }
 }

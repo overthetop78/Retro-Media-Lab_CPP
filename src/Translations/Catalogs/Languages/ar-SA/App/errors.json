@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "حدث خطأ غير متوقع في التطبيق.",
     "Errors.UnexpectedDetails": "حدث خطأ غير متوقع في التطبيق.\n{detail}",
     "Errors.NativeFailure": "خطأ Windows برمز {code}.\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab — خطأ"
+    "Errors.DialogTitle": "Retro Media Lab — خطأ",
+    "Errors.InvalidLoggingSettings": "إعدادات ملفات السجل غير صالحة",
+    "Errors.CannotResolveDataDirectory": "لا يمكن حل دليل بيانات التطبيقات"
   }
 }

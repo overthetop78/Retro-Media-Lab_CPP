@@ -1,0 +1,75 @@
+#pragma once
+namespace RetroMediaLab::LogConstants {
+inline constexpr int ActionCount = 14;
+inline constexpr int DefaultMaximumKiB = 1024;
+inline constexpr int BytesPerKiB = 1024;
+inline constexpr int Unlimited = 0;
+inline constexpr int InvalidSize = -1;
+inline constexpr int FirstArchiveSuffix = 2;
+inline constexpr auto Logging = "logging";
+inline constexpr auto Enabled = "enabled";
+inline constexpr auto MaximumKilobytes = "maximumKilobytes";
+inline constexpr auto KeepArchives = "keepArchives";
+inline constexpr auto Actions = "actions";
+inline constexpr auto Read = "read";
+inline constexpr auto Write = "write";
+inline constexpr auto Convert = "convert";
+inline constexpr auto Erase = "erase";
+inline constexpr auto Clean = "clean";
+inline constexpr auto Info = "info";
+inline constexpr auto Bandwidth = "bandwidth";
+inline constexpr auto Rpm = "rpm";
+inline constexpr auto Seek = "seek";
+inline constexpr auto Pin = "pin";
+inline constexpr auto Reset = "reset";
+inline constexpr auto Delays = "delays";
+inline constexpr auto Update = "update";
+inline constexpr auto Align = "align";
+inline constexpr auto ReadLabel = "Tab.Read";
+inline constexpr auto WriteLabel = "Tab.Write";
+inline constexpr auto ConvertLabel = "Tab.Convert";
+inline constexpr auto EraseLabel = "Options.LogActionErase";
+inline constexpr auto CleanLabel = "Options.LogActionClean";
+inline constexpr auto InfoLabel = "Tool.Title.Info";
+inline constexpr auto BandwidthLabel = "Tool.Title.Bandwidth";
+inline constexpr auto RpmLabel = "Tool.Title.Rpm";
+inline constexpr auto SeekLabel = "Tool.Title.Seek";
+inline constexpr auto PinLabel = "Tool.Title.Pin";
+inline constexpr auto ResetLabel = "Tool.Title.Reset";
+inline constexpr auto DelaysLabel = "Tool.Title.Delays";
+inline constexpr auto UpdateLabel = "Tool.Title.Update";
+inline constexpr auto AlignLabel = "Tool.Title.Align";
+inline constexpr auto Operation = "operation";
+inline constexpr auto LogExtension = ".log";
+inline constexpr auto Dash = "-";
+inline constexpr auto InvalidNamePattern = "[\\x00-\\x1f<>:\"/\\\\|?*]";
+inline constexpr auto LineBreakPattern = "\\r\\n|\\n|\\r";
+inline constexpr auto LineFeed = '\n';
+inline constexpr auto CarriageReturn = '\r';
+#if defined(_WIN32)
+inline constexpr auto NewLine = "\r\n";
+#else
+inline constexpr auto NewLine = "\n";
+#endif
+inline constexpr auto Separator = "================================================================================";
+inline constexpr auto CommandPrefix = "> ";
+inline constexpr auto ArchiveTimestamp = "yyyy-MM-dd_HH-mm-ss";
+inline constexpr auto DiagnosticDate = "yyyyMMdd";
+inline constexpr auto ProductDirectory = "Retro Media Lab";
+inline constexpr auto PortableFlag = "portable.flag";
+inline constexpr auto PortableData = "Data";
+inline constexpr auto LogsDirectory = "Logs";
+inline constexpr auto Errors = "errors";
+inline constexpr auto Warnings = "warnings";
+inline constexpr auto Information = "information";
+inline constexpr auto TimeField = "Time: ";
+inline constexpr auto ContextField = "Context: ";
+inline constexpr auto ApplicationField = "Application: ";
+inline constexpr auto RuntimeField = "Runtime: ";
+inline constexpr auto OSField = "OS: ";
+inline constexpr auto CultureField = "Culture: ";
+inline constexpr auto ProcessField = "Process: ";
+inline constexpr auto Space = " ";
+inline constexpr auto ApplicationContext = "application";
+inline constexpr auto OpenFolderContext = "opening-logs-folder";
+}

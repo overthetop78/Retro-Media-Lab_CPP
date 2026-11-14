@@ -56,15 +56,15 @@ def main():
     child(settings, "DebuggerFlavor", "WindowsLocalDebugger")
     child(settings, "OutDir", "$(ProjectDir)build\\ide\\$(Configuration)\\")
     child(settings, "IntDir", "$(OutDir)")
-    child(settings, "NMakePreprocessorDefinitions", "UNICODE;_UNICODE;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;RETROMEDIALAB_APP_BUILD;RETROMEDIALAB_TRANSLATIONS_BUILD;$(NMakePreprocessorDefinitions)")
-    includes = ["src\\App", "src\\Common", "src\\Translations\\include", "src\\Platform\\include", "build\\$(Configuration)\\generated"]
+    child(settings, "NMakePreprocessorDefinitions", "UNICODE;_UNICODE;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;RETROMEDIALAB_APP_BUILD;RETROMEDIALAB_INFRASTRUCTURE_BUILD;RETROMEDIALAB_TRANSLATIONS_BUILD;$(NMakePreprocessorDefinitions)")
+    includes = ["src\\App", "src\\Infrastructure", "src\\Infrastructure\\include", "src\\Common", "third_party\\libarchive\\libarchive", "build\\$(Configuration)\\third_party\\libarchive", "src\\Translations\\include", "src\\Platform\\include", "build\\$(Configuration)\\generated"]
     includes = ["$(ProjectDir)" + item for item in includes]
-    includes += ["$(QtRoot)\\include", "$(QtRoot)\\include\\QtCore", "$(QtRoot)\\include\\QtGui", "$(QtRoot)\\include\\QtWidgets", "$(QtRoot)\\mkspecs\\win32-msvc", "$(NMakeIncludeSearchPath)"]
+    includes += ["$(QtRoot)\\include", "$(QtRoot)\\include\\QtCore", "$(QtRoot)\\include\\QtGui", "$(QtRoot)\\include\\QtWidgets", "$(QtRoot)\\include\\QtNetwork", "$(QtRoot)\\mkspecs\\win32-msvc", "$(NMakeIncludeSearchPath)"]
     child(settings, "NMakeIncludeSearchPath", ";".join(includes))
     child(settings, "NMakeAdditionalOptions", "/std:c++20 /utf-8 $(NMakeAdditionalOptions)")
     filters = ET.Element("{" + MSBUILD + "}Project", ToolsVersion="Current")
     filter_definitions = child(filters, "ItemGroup")
-    files = sorted(path for folder in (ROOT / "src", ROOT / "scripts") for path in folder.rglob("*") if path.is_file() and "__pycache__" not in path.parts)
+    files = sorted(path for folder in (ROOT / "src", ROOT / "scripts", ROOT / "third_party") for path in folder.rglob("*") if path.is_file() and "__pycache__" not in path.parts)
     files += [ROOT / name for name in ("CMakeLists.txt", "CMakePresets.json", "README.md")]
     source_items = child(project, "ItemGroup")
     filter_items = child(filters, "ItemGroup")
@@ -81,7 +81,7 @@ def main():
                 defined.add(name)
                 definition = child(filter_definitions, "Filter", Include=name)
                 child(definition, "UniqueIdentifier", "{" + str(uuid.uuid5(uuid.NAMESPACE_URL, "RetroMediaLab/" + name)).upper() + "}")
-        kind = "ClCompile" if path.suffix == ".cpp" else "ClInclude" if path.suffix == ".h" else "None"
+        kind = "ClCompile" if path.suffix in {".cpp", ".c"} else "ClInclude" if path.suffix == ".h" else "None"
         filename = str(relative).replace("/", "\\")
         child(source_items, kind, Include=filename)
         child(child(filter_items, kind, Include=filename), "Filter", filter_name)

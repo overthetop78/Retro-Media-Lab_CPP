@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "ログ",
+    "Options.LogsDescription": "各アクションには、Retro Media Lab Logs フォルダー内に独自のファイルがあります。",
+    "Options.EnableLogs": "ログを保存する",
+    "Options.LogMaximumSize": "最大サイズ",
+    "Options.KeepLogArchives": "以前のログを保存する",
+    "Options.LogUnlimitedHint": "0 = 無制限",
+    "Options.OpenLogsFolder": "フォルダーを開く",
+    "Options.LogActionErase": "消去",
+    "Options.LogActionClean": "ヘッドをクリーンにする",
+    "Tool.Title.Info": "コントローラ情報",
+    "Tool.Title.Bandwidth": "USB 帯域幅",
+    "Tool.Title.Rpm": "ドライブ速度",
+    "Tool.Title.Seek": "シークヘッド",
+    "Tool.Title.Pin": "ハードウェアピン",
+    "Tool.Title.Reset": "コントローラーをリセットする",
+    "Tool.Title.Delays": "遅延",
+    "Tool.Title.Update": "ファームウェア",
+    "Tool.Title.Align": "ドライブアライメント診断",
+    "Logs.OpenFolderError": "ログフォルダーを開けません。\n{detail}"
+  }
+}

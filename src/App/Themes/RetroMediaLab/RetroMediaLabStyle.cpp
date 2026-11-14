@@ -1,4 +1,5 @@
 #include "ThemeConstants.h"
+#include "Hardware/HardwareConstants.h"
 #include "RetroMediaLabStyle.h"
 #include <QPainter>
 #include <QStyleFactory>
@@ -22,7 +23,7 @@ void RetroMediaLabStyle::drawPrimitive(PrimitiveElement element, const QStyleOpt
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);
         auto fill = data_->color(ThemeConstants::ControlBrush);
-        if (option->state & State_Sunken) fill = data_->color(ThemeConstants::SelectedBrush);
+        if (element == PE_PanelButtonCommand && (option->state & State_Sunken)) fill = data_->color(ThemeConstants::SelectedBrush);
         else if (option->state & State_MouseOver) fill = data_->color(ThemeConstants::HoverBrush);
         painter->setBrush(fill);
         painter->setPen(data_->color(option->state & State_HasFocus ? ThemeConstants::AccentBrush : ThemeConstants::BorderBrush));
@@ -38,6 +39,10 @@ QSize RetroMediaLabStyle::sizeFromContents(ContentsType type, const QStyleOption
         const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
         size = QSize(tab->fontMetrics.horizontalAdvance(tab->text) + ThemeConstants::Style::TabIconExtent + ThemeConstants::Style::IconTextGap + data_->tabPaddingX * ThemeConstants::Style::TabUnderlineBottomInset + ThemeConstants::Style::TabUnderlineThickness,
                      qMax(ThemeConstants::Style::TabIconExtent, tab->fontMetrics.height()) + data_->tabPaddingY * ThemeConstants::Style::TabUnderlineBottomInset);
+    }
+    if (type == CT_TabBarTab && widget && widget->objectName() == HardwareConstants::CategoryTabBar) {
+        const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
+        size.setWidth(tab->fontMetrics.horizontalAdvance(tab->text) + HardwareConstants::CategoryTabPadding);
     }
     if (type == CT_MenuBarItem) size = content + QSize(ThemeConstants::Style::MenuBarHorizontalPadding, ThemeConstants::Style::MenuBarVerticalPadding);
     if (type == CT_MenuItem) size.setHeight(option->fontMetrics.height() + ThemeConstants::Style::MenuItemVerticalPadding);

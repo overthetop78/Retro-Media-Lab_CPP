@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Protokolle",
+    "Options.LogsDescription": "Jede Aktion verfügt über eine eigene Datei im Ordner Retro Media Lab Logs.",
+    "Options.EnableLogs": "Protokolle speichern",
+    "Options.LogMaximumSize": "Maximale Größe",
+    "Options.KeepLogArchives": "Behalten Sie frühere Protokolle bei",
+    "Options.LogUnlimitedHint": "0 = unbegrenzt",
+    "Options.OpenLogsFolder": "Ordner öffnen",
+    "Options.LogActionErase": "Löschen",
+    "Options.LogActionClean": "Saubere Köpfe",
+    "Tool.Title.Info": "Controller-Informationen",
+    "Tool.Title.Bandwidth": "USB Bandbreite",
+    "Tool.Title.Rpm": "Fahrgeschwindigkeit",
+    "Tool.Title.Seek": "Kopf suchen",
+    "Tool.Title.Pin": "Hardware-Pins",
+    "Tool.Title.Reset": "Controller zurücksetzen",
+    "Tool.Title.Delays": "Verzögerungen",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Diagnose der Antriebsausrichtung",
+    "Logs.OpenFolderError": "Kann den Logs-Ordner nicht öffnen.\n{detail}"
+  }
+}

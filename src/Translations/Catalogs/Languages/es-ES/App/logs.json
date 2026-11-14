@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Registros",
+    "Options.LogsDescription": "Cada acción tiene su propio archivo en el Retro Media Lab carpeta de registros.",
+    "Options.EnableLogs": "Guardar registros",
+    "Options.LogMaximumSize": "Tamaño máximo",
+    "Options.KeepLogArchives": "Mantener registros anteriores",
+    "Options.LogUnlimitedHint": "0 = ilimitado",
+    "Options.OpenLogsFolder": "Abrir carpeta",
+    "Options.LogActionErase": "Borrar",
+    "Options.LogActionClean": "Cabezas limpias",
+    "Tool.Title.Info": "Información del controlador",
+    "Tool.Title.Bandwidth": "USB ancho de banda",
+    "Tool.Title.Rpm": "Velocidad de conducción",
+    "Tool.Title.Seek": "buscar cabeza",
+    "Tool.Title.Pin": "Pasadores de hardware",
+    "Tool.Title.Reset": "Reiniciar el controlador",
+    "Tool.Title.Delays": "Retrasos",
+    "Tool.Title.Update": "firmware",
+    "Tool.Title.Align": "Diagnóstico de alineación de la unidad",
+    "Logs.OpenFolderError": "No se puede abrir la carpeta de registros.\n{detail}"
+  }
+}

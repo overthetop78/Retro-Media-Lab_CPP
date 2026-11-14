@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "Произошла неожиданная ошибка приложения.",
     "Errors.UnexpectedDetails": "Произошла неожиданная ошибка приложения.\n{detail}",
     "Errors.NativeFailure": "Ошибка Windows {code}.\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab — ошибка"
+    "Errors.DialogTitle": "Retro Media Lab — ошибка",
+    "Errors.InvalidLoggingSettings": "Некорректные настройки журналов",
+    "Errors.CannotResolveDataDirectory": "Не может разрешить каталог данных приложения"
   }
 }

@@ -7,6 +7,9 @@
 #include "Windows/WindowCoordinator.h"
 #include "State/WorkspaceState.h"
 #include "State/PreferencesStore.h"
+#include "Logging/LogPaths.h"
+#include "Logging/DiagnosticLog.h"
+#include "Hardware/HardwareAvailability.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <RetroMediaLab/Translations/LanguageCatalog.h>
 #include <QApplication>
@@ -53,7 +56,7 @@ int Application::run(int argc, char** argv) {
     app.setOrganizationName(AppConstants::RetroMediaLab);
     app.setQuitOnLastWindowClosed(false);
     const auto directory = QApplication::applicationDirPath();
-    const auto preferencesPath = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation) + AppConstants::PreferencesJson;
+    const auto preferencesPath = PreferencesStore::defaultPath();
     const PreferencesStore preferences(preferencesPath);
     auto selected = preferences.loadOrCreate({QString::fromStdString(Translations::resolveLanguage(systemCulture.toStdString()))});
     errorLanguage = selected.language.toStdString();
@@ -62,22 +65,41 @@ int Application::run(int argc, char** argv) {
     ThemeService themes(themeModule);
     themes.applySettings(selected.themeSettings.value(themes.id()).toObject());
     WorkspaceState state;
+    state.logsDirectory = logsDirectory(executableDirectory);
+    state.setLogging(selected.logging);
+    state.setConversion(selected.conversion);
+    state.setHardware(selected.hardware);
     state.setDefaultImageDirectory(selected.defaultImageDirectory);
     const auto savePreferences = [&] {
         selected.language = QString::fromStdString(translations.language());
         errorLanguage = translations.language();
         selected.defaultImageDirectory = state.defaultImageDirectory();
+        selected.logging = state.logging();
+        selected.conversion = state.conversion();
+        selected.hardware = state.hardware();
         selected.themeSettings.insert(themes.id(), themes.settings());
         preferences.save(selected);
     };
     const auto languagePreference = translations.subscribe(savePreferences);
     const auto themePreference = themes.subscribe(savePreferences);
     const auto directoryPreference = state.subscribeToDefaultImageDirectory(savePreferences);
+    const auto hardwarePreference = state.subscribeToHardware(savePreferences);
+    const auto conversionPreference = state.subscribeToConversion(savePreferences);
+    const auto loggingPreference = state.subscribeToLogging(savePreferences);
     app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.
     WindowCoordinator windows([&] {
         return themes.createPresentation(translations, state);
     });
     windows.rebuild();
+    HardwareAvailability availability;
+    availability.refresh(state.hardware(),state.logsDirectory,state.logging(),[&](HardwareAvailabilityResult result){
+        auto current=state.hardware();result.applyTo(current);state.setHardware(std::move(current));
+        for(const auto& key:result.errors){
+            auto message=QString::fromStdString(translations.text(key.toStdString()));
+            message.replace(HardwareConstants::Argument,HardwareConstants::Greaseweazle);
+            writeDiagnostic(state.logsDirectory,DiagnosticSeverity::Error,message,HardwareConstants::DiagnosticContext,QString::fromStdString(translations.language()),HardwareConstants::DiagnosticProcess);
+        }
+    });
     const int result = app.exec();
     if (app.failure) std::rethrow_exception(app.failure);
     return result;

@@ -42,7 +42,7 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
     });
     areaLayout->addWidget(splitter_);
     layout->addWidget(area, 1);
-    layout->addWidget(new StatusBar(themes, translations, state.console.expanded, [this](bool expanded) {
+    layout->addWidget(new StatusBar(themes, translations, state, state.console.expanded, [this](bool expanded) {
         if (!expanded) state_.console.height = splitter_->sizes().value(1, state_.console.height);
         state_.console.expanded = expanded;
         terminal_->setVisible(expanded);

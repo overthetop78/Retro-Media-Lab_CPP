@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Registri",
+    "Options.LogsDescription": "Ogni azione ha il proprio file nella cartella Retro Media Lab Logs.",
+    "Options.EnableLogs": "Salva i registri",
+    "Options.LogMaximumSize": "Dimensione massima",
+    "Options.KeepLogArchives": "Conserva i registri precedenti",
+    "Options.LogUnlimitedHint": "0 = illimitato",
+    "Options.OpenLogsFolder": "Apri cartella",
+    "Options.LogActionErase": "Cancellare",
+    "Options.LogActionClean": "Teste pulite",
+    "Tool.Title.Info": "Informazioni sul controllore",
+    "Tool.Title.Bandwidth": "USB larghezza di banda",
+    "Tool.Title.Rpm": "Velocità di guida",
+    "Tool.Title.Seek": "Cerca la testa",
+    "Tool.Title.Pin": "Perni dell'hardware",
+    "Tool.Title.Reset": "Reimpostare il controller",
+    "Tool.Title.Delays": "Ritardi",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Diagnostica dell'allineamento dell'unità",
+    "Logs.OpenFolderError": "Non è possibile aprire la cartella logs.\n{detail}"
+  }
+}

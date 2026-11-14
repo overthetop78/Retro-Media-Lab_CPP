@@ -1,6 +1,9 @@
 #include "../ThemeConstants.h"
 #include "PreferencesDialog.h"
 #include "ThemeSettingsPage.h"
+#include "LogSettingsPage.h"
+#include "ConversionSettingsPage.h"
+#include "HardwareSettingsPage.h"
 #include "../ThemeIcons.h"
 #include "Shared/Controls/Card.h"
 #include <RetroMediaLab/Translations/LanguageCatalog.h>
@@ -70,14 +73,20 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     sections_->addTab(general, QString());
     auto* themePage = new ThemeSettingsPage(themes, translations, state, parent, sections_);
     sections_->addTab(themePage, QString());
+    logs_=new LogSettingsPage(themes,translations,state,sections_);
+    sections_->addTab(logs_,QString());
+    conversion_ = new ConversionSettingsPage(themes, translations, state, sections_);
+    sections_->addTab(conversion_, QString());
+    hardware_ = new HardwareSettingsPage(themes, translations, state, sections_);
+    sections_->addTab(hardware_, QString());
     layout->addWidget(sections_, 1);
     close_ = new QPushButton(this);
     close_->setObjectName(ThemeConstants::ClosePreferences);
     close_->setMinimumWidth(ThemeConstants::PreferencesLayout::ActionMinimumWidth);
     layout->addWidget(close_, 0, Qt::AlignRight);
-    sections_->setCurrentIndex(state.preferencesSection == ThemeConstants::Themes ? 1 : 0);
+    sections_->setCurrentIndex(state.preferencesSection == HardwareConstants::Section ? HardwareConstants::TabIndex : state.preferencesSection == ConversionConstants::Section ? ConversionConstants::TabIndex : state.preferencesSection == ThemeConstants::Logs ? ThemeConstants::LogPage::Index : state.preferencesSection == ThemeConstants::Themes ? 1 : 0);
     connect(sections_, &QTabWidget::currentChanged, this, [this](int index) {
-        state_.preferencesSection = index == 1 ? ThemeConstants::Themes : ThemeConstants::General;
+        state_.preferencesSection = index == HardwareConstants::TabIndex ? HardwareConstants::Section : index == ConversionConstants::TabIndex ? ConversionConstants::Section : index == ThemeConstants::LogPage::Index ? ThemeConstants::Logs : index == 1 ? ThemeConstants::Themes : ThemeConstants::General;
     });
     connect(languages_, &QComboBox::currentIndexChanged, this, [this](int index) {
         if (index >= 0) translations_.setLanguage(languages_->itemData(index).toString().toStdString());
@@ -117,6 +126,9 @@ void PreferencesDialog::refreshTexts() {
     setWindowTitle(text(ThemeConstants::PreferencesTitle));
     sections_->setTabText(0, text(ThemeConstants::PreferencesGeneral));
     sections_->setTabText(1, text(ThemeConstants::PreferencesThemes));
+    sections_->setTabText(ThemeConstants::LogPage::Index,text(ThemeConstants::LogsTitle));
+    sections_->setTabText(ConversionConstants::TabIndex, text(ConversionConstants::Title));
+    sections_->setTabText(HardwareConstants::TabIndex, text(HardwareConstants::TitleKey));
     languageLabel_->setText(text(ThemeConstants::WindowLanguage));
     directoryLabel_->setText(text(ThemeConstants::PreferencesDefaultImageDirectory));
     directory_->setAccessibleName(directoryLabel_->text());
@@ -129,12 +141,18 @@ void PreferencesDialog::refreshTexts() {
 void PreferencesDialog::refreshAppearance() {
     const auto icon = themeIcon(ThemeConstants::Preferences, themes_.data()->color(ThemeConstants::MutedTextBrush));
     sections_->setTabIcon(0, icon); sections_->setTabIcon(1, icon);
+    sections_->setTabIcon(ThemeConstants::LogPage::Index,themeIcon(ThemeConstants::LogsIcon,themes_.data()->color(ThemeConstants::MutedTextBrush)));
+    sections_->setTabIcon(ConversionConstants::TabIndex, themeIcon(ConversionConstants::Icon, themes_.data()->color(ThemeConstants::MutedTextBrush)));
+    sections_->setTabIcon(HardwareConstants::TabIndex, themeIcon(HardwareConstants::Icon, themes_.data()->color(ThemeConstants::MutedTextBrush)));
     Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.data()->dark,
         themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(),
         themes_.data()->nativeSystemColors);
     update();
 }
 void PreferencesDialog::synchronizeState() {
+    logs_->commitEdits();
+    conversion_->commitEdits();
+    hardware_->synchronizeState();
     state_.setDefaultImageDirectory(directory_->text());
     state_.preferencesGeometry = saveGeometry();
 }

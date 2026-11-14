@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "Tapahtui odottamaton sovellusvirhe.",
     "Errors.UnexpectedDetails": "Tapahtui odottamaton sovellusvirhe.\n{detail}",
     "Errors.NativeFailure": "Windows-virhe {code}.\n{detail}",
-    "Errors.DialogTitle": "Virhe Retro Media Lab"
+    "Errors.DialogTitle": "Virhe Retro Media Lab",
+    "Errors.InvalidLoggingSettings": "Virheelliset kirjausasetukset",
+    "Errors.CannotResolveDataDirectory": "Sovellustietohakemistoa ei voitu ratkaista"
   }
 }

@@ -52,6 +52,8 @@
     "Errors.UnexpectedApplicationException": "예기치 않은 응용 프로그램 오류가 발생했습니다.",
     "Errors.UnexpectedDetails": "예기치 않은 응용 프로그램 오류가 발생했습니다.\n{detail}",
     "Errors.NativeFailure": "Windows 오류 {code}.\n{detail}",
-    "Errors.DialogTitle": "Retro Media Lab - 오류"
+    "Errors.DialogTitle": "Retro Media Lab - 오류",
+    "Errors.InvalidLoggingSettings": "로그 파일 설정이 올바르지 않습니다",
+    "Errors.CannotResolveDataDirectory": "응용 프로그램 데이터 폴더를 확인할 수 없습니다."
   }
 }

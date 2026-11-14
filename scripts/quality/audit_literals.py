@@ -6,11 +6,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TOKEN = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|(?:L|u8)?"(?:\\.|[^"\\])*"|(?:L)?\x27(?:\\.|[^\x27\\])*\x27|(?<![\w.])(?:0x[\da-fA-F]+|\d+\.\d+|\.\d+|\d+)(?![\w.])')
 CONSTANT_HEADERS = {
-    "src/App/Constants/AppConstants.h", "src/App/Themes/RetroMediaLab/ThemeConstants.h",
+    "src/Common/Constants/AppConstants.h", "src/App/Themes/RetroMediaLab/ThemeConstants.h",
     "src/Translations/include/RetroMediaLab/Translations/TranslationConstants.h",
     "src/Launcher/LauncherConstants.h", "src/Common/PlatformConstants.h",
     "src/Common/DiagnosticConstants.h", "src/Common/ErrorKeys.h",
-    "src/Common/ProcessConstants.h",
+    "src/Common/ProcessConstants.h", "src/Common/StorageProbeConstants.h",
+    "src/Infrastructure/Logging/LogConstants.h",
+    "src/Infrastructure/Conversion/ConversionConstants.h",
+    "src/Infrastructure/Hardware/HardwareConstants.h", "src/Common/HardwareDiscoveryConstants.h",
 }
 PLACEHOLDERS = re.compile(r"\{[^{}]+\}")
 

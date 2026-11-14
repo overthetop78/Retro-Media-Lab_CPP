@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Logger",
+    "Options.LogsDescription": "Hver handling har sin egen fil i mappen Retro Media Lab Logger.",
+    "Options.EnableLogs": "Lagre logger",
+    "Options.LogMaximumSize": "Maksimal størrelse",
+    "Options.KeepLogArchives": "Behold tidligere logger",
+    "Options.LogUnlimitedHint": "0 = ubegrenset",
+    "Options.OpenLogsFolder": "Åpne mappen",
+    "Options.LogActionErase": "Viske",
+    "Options.LogActionClean": "Rengjør hoder",
+    "Tool.Title.Info": "Kontrollørinformasjon",
+    "Tool.Title.Bandwidth": "USB båndbredde",
+    "Tool.Title.Rpm": "Kjørehastighet",
+    "Tool.Title.Seek": "Søk hodet",
+    "Tool.Title.Pin": "Maskinvarepinner",
+    "Tool.Title.Reset": "Tilbakestill kontrolleren",
+    "Tool.Title.Delays": "Forsinkelser",
+    "Tool.Title.Update": "Fastvare",
+    "Tool.Title.Align": "Drive justering diagnostikk",
+    "Logs.OpenFolderError": "Kan ikke åpne loggmappen.\n{detail}"
+  }
+}

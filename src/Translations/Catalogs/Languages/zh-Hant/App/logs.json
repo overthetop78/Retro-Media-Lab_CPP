@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "紀錄",
+    "Options.LogsDescription": "每個操作在 Retro Media Lab Logs 資料夾中都有自己的檔案。",
+    "Options.EnableLogs": "保存日誌",
+    "Options.LogMaximumSize": "最大尺寸",
+    "Options.KeepLogArchives": "保留先前的日誌",
+    "Options.LogUnlimitedHint": "0 = 無限制",
+    "Options.OpenLogsFolder": "打開資料夾",
+    "Options.LogActionErase": "擦除",
+    "Options.LogActionClean": "清潔頭部",
+    "Tool.Title.Info": "控制器資訊",
+    "Tool.Title.Bandwidth": "USB 頻寬",
+    "Tool.Title.Rpm": "行駛速度",
+    "Tool.Title.Seek": "求頭",
+    "Tool.Title.Pin": "硬體引腳",
+    "Tool.Title.Reset": "重設控制器",
+    "Tool.Title.Delays": "延誤",
+    "Tool.Title.Update": "韌體",
+    "Tool.Title.Align": "驅動器對準診斷",
+    "Logs.OpenFolderError": "無法開啟記錄檔資料夾。\n{detail}"
+  }
+}

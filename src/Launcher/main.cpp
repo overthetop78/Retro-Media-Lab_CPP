@@ -1,4 +1,5 @@
 #include <ProcessConstants.h>
+#include <StorageProbeConstants.h>
 #include "LauncherConstants.h"
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
@@ -6,6 +7,7 @@
 #include <ErrorDialog.h>
 #include <shellapi.h>
 #include <filesystem>
+#include <cstring>
 #include <memory>
 #include <string>
 #include <utility>
@@ -59,10 +61,6 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int) {
             const auto path = root / name;
             if (std::filesystem::is_directory(path)) directories.emplace_back(path);
         }
-        Library application(root / ::RetroMediaLab::LauncherConstants::WideLibAppDll);
-        using Entry = int (__cdecl*)(int, char**);
-        const auto entry = reinterpret_cast<Entry>(GetProcAddress(application.module, ::RetroMediaLab::LauncherConstants::RetroMediaLabRun));
-        if (!entry) throw WindowsError{GetLastError(), ::RetroMediaLab::LauncherConstants::WideRetroMediaLabRun};
         int argc = 0;
         auto** wideArguments = CommandLineToArgvW(GetCommandLineW(), &argc);
         if (!wideArguments) throw WindowsError{GetLastError(), ::RetroMediaLab::LauncherConstants::WideEmpty};
@@ -83,6 +81,11 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int) {
         std::vector<char*> arguments;
         for (auto& argument : storage) arguments.push_back(argument.data());
         arguments.push_back(nullptr);
+        const bool probe = argc > 1 && std::strcmp(arguments[1], ::RetroMediaLab::StorageProbeConstants::Mode) == 0;
+        Library application(root / (probe ? ::RetroMediaLab::LauncherConstants::WideLibInfrastructureDll : ::RetroMediaLab::LauncherConstants::WideLibAppDll));
+        using Entry = int (__cdecl*)(int, char**);
+        const auto entry = reinterpret_cast<Entry>(GetProcAddress(application.module, probe ? ::RetroMediaLab::LauncherConstants::ProbeEntry : ::RetroMediaLab::LauncherConstants::RetroMediaLabRun));
+        if (!entry) throw WindowsError{GetLastError(), probe ? ::RetroMediaLab::LauncherConstants::WideProbeEntry : ::RetroMediaLab::LauncherConstants::WideRetroMediaLabRun};
         return entry(argc, arguments.data());
     } catch (const WindowsError& error) { report(error); }
       catch (...) { report({ERROR_GEN_FAILURE, ::RetroMediaLab::LauncherConstants::WideRetroMediaLab}); }

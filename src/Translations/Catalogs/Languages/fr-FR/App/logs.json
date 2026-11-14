@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "Options.Logs": "Journaux",
+    "Options.LogsDescription": "Chaque action dispose de son propre fichier dans le dossier des journaux de Retro Media Lab.",
+    "Options.EnableLogs": "Enregistrer les journaux",
+    "Options.LogMaximumSize": "Taille maximale",
+    "Options.KeepLogArchives": "Conserver les anciens journaux",
+    "Options.LogUnlimitedHint": "0 = aucune limite",
+    "Options.OpenLogsFolder": "Ouvrir le dossier",
+    "Options.LogActionErase": "Effacement",
+    "Options.LogActionClean": "Nettoyage des têtes",
+    "Tool.Title.Info": "Informations du contrôleur",
+    "Tool.Title.Bandwidth": "Bande passante USB",
+    "Tool.Title.Rpm": "Vitesse du lecteur",
+    "Tool.Title.Seek": "Déplacer la tête",
+    "Tool.Title.Pin": "Broches matérielles",
+    "Tool.Title.Reset": "Réinitialiser le contrôleur",
+    "Tool.Title.Delays": "Temporisations",
+    "Tool.Title.Update": "Firmware",
+    "Tool.Title.Align": "Diagnostic d’alignement du lecteur",
+    "Logs.OpenFolderError": "Impossible d'ouvrir le dossier des journaux.\n{detail}"
+  }
+}
