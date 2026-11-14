@@ -1,3 +1,4 @@
+#include "ThemeConstants.h"
 #include "RetroMediaLabLayout.h"
 #include "Shared/Controls/TerminalView.h"
 #include "ThemeIcons.h"
@@ -16,20 +17,20 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
     layout->addWidget(new MainMenu(translations, std::move(openPreferences), this));
     auto* area = new QWidget(this);
     auto* areaLayout = new QVBoxLayout(area);
-    areaLayout->setContentsMargins(16, 10, 16, 8);
+    areaLayout->setContentsMargins(ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::PagePadding, ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::ContentSpacing);
     splitter_ = new QSplitter(Qt::Vertical, area);
-    splitter_->setObjectName("workspaceSplitter");
-    splitter_->setHandleWidth(4);
+    splitter_->setObjectName(ThemeConstants::WorkspaceSplitter);
+    splitter_->setHandleWidth(ThemeConstants::Layout::OuterSpacing);
     splitter_->setChildrenCollapsible(false);
     auto* pages = new WorkspaceTabs(themes, translations, state, splitter_);
     terminal_ = new TerminalView(themes, translations, state.console, splitter_);
     const auto refreshIcon = [this, &themes] {
-        terminal_->setCopyIcon(themeIcon("copy", themes.data()->color("TerminalText")));
+        terminal_->setCopyIcon(themeIcon(ThemeConstants::Copy, themes.data()->color(ThemeConstants::TerminalText)));
     };
     refreshIcon();
     themeSubscription_ = themes.subscribe(refreshIcon);
-    terminal_->setMinimumHeight(110);
-    pages->setMinimumHeight(100);
+    terminal_->setMinimumHeight(ThemeConstants::Layout::MinimumContentHeight);
+    pages->setMinimumHeight(ThemeConstants::Layout::MinimumConsoleHeight);
     splitter_->addWidget(pages);
     splitter_->addWidget(terminal_);
     splitter_->setStretchFactor(0, 1);
@@ -46,7 +47,7 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
         state_.console.expanded = expanded;
         terminal_->setVisible(expanded);
         if (expanded) {
-            splitter_->setSizes({qMax(100, splitter_->height() - state_.console.height), state_.console.height});
+            splitter_->setSizes({qMax(ThemeConstants::Layout::MinimumConsoleHeight, splitter_->height() - state_.console.height), state_.console.height});
             terminal_->restoreScroll();
         }
     }, this));
@@ -55,7 +56,7 @@ void RetroMediaLabLayout::showEvent(QShowEvent* event) {
     QWidget::showEvent(event);
     if (!restored_) {
         restored_ = true;
-        splitter_->setSizes({qMax(100, splitter_->height() - state_.console.height), state_.console.height});
+        splitter_->setSizes({qMax(ThemeConstants::Layout::MinimumConsoleHeight, splitter_->height() - state_.console.height), state_.console.height});
         terminal_->restoreScroll();
     }
 }

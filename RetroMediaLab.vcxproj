@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="Current">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3A6BA25D-958F-5DBF-A782-0FA936172DBF}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <RootNamespace>RetroMediaLab</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <QtRoot Condition="'$(QtRoot)' == ''">$(RETROMEDIALAB_QT_DIR)</QtRoot>
+    <QtRoot Condition="'$(QtRoot)' == ''">C:\Qt\6.12.0\msvc2022_64</QtRoot>
+    <CMakeExecutable Condition="'$(CMakeExecutable)' == ''">$(VSInstallDir)Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe</CMakeExecutable>
+    <NMakeBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(ProjectDir)scripts\local-building\build.ps1" -Configuration "$(Configuration)" -QtRoot "$(QtRoot)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(CMakeExecutable)" --build "$(ProjectDir)build\$(Configuration)" --target clean &amp;&amp; powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(ProjectDir)scripts\local-building\build.ps1" -Configuration "$(Configuration)" -QtRoot "$(QtRoot)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(CMakeExecutable)" --build "$(ProjectDir)build\$(Configuration)" --target clean</NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)build\$(Configuration)\Retro Media Lab\retromedialab.exe</NMakeOutput>
+    <LocalDebuggerCommand>$(ProjectDir)build\$(Configuration)\Retro Media Lab\retromedialab.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)build\$(Configuration)\Retro Media Lab</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <OutDir>$(ProjectDir)build\ide\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)</IntDir>
+    <NMakePreprocessorDefinitions>UNICODE;_UNICODE;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;RETROMEDIALAB_APP_BUILD;RETROMEDIALAB_TRANSLATIONS_BUILD;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir)src\App;$(ProjectDir)src\Common;$(ProjectDir)src\Translations\include;$(ProjectDir)src\Platform\include;$(ProjectDir)build\$(Configuration)\generated;$(QtRoot)\include;$(QtRoot)\include\QtCore;$(QtRoot)\include\QtGui;$(QtRoot)\include\QtWidgets;$(QtRoot)\mkspecs\win32-msvc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeAdditionalOptions>/std:c++20 /utf-8 $(NMakeAdditionalOptions)</NMakeAdditionalOptions>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="scripts\local-building\build.ps1" />
+    <None Include="scripts\local-building\update-solution.py" />
+    <None Include="scripts\quality\audit_literals.py" />
+    <None Include="scripts\translations\compile_catalog.py" />
+    <None Include="scripts\translations\compile_errors.py" />
+    <None Include="scripts\translations\ignores\common.txt" />
+    <None Include="scripts\translations\translate.py" />
+    <ClInclude Include="src\App\AppApi.h" />
+    <None Include="src\App\Assets\app-icon.ico" />
+    <ClCompile Include="src\App\Bootstrap\Application.cpp" />
+    <ClInclude Include="src\App\Bootstrap\Application.h" />
+    <ClCompile Include="src\App\Bootstrap\EntryPoint.cpp" />
+    <None Include="src\App\CMakeLists.txt" />
+    <ClInclude Include="src\App\Constants\AppConstants.h" />
+    <ClCompile Include="src\App\main.cpp" />
+    <ClCompile Include="src\App\Shared\Controls\Card.cpp" />
+    <ClInclude Include="src\App\Shared\Controls\Card.h" />
+    <ClCompile Include="src\App\Shared\Controls\LocalizedAction.cpp" />
+    <ClInclude Include="src\App\Shared\Controls\LocalizedAction.h" />
+    <ClCompile Include="src\App\Shared\Controls\StatusIndicator.cpp" />
+    <ClInclude Include="src\App\Shared\Controls\StatusIndicator.h" />
+    <ClCompile Include="src\App\Shared\Controls\TerminalView.cpp" />
+    <ClInclude Include="src\App\Shared\Controls\TerminalView.h" />
+    <ClCompile Include="src\App\Shared\Navigation\WorkspacePages.cpp" />
+    <ClInclude Include="src\App\Shared\Navigation\WorkspacePages.h" />
+    <ClInclude Include="src\App\Shell\ConsoleState.h" />
+    <ClCompile Include="src\App\State\PreferencesStore.cpp" />
+    <ClInclude Include="src\App\State\PreferencesStore.h" />
+    <ClCompile Include="src\App\State\WorkspaceState.cpp" />
+    <ClInclude Include="src\App\State\WorkspaceState.h" />
+    <ClInclude Include="src\App\Themes\IThemePresentation.h" />
+    <None Include="src\App\Themes\RetroMediaLab\dark.json" />
+    <None Include="src\App\Themes\RetroMediaLab\icons.json" />
+    <None Include="src\App\Themes\RetroMediaLab\light.json" />
+    <None Include="src\App\Themes\RetroMediaLab\metrics.json" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabConfiguration.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabConfiguration.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabLayout.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabLayout.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabPresentation.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabPresentation.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabStyle.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabStyle.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabWindow.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabWindow.h" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\ThemeConstants.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\ThemeEntry.cpp" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\ThemeIcons.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\ThemeIcons.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\MainMenu.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\MainMenu.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\StatusBar.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\StatusBar.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\WorkspaceTabs.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\WorkspaceTabs.h" />
+    <ClCompile Include="src\App\Themes\ThemeService.cpp" />
+    <ClInclude Include="src\App\Themes\ThemeService.h" />
+    <ClCompile Include="src\App\Windows\WindowCoordinator.cpp" />
+    <ClInclude Include="src\App\Windows\WindowCoordinator.h" />
+    <ClInclude Include="src\Common\DiagnosticConstants.h" />
+    <ClInclude Include="src\Common\ErrorDialog.h" />
+    <ClInclude Include="src\Common\ErrorKeys.h" />
+    <ClInclude Include="src\Common\Errors.h" />
+    <ClInclude Include="src\Common\PlatformConstants.h" />
+    <ClInclude Include="src\Common\ProcessConstants.h" />
+    <ClInclude Include="src\Launcher\LauncherConstants.h" />
+    <ClCompile Include="src\Launcher\main.cpp" />
+    <None Include="src\Platform\CMakeLists.txt" />
+    <ClInclude Include="src\Platform\include\RetroMediaLab\Platform\WindowAppearance.h" />
+    <ClCompile Include="src\Platform\Unix\WindowAppearance.cpp" />
+    <None Include="src\Platform\Windows\App.rc" />
+    <ClCompile Include="src\Platform\Windows\WindowAppearance.cpp" />
+    <None Include="src\Translations\Catalogs\Constants\App\console.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\status.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\window.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\console.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\errors.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\menus.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\navigation.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\preferences.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\status.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\themes.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\window.json" />
+    <None Include="src\Translations\CMakeLists.txt" />
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\Export.h" />
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\LanguageCatalog.h" />
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\TranslationConstants.h" />
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\TranslationService.h" />
+    <None Include="src\Translations\Languages.json" />
+    <ClCompile Include="src\Translations\src\LanguageCatalog.cpp" />
+    <ClCompile Include="src\Translations\src\TranslationService.cpp" />
+    <None Include="CMakeLists.txt" />
+    <None Include="CMakePresets.json" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,4 +1,6 @@
+#include "../ThemeConstants.h"
 #include "PreferencesDialog.h"
+#include "ThemeSettingsPage.h"
 #include "../ThemeIcons.h"
 #include "Shared/Controls/Card.h"
 #include <RetroMediaLab/Translations/LanguageCatalog.h>
@@ -19,88 +21,63 @@ namespace RetroMediaLab {
 PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::TranslationService& translations,
     WorkspaceState& state, QWidget* parent)
     : QDialog(parent), themes_(themes), translations_(translations), state_(state) {
-    setObjectName("preferencesDialog");
+    setObjectName(ThemeConstants::PreferencesDialog);
     setWindowModality(Qt::WindowModal);
     setWindowIcon(parent->windowIcon());
     setSizeGripEnabled(true);
     auto* layout = new QVBoxLayout(this);
-    layout->setContentsMargins(16, 16, 16, 16);
+    layout->setContentsMargins(ThemeConstants::PreferencesLayout::OuterPadding, ThemeConstants::PreferencesLayout::OuterPadding, ThemeConstants::PreferencesLayout::OuterPadding, ThemeConstants::PreferencesLayout::OuterPadding);
     sections_ = new QTabWidget(this);
-    sections_->setObjectName("preferencesSections");
-    sections_->setIconSize(QSize(17, 17));
+    sections_->setObjectName(ThemeConstants::PreferencesSections);
+    sections_->setIconSize(QSize(ThemeConstants::PreferencesLayout::TabIconExtent, ThemeConstants::PreferencesLayout::TabIconExtent));
     auto* general = new QWidget(sections_);
     auto* generalLayout = new QVBoxLayout(general);
-    generalLayout->setContentsMargins(18, 18, 18, 18);
+    generalLayout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
     auto* row = new QHBoxLayout;
-    row->setSpacing(12);
+    row->setSpacing(ThemeConstants::PreferencesLayout::CardSpacing);
     auto* destinationCard = new Card(themes.data(), general);
-    destinationCard->setObjectName("destinationCard");
+    destinationCard->setObjectName(ThemeConstants::DestinationCard);
     auto* destinationLayout = new QVBoxLayout(destinationCard);
-    destinationLayout->setContentsMargins(18, 18, 18, 18);
+    destinationLayout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
     directoryLabel_ = new QLabel(destinationCard);
     directory_ = new QLineEdit(state.defaultImageDirectory(), destinationCard);
-    directory_->setObjectName("defaultImageDirectory");
-    directory_->setMinimumWidth(120);
+    directory_->setObjectName(ThemeConstants::DefaultImageDirectory);
+    directory_->setMinimumWidth(ThemeConstants::PreferencesLayout::ActionMinimumWidth);
     directoryLabel_->setBuddy(directory_);
     browse_ = new QPushButton(destinationCard);
-    browse_->setObjectName("browseImageDirectory");
+    browse_->setObjectName(ThemeConstants::BrowseImageDirectory);
     auto* directoryRow = new QHBoxLayout;
     directoryRow->addWidget(directory_, 1);
     directoryRow->addWidget(browse_);
     destinationLayout->addWidget(directoryLabel_);
     destinationLayout->addLayout(directoryRow);
     auto* languageCard = new Card(themes.data(), general);
-    languageCard->setObjectName("languageCard");
+    languageCard->setObjectName(ThemeConstants::LanguageCard);
     auto* languageLayout = new QVBoxLayout(languageCard);
-    languageLayout->setContentsMargins(18, 18, 18, 18);
+    languageLayout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
     languageLabel_ = new QLabel(languageCard);
     languages_ = new QComboBox(languageCard);
-    languages_->setObjectName("preferencesLanguage");
+    languages_->setObjectName(ThemeConstants::PreferencesLanguage);
     for (const auto& language : Translations::availableLanguages())
         languages_->addItem(QString::fromStdString(language.nativeName), QString::fromStdString(language.code));
     languageLabel_->setBuddy(languages_);
     languageLayout->addWidget(languageLabel_);
     languageLayout->addWidget(languages_);
-    row->addWidget(destinationCard, 3);
-    row->addWidget(languageCard, 2);
+    row->addWidget(destinationCard, ThemeConstants::PreferencesLayout::DirectoryColumnWeight);
+    row->addWidget(languageCard, ThemeConstants::PreferencesLayout::LanguageColumnWeight);
     generalLayout->addLayout(row);
     generalLayout->addStretch();
     sections_->addTab(general, QString());
-    auto* themePage = new QWidget(sections_);
-    auto* themeLayout = new QVBoxLayout(themePage);
-    themeLayout->setContentsMargins(18, 18, 18, 18);
-    auto* themeCard = new Card(themes.data(), themePage);
-    auto* options = new QVBoxLayout(themeCard);
-    options->setContentsMargins(18, 18, 18, 18);
-    themeName_ = new QLabel(QString::fromStdString(translations.text("Theme.Name")), themeCard);
-    auto heading = themeName_->font();
-    heading.setWeight(QFont::DemiBold);
-    themeName_->setFont(heading);
-    description_ = new QLabel(themeCard);
-    description_->setWordWrap(true);
-    appearanceLabel_ = new QLabel(themeCard);
-    light_ = new QRadioButton(themeCard);
-    light_->setObjectName("appearanceLight");
-    dark_ = new QRadioButton(themeCard);
-    dark_->setObjectName("appearanceDark");
-    auto* variants = new QHBoxLayout;
-    variants->addWidget(light_); variants->addWidget(dark_); variants->addStretch();
-    options->addWidget(themeName_);
-    options->addWidget(description_);
-    options->addSpacing(16);
-    options->addWidget(appearanceLabel_);
-    options->addLayout(variants);
-    themeLayout->addWidget(themeCard);
-    themeLayout->addStretch();
+    auto* themePage = new ThemeSettingsPage(themes, translations, parent, sections_);
     sections_->addTab(themePage, QString());
     layout->addWidget(sections_, 1);
     close_ = new QPushButton(this);
-    close_->setObjectName("closePreferences");
-    close_->setMinimumWidth(120);
+    close_->setObjectName(ThemeConstants::ClosePreferences);
+    close_->setMinimumWidth(ThemeConstants::PreferencesLayout::ActionMinimumWidth);
     layout->addWidget(close_, 0, Qt::AlignRight);
-    sections_->setCurrentIndex(state.preferencesSection == "themes" ? 1 : 0);
+    sections_->setCurrentIndex(state.preferencesSection == ThemeConstants::Themes ? 1 : 0);
     connect(sections_, &QTabWidget::currentChanged, this, [this](int index) {
-        state_.preferencesSection = index == 1 ? "themes" : "general";
+        state_.preferencesSection = index == 1 ? ThemeConstants::Themes : ThemeConstants::General;
     });
     connect(languages_, &QComboBox::currentIndexChanged, this, [this](int index) {
         if (index >= 0) translations_.setLanguage(languages_->itemData(index).toString().toStdString());
@@ -109,18 +86,12 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
         state_.setDefaultImageDirectory(directory_->text());
     });
     connect(browse_, &QPushButton::clicked, this, [this] { browseDirectory(); });
-    connect(light_, &QRadioButton::toggled, this, [this](bool checked) {
-        if (checked) themes_.setVariant(ThemeVariant::Light);
-    });
-    connect(dark_, &QRadioButton::toggled, this, [this](bool checked) {
-        if (checked) themes_.setVariant(ThemeVariant::Dark);
-    });
     connect(close_, &QPushButton::clicked, this, [this] { reject(); });
     languageSubscription_ = translations.subscribe([this] { refreshTexts(); });
     themeSubscription_ = themes.subscribe([this] { refreshAppearance(); });
-    const auto room = screen()->availableGeometry().size() - QSize(48, 48);
-    setMinimumSize(qMin(640, room.width()), qMin(400, room.height()));
-    resize(qMin(1100, room.width()), qMin(640, room.height()));
+    const auto room = screen()->availableGeometry().size() - QSize(ThemeConstants::PreferencesLayout::ScreenInset, ThemeConstants::PreferencesLayout::ScreenInset);
+    setMinimumSize(qMin(ThemeConstants::PreferencesLayout::MinimumWidth, room.width()), qMin(ThemeConstants::PreferencesLayout::MinimumHeight, room.height()));
+    resize(qMin(ThemeConstants::PreferencesLayout::DefaultWidth, room.width()), qMin(ThemeConstants::PreferencesLayout::MinimumWidth, room.height()));
     if (!state.preferencesGeometry.isEmpty()) restoreGeometry(state.preferencesGeometry);
     refreshTexts();
     refreshAppearance();
@@ -137,36 +108,30 @@ void PreferencesDialog::browseDirectory() {
             state_.setDefaultImageDirectory(path);
         });
     }
-    directoryPicker_->setWindowTitle(QString::fromStdString(translations_.text("Preferences.SelectDirectory")));
+    directoryPicker_->setWindowTitle(QString::fromStdString(translations_.text(ThemeConstants::PreferencesSelectDirectory)));
     directoryPicker_->setDirectory(directory_->text());
     directoryPicker_->open();
 }
 void PreferencesDialog::refreshTexts() {
     const auto text = [this](const char* key) { return QString::fromStdString(translations_.text(key)); };
-    setWindowTitle(text("Preferences.Title"));
-    sections_->setTabText(0, text("Preferences.General"));
-    sections_->setTabText(1, text("Preferences.Themes"));
-    languageLabel_->setText(text("Window.Language"));
-    directoryLabel_->setText(text("Preferences.DefaultImageDirectory"));
+    setWindowTitle(text(ThemeConstants::PreferencesTitle));
+    sections_->setTabText(0, text(ThemeConstants::PreferencesGeneral));
+    sections_->setTabText(1, text(ThemeConstants::PreferencesThemes));
+    languageLabel_->setText(text(ThemeConstants::WindowLanguage));
+    directoryLabel_->setText(text(ThemeConstants::PreferencesDefaultImageDirectory));
     directory_->setAccessibleName(directoryLabel_->text());
-    browse_->setText(text("Preferences.Browse"));
+    browse_->setText(text(ThemeConstants::PreferencesBrowse));
     languages_->setAccessibleName(languageLabel_->text());
     const QSignalBlocker blocked(languages_);
     languages_->setCurrentIndex(languages_->findData(QString::fromStdString(translations_.language())));
-    appearanceLabel_->setText(text("Window.Theme"));
-    light_->setText(text("Window.Light"));
-    dark_->setText(text("Window.Dark"));
-    description_->setText(text("Preferences.ThemeDescription"));
-    close_->setText(text("Preferences.Close"));
+    close_->setText(text(ThemeConstants::PreferencesClose));
 }
 void PreferencesDialog::refreshAppearance() {
-    const QSignalBlocker lightBlocked(light_), darkBlocked(dark_);
-    light_->setChecked(themes_.variant() == ThemeVariant::Light);
-    dark_->setChecked(themes_.variant() == ThemeVariant::Dark);
-    const auto icon = themeIcon("preferences", themes_.data()->color("MutedTextBrush"));
+    const auto icon = themeIcon(ThemeConstants::Preferences, themes_.data()->color(ThemeConstants::MutedTextBrush));
     sections_->setTabIcon(0, icon); sections_->setTabIcon(1, icon);
-    Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.variant() == ThemeVariant::Dark,
-        themes_.data()->color("CaptionBrush").rgba(), themes_.data()->color("TextBrush").rgba());
+    Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.data()->dark,
+        themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(),
+        themes_.data()->nativeSystemColors);
     update();
 }
 void PreferencesDialog::synchronizeState() {

@@ -1,0 +1,228 @@
+#pragma once
+// Technical constants; displayed text is resolved through translation catalogs.
+namespace RetroMediaLab::ThemeConstants {
+inline constexpr auto ThemesRetroMediaLabMetricsJson = ":/Themes/RetroMediaLab/metrics.json";
+inline constexpr auto FontSize = "fontSize";
+inline constexpr auto ControlHeight = "controlHeight";
+inline constexpr auto CardPadding = "cardPadding";
+inline constexpr auto CardRadius = "cardRadius";
+inline constexpr auto ControlRadius = "controlRadius";
+inline constexpr auto TabPaddingX = "tabPaddingX";
+inline constexpr auto TabPaddingY = "tabPaddingY";
+inline constexpr auto TabRadius = "tabRadius";
+inline constexpr auto SegoeUI = "Segoe UI";
+inline constexpr auto ThemesRetroMediaLabDarkJson = ":/Themes/RetroMediaLab/dark.json";
+inline constexpr auto ThemesRetroMediaLabLightJson = ":/Themes/RetroMediaLab/light.json";
+inline constexpr auto WindowBrush = "WindowBrush";
+inline constexpr auto CardBrush = "CardBrush";
+inline constexpr auto ControlBrush = "ControlBrush";
+inline constexpr auto TextBrush = "TextBrush";
+inline constexpr auto BorderBrush = "BorderBrush";
+inline constexpr auto AccentBrush = "AccentBrush";
+inline constexpr auto MutedTextBrush = "MutedTextBrush";
+inline constexpr auto SelectedBrush = "SelectedBrush";
+inline constexpr auto HoverBrush = "HoverBrush";
+inline constexpr auto StatusBrush = "StatusBrush";
+inline constexpr auto TerminalBackground = "TerminalBackground";
+inline constexpr auto TerminalBorder = "TerminalBorder";
+inline constexpr auto TerminalText = "TerminalText";
+inline constexpr auto TerminalCommand = "TerminalCommand";
+inline constexpr auto TerminalPrompt = "TerminalPrompt";
+inline constexpr auto CaptionBrush = "CaptionBrush";
+inline constexpr auto Appearance = "appearance";
+inline constexpr auto Light = "light";
+inline constexpr auto System = "system";
+inline constexpr auto Dark = "dark";
+inline constexpr auto ExplorerSelectionBrush = "ExplorerSelectionBrush";
+inline constexpr auto WorkspaceSplitter = "workspaceSplitter";
+inline constexpr auto Copy = "copy";
+inline constexpr auto Fusion = "Fusion";
+inline constexpr auto RetroMediaLabWindow = "RetroMediaLabWindow";
+inline constexpr auto AppTitle = "App.Title";
+inline constexpr auto AssetsAppIconIco = "/Assets/app-icon.ico";
+inline constexpr auto ErrorBufferFormat = "%s";
+inline constexpr auto ThemesRetroMediaLab = ":/Themes/RetroMediaLab";
+inline constexpr auto RetroMediaLab = "RetroMediaLab";
+inline constexpr auto ThemesRetroMediaLabIconsJson = ":/Themes/RetroMediaLab/icons.json";
+inline constexpr auto CanvasSize = "canvasSize";
+inline constexpr auto DevicePixelRatio = "devicePixelRatio";
+inline constexpr auto StrokeWidth = "strokeWidth";
+inline constexpr auto Paths = "paths";
+inline constexpr auto Move = "move";
+inline constexpr auto Line = "line";
+inline constexpr auto Quad = "quad";
+inline constexpr auto Cubic = "cubic";
+inline constexpr auto Rect = "rect";
+inline constexpr auto Ellipse = "ellipse";
+inline constexpr auto Close = "close";
+inline constexpr auto MainMenu = "mainMenu";
+inline constexpr auto MenuOptions = "Menu.Options";
+inline constexpr auto MenuPreferences = "Menu.Preferences";
+inline constexpr auto UpdatesTitle = "Updates.Title";
+inline constexpr auto LogsHistory = "Logs.History";
+inline constexpr auto MenuDiagnostics = "Menu.Diagnostics";
+inline constexpr auto MenuInformation = "Menu.Information";
+inline constexpr auto MenuBandwidth = "Menu.Bandwidth";
+inline constexpr auto MenuRpm = "Menu.Rpm";
+inline constexpr auto MenuSeek = "Menu.Seek";
+inline constexpr auto MenuAlign = "Menu.Align";
+inline constexpr auto MenuHardware = "Menu.Hardware";
+inline constexpr auto MenuPins = "Menu.Pins";
+inline constexpr auto MenuReset = "Menu.Reset";
+inline constexpr auto MenuDelays = "Menu.Delays";
+inline constexpr auto MenuFirmware = "Menu.Firmware";
+inline constexpr auto MenuEmulation = "Menu.Emulation";
+inline constexpr auto MenuEmulationPreferences = "Menu.EmulationPreferences";
+inline constexpr auto MenuHelp = "Menu.Help";
+inline constexpr auto MenuDocumentation = "Menu.Documentation";
+inline constexpr auto MenuAbout = "Menu.About";
+inline constexpr auto PreferencesDialog = "preferencesDialog";
+inline constexpr auto PreferencesSections = "preferencesSections";
+inline constexpr auto DestinationCard = "destinationCard";
+inline constexpr auto DefaultImageDirectory = "defaultImageDirectory";
+inline constexpr auto BrowseImageDirectory = "browseImageDirectory";
+inline constexpr auto LanguageCard = "languageCard";
+inline constexpr auto PreferencesLanguage = "preferencesLanguage";
+inline constexpr auto ClosePreferences = "closePreferences";
+inline constexpr auto Themes = "themes";
+inline constexpr auto General = "general";
+inline constexpr auto PreferencesSelectDirectory = "Preferences.SelectDirectory";
+inline constexpr auto PreferencesTitle = "Preferences.Title";
+inline constexpr auto PreferencesGeneral = "Preferences.General";
+inline constexpr auto PreferencesThemes = "Preferences.Themes";
+inline constexpr auto WindowLanguage = "Window.Language";
+inline constexpr auto PreferencesDefaultImageDirectory = "Preferences.DefaultImageDirectory";
+inline constexpr auto PreferencesBrowse = "Preferences.Browse";
+inline constexpr auto PreferencesClose = "Preferences.Close";
+inline constexpr auto Preferences = "preferences";
+inline constexpr auto StatusBar = "statusBar";
+inline constexpr auto ReadyStatus = "readyStatus";
+inline constexpr auto ToggleConsole = "toggleConsole";
+inline constexpr auto HardwareNotConfigured = "Hardware.NotConfigured";
+inline constexpr auto StatusReadyShort = "Status.ReadyShort";
+inline constexpr auto CommonConsole = "Common.Console";
+inline constexpr auto Console = "console";
+inline constexpr auto ThemePreview = "themePreview";
+inline constexpr auto ThemeSettingsPage = "themeSettingsPage";
+inline constexpr auto AvailableThemesCard = "availableThemesCard";
+inline constexpr auto AvailableThemes = "availableThemes";
+inline constexpr auto ThemeName = "Theme.Name";
+inline constexpr auto AppearanceSystem = "appearanceSystem";
+inline constexpr auto AppearanceLight = "appearanceLight";
+inline constexpr auto AppearanceDark = "appearanceDark";
+inline constexpr auto ActiveTheme = "activeTheme";
+inline constexpr auto ChooseTheme = "chooseTheme";
+inline constexpr auto ThemesAvailable = "Themes.Available";
+inline constexpr auto ThemesSystem = "Themes.System";
+inline constexpr auto WindowLight = "Window.Light";
+inline constexpr auto WindowDark = "Window.Dark";
+inline constexpr auto ThemesVariants = "Themes.Variants";
+inline constexpr auto System2 = "{system}";
+inline constexpr auto Light2 = "{light}";
+inline constexpr auto Dark2 = "{dark}";
+inline constexpr auto Space = " ";
+inline constexpr auto ThemesDescription = "Themes.Description";
+inline constexpr auto WindowTheme = "Window.Theme";
+inline constexpr auto ThemesPersisted = "Themes.Persisted";
+inline constexpr auto ThemesChoose = "Themes.Choose";
+inline constexpr auto ThemesPreview = "Themes.Preview";
+inline constexpr auto ThemesActive = "Themes.Active";
+inline constexpr auto Theme = "{theme}";
+inline constexpr auto Appearance2 = "{appearance}";
+inline constexpr auto WorkspaceTabs = "workspaceTabs";
+namespace Menu {
+inline constexpr auto HorizontalInset = 3;
+inline constexpr auto VerticalInset = 2;
+}
+namespace PreferencesLayout {
+inline constexpr auto OuterPadding = 16;
+inline constexpr auto TabIconExtent = 17;
+inline constexpr auto CardPadding = 18;
+inline constexpr auto CardSpacing = 12;
+inline constexpr auto ActionMinimumWidth = 120;
+inline constexpr auto DirectoryColumnWeight = 3;
+inline constexpr auto LanguageColumnWeight = 2;
+inline constexpr auto ScreenInset = 48;
+inline constexpr auto MinimumWidth = 640;
+inline constexpr auto MinimumHeight = 400;
+inline constexpr auto DefaultWidth = 1100;
+}
+namespace Configuration {
+inline constexpr auto MinimumMetric = 1;
+inline constexpr auto MaximumMetric = 256;
+inline constexpr auto DarkLightnessThreshold = .5;
+}
+namespace Layout {
+inline constexpr auto ConsoleToggleIconSize = 16;
+inline constexpr auto PagePadding = 10;
+inline constexpr auto ContentSpacing = 8;
+inline constexpr auto OuterSpacing = 4;
+inline constexpr auto MinimumContentHeight = 110;
+inline constexpr auto MinimumConsoleHeight = 100;
+}
+namespace Style {
+inline constexpr auto BorderInset = .5;
+inline constexpr auto TabFrameRadius = 9;
+inline constexpr auto ButtonBorderInset = 0.5;
+inline constexpr auto TabIconExtent = 17;
+inline constexpr auto IconTextGap = 8;
+inline constexpr auto TabUnderlineBottomInset = 2;
+inline constexpr auto TabUnderlineThickness = 3;
+inline constexpr auto MenuBarHorizontalPadding = 28;
+inline constexpr auto MenuBarVerticalPadding = 18;
+inline constexpr auto MenuItemVerticalPadding = 14;
+inline constexpr auto TabUnderlineInset = 12;
+inline constexpr auto TabRightInset = 3.5;
+inline constexpr auto TabBottomExtension = 5;
+}
+namespace Window {
+inline constexpr auto ScreenInset = 48;
+inline constexpr auto MinimumWidth = 800;
+inline constexpr auto MinimumHeight = 480;
+inline constexpr auto DefaultWidth = 1360;
+inline constexpr auto DefaultHeight = 820;
+}
+namespace StatusBarLayout {
+inline constexpr auto BarHeight = 30;
+inline constexpr auto HorizontalInset = 8;
+inline constexpr auto VerticalInset = 2;
+inline constexpr auto ToggleExtent = 22;
+inline constexpr auto ToggleIconSize = 20;
+}
+namespace Entry {
+inline constexpr auto ApiVersion = 2;
+}
+namespace Icons {
+inline constexpr auto OperationIndex = 0;
+inline constexpr auto FirstCoordinate = 1;
+inline constexpr auto ThirdCoordinate = 3;
+inline constexpr auto FifthCoordinate = 5;
+inline constexpr auto CloseCommandLength = 1;
+inline constexpr auto MaximumCanvasSize = 256;
+inline constexpr auto PairCommandLength = 3;
+inline constexpr auto SecondCoordinate = 2;
+inline constexpr auto QuadCommandLength = 5;
+inline constexpr auto FourthCoordinate = 4;
+inline constexpr auto CubicCommandLength = 7;
+inline constexpr auto SixthCoordinate = 6;
+}
+namespace ThemeSettings {
+inline constexpr auto PreviewMinimumHeight = 150;
+inline constexpr auto PreviewMaximumHeight = 260;
+inline constexpr auto BorderInset = .5;
+inline constexpr auto PreviewInset = 24;
+inline constexpr auto CenterDivisor = 2;
+inline constexpr auto PagePadding = 18;
+inline constexpr auto ColumnSpacing = 16;
+inline constexpr auto ListWidth = 230;
+inline constexpr auto DetailSpacing = 12;
+inline constexpr auto ListEntryHeight = 82;
+inline constexpr auto ListEntryHorizontalInset = 10;
+inline constexpr auto ListEntryVerticalInset = 8;
+inline constexpr auto HeadingFontSize = 20;
+inline constexpr auto ActionMinimumWidth = 120;
+}
+namespace Tabs {
+inline constexpr auto IconExtent = 17;
+}
+}

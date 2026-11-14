@@ -1,12 +1,11 @@
+#include <ErrorKeys.h>
+#include <Constants/AppConstants.h>
 #include "ThemeService.h"
 #include "IThemePresentation.h"
 #include <QApplication>
-#include <QFile>
 #include <QFont>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QPalette>
 #include <QLibrary>
+#include <QPalette>
 #include <QStyle>
 #include <algorithm>
 #include <stdexcept>
@@ -16,20 +15,30 @@ struct ThemeModule {
     using Destroy = void (*)(IThemePresentation*) noexcept;
     using Style = QStyle* (*)(const std::shared_ptr<const ThemeData>*, char*, std::size_t) noexcept;
     using Operation = bool (*)(IThemePresentation*, char*, std::size_t) noexcept;
+    using CreateConfiguration = void* (*)(ThemeService*, char*, std::size_t) noexcept;
+    using DestroyConfiguration = void (*)(void*) noexcept;
+    using Configure = bool (*)(void*, const QJsonObject*, char*, std::size_t) noexcept;
     explicit ThemeModule(const QString& path) : library(path) {}
     ~ThemeModule() { if (library.isLoaded()) library.unload(); }
     QLibrary library;
-    QString prefix;
+    QString id;
     Create create = nullptr;
     Destroy destroy = nullptr;
     Style style = nullptr;
-    Operation show = nullptr;
-    Operation synchronize = nullptr;
+    Operation show = nullptr, synchronize = nullptr;
+    CreateConfiguration createConfiguration = nullptr;
+    DestroyConfiguration destroyConfiguration = nullptr;
+    Configure configure = nullptr;
+};
+struct ThemeService::Configuration {
+    void* instance = nullptr;
+    ThemeModule::DestroyConfiguration destroy = nullptr;
+    ~Configuration() { if (instance) destroy(instance); }
 };
 namespace {
 template<class Function> Function symbol(QLibrary& library, const char* name) {
     const auto found = library.resolve(name);
-    if (!found) throw std::runtime_error(std::string("Missing theme entry point: ") + name);
+    if (!found) throw std::runtime_error(std::string(ErrorKeys::MissingThemeEntryPointWithContext) + name);
     return reinterpret_cast<Function>(found);
 }
 class LoadedThemePresentation final : public IThemePresentation {
@@ -40,108 +49,72 @@ public:
     void show() override { invoke(module_->show); }
 private:
     void invoke(ThemeModule::Operation operation) {
-        char error[1024] = {};
-        if (!operation(view_.get(), error, sizeof(error))) throw std::runtime_error(error[0] ? error : "Theme operation failed");
+        char error[AppConstants::Service::ErrorBufferCapacity] = {};
+        if (!operation(view_.get(), error, sizeof(error))) throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeOperationFailed);
     }
-    ThemeModuleHandle module_; // Declared first: released after the concrete view is destroyed.
+    ThemeModuleHandle module_;
     OwnedView view_;
 };
-QJsonObject readObject(const QString& path) {
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error("Cannot read theme: " + path.toStdString());
-    QJsonParseError error;
-    const auto document = QJsonDocument::fromJson(file.readAll(), &error);
-    if (error.error != QJsonParseError::NoError || !document.isObject()) throw std::runtime_error("Invalid theme JSON");
-    return document.object();
-}
 }
 QColor ThemeData::color(const QString& key) const {
     const auto found = colors.constFind(key);
-    if (found == colors.cend()) throw std::runtime_error("Missing theme color: " + key.toStdString());
+    if (found == colors.cend()) throw std::runtime_error(ErrorKeys::MissingThemeColorWithContext + key.toStdString());
     return found.value();
 }
 ThemeModuleHandle ThemeService::loadModule(const QString& path) {
     auto module = std::make_shared<ThemeModule>(path);
-    if (!module->library.load()) throw std::runtime_error("Cannot load theme: " + path.toStdString());
-    const auto version = symbol<unsigned (*)() noexcept>(module->library, "RetroMediaLabThemeApiVersion");
-    if (version() != 1) throw std::runtime_error("Incompatible theme API");
-    const auto prefix = symbol<const char* (*)() noexcept>(module->library, "RetroMediaLabThemeResourcePrefix");
-    module->prefix = QString::fromUtf8(prefix());
-    if (!module->prefix.startsWith(":/Themes/")) throw std::runtime_error("Invalid theme resource prefix");
-    module->create = symbol<ThemeModule::Create>(module->library, "RetroMediaLabCreateTheme");
-    module->destroy = symbol<ThemeModule::Destroy>(module->library, "RetroMediaLabDestroyTheme");
-    module->style = symbol<ThemeModule::Style>(module->library, "RetroMediaLabCreateThemeStyle");
-    module->show = symbol<ThemeModule::Operation>(module->library, "RetroMediaLabShowTheme");
-    module->synchronize = symbol<ThemeModule::Operation>(module->library, "RetroMediaLabSynchronizeTheme");
+    if (!module->library.load()) throw std::runtime_error(ErrorKeys::CannotLoadThemeWithContext + path.toStdString());
+    const auto version = symbol<unsigned (*)() noexcept>(module->library, AppConstants::RetroMediaLabThemeApiVersion);
+    if (version() != AppConstants::Service::ApiVersion) throw std::runtime_error(ErrorKeys::IncompatibleThemeAPI);
+    const auto identifier = symbol<const char* (*)() noexcept>(module->library, AppConstants::RetroMediaLabThemeIdentifier);
+    module->id = QString::fromUtf8(identifier());
+    if (module->id.isEmpty()) throw std::runtime_error(ErrorKeys::MissingThemeIdentifier);
+    module->create = symbol<ThemeModule::Create>(module->library, AppConstants::RetroMediaLabCreateTheme);
+    module->destroy = symbol<ThemeModule::Destroy>(module->library, AppConstants::RetroMediaLabDestroyTheme);
+    module->style = symbol<ThemeModule::Style>(module->library, AppConstants::RetroMediaLabCreateThemeStyle);
+    module->show = symbol<ThemeModule::Operation>(module->library, AppConstants::RetroMediaLabShowTheme);
+    module->synchronize = symbol<ThemeModule::Operation>(module->library, AppConstants::RetroMediaLabSynchronizeTheme);
+    module->createConfiguration = symbol<ThemeModule::CreateConfiguration>(module->library, AppConstants::RetroMediaLabCreateThemeConfiguration);
+    module->destroyConfiguration = symbol<ThemeModule::DestroyConfiguration>(module->library, AppConstants::RetroMediaLabDestroyThemeConfiguration);
+    module->configure = symbol<ThemeModule::Configure>(module->library, AppConstants::RetroMediaLabConfigureTheme);
     return module;
 }
-ThemeService::ThemeService(ThemeModuleHandle module) : module_(std::move(module)), data_(std::make_shared<ThemeData>()) {
-    if (!module_) throw std::invalid_argument("Missing theme module");
-    directory_ = module_->prefix;
-    const auto metrics = readObject(directory_ + "/metrics.json");
-    auto metric = [&](const char* key) {
-        const auto value = metrics.value(key);
-        if (!value.isDouble() || value.toInt() < 1 || value.toInt() > 256) throw std::runtime_error("Invalid theme metric");
-        return value.toInt();
-    };
-    data_->fontSize = metric("fontSize");
-    data_->controlHeight = metric("controlHeight");
-    data_->cardPadding = metric("cardPadding");
-    data_->cardRadius = metric("cardRadius");
-    data_->controlRadius = metric("controlRadius");
-    data_->tabPaddingX = metric("tabPaddingX");
-    data_->tabPaddingY = metric("tabPaddingY");
-    data_->tabRadius = metric("tabRadius");
-    setVariant(ThemeVariant::Light);
+ThemeService::ThemeService(ThemeModuleHandle module)
+    : module_(std::move(module)), data_(std::make_shared<ThemeData>()), configuration_(std::make_unique<Configuration>()) {
+    if (!module_) throw std::invalid_argument(ErrorKeys::MissingThemeModule);
+    id_ = module_->id;
+    char error[AppConstants::Service::ErrorBufferCapacity] = {};
+    configuration_->destroy = module_->destroyConfiguration;
+    configuration_->instance = module_->createConfiguration(this, error, sizeof(error));
+    if (!configuration_->instance) throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeConfigurationCreationFailed);
+    applySettings({});
 }
-ThemeVariant ThemeService::variant() const noexcept { return data_->dark ? ThemeVariant::Dark : ThemeVariant::Light; }
+ThemeService::~ThemeService() = default;
 std::unique_ptr<IThemePresentation> ThemeService::createPresentation(Translations::TranslationService& translations, WorkspaceState& state) {
-    char error[1024] = {};
+    char error[AppConstants::Service::ErrorBufferCapacity] = {};
     LoadedThemePresentation::OwnedView view(module_->create(this, &translations, &state, error, sizeof(error)), module_->destroy);
-    if (!view) throw std::runtime_error(error[0] ? error : "Theme returned no presentation");
+    if (!view) throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeReturnedNoPresentation);
     return std::make_unique<LoadedThemePresentation>(module_, std::move(view));
 }
 QStyle* ThemeService::createStyle() const {
-    char error[1024] = {};
+    char error[AppConstants::Service::ErrorBufferCapacity] = {};
     const std::shared_ptr<const ThemeData> data = data_;
     auto* style = module_->style(&data, error, sizeof(error));
-    if (!style) throw std::runtime_error(error[0] ? error : "Theme returned no style");
+    if (!style) throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeReturnedNoStyle);
     return style;
 }
-void ThemeService::setVariant(ThemeVariant variant) {
-    ThemeData next = *data_;
-    next.dark = variant == ThemeVariant::Dark;
-    const auto palette = readObject(directory_ + (next.dark ? "/dark.json" : "/light.json"));
-    next.colors.clear();
-    for (auto it = palette.begin(); it != palette.end(); ++it) {
-        const QColor color(it.value().toString());
-        if (!it.value().isString() || !color.isValid()) throw std::runtime_error("Invalid theme color");
-        next.colors.insert(it.key(), color);
-    }
-    for (const auto* key : {"WindowBrush", "CardBrush", "ControlBrush", "TextBrush", "BorderBrush", "AccentBrush", "MutedTextBrush", "SelectedBrush", "HoverBrush", "StatusBrush", "TerminalBackground", "TerminalBorder", "TerminalText", "TerminalCommand", "TerminalPrompt", "CaptionBrush"})
-        (void)next.color(key);
-    *data_ = std::move(next);
-    QPalette colors;
-    colors.setColor(QPalette::Window, data_->color("WindowBrush"));
-    colors.setColor(QPalette::WindowText, data_->color("TextBrush"));
-    colors.setColor(QPalette::Text, data_->color("TextBrush"));
-    colors.setColor(QPalette::ButtonText, data_->color("TextBrush"));
-    colors.setColor(QPalette::Base, data_->color("ControlBrush"));
-    colors.setColor(QPalette::AlternateBase, data_->color("CardBrush"));
-    colors.setColor(QPalette::Button, data_->color("ControlBrush"));
-    colors.setColor(QPalette::Highlight, data_->color("SelectedBrush"));
-    colors.setColor(QPalette::HighlightedText, data_->color("TextBrush"));
-    colors.setColor(QPalette::PlaceholderText, data_->color("MutedTextBrush"));
-    colors.setColor(QPalette::ToolTipBase, data_->color("CardBrush"));
-    colors.setColor(QPalette::ToolTipText, data_->color("TextBrush"));
-    colors.setColor(QPalette::Disabled, QPalette::Text, data_->color("MutedTextBrush"));
-    colors.setColor(QPalette::Disabled, QPalette::ButtonText, data_->color("MutedTextBrush"));
-    QApplication::setPalette(colors);
-    QFont font = QApplication::font();
-#ifdef Q_OS_WIN
-    font.setFamily("Segoe UI");
-#endif
-    font.setPixelSize(data_->fontSize);
+void ThemeService::applySettings(const QJsonObject& values) {
+    char error[AppConstants::Service::ErrorBufferCapacity] = {};
+    if (!module_->configure(configuration_->instance, &values, error, sizeof(error)))
+        throw std::runtime_error(error[0] ? error : ErrorKeys::ThemeConfigurationFailed);
+}
+void ThemeService::publish(const ThemeData& data, const QJsonObject& values, const QPalette* palette) {
+    *data_ = data;
+    settings_ = values;
+    if (palette) QApplication::setPalette(*palette);
+    auto font = QApplication::font();
+    if (!data.fontFamily.isEmpty()) font.setFamily(data.fontFamily);
+    font.setPixelSize(data.fontSize);
     QApplication::setFont(font);
     const auto observers = observers_;
     std::erase_if(observers_, [](const auto& observer) { return observer.expired(); });

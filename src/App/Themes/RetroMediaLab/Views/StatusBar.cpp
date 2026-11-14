@@ -1,3 +1,4 @@
+#include "../ThemeConstants.h"
 #include "StatusBar.h"
 #include "Shared/Controls/StatusIndicator.h"
 #include "../ThemeIcons.h"
@@ -7,20 +8,20 @@
 namespace RetroMediaLab {
 StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& translations,
     bool expanded, std::function<void(bool)> toggle, QWidget* parent) : QWidget(parent) {
-    setObjectName("statusBar");
-    setMinimumHeight(30);
+    setObjectName(ThemeConstants::StatusBar);
+    setMinimumHeight(ThemeConstants::StatusBarLayout::BarHeight);
     setAutoFillBackground(true);
     auto* layout = new QHBoxLayout(this);
-    layout->setContentsMargins(8, 2, 8, 2);
+    layout->setContentsMargins(ThemeConstants::StatusBarLayout::HorizontalInset, ThemeConstants::StatusBarLayout::VerticalInset, ThemeConstants::StatusBarLayout::HorizontalInset, ThemeConstants::StatusBarLayout::VerticalInset);
     auto* hardware = new StatusIndicator(this);
     auto* ready = new QLabel(this);
-    ready->setObjectName("readyStatus");
+    ready->setObjectName(ThemeConstants::ReadyStatus);
     auto* console = new QToolButton(this);
-    console->setObjectName("toggleConsole");
+    console->setObjectName(ThemeConstants::ToggleConsole);
     console->setCheckable(true);
     console->setChecked(expanded);
     layout->addWidget(hardware);
-    layout->addSpacing(22);
+    layout->addSpacing(ThemeConstants::StatusBarLayout::ToggleExtent);
     layout->addWidget(ready);
     layout->addStretch();
     layout->addWidget(console);
@@ -28,16 +29,16 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
         toggle(checked);
     });
     const auto refresh = [this, hardware, ready, console, &themes, &translations] {
-        hardware->setStatus(QString::fromStdString(translations.text("Hardware.NotConfigured")),
-            themes.data()->color("MutedTextBrush"));
-        ready->setText(QString::fromStdString(translations.text("Status.ReadyShort")));
-        const auto label = QString::fromStdString(translations.text("Common.Console"));
+        hardware->setStatus(QString::fromStdString(translations.text(ThemeConstants::HardwareNotConfigured)),
+            themes.data()->color(ThemeConstants::MutedTextBrush));
+        ready->setText(QString::fromStdString(translations.text(ThemeConstants::StatusReadyShort)));
+        const auto label = QString::fromStdString(translations.text(ThemeConstants::CommonConsole));
         console->setToolTip(label);
         console->setAccessibleName(label);
-        console->setIcon(themeIcon("console", themes.data()->color("MutedTextBrush")));
-        console->setIconSize(QSize(20, 20));
+        console->setIcon(themeIcon(ThemeConstants::Console, themes.data()->color(ThemeConstants::MutedTextBrush)));
+        console->setIconSize(QSize(ThemeConstants::StatusBarLayout::ToggleIconSize, ThemeConstants::StatusBarLayout::ToggleIconSize));
         auto colors = palette();
-        colors.setColor(QPalette::Window, themes.data()->color("StatusBrush"));
+        colors.setColor(QPalette::Window, themes.data()->color(ThemeConstants::StatusBrush));
         setPalette(colors);
     };
     refresh();

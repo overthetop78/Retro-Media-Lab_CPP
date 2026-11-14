@@ -1,3 +1,4 @@
+#include <Constants/AppConstants.h>
 #include "Card.h"
 #include "Themes/ThemeService.h"
 #include <QPainter>
@@ -6,8 +7,8 @@ Card::Card(std::shared_ptr<const ThemeData> theme, QWidget* parent) : QWidget(pa
 void Card::paintEvent(QPaintEvent*) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(theme_->color("CardBrush"));
-    painter.setPen(theme_->color("BorderBrush"));
-    painter.drawRoundedRect(QRectF(rect()).adjusted(0.5, 0.5, -0.5, -0.5), theme_->cardRadius, theme_->cardRadius);
+    painter.setBrush(theme_->color(AppConstants::CardBrush));
+    painter.setPen(theme_->color(AppConstants::BorderBrush));
+    painter.drawRoundedRect(QRectF(rect()).adjusted(AppConstants::CardValues::BorderInset, AppConstants::CardValues::BorderInset, -AppConstants::CardValues::BorderInset, -AppConstants::CardValues::BorderInset), theme_->cardRadius, theme_->cardRadius);
 }
 }

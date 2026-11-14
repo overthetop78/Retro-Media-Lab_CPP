@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.Platform STATIC)
+target_link_libraries(RetroMediaLab.Platform PRIVATE RetroMediaLab.Runtime)
 target_include_directories(RetroMediaLab.Platform PUBLIC include)
 if(WIN32)
   target_sources(RetroMediaLab.Platform PRIVATE Windows/WindowAppearance.cpp)

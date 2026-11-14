@@ -1,4 +1,5 @@
 #pragma once
+#include <RetroMediaLab/Translations/TranslationConstants.h>
 #include "Export.h"
 #include <filesystem>
 #include <functional>
@@ -9,7 +10,7 @@ class TranslationService final {
 public:
     // Keep the subscription alive while the observer exists. All calls use the UI thread.
     using Subscription = std::shared_ptr<const std::function<void()>>;
-    RETROMEDIALAB_TRANSLATIONS_API explicit TranslationService(std::filesystem::path catalogs, std::string domain = "App");
+    RETROMEDIALAB_TRANSLATIONS_API explicit TranslationService(std::filesystem::path catalogs, std::string domain = TranslationConstants::App);
     RETROMEDIALAB_TRANSLATIONS_API ~TranslationService();
     TranslationService(const TranslationService&) = delete;
     TranslationService& operator=(const TranslationService&) = delete;

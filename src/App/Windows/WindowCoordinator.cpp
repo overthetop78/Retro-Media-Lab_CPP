@@ -1,3 +1,4 @@
+#include <ErrorKeys.h>
 #include "WindowCoordinator.h"
 #include <stdexcept>
 namespace RetroMediaLab {
@@ -7,7 +8,7 @@ void WindowCoordinator::rebuild() { replace(factory_); }
 void WindowCoordinator::replace(Factory factory) {
     if (presentation_) presentation_->synchronizeState();
     auto candidate = factory();
-    if (!candidate) throw std::runtime_error("Theme returned no presentation");
+    if (!candidate) throw std::runtime_error(ErrorKeys::ThemeReturnedNoPresentation);
     candidate->show();
     // Nothing owning the current views is released until preparation succeeds.
     presentation_.swap(candidate);

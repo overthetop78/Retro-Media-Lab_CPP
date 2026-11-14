@@ -1,3 +1,4 @@
+#include <Constants/AppConstants.h>
 #include "StatusIndicator.h"
 #include <QHBoxLayout>
 #include <QLabel>
@@ -5,7 +6,7 @@
 namespace RetroMediaLab {
 StatusIndicator::StatusIndicator(QWidget* parent) : QWidget(parent), label_(new QLabel(this)) {
     auto* layout = new QHBoxLayout(this);
-    layout->setContentsMargins(22,0,8,0);
+    layout->setContentsMargins(AppConstants::StatusIndicatorValues::IndicatorWidth,0,AppConstants::StatusIndicatorValues::DotDiameter,0);
     layout->addWidget(label_);
 }
 void StatusIndicator::setStatus(const QString& text, const QColor& color) {
@@ -14,6 +15,6 @@ void StatusIndicator::setStatus(const QString& text, const QColor& color) {
 void StatusIndicator::paintEvent(QPaintEvent*) {
     QPainter painter(this); painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen); painter.setBrush(color_);
-    painter.drawEllipse(QPointF(10, height()/2.), 4, 4);
+    painter.drawEllipse(QPointF(AppConstants::StatusIndicatorValues::LabelOffset, height()/2.), AppConstants::StatusIndicatorValues::LeftInset, AppConstants::StatusIndicatorValues::LeftInset);
 }
 }

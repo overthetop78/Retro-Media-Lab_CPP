@@ -1,0 +1,1273 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <ItemGroup>
+    <Filter Include="scripts">
+      <UniqueIdentifier>{0B1B0F77-5E16-5A02-852D-77170C7AFC0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts\local-building">
+      <UniqueIdentifier>{63781CFC-640E-59A0-9413-7FA0CE3F7820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts\quality">
+      <UniqueIdentifier>{8649EF82-BBFD-521E-963B-C89FF4F49256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts\translations">
+      <UniqueIdentifier>{BC188581-E6EE-5951-9753-81576FE0FF2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts\translations\ignores">
+      <UniqueIdentifier>{3535C44B-E93D-586D-8E52-A3000B3C0146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{5F29526B-5683-5037-A80D-E81B20065C7C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App">
+      <UniqueIdentifier>{5B99E5BA-28EA-55B9-B15D-0519BF8564A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Assets">
+      <UniqueIdentifier>{0EEA0AD1-32C3-522D-A30D-ED4D849DB15F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Bootstrap">
+      <UniqueIdentifier>{33AE3D6B-296B-507A-A967-9B0A0E495507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Constants">
+      <UniqueIdentifier>{F8FE92EB-775F-515D-89B3-AA5C99A070A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Shared">
+      <UniqueIdentifier>{36CD051A-D99C-542C-BFE5-FE602A04046F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Shared\Controls">
+      <UniqueIdentifier>{AB3DCC7A-A3A7-5014-A0DF-339B3F32F04A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Shared\Navigation">
+      <UniqueIdentifier>{4A809EBE-9A18-5EA0-9AD7-8F22EF49508E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Shell">
+      <UniqueIdentifier>{61131EED-AA11-5DC2-8969-97E9F1C016B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\State">
+      <UniqueIdentifier>{0D2C0A6C-5CD7-5C8A-A75D-5401A9F9B41D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Themes">
+      <UniqueIdentifier>{BF86BCA9-6476-535A-AF41-198CD263429B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Themes\RetroMediaLab">
+      <UniqueIdentifier>{26D8A4CE-26A4-50AF-893D-15F6D6A4890D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Themes\RetroMediaLab\Views">
+      <UniqueIdentifier>{25D6D802-3867-506F-97D5-8E65D2C2A32C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\App\Windows">
+      <UniqueIdentifier>{01A53519-B460-56AF-A731-73304ACD3B18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Common">
+      <UniqueIdentifier>{A4FAE7CC-6621-59D9-A650-EBB63DF3C15E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Launcher">
+      <UniqueIdentifier>{777B8D0C-57C2-52A4-97DE-1A645B1C018F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{CBF0D609-C6DD-59D9-89DC-FA8BA9349323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\include">
+      <UniqueIdentifier>{46DA74EF-BDE3-5E46-A1E9-F467E90C4D55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\include\RetroMediaLab">
+      <UniqueIdentifier>{35428649-3D31-5BFA-A9D9-CA9ED6C4F94C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\include\RetroMediaLab\Platform">
+      <UniqueIdentifier>{F0FBD66D-AC42-5D8A-89AC-8FE2D609F781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Unix">
+      <UniqueIdentifier>{05C0F45B-E1F1-5A14-B6F1-0684E61D1D2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{D53EEFC8-58A7-5707-B9E0-EC9189EF4140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations">
+      <UniqueIdentifier>{7B2477DC-7D8A-5D33-9BDE-345188F63E5A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs">
+      <UniqueIdentifier>{510C376D-4D43-58F2-9C6B-59DDB18C924B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Constants">
+      <UniqueIdentifier>{769F2992-EAF1-531C-B113-4ED8E7DC6CB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Constants\App">
+      <UniqueIdentifier>{3B7C9701-CB09-5515-A830-F5399D722E81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages">
+      <UniqueIdentifier>{AC236016-1ADE-5B1B-AC04-64B5F9FFE976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ar-SA">
+      <UniqueIdentifier>{2EEB43FE-08CC-5D2F-B83B-4EABBFB99DB1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ar-SA\App">
+      <UniqueIdentifier>{3F598171-CD40-5A52-92B4-97EAB96B09E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\cs-CZ">
+      <UniqueIdentifier>{5690310E-DC4A-5A88-9276-EA30C0C6BEB0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\cs-CZ\App">
+      <UniqueIdentifier>{3D1BE505-46AA-5FE1-AB65-7C1B752EBD0D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\da-DK">
+      <UniqueIdentifier>{D460C2FC-75D0-5CF3-88A0-A76C3BF2BBD2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\da-DK\App">
+      <UniqueIdentifier>{49520FE3-42AC-5AA1-820E-4C97F4651271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\de-DE">
+      <UniqueIdentifier>{8CF3DF34-7D4D-59BA-90F2-A3B936F6AB63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\de-DE\App">
+      <UniqueIdentifier>{0CC56F96-2755-591D-AEBF-53F5BEFE9F80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\el-GR">
+      <UniqueIdentifier>{A388C263-9CA7-5D73-979F-5706BE3DF5AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\el-GR\App">
+      <UniqueIdentifier>{BF83670E-4CA9-559B-AB74-541B41BAB88C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\en-US">
+      <UniqueIdentifier>{9E54BD92-FBB0-549C-AD9B-D27698902573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\en-US\App">
+      <UniqueIdentifier>{FB5416AE-8799-5E90-B692-13DF64A64343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\es-ES">
+      <UniqueIdentifier>{6D8B98A4-D8AC-502A-B769-50D69B1304A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\es-ES\App">
+      <UniqueIdentifier>{D648CEA3-B6FE-514D-8C44-1EEA3D183E2C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\fi-FI">
+      <UniqueIdentifier>{CC7D63BF-16DE-5F5C-A479-687341F5B73B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\fi-FI\App">
+      <UniqueIdentifier>{9B71F4C3-4C23-599F-AAA1-AC34DF844964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\fr-FR">
+      <UniqueIdentifier>{BD96A071-54D7-5A39-9005-8144923D206B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\fr-FR\App">
+      <UniqueIdentifier>{93306EEE-940D-56D8-B3C6-1EDA08FF89A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\he-IL">
+      <UniqueIdentifier>{290F6D4C-7010-58B5-A9BF-3C5316148ED0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\he-IL\App">
+      <UniqueIdentifier>{9E5BE340-6D94-5885-A198-2D15DD370B05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\hu-HU">
+      <UniqueIdentifier>{8314DBC4-7C41-5C6E-A2FC-60375801A7D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\hu-HU\App">
+      <UniqueIdentifier>{F3F0AE9D-30FF-5EE6-8ACB-C76C5E7A1546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\id-ID">
+      <UniqueIdentifier>{637E5037-E344-563E-B17B-09CDEFDF8C18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\id-ID\App">
+      <UniqueIdentifier>{FFAB6304-C250-57CE-B6F8-2A1D347D18D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\it-IT">
+      <UniqueIdentifier>{2F6079E1-F61F-5A03-86D1-433306D08C0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\it-IT\App">
+      <UniqueIdentifier>{31D760F4-2ABB-58AA-B4A3-71F4C82EEE88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ja-JP">
+      <UniqueIdentifier>{E1BB7D8D-83BB-5289-9834-0B1E1E519A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ja-JP\App">
+      <UniqueIdentifier>{E7D8807E-8BF7-57A1-9BB8-1B1845FD95D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ko-KR">
+      <UniqueIdentifier>{A4826ED3-0843-5C7D-94EE-CF158A860B39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ko-KR\App">
+      <UniqueIdentifier>{086F1737-1E40-5F2A-B11F-08C5F2EFC08E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\nb-NO">
+      <UniqueIdentifier>{24A9D825-9F76-52D4-A718-69FB0C170743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\nb-NO\App">
+      <UniqueIdentifier>{775DF6A2-C623-5FDC-B8E6-823FDDDF75E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\nl-NL">
+      <UniqueIdentifier>{204504E2-B42F-581E-B80F-36B81EF78B3A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\nl-NL\App">
+      <UniqueIdentifier>{0E34E438-F11D-5469-AFFC-37B45A20E153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pl-PL">
+      <UniqueIdentifier>{F46BE6A4-F7A6-5855-8F37-A3C34D642FC9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pl-PL\App">
+      <UniqueIdentifier>{AD5844A7-D051-5F95-A22D-B547CE6A640C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pt-BR">
+      <UniqueIdentifier>{EDE776A3-DB93-54F9-85E6-100C86AF95EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pt-BR\App">
+      <UniqueIdentifier>{25B5F54A-9FAE-5808-8D6F-5042E6E5EA51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pt-PT">
+      <UniqueIdentifier>{F09DAC82-4C73-5990-BD11-9F8A3AC79823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\pt-PT\App">
+      <UniqueIdentifier>{444A2307-F8CB-5513-A452-A44D69775F10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ro-RO">
+      <UniqueIdentifier>{058D2B47-ADFC-5B75-8C44-8DC8365901A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ro-RO\App">
+      <UniqueIdentifier>{CE7829DC-C41A-5B0A-90C6-172184275DFB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ru-RU">
+      <UniqueIdentifier>{6BC1477E-4E4E-592C-9EEA-2C35E5DDD12E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\ru-RU\App">
+      <UniqueIdentifier>{F98896B6-FBA7-5FD7-B044-82A91D5AFDFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\sv-SE">
+      <UniqueIdentifier>{C0C57C8B-3960-5C7A-B106-9D4890D213B7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\sv-SE\App">
+      <UniqueIdentifier>{7BBB997A-D9DC-52F1-8B67-0C0513F16120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\th-TH">
+      <UniqueIdentifier>{B54DA477-0C02-5E0E-A8CA-25C10DE331C4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\th-TH\App">
+      <UniqueIdentifier>{3F9FC6C6-0CC7-5057-A525-07073AB215A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\tr-TR">
+      <UniqueIdentifier>{FABEFD1E-3A5B-5A11-91A9-8DC6CD61E3BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\tr-TR\App">
+      <UniqueIdentifier>{4AE53E69-48F3-5F0D-BEFA-18D40A046E6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\uk-UA">
+      <UniqueIdentifier>{46E027A6-01FB-5421-9610-1A21BF58057F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\uk-UA\App">
+      <UniqueIdentifier>{E748A612-A97C-5429-B0B9-F8EDEA2B2BF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\vi-VN">
+      <UniqueIdentifier>{B73180E0-5FDF-5725-A17A-22C84E5F359C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\vi-VN\App">
+      <UniqueIdentifier>{1D5E9282-391A-50AD-9863-8E2E5D79878E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\zh-Hans">
+      <UniqueIdentifier>{8C04C5A3-9392-5204-BC7A-A04F343B96CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\zh-Hans\App">
+      <UniqueIdentifier>{2ED811CB-8F99-51F7-B23B-832C8884F672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\zh-Hant">
+      <UniqueIdentifier>{95AF8E68-A0A6-56AD-8486-5C21AF6B0973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\Catalogs\Languages\zh-Hant\App">
+      <UniqueIdentifier>{3736BD3B-21D7-53C6-8C71-A2E522972C20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\include">
+      <UniqueIdentifier>{D26F4FE1-85BE-563B-9998-D762FCBECA44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\include\RetroMediaLab">
+      <UniqueIdentifier>{4E7BB617-F2F6-5C8F-BBA5-77650C99119A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\include\RetroMediaLab\Translations">
+      <UniqueIdentifier>{1EB06824-5B6E-5D55-A708-F7BB3FE7D1AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Translations\src">
+      <UniqueIdentifier>{B2173192-70CE-597D-83E9-1CA565D8AA06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project">
+      <UniqueIdentifier>{CEC341DC-8794-5CF6-9F06-30F52065FB5C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scripts\local-building\build.ps1">
+      <Filter>scripts\local-building</Filter>
+    </None>
+    <None Include="scripts\local-building\update-solution.py">
+      <Filter>scripts\local-building</Filter>
+    </None>
+    <None Include="scripts\quality\audit_literals.py">
+      <Filter>scripts\quality</Filter>
+    </None>
+    <None Include="scripts\translations\compile_catalog.py">
+      <Filter>scripts\translations</Filter>
+    </None>
+    <None Include="scripts\translations\compile_errors.py">
+      <Filter>scripts\translations</Filter>
+    </None>
+    <None Include="scripts\translations\ignores\common.txt">
+      <Filter>scripts\translations\ignores</Filter>
+    </None>
+    <None Include="scripts\translations\translate.py">
+      <Filter>scripts\translations</Filter>
+    </None>
+    <ClInclude Include="src\App\AppApi.h">
+      <Filter>src\App</Filter>
+    </ClInclude>
+    <None Include="src\App\Assets\app-icon.ico">
+      <Filter>src\App\Assets</Filter>
+    </None>
+    <ClCompile Include="src\App\Bootstrap\Application.cpp">
+      <Filter>src\App\Bootstrap</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Bootstrap\Application.h">
+      <Filter>src\App\Bootstrap</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Bootstrap\EntryPoint.cpp">
+      <Filter>src\App\Bootstrap</Filter>
+    </ClCompile>
+    <None Include="src\App\CMakeLists.txt">
+      <Filter>src\App</Filter>
+    </None>
+    <ClInclude Include="src\App\Constants\AppConstants.h">
+      <Filter>src\App\Constants</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\main.cpp">
+      <Filter>src\App</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App\Shared\Controls\Card.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Shared\Controls\Card.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Shared\Controls\LocalizedAction.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Shared\Controls\LocalizedAction.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Shared\Controls\StatusIndicator.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Shared\Controls\StatusIndicator.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Shared\Controls\TerminalView.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Shared\Controls\TerminalView.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Shared\Navigation\WorkspacePages.cpp">
+      <Filter>src\App\Shared\Navigation</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Shared\Navigation\WorkspacePages.h">
+      <Filter>src\App\Shared\Navigation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Shell\ConsoleState.h">
+      <Filter>src\App\Shell</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\State\PreferencesStore.cpp">
+      <Filter>src\App\State</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\State\PreferencesStore.h">
+      <Filter>src\App\State</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\State\WorkspaceState.cpp">
+      <Filter>src\App\State</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\State\WorkspaceState.h">
+      <Filter>src\App\State</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Themes\IThemePresentation.h">
+      <Filter>src\App\Themes</Filter>
+    </ClInclude>
+    <None Include="src\App\Themes\RetroMediaLab\dark.json">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </None>
+    <None Include="src\App\Themes\RetroMediaLab\icons.json">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </None>
+    <None Include="src\App\Themes\RetroMediaLab\light.json">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </None>
+    <None Include="src\App\Themes\RetroMediaLab\metrics.json">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </None>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabConfiguration.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabConfiguration.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabLayout.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabLayout.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabPresentation.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabPresentation.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabStyle.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabStyle.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\RetroMediaLabWindow.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\RetroMediaLabWindow.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\ThemeConstants.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\ThemeEntry.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\ThemeIcons.cpp">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\ThemeIcons.h">
+      <Filter>src\App\Themes\RetroMediaLab</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\MainMenu.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\MainMenu.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\StatusBar.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\StatusBar.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\WorkspaceTabs.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\WorkspaceTabs.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\ThemeService.cpp">
+      <Filter>src\App\Themes</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\ThemeService.h">
+      <Filter>src\App\Themes</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Windows\WindowCoordinator.cpp">
+      <Filter>src\App\Windows</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Windows\WindowCoordinator.h">
+      <Filter>src\App\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\DiagnosticConstants.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\ErrorDialog.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\ErrorKeys.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\Errors.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\PlatformConstants.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Common\ProcessConstants.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Launcher\LauncherConstants.h">
+      <Filter>src\Launcher</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Launcher\main.cpp">
+      <Filter>src\Launcher</Filter>
+    </ClCompile>
+    <None Include="src\Platform\CMakeLists.txt">
+      <Filter>src\Platform</Filter>
+    </None>
+    <ClInclude Include="src\Platform\include\RetroMediaLab\Platform\WindowAppearance.h">
+      <Filter>src\Platform\include\RetroMediaLab\Platform</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Platform\Unix\WindowAppearance.cpp">
+      <Filter>src\Platform\Unix</Filter>
+    </ClCompile>
+    <None Include="src\Platform\Windows\App.rc">
+      <Filter>src\Platform\Windows</Filter>
+    </None>
+    <ClCompile Include="src\Platform\Windows\WindowAppearance.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
+    <None Include="src\Translations\Catalogs\Constants\App\console.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\errors.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\menus.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\status.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\themes.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\window.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\console.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\errors.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\menus.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\navigation.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\preferences.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\status.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\themes.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\window.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\CMakeLists.txt">
+      <Filter>src\Translations</Filter>
+    </None>
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\Export.h">
+      <Filter>src\Translations\include\RetroMediaLab\Translations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\LanguageCatalog.h">
+      <Filter>src\Translations\include\RetroMediaLab\Translations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\TranslationConstants.h">
+      <Filter>src\Translations\include\RetroMediaLab\Translations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Translations\include\RetroMediaLab\Translations\TranslationService.h">
+      <Filter>src\Translations\include\RetroMediaLab\Translations</Filter>
+    </ClInclude>
+    <None Include="src\Translations\Languages.json">
+      <Filter>src\Translations</Filter>
+    </None>
+    <ClCompile Include="src\Translations\src\LanguageCatalog.cpp">
+      <Filter>src\Translations\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Translations\src\TranslationService.cpp">
+      <Filter>src\Translations\src</Filter>
+    </ClCompile>
+    <None Include="CMakeLists.txt">
+      <Filter>Project</Filter>
+    </None>
+    <None Include="CMakePresets.json">
+      <Filter>Project</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Project</Filter>
+    </None>
+  </ItemGroup>
+</Project>

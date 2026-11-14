@@ -39,3 +39,7 @@ Le build appelle compile_catalog.py pour regrouper les domaines et leurs fichier
 Le service copie les textes dans ses propres données avant de décharger les DLL de catalogues. Les abonnements sont des objets de durée de vie explicite ; les vues les libèrent à leur destruction. Changer la langue met à jour les libellés des vues ouvertes.
 
 Un module peut employer son propre dossier de bibliothèques de langues et son domaine avec un service distinct ; ses catalogues ne sont pas intégrés dans ceux d'App. La propagation de la langue commune via Emulation sera intégrée lors du portage de ces modules.
+
+Au premier démarrage, la langue d'interface du système est résolue dans les langues disponibles et enregistrée immédiatement dans les préférences. Si elle n'est pas prise en charge, en-US est enregistré. Les lancements suivants conservent la langue sauvegardée, même si le système change de langue ; le choix des préférences reste prioritaire.
+
+Les erreurs sont dans App/errors.json selon le même mécanisme Constants/Languages. compile_errors.py génère au build leur secours embarqué pour les pannes empêchant de charger les DLL ou le GUI ; les textes proviennent des mêmes catalogues. Ne pas maintenir d'anglais en parallèle dans les sources C++. Le contrôle `python scripts/quality/audit_literals.py` vérifie les littéraux, clés et paramètres. Les messages des scripts de développement ne sont pas concernés par la traduction, selon la consigne utilisateur ; ceux du futur installateur le seront.

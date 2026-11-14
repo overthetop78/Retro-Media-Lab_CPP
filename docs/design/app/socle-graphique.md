@@ -3,6 +3,8 @@
 Statut : premier socle implémenté le 14 novembre 2026 ; ce document conserve son découpage et les exigences des étapes suivantes.
 Les choix déjà demandés sont RetroMediaLab Light/Dark, une fenêtre simple, Windows en premier, et l'émulation en dernier.
 
+Précision pour la page Thèmes : Système/Clair/Sombre sont exclusivement des paramètres de RetroMediaLab. Système reprend les couleurs de la plateforme et leurs changements ; chaque futur thème pourra définir des paramètres différents. ThemeService transmet des paramètres génériques à son contrôleur dans la DLL, et les préférences les conservent séparément par identifiant de thème. Voir [les références techniques](../../references/tooling/couleurs-systeme-et-reglages-themes.md) et [la validation de la page](../../validation/app/page-themes.md).
+
 ## Choix technique proposé
 
 Outils employés sous Windows : C++20, Qt 6.12.0 Widgets, MSVC 14.44 x64, CMake fourni avec Visual Studio et Ninja. Qt Creator 20.0.2 est également installé. Le build ne nécessite pas d'utiliser un éditeur précis.

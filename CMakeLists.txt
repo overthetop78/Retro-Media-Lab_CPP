@@ -6,9 +6,22 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
+file(GLOB_RECURSE error_catalogs CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs/*/App/errors.json"
+  "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs/Languages/*/App/errors.json")
+set(error_header "${CMAKE_BINARY_DIR}/generated/ErrorCatalog.h")
+add_custom_command(OUTPUT "${error_header}"
+  COMMAND "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/scripts/translations/compile_errors.py"
+    --catalogs "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs" --output "${error_header}"
+  DEPENDS ${error_catalogs} "${PROJECT_SOURCE_DIR}/scripts/translations/compile_errors.py" VERBATIM)
+add_custom_target(RetroMediaLab.ErrorCatalog DEPENDS "${error_header}")
+add_library(RetroMediaLab.Runtime INTERFACE)
+add_dependencies(RetroMediaLab.Runtime RetroMediaLab.ErrorCatalog)
+target_include_directories(RetroMediaLab.Runtime INTERFACE "${PROJECT_SOURCE_DIR}/src/Common" "${CMAKE_BINARY_DIR}/generated")
 if(MSVC)
   add_compile_options(/W4 /permissive- /utf-8 /EHsc)
 endif()

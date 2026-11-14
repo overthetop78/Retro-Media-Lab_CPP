@@ -11,6 +11,7 @@ class QTabWidget;
 class QLineEdit;
 class QFileDialog;
 namespace RetroMediaLab {
+class ThemeSettingsPage;
 class PreferencesDialog final : public QDialog {
 public:
     PreferencesDialog(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
@@ -32,8 +33,7 @@ private:
     QLabel* directoryLabel_;
     QPushButton* browse_;
     std::unique_ptr<QFileDialog> directoryPicker_;
-    QRadioButton *light_, *dark_;
-    QLabel *languageLabel_, *themeName_, *appearanceLabel_, *description_;
+    QLabel* languageLabel_;
     QPushButton* close_;
     Translations::TranslationService::Subscription languageSubscription_;
     ThemeService::Subscription themeSubscription_;

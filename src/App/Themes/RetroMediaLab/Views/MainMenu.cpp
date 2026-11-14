@@ -1,3 +1,4 @@
+#include "../ThemeConstants.h"
 #include "MainMenu.h"
 #include "Shared/Controls/LocalizedAction.h"
 #include <QMenu>
@@ -5,9 +6,9 @@
 namespace RetroMediaLab {
 MainMenu::MainMenu(Translations::TranslationService& translations, std::function<void()> openPreferences, QWidget* parent)
     : QMenuBar(parent) {
-    setObjectName("mainMenu");
+    setObjectName(ThemeConstants::MainMenu);
     setNativeMenuBar(false);
-    setContentsMargins(3, 2, 3, 2);
+    setContentsMargins(ThemeConstants::Menu::HorizontalInset, ThemeConstants::Menu::VerticalInset, ThemeConstants::Menu::HorizontalInset, ThemeConstants::Menu::VerticalInset);
 
     const auto menu = [&](const char* key, QMenu* owner = nullptr) {
         auto* result = new QMenu(this);
@@ -27,25 +28,25 @@ MainMenu::MainMenu(Translations::TranslationService& translations, std::function
         return result;
     };
 
-    auto* options = menu("Menu.Options");
-    auto* preferences = action(options, "Menu.Preferences");
+    auto* options = menu(ThemeConstants::MenuOptions);
+    auto* preferences = action(options, ThemeConstants::MenuPreferences);
     preferences->setEnabled(true);
     connect(preferences, &QAction::triggered, this, [openPreferences = std::move(openPreferences)] { openPreferences(); });
-    for (const auto* key : {"Updates.Title", "Logs.History"})
+    for (const auto* key : {ThemeConstants::UpdatesTitle, ThemeConstants::LogsHistory})
         action(options, key);
     options->addSeparator();
-    auto* diagnostics = menu("Menu.Diagnostics", options);
-    for (const auto* key : {"Menu.Information", "Menu.Bandwidth", "Menu.Rpm", "Menu.Seek", "Menu.Align"})
+    auto* diagnostics = menu(ThemeConstants::MenuDiagnostics, options);
+    for (const auto* key : {ThemeConstants::MenuInformation, ThemeConstants::MenuBandwidth, ThemeConstants::MenuRpm, ThemeConstants::MenuSeek, ThemeConstants::MenuAlign})
         action(diagnostics, key);
-    auto* hardware = menu("Menu.Hardware", options);
-    for (const auto* key : {"Menu.Pins", "Menu.Reset", "Menu.Delays"})
+    auto* hardware = menu(ThemeConstants::MenuHardware, options);
+    for (const auto* key : {ThemeConstants::MenuPins, ThemeConstants::MenuReset, ThemeConstants::MenuDelays})
         action(hardware, key);
     hardware->addSeparator();
-    action(hardware, "Menu.Firmware");
-    action(menu("Menu.Emulation"), "Menu.EmulationPreferences");
-    auto* help = menu("Menu.Help");
-    action(help, "Menu.Documentation");
-    action(help, "Menu.About");
+    action(hardware, ThemeConstants::MenuFirmware);
+    action(menu(ThemeConstants::MenuEmulation), ThemeConstants::MenuEmulationPreferences);
+    auto* help = menu(ThemeConstants::MenuHelp);
+    action(help, ThemeConstants::MenuDocumentation);
+    action(help, ThemeConstants::MenuAbout);
 }
 }
 

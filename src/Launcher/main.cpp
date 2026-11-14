@@ -1,6 +1,9 @@
+#include <ProcessConstants.h>
+#include "LauncherConstants.h"
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <windows.h>
+#include <ErrorDialog.h>
 #include <shellapi.h>
 #include <filesystem>
 #include <memory>
@@ -34,42 +37,42 @@ struct Library {
 };
 struct LocalFreeDeleter { void operator()(void* memory) const noexcept { if (memory) LocalFree(memory); } };
 void report(const WindowsError& error) {
-    wchar_t* buffer = nullptr;
-    FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-        nullptr, error.code, 0, reinterpret_cast<LPWSTR>(&buffer), 0, nullptr);
-    const std::unique_ptr<void, LocalFreeDeleter> owned(buffer);
-    const std::wstring message = (buffer ? std::wstring(buffer) : std::to_wstring(error.code)) + L"\n" + error.context;
-    MessageBoxW(nullptr, message.c_str(), L"Retro Media Lab", MB_OK | MB_ICONERROR);
+    const auto language = RetroMediaLab::Errors::systemLanguage();
+    const auto& context = error.context;
+    const auto count = WideCharToMultiByte(CP_UTF8, 0, context.data(), static_cast<int>(context.size()), nullptr, 0, nullptr, nullptr);
+    std::string detail(count, ::RetroMediaLab::LauncherConstants::NullCharacter);
+    if (count) WideCharToMultiByte(CP_UTF8, 0, context.data(), static_cast<int>(context.size()), detail.data(), count, nullptr, nullptr);
+    RetroMediaLab::Errors::show(language, RetroMediaLab::Errors::nativeFailure(language, error.code, detail));
 }
 }
 int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int) {
     try {
-        std::wstring executable(32768, L'\0');
+        std::wstring executable(::RetroMediaLab::LauncherConstants::Process::ExecutablePathCapacity, ::RetroMediaLab::LauncherConstants::WideNullCharacter);
         const auto length = GetModuleFileNameW(nullptr, executable.data(), static_cast<DWORD>(executable.size()));
-        if (!length || length >= executable.size()) throw WindowsError{ERROR_BAD_PATHNAME, L""};
+        if (!length || length >= executable.size()) throw WindowsError{ERROR_BAD_PATHNAME, ::RetroMediaLab::LauncherConstants::WideEmpty};
         executable.resize(length);
         const auto root = std::filesystem::path(executable).parent_path();
         if (!SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_USER_DIRS | LOAD_LIBRARY_SEARCH_SYSTEM32))
             throw WindowsError{GetLastError(), root.wstring()};
         std::vector<SearchDirectory> directories;
-        for (const auto* name : {L"lib", L"lib/Qt6", L"lib/DirectX", L"lib/OpenGL"}) {
+        for (const auto* name : {::RetroMediaLab::LauncherConstants::WideLib, ::RetroMediaLab::LauncherConstants::WideLibQt6, ::RetroMediaLab::LauncherConstants::WideLibDirectX, ::RetroMediaLab::LauncherConstants::WideLibOpenGL}) {
             const auto path = root / name;
             if (std::filesystem::is_directory(path)) directories.emplace_back(path);
         }
-        Library application(root / L"lib/App.dll");
+        Library application(root / ::RetroMediaLab::LauncherConstants::WideLibAppDll);
         using Entry = int (__cdecl*)(int, char**);
-        const auto entry = reinterpret_cast<Entry>(GetProcAddress(application.module, "RetroMediaLabRun"));
-        if (!entry) throw WindowsError{GetLastError(), L"RetroMediaLabRun"};
+        const auto entry = reinterpret_cast<Entry>(GetProcAddress(application.module, ::RetroMediaLab::LauncherConstants::RetroMediaLabRun));
+        if (!entry) throw WindowsError{GetLastError(), ::RetroMediaLab::LauncherConstants::WideRetroMediaLabRun};
         int argc = 0;
         auto** wideArguments = CommandLineToArgvW(GetCommandLineW(), &argc);
-        if (!wideArguments) throw WindowsError{GetLastError(), L""};
+        if (!wideArguments) throw WindowsError{GetLastError(), ::RetroMediaLab::LauncherConstants::WideEmpty};
         const std::unique_ptr<void, LocalFreeDeleter> ownedArguments(wideArguments);
         std::vector<std::string> storage;
         storage.reserve(argc);
         for (int index = 0; index < argc; ++index) {
             const auto count = WideCharToMultiByte(CP_UTF8, 0, wideArguments[index], -1, nullptr, 0, nullptr, nullptr);
-            if (!count) throw WindowsError{GetLastError(), L""};
-            std::string argument(count, '\0');
+            if (!count) throw WindowsError{GetLastError(), ::RetroMediaLab::LauncherConstants::WideEmpty};
+            std::string argument(count, ::RetroMediaLab::LauncherConstants::NullCharacter);
             WideCharToMultiByte(CP_UTF8, 0, wideArguments[index], -1, argument.data(), count, nullptr, nullptr);
             storage.push_back(std::move(argument));
         }
@@ -82,6 +85,6 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int) {
         arguments.push_back(nullptr);
         return entry(argc, arguments.data());
     } catch (const WindowsError& error) { report(error); }
-      catch (...) { report({ERROR_GEN_FAILURE, L"Retro Media Lab"}); }
-    return 1;
+      catch (...) { report({ERROR_GEN_FAILURE, ::RetroMediaLab::LauncherConstants::WideRetroMediaLab}); }
+    return RetroMediaLab::ProcessConstants::Failure;
 }

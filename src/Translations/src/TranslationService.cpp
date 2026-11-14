@@ -1,3 +1,5 @@
+#include <ErrorKeys.h>
+#include <RetroMediaLab/Translations/TranslationConstants.h>
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -15,39 +17,39 @@ using Strings = std::map<std::string, std::string>;
 QString qtPath(const std::filesystem::path& path) { return QString::fromStdU16String(path.u16string()); }
 void load(const std::filesystem::path& path, const std::string& domain, Strings& strings, std::set<std::string>* invariants = nullptr) {
     QLibrary library(qtPath(path));
-    if (!library.load()) throw std::runtime_error("Cannot load translation catalog: " + path.string());
+    if (!library.load()) throw std::runtime_error(ErrorKeys::CannotLoadTranslationCatalogWithContext + qtPath(path).toStdString());
     struct Unload { QLibrary& library; ~Unload() { library.unload(); } } unload{library};
     using Catalog = const unsigned char* (*)(std::size_t*);
-    const auto catalog = reinterpret_cast<Catalog>(library.resolve("RetroMediaLabCatalog"));
-    if (!catalog) throw std::runtime_error("Translation catalog entry point missing");
+    const auto catalog = reinterpret_cast<Catalog>(library.resolve(TranslationConstants::RetroMediaLabCatalog));
+    if (!catalog) throw std::runtime_error(ErrorKeys::TranslationCatalogEntryPointMissing);
     std::size_t size = 0;
     const auto* bytes = catalog(&size);
-    if (!bytes || size == 0 || size > 16 * 1024 * 1024) throw std::runtime_error("Invalid translation catalog size");
+    if (!bytes || size == 0 || size > TranslationConstants::TranslationServiceValues::MaximumCatalogMegabytes * TranslationConstants::TranslationServiceValues::BytesPerKibibyte * TranslationConstants::TranslationServiceValues::BytesPerKibibyte) throw std::runtime_error(ErrorKeys::InvalidTranslationCatalogSize);
     // Copy before unloading. No pointer into the resource DLL escapes this function.
     const QByteArray payload(reinterpret_cast<const char*>(bytes), static_cast<qsizetype>(size));
     QJsonParseError error;
     const auto document = QJsonDocument::fromJson(payload, &error);
     if (error.error != QJsonParseError::NoError || !document.isObject())
-        throw std::runtime_error("Invalid compiled translation catalog");
-    const auto domains = document.object().value("catalogs").toObject();
-    if (!domains.value(QString::fromStdString(domain)).isObject()) throw std::runtime_error("Translation domain not found: " + domain);
+        throw std::runtime_error(ErrorKeys::InvalidCompiledTranslationCatalog);
+    const auto domains = document.object().value(TranslationConstants::Catalogs).toObject();
+    if (!domains.value(QString::fromStdString(domain)).isObject()) throw std::runtime_error(ErrorKeys::TranslationDomainNotFoundWithContext + domain);
     const auto object = domains.value(QString::fromStdString(domain)).toObject();
-    if (!object.value("strings").isObject()) throw std::runtime_error("Missing translation strings");
-    const auto values = object.value("strings").toObject();
+    if (!object.value(TranslationConstants::Strings).isObject()) throw std::runtime_error(ErrorKeys::MissingTranslationStrings);
+    const auto values = object.value(TranslationConstants::Strings).toObject();
     for (auto it = values.begin(); it != values.end(); ++it) {
         if (!it.value().isString() || !strings.emplace(it.key().toStdString(), it.value().toString().toStdString()).second)
-            throw std::runtime_error("Invalid or duplicate translation key: " + it.key().toStdString());
+            throw std::runtime_error(ErrorKeys::InvalidOrDuplicateTranslationKeyWithContext + it.key().toStdString());
     }
     if (invariants) {
-        for (const auto& key : object.value("invariants").toArray()) {
-            if (!key.isString()) throw std::runtime_error("Invalid invariant key");
+        for (const auto& key : object.value(TranslationConstants::Invariants).toArray()) {
+            if (!key.isString()) throw std::runtime_error(ErrorKeys::InvalidInvariantKey);
             invariants->insert(key.toString().toStdString());
         }
     }
 }
 void validateSegment(const std::string& segment) {
-    if (!QRegularExpression("^[A-Za-z0-9_-]+$").match(QString::fromStdString(segment)).hasMatch())
-        throw std::invalid_argument("Invalid translation domain or language");
+    if (!QRegularExpression(TranslationConstants::SafeSegmentPattern).match(QString::fromStdString(segment)).hasMatch())
+        throw std::invalid_argument(ErrorKeys::InvalidTranslationDomainOrLanguage);
 }
 }
 struct TranslationService::Implementation {
@@ -65,10 +67,10 @@ TranslationService::TranslationService(std::filesystem::path catalogs, std::stri
     auto& data = *implementation_;
     data.root = std::move(catalogs);
     data.domain = std::move(domain);
-    load(data.root / "constants", data.domain, data.constants, &data.invariants);
+    load(data.root / TranslationConstants::Constants, data.domain, data.constants, &data.invariants);
     for (const auto& key : data.invariants)
-        if (!data.constants.contains(key)) throw std::runtime_error("Invariant has no constant");
-    setLanguage("en-US");
+        if (!data.constants.contains(key)) throw std::runtime_error(ErrorKeys::InvariantHasNoConstant);
+    setLanguage(TranslationConstants::EnUS);
 }
 TranslationService::~TranslationService() = default;
 void TranslationService::setLanguage(const std::string& language) {
@@ -90,7 +92,7 @@ std::string TranslationService::text(const std::string& key) const {
     if (!data.invariants.contains(key))
         if (const auto value = data.localized.find(key); value != data.localized.end()) return value->second;
     if (const auto value = data.constants.find(key); value != data.constants.end()) return value->second;
-    return "[" + key + "]";
+    return TranslationConstants::MissingKeyOpen + key + TranslationConstants::MissingKeyClose;
 }
 TranslationService::Subscription TranslationService::subscribe(std::function<void()> observer) {
     auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));

@@ -1,4 +1,5 @@
 #pragma once
+#include <Constants/AppConstants.h>
 #include "AppApi.h"
 #include <QByteArray>
 #include <QStringList>
@@ -9,11 +10,11 @@
 namespace RetroMediaLab {
 // Session-owned state survives destruction of theme windows. Business models will live outside views.
 struct WorkspaceState {
-    QStringList openPageIds{"read", "write", "convert", "visualize", "explorer", "tools", "emulation"};
-    QString activePageId = "read";
+    QStringList openPageIds{AppConstants::Read, AppConstants::Write, AppConstants::Convert, AppConstants::Visualize, AppConstants::Explorer, AppConstants::Tools, AppConstants::Emulation};
+    QString activePageId = AppConstants::Read;
     ConsoleState console;
     bool preferencesOpen = false;
-    QString preferencesSection = "general";
+    QString preferencesSection = AppConstants::General;
     QByteArray preferencesGeometry;
     QByteArray mainWindowGeometry;
     bool mainWindowMaximized = false;

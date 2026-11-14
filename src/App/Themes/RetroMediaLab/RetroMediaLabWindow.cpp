@@ -1,3 +1,4 @@
+#include "ThemeConstants.h"
 #include "RetroMediaLabWindow.h"
 #include "RetroMediaLabLayout.h"
 #include "State/WorkspaceState.h"
@@ -11,26 +12,26 @@
 namespace RetroMediaLab {
 RetroMediaLabWindow::RetroMediaLabWindow(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state)
     : themes_(themes), translations_(translations), state_(state) {
-    setObjectName("RetroMediaLabWindow");
-    setWindowTitle(QString::fromStdString(translations.text("App.Title")));
-    setWindowIcon(QIcon(QApplication::applicationDirPath() + "/Assets/app-icon.ico"));
+    setObjectName(ThemeConstants::RetroMediaLabWindow);
+    setWindowTitle(QString::fromStdString(translations.text(ThemeConstants::AppTitle)));
+    setWindowIcon(QIcon(QApplication::applicationDirPath() + ThemeConstants::AssetsAppIconIco));
     setCentralWidget(new RetroMediaLabLayout(themes, translations, state, [this] { openPreferences(); }, this));
     const auto available = screen()->availableGeometry();
-    const auto room = (available.size() - QSize(48, 48)).expandedTo(QSize(1, 1));
-    setMinimumSize(qMin(800, room.width()), qMin(480, room.height()));
-    resize(qMin(1360, room.width()), qMin(820, room.height()));
+    const auto room = (available.size() - QSize(ThemeConstants::Window::ScreenInset, ThemeConstants::Window::ScreenInset)).expandedTo(QSize(1, 1));
+    setMinimumSize(qMin(ThemeConstants::Window::MinimumWidth, room.width()), qMin(ThemeConstants::Window::MinimumHeight, room.height()));
+    resize(qMin(ThemeConstants::Window::DefaultWidth, room.width()), qMin(ThemeConstants::Window::DefaultHeight, room.height()));
     move(available.center() - rect().center());
     if (state.hasGeometry()) restoreGeometry(state.mainWindowGeometry);
     if (state.mainWindowMaximized) setWindowState(windowState() | Qt::WindowMaximized);
     const auto native = static_cast<std::uintptr_t>(winId());
-    Platform::applyWindowAppearance(native, themes.variant() == ThemeVariant::Dark,
-        themes.data()->color("CaptionBrush").rgba(), themes.data()->color("TextBrush").rgba());
+    Platform::applyWindowAppearance(native, themes.data()->dark,
+        themes.data()->color(ThemeConstants::CaptionBrush).rgba(), themes.data()->color(ThemeConstants::TextBrush).rgba(), themes.data()->nativeSystemColors);
     themeSubscription_ = themes.subscribe([this, &themes] {
-        Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes.variant() == ThemeVariant::Dark,
-            themes.data()->color("CaptionBrush").rgba(), themes.data()->color("TextBrush").rgba());
+        Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes.data()->dark,
+            themes.data()->color(ThemeConstants::CaptionBrush).rgba(), themes.data()->color(ThemeConstants::TextBrush).rgba(), themes.data()->nativeSystemColors);
     });
     languageSubscription_ = translations.subscribe([this, &translations] {
-        setWindowTitle(QString::fromStdString(translations.text("App.Title")));
+        setWindowTitle(QString::fromStdString(translations.text(ThemeConstants::AppTitle)));
     });
 }
 RetroMediaLabWindow::~RetroMediaLabWindow() = default;
@@ -46,8 +47,8 @@ void RetroMediaLabWindow::showEvent(QShowEvent* event) {
     // Qt can reset native frame attributes while mapping the window.
     // The context-bound callback is cancelled automatically if this view is destroyed.
     QTimer::singleShot(0, this, [this] {
-        Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.variant() == ThemeVariant::Dark,
-            themes_.data()->color("CaptionBrush").rgba(), themes_.data()->color("TextBrush").rgba());
+        Platform::applyWindowAppearance(static_cast<std::uintptr_t>(winId()), themes_.data()->dark,
+            themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(), themes_.data()->nativeSystemColors);
     });
     if (state_.preferencesOpen) openPreferences();
 }

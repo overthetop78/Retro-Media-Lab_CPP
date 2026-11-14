@@ -1,0 +1,25 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Windows MSVC x64",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+      "intelliSenseMode": "windows-msvc-x64",
+      "cppStandard": "c++20",
+      "compileCommands": "${workspaceFolder}/build/debug/compile_commands.json",
+      "includePath": [
+        "${workspaceFolder}/src/App",
+        "${workspaceFolder}/src/Common",
+        "${workspaceFolder}/src/Translations/include",
+        "${workspaceFolder}/src/Platform/include",
+        "${workspaceFolder}/build/debug/generated",
+        "C:/Qt/6.12.0/msvc2022_64/include",
+        "C:/Qt/6.12.0/msvc2022_64/include/QtCore",
+        "C:/Qt/6.12.0/msvc2022_64/include/QtGui",
+        "C:/Qt/6.12.0/msvc2022_64/include/QtWidgets",
+        "C:/Qt/6.12.0/msvc2022_64/mkspecs/win32-msvc"
+      ],
+      "defines": ["UNICODE", "_UNICODE", "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB"]
+    }
+  ]
+}

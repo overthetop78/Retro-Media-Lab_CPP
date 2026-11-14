@@ -1,3 +1,4 @@
+#include <Constants/AppConstants.h>
 #include "TerminalView.h"
 #include <QApplication>
 #include <QClipboard>
@@ -13,29 +14,29 @@
 namespace RetroMediaLab {
 TerminalView::TerminalView(ThemeService& themes, Translations::TranslationService& translations, ConsoleState& state, QWidget* parent)
     : QWidget(parent), state_(state), themes_(themes) {
-    setObjectName("console");
+    setObjectName(AppConstants::Console);
     auto* outer = new QVBoxLayout(this);
-    outer->setContentsMargins(14, 14, 14, 14);
+    outer->setContentsMargins(AppConstants::TerminalViewValues::Padding, AppConstants::TerminalViewValues::Padding, AppConstants::TerminalViewValues::Padding, AppConstants::TerminalViewValues::Padding);
     auto* line = new QHBoxLayout;
-    prompt_ = new QLabel(QString::fromStdString(translations.text("Shell.Terminal.Prompt")), this);
+    prompt_ = new QLabel(QString::fromStdString(translations.text(AppConstants::ShellTerminalPrompt)), this);
     line->addWidget(prompt_);
     command_ = new QPlainTextEdit(this);
-    command_->setObjectName("commandPreview");
+    command_->setObjectName(AppConstants::CommandPreview);
     command_->setReadOnly(true);
-    command_->setMaximumHeight(30);
+    command_->setMaximumHeight(AppConstants::TerminalViewValues::CommandHeight);
     command_->setPlainText(state.commandPreview);
     line->addWidget(command_, 1);
     outer->addLayout(line);
     output_ = new QPlainTextEdit(this);
-    output_->setObjectName("consoleOutput");
+    output_->setObjectName(AppConstants::ConsoleOutput);
     output_->setReadOnly(true);
     output_->setPlainText(state.output);
     outer->addWidget(output_, 1);
     copy_ = new QPushButton(this);
-    copy_->setObjectName("copyConsole");
+    copy_->setObjectName(AppConstants::CopyConsole);
     copy_->setFlat(true);
-    copy_->setIconSize(QSize(22, 22));
-    copy_->setFixedSize(32, 32);
+    copy_->setIconSize(QSize(AppConstants::TerminalViewValues::CopyIconSize, AppConstants::TerminalViewValues::CopyIconSize));
+    copy_->setFixedSize(AppConstants::TerminalViewValues::CopyButtonSize, AppConstants::TerminalViewValues::CopyButtonSize);
     outer->addWidget(copy_, 0, Qt::AlignRight);
     for (auto* edit : {command_, output_}) {
         edit->setFrameShape(QFrame::NoFrame);
@@ -45,14 +46,14 @@ TerminalView::TerminalView(ThemeService& themes, Translations::TranslationServic
         QApplication::clipboard()->setText(output_->toPlainText());
     });
     const auto texts = [this, &translations] {
-        const auto copyText = QString::fromStdString(translations.text("Common.Copy"));
+        const auto copyText = QString::fromStdString(translations.text(AppConstants::CommonCopy));
         copy_->setToolTip(copyText);
         copy_->setAccessibleName(copyText);
-        command_->setAccessibleName(QString::fromStdString(translations.text("Common.Command")));
-        output_->setAccessibleName(QString::fromStdString(translations.text("Tool.RawOutput")));
-        setAccessibleName(QString::fromStdString(translations.text("Common.Console")));
+        command_->setAccessibleName(QString::fromStdString(translations.text(AppConstants::CommonCommand)));
+        output_->setAccessibleName(QString::fromStdString(translations.text(AppConstants::ToolRawOutput)));
+        setAccessibleName(QString::fromStdString(translations.text(AppConstants::CommonConsole)));
         if (state_.output.isEmpty() && (output_->toPlainText().isEmpty() || output_->toPlainText() == initialStatus_)) {
-            initialStatus_ = QString::fromStdString(translations.text("Status.Ready"));
+            initialStatus_ = QString::fromStdString(translations.text(AppConstants::StatusReady));
             output_->setPlainText(initialStatus_);
         }
     };
@@ -60,12 +61,12 @@ TerminalView::TerminalView(ThemeService& themes, Translations::TranslationServic
     languageSubscription_ = translations.subscribe(texts);
     const auto colors = [this] {
         auto palette = output_->palette();
-        palette.setColor(QPalette::Base, themes_.data()->color("TerminalBackground"));
-        palette.setColor(QPalette::Text, themes_.data()->color("TerminalText"));
+        palette.setColor(QPalette::Base, themes_.data()->color(AppConstants::TerminalBackground));
+        palette.setColor(QPalette::Text, themes_.data()->color(AppConstants::TerminalText));
         output_->setPalette(palette);
-        palette.setColor(QPalette::Text, themes_.data()->color("TerminalCommand"));
+        palette.setColor(QPalette::Text, themes_.data()->color(AppConstants::TerminalCommand));
         command_->setPalette(palette);
-        palette.setColor(QPalette::WindowText, themes_.data()->color("TerminalPrompt"));
+        palette.setColor(QPalette::WindowText, themes_.data()->color(AppConstants::TerminalPrompt));
         prompt_->setPalette(palette);
         update();
     };
@@ -103,8 +104,8 @@ void TerminalView::synchronizeState() {
 void TerminalView::paintEvent(QPaintEvent*) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    painter.setBrush(themes_.data()->color("TerminalBackground"));
-    painter.setPen(themes_.data()->color("TerminalBorder"));
-    painter.drawRoundedRect(QRectF(rect()).adjusted(.5,.5,-.5,-.5), 8, 8);
+    painter.setBrush(themes_.data()->color(AppConstants::TerminalBackground));
+    painter.setPen(themes_.data()->color(AppConstants::TerminalBorder));
+    painter.drawRoundedRect(QRectF(rect()).adjusted(AppConstants::TerminalViewValues::BorderInset,AppConstants::TerminalViewValues::BorderInset,-AppConstants::TerminalViewValues::BorderInset,-AppConstants::TerminalViewValues::BorderInset), AppConstants::TerminalViewValues::CornerRadius, AppConstants::TerminalViewValues::CornerRadius);
 }
 }

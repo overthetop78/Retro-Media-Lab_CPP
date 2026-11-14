@@ -35,6 +35,8 @@ if (-not $cmake -or -not (Test-Path -LiteralPath $cmake)) { throw 'CMake is requ
 if (-not $ninja -or -not (Test-Path -LiteralPath $ninja)) { throw 'Ninja is required.' }
 Push-Location $projectRoot
 try {
+    & python (Join-Path $PSScriptRoot 'update-solution.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Visual C++ solution refresh failed.' }
     $includePrefixArgument = @()
     if ($vsRoot) {
         # Read raw compiler output: CMake's console decoding can corrupt French non-breaking spaces.

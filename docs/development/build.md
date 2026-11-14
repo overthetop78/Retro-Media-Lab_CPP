@@ -14,6 +14,10 @@ Les presets CMake debug/release sont utilisables directement depuis un environne
 
 ## Arborescence produite
 
+La solution [RetroMediaLab.sln](../../RetroMediaLab.sln) à la racine contient le projet Visual C++ [RetroMediaLab.vcxproj](../../RetroMediaLab.vcxproj). Elle est utilisable avec l'explorateur de solutions VS Code et Visual Studio. Debug/Release x64 appellent le même build CMake via build.ps1 ; les listes de fichiers et filtres sont actualisés automatiquement. Les commandes Clean/Rebuild utilisent également CMake. Pour actualiser uniquement l'arborescence : `python scripts/local-building/update-solution.py`.
+
+IntelliSense lit les commandes réelles de build/debug/compile_commands.json ; les propriétés sous .vscode fournissent le compilateur MSVC et les chemins Qt de secours. Après un changement de kit, adapter ces chemins et régénérer le build. Voir [les références](../references/tooling/visual-cpp-et-intellisense.md).
+
 ```text
 Retro Media Lab/
   retromedialab.exe

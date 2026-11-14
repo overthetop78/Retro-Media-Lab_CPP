@@ -1,20 +1,21 @@
+#include "../ThemeConstants.h"
 #include "WorkspaceTabs.h"
 #include "Shared/Navigation/WorkspacePages.h"
 #include "../ThemeIcons.h"
 namespace RetroMediaLab {
 WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationService& translations,
     WorkspaceState& state, QWidget* parent) : QTabWidget(parent) {
-    setObjectName("workspaceTabs");
+    setObjectName(ThemeConstants::WorkspaceTabs);
     setDocumentMode(false);
     setUsesScrollButtons(true);
-    setIconSize(QSize(17, 17));
+    setIconSize(QSize(ThemeConstants::Tabs::IconExtent, ThemeConstants::Tabs::IconExtent));
     for (const auto& id : state.openPageIds) {
         for (const auto& page : workspacePages()) {
             if (id != page.id) continue;
             auto* view = new QWidget(this);
             view->setObjectName(id);
             view->setAutoFillBackground(true);
-            addTab(view, themeIcon(id, themes.data()->color("MutedTextBrush")),
+            addTab(view, themeIcon(id, themes.data()->color(ThemeConstants::MutedTextBrush)),
                 QString::fromStdString(translations.text(page.translationKey)));
             break;
         }
@@ -34,7 +35,7 @@ WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationServ
     });
     themeSubscription_ = themes.subscribe([this, &themes] {
         for (int i = 0; i < count(); ++i)
-            setTabIcon(i, themeIcon(widget(i)->objectName(), themes.data()->color("MutedTextBrush")));
+            setTabIcon(i, themeIcon(widget(i)->objectName(), themes.data()->color(ThemeConstants::MutedTextBrush)));
     });
 }
 }

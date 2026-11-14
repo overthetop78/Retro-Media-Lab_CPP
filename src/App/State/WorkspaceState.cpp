@@ -1,10 +1,11 @@
+#include <ErrorKeys.h>
 #include "WorkspaceState.h"
 #include <algorithm>
 #include <stdexcept>
 namespace RetroMediaLab {
 bool WorkspaceState::hasGeometry() const noexcept { return !mainWindowGeometry.isEmpty(); }
 void WorkspaceState::setDefaultImageDirectory(QString directory) {
-    if (directory.contains(QChar::Null)) throw std::invalid_argument("Invalid image directory");
+    if (directory.contains(QChar::Null)) throw std::invalid_argument(ErrorKeys::InvalidImageDirectory);
     if (directory == defaultImageDirectory_) return;
     defaultImageDirectory_ = std::move(directory);
     const auto observers = directoryObservers_;

@@ -1,5 +1,7 @@
+#include <ProcessConstants.h>
+#include <ErrorKeys.h>
 #include "Application.h"
-#include <QDebug>
+#include <ErrorDialog.h>
 #include <exception>
 #include <cstdio>
 #if defined(_WIN32)
@@ -10,12 +12,11 @@
 extern "C" RETROMEDIALAB_ENTRY int RetroMediaLabRun(int argc, char** argv) {
     try { return RetroMediaLab::Application{}.run(argc, argv); }
     catch (const std::exception& error) {
-        std::fprintf(stderr, "Retro Media Lab: %s\n", error.what());
-        qCritical("Retro Media Lab: %s", error.what());
+        RetroMediaLab::Errors::show(RetroMediaLab::Errors::presentationLanguage, error.what());
     }
     catch (...) {
-        std::fprintf(stderr, "Retro Media Lab: unexpected application exception\n");
-        qCritical("Retro Media Lab: unexpected application exception");
+        RetroMediaLab::Errors::show(RetroMediaLab::Errors::presentationLanguage,
+            RetroMediaLab::Errors::render(RetroMediaLab::Errors::presentationLanguage, RetroMediaLab::ErrorKeys::UnexpectedApplicationException));
     }
-    return 1;
+    return RetroMediaLab::ProcessConstants::Failure;
 }
