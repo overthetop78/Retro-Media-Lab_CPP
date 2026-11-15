@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "De CP/M-schijfindeling wordt niet ondersteund voor formaat {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Het schijfkopiebestand bevat geen ondersteunde CP/M-directory voor formaat {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-allocatieblok {1} op positie {2} ligt buiten het schijfkopiebestand van {3} bytes.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M-allocatieblok {1} overlapt een ontbrekend logisch blok.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M-allocatieblok {1} overlapt een afgekapt logisch blok.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: naar CP/M-allocatieblok {1} wordt meer dan één keer verwezen.",
+    "MediaFileSystems.CpmImageMissing": "Het CP/M-schijfkopiebestand bevat {0} ontbrekende logische blokken.",
+    "MediaFileSystems.CpmImageTruncated": "Het CP/M-schijfkopiebestand bevat {0} afgekapte logische blokken.",
+    "MediaFileSystems.CpmInvalidLayout": "De CP/M-indeling is ongeldig (directorypositie={0}, allocatiebegin={1}, directoryvermeldingen={2}, allocatiegrootte={3}, directoryblokken={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M-gebruiker {0}"
+  }
+}

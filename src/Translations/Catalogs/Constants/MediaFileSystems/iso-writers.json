@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "The ISO image is empty or is not aligned to 2048-byte sectors.",
+    "MediaFileSystems.IsoContainerChanged": "The ISO image length changed after recognition.",
+    "MediaFileSystems.IsoWriteProfile": "The optical document cannot be written as a lossless single-track ISO image.",
+    "MediaFileSystems.WriterRegistryNull": "A media image writer cannot be null.",
+    "MediaFileSystems.WriterRegistryDuplicate": "Media image writer identifier '{0}' is registered more than once.",
+    "MediaFileSystems.WriterTargetFormat": "A target media format identifier is required.",
+    "MediaFileSystems.WriterTargetExtension": "A target media file extension is required."
+  }
+}

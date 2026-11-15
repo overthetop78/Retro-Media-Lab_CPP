@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Dosya sistemi okuyucu indeks {0} null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Ekrandaki dosya-sistem okuyucusu {0} boş bir tanımlayıcıya sahiptir.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Birden çok dosya-sistem okuyucusu ‘{0} tanımlayıcılara sahiptir.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Hiçbir dosya sistemi okuyucunun “{0} tanımlayıcısı yoktur.",
+    "MediaFileSystems.RegistryNullImage": "Bir sektör imajı çıplak olamaz.",
+    "MediaFileSystems.AtariKFileUnsupported": "Sektör görüntüsü KBoot kullanarak bir Atari K-file disk değildir.",
+    "MediaFileSystems.AtariBootUnsupported": "Sektör imajı tam bir Atari boot programı içermiyor.",
+    "MediaFileSystems.AtariClkUnsupported": "Sektör imajı bir Atari CLK grafik-library disk değildir.",
+    "MediaFileSystems.AtariClkIncomplete": "Katalog {0} bytes, ancak sektör zinciri {1} bytes içerir.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK grafik"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "イメージに {0} ボリュームが含まれていません。検出されたシグネチャ: 0x{1}。",
+    "MediaFileSystems.MacMissingBlock": "{0}: ファイルストリーム {1} のブロック {2} がありません。",
+    "MediaFileSystems.MacIncompleteData": "{0}: ファイルストリーム {1} には {2} バイトが含まれています。必要なサイズは {3} バイトです。",
+    "MediaFileSystems.MacAllocationSize": "ボリューム {0} の割り当てサイズ {1} は、ゼロではない {2} バイトの倍数である必要があります。",
+    "MediaFileSystems.MacFreeCount": "ボリューム {0} は、全 {2} ブロック中 {1} 個の空き割り当てブロックを宣言しています。",
+    "MediaFileSystems.MfsMapTruncated": "{0} 個の割り当ての MFS マップには {1} バイトが含まれています。必要なサイズは {2} バイトです。",
+    "MediaFileSystems.MfsDirectoryEntry": "ブロック {0}、オフセット {1} の MFS ディレクトリエントリは無効です。",
+    "MediaFileSystems.MfsChain": "{0}: ファイルストリーム {1} の割り当てチェーンは無効です (循環={2}、マップ範囲外={3}、早すぎる終端={4})。",
+    "MediaFileSystems.MfsForkMetadata": "{0}: ファイルストリーム {1} はクラスター {3} から {2} バイトを宣言しています。メタデータに矛盾があります。",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh ファイル"
+  }
+}

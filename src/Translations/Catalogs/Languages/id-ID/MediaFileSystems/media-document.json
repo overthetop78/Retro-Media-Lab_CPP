@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Sumber media tidak dapat dibatalkan.",
+    "MediaFileSystems.ContextSourcePath": "Path sumber media primer tidak dapat kosong atau ruang kosong.",
+    "MediaFileSystems.ContextPageSize": "Ukuran halaman pengakuan harus positif.",
+    "MediaFileSystems.ContextKnownLength": "Panjang sumber yang diketahui tidak dapat negatif.",
+    "MediaFileSystems.ContextLengthOverflow": "Panjang sumber media melebihi jangkauan signed yang didukung.",
+    "MediaFileSystems.ContextReadOffset": "Ofset pembacaan pengenalan tidak dapat negatif.",
+    "MediaFileSystems.ContextReadCount": "Pengakuan jumlah pembacaan tidak dapat negatif.",
+    "MediaFileSystems.ContextReadRange": "Jangkauan yang diminta melebihi panjang sumber.",
+    "MediaFileSystems.ContextFullRead": "Sumber lengkap tidak dapat dimuat ke satu buffer memori. Lebih baik gunakan bawangnya.",
+    "MediaFileSystems.ContextPageEnded": "Sumber media berakhir pada byte {0} ketika membaca halaman cached.",
+    "MediaFileSystems.DocumentFormatId": "Perlu pengidentifikasi format yang dikenal.",
+    "MediaFileSystems.DocumentRepresentation": "Sebuah representasi media dengan informasi representasi publik diperlukan."
+  }
+}

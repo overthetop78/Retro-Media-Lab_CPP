@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Een mediavoorstelling kan geen nul zijn.",
+    "MediaFileSystems.RepresentationCountOverflow": "De teller van de mediarepresentatie overschrijdt het ondersteunde bereik voor gehele getallen met teken.",
+    "MediaFileSystems.WriterAdapterId": "Een media image writer identifier is vereist.",
+    "MediaFileSystems.WriterAdapterFormats": "Doelformaat-identifiers kunnen niet leeg zijn.",
+    "MediaFileSystems.WriterAdapterExtensions": "Uitvoerextensies kunnen niet leeg zijn.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Mediawriter validatie en uitvoer callbacks zijn vereist.",
+    "MediaFileSystems.WriterAdapterPath": "Een mediawriter output pad is vereist.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Schrijfcomponent '{0}' kan de vereiste mediaweergave niet uitpakken.",
+    "MediaFileSystems.WriterAdapterTarget": "Schrijfcomponent '{0}' accepteert geen doel '{1}' met extensie '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Schrijfcomponent '{0}' rapporteerde geen geldige geproduceerde bestanden.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore bronformaat '{0}' kan niet geschreven worden als '{1}' zonder een geometrietransformatie."
+  }
+}

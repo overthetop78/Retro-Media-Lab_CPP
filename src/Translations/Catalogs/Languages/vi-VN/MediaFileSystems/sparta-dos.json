@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Ảnh đĩa '{0}' không chứa phân vùng SpartaDOS hợp lệ.",
+    "MediaFileSystems.SpartaMissingSector": "Thiếu cung từ SpartaDOS {0}.",
+    "MediaFileSystems.SpartaSectorRange": "Cung từ SpartaDOS {0} nằm ngoài phạm vi 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Chuỗi bản đồ cung từ SpartaDOS tạo thành vòng lặp tại cung từ {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Bản đồ cung từ SpartaDOS {0} tham chiếu bản đồ trước là {2} thay vì {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Cây thư mục SpartaDOS tạo thành vòng lặp tại thư mục có bản đồ bắt đầu ở cung từ {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Thư mục SpartaDOS tại cung từ {0} khai báo kích thước không hợp lệ là {1} byte."
+  }
+}

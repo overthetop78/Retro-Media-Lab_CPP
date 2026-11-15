@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Belge optik ISO görüntüsü değildir.",
+    "MediaFileSystems.GameCubeNotImage": "Belge bir GameCube görüntüsü değildir.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST optik takip verileri gerektirir.",
+    "MediaFileSystems.GameCubeNoTrack": "GameCube FST hacmi için hiçbir veri yolu mevcut değildir.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST 2048-bayt optik sektör gerektirir.",
+    "MediaFileSystems.GameCubeHeader": "GameCube disk başlığı geçersizdir.",
+    "MediaFileSystems.GameCubeDescriptor": "GameCube FST descriptor geçersizdir.",
+    "MediaFileSystems.GameCubeRoot": "GameCube FST kök girişi geçersizdir.",
+    "MediaFileSystems.GameCubeCount": "GameCube FST giriş sayısı geçersizdir.",
+    "MediaFileSystems.GameCubeDepth": "GameCube FST directory ağacı çok derin.",
+    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST directory aralığı geçersizdir.",
+    "MediaFileSystems.GameCubeContentLimit": "GameCube dosyası ‘{0} içerik sınırından daha büyük ve yüklenemez.",
+    "MediaFileSystems.GameCubeNameOffset": "GameCube FST adı dengeleme, dize masasının dışındadır.",
+    "MediaFileSystems.GameCubeSectorData": "GameCube optik sektörü okunabilir bir veriye sahip değildir.",
+    "MediaFileSystems.GameCubeExtent": "GameCube FST boyutunu optik pist dışındadır.",
+    "MediaFileSystems.GameCubeOverflow": "GameCube FST değeri desteklenen sayısal aralığı aşıyor."
+  }
+}

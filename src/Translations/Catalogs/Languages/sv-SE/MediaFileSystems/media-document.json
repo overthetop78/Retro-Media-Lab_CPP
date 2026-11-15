@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Mediekällan kan inte vara null.",
+    "MediaFileSystems.ContextSourcePath": "Den primära mediekällan kan inte vara tom eller vitrymd.",
+    "MediaFileSystems.ContextPageSize": "Erkännandesidans storlek måste vara positiv.",
+    "MediaFileSystems.ContextKnownLength": "Den kända källlängden kan inte vara negativ.",
+    "MediaFileSystems.ContextLengthOverflow": "Mediekällans längd överstiger det stödda signerade intervallet.",
+    "MediaFileSystems.ContextReadOffset": "Erkännandet av läskompensation kan inte vara negativt.",
+    "MediaFileSystems.ContextReadCount": "Erkännandet läsräkningen kan inte vara negativt.",
+    "MediaFileSystems.ContextReadRange": "Det begärda intervallet överstiger källlängden.",
+    "MediaFileSystems.ContextFullRead": "Den fullständiga källan kan inte laddas in i en minnesbuffert. Använd bundna läsningar istället.",
+    "MediaFileSystems.ContextPageEnded": "Mediekällan slutade vid byte {0} medan du läste en cachad sida.",
+    "MediaFileSystems.DocumentFormatId": "En erkänd formatidentifierare krävs.",
+    "MediaFileSystems.DocumentRepresentation": "En medierepresentation med offentlig representationsinformation krävs."
+  }
+}

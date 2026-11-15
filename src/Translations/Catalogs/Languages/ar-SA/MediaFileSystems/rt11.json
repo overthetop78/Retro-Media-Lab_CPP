@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "كتلة البداية RT-11 غير صالحة (التوقيع '{0}'، كتلة الدليل {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "مقطع RT-11 {0} عند الكتلة {1} له رقم مقطع خارج النطاق.",
+    "MediaFileSystems.Rt11SegmentCycle": "مقطع RT-11 {0} عند الكتلة {1} يشكل دورة.",
+    "MediaFileSystems.Rt11SegmentOutside": "مقطع RT-11 {0} عند الكتلة {1} خارج صورة القرص.",
+    "MediaFileSystems.Rt11SegmentMissing": "مقطع RT-11 {0} عند الكتلة {1} له زوج كتل مفقود أو مبتور.",
+    "MediaFileSystems.Rt11EntrySize": "مقطع RT-11 {0} يعلن عن حجم إدخال غير صالح قدره {1} بايت.",
+    "MediaFileSystems.Rt11EmptyName": "إدخال RT-11 عند كتلة البيانات {0}، الإزاحة {1}، له اسم فارغ.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: كتل RT-11 مفقودة أو مبتورة: {1}.",
+    "MediaFileSystems.Rt11Tentative": "ملف RT-11 مؤقت",
+    "MediaFileSystems.Rt11Permanent": "ملف RT-11"
+  }
+}

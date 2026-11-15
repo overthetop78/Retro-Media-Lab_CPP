@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Dispunerea discului CP/M nu este acceptată pentru formatul {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Imaginea de disc nu conține un director CP/M acceptat pentru formatul {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: blocul de alocare CP/M {1} de la poziția {2} se află în afara imaginii de {3} octeți.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: blocul de alocare CP/M {1} traversează un bloc logic lipsă.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: blocul de alocare CP/M {1} traversează un bloc logic trunchiat.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: blocul de alocare CP/M {1} este referit de mai multe ori.",
+    "MediaFileSystems.CpmImageMissing": "Imaginea CP/M conține {0} blocuri logice lipsă.",
+    "MediaFileSystems.CpmImageTruncated": "Imaginea CP/M conține {0} blocuri logice trunchiate.",
+    "MediaFileSystems.CpmInvalidLayout": "Dispunerea CP/M este nevalidă (poziția directorului={0}, începutul alocării={1}, intrări de director={2}, dimensiunea alocării={3}, blocuri de director={4}).",
+    "MediaFileSystems.CpmUserArea": "Utilizator CP/M {0}"
+  }
+}

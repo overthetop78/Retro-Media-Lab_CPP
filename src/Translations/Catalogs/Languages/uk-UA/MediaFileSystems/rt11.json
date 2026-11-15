@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Початковий блок RT-11 неприпустимий (сигнатура '{0}', блок каталогу {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Сегмент RT-11 {0} у блоці {1} має номер сегмента поза діапазоном.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 сегмент {0} на блок {1} формує цикл.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 відрізок {0} на блок {1} є поза зображенням.",
+    "MediaFileSystems.Rt11SegmentMissing": "Сегмент RT-11 {0} у блоці {1} має відсутню або обрізану пару блоків.",
+    "MediaFileSystems.Rt11EntrySize": "Сегмент RT-11 {0} оголошує неприпустимий розмір запису: {1} байтів.",
+    "MediaFileSystems.Rt11EmptyName": "Вхід RT-11 в блок даних {0}, offset {1}, має порожню назву.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 блоки відсутні або обрізаються: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Тимчасовий файл RT-11",
+    "MediaFileSystems.Rt11Permanent": "RT-11 файл"
+  }
+}

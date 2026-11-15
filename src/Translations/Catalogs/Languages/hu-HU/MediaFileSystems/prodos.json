@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "A(z) {0}. blokkban található ProDOS/SOS kötetfejléc nem ismerhető fel (olvasott érték: ${1}).",
+    "MediaFileSystems.ProDosDepth": "A ProDOS könyvtárblokk {1} meghaladja a maximális mélységet a {0} szinten.",
+    "MediaFileSystems.ProDosDirectory": "A ProDOS könyvtárblokk {0} érvénytelen (ciklus = {1}, újrahasznált = {2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS indexblokk {2} érvénytelen (ciklus = {3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): A ProDOS fő indexblokkja a {2} érvénytelen.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): A ProDOS adatblokkja {2} hiányzik, a képen kívül vagy érvénytelen méretű.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): rekonstruált {2} bájt a {3} várható bájtjából.",
+    "MediaFileSystems.ProDosBitmap": "A ProDOS bitmap blokk {0} hiányzik vagy érvénytelen a mérete.",
+    "MediaFileSystems.ProDosTotal": "A ProDOS kötet {0} blokkot jelez, de a lemezkép {1} blokkot tartalmaz.",
+    "MediaFileSystems.ProDosWriteFormat": "A ProDOS célformátum \"{0}\"támogatatlan.",
+    "MediaFileSystems.ProDosDiskFull": "A ProDOS kötet nem rendelkezik elegendő blokkkal vagy könyvtárbejegyzéssel.",
+    "MediaFileSystems.ProDosGeometry": "A cél ProDOS-geometria vagy szektorcímtérkép érvénytelen.",
+    "MediaFileSystems.ProDosEntry": "A ProDOS bejegyzés \"{0}\" nem írható.",
+    "MediaFileSystems.ProDosFileLength": "A ProDOS fájl '{0}' meghaladja a 24- bit hosszúságú mezőt.",
+    "MediaFileSystems.ProDosName": "A \"{0}\" ProDOS név érvénytelen.",
+    "MediaFileSystems.ProDosTypeText": "Szöveg",
+    "MediaFileSystems.ProDosTypeBinary": "Bináris",
+    "MediaFileSystems.ProDosTypeDirectory": "Könyvtár",
+    "MediaFileSystems.ProDosTypeVariables": "Változók",
+    "MediaFileSystems.ProDosTypeSystem": "Rendszer"
+  }
+}

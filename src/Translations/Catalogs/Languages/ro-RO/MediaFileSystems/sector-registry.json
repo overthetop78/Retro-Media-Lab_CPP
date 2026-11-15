@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Cititorul de fișiere la indexul {0} este nul.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Cititorul sistemului de fișiere la index {0} are un identificator gol.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Cititorii mai multor sisteme de fișiere au identificator \"{0} .\"",
+    "MediaFileSystems.RegistryUnknownReaderId": "Niciun cititor de fișiere nu are identificator \"{0} .\"",
+    "MediaFileSystems.RegistryNullImage": "O imagine sectorială nu poate fi nulă.",
+    "MediaFileSystems.AtariKFileUnsupported": "Imaginea din sector nu este un disc Atari K-file folosind KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Imaginea sectorului nu conține un program complet de boot Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Imaginea din sector nu este un disc grafic-librar Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Catalogul declară {0} octeți, dar lanțul sectorial conține {1} octeți.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK grafic"
+  }
+}

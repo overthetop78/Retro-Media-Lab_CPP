@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Filsystemets leser ved indeks {0} er null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Filsystemleseren ved indeks {0} har en tom identifikator.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Flere filsystemlesere har identifikator «{0}».",
+    "MediaFileSystems.RegistryUnknownReaderId": "Ingen filsystemleser har identifikator «{0}».",
+    "MediaFileSystems.RegistryNullImage": "Et sektorbilde kan ikke være null.",
+    "MediaFileSystems.AtariKFileUnsupported": "Sektorbildet er ikke en Atari K-file-disk ved hjelp av KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Sektorbildet inneholder ikke et komplett Atari oppstartsprogram.",
+    "MediaFileSystems.AtariClkUnsupported": "Sektorbildet er ikke en Atari CLK grafikkbibliotek disk.",
+    "MediaFileSystems.AtariClkIncomplete": "Katalogen erklærer {0} bytes, men sektorkjeden inneholder {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK-grafikk"
+  }
+}

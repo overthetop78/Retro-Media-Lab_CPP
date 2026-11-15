@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Optik mantıksal uzunluk negatif olamaz.",
+    "MediaFileSystems.OpticalMetadataOnly": "Bu miras medyası sadece metadata içerir ve okunabilir veri kaynağı yoktur.",
+    "MediaFileSystems.OpticalIndexNumber": "Optik takip indeksi 0 ve 99 arasında olmalıdır.",
+    "MediaFileSystems.OpticalPositiveDimension": "Optik boyut '{0}' pozitif olmalıdır.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optik boyut '{0}' negatif olamaz.",
+    "MediaFileSystems.OpticalDataSource": "Optik bir iz veri kaynağı gereklidir.",
+    "MediaFileSystems.OpticalUserWindow": "Kullanıcı verileri penceresi bir depolanmış sektörü aşıyor.",
+    "MediaFileSystems.OpticalTrackSource": "Takip verileri kaynağını aşıyor.",
+    "MediaFileSystems.OpticalSubchannelSource": "Alt kanal boyutları alt kanal kaynağı gerektirir.",
+    "MediaFileSystems.OpticalSubchannelRange": "Alt kanal verileri kaynağını aşıyor.",
+    "MediaFileSystems.OpticalPregapOffset": "Depolanan pregap kaynak ofseti için depolanmış pregap sektörleri gerekir.",
+    "MediaFileSystems.OpticalPregapRange": "Depolanan pregap kaynağını aşıyor.",
+    "MediaFileSystems.OpticalStoredDestination": "Hedef tam olarak bir depolanmış sektör içermelidir.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektör depolanmış öngap dışındadır.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektör optik pist dışındadır.",
+    "MediaFileSystems.OpticalNullTrack": "Optik iz null olamaz."
+  }
+}

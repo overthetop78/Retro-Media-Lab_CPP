@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "볼륨 정보 블록 {0}이 없거나 크기가 잘못되었습니다.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "디렉터리 블록 {0}이 없거나 크기가 잘못되었습니다.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: 데이터 스트림: 블록 {1}이 없거나 크기가 잘못되었습니다.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: 데이터 스트림에 {1}바이트가 있습니다. 예상 크기는 {2}바이트입니다.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: 데이터 스트림은 클러스터 {2}부터 {1}바이트를 선언합니다. 메타데이터가 일관되지 않습니다.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: 데이터 스트림: 할당 체인에 순환이 있습니다.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: 데이터 스트림: 할당 체인이 할당 맵의 범위 밖을 참조합니다.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: 데이터 스트림: 필요한 모든 클러스터를 확보하기 전에 할당 체인이 종료됩니다.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: 리소스 스트림: 블록 {1}이 없거나 크기가 잘못되었습니다.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: 리소스 스트림에 {1}바이트가 있습니다. 예상 크기는 {2}바이트입니다.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: 리소스 스트림은 클러스터 {2}부터 {1}바이트를 선언합니다. 메타데이터가 일관되지 않습니다.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: 리소스 스트림: 할당 체인에 순환이 있습니다.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: 리소스 스트림: 할당 체인이 할당 맵의 범위 밖을 참조합니다.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: 리소스 스트림: 필요한 모든 클러스터를 확보하기 전에 할당 체인이 종료됩니다."
+  }
+}

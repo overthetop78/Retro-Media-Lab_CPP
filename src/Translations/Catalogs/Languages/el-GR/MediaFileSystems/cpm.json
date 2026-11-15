@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Η διάταξη δίσκου CP/M δεν υποστηρίζεται για τη μορφή {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Η εικόνα δεν περιέχει έναν υποστηριζόμενο κατάλογο CP/M για τη μορφή {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: Το μπλοκ κατανομής CP/M {1} στη μετατόπιση {2} βρίσκεται εκτός της εικόνας των {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: Το μπλοκ κατανομής CP/M {1} διασχίζει ένα λογικό μπλοκ που λείπει.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: Το μπλοκ κατανομής CP/M {1} διασχίζει ένα περικομμένο λογικό μπλοκ.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: Το μπλοκ κατανομής CP/M {1} αναφέρεται περισσότερες από μία φορές.",
+    "MediaFileSystems.CpmImageMissing": "Η εικόνα CP/M περιέχει {0} λογικά μπλοκ που λείπουν.",
+    "MediaFileSystems.CpmImageTruncated": "Η εικόνα CP/M περιέχει {0} περικομμένα λογικά μπλοκ.",
+    "MediaFileSystems.CpmInvalidLayout": "Η διάταξη CP/M είναι άκυρη (κατάλογος όφσετ={0}, προέλευση κατανομής={1}, καταχωρήσεις καταλόγου={2}, μέγεθος κατανομής={3}, μπλοκ καταλόγου={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M χρήστης {0}"
+  }
+}

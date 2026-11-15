@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Układ dysku CP/M nie jest obsługiwany dla formatu {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Obraz dysku nie zawiera obsługiwanego katalogu CP/M dla formatu {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: blok alokacji CP/M {1} na pozycji {2} znajduje się poza obrazem dysku o rozmiarze {3} bajtów.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: blok alokacji CP/M {1} przecina brakujący blok logiczny.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: blok alokacji CP/M {1} przecina ucięty blok logiczny.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: blok alokacji CP/M {1} jest wskazywany więcej niż raz.",
+    "MediaFileSystems.CpmImageMissing": "Obraz CP/M zawiera {0} brakujących bloków logicznych.",
+    "MediaFileSystems.CpmImageTruncated": "Obraz CP/M zawiera {0} uciętych bloków logicznych.",
+    "MediaFileSystems.CpmInvalidLayout": "Układ CP/M jest nieprawidłowy (pozycja katalogu={0}, początek alokacji={1}, wpisy katalogu={2}, rozmiar alokacji={3}, bloki katalogu={4}).",
+    "MediaFileSystems.CpmUserArea": "Użytkownik CP/M {0}"
+  }
+}

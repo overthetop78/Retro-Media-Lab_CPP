@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENT 规范值包含 {0} 字节；需要 {1} 字节。",
+    "Media.CoherentPointerLength": "COHERENT 块指针包含 {0} 字节；需要 {1} 字节。",
+    "Media.CoherentInvalidSuperblock": "镜像不包含有效的 COHERENT 文件系统。",
+    "Media.CoherentDeclaredBlocks": "COHERENT 声明了 {0} 个块，但只有 {1} 个块可用。",
+    "Media.CoherentMissingSuperblock": "缺少 COHERENT 超级块所需的块。",
+    "Media.CoherentInodeZone": "COHERENT inode 区域结束于块 {0}，超出了包含 {1} 个块的文件系统。",
+    "Media.CoherentNullInode": "COHERENT inode 0 无效。",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} 超出了大小为 {1} 字节的 inode 区域。",
+    "Media.CoherentFileTooLarge": "无法在内存中表示长度为 {0} 字节的 COHERENT 文件。",
+    "Media.CoherentDirectUnavailable": "{0}：COHERENT 直接块 {1} 缺失或超出镜像范围。",
+    "Media.CoherentIndirectUnavailable": "{0}：第 {2} 级 COHERENT 间接块 {1} 缺失或超出镜像范围。",
+    "Media.CoherentIndirectRepeated": "{0}：第 {2} 级 COHERENT 间接块 {1} 被多次引用。",
+    "Media.CoherentDirectoryCycle": "{0}：COHERENT 目录 inode {1} 形成循环。",
+    "Media.CoherentDirectoryRepeated": "{0}：COHERENT 目录 inode {1} 已经遍历过。",
+    "Media.CoherentChildUnreadable": "{0}：无法读取 COHERENT 子 inode。",
+    "Media.CoherentMissingBytes": "{0}：缺失 {1} 个 COHERENT 字节，其位置保持为零。",
+    "Media.CoherentDepth": "{0}：在深度 {1} 处达到 COHERENT 目录深度上限。",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

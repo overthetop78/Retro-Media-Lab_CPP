@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Adres zakresu danych mediów nie może być negatywny.",
+    "MediaFileSystems.BlockRangeLength": "Długość zakresu danych mediów musi być dodatnia.",
+    "MediaFileSystems.BlockSourceOffset": "Offset źródła danych w zakresie mediów nie może być negatywny.",
+    "MediaFileSystems.BlockSourceNull": "Przechowywany zakres mediów wymaga źródła danych.",
+    "MediaFileSystems.BlockSourceRange": "Zakres mapy przekracza jego źródło danych.",
+    "MediaFileSystems.BlockNonStoredSource": "Tylko przechowywane zakresy mogą odnosić się do źródła danych.",
+    "MediaFileSystems.BlockNonStoredOffset": "Zakres nieprzechowywany nie może mieć przesunięcia źródła.",
+    "MediaFileSystems.BlockLogicalLength": "Logiczna długość mediów nie może być ujemna.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Logiczny rozmiar bloku musi być pozytywny.",
+    "MediaFileSystems.BlockCompleteBlocks": "Długość logiczna musi zawierać kompletne bloki logiczne.",
+    "MediaFileSystems.BlockGeometryOutside": "Geometria deklarowana przekracza logiczną pojemność nośników.",
+    "MediaFileSystems.BlockRangeOutside": "Zakres bloku przekracza logiczną długość nośnika.",
+    "MediaFileSystems.BlockRangeOverlap": "Przedziały bloku nie mogą się nakładać.",
+    "MediaFileSystems.BlockReadAddress": "Logiczny adres odczytu nie może być negatywny.",
+    "MediaFileSystems.BlockReadRange": "Wymagany zakres logiczny przekracza pojemność mediów.",
+    "MediaFileSystems.BlockRangeMissing": "Brak zakresu danych mediów obejmuje adres logiczny {0}.",
+    "MediaFileSystems.BlockUnavailable": "Adres logiczny {0} jest niedostępny na obrazku źródłowym.",
+    "MediaFileSystems.BlockRangeKind": "Nieobsługiwany zakres danych medialnych {0}.",
+    "MediaFileSystems.BlockOverflow": "Obliczenie bloku multimedialnego przekracza obsługiwany zakres podpisany.",
+    "MediaFileSystems.BlockGeometryValue": "Parametr geometrii dysku twardego {0} musi być dodatni.",
+    "MediaFileSystems.BlockDriveCount": "Dostęp mechaniczny musi obejmować dodatnią liczbę bajtów.",
+    "MediaFileSystems.BlockNullImage": "Wymagany jest obraz bloku."
+  }
+}

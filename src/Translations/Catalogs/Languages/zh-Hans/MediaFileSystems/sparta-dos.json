@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "磁盘映像“{0}”不包含有效的 SpartaDOS 卷。",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS 扇区 {0} 缺失。",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS 扇区 {0} 超出范围 1..{1}。",
+    "MediaFileSystems.SpartaMapLoop": "SpartaDOS 扇区映射链在扇区 {0} 处形成循环。",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS 扇区映射 {0} 指向前驱 {2}，而非 {1}。",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS 目录树在其映射从扇区 {0} 开始的目录处形成循环。",
+    "MediaFileSystems.SpartaDirectoryLength": "扇区 {0} 处的 SpartaDOS 目录声明了无效的大小：{1} 字节。"
+  }
+}

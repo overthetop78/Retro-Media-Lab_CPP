@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "كتالوج Apple DOS الذي يشير إليه VTOC عند المسار {0} والقطاع {1} مفقود أو غير صالح.",
+    "MediaFileSystems.AppleDosCatalogChain": "قطاع كتالوج Apple DOS ‏{0}/{1} مفقود أو ضمن حلقة.",
+    "MediaFileSystems.AppleDosAddress": "عنوان Apple DOS ‏{1}/{2} الخاص بـ {0} خارج هندسة القرص.",
+    "MediaFileSystems.AppleDosListCycle": "قائمة المسارات والقطاعات الخاصة بـ {0} تشكل حلقة عند {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "قائمة المسارات والقطاعات الخاصة بـ {0} مفقودة عند {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "قطاع البيانات {1}/{2} الخاص بـ {0} مفقود.",
+    "MediaFileSystems.AppleDosSize": "يحدد الملف {0} عدد {1} من القطاعات، لكن تم اجتياز {2} من القطاعات.",
+    "MediaFileSystems.AppleDosWriteFormat": "تنسيق Apple DOS الهدف {0} غير مدعوم.",
+    "MediaFileSystems.AppleDosWriteFull": "لا يحتوي قسم Apple DOS على قطاعات كافية للكتالوج أو البيانات.",
+    "MediaFileSystems.AppleDosWriteVolume": "يجب أن يتبع اسم قسم Apple DOS ‏{0} الصيغة DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "يدعم Apple DOS فقط الملفات ذات المحتوى المتاح في الكتالوج الجذري.",
+    "MediaFileSystems.AppleDosBinarySize": "لا يمكن أن يتجاوز حجم الملف الثنائي في Apple DOS ‏65535 بايت.",
+    "MediaFileSystems.AppleDosWriteName": "لا يمكن ترميز اسم الملف {0} في Apple DOS ضمن إدخال كتالوج.",
+    "MediaFileSystems.AppleDosTypeText": "نص",
+    "MediaFileSystems.AppleDosTypeBinary": "ثنائي",
+    "MediaFileSystems.AppleDosTypeRelocatable": "قابل لإعادة التمركز",
+    "MediaFileSystems.AppleDosTypeFile": "ملف"
+  }
+}

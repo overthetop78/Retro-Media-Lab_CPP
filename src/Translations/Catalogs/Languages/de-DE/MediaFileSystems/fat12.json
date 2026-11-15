@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Ungültige Sektorabbildung {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Die Sektorbildformatkennung ist leer oder ungültig: {0}.",
+    "Media.SectorDuplicateBlock": "Der logische Sektor {0} tritt mehr als einmal im Bild auf.",
+    "Media.SectorBlockOutside": "Der logische Sektor {0} befindet sich außerhalb des Bildes, das {1} Sektoren enthält.",
+    "Media.SectorCapacityShort": "Die deklarierte Sektorbildkapazität {0} ist kleiner als die verfügbare Datenlänge {1}.",
+    "Media.SectorMissingBlock": "Der logische Sektor {0} fehlt.",
+    "Media.SectorInvalidBlockSize": "Der logische Sektor {0} enthält {1} Bytes anstelle von {2}.",
+    "Media.FatUnsupportedBoot": "Das Bildformat {0} hat kein unterstütztes FAT12-Dateisystem: Der Bootsektor fehlt oder ist abgeschnitten.",
+    "Media.FatUnsupportedLayout": "Das Bildformat {0} hat kein unterstütztes FAT12-Dateisystem (Sektorgröße {1}, Sektoren pro Cluster {2}, reservierte Sektoren {3}, FAT-Kopien {4}, Wurzeleinträge {5}, Sektoren pro FAT {6}).",
+    "Media.FatInvalidChain": "Die FAT-Kette von {0} ist ungültig oder zyklisch bei Cluster {1}.",
+    "Media.FatTruncatedTable": "Der FAT12-Eintrag für Cluster {0} ist gekürzt.",
+    "Media.FatMissingSectors": "Sektorbereich {0} bis {1} ist unvollständig.",
+    "Media.FatDepthLimit": "Die FAT-Verzeichnisverschachtelungsgrenze wurde bei {0} (Tiefe {1}) erreicht.",
+    "Media.FatMissingSector": "Der FAT-Sektor {0} enthält {1} Bytes anstelle von {2}.",
+    "Media.FatCyclicChain": "{0}: Die FAT12-Kette ist zyklisch bei Cluster {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 Cluster {1} liegt außerhalb des Datenbereichs.",
+    "Media.FatIncompleteContent": "{0}: Die deklarierte Größe ist {1} Bytes, aber nur {2} Bytes sind verfügbar.",
+    "Media.FatUnsupportedGeometry": "Bildformat {0} ist keine unterstützte FAT12-Geometrie.",
+    "Media.FatDiskFull": "Das Ziel-FAT12-Volume hat nicht genügend freie Cluster oder Verzeichniseinträge.",
+    "Media.FatInvalidEntry": "Der Migrationseintrag {0} kann nicht als FAT12-Kurznameneintrag dargestellt werden.",
+    "Media.FatDirectoryCycle": "Verzeichnis {0} verwendet den bereits durchsuchten FAT12-Cluster {1} erneut.",
+    "Media.FatIntegrityInvalid": "FAT Sektor {0} hat ungültige aufgezeichnete Integrität.",
+    "Media.FatResourceLimit": "Die FAT12-Extraktionsgrenze wurde beim Lesen {0} erreicht."
+  }
+}

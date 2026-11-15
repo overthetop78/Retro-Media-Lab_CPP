@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "{1} baytlık sektörlere sahip {0} görüntüsü, desteklenen bir Atari DOS dizini içermiyor.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Dizin sektörü {0} eksik.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Dizin sektörü {0}, girdi {1}, geçerli bir Atari DOS dosya girdisi değil ve yok sayıldı.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS veri sektörü {1} eksik.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS veri zinciri {1} sektöründe döngü içeriyor.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektör {1}, {3} dosyasına ait; beklenen {2}.",
+    "MediaFileSystems.AtariDosOpen": "Dizin sektörü {1}, girdi {2} ('{0}'), hâlâ yazma için açık ve yok sayıldı.",
+    "MediaFileSystems.AtariDosTruncated": "'{0}' dosyasının veri sektörü {1}, bağlantısını içermek için fazla kısa.",
+    "MediaFileSystems.AtariDosPremature": "'{0}' dosyası {1} sektör bildiriyor, ancak zinciri {2} sektörden sonra bitiyor.",
+    "MediaFileSystems.AtariDosEmptyData": "Boş dosya '{0}', beklenmedik şekilde sektör {1} konumuna başvuruyor.",
+    "MediaFileSystems.AtariDosBounded": "'{0}' dosyası, dizin girdisinde bildirilen {1} sektörle sınırlı; alttaki zincir {2} sektöründe devam ediyor.",
+    "MediaFileSystems.AtariDosShared": "'{0}' dosyası, {2} sektöründen başlayan {3} sektörü '{1}' ile paylaşıyor.",
+    "MediaFileSystems.AtariDosUsedLength": "'{0}' dosyasının veri sektörü {1}, {2} bayt bildiriyor ancak yalnızca {3} bayt kullanılabilir."
+  }
+}

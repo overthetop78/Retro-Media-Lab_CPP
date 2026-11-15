@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "卷宗資訊區塊 {0} 缺失或大小無效。",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "目錄區塊 {0} 缺失或大小無效。",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}：資料分支的區塊 {1} 缺失或大小無效。",
+    "MediaFileSystems.MfsDataIncomplete": "{0}：資料分支包含 {1} 位元組；預期為 {2} 位元組。",
+    "MediaFileSystems.MfsDataMetadata": "{0}：資料分支宣告從叢集 {2} 開始包含 {1} 位元組；中繼資料不一致。",
+    "MediaFileSystems.MfsDataChainCycle": "{0}：資料分支的配置鏈包含循環。",
+    "MediaFileSystems.MfsDataChainOutside": "{0}：資料分支的配置鏈參照了配置表範圍之外的位置。",
+    "MediaFileSystems.MfsDataChainPremature": "{0}：資料分支的配置鏈在所有所需叢集可用之前就已結束。",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}：資源分支的區塊 {1} 缺失或大小無效。",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}：資源分支包含 {1} 位元組；預期為 {2} 位元組。",
+    "MediaFileSystems.MfsResourceMetadata": "{0}：資源分支宣告從叢集 {2} 開始包含 {1} 位元組；中繼資料不一致。",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}：資源分支的配置鏈包含循環。",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}：資源分支的配置鏈參照了配置表範圍之外的位置。",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}：資源分支的配置鏈在所有所需叢集可用之前就已結束。"
+  }
+}

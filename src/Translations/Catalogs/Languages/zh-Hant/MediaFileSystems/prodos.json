@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "無法識別區塊 {0} 中的 ProDOS/SOS 卷宗標頭（讀取值為 ${1}）。",
+    "MediaFileSystems.ProDosDepth": "ProDOS 目錄區塊 {1} 超出了層級 {0} 的最大深度。",
+    "MediaFileSystems.ProDosDirectory": "ProDOS 目錄區塊 {0} 無效（循環={1}，重複使用={2}）。",
+    "MediaFileSystems.ProDosIndex": "{0} ({1})：ProDOS 索引區塊 {2} 無效（循環={3}）。",
+    "MediaFileSystems.ProDosMaster": "{0} ({1})：ProDOS 主索引區塊 {2} 無效。",
+    "MediaFileSystems.ProDosData": "{0} ({1})：ProDOS 資料區塊 {2} 遺失、位於磁碟映像範圍之外或大小無效。",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1})：已重建 {2} 位元組，預期為 {3} 位元組。",
+    "MediaFileSystems.ProDosBitmap": "ProDOS 點陣圖區塊 {0} 遺失或大小無效。",
+    "MediaFileSystems.ProDosTotal": "ProDOS 卷宗宣告了 {0} 個區塊，但磁碟映像包含 {1} 個區塊。",
+    "MediaFileSystems.ProDosWriteFormat": "不支援 ProDOS 目標格式 '{0}'。",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS 卷宗沒有足夠的區塊或目錄項目。",
+    "MediaFileSystems.ProDosGeometry": "ProDOS 目標磁碟幾何結構或磁區位址對映無效。",
+    "MediaFileSystems.ProDosEntry": "無法寫入 ProDOS 項目 '{0}'。",
+    "MediaFileSystems.ProDosFileLength": "ProDOS 檔案 '{0}' 超出了 24 位元長度欄位的範圍。",
+    "MediaFileSystems.ProDosName": "ProDOS 名稱 '{0}' 無效。",
+    "MediaFileSystems.ProDosTypeText": "文字",
+    "MediaFileSystems.ProDosTypeBinary": "二進位",
+    "MediaFileSystems.ProDosTypeDirectory": "目錄",
+    "MediaFileSystems.ProDosTypeVariables": "變數",
+    "MediaFileSystems.ProDosTypeSystem": "系統"
+  }
+}

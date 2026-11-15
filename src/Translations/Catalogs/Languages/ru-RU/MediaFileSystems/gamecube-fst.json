@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Документ не является оптическим изображением ISO.",
+    "MediaFileSystems.GameCubeNotImage": "Документ не является изображением GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST требует оптических данных.",
+    "MediaFileSystems.GameCubeNoTrack": "Отслеживание данных для GameCube FST не доступно.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST требует 2048-байтовых оптических секторов.",
+    "MediaFileSystems.GameCubeHeader": "Заголовок диска GameCube недействителен.",
+    "MediaFileSystems.GameCubeDescriptor": "Дескриптор GameCube FST недействителен.",
+    "MediaFileSystems.GameCubeRoot": "Корневая запись GameCube FST недействительна.",
+    "MediaFileSystems.GameCubeCount": "Количество входов в GameCube FST является недействительным.",
+    "MediaFileSystems.GameCubeDepth": "Дерево каталогов GameCube FST слишком глубокое.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Диапазон каталогов GameCube FST недействителен.",
+    "MediaFileSystems.GameCubeContentLimit": "Файл GameCube {0} больше лимита содержимого и не был загружен.",
+    "MediaFileSystems.GameCubeNameOffset": "Название GameCube FST смещено за пределами струнного стола.",
+    "MediaFileSystems.GameCubeSectorData": "Оптический сектор GameCube не имеет считываемых данных.",
+    "MediaFileSystems.GameCubeExtent": "Протяженность GameCube FST находится за пределами оптической дорожки.",
+    "MediaFileSystems.GameCubeOverflow": "Значение GameCube FST превышает поддерживаемый численный диапазон."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ProDOS/SOS-diskenhedens header i blok {0} genkendes ikke (observeret værdi ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS mappe blok {1} overstiger den maksimale dybde på niveau {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS mappeblok {0} er ugyldig (cyklus = {1}, genbruges = {2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS indeksblok {2} er ugyldig (cyklus = {3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS master index blok {2} er ugyldig.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS-datablok {2} mangler, ligger uden for diskbilledet eller har en ugyldig størrelse.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): rekonstrueret {2} bytes ud af {3} forventede bytes.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS bitmap blok {0} mangler eller har en ugyldig størrelse.",
+    "MediaFileSystems.ProDosTotal": "ProDOS volumen erklærer {0} blokke, men billedet indeholder {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS målformatet '{0}' er ikke understøttet.",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS volumen har ikke nok blokke eller mappeindgange.",
+    "MediaFileSystems.ProDosGeometry": "ProDOS-målets geometri eller sektoradressekort er ugyldigt.",
+    "MediaFileSystems.ProDosEntry": "ProDOS-indgangen '{0}' er ikke skrivbar.",
+    "MediaFileSystems.ProDosFileLength": "ProDOS-filen '{0}' overstiger 24bit-længden.",
+    "MediaFileSystems.ProDosName": "ProDOS-navnet {0} er ugyldigt.",
+    "MediaFileSystems.ProDosTypeText": "Tekst",
+    "MediaFileSystems.ProDosTypeBinary": "Binær",
+    "MediaFileSystems.ProDosTypeDirectory": "Mappe",
+    "MediaFileSystems.ProDosTypeVariables": "Variabler",
+    "MediaFileSystems.ProDosTypeSystem": "System"
+  }
+}

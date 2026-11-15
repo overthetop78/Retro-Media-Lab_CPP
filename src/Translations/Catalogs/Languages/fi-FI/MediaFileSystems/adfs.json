@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Kuvassa ei ole tuettua ADFS-luetteloa ({0}-tavu lohkot, {1} lohkot).",
+    "Media.AdfsInvalidDirectory": "ADFS-hakemisto {0} on virheellinen tai epätäydellinen.",
+    "Media.AdfsDepth": "ADFS-hakemiston syvyysraja saavutettiin syvyydessä {0}.",
+    "Media.AdfsCycle": "ADFS hakemisto {0} on syklinen tai viitataan useammin kuin kerran.",
+    "Media.AdfsInvalidRange": "{0}: virheellinen ADFS-osoite {1}, offset {2}, pituus {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS-osoite {1} offset {2} vaatii puuttuvan lohkon {3}.",
+    "Media.AdfsIntegrity": "ADFS-lohkolla {0} on virheellinen tallennettu eheys.",
+    "Media.AdfsBlockVolume": "ADFS edellyttää taltiota, jonka sektoreita tai lohkoja voidaan osoittaa suoraan.",
+    "Media.AdfsSectorCount": "ADFS-sektorin luku {0} on tuetun alueen ulkopuolella."
+  }
+}

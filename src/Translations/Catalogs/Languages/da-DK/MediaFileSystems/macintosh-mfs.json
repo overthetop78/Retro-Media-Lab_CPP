@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Diskafbildningen indeholder ikke en {0}-diskenhed; registreret signatur: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: blok {2} i filstrøm {1} mangler.",
+    "MediaFileSystems.MacIncompleteData": "{0}: filstrøm {1} indeholder {2} byte; forventet {3}.",
+    "MediaFileSystems.MacAllocationSize": "Allokeringsstørrelsen {1} for diskenhed {0} skal være et multiplum af {2} byte og forskellig fra nul.",
+    "MediaFileSystems.MacFreeCount": "Diskenhed {0} angiver {1} ledige allokeringsblokke ud af {2} blokke i alt.",
+    "MediaFileSystems.MfsMapTruncated": "MFS-kortet for {0} allokeringer indeholder {1} byte; krævet {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "MFS-mappeposten i blok {0} ved forskydning {1} er ugyldig.",
+    "MediaFileSystems.MfsChain": "{0}: allokeringskæden for filstrøm {1} er ugyldig (cyklus={2}, uden for kortet={3}, for tidlig afslutning={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: filstrøm {1} angiver {2} byte fra klynge {3}; metadataene er inkonsistente.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-fil"
+  }
+}

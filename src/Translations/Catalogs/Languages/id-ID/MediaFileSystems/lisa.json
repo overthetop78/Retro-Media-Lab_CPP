@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Citra disk tidak memuat sistem berkas Lisa dengan tag di antara {0} halamannya.",
+    "MediaFileSystems.LisaMissingPage": "Berkas Lisa 0x{0} tidak memiliki halaman {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Halaman Lisa MDDF berisi {0} byte; diperlukan {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Blok logis Lisa {0} memiliki tag berukuran {1} byte; diperlukan {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Berkas Lisa 0x{0} berisi beberapa salinan halaman {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Ruang kosong Lisa tidak dapat ditentukan tanpa tag yang dapat digunakan.",
+    "MediaFileSystems.LisaFileDescription": "Berkas Lisa ${0}"
+  }
+}

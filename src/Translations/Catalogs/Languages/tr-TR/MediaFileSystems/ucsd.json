@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "{0} bloğundaki UCSD dizini tanınmıyor; geçersiz bloklar: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD blokları eksik veya kesilmiş: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System dizin blokları eksik veya kesilmiş: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD girdisi {0} geçersiz bir ada sahip: '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD girdisi {0} ('{1}'), {4} blok içinde geçersiz [{2}, {3}) aralığını kullanıyor.",
+    "MediaFileSystems.UcsdOverlap": "UCSD girdisi {0} ('{1}'), {2} bloklarıyla örtüşüyor.",
+    "MediaFileSystems.UcsdCount": "UCSD dizini {0} dosya bildiriyor, ancak {1} geçerli girdi bulundu.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: son UCSD bloğu {1} bayt bildiriyor.",
+    "MediaFileSystems.UcsdTypeUntyped": "Türsüz UCSD dosyası",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD dış disk dosyası",
+    "MediaFileSystems.UcsdTypeCode": "UCSD kod dosyası",
+    "MediaFileSystems.UcsdTypeText": "UCSD metin dosyası",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD bilgi dosyası",
+    "MediaFileSystems.UcsdTypeData": "UCSD veri dosyası",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD Grafik dosyası",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD fotoğraf dosyası",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD güvenli dizini"
+  }
+}

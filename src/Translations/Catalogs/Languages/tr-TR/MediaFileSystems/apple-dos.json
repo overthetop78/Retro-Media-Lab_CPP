@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "{0} izindeki {1} sektöründe bulunan VTOC tarafından belirtilen Apple DOS kataloğu eksik veya geçersizdir.",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS katalog sektörü {0}/{1} eksik veya döngüseldir.",
+    "MediaFileSystems.AppleDosAddress": "{0} için Apple DOS adresi {1}/{2}, disk geometrisinin dışındadır.",
+    "MediaFileSystems.AppleDosListCycle": "{0} için iz/sektör listesi {1}/{2} konumunda döngüseldir.",
+    "MediaFileSystems.AppleDosListMissing": "{0} için iz/sektör listesi {1}/{2} konumunda eksiktir.",
+    "MediaFileSystems.AppleDosDataMissing": "{0} için veri sektörü {1}/{2} eksiktir.",
+    "MediaFileSystems.AppleDosSize": "{0} dosyası {1} sektör bildiriyor, ancak {2} sektör dolaşıldı.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS hedef formatı {0} desteklenmez.",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOS biriminde yeterli katalog veya veri sektörü yoktur.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS birim adı {0}, DOS-nnn biçiminde olmalıdır.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS yalnızca kök katalogda içeriği mevcut olan dosyaları destekler.",
+    "MediaFileSystems.AppleDosBinarySize": "Bir Apple DOS ikili dosyası 65535 baytı aşamaz.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS dosya adı {0} bir katalog girişinde kodlanamaz.",
+    "MediaFileSystems.AppleDosTypeText": "Metin",
+    "MediaFileSystems.AppleDosTypeBinary": "İkili",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Yeniden konumlandırılabilir",
+    "MediaFileSystems.AppleDosTypeFile": "Dosya"
+  }
+}

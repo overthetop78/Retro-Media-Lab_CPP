@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Schijfafbeelding '{0}' bevat geen geldig SpartaDOS-volume.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS-sector {0} ontbreekt.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS-sector {0} is buiten bereik 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "De keten van SpartaDOS-sectorkaarten vormt een lus bij sector {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS sectorkaart {0} verwijst naar voorganger {2} in plaats van {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "De SpartaDOS-mappenboom vormt een lus bij de map waarvan de sectorkaart bij sector {0} begint.",
+    "MediaFileSystems.SpartaDirectoryLength": "De SpartaDOS directory op sector {0} verklaart een ongeldige grootte van {1} bytes."
+  }
+}

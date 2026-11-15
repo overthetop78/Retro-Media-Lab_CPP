@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "La fuente de medios no puede ser nula.",
+    "MediaFileSystems.ContextSourcePath": "El camino principal fuente de medios no puede ser vacío o blanco.",
+    "MediaFileSystems.ContextPageSize": "El tamaño de la página de reconocimiento debe ser positivo.",
+    "MediaFileSystems.ContextKnownLength": "La longitud de la fuente conocida no puede ser negativa.",
+    "MediaFileSystems.ContextLengthOverflow": "La duración de la fuente de medios supera el rango firmado.",
+    "MediaFileSystems.ContextReadOffset": "El reconocimiento leído no puede ser negativo.",
+    "MediaFileSystems.ContextReadCount": "El recuento de reconocimiento no puede ser negativo.",
+    "MediaFileSystems.ContextReadRange": "El rango solicitado supera la duración de la fuente.",
+    "MediaFileSystems.ContextFullRead": "La fuente completa no se puede cargar en un solo búfer de memoria. Usar lecturas ligadas en su lugar.",
+    "MediaFileSystems.ContextPageEnded": "La fuente de medios terminó en byte {0} mientras leía una página en caché.",
+    "MediaFileSystems.DocumentFormatId": "Se requiere un identificador de formato reconocido.",
+    "MediaFileSystems.DocumentRepresentation": "Se requiere una representación mediática con información de representación pública."
+  }
+}

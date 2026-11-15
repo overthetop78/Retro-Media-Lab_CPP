@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Il blocco iniziale RT-11 non è valido (firma '{0}', blocco directory {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Il segmento RT-11 {0} al blocco {1} ha un numero di segmento fuori intervallo.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segmento {0} a blocco {1} forma un ciclo.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segmento {0} a blocco {1} è al di fuori dell'immagine.",
+    "MediaFileSystems.Rt11SegmentMissing": "Il segmento RT-11 {0} al blocco {1} ha una coppia di blocchi mancante o troncata.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 segmento {0} dichiara una dimensione di entrata non valida di {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "La voce RT-11 nel blocco dati {0}, offset {1}, ha un nome vuoto.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 blocchi mancanti o troncati: {1}.",
+    "MediaFileSystems.Rt11Tentative": "File RT-11 provvisorio",
+    "MediaFileSystems.Rt11Permanent": "File RT-11"
+  }
+}

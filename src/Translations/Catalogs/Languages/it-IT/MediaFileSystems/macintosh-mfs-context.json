@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Il blocco di informazioni del volume {0} manca o ha una dimensione non valida.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Il blocco di directory {0} manca o ha una dimensione non valida.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: il flusso di dati: il blocco {1} manca o ha una dimensione non valida.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: il flusso di dati contiene {1} byte; previsti {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: il flusso di dati dichiara {1} byte dal cluster {2}; i metadati sono incoerenti.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: il flusso di dati: la catena di allocazione contiene un ciclo.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: il flusso di dati: la catena di allocazione fa riferimento all’esterno della mappa di allocazione.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: il flusso di dati: la catena di allocazione termina prima che tutti i cluster necessari siano disponibili.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: il flusso di risorse: il blocco {1} manca o ha una dimensione non valida.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: il flusso di risorse contiene {1} byte; previsti {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: il flusso di risorse dichiara {1} byte dal cluster {2}; i metadati sono incoerenti.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: il flusso di risorse: la catena di allocazione contiene un ciclo.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: il flusso di risorse: la catena di allocazione fa riferimento all’esterno della mappa di allocazione.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: il flusso di risorse: la catena di allocazione termina prima che tutti i cluster necessari siano disponibili."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Awal volume harus bukan -negatif: {0}.",
+    "MediaFileSystems.VolumeLength": "Panjang volume mesti positif: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Sebuah asal volume diperlukan.",
+    "MediaFileSystems.VolumePartitionNumber": "Sebuah nomor partisi harus positif: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Sebuah nomor sesi harus positif: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Sebuah nomor trek harus positif: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Jangkauan volume melebihi yang didukung signed 64- bit bounds.",
+    "MediaFileSystems.WholeVolumeRequired": "Pembaca sistem sektor ini memerlukan volume untuk menutupi seluruh citra sektor."
+  }
+}

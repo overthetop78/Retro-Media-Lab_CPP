@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Считыватель файловой системы в индексе {0} является нулевым.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Считыватель файловой системы в индексе {0} имеет пустой идентификатор.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Несколько файловых систем имеют идентификатор '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Ни один считыватель файловой системы не имеет идентификатора {0}.",
+    "MediaFileSystems.RegistryNullImage": "Образ сектора не может быть нулевым.",
+    "MediaFileSystems.AtariKFileUnsupported": "Изображение сектора не является диском Atari K-file с использованием KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Изображение сектора не содержит полной программы загрузки Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Изображение сектора не является графическим диском Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Каталог объявляет {0} байтами, но секторная цепочка содержит {1} байтами.",
+    "MediaFileSystems.AtariClkGraphic": "График Atari CLK"
+  }
+}

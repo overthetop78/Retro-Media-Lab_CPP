@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 hemblocket är ogiltigt (signatur {0}, katalogblock {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11-segment {0} i block {1} har ett segmentnummer utanför giltigt intervall.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} i block {1} bildar en cykel.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} i block {1} ligger utanför bilden.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11-segment {0} i block {1} har ett blockpar som saknas eller är trunkerat.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11-segment {0} anger en ogiltig poststorlek på {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "RT-11-posten på datablock {0}, offset {1}, har ett tomt namn.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 block saknas eller trunkeras: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Tillfällig RT-11-fil",
+    "MediaFileSystems.Rt11Permanent": "RT-11-fil"
+  }
+}

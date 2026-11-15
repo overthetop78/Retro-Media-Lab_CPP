@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Pembaca sistem berkas pada indeks {0} kosong.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Pembaca sistem berkas pada indeks {0} memiliki identifier kosong.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Multiple berkas-system readers have identifier '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Tidak ada pembaca sistem file- memiliki identifier '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Sebuah gambar sektor tidak dapat kosong.",
+    "MediaFileSystems.AtariKFileUnsupported": "Gambar sektor ini bukanlah cakram Atari K-file menggunakan KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Gambar sektor tidak berisi program boot Atari lengkap.",
+    "MediaFileSystems.AtariClkUnsupported": "Gambar sektor ini bukan sebuah disk perpustakaan milik Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Katalog mendeklarasikan {0} bytes, tapi rantai sektor berisi {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Grafik Atari CLK"
+  }
+}

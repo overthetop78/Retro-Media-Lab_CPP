@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "ディスクイメージの {0} ページ内に、タグ付きの Lisa ファイルシステムがありません。",
+    "MediaFileSystems.LisaMissingPage": "Lisa ファイル 0x{0} のページ {1} がありません。",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF ページは {0} バイトですが、{1} バイト必要です。",
+    "MediaFileSystems.LisaInvalidTag": "Lisa 論理ブロック {0} のタグは {1} バイトですが、{2} バイト必要です。",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa ファイル 0x{0} にページ {1} のコピーが複数あります。",
+    "MediaFileSystems.LisaUnknownFreeSpace": "使用可能なタグがないため、Lisa の空き容量を特定できません。",
+    "MediaFileSystems.LisaFileDescription": "Lisa ファイル ${0}"
+  }
+}

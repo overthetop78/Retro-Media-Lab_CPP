@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Diskafbildningen '{0}' indeholder ikke en gyldig SpartaDOS-diskenhed.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS sektor {0} mangler.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS sektor {0} er uden for område 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Kæden af SpartaDOS-sektorkort danner en løkke ved sektor {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS sektorkort {0} henviser til forgænger {2} i stedet for {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS-mappetræet danner en løkke ved mappen, hvis kort starter ved sektor {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "SpartaDOS-mappen ved sektor {0} angiver en ugyldig størrelse på {1} byte."
+  }
+}

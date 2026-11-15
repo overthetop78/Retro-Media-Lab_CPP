@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Chiều dài logic quang học không thể là âm.",
+    "MediaFileSystems.OpticalMetadataOnly": "Bộ mô tả phương tiện kiểu cũ này chỉ chứa siêu dữ liệu và không có nguồn dữ liệu có thể đọc.",
+    "MediaFileSystems.OpticalIndexNumber": "Chỉ số quang học phải nằm giữa 0 và 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Tham số quang học '{0}' phải là số dương.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Tham số quang học '{0}' không được âm.",
+    "MediaFileSystems.OpticalDataSource": "Một nguồn dữ liệu quang học là cần thiết.",
+    "MediaFileSystems.OpticalUserWindow": "Cửa sổ dữ liệu người dùng vượt quá một khu vực được lưu trữ.",
+    "MediaFileSystems.OpticalTrackSource": "Dữ liệu theo dõi vượt quá nguồn của nó.",
+    "MediaFileSystems.OpticalSubchannelSource": "Kích thước con cần một nguồn con.",
+    "MediaFileSystems.OpticalSubchannelRange": "Dữ liệu kênh phụ vượt quá phạm vi nguồn.",
+    "MediaFileSystems.OpticalPregapOffset": "Một bù đắp mã nguồn pregap được lưu trữ đòi hỏi các khu vực pregap được lưu trữ.",
+    "MediaFileSystems.OpticalPregapRange": "Bản pregap được lưu trữ vượt quá nguồn gốc của nó.",
+    "MediaFileSystems.OpticalStoredDestination": "Điểm đến phải chứa chính xác một khu vực được lưu trữ.",
+    "MediaFileSystems.OpticalStoredPregap": "Sector nằm ngoài vùng pregap đã lưu.",
+    "MediaFileSystems.OpticalRelativeSector": "Khu vực này nằm ngoài đường ray quang học.",
+    "MediaFileSystems.OpticalNullTrack": "Rãnh quang học không được là null."
+  }
+}

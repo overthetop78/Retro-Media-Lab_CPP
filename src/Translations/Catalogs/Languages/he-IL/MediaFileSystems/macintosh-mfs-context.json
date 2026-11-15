@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "בלוק מידע אמצעי האחסון {0} חסר או שגודלו אינו תקין.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "בלוק הספרייה {0} חסר או שגודלו אינו תקין.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: זרם הנתונים: בלוק {1} חסר או שגודלו אינו תקין.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: זרם הנתונים מכיל {1} בתים; צפויים {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: זרם הנתונים מצהיר על {1} בתים החל מאשכול {2}; המטא־נתונים אינם עקביים.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: זרם הנתונים: שרשרת ההקצאה מכילה מחזור.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: זרם הנתונים: שרשרת ההקצאה מפנה אל מחוץ למפת ההקצאה.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: זרם הנתונים: שרשרת ההקצאה מסתיימת לפני שכל האשכולות הדרושים זמינים.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: זרם המשאבים: בלוק {1} חסר או שגודלו אינו תקין.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: זרם המשאבים מכיל {1} בתים; צפויים {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: זרם המשאבים מצהיר על {1} בתים החל מאשכול {2}; המטא־נתונים אינם עקביים.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: זרם המשאבים: שרשרת ההקצאה מכילה מחזור.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: זרם המשאבים: שרשרת ההקצאה מפנה אל מחוץ למפת ההקצאה.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: זרם המשאבים: שרשרת ההקצאה מסתיימת לפני שכל האשכולות הדרושים זמינים."
+  }
+}

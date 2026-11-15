@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "磁碟映像檔不包含 {0} 卷宗；讀取到的簽章為 0x{1}。",
+    "MediaFileSystems.MacMissingBlock": "{0}：fork {1} 的區塊 {2} 缺失。",
+    "MediaFileSystems.MacIncompleteData": "{0}：fork {1} 包含 {2} 位元組；預期為 {3} 位元組。",
+    "MediaFileSystems.MacAllocationSize": "卷宗 {0} 的配置單元大小 {1} 必須是 {2} 位元組的正整數倍。",
+    "MediaFileSystems.MacFreeCount": "卷宗 {0} 宣告共有 {2} 個配置區塊，其中 {1} 個可用。",
+    "MediaFileSystems.MfsMapTruncated": "用於 {0} 個配置單元的 MFS 表包含 {1} 位元組；需要 {2} 位元組。",
+    "MediaFileSystems.MfsDirectoryEntry": "區塊 {0} 中位移 {1} 處的 MFS 目錄項目無效。",
+    "MediaFileSystems.MfsChain": "{0}：fork {1} 的配置鏈無效（循環={2}，超出表範圍={3}，過早結束={4}）。",
+    "MediaFileSystems.MfsForkMetadata": "{0}：fork {1} 宣告從叢集 {3} 開始包含 {2} 位元組；中繼資料不一致。",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh 檔案"
+  }
+}

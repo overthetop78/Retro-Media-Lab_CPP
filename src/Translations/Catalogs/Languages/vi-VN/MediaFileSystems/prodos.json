@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Không nhận diện được phần đầu phân vùng ProDOS/SOS trong khối {0} (giá trị đọc được ${1}).",
+    "MediaFileSystems.ProDosDepth": "Khối thư mục ProDOS {1} vượt quá độ sâu tối đa ở mức {0}.",
+    "MediaFileSystems.ProDosDirectory": "Khối thư mục ProDOS {0} không hợp lệ (vòng lặp={1}, dùng lại={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): khối chỉ mục ProDOS {2} không hợp lệ (vòng lặp={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): khối chỉ mục chính ProDOS {2} không hợp lệ.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): khối dữ liệu ProDOS {2} bị thiếu, nằm ngoài ảnh đĩa hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): đã tái tạo {2} byte trong số {3} byte dự kiến.",
+    "MediaFileSystems.ProDosBitmap": "Khối bitmap ProDOS {0} bị thiếu hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.ProDosTotal": "Phân vùng ProDOS khai báo {0} khối, nhưng ảnh đĩa chứa {1} khối.",
+    "MediaFileSystems.ProDosWriteFormat": "Định dạng đích ProDOS '{0}' không được hỗ trợ.",
+    "MediaFileSystems.ProDosDiskFull": "Phân vùng ProDOS không có đủ khối hoặc mục thư mục.",
+    "MediaFileSystems.ProDosGeometry": "Hình học đĩa ProDOS đích hoặc bản đồ địa chỉ cung không hợp lệ.",
+    "MediaFileSystems.ProDosEntry": "Không thể ghi mục ProDOS '{0}'.",
+    "MediaFileSystems.ProDosFileLength": "Tệp ProDOS '{0}' vượt quá trường độ dài 24 bit.",
+    "MediaFileSystems.ProDosName": "Tên ProDOS '{0}' không hợp lệ.",
+    "MediaFileSystems.ProDosTypeText": "Văn bản",
+    "MediaFileSystems.ProDosTypeBinary": "Nhị phân",
+    "MediaFileSystems.ProDosTypeDirectory": "Thư mục",
+    "MediaFileSystems.ProDosTypeVariables": "Biến",
+    "MediaFileSystems.ProDosTypeSystem": "Hệ thống"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "UCSD-katalogen i block {0} är inte erkänd; ogiltiga block: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-block saknas eller är trunkerade: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Katalogblock för UCSD p-System saknas eller är trunkerade: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD-post {0} har ett ogiltigt namn '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD-post {0} ('{1}') använder det ogiltiga intervallet [{2}, {3}) i {4} block.",
+    "MediaFileSystems.UcsdOverlap": "UCSD-post {0} ('{1}') överlappar block {2}.",
+    "MediaFileSystems.UcsdCount": "UCSD-katalogen anger {0} filer, men {1} giltiga poster hittades.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: det sista UCSD-blocket anger {1} byte.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD-fil utan typ",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD-fil på extern disk",
+    "MediaFileSystems.UcsdTypeCode": "UCSD-kodfil",
+    "MediaFileSystems.UcsdTypeText": "UCSD textfil",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD-informationsfil",
+    "MediaFileSystems.UcsdTypeData": "UCSD datafil",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD grafikfil",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD fotofil",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD säker katalog"
+  }
+}

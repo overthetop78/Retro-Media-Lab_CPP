@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "ISO イメージが空であるか、長さが 2048 バイトのセクター境界に整列していません。",
+    "MediaFileSystems.IsoContainerChanged": "認識後にISOイメージの長さが変更されました。",
+    "MediaFileSystems.IsoWriteProfile": "光学文書は、ロスレスシングルトラックISOイメージとして記述することはできません。",
+    "MediaFileSystems.WriterRegistryNull": "メディアイメージの書き込みコンポーネントを null にすることはできません。",
+    "MediaFileSystems.WriterRegistryDuplicate": "メディアイメージライター識別子 '{0}' は複数回登録されています。",
+    "MediaFileSystems.WriterTargetFormat": "ターゲットメディアフォーマット識別子が必要です。",
+    "MediaFileSystems.WriterTargetExtension": "対象となるメディアファイルの拡張子が必要です。"
+  }
+}

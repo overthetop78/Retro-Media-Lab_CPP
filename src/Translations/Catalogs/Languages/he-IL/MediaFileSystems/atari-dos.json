@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "התמונה {0}, עם סקטורים בגודל {1} בתים, אינה מכילה ספריית Atari DOS נתמכת.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "סקטור הספרייה {0} חסר.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "בסקטור הספרייה {0}, הרשומה {1} אינה רשומת קובץ Atari DOS תקינה ולכן המערכת התעלמה ממנה.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS מגזר נתונים {1} חסר.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: שרשרת הנתונים של Atari DOS מכילה מעגל בסקטור {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: מגזר {1} שייך לקובץ {3}, צפוי {2}.",
+    "MediaFileSystems.AtariDosOpen": "רשומה {2} ('{0}') בסקטור הספרייה {1} עדיין פתוחה לכתיבה ולכן המערכת התעלמה ממנה.",
+    "MediaFileSystems.AtariDosTruncated": "מגזר הנתונים {1} עבור \"{0}\" הוא קצר מכדי להכיל את הקישור שלו.",
+    "MediaFileSystems.AtariDosPremature": "\"{0}\" מכריז על מגזרי {1}, אך שרשרתו מסתיימת לאחר {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "קובץ ריק \" {0}\" מתייחס באופן בלתי צפוי למגזר {1}",
+    "MediaFileSystems.AtariDosBounded": "הקובץ '{0}' הוגבל ל-{1} הסקטורים המוצהרים בספרייה, אך השרשרת ממשיכה בסקטור {2}.",
+    "MediaFileSystems.AtariDosShared": "הקובץ '{0}' חולק {3} סקטורים החל מסקטור {2} עם '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "סקטור הנתונים {1} של '{0}' מצהיר על {2} בתים, אך זמינים רק {3}."
+  }
+}

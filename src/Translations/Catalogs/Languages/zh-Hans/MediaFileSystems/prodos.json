@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "无法识别块 {0} 中的 ProDOS/SOS 卷标头（读取值为 ${1}）。",
+    "MediaFileSystems.ProDosDepth": "ProDOS 目录块 {1} 超出了层级 {0} 的最大深度。",
+    "MediaFileSystems.ProDosDirectory": "ProDOS 目录块 {0} 无效（循环={1}，重复使用={2}）。",
+    "MediaFileSystems.ProDosIndex": "{0} ({1})：ProDOS 索引块 {2} 无效（循环={3}）。",
+    "MediaFileSystems.ProDosMaster": "{0} ({1})：ProDOS 主索引块 {2} 无效。",
+    "MediaFileSystems.ProDosData": "{0} ({1})：ProDOS 数据块 {2} 缺失、位于磁盘映像范围之外或大小无效。",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1})：已重建 {2} 字节，预期为 {3} 字节。",
+    "MediaFileSystems.ProDosBitmap": "ProDOS 位图块 {0} 缺失或大小无效。",
+    "MediaFileSystems.ProDosTotal": "ProDOS 卷声明了 {0} 个块，但磁盘映像包含 {1} 个块。",
+    "MediaFileSystems.ProDosWriteFormat": "不支持 ProDOS 目标格式 '{0}'。",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS 卷没有足够的块或目录条目。",
+    "MediaFileSystems.ProDosGeometry": "ProDOS 目标磁盘几何结构或扇区地址映射无效。",
+    "MediaFileSystems.ProDosEntry": "无法写入 ProDOS 条目 '{0}'。",
+    "MediaFileSystems.ProDosFileLength": "ProDOS 文件 '{0}' 超出了 24 位长度字段的范围。",
+    "MediaFileSystems.ProDosName": "ProDOS 名称 '{0}' 无效。",
+    "MediaFileSystems.ProDosTypeText": "文本",
+    "MediaFileSystems.ProDosTypeBinary": "二进制",
+    "MediaFileSystems.ProDosTypeDirectory": "目录",
+    "MediaFileSystems.ProDosTypeVariables": "变量",
+    "MediaFileSystems.ProDosTypeSystem": "系统"
+  }
+}

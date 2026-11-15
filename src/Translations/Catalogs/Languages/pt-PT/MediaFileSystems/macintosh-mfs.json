@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "A imagem de disco não contém um volume {0}; assinatura observada: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: o bloco {2} do fork {1} está em falta.",
+    "MediaFileSystems.MacIncompleteData": "{0}: o fork {1} contém {2} bytes; eram esperados {3}.",
+    "MediaFileSystems.MacAllocationSize": "O tamanho de alocação {1} do volume {0} deve ser um múltiplo positivo de {2} bytes.",
+    "MediaFileSystems.MacFreeCount": "O volume {0} indica {1} blocos de alocação livres de um total de {2}.",
+    "MediaFileSystems.MfsMapTruncated": "O mapa MFS de {0} unidades de alocação contém {1} bytes; são necessários {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "A entrada de diretório MFS no bloco {0}, na posição {1}, é inválida.",
+    "MediaFileSystems.MfsChain": "{0}: a cadeia de alocação do fork {1} é inválida (ciclo={2}, fora do mapa={3}, fim prematuro={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: o fork {1} indica {2} bytes a partir do grupo {3}; os metadados são inconsistentes.",
+    "MediaFileSystems.MfsDefaultFile": "Ficheiro Macintosh"
+  }
+}

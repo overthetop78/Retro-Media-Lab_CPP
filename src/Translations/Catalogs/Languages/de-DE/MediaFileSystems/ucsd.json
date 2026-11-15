@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Das UCSD-Verzeichnis in Block {0} wird nicht erkannt; ungültige Blöcke: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-Blöcke fehlen oder sind abgeschnitten: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Verzeichnisblöcke von UCSD p-System fehlen oder sind abgeschnitten: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD Eintrag {0} hat einen ungültigen Namen '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD-Eintrag {0} ('{1}') verwendet den ungültigen Bereich [{2}, {3}) in {4} Blöcken.",
+    "MediaFileSystems.UcsdOverlap": "UCSD-Eintrag {0} ('{1}') überlappt Blöcke {2}.",
+    "MediaFileSystems.UcsdCount": "Das UCSD-Verzeichnis deklariert {0} Dateien, aber {1} gültige Einträge wurden gefunden.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: der letzte UCSD-Block deklariert {1} Bytes.",
+    "MediaFileSystems.UcsdTypeUntyped": "Untypisierte UCSD-Datei",
+    "MediaFileSystems.UcsdTypeExternalDisk": "Datei für externes UCSD-Laufwerk",
+    "MediaFileSystems.UcsdTypeCode": "UCSD-Codedatei",
+    "MediaFileSystems.UcsdTypeText": "UCSD-Textdatei",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD-Informationsdatei",
+    "MediaFileSystems.UcsdTypeData": "UCSD-Datendatei",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD Grafikdatei",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD Fotodatei",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD sicheres Verzeichnis"
+  }
+}

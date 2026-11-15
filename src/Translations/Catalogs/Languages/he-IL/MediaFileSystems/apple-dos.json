@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "קטלוג Apple DOS שאליו מפנה VTOC במסילה {0}, בסקטור {1}, חסר או אינו תקין.",
+    "MediaFileSystems.AppleDosCatalogChain": "סקטור הקטלוג {0}/{1} של Apple DOS חסר או שייך ללולאה.",
+    "MediaFileSystems.AppleDosAddress": "כתובת Apple DOS ‏{1}/{2} של {0} נמצאת מחוץ לגאומטריית הדיסק.",
+    "MediaFileSystems.AppleDosListCycle": "רשימת המסילות והסקטורים של {0} יוצרת לולאה ב־{1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "רשימת המסילות והסקטורים של {0} חסרה ב־{1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "סקטור הנתונים {1}/{2} של {0} חסר.",
+    "MediaFileSystems.AppleDosSize": "הקובץ {0} מציין {1} סקטורים, אך נסרקו {2} סקטורים.",
+    "MediaFileSystems.AppleDosWriteFormat": "פורמט היעד {0} של Apple DOS אינו נתמך.",
+    "MediaFileSystems.AppleDosWriteFull": "באמצעי האחסון Apple DOS אין מספיק סקטורים לקטלוג או לנתונים.",
+    "MediaFileSystems.AppleDosWriteVolume": "שם אמצעי האחסון {0} של Apple DOS חייב להיות בתבנית DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS תומך רק בקבצים עם תוכן זמין בקטלוג השורש.",
+    "MediaFileSystems.AppleDosBinarySize": "קובץ בינארי של Apple DOS אינו יכול לחרוג מ־65535 בתים.",
+    "MediaFileSystems.AppleDosWriteName": "לא ניתן לקודד את שם הקובץ {0} של Apple DOS ברשומת קטלוג.",
+    "MediaFileSystems.AppleDosTypeText": "טקסט",
+    "MediaFileSystems.AppleDosTypeBinary": "בינארי",
+    "MediaFileSystems.AppleDosTypeRelocatable": "ניתן למיקום מחדש",
+    "MediaFileSystems.AppleDosTypeFile": "קובץ"
+  }
+}

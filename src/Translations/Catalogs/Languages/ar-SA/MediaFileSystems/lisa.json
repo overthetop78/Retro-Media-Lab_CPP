@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "لا تحتوي صورة القرص على نظام ملفات Lisa ذي وسوم ضمن صفحاتها البالغ عددها {0}.",
+    "MediaFileSystems.LisaMissingPage": "يفتقد ملف Lisa ‏0x{0} الصفحة {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "تحتوي صفحة Lisa MDDF على {0} بايت؛ المطلوب {1}.",
+    "MediaFileSystems.LisaInvalidTag": "تحتوي الكتلة المنطقية Lisa ‏{0} على وسم حجمه {1} بايت؛ المطلوب {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "يحتوي ملف Lisa ‏0x{0} على نسخ متعددة من الصفحة {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "لا يمكن تحديد المساحة الحرة في Lisa دون وسوم قابلة للاستخدام.",
+    "MediaFileSystems.LisaFileDescription": "ملف Lisa ‏${0}"
+  }
+}

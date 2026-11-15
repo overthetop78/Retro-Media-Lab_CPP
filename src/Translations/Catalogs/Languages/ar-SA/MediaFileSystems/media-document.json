@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "ولا يمكن أن يكون المصدر الإعلامي باطلا.",
+    "MediaFileSystems.ContextSourcePath": "ولا يمكن أن يكون الطريق الرئيسي لمصدر وسائط الإعلام فارغاً أو أبيض.",
+    "MediaFileSystems.ContextPageSize": "ويجب أن يكون حجم صفحة الاعتراف إيجابيا.",
+    "MediaFileSystems.ContextKnownLength": "The known source length cannot be negative.",
+    "MediaFileSystems.ContextLengthOverflow": "The media source length exceeds the supported signed range.",
+    "MediaFileSystems.ContextReadOffset": "ولا يمكن أن يكون الاعتراف الوارد في هذا التقرير سلبيا.",
+    "MediaFileSystems.ContextReadCount": "لا يمكن أن يكون الاعتراف به سلبياً.",
+    "MediaFileSystems.ContextReadRange": "ويتجاوز النطاق المطلوب طول المصدر.",
+    "MediaFileSystems.ContextFullRead": "المصدر الكامل لا يمكن تحميله في حاجز ذاكرة واحد مُستخدمة في القراءة بدلاً من ذلك",
+    "MediaFileSystems.ContextPageEnded": "The media source ended at byte {0} while reading a cached page.",
+    "MediaFileSystems.DocumentFormatId": "ولا بد من تحديد الشكل المعترف به.",
+    "MediaFileSystems.DocumentRepresentation": "ولا بد من وجود تمثيل لوسائط الإعلام يتضمن معلومات عن التمثيل العام."
+  }
+}

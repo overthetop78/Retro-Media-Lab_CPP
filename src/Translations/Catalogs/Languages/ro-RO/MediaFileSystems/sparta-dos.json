@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Imaginea de disc '{0}' nu conține un volum SpartaDOS valid.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS sector {0} lipsește.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS sector {0} este în afara intervalului 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Lanțul hărților de sectoare SpartaDOS formează o buclă la sectorul {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Harta sectorului SpartaDOS {0} se referă la predecesor {2} în loc de {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Arborele directoarelor SpartaDOS formează o buclă în directorul a cărui hartă începe la sectorul {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Directorul SpartaDOS din sectorul {0} declară o dimensiune nevalidă de {1} octeți."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11-startblokken er ugyldig (signatur '{0}', mappeblok {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11-segment {0} i blok {1} har et segmentnummer uden for det tilladte område.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} ved blok {1} danner en cyklus.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} ved blok {1} er uden for billedet.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11-segment {0} i blok {1} har et manglende eller afkortet blokpar.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11-segment {0} angiver en ugyldig poststørrelse på {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "RT-11 indgangen ved datablok {0}, offset {1}, har et tomt navn.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11-blokke mangler eller er afkortede: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Foreløbig RT-11 fil",
+    "MediaFileSystems.Rt11Permanent": "RT-11 fil"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Imaginea de disc nu conține un volum {0}; semnătura observată: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: lipsește blocul {2} al fluxului fork {1}.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fluxul fork {1} conține {2} octeți; erau așteptați {3}.",
+    "MediaFileSystems.MacAllocationSize": "Dimensiunea unității de alocare {1} pentru volumul {0} trebuie să fie un multiplu pozitiv de {2} octeți.",
+    "MediaFileSystems.MacFreeCount": "Volumul {0} declară {1} blocuri de alocare libere dintr-un total de {2}.",
+    "MediaFileSystems.MfsMapTruncated": "Harta MFS pentru {0} unități de alocare conține {1} octeți; sunt necesari {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Intrarea de director MFS din blocul {0}, la poziția {1}, nu este validă.",
+    "MediaFileSystems.MfsChain": "{0}: lanțul de alocare al fluxului fork {1} nu este valid (ciclu={2}, în afara hărții={3}, sfârșit prematur={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fluxul fork {1} declară {2} octeți începând de la clusterul {3}; metadatele sunt inconsecvente.",
+    "MediaFileSystems.MfsDefaultFile": "Fișier Macintosh"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Medya kaynağı çıplak olamaz.",
+    "MediaFileSystems.ContextSourcePath": "birincil medya kaynağı yolu boş veya beyaz alan olamaz.",
+    "MediaFileSystems.ContextPageSize": "Tanık sayfa büyüklüğü olumlu olmalıdır.",
+    "MediaFileSystems.ContextKnownLength": "Bilinen kaynak uzunluğu negatif olamaz.",
+    "MediaFileSystems.ContextLengthOverflow": "Medya kaynağı uzunluğu desteklenen imza aralığı aşıyor.",
+    "MediaFileSystems.ContextReadOffset": "Tanık okuma dengesi olumsuz olamaz.",
+    "MediaFileSystems.ContextReadCount": "Tanık okuma sayısı olumsuz olamaz.",
+    "MediaFileSystems.ContextReadRange": "Talep edilen aralığı kaynak uzunluğu aşıyor.",
+    "MediaFileSystems.ContextFullRead": "Tamam kaynak bir hafıza tamponuna yüklenemez. Bunun yerine sınırsız okuma kullanın.",
+    "MediaFileSystems.ContextPageEnded": "Medya kaynağı, önbellek bir sayfa okurken {0} tarafından sona erdi.",
+    "MediaFileSystems.DocumentFormatId": "Bilinen bir format tanımlayıcısı gereklidir.",
+    "MediaFileSystems.DocumentRepresentation": "Kamu temsil bilgileri ile bir medya gösterimi gereklidir."
+  }
+}

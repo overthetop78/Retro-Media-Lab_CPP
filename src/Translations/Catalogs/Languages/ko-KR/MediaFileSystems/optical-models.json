@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "광학 미디어의 논리 길이는 음수일 수 없습니다.",
+    "MediaFileSystems.OpticalMetadataOnly": "이 레거시 미디어 설명자에는 메타데이터만 있으며 읽을 수 있는 데이터 소스가 없습니다.",
+    "MediaFileSystems.OpticalIndexNumber": "광학적인 궤도 색인은 0과 99 사이에서 있어야 합니다.",
+    "MediaFileSystems.OpticalPositiveDimension": "광학 매개변수 '{0}'는 양수여야 합니다.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "광학 매개변수 '{0}'는 음수일 수 없습니다.",
+    "MediaFileSystems.OpticalDataSource": "광학 트랙 데이터 소스가 필요합니다.",
+    "MediaFileSystems.OpticalUserWindow": "사용자 데이터 창은 하나의 저장 섹터를 초과합니다.",
+    "MediaFileSystems.OpticalTrackSource": "트랙 데이터는 소스를 초과합니다.",
+    "MediaFileSystems.OpticalSubchannelSource": "Subchannel 차원은 subchannel 근원을 요구합니다.",
+    "MediaFileSystems.OpticalSubchannelRange": "하위 채널 데이터는 소스를 초과합니다.",
+    "MediaFileSystems.OpticalPregapOffset": "저장된 프리갭 소스 오프셋을 지정하려면 저장된 프리갭 섹터가 있어야 합니다.",
+    "MediaFileSystems.OpticalPregapRange": "저장된 pregap는 그것의 근원을 초과합니다.",
+    "MediaFileSystems.OpticalStoredDestination": "목적지는 정확히 하나의 저장 섹터를 포함해야합니다.",
+    "MediaFileSystems.OpticalStoredPregap": "섹터는 저장된 pregap 밖에 있습니다.",
+    "MediaFileSystems.OpticalRelativeSector": "섹터가 광학 트랙 범위를 벗어났습니다.",
+    "MediaFileSystems.OpticalNullTrack": "광학적인 궤도는 null일 수 없습니다."
+  }
+}

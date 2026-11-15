@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "De Apple DOS-catalogus waarnaar de VTOC op spoor {0}, sector {1} verwijst, ontbreekt of is ongeldig.",
+    "MediaFileSystems.AppleDosCatalogChain": "De Apple DOS catalogussector {0}/{1} ontbreekt of is cyclisch.",
+    "MediaFileSystems.AppleDosAddress": "Apple DOS adres {1}/{2} voor {0} is buiten de schijfgeometrie.",
+    "MediaFileSystems.AppleDosListCycle": "De lijst track/sector voor {0} is cyclisch op {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "De lijst met tracks/sectoren voor {0} ontbreekt op {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "De gegevenssector {1}/{2} voor {0} ontbreekt.",
+    "MediaFileSystems.AppleDosSize": "Bestand {0} vermeldt {1} sectoren, maar er zijn {2} sectoren doorlopen.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS doelformaat {0} wordt niet ondersteund.",
+    "MediaFileSystems.AppleDosWriteFull": "Het Apple DOS-volume heeft onvoldoende catalogus- of gegevenssectoren.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS volumenaam {0} moet DOS-nnn gebruiken.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS ondersteunt alleen bestanden met beschikbare inhoud in de hoofdcatalogus.",
+    "MediaFileSystems.AppleDosBinarySize": "Een Apple DOS binair bestand mag de 65535 bytes niet overschrijden.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS bestandsnaam {0} kan niet gecodeerd worden in een catalogus item.",
+    "MediaFileSystems.AppleDosTypeText": "Tekst",
+    "MediaFileSystems.AppleDosTypeBinary": "Binair",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Verplaatsbaar",
+    "MediaFileSystems.AppleDosTypeFile": "Bestand"
+  }
+}

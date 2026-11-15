@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "قارئ نظام الملفات في الرقم القياسي {0} باطل",
+    "MediaFileSystems.RegistryEmptyReaderId": "قارئ نظام الملفات في الرقم القياسي {0}\"لديه تعريف فارغ",
+    "MediaFileSystems.RegistryDuplicateReaderId": "عدّة قراء نظام ملفّاتِ عِنْدَهُ مُحدّدُ ' {0}.",
+    "MediaFileSystems.RegistryUnknownReaderId": "لا يوجد قراء نظام ملف لديه تحديد{0}'.",
+    "MediaFileSystems.RegistryNullImage": "لا يمكن أن تكون صورة قطاعية باطلة.",
+    "MediaFileSystems.AtariKFileUnsupported": "The sector image is not an Atari K-file disk using KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "صورة القطاع لا تحتوي على برنامج كامل لأحذية أتاري",
+    "MediaFileSystems.AtariClkUnsupported": "The sector image is not an Atari CLK graphics-library disk.",
+    "MediaFileSystems.AtariClkIncomplete": "The catalog declares {0} bytes, but the sector chain contains {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK graphic"
+  }
+}

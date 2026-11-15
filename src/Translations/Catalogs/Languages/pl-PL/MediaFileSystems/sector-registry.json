@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Czytnik systemu plików w indeksie {0} jest null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Czytnik systemu plików w indeksie {0} ma pusty identyfikator.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Wiele czytników systemu plików ma identyfikator '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Żaden czytnik systemu plików nie ma identyfikatora '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Obraz sektora nie może być zerowy.",
+    "MediaFileSystems.AtariKFileUnsupported": "Obraz sektora nie jest dyskiem Atari K-file używającym KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Obraz sektora nie zawiera kompletnego programu startowego Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Obraz sektora nie jest dyskiem graficznym Atari CLK-library.",
+    "MediaFileSystems.AtariClkIncomplete": "Katalog deklaruje bajty {0}, ale łańcuch sektorowy zawiera bajty {1}.",
+    "MediaFileSystems.AtariClkGraphic": "Grafika Atari CLK"
+  }
+}

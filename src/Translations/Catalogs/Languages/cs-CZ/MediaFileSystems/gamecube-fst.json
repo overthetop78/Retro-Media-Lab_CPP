@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Dokument není optickým obrázkem ISO.",
+    "MediaFileSystems.GameCubeNotImage": "Dokument není obraz GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST vyžaduje data optických tratí.",
+    "MediaFileSystems.GameCubeNoTrack": "Pro objem hry GameCube FST není k dispozici žádná datová stopa.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST vyžaduje 2048- byte optické sektory.",
+    "MediaFileSystems.GameCubeHeader": "Záhlaví disku GameCube je neplatné.",
+    "MediaFileSystems.GameCubeDescriptor": "Deskriptor GameCube FST je neplatný.",
+    "MediaFileSystems.GameCubeRoot": "Zápis kořene GameCube FST je neplatný.",
+    "MediaFileSystems.GameCubeCount": "Počet vstupů GameCube FST je neplatný.",
+    "MediaFileSystems.GameCubeDepth": "Strom adresáře GameCube FST je příliš hluboký.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Rozsah adresářů GameCube FST je neplatný.",
+    "MediaFileSystems.GameCubeContentLimit": "Soubor GameCube '{0}' je větší než limit obsahu a nebyl načten.",
+    "MediaFileSystems.GameCubeNameOffset": "Vyrovnání názvu GameCube FST je mimo tabulku řetězce.",
+    "MediaFileSystems.GameCubeSectorData": "Optický sektor GameCube nemá čitelná data.",
+    "MediaFileSystems.GameCubeExtent": "Rozsah GameCube FST je mimo optickou dráhu.",
+    "MediaFileSystems.GameCubeOverflow": "Hodnota GameCube FST přesahuje podporovaný číselný rozsah."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "The RT-11 home block is invalid (signature '{0}', directory block {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11 segment {0} at block {1} has an out-of-range segment number.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} at block {1} forms a cycle.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} at block {1} is outside the image.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segment {0} at block {1} has a missing or truncated block pair.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 segment {0} declares an invalid entry size of {1} bytes.",
+    "MediaFileSystems.Rt11EmptyName": "The RT-11 entry at data block {0}, offset {1}, has an empty name.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 blocks are missing or truncated: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Tentative RT-11 file",
+    "MediaFileSystems.Rt11Permanent": "RT-11 file"
+  }
+}

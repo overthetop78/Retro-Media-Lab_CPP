@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Η εικόνα δεν έχει υποστηριζόμενο μπλοκ εκκίνησης AmigaDOS.",
+    "Media.AmigaUnsupportedVariant": "Η παραλλαγή εκκίνησης του AmigaDOS {0} δεν υποστηρίζεται.",
+    "Media.AmigaInvalidRoot": "Το ριζικό μπλοκ AmigaDOS {0} δεν είναι έγκυρο.",
+    "Media.AmigaRootChecksum": "Το ριζικό μπλοκ AmigaDOS {0} έχει μη έγκυρο άθροισμα ελέγχου.",
+    "Media.AmigaDirectoryChain": "Η αλυσίδα καταλόγου AmigaDOS στο μπλοκ {0} είναι άκυρη ή κυκλική.",
+    "Media.AmigaMissingDirectoryEntry": "Λείπει το μπλοκ εισόδου καταλόγου AmigaDOS {0}.",
+    "Media.AmigaMissingData": "Λείπει το μπλοκ δεδομένων αρχείων AmigaDOS {0}.",
+    "Media.AmigaOfsType": "Το OFS data block {0} έχει μη αναμενόμενο τύπο {1}.",
+    "Media.AmigaDataChecksum": "Το μπλοκ δεδομένων OFS {0} έχει μη έγκυρο άθροισμα ελέγχου.",
+    "Media.AmigaInvalidExtension": "Το μπλοκ επέκτασης αρχείου AmigaDOS {0} είναι άκυρο, κυκλικό ή λείπει.",
+    "Media.AmigaExtensionChecksum": "Το μπλοκ επέκτασης αρχείου AmigaDOS {0} έχει μη έγκυρη δομή ή checksum.",
+    "Media.AmigaTruncatedFile": "Το περιεχόμενο αρχείου AmigaDOS είναι ελλιπές: αναμένονταν {0} byte, διαβάστηκαν {1}.",
+    "Media.AmigaMissingBitmap": "Λείπει το μπλοκ bitmap AmigaDOS {0}.",
+    "Media.AmigaBitmapChecksum": "Το μπλοκ bitmap AmigaDOS {0} έχει μη έγκυρο άθροισμα ελέγχου.",
+    "Media.AmigaDepth": "Το όριο βάθους καταλόγου AmigaDOS επιτεύχθηκε σε βάθος {0}.",
+    "Media.AmigaRecovered": "Ανακτήθηκε {0} AmigaDOS καταχωρήσεις καταλόγου από έγκυρες κεφαλίδες επειδή το ριζικό μπλοκ δεν είναι διαθέσιμο.",
+    "Media.AmigaWriterVariant": "Η παραλλαγή AmigaDOS {0} δεν μπορεί να δημιουργηθεί από αυτό το άρθρωμα.",
+    "Media.AmigaWriterGeometry": "Η μορφή εικόνας {0} δεν είναι μια υποστηριζόμενη γεωμετρία AmigaDOS.",
+    "Media.AmigaDiskFull": "Ο στόχος AmigaDOS όγκος έχει ανεπαρκή ελεύθερα μπλοκ.",
+    "Media.AmigaInvalidEntry": "Η είσοδος μετανάστευσης {0} δεν μπορεί να εκπροσωπηθεί στο AmigaDOS.",
+    "Media.AmigaShortBlock": "Το μπλοκ AmigaDOS {0} είναι ημιτελές: {1} bytes είναι διαθέσιμα.",
+    "Media.AmigaRecordedIntegrity": "Το μπλοκ AmigaDOS {0} έχει μη έγκυρα καταγεγραμμένα στοιχεία ακεραιότητας.",
+    "Media.AmigaFileSize": "Το μήκος αρχείου AmigaDOS {0} υπερβαίνει το υποστηριζόμενο εύρος."
+  }
+}

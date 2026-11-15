@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Billedet har ingen understøttet AmigaDOS boot blok.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} er ikke understøttet.",
+    "Media.AmigaInvalidRoot": "AmigaDOS root block {0} er ugyldig.",
+    "Media.AmigaRootChecksum": "AmigaDOS root block {0} har en ugyldig checksum.",
+    "Media.AmigaDirectoryChain": "AmigaDOS mappekæden ved blok {0} er ugyldig eller cyklisk.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS mappe indgang blok {0} mangler.",
+    "Media.AmigaMissingData": "AmigaDOS fildatablok {0} mangler.",
+    "Media.AmigaOfsType": "OFS datablok {0} har uventet type {1}.",
+    "Media.AmigaDataChecksum": "OFS datablok {0} har et ugyldigt checksum.",
+    "Media.AmigaInvalidExtension": "AmigaDOS-filudvidelsesblok {0} er ugyldig, cyklisk eller mangler.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS-filudvidelsesblok {0} har ugyldig struktur eller kontrolsum.",
+    "Media.AmigaTruncatedFile": "AmigaDOS filindhold er afkortet: forventet {0} bytes, læs {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap blok {0} mangler.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap blok {0} har en ugyldig checksum.",
+    "Media.AmigaDepth": "AmigaDOS mappedybdegrænsen blev nået ved dybde {0}.",
+    "Media.AmigaRecovered": "Genvundet {0} AmigaDOS katalogindgange fra gyldige overskrifter, fordi rodblokken ikke er tilgængelig.",
+    "Media.AmigaWriterVariant": "AmigaDOS variant {0} kan ikke oprettes af dette modul.",
+    "Media.AmigaWriterGeometry": "Billedformat {0} er ikke en understøttet AmigaDOS geometri.",
+    "Media.AmigaDiskFull": "Målet AmigaDOS volumen har utilstrækkelige frie blokke.",
+    "Media.AmigaInvalidEntry": "Migreringspost {0} kan ikke repræsenteres på AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS blok {0} er ufuldstændig: {1} bytes er tilgængelige.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS blok {0} har ugyldig registreret integritet.",
+    "Media.AmigaFileSize": "AmigaDOS fillængde {0} overstiger det understøttede område."
+  }
+}

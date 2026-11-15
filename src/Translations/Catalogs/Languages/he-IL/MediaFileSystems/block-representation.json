@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "כתובת נתונים של מדיה לא יכולה להיות שלילית.",
+    "MediaFileSystems.BlockRangeLength": "טווח נתוני מדיה חייב להיות חיובי.",
+    "MediaFileSystems.BlockSourceOffset": "טווח נתוני מדיה לא יכול להיות שלילי.",
+    "MediaFileSystems.BlockSourceNull": "טווח מדיה מאוחסן דורש מקור נתונים.",
+    "MediaFileSystems.BlockSourceRange": "טווח המפלים עולה על מקור הנתונים שלו.",
+    "MediaFileSystems.BlockNonStoredSource": "רק טווחים מאוחסנים יכולים להתייחס למקור נתונים.",
+    "MediaFileSystems.BlockNonStoredOffset": "טווח ללא חנות לא יכול להיות מקור.",
+    "MediaFileSystems.BlockLogicalLength": "אורך התקשורת ההגיוני לא יכול להיות שלילי.",
+    "MediaFileSystems.BlockLogicalBlockSize": "גודל בלוק הגיוני חייב להיות חיובי.",
+    "MediaFileSystems.BlockCompleteBlocks": "האורך ההגיוני חייב להכיל בלוקים לוגיים מלאים.",
+    "MediaFileSystems.BlockGeometryOutside": "הגיאומטריה המוצהרת עולה על יכולת התקשורת ההגיונית.",
+    "MediaFileSystems.BlockRangeOutside": "טווח בלוק עולה על אורך התקשורת הלוגי.",
+    "MediaFileSystems.BlockRangeOverlap": "טווחי בלוק לא חייבים לחפוף.",
+    "MediaFileSystems.BlockReadAddress": "כתובת הקריאה ההגיונית לא יכולה להיות שלילית.",
+    "MediaFileSystems.BlockReadRange": "הטווח ההגיוני המבוקש עולה על יכולת התקשורת.",
+    "MediaFileSystems.BlockRangeMissing": "אין טווח נתוני מדיה מכסה כתובת הגיונית {0}",
+    "MediaFileSystems.BlockUnavailable": "כתובת הגיונית {0} אינה זמינה בדימוי המקור.",
+    "MediaFileSystems.BlockRangeKind": "נתונים ללא תמיכה טווח נתונים מדיה מסוג {0}.",
+    "MediaFileSystems.BlockOverflow": "חישוב חסימת המדיה עולה על טווח החתום הנתמך.",
+    "MediaFileSystems.BlockGeometryValue": "פרמטר הגיאומטריה הדיסק הקשיח {0} חייב להיות חיובי.",
+    "MediaFileSystems.BlockDriveCount": "הגישה המכנית חייבת לכסות מספר חיובי של עציצים.",
+    "MediaFileSystems.BlockNullImage": "תמונת בלוק נדרשת."
+  }
+}

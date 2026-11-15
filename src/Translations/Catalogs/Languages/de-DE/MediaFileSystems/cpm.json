@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Das CP/M Festplattenlayout wird für Format {0} nicht unterstützt.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Das Bild enthält kein unterstütztes CP/M-Verzeichnis für Format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-Zuweisungsblock {1} am Offset {2} befindet sich außerhalb des {3}-Byte-Bildes.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M-Zuweisungsblock {1} kreuzt einen fehlenden logischen Block.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M-Zuweisungsblock {1} kreuzt einen verkürzten logischen Block.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M-Zuweisungsblock {1} wird mehr als einmal referenziert.",
+    "MediaFileSystems.CpmImageMissing": "CP/M-Bild enthält {0} fehlende logische Blöcke.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M-Bild enthält {0} verkürzte logische Blöcke.",
+    "MediaFileSystems.CpmInvalidLayout": "Das CP/M-Layout ist ungültig (Verzeichnisoffset={0}, Zuweisungsbeginn={1}, Verzeichniseinträge={2}, Zuweisungsgröße={3}, Verzeichnisblöcke={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M Nutzer {0}"
+  }
+}

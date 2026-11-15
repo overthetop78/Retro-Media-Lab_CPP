@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "لا تحتوي الصورة على وحدة تخزين {0}؛ التوقيع المرصود: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: الكتلة {2} من تدفق الملف {1} مفقودة.",
+    "MediaFileSystems.MacIncompleteData": "{0}: يحتوي تدفق الملف {1} على {2} بايت؛ المتوقع {3}.",
+    "MediaFileSystems.MacAllocationSize": "يجب أن يكون حجم التخصيص {1} لوحدة التخزين {0} مضاعفًا غير صفري لـ {2} بايت.",
+    "MediaFileSystems.MacFreeCount": "تعلن وحدة التخزين {0} عن {1} كتلة تخصيص حرة من أصل {2} كتلة.",
+    "MediaFileSystems.MfsMapTruncated": "تحتوي خريطة MFS لعدد {0} من التخصيصات على {1} بايت؛ المطلوب {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "إدخال دليل MFS عند الكتلة {0} والإزاحة {1} غير صالح.",
+    "MediaFileSystems.MfsChain": "{0}: سلسلة تخصيص تدفق الملف {1} غير صالحة (دورة={2}، خارج الخريطة={3}، نهاية مبكرة={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: يعلن تدفق الملف {1} عن {2} بايت بدءًا من العنقود {3}؛ البيانات الوصفية غير متسقة.",
+    "MediaFileSystems.MfsDefaultFile": "ملف Macintosh"
+  }
+}

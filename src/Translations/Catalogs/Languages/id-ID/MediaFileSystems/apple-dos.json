@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Katalog Apple DOS yang dirujuk VTOC pada trek {0}, sektor {1}, hilang atau tidak valid.",
+    "MediaFileSystems.AppleDosCatalogChain": "Sektor katalog Apple DOS {0}/{1} hilang atau merupakan bagian dari siklus.",
+    "MediaFileSystems.AppleDosAddress": "Alamat Apple DOS {1}/{2} untuk {0} berada di luar geometri disk.",
+    "MediaFileSystems.AppleDosListCycle": "Daftar trek/sektor untuk {0} membentuk siklus pada {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Daftar trek/sektor untuk {0} hilang pada {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Sektor data {1}/{2} untuk {0} hilang.",
+    "MediaFileSystems.AppleDosSize": "Berkas {0} menyatakan {1} sektor, tetapi {2} sektor telah ditelusuri.",
+    "MediaFileSystems.AppleDosWriteFormat": "Format target Apple DOS {0} tidak didukung.",
+    "MediaFileSystems.AppleDosWriteFull": "Volume Apple DOS tidak memiliki cukup sektor katalog atau data.",
+    "MediaFileSystems.AppleDosWriteVolume": "Nama volume Apple DOS {0} harus menggunakan format DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS hanya mendukung berkas dengan konten yang tersedia dalam katalog akar.",
+    "MediaFileSystems.AppleDosBinarySize": "Berkas biner Apple DOS tidak boleh melebihi 65535 byte.",
+    "MediaFileSystems.AppleDosWriteName": "Nama berkas Apple DOS {0} tidak dapat dikodekan dalam entri katalog.",
+    "MediaFileSystems.AppleDosTypeText": "Teks",
+    "MediaFileSystems.AppleDosTypeBinary": "Biner",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Dapat direlokasi",
+    "MediaFileSystems.AppleDosTypeFile": "Berkas"
+  }
+}

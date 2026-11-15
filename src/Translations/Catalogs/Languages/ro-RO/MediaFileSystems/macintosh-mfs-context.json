@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Blocul de informații al volumului {0} lipsește sau are o dimensiune nevalidă.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Blocul de director {0} lipsește sau are o dimensiune nevalidă.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: blocul {1} al fluxului de date lipsește sau are o dimensiune nevalidă.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: conținutul fluxului de date are {1} octeți; erau așteptați {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: metadatele fluxului de date declară {1} octeți începând de la clusterul {2}; metadatele sunt inconsecvente.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: lanțul de alocare al fluxului de date conține un ciclu.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: lanțul de alocare al fluxului de date indică o poziție în afara hărții de alocare.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: lanțul de alocare al fluxului de date se încheie înainte ca toate clusterele necesare să fie disponibile.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: blocul {1} al fluxului de resurse lipsește sau are o dimensiune nevalidă.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: conținutul fluxului de resurse are {1} octeți; erau așteptați {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: metadatele fluxului de resurse declară {1} octeți începând de la clusterul {2}; metadatele sunt inconsecvente.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: lanțul de alocare al fluxului de resurse conține un ciclu.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: lanțul de alocare al fluxului de resurse indică o poziție în afara hărții de alocare.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: lanțul de alocare al fluxului de resurse se încheie înainte ca toate clusterele necesare să fie disponibile."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "L'en-tête du volume ProDOS/SOS dans le bloc {0} n'est pas reconnu (valeur observée ${1}).",
+    "MediaFileSystems.ProDosDepth": "Le bloc de répertoire ProDOS {1} dépasse la profondeur maximale au niveau {0}.",
+    "MediaFileSystems.ProDosDirectory": "Le bloc de répertoire ProDOS {0} est invalide (cycle={1}, réutilisé={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): le bloc d'index ProDOS {2} est invalide (cycle={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): le bloc maître d'index ProDOS {2} est invalide.",
+    "MediaFileSystems.ProDosData": "{0} ({1}) : le bloc de données ProDOS {2} est absent, hors de l’image ou de taille invalide.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}) : {2} octets reconstitués sur {3} octets attendus.",
+    "MediaFileSystems.ProDosBitmap": "Le bloc de bitmap ProDOS {0} est absent ou de taille invalide.",
+    "MediaFileSystems.ProDosTotal": "Le volume ProDOS déclare {0} blocs, mais l'image contient {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Le format cible ProDOS « {0} » n'est pas pris en charge.",
+    "MediaFileSystems.ProDosDiskFull": "Le volume ProDOS n'a pas assez de blocs ou d'entrées de répertoires.",
+    "MediaFileSystems.ProDosGeometry": "La géométrie ProDOS cible ou la carte des adresses sectorielles est invalide.",
+    "MediaFileSystems.ProDosEntry": "L'entrée ProDOS « {0} » n'est pas enregistrable.",
+    "MediaFileSystems.ProDosFileLength": "Le fichier ProDOS « {0} » dépasse le champ de longueur sur 24 bits.",
+    "MediaFileSystems.ProDosName": "Le nom ProDOS « {0} » est invalide.",
+    "MediaFileSystems.ProDosTypeText": "Texte",
+    "MediaFileSystems.ProDosTypeBinary": "Binaire",
+    "MediaFileSystems.ProDosTypeDirectory": "Répertoire",
+    "MediaFileSystems.ProDosTypeVariables": "Variables",
+    "MediaFileSystems.ProDosTypeSystem": "Système"
+  }
+}

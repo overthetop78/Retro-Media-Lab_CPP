@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "A média adattartományi címe nem lehet negatív.",
+    "MediaFileSystems.BlockRangeLength": "A média adattartományának pozitívnak kell lennie.",
+    "MediaFileSystems.BlockSourceOffset": "A médiaadatok tartománya nem lehet negatív.",
+    "MediaFileSystems.BlockSourceNull": "A tárolt médiatartomány adatforrást igényel.",
+    "MediaFileSystems.BlockSourceRange": "A feltérképezett tartomány meghaladja az adatforrását.",
+    "MediaFileSystems.BlockNonStoredSource": "Csak a tárolt tartományok hivatkozhatnak adatforrásra.",
+    "MediaFileSystems.BlockNonStoredOffset": "A nem tárolt tartományban nem lehet forráseltolódás.",
+    "MediaFileSystems.BlockLogicalLength": "A logikai média hossza nem lehet negatív.",
+    "MediaFileSystems.BlockLogicalBlockSize": "A logikai blokk méretének pozitívnak kell lennie.",
+    "MediaFileSystems.BlockCompleteBlocks": "A logikai hosszúságnak teljes logikai blokkokat kell tartalmaznia.",
+    "MediaFileSystems.BlockGeometryOutside": "A bejelentett geometria meghaladja a logikai média kapacitást.",
+    "MediaFileSystems.BlockRangeOutside": "A blokk tartomány meghaladja a logikai média hossza.",
+    "MediaFileSystems.BlockRangeOverlap": "A blokktartományok nem lehetnek átfedések.",
+    "MediaFileSystems.BlockReadAddress": "A logikus olvasási cím nem lehet negatív.",
+    "MediaFileSystems.BlockReadRange": "A kért logikai tartomány meghaladja a média kapacitását.",
+    "MediaFileSystems.BlockRangeMissing": "Semmilyen médiaadat nem terjed ki a logikai címre {0}.",
+    "MediaFileSystems.BlockUnavailable": "Logikai cím {0} nem található a forrásképben.",
+    "MediaFileSystems.BlockRangeKind": "A nem támogatott médiaadatok tartománya {0}.",
+    "MediaFileSystems.BlockOverflow": "A média blokk számítása meghaladja a támogatott aláírt tartományt.",
+    "MediaFileSystems.BlockGeometryValue": "A merevlemez geometriai paraméterének ({0}) pozitívnak kell lennie.",
+    "MediaFileSystems.BlockDriveCount": "A mechanikai hozzáférésnek pozitív számú bájtra kell kiterjednie.",
+    "MediaFileSystems.BlockNullImage": "Blokk kép szükséges."
+  }
+}

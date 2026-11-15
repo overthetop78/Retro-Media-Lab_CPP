@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Nagłówek woluminu ProDOS/SOS w bloku {0} nie został rozpoznany (odczytana wartość ${1}).",
+    "MediaFileSystems.ProDosDepth": "Blok katalogu ProDOS {1} przekracza maksymalną głębokość na poziomie {0}.",
+    "MediaFileSystems.ProDosDirectory": "Blok katalogu ProDOS {0} jest nieprawidłowy (cykl={1}, ponownie użyty={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): blok indeksu ProDOS {2} jest nieprawidłowy (cykl={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): blok indeksu głównego ProDOS {2} jest nieprawidłowy.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): blok danych ProDOS {2} jest nieobecny, leży poza obrazem dysku lub ma nieprawidłowy rozmiar.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): odtworzono {2} bajtów z oczekiwanych {3} bajtów.",
+    "MediaFileSystems.ProDosBitmap": "Blok mapy bitowej ProDOS {0} jest nieobecny lub ma nieprawidłowy rozmiar.",
+    "MediaFileSystems.ProDosTotal": "Wolumin ProDOS deklaruje {0} bloków, ale obraz dysku zawiera {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Docelowy format ProDOS '{0}' nie jest obsługiwany.",
+    "MediaFileSystems.ProDosDiskFull": "Wolumin ProDOS nie ma wystarczającej liczby bloków lub wpisów katalogowych.",
+    "MediaFileSystems.ProDosGeometry": "Docelowa geometria ProDOS lub mapa adresów sektorów jest nieprawidłowa.",
+    "MediaFileSystems.ProDosEntry": "Nie można zapisać wpisu ProDOS '{0}'.",
+    "MediaFileSystems.ProDosFileLength": "Plik ProDOS '{0}' przekracza 24-bitowe pole długości.",
+    "MediaFileSystems.ProDosName": "Nazwa ProDOS '{0}' jest nieprawidłowa.",
+    "MediaFileSystems.ProDosTypeText": "Tekst",
+    "MediaFileSystems.ProDosTypeBinary": "Binarny",
+    "MediaFileSystems.ProDosTypeDirectory": "Katalog",
+    "MediaFileSystems.ProDosTypeVariables": "Zmienne",
+    "MediaFileSystems.ProDosTypeSystem": "System"
+  }
+}

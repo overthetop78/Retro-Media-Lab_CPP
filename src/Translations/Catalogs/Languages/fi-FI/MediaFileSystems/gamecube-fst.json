@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Asiakirja ei ole optinen ISO-kuva.",
+    "MediaFileSystems.GameCubeNotImage": "Asiakirja ei ole GameCube-kuva.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST vaatii optisia ratatietoja.",
+    "MediaFileSystems.GameCubeNoTrack": "GameCuben FST-tilavuudelle ei ole saatavilla dataraitaa.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST vaatii 2048 tavua optisia sektoreita.",
+    "MediaFileSystems.GameCubeHeader": "GameCube-levyn otsikko on virheellinen.",
+    "MediaFileSystems.GameCubeDescriptor": "GameCube FST -kuvaus on virheellinen.",
+    "MediaFileSystems.GameCubeRoot": "GameCube FST juurimerkintä on virheellinen.",
+    "MediaFileSystems.GameCubeCount": "GameCuben FST-syöteluku on virheellinen.",
+    "MediaFileSystems.GameCubeDepth": "GameCube FST hakemistopuu on liian syvä.",
+    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST-hakemistoalue on virheellinen.",
+    "MediaFileSystems.GameCubeContentLimit": "GameCube-tiedosto \"{0}\" on suurempi kuin sisältöraja eikä sitä ladattu.",
+    "MediaFileSystems.GameCubeNameOffset": "GameCube FST nimi offset on merkkijono taulukon ulkopuolella.",
+    "MediaFileSystems.GameCubeSectorData": "GameCuben optisella sektorilla ei ole luettavissa olevaa tietoa.",
+    "MediaFileSystems.GameCubeExtent": "GameCube FST laajuus on optisen radan ulkopuolella.",
+    "MediaFileSystems.GameCubeOverflow": "GameCuben FST-arvo ylittää tuetun numeerisen alueen."
+  }
+}

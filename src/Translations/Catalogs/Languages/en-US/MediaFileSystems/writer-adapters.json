@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "A media representation image cannot be null.",
+    "MediaFileSystems.RepresentationCountOverflow": "The media representation count exceeds the supported signed range.",
+    "MediaFileSystems.WriterAdapterId": "A media image writer identifier is required.",
+    "MediaFileSystems.WriterAdapterFormats": "Target format identifiers cannot be empty.",
+    "MediaFileSystems.WriterAdapterExtensions": "Output extensions cannot be empty.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Media writer validation and output callbacks are required.",
+    "MediaFileSystems.WriterAdapterPath": "A media writer output path is required.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Writer '{0}' cannot extract its required media representation.",
+    "MediaFileSystems.WriterAdapterTarget": "Writer '{0}' does not accept target '{1}' with extension '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Writer '{0}' did not report valid produced files.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore source format '{0}' cannot be written as '{1}' without a geometry transformation."
+  }
+}

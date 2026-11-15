@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "De mediabron kan niet nul zijn.",
+    "MediaFileSystems.ContextSourcePath": "Het primaire mediabronpad kan niet leeg of witruimte zijn.",
+    "MediaFileSystems.ContextPageSize": "Het formaat van de herkenningspagina moet positief zijn.",
+    "MediaFileSystems.ContextKnownLength": "De bekende bronlengte kan niet negatief zijn.",
+    "MediaFileSystems.ContextLengthOverflow": "De mediabronlengte overschrijdt het ondersteunde ondertekende bereik.",
+    "MediaFileSystems.ContextReadOffset": "De interpretatie van de erkenning kan niet negatief zijn.",
+    "MediaFileSystems.ContextReadCount": "De erkenning lees telling kan niet negatief zijn.",
+    "MediaFileSystems.ContextReadRange": "Het gevraagde bereik overschrijdt de bronlengte.",
+    "MediaFileSystems.ContextFullRead": "De volledige bron kan niet in één geheugenbuffer worden geladen. Gebruik begrensde leest in plaats daarvan.",
+    "MediaFileSystems.ContextPageEnded": "De mediabron eindigde op byte {0} tijdens het lezen van een ingecachede pagina.",
+    "MediaFileSystems.DocumentFormatId": "Een herkende format identificatie is vereist.",
+    "MediaFileSystems.DocumentRepresentation": "Een mediavertegenwoordiging met informatie over de publieke vertegenwoordiging is vereist."
+  }
+}

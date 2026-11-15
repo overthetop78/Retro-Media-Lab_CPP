@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "잘못된 영역 이미지 차원 {0}: {1}.",
+    "Media.SectorInvalidFormatId": "필드 이미지 형식 식별자는 빈 또는 잘못된: {0}.",
+    "Media.SectorDuplicateBlock": "논리 섹터 {0}가 이미지에 두 번 이상 존재합니다.",
+    "Media.SectorBlockOutside": "논리 섹터 {0}가 {1}개 섹터를 포함하는 이미지의 범위를 벗어납니다.",
+    "Media.SectorCapacityShort": "선언 된 섹터 이미지 용량 {0}은 사용 가능한 데이터 길이 {1}보다 작습니다.",
+    "Media.SectorMissingBlock": "논리 섹터 {0}가 없습니다.",
+    "Media.SectorInvalidBlockSize": "논리 섹터 {0}에 {2}바이트 대신 {1}바이트가 있습니다.",
+    "Media.FatUnsupportedBoot": "이미지 형식 {0}에 지원되는 FAT12 파일 시스템이 없습니다. 부트 섹터가 없거나 잘렸습니다.",
+    "Media.FatUnsupportedLayout": "이미지 형식 {0}에 지원되는 FAT12 파일 시스템이 없습니다(섹터 크기 {1}, 클러스터당 섹터 수 {2}, 예약된 섹터 수 {3}, FAT 복사본 수 {4}, 루트 항목 수 {5}, FAT당 섹터 수 {6}).",
+    "Media.FatInvalidChain": "{0}의 FAT 체인이 클러스터 {1}에서 유효하지 않거나 순환합니다.",
+    "Media.FatTruncatedTable": "클러스터 {0}의 FAT12 항목이 잘렸습니다.",
+    "Media.FatMissingSectors": "분야 범위 {0} 에 {1} 불완전.",
+    "Media.FatDepthLimit": "{0}에서 FAT 디렉터리 중첩 제한에 도달했습니다(깊이 {1}).",
+    "Media.FatMissingSector": "FAT sector {0}는 {2} 대신 {1} 바이트를 포함합니다.",
+    "Media.FatCyclicChain": "{0}: FAT12 체인은 클러스터 {1}에서 순환합니다.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 클러스터 {1}는 데이터 범위 밖에 있습니다.",
+    "Media.FatIncompleteContent": "{0}: 선언된 크기는 {1} 바이트이지만 {2} 바이트만 사용할 수 있습니다.",
+    "Media.FatUnsupportedGeometry": "이미지 형식 {0}는 지원되는 FAT12 기하학이 아닙니다.",
+    "Media.FatDiskFull": "대상 FAT12 볼륨에 사용 가능한 클러스터 또는 디렉터리 항목이 부족합니다.",
+    "Media.FatInvalidEntry": "마이그레이션 항목 {0} FAT12 짧은 이름 항목으로 표시 할 수 없습니다.",
+    "Media.FatDirectoryCycle": "디렉터리 {0}가 이미 탐색한 FAT12 클러스터 {1}를 다시 사용합니다.",
+    "Media.FatIntegrityInvalid": "FAT 섹터 {0}의 기록된 무결성 정보가 유효하지 않습니다.",
+    "Media.FatResourceLimit": "FAT12 추출 제한은 {0}을 읽는 동안 도달했습니다."
+  }
+}

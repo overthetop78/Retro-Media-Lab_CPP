@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Citra tidak berisi volume {0}; tanda tangan yang ditemukan: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: blok {2} dari aliran berkas {1} hilang.",
+    "MediaFileSystems.MacIncompleteData": "{0}: aliran berkas {1} berisi {2} bita; diharapkan {3}.",
+    "MediaFileSystems.MacAllocationSize": "Ukuran alokasi {1} untuk volume {0} harus merupakan kelipatan bukan nol dari {2} bita.",
+    "MediaFileSystems.MacFreeCount": "Volume {0} menyatakan {1} blok alokasi kosong dari total {2} blok.",
+    "MediaFileSystems.MfsMapTruncated": "Peta MFS untuk {0} alokasi berisi {1} bita; diperlukan {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Entri direktori MFS pada blok {0}, ofset {1}, tidak valid.",
+    "MediaFileSystems.MfsChain": "{0}: rantai alokasi aliran berkas {1} tidak valid (siklus={2}, di luar peta={3}, akhir terlalu dini={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: aliran berkas {1} menyatakan {2} bita mulai dari klaster {3}; metadata tidak konsisten.",
+    "MediaFileSystems.MfsDefaultFile": "Berkas Macintosh"
+  }
+}

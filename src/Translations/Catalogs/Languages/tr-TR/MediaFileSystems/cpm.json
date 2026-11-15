@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M disk düzeni {0} biçimi için desteklenmiyor.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Disk görüntüsü {0} biçimi için desteklenen bir CP/M dizini içermiyor.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: {2} konumundaki CP/M tahsis bloğu {1}, {3} baytlık görüntünün dışında.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M tahsis bloğu {1}, eksik bir mantıksal blokla kesişiyor.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M tahsis bloğu {1}, kesilmiş bir mantıksal blokla kesişiyor.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M tahsis bloğu {1} için birden fazla başvuru var.",
+    "MediaFileSystems.CpmImageMissing": "CP/M görüntüsü {0} eksik mantıksal blok içeriyor.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M görüntüsü {0} kesilmiş mantıksal blok içeriyor.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M düzeni geçersiz (dizin konumu={0}, tahsis başlangıcı={1}, dizin girdileri={2}, tahsis boyutu={3}, dizin blokları={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M kullanıcısı {0}"
+  }
+}

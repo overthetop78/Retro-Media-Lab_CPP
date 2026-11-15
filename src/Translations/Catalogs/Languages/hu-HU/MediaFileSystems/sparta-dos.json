@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "A(z) '{0}' lemezkép nem tartalmaz érvényes SpartaDOS-kötetet.",
+    "MediaFileSystems.SpartaMissingSector": "A(z) {0}. SpartaDOS-szektor hiányzik.",
+    "MediaFileSystems.SpartaSectorRange": "A(z) {0}. SpartaDOS-szektor az 1..{1} tartományon kívül van.",
+    "MediaFileSystems.SpartaMapLoop": "A SpartaDOS-szektortérképek lánca hurkot alkot a(z) {0}. szektornál.",
+    "MediaFileSystems.SpartaMapBackLink": "A SpartaDOS ágazati térkép ({0}) a {1} helyett az elődre ({2}) vonatkozik.",
+    "MediaFileSystems.SpartaDirectoryLoop": "A SpartaDOS könyvtárfája hurkot alkot abban a könyvtárban, amelynek térképe a(z) {0}. szektornál kezdődik.",
+    "MediaFileSystems.SpartaDirectoryLength": "A(z) {0}. szektornál lévő SpartaDOS-könyvtár érvénytelen, {1} bájtos méretet jelez."
+  }
+}

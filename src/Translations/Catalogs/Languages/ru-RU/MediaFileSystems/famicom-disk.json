@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "Выбранный том Famicom Disk System не читается.",
+    "MediaFileSystems.FdsSideCount": "Количество сторон Famicom Disk System отсутствует или недействительно.",
+    "MediaFileSystems.FdsSideLength": "Длина стороны Famicom Disk System отсутствует или недействительна.",
+    "MediaFileSystems.FdsNoFiles": "Файловый блок Famicom Disk System не найден.",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System сторона {0} Не имеет действующего информационного блока диска.",
+    "MediaFileSystems.FdsFileCount": "На стороне Famicom Disk System {0} отсутствует действительный блок подсчета файлов.",
+    "MediaFileSystems.FdsFileHeader": "Сторона Famicom Disk System {0} имеет недействительный заголовок файла.",
+    "MediaFileSystems.FdsIncomplete": "Файл Famicom Disk System {0} на стороне {1} имеет неполные данные."
+  }
+}

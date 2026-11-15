@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "映像中没有受支持的 AmigaDOS 引导块。",
+    "Media.AmigaUnsupportedVariant": "不支持 AmigaDOS 引导变体 {0}。",
+    "Media.AmigaInvalidRoot": "AmigaDOS 根块 {0} 无效。",
+    "Media.AmigaRootChecksum": "AmigaDOS 根块 {0} 的校验和无效。",
+    "Media.AmigaDirectoryChain": "块 {0} 处的 AmigaDOS 目录链无效或存在循环。",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS 目录条目块 {0} 缺失。",
+    "Media.AmigaMissingData": "AmigaDOS 文件数据块 {0} 缺失。",
+    "Media.AmigaOfsType": "OFS 数据块 {0} 的类型 {1} 不符合预期。",
+    "Media.AmigaDataChecksum": "OFS 数据块 {0} 的校验和无效。",
+    "Media.AmigaInvalidExtension": "AmigaDOS 文件扩展块 {0} 无效、存在循环或缺失。",
+    "Media.AmigaExtensionChecksum": "AmigaDOS 文件扩展块 {0} 的结构或校验和无效。",
+    "Media.AmigaTruncatedFile": "AmigaDOS 文件内容被截断：预期 {0} 字节，实际读取 {1} 字节。",
+    "Media.AmigaMissingBitmap": "AmigaDOS 分配位图块 {0} 缺失。",
+    "Media.AmigaBitmapChecksum": "AmigaDOS 分配位图块 {0} 的校验和无效。",
+    "Media.AmigaDepth": "在深度 {0} 处达到了 AmigaDOS 目录深度限制。",
+    "Media.AmigaRecovered": "根块不可用，已从有效的头块中恢复 {0} 个 AmigaDOS 目录条目。",
+    "Media.AmigaWriterVariant": "此模块无法创建 AmigaDOS 变体 {0}。",
+    "Media.AmigaWriterGeometry": "映像格式 {0} 不是受支持的 AmigaDOS 几何结构。",
+    "Media.AmigaDiskFull": "目标 AmigaDOS 卷的空闲块不足。",
+    "Media.AmigaInvalidEntry": "迁移条目 {0} 无法在 AmigaDOS 中表示。",
+    "Media.AmigaShortBlock": "AmigaDOS 块 {0} 不完整：有 {1} 字节可用。",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS 块 {0} 的记录完整性信息无效。",
+    "Media.AmigaFileSize": "AmigaDOS 文件长度 {0} 超出了支持范围。"
+  }
+}

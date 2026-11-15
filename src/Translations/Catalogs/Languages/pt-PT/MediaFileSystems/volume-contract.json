@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Um início de volume deve ser não negativo: {0}.",
+    "MediaFileSystems.VolumeLength": "Um comprimento de volume deve ser positivo: {0}.",
+    "MediaFileSystems.VolumeOrigin": "É necessária uma origem volumétrica.",
+    "MediaFileSystems.VolumePartitionNumber": "Um número de partição deve ser positivo: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Um número de sessão deve ser positivo: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Um número de faixa deve ser positivo: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "O intervalo de volume excede os limites de 64 bits assinados.",
+    "MediaFileSystems.WholeVolumeRequired": "O leitor de arquivos do setor requer um volume cobrindo toda a imagem do setor."
+  }
+}

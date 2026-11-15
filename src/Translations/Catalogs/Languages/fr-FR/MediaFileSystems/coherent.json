@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "La valeur canonique COHERENT contient {0} octets ; {1} sont requis.",
+    "Media.CoherentPointerLength": "Le pointeur de bloc COHERENT contient {0} octets ; {1} sont requis.",
+    "Media.CoherentInvalidSuperblock": "L'image ne contient pas de système de fichiers COHERENT valide.",
+    "Media.CoherentDeclaredBlocks": "COHERENT déclare {0} blocs mais seulement {1} sont disponibles.",
+    "Media.CoherentMissingSuperblock": "Il manque un bloc de superbloc COHERENT requis.",
+    "Media.CoherentInodeZone": "La zone d’inodes COHERENT se termine au bloc {0}, hors du système de fichiers de {1} blocs.",
+    "Media.CoherentNullInode": "L'inode zéro COHERENT est invalide.",
+    "Media.CoherentInodeOutside": "L'inode COHERENT {0} est à l'extérieur de la zone d'inode de {1} octets.",
+    "Media.CoherentFileTooLarge": "La longueur du fichier COHERENT de {0} octets ne peut pas être représentée en mémoire.",
+    "Media.CoherentDirectUnavailable": "{0} : le bloc direct COHERENT {1} est manquant ou en dehors de l'image.",
+    "Media.CoherentIndirectUnavailable": "{0} : le bloc indirect COHERENT {1} au niveau {2} est manquant ou en dehors de l'image.",
+    "Media.CoherentIndirectRepeated": "{0} : le bloc indirect COHERENT {1} au niveau {2} est référencé plus d'une fois.",
+    "Media.CoherentDirectoryCycle": "{0} : l’inode de répertoire COHERENT {1} forme un cycle.",
+    "Media.CoherentDirectoryRepeated": "{0} : l'inode du répertoire COHERENT {1} a déjà été visité.",
+    "Media.CoherentChildUnreadable": "{0} : l’inode enfant COHERENT ne peut pas être lu.",
+    "Media.CoherentMissingBytes": "{0} : {1} octet(s) COHERENT sont absents et restent positionnés à zéro.",
+    "Media.CoherentDepth": "{0} : la limite de profondeur du répertoire COHERENT a été atteinte à la profondeur {1}.",
+    "Media.CoherentInodeDescription": "Inode COHERENT {0}"
+  }
+}

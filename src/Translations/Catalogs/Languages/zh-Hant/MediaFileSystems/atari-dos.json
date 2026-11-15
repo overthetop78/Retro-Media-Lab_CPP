@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "使用 {1} 位元組磁區的 {0} 映像檔不包含受支援的 Atari DOS 目錄。",
+    "MediaFileSystems.AtariDosDirectoryMissing": "目錄磁區 {0} 缺失。",
+    "MediaFileSystems.AtariDosDirectoryEntry": "目錄磁區 {0} 的項目 {1} 不是有效的 Atari DOS 檔案項目，已被忽略。",
+    "MediaFileSystems.AtariDosDataMissing": "{0}：Atari DOS 資料磁區 {1} 缺失。",
+    "MediaFileSystems.AtariDosChainCycle": "{0}：Atari DOS 資料鏈在磁區 {1} 處存在循環。",
+    "MediaFileSystems.AtariDosOwner": "{0}：磁區 {1} 屬於檔案 {3}，預期屬於 {2}。",
+    "MediaFileSystems.AtariDosOpen": "目錄磁區 {1} 的項目 {2}（「{0}」）仍處於開啟寫入狀態，已被忽略。",
+    "MediaFileSystems.AtariDosTruncated": "「{0}」的資料磁區 {1} 太短，無法包含連結。",
+    "MediaFileSystems.AtariDosPremature": "檔案「{0}」宣告有 {1} 個磁區，但其鏈在 {2} 個磁區後結束。",
+    "MediaFileSystems.AtariDosEmptyData": "空檔案「{0}」意外參照了磁區 {1}。",
+    "MediaFileSystems.AtariDosBounded": "檔案「{0}」僅限於目錄項目宣告的 {1} 個磁區，而底層鏈繼續指向磁區 {2}。",
+    "MediaFileSystems.AtariDosShared": "檔案「{0}」與「{1}」共用從磁區 {2} 開始的 {3} 個磁區。",
+    "MediaFileSystems.AtariDosUsedLength": "「{0}」的資料磁區 {1} 宣告有 {2} 位元組，但只有 {3} 位元組可用。"
+  }
+}

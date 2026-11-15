@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Katalog Apple DOS wskazywany przez VTOC na ścieżce {0}, w sektorze {1}, nie istnieje lub jest nieprawidłowy.",
+    "MediaFileSystems.AppleDosCatalogChain": "Sektor katalogu Apple DOS {0}/{1} nie istnieje lub tworzy cykl.",
+    "MediaFileSystems.AppleDosAddress": "Adres Apple DOS {1}/{2} dla {0} znajduje się poza geometrią dysku.",
+    "MediaFileSystems.AppleDosListCycle": "Lista ścieżek/sektorów dla {0} tworzy cykl w {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Brakuje listy ścieżek/sektorów dla {0} w {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Brakuje sektora danych {1} / {2} dla {0}.",
+    "MediaFileSystems.AppleDosSize": "Plik {0} deklaruje {1} sektorów, ale odczytano łańcuch obejmujący {2} sektorów.",
+    "MediaFileSystems.AppleDosWriteFormat": "Format docelowy Apple DOS {0} nie jest obsługiwany.",
+    "MediaFileSystems.AppleDosWriteFull": "Na woluminie Apple DOS brakuje sektorów katalogu lub danych.",
+    "MediaFileSystems.AppleDosWriteVolume": "Nazwa woluminu Apple DOS {0} musi mieć postać DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS obsługuje tylko pliki z dostępną zawartością w katalogu głównym.",
+    "MediaFileSystems.AppleDosBinarySize": "Plik binarny Apple DOS nie może przekraczać 65535 bajtów.",
+    "MediaFileSystems.AppleDosWriteName": "Nazwy pliku Apple DOS {0} nie można zakodować we wpisie katalogu.",
+    "MediaFileSystems.AppleDosTypeText": "Tekst",
+    "MediaFileSystems.AppleDosTypeBinary": "Binarny",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relokowalny",
+    "MediaFileSystems.AppleDosTypeFile": "Plik"
+  }
+}

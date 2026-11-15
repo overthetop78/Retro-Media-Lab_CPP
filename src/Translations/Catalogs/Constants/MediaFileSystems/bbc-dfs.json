@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "Media.BbcInvalidCatalog": "The BBC DFS catalogue is invalid: {0} entries and {1} total sectors were observed.",
+    "Media.BbcFileOutside": "{0}: the file range starting at sector {1} with length {2} bytes is outside the image.",
+    "Media.BbcIntegrityInvalid": "BBC DFS sector {0} has invalid recorded integrity."
+  }
+}

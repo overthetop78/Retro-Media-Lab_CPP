@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Imaginea nu conține un catalog ADFS acceptat (blocuri de {0} octeți, {1} blocuri).",
+    "Media.AdfsInvalidDirectory": "Dosarul ADFS {0} este invalid sau incomplet.",
+    "Media.AdfsDepth": "Limita de adâncime a directorului ADFS a fost atinsă la adâncime {0}.",
+    "Media.AdfsCycle": "Dosarul ADFS {0} este ciclic sau face referire de mai multe ori.",
+    "Media.AdfsInvalidRange": "{0}: adresă ADFS invalidă {1}, offset {2}, lungime {3}.",
+    "Media.AdfsMissingBlock": "{0}: adresa ADFS {1} la deplasarea {2} necesită blocul lipsă {3}.",
+    "Media.AdfsIntegrity": "Blocul ADFS {0} are informații de integritate înregistrate nevalide.",
+    "Media.AdfsBlockVolume": "ADFS necesită un sector adresabil sau volum bloc.",
+    "Media.AdfsSectorCount": "Numărul sectorului ADFS {0} este în afara intervalului sprijinit."
+  }
+}

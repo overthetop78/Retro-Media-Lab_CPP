@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Adresa pro rozsah dat médií nemůže být záporná.",
+    "MediaFileSystems.BlockRangeLength": "Rozsah mediálních dat musí být kladný.",
+    "MediaFileSystems.BlockSourceOffset": "Odstupňování zdrojů mediálních dat nemůže být záporné.",
+    "MediaFileSystems.BlockSourceNull": "Uložený rozsah médií vyžaduje zdroj dat.",
+    "MediaFileSystems.BlockSourceRange": "Mapovaný rozsah překračuje svůj zdroj dat.",
+    "MediaFileSystems.BlockNonStoredSource": "Pouze uložené rozsahy mohou odkazovat na zdroj dat.",
+    "MediaFileSystems.BlockNonStoredOffset": "Neuložený rozsah nemůže mít zdrojový posun.",
+    "MediaFileSystems.BlockLogicalLength": "Logická délka médií nemůže být záporná.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Logická velikost bloku musí být kladná.",
+    "MediaFileSystems.BlockCompleteBlocks": "Logická délka musí obsahovat kompletní logické bloky.",
+    "MediaFileSystems.BlockGeometryOutside": "Deklarovaná geometrie překračuje logickou kapacitu média.",
+    "MediaFileSystems.BlockRangeOutside": "Blokový rozsah překračuje délku logického média.",
+    "MediaFileSystems.BlockRangeOverlap": "Blokové rozsahy se nesmí překrývat.",
+    "MediaFileSystems.BlockReadAddress": "Logická adresa pro čtení nemůže být záporná.",
+    "MediaFileSystems.BlockReadRange": "Požadovaný logický rozsah překračuje kapacitu médií.",
+    "MediaFileSystems.BlockRangeMissing": "Žádný rozsah mediálních dat neobsahuje logickou adresu {0}.",
+    "MediaFileSystems.BlockUnavailable": "Logická adresa {0} není dostupná ve zdrojovém obrázku.",
+    "MediaFileSystems.BlockRangeKind": "Nepodporovaný rozsah dat médií {0}.",
+    "MediaFileSystems.BlockOverflow": "Výpočet bloku médií překračuje podporovaný podepsaný rozsah.",
+    "MediaFileSystems.BlockGeometryValue": "Parametr geometrie pevného disku {0} musí být kladný.",
+    "MediaFileSystems.BlockDriveCount": "Mechanický přístup musí zahrnovat kladný počet bajtů.",
+    "MediaFileSystems.BlockNullImage": "Vyžaduje se blokový obrázek."
+  }
+}

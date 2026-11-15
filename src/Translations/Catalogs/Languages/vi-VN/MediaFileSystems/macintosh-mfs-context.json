@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Khối thông tin phân vùng {0} bị thiếu hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Khối thư mục {0} bị thiếu hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: khối {1} của fork dữ liệu bị thiếu hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: fork dữ liệu chứa {1} byte; dự kiến có {2} byte.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: fork dữ liệu khai báo {1} byte bắt đầu từ cụm {2}; siêu dữ liệu không nhất quán.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: chuỗi cấp phát của fork dữ liệu chứa vòng lặp.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: chuỗi cấp phát của fork dữ liệu tham chiếu đến vị trí ngoài bảng cấp phát.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: chuỗi cấp phát của fork dữ liệu kết thúc trước khi có đủ tất cả các cụm cần thiết.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: khối {1} của fork tài nguyên bị thiếu hoặc có kích thước không hợp lệ.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: fork tài nguyên chứa {1} byte; dự kiến có {2} byte.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: fork tài nguyên khai báo {1} byte bắt đầu từ cụm {2}; siêu dữ liệu không nhất quán.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: chuỗi cấp phát của fork tài nguyên chứa vòng lặp.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: chuỗi cấp phát của fork tài nguyên tham chiếu đến vị trí ngoài bảng cấp phát.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: chuỗi cấp phát của fork tài nguyên kết thúc trước khi có đủ tất cả các cụm cần thiết."
+  }
+}

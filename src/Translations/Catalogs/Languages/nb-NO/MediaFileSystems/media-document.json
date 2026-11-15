@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Mediakilden kan ikke være null.",
+    "MediaFileSystems.ContextSourcePath": "Den primære mediekildestien kan ikke være tom eller tom.",
+    "MediaFileSystems.ContextPageSize": "Sidestørrelsen må være positiv.",
+    "MediaFileSystems.ContextKnownLength": "Den kjente kildelengden kan ikke være negativ.",
+    "MediaFileSystems.ContextLengthOverflow": "mediekildelengden overstiger det understøttede signerte området.",
+    "MediaFileSystems.ContextReadOffset": "Leseforskyvningen kan ikke være negativ.",
+    "MediaFileSystems.ContextReadCount": "Erkjennelsen kan ikke være negativ.",
+    "MediaFileSystems.ContextReadRange": "Det ønskede området overstiger kildelengden.",
+    "MediaFileSystems.ContextFullRead": "Den komplette kilden kan ikke lastes inn i én minnebuffer. Bruk avgrensede lesere i stedet.",
+    "MediaFileSystems.ContextPageEnded": "Mediakilden endte ved byte {0} mens du leste en cacheside.",
+    "MediaFileSystems.DocumentFormatId": "En anerkjent formatidentifikator kreves.",
+    "MediaFileSystems.DocumentRepresentation": "En medierepresentasjon med offentlig informasjon kreves."
+  }
+}

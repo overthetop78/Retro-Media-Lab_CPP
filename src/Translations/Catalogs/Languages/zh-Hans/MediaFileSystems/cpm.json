@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "格式 {0} 不支持该 CP/M 磁盘布局。",
+    "MediaFileSystems.CpmUnsupportedDirectory": "磁盘映像不包含格式 {0} 所支持的 CP/M 目录。",
+    "MediaFileSystems.CpmAllocationOutside": "{0}：偏移 {2} 处的 CP/M 分配块 {1} 超出了 {3} 字节的映像范围。",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}：CP/M 分配块 {1} 跨越了缺失的逻辑块。",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}：CP/M 分配块 {1} 跨越了被截断的逻辑块。",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}：CP/M 分配块 {1} 被引用了多次。",
+    "MediaFileSystems.CpmImageMissing": "CP/M 映像包含 {0} 个缺失的逻辑块。",
+    "MediaFileSystems.CpmImageTruncated": "CP/M 映像包含 {0} 个被截断的逻辑块。",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M 布局无效（目录偏移={0}，分配起点={1}，目录项数={2}，分配大小={3}，目录块数={4}）。",
+    "MediaFileSystems.CpmUserArea": "CP/M 用户 {0}"
+  }
+}

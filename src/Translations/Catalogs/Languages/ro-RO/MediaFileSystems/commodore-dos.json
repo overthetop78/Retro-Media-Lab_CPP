@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Formatul imaginii \"{0} \" nu conține un sistem de fișiere CBM DOS susținut.",
+    "MediaFileSystems.CbmDirectoryCycle": "Lanţul director CBM DOS este ciclic la {0}/ {1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Sectorul director CBM DOS {0}/{1} lipsește.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Sectorul director CBM DOS {0}/ {1} conţine numai bytes {2}.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Coordonarea directorului CBM DOS {0}/{1} este invalidă.",
+    "MediaFileSystems.CbmFileCycle": "{0}: lanțul este ciclic la {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: coordonatele {1}/ {2} nu sunt valabile.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sectorul {1}/ {2} este trunchiat.",
+    "MediaFileSystems.CbmFileMissing": "{0}: sectorul {1}/ {2} lipseşte.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: numărul final {1} este invalid.",
+    "MediaFileSystems.CbmCapacity": "{0}: lanțul CBM DOS depășește capacitatea imaginii.",
+    "MediaFileSystems.CbmBamMissing": "Lipsește CBM DOS BAM necesară la {0}/{1}.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} este trunchiat la bytes {2}.",
+    "MediaFileSystems.PetsciiLength": "Lungimea câmpului PETSCII {0} nu trebuie să fie negativă.",
+    "MediaFileSystems.PetsciiTooLong": "Valoarea PETSCII depășește {0} caractere.",
+    "MediaFileSystems.PetsciiCharacter": "Caracterul \"{0} \" nu poate fi reprezentat de subgrupul PETSCII susţinut.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, deschis",
+    "MediaFileSystems.CbmTypeLocked": "{0}, blocat",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, deschis, blocat"
+  }
+}

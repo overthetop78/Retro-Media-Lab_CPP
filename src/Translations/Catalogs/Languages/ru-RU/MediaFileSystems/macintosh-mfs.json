@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Образ диска не содержит тома {0}; прочитанная сигнатура: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: блок {2} потока fork {1} отсутствует.",
+    "MediaFileSystems.MacIncompleteData": "{0}: поток fork {1} содержит {2} байтов; ожидалось {3}.",
+    "MediaFileSystems.MacAllocationSize": "Размер единицы распределения {1} тома {0} должен быть положительным кратным {2} байтам.",
+    "MediaFileSystems.MacFreeCount": "Том {0} объявляет {1} свободных блоков распределения из {2}.",
+    "MediaFileSystems.MfsMapTruncated": "Карта MFS для {0} единиц распределения содержит {1} байтов; требуется {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Запись каталога MFS в блоке {0}, по смещению {1}, недопустима.",
+    "MediaFileSystems.MfsChain": "{0}: цепочка распределения потока fork {1} недопустима (цикл={2}, вне карты={3}, преждевременный конец={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: поток fork {1} объявляет {2} байтов начиная с кластера {3}; метаданные противоречивы.",
+    "MediaFileSystems.MfsDefaultFile": "Файл Macintosh"
+  }
+}

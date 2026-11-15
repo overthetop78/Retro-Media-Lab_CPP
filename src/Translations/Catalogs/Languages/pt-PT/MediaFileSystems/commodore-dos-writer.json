@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmWriteType": "O tipo de arquivo Commodore DOS padrão {0} deve ser SEQ, PRG, USR ou REL.",
+    "MediaFileSystems.CbmWriteRecordLength": "O comprimento padrão do registro REL deve ser maior que zero.",
+    "MediaFileSystems.CbmWriteFormat": "O formato alvo '{0}' do Commodore DOS não é suportado.",
+    "MediaFileSystems.CbmWriteEntry": "A entrada '{0}' não pode ser armazenada em um diretório raiz do Commodore DOS.",
+    "MediaFileSystems.CbmWriteFull": "O volume Commodore DOS tem blocos livres insuficientes.",
+    "MediaFileSystems.CbmWriteRelativeSize": "O arquivo REL '{0}' excede a capacidade clássica do setor lateral."
+  }
+}

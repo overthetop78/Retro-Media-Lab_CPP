@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "The {0} image with {1}-byte sectors does not contain a supported Atari DOS directory.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Directory sector {0} is missing.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Directory sector {0}, entry {1} is not a valid Atari DOS file entry and was ignored.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS data sector {1} is missing.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS data chain is cyclic at sector {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sector {1} belongs to file {3}, expected {2}.",
+    "MediaFileSystems.AtariDosOpen": "Directory sector {1}, entry {2} ('{0}') is still open for output and was ignored.",
+    "MediaFileSystems.AtariDosTruncated": "Data sector {1} for '{0}' is too short to contain its link.",
+    "MediaFileSystems.AtariDosPremature": "File '{0}' declares {1} sectors, but its chain ends after {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Empty file '{0}' unexpectedly references sector {1}.",
+    "MediaFileSystems.AtariDosBounded": "File '{0}' is limited to the {1} sectors declared in its directory entry while the underlying chain continues at sector {2}.",
+    "MediaFileSystems.AtariDosShared": "File '{0}' shares {3} sectors from sector {2} with '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Data sector {1} for '{0}' declares {2} bytes but only {3} are available."
+  }
+}

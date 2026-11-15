@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "อิมเมจดิสก์ไม่มีโวลุม {0} ลายเซ็นที่ตรวจพบ: 0x{1}",
+    "MediaFileSystems.MacMissingBlock": "{0}: บล็อก {2} ของ fork {1} หายไป",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1} มีข้อมูล {2} ไบต์ แต่ควรมี {3} ไบต์",
+    "MediaFileSystems.MacAllocationSize": "ขนาดหน่วยจัดสรร {1} ของโวลุม {0} ต้องเป็นจำนวนเท่าบวกของ {2} ไบต์",
+    "MediaFileSystems.MacFreeCount": "โวลุม {0} ระบุบล็อกจัดสรรว่าง {1} บล็อกจากทั้งหมด {2} บล็อก",
+    "MediaFileSystems.MfsMapTruncated": "ตาราง MFS สำหรับหน่วยจัดสรร {0} หน่วยมี {1} ไบต์ แต่ต้องมี {2} ไบต์",
+    "MediaFileSystems.MfsDirectoryEntry": "รายการไดเรกทอรี MFS ในบล็อก {0} ที่ออฟเซต {1} ไม่ถูกต้อง",
+    "MediaFileSystems.MfsChain": "{0}: ห่วงโซ่การจัดสรรของ fork {1} ไม่ถูกต้อง (วนซ้ำ={2}, นอกตาราง={3}, สิ้นสุดก่อนกำหนด={4})",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1} ระบุข้อมูล {2} ไบต์จากคลัสเตอร์ {3} เมทาดาทาไม่สอดคล้องกัน",
+    "MediaFileSystems.MfsDefaultFile": "ไฟล์ Macintosh"
+  }
+}

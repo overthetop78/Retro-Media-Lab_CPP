@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "ويجب أن تكون بداية الحجم غير مؤثرة: {0}.",
+    "MediaFileSystems.VolumeLength": "A volume length must be positive: {0}.",
+    "MediaFileSystems.VolumeOrigin": "ويلزم الحصول على مصدر حجمي.",
+    "MediaFileSystems.VolumePartitionNumber": "A partition number must be positive: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "A session number must be positive: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "A track number must be positive: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "ويتجاوز نطاق الحجم الحدود التي تم التوقيع عليها وعددها 64 نقطة.",
+    "MediaFileSystems.WholeVolumeRequired": "ويحتاج قارئ النظام القطاعي للملفات إلى حجم يغطي كامل صورة القطاع."
+  }
+}

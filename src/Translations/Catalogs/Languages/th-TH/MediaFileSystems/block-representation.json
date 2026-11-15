@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "ที่อยู่ช่วงข้อมูลสื่อไม่สามารถเป็นค่าลบได้",
+    "MediaFileSystems.BlockRangeLength": "ช่วงข้อมูลสื่อจะต้องเป็นบวก",
+    "MediaFileSystems.BlockSourceOffset": "การปรับค่าแหล่งข้อมูลสื่อเป็นลบไม่ได้",
+    "MediaFileSystems.BlockSourceNull": "สื่อที่เก็บไว้ต้องการแหล่งข้อมูล",
+    "MediaFileSystems.BlockSourceRange": "ช่วงของแผนที่มากกว่าแหล่งข้อมูล",
+    "MediaFileSystems.BlockNonStoredSource": "ช่วงที่ถูกจัดเก็บเท่านั้นที่สามารถอ้างอิงแหล่งข้อมูลได้",
+    "MediaFileSystems.BlockNonStoredOffset": "ช่วงที่ยังไม่ได้พิมพ์ไม่สามารถมีการปรับค่าแหล่ง",
+    "MediaFileSystems.BlockLogicalLength": "ความยาวของสื่อตรรกะไม่สามารถเป็นลบ",
+    "MediaFileSystems.BlockLogicalBlockSize": "ขนาดของบล็อกตรรกะต้องเป็นบวก",
+    "MediaFileSystems.BlockCompleteBlocks": "ความ ยาว ที่ สม เหตุ สม ผล ต้อง มี กล่อง เหตุ ผล ครบ ถ้วน.",
+    "MediaFileSystems.BlockGeometryOutside": "เรขาคณิตที่ประกาศไว้นั้นเกินความเหมาะสมของสื่อ",
+    "MediaFileSystems.BlockRangeOutside": "ช่วงของบล็อกมากกว่าความยาวสื่อที่สมเหตุสมผล",
+    "MediaFileSystems.BlockRangeOverlap": "ช่วงของบล็อคต้องไม่ทับกัน",
+    "MediaFileSystems.BlockReadAddress": "ที่ อยู่ อ่าน ได้ อย่าง สม เหตุ สม ผล ไม่ อาจ เป็น แง่ ลบ.",
+    "MediaFileSystems.BlockReadRange": "มี เหตุ ผล มาก กว่า ความ สามารถ ทาง สื่อ.",
+    "MediaFileSystems.BlockRangeMissing": "ไม่มีช่วงข้อมูลสื่อ ครอบคลุมที่อยู่ตามตรรกะ {0}",
+    "MediaFileSystems.BlockUnavailable": "ไม่มีที่อยู่ที่ถูกต้อง {0} ในอิมเมจต้นฉบับ",
+    "MediaFileSystems.BlockRangeKind": "ชนิดของข้อมูลสื่อที่ไม่รองรับ {0}",
+    "MediaFileSystems.BlockOverflow": "การคํานวณบล็อกของสื่อเกินช่วงที่รองรับการเซ็น",
+    "MediaFileSystems.BlockGeometryValue": "พารามิเตอร์เรขาคณิตของฮาร์ดดิสก์ {0} ต้องเป็นบวก",
+    "MediaFileSystems.BlockDriveCount": "การเข้าถึงเครื่องจักร ต้องครอบคลุมจํานวนที่เป็นบวกของไบท์",
+    "MediaFileSystems.BlockNullImage": "จําเป็นต้องบล็อคภาพ"
+  }
+}

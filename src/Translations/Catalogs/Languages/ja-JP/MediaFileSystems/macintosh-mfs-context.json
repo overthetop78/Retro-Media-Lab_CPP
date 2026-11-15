@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "ボリューム情報ブロック {0} がないか、サイズが無効です。",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "ディレクトリブロック {0} がないか、サイズが無効です。",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: データフォークのブロック {1} がないか、サイズが無効です。",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: データフォークには {1} バイトが含まれています。必要なサイズは {2} バイトです。",
+    "MediaFileSystems.MfsDataMetadata": "{0}: データフォークはクラスター {2} から {1} バイトを宣言しています。メタデータに矛盾があります。",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: データフォークの割り当てチェーンに循環があります。",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: データフォークの割り当てチェーンが割り当てマップの範囲外を参照しています。",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: データフォークの割り当てチェーンが、必要なすべてのクラスターを取得する前に終了しています。",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: リソースフォークのブロック {1} がないか、サイズが無効です。",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: リソースフォークには {1} バイトが含まれています。必要なサイズは {2} バイトです。",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: リソースフォークはクラスター {2} から {1} バイトを宣言しています。メタデータに矛盾があります。",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: リソースフォークの割り当てチェーンに循環があります。",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: リソースフォークの割り当てチェーンが割り当てマップの範囲外を参照しています。",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: リソースフォークの割り当てチェーンが、必要なすべてのクラスターを取得する前に終了しています。"
+  }
+}

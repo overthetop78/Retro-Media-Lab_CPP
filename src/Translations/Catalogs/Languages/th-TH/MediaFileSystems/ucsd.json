@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "ไม่รู้จักไดเรกทอรี UCSD ที่บล็อก {0}; บล็อกที่ไม่ถูกต้อง: {1}",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: บล็อก UCSD ขาดหายไปหรือถูกตัดทอน: {1}",
+    "MediaFileSystems.UcsdMissingDirectory": "บล็อกไดเรกทอรี UCSD p-System ขาดหายไปหรือถูกตัดทอน: {0}",
+    "MediaFileSystems.UcsdInvalidName": "รายการ UCSD {0} มีชื่อไม่ถูกต้อง '{1}'",
+    "MediaFileSystems.UcsdRange": "รายการ UCSD {0} ('{1}') ใช้ช่วงที่ไม่ถูกต้อง [{2}, {3}) ใน {4} บล็อก",
+    "MediaFileSystems.UcsdOverlap": "UCSD ในรายการ {0} ('{1}') ทับซ้อนบล็อก {2}.",
+    "MediaFileSystems.UcsdCount": "ไดเรกทอรี UCSD ระบุว่ามี {0} ไฟล์ แต่พบรายการที่ถูกต้อง {1} รายการ",
+    "MediaFileSystems.UcsdLastBytes": "{0}: บล็อกสุดท้ายของ UCSD ประกาศ {1} ไบต์",
+    "MediaFileSystems.UcsdTypeUntyped": "ไฟล์ UCSD ที่ไม่มีชนิด",
+    "MediaFileSystems.UcsdTypeExternalDisk": "ไฟล์ดิสก์ภายนอก UCSD",
+    "MediaFileSystems.UcsdTypeCode": "ไฟล์โค้ด UCSD",
+    "MediaFileSystems.UcsdTypeText": "ไฟล์ข้อความ UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "ไฟล์สารสนเทศ UCSD",
+    "MediaFileSystems.UcsdTypeData": "ไฟล์ข้อมูล UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "ไฟล์กราฟิก UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "ไฟล์ภาพถ่าย UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "ไดเรกทอรีที่ปลอดภัย UCSD"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "The media source cannot be null.",
+    "MediaFileSystems.ContextSourcePath": "The primary media source path cannot be empty or whitespace.",
+    "MediaFileSystems.ContextPageSize": "The recognition page size must be positive.",
+    "MediaFileSystems.ContextKnownLength": "The known source length cannot be negative.",
+    "MediaFileSystems.ContextLengthOverflow": "The media source length exceeds the supported signed range.",
+    "MediaFileSystems.ContextReadOffset": "The recognition read offset cannot be negative.",
+    "MediaFileSystems.ContextReadCount": "The recognition read count cannot be negative.",
+    "MediaFileSystems.ContextReadRange": "The requested range exceeds the source length.",
+    "MediaFileSystems.ContextFullRead": "The complete source cannot be loaded into one memory buffer. Use bounded reads instead.",
+    "MediaFileSystems.ContextPageEnded": "The media source ended at byte {0} while reading a cached page.",
+    "MediaFileSystems.DocumentFormatId": "A recognized format identifier is required.",
+    "MediaFileSystems.DocumentRepresentation": "A media representation with public representation information is required."
+  },
+  "invariants": []
+}

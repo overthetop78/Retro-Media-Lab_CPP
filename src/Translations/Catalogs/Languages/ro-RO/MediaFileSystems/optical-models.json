@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Lungimea optică logică nu poate fi negativă.",
+    "MediaFileSystems.OpticalMetadataOnly": "Acest descriptor media moștenitor conține doar metadate și nu are nici o sursă de date lizibilă.",
+    "MediaFileSystems.OpticalIndexNumber": "Indicele optic al liniei trebuie să fie între 0 și 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Dimensiunea optică \"{0} \" trebuie să fie pozitivă.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Dimensiunea optică \"{0} \" nu poate fi negativă.",
+    "MediaFileSystems.OpticalDataSource": "Este necesară o sursă optică de date de cale.",
+    "MediaFileSystems.OpticalUserWindow": "Fereastra de date a utilizatorului depășește un sector stocat.",
+    "MediaFileSystems.OpticalTrackSource": "Datele de cale depăşesc sursa.",
+    "MediaFileSystems.OpticalSubchannelSource": "Dimensiunile subcanalului necesită o sursă de subcanal.",
+    "MediaFileSystems.OpticalSubchannelRange": "Datele subcanal depășește sursa sa.",
+    "MediaFileSystems.OpticalPregapOffset": "O compensare a sursei de pregap stocată necesită sectoare de pregap stocate.",
+    "MediaFileSystems.OpticalPregapRange": "Pregapa stocată îşi depăşeşte sursa.",
+    "MediaFileSystems.OpticalStoredDestination": "Destinaţia trebuie să conţină exact un sector stocat.",
+    "MediaFileSystems.OpticalStoredPregap": "Sectorul este în afara pregapului stocat.",
+    "MediaFileSystems.OpticalRelativeSector": "Sectorul este în afara liniei optice.",
+    "MediaFileSystems.OpticalNullTrack": "O pistă optică nu poate fi nulă."
+  }
+}

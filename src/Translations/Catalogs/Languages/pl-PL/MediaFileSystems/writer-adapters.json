@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Obraz reprezentacji mediów nie może być zerowy.",
+    "MediaFileSystems.RepresentationCountOverflow": "Licznik reprezentacji nośnika przekracza obsługiwany zakres liczb całkowitych ze znakiem.",
+    "MediaFileSystems.WriterAdapterId": "Wymagany jest identyfikator komponentu zapisu obrazu nośnika.",
+    "MediaFileSystems.WriterAdapterFormats": "Identyfikatory formatu docelowego nie mogą być puste.",
+    "MediaFileSystems.WriterAdapterExtensions": "Rozszerzenia wyjść nie mogą być puste.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Wymagane jest walidację zapisu multimedialnego i wywołania wyjściowe.",
+    "MediaFileSystems.WriterAdapterPath": "Wymagana jest ścieżka wyjściowa komponentu zapisu nośnika.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Writer '{0}' nie może wyodrębnić wymaganej reprezentacji mediów.",
+    "MediaFileSystems.WriterAdapterTarget": "Writer '{0}' nie akceptuje celu '{1}' z rozszerzeniem '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Writer '{0}' nie zgłosił poprawnych wyprodukowanych plików.",
+    "MediaFileSystems.WriterCommodoreTransform": "Format źródłowy Commodore '{0}' nie może być napisany jako '{1}' bez transformacji geometrii."
+  }
+}

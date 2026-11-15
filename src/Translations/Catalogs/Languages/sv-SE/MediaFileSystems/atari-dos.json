@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Diskavbildningen {0} med sektorer på {1} byte innehåller ingen Atari DOS-katalog som stöds.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Katalogsektor {0} saknas.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Katalogsektor {0}, post {1}, är inte en giltig Atari DOS-filpost och ignorerades.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS-datasektor {1} saknas.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS-datakedjan innehåller en slinga vid sektor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} tillhör fil {3}; förväntat var {2}.",
+    "MediaFileSystems.AtariDosOpen": "Katalogsektor {1}, post {2} (”{0}”), är fortfarande öppen för skrivning och ignorerades.",
+    "MediaFileSystems.AtariDosTruncated": "Datasektor {1} för ”{0}” är för kort för att innehålla länken.",
+    "MediaFileSystems.AtariDosPremature": "Filen ”{0}” anger {1} sektorer, men kedjan slutar efter {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Den tomma filen ”{0}” hänvisar oväntat till sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Filen ”{0}” är begränsad till de {1} sektorer som anges i katalogposten, medan den underliggande kedjan fortsätter vid sektor {2}.",
+    "MediaFileSystems.AtariDosShared": "Filen ”{0}” delar {3} sektorer från sektor {2} med ”{1}”.",
+    "MediaFileSystems.AtariDosUsedLength": "Datasektor {1} för ”{0}” anger {2} byte, men bara {3} är tillgängliga."
+  }
+}

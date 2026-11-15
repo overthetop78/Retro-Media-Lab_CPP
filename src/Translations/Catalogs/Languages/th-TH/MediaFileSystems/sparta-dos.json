@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "อิมเมจดิสก์ '{0}' ไม่มีโวลุม SpartaDOS ที่ถูกต้อง",
+    "MediaFileSystems.SpartaMissingSector": "เซกเตอร์ SpartaDOS {0} ขาดหายไป",
+    "MediaFileSystems.SpartaSectorRange": "เซกเตอร์ SpartaDOS {0} อยู่นอกช่วง 1..{1}",
+    "MediaFileSystems.SpartaMapLoop": "โซ่แผนที่เซกเตอร์ SpartaDOS วนซ้ำที่เซกเตอร์ {0}",
+    "MediaFileSystems.SpartaMapBackLink": "แผนที่เซกเตอร์ SpartaDOS {0} อ้างถึงแผนที่ก่อนหน้า {2} แทนที่จะเป็น {1}",
+    "MediaFileSystems.SpartaDirectoryLoop": "ต้นไม้ไดเรกทอรี SpartaDOS วนซ้ำที่ไดเรกทอรีซึ่งแผนที่เริ่มต้นที่เซกเตอร์ {0}",
+    "MediaFileSystems.SpartaDirectoryLength": "ไดเรกทอรี SpartaDOS ที่เซกเตอร์ {0} ระบุขนาด {1} ไบต์ที่ไม่ถูกต้อง"
+  }
+}

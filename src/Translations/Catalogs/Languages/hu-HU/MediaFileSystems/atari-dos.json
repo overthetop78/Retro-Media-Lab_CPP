@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "A {0} kép {1}- byte szektorokkal nem tartalmaz támogatott Atari DOS könyvtárat.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "A könyvtár szektor {0} hiányzik.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "A könyvtár szektor {0}, bejegyzés {1} nem érvényes Atari DOS fájl bejegyzés, és figyelmen kívül hagyták.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Az Atari DOS {1}. adatszektora hiányzik.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: A Atari DOS adatlánc a {1} szektorban ciklikus.",
+    "MediaFileSystems.AtariDosOwner": "{0}: A(z) {1}. szektor a(z) {3}. fájlhoz tartozik, az elvárt fájlazonosító {2}.",
+    "MediaFileSystems.AtariDosOpen": "A(z) {1}. könyvtárszektor {2}. bejegyzése ('{0}') még nyitva van írásra, ezért a rendszer figyelmen kívül hagyta.",
+    "MediaFileSystems.AtariDosTruncated": "A \"{0}\" esetében a {1} adatszektor túl rövid ahhoz, hogy tartalmazza a kapcsolatot.",
+    "MediaFileSystems.AtariDosPremature": "A \"{0}\" fájl a {1} szektort jelenti, de lánca a {2} után ér véget.",
+    "MediaFileSystems.AtariDosEmptyData": "Üres fájl \"{0}\" váratlanul referenciaszektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "A(z) '{0}' fájl a könyvtárbejegyzésben megadott {1} szektorra korlátozódik, de a lánc a(z) {2}. szektornál folytatódik.",
+    "MediaFileSystems.AtariDosShared": "A(z) '{0}' fájl {3} szektort oszt meg a(z) '{1}' fájllal a(z) {2}. szektortól kezdve.",
+    "MediaFileSystems.AtariDosUsedLength": "A(z) '{0}' fájl {1}. adatszektora {2} bájtot jelez, de csak {3} érhető el."
+  }
+}

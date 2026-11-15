@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "تحتوي القيمة القياسية COHERENT على {0} بايت؛ يلزم {1}.",
+    "Media.CoherentPointerLength": "يحتوي مؤشر كتلة COHERENT على {0} بايت؛ يلزم {1}.",
+    "Media.CoherentInvalidSuperblock": "لا تحتوي الصورة على نظام ملفات COHERENT صالح.",
+    "Media.CoherentDeclaredBlocks": "يعلن COHERENT عن {0} كتلة، لكن المتاح هو {1} فقط.",
+    "Media.CoherentMissingSuperblock": "إحدى كتل الكتلة الفائقة المطلوبة لنظام COHERENT مفقودة.",
+    "Media.CoherentInodeZone": "تنتهي منطقة عُقد COHERENT عند الكتلة {0}، خارج نظام الملفات الذي يحتوي على {1} كتلة.",
+    "Media.CoherentNullInode": "عقدة COHERENT ذات الرقم صفر غير صالحة.",
+    "Media.CoherentInodeOutside": "عقدة COHERENT رقم {0} خارج منطقة العُقد التي يبلغ حجمها {1} بايت.",
+    "Media.CoherentFileTooLarge": "لا يمكن تمثيل طول ملف COHERENT البالغ {0} بايت في الذاكرة.",
+    "Media.CoherentDirectUnavailable": "{0}: كتلة COHERENT المباشرة {1} مفقودة أو خارج الصورة.",
+    "Media.CoherentIndirectUnavailable": "{0}: كتلة COHERENT غير المباشرة {1} في المستوى {2} مفقودة أو خارج الصورة.",
+    "Media.CoherentIndirectRepeated": "{0}: كتلة COHERENT غير المباشرة {1} في المستوى {2} مشار إليها أكثر من مرة.",
+    "Media.CoherentDirectoryCycle": "{0}: عقدة دليل COHERENT رقم {1} تشكّل دورة.",
+    "Media.CoherentDirectoryRepeated": "{0}: سبق اجتياز عقدة دليل COHERENT رقم {1}.",
+    "Media.CoherentChildUnreadable": "{0}: تعذّر قراءة عقدة COHERENT الفرعية.",
+    "Media.CoherentMissingBytes": "{0}: هناك {1} بايت مفقود من COHERENT وتبقى مواضعها أصفارًا.",
+    "Media.CoherentDepth": "{0}: تم بلوغ حد عمق أدلة COHERENT عند العمق {1}.",
+    "Media.CoherentInodeDescription": "عقدة COHERENT رقم {0}"
+  }
+}

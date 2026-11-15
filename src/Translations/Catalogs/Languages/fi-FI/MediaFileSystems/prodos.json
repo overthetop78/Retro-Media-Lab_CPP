@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ProDOS/SOS-volyymiotsaketta lohkossa {0} ei tunnisteta (havaittu arvo ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS-hakemiston lohko {1} ylittää maksimisyvyyden tasolla {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS-hakemiston lohko {0} on virheellinen (sykli={1}, uudelleenkäytetty={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS- indeksiblokki {2} on virheellinen (sykli={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS-pääindeksilohko {2} on virheellinen.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS-datalohko {2} puuttuu, on levykuvan ulkopuolella tai sen koko on virheellinen.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): Rekonstruoitu {2} tavua {3} odotetusta tavusta.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS bittikartta lohko {0} puuttuu tai on virheellinen koko.",
+    "MediaFileSystems.ProDosTotal": "ProDOS-taltio ilmoittaa {0} lohkoa, mutta levykuva sisältää {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS- kohdemuotoa \"{0}\" ei tueta.",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS-taltiolla ei ole tarpeeksi lohkoja tai hakemistomerkintöjä.",
+    "MediaFileSystems.ProDosGeometry": "ProDOS-kohteen geometria tai sektoriosoitteiden kartta on virheellinen.",
+    "MediaFileSystems.ProDosEntry": "ProDOS-merkintää \"{0}\" ei voi kirjoittaa.",
+    "MediaFileSystems.ProDosFileLength": "ProDOS-tiedosto \"{0}\" ylittää 24-bittisen kentän.",
+    "MediaFileSystems.ProDosName": "ProDOS-nimi \"{0}\" on virheellinen.",
+    "MediaFileSystems.ProDosTypeText": "Teksti",
+    "MediaFileSystems.ProDosTypeBinary": "Binääri",
+    "MediaFileSystems.ProDosTypeDirectory": "Kansio",
+    "MediaFileSystems.ProDosTypeVariables": "Muuttujat",
+    "MediaFileSystems.ProDosTypeSystem": "Järjestelmä"
+  }
+}

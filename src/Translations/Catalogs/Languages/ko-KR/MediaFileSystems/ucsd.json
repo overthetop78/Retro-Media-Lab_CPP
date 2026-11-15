@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "블록 {0}에서 UCSD 디렉토리는 인식되지 않습니다. 잘못된 블록 : {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD 블록이 없거나 잘렸습니다: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System 디렉터리 블록이 없거나 잘렸습니다: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD 항목 {0}에는 잘못된 이름 '{1}'이 있습니다.",
+    "MediaFileSystems.UcsdRange": "UCSD 항목 {0} ('{1}')는 {4} 블록에서 잘못된 범위 [{2}, {3})를 사용합니다.",
+    "MediaFileSystems.UcsdOverlap": "UCSD 항목 {0} ('{1}')이 블록 {2}와 겹칩니다.",
+    "MediaFileSystems.UcsdCount": "UCSD 디렉터리는 {0}개 파일을 선언하지만 유효한 항목이 {1}개 발견되었습니다.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: 최종 UCSD 블록은 {1} 바이트를 선언합니다.",
+    "MediaFileSystems.UcsdTypeUntyped": "유형이 없는 UCSD 파일",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD 외부 디스크 파일",
+    "MediaFileSystems.UcsdTypeCode": "UCSD 코드 파일",
+    "MediaFileSystems.UcsdTypeText": "UCSD 텍스트 파일",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD 정보 파일",
+    "MediaFileSystems.UcsdTypeData": "UCSD 데이터 파일",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD 그래픽 파일",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD 사진 파일",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD 보안 디렉토리"
+  }
+}

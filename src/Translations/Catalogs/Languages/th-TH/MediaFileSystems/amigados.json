@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "อิมเมจไม่มีบล็อกบูต AmigaDOS ที่รองรับ",
+    "Media.AmigaUnsupportedVariant": "ไม่รองรับ AmigaDOS รุ่น {0} ที่ระบุในบล็อกบูต",
+    "Media.AmigaInvalidRoot": "AmigaDOS บล็อคราก {0} ไม่ถูกต้อง",
+    "Media.AmigaRootChecksum": "รากของ AmigaDOS บล็อค {0} มี checksum ไม่ถูกต้อง",
+    "Media.AmigaDirectoryChain": "สายโซ่ไดเรกทอรี AmigaDOS ที่บล็อก {0} ไม่ถูกต้องหรือวนซ้ำ",
+    "Media.AmigaMissingDirectoryEntry": "ไม่พบบล็อกรายการไดเรกทอรี AmigaDOS {0}",
+    "Media.AmigaMissingData": "ไฟล์ AmigaDOS บล็อคข้อมูล {0} ขาดหายไป",
+    "Media.AmigaOfsType": "OFS บล็อคข้อมูล {0} มีชนิดที่ไม่คาดคิดคือ {1}",
+    "Media.AmigaDataChecksum": "บล็อกข้อมูล OFS {0} มีผลรวมตรวจสอบไม่ถูกต้อง",
+    "Media.AmigaInvalidExtension": "ส่วนขยายแฟ้ม AmigaDOS บล็อค {0} ไม่ถูกต้อง, ขาดหรือหายไป",
+    "Media.AmigaExtensionChecksum": "ส่วนขยายแฟ้ม AmigaDOS บล็อค {0} มีโครงสร้างหรือ checksum ไม่ถูกต้อง",
+    "Media.AmigaTruncatedFile": "เนื้อหาไฟล์ AmigaDOS ถูกตัดทอน: คาดว่า {0} ไบต์ อ่านได้ {1} ไบต์",
+    "Media.AmigaMissingBitmap": "ไม่พบบล็อกบิตแมป AmigaDOS {0}",
+    "Media.AmigaBitmapChecksum": "บล็อกบิตแมป AmigaDOS {0} มีผลรวมตรวจสอบไม่ถูกต้อง",
+    "Media.AmigaDepth": "ถึงขีดจำกัดความลึกของไดเรกทอรี AmigaDOS ที่ระดับ {0}",
+    "Media.AmigaRecovered": "กู้คืนรายการแค็ตตาล็อก AmigaDOS {0} รายการจากส่วนหัวที่ถูกต้อง เนื่องจากไม่สามารถใช้บล็อกรากได้",
+    "Media.AmigaWriterVariant": "AmigaDOS {0} ไม่สามารถสร้างโดยโมดูลนี้ได้",
+    "Media.AmigaWriterGeometry": "รูปแบบอิมเมจ {0} ไม่ใช่เรขาคณิตของ AmigaDOS ที่รองรับ",
+    "Media.AmigaDiskFull": "โวลุม AmigaDOS ปลายทางมีบล็อกว่างไม่เพียงพอ",
+    "Media.AmigaInvalidEntry": "การย้ายรายการ {0} ไม่สามารถแทนได้บน AmigaDOS",
+    "Media.AmigaShortBlock": "บล็อก AmigaDOS {0} ไม่สมบูรณ์: มีข้อมูล {1} ไบต์",
+    "Media.AmigaRecordedIntegrity": "ข้อมูลความสมบูรณ์ที่บันทึกไว้ของบล็อก AmigaDOS {0} ไม่ถูกต้อง",
+    "Media.AmigaFileSize": "AmigaDOS ความยาวของแฟ้ม {0} เกินช่วงที่รองรับ"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "โปรแกรมอ่านระบบแฟ้มที่ดัชนี {0} ไม่ถูกต้อง",
+    "MediaFileSystems.RegistryEmptyReaderId": "โปรแกรมอ่านระบบแฟ้มที่ดัชนี {0} มีตัวระบุว่างอยู่",
+    "MediaFileSystems.RegistryDuplicateReaderId": "โปรแกรมอ่านแฟ้ม- ระบบหลายระบบมีตัวระบุ '{0}'",
+    "MediaFileSystems.RegistryUnknownReaderId": "ไม่มีโปรแกรมอ่านแฟ้ม- ระบบ มีตัวระบุ '{0}'",
+    "MediaFileSystems.RegistryNullImage": "อิมเมจของภาคไม่สามารถว่างได้",
+    "MediaFileSystems.AtariKFileUnsupported": "ส่วนภาพไม่ใช่อาตาริ K-file ดิสก์ที่ใช้ KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "อิมเมจของเซกเตอร์ไม่มีโปรแกรมบูตเอตาริสมบูรณ์",
+    "MediaFileSystems.AtariClkUnsupported": "ส่วนภาพไม่ใช่อาตาริ CLK กราฟฟิก-ไลเบรย์ดิสก์",
+    "MediaFileSystems.AtariClkIncomplete": "แคตตาล็อกประกาศ {0} ไบต์ แต่ห่วงโซ่ภาคมี {1} ไบต์",
+    "MediaFileSystems.AtariClkGraphic": "กราฟิก Atari CLK"
+  }
+}

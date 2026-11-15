@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Diskbilledet indeholder intet Lisa-filsystem med mærker blandt sine {0} sider.",
+    "MediaFileSystems.LisaMissingPage": "Lisa-filen 0x{0} mangler side {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF-siden indeholder {0} byte; {1} kræves.",
+    "MediaFileSystems.LisaInvalidTag": "Den logiske Lisa-blok {0} har et mærke på {1} byte; {2} kræves.",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa-filen 0x{0} indeholder flere kopier af side {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Ledig plads i Lisa kan ikke bestemmes uden brugbare mærker.",
+    "MediaFileSystems.LisaFileDescription": "Lisa-fil ${0}"
+  }
+}

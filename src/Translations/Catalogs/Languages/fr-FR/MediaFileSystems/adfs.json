@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "L’image ne contient aucun catalogue ADFS pris en charge (blocs de {0} octets, {1} blocs).",
+    "Media.AdfsInvalidDirectory": "Le répertoire ADFS {0} est invalide ou incomplet.",
+    "Media.AdfsDepth": "La limite de profondeur du répertoire ADFS a été atteinte à la profondeur {0}.",
+    "Media.AdfsCycle": "Le répertoire ADFS {0} est cyclique ou référencé plus d'une fois.",
+    "Media.AdfsInvalidRange": "{0} : adresse ADFS invalide {1}, décalage {2}, longueur {3}.",
+    "Media.AdfsMissingBlock": "{0} : l’adresse ADFS {1}, au décalage {2}, nécessite le bloc absent {3}.",
+    "Media.AdfsIntegrity": "Le bloc ADFS {0} présente une intégrité enregistrée invalide.",
+    "Media.AdfsBlockVolume": "ADFS nécessite un secteur adressable ou un volume de blocs.",
+    "Media.AdfsSectorCount": "Le nombre de secteurs ADFS {0} n'est pas pris en charge."
+  }
+}

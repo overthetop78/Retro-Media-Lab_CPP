@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "บล็อกเริ่มต้น RT-11 ไม่ถูกต้อง (ลายเซ็น '{0}', บล็อกไดเรกทอรี {1})",
+    "MediaFileSystems.Rt11SegmentRange": "เซกเมนต์ RT-11 {0} ที่บล็อก {1} มีหมายเลขเซกเมนต์อยู่นอกช่วง",
+    "MediaFileSystems.Rt11SegmentCycle": "เซกเมนต์ RT-11 {0} ที่บล็อก {1} สร้างวงวน",
+    "MediaFileSystems.Rt11SegmentOutside": "เซกเมนต์ RT-11 {0} ที่บล็อก {1} อยู่นอกอิมเมจดิสก์",
+    "MediaFileSystems.Rt11SegmentMissing": "เซกเมนต์ RT-11 {0} ที่บล็อก {1} มีคู่บล็อกที่ขาดหายไปหรือถูกตัดทอน",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 ส่วนของเส้นตรง {0} ประกาศขนาดรายการที่ไม่ถูกต้องของ {1} ไบต์",
+    "MediaFileSystems.Rt11EmptyName": "รายการ RT-11 ที่บล็อกข้อมูล {0}, ออฟเซ็ต {1}, มีชื่อว่าง",
+    "MediaFileSystems.Rt11MissingContent": "{0}: บล็อก RT-11 หายไปหรือถูกตัด: {1}.",
+    "MediaFileSystems.Rt11Tentative": "แฟ้ม RT-11 ชั่วคราว",
+    "MediaFileSystems.Rt11Permanent": "แฟ้ม RT-11"
+  }
+}

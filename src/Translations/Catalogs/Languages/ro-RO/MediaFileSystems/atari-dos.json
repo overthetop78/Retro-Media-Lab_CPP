@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Imaginea {0}, cu sectoare de {1} octeți, nu conține un director Atari DOS acceptat.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Sectorul de director {0} lipsește.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Sectorul de director {0}, intrarea {1}, nu este o intrare de fișier Atari DOS validă și a fost ignorată.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: sectorul de date Atari DOS {1} lipsește.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: lanțul de date Atari DOS conține un ciclu la sectorul {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sectorul {1} aparține fișierului {3}; era așteptat {2}.",
+    "MediaFileSystems.AtariDosOpen": "Sectorul de director {1}, intrarea {2} („{0}”), este încă deschisă pentru scriere și a fost ignorată.",
+    "MediaFileSystems.AtariDosTruncated": "Sectorul de date {1} pentru „{0}” este prea scurt pentru a conține legătura.",
+    "MediaFileSystems.AtariDosPremature": "Fișierul „{0}” declară {1} sectoare, dar lanțul său se încheie după {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Fișierul gol „{0}” face trimitere în mod neașteptat la sectorul {1}.",
+    "MediaFileSystems.AtariDosBounded": "Fișierul „{0}” este limitat la cele {1} sectoare declarate în intrarea de director, în timp ce lanțul subiacent continuă la sectorul {2}.",
+    "MediaFileSystems.AtariDosShared": "Fișierul „{0}” partajează {3} sectoare începând de la sectorul {2} cu „{1}”.",
+    "MediaFileSystems.AtariDosUsedLength": "Sectorul de date {1} pentru „{0}” declară {2} octeți, dar sunt disponibili numai {3}."
+  }
+}

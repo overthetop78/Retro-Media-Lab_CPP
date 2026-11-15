@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M-disklayouten stöds inte för format {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Diskavbildningen innehåller ingen CP/M-katalog som stöds för format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-allokeringsblock {1} vid position {2} ligger utanför diskavbildningen på {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M-allokeringsblock {1} korsar ett saknat logiskt block.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M-allokeringsblock {1} korsar ett trunkerat logiskt block.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M-allokeringsblock {1} refereras mer än en gång.",
+    "MediaFileSystems.CpmImageMissing": "CP/M-diskavbildningen innehåller {0} saknade logiska block.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M-diskavbildningen innehåller {0} trunkerade logiska block.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M-layouten är ogiltig (katalogposition={0}, allokeringsstart={1}, katalogposter={2}, allokeringsstorlek={3}, katalogblock={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M-användare {0}"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Ein Volumenstart muss nicht negativ sein: {0}.",
+    "MediaFileSystems.VolumeLength": "Eine Volumenlänge muss positiv sein: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Ein Volume Origin ist erforderlich.",
+    "MediaFileSystems.VolumePartitionNumber": "Eine Partitionsnummer muss positiv sein: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Eine Sitzungsnummer muss positiv sein: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Eine Spurnummer muss positiv sein: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Der Volumenbereich überschreitet die unterstützten signierten 64-Bit-Grenzen.",
+    "MediaFileSystems.WholeVolumeRequired": "Der Sektordateisystemleser benötigt ein Volumen, das das gesamte Sektorbild abdeckt."
+  }
+}

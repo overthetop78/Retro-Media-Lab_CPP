@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "De UCSD-map in blok {0} wordt niet herkend; ongeldige blokken: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-blokken ontbreken of zijn afgekapt: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Directoryblokken van UCSD p-System ontbreken of zijn afgekapt: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD-item {0} heeft een ongeldige naam '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD-item {0} ('{1}') gebruikt een ongeldig bereik [{2}, {3}) in {4} blokken.",
+    "MediaFileSystems.UcsdOverlap": "UCSD-item {0} ('{1}') overlapt blokken {2}.",
+    "MediaFileSystems.UcsdCount": "De UCSD-map declareert {0} bestanden, maar {1} geldige items werden gevonden.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: het laatste UCSD-blok declareert {1} bytes.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD ongetypt bestand",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD-bestand op externe schijf",
+    "MediaFileSystems.UcsdTypeCode": "UCSD-codebestand",
+    "MediaFileSystems.UcsdTypeText": "UCSD-tekstbestand",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD-infobestand",
+    "MediaFileSystems.UcsdTypeData": "UCSD-gegevensbestand",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD-grafisch bestand",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD-fotobestand",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD beveiligde map"
+  }
+}

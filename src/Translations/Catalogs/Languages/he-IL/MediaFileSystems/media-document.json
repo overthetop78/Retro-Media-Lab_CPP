@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "מקור התקשורת לא יכול להיות אפס.",
+    "MediaFileSystems.ContextSourcePath": "נתיב מקור המדיה העיקרי אינו יכול להיות ריק או לבן.",
+    "MediaFileSystems.ContextPageSize": "גודל דף ההכרה חייב להיות חיובי.",
+    "MediaFileSystems.ContextKnownLength": "אורך המקור הידוע אינו שלילי.",
+    "MediaFileSystems.ContextLengthOverflow": "אורך מקור התקשורת עולה על טווח החתום הנתמך.",
+    "MediaFileSystems.ContextReadOffset": "ההכרה שקריאה לא יכולה להיות שלילית.",
+    "MediaFileSystems.ContextReadCount": "ספירת הקריאה לא יכולה להיות שלילית.",
+    "MediaFileSystems.ContextReadRange": "הטווח המבוקש עולה על אורך המקור.",
+    "MediaFileSystems.ContextFullRead": "המקור המלא אינו יכול להיטען לתוך חיץ זיכרון אחד. במקום זאת, השתמשו בקריאות קשורות.",
+    "MediaFileSystems.ContextPageEnded": "מקור התקשורת הסתיים ב- Byte {0} בעת קריאת דף חנון.",
+    "MediaFileSystems.DocumentFormatId": "מזהה פורמט מוכר נדרש.",
+    "MediaFileSystems.DocumentRepresentation": "נדרשת ייצוג תקשורת עם מידע ייצוג ציבורי."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "媒體表示的映像不能為 null。",
+    "MediaFileSystems.RepresentationCountOverflow": "媒體表示的計數超出支援的帶正負號整數範圍。",
+    "MediaFileSystems.WriterAdapterId": "必須提供媒體映像寫入元件的識別碼。",
+    "MediaFileSystems.WriterAdapterFormats": "目標格式識別碼不能為空。",
+    "MediaFileSystems.WriterAdapterExtensions": "輸出副檔名不能為空。",
+    "MediaFileSystems.WriterAdapterCallbacks": "必須提供媒體寫入元件的驗證和輸出回呼。",
+    "MediaFileSystems.WriterAdapterPath": "必須提供媒體寫入元件的輸出路徑。",
+    "MediaFileSystems.WriterAdapterRepresentation": "寫入元件 '{0}' 無法擷取所需的媒體表示。",
+    "MediaFileSystems.WriterAdapterTarget": "寫入元件 '{0}' 不接受副檔名為 '{2}' 的目標格式 '{1}'。",
+    "MediaFileSystems.WriterAdapterProduced": "寫入元件 '{0}' 未回報有效的輸出檔案。",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore 來源格式 '{0}' 未經幾何結構轉換，無法寫成 '{1}'。"
+  }
+}

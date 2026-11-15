@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Image '{0}' enthält kein gültiges SpartaDOS-Volume.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS Sektor {0} fehlt.",
+    "MediaFileSystems.SpartaSectorRange": "Der SpartaDOS-Sektor {0} liegt außerhalb des Bereichs 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Die Kette der SpartaDOS-Sektortabellen bildet bei Sektor {0} eine Schleife.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS Sektorkarte {0} bezieht sich auf Vorgänger {2} anstelle von {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Der SpartaDOS-Verzeichnisbaum bildet eine Schleife im Verzeichnis, dessen Sektortabelle bei Sektor {0} beginnt.",
+    "MediaFileSystems.SpartaDirectoryLength": "Das SpartaDOS-Verzeichnis bei Sektor {0} meldet eine ungültige Größe von {1} Bytes."
+  }
+}

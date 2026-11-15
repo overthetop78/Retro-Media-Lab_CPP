@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Az UCSD könyvtár a {0} blokkban nem ismert; érvénytelen blokkok: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-blokkok hiányoznak vagy csonkoltak: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "A UCSD p-System könyvtárblokkjai hiányoznak vagy csonkoltak: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Az UCSD {0} bejegyzés érvénytelen neve: \"{1}\".",
+    "MediaFileSystems.UcsdRange": "A(z) {0} UCSD-bejegyzés ('{1}') az érvénytelen [{2}, {3}) tartományt használja {4} blokkban.",
+    "MediaFileSystems.UcsdOverlap": "A(z) {0} UCSD-bejegyzés ('{1}') átfedi a(z) {2} blokkokat.",
+    "MediaFileSystems.UcsdCount": "A UCSD-könyvtár {0} fájlt jelez, de {1} érvényes bejegyzés található.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: az utolsó UCSD-blokk {1} bájtot jelez.",
+    "MediaFileSystems.UcsdTypeUntyped": "Típus nélküli UCSD-fájl",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD külső lemezfájl",
+    "MediaFileSystems.UcsdTypeCode": "UCSD- kódfájl",
+    "MediaFileSystems.UcsdTypeText": "UCSD szövegfájl",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD info fájl",
+    "MediaFileSystems.UcsdTypeData": "UCSD adatfájl",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD grafikus fájl",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD fotófájl",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD biztonságos könyvtár"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "มิติส่วนของภาพ {0} ไม่ถูกต้อง: {1}",
+    "Media.SectorInvalidFormatId": "ตัวระบุรูปแบบของภาคว่างหรือไม่ถูกต้อง: {0}",
+    "Media.SectorDuplicateBlock": "เซกเตอร์ตรรกะ {0} ปรากฏมากกว่าหนึ่งครั้งในอิมเมจ",
+    "Media.SectorBlockOutside": "เซกเตอร์ตรรกะ {0} อยู่นอกอิมเมจที่มี {1} เซกเตอร์",
+    "Media.SectorCapacityShort": "ค่าความจุของภาพแบบภาคประกาศ {0} นั้นน้อยกว่าค่าความยาวของข้อมูลที่มีอยู่ {1}",
+    "Media.SectorMissingBlock": "ไม่พบเซกเตอร์ตรรกะ {0}",
+    "Media.SectorInvalidBlockSize": "เซกเตอร์ตรรกะ {0} มี {1} ไบต์ แทนที่จะเป็น {2} ไบต์",
+    "Media.FatUnsupportedBoot": "ฟอร์แมตของอิมเมจ {0} ไม่รองรับระบบแฟ้ม FAT12: ส่วนการบูตหายไปหรือถูกตัดไว้",
+    "Media.FatUnsupportedLayout": "รูปแบบรูปภาพ {0} ยังไม่มีการรองรับ FAT12 ระบบแฟ้ม (ขนาดตัวแสดง) {1}สัดส่วนต่อกลุ่ม {2}ส่วนที่สงวนไว้ {3}. FAT คัดลอก {4}รายการราก {5}สัดส่วนต่อ FAT {6})",
+    "Media.FatInvalidChain": "สายโซ่ FAT ของ {0} ไม่ถูกต้องหรือวนซ้ำที่คลัสเตอร์ {1}",
+    "Media.FatTruncatedTable": "รายการ FAT12 สําหรับกลุ่มข้อมูล {0} ถูกตัดทอน",
+    "Media.FatMissingSectors": "ขอบเขต {0} ถึง {1} ไม่สมบูรณ์",
+    "Media.FatDepthLimit": "ถึงขีดจำกัดการซ้อนไดเรกทอรี FAT ที่ {0} (ความลึก {1})",
+    "Media.FatMissingSector": "เซกเตอร์ FAT {0} มี {1} ไบต์ แทนที่จะเป็น {2} ไบต์",
+    "Media.FatCyclicChain": "{0}. FAT12 โซ่เป็นเกลียวที่กระจุก {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 Group {1} อยู่นอกช่วงข้อมูล",
+    "Media.FatIncompleteContent": "{0}: ขนาดที่ระบุไว้: {1} ไบต์ แต่มีเพียง {2} ไบต์เท่านั้น",
+    "Media.FatUnsupportedGeometry": "รูปแบบอิมเมจ {0} ไม่ใช่เรขาคณิตของ FAT12 ที่รองรับ",
+    "Media.FatDiskFull": "โวลุม FAT12 ปลายทางมีคลัสเตอร์ว่างหรือรายการไดเรกทอรีไม่เพียงพอ",
+    "Media.FatInvalidEntry": "ไม่สามารถแสดงรายการย้ายข้อมูล {0} เป็นรายการชื่อสั้นของ FAT12 ได้",
+    "Media.FatDirectoryCycle": "ไดเรกทอรี {0} ใช้คลัสเตอร์ FAT12 {1} ที่ตรวจสอบไปแล้วซ้ำ",
+    "Media.FatIntegrityInvalid": "ข้อมูลความสมบูรณ์ที่บันทึกไว้ของเซกเตอร์ FAT {0} ไม่ถูกต้อง",
+    "Media.FatResourceLimit": "บรรลุข้อจํากัดการสกัดจาก FAT12 ขณะอ่าน {0}"
+  }
+}

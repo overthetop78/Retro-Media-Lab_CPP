@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "รูปแบบอิมเมจ «{0}» ไม่มีระบบแฟ้ม CBM DOS ที่รองรับ",
+    "MediaFileSystems.CbmDirectoryCycle": "โซ่ไดเรกทอรี CBM DOS วนซ้ำที่ {0}/{1}",
+    "MediaFileSystems.CbmDirectoryMissing": "ไม่มีเซกเตอร์ไดเรกทอรี CBM DOS {0}/{1}",
+    "MediaFileSystems.CbmDirectoryTruncated": "เซกเตอร์ไดเรกทอรี CBM DOS {0}/{1} มีเพียง {2} ไบต์",
+    "MediaFileSystems.CbmDirectoryCoordinate": "พิกัดไดเรกทอรี CBM DOS {0}/{1} ไม่ถูกต้อง",
+    "MediaFileSystems.CbmFileCycle": "{0}: โซ่วนซ้ำที่ {1}/{2}",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: พิกัด {1}/{2} ไม่ถูกต้อง",
+    "MediaFileSystems.CbmFileTruncated": "{0}: ข้อมูลเซกเตอร์ {1}/{2} ไม่ครบ",
+    "MediaFileSystems.CbmFileMissing": "{0}: ไม่มีเซกเตอร์ {1}/{2}",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: ค่าจำนวนสุดท้าย {1} ไม่ถูกต้อง",
+    "MediaFileSystems.CbmCapacity": "{0}: โซ่ CBM DOS เกินความจุอิมเมจ",
+    "MediaFileSystems.CbmBamMissing": "ไม่มี CBM DOS BAM ที่จำเป็นที่ {0}/{1}",
+    "MediaFileSystems.CbmBamTruncated": "ข้อมูล CBM DOS BAM {0}/{1} ไม่ครบ เหลือเพียง {2} ไบต์",
+    "MediaFileSystems.PetsciiLength": "ความยาวช่องข้อมูล PETSCII {0} ต้องไม่เป็นลบ",
+    "MediaFileSystems.PetsciiTooLong": "ค่า PETSCII ยาวเกิน {0} อักขระ",
+    "MediaFileSystems.PetsciiCharacter": "ไม่สามารถแทนอักขระ «{0}» ด้วยชุดย่อย PETSCII ที่รองรับได้",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, ยังไม่ปิด",
+    "MediaFileSystems.CbmTypeLocked": "{0}, ล็อก",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, ยังไม่ปิด, ล็อก"
+  }
+}

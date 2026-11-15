@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "磁盘映像的 {0} 个页面中不包含带标签的 Lisa 文件系统。",
+    "MediaFileSystems.LisaMissingPage": "Lisa 文件 0x{0} 缺少页面 {1}。",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF 页面包含 {0} 字节；需要 {1} 字节。",
+    "MediaFileSystems.LisaInvalidTag": "Lisa 逻辑块 {0} 的标签为 {1} 字节；需要 {2} 字节。",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa 文件 0x{0} 包含页面 {1} 的多个副本。",
+    "MediaFileSystems.LisaUnknownFreeSpace": "没有可用的标签，无法确定 Lisa 的可用空间。",
+    "MediaFileSystems.LisaFileDescription": "Lisa 文件 ${0}"
+  }
+}

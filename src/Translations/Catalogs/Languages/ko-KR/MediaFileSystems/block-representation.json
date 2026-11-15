@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "미디어 데이터 범위 주소는 부정적인 수 없습니다.",
+    "MediaFileSystems.BlockRangeLength": "미디어 데이터 범위 길이는 긍정적이어야합니다.",
+    "MediaFileSystems.BlockSourceOffset": "미디어 데이터 범위 소스 오프셋은 부정적인 수 없습니다.",
+    "MediaFileSystems.BlockSourceNull": "저장된 미디어 범위는 데이터 소스가 필요합니다.",
+    "MediaFileSystems.BlockSourceRange": "mapped 범위는 데이터 소스를 초과합니다.",
+    "MediaFileSystems.BlockNonStoredSource": "저장된 범위는 자료 근원을 참조할 수 있습니다.",
+    "MediaFileSystems.BlockNonStoredOffset": "비 저장된 범위에는 소스 오프셋이 없습니다.",
+    "MediaFileSystems.BlockLogicalLength": "논리적인 매체 길이는 부정적인 일 수 없습니다.",
+    "MediaFileSystems.BlockLogicalBlockSize": "논리 블록 크기는 긍정적이어야합니다.",
+    "MediaFileSystems.BlockCompleteBlocks": "논리적인 길이는 완전한 논리 구획을 포함해야 합니다.",
+    "MediaFileSystems.BlockGeometryOutside": "선언된 기하학은 논리적인 매체 수용량을 초과합니다.",
+    "MediaFileSystems.BlockRangeOutside": "블록 범위는 논리 미디어 길이를 초과합니다.",
+    "MediaFileSystems.BlockRangeOverlap": "블록 범위는 오버랩하지 않아야 합니다.",
+    "MediaFileSystems.BlockReadAddress": "논리 읽기 주소는 부정적인 수 없습니다.",
+    "MediaFileSystems.BlockReadRange": "요청된 논리 범위는 미디어 용량을 초과합니다.",
+    "MediaFileSystems.BlockRangeMissing": "미디어 데이터 범위는 논리적인 주소 {0}를 다룹니다.",
+    "MediaFileSystems.BlockUnavailable": "Logical address {0}는 소스 이미지에서 사용할 수 없습니다.",
+    "MediaFileSystems.BlockRangeKind": "지원되지 않은 미디어 데이터 범위 종류 {0}.",
+    "MediaFileSystems.BlockOverflow": "미디어 블록 계산은 지원되는 서명 범위를 초과합니다.",
+    "MediaFileSystems.BlockGeometryValue": "하드 디스크 형상 매개변수 {0}는 긍정적이어야 합니다.",
+    "MediaFileSystems.BlockDriveCount": "기계적인 접근은 바이트의 긍정적인 수를 커버해야 합니다.",
+    "MediaFileSystems.BlockNullImage": "블록 이미지가 필요합니다."
+  }
+}

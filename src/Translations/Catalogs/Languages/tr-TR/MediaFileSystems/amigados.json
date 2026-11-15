@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Görüntü, desteklenen bir AmigaDOS önyükleme bloğu içermiyor.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variable {0} desteklenmez.",
+    "Media.AmigaInvalidRoot": "AmigaDOS kök bloğu {0} geçersizdir.",
+    "Media.AmigaRootChecksum": "AmigaDOS kök bloğu {0} için sağlama toplamı geçersiz.",
+    "Media.AmigaDirectoryChain": "AmigaDOS rehberi blokta zincir {0} geçersiz veya döngüdür.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS rehberi girişi bloğu {0} eksik.",
+    "Media.AmigaMissingData": "AmigaDOS dosya veri bloğu {0} eksik.",
+    "Media.AmigaOfsType": "OFS veri blok {0} beklenmedik tip {1} var.",
+    "Media.AmigaDataChecksum": "OFS veri bloğu {0}'in geçersiz bir çekleri var.",
+    "Media.AmigaInvalidExtension": "AmigaDOS dosya uzatma bloğu {0} geçersiz, döngü veya eksik.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS dosya uzatma bloğu {0} geçersiz yapısı veya kontrolleri vardır.",
+    "Media.AmigaTruncatedFile": "AmigaDOS dosya içeriği kesilmiş: {0} bayt bekleniyordu, {1} bayt okundu.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap bloğu {0} eksik.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap bloğu {0} geçersiz bir çek var.",
+    "Media.AmigaDepth": "AmigaDOS dizin derinliği sınırına {0} derinliğinde ulaşıldı.",
+    "Media.AmigaRecovered": "Kök bloğu kullanılamadığından geçerli başlıklardan {0} AmigaDOS katalog girdisi kurtarıldı.",
+    "Media.AmigaWriterVariant": "AmigaDOS değişkeni {0} bu modül tarafından yaratılamaz.",
+    "Media.AmigaWriterGeometry": "Resim formatı {0} desteklenen AmigaDOS geometrisi değildir.",
+    "Media.AmigaDiskFull": "Hedef AmigaDOS hacminin ücretsiz blokları yoktur.",
+    "Media.AmigaInvalidEntry": "Göç girişi {0} AmigaDOS üzerinde temsil edilemez.",
+    "Media.AmigaShortBlock": "AmigaDOS bloğu {0} eksik: {1} bytes mevcuttur.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS bloğu {0} için kaydedilen bütünlük bilgisi geçersiz.",
+    "Media.AmigaFileSize": "AmigaDOS dosya uzunluğu {0} desteklenen aralığı aşıyor."
+  }
+}

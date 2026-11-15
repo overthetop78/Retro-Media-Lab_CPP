@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Obraz neobsahuje svazek {0}; zjištěná signatura: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: blok {2} datového proudu {1} chybí.",
+    "MediaFileSystems.MacIncompleteData": "{0}: datový proud {1} obsahuje {2} bajtů; očekáváno {3}.",
+    "MediaFileSystems.MacAllocationSize": "Velikost alokace {1} pro svazek {0} musí být nenulovým násobkem {2} bajtů.",
+    "MediaFileSystems.MacFreeCount": "Svazek {0} uvádí {1} volných alokačních bloků z celkových {2} bloků.",
+    "MediaFileSystems.MfsMapTruncated": "Alokační mapa MFS pro {0} alokací obsahuje {1} bajtů; požadováno {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Položka adresáře MFS v bloku {0} na posunu {1} je neplatná.",
+    "MediaFileSystems.MfsChain": "{0}: alokační řetězec datového proudu {1} je neplatný (cyklus={2}, mimo mapu={3}, předčasný konec={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: datový proud {1} uvádí {2} bajtů od clusteru {3}; metadata jsou nekonzistentní.",
+    "MediaFileSystems.MfsDefaultFile": "Soubor Macintosh"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "The file-system reader at index {0} is null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "The file-system reader at index {0} has an empty identifier.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Multiple file-system readers have identifier '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "No file-system reader has identifier '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "A sector image cannot be null.",
+    "MediaFileSystems.AtariKFileUnsupported": "The sector image is not an Atari K-file disk using KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "The sector image does not contain a complete Atari boot program.",
+    "MediaFileSystems.AtariClkUnsupported": "The sector image is not an Atari CLK graphics-library disk.",
+    "MediaFileSystems.AtariClkIncomplete": "The catalog declares {0} bytes, but the sector chain contains {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK graphic"
+  },
+  "invariants": []
+}

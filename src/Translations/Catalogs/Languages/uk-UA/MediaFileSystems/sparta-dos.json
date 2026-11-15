@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Образ диска '{0}' не містить допустимого тому SpartaDOS.",
+    "MediaFileSystems.SpartaMissingSector": "Сектор SpartaDOS {0} відсутній.",
+    "MediaFileSystems.SpartaSectorRange": "Сектор SpartaDOS {0} перебуває поза діапазоном 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Ланцюжок карт секторів SpartaDOS зациклюється на секторі {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS карта {0} відноситься до попередника {2} замість {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Дерево каталогів SpartaDOS зациклюється на каталозі, карта якого починається в секторі {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Каталог SpartaDOS в секторі {0} визначає недійсний розмір {1} байтів."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Bild \"{0}\" innehåller inte en giltig SpartaDOS-volym.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS sektor {0} saknas.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS-sektorn {0} är utom räckvidd 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Kedjan av SpartaDOS-sektorkartor bildar en slinga vid sektor {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS sektor karta {0} hänvisar till föregångare {2} i stället för {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS-mappträdet bildar en slinga vid mappen vars karta börjar vid sektor {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "SpartaDOS-katalogen på sektor {0} förklarar en ogiltig storlek på {1} byte."
+  }
+}

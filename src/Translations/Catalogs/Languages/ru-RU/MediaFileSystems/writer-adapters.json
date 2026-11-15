@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Образ представления носителя не может быть null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Счётчик представления носителя превышает поддерживаемый диапазон знаковых целых чисел.",
+    "MediaFileSystems.WriterAdapterId": "Требуется идентификатор компонента записи образов носителей.",
+    "MediaFileSystems.WriterAdapterFormats": "Идентификаторы формата не могут быть пустыми.",
+    "MediaFileSystems.WriterAdapterExtensions": "Выходные расширения не могут быть пустыми.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Требуются функции проверки и вывода компонента записи носителей.",
+    "MediaFileSystems.WriterAdapterPath": "Требуется выходной путь компонента записи носителей.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Компонент записи '{0}' не может получить требуемое представление носителя.",
+    "MediaFileSystems.WriterAdapterTarget": "Компонент записи '{0}' не принимает целевой формат '{1}' с расширением '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Компонент записи '{0}' не сообщил о корректных выходных файлах.",
+    "MediaFileSystems.WriterCommodoreTransform": "Формат источника Commodore '{0}' не может быть записан как '{1}' без преобразования геометрии."
+  }
+}

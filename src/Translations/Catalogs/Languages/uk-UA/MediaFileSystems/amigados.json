@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Образ не містить підтримуваного завантажувального блоку AmigaDOS.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS варіант завантаження {0} не підтримується.",
+    "Media.AmigaInvalidRoot": "AmigaDOS недійсний блок {0}.",
+    "Media.AmigaRootChecksum": "Кореневий блок AmigaDOS {0} має недійсну контрольну суму.",
+    "Media.AmigaDirectoryChain": "Мережа каталогів AmigaDOS в блокі {0} недійсний або циклічний.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS вхідний блок {0} відсутні.",
+    "Media.AmigaMissingData": "Відсутній блок даних файлів AmigaDOS {0}.",
+    "Media.AmigaOfsType": "OFS блок даних {0} має несподіваний тип {1}.",
+    "Media.AmigaDataChecksum": "OFS блок даних {0} має недійсний контроль.",
+    "Media.AmigaInvalidExtension": "Блок розширення файлів AmigaDOS {0} недійсний, циклічний або відсутній.",
+    "Media.AmigaExtensionChecksum": "Блок розширення файлів AmigaDOS {0} має недійсну структуру або контроль.",
+    "Media.AmigaTruncatedFile": "Вміст файлу AmigaDOS обрізано: очікувалося {0} байтів, прочитано {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS блок карти {0} відсутні.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS блок карти {0} має недійсний контроль.",
+    "Media.AmigaDepth": "На глибині каталогів AmigaDOS було досягнуто обмеження глибини {0}.",
+    "Media.AmigaRecovered": "З дійсних заголовків відновлено {0} записів каталогу AmigaDOS, оскільки кореневий блок недоступний.",
+    "Media.AmigaWriterVariant": "Варіант AmigaDOS {0} не може бути створений цим модулем.",
+    "Media.AmigaWriterGeometry": "Формат зображення {0} не підтримується геометрія AmigaDOS.",
+    "Media.AmigaDiskFull": "Призначення об'єму AmigaDOS має недостатньо вільні блоки.",
+    "Media.AmigaInvalidEntry": "Імміграційний запис {0} не може бути представлений на AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS блок {0} неповний: {1} байти доступні.",
+    "Media.AmigaRecordedIntegrity": "Блок AmigaDOS {0} має недійсні записані відомості про цілісність.",
+    "Media.AmigaFileSize": "Довжина файлу AmigaDOS {0} перевищує діапазон підтримки."
+  }
+}

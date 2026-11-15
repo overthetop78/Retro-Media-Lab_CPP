@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "ولا يمكن أن تكون صورة التمثيل الإعلامي لاغية.",
+    "MediaFileSystems.RepresentationCountOverflow": "يتجاوز عدّاد تمثيل الوسائط نطاق الأعداد الصحيحة ذات الإشارة المدعوم.",
+    "MediaFileSystems.WriterAdapterId": "يلزم معرّف لمكون كتابة صور الوسائط.",
+    "MediaFileSystems.WriterAdapterFormats": "لا يمكن أن تكون محددات الشكل المستهدفة فارغة.",
+    "MediaFileSystems.WriterAdapterExtensions": "تمديد الناتج لا يمكن أن يكون فارغا.",
+    "MediaFileSystems.WriterAdapterCallbacks": "يلزم توفير دوال التحقق والكتابة لمكون كتابة الوسائط.",
+    "MediaFileSystems.WriterAdapterPath": "يلزم مسار إخراج لمكون كتابة الوسائط.",
+    "MediaFileSystems.WriterAdapterRepresentation": "لا يستطيع مكون الكتابة '{0}' استخراج تمثيل الوسائط المطلوب.",
+    "MediaFileSystems.WriterAdapterTarget": "لا يقبل مكون الكتابة '{0}' التنسيق الهدف '{1}' بالامتداد '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "لم يحدد مكون الكتابة '{0}' ملفات إخراج صالحة.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore شكل المصدر{0}لا يمكن أن تكتب كما{1}بدون تحول في الهندسة"
+  }
+}

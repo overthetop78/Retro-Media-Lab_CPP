@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "メディア表現のイメージを null にすることはできません。",
+    "MediaFileSystems.RepresentationCountOverflow": "メディア表現のカウントが、サポートされる符号付き整数の範囲を超えています。",
+    "MediaFileSystems.WriterAdapterId": "メディアイメージライターの識別子が必要です。",
+    "MediaFileSystems.WriterAdapterFormats": "ターゲット形式識別子は空にすることはできません。",
+    "MediaFileSystems.WriterAdapterExtensions": "出力ファイルの拡張子を空にすることはできません。",
+    "MediaFileSystems.WriterAdapterCallbacks": "メディアライターの検証と出力コールバックが必要です。",
+    "MediaFileSystems.WriterAdapterPath": "メディアライターの出力パスが必要です。",
+    "MediaFileSystems.WriterAdapterRepresentation": "Writer '{0}' は、必要なメディア表現を抽出できません。",
+    "MediaFileSystems.WriterAdapterTarget": "Writer '{0}' は、拡張子 '{2}' でターゲット '{1}' を受け入れません。",
+    "MediaFileSystems.WriterAdapterProduced": "Writer '{0}' は有効な生成されたファイルを報告しなかった。",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore ソース形式 '{0}' は、ジオメトリ変換なしで '{1}' として記述できません。"
+  }
+}

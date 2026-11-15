@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.AmstradCartridgeUnsupported": "The selected volume is not a supported Amstrad cartridge or ROM structure.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "The Amstrad cartridge bank count is missing or invalid.",
+    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad bank {0} has an invalid length.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "The declared Amstrad cartridge bank count does not match its mapped banks.",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "The selected console cartridge volume is not readable.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "The console cartridge bank count is missing or invalid.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "The console cartridge bank size is missing or invalid.",
+    "MediaFileSystems.ConsoleCartridgeBankLength": "Console cartridge bank {0} has an invalid length.",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "The console cartridge bank address exceeds the supported storage reference range.",
+    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad cartridge banks"
+  }
+}

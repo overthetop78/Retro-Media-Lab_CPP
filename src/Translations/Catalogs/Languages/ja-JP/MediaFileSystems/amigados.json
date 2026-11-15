@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "AmigaDOSの起動ブロックはサポートしていません。",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} はサポートされていません。",
+    "Media.AmigaInvalidRoot": "AmigaDOS ルートブロック {0} は無効です。",
+    "Media.AmigaRootChecksum": "AmigaDOSのルートブロック{0}は無効なチェックサムを持っています。",
+    "Media.AmigaDirectoryChain": "ブロック {0} の AmigaDOS ディレクトリーチェーンは無効またはサイクティックです。",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS ディレクトリのエントリブロック {0} が見つかりません。",
+    "Media.AmigaMissingData": "AmigaDOSファイルデータブロック{0}が欠落しています。",
+    "Media.AmigaOfsType": "OFS のデータブロック {0} は、予期しない型 {1} を持っています。",
+    "Media.AmigaDataChecksum": "OFS のデータブロック {0} は無効なチェックサムを持っています。",
+    "Media.AmigaInvalidExtension": "AmigaDOSファイル拡張子ブロック{0}は無効、サイクリック、または欠落しています。",
+    "Media.AmigaExtensionChecksum": "AmigaDOS ファイル拡張子ブロック {0} には、無効な構造やチェックサムがあります。",
+    "Media.AmigaTruncatedFile": "AmigaDOS ファイルの内容が途中で切れています。期待値は {0} バイト、読み取った量は {1} バイトです。",
+    "Media.AmigaMissingBitmap": "AmigaDOS ビットマップブロック {0} が見つかりません。",
+    "Media.AmigaBitmapChecksum": "AmigaDOSビットマップブロック{0}は無効なチェックサムを持っています。",
+    "Media.AmigaDepth": "AmigaDOS ディレクトリの深さ制限は、深さ {0} に達しました。",
+    "Media.AmigaRecovered": "回復 {0} ルートブロックが利用できないので、有効なヘッダーからAmigaDOSのカタログエントリ。",
+    "Media.AmigaWriterVariant": "このモジュールでは、AmigaDOS の variant {0} は作成できません。",
+    "Media.AmigaWriterGeometry": "画像形式 {0} は AmigaDOS ジオメトリをサポートしていません。",
+    "Media.AmigaDiskFull": "ターゲットAmigaDOSのボリュームは、不十分な無料のブロックを持っています。",
+    "Media.AmigaInvalidEntry": "移行エントリ {0} は AmigaDOS で表現できません。",
+    "Media.AmigaShortBlock": "AmigaDOSブロック {0} は不完全です: {1} バイトが利用可能です。",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS ブロック {0} の記録済み整合性情報は無効です。",
+    "Media.AmigaFileSize": "AmigaDOSファイルの長さ{0}は、サポートされている範囲を超えています。"
+  }
+}

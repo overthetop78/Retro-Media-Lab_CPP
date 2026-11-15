@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "صورة القرص '{0}' لا تحتوي على وحدة تخزين SpartaDOS صالحة.",
+    "MediaFileSystems.SpartaMissingSector": "قطاع SpartaDOS {0} مفقود.",
+    "MediaFileSystems.SpartaSectorRange": "قطاع SpartaDOS {0} خارج النطاق 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "سلسلة خرائط قطاعات SpartaDOS تشكل حلقة عند القطاع {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "خريطة قطاعات SpartaDOS {0} تشير إلى السابق {2} بدلًا من {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "شجرة دليل SpartaDOS تشكل حلقة عند الدليل الذي تبدأ خريطته بالقطاع {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "دليل SpartaDOS عند القطاع {0} يعلن عن حجم غير صالح قدره {1} بايت."
+  }
+}

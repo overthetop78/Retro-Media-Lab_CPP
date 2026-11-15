@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "En medieadresse kan ikke være negativ.",
+    "MediaFileSystems.BlockRangeLength": "En rekkevidde må være positiv.",
+    "MediaFileSystems.BlockSourceOffset": "En kilde fra mediedataområde kan ikke være negativ.",
+    "MediaFileSystems.BlockSourceNull": "Et lagret medieområde krever en datakilde.",
+    "MediaFileSystems.BlockSourceRange": "Det kartlagte området overstiger sin datakilde.",
+    "MediaFileSystems.BlockNonStoredSource": "Bare lagrede områder kan referere til en datakilde.",
+    "MediaFileSystems.BlockNonStoredOffset": "Et ikke lagret område kan ikke ha en kilde forskyvning.",
+    "MediaFileSystems.BlockLogicalLength": "Den logiske medielengden kan ikke være negativ.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Den logiske blokkstørrelsen må være positiv.",
+    "MediaFileSystems.BlockCompleteBlocks": "Den logiske lengden må inneholde fullstendige logiske blokker.",
+    "MediaFileSystems.BlockGeometryOutside": "Geometrien overstiger den logiske mediekapasiteten.",
+    "MediaFileSystems.BlockRangeOutside": "Et blokkområde overstiger den logiske medielengden.",
+    "MediaFileSystems.BlockRangeOverlap": "Blokkområde må ikke overlappe.",
+    "MediaFileSystems.BlockReadAddress": "Logisk leseadresse kan ikke være negativ.",
+    "MediaFileSystems.BlockReadRange": "Det etterspurte logiske området overstiger mediekapasiteten.",
+    "MediaFileSystems.BlockRangeMissing": "Ingen mediedataområde dekker logisk adresse {0}.",
+    "MediaFileSystems.BlockUnavailable": "Logisk adresse {0} er ikke tilgjengelig i kildebildet.",
+    "MediaFileSystems.BlockRangeKind": "Ikke støttet mediedataområde type {0}.",
+    "MediaFileSystems.BlockOverflow": "Medieblokkberegningen overstiger det støttede signerte området.",
+    "MediaFileSystems.BlockGeometryValue": "Harddiskens geometriparameter {0} må være positiv.",
+    "MediaFileSystems.BlockDriveCount": "Den mekaniske tilgangen må dekke et positivt antall byte.",
+    "MediaFileSystems.BlockNullImage": "Et blokkbilde er nødvendig."
+  }
+}

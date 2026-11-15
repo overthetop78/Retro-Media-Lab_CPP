@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Direktori UCSD pada blok {0} tidak dikenal; blok tidak valid: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: Blok UCSD hilang atau dipotong: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Blok direktori UCSD p-System hilang atau terpotong: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Entri UCSD {0} memiliki nama '{1}' yang tidak valid.",
+    "MediaFileSystems.UcsdRange": "Entri UCSD {0} ('{1}') menggunakan jangkauan tidak valid [{2}, {3}) dalam {4} blok.",
+    "MediaFileSystems.UcsdOverlap": "Entri UCSD {0} ('{1}') tumpang tindih blok {2}.",
+    "MediaFileSystems.UcsdCount": "Direktori UCSD menyatakan {0} berkas, tetapi ditemukan {1} entri yang valid.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: blok UCSD terakhir menyatakan {1} bita.",
+    "MediaFileSystems.UcsdTypeUntyped": "Berkas UCSD tanpa tipe",
+    "MediaFileSystems.UcsdTypeExternalDisk": "Berkas cakram eksternal UCSD",
+    "MediaFileSystems.UcsdTypeCode": "Berkas kode UCSD",
+    "MediaFileSystems.UcsdTypeText": "Berkas teks UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Berkas info UCSD",
+    "MediaFileSystems.UcsdTypeData": "Berkas data UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Berkas grafis UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "Berkas foto UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Direktori aman UCSD"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "A media data range address cannot be negative.",
+    "MediaFileSystems.BlockRangeLength": "A media data range length must be positive.",
+    "MediaFileSystems.BlockSourceOffset": "A media data range source offset cannot be negative.",
+    "MediaFileSystems.BlockSourceNull": "A stored media range requires a data source.",
+    "MediaFileSystems.BlockSourceRange": "The mapped range exceeds its data source.",
+    "MediaFileSystems.BlockNonStoredSource": "Only stored ranges can reference a data source.",
+    "MediaFileSystems.BlockNonStoredOffset": "A non-stored range cannot have a source offset.",
+    "MediaFileSystems.BlockLogicalLength": "The logical media length cannot be negative.",
+    "MediaFileSystems.BlockLogicalBlockSize": "The logical block size must be positive.",
+    "MediaFileSystems.BlockCompleteBlocks": "The logical length must contain complete logical blocks.",
+    "MediaFileSystems.BlockGeometryOutside": "The declared geometry exceeds the logical media capacity.",
+    "MediaFileSystems.BlockRangeOutside": "A block range exceeds the logical media length.",
+    "MediaFileSystems.BlockRangeOverlap": "Block ranges must not overlap.",
+    "MediaFileSystems.BlockReadAddress": "The logical read address cannot be negative.",
+    "MediaFileSystems.BlockReadRange": "The requested logical range exceeds the media capacity.",
+    "MediaFileSystems.BlockRangeMissing": "No media data range covers logical address {0}.",
+    "MediaFileSystems.BlockUnavailable": "Logical address {0} is unavailable in the source image.",
+    "MediaFileSystems.BlockRangeKind": "Unsupported media data range kind {0}.",
+    "MediaFileSystems.BlockOverflow": "The media block calculation exceeds the supported signed range.",
+    "MediaFileSystems.BlockGeometryValue": "The hard disk geometry parameter {0} must be positive.",
+    "MediaFileSystems.BlockDriveCount": "The mechanical access must cover a positive number of bytes.",
+    "MediaFileSystems.BlockNullImage": "A block image is required."
+  },
+  "invariants": []
+}

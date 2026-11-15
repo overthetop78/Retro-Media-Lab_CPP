@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Obraz {0} z sektorami o rozmiarze {1} bajtów nie zawiera obsługiwanego katalogu Atari DOS.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Brakuje sektora katalogu {0}.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Sektor katalogu {0}, wpis {1}, nie jest prawidłowym wpisem pliku Atari DOS i został zignorowany.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: brakuje sektora danych Atari DOS {1}.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: łańcuch danych Atari DOS zawiera pętlę w sektorze {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} należy do pliku {3}; oczekiwano {2}.",
+    "MediaFileSystems.AtariDosOpen": "Sektor katalogu {1}, wpis {2} („{0}”), pozostaje otwarty do zapisu i został zignorowany.",
+    "MediaFileSystems.AtariDosTruncated": "Sektor danych {1} pliku „{0}” jest zbyt krótki, aby zawierać odsyłacz.",
+    "MediaFileSystems.AtariDosPremature": "Plik „{0}” deklaruje {1} sektorów, ale jego łańcuch kończy się po {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Pusty plik „{0}” niespodziewanie wskazuje sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Plik „{0}” jest ograniczony do {1} sektorów zadeklarowanych we wpisie katalogu, podczas gdy bazowy łańcuch jest kontynuowany w sektorze {2}.",
+    "MediaFileSystems.AtariDosShared": "Plik „{0}” współdzieli {3} sektorów od sektora {2} z plikiem „{1}”.",
+    "MediaFileSystems.AtariDosUsedLength": "Sektor danych {1} pliku „{0}” deklaruje {2} bajtów, ale dostępnych jest tylko {3}."
+  }
+}

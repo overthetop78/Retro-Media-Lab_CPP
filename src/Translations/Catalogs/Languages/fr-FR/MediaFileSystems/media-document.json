@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "La source du média ne peut pas être nulle.",
+    "MediaFileSystems.ContextSourcePath": "Le chemin principal du média ne peut pas être vide ou composé uniquement d’espaces.",
+    "MediaFileSystems.ContextPageSize": "La taille de la page de reconnaissance doit être positive.",
+    "MediaFileSystems.ContextKnownLength": "La longueur connue de la source ne peut être négative.",
+    "MediaFileSystems.ContextLengthOverflow": "La longueur de la source du média dépasse la plage des entiers signés.",
+    "MediaFileSystems.ContextReadOffset": "Le décalage de lecture de reconnaissance ne peut pas être négatif.",
+    "MediaFileSystems.ContextReadCount": "Le nombre d’octets à lire pour la reconnaissance ne peut pas être négatif.",
+    "MediaFileSystems.ContextReadRange": "La plage demandée dépasse la longueur de la source.",
+    "MediaFileSystems.ContextFullRead": "La source complète ne peut pas être chargée dans un seul tampon mémoire. Utilisez plutôt des lectures limitées.",
+    "MediaFileSystems.ContextPageEnded": "La source du média se termine à l’octet {0} pendant la lecture d’une page mise en cache.",
+    "MediaFileSystems.DocumentFormatId": "Un identifiant de format reconnu est requis.",
+    "MediaFileSystems.DocumentRepresentation": "Une représentation du média fournissant les informations publiques de représentation est requise."
+  }
+}

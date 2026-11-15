@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Образ не содержит поддерживаемого загрузочного блока AmigaDOS.",
+    "Media.AmigaUnsupportedVariant": "Загрузочный вариант AmigaDOS {0} не поддерживается.",
+    "Media.AmigaInvalidRoot": "Корневой блок AmigaDOS {0} является недействительным.",
+    "Media.AmigaRootChecksum": "Корневой блок AmigaDOS {0} имеет недействительную контрольную сумму.",
+    "Media.AmigaDirectoryChain": "Сеть каталогов AmigaDOS в блоке {0} недействительна или циклична.",
+    "Media.AmigaMissingDirectoryEntry": "Блок ввода каталога AmigaDOS {0} отсутствует.",
+    "Media.AmigaMissingData": "Блок данных файла AmigaDOS {0} отсутствует.",
+    "Media.AmigaOfsType": "Блок данных OFS {0} имеет неожиданный тип {1}.",
+    "Media.AmigaDataChecksum": "Блок данных OFS {0} имеет недопустимую контрольную сумму.",
+    "Media.AmigaInvalidExtension": "Блок расширения файла AmigaDOS {0} недействителен, цикличен или отсутствует.",
+    "Media.AmigaExtensionChecksum": "Блок расширения файлов AmigaDOS {0} имеет неверную структуру или контрольную сумму.",
+    "Media.AmigaTruncatedFile": "Содержимое файла AmigaDOS усечено: ожидалось {0} байт, прочитано {1}.",
+    "Media.AmigaMissingBitmap": "Блок растровой карты AmigaDOS {0} отсутствует.",
+    "Media.AmigaBitmapChecksum": "Блок растровой карты AmigaDOS {0} имеет недействительную контрольную сумму.",
+    "Media.AmigaDepth": "Предел глубины каталога AmigaDOS был достигнут на глубине {0}.",
+    "Media.AmigaRecovered": "Восстановлено {0} записей каталога AmigaDOS из корректных заголовков, поскольку корневой блок недоступен.",
+    "Media.AmigaWriterVariant": "Вариант AmigaDOS {0} не может быть создан этим модулем.",
+    "Media.AmigaWriterGeometry": "Формат образа {0} не соответствует поддерживаемой геометрии AmigaDOS.",
+    "Media.AmigaDiskFull": "В целевом объеме AmigaDOS недостаточно свободных блоков.",
+    "Media.AmigaInvalidEntry": "Миграционный ввод {0} не может быть представлен на AmigaDOS.",
+    "Media.AmigaShortBlock": "Блок AmigaDOS {0} неполный: доступны байты {1}.",
+    "Media.AmigaRecordedIntegrity": "Блок AmigaDOS {0} имеет недействительную зарегистрированную целостность.",
+    "Media.AmigaFileSize": "Длина файла AmigaDOS {0} превышает поддерживаемый диапазон."
+  }
+}

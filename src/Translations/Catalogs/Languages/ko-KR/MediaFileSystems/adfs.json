@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "이미지에 지원되는 ADFS 카탈로그가 없습니다({0}바이트 블록, {1}개 블록).",
+    "Media.AdfsInvalidDirectory": "ADFS 디렉터리 {0}이 잘못되었거나 불완전합니다.",
+    "Media.AdfsDepth": "ADFS 디렉토리 깊이 제한은 깊이 {0}에 도달했습니다.",
+    "Media.AdfsCycle": "ADFS 디렉토리 {0}는 순환 또는 한 번 이상 참조됩니다.",
+    "Media.AdfsInvalidRange": "{0}: 잘못된 ADFS 주소 {1}, 오프셋 {2}, 길이 {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS 주소 {1} 오프셋 {2}에서 누락된 블록 {3}이 필요합니다.",
+    "Media.AdfsIntegrity": "ADFS 블록 {0}의 기록된 무결성 정보가 잘못되었습니다.",
+    "Media.AdfsBlockVolume": "ADFS에는 섹터 또는 블록에 직접 접근할 수 있는 볼륨이 필요합니다.",
+    "Media.AdfsSectorCount": "ADFS 섹터 수 {0}이 지원되는 범위를 벗어납니다."
+  }
+}

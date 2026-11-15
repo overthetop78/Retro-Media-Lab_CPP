@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Kuvamuoto \"{0}\" ei sisällä tuettua CBM DOS -tiedostojärjestelmää.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS -hakemistoketju on syklinen osoitteessa {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS -hakemistosektori {0}/{1} puuttuu.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS -hakemistosektori {0}/{1} sisältää vain {2} tavua.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS -hakemiston koordinaatti {0}/{1} on virheellinen.",
+    "MediaFileSystems.CbmFileCycle": "{0}: ketju on syklinen {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: koordinaatti {1}/{2} on virheellinen.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sektorin {1}/{2} tiedot ovat puutteelliset.",
+    "MediaFileSystems.CbmFileMissing": "{0}: sektori {1}/{2} puuttuu.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: lopullinen luku {1} on virheellinen.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS -ketju ylittää kuvakapasiteetin.",
+    "MediaFileSystems.CbmBamMissing": "{0}/{1} kohdassa vaadittu CBM DOS BAM puuttuu.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} on katkennut {2} tavuun.",
+    "MediaFileSystems.PetsciiLength": "PETSCII-kentän pituus {0} ei saa olla negatiivinen.",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII-arvo ylittää {0} merkkiä.",
+    "MediaFileSystems.PetsciiCharacter": "Merkkiä \"{0}\" ei voi edustaa tuettu PETSCII-alaryhmä.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, avoin",
+    "MediaFileSystems.CbmTypeLocked": "{0}, lukittu",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, avoin, lukittu"
+  }
+}

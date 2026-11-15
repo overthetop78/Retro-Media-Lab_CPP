@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Az RT-11 kezdőblokk érvénytelen ('{0}' aláírás, könyvtárblokk {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "A(z) {1}. blokkban lévő {0}. RT-11 szegmens száma tartományon kívüli.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 szegmens {0} a blokk {1} létrehoz egy ciklust.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 szegmens {0} a {1} blokkban kívül esik a képen.",
+    "MediaFileSystems.Rt11SegmentMissing": "A(z) {1}. blokkban lévő {0}. RT-11 szegmens blokkpárja hiányzik vagy csonkolt.",
+    "MediaFileSystems.Rt11EntrySize": "A(z) {0}. RT-11 szegmens érvénytelen, {1} bájtos bejegyzésméretet jelez.",
+    "MediaFileSystems.Rt11EmptyName": "Az RT-11 bejegyzés az adatblokkban: {0}, offset {1}, üres neve van.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11-blokkok hiányoznak vagy csonkoltak: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Ideiglenes RT-11-fájl",
+    "MediaFileSystems.Rt11Permanent": "RT-11-fájl"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Tiedostojärjestelmän lukija hakemistossa {0} on nolla.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Tiedostojärjestelmän lukija hakemistossa {0} on tyhjä tunniste.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Useilla tiedostojärjestelmän lukijoilla on tunniste \"{0}.\"",
+    "MediaFileSystems.RegistryUnknownReaderId": "Tiedostojärjestelmän lukijalla ei ole tunnistetta \"{0}.\"",
+    "MediaFileSystems.RegistryNullImage": "Alan kuvaa ei voi kumota.",
+    "MediaFileSystems.AtariKFileUnsupported": "Alakuva ei ole Atari K-file-levy KBoot:n avulla.",
+    "MediaFileSystems.AtariBootUnsupported": "Alakuva ei sisällä täydellistä Atarin käynnistysohjelmaa.",
+    "MediaFileSystems.AtariClkUnsupported": "Alakuva ei ole Atari CLK-grafiikka-kirjastolevy.",
+    "MediaFileSystems.AtariClkIncomplete": "Luettelo ilmoittaa {0} tavua, mutta sektoriketju sisältää {1} tavua.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK -grafiikka"
+  }
+}

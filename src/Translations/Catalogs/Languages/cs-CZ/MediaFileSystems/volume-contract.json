@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Počátek objemu musí být nezáporný: {0}.",
+    "MediaFileSystems.VolumeLength": "Délka objemu musí být kladná: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Vyžaduje se původ objemu.",
+    "MediaFileSystems.VolumePartitionNumber": "Číslo oddílu musí být kladné: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Číslo sezení musí být kladné: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Číslo stopy musí být kladné: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Rozsah hlasitosti překračuje podporované podepsané 64bitové meze.",
+    "MediaFileSystems.WholeVolumeRequired": "Odvětvová čtečka souborů vyžaduje objem pokrývající celý obraz sektoru."
+  }
+}

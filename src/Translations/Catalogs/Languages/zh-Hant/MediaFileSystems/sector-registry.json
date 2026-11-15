@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "索引{0}中的文件系统阅读器无效 。",
+    "MediaFileSystems.RegistryEmptyReaderId": "索引{0}中的文件系统读取器有一个空的标识符 。",
+    "MediaFileSystems.RegistryDuplicateReaderId": "多文件系统读取器有标识符'{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "没有文件系统读取器有标识符'{0}' 。",
+    "MediaFileSystems.RegistryNullImage": "扇形图像不能为无效 。",
+    "MediaFileSystems.AtariKFileUnsupported": "扇区图像不是使用KBoot的Atari K-file磁盘.",
+    "MediaFileSystems.AtariBootUnsupported": "扇区图像不包含完整的Atari启动程序.",
+    "MediaFileSystems.AtariClkUnsupported": "扇区图像不是Atari CLK图形-图书馆磁盘.",
+    "MediaFileSystems.AtariClkIncomplete": "目录声明{0}字节,但扇区链包含{1}字节.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK 图形"
+  }
+}

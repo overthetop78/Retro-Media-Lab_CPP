@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Das Bildformat '{0}' enthält kein unterstütztes CBM DOS-Dateisystem.",
+    "MediaFileSystems.CbmDirectoryCycle": "Die CBM DOS-Verzeichniskette ist zyklisch bei {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS Verzeichnissektor {0}/{1} fehlt.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS Verzeichnissektor {0}/{1} enthält nur {2} Bytes.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS Verzeichniskoordinate {0}/{1} ist ungültig.",
+    "MediaFileSystems.CbmFileCycle": "{0}: die Kette ist zyklisch bei {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: Koordinate {1}/{2} ist ungültig.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: Sektor {1}/{2} ist unvollständig.",
+    "MediaFileSystems.CbmFileMissing": "{0}: Sektor {1}/{2} fehlt.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: der abschließende Zähler {1} ist ungültig.",
+    "MediaFileSystems.CbmCapacity": "{0}: Die CBM DOS-Kette überschreitet die Bildkapazität.",
+    "MediaFileSystems.CbmBamMissing": "Die bei {0}/{1} erforderliche CBM DOS BAM fehlt.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} wird auf {2} Bytes verkürzt.",
+    "MediaFileSystems.PetsciiLength": "Die PETSCII-Feldlänge {0} darf nicht negativ sein.",
+    "MediaFileSystems.PetsciiTooLong": "Der PETSCII-Wert überschreitet {0} Zeichen.",
+    "MediaFileSystems.PetsciiCharacter": "Das Zeichen '{0}' kann nicht durch die unterstützte PETSCII-Untermenge dargestellt werden.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, offen",
+    "MediaFileSystems.CbmTypeLocked": "{0}, gesperrt",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, offen, gesperrt"
+  }
+}

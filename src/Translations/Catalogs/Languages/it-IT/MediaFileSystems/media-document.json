@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "La fonte mediatica non può essere nulla.",
+    "MediaFileSystems.ContextSourcePath": "Il percorso principale dei media non può essere vuoto o bianco.",
+    "MediaFileSystems.ContextPageSize": "La dimensione della pagina di riconoscimento deve essere positiva.",
+    "MediaFileSystems.ContextKnownLength": "La lunghezza di origine nota non può essere negativa.",
+    "MediaFileSystems.ContextLengthOverflow": "La lunghezza della sorgente media supera l'intervallo firmato supportato.",
+    "MediaFileSystems.ContextReadOffset": "L'offset di lettura di riconoscimento non può essere negativo.",
+    "MediaFileSystems.ContextReadCount": "Il conteggio di lettura di riconoscimento non può essere negativo.",
+    "MediaFileSystems.ContextReadRange": "L'intervallo richiesto supera la lunghezza della sorgente.",
+    "MediaFileSystems.ContextFullRead": "La sorgente completa non può essere caricata in un buffer di memoria. Utilizzare le letture limitate invece.",
+    "MediaFileSystems.ContextPageEnded": "La fonte media si è conclusa a byte {0} durante la lettura di una pagina cache.",
+    "MediaFileSystems.DocumentFormatId": "È richiesto un identificatore di formato riconosciuto.",
+    "MediaFileSystems.DocumentRepresentation": "È richiesta una rappresentanza mediatica con informazioni di rappresentanza pubblica."
+  }
+}

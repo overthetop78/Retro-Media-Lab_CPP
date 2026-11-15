@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 起始块无效 (签名“{0}”，目录块 {1})。",
+    "MediaFileSystems.Rt11SegmentRange": "块 {1} 上的 RT-11 段 {0} 的段编号超出范围。",
+    "MediaFileSystems.Rt11SegmentCycle": "块 {1} 上的 RT-11 段 {0} 形成循环。",
+    "MediaFileSystems.Rt11SegmentOutside": "块 {1} 上的 RT-11 段 {0} 位于磁盘映像之外。",
+    "MediaFileSystems.Rt11SegmentMissing": "块 {1} 上的 RT-11 段 {0} 的块对缺失或被截断。",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 段 {0} 声明了无效的条目大小：{1} 字节。",
+    "MediaFileSystems.Rt11EmptyName": "数据块 {0}、偏移 {1} 处的 RT-11 条目的名称为空。",
+    "MediaFileSystems.Rt11MissingContent": "{0}：RT-11 块缺失或被截断：{1}。",
+    "MediaFileSystems.Rt11Tentative": "临时 RT-11 文件",
+    "MediaFileSystems.Rt11Permanent": "RT-11 文件"
+  }
+}

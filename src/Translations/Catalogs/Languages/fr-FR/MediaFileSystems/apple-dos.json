@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Le catalogue Apple DOS référencé par le VTOC à la piste {0}, secteur {1}, est absent ou invalide.",
+    "MediaFileSystems.AppleDosCatalogChain": "Le secteur de catalogue Apple DOS {0}/{1} est absent ou appartient à une boucle.",
+    "MediaFileSystems.AppleDosAddress": "L’adresse Apple DOS {1}/{2} pour {0} est hors de la géométrie du disque.",
+    "MediaFileSystems.AppleDosListCycle": "La liste piste/secteur de {0} forme une boucle à {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "La liste piste/secteur de {0} est absente à {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Le secteur de données {1}/{2} de {0} est absent.",
+    "MediaFileSystems.AppleDosSize": "Le fichier {0} déclare {1} secteurs, mais {2} secteurs ont été parcourus.",
+    "MediaFileSystems.AppleDosWriteFormat": "Le format cible Apple DOS {0} n’est pas pris en charge.",
+    "MediaFileSystems.AppleDosWriteFull": "Le volume Apple DOS ne dispose pas d’assez de secteurs de catalogue ou de données.",
+    "MediaFileSystems.AppleDosWriteVolume": "Le nom de volume Apple DOS {0} doit respecter le format DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS accepte uniquement les fichiers dont le contenu est disponible dans le catalogue racine.",
+    "MediaFileSystems.AppleDosBinarySize": "Un fichier binaire Apple DOS ne peut pas dépasser 65535 octets.",
+    "MediaFileSystems.AppleDosWriteName": "Le nom de fichier Apple DOS {0} ne peut pas être encodé dans une entrée du catalogue.",
+    "MediaFileSystems.AppleDosTypeText": "Texte",
+    "MediaFileSystems.AppleDosTypeBinary": "Binaire",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relogeable",
+    "MediaFileSystems.AppleDosTypeFile": "Fichier"
+  }
+}

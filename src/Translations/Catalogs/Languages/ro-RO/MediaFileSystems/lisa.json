@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Imaginea de disc nu conține un sistem de fișiere Lisa cu etichete în cele {0} pagini.",
+    "MediaFileSystems.LisaMissingPage": "Din fișierul Lisa 0x{0} lipsește pagina {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Pagina Lisa MDDF conține {0} octeți; sunt necesari {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Blocul logic Lisa {0} are o etichetă de {1} octeți; sunt necesari {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Fișierul Lisa 0x{0} conține mai multe copii ale paginii {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Spațiul liber Lisa nu poate fi determinat fără etichete utilizabile.",
+    "MediaFileSystems.LisaFileDescription": "Fișier Lisa ${0}"
+  }
+}

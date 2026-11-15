@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Ảnh của biểu diễn phương tiện không được là null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Bộ đếm của biểu diễn phương tiện vượt quá phạm vi số nguyên có dấu được hỗ trợ.",
+    "MediaFileSystems.WriterAdapterId": "Cần mã định danh của thành phần ghi ảnh phương tiện.",
+    "MediaFileSystems.WriterAdapterFormats": "Định dạng mục tiêu không thể rỗng.",
+    "MediaFileSystems.WriterAdapterExtensions": "Phần mở rộng của tập tin đầu ra không được rỗng.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Cần thiết phải có sự hợp lệ hoá khả năng ghi và gọi lại kết xuất.",
+    "MediaFileSystems.WriterAdapterPath": "Cần đường dẫn đầu ra của thành phần ghi phương tiện.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Thành phần ghi '{0}' không thể lấy biểu diễn phương tiện cần thiết.",
+    "MediaFileSystems.WriterAdapterTarget": "Thành phần ghi '{0}' không chấp nhận định dạng đích '{1}' với phần mở rộng '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Thành phần ghi '{0}' không báo cáo các tập tin đầu ra hợp lệ.",
+    "MediaFileSystems.WriterCommodoreTransform": "Định dạng nguồn Commodore '{0}' không thể được viết là '{1}' mà không có sự biến đổi hình học."
+  }
+}

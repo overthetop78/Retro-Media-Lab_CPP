@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "A képen nincs támogatott ADFS katalógus ({0} -byte blokk, {1} blokk).",
+    "Media.AdfsInvalidDirectory": "ADFS könyvtár {0} érvénytelen vagy hiányos.",
+    "Media.AdfsDepth": "Az ADFS könyvtár mélységi korlátját a mélységben érték el {0}.",
+    "Media.AdfsCycle": "ADFS könyvtár {0} ciklikus vagy hivatkozott többször.",
+    "Media.AdfsInvalidRange": "{0}: érvénytelen ADFS-cím {1}, eltolás {2}, hossz {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS cím {1} ofszet {2} szükséges hiányzó blokk {3}.",
+    "Media.AdfsIntegrity": "Az ADFS-blokk {0} rögzített integritási adatai érvénytelenek.",
+    "Media.AdfsBlockVolume": "Az ADFS közvetlenül címezhető szektorokkal vagy blokkokkal rendelkező kötetet igényel.",
+    "Media.AdfsSectorCount": "Az ADFS szektorszám {0} kívül esik a támogatott tartományon."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Ảnh đĩa không chứa phân vùng {0}; chữ ký đọc được: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: thiếu khối {2} của fork {1}.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1} chứa {2} byte; dự kiến có {3} byte.",
+    "MediaFileSystems.MacAllocationSize": "Kích thước đơn vị cấp phát {1} của phân vùng {0} phải là bội số dương của {2} byte.",
+    "MediaFileSystems.MacFreeCount": "Phân vùng {0} khai báo {1} khối cấp phát trống trên tổng số {2} khối.",
+    "MediaFileSystems.MfsMapTruncated": "Bảng MFS cho {0} đơn vị cấp phát chứa {1} byte; cần {2} byte.",
+    "MediaFileSystems.MfsDirectoryEntry": "Mục thư mục MFS trong khối {0}, tại vị trí {1}, không hợp lệ.",
+    "MediaFileSystems.MfsChain": "{0}: chuỗi cấp phát của fork {1} không hợp lệ (vòng lặp={2}, ngoài bảng={3}, kết thúc sớm={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1} khai báo {2} byte bắt đầu từ cụm {3}; siêu dữ liệu không nhất quán.",
+    "MediaFileSystems.MfsDefaultFile": "Tập tin Macintosh"
+  }
+}

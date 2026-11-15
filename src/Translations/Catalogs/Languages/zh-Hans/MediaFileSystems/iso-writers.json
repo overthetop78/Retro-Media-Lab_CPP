@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "ISO映像为空或未与2048字节扇区对齐.",
+    "MediaFileSystems.IsoContainerChanged": "ISO 图像长度在识别后更改.",
+    "MediaFileSystems.IsoWriteProfile": "光学文档不能被写入为无损失的单轨ISO图像.",
+    "MediaFileSystems.WriterRegistryNull": "媒体映像写入组件不能为 null。",
+    "MediaFileSystems.WriterRegistryDuplicate": "媒体映像写入组件标识符 '{0}' 已被重复注册。",
+    "MediaFileSystems.WriterTargetFormat": "需要一个目标媒体格式标识符。",
+    "MediaFileSystems.WriterTargetExtension": "需要目标媒体文件扩展名."
+  }
+}

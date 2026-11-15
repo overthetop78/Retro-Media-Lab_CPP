@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "メディアソースはnullできません。",
+    "MediaFileSystems.ContextSourcePath": "プライマリメディアソースパスは空白または空白にすることはできません。",
+    "MediaFileSystems.ContextPageSize": "認識ページのサイズは肯定的でなければなりません。",
+    "MediaFileSystems.ContextKnownLength": "既知のソースの長さは否定できません。",
+    "MediaFileSystems.ContextLengthOverflow": "メディアソースの長さは、サポートされている署名範囲を超えています。",
+    "MediaFileSystems.ContextReadOffset": "認識読まれたオフセットは否定できません。",
+    "MediaFileSystems.ContextReadCount": "認識読み取り回数がマイナスになることはできません。",
+    "MediaFileSystems.ContextReadRange": "要求された範囲は源の長さを超過します。",
+    "MediaFileSystems.ContextFullRead": "完全なソースは 1 つのメモリバッファにロードできません。 代わりにバインドされた読み込みを使用します。",
+    "MediaFileSystems.ContextPageEnded": "キャッシュされたページを読みながら、メディアソースはバイト{0}で終了しました。",
+    "MediaFileSystems.DocumentFormatId": "認識されたフォーマット識別子が必要です。",
+    "MediaFileSystems.DocumentRepresentation": "公開情報を含むメディア表現が必要です。"
+  }
+}

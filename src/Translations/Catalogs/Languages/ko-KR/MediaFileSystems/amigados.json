@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "이미지는 지원되지 않았습니다 AmigaDOS 부팅 블록.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS 부팅 변형 {0}은 지원되지 않습니다.",
+    "Media.AmigaInvalidRoot": "AmigaDOS 루트 블록 {0}은 유효하지 않습니다.",
+    "Media.AmigaRootChecksum": "AmigaDOS root block {0}는 잘못된 체크섬이 있습니다.",
+    "Media.AmigaDirectoryChain": "블록 {0}에서 AmigaDOS 디렉토리 체인은 유효하거나 순환합니다.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS 디렉토리 항목 블록 {0}이 누락됩니다.",
+    "Media.AmigaMissingData": "AmigaDOS 파일 데이터 블록 {0}이 누락되었습니다.",
+    "Media.AmigaOfsType": "OFS 데이터 블록 {0}은 예기치 않은 유형 {1}이 있습니다.",
+    "Media.AmigaDataChecksum": "OFS 데이터 블록 {0}에는 잘못된 체크섬이 있습니다.",
+    "Media.AmigaInvalidExtension": "AmigaDOS 파일 확장 블록 {0}는 무효, 사이클링 또는 누락.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS 파일 확장 블록 {0} 잘못된 구조 또는 체크섬이 있습니다.",
+    "Media.AmigaTruncatedFile": "AmigaDOS 파일 내용이 잘렸습니다. 예상 크기는 {0}바이트이며 읽은 크기는 {1}바이트입니다.",
+    "Media.AmigaMissingBitmap": "AmigaDOS 비트맵 블록 {0}이 누락되었습니다.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS 비트맵 블록 {0}는 잘못된 체크섬이 있습니다.",
+    "Media.AmigaDepth": "AmigaDOS 디렉토리 깊이 제한은 깊이 {0}에 도달했습니다.",
+    "Media.AmigaRecovered": "복구 {0} AmigaDOS 카탈로그 항목에서 유효한 헤더 때문에 루트 블록을 사용할 수 없습니다.",
+    "Media.AmigaWriterVariant": "AmigaDOS 변형 {0}이 모듈에 의해 생성 될 수 없습니다.",
+    "Media.AmigaWriterGeometry": "이미지 형식 {0}는 지원되는 AmigaDOS 기하학이 아닙니다.",
+    "Media.AmigaDiskFull": "대상 AmigaDOS 볼륨은 충분한 무료 블록을 가지고 있습니다.",
+    "Media.AmigaInvalidEntry": "마이그레이션 항목 {0} AmigaDOS에 표시 할 수 없습니다.",
+    "Media.AmigaShortBlock": "AmigaDOS 블록 {0} 불완전: {1} 바이트를 사용할 수 있습니다.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS 블록 {0}의 기록된 무결성 정보가 잘못되었습니다.",
+    "Media.AmigaFileSize": "AmigaDOS 파일 길이 {0} 지원 범위를 초과합니다."
+  }
+}

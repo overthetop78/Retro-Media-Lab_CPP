@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "The image does not contain a {0} volume; observed signature: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: block {2} of fork {1} is missing.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1} contains {2} bytes; {3} expected.",
+    "MediaFileSystems.MacAllocationSize": "Allocation size {1} for volume {0} must be a nonzero multiple of {2} bytes.",
+    "MediaFileSystems.MacFreeCount": "Volume {0} declares {1} free allocation blocks out of {2} total blocks.",
+    "MediaFileSystems.MfsMapTruncated": "The MFS map for {0} allocations contains {1} bytes; {2} required.",
+    "MediaFileSystems.MfsDirectoryEntry": "MFS directory entry at block {0}, offset {1} is invalid.",
+    "MediaFileSystems.MfsChain": "{0}: fork {1} allocation chain is invalid (cycle={2}, outside map={3}, premature end={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1} declares {2} bytes from cluster {3}; the metadata is inconsistent.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh file"
+  }
+}

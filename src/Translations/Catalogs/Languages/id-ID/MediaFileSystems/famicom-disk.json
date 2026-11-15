@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "Volume Famicom Disk System yang dipilih tidak dapat dibaca.",
+    "MediaFileSystems.FdsSideCount": "Jumlah sisi Famicom Disk System hilang atau tidak valid.",
+    "MediaFileSystems.FdsSideLength": "Panjang samping Famicom Disk System hilang atau tidak valid.",
+    "MediaFileSystems.FdsNoFiles": "Tidak ditemukan blok berkas Famicom Disk System yang valid.",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System sisi {0} tidak memiliki blok informasi disk yang valid.",
+    "MediaFileSystems.FdsFileCount": "Famicom Disk System sisi {0} tidak memiliki file count block yang valid.",
+    "MediaFileSystems.FdsFileHeader": "Famicom Disk System sisi {0} memiliki sebuah file header tidak valid.",
+    "MediaFileSystems.FdsIncomplete": "Famicom Disk System berkas {0} di samping {1} memiliki data yang tidak lengkap."
+  }
+}

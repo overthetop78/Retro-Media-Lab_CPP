@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Το είδωλο δίσκου δεν περιέχει σύστημα αρχείων Lisa με ετικέτες στις {0} σελίδες του.",
+    "MediaFileSystems.LisaMissingPage": "Από το αρχείο Lisa 0x{0} λείπει η σελίδα {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Η σελίδα Lisa MDDF περιέχει {0} byte· απαιτούνται {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Το λογικό μπλοκ Lisa {0} έχει ετικέτα {1} byte· απαιτούνται {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Το αρχείο Lisa 0x{0} περιέχει πολλά αντίγραφα της σελίδας {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Ο ελεύθερος χώρος Lisa δεν μπορεί να προσδιοριστεί χωρίς αξιοποιήσιμες ετικέτες.",
+    "MediaFileSystems.LisaFileDescription": "Αρχείο Lisa ${0}"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "دليل UCSD عند الكتلة {0} غير معروف؛ الكتل غير الصالحة: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: كتل UCSD مفقودة أو مبتورة: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "كتل دليل UCSD p-System مفقودة أو مبتورة: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "إدخال UCSD {0} له اسم غير صالح '{1}'.",
+    "MediaFileSystems.UcsdRange": "إدخال UCSD {0} ('{1}') يستخدم النطاق غير الصالح [{2}, {3}) ضمن {4} كتلة.",
+    "MediaFileSystems.UcsdOverlap": "إدخال UCSD {0} ('{1}') يتداخل مع الكتل {2}.",
+    "MediaFileSystems.UcsdCount": "يعلن دليل UCSD عن {0} ملف، لكن عُثر على {1} إدخال صالح.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: تعلن كتلة UCSD الأخيرة عن {1} بايت.",
+    "MediaFileSystems.UcsdTypeUntyped": "ملف UCSD بلا نوع",
+    "MediaFileSystems.UcsdTypeExternalDisk": "ملف قرص خارجي UCSD",
+    "MediaFileSystems.UcsdTypeCode": "ملف شيفرة UCSD",
+    "MediaFileSystems.UcsdTypeText": "ملف نص UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "ملف معلومات UCSD",
+    "MediaFileSystems.UcsdTypeData": "ملف بيانات UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "ملف رسوميات UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "ملف صور UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "دليل UCSD آمن"
+  }
+}

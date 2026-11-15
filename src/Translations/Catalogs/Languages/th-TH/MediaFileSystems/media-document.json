@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "แหล่งของสื่อไม่สามารถว่างได้",
+    "MediaFileSystems.ContextSourcePath": "เส้นทางไปยังแหล่งของสื่อหลัก ไม่สามารถว่างหรือว่างอยู่ในช่องว่างได้",
+    "MediaFileSystems.ContextPageSize": "ขนาดหน้าจําต้องเป็นบวก",
+    "MediaFileSystems.ContextKnownLength": "ความยาวแหล่งที่รู้ไม่สามารถเป็นลบ",
+    "MediaFileSystems.ContextLengthOverflow": "ความยาวแหล่งสื่อมากกว่าช่วงที่รองรับการเซ็น",
+    "MediaFileSystems.ContextReadOffset": "ปรับค่าการอ่านแบบจดจําไม่สามารถเป็นลบ",
+    "MediaFileSystems.ContextReadCount": "ตัวนับที่อ่านแล้วไม่สามารถเป็นค่าลบได้",
+    "MediaFileSystems.ContextReadRange": "ช่วงที่ต้องการมากกว่าความยาวของแหล่ง",
+    "MediaFileSystems.ContextFullRead": "แหล่งที่มาที่สมบูรณ์ไม่สามารถใส่ลงในไดอะฟเฟอร์หน่วยความจําเดียว ใช้การอ่านแบบผูกร้อยแทน",
+    "MediaFileSystems.ContextPageEnded": "แหล่งสื่อสิ้นสุดลงที่ byte {0} ในขณะที่อ่านหน้าที่มีแคชไว้",
+    "MediaFileSystems.DocumentFormatId": "ต้องการการแสดงตัวของฟอร์แมตที่รู้จัก",
+    "MediaFileSystems.DocumentRepresentation": "จําเป็น ต้อง มี การ ให้ คํา พยาน แก่ สาธารณชน."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "光学逻辑长度不能为负.",
+    "MediaFileSystems.OpticalMetadataOnly": "这个遗留的媒体描述器只包含元数据,没有可读的数据源.",
+    "MediaFileSystems.OpticalIndexNumber": "光盘轨道索引必须在 0 到 99 之间。",
+    "MediaFileSystems.OpticalPositiveDimension": "光学维度\"{0}\"必须是正的 。",
+    "MediaFileSystems.OpticalNonNegativeDimension": "光学维度不能为负 {0} 。",
+    "MediaFileSystems.OpticalDataSource": "需要有光学轨道数据源。",
+    "MediaFileSystems.OpticalUserWindow": "用户数据窗口超过一个存储扇区 。",
+    "MediaFileSystems.OpticalTrackSource": "轨迹数据超过其来源.",
+    "MediaFileSystems.OpticalSubchannelSource": "子通道维度需要子通道源.",
+    "MediaFileSystems.OpticalSubchannelRange": "次通道数据超过其来源.",
+    "MediaFileSystems.OpticalPregapOffset": "指定已存储 pregap 的源偏移量时，必须存在已存储的 pregap 扇区。",
+    "MediaFileSystems.OpticalPregapRange": "已存储的 pregap 超出其数据源范围。",
+    "MediaFileSystems.OpticalStoredDestination": "目标缓冲区必须恰好容纳一个存储扇区。",
+    "MediaFileSystems.OpticalStoredPregap": "扇区位于已存储的 pregap 范围之外。",
+    "MediaFileSystems.OpticalRelativeSector": "该区段位于光学轨道外.",
+    "MediaFileSystems.OpticalNullTrack": "光盘轨道不能为 null。"
+  }
+}

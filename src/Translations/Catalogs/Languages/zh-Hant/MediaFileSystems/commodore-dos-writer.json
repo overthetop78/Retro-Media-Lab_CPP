@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmWriteType": "預設 Commodore DOS 檔案類型 {0} 必須是 SEQ、PRG、USR 或 REL。",
+    "MediaFileSystems.CbmWriteRecordLength": "預設 REL 記錄長度必須大於零。",
+    "MediaFileSystems.CbmWriteFormat": "不支援 Commodore DOS 目標格式「{0}」。",
+    "MediaFileSystems.CbmWriteEntry": "項目「{0}」無法儲存在 Commodore DOS 根目錄中。",
+    "MediaFileSystems.CbmWriteFull": "Commodore DOS 磁碟區的可用區塊不足。",
+    "MediaFileSystems.CbmWriteRelativeSize": "REL 檔案「{0}」超過傳統側磁區容量。"
+  }
+}

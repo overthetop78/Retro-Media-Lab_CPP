@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Источник в СМИ не может быть нулевым.",
+    "MediaFileSystems.ContextSourcePath": "Путь первичного источника не может быть пустым или белым пространством.",
+    "MediaFileSystems.ContextPageSize": "Размер страницы распознавания должен быть положительным.",
+    "MediaFileSystems.ContextKnownLength": "Длина источника не может быть отрицательной.",
+    "MediaFileSystems.ContextLengthOverflow": "Длина источника информации превышает поддерживаемый диапазон подписей.",
+    "MediaFileSystems.ContextReadOffset": "Смещение считывания не может быть отрицательным.",
+    "MediaFileSystems.ContextReadCount": "Число прочитанного не может быть отрицательным.",
+    "MediaFileSystems.ContextReadRange": "Запрашиваемый диапазон превышает длину источника.",
+    "MediaFileSystems.ContextFullRead": "Полный источник не может быть загружен в один буфер памяти. Вместо этого используйте ограниченные чтения.",
+    "MediaFileSystems.ContextPageEnded": "Источник СМИ закончился на байте {0} при чтении кэшированной страницы.",
+    "MediaFileSystems.DocumentFormatId": "Требуется распознанный идентификатор формата.",
+    "MediaFileSystems.DocumentRepresentation": "Требуется представительство СМИ с информацией о публичном представительстве."
+  }
+}

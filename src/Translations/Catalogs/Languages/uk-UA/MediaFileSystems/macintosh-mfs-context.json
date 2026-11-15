@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Блок інформації про том {0} відсутній або має неприпустимий розмір.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Блок каталогу {0} відсутній або має неприпустимий розмір.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: блок {1} потоку даних відсутній або має неприпустимий розмір.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: вміст потоку даних має розмір {1} байтів; очікувалося {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: метадані потоку даних оголошують {1} байтів починаючи з кластера {2}; метадані суперечливі.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: ланцюжок розміщення потоку даних містить цикл.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: ланцюжок розміщення потоку даних посилається на позицію за межами карти розміщення.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: ланцюжок розміщення потоку даних закінчується до того, як доступні всі потрібні кластери.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: блок {1} потоку ресурсів відсутній або має неприпустимий розмір.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: вміст потоку ресурсів має розмір {1} байтів; очікувалося {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: метадані потоку ресурсів оголошують {1} байтів починаючи з кластера {2}; метадані суперечливі.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: ланцюжок розміщення потоку ресурсів містить цикл.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: ланцюжок розміщення потоку ресурсів посилається на позицію за межами карти розміщення.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: ланцюжок розміщення потоку ресурсів закінчується до того, як доступні всі потрібні кластери."
+  }
+}

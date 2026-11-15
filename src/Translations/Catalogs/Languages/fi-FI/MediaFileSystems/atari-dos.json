@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "{0} kuva {1}-tavu-sektoreilla ei sisällä tuettua Atari DOS -hakemistoa.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Hakemistosektori {0} puuttuu.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Kansiosektori {0}, merkintä {1} ei ole kelvollinen Atari DOS -tiedostomerkintä eikä sitä otettu huomioon.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS -tietosektori {1} puuttuu.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS -dataketju on syklinen sektorissa {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektori {1} kuuluu tiedostoon {3}, odotetaan {2}.",
+    "MediaFileSystems.AtariDosOpen": "Hakemistosektorin {1} merkintä {2} ('{0}') on edelleen avoinna kirjoitusta varten ja jätettiin huomiotta.",
+    "MediaFileSystems.AtariDosTruncated": "Tiedoston '{0}' tietosektori {1} on liian lyhyt sisältääkseen ketjulinkin.",
+    "MediaFileSystems.AtariDosPremature": "Tiedosto \"{0}\" ilmoittaa {1} sektorit, mutta sen ketju päättyy {2} jälkeen.",
+    "MediaFileSystems.AtariDosEmptyData": "Tyhjä tiedosto '{0}' viittaa odottamatta sektoriin {1}.",
+    "MediaFileSystems.AtariDosBounded": "Tiedosto '{0}' on rajoitettu hakemistomerkinnän ilmoittamaan {1} sektoriin, mutta ketju jatkuu sektorissa {2}.",
+    "MediaFileSystems.AtariDosShared": "Tiedosto '{0}' jakaa {3} sektoria sektorista {2} alkaen tiedoston '{1}' kanssa.",
+    "MediaFileSystems.AtariDosUsedLength": "Tietosektori {1} \"{0}\" ilmoittaa {2} tavua, mutta vain {3} on saatavilla."
+  }
+}

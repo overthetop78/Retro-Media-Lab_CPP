@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ترويسة وحدة تخزين ProDOS/SOS في الكتلة {0} غير معروفة (القيمة المقروءة ${1}).",
+    "MediaFileSystems.ProDosDepth": "تتجاوز كتلة دليل ProDOS ‏{1} الحد الأقصى للعمق عند المستوى {0}.",
+    "MediaFileSystems.ProDosDirectory": "كتلة دليل ProDOS ‏{0} غير صالحة (حلقة={1}، إعادة استخدام={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): كتلة فهرس ProDOS ‏{2} غير صالحة (حلقة={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): كتلة الفهرس الرئيسي في ProDOS ‏{2} غير صالحة.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): كتلة بيانات ProDOS ‏{2} مفقودة أو خارج صورة القرص أو ذات حجم غير صالح.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): أُعيد تكوين {2} بايت من أصل {3} بايت متوقعة.",
+    "MediaFileSystems.ProDosBitmap": "كتلة خريطة البتات في ProDOS ‏{0} مفقودة أو ذات حجم غير صالح.",
+    "MediaFileSystems.ProDosTotal": "تعلن وحدة تخزين ProDOS عن {0} كتلة، لكن صورة القرص تحتوي على {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "تنسيق ProDOS الهدف '{0}' غير مدعوم.",
+    "MediaFileSystems.ProDosDiskFull": "لا تحتوي وحدة تخزين ProDOS على كتل أو إدخالات دليل كافية.",
+    "MediaFileSystems.ProDosGeometry": "هندسة ProDOS الهدف أو خريطة عناوين القطاعات غير صالحة.",
+    "MediaFileSystems.ProDosEntry": "لا يمكن كتابة إدخال ProDOS ‏'{0}'.",
+    "MediaFileSystems.ProDosFileLength": "يتجاوز ملف ProDOS ‏'{0}' حقل الطول ذي 24 بت.",
+    "MediaFileSystems.ProDosName": "اسم ProDOS ‏'{0}' غير صالح.",
+    "MediaFileSystems.ProDosTypeText": "النص",
+    "MediaFileSystems.ProDosTypeBinary": "ثنائي",
+    "MediaFileSystems.ProDosTypeDirectory": "دليل",
+    "MediaFileSystems.ProDosTypeVariables": "متغيرات",
+    "MediaFileSystems.ProDosTypeSystem": "النظام"
+  }
+}

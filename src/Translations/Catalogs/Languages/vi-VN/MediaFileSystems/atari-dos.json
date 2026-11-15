@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Ảnh đĩa {0} có cung từ dài {1} byte không chứa thư mục Atari DOS được hỗ trợ.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Cung từ thư mục {0} bị thiếu.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Cung từ thư mục {0}, mục {1}, không phải mục tập tin Atari DOS hợp lệ nên đã bị bỏ qua.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: cung từ dữ liệu Atari DOS {1} bị thiếu.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: chuỗi dữ liệu Atari DOS lặp lại tại cung từ {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: cung từ {1} thuộc tập tin {3}; dự kiến là {2}.",
+    "MediaFileSystems.AtariDosOpen": "Cung từ thư mục {1}, mục {2} ('{0}'), vẫn đang mở để ghi nên đã bị bỏ qua.",
+    "MediaFileSystems.AtariDosTruncated": "Cung từ dữ liệu {1} của '{0}' quá ngắn để chứa liên kết.",
+    "MediaFileSystems.AtariDosPremature": "Tập tin '{0}' khai báo {1} cung từ, nhưng chuỗi kết thúc sau {2} cung từ.",
+    "MediaFileSystems.AtariDosEmptyData": "Tập tin rỗng '{0}' tham chiếu bất thường đến cung từ {1}.",
+    "MediaFileSystems.AtariDosBounded": "Tập tin '{0}' bị giới hạn ở {1} cung từ đã khai báo trong mục thư mục, trong khi chuỗi bên dưới tiếp tục tại cung từ {2}.",
+    "MediaFileSystems.AtariDosShared": "Tập tin '{0}' dùng chung {3} cung từ bắt đầu từ cung từ {2} với '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Cung từ dữ liệu {1} của '{0}' khai báo {2} byte nhưng chỉ có {3} byte."
+  }
+}

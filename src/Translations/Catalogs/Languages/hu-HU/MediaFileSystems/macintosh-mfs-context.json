@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "A kötetinformációs blokk {0} hiányzik vagy érvénytelen méretű.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "A könyvtárblokk {0} hiányzik vagy érvénytelen méretű.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: az adatfolyam: a(z) {1}. blokk hiányzik vagy érvénytelen méretű.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: az adatfolyam {1} bájtot tartalmaz; a várt mennyiség {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: az adatfolyam {1} bájtot jelez a(z) {2}. klasztertől; a metaadatok következetlenek.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: az adatfolyam: a foglalási lánc ciklust tartalmaz.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: az adatfolyam: a foglalási lánc a foglalási térképen kívülre hivatkozik.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: az adatfolyam: a foglalási lánc véget ér, mielőtt minden szükséges klaszter rendelkezésre állna.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: az erőforrás-adatfolyam: a(z) {1}. blokk hiányzik vagy érvénytelen méretű.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: az erőforrás-adatfolyam {1} bájtot tartalmaz; a várt mennyiség {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: az erőforrás-adatfolyam {1} bájtot jelez a(z) {2}. klasztertől; a metaadatok következetlenek.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: az erőforrás-adatfolyam: a foglalási lánc ciklust tartalmaz.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: az erőforrás-adatfolyam: a foglalási lánc a foglalási térképen kívülre hivatkozik.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: az erőforrás-adatfolyam: a foglalási lánc véget ér, mielőtt minden szükséges klaszter rendelkezésre állna."
+  }
+}

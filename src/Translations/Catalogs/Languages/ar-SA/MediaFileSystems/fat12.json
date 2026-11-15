@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "بُعد صورة القطاعات {0} غير صالح: {1}.",
+    "Media.SectorInvalidFormatId": "معرّف تنسيق صورة القطاعات فارغ أو غير صالح: {0}.",
+    "Media.SectorDuplicateBlock": "يتكرر القطاع المنطقي {0} أكثر من مرة في الصورة.",
+    "Media.SectorBlockOutside": "القطاع المنطقي {0} خارج الصورة التي تحتوي على {1} قطاعًا.",
+    "Media.SectorCapacityShort": "السعة المعلنة لصورة القطاعات {0} أصغر من طول البيانات المتاحة {1}.",
+    "Media.SectorMissingBlock": "القطاع المنطقي {0} مفقود.",
+    "Media.SectorInvalidBlockSize": "يحتوي القطاع المنطقي {0} على {1} بايت بدلًا من {2}.",
+    "Media.FatUnsupportedBoot": "لا يحتوي تنسيق الصورة {0} على نظام ملفات FAT12 مدعوم: قطاع الإقلاع مفقود أو مبتور.",
+    "Media.FatUnsupportedLayout": "لا يحتوي تنسيق الصورة {0} على نظام ملفات FAT12 مدعوم (حجم القطاع {1}، قطاعات لكل عنقود {2}، قطاعات محجوزة {3}، نسخ FAT {4}، إدخالات الجذر {5}، قطاعات لكل FAT {6}).",
+    "Media.FatInvalidChain": "سلسلة FAT للعنصر {0} غير صالحة أو دورية عند العنقود {1}.",
+    "Media.FatTruncatedTable": "إدخال FAT12 للعنقود {0} مبتور.",
+    "Media.FatMissingSectors": "نطاق القطاعات من {0} إلى {1} غير مكتمل.",
+    "Media.FatDepthLimit": "تم بلوغ حد تداخل مجلدات FAT عند {0} (العمق {1}).",
+    "Media.FatMissingSector": "يحتوي قطاع FAT {0} على {1} بايت بدلًا من {2}.",
+    "Media.FatCyclicChain": "{0}: سلسلة FAT12 دورية عند العنقود {1}.",
+    "Media.FatClusterOutsideRange": "{0}: عنقود FAT12 {1} خارج نطاق البيانات.",
+    "Media.FatIncompleteContent": "{0}: الحجم المعلن {1} بايت، لكن المتاح {2} بايت فقط.",
+    "Media.FatUnsupportedGeometry": "هندسة تنسيق الصورة {0} غير مدعومة في FAT12.",
+    "Media.FatDiskFull": "لا يحتوي مجلد تخزين FAT12 الهدف على عناقيد حرة أو إدخالات أدلة كافية.",
+    "Media.FatInvalidEntry": "لا يمكن تمثيل إدخال الترحيل {0} كإدخال ذي اسم قصير في FAT12.",
+    "Media.FatDirectoryCycle": "يعيد الدليل {0} استخدام عنقود FAT12 {1} الذي سبق استعراضه.",
+    "Media.FatIntegrityInvalid": "سلامة البيانات المسجلة لقطاع FAT {0} غير صالحة.",
+    "Media.FatResourceLimit": "تم بلوغ حد استخراج FAT12 أثناء قراءة {0}."
+  }
+}

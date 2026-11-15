@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "De afbeelding heeft geen ondersteunde ADFS-catalogus ({0}-byte blokken, {1} blokken).",
+    "Media.AdfsInvalidDirectory": "ADFS-map {0} is ongeldig of onvolledig.",
+    "Media.AdfsDepth": "De ADFS-mapdieptelimiet werd bereikt op diepte {0}.",
+    "Media.AdfsCycle": "ADFS-map {0} is cyclisch of wordt meerdere malen verwezen.",
+    "Media.AdfsInvalidRange": "{0}: ongeldig ADFS adres {1}, offset {2}, lengte {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS-adres {1} op offset {2} vereist ontbrekende blok {3}.",
+    "Media.AdfsIntegrity": "ADFS-blok {0} heeft ongeldige geregistreerde integriteit.",
+    "Media.AdfsBlockVolume": "ADFS vereist een adresseerbare sector of blokvolume.",
+    "Media.AdfsSectorCount": "Het aantal ADFS-sectoren {0} ligt buiten het ondersteunde bereik."
+  }
+}

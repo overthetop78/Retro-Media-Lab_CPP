@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Dimension invalide de l’image sectorielle {0} : {1}.",
+    "Media.SectorInvalidFormatId": "L’identifiant du format de l’image sectorielle est vide ou invalide : {0}.",
+    "Media.SectorDuplicateBlock": "Le secteur logique {0} apparaît plus d'une fois dans l'image.",
+    "Media.SectorBlockOutside": "Le secteur logique {0} est hors de l’image, qui contient {1} secteurs.",
+    "Media.SectorCapacityShort": "La capacité déclarée de l’image sectorielle {0} est inférieure à la longueur des données disponibles {1}.",
+    "Media.SectorMissingBlock": "Le secteur logique {0} manque.",
+    "Media.SectorInvalidBlockSize": "Le secteur logique {0} contient {1} octets au lieu de {2}.",
+    "Media.FatUnsupportedBoot": "Le format d’image {0} ne contient pas de système de fichiers FAT12 pris en charge : le secteur d’amorçage est absent ou tronqué.",
+    "Media.FatUnsupportedLayout": "Le format d’image {0} ne contient pas de système de fichiers FAT12 pris en charge (taille des secteurs {1}, secteurs par cluster {2}, secteurs réservés {3}, copies de FAT {4}, entrées racines {5}, secteurs par FAT {6}).",
+    "Media.FatInvalidChain": "La chaîne FAT de {0} est invalide ou cyclique au cluster {1}.",
+    "Media.FatTruncatedTable": "L'entrée FAT12 du cluster {0} est tronquée.",
+    "Media.FatMissingSectors": "La plage de secteurs {0} à {1} est incomplète.",
+    "Media.FatDepthLimit": "La limite de nidification du répertoire FAT a été atteinte à {0} (profondeur {1}).",
+    "Media.FatMissingSector": "Le secteur FAT {0} contient {1} octets au lieu de {2}.",
+    "Media.FatCyclicChain": "{0} : la chaîne FAT12 est cyclique au cluster {1}.",
+    "Media.FatClusterOutsideRange": "{0} : le cluster FAT12 {1} est hors de la zone de données.",
+    "Media.FatIncompleteContent": "{0} : la taille déclarée est {1} octets mais seulement {2} octets sont disponibles.",
+    "Media.FatUnsupportedGeometry": "Le format d'image {0} n'est pas une géométrie FAT12 prise en charge.",
+    "Media.FatDiskFull": "Le volume cible FAT12 n'a pas assez de clusters libres ou d'entrées de répertoires.",
+    "Media.FatInvalidEntry": "L'entrée de migration {0} ne peut pas être représentée comme une entrée de nom abrégé FAT12.",
+    "Media.FatDirectoryCycle": "Le répertoire {0} réutilise le cluster FAT12 {1}, déjà parcouru.",
+    "Media.FatIntegrityInvalid": "L’intégrité enregistrée du secteur FAT {0} est invalide.",
+    "Media.FatResourceLimit": "La limite d'extraction FAT12 a été atteinte en lisant {0}."
+  }
+}

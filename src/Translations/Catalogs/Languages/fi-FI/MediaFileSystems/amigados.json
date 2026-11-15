@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Levykuvassa ei ole tuettua AmigaDOS-käynnistyslohkoa.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS- käynnistysversiota {0} ei tueta.",
+    "Media.AmigaInvalidRoot": "AmigaDOS root block {0} on virheellinen.",
+    "Media.AmigaRootChecksum": "AmigaDOS-juurilohkon {0} tarkistussumma on virheellinen.",
+    "Media.AmigaDirectoryChain": "AmigaDOS-hakemistoketju lohkossa {0} on virheellinen tai syklinen.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS-hakemiston tietue {0} puuttuu.",
+    "Media.AmigaMissingData": "AmigaDOS-tiedoston tietokenttä {0} puuttuu.",
+    "Media.AmigaOfsType": "OFS-tietokenttä {0} on odottamaton tyyppi {1}.",
+    "Media.AmigaDataChecksum": "OFS-tietolohkossa {0} on virheellinen tarkistussumma.",
+    "Media.AmigaInvalidExtension": "AmigaDOS -tiedoston päätesulku {0} on virheellinen, syklinen tai puuttuu.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS -tiedoston päätelohkossa {0} on virheellinen rakenne tai tarkistussumma.",
+    "Media.AmigaTruncatedFile": "AmigaDOS-tiedoston sisältö on typistetty: odotettavissa {0} tavua, lue {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bittikartta {0} puuttuu.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bittikarttakatkoksessa {0} on virheellinen tarkistussumma.",
+    "Media.AmigaDepth": "AmigaDOS-hakemiston syvyysraja saavutettiin syvyydessä {0}.",
+    "Media.AmigaRecovered": "Palautettu {0} AmigaDOS-luettelon merkinnät voimassa olevista otsikoista, koska juurilohkoa ei ole saatavilla.",
+    "Media.AmigaWriterVariant": "Tämä moduuli ei voi luoda AmigaDOS-varianttia {0}.",
+    "Media.AmigaWriterGeometry": "Kuvamuoto {0} ei ole tuettu AmigaDOS-geometria.",
+    "Media.AmigaDiskFull": "AmigaDOSin tavoitetilavuudessa ei ole riittävästi vapaita lohkoja.",
+    "Media.AmigaInvalidEntry": "Muuttotietue {0} ei voi olla edustettuna AmigaDOSissa.",
+    "Media.AmigaShortBlock": "AmigaDOS- lohko {0} on epätäydellinen: {1} tavua on saatavilla.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS-lohkolla {0} on virheellinen tallennettu eheys.",
+    "Media.AmigaFileSize": "AmigaDOS-tiedoston pituus {0} ylittää tuetun alueen."
+  }
+}

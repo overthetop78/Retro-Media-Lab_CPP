@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "卷信息块 {0} 缺失或大小无效。",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "目录块 {0} 缺失或大小无效。",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}：数据分支的块 {1} 缺失或大小无效。",
+    "MediaFileSystems.MfsDataIncomplete": "{0}：数据分支包含 {1} 字节；预期为 {2} 字节。",
+    "MediaFileSystems.MfsDataMetadata": "{0}：数据分支声明从簇 {2} 开始包含 {1} 字节；元数据不一致。",
+    "MediaFileSystems.MfsDataChainCycle": "{0}：数据分支的分配链包含循环。",
+    "MediaFileSystems.MfsDataChainOutside": "{0}：数据分支的分配链引用了分配表范围之外的位置。",
+    "MediaFileSystems.MfsDataChainPremature": "{0}：数据分支的分配链在所有所需簇可用之前就已结束。",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}：资源分支的块 {1} 缺失或大小无效。",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}：资源分支包含 {1} 字节；预期为 {2} 字节。",
+    "MediaFileSystems.MfsResourceMetadata": "{0}：资源分支声明从簇 {2} 开始包含 {1} 字节；元数据不一致。",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}：资源分支的分配链包含循环。",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}：资源分支的分配链引用了分配表范围之外的位置。",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}：资源分支的分配链在所有所需簇可用之前就已结束。"
+  }
+}

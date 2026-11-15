@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Birim bilgi bloğu {0} eksik veya boyutu geçersiz.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Dizin bloğu {0} eksik veya boyutu geçersiz.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: veri çatalı için {1} bloğu eksik veya boyutu geçersiz.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: veri çatalı, {1} bayt içeriyor; beklenen {2} bayt.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: veri çatalı, {2} kümesinden başlayarak {1} bayt bildiriyor; üst veriler tutarsız.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: veri çatalı tahsis zinciri bir döngü içeriyor.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: veri çatalı tahsis zinciri, tahsis haritasının dışındaki bir konuma başvuruyor.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: veri çatalı tahsis zinciri, gerekli tüm kümeler kullanılabilir olmadan bitiyor.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: kaynak çatalı için {1} bloğu eksik veya boyutu geçersiz.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: kaynak çatalı, {1} bayt içeriyor; beklenen {2} bayt.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: kaynak çatalı, {2} kümesinden başlayarak {1} bayt bildiriyor; üst veriler tutarsız.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: kaynak çatalı tahsis zinciri bir döngü içeriyor.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: kaynak çatalı tahsis zinciri, tahsis haritasının dışındaki bir konuma başvuruyor.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: kaynak çatalı tahsis zinciri, gerekli tüm kümeler kullanılabilir olmadan bitiyor."
+  }
+}

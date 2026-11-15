@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "VTOC 在磁道 {0}、扇区 {1} 引用的 Apple DOS 目录缺失或无效。",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS 目录扇区 {0}/{1} 缺失或存在循环引用。",
+    "MediaFileSystems.AppleDosAddress": "{0} 的 Apple DOS 地址 {1}/{2} 超出了磁盘几何范围。",
+    "MediaFileSystems.AppleDosListCycle": "{0} 的磁道/扇区列表在 {1}/{2} 处存在循环引用。",
+    "MediaFileSystems.AppleDosListMissing": "{0} 的磁道/扇区列表在 {1}/{2} 处缺失。",
+    "MediaFileSystems.AppleDosDataMissing": "缺少 {0} 的数据扇区 {1}/{2}。",
+    "MediaFileSystems.AppleDosSize": "文件 {0} 声明有 {1} 个扇区，但遍历到了 {2} 个扇区。",
+    "MediaFileSystems.AppleDosWriteFormat": "不支持 Apple DOS 目标格式 {0}。",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOS 卷没有足够的目录扇区或数据扇区。",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS 卷名 {0} 必须采用 DOS-nnn 格式。",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS 仅支持根目录中内容可用的文件。",
+    "MediaFileSystems.AppleDosBinarySize": "Apple DOS 二进制文件不能超过 65535 字节。",
+    "MediaFileSystems.AppleDosWriteName": "无法在目录项中编码 Apple DOS 文件名 {0}。",
+    "MediaFileSystems.AppleDosTypeText": "文本",
+    "MediaFileSystems.AppleDosTypeBinary": "二进制",
+    "MediaFileSystems.AppleDosTypeRelocatable": "可重定位",
+    "MediaFileSystems.AppleDosTypeFile": "文件"
+  }
+}

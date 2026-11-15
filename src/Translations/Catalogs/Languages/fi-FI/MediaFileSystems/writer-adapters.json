@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Mediaesittelykuva ei voi olla mitätön.",
+    "MediaFileSystems.RepresentationCountOverflow": "Median esityksen laskuri ylittää tuetun etumerkillisten kokonaislukujen alueen.",
+    "MediaFileSystems.WriterAdapterId": "Tarvitaan mediakuvan kirjoittajan tunniste.",
+    "MediaFileSystems.WriterAdapterFormats": "Kohdemuototunnisteet eivät voi olla tyhjiä.",
+    "MediaFileSystems.WriterAdapterExtensions": "Tulosten laajennukset eivät voi olla tyhjiä.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Mediakirjoituskomponentin tarkistus- ja tulostuskutsut vaaditaan.",
+    "MediaFileSystems.WriterAdapterPath": "Tarvitaan mediakirjoittajan tulostuspolku.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Kirjoituskomponentti '{0}' ei voi hakea vaadittua mediaesitystä.",
+    "MediaFileSystems.WriterAdapterTarget": "Kirjoituskomponentti \"{0}\" ei hyväksy kohdetta \"{1}\" laajennuksella \"{2}.\"",
+    "MediaFileSystems.WriterAdapterProduced": "Kirjoituskomponentti \"{0}\" ei raportoi kelvollisia valmistettuja tiedostoja.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore-lähdemuotoa \"{0}\" ei voi kirjoittaa \"{1}\" ilman geometrian muutosta."
+  }
+}

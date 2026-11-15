@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Blok macierzysty RT-11 jest nieprawidłowy (podpis '{0}', blok katalogowy {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Segment RT-11 {0} w bloku {1} ma numer segmentu poza zakresem.",
+    "MediaFileSystems.Rt11SegmentCycle": "Segment RT-11 {0} w bloku {1} tworzy cykl.",
+    "MediaFileSystems.Rt11SegmentOutside": "Segment RT-11 {0} w bloku {1} jest poza obrazem.",
+    "MediaFileSystems.Rt11SegmentMissing": "Segment RT-11 {0} w bloku {1} ma brakującą lub okrojoną parę bloków.",
+    "MediaFileSystems.Rt11EntrySize": "Segment RT-11 {0} deklaruje nieprawidłowy rozmiar wpisu: {1} bajtów.",
+    "MediaFileSystems.Rt11EmptyName": "Pozycja RT-11 w bloku danych {0}, offset {1}, ma pustą nazwę.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: Brakuje lub okrojono bloki RT-11: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Wstępny plik RT-11",
+    "MediaFileSystems.Rt11Permanent": "Plik RT-11"
+  }
+}

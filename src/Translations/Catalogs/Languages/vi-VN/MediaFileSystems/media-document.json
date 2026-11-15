@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Nguồn truyền thông không thể vô hiệu hóa được.",
+    "MediaFileSystems.ContextSourcePath": "Đường dẫn nguồn chính không thể rỗng hoặc trắng.",
+    "MediaFileSystems.ContextPageSize": "Kích thước nhận diện trang phải là dương.",
+    "MediaFileSystems.ContextKnownLength": "Độ dài nguồn đã biết không thể là âm.",
+    "MediaFileSystems.ContextLengthOverflow": "Độ dài của nguồn truyền thông vượt quá phạm vi được ký.",
+    "MediaFileSystems.ContextReadOffset": "Khoảng cách nhận biết đọc không thể là tiêu cực.",
+    "MediaFileSystems.ContextReadCount": "Số người được công nhận không thể là tiêu cực.",
+    "MediaFileSystems.ContextReadRange": "Phạm vi yêu cầu vượt quá chiều dài nguồn.",
+    "MediaFileSystems.ContextFullRead": "Không thể tải toàn bộ nguồn vào cùng một bộ nhớ. Sử dụng ràng buộc đọc.",
+    "MediaFileSystems.ContextPageEnded": "Nguồn truyền thông đã kết thúc tại byte{0} trong khi đọc một trang đã lưu tạm.",
+    "MediaFileSystems.DocumentFormatId": "Cần thiết xác nhận định dạng thức.",
+    "MediaFileSystems.DocumentRepresentation": "Một phương tiện truyền thông đại diện cho thông tin đại diện công cộng là cần thiết."
+  }
+}

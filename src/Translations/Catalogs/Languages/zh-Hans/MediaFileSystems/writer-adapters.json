@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "媒体表示的映像不能为 null。",
+    "MediaFileSystems.RepresentationCountOverflow": "媒体表示的计数超出了支持的有符号整数范围。",
+    "MediaFileSystems.WriterAdapterId": "必须提供媒体映像写入组件的标识符。",
+    "MediaFileSystems.WriterAdapterFormats": "目标格式标识符不能为空 。",
+    "MediaFileSystems.WriterAdapterExtensions": "输出扩展不能为空 。",
+    "MediaFileSystems.WriterAdapterCallbacks": "必须提供媒体写入组件的验证和输出回调。",
+    "MediaFileSystems.WriterAdapterPath": "必须提供媒体写入组件的输出路径。",
+    "MediaFileSystems.WriterAdapterRepresentation": "写入组件 '{0}' 无法提取所需的媒体表示。",
+    "MediaFileSystems.WriterAdapterTarget": "写入组件 '{0}' 不接受扩展名为 '{2}' 的目标格式 '{1}'。",
+    "MediaFileSystems.WriterAdapterProduced": "写入组件 '{0}' 未报告有效的输出文件。",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore source格式为\"{0}\",没有几何转换就无法被写入\"{1}\"."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Bildet har ingen støttet AmigaDOS oppstartsblokk.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS oppstartsvariant {0} støttes ikke.",
+    "Media.AmigaInvalidRoot": "AmigaDOS rotblokk {0} er ugyldig.",
+    "Media.AmigaRootChecksum": "AmigaDOS rotblokk {0} har en ugyldig kontrollsum.",
+    "Media.AmigaDirectoryChain": "AmigaDOS-katalogkjeden ved blokk {0} er ugyldig eller syklisk.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS-katalogoppføringsblokk {0} mangler.",
+    "Media.AmigaMissingData": "AmigaDOS-fildatablokk {0} mangler.",
+    "Media.AmigaOfsType": "OFS datablokk {0} har uventet type {1}.",
+    "Media.AmigaDataChecksum": "OFS datablokk {0} har en ugyldig kontrollsum.",
+    "Media.AmigaInvalidExtension": "AmigaDOS-filutvidelsesblokk {0} er ugyldig, syklisk eller mangler.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS-filutvidelsesblokk {0} har ugyldig struktur eller kontrollsum.",
+    "Media.AmigaTruncatedFile": "AmigaDOS-filinnholdet er avkortet: forventet {0} bytes, les {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS punktgrafikkblokk {0} mangler.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS punktgrafikkblokk {0} har en ugyldig kontrollsum.",
+    "Media.AmigaDepth": "AmigaDOS-katalogens dybdegrense ble nådd på dybde {0}.",
+    "Media.AmigaRecovered": "Gjenopprettet {0} AmigaDOS katalogoppføringer fra gyldige overskrifter fordi rotblokken ikke er tilgjengelig.",
+    "Media.AmigaWriterVariant": "AmigaDOS-variant {0} kan ikke opprettes av denne modulen.",
+    "Media.AmigaWriterGeometry": "Bildeformat {0} er ikke en støttet AmigaDOS-geometri.",
+    "Media.AmigaDiskFull": "AmigaDOS volum har utilstrekkelige frie blokker.",
+    "Media.AmigaInvalidEntry": "Migrasjon {0} kan ikke representeres på AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS blokk {0} er ufullstendig: {1} bytes er tilgjengelig.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS-blokk {0} har ugyldig registrert integritet.",
+    "Media.AmigaFileSize": "AmigaDOS-fillengde {0} overstiger det støttede området."
+  }
+}

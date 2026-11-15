@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Het schijfkopiebestand bevat geen {0}-volume; waargenomen signatuur: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: blok {2} van fork {1} ontbreekt.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1} bevat {2} bytes; verwacht werden {3}.",
+    "MediaFileSystems.MacAllocationSize": "De allocatiegrootte {1} van volume {0} moet een positief veelvoud van {2} bytes zijn.",
+    "MediaFileSystems.MacFreeCount": "Volume {0} geeft {1} vrije allocatieblokken aan, van in totaal {2}.",
+    "MediaFileSystems.MfsMapTruncated": "De MFS-allocatietabel voor {0} allocaties bevat {1} bytes; {2} vereist.",
+    "MediaFileSystems.MfsDirectoryEntry": "De MFS-directoryvermelding in blok {0}, op positie {1}, is ongeldig.",
+    "MediaFileSystems.MfsChain": "{0}: de allocatieketen van fork {1} is ongeldig (lus={2}, buiten tabel={3}, voortijdig einde={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1} geeft {2} bytes vanaf cluster {3} aan; de metadata zijn inconsistent.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-bestand"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Apple DOS-katalogen som VTOC på spår {0}, sektor {1} hänvisar till saknas eller är ogiltig.",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS-katalogsektor {0}/{1} saknas eller ingår i en cykel.",
+    "MediaFileSystems.AppleDosAddress": "Apple DOS-adress {1}/{2} för {0} ligger utanför diskgeometrin.",
+    "MediaFileSystems.AppleDosListCycle": "Spår-/sektorlistan för {0} innehåller en cykel vid {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Spår-/sektorlistan för {0} saknas vid {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Datasektorn {1}/{2} för {0} saknas.",
+    "MediaFileSystems.AppleDosSize": "Fil {0} anger {1} sektorer, men {2} sektorer har gåtts igenom.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS-målformat {0} stöds inte.",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOS-volymen har inte tillräckligt med katalog- eller datasektorer.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS volymnamn {0} måste använda DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS stöder endast filer med tillgängligt innehåll i rotkatalogen.",
+    "MediaFileSystems.AppleDosBinarySize": "En Apple DOS binär fil kan inte överstiga 65535 byte.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS-filnamn {0} kan inte kodas i en katalogpost.",
+    "MediaFileSystems.AppleDosTypeText": "Text",
+    "MediaFileSystems.AppleDosTypeBinary": "Binär",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relokerbar",
+    "MediaFileSystems.AppleDosTypeFile": "Fil"
+  }
+}

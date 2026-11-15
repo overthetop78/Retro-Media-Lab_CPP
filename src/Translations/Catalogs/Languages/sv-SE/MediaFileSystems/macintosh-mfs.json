@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Diskavbildningen innehåller ingen {0}-volym; registrerad signatur: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: block {2} i fork {1} saknas.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1} innehåller {2} byte; förväntat antal är {3}.",
+    "MediaFileSystems.MacAllocationSize": "Allokeringsstorleken {1} för volym {0} måste vara en positiv multipel av {2} byte.",
+    "MediaFileSystems.MacFreeCount": "Volym {0} anger {1} lediga allokeringsblock av totalt {2}.",
+    "MediaFileSystems.MfsMapTruncated": "MFS-kartan för {0} allokeringar innehåller {1} byte; {2} krävs.",
+    "MediaFileSystems.MfsDirectoryEntry": "MFS-katalogposten i block {0}, på position {1}, är ogiltig.",
+    "MediaFileSystems.MfsChain": "{0}: allokeringskedjan för fork {1} är ogiltig (slinga={2}, utanför kartan={3}, för tidigt slut={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1} anger {2} byte från kluster {3}; metadata är inkonsekventa.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-fil"
+  }
+}

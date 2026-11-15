@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "The CP/M disk layout is not supported for format {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "The image does not contain a supported CP/M directory for format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M allocation block {1} at offset {2} is outside the {3}-byte image.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M allocation block {1} crosses a missing logical block.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M allocation block {1} crosses a truncated logical block.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M allocation block {1} is referenced more than once.",
+    "MediaFileSystems.CpmImageMissing": "CP/M image contains {0} missing logical blocks.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M image contains {0} truncated logical blocks.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M layout is invalid (directory offset={0}, allocation origin={1}, directory entries={2}, allocation size={3}, directory blocks={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M user {0}"
+  }
+}

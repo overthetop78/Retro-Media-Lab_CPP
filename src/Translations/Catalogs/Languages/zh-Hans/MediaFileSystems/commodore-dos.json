@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "图像格式\"{0}\"并不包含一个支持的 CBM DOS 文件系统.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS目录链在{0}/{1}时是循环的.",
+    "MediaFileSystems.CbmDirectoryMissing": "缺少 CBM DOS 目录扇区{0}/{1} 。",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS 目录扇区{0}/{1} 只包含{2}字节.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS 目录坐标为{0}/{1} 无效 。",
+    "MediaFileSystems.CbmFileCycle": "{0}: 链条在{1}/{2}是循环的。",
+    "MediaFileSystems.CbmFileCoordinate": "{0}:坐标{1}/{2}无效。",
+    "MediaFileSystems.CbmFileTruncated": "{0}: 扇区{1}/{2}已截断 。",
+    "MediaFileSystems.CbmFileMissing": "{0}: 扇区{1}/{2}已丢失 。",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: 最终数{1}无效 。",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS 链已超过图像容量.",
+    "MediaFileSystems.CbmBamMissing": "{0}/{1}需要的 CBM DOS BAM 缺少。",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1}被缩短为{2}字节.",
+    "MediaFileSystems.PetsciiLength": "PETSCII 字段长度{0} 不得为负数 。",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII 值超过{0} 字符 。",
+    "MediaFileSystems.PetsciiCharacter": "字符\"{0}\"不能被支持的PETSCII子集所代表.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, 未关闭",
+    "MediaFileSystems.CbmTypeLocked": "{0}, 已锁定",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, 未关闭, 已锁定"
+  }
+}

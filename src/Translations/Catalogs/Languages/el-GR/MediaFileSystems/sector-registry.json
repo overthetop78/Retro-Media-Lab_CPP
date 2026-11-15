@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Ο αναγνώστης του συστήματος αρχείων στο ευρετήριο {0} είναι μηδενικός.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Ο αναγνώστης συστήματος αρχείων στο ευρετήριο {0} έχει ένα κενό αναγνωριστικό.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Πολλαπλοί αναγνώστες συστημάτων αρχείων έχουν αναγνωριστικό '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Κανένας αναγνώστης συστήματος αρχείων δεν έχει αναγνωριστικό '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Μια εικόνα τομέα δεν μπορεί να είναι άκυρη.",
+    "MediaFileSystems.AtariKFileUnsupported": "Η εικόνα τομέα δεν είναι ένας δίσκος Atari K-file χρησιμοποιώντας KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Η εικόνα τομέα δεν περιέχει ένα πλήρες πρόγραμμα εκκίνησης Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Η εικόνα του τομέα δεν είναι ένας δίσκος γραφικών-βιβλιοθήκης Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Ο κατάλογος δηλώνει {0} bytes, αλλά η αλυσίδα τομέα περιέχει {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Γραφικό Atari CLK"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "الصورة {0} ذات القطاعات بحجم {1} بايت لا تحتوي على دليل Atari DOS مدعوم.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "قطاع الدليل {0} مفقود",
+    "MediaFileSystems.AtariDosDirectoryEntry": "القطاع {0} من الدليل، الإدخال {1}، ليس إدخال ملف Atari DOS صالحًا وتم تجاهله.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: قطاع بيانات Atari DOS رقم {1} مفقود.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: سلسلة بيانات  Atari DOS هي دورية في القطاع {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: القطاع {1} ملك للملف {3}، المتوقع {2}.",
+    "MediaFileSystems.AtariDosOpen": "الإدخال {2} ('{0}') في قطاع الدليل {1} ما زال مفتوحًا للكتابة وتم تجاهله.",
+    "MediaFileSystems.AtariDosTruncated": "قطاع البيانات {1} للملف '{0}' أقصر من أن يحتوي على رابط السلسلة.",
+    "MediaFileSystems.AtariDosPremature": "يعلن الملف '{0}' عن {1} قطاعًا، لكن سلسلته تنتهي بعد {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "يشير الملف الفارغ '{0}' بصورة غير متوقعة إلى القطاع {1}.",
+    "MediaFileSystems.AtariDosBounded": "اقتصر الملف '{0}' على {1} من القطاعات المعلنة في الدليل، بينما تستمر السلسلة عند القطاع {2}.",
+    "MediaFileSystems.AtariDosShared": "يشارك الملف '{0}' عدد {3} من القطاعات بدءًا من القطاع {2} مع الملف '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "يعلن قطاع البيانات {1} للملف '{0}' عن {2} بايت، لكن المتاح هو {3} فقط."
+  }
+}

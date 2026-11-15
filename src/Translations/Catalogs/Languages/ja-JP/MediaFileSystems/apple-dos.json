@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "VTOCがトラック{0}、セクター{1}で参照するApple DOSカタログが見つからないか、無効です。",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOSカタログのセクター{0}/{1}が見つからないか、ループの一部になっています。",
+    "MediaFileSystems.AppleDosAddress": "{0}のApple DOSアドレス{1}/{2}はディスクジオメトリの範囲外です。",
+    "MediaFileSystems.AppleDosListCycle": "{0}のトラック／セクターリストは{1}/{2}でループしています。",
+    "MediaFileSystems.AppleDosListMissing": "{0}のトラック／セクターリストが{1}/{2}にありません。",
+    "MediaFileSystems.AppleDosDataMissing": "{0}のデータセクター{1}/{2}が見つかりません。",
+    "MediaFileSystems.AppleDosSize": "ファイル{0}は{1}セクターを宣言していますが、{2}セクターが走査されました。",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOSの出力形式{0}はサポートされていません。",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOSボリュームのカタログまたはデータ用セクターが不足しています。",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOSのボリューム名{0}はDOS-nnn形式でなければなりません。",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOSでは、ルートカタログ内に内容が利用可能なファイルのみを格納できます。",
+    "MediaFileSystems.AppleDosBinarySize": "Apple DOSのバイナリファイルは65535バイトを超えることはできません。",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOSのファイル名{0}をカタログエントリにエンコードできません。",
+    "MediaFileSystems.AppleDosTypeText": "テキスト",
+    "MediaFileSystems.AppleDosTypeBinary": "バイナリ",
+    "MediaFileSystems.AppleDosTypeRelocatable": "再配置可能",
+    "MediaFileSystems.AppleDosTypeFile": "ファイル"
+  }
+}

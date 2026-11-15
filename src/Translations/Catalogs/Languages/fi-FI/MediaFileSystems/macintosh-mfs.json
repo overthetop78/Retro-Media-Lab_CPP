@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Levykuva ei sisällä taltiota {0}; havaittu tunniste: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: tiedostovirran {1} lohko {2} puuttuu.",
+    "MediaFileSystems.MacIncompleteData": "{0}: tiedostovirta {1} sisältää {2} tavua; odotettu määrä on {3}.",
+    "MediaFileSystems.MacAllocationSize": "Taltion {0} varauskoon {1} on oltava {2} tavun monikerta ja suurempi kuin nolla.",
+    "MediaFileSystems.MacFreeCount": "Taltio {0} ilmoittaa {1} vapaata varauslohkoa yhteensä {2} lohkosta.",
+    "MediaFileSystems.MfsMapTruncated": "MFS-kartta {0} varaukselle sisältää {1} tavua; tarvitaan {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "MFS-hakemistomerkintä lohkossa {0}, siirtymässä {1}, on virheellinen.",
+    "MediaFileSystems.MfsChain": "{0}: tiedostovirran {1} varausketju on virheellinen (silmukka={2}, kartan ulkopuolella={3}, ennenaikainen loppu={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: tiedostovirta {1} ilmoittaa {2} tavua klusterista {3} alkaen; metatiedot ovat ristiriitaisia.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-tiedosto"
+  }
+}

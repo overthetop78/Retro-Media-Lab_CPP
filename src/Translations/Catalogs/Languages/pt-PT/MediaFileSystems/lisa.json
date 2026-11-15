@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "A imagem de disco não contém nenhum sistema de ficheiros Lisa com etiquetas entre as suas {0} páginas.",
+    "MediaFileSystems.LisaMissingPage": "A página {1} está em falta no ficheiro Lisa 0x{0}.",
+    "MediaFileSystems.LisaTruncatedMddf": "A página Lisa MDDF contém {0} bytes; são necessários {1}.",
+    "MediaFileSystems.LisaInvalidTag": "O bloco lógico Lisa {0} tem uma etiqueta de {1} bytes; são necessários {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "O ficheiro Lisa 0x{0} contém várias cópias da página {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Não é possível determinar o espaço livre de Lisa sem etiquetas utilizáveis.",
+    "MediaFileSystems.LisaFileDescription": "Ficheiro Lisa ${0}"
+  }
+}

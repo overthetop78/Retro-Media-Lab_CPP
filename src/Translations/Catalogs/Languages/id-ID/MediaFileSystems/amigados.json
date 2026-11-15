@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Citra tidak memiliki blok boot AmigaDOS yang didukung.",
+    "Media.AmigaUnsupportedVariant": "varian boot AmigaDOS {0} tidak didukung.",
+    "Media.AmigaInvalidRoot": "Akar blok AmigaDOS {0} tak valid.",
+    "Media.AmigaRootChecksum": "Akar blok AmigaDOS {0} memiliki checksum yang tidak valid.",
+    "Media.AmigaDirectoryChain": "Rantai direktori AmigaDOS pada blok {0} tidak valid atau siklik.",
+    "Media.AmigaMissingDirectoryEntry": "Masukan direktori AmigaDOS blok {0} hilang.",
+    "Media.AmigaMissingData": "AmigaDOS berkas data blok {0} hilang.",
+    "Media.AmigaOfsType": "Blok data OFS {0} memiliki tipe tak terduga {1}.",
+    "Media.AmigaDataChecksum": "Blok data OFS {0} memiliki checksum tidak valid.",
+    "Media.AmigaInvalidExtension": "Berkas ekstensi AmigaDOS blok {0} tidak valid, siklik atau hilang.",
+    "Media.AmigaExtensionChecksum": "Berkas ekstensi AmigaDOS blok {0} memiliki struktur atau checksum tidak valid.",
+    "Media.AmigaTruncatedFile": "Isi berkas AmigaDOS terpotong: diharapkan {0} byte, terbaca {1}.",
+    "Media.AmigaMissingBitmap": "Blok bitmap AmigaDOS {0} hilang.",
+    "Media.AmigaBitmapChecksum": "Blok bitmap AmigaDOS {0} memiliki checksum tidak valid.",
+    "Media.AmigaDepth": "Batas kedalaman direktori AmigaDOS dicapai pada kedalaman {0}.",
+    "Media.AmigaRecovered": "Memulihkan {0} entri katalog AmigaDOS dari header yang valid karena blok root tidak tersedia.",
+    "Media.AmigaWriterVariant": "varian AmigaDOS {0} tidak dapat dibuat oleh modul ini.",
+    "Media.AmigaWriterGeometry": "Format gambar {0} bukan geometri AmigaDOS yang didukung.",
+    "Media.AmigaDiskFull": "Target AmigaDOS volume memiliki blok bebas tidak cukup.",
+    "Media.AmigaInvalidEntry": "Entri migrasi {0} tidak dapat diwakili di AmigaDOS.",
+    "Media.AmigaShortBlock": "Blok AmigaDOS {0} tidak lengkap: {1} bytes tersedia.",
+    "Media.AmigaRecordedIntegrity": "Blok AmigaDOS {0} memiliki integritas rekaman tidak valid.",
+    "Media.AmigaFileSize": "Panjang berkas AmigaDOS {0} melebihi jangkauan yang didukung."
+  }
+}

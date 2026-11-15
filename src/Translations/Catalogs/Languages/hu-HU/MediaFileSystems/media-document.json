@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "A média forrása nem lehet nulla.",
+    "MediaFileSystems.ContextSourcePath": "Az elsődleges médiaforrás útvonal nem lehet üres vagy fehér tér.",
+    "MediaFileSystems.ContextPageSize": "Az elismerési oldal méretének pozitívnak kell lennie.",
+    "MediaFileSystems.ContextKnownLength": "Az ismert forráshossz nem lehet negatív.",
+    "MediaFileSystems.ContextLengthOverflow": "A médiaforrás hossza meghaladja a támogatott aláírt tartományt.",
+    "MediaFileSystems.ContextReadOffset": "Az elismerés nem lehet negatív.",
+    "MediaFileSystems.ContextReadCount": "A felismerés értéke nem lehet negatív.",
+    "MediaFileSystems.ContextReadRange": "A kért tartomány meghaladja a forrás hosszát.",
+    "MediaFileSystems.ContextFullRead": "A teljes forrás nem tölthető be egyetlen memória pufferbe. Használata határolt olvasatok helyett.",
+    "MediaFileSystems.ContextPageEnded": "A médiaforrás byte {0} -nél ért véget, miközben egy tárolt oldalt olvasott.",
+    "MediaFileSystems.DocumentFormatId": "Elismert formátumazonosító szükséges.",
+    "MediaFileSystems.DocumentRepresentation": "Szükség van a média képviseletére és a nyilvánosság tájékoztatására."
+  }
+}

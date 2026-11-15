@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "كتلة معلومات وحدة التخزين {0} مفقودة أو حجمها غير صالح.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "كتلة الدليل {0} مفقودة أو حجمها غير صالح.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: تدفق البيانات: الكتلة {1} مفقودة أو حجمها غير صالح.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: تدفق البيانات يحتوي على {1} بايت؛ المتوقع {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: تدفق البيانات يعلن عن {1} بايت بدءًا من العنقود {2}؛ البيانات الوصفية غير متسقة.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: سلسلة تخصيص تدفق البيانات تحتوي على دورة.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: سلسلة تخصيص تدفق البيانات تشير إلى خارج خريطة التخصيص.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: سلسلة تخصيص تدفق البيانات تنتهي قبل توفر جميع العناقيد المطلوبة.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: تدفق الموارد: الكتلة {1} مفقودة أو حجمها غير صالح.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: تدفق الموارد يحتوي على {1} بايت؛ المتوقع {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: تدفق الموارد يعلن عن {1} بايت بدءًا من العنقود {2}؛ البيانات الوصفية غير متسقة.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: سلسلة تخصيص تدفق الموارد تحتوي على دورة.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: سلسلة تخصيص تدفق الموارد تشير إلى خارج خريطة التخصيص.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: سلسلة تخصيص تدفق الموارد تنتهي قبل توفر جميع العناقيد المطلوبة."
+  }
+}

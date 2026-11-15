@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Het RT-11-startblok is ongeldig (signatuur '{0}', mapblok {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11 segment {0} bij blok {1} heeft een buiten bereik segmentnummer.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} in blok {1} vormt een cyclus.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11-segment {0} in blok {1} ligt buiten de schijfafbeelding.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segment {0} op blok {1} heeft een ontbrekend of afgekapt blokpaar.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11-segment {0} geeft een ongeldige recordgrootte van {1} bytes aan.",
+    "MediaFileSystems.Rt11EmptyName": "De RT-11 ingang op datablok {0}, offset {1}, heeft een lege naam.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11-blokken ontbreken of zijn afgekapt: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Voorlopig RT-11-bestand",
+    "MediaFileSystems.Rt11Permanent": "RT-11-bestand"
+  }
+}

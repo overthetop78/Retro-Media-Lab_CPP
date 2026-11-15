@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Джерело не може бути нульцем.",
+    "MediaFileSystems.ContextSourcePath": "Не може бути порожній або білий простір.",
+    "MediaFileSystems.ContextPageSize": "Розмір сторінки визнання повинен бути позитивним.",
+    "MediaFileSystems.ContextKnownLength": "Відоме джерело не може бути негативним.",
+    "MediaFileSystems.ContextLengthOverflow": "Довжина джерела медіа перевищує підтримуваний діапазон.",
+    "MediaFileSystems.ContextReadOffset": "Не може бути негативним.",
+    "MediaFileSystems.ContextReadCount": "Не може бути негативним.",
+    "MediaFileSystems.ContextReadRange": "Вимаганий діапазон перевищує довжину джерела.",
+    "MediaFileSystems.ContextFullRead": "Повне джерело не може бути завантажене в один буфер пам'яті. Використовуйте обмежені дані замість.",
+    "MediaFileSystems.ContextPageEnded": "Під час читання кеш-сторінки медіа-редакція завершилася за допомогою пункту {0}.",
+    "MediaFileSystems.DocumentFormatId": "Визнаний ідентифікатор формата необхідно.",
+    "MediaFileSystems.DocumentRepresentation": "Необхідна інформація про публічне представлення."
+  }
+}

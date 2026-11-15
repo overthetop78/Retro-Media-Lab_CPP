@@ -1,0 +1,30 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "The ProDOS/SOS volume header in block {0} is not recognized (observed value ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS directory block {1} exceeds the maximum depth at level {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS directory block {0} is invalid (cycle={1}, reused={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS index block {2} is invalid (cycle={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS master index block {2} is invalid.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS data block {2} is missing, outside the image or has an invalid size.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): reconstructed {2} bytes out of {3} expected bytes.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS bitmap block {0} is missing or has an invalid size.",
+    "MediaFileSystems.ProDosTotal": "The ProDOS volume declares {0} blocks, but the image contains {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "The ProDOS target format '{0}' is unsupported.",
+    "MediaFileSystems.ProDosDiskFull": "The ProDOS volume does not have enough blocks or directory entries.",
+    "MediaFileSystems.ProDosGeometry": "The target ProDOS geometry or sector address map is invalid.",
+    "MediaFileSystems.ProDosEntry": "The ProDOS entry '{0}' is not writable.",
+    "MediaFileSystems.ProDosFileLength": "The ProDOS file '{0}' exceeds the 24-bit length field.",
+    "MediaFileSystems.ProDosName": "The ProDOS name '{0}' is invalid.",
+    "MediaFileSystems.ProDosTypeText": "Text",
+    "MediaFileSystems.ProDosTypeBinary": "Binary",
+    "MediaFileSystems.ProDosTypeDirectory": "Directory",
+    "MediaFileSystems.ProDosTypeBasic": "BASIC",
+    "MediaFileSystems.ProDosTypeVariables": "Variables",
+    "MediaFileSystems.ProDosTypeSystem": "System",
+    "MediaFileSystems.ProDosTypeUnknown": "ProDOS ${0}"
+  },
+  "invariants": [
+    "MediaFileSystems.ProDosTypeBasic",
+    "MediaFileSystems.ProDosTypeUnknown"
+  ]
+}

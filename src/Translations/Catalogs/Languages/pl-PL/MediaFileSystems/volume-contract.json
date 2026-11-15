@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Uruchomienie objętości musi być nienegatywne: {0}.",
+    "MediaFileSystems.VolumeLength": "Długość objętości musi być dodatnia: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Wymagane jest pochodzenie wolumenu.",
+    "MediaFileSystems.VolumePartitionNumber": "Numer partycji musi być dodatni: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Numer sesji musi być pozytywny: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Numer toru musi być dodatni: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Zakres głośności przekracza obsługiwane podpisane 64-bitowe granice.",
+    "MediaFileSystems.WholeVolumeRequired": "Sektorowy czytnik systemu plików wymaga głośności obejmującej cały obraz sektora."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Формат зображення '{0}' не містить підтримки файлової системи CBM DOS.",
+    "MediaFileSystems.CbmDirectoryCycle": "Мережа каталогів CBM DOS є циклічним на {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS каталог сектор {0}/{1} відсутні.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS каталог сектор {0}/{1} містить тільки {2} байтів.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS каталог координат {0}/{1} недійсний.",
+    "MediaFileSystems.CbmFileCycle": "{0}: ланцюг циклічний на {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: Координація {1}/{2} недійсна.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: дані сектора {1}/{2} неповні.",
+    "MediaFileSystems.CbmFileMissing": "{0}: сектор {1}/{2} відсутні.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: фінальна кількість {1} недійсна.",
+    "MediaFileSystems.CbmCapacity": "{0}: ланцюг CBM DOS перевищує місткість образу.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM потрібно на {0}/{1} відсутні.",
+    "MediaFileSystems.CbmBamTruncated": "Дані CBM DOS BAM {0}/{1} неповні: лише {2} байтів.",
+    "MediaFileSystems.PetsciiLength": "Довжина поля PETSCII {0} не повинна бути негативною.",
+    "MediaFileSystems.PetsciiTooLong": "Значення PETSCII перевищує символи {0}.",
+    "MediaFileSystems.PetsciiCharacter": "Символ '{0}' не може бути представлений підтриманим PETSCII.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, відкритий",
+    "MediaFileSystems.CbmTypeLocked": "{0}, заблокований",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, відкритий, заблокований"
+  }
+}

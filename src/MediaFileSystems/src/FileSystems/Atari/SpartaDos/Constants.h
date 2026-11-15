@@ -1,0 +1,71 @@
+#pragma once
+#include <cstdint>
+#include <limits>
+#include <string_view>
+namespace RetroMediaLab::MediaFileSystems::SpartaDos::Constants {
+inline constexpr std::string_view Id="atari-spartados",System="SpartaDOS";
+inline constexpr std::uint32_t DoubleDensitySectorSize=256;
+inline constexpr std::uint8_t TrackMask=0x7f,SideMask=0x80,AsciiMaximum=0x7f,AsciiReplacement='?';
+inline constexpr std::size_t YearIndex=2,MonthIndex=1,DayIndex=0,HourIndex=0,MinuteIndex=1,SecondIndex=2;
+inline constexpr std::int32_t YearBase=1900,LengthHighShift=16;
+inline constexpr char Null='\0',ExtensionSeparator='.';
+inline constexpr std::size_t MaximumStreamSize=std::size_t(std::numeric_limits<std::int32_t>::max());
+inline constexpr std::int32_t FirstSectorNumber=1;
+inline constexpr std::int32_t BootSectorNumber=1;
+inline constexpr std::int32_t IdentificationOffset=7;
+inline constexpr std::uint8_t Identification=0x80;
+inline constexpr std::int32_t RootDirectoryMapOffset=9;
+inline constexpr std::int32_t TotalSectorCountOffset=11;
+inline constexpr std::int32_t FreeSectorCountOffset=13;
+inline constexpr std::int32_t BitmapSectorCountOffset=15;
+inline constexpr std::int32_t FirstBitmapSectorOffset=16;
+inline constexpr std::int32_t FirstFileAllocationSectorOffset=18;
+inline constexpr std::int32_t FirstDirectoryAllocationSectorOffset=20;
+inline constexpr std::int32_t VolumeNameOffset=22;
+inline constexpr std::int32_t VolumeNameLength=8;
+inline constexpr std::int32_t TrackCountOffset=30;
+inline constexpr std::int32_t SectorSizeOffset=31;
+inline constexpr std::uint8_t DoubleDensitySectorSizeCode=0;
+inline constexpr std::uint8_t SingleDensitySectorSizeCode=128;
+inline constexpr std::int32_t VersionOffset=32;
+inline constexpr std::uint8_t Version1=0x10;
+inline constexpr std::uint8_t Version2=0x20;
+inline constexpr std::int32_t VolumeSequenceOffset=38;
+inline constexpr std::int32_t VolumeRandomOffset=39;
+inline constexpr std::int32_t BootFileMapOffset=40;
+inline constexpr std::int32_t WriteLockOffset=42;
+inline constexpr std::uint8_t WriteLocked=0xff;
+inline constexpr std::int32_t MinimumBootSectorLength=WriteLockOffset + 1;
+inline constexpr std::int32_t SectorMapNextOffset=0;
+inline constexpr std::int32_t SectorMapPreviousOffset=2;
+inline constexpr std::int32_t SectorMapDataOffset=4;
+inline constexpr std::int32_t SectorNumberSize=sizeof(std::uint16_t);
+inline constexpr std::int32_t DirectoryEntrySize=23;
+inline constexpr std::int32_t DirectoryHeaderLengthOffset=3;
+inline constexpr std::int32_t DirectoryHeaderNameOffset=6;
+inline constexpr std::int32_t DirectoryHeaderNameLength=8;
+inline constexpr std::int32_t DirectoryFirstEntryOffset=DirectoryEntrySize;
+inline constexpr std::int32_t DirectoryStatusOffset=0;
+inline constexpr std::int32_t DirectoryMapOffset=1;
+inline constexpr std::int32_t DirectoryLengthOffset=3;
+inline constexpr std::int32_t DirectoryNameOffset=6;
+inline constexpr std::int32_t DirectoryNameLength=8;
+inline constexpr std::int32_t DirectoryExtensionOffset=14;
+inline constexpr std::int32_t DirectoryExtensionLength=3;
+inline constexpr std::int32_t DirectoryDateOffset=17;
+inline constexpr std::int32_t DirectoryTimeOffset=20;
+inline constexpr std::int32_t PackedLengthSize=3;
+inline constexpr std::int32_t DateFieldLength=3;
+inline constexpr std::int32_t TimeFieldLength=3;
+inline constexpr std::uint8_t NamePadding=0x20;
+inline constexpr std::string_view VolumeAttribute="spartados";
+inline constexpr std::string_view Version1Attribute="version-1";
+inline constexpr std::string_view Version2Attribute="version-2";
+inline constexpr std::string_view WriteProtectedAttribute="write-protected";
+inline constexpr std::string_view ProtectedAttribute="protected";
+inline constexpr std::string_view HiddenAttribute="hidden";
+inline constexpr std::string_view ArchivedAttribute="archived";
+inline constexpr std::string_view SparseAttribute="sparse";
+inline constexpr std::string_view DirectoryNativeType="directory";
+inline constexpr std::string_view FileNativeType="file";
+}

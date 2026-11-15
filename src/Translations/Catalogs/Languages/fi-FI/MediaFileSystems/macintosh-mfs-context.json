@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Taltion tietolohko {0} puuttuu tai sen koko on virheellinen.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Hakemistolohko {0} puuttuu tai sen koko on virheellinen.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: datavirta: lohko {1} puuttuu tai sen koko on virheellinen.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: datavirta sisältää {1} tavua; odotettu määrä on {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: datavirta ilmoittaa {1} tavua klusterista {2} alkaen; metatiedot ovat ristiriitaisia.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: datavirta: varausketju sisältää silmukan.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: datavirta: varausketju viittaa varauskartan ulkopuolelle.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: datavirta: varausketju päättyy ennen kuin kaikki tarvittavat klusterit ovat saatavilla.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: resurssivirta: lohko {1} puuttuu tai sen koko on virheellinen.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: resurssivirta sisältää {1} tavua; odotettu määrä on {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: resurssivirta ilmoittaa {1} tavua klusterista {2} alkaen; metatiedot ovat ristiriitaisia.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: resurssivirta: varausketju sisältää silmukan.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: resurssivirta: varausketju viittaa varauskartan ulkopuolelle.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: resurssivirta: varausketju päättyy ennen kuin kaikki tarvittavat klusterit ovat saatavilla."
+  }
+}

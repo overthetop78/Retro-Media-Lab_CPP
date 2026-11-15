@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Der ProDOS/SOS-Volume-Header in Block {0} wird nicht erkannt (gelesener Wert ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS-Verzeichnisblock {1} überschreitet die maximale Tiefe auf Ebene {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS-Verzeichnisblock {0} ist ungültig (Zyklus={1}, wiederverwendet={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS-Indexblock {2} ist ungültig (Zyklus={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS Master Index Block {2} ist ungültig.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS-Datenblock {2} fehlt, liegt außerhalb des Datenträgerabbilds oder hat eine ungültige Größe.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): rekonstruierte {2} Bytes aus {3} erwarteten Bytes.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS Bitmap Block {0} fehlt oder hat eine ungültige Größe.",
+    "MediaFileSystems.ProDosTotal": "Das ProDOS-Volume deklariert {0} Blöcke, aber das Datenträgerabbild enthält {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Das ProDOS-Zielformat '{0}' wird nicht unterstützt.",
+    "MediaFileSystems.ProDosDiskFull": "Das ProDOS-Volume hat nicht genügend Blöcke oder Verzeichniseinträge.",
+    "MediaFileSystems.ProDosGeometry": "Die Ziel-ProDOS-Geometrie- oder Sektoradresskarte ist ungültig.",
+    "MediaFileSystems.ProDosEntry": "Der ProDOS-Eintrag '{0}' ist nicht beschreibbar.",
+    "MediaFileSystems.ProDosFileLength": "Die ProDOS-Datei '{0}' überschreitet das Feld mit 24 Bit Länge.",
+    "MediaFileSystems.ProDosName": "Der ProDOS-Name '{0}' ist ungültig.",
+    "MediaFileSystems.ProDosTypeText": "Text",
+    "MediaFileSystems.ProDosTypeBinary": "Binär",
+    "MediaFileSystems.ProDosTypeDirectory": "Verzeichnis",
+    "MediaFileSystems.ProDosTypeVariables": "Variablen",
+    "MediaFileSystems.ProDosTypeSystem": "System"
+  }
+}

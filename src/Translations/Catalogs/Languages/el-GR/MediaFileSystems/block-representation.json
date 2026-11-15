@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Μια διεύθυνση εύρους δεδομένων πολυμέσων δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.BlockRangeLength": "Ένα εύρος δεδομένων πολυμέσων πρέπει να είναι θετικό.",
+    "MediaFileSystems.BlockSourceOffset": "Ένα εύρος δεδομένων πολυμέσων δεν μπορεί να είναι αρνητικό.",
+    "MediaFileSystems.BlockSourceNull": "Ένα αποθηκευμένο εύρος μέσων απαιτεί μια πηγή δεδομένων.",
+    "MediaFileSystems.BlockSourceRange": "Το χαρτογραφημένο εύρος υπερβαίνει την πηγή δεδομένων του.",
+    "MediaFileSystems.BlockNonStoredSource": "Μόνο τα αποθηκευμένα πεδία μπορούν να αναφέρουν μια πηγή δεδομένων.",
+    "MediaFileSystems.BlockNonStoredOffset": "Ένα μη αποθηκευμένο εύρος δεν μπορεί να έχει αντιστάθμιση πηγής.",
+    "MediaFileSystems.BlockLogicalLength": "Το λογικό μήκος των μέσων δεν μπορεί να είναι αρνητικό.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Το λογικό μέγεθος του μπλοκ πρέπει να είναι θετικό.",
+    "MediaFileSystems.BlockCompleteBlocks": "Το λογικό μήκος πρέπει να περιέχει πλήρη λογικά μπλοκ.",
+    "MediaFileSystems.BlockGeometryOutside": "Η δηλωμένη γεωμετρία υπερβαίνει τη λογική ικανότητα των μέσων ενημέρωσης.",
+    "MediaFileSystems.BlockRangeOutside": "Ένα εύρος μπλοκ υπερβαίνει το λογικό μήκος των μέσων.",
+    "MediaFileSystems.BlockRangeOverlap": "Δεν πρέπει να αλληλεπικαλύπτονται τα όρια των φραγμών.",
+    "MediaFileSystems.BlockReadAddress": "Η λογική διεύθυνση ανάγνωσης δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.BlockReadRange": "Το ζητούμενο λογικό εύρος υπερβαίνει την ικανότητα των μέσων ενημέρωσης.",
+    "MediaFileSystems.BlockRangeMissing": "Κανένα εύρος δεδομένων πολυμέσων δεν καλύπτει τη λογική διεύθυνση {0}.",
+    "MediaFileSystems.BlockUnavailable": "Η λογική διεύθυνση {0} δεν είναι διαθέσιμη στην εικόνα πηγής.",
+    "MediaFileSystems.BlockRangeKind": "Μη υποστηριζόμενο είδος εύρους δεδομένων πολυμέσων {0}.",
+    "MediaFileSystems.BlockOverflow": "Ο υπολογισμός του μπλοκ των μέσων ενημέρωσης υπερβαίνει το υποστηριζόμενο υπογεγραμμένο εύρος.",
+    "MediaFileSystems.BlockGeometryValue": "Η παράμετρος γεωμετρίας του σκληρού δίσκου {0} πρέπει να είναι θετική.",
+    "MediaFileSystems.BlockDriveCount": "Η μηχανική πρόσβαση πρέπει να καλύπτει θετικό αριθμό bytes.",
+    "MediaFileSystems.BlockNullImage": "Απαιτείται εικόνα μπλοκ."
+  }
+}

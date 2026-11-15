@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Levykuvan {0} sivulla ei ole tunnisteilla varustettua Lisa-tiedostojärjestelmää.",
+    "MediaFileSystems.LisaMissingPage": "Lisa-tiedostosta 0x{0} puuttuu sivu {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF -sivu sisältää {0} tavua; vaaditaan {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Loogisessa Lisa-lohkossa {0} on {1} tavun tunniste; vaaditaan {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa-tiedosto 0x{0} sisältää useita kopioita sivusta {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Lisan vapaata tilaa ei voi määrittää ilman käyttökelpoisia tunnisteita.",
+    "MediaFileSystems.LisaFileDescription": "Lisa-tiedosto ${0}"
+  }
+}

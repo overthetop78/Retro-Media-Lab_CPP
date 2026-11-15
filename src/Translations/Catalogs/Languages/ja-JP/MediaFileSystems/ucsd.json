@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "ブロック{0}のUCSDディレクトリは認識されません。無効なブロック:{1}。",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD ブロックが存在しないか、途中で切れています: {1}。",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System のディレクトリブロックが存在しないか、途中で切れています: {0}。",
+    "MediaFileSystems.UcsdInvalidName": "UCSD エントリー {0} は無効な名前 '{1}' を持っています。",
+    "MediaFileSystems.UcsdRange": "UCSD エントリ {0} ('{1}') は全 {4} ブロック中で無効な範囲 [{2}, {3}) を使用しています。",
+    "MediaFileSystems.UcsdOverlap": "UCSD エントリ {0} ('{1}') はブロック {2} と重複しています。",
+    "MediaFileSystems.UcsdCount": "UCSD ディレクトリは {0} ファイルを宣言しますが、 {1} の有効なエントリが見つかりました。",
+    "MediaFileSystems.UcsdLastBytes": "{0}: 最終的なUCSDブロックは{1}バイトを宣言します。",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD 型なしファイル",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD外部ディスクファイル",
+    "MediaFileSystems.UcsdTypeCode": "UCSDコードファイル",
+    "MediaFileSystems.UcsdTypeText": "UCSDテキストファイル",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD情報ファイル",
+    "MediaFileSystems.UcsdTypeData": "UCSDデータファイル",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSDのグラフィック ファイル",
+    "MediaFileSystems.UcsdTypePhoto": "UCSDの写真ファイル",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSDセキュアディレクトリ"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Η πηγή των μέσων ενημέρωσης δεν μπορεί να είναι μηδενική.",
+    "MediaFileSystems.ContextSourcePath": "Η κύρια διαδρομή πηγής μέσων δεν μπορεί να είναι κενή ή κενός χώρος.",
+    "MediaFileSystems.ContextPageSize": "Το μέγεθος της σελίδας αναγνώρισης πρέπει να είναι θετικό.",
+    "MediaFileSystems.ContextKnownLength": "Το γνωστό μήκος πηγής δεν μπορεί να είναι αρνητικό.",
+    "MediaFileSystems.ContextLengthOverflow": "Το μήκος της πηγής μέσων υπερβαίνει το υποστηριζόμενο υπογεγραμμένο εύρος.",
+    "MediaFileSystems.ContextReadOffset": "Η αναγνώρισή της δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.ContextReadCount": "Η αναγνώρισή του δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.ContextReadRange": "Το ζητούμενο εύρος υπερβαίνει το μήκος της πηγής.",
+    "MediaFileSystems.ContextFullRead": "Η πλήρης πηγή δεν μπορεί να φορτωθεί σε μία ενδιάμεση μνήμη. Χρησιμοποιήστε οριοθετημένες διαβάσεις αντ 'αυτού.",
+    "MediaFileSystems.ContextPageEnded": "Η πηγή των μέσων τελείωσε στο byte {0} ενώ διάβαζε μια κρυφή σελίδα.",
+    "MediaFileSystems.DocumentFormatId": "Απαιτείται αναγνωρισμένο αναγνωριστικό μορφής.",
+    "MediaFileSystems.DocumentRepresentation": "Απαιτείται εκπροσώπηση των μέσων ενημέρωσης με πληροφορίες δημόσιας εκπροσώπησης."
+  }
+}

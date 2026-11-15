@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Trình đọc tập tin hệ thống tại index{0} là vô giá trị.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Trình đọc tập tin hệ thống tại index{0} có một bộ nhận diện rỗng.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Nhiều người đọc tập tin có bộ nhận diện \"{0}\".",
+    "MediaFileSystems.RegistryUnknownReaderId": "Không có máy đọc tập tin nào có khả năng nhận dạng '{0}.",
+    "MediaFileSystems.RegistryNullImage": "Một hình ảnh phân khu không thể vô hiệu hóa.",
+    "MediaFileSystems.AtariKFileUnsupported": "Hình ảnh khu vực không phải là Atari K-file ổ đĩa dùng KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Hình ảnh khu vực không chứa toàn bộ chương trình khởi động Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Hình ảnh khu vực không phải là một đĩa đồ họa Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Danh mục tuyên bố {0} byte, nhưng chuỗi phân khu chứa {1} byte.",
+    "MediaFileSystems.AtariClkGraphic": "Đồ họa Atari CLK"
+  }
+}

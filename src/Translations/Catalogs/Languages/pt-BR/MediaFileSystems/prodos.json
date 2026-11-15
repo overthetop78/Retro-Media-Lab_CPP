@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "O cabeçalho do volume ProDOS/SOS no bloco {0} não é reconhecido (valor observado ${1}).",
+    "MediaFileSystems.ProDosDepth": "O bloco de diretório ProDOS {1} excede a profundidade máxima no nível {0}.",
+    "MediaFileSystems.ProDosDirectory": "O bloco de diretório ProDOS {0} é inválido (ciclo={1}, reutilizado={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): o bloco de índice ProDOS {2} é inválido (ciclo={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): o bloco de índice mestre ProDOS {2} é inválido.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): o bloco de dados ProDOS {2} está ausente, fora da imagem de disco ou tem tamanho inválido.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): {2} bytes reconstruídos de {3} bytes esperados.",
+    "MediaFileSystems.ProDosBitmap": "O bloco de bitmap ProDOS {0} está ausente ou tem tamanho inválido.",
+    "MediaFileSystems.ProDosTotal": "O volume ProDOS declara {0} blocos, mas a imagem de disco contém {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "O formato de destino ProDOS '{0}' não é suportado.",
+    "MediaFileSystems.ProDosDiskFull": "O volume ProDOS não tem blocos ou entradas de diretório suficientes.",
+    "MediaFileSystems.ProDosGeometry": "A geometria de destino ProDOS ou o mapa de endereços de setores é inválido.",
+    "MediaFileSystems.ProDosEntry": "Não é possível gravar a entrada ProDOS '{0}'.",
+    "MediaFileSystems.ProDosFileLength": "O arquivo ProDOS '{0}' excede o campo de comprimento de 24 bits.",
+    "MediaFileSystems.ProDosName": "O nome ProDOS '{0}' é inválido.",
+    "MediaFileSystems.ProDosTypeText": "Texto",
+    "MediaFileSystems.ProDosTypeBinary": "Binário",
+    "MediaFileSystems.ProDosTypeDirectory": "Diretório",
+    "MediaFileSystems.ProDosTypeVariables": "Variáveis",
+    "MediaFileSystems.ProDosTypeSystem": "Sistema"
+  }
+}

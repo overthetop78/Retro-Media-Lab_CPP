@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Imagen '{0}' no contiene un volumen válido de SpartaDOS.",
+    "MediaFileSystems.SpartaMissingSector": "Falta el sector SpartaDOS {0}.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS sector {0} está fuera del rango 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "La cadena de mapas de sectores SpartaDOS forma un bucle en el sector {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "El mapa de sectores SpartaDOS {0} hace referencia al predecesor {2} en lugar de {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "El árbol de directorios SpartaDOS forma un bucle en el directorio cuyo mapa comienza en el sector {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "El directorio SpartaDOS en el sector {0} declara un tamaño inválido de {1} bytes."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Obraz dysku nie zawiera systemu plików Lisa ze znacznikami wśród {0} stron.",
+    "MediaFileSystems.LisaMissingPage": "W pliku Lisa 0x{0} brakuje strony {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Strona Lisa MDDF zawiera {0} bajtów; wymagane jest {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Blok logiczny Lisa {0} ma znacznik o rozmiarze {1} bajtów; wymagane jest {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Plik Lisa 0x{0} zawiera wiele kopii strony {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Nie można określić wolnego miejsca Lisa bez użytecznych znaczników.",
+    "MediaFileSystems.LisaFileDescription": "Plik Lisa ${0}"
+  }
+}

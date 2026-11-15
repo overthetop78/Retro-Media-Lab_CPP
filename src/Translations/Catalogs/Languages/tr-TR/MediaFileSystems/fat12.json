@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Geçersiz sektör görüntüsü boyutu {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Sektör resmi format tanımlayıcısı boş veya geçersizdir: {0}.",
+    "Media.SectorDuplicateBlock": "Mantıksal sektör {0} görüntüde birden fazla meydana gelir.",
+    "Media.SectorBlockOutside": "Mantık sektörü {0} {1} sektörleri içeren görüntü dışındadır.",
+    "Media.SectorCapacityShort": "Açıklama sektörü görüntü kapasitesi {0} mevcut veri uzunluğu {1}'den daha küçüktür.",
+    "Media.SectorMissingBlock": "Mantıksal sektör {0} eksik.",
+    "Media.SectorInvalidBlockSize": "Mantıksal sektör {0}, {2} yerine {1} bayt içeriyor.",
+    "Media.FatUnsupportedBoot": "Görüntü biçimi {0}, desteklenen bir FAT12 dosya sistemi içermiyor: önyükleme sektörü eksik veya kesilmiş.",
+    "Media.FatUnsupportedLayout": "Resim formatı {0} FAT12 dosya sistemi desteklenmedi (sector büyüklüğü {1}, küme başına sektörler {2}, ayırt edici sektörler {3}, FAT kopyaları {4}, kök girişleri {5}, FAT {6} başına sektörler.",
+    "Media.FatInvalidChain": "FAT {0} zinciri, küme {1}'de geçersiz veya döngüdür.",
+    "Media.FatTruncatedTable": "Küme {0} için FAT12 girdisi kesilmiş.",
+    "Media.FatMissingSectors": "Sektör aralığı {0} to {1} eksik.",
+    "Media.FatDepthLimit": "{0} konumunda FAT dizin iç içe geçme sınırına ulaşıldı (derinlik {1}).",
+    "Media.FatMissingSector": "FAT sektörü {0}, {2} yerine {1} bayt içeriyor.",
+    "Media.FatCyclicChain": "{0}: FAT12 zinciri küme {1}'de döngüdür.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 küme {1} veri aralığı dışında.",
+    "Media.FatIncompleteContent": "{0}: ilan edilen boyut {1} bytes ama sadece {2} bytes mevcuttur.",
+    "Media.FatUnsupportedGeometry": "Resim formatı {0} desteklenen bir FAT12 geometri değildir.",
+    "Media.FatDiskFull": "Hedef FAT12 biriminde yeterli boş küme veya dizin girdisi yok.",
+    "Media.FatInvalidEntry": "Göç girişi {0} bir FAT12 kısa isim girişi olarak temsil edilemez.",
+    "Media.FatDirectoryCycle": "Dizin {0}, daha önce taranmış FAT12 kümesi {1} değerini yeniden kullanıyor.",
+    "Media.FatIntegrityInvalid": "FAT sektörü {0} için kaydedilen bütünlük bilgisi geçersiz.",
+    "Media.FatResourceLimit": "FAT12 Ekstraksiyon sınırı {0}'i okurken ulaştı."
+  }
+}

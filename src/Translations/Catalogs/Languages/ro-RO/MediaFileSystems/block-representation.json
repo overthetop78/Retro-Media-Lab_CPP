@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "O adresă din gama de date media nu poate fi negativă.",
+    "MediaFileSystems.BlockRangeLength": "Lungimea intervalului de date media trebuie să fie pozitivă.",
+    "MediaFileSystems.BlockSourceOffset": "O compensare a sursei de date media nu poate fi negativă.",
+    "MediaFileSystems.BlockSourceNull": "O gamă media stocată necesită o sursă de date.",
+    "MediaFileSystems.BlockSourceRange": "Gama cartografiată depășește sursa sa de date.",
+    "MediaFileSystems.BlockNonStoredSource": "Numai intervalele stocate pot face referire la o sursă de date.",
+    "MediaFileSystems.BlockNonStoredOffset": "O gamă neamenajată nu poate avea o sursă de compensare.",
+    "MediaFileSystems.BlockLogicalLength": "Lungimea mediei logice nu poate fi negativă.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Dimensiunea logică a blocului trebuie să fie pozitivă.",
+    "MediaFileSystems.BlockCompleteBlocks": "Lungimea logică trebuie să conţină blocuri logice complete.",
+    "MediaFileSystems.BlockGeometryOutside": "Geometria declarată depășește capacitatea medie logică.",
+    "MediaFileSystems.BlockRangeOutside": "Un bloc depășește lungimea mediei logice.",
+    "MediaFileSystems.BlockRangeOverlap": "Gama de blocuri nu trebuie să se suprapună.",
+    "MediaFileSystems.BlockReadAddress": "Adresa de citire logică nu poate fi negativă.",
+    "MediaFileSystems.BlockReadRange": "Intervalul logic solicitat depășește capacitatea mass-media.",
+    "MediaFileSystems.BlockRangeMissing": "Nicio gamă de date media nu acoperă adresa logică {0}.",
+    "MediaFileSystems.BlockUnavailable": "Adresa logică {0} nu este disponibilă în imaginea sursă.",
+    "MediaFileSystems.BlockRangeKind": "Tipul nesusţinut de date media {0}.",
+    "MediaFileSystems.BlockOverflow": "Calculul blocului media depășește intervalul semnat susținut.",
+    "MediaFileSystems.BlockGeometryValue": "Parametrul geometriei discului dur {0} trebuie să fie pozitiv.",
+    "MediaFileSystems.BlockDriveCount": "Accesul mecanic trebuie să acopere un număr pozitiv de octeți.",
+    "MediaFileSystems.BlockNullImage": "Este necesară o imagine de bloc."
+  }
+}

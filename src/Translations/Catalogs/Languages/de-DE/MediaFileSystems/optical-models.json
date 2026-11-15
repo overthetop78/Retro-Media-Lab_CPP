@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Die optische logische Länge kann nicht negativ sein.",
+    "MediaFileSystems.OpticalMetadataOnly": "Dieser ältere Mediendeskriptor enthält nur Metadaten und hat keine lesbare Datenquelle.",
+    "MediaFileSystems.OpticalIndexNumber": "Die Indexnummer der optischen Spur muss zwischen 0 und 99 liegen.",
+    "MediaFileSystems.OpticalPositiveDimension": "Die optische Dimension '{0}' muss positiv sein.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Die optische Dimension '{0}' kann nicht negativ sein.",
+    "MediaFileSystems.OpticalDataSource": "Eine optische Spurdatenquelle ist erforderlich.",
+    "MediaFileSystems.OpticalUserWindow": "Das Benutzerdatenfenster überschreitet einen gespeicherten Sektor.",
+    "MediaFileSystems.OpticalTrackSource": "Die Spurdaten überschreiten ihre Quelle.",
+    "MediaFileSystems.OpticalSubchannelSource": "Subkanaldimensionen erfordern eine Subkanalquelle.",
+    "MediaFileSystems.OpticalSubchannelRange": "Die Subkanaldaten überschreiten ihre Quelle.",
+    "MediaFileSystems.OpticalPregapOffset": "Ein gespeicherter Pregap-Source-Offset erfordert gespeicherte Pregap-Sektoren.",
+    "MediaFileSystems.OpticalPregapRange": "Der gespeicherte Pregap überschreitet seine Quelle.",
+    "MediaFileSystems.OpticalStoredDestination": "Das Ziel muss genau einen gespeicherten Sektor enthalten.",
+    "MediaFileSystems.OpticalStoredPregap": "Der Sektor befindet sich außerhalb der gespeicherten Pregap.",
+    "MediaFileSystems.OpticalRelativeSector": "Der Sektor befindet sich außerhalb der optischen Spur.",
+    "MediaFileSystems.OpticalNullTrack": "Eine optische Spur kann nicht null sein."
+  }
+}

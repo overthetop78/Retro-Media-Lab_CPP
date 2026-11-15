@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENT kanoniske værdi indeholder {0} bytes; {1} er påkrævet.",
+    "Media.CoherentPointerLength": "COHERENT- blokmarkøren indeholder {0} bytes; {1} er påkrævet.",
+    "Media.CoherentInvalidSuperblock": "Billedet indeholder ikke et gyldigt COHERENT filsystem.",
+    "Media.CoherentDeclaredBlocks": "COHERENT erklærer {0} blokke, men kun {1} er tilgængelige.",
+    "Media.CoherentMissingSuperblock": "Der mangler en krævet COHERENT superblok.",
+    "Media.CoherentInodeZone": "COHERENT inodezonen slutter ved blok {0}, uden for filsystemet af {1} blokke.",
+    "Media.CoherentNullInode": "COHERENT inode nul er ugyldig.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} er uden for inodezonen af {1} bytes.",
+    "Media.CoherentFileTooLarge": "COHERENT filens længde på {0} bytes kan ikke repræsenteres i hukommelsen.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT direkte blok {1} mangler eller udenfor billedet.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT indirekte blok {1} på niveau {2} mangler eller udenfor billedet.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT indirekte blok {1} på niveau {2} refereres mere end én gang.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT mappe inode {1} danner en cyklus.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT bibliotek inode {1} er allerede blevet besøgt.",
+    "Media.CoherentChildUnreadable": "{0}: COHERENT børneinoden kan ikke læses.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT bytes mangler og forbliver placeret som nuller.",
+    "Media.CoherentDepth": "{0}: COHERENT mappens dybdegrænse blev nået ved dybde {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

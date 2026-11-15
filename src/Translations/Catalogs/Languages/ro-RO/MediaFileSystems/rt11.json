@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Blocul inițial RT-11 nu este valid (semnătura '{0}', blocul de director {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Segmentul RT-11 {0} la blocul {1} are un număr de segment în afara intervalului.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} la bloc {1} formează un ciclu.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} la bloc {1} este în afara imaginii.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segment {0} la bloc {1} are o pereche bloc lipsă sau trunchiată.",
+    "MediaFileSystems.Rt11EntrySize": "Segmentul RT-11 {0} declară o dimensiune de intrare invalidă de {1} octeţi.",
+    "MediaFileSystems.Rt11EmptyName": "Intrarea RT-11 la blocul de date {0}, offset {1}, are un nume gol.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: blocurile RT-11 lipsesc sau sunt trunchiate: {1}",
+    "MediaFileSystems.Rt11Tentative": "Fișier RT-11 provizoriu",
+    "MediaFileSystems.Rt11Permanent": "Fișier RT-11"
+  }
+}

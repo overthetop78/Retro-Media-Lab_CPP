@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "התמונה אינה מכילה בלוק אתחול AmigaDOS נתמך.",
+    "Media.AmigaUnsupportedVariant": "גרסת האתחול {0} של AmigaDOS אינה נתמכת.",
+    "Media.AmigaInvalidRoot": "בלוק השורש {0} של AmigaDOS אינו תקין.",
+    "Media.AmigaRootChecksum": "סכום הביקורת של בלוק השורש {0} של AmigaDOS אינו תקין.",
+    "Media.AmigaDirectoryChain": "שרשרת התיקייה של AmigaDOS בבלוק {0} אינה תקינה או מעגלית.",
+    "Media.AmigaMissingDirectoryEntry": "בלוק רשומת התיקייה {0} של AmigaDOS חסר.",
+    "Media.AmigaMissingData": "בלוק נתוני הקובץ {0} של AmigaDOS חסר.",
+    "Media.AmigaOfsType": "לבלוק נתוני OFS ‏{0} יש סוג לא צפוי {1}.",
+    "Media.AmigaDataChecksum": "סכום הביקורת של בלוק נתוני OFS ‏{0} אינו תקין.",
+    "Media.AmigaInvalidExtension": "בלוק הרחבת הקובץ {0} של AmigaDOS אינו תקין, מעגלי או חסר.",
+    "Media.AmigaExtensionChecksum": "המבנה או סכום הביקורת של בלוק הרחבת הקובץ {0} של AmigaDOS אינו תקין.",
+    "Media.AmigaTruncatedFile": "תוכן קובץ AmigaDOS נקטע: ציפייה ל־{0} בתים, נקראו {1}.",
+    "Media.AmigaMissingBitmap": "בלוק מפת ההקצאה {0} של AmigaDOS חסר.",
+    "Media.AmigaBitmapChecksum": "סכום הביקורת של בלוק מפת ההקצאה {0} של AmigaDOS אינו תקין.",
+    "Media.AmigaDepth": "מגבלת עומק התיקיות של AmigaDOS הושגה בעומק {0}.",
+    "Media.AmigaRecovered": "שוחזרו {0} רשומות קטלוג של AmigaDOS מכותרות תקינות משום שבלוק השורש אינו זמין.",
+    "Media.AmigaWriterVariant": "מודול זה אינו יכול ליצור את גרסת AmigaDOS ‏{0}.",
+    "Media.AmigaWriterGeometry": "פורמט התמונה {0} אינו גאומטריית AmigaDOS נתמכת.",
+    "Media.AmigaDiskFull": "אין די בלוקים פנויים באמצעי האחסון היעד של AmigaDOS.",
+    "Media.AmigaInvalidEntry": "לא ניתן לייצג את רשומת ההעברה {0} ב-AmigaDOS.",
+    "Media.AmigaShortBlock": "בלוק AmigaDOS ‏{0} אינו שלם: {1} בתים זמינים.",
+    "Media.AmigaRecordedIntegrity": "מידע השלמות הרשום של בלוק AmigaDOS ‏{0} אינו תקין.",
+    "Media.AmigaFileSize": "אורך קובץ AmigaDOS ‏{0} חורג מהטווח הנתמך."
+  }
+}

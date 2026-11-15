@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "格式 {0} 不支援此 CP/M 磁碟配置。",
+    "MediaFileSystems.CpmUnsupportedDirectory": "磁碟映像檔不包含格式 {0} 所支援的 CP/M 目錄。",
+    "MediaFileSystems.CpmAllocationOutside": "{0}：位移 {2} 處的 CP/M 配置區塊 {1} 超出了 {3} 位元組的映像檔範圍。",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}：CP/M 配置區塊 {1} 跨越了缺失的邏輯區塊。",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}：CP/M 配置區塊 {1} 跨越了遭截斷的邏輯區塊。",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}：CP/M 配置區塊 {1} 被參照了多次。",
+    "MediaFileSystems.CpmImageMissing": "CP/M 映像檔包含 {0} 個缺失的邏輯區塊。",
+    "MediaFileSystems.CpmImageTruncated": "CP/M 映像檔包含 {0} 個遭截斷的邏輯區塊。",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M 配置無效（目錄位移={0}，配置起點={1}，目錄項目數={2}，配置大小={3}，目錄區塊數={4}）。",
+    "MediaFileSystems.CpmUserArea": "CP/M 使用者 {0}"
+  }
+}

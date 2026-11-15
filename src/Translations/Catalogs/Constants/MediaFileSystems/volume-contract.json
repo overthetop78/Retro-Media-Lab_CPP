@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "A volume start must be non-negative: {0}.",
+    "MediaFileSystems.VolumeLength": "A volume length must be positive: {0}.",
+    "MediaFileSystems.VolumeOrigin": "A volume origin is required.",
+    "MediaFileSystems.VolumePartitionNumber": "A partition number must be positive: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "A session number must be positive: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "A track number must be positive: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "The volume range exceeds the supported signed 64-bit bounds.",
+    "MediaFileSystems.WholeVolumeRequired": "The sector file-system reader requires a volume covering the entire sector image."
+  },
+  "invariants": []
+}

@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Volume-Informationsblock {0} fehlt oder hat eine ungültige Größe.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Verzeichnisblock {0} fehlt oder hat eine ungültige Größe.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: der Datenstrom: Block {1} fehlt oder hat eine ungültige Größe.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: der Datenstrom enthält {1} Bytes; erwartet: {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: der Datenstrom meldet {1} Bytes ab Cluster {2}; die Metadaten sind inkonsistent.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: der Datenstrom: Die Zuordnungskette enthält einen Zyklus.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: der Datenstrom: Die Zuordnungskette verweist außerhalb der Zuordnungstabelle.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: der Datenstrom: Die Zuordnungskette endet, bevor alle erforderlichen Cluster verfügbar sind.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: der Ressourcenstrom: Block {1} fehlt oder hat eine ungültige Größe.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: der Ressourcenstrom enthält {1} Bytes; erwartet: {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: der Ressourcenstrom meldet {1} Bytes ab Cluster {2}; die Metadaten sind inkonsistent.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: der Ressourcenstrom: Die Zuordnungskette enthält einen Zyklus.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: der Ressourcenstrom: Die Zuordnungskette verweist außerhalb der Zuordnungstabelle.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: der Ressourcenstrom: Die Zuordnungskette endet, bevor alle erforderlichen Cluster verfügbar sind."
+  }
+}

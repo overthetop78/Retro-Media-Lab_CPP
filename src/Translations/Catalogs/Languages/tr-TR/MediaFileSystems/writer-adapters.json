@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Medya temsili görüntüsü null olamaz.",
+    "MediaFileSystems.RepresentationCountOverflow": "Medya temsili sayacı desteklenen işaretli tamsayı aralığını aşıyor.",
+    "MediaFileSystems.WriterAdapterId": "Bir medya görüntü yazarı tanımlayıcısı gereklidir.",
+    "MediaFileSystems.WriterAdapterFormats": "Hedef format tanımlayıcıları boş olamaz.",
+    "MediaFileSystems.WriterAdapterExtensions": "Çıkış uzantıları boş olamaz.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Medya yazarı doğrulama ve çıkış çağrıları gereklidir.",
+    "MediaFileSystems.WriterAdapterPath": "Bir medya yazar çıkış yolu gereklidir.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Yazma bileşeni '{0}' gerekli medya temsilini çıkaramaz.",
+    "MediaFileSystems.WriterAdapterTarget": "Yazma bileşeni '{0}', '{2}' uzantılı '{1}' hedef biçimini kabul etmiyor.",
+    "MediaFileSystems.WriterAdapterProduced": "Yazma bileşeni '{0}' geçerli çıktı dosyaları bildirmedi.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore kaynak biçimi '{0}', geometri dönüşümü olmadan '{1}' olarak yazılamaz."
+  }
+}

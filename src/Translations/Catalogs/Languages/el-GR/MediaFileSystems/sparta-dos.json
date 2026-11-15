@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Η εικόνα '{0}' δεν περιέχει έγκυρο τόμο SpartaDOS.",
+    "MediaFileSystems.SpartaMissingSector": "Λείπει ο τομέας SpartaDOS {0}.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS τομέας {0} είναι εκτός του εύρους 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Η αλυσίδα χαρτών τομέων SpartaDOS σχηματίζει βρόχο στον τομέα {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Ο χάρτης τομέων SpartaDOS {0} αναφέρεται στον προκάτοχο {2} αντί του {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Το δέντρο καταλόγων SpartaDOS σχηματίζει βρόχο στον κατάλογο του οποίου ο χάρτης ξεκινά στον τομέα {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Ο κατάλογος SpartaDOS στον τομέα {0} δηλώνει μη έγκυρο μέγεθος {1} byte."
+  }
+}

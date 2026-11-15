@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "מדד תמונות מגזרי לא חוקי {0}: {1}.",
+    "Media.SectorInvalidFormatId": "עיצוב תמונת המגזר הוא ריק או לא חוקי: {0}",
+    "Media.SectorDuplicateBlock": "מגזר לוגי {0} מתרחש יותר מפעם אחת בתמונה.",
+    "Media.SectorBlockOutside": "מגזר לוגי {0} הוא מחוץ לתמונה המכילה ענפי {1}.",
+    "Media.SectorCapacityShort": "קיבולת התמונה של מגזר {0} קטנה יותר מאורך הנתונים הזמין {1}.",
+    "Media.SectorMissingBlock": "מגזר הגיוני {0} נעדר.",
+    "Media.SectorInvalidBlockSize": "המגזר הלוגי {0} מכיל {1} בתים במקום {2}.",
+    "Media.FatUnsupportedBoot": "תבנית התמונה {0} אינה מכילה מערכת קבצים FAT12 נתמכת: מגזר האתחול חסר או קטוע.",
+    "Media.FatUnsupportedLayout": "תבנית התמונה {0} אינה מכילה מערכת קבצים FAT12 נתמכת (גודל מגזר {1}, מגזרים לאשכול {2}, מגזרים שמורים {3}, עותקי FAT {4}, רשומות שורש {5}, מגזרים לכל FAT {6}).",
+    "Media.FatInvalidChain": "שרשרת FAT של {0} אינה תקינה או מכילה מחזור באשכול {1}.",
+    "Media.FatTruncatedTable": "רשומת FAT12 עבור אשכול {0} קטועה.",
+    "Media.FatMissingSectors": "טווח ה- {0} ל- {1} אינו שלם.",
+    "Media.FatDepthLimit": "מגבלת הקינון של ספריות FAT הושגה ב־{0} (עומק {1}).",
+    "Media.FatMissingSector": "מגזר FAT {0} מכיל {1} בתים במקום {2}.",
+    "Media.FatCyclicChain": "{0}: שרשרת FAT12 היא מחזורית ב- {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 אשכול {1} מחוץ לטווח הנתונים.",
+    "Media.FatIncompleteContent": "{0}: הגודל המוצהר הוא {1} בתים, אך רק {2} בתים זמינים.",
+    "Media.FatUnsupportedGeometry": "פורמט תמונה {0} אינו גאומטריה תומכת FAT12.",
+    "Media.FatDiskFull": "אין מספיק אשכולות פנויים או רשומות ספרייה בכרך FAT12 היעד.",
+    "Media.FatInvalidEntry": "כניסה להגירה {0} אינה יכולה להיות מיוצגת ככניסה קצרת שם FAT12.",
+    "Media.FatDirectoryCycle": "הספרייה {0} משתמשת שוב באשכול FAT12 {1} שכבר נסרק.",
+    "Media.FatIntegrityInvalid": "נתוני השלמות השמורים של מגזר FAT {0} אינם תקינים.",
+    "Media.FatResourceLimit": "מגבלת החילוץ FAT12 הגיעה בזמן קריאה {0}."
+  }
+}

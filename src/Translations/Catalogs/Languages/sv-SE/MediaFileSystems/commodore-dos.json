@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Bildformat \"{0}\" innehåller inte ett stöd CBM DOS-filsystem.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS-katalogen är cyklisk på {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS katalog sektor {0}/{1} saknas.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS katalog sektor {0}/{1} innehåller endast {2} byte.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS-katalogen koordinerar {0}/{1} är ogiltig.",
+    "MediaFileSystems.CbmFileCycle": "{0}: Kedjan är cyklisk vid {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: koordinera {1}/{2} är ogiltig.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sektor {1}/{2} är ofullständig.",
+    "MediaFileSystems.CbmFileMissing": "{0}: sektor {1}/{2} saknas.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: det sista antalet {1} är ogiltigt.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS-kedjan överstiger bildkapaciteten.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM krävs på {0}/{1} saknas.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} är avkortad till {2} byte.",
+    "MediaFileSystems.PetsciiLength": "PETSCII-fältlängden {0} får inte vara negativ.",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII-värdet överstiger {0} tecken.",
+    "MediaFileSystems.PetsciiCharacter": "Karaktären \"{0}\" kan inte representeras av den stödda PETSCII-delmängden.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, öppen",
+    "MediaFileSystems.CbmTypeLocked": "{0}, låst",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, öppen, låst"
+  }
+}

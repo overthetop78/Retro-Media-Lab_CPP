@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "صيغة الصورة «{0}» لا تحتوي على نظام ملفات CBM DOS مدعوم.",
+    "MediaFileSystems.CbmDirectoryCycle": "سلسلة مجلد CBM DOS دورية عند {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "قطاع مجلد CBM DOS عند {0}/{1} مفقود.",
+    "MediaFileSystems.CbmDirectoryTruncated": "قطاع مجلد CBM DOS عند {0}/{1} يحتوي على {2} بايت فقط.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "إحداثيات مجلد CBM DOS عند {0}/{1} غير صالحة.",
+    "MediaFileSystems.CbmFileCycle": "{0}: السلسلة دورية عند {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: الإحداثيات {1}/{2} غير صالحة.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: القطاع {1}/{2} مبتور.",
+    "MediaFileSystems.CbmFileMissing": "{0}: القطاع {1}/{2} مفقود.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: العداد النهائي {1} غير صالح.",
+    "MediaFileSystems.CbmCapacity": "{0}: سلسلة CBM DOS تتجاوز سعة الصورة.",
+    "MediaFileSystems.CbmBamMissing": "بيانات CBM DOS BAM المطلوبة عند {0}/{1} مفقودة.",
+    "MediaFileSystems.CbmBamTruncated": "بيانات CBM DOS BAM عند {0}/{1} مبتورة إلى {2} بايت.",
+    "MediaFileSystems.PetsciiLength": "يجب ألا يكون طول حقل PETSCII وهو {0} سالبًا.",
+    "MediaFileSystems.PetsciiTooLong": "قيمة PETSCII تتجاوز {0} محارف.",
+    "MediaFileSystems.PetsciiCharacter": "لا يمكن تمثيل المحرف «{0}» بمجموعة PETSCII الفرعية المدعومة.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, مفتوح",
+    "MediaFileSystems.CbmTypeLocked": "{0}, مقفل",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, مفتوح, مقفل"
+  }
+}

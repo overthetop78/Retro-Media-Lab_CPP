@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Dimensiunea nevalidă a imaginii sectorului {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Identificatorul imaginii din sector este gol sau invalid: {0}.",
+    "Media.SectorDuplicateBlock": "Sectorul logic {0} apare de mai multe ori în imagine.",
+    "Media.SectorBlockOutside": "Sectorul logic {0} este în afara imaginii care conţine sectoare {1}.",
+    "Media.SectorCapacityShort": "Capacitatea declarată de imagine în sector {0} este mai mică decât lungimea datelor disponibile {1}.",
+    "Media.SectorMissingBlock": "Sectorul logic {0} lipseşte.",
+    "Media.SectorInvalidBlockSize": "Sectorul logic {0} conține octeți {1} în loc de {2}.",
+    "Media.FatUnsupportedBoot": "Format imagine {0} nu are sistem de fișiere FAT12 susținut: sectorul de boot lipsește sau este trunchiat.",
+    "Media.FatUnsupportedLayout": "Formatul imaginii {0} nu are sistem de fișiere FAT12 (dimensiunea sectorului {1}, sectoare per grup {2}, sectoare rezervate {3}, copii FAT {4}, intrări rădăcină {5}, sectoare per FAT {6}).",
+    "Media.FatInvalidChain": "Lanţul FAT de {0} este invalid sau ciclic la grupul {1}.",
+    "Media.FatTruncatedTable": "Intrarea FAT12 pentru grup {0} este trunchiată.",
+    "Media.FatMissingSectors": "Intervalul sectorial {0} până la {1} este incomplet.",
+    "Media.FatDepthLimit": "Limita de cuibărire a directorului FAT a fost atinsă la {0} (în profunzime {1}).",
+    "Media.FatMissingSector": "FAT sector {0} conține octeți {1} în loc de {2}.",
+    "Media.FatCyclicChain": "{0}: lanţul FAT12 este ciclic în grup {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 cluster {1} este în afara intervalului de date.",
+    "Media.FatIncompleteContent": "{0}: dimensiunea declarată este {1} octeţi, dar sunt disponibile numai octeţi {2}.",
+    "Media.FatUnsupportedGeometry": "Formatul imaginii {0} nu este o geometrie FAT12 susținută.",
+    "Media.FatDiskFull": "Volumul FAT12 țintă nu are suficiente clustere libere sau intrări de director.",
+    "Media.FatInvalidEntry": "Intrarea în migraţie {0} nu poate fi reprezentată ca intrare cu nume scurt FAT12.",
+    "Media.FatDirectoryCycle": "Director {0} reutilizează grupul FAT12 {1}, care a fost deja extins.",
+    "Media.FatIntegrityInvalid": "Integritatea înregistrată a sectorului FAT {0} nu este validă.",
+    "Media.FatResourceLimit": "Limita de extracție a FAT12 a fost atinsă în timpul citirii {0}."
+  }
+}

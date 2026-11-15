@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Diskbildet {0} med sektorer på {1} byte inneholder ingen støttet Atari DOS-katalog.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Katalogsektor {0} mangler.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Katalogsektor {0}, oppføring {1}, er ikke en gyldig Atari DOS-filoppføring og ble ignorert.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS-datasektor {1} mangler.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS-datakjeden har en løkke ved sektor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} tilhører fil {3}; forventet {2}.",
+    "MediaFileSystems.AtariDosOpen": "Katalogsektor {1}, oppføring {2} («{0}»), er fortsatt åpen for skriving og ble ignorert.",
+    "MediaFileSystems.AtariDosTruncated": "Datasektor {1} for «{0}» er for kort til å inneholde lenken.",
+    "MediaFileSystems.AtariDosPremature": "Filen «{0}» oppgir {1} sektorer, men kjeden slutter etter {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Den tomme filen «{0}» refererer uventet til sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Filen «{0}» er begrenset til de {1} sektorene oppgitt i katalogoppføringen, mens den underliggende kjeden fortsetter ved sektor {2}.",
+    "MediaFileSystems.AtariDosShared": "Filen «{0}» deler {3} sektorer fra sektor {2} med «{1}».",
+    "MediaFileSystems.AtariDosUsedLength": "Datasektor {1} for «{0}» oppgir {2} byte, men bare {3} er tilgjengelige."
+  }
+}

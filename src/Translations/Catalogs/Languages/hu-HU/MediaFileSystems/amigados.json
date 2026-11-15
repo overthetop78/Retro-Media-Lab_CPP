@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "A kép nem támogatott AmigaDOS bootblokkot.",
+    "Media.AmigaUnsupportedVariant": "A AmigaDOS indítóváltozat {0} nem támogatott.",
+    "Media.AmigaInvalidRoot": "A AmigaDOS alapblokk {0} érvénytelen.",
+    "Media.AmigaRootChecksum": "Az AmigaDOS gyökérblokk {0} ellenőrzőösszege érvénytelen.",
+    "Media.AmigaDirectoryChain": "A AmigaDOS könyvtárlánc a {0} blokkban érvénytelen vagy ciklikus.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS Könyvtárbejegyzés {0} Eltűnt.",
+    "Media.AmigaMissingData": "A AmigaDOS fájlblokk {0} hiányzik.",
+    "Media.AmigaOfsType": "A OFS adatblokk {0} típusú váratlan {1} típusú.",
+    "Media.AmigaDataChecksum": "A {0} OFS adatblokkban érvénytelen az ellenőrző összeg.",
+    "Media.AmigaInvalidExtension": "A AmigaDOS fájlkiterjesztő blokk a {0} érvénytelen, ciklikus vagy hiányzik.",
+    "Media.AmigaExtensionChecksum": "A AmigaDOS fájl kiterjesztési blokkja a {0} érvénytelen szerkezettel vagy ellenőrző összeggel rendelkezik.",
+    "Media.AmigaTruncatedFile": "AmigaDOS fájltartalom csonkítva: várható {0} bájt, olvasd {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap blokk {0} hiányzik.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap blokk {0} van egy érvénytelen ellenőrző összeg.",
+    "Media.AmigaDepth": "Az AmigaDOS könyvtár mélységi korlátját a mélységben érték el {0}.",
+    "Media.AmigaRecovered": "A gyökérblokk nem érhető el; érvényes fejlécekből {0} AmigaDOS-katalógusbejegyzés állt helyre.",
+    "Media.AmigaWriterVariant": "AmigaDOS változat {0} nem lehet létrehozni ez a modul.",
+    "Media.AmigaWriterGeometry": "A {0} képformátum nem támogatott AmigaDOS geometria.",
+    "Media.AmigaDiskFull": "A AmigaDOS célmennyiségnek nincs elegendő szabad blokkja.",
+    "Media.AmigaInvalidEntry": "A {0} migrációs bejegyzés nem képviselhető a AmigaDOS-n.",
+    "Media.AmigaShortBlock": "AmigaDOS blokk {0} hiányos: {1} bájtok állnak rendelkezésre.",
+    "Media.AmigaRecordedIntegrity": "Az AmigaDOS-blokk {0} rögzített integritási adatai érvénytelenek.",
+    "Media.AmigaFileSize": "AmigaDOS fájl hossza {0} meghaladja a támogatott tartományt."
+  }
+}

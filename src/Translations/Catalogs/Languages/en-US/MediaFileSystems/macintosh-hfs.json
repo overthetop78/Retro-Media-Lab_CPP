@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.HfsCatalogBlockMissing": "Catalog data fork block {0} is missing.",
+    "MediaFileSystems.HfsCatalogIncomplete": "The catalog data fork contains {0} bytes; {1} expected.",
+    "MediaFileSystems.HfsCatalogTruncated": "The HFS catalog contains {0} bytes; {1} required.",
+    "MediaFileSystems.HfsNoRecords": "The HFS catalog contains no readable record.",
+    "MediaFileSystems.MacDirectoryCycle": "Macintosh directory {0} forms a cycle in the catalog.",
+    "MediaFileSystems.HfsDirectory": "Directory"
+  }
+}

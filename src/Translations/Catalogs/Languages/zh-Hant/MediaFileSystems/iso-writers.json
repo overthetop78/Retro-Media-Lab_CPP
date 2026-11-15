@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "ISO 映像為空，或其長度未對齊 2048 位元組的磁區邊界。",
+    "MediaFileSystems.IsoContainerChanged": "ISO 映像的長度在辨識後已變更。",
+    "MediaFileSystems.IsoWriteProfile": "此光碟文件無法在不遺失資料的情況下寫成單軌 ISO 映像。",
+    "MediaFileSystems.WriterRegistryNull": "媒體映像寫入元件不能為 null。",
+    "MediaFileSystems.WriterRegistryDuplicate": "媒體映像寫入元件識別碼 '{0}' 已重複註冊。",
+    "MediaFileSystems.WriterTargetFormat": "必須提供目標媒體格式識別碼。",
+    "MediaFileSystems.WriterTargetExtension": "必須提供目標媒體檔案副檔名。"
+  }
+}

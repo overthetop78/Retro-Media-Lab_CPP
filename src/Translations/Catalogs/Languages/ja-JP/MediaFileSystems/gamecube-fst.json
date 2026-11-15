@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "文書は光学ISOイメージではありません。",
+    "MediaFileSystems.GameCubeNotImage": "ドキュメントはGameCubeイメージではありません。",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FSTは光学トラックデータを必要とします。",
+    "MediaFileSystems.GameCubeNoTrack": "GameCube FSTのボリュームでデータトラックは使用できません。",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FSTは2048バイトの光学セクターを必要とします。",
+    "MediaFileSystems.GameCubeHeader": "GameCube ディスクヘッダーは無効です。",
+    "MediaFileSystems.GameCubeDescriptor": "GameCube FSTの記述子は無効です。",
+    "MediaFileSystems.GameCubeRoot": "GameCube FSTのルートエントリーは無効です。",
+    "MediaFileSystems.GameCubeCount": "GameCube FSTエントリーカウントは無効です。",
+    "MediaFileSystems.GameCubeDepth": "GameCube FSTのディレクトリツリーは深すぎる。",
+    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST ディレクトリ範囲は無効です。",
+    "MediaFileSystems.GameCubeContentLimit": "GameCubeファイル '{0}' は、コンテンツの制限よりも大きいため、ロードされていない。",
+    "MediaFileSystems.GameCubeNameOffset": "GameCube FSTの名前のオフセットは文字列テーブルの外にあります。",
+    "MediaFileSystems.GameCubeSectorData": "GameCubeの光学部門は読みやすいデータがありません。",
+    "MediaFileSystems.GameCubeExtent": "GameCube FSTは光学トラックの外にあります。",
+    "MediaFileSystems.GameCubeOverflow": "GameCube FST は、サポートされている数値範囲を超えた値です。"
+  }
+}

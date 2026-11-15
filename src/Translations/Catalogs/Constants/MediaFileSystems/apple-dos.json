@@ -1,0 +1,33 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "The Apple DOS catalog referenced by VTOC at track {0}, sector {1} is missing or invalid.",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS catalog sector {0}/{1} is missing or cyclic.",
+    "MediaFileSystems.AppleDosAddress": "Apple DOS address {1}/{2} for {0} is outside the disk geometry.",
+    "MediaFileSystems.AppleDosListCycle": "The track/sector list for {0} is cyclic at {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "The track/sector list for {0} is missing at {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "The data sector {1}/{2} for {0} is missing.",
+    "MediaFileSystems.AppleDosSize": "File {0} declares {1} sectors but {2} sectors were traversed.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS target format {0} is unsupported.",
+    "MediaFileSystems.AppleDosWriteFull": "The Apple DOS volume does not have enough catalog or data sectors.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS volume name {0} must use DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS supports only files with available content in the root catalog.",
+    "MediaFileSystems.AppleDosBinarySize": "An Apple DOS binary file cannot exceed 65535 bytes.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS filename {0} cannot be encoded in a catalog entry.",
+    "MediaFileSystems.AppleDosTypeText": "Text",
+    "MediaFileSystems.AppleDosTypeIntegerBasic": "Integer BASIC",
+    "MediaFileSystems.AppleDosTypeApplesoftBasic": "Applesoft BASIC",
+    "MediaFileSystems.AppleDosTypeBinary": "Binary",
+    "MediaFileSystems.AppleDosTypeS": "S",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relocatable",
+    "MediaFileSystems.AppleDosTypeA": "A",
+    "MediaFileSystems.AppleDosTypeB": "B",
+    "MediaFileSystems.AppleDosTypeFile": "File"
+  },
+  "invariants": [
+    "MediaFileSystems.AppleDosTypeIntegerBasic",
+    "MediaFileSystems.AppleDosTypeApplesoftBasic",
+    "MediaFileSystems.AppleDosTypeS",
+    "MediaFileSystems.AppleDosTypeA",
+    "MediaFileSystems.AppleDosTypeB"
+  ]
+}

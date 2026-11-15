@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "インデックス {0} のファイルシステムリーダーは null です。",
+    "MediaFileSystems.RegistryEmptyReaderId": "インデックス{0}のファイルシステムリーダーは空の識別子を持っています。",
+    "MediaFileSystems.RegistryDuplicateReaderId": "複数のファイルシステムリーダーは、識別子 '{0}' を持っています。",
+    "MediaFileSystems.RegistryUnknownReaderId": "ファイルシステムリーダーに識別子 '{0}' はありません。",
+    "MediaFileSystems.RegistryNullImage": "セクターイメージはnullできません。",
+    "MediaFileSystems.AtariKFileUnsupported": "セクターイメージは、KBoot を使用した Atari K-file ディスクではありません。",
+    "MediaFileSystems.AtariBootUnsupported": "セクターイメージには、アタリブートプログラムが完全に含まれていません。",
+    "MediaFileSystems.AtariClkUnsupported": "セクターイメージは、Atari CLKグラフィックスライブラリディスクではありません。",
+    "MediaFileSystems.AtariClkIncomplete": "カタログは {0} バイトを宣言しますが、セクターチェーンには {1} バイトが含まれています。",
+    "MediaFileSystems.AtariClkGraphic": "アタリCLKグラフィック"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "{0} bloğundaki ProDOS/SOS birim başlığı tanınmıyor (okunan değer ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS dizin bloğu {1}, {0} düzeyindeki en yüksek derinliği aşıyor.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS dizin bloğu {0} geçersiz (döngü={1}, yeniden kullanıldı={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS dizinleme bloğu {2} geçersiz (döngü={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS ana dizinleme bloğu {2} geçersiz.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS veri bloğu {2} eksik, disk görüntüsünün dışında veya boyutu geçersiz.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): beklenen {3} baytın {2} baytı yeniden oluşturuldu.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS bit eşlem bloğu {0} eksik veya boyutu geçersiz.",
+    "MediaFileSystems.ProDosTotal": "ProDOS birimi {0} blok bildiriyor, ancak disk görüntüsü {1} blok içeriyor.",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS hedef biçimi '{0}' desteklenmiyor.",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS biriminde yeterli blok veya dizin girdisi yok.",
+    "MediaFileSystems.ProDosGeometry": "Hedef ProDOS geometrisi veya sektör adres haritası geçersiz.",
+    "MediaFileSystems.ProDosEntry": "ProDOS girdisi '{0}' yazılamıyor.",
+    "MediaFileSystems.ProDosFileLength": "ProDOS dosyası '{0}', 24 bit uzunluk alanının sınırını aşıyor.",
+    "MediaFileSystems.ProDosName": "ProDOS adı '{0}' geçersiz.",
+    "MediaFileSystems.ProDosTypeText": "Metin",
+    "MediaFileSystems.ProDosTypeBinary": "İkili",
+    "MediaFileSystems.ProDosTypeDirectory": "Dizin",
+    "MediaFileSystems.ProDosTypeVariables": "Değişkenler",
+    "MediaFileSystems.ProDosTypeSystem": "Sistem"
+  }
+}

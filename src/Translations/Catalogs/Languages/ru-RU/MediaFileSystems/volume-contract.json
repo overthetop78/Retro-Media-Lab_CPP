@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Начало объема должно быть неотрицательным: {0}.",
+    "MediaFileSystems.VolumeLength": "Длина объема должна быть положительной: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Требуется объемное происхождение.",
+    "MediaFileSystems.VolumePartitionNumber": "Номер раздела должен быть положительным: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Номер сеанса должен быть положительным: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Номер трека должен быть положительным: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Диапазон громкости превышает поддерживаемые подписанные 64-битные границы.",
+    "MediaFileSystems.WholeVolumeRequired": "Считыватель секторальной файловой системы требует объема, охватывающего весь сектор изображения."
+  }
+}

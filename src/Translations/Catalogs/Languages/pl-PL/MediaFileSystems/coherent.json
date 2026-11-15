@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Wartość kanoniczna COHERENT zawiera bajty {0}; {1} są wymagane.",
+    "Media.CoherentPointerLength": "Wskaźnik bloku COHERENT zawiera bajty {0}; {1} są wymagane.",
+    "Media.CoherentInvalidSuperblock": "Obraz nie zawiera poprawnego systemu plików COHERENT.",
+    "Media.CoherentDeclaredBlocks": "COHERENT deklaruje bloki {0}, ale tylko {1} są dostępne.",
+    "Media.CoherentMissingSuperblock": "Brakuje wymaganego bloku COHERENT.",
+    "Media.CoherentInodeZone": "Strefa INode COHERENT kończy się na bloku {0}, poza systemem plików bloków {1}.",
+    "Media.CoherentNullInode": "COHERENT inode zero jest nieważny.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} znajduje się poza strefą inode w bajtach {1}.",
+    "Media.CoherentFileTooLarge": "Długość pliku COHERENT bajtów {0} nie może być reprezentowana w pamięci.",
+    "Media.CoherentDirectUnavailable": "{0}: Brak bezpośredniego bloku COHERENT {1} lub poza obrazem.",
+    "Media.CoherentIndirectUnavailable": "{0}: Brak pośredniego bloku COHERENT {1} na poziomie {2} lub poza obrazem.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT pośredni blok {1} na poziomie {2} odnosi się więcej niż raz.",
+    "Media.CoherentDirectoryCycle": "{0}: Katalog INode COHERENT {1} tworzy cykl.",
+    "Media.CoherentDirectoryRepeated": "{0}: Katalog COHERENT inode {1} został już odwiedzony.",
+    "Media.CoherentChildUnreadable": "{0}: nie można odczytać podrzędnego inode COHERENT.",
+    "Media.CoherentMissingBytes": "{0}: brakuje {1} bajtów COHERENT, a ich pozycje pozostają wypełnione zerami.",
+    "Media.CoherentDepth": "{0}: limit głębokości katalogu COHERENT został osiągnięty na głębokości {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

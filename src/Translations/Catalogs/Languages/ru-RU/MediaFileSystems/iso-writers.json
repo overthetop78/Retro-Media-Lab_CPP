@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "Изображение ISO является пустым или не выровнено с секторами 2048 байт.",
+    "MediaFileSystems.IsoContainerChanged": "Длина изображения ISO изменилась после распознавания.",
+    "MediaFileSystems.IsoWriteProfile": "Оптический документ не может быть записан как однопутное изображение ISO без потерь.",
+    "MediaFileSystems.WriterRegistryNull": "Компонент записи образов носителей не может быть null.",
+    "MediaFileSystems.WriterRegistryDuplicate": "Идентификатор компонента записи образов носителей '{0}' зарегистрирован более одного раза.",
+    "MediaFileSystems.WriterTargetFormat": "Требуется идентификатор целевого медиаформата.",
+    "MediaFileSystems.WriterTargetExtension": "Требуется расширение целевого медиафайла."
+  }
+}

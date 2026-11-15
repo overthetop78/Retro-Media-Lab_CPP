@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Diskenhedens informationsblok {0} mangler eller har en ugyldig størrelse.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Mappeblok {0} mangler eller har en ugyldig størrelse.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: datastrømmen: blok {1} mangler eller har en ugyldig størrelse.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: datastrømmen indeholder {1} byte; forventet {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: datastrømmen angiver {1} byte fra klynge {2}; metadataene er inkonsistente.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: datastrømmen: allokeringskæden indeholder en cyklus.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: datastrømmen: allokeringskæden henviser uden for allokeringskortet.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: datastrømmen: allokeringskæden slutter, før alle nødvendige klynger er tilgængelige.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: ressourcestrømmen: blok {1} mangler eller har en ugyldig størrelse.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: ressourcestrømmen indeholder {1} byte; forventet {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: ressourcestrømmen angiver {1} byte fra klynge {2}; metadataene er inkonsistente.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: ressourcestrømmen: allokeringskæden indeholder en cyklus.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: ressourcestrømmen: allokeringskæden henviser uden for allokeringskortet.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: ressourcestrømmen: allokeringskæden slutter, før alle nødvendige klynger er tilgængelige."
+  }
+}

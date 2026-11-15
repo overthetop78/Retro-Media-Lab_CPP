@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "O bloco de informações do volume {0} está ausente ou tem tamanho inválido.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "O bloco de diretório {0} está ausente ou tem tamanho inválido.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: o bloco {1} do fork de dados está ausente ou tem tamanho inválido.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: o fork de dados contém {1} bytes; eram esperados {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: o fork de dados informa {1} bytes a partir do cluster {2}; os metadados são inconsistentes.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: a cadeia de alocação do fork de dados contém um ciclo.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: a cadeia de alocação do fork de dados referencia uma posição fora do mapa de alocação.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: a cadeia de alocação do fork de dados termina antes que todos os clusters necessários estejam disponíveis.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: o bloco {1} do fork de recursos está ausente ou tem tamanho inválido.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: o fork de recursos contém {1} bytes; eram esperados {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: o fork de recursos informa {1} bytes a partir do cluster {2}; os metadados são inconsistentes.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: a cadeia de alocação do fork de recursos contém um ciclo.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: a cadeia de alocação do fork de recursos referencia uma posição fora do mapa de alocação.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: a cadeia de alocação do fork de recursos termina antes que todos os clusters necessários estejam disponíveis."
+  }
+}

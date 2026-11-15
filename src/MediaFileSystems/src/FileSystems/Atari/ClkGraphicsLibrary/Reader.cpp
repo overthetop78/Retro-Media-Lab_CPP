@@ -1,0 +1,22 @@
+#include "Constants.h"
+#include "../FormatRecognition.h"
+#include "../../../Primitives/Binary.h"
+#include "../../../Exploration/Composition/Internal.h"
+#include <algorithm>
+#include <set>
+namespace RetroMediaLab::MediaFileSystems::AtariMetadata {
+namespace {
+using namespace ClkConstants;
+struct Record{std::string name;std::uint16_t start,length;std::uint8_t type;bool valid(std::uint64_t count)const{return (type==ActiveUpper||type==ActiveLower)&&!Composition::blank(name)&&start>0&&start<=count&&length>0&&length<=IconLength;}};
+std::shared_ptr<const SectorBlock> sector(const SectorImage& image,std::uint64_t number,std::stop_token token){if(number==0)return {};auto block=image.block(number-1,token);return block&&block->data.size()>=SectorSize?block:nullptr;}
+std::vector<Record> records(const SectorImage& image,std::stop_token token,bool stopAtFirstValid=false){std::vector<Record> result;for(std::size_t number=FirstDirectory;number<=LastDirectory;++number){checkCancellation(token);const auto block=sector(image,number,token);if(!block)break;const Bytes data=block->data;for(std::size_t offset=0;offset+EntryLength<=data.size();offset+=EntryLength){std::string name;for(std::size_t i=0;i<NameLength;++i)name+=data[offset+i]<=AsciiMaximum?char(data[offset+i]):AsciiReplacement;while(!name.empty()&&(name.back()==Space||name.back()==Null))name.pop_back();result.push_back({std::move(name),Binary::little<std::uint16_t>(data,offset+StartOffset),Binary::little<std::uint16_t>(data,offset+LengthOffset),data[offset+TypeOffset]});if(stopAtFirstValid&&result.back().valid(image.blockCount()))return result;}}return result;}
+}
+bool clk(const SectorImage& image,std::stop_token token){checkCancellation(token);if(!supported(image.geometry().formatId)||image.geometry().blockSize!=SectorSize||image.blockCount()<LastDirectory)return false;const auto header=sector(image,HeaderSector,token);if(!header||!std::equal(Signature.begin(),Signature.end(),header->data.begin()))return false;const auto entries=records(image,token,true);return std::any_of(entries.begin(),entries.end(),[&](const Record& entry){return entry.valid(image.blockCount());});}
+FileSystemVolume readClk(const SectorImage& image,std::stop_token token){
+    if(!clk(image,token))throw MediaError(DiagnosticCode::AtariClkUnsupported);std::set<std::uint64_t> occupied;for(std::size_t n=FirstOccupied;n<=LastDirectory;++n)occupied.insert(n);FileSystemVolume volume;volume.name=Display;volume.fileSystemId=Id;volume.fileSystemDisplayName=Id;volume.capacity=image.capacity();volume.attributes={std::string(Library)};volume.bootable=false;
+    for(const auto& record:records(image,token)){if(!record.valid(image.blockCount()))continue;std::vector<std::uint8_t> content(record.length);std::size_t written=0;std::uint64_t current=record.start;std::set<std::uint64_t> visited;bool valid=true;
+        while(written<content.size()){checkCancellation(token);if(current==0||current>image.blockCount()||!visited.insert(current).second){valid=false;break;}const auto block=sector(image,current,token);if(!block){valid=false;break;}occupied.insert(current);const auto count=std::min(DataLength,content.size()-written);std::copy_n(block->data.begin(),count,content.begin()+std::ptrdiff_t(written));written+=count;const auto next=Binary::little<std::uint16_t>(block->data,DataLength);if(written<content.size()&&next==0){valid=false;break;}current=next;}
+        content.resize(written);FileSystemEntry entry;entry.name=record.name;entry.kind=EntryKind::File;entry.size=content.size();entry.commentResourceKey=CommentKey;entry.commentTranslationDomain=Domain;entry.rawAttributes=record.type;entry.storageReference=record.start;entry.content=std::move(content);entry.nativeTypeId=NativeType;entry.occupiedSize=visited.size()*image.geometry().blockSize;entry.attributes={std::string(Graphic)};entry.dataValid=valid;if(!valid)entry.diagnostics.push_back({DiagnosticCode::AtariClkIncomplete,{std::to_string(record.length),std::to_string(entry.size)}});entry.metadata={{std::string(ContainerKey),std::string(Id)},{std::string(StartKey),std::to_string(record.start)},{std::string(TypeKey),std::string(1,char(record.type))},{std::string(LengthKey),std::to_string(record.length)}};volume.entries.push_back(std::move(entry));}
+    volume.freeBytes=(image.blockCount()>occupied.size()?image.blockCount()-occupied.size():0)*image.geometry().blockSize;return volume;
+}
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Długość optyczna logiczna nie może być ujemna.",
+    "MediaFileSystems.OpticalMetadataOnly": "Ten istniejący deskryptor mediów zawiera tylko metadane i nie ma czytelnego źródła danych.",
+    "MediaFileSystems.OpticalIndexNumber": "Wskaźnik toru optycznego musi wynosić od 0 do 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Wymiar optyczny '{0}' musi być dodatni.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Wymiar optyczny '{0}' nie może być ujemny.",
+    "MediaFileSystems.OpticalDataSource": "Wymagane jest optyczne źródło danych toru.",
+    "MediaFileSystems.OpticalUserWindow": "Okno danych użytkownika przekracza jeden sektor przechowywany.",
+    "MediaFileSystems.OpticalTrackSource": "Dane dotyczące toru przekraczają ich źródło.",
+    "MediaFileSystems.OpticalSubchannelSource": "Wymiary podkanałowe wymagają źródła podkanałowego.",
+    "MediaFileSystems.OpticalSubchannelRange": "Dane podkanałowe przekraczają ich źródło.",
+    "MediaFileSystems.OpticalPregapOffset": "Przesunięcie źródła zapisanego pregapu wymaga zapisanych sektorów pregapu.",
+    "MediaFileSystems.OpticalPregapRange": "Zapisany pregap przekracza zakres źródła.",
+    "MediaFileSystems.OpticalStoredDestination": "Miejsce przeznaczenia musi zawierać dokładnie jeden składowany sektor.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektor znajduje się poza zapisanym pregapem.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektor jest poza torem optycznym.",
+    "MediaFileSystems.OpticalNullTrack": "Ścieżka optyczna nie może być zerowa."
+  }
+}

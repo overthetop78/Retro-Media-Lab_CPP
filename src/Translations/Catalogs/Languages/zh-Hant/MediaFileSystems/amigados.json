@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "映像中沒有支援的 AmigaDOS 開機區塊。",
+    "Media.AmigaUnsupportedVariant": "不支援 AmigaDOS 開機變體 {0}。",
+    "Media.AmigaInvalidRoot": "AmigaDOS 根區塊 {0} 無效。",
+    "Media.AmigaRootChecksum": "AmigaDOS 根區塊 {0} 的總和檢查碼無效。",
+    "Media.AmigaDirectoryChain": "區塊 {0} 處的 AmigaDOS 目錄鏈無效或存在循環。",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS 目錄項目區塊 {0} 缺少。",
+    "Media.AmigaMissingData": "AmigaDOS 檔案資料區塊 {0} 缺少。",
+    "Media.AmigaOfsType": "OFS 資料區塊 {0} 的類型 {1} 不符合預期。",
+    "Media.AmigaDataChecksum": "OFS 資料區塊 {0} 的總和檢查碼無效。",
+    "Media.AmigaInvalidExtension": "AmigaDOS 檔案延伸區塊 {0} 無效、存在循環或缺少。",
+    "Media.AmigaExtensionChecksum": "AmigaDOS 檔案延伸區塊 {0} 的結構或總和檢查碼無效。",
+    "Media.AmigaTruncatedFile": "AmigaDOS 檔案內容被截斷：預期 {0} 位元組，實際讀取 {1} 位元組。",
+    "Media.AmigaMissingBitmap": "AmigaDOS 配置點陣圖區塊 {0} 缺少。",
+    "Media.AmigaBitmapChecksum": "AmigaDOS 配置點陣圖區塊 {0} 的總和檢查碼無效。",
+    "Media.AmigaDepth": "在深度 {0} 處達到了 AmigaDOS 目錄深度限制。",
+    "Media.AmigaRecovered": "根區塊無法使用，已從有效的標頭區塊復原 {0} 個 AmigaDOS 目錄項目。",
+    "Media.AmigaWriterVariant": "此模組無法建立 AmigaDOS 變體 {0}。",
+    "Media.AmigaWriterGeometry": "映像格式 {0} 不是支援的 AmigaDOS 磁碟幾何。",
+    "Media.AmigaDiskFull": "目標 AmigaDOS 磁碟區的可用區塊不足。",
+    "Media.AmigaInvalidEntry": "移轉項目 {0} 無法在 AmigaDOS 中表示。",
+    "Media.AmigaShortBlock": "AmigaDOS 區塊 {0} 不完整：有 {1} 位元組可用。",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS 區塊 {0} 的記錄完整性資訊無效。",
+    "Media.AmigaFileSize": "AmigaDOS 檔案長度 {0} 超出了支援範圍。"
+  }
+}

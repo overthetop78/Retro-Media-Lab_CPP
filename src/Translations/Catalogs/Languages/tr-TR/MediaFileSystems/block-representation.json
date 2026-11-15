@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Bir medya veri aralığı adresi olumsuz olamaz.",
+    "MediaFileSystems.BlockRangeLength": "Bir medya veri aralığı uzunluğu olumlu olmalıdır.",
+    "MediaFileSystems.BlockSourceOffset": "Bir medya veri aralığı kaynağı dengesi olumsuz olamaz.",
+    "MediaFileSystems.BlockSourceNull": "Güvenli bir medya aralığı veri kaynağı gerektirir.",
+    "MediaFileSystems.BlockSourceRange": "Haritalanan aralığı veri kaynağını aşıyor.",
+    "MediaFileSystems.BlockNonStoredSource": "Sadece depolama aralıkları bir veri kaynağına atıfta bulunabilir.",
+    "MediaFileSystems.BlockNonStoredOffset": "Mağaza olmayan bir aralığın bir kaynak dengelemesi olamaz.",
+    "MediaFileSystems.BlockLogicalLength": "Mantıksal medya uzunluğu olumsuz olamaz.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Mantıksal blok boyutu olumlu olmalıdır.",
+    "MediaFileSystems.BlockCompleteBlocks": "Mantıksal uzunluk tam mantıksal blokları içermelidir.",
+    "MediaFileSystems.BlockGeometryOutside": "Açıklama geometri mantıksal medya kapasitesi aşıyor.",
+    "MediaFileSystems.BlockRangeOutside": "Bir blok aralığı mantıksal medya uzunluğu aşıyor.",
+    "MediaFileSystems.BlockRangeOverlap": "Blok aralıkları çakışmamalıdır.",
+    "MediaFileSystems.BlockReadAddress": "Mantıklı okuma adresi olumsuz olamaz.",
+    "MediaFileSystems.BlockReadRange": "İstenen mantıksal aralık, medya kapasitesini aşıyor.",
+    "MediaFileSystems.BlockRangeMissing": "Hiçbir medya veri aralığı mantıksal adresi kapsar {0}.",
+    "MediaFileSystems.BlockUnavailable": "Mantıksal adres {0} kaynak görüntüsünde kullanılamaz.",
+    "MediaFileSystems.BlockRangeKind": "Desteksiz medya verileri bir çeşit {0}.",
+    "MediaFileSystems.BlockOverflow": "Medya bloğu hesabı desteklenen imza aralığı aşıyor.",
+    "MediaFileSystems.BlockGeometryValue": "Sert disk geometri parametresi {0} pozitif olmalıdır.",
+    "MediaFileSystems.BlockDriveCount": "Mekanik erişim, olumlu sayıda astes kapsamalıdır.",
+    "MediaFileSystems.BlockNullImage": "Bir blok görüntüsü gereklidir."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "A média ábrázoló kép nem lehet nulla.",
+    "MediaFileSystems.RepresentationCountOverflow": "A médiareprezentáció számlálója meghaladja a támogatott előjeles egész számtartományt.",
+    "MediaFileSystems.WriterAdapterId": "Médiaképíró azonosítója szükséges.",
+    "MediaFileSystems.WriterAdapterFormats": "A célformátumazonosítók nem lehetnek üresek.",
+    "MediaFileSystems.WriterAdapterExtensions": "A kimeneti kiterjesztések nem lehetnek üresek.",
+    "MediaFileSystems.WriterAdapterCallbacks": "A médiaíró komponens ellenőrző és kimeneti visszahívásai szükségesek.",
+    "MediaFileSystems.WriterAdapterPath": "A média író kimeneti útvonal szükséges.",
+    "MediaFileSystems.WriterAdapterRepresentation": "\"{0}\" író nem tudja kivonni a szükséges médiaképviseletet.",
+    "MediaFileSystems.WriterAdapterTarget": "A \"{0}\" író nem fogadja el a \"{1}\" célt a \"{2}\" kiterjesztéssel.",
+    "MediaFileSystems.WriterAdapterProduced": "\"{0}\" író nem jelentett érvényes készített fájlokat.",
+    "MediaFileSystems.WriterCommodoreTransform": "A Commodore source format '{0}' nem írható \"{1}\" -ként geometriai átalakítás nélkül."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Diskavbildningen innehåller inget Lisa-filsystem med taggar bland sina {0} sidor.",
+    "MediaFileSystems.LisaMissingPage": "Lisa-filen 0x{0} saknar sida {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF-sidan innehåller {0} byte; {1} krävs.",
+    "MediaFileSystems.LisaInvalidTag": "Det logiska Lisa-blocket {0} har en tagg på {1} byte; {2} krävs.",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa-filen 0x{0} innehåller flera kopior av sida {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Ledigt utrymme i Lisa kan inte bestämmas utan användbara taggar.",
+    "MediaFileSystems.LisaFileDescription": "Lisa-fil ${0}"
+  }
+}

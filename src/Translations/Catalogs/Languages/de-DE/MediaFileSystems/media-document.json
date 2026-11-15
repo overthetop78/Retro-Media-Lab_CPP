@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Die Medienquelle kann nicht null sein.",
+    "MediaFileSystems.ContextSourcePath": "Der primäre Medienquellpfad kann nicht leer oder Whitespace sein.",
+    "MediaFileSystems.ContextPageSize": "Die Größe der Erkennungsseite muss positiv sein.",
+    "MediaFileSystems.ContextKnownLength": "Die bekannte Quellenlänge kann nicht negativ sein.",
+    "MediaFileSystems.ContextLengthOverflow": "Die Medienquellenlänge übersteigt den unterstützten signierten Bereich.",
+    "MediaFileSystems.ContextReadOffset": "Der Erkennungslese-Offset kann nicht negativ sein.",
+    "MediaFileSystems.ContextReadCount": "Die Anzahl der Erkennungsleser kann nicht negativ sein.",
+    "MediaFileSystems.ContextReadRange": "Der angeforderte Bereich übersteigt die Quellenlänge.",
+    "MediaFileSystems.ContextFullRead": "Die vollständige Quelle kann nicht in einen Speicherpuffer geladen werden. Verwenden Sie stattdessen Bounded Reads.",
+    "MediaFileSystems.ContextPageEnded": "Die Medienquelle endete bei Byte {0} beim Lesen einer zwischengespeicherten Seite.",
+    "MediaFileSystems.DocumentFormatId": "Ein erkannter Formatbezeichner ist erforderlich.",
+    "MediaFileSystems.DocumentRepresentation": "Eine Mediendarstellung mit öffentlichen Repräsentationsinformationen ist erforderlich."
+  }
+}

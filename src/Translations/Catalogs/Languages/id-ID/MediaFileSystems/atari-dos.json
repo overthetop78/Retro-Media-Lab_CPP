@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Citra {0} dengan sektor berukuran {1} byte tidak berisi direktori Atari DOS yang didukung.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Sektor direktori {0} hilang.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Sektor direktori {0}, entri {1} bukan entri berkas Atari DOS yang valid dan diabaikan.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS data sektor {1} hilang.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS data rantai adalah siklik di sektor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} milik berkas {3}, diduga {2}.",
+    "MediaFileSystems.AtariDosOpen": "Sektor direktori {1}, entri {2} ('{0}') masih terbuka untuk keluaran dan diabaikan.",
+    "MediaFileSystems.AtariDosTruncated": "Sektor data {1} untuk '{0}' terlalu pendek untuk memuat link-nya.",
+    "MediaFileSystems.AtariDosPremature": "Berkas '{0}' mendeklarasikan {1} sektor, tapi rantainya berakhir setelah {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Berkas kosong '{0}' secara tidak terduga merujuk ke sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Berkas '{0}' dibatasi hingga {1} sektor yang dinyatakan dalam direktori, tetapi rantainya berlanjut pada sektor {2}.",
+    "MediaFileSystems.AtariDosShared": "Berkas '{0}' berbagi {3} sektor dari sektor {2} dengan '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Sektor data {1} untuk '{0}' mendeklarasikan {2} bytes tapi hanya {3} yang tersedia."
+  }
+}

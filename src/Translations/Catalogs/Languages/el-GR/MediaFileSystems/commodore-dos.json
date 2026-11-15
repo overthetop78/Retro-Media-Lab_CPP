@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Η μορφή εικόνας '{0}' δεν περιέχει υποστηριζόμενο σύστημα αρχείων CBM DOS.",
+    "MediaFileSystems.CbmDirectoryCycle": "Η αλυσίδα καταλόγου CBM DOS είναι κυκλική στο {0}/ {1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Λείπει ο τομέας καταλόγου CBM DOS {0}/ {1}.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Ο τομέας καταλόγου CBM DOS {0}/ {1} περιέχει μόνο bytes {2}.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Η συντεταγμένη καταλόγου CBM DOS {0}/ {1} δεν είναι έγκυρη.",
+    "MediaFileSystems.CbmFileCycle": "{0}: η αλυσίδα είναι κυκλική στο {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: η συντεταγμένη {1}/ {2} είναι άκυρη.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: ο τομέας {1}/{2} είναι ελλιπής.",
+    "MediaFileSystems.CbmFileMissing": "{0}: Λείπει ο τομέας {1}/ {2}.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: ο τελικός αριθμός {1} δεν είναι έγκυρος.",
+    "MediaFileSystems.CbmCapacity": "{0}: η αλυσίδα CBM DOS υπερβαίνει την ικανότητα εικόνας.",
+    "MediaFileSystems.CbmBamMissing": "Το CBM DOS BAM που απαιτείται στο {0}/ {1} λείπει.",
+    "MediaFileSystems.CbmBamTruncated": "Το CBM DOS BAM {0}/{1} είναι ελλιπές και περιέχει μόνο {2} bytes.",
+    "MediaFileSystems.PetsciiLength": "Το μήκος πεδίου PETSCII {0} δεν πρέπει να είναι αρνητικό.",
+    "MediaFileSystems.PetsciiTooLong": "Η τιμή PETSCII υπερβαίνει τους χαρακτήρες {0}.",
+    "MediaFileSystems.PetsciiCharacter": "Ο χαρακτήρας '{0}' δεν μπορεί να αντιπροσωπεύεται από το υποσύνολο PETSCII που υποστηρίζεται.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, ανοιχτό",
+    "MediaFileSystems.CbmTypeLocked": "{0}, κλειδωμένο",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, ανοιχτό, κλειδωμένο"
+  }
+}

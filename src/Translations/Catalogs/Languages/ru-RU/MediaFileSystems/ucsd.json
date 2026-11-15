@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Каталог UCSD в блоке {0} не распознается; недействительные блоки: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: блоки UCSD отсутствуют или усечены: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Блоки каталога UCSD p-System отсутствуют или усечены: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Запись UCSD {0} имеет недопустимое имя '{1}'.",
+    "MediaFileSystems.UcsdRange": "Запись UCSD {0} ('{1}') использует недопустимый диапазон [{2}, {3}) в {4} блоках.",
+    "MediaFileSystems.UcsdOverlap": "Запись UCSD {0} ('{1}') перекрывает блоки {2}.",
+    "MediaFileSystems.UcsdCount": "Каталог UCSD объявляет {0} файлов, но найдено {1} допустимых записей.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: последний блок UCSD объявляет {1} байтов.",
+    "MediaFileSystems.UcsdTypeUntyped": "Нетипированный файл UCSD",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD внешний дисковый файл",
+    "MediaFileSystems.UcsdTypeCode": "Файл кода UCSD",
+    "MediaFileSystems.UcsdTypeText": "Текстовый файл UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Информационный файл UCSD",
+    "MediaFileSystems.UcsdTypeData": "Файл данных UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD графический файл",
+    "MediaFileSystems.UcsdTypePhoto": "Файл фотографий UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Защищённый каталог UCSD"
+  }
+}

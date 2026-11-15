@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Billedet har ingen understøttet ADFS katalog ({0} - byte blokke, {1} blokke).",
+    "Media.AdfsInvalidDirectory": "ADFS mappe {0} er ugyldig eller ufuldstændig.",
+    "Media.AdfsDepth": "ADFS mappedybdegrænsen blev nået ved dybde {0}.",
+    "Media.AdfsCycle": "ADFS mappe {0} er cyklisk eller refereret mere end én gang.",
+    "Media.AdfsInvalidRange": "{0}: ugyldig ADFS adresse {1}, offset {2}, længde {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS adresse {1} ved offset {2} kræver manglende blok {3}.",
+    "Media.AdfsIntegrity": "ADFS blok {0} har ugyldig registreret integritet.",
+    "Media.AdfsBlockVolume": "ADFS kræver en adresserbar sektor eller blok volumen.",
+    "Media.AdfsSectorCount": "ADFS sektor tæller {0} er uden for det støttede område."
+  }
+}

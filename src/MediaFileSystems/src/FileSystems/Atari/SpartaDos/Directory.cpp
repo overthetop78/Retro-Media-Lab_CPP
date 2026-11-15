@@ -1,0 +1,15 @@
+#include "Internal.h"
+namespace RetroMediaLab::MediaFileSystems::SpartaDos::Internal {
+using namespace Constants;
+Directory directory(const SectorImage& image,std::int32_t first,std::set<std::int32_t> ancestors,std::stop_token token){
+    checkCancellation(token);if(!ancestors.insert(first).second)throw MediaError(DiagnosticCode::SpartaDirectoryLoop,{std::to_string(first)});const auto firstSector=firstData(image,first,token);const auto firstBlock=sector(image,firstSector,token);if(firstBlock->data.size()<DirectoryEntrySize)throw MediaError(DiagnosticCode::SpartaDirectoryLength,{std::to_string(first),std::to_string(firstBlock->data.size())});const auto byteLength=length(firstBlock->data,DirectoryHeaderLengthOffset);if(byteLength<DirectoryEntrySize||byteLength>image.capacity())throw MediaError(DiagnosticCode::SpartaDirectoryLength,{std::to_string(first),std::to_string(byteLength)});const auto data=file(image,first,std::int32_t(byteLength),token);const auto bytes=Bytes(data.bytes);Directory result;result.name=name(bytes.subspan(DirectoryHeaderNameOffset,DirectoryHeaderNameLength));result.length=std::int32_t(byteLength);result.occupied=data.occupied;
+    for(std::size_t offset=DirectoryFirstEntryOffset;offset+DirectoryEntrySize<=bytes.size();offset+=DirectoryEntrySize){
+        checkCancellation(token);const auto flags=bytes[offset+DirectoryStatusOffset];if(flags==std::uint8_t(Flags::None))break;if(!has(flags,Flags::InUse)||has(flags,Flags::Deleted))continue;const auto map=Binary::little<std::uint16_t>(bytes,offset+DirectoryMapOffset);const auto entryLength=length(bytes,offset+DirectoryLengthOffset);auto entryName=fileName(bytes.subspan(offset+DirectoryNameOffset,DirectoryNameLength),bytes.subspan(offset+DirectoryExtensionOffset,DirectoryExtensionLength));const auto [valid,date]=timestamp(bytes.subspan(offset+DirectoryDateOffset,DateFieldLength),bytes.subspan(offset+DirectoryTimeOffset,TimeFieldLength));
+        FileSystemEntry entry;entry.name=std::move(entryName);entry.modified=date;entry.created=date;entry.rawAttributes=flags;entry.storageReference=map;entry.metadataValid=valid;entry.dataValid=true;if(has(flags,Flags::Protected))entry.attributes.push_back(std::string(ProtectedAttribute));if(has(flags,Flags::Hidden))entry.attributes.push_back(std::string(HiddenAttribute));if(has(flags,Flags::Archived))entry.attributes.push_back(std::string(ArchivedAttribute));
+        if(has(flags,Flags::Subdirectory)){auto child=directory(image,map,ancestors,token);entry.kind=EntryKind::Directory;entry.size=std::uint64_t(child.length);entry.children=std::move(child.children);entry.nativeTypeId=DirectoryNativeType;entry.occupiedSize=child.occupied;}
+        else{auto content=file(image,map,std::int32_t(entryLength),token);entry.kind=EntryKind::File;entry.size=entryLength;entry.content=std::move(content.bytes);entry.nativeTypeId=FileNativeType;entry.occupiedSize=content.occupied;if(content.sparse)entry.attributes.push_back(std::string(SparseAttribute));}
+        result.children.push_back(std::move(entry));
+    }
+    return result;
+}
+}

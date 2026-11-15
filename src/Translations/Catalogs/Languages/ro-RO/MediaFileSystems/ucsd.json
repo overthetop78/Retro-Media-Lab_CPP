@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Directorul UCSD din blocul {0} nu este recunoscut; blocuri nevalide: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: Blocurile UCSD lipsesc sau sunt trunchiate: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Blocurile directoare UCSD p-System lipsesc sau sunt trunchiate: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Intrarea UCSD {0} are un nume nevalid '{1}'.",
+    "MediaFileSystems.UcsdRange": "Intrarea UCSD {0} ('{1}') folosește intervalul nevalid [{2}, {3}) în {4} blocuri.",
+    "MediaFileSystems.UcsdOverlap": "Intrarea UCSD {0} ('{1}') se suprapune cu blocurile {2}.",
+    "MediaFileSystems.UcsdCount": "Directorul UCSD declară {0} fișiere, dar au fost găsite {1} intrări valide.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: ultimul bloc UCSD declară {1} octeți.",
+    "MediaFileSystems.UcsdTypeUntyped": "Fișier netipat UCSD",
+    "MediaFileSystems.UcsdTypeExternalDisk": "Fișier disc extern UCSD",
+    "MediaFileSystems.UcsdTypeCode": "Fișier cod UCSD",
+    "MediaFileSystems.UcsdTypeText": "Fișier text UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Fișier informativ UCSD",
+    "MediaFileSystems.UcsdTypeData": "Fișier de date UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Fișier grafic UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "Fișier foto UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Director securizat UCSD"
+  }
+}

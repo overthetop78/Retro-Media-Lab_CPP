@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M-levyasettelua ei tueta muodossa {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Kuva ei sisällä tuettua CP/M-hakemistoa muotoa {0} varten.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-varauslohko {1} siirtymässä {2} on {3} tavun levykuvan ulkopuolella.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M-jakolohko {1} ylittää puuttuvan loogisen lohkon.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M-jakolohko {1} ylittää katkaistun loogisen lohkon.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M-jakolohkoon {1} viitataan useammin kuin kerran.",
+    "MediaFileSystems.CpmImageMissing": "CP/M-levykuvassa on {0} puuttuvaa loogista lohkoa.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M-kuva sisältää {0} katkaistuja loogisia lohkoja.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M-asettelu on virheellinen (hakemiston siirtymä={0}, varausalueen alku={1}, hakemistomerkinnät={2}, varauskoko={3}, hakemistolohkot={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M käyttäjä {0}"
+  }
+}

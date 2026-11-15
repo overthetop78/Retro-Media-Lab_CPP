@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "O diretório UCSD no bloco {0} não é reconhecido; blocos inválidos: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: Blocos UCSD em falta ou truncados: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Blocos do diretório UCSD p-System em falta ou truncados: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "O item UCSD {0} tem um nome inválido '{1}'.",
+    "MediaFileSystems.UcsdRange": "A entrada UCSD {0} ('{1}') usa o intervalo inválido [{2}, {3}) em {4} blocos.",
+    "MediaFileSystems.UcsdOverlap": "A entrada UCSD {0} ('{1}') sobrepõe-se aos blocos {2}.",
+    "MediaFileSystems.UcsdCount": "O diretório UCSD declara {0} ficheiros, mas foram encontradas {1} entradas válidas.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: o bloco UCSD final declara {1} bytes.",
+    "MediaFileSystems.UcsdTypeUntyped": "Ficheiro UCSD sem tipo",
+    "MediaFileSystems.UcsdTypeExternalDisk": "Ficheiro de disco externo UCSD",
+    "MediaFileSystems.UcsdTypeCode": "Ficheiro de código UCSD",
+    "MediaFileSystems.UcsdTypeText": "Ficheiro de texto UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Ficheiro de informações UCSD",
+    "MediaFileSystems.UcsdTypeData": "Ficheiro de dados UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Ficheiro gráfico UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "Ficheiro de fotografias UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Directório seguro UCSD"
+  }
+}

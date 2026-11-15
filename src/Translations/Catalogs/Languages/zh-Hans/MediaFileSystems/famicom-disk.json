@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "所选的 Famicom Disk System 音量无法读取 。",
+    "MediaFileSystems.FdsSideCount": "Famicom Disk System侧数缺失或无效.",
+    "MediaFileSystems.FdsSideLength": "Famicom Disk System侧长度缺失或无效.",
+    "MediaFileSystems.FdsNoFiles": "未找到有效的 Famicom Disk System 文件块 。",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System侧{0}没有有效的磁盘信息块.",
+    "MediaFileSystems.FdsFileCount": "Famicom Disk System侧{0}没有有效的文件计数块.",
+    "MediaFileSystems.FdsFileHeader": "Famicom Disk System侧{0}有无效的文件头.",
+    "MediaFileSystems.FdsIncomplete": "Famicom Disk System文件{0}在侧{1}有不完整的数据."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "A fájlrendszer olvasó az index {0} -nél nulla.",
+    "MediaFileSystems.RegistryEmptyReaderId": "A (z) {0} indexen található fájlrendszerolvasó egy üres azonosítóval rendelkezik.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Többszörös fájlrendszer olvasók azonosítója \"{0}\".",
+    "MediaFileSystems.RegistryUnknownReaderId": "Egyetlen fájlrendszer olvasó sem rendelkezik \"{0}\" azonosítóval.",
+    "MediaFileSystems.RegistryNullImage": "Egy ágazati kép nem lehet nulla.",
+    "MediaFileSystems.AtariKFileUnsupported": "A szektorkép nem egy Atari K-file lemez a KBoot használatával.",
+    "MediaFileSystems.AtariBootUnsupported": "A szektorkép nem tartalmaz teljes Atari boot programot.",
+    "MediaFileSystems.AtariClkUnsupported": "A szektor képe nem Atari CLK grafikus könyvtárlemez.",
+    "MediaFileSystems.AtariClkIncomplete": "A katalógus szerint {0} bájt, de a szektorlánc tartalmaz {1} bájtot.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK grafika"
+  }
+}

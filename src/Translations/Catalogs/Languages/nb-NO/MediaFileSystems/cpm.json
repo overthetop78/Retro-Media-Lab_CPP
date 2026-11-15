@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M-diskoppsettet støttes ikke for format {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Diskbildet inneholder ingen støttet CP/M-katalog for format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-allokeringsblokk {1} ved forskyvning {2} er utenfor diskbildet på {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M-allokeringsblokk {1} krysser en manglende logisk blokk.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M-allokeringsblokk {1} krysser en avkortet logisk blokk.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M-allokeringsblokk {1} refereres til mer enn én gang.",
+    "MediaFileSystems.CpmImageMissing": "CP/M-diskbildet inneholder {0} manglende logiske blokker.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M-diskbildet inneholder {0} avkortede logiske blokker.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M-oppsettet er ugyldig (katalogforskyvning={0}, allokeringsstart={1}, katalogoppføringer={2}, allokeringsstørrelse={3}, katalogblokker={4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M-bruker {0}"
+  }
+}

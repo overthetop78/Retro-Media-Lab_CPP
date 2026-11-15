@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "磁碟映像檔的 {0} 個頁面中不包含帶標籤的 Lisa 檔案系統。",
+    "MediaFileSystems.LisaMissingPage": "Lisa 檔案 0x{0} 缺少頁面 {1}。",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF 頁面包含 {0} 位元組；需要 {1} 位元組。",
+    "MediaFileSystems.LisaInvalidTag": "Lisa 邏輯區塊 {0} 的標籤為 {1} 位元組；需要 {2} 位元組。",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa 檔案 0x{0} 包含頁面 {1} 的多個副本。",
+    "MediaFileSystems.LisaUnknownFreeSpace": "沒有可用的標籤，無法確定 Lisa 的可用空間。",
+    "MediaFileSystems.LisaFileDescription": "Lisa 檔案 ${0}"
+  }
+}

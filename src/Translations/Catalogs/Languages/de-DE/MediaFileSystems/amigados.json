@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Das Bild hat keinen unterstützten AmigaDOS-Bootblock.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} wird nicht unterstützt.",
+    "Media.AmigaInvalidRoot": "AmigaDOS root block {0} ist ungültig.",
+    "Media.AmigaRootChecksum": "AmigaDOS root block {0} hat eine ungültige Prüfsumme.",
+    "Media.AmigaDirectoryChain": "Die AmigaDOS-Verzeichniskette bei block {0} ist ungültig oder zyklisch.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS Verzeichniseintragsblock {0} fehlt.",
+    "Media.AmigaMissingData": "AmigaDOS Dateidatenblock {0} fehlt.",
+    "Media.AmigaOfsType": "OFS-Datenblock {0} hat einen unerwarteten Typ {1}.",
+    "Media.AmigaDataChecksum": "OFS Datenblock {0} hat eine ungültige Prüfsumme.",
+    "Media.AmigaInvalidExtension": "AmigaDOS Dateierweiterungsblock {0} ist ungültig, zyklisch oder fehlt.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS Dateierweiterungsblock {0} hat eine ungültige Struktur oder Prüfsumme.",
+    "Media.AmigaTruncatedFile": "Der Inhalt der AmigaDOS-Datei ist abgeschnitten: {0} Byte erwartet, {1} gelesen.",
+    "Media.AmigaMissingBitmap": "AmigaDOS Bitmap Block {0} fehlt.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS Bitmap Block {0} hat eine ungültige Prüfsumme.",
+    "Media.AmigaDepth": "Die maximale AmigaDOS-Verzeichnistiefe wurde bei Tiefe {0} erreicht.",
+    "Media.AmigaRecovered": "Wiederhergestellt {0} AmigaDOS Katalogeinträge aus gültigen Headern, da der Root-Block nicht verfügbar ist.",
+    "Media.AmigaWriterVariant": "AmigaDOS Variante {0} kann von diesem Modul nicht erstellt werden.",
+    "Media.AmigaWriterGeometry": "Das Bildformat {0} ist keine unterstützte AmigaDOS Geometrie.",
+    "Media.AmigaDiskFull": "Das Ziel-AmigaDOS-Volume hat nicht genügend freie Blöcke.",
+    "Media.AmigaInvalidEntry": "Der Migrationseintrag {0} kann auf AmigaDOS nicht dargestellt werden.",
+    "Media.AmigaShortBlock": "AmigaDOS Block {0} ist unvollständig: {1} Bytes sind verfügbar.",
+    "Media.AmigaRecordedIntegrity": "Der AmigaDOS-Block {0} hat eine ungültige aufgezeichnete Integrität.",
+    "Media.AmigaFileSize": "AmigaDOS Dateilänge {0} überschreitet den unterstützten Bereich."
+  }
+}

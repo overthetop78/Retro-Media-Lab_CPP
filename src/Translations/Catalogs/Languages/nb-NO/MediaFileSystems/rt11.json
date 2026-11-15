@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 hjemmeblokken er ugyldig (signatur «{0}», katalogblokk {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11-segment {0} i blokk {1} har et segmentnummer utenfor gyldig område.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} i blokk {1} danner en syklus.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} i blokk {1} er utenfor bildet.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segment {0} i blokk {1} har et manglende eller avkortet blokkpar.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11-segment {0} angir en ugyldig oppføringsstørrelse på {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "RT-11-oppføringen i datablokk {0}, offset {1}, har et tomt navn.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11-blokker mangler eller er avkortet: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Midlertidig RT-11-fil",
+    "MediaFileSystems.Rt11Permanent": "RT-11-fil"
+  }
+}

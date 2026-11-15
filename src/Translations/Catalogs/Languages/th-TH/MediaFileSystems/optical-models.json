@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "ความยาวเชิงตรรกะของสื่อออปติคัลต้องไม่เป็นค่าลบ",
+    "MediaFileSystems.OpticalMetadataOnly": "ตัวถอดรหัสสื่อที่สืบทอดมานี้ มีเฉพาะข้อมูลกํากับภาพเท่านั้น และไม่มีแหล่งข้อมูลที่สามารถอ่านได้",
+    "MediaFileSystems.OpticalIndexNumber": "ดัชนีของแทร็กภาพจะต้องอยู่ระหว่าง 0 ถึง 99",
+    "MediaFileSystems.OpticalPositiveDimension": "มิติแบบ Optical '{0}' ต้องเป็นบวก",
+    "MediaFileSystems.OpticalNonNegativeDimension": "พารามิเตอร์ออปติคัล '{0}' ต้องไม่เป็นค่าลบ",
+    "MediaFileSystems.OpticalDataSource": "ต้องการแหล่งข้อมูลติดตามแสง",
+    "MediaFileSystems.OpticalUserWindow": "หน้าต่างข้อมูลของผู้ใช้มากกว่า 1 ส่วนที่ถูกจัดเก็บ",
+    "MediaFileSystems.OpticalTrackSource": "ข้อมูลเพลงมันมากกว่าแหล่งที่มา",
+    "MediaFileSystems.OpticalSubchannelSource": "มิติย่อยที่ต้องการแหล่งย่อย",
+    "MediaFileSystems.OpticalSubchannelRange": "ข้อมูลย่อยเกินแหล่งกําเนิด",
+    "MediaFileSystems.OpticalPregapOffset": "การระบุออฟเซ็ตต้นทางของพรีแกปที่จัดเก็บต้องมีเซกเตอร์พรีแกปที่จัดเก็บ",
+    "MediaFileSystems.OpticalPregapRange": "พรีแกปที่เก็บไว้เกินแหล่งกําเนิด",
+    "MediaFileSystems.OpticalStoredDestination": "บัฟเฟอร์ปลายทางต้องมีขนาดเท่ากับหนึ่งเซกเตอร์ที่จัดเก็บพอดี",
+    "MediaFileSystems.OpticalStoredPregap": "ภาคนี้อยู่ด้านนอกของพรีแกป",
+    "MediaFileSystems.OpticalRelativeSector": "เซกเตอร์อยู่นอกช่วงของแทร็กออปติคัล",
+    "MediaFileSystems.OpticalNullTrack": "แทร็กแสงไม่สามารถว่างได้"
+  }
+}

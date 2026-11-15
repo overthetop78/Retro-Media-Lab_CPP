@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "อิมเมจ {0} ที่มีเซกเตอร์ขนาด {1} ไบต์ไม่มีไดเรกทอรี Atari DOS ที่รองรับ",
+    "MediaFileSystems.AtariDosDirectoryMissing": "เซกเตอร์ไดเรกทอรี {0} หายไป",
+    "MediaFileSystems.AtariDosDirectoryEntry": "เซกเตอร์ไดเรกทอรี {0} รายการ {1} ไม่ใช่รายการไฟล์ Atari DOS ที่ถูกต้อง จึงถูกข้าม",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: เซกเตอร์ข้อมูล Atari DOS {1} หายไป",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: ห่วงโซ่ข้อมูล Atari DOS วนซ้ำที่เซกเตอร์ {1}",
+    "MediaFileSystems.AtariDosOwner": "{0}: เซกเตอร์ {1} เป็นของไฟล์ {3} แต่ควรเป็น {2}",
+    "MediaFileSystems.AtariDosOpen": "เซกเตอร์ไดเรกทอรี {1} รายการ {2} ('{0}') ยังเปิดไว้เพื่อเขียน จึงถูกข้าม",
+    "MediaFileSystems.AtariDosTruncated": "เซกเตอร์ข้อมูล {1} ของ '{0}' สั้นเกินกว่าจะมีข้อมูลลิงก์",
+    "MediaFileSystems.AtariDosPremature": "ไฟล์ '{0}' ระบุ {1} เซกเตอร์ แต่ห่วงโซ่สิ้นสุดหลังจาก {2} เซกเตอร์",
+    "MediaFileSystems.AtariDosEmptyData": "ไฟล์ว่าง '{0}' อ้างอิงเซกเตอร์ {1} โดยไม่คาดคิด",
+    "MediaFileSystems.AtariDosBounded": "ไฟล์ '{0}' ถูกจำกัดไว้ที่ {1} เซกเตอร์ตามที่ระบุในรายการไดเรกทอรี แต่ห่วงโซ่พื้นฐานดำเนินต่อที่เซกเตอร์ {2}",
+    "MediaFileSystems.AtariDosShared": "ไฟล์ '{0}' ใช้ {3} เซกเตอร์ร่วมกับ '{1}' โดยเริ่มจากเซกเตอร์ {2}",
+    "MediaFileSystems.AtariDosUsedLength": "เซกเตอร์ข้อมูล {1} ของ '{0}' ระบุ {2} ไบต์ แต่มีเพียง {3} ไบต์"
+  }
+}

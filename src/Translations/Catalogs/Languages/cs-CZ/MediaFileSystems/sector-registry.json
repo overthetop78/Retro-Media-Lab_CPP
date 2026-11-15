@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Čtečka souborů na indexu {0} je nulová.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Čtečka souborů na indexu {0} má prázdný identifikátor.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Vícenásobné čtečky souborů mají identifikátor '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Žádný čtečka souborů nemá identifikátor '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Sector image nemůže být null.",
+    "MediaFileSystems.AtariKFileUnsupported": "Sector image není disk Atari K-file používající KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Sektor obraz neobsahuje kompletní Atari boot program.",
+    "MediaFileSystems.AtariClkUnsupported": "Sector image není grafický disk Atari CLK-knihovny.",
+    "MediaFileSystems.AtariClkIncomplete": "Katalog deklaruje {0} bajty, ale sektorový řetězec obsahuje {1} bajty.",
+    "MediaFileSystems.AtariClkGraphic": "Grafika Atari CLK"
+  }
+}

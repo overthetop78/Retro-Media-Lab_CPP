@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Nieprawidłowy wymiar obrazu sektora {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Identyfikator sektorowego formatu obrazu jest pusty lub nieprawidłowy: {0}.",
+    "Media.SectorDuplicateBlock": "Sektor logiczny {0} występuje więcej niż raz na obrazku.",
+    "Media.SectorBlockOutside": "Sektor logiczny {0} znajduje się poza obrazem zawierającym sektory {1}.",
+    "Media.SectorCapacityShort": "Zadeklarowana przepustowość obrazu sektora {0} jest mniejsza niż dostępna długość danych {1}.",
+    "Media.SectorMissingBlock": "Brakuje sektora logicznego {0}.",
+    "Media.SectorInvalidBlockSize": "Sektor logiczny {0} zawiera bajty {1} zamiast {2}.",
+    "Media.FatUnsupportedBoot": "Format obrazka {0} nie posiada obsługiwanego systemu plików FAT12: brakuje lub okrojono sektor startowy.",
+    "Media.FatUnsupportedLayout": "Format obrazka {0} nie ma obsługiwanego systemu plików FAT12 (rozmiar sektora {1}, sektory na klaster {2}, zarezerwowane sektory {3}, kopie FAT {4}, wpisy root {5}, sektory na FAT {6}).",
+    "Media.FatInvalidChain": "Łańcuch FAT {0} jest nieprawidłowy lub cykliczny w klastrze {1}.",
+    "Media.FatTruncatedTable": "Wpis FAT12 dla klastra {0} jest skrócony.",
+    "Media.FatMissingSectors": "Zakres sektorów od {0} do {1} jest niekompletny.",
+    "Media.FatDepthLimit": "Limit nestingu katalogu FAT został osiągnięty na stronie {0} (głębokość {1}).",
+    "Media.FatMissingSector": "Sektor FAT {0} zawiera bajty {1} zamiast {2}.",
+    "Media.FatCyclicChain": "{0}: łańcuch FAT12 jest cykliczny w klastrze {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 klaster {1} jest poza zakresem danych.",
+    "Media.FatIncompleteContent": "{0}: deklarowany rozmiar to {1} bajty, ale tylko {2} bajty są dostępne.",
+    "Media.FatUnsupportedGeometry": "Format obrazka {0} nie jest obsługiwaną geometrią FAT12.",
+    "Media.FatDiskFull": "Docelowy wolumin FAT12 nie posiada wystarczającej ilości wolnych klastrów lub wpisów katalogowych.",
+    "Media.FatInvalidEntry": "Wpis migracyjny {0} nie może zostać zapisany jako wpis FAT12 z krótką nazwą.",
+    "Media.FatDirectoryCycle": "Katalog {0} ponownie wykorzystuje klaster FAT12 {1}, który został już rozszerzony.",
+    "Media.FatIntegrityInvalid": "Zapisana informacja o integralności sektora FAT {0} jest nieprawidłowa.",
+    "Media.FatResourceLimit": "Limit ekstrakcji FAT12 został osiągnięty podczas czytania {0}."
+  }
+}

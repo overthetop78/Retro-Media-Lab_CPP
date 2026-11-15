@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Optinen looginen pituus ei voi olla negatiivinen.",
+    "MediaFileSystems.OpticalMetadataOnly": "Tämä perinteinen mediakuvaaja sisältää vain metatietoja eikä sillä ole luettavaa tietolähdettä.",
+    "MediaFileSystems.OpticalIndexNumber": "Optisen rataindeksin on oltava 0-99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Optisen ulottuvuuden '{0}' on oltava positiivinen.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optinen ulottuvuus \"{0}\" ei voi olla negatiivinen.",
+    "MediaFileSystems.OpticalDataSource": "Tarvitaan optinen ratatietolähde.",
+    "MediaFileSystems.OpticalUserWindow": "Käyttäjän tietoikkuna ylittää yhden tallennetun sektorin.",
+    "MediaFileSystems.OpticalTrackSource": "Ratadata ylittää sen lähteen.",
+    "MediaFileSystems.OpticalSubchannelSource": "Alikanavamitat vaativat alikanavalähteen.",
+    "MediaFileSystems.OpticalSubchannelRange": "Alakanavatieto ylittää sen lähteen.",
+    "MediaFileSystems.OpticalPregapOffset": "Tallennetun pregap-alueen lähdesiirtymä edellyttää tallennettuja pregap-sektoreita.",
+    "MediaFileSystems.OpticalPregapRange": "Tallennettu pregap-alue ylittää lähteensä rajat.",
+    "MediaFileSystems.OpticalStoredDestination": "Määränpäässä on oltava täsmälleen yksi varastoitu sektori.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektori on tallennetun pregap-alueen ulkopuolella.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektori on optisen radan ulkopuolella.",
+    "MediaFileSystems.OpticalNullTrack": "Optinen rata ei voi olla mitätön."
+  }
+}

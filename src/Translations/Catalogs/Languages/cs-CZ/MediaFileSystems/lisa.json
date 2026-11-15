@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Obraz disku mezi svými {0} stránkami neobsahuje žádný souborový systém Lisa s platnými značkami.",
+    "MediaFileSystems.LisaMissingPage": "V souboru Lisa 0x{0} chybí stránka {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Stránka Lisa MDDF obsahuje {0} bajtů; požadováno je {1}.",
+    "MediaFileSystems.LisaInvalidTag": "Logický blok Lisa {0} má značku o velikosti {1} bajtů; požadováno je {2}.",
+    "MediaFileSystems.LisaDuplicatePage": "Soubor Lisa 0x{0} obsahuje více kopií stránky {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Volné místo Lisa nelze určit bez použitelných značek.",
+    "MediaFileSystems.LisaFileDescription": "Soubor Lisa ${0}"
+  }
+}

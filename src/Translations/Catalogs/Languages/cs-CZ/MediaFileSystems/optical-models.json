@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Optická logická délka nemůže být záporná.",
+    "MediaFileSystems.OpticalMetadataOnly": "Tento zděděný mediální deskriptor obsahuje pouze metadata a nemá čitelný zdroj dat.",
+    "MediaFileSystems.OpticalIndexNumber": "Číslo indexu optické stopy musí být mezi 0 a 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Optický rozměr '{0}' musí být kladný.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optický rozměr '{0}' nemůže být záporný.",
+    "MediaFileSystems.OpticalDataSource": "Je vyžadován zdroj dat optické stopy.",
+    "MediaFileSystems.OpticalUserWindow": "Uživatelské datové okno přesahuje jeden uložený sektor.",
+    "MediaFileSystems.OpticalTrackSource": "Data stopy přesahují svůj zdroj.",
+    "MediaFileSystems.OpticalSubchannelSource": "Subkanálové rozměry vyžadují subkanálový zdroj.",
+    "MediaFileSystems.OpticalSubchannelRange": "Subkanálová data překračují svůj zdroj.",
+    "MediaFileSystems.OpticalPregapOffset": "Posun zdroje uložené mezery před stopou vyžaduje uložené sektory této mezery.",
+    "MediaFileSystems.OpticalPregapRange": "Uložená mezera překračuje svůj zdroj.",
+    "MediaFileSystems.OpticalStoredDestination": "Místo určení musí obsahovat přesně jeden skladovaný sektor.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektor je mimo uloženou mezeru.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektor je mimo optickou dráhu.",
+    "MediaFileSystems.OpticalNullTrack": "Optická stopa nemůže být nulová."
+  }
+}

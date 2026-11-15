@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "แค็ตตาล็อก Apple DOS ที่ VTOC อ้างถึงบนแทร็ก {0} เซกเตอร์ {1} หายไปหรือไม่ถูกต้อง",
+    "MediaFileSystems.AppleDosCatalogChain": "เซกเตอร์แค็ตตาล็อก Apple DOS {0}/{1} หายไปหรือมีการอ้างอิงวนซ้ำ",
+    "MediaFileSystems.AppleDosAddress": "ที่อยู่ Apple DOS {1}/{2} ของ {0} อยู่นอกขอบเขตรูปทรงดิสก์",
+    "MediaFileSystems.AppleDosListCycle": "รายการแทร็ก/เซกเตอร์ของ {0} มีการอ้างอิงวนซ้ำที่ {1}/{2}",
+    "MediaFileSystems.AppleDosListMissing": "รายการแทร็ก/เซกเตอร์ของ {0} หายไปที่ {1}/{2}",
+    "MediaFileSystems.AppleDosDataMissing": "เซกเตอร์ข้อมูล {1}/{2} ของ {0} หายไป",
+    "MediaFileSystems.AppleDosSize": "ไฟล์ {0} ระบุ {1} เซกเตอร์ แต่ตรวจพบ {2} เซกเตอร์ระหว่างการไล่อ่าน",
+    "MediaFileSystems.AppleDosWriteFormat": "ไม่รองรับรูปแบบปลายทาง Apple DOS {0}",
+    "MediaFileSystems.AppleDosWriteFull": "โวลุม Apple DOS มีเซกเตอร์แค็ตตาล็อกหรือเซกเตอร์ข้อมูลไม่เพียงพอ",
+    "MediaFileSystems.AppleDosWriteVolume": "ชื่อโวลุม Apple DOS {0} ต้องอยู่ในรูปแบบ DOS-nnn",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS รองรับเฉพาะไฟล์ในแค็ตตาล็อกรากที่มีเนื้อหาให้ใช้งาน",
+    "MediaFileSystems.AppleDosBinarySize": "ไฟล์ไบนารี Apple DOS ต้องมีขนาดไม่เกิน 65535 ไบต์",
+    "MediaFileSystems.AppleDosWriteName": "ไม่สามารถเข้ารหัสชื่อไฟล์ Apple DOS {0} ในรายการแค็ตตาล็อกได้",
+    "MediaFileSystems.AppleDosTypeText": "ข้อความ",
+    "MediaFileSystems.AppleDosTypeBinary": "ไบนารี",
+    "MediaFileSystems.AppleDosTypeRelocatable": "ย้ายตำแหน่งได้",
+    "MediaFileSystems.AppleDosTypeFile": "แฟ้ม"
+  }
+}

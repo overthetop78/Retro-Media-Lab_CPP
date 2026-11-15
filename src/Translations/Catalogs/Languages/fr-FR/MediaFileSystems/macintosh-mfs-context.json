@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Le bloc d’informations du volume {0} est manquant ou sa taille est invalide.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Le bloc de répertoire {0} est manquant ou sa taille est invalide.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0} : le flux de données : le bloc {1} est manquant ou sa taille est invalide.",
+    "MediaFileSystems.MfsDataIncomplete": "{0} : le flux de données contient {1} octets ; {2} attendus.",
+    "MediaFileSystems.MfsDataMetadata": "{0} : le flux de données déclare {1} octets à partir du cluster {2} ; les métadonnées sont incohérentes.",
+    "MediaFileSystems.MfsDataChainCycle": "{0} : le flux de données : la chaîne d’allocation contient un cycle.",
+    "MediaFileSystems.MfsDataChainOutside": "{0} : le flux de données : la chaîne d’allocation pointe hors de la carte d’allocation.",
+    "MediaFileSystems.MfsDataChainPremature": "{0} : le flux de données : la chaîne d’allocation se termine avant que tous les clusters requis soient disponibles.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0} : le flux de ressources : le bloc {1} est manquant ou sa taille est invalide.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0} : le flux de ressources contient {1} octets ; {2} attendus.",
+    "MediaFileSystems.MfsResourceMetadata": "{0} : le flux de ressources déclare {1} octets à partir du cluster {2} ; les métadonnées sont incohérentes.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0} : le flux de ressources : la chaîne d’allocation contient un cycle.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0} : le flux de ressources : la chaîne d’allocation pointe hors de la carte d’allocation.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0} : le flux de ressources : la chaîne d’allocation se termine avant que tous les clusters requis soient disponibles."
+  }
+}

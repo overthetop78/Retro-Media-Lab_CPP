@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "UCSD-katalogen på blokk {0} er ikke gjenkjent; ugyldige blokker: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-blokker mangler eller er avkortet: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Katalogblokker i UCSD p-System mangler eller er avkortet: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD-oppføring {0} har et ugyldig navn '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD-oppføring {0} ('{1}') bruker det ugyldige området [{2}, {3}) i {4} blokker.",
+    "MediaFileSystems.UcsdOverlap": "UCSD-oppføring {0} («{1}») overlapper blokkene {2}.",
+    "MediaFileSystems.UcsdCount": "UCSD-katalogen angir {0} filer, men {1} gyldige oppføringer ble funnet.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: den siste UCSD-blokken angir {1} byte.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD utypet fil",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD ekstern diskfil",
+    "MediaFileSystems.UcsdTypeCode": "UCSD-kodefil",
+    "MediaFileSystems.UcsdTypeText": "UCSD tekstfil",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD infofil",
+    "MediaFileSystems.UcsdTypeData": "UCSD-datafil",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD grafikkfil",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD fotofil",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD sikker mappe"
+  }
+}

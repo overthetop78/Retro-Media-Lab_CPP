@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "이미지에 {0} 볼륨이 없습니다. 확인된 서명: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: 파일 스트림 {1}의 블록 {2}가 없습니다.",
+    "MediaFileSystems.MacIncompleteData": "{0}: 파일 스트림 {1}에 {2}바이트가 있습니다. 예상 크기는 {3}바이트입니다.",
+    "MediaFileSystems.MacAllocationSize": "볼륨 {0}의 할당 크기 {1}은 0이 아닌 {2}바이트의 배수여야 합니다.",
+    "MediaFileSystems.MacFreeCount": "볼륨 {0}은 전체 {2}개 블록 중 {1}개의 빈 할당 블록을 선언합니다.",
+    "MediaFileSystems.MfsMapTruncated": "{0}개 할당의 MFS 맵에는 {1}바이트가 있습니다. 필요한 크기는 {2}바이트입니다.",
+    "MediaFileSystems.MfsDirectoryEntry": "블록 {0}, 오프셋 {1}의 MFS 디렉터리 항목이 잘못되었습니다.",
+    "MediaFileSystems.MfsChain": "{0}: 파일 스트림 {1}의 할당 체인이 잘못되었습니다 (순환={2}, 맵 범위 밖={3}, 조기 종료={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: 파일 스트림 {1}은 클러스터 {3}부터 {2}바이트를 선언합니다. 메타데이터가 일관되지 않습니다.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh 파일"
+  }
+}

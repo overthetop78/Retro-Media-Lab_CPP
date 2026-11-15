@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "Media.AmigaFlatInvalidDirectory": "The image does not contain a valid Amiga flat-resource archive directory.",
+    "Media.AmigaFlatRange": "Flat-archive range {0}+{1} exceeds image capacity {2}.",
+    "Media.AmigaFlatMissingBlocks": "{0}: missing source blocks {1}; unavailable bytes were replaced with zeroes.",
+    "Media.AmigaFlatInvalidBlocks": "{0}: source blocks {1} have invalid recorded integrity.",
+    "Media.AmigaFlatEntryComment": "Flat resource archive entry"
+  }
+}

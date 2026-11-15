@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENT 規範值包含 {0} 位元組；需要 {1} 位元組。",
+    "Media.CoherentPointerLength": "COHERENT 區塊指標包含 {0} 位元組；需要 {1} 位元組。",
+    "Media.CoherentInvalidSuperblock": "映像不包含有效的 COHERENT 檔案系統。",
+    "Media.CoherentDeclaredBlocks": "COHERENT 宣告了 {0} 個區塊，但只有 {1} 個區塊可用。",
+    "Media.CoherentMissingSuperblock": "缺少 COHERENT 超級區塊所需的區塊。",
+    "Media.CoherentInodeZone": "COHERENT inode 區域結束於區塊 {0}，超出了包含 {1} 個區塊的檔案系統。",
+    "Media.CoherentNullInode": "COHERENT inode 0 無效。",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} 超出了大小為 {1} 位元組的 inode 區域。",
+    "Media.CoherentFileTooLarge": "無法在記憶體中表示長度為 {0} 位元組的 COHERENT 檔案。",
+    "Media.CoherentDirectUnavailable": "{0}：COHERENT 直接區塊 {1} 遺失或超出映像範圍。",
+    "Media.CoherentIndirectUnavailable": "{0}：第 {2} 級 COHERENT 間接區塊 {1} 遺失或超出映像範圍。",
+    "Media.CoherentIndirectRepeated": "{0}：第 {2} 級 COHERENT 間接區塊 {1} 被多次參照。",
+    "Media.CoherentDirectoryCycle": "{0}：COHERENT 目錄 inode {1} 形成循環。",
+    "Media.CoherentDirectoryRepeated": "{0}：COHERENT 目錄 inode {1} 已經走訪過。",
+    "Media.CoherentChildUnreadable": "{0}：無法讀取 COHERENT 子 inode。",
+    "Media.CoherentMissingBytes": "{0}：遺失 {1} 個 COHERENT 位元組，其位置保持為零。",
+    "Media.CoherentDepth": "{0}：在深度 {1} 處達到 COHERENT 目錄深度上限。",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

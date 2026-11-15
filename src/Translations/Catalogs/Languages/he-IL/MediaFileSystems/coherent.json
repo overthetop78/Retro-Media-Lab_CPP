@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "הערך הקנוני COHERENT מכיל {0} בתים; נדרשים {1}.",
+    "Media.CoherentPointerLength": "מצביע בלוק COHERENT מכיל {0} בתים; נדרשים {1}.",
+    "Media.CoherentInvalidSuperblock": "הדמות אינה מכילה מערכת קבצים תקינה של COHERENT.",
+    "Media.CoherentDeclaredBlocks": "COHERENT מצהיר על {0} בלוקים, אך רק {1} זמינים.",
+    "Media.CoherentMissingSuperblock": "אחד הבלוקים הנדרשים של בלוק העל COHERENT חסר.",
+    "Media.CoherentInodeZone": "אזור ה-inode של COHERENT מסתיים בבלוק {0}, מחוץ למערכת הקבצים בת {1} הבלוקים.",
+    "Media.CoherentNullInode": "inode מספר אפס של COHERENT אינו תקין.",
+    "Media.CoherentInodeOutside": "inode מספר {0} של COHERENT נמצא מחוץ לאזור ה-inode בגודל {1} בתים.",
+    "Media.CoherentFileTooLarge": "לא ניתן לייצג בזיכרון אורך קובץ COHERENT של {0} בתים.",
+    "Media.CoherentDirectUnavailable": "{0}: בלוק ישיר {1} של COHERENT חסר או נמצא מחוץ לדמות.",
+    "Media.CoherentIndirectUnavailable": "{0}: בלוק עקיף {1} של COHERENT ברמה {2} חסר או נמצא מחוץ לדמות.",
+    "Media.CoherentIndirectRepeated": "{0}: יש יותר מהפניה אחת לבלוק עקיף {1} של COHERENT ברמה {2}.",
+    "Media.CoherentDirectoryCycle": "{0}: inode ספרייה {1} של COHERENT יוצר מעגל.",
+    "Media.CoherentDirectoryRepeated": "{0}: inode ספרייה {1} של COHERENT כבר נסרק.",
+    "Media.CoherentChildUnreadable": "{0}: לא ניתן לקרוא את inode הצאצא של COHERENT.",
+    "Media.CoherentMissingBytes": "{0}: חסרים {1} בתים של COHERENT והמיקומים שלהם נשארים מאופסים.",
+    "Media.CoherentDepth": "{0}: מגבלת עומק הספריות של COHERENT הושגה בעומק {1}.",
+    "Media.CoherentInodeDescription": "inode של COHERENT מספר {0}"
+  }
+}

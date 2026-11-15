@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "אורך הגיוני אופטי אינו יכול להיות שלילי.",
+    "MediaFileSystems.OpticalMetadataOnly": "מתאר המדיה הישן הזה מכיל מטא־נתונים בלבד ואין לו מקור נתונים קריא.",
+    "MediaFileSystems.OpticalIndexNumber": "מדד המסלול האופטי חייב להיות בין 0 ל 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "ממד אופטי \"{0}\" חייב להיות חיובי.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "מימד אופטי \"{0}\" אינו יכול להיות שלילי.",
+    "MediaFileSystems.OpticalDataSource": "מקור נתונים של מעקב אופטי נדרש.",
+    "MediaFileSystems.OpticalUserWindow": "חלון הנתונים של המשתמש עולה על מגזר אחד מאוחסן.",
+    "MediaFileSystems.OpticalTrackSource": "נתוני המסלול עולים על מקורו.",
+    "MediaFileSystems.OpticalSubchannelSource": "מידות משנה דורשות מקור תת-ערוצי.",
+    "MediaFileSystems.OpticalSubchannelRange": "הנתונים התת-ערוציים עולים על מקורם.",
+    "MediaFileSystems.OpticalPregapOffset": "מקור pregap מאוחסן דורש מגזרים pregap מאוחסנים.",
+    "MediaFileSystems.OpticalPregapRange": "ה-Pregap המאוחסן עולה על מקורו.",
+    "MediaFileSystems.OpticalStoredDestination": "היעד חייב להכיל בדיוק מגזר אחד מאוחסן.",
+    "MediaFileSystems.OpticalStoredPregap": "המגזר נמצא מחוץ ל-Pregap המאוחסן.",
+    "MediaFileSystems.OpticalRelativeSector": "המגזר נמצא מחוץ למסלול האופטי.",
+    "MediaFileSystems.OpticalNullTrack": "מסלול אופטי לא יכול להיות אפס."
+  }
+}

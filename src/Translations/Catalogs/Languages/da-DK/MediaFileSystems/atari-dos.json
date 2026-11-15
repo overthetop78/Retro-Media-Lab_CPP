@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "{0} billedet med {1} - byte sektorer indeholder ikke en understøttet Atari DOS mappe.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Registersektor {0} mangler.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Mappesektor {0}, post {1}, er ikke en gyldig Atari DOS-filpost og blev ignoreret.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS datasektor {1} mangler.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS datakæde er cyklisk på sektor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} tilhører filen {3}, forventet {2}.",
+    "MediaFileSystems.AtariDosOpen": "Mappesektor {1}, post {2} ('{0}'), er stadig åben for skrivning og blev ignoreret.",
+    "MediaFileSystems.AtariDosTruncated": "Datasektor {1} for '{0}' er for kort til at indeholde dets link.",
+    "MediaFileSystems.AtariDosPremature": "Fil '{0}' erklærer {1} sektorer, men dens kæde slutter efter {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Den tomme fil '{0}' henviser uventet til sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Filen '{0}' er begrænset til {1} sektorer angivet i mappen, mens kæden fortsætter ved sektor {2}.",
+    "MediaFileSystems.AtariDosShared": "Filen '{0}' deler {3} sektorer fra sektor {2} med '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Data sektor {1} for '{0}' erklærer {2} bytes, men kun {3} er tilgængelige."
+  }
+}

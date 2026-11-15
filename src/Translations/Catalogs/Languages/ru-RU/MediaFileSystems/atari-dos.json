@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Образ {0} с секторами размером {1} байтов не содержит поддерживаемого каталога Atari DOS.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Сектор каталога {0} отсутствует.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Сектор каталога {0}, запись {1}, не является допустимой записью файла Atari DOS и проигнорирована.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: сектор данных Atari DOS {1} отсутствует.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: цепочка данных Atari DOS содержит цикл в секторе {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: сектор {1} принадлежит файлу {3}; ожидался {2}.",
+    "MediaFileSystems.AtariDosOpen": "Сектор каталога {1}, запись {2} («{0}»), всё ещё открыт для записи и проигнорирован.",
+    "MediaFileSystems.AtariDosTruncated": "Сектор данных {1} файла «{0}» слишком короток для размещения ссылки.",
+    "MediaFileSystems.AtariDosPremature": "Файл «{0}» объявляет {1} секторов, но его цепочка заканчивается после {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Пустой файл «{0}» неожиданно ссылается на сектор {1}.",
+    "MediaFileSystems.AtariDosBounded": "Файл «{0}» ограничен {1} секторами, объявленными в записи каталога, тогда как основная цепочка продолжается в секторе {2}.",
+    "MediaFileSystems.AtariDosShared": "Файл «{0}» совместно использует с файлом «{1}» {3} секторов начиная с сектора {2}.",
+    "MediaFileSystems.AtariDosUsedLength": "Сектор данных {1} файла «{0}» объявляет {2} байтов, но доступно только {3}."
+  }
+}

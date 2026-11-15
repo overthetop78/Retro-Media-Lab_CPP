@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "зчитувач файлової системи в індексі {0} null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Зчитувач файлової системи в індексі {0} має порожній ідентифікатор.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Кілька зчитувачів файлової системи мають ідентифікатор '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Немає зчитувача файлової системи ідентифікатора '{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Зображення сектора не може бути null.",
+    "MediaFileSystems.AtariKFileUnsupported": "Зображення сектора не є диском Atari K-file за допомогою KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Зображення сектора не містить повної програми для завантаження Atari.",
+    "MediaFileSystems.AtariClkUnsupported": "Секторний образ – не графічний диск Atari CLK.",
+    "MediaFileSystems.AtariClkIncomplete": "Каталог заявляє {0} байтів, але мережа секторів містить {1} байтів.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK графіка"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Volyminformationsblock {0} saknas eller har ogiltig storlek.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Katalogblock {0} saknas eller har ogiltig storlek.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: block {1} i dataforken saknas eller har ogiltig storlek.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: dataforken innehåller {1} byte; förväntat antal är {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: dataforken anger {1} byte från kluster {2}; metadata är inkonsekventa.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: allokeringskedjan för dataforken innehåller en slinga.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: allokeringskedjan för dataforken hänvisar till en position utanför allokeringskartan.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: allokeringskedjan för dataforken slutar innan alla nödvändiga kluster är tillgängliga.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: block {1} i resursforken saknas eller har ogiltig storlek.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: resursforken innehåller {1} byte; förväntat antal är {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: resursforken anger {1} byte från kluster {2}; metadata är inkonsekventa.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: allokeringskedjan för resursforken innehåller en slinga.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: allokeringskedjan för resursforken hänvisar till en position utanför allokeringskartan.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: allokeringskedjan för resursforken slutar innan alla nödvändiga kluster är tillgängliga."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Der RT-11-Startblock ist ungültig (Signatur '{0}', Verzeichnisblock {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11-Segment {0} in Block {1} hat eine Segmentnummer außerhalb des gültigen Bereichs.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 Segment {0} am Block {1} bildet einen Zyklus.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11-Segment {0} in Block {1} liegt außerhalb des Datenträgerabbilds.",
+    "MediaFileSystems.Rt11SegmentMissing": "Das RT-11-Segment {0} am Block {1} hat ein fehlendes oder verkürztes Blockpaar.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 Segment {0} deklariert eine ungültige Eintragsgröße von {1} Bytes.",
+    "MediaFileSystems.Rt11EmptyName": "Der RT-11-Eintrag am Datenblock {0}, offset {1}, hat einen leeren Namen.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11-Blöcke fehlen oder sind abgeschnitten: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Vorläufige RT-11-Datei",
+    "MediaFileSystems.Rt11Permanent": "RT-11-Datei"
+  }
+}

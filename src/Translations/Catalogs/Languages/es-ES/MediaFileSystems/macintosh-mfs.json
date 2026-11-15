@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "La imagen no contiene un volumen {0}; firma observada: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: falta el bloque {2} del flujo de archivo {1}.",
+    "MediaFileSystems.MacIncompleteData": "{0}: el flujo de archivo {1} contiene {2} bytes; se esperaban {3}.",
+    "MediaFileSystems.MacAllocationSize": "El tamaño de asignación {1} del volumen {0} debe ser un múltiplo no nulo de {2} bytes.",
+    "MediaFileSystems.MacFreeCount": "El volumen {0} declara {1} bloques de asignación libres de un total de {2} bloques.",
+    "MediaFileSystems.MfsMapTruncated": "El mapa MFS para {0} asignaciones contiene {1} bytes; se requieren {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "La entrada del directorio MFS en el bloque {0}, desplazamiento {1}, no es válida.",
+    "MediaFileSystems.MfsChain": "{0}: la cadena de asignación del flujo de archivo {1} no es válida (ciclo={2}, fuera del mapa={3}, final prematuro={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: el flujo de archivo {1} declara {2} bytes desde el clúster {3}; los metadatos son incoherentes.",
+    "MediaFileSystems.MfsDefaultFile": "Archivo Macintosh"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Kích thước ảnh phân khu không hợp lệ{0}:{1}.",
+    "Media.SectorInvalidFormatId": "Định dạng ảnh phân khu trống hay không hợp lệ:{0}.",
+    "Media.SectorDuplicateBlock": "Khu vực lý luận{0} xuất hiện nhiều lần trong hình.",
+    "Media.SectorBlockOutside": "Phân khu logic {0} nằm ngoài ảnh chứa {1} phân khu.",
+    "Media.SectorCapacityShort": "Khả năng hình ảnh khu vực đã tuyên bố là {0} nhỏ hơn chiều dài dữ liệu hiện có {1}.",
+    "Media.SectorMissingBlock": "Thiếu phân khu logic {0}.",
+    "Media.SectorInvalidBlockSize": "Khu vực lý luận{0} chứa{1} byte thay vì{2}.",
+    "Media.FatUnsupportedBoot": "Định dạng ảnh {0} không hỗ trợ hệ thống tập tin FAT12: vùng khởi động bị thiếu hay bị cắt.",
+    "Media.FatUnsupportedLayout": "Định dạng ảnh {0} chưa hỗ trợ FAT12 Hệ thống tập tin (hộp nhỏ cỡ {1}phân khu trên mỗi cụm {2}phân khu riêng {3}. FAT bản sao {4}Mục nhập gốc {5}Phân khu trên FAT {6}).",
+    "Media.FatInvalidChain": "Chuỗi FAT của{0} là không hợp lệ hoặc chu kỳ ở cụm{1}.",
+    "Media.FatTruncatedTable": "Mục nhập FAT12 cho cụm {0} bị cắt đứt.",
+    "Media.FatMissingSectors": "Phạm vi của {0} đến {1} là chưa đầy đủ.",
+    "Media.FatDepthLimit": "Đã đạt giới hạn lồng thư mục FAT tại {0} (độ sâu {1}).",
+    "Media.FatMissingSector": "FAT khu vực {0} chứa {1} byte thay vì {2}.",
+    "Media.FatCyclicChain": "{0}: chuỗi FAT12 là chu kỳ tại cụm {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 cụm {1} nằm ngoài phạm vi dữ liệu.",
+    "Media.FatIncompleteContent": "{0}: kích cỡ đã tuyên bố là{1} byte nhưng chỉ có thể dùng {2} byte.",
+    "Media.FatUnsupportedGeometry": "Định dạng ảnh {0} không phải là một hình học FAT12 được hỗ trợ.",
+    "Media.FatDiskFull": "Ổ đĩa FAT12 đích không có đủ cụm trống hoặc mục thư mục.",
+    "Media.FatInvalidEntry": "Không thể biểu diễn mục di chuyển {0} bằng mục tên ngắn FAT12.",
+    "Media.FatDirectoryCycle": "Thư mục {0} Dùng lại FAT12 cụm {1}Nó đã được mở rộng.",
+    "Media.FatIntegrityInvalid": "FAT khu vực {0} đã ghi nhận không chính xác.",
+    "Media.FatResourceLimit": "Giới hạn chiết xuất FAT12 đã đạt được trong khi đọc {0}."
+  }
+}

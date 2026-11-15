@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Volume information block {0} is missing or has an invalid size.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Directory block {0} is missing or has an invalid size.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: data fork block {1} is missing or has an invalid size.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: the data fork contains {1} bytes; {2} expected.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: the data fork declares {1} bytes from cluster {2}; the metadata is inconsistent.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: the data fork allocation chain contains a cycle.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: the data fork allocation chain refers outside the allocation map.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: the data fork allocation chain ends before all required clusters are available.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: resource fork block {1} is missing or has an invalid size.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: the resource fork contains {1} bytes; {2} expected.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: the resource fork declares {1} bytes from cluster {2}; the metadata is inconsistent.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: the resource fork allocation chain contains a cycle.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: the resource fork allocation chain refers outside the allocation map.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: the resource fork allocation chain ends before all required clusters are available."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Le document n'est pas une image optique ISO.",
+    "MediaFileSystems.GameCubeNotImage": "Le document n'est pas une image GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST nécessite des données de piste optique.",
+    "MediaFileSystems.GameCubeNoTrack": "Aucune piste de données n'est disponible pour le volume FST GameCube.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST nécessite des secteurs optiques de 2048 octets.",
+    "MediaFileSystems.GameCubeHeader": "L'en-tête du disque GameCube est invalide.",
+    "MediaFileSystems.GameCubeDescriptor": "Le descripteur FST GameCube est invalide.",
+    "MediaFileSystems.GameCubeRoot": "L'entrée de la racine GameCube FST est invalide.",
+    "MediaFileSystems.GameCubeCount": "Le nombre d'entrées FST de GameCube est invalide.",
+    "MediaFileSystems.GameCubeDepth": "L'arborescence du répertoire FST GameCube est trop profonde.",
+    "MediaFileSystems.GameCubeDirectoryRange": "La plage de répertoires GameCube FST est invalide.",
+    "MediaFileSystems.GameCubeContentLimit": "Le fichier GameCube « {0} » est plus grand que la limite de contenu et n'a pas été chargé.",
+    "MediaFileSystems.GameCubeNameOffset": "L'offset du nom FST GameCube est à l'extérieur de la table des chaînes.",
+    "MediaFileSystems.GameCubeSectorData": "Le secteur optique GameCube n'a aucune donnée lisible.",
+    "MediaFileSystems.GameCubeExtent": "L'étendue de la FST GameCube est en dehors de la piste optique.",
+    "MediaFileSystems.GameCubeOverflow": "La valeur FST de GameCube dépasse la plage numérique prise en charge."
+  }
+}

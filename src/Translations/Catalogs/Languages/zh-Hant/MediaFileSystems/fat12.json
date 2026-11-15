@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "磁區映像的維度 {0} 無效：{1}。",
+    "Media.SectorInvalidFormatId": "磁區映像格式識別碼為空或無效：{0}。",
+    "Media.SectorDuplicateBlock": "邏輯磁區 {0} 在映像中出現多次。",
+    "Media.SectorBlockOutside": "邏輯磁區 {0} 超出包含 {1} 個磁區的映像範圍。",
+    "Media.SectorCapacityShort": "宣告的磁區映像容量 {0} 小於可用資料長度 {1}。",
+    "Media.SectorMissingBlock": "缺少邏輯磁區 {0}。",
+    "Media.SectorInvalidBlockSize": "邏輯磁區 {0} 包含 {1} 位元組，而不是 {2} 位元組。",
+    "Media.FatUnsupportedBoot": "映像格式 {0} 不包含受支援的 FAT12 檔案系統：開機磁區遺失或遭截斷。",
+    "Media.FatUnsupportedLayout": "映像格式 {0} 不包含受支援的 FAT12 檔案系統（磁區大小 {1}，每叢集磁區數 {2}，保留磁區數 {3}，FAT 副本數 {4}，根目錄項目數 {5}，每個 FAT 的磁區數 {6}）。",
+    "Media.FatInvalidChain": "{0} 的 FAT 鏈結在叢集 {1} 處無效或存在循環。",
+    "Media.FatTruncatedTable": "叢集 {0} 的 FAT12 項目遭截斷。",
+    "Media.FatMissingSectors": "磁區範圍 {0} 至 {1} 不完整。",
+    "Media.FatDepthLimit": "在 {0} 處達到 FAT 目錄巢狀層數限制（深度 {1}）。",
+    "Media.FatMissingSector": "FAT 磁區 {0} 包含 {1} 位元組，而不是 {2} 位元組。",
+    "Media.FatCyclicChain": "{0}：FAT12 鏈結在叢集 {1} 處存在循環。",
+    "Media.FatClusterOutsideRange": "{0}：FAT12 叢集 {1} 超出資料範圍。",
+    "Media.FatIncompleteContent": "{0}：宣告的大小為 {1} 位元組，但只有 {2} 位元組可用。",
+    "Media.FatUnsupportedGeometry": "映像格式 {0} 的幾何配置不受 FAT12 支援。",
+    "Media.FatDiskFull": "目標 FAT12 磁碟區沒有足夠的可用叢集或目錄項目。",
+    "Media.FatInvalidEntry": "移轉項目 {0} 無法表示為 FAT12 短檔名項目。",
+    "Media.FatDirectoryCycle": "目錄 {0} 重複使用已走訪的 FAT12 叢集 {1}。",
+    "Media.FatIntegrityInvalid": "FAT 磁區 {0} 已記錄的完整性資訊無效。",
+    "Media.FatResourceLimit": "讀取 {0} 時達到 FAT12 擷取限制。"
+  }
+}

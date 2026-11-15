@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Blok informací o svazku {0} chybí nebo má neplatnou velikost.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Blok adresáře {0} chybí nebo má neplatnou velikost.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: datový proud: blok {1} chybí nebo má neplatnou velikost.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: datový proud obsahuje {1} bajtů; očekáváno {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: datový proud uvádí {1} bajtů od clusteru {2}; metadata jsou nekonzistentní.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: datový proud: alokační řetězec obsahuje cyklus.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: datový proud: alokační řetězec odkazuje mimo alokační mapu.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: datový proud: alokační řetězec končí před zpřístupněním všech požadovaných clusterů.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: proud prostředků: blok {1} chybí nebo má neplatnou velikost.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: proud prostředků obsahuje {1} bajtů; očekáváno {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: proud prostředků uvádí {1} bajtů od clusteru {2}; metadata jsou nekonzistentní.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: proud prostředků: alokační řetězec obsahuje cyklus.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: proud prostředků: alokační řetězec odkazuje mimo alokační mapu.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: proud prostředků: alokační řetězec končí před zpřístupněním všech požadovaných clusterů."
+  }
+}

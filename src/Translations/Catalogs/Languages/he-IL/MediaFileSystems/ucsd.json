@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "ספריית UCSD בבלוק {0} אינה מזוהה; בלוקים לא תקינים: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: בלוקי UCSD חסרים או קטועים: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "בלוקי הספרייה של UCSD p-System חסרים או קטועים: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "לרשומת UCSD {0} יש שם לא תקין '{1}'.",
+    "MediaFileSystems.UcsdRange": "רשומת UCSD {0} ('{1}') משתמשת בטווח הלא תקין [{2}, {3}) מתוך {4} בלוקים.",
+    "MediaFileSystems.UcsdOverlap": "רשומת UCSD {0} ('{1}') חופפת לבלוקים {2}.",
+    "MediaFileSystems.UcsdCount": "ספריית UCSD מצהירה על {0} קבצים, אך נמצאו {1} רשומות תקינות.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: בלוק UCSD האחרון מצהיר על {1} בתים.",
+    "MediaFileSystems.UcsdTypeUntyped": "קובץ UCSD ללא סוג",
+    "MediaFileSystems.UcsdTypeExternalDisk": "קובץ דיסק חיצוני UCSD",
+    "MediaFileSystems.UcsdTypeCode": "קובץ קוד UCSD",
+    "MediaFileSystems.UcsdTypeText": "קובץ טקסט UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "קובץ מידע UCSD",
+    "MediaFileSystems.UcsdTypeData": "קובץ נתונים UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "קובץ גרפיקה UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "קובץ תמונה UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "ספריית UCSD מאובטחת"
+  }
+}

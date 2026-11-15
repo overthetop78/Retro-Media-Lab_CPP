@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "磁盘映像不包含 {0} 卷；读取到的签名为 0x{1}。",
+    "MediaFileSystems.MacMissingBlock": "{0}：fork {1} 的块 {2} 缺失。",
+    "MediaFileSystems.MacIncompleteData": "{0}：fork {1} 包含 {2} 字节；预期为 {3} 字节。",
+    "MediaFileSystems.MacAllocationSize": "卷 {0} 的分配单元大小 {1} 必须是 {2} 字节的正整数倍。",
+    "MediaFileSystems.MacFreeCount": "卷 {0} 声明共有 {2} 个分配块，其中 {1} 个空闲。",
+    "MediaFileSystems.MfsMapTruncated": "用于 {0} 个分配单元的 MFS 表包含 {1} 字节；需要 {2} 字节。",
+    "MediaFileSystems.MfsDirectoryEntry": "块 {0} 中偏移 {1} 处的 MFS 目录项无效。",
+    "MediaFileSystems.MfsChain": "{0}：fork {1} 的分配链无效（循环={2}，超出表范围={3}，过早结束={4}）。",
+    "MediaFileSystems.MfsForkMetadata": "{0}：fork {1} 声明从簇 {3} 开始包含 {2} 字节；元数据不一致。",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh 文件"
+  }
+}

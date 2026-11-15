@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "En mediedata-adresse kan ikke være negativ.",
+    "MediaFileSystems.BlockRangeLength": "En mediedata længde skal være positiv.",
+    "MediaFileSystems.BlockSourceOffset": "Et mediedata kan ikke være negativt.",
+    "MediaFileSystems.BlockSourceNull": "En lagret medierække kræver en datakilde.",
+    "MediaFileSystems.BlockSourceRange": "Det kortlagte område overstiger dets datakilde.",
+    "MediaFileSystems.BlockNonStoredSource": "Kun lagrede områder kan henvise til en datakilde.",
+    "MediaFileSystems.BlockNonStoredOffset": "Et ikke-lagret område kan ikke have en kilde forskydning.",
+    "MediaFileSystems.BlockLogicalLength": "Den logiske medielængde kan ikke være negativ.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Den logiske blokstørrelse skal være positiv.",
+    "MediaFileSystems.BlockCompleteBlocks": "Den logiske længde skal indeholde fuldstændige logiske blokke.",
+    "MediaFileSystems.BlockGeometryOutside": "Den erklærede geometri overstiger den logiske mediekapacitet.",
+    "MediaFileSystems.BlockRangeOutside": "Et blokområde overstiger den logiske medielængde.",
+    "MediaFileSystems.BlockRangeOverlap": "Blokintervaller må ikke overlappe hinanden.",
+    "MediaFileSystems.BlockReadAddress": "Den logiske læseadresse kan ikke være negativ.",
+    "MediaFileSystems.BlockReadRange": "Det ønskede logiske område overstiger mediekapaciteten.",
+    "MediaFileSystems.BlockRangeMissing": "Ingen mediedata dækker logisk adresse {0}.",
+    "MediaFileSystems.BlockUnavailable": "Logisk adresse {0} er ikke tilgængelig i kildebilledet.",
+    "MediaFileSystems.BlockRangeKind": "Ikke understøttet mediedata art {0}.",
+    "MediaFileSystems.BlockOverflow": "Beregningen af medieblokken overstiger det understøttede underskrevne interval.",
+    "MediaFileSystems.BlockGeometryValue": "Den harddisk geometri parameter {0} skal være positiv.",
+    "MediaFileSystems.BlockDriveCount": "Den mekaniske adgang skal omfatte et positivt antal byte.",
+    "MediaFileSystems.BlockNullImage": "Der kræves et blokbillede."
+  }
+}

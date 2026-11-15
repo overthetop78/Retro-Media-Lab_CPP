@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "התמונה אינה מכילה קטלוג ADFS נתמך (בלוקים בגודל {0} בתים, {1} בלוקים).",
+    "Media.AdfsInvalidDirectory": "תיקיית ADFS ‏{0} אינה תקינה או אינה שלמה.",
+    "Media.AdfsDepth": "מגבלת עומק התיקיות של ADFS הושגה בעומק {0}.",
+    "Media.AdfsCycle": "תיקיית ADFS ‏{0} יוצרת מעגל או שיש אליה יותר מהפניה אחת.",
+    "Media.AdfsInvalidRange": "{0}: כתובת ADFS ‏{1}, היסט {2} או אורך {3} אינם תקינים.",
+    "Media.AdfsMissingBlock": "{0}: כתובת ADFS ‏{1} בהיסט {2} דורשת את הבלוק החסר {3}.",
+    "Media.AdfsIntegrity": "מידע השלמות הרשום של בלוק ADFS ‏{0} אינו תקין.",
+    "Media.AdfsBlockVolume": "ADFS דורש אמצעי אחסון עם גישה ישירה למגזרים או לבלוקים.",
+    "Media.AdfsSectorCount": "מספר מגזרי ADFS ‏{0} נמצא מחוץ לטווח הנתמך."
+  }
+}

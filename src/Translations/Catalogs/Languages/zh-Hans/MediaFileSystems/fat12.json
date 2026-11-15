@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "扇区映像的维度 {0} 无效：{1}。",
+    "Media.SectorInvalidFormatId": "扇区映像格式标识符为空或无效：{0}。",
+    "Media.SectorDuplicateBlock": "逻辑扇区 {0} 在映像中出现多次。",
+    "Media.SectorBlockOutside": "逻辑扇区 {0} 超出包含 {1} 个扇区的映像范围。",
+    "Media.SectorCapacityShort": "声明的扇区映像容量 {0} 小于可用数据长度 {1}。",
+    "Media.SectorMissingBlock": "缺少逻辑扇区 {0}。",
+    "Media.SectorInvalidBlockSize": "逻辑扇区 {0} 包含 {1} 字节，而不是 {2} 字节。",
+    "Media.FatUnsupportedBoot": "映像格式 {0} 不包含受支持的 FAT12 文件系统：引导扇区缺失或被截断。",
+    "Media.FatUnsupportedLayout": "映像格式 {0} 不包含受支持的 FAT12 文件系统（扇区大小 {1}，每簇扇区数 {2}，保留扇区数 {3}，FAT 副本数 {4}，根目录项数 {5}，每个 FAT 的扇区数 {6}）。",
+    "Media.FatInvalidChain": "{0} 的 FAT 链在簇 {1} 处无效或存在循环。",
+    "Media.FatTruncatedTable": "簇 {0} 的 FAT12 表项被截断。",
+    "Media.FatMissingSectors": "扇区范围 {0} 至 {1} 不完整。",
+    "Media.FatDepthLimit": "在 {0} 处达到 FAT 目录嵌套限制（深度 {1}）。",
+    "Media.FatMissingSector": "FAT 扇区 {0} 包含 {1} 字节，而不是 {2} 字节。",
+    "Media.FatCyclicChain": "{0}：FAT12 链在簇 {1} 处存在循环。",
+    "Media.FatClusterOutsideRange": "{0}：FAT12 簇 {1} 超出数据范围。",
+    "Media.FatIncompleteContent": "{0}：声明的大小为 {1} 字节，但只有 {2} 字节可用。",
+    "Media.FatUnsupportedGeometry": "映像格式 {0} 的几何布局不受 FAT12 支持。",
+    "Media.FatDiskFull": "目标 FAT12 卷没有足够的空闲簇或目录项。",
+    "Media.FatInvalidEntry": "迁移条目 {0} 无法表示为 FAT12 短文件名条目。",
+    "Media.FatDirectoryCycle": "目录 {0} 重复使用已遍历的 FAT12 簇 {1}。",
+    "Media.FatIntegrityInvalid": "FAT 扇区 {0} 的已记录完整性信息无效。",
+    "Media.FatResourceLimit": "读取 {0} 时达到 FAT12 提取限制。"
+  }
+}

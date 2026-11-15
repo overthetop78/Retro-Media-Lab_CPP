@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "De COHERENT canonieke waarde bevat {0} bytes; {1} zijn vereist.",
+    "Media.CoherentPointerLength": "De COHERENT blokaanwijzer bevat {0} bytes; {1} zijn vereist.",
+    "Media.CoherentInvalidSuperblock": "De afbeelding bevat geen geldig COHERENT bestandssysteem.",
+    "Media.CoherentDeclaredBlocks": "COHERENT declareert {0} blokken maar alleen {1} zijn beschikbaar.",
+    "Media.CoherentMissingSuperblock": "Een vereist COHERENT superblokblok ontbreekt.",
+    "Media.CoherentInodeZone": "De COHERENT-inodezone eindigt op blok {0}, buiten het bestandssysteem van {1} blokken.",
+    "Media.CoherentNullInode": "COHERENT inode nul is ongeldig.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} ligt buiten de inode zone van {1} bytes.",
+    "Media.CoherentFileTooLarge": "De COHERENT bestandslengte van {0} bytes kan niet in het geheugen worden weergegeven.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT direct blok {1} ontbreekt of buiten het beeld.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT indirect blok {1} op niveau {2} ontbreekt of buiten de afbeelding.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT indirect blok {1} op niveau {2} wordt meer dan eens genoemd.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT directory inode {1} vormt een cyclus.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT directory inode {1} is al bezocht.",
+    "Media.CoherentChildUnreadable": "{0}: het COHERENT-kindinode kan niet gelezen worden.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT bytes ontbreken en blijven gepositioneerd als nullen.",
+    "Media.CoherentDepth": "{0}: de COHERENT-mapdieptelimiet werd bereikt op diepte {1}.",
+    "Media.CoherentInodeDescription": "COHERENT INODE {0}"
+  }
+}

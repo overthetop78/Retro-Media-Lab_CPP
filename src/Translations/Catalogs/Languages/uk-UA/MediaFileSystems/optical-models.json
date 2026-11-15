@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Логічна довжина оптичного носія не може бути від’ємною.",
+    "MediaFileSystems.OpticalMetadataOnly": "Цей застарілий описувач носія містить лише метадані й не має джерела даних для читання.",
+    "MediaFileSystems.OpticalIndexNumber": "Індекс оптичної доріжки повинен бути між 0 і 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Оптичний вимір '{0}' повинен бути позитивним.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Оптичний вимір '{0}' не може бути негативним.",
+    "MediaFileSystems.OpticalDataSource": "Необхідний джерело даних оптичних треків.",
+    "MediaFileSystems.OpticalUserWindow": "Вікно даних користувача перевищує один збережений сектор.",
+    "MediaFileSystems.OpticalTrackSource": "Дані треку перевищили джерело.",
+    "MediaFileSystems.OpticalSubchannelSource": "Розміри каналів вимагають підканального джерела.",
+    "MediaFileSystems.OpticalSubchannelRange": "Підканальні дані перевищують джерело.",
+    "MediaFileSystems.OpticalPregapOffset": "Зміщення джерела збереженого прегапу потребує збережених секторів прегапу.",
+    "MediaFileSystems.OpticalPregapRange": "Збережений прегап перевищує джерело.",
+    "MediaFileSystems.OpticalStoredDestination": "Буфер призначення має містити рівно один збережений сектор.",
+    "MediaFileSystems.OpticalStoredPregap": "Сектор знаходиться поза збереженим прегапом.",
+    "MediaFileSystems.OpticalRelativeSector": "Сектор знаходиться за межами оптичної доріжки.",
+    "MediaFileSystems.OpticalNullTrack": "Оптичний трек не може бути null."
+  }
+}

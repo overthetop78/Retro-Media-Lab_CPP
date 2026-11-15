@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Invalid sektor bild dimension {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Identifieraren för bildformat är tom eller ogiltig: {0}.",
+    "Media.SectorDuplicateBlock": "Logisk sektor {0} förekommer mer än en gång i bilden.",
+    "Media.SectorBlockOutside": "Logisk sektor {0} ligger utanför bilden som innehåller {1} sektorer.",
+    "Media.SectorCapacityShort": "Den deklarerade sektorns bildkapacitet {0} är mindre än den tillgängliga datalängden {1}.",
+    "Media.SectorMissingBlock": "Logisk sektor {0} saknas.",
+    "Media.SectorInvalidBlockSize": "Logisk sektor {0} innehåller {1} byte istället för {2}.",
+    "Media.FatUnsupportedBoot": "Bildformat {0} har inget stöd för FAT12-filsystemet: startsektorn saknas eller trunceras.",
+    "Media.FatUnsupportedLayout": "Bildformat {0} har inget stöd FAT12-filsystem (sektorstorlek {1}, sektorer per kluster {2}, reserverade sektorer {3}, FAT-kopior {4}, root-poster {5}, sektorer per FAT {6}).",
+    "Media.FatInvalidChain": "FAT-kedjan av {0} är ogiltig eller cyklisk vid kluster {1}.",
+    "Media.FatTruncatedTable": "FAT12-posten för kluster {0} är avkortad.",
+    "Media.FatMissingSectors": "Sektorintervall {0} till {1} är ofullständig.",
+    "Media.FatDepthLimit": "Gränsen för nästlade FAT-kataloger nåddes vid {0} (djup {1}).",
+    "Media.FatMissingSector": "FAT-sektorn {0} innehåller {1} byte istället för {2}.",
+    "Media.FatCyclicChain": "{0}: FAT12-kedjan är cyklisk vid kluster {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 kluster {1} ligger utanför dataområdet.",
+    "Media.FatIncompleteContent": "{0}: den deklarerade storleken är {1} byte, men endast {2} byte är tillgängliga.",
+    "Media.FatUnsupportedGeometry": "Bildformat {0} är inte en stödd FAT12 geometri.",
+    "Media.FatDiskFull": "Målet FAT12-volymen har inte tillräckligt med fria kluster eller katalogposter.",
+    "Media.FatInvalidEntry": "Migrationspost {0} kan inte representeras som en FAT12 kortnamnspost.",
+    "Media.FatDirectoryCycle": "Katalog {0} återanvänder FAT12 kluster {1}, som redan har utökats.",
+    "Media.FatIntegrityInvalid": "FAT-sektorn {0} har ogiltig registrerad integritet.",
+    "Media.FatResourceLimit": "FAT12-utvinningsgränsen uppnåddes när du läser {0}."
+  }
+}

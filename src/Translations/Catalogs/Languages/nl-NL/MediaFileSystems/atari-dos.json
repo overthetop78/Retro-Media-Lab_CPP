@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Het schijfkopiebestand {0} met sectoren van {1} bytes bevat geen ondersteunde Atari DOS-directory.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Directorysector {0} ontbreekt.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Directorysector {0}, vermelding {1}, is geen geldige Atari DOS-bestandsvermelding en is genegeerd.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS-datasector {1} ontbreekt.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: de Atari DOS-dataketen bevat een lus bij sector {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sector {1} behoort tot bestand {3}; verwacht werd {2}.",
+    "MediaFileSystems.AtariDosOpen": "Directorysector {1}, vermelding {2} (‘{0}’), staat nog open voor schrijven en is genegeerd.",
+    "MediaFileSystems.AtariDosTruncated": "Datasector {1} voor ‘{0}’ is te kort om de koppeling te bevatten.",
+    "MediaFileSystems.AtariDosPremature": "Bestand ‘{0}’ geeft {1} sectoren aan, maar de keten eindigt na {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Het lege bestand ‘{0}’ verwijst onverwacht naar sector {1}.",
+    "MediaFileSystems.AtariDosBounded": "Bestand ‘{0}’ is beperkt tot de {1} sectoren uit de directoryvermelding, terwijl de onderliggende keten doorgaat bij sector {2}.",
+    "MediaFileSystems.AtariDosShared": "Bestand ‘{0}’ deelt {3} sectoren vanaf sector {2} met ‘{1}’.",
+    "MediaFileSystems.AtariDosUsedLength": "Datasector {1} voor ‘{0}’ geeft {2} bytes aan, maar slechts {3} zijn beschikbaar."
+  }
+}

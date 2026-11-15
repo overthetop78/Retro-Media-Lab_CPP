@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Danh mục Apple DOS được VTOC tham chiếu tại rãnh {0}, cung {1} bị thiếu hoặc không hợp lệ.",
+    "MediaFileSystems.AppleDosCatalogChain": "Cung danh mục Apple DOS {0}/{1} bị thiếu hoặc tạo thành vòng lặp.",
+    "MediaFileSystems.AppleDosAddress": "Địa chỉ Apple DOS {1}/{2} của {0} nằm ngoài hình học đĩa.",
+    "MediaFileSystems.AppleDosListCycle": "Danh sách rãnh/cung của {0} tạo thành vòng lặp tại {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Danh sách rãnh/cung của {0} bị thiếu tại {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Cung dữ liệu {1}/{2} của {0} bị thiếu.",
+    "MediaFileSystems.AppleDosSize": "Tập tin {0} khai báo {1} cung nhưng đã duyệt qua {2} cung.",
+    "MediaFileSystems.AppleDosWriteFormat": "Định dạng đích Apple DOS {0} không được hỗ trợ.",
+    "MediaFileSystems.AppleDosWriteFull": "Ổ đĩa Apple DOS không có đủ cung danh mục hoặc cung dữ liệu.",
+    "MediaFileSystems.AppleDosWriteVolume": "Tên ổ đĩa Apple DOS {0} phải theo dạng DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS chỉ hỗ trợ tập tin nằm trong danh mục gốc và có nội dung khả dụng.",
+    "MediaFileSystems.AppleDosBinarySize": "Tập tin nhị phân Apple DOS không được vượt quá 65535 byte.",
+    "MediaFileSystems.AppleDosWriteName": "Không thể mã hóa tên tập tin Apple DOS {0} trong mục danh mục.",
+    "MediaFileSystems.AppleDosTypeText": "Văn bản",
+    "MediaFileSystems.AppleDosTypeBinary": "Nhị phân",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Có thể tái định vị",
+    "MediaFileSystems.AppleDosTypeFile": "Tập tin"
+  }
+}

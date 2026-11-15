@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "index {0}의 파일 시스템 리더는 null입니다.",
+    "MediaFileSystems.RegistryEmptyReaderId": "index {0}의 파일 시스템 리더는 빈 식별자를 가지고 있습니다.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "다중 파일 시스템 리더는 '{0}'을 식별합니다.",
+    "MediaFileSystems.RegistryUnknownReaderId": "파일 시스템 리더가 식별자 '{0}'이 없습니다.",
+    "MediaFileSystems.RegistryNullImage": "섹터 이미지는 null일 수 없습니다.",
+    "MediaFileSystems.AtariKFileUnsupported": "분야 이미지는 KBoot를 사용하여 Atari K-file 디스크가 아닙니다.",
+    "MediaFileSystems.AtariBootUnsupported": "섹터 이미지는 완전한 Atari 부팅 프로그램을 포함하지 않습니다.",
+    "MediaFileSystems.AtariClkUnsupported": "섹터 이미지는 Atari CLK 그래픽 라이브러리 디스크가 아닙니다.",
+    "MediaFileSystems.AtariClkIncomplete": "카탈로그는 {0} 바이트를 선언하지만, 섹터 체인에는 {1} 바이트가 포함되어 있습니다.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK 그래픽"
+  }
+}

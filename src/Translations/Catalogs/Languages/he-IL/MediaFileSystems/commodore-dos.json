@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "פורמט הדמות «{0}» אינו מכיל מערכת קבצים נתמכת מסוג CBM DOS.",
+    "MediaFileSystems.CbmDirectoryCycle": "שרשרת התיקייה CBM DOS מחזורית ב־{0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "מגזר התיקייה CBM DOS ב־{0}/{1} חסר.",
+    "MediaFileSystems.CbmDirectoryTruncated": "מגזר התיקייה CBM DOS ב־{0}/{1} מכיל רק {2} בתים.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "קואורדינטת התיקייה CBM DOS ב־{0}/{1} אינה תקינה.",
+    "MediaFileSystems.CbmFileCycle": "{0}: השרשרת מחזורית ב־{1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: הקואורדינטה {1}/{2} אינה תקינה.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: המגזר {1}/{2} קטוע.",
+    "MediaFileSystems.CbmFileMissing": "{0}: המגזר {1}/{2} חסר.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: המונה הסופי {1} אינו תקין.",
+    "MediaFileSystems.CbmCapacity": "{0}: שרשרת CBM DOS חורגת מקיבולת הדמות.",
+    "MediaFileSystems.CbmBamMissing": "נתוני CBM DOS BAM הנדרשים ב־{0}/{1} חסרים.",
+    "MediaFileSystems.CbmBamTruncated": "נתוני CBM DOS BAM ב־{0}/{1} קטועים ל־{2} בתים.",
+    "MediaFileSystems.PetsciiLength": "אורך שדה PETSCII, ‏{0}, לא יכול להיות שלילי.",
+    "MediaFileSystems.PetsciiTooLong": "ערך PETSCII חורג מ־{0} תווים.",
+    "MediaFileSystems.PetsciiCharacter": "לא ניתן לייצג את התו «{0}» בתת־הקבוצה הנתמכת של PETSCII.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, פתוח",
+    "MediaFileSystems.CbmTypeLocked": "{0}, נעול",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, פתוח, נעול"
+  }
+}

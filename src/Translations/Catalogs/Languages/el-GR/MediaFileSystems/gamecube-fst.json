@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Το έγγραφο δεν είναι οπτική εικόνα ISO.",
+    "MediaFileSystems.GameCubeNotImage": "Το έγγραφο δεν είναι εικόνα GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "Το GameCube FST απαιτεί οπτικά δεδομένα τροχιάς.",
+    "MediaFileSystems.GameCubeNoTrack": "Δεν υπάρχει διαθέσιμο κομμάτι δεδομένων για τον τόμο FST GameCube.",
+    "MediaFileSystems.GameCubeSectorSize": "Το GameCube FST απαιτεί οπτικούς τομείς 2048-byte.",
+    "MediaFileSystems.GameCubeHeader": "Η κεφαλίδα δίσκου GameCube είναι άκυρη.",
+    "MediaFileSystems.GameCubeDescriptor": "Ο περιγραφέας FST GameCube είναι άκυρος.",
+    "MediaFileSystems.GameCubeRoot": "Η καταχώρηση ρίζας FST GameCube είναι άκυρη.",
+    "MediaFileSystems.GameCubeCount": "Ο αριθμός καταχώρησης FST του GameCube δεν είναι έγκυρος.",
+    "MediaFileSystems.GameCubeDepth": "Το δέντρο καταλόγου του GameCube FST είναι πολύ βαθύ.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Το εύρος καταλόγου FST GameCube είναι άκυρο.",
+    "MediaFileSystems.GameCubeContentLimit": "Το αρχείο GameCube '{0}' είναι μεγαλύτερο από το όριο περιεχομένου και δεν φορτώθηκε.",
+    "MediaFileSystems.GameCubeNameOffset": "Το GameCube FST όφσετ όνομα είναι έξω από τον πίνακα συμβολοσειρών.",
+    "MediaFileSystems.GameCubeSectorData": "Ο οπτικός τομέας GameCube δεν έχει αναγνώσιμα δεδομένα.",
+    "MediaFileSystems.GameCubeExtent": "Η έκταση του GameCube FST είναι έξω από την οπτική τροχιά.",
+    "MediaFileSystems.GameCubeOverflow": "Η τιμή FST GameCube υπερβαίνει το υποστηριζόμενο αριθμητικό εύρος."
+  }
+}

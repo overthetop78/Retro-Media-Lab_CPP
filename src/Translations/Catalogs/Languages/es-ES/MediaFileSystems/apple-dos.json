@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "El catálogo Apple DOS al que apunta el VTOC en la pista {0}, sector {1}, no existe o no es válido.",
+    "MediaFileSystems.AppleDosCatalogChain": "El sector de catálogo Apple DOS {0}/{1} no existe o forma parte de un bucle.",
+    "MediaFileSystems.AppleDosAddress": "La dirección Apple DOS {1}/{2} de {0} está fuera de la geometría del disco.",
+    "MediaFileSystems.AppleDosListCycle": "La lista de pistas y sectores de {0} forma un bucle en {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "La lista de pistas y sectores de {0} no existe en {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "El sector de datos {1}/{2} de {0} no existe.",
+    "MediaFileSystems.AppleDosSize": "El archivo {0} declara {1} sectores, pero se recorrieron {2} sectores.",
+    "MediaFileSystems.AppleDosWriteFormat": "El formato de destino Apple DOS {0} no es compatible.",
+    "MediaFileSystems.AppleDosWriteFull": "El volumen Apple DOS no tiene suficientes sectores de catálogo o de datos.",
+    "MediaFileSystems.AppleDosWriteVolume": "El nombre del volumen Apple DOS {0} debe tener el formato DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS solo admite archivos con contenido disponible en el catálogo raíz.",
+    "MediaFileSystems.AppleDosBinarySize": "Un archivo binario Apple DOS no puede superar los 65535 bytes.",
+    "MediaFileSystems.AppleDosWriteName": "El nombre de archivo Apple DOS {0} no se puede codificar en una entrada del catálogo.",
+    "MediaFileSystems.AppleDosTypeText": "Texto",
+    "MediaFileSystems.AppleDosTypeBinary": "Binario",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Reubicable",
+    "MediaFileSystems.AppleDosTypeFile": "Archivo"
+  }
+}

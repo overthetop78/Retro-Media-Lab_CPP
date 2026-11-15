@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Imaginea nu conține un bloc de pornire AmigaDOS acceptat.",
+    "Media.AmigaUnsupportedVariant": "Varianta de boot AmigaDOS {0} nu este susținută.",
+    "Media.AmigaInvalidRoot": "AmigaDOS bloc rădăcină {0} este invalid.",
+    "Media.AmigaRootChecksum": "Blocul rădăcină AmigaDOS {0} are o sumă de control nevalidă.",
+    "Media.AmigaDirectoryChain": "Lanţul director AmigaDOS din blocul {0} este invalid sau ciclic.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS director bloc de intrare {0} lipsește.",
+    "Media.AmigaMissingData": "Blocul de date AmigaDOS {0} lipsește.",
+    "Media.AmigaOfsType": "OFS bloc de date {0} are un tip neașteptat {1}.",
+    "Media.AmigaDataChecksum": "Blocul de date OFS {0} are o sumă de control nevalidă.",
+    "Media.AmigaInvalidExtension": "Blocul de extensie a fişierului AmigaDOS {0} este invalid, ciclic sau lipseşte.",
+    "Media.AmigaExtensionChecksum": "Blocul de extensie a fișierului AmigaDOS {0} are structură sau sumă de control nevalidă.",
+    "Media.AmigaTruncatedFile": "Conţinutul fişierului AmigaDOS este trunchiat: se aşteaptă {0} octeţi, citiţi {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS Bloc bitmap {0} lipsește.",
+    "Media.AmigaBitmapChecksum": "Blocul bitmap AmigaDOS {0} are o sumă de control nevalidă.",
+    "Media.AmigaDepth": "Limita de adâncime a directorului AmigaDOS a fost atinsă la adâncime {0}.",
+    "Media.AmigaRecovered": "Recuperat {0} AmigaDOS inregistrari catalog de antete valabile, deoarece blocul rădăcină este indisponibil.",
+    "Media.AmigaWriterVariant": "Varianta AmigaDOS {0} nu poate fi creată de acest modul.",
+    "Media.AmigaWriterGeometry": "Formatul imaginii {0} nu este o geometrie AmigaDOS susținută.",
+    "Media.AmigaDiskFull": "Volumul țintă de AmigaDOS are blocuri libere insuficiente.",
+    "Media.AmigaInvalidEntry": "Intrarea în migraţie {0} nu poate fi reprezentată pe AmigaDOS.",
+    "Media.AmigaShortBlock": "Blocul AmigaDOS {0} este incomplet: sunt disponibile octeţi {1}.",
+    "Media.AmigaRecordedIntegrity": "Blocul AmigaDOS {0} are informații de integritate înregistrate nevalide.",
+    "Media.AmigaFileSize": "Lungimea fișierului AmigaDOS {0} depășește intervalul susținut."
+  }
+}

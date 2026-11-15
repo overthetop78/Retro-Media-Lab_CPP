@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Brakuje bloku informacji o woluminie {0} lub jego rozmiar jest nieprawidłowy.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Brakuje bloku katalogu {0} lub jego rozmiar jest nieprawidłowy.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: brakuje bloku {1} strumienia danych lub jego rozmiar jest nieprawidłowy.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: zawartość strumienia danych ma {1} bajtów; oczekiwano {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: metadane strumienia danych określają {1} bajtów od klastra {2}; metadane są niespójne.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: łańcuch alokacji strumienia danych zawiera pętlę.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: łańcuch alokacji strumienia danych odwołuje się do pozycji poza mapą alokacji.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: łańcuch alokacji strumienia danych kończy się przed udostępnieniem wszystkich wymaganych klastrów.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: brakuje bloku {1} strumienia zasobów lub jego rozmiar jest nieprawidłowy.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: zawartość strumienia zasobów ma {1} bajtów; oczekiwano {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: metadane strumienia zasobów określają {1} bajtów od klastra {2}; metadane są niespójne.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: łańcuch alokacji strumienia zasobów zawiera pętlę.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: łańcuch alokacji strumienia zasobów odwołuje się do pozycji poza mapą alokacji.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: łańcuch alokacji strumienia zasobów kończy się przed udostępnieniem wszystkich wymaganych klastrów."
+  }
+}

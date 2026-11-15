@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "כותרת אמצעי האחסון ProDOS/SOS בבלוק {0} אינה מזוהה (הערך שנקרא: ${1}).",
+    "MediaFileSystems.ProDosDepth": "בלוק הספרייה {1} של ProDOS חורג מהעומק המרבי ברמה {0}.",
+    "MediaFileSystems.ProDosDirectory": "בלוק הספרייה {0} של ProDOS אינו תקין (לולאה={1}, שימוש חוזר={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): בלוק האינדקס {2} של ProDOS אינו תקין (לולאה={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): בלוק האינדקס הראשי {2} של ProDOS אינו תקין.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): בלוק הנתונים {2} של ProDOS חסר, מחוץ לתמונת הדיסק או בגודל לא תקין.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): שוחזרו {2} בתים מתוך {3} בתים צפויים.",
+    "MediaFileSystems.ProDosBitmap": "בלוק מפת הסיביות {0} של ProDOS חסר או בגודל לא תקין.",
+    "MediaFileSystems.ProDosTotal": "אמצעי האחסון ProDOS מצהיר על {0} בלוקים, אך תמונת הדיסק מכילה {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "פורמט היעד ProDOS \"{0}\" אינו נתמך.",
+    "MediaFileSystems.ProDosDiskFull": "אין באמצעי האחסון ProDOS מספיק בלוקים או רשומות ספרייה.",
+    "MediaFileSystems.ProDosGeometry": "גאומטריית היעד של ProDOS או מפת כתובות הסקטורים אינה תקינה.",
+    "MediaFileSystems.ProDosEntry": "לא ניתן לכתוב את רשומת ProDOS ‏'{0}'.",
+    "MediaFileSystems.ProDosFileLength": "קובץ ProDOS ‏'{0}' חורג משדה האורך של 24 סיביות.",
+    "MediaFileSystems.ProDosName": "שם ProDOS \"{0}\" אינו חוקי.",
+    "MediaFileSystems.ProDosTypeText": "טקסט",
+    "MediaFileSystems.ProDosTypeBinary": "בינארי",
+    "MediaFileSystems.ProDosTypeDirectory": "ספרייה",
+    "MediaFileSystems.ProDosTypeVariables": "משתנים",
+    "MediaFileSystems.ProDosTypeSystem": "מערכת"
+  }
+}

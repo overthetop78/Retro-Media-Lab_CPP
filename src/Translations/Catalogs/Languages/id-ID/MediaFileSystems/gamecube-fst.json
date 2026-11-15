@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Dokumen ini bukan citra ISO optik.",
+    "MediaFileSystems.GameCubeNotImage": "Dokumen ini bukan gambar GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GemeCube FST memerlukan data trek optik.",
+    "MediaFileSystems.GameCubeNoTrack": "Tak ada trek data yang tersedia bagi volume FST GameCube.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST memerlukan 2048- byte sektor optik.",
+    "MediaFileSystems.GameCubeHeader": "Header cakram GameCube tak valid.",
+    "MediaFileSystems.GameCubeDescriptor": "Deskripsi FST GameCube tidak valid.",
+    "MediaFileSystems.GameCubeRoot": "Masukan akar FST GameCube tidak valid.",
+    "MediaFileSystems.GameCubeCount": "Jumlah masukan FST GameCube tidak valid.",
+    "MediaFileSystems.GameCubeDepth": "Pohon direktori GameCube FST terlalu dalam.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Jangkauan direktori FST GameCube tidak valid.",
+    "MediaFileSystems.GameCubeContentLimit": "Berkas gameCube '{0}' lebih besar dari batas isi dan tidak dimuat.",
+    "MediaFileSystems.GameCubeNameOffset": "Nama FST GameCube di luar meja string.",
+    "MediaFileSystems.GameCubeSectorData": "Sektor optik GameCube tidak memiliki data yang dapat dibaca.",
+    "MediaFileSystems.GameCubeExtent": "Tingkat FST GameCube di luar jalur optik.",
+    "MediaFileSystems.GameCubeOverflow": "Nilai FST GameCube melebihi jangkauan numerik yang didukung."
+  }
+}

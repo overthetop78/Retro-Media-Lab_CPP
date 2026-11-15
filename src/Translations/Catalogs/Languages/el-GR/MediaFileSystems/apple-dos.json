@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Ο κατάλογος Apple DOS που αναφέρεται από το VTOC στην τροχιά {0}, τομέα {1}, λείπει ή δεν είναι έγκυρος.",
+    "MediaFileSystems.AppleDosCatalogChain": "Ο τομέας καταλόγου Apple DOS {0}/{1} λείπει ή ανήκει σε βρόχο.",
+    "MediaFileSystems.AppleDosAddress": "Η διεύθυνση Apple DOS {1}/{2} για το {0} βρίσκεται εκτός της γεωμετρίας του δίσκου.",
+    "MediaFileSystems.AppleDosListCycle": "Η λίστα τροχιών και τομέων για το {0} σχηματίζει βρόχο στη θέση {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Η λίστα τροχιών και τομέων για το {0} λείπει στη θέση {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Ο τομέας δεδομένων {1}/{2} για το {0} λείπει.",
+    "MediaFileSystems.AppleDosSize": "Το αρχείο {0} δηλώνει {1} τομείς, αλλά διασχίστηκαν {2} τομείς.",
+    "MediaFileSystems.AppleDosWriteFormat": "Η μορφή προορισμού Apple DOS {0} δεν υποστηρίζεται.",
+    "MediaFileSystems.AppleDosWriteFull": "Ο τόμος Apple DOS δεν διαθέτει αρκετούς τομείς καταλόγου ή δεδομένων.",
+    "MediaFileSystems.AppleDosWriteVolume": "Το όνομα τόμου Apple DOS {0} πρέπει να έχει τη μορφή DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Το Apple DOS υποστηρίζει μόνο αρχεία με διαθέσιμο περιεχόμενο στον ριζικό κατάλογο.",
+    "MediaFileSystems.AppleDosBinarySize": "Ένα δυαδικό αρχείο Apple DOS δεν μπορεί να υπερβαίνει τα 65535 byte.",
+    "MediaFileSystems.AppleDosWriteName": "Το όνομα αρχείου Apple DOS {0} δεν μπορεί να κωδικοποιηθεί σε εγγραφή καταλόγου.",
+    "MediaFileSystems.AppleDosTypeText": "Κείμενο",
+    "MediaFileSystems.AppleDosTypeBinary": "Δυαδικό",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Μετατοπίσιμο",
+    "MediaFileSystems.AppleDosTypeFile": "Αρχείο"
+  }
+}

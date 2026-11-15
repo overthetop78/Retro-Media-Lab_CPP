@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "이미지 형식 '{0}'은 지원되는 CBM DOS 파일 시스템을 포함하지 않습니다.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS 디렉토리 체인은 {0}/{1}에서 순환합니다.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS 디렉터리 섹터 {0}/{1}이(가) 없습니다.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS 디렉터리 섹터 {0}/{1}에는 {2}바이트만 있습니다.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS 디렉토리 좌표 {0}/{1}는 유효하지 않습니다.",
+    "MediaFileSystems.CbmFileCycle": "{0}: 체인은 {1}/{2}에서 순환합니다.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: 좌표 {1}/{2}는 유효하지 않습니다.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: 섹터 {1}/{2}의 데이터가 불완전합니다.",
+    "MediaFileSystems.CbmFileMissing": "{0}: 섹터 {1}/{2}가 누락되었습니다.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: 마지막 카운트 {1}는 유효하지 않습니다.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS 체인은 이미지 용량을 초과합니다.",
+    "MediaFileSystems.CbmBamMissing": "{0}/{1}에 필요한 CBM DOS BAM은 누락됩니다.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1}의 데이터가 불완전하며 {2}바이트만 있습니다.",
+    "MediaFileSystems.PetsciiLength": "PETSCII 필드 길이 {0}은(는) 음수일 수 없습니다.",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII 값은 {0} 문자를 초과합니다.",
+    "MediaFileSystems.PetsciiCharacter": "'{0}'은 지원되는 PETSCII 서브셋에 의해 표현할 수 없습니다.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, 닫히지 않음",
+    "MediaFileSystems.CbmTypeLocked": "{0}, 잠김",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, 닫히지 않음, 잠김"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "媒体データ範囲のアドレスは負いません。",
+    "MediaFileSystems.BlockRangeLength": "媒体のデータ範囲の長さは肯定的でなければなりません。",
+    "MediaFileSystems.BlockSourceOffset": "媒体データ範囲のソースオフセットは負えない。",
+    "MediaFileSystems.BlockSourceNull": "保存されたメディア範囲は、データソースが必要です。",
+    "MediaFileSystems.BlockSourceRange": "マッピングされた範囲は、データソースを上回ります。",
+    "MediaFileSystems.BlockNonStoredSource": "保存範囲のみのデータソースを参照できます。",
+    "MediaFileSystems.BlockNonStoredOffset": "保存されていない範囲は、ソースのオフセットを持つことができません。",
+    "MediaFileSystems.BlockLogicalLength": "論理的な媒体の長さは否定できません。",
+    "MediaFileSystems.BlockLogicalBlockSize": "論理ブロックのサイズは肯定的でなければなりません。",
+    "MediaFileSystems.BlockCompleteBlocks": "論理の長さは、完全な論理ブロックを含む必要があります。",
+    "MediaFileSystems.BlockGeometryOutside": "宣言された幾何学は論理媒体容量を超過します。",
+    "MediaFileSystems.BlockRangeOutside": "ブロック範囲は論理媒体の長さを超過します。",
+    "MediaFileSystems.BlockRangeOverlap": "ブロック範囲は重なりません。",
+    "MediaFileSystems.BlockReadAddress": "論理読み取りアドレスは負できません。",
+    "MediaFileSystems.BlockReadRange": "要求された論理範囲は媒体容量を超過します。",
+    "MediaFileSystems.BlockRangeMissing": "メディアのデータ範囲は、論理アドレス {0} をカバーしていません。",
+    "MediaFileSystems.BlockUnavailable": "ログアドレス {0} はソースイメージで利用できません。",
+    "MediaFileSystems.BlockRangeKind": "未サポートのメディアデータ範囲 親切 {0}.",
+    "MediaFileSystems.BlockOverflow": "メディアブロックの計算は、サポートされている署名範囲を超えた。",
+    "MediaFileSystems.BlockGeometryValue": "ハードディスクのジオメトリパラメータ {0} は肯定的でなければなりません。",
+    "MediaFileSystems.BlockDriveCount": "機械的アクセスは、正の数のバイトをカバーする必要があります。",
+    "MediaFileSystems.BlockNullImage": "ブロックイメージが必要です。"
+  }
+}

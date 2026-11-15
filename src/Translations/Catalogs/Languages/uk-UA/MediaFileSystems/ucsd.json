@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Каталог UCSD у блоці {0} не розпізнано; недійсні блоки: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: блоки UCSD відсутні або обрізані: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Блоки каталогу UCSD p-System відсутні або обрізані: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD запис {0} має недійсну назву '{1}'.",
+    "MediaFileSystems.UcsdRange": "Запис UCSD {0} ('{1}') використовує недійсний діапазон [{2}, {3}) у {4} блоках.",
+    "MediaFileSystems.UcsdOverlap": "Запис UCSD {0} ('{1}') перекриває блоки {2}.",
+    "MediaFileSystems.UcsdCount": "Каталог UCSD оголошує {0} файлів, але знайдено {1} дійсних записів.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: останній блок UCSD оголошує {1} байтів.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD нетипований файл",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD зовнішній дисковий файл",
+    "MediaFileSystems.UcsdTypeCode": "Файл коду UCSD",
+    "MediaFileSystems.UcsdTypeText": "UCSD текстовий файл",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD інформаційний файл",
+    "MediaFileSystems.UcsdTypeData": "Файл даних UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Графічний файл UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD фото файл",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD захищений каталог"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Uma imagem de representação de mídia não pode ser nula.",
+    "MediaFileSystems.RepresentationCountOverflow": "O contador da representação do suporte excede o intervalo de inteiros com sinal suportado.",
+    "MediaFileSystems.WriterAdapterId": "É necessário um identificador do gravador de imagens multimédia.",
+    "MediaFileSystems.WriterAdapterFormats": "Os identificadores de formato do alvo não podem estar em branco.",
+    "MediaFileSystems.WriterAdapterExtensions": "As extensões de saída não podem estar vazias.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Validação do gravador de mídia e callbacks de saída são necessários.",
+    "MediaFileSystems.WriterAdapterPath": "É necessário um caminho de saída do gravador de mídia.",
+    "MediaFileSystems.WriterAdapterRepresentation": "O gravador '{0}' não consegue extrair a representação de mídia necessária.",
+    "MediaFileSystems.WriterAdapterTarget": "O gravador '{0}' não aceita o alvo '{1}' com a extensão '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "O gravador '{0}' não relatou arquivos produzidos válidos.",
+    "MediaFileSystems.WriterCommodoreTransform": "O formato fonte Commodore '{0}' não pode ser escrito como '{1}' sem uma transformação de geometria."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "En volumenstart skal være ikke- negativ: {0}.",
+    "MediaFileSystems.VolumeLength": "En volumenlængde skal være positiv: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Der kræves en volumenoprindelse.",
+    "MediaFileSystems.VolumePartitionNumber": "Et partitionsnummer skal være positivt: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Et sessionsnummer skal være positivt: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Et spornummer skal være positivt: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Volumenområdet overstiger de understøttede 64- bit grænser.",
+    "MediaFileSystems.WholeVolumeRequired": "Sektorens filsystemlæser kræver et bind, der dækker hele sektorbilledet."
+  }
+}

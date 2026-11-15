@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "תמונת הדיסק אינה מכילה אמצעי אחסון {0}; החתימה שזוהתה: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: בלוק {2} של זרם הקובץ {1} חסר.",
+    "MediaFileSystems.MacIncompleteData": "{0}: זרם הקובץ {1} מכיל {2} בתים; צפויים {3}.",
+    "MediaFileSystems.MacAllocationSize": "גודל ההקצאה {1} עבור אמצעי האחסון {0} חייב להיות כפולה שאינה אפס של {2} בתים.",
+    "MediaFileSystems.MacFreeCount": "אמצעי האחסון {0} מצהיר על {1} בלוקי הקצאה פנויים מתוך {2} בלוקים בסך הכול.",
+    "MediaFileSystems.MfsMapTruncated": "מפת MFS עבור {0} הקצאות מכילה {1} בתים; נדרשים {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "רשומת ספריית MFS בבלוק {0}, בהיסט {1}, אינה תקינה.",
+    "MediaFileSystems.MfsChain": "{0}: שרשרת ההקצאה של זרם הקובץ {1} אינה תקינה (מחזור={2}, מחוץ למפה={3}, סיום מוקדם={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: זרם הקובץ {1} מצהיר על {2} בתים החל מאשכול {3}; המטא־נתונים אינם עקביים.",
+    "MediaFileSystems.MfsDefaultFile": "קובץ Macintosh"
+  }
+}

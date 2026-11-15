@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "ボリュームの開始は非必須である必要があります: {0}.",
+    "MediaFileSystems.VolumeLength": "ボリュームの長さは肯定的でなければなりません: {0}.",
+    "MediaFileSystems.VolumeOrigin": "ボリュームの起源が必要です。",
+    "MediaFileSystems.VolumePartitionNumber": "パーティション番号は正式でなければなりません: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "セッション番号は肯定的でなければなりません: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "トラック番号は正式でなければなりません: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "ボリューム範囲は、サポートされている署名された64ビット境界を超える。",
+    "MediaFileSystems.WholeVolumeRequired": "セクターのファイルシステムリーダーは、セクター全体のイメージをカバーするボリュームを必要とします。"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmWriteType": "The default Commodore DOS file type {0} must be SEQ, PRG, USR or REL.",
+    "MediaFileSystems.CbmWriteRecordLength": "The default REL record length must be greater than zero.",
+    "MediaFileSystems.CbmWriteFormat": "The Commodore DOS target format '{0}' is unsupported.",
+    "MediaFileSystems.CbmWriteEntry": "The entry '{0}' cannot be stored in a Commodore DOS root directory.",
+    "MediaFileSystems.CbmWriteFull": "The Commodore DOS volume has insufficient free blocks.",
+    "MediaFileSystems.CbmWriteRelativeSize": "The REL file '{0}' exceeds the classic side-sector capacity."
+  }
+}

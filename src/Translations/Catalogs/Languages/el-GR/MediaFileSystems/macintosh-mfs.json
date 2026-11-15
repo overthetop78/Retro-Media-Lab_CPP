@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Το είδωλο δεν περιέχει τόμο {0}· υπογραφή που εντοπίστηκε: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: λείπει το μπλοκ {2} της ροής αρχείου {1}.",
+    "MediaFileSystems.MacIncompleteData": "{0}: η ροή αρχείου {1} περιέχει {2} byte· αναμένονται {3}.",
+    "MediaFileSystems.MacAllocationSize": "Το μέγεθος κατανομής {1} για τον τόμο {0} πρέπει να είναι μη μηδενικό πολλαπλάσιο των {2} byte.",
+    "MediaFileSystems.MacFreeCount": "Ο τόμος {0} δηλώνει {1} ελεύθερα μπλοκ κατανομής από {2} συνολικά μπλοκ.",
+    "MediaFileSystems.MfsMapTruncated": "Ο χάρτης MFS για {0} κατανομές περιέχει {1} byte· απαιτούνται {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Η καταχώρηση καταλόγου MFS στο μπλοκ {0}, στη μετατόπιση {1}, δεν είναι έγκυρη.",
+    "MediaFileSystems.MfsChain": "{0}: η αλυσίδα κατανομής της ροής αρχείου {1} δεν είναι έγκυρη (κύκλος={2}, εκτός χάρτη={3}, πρόωρο τέλος={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: η ροή αρχείου {1} δηλώνει {2} byte από τη συστάδα {3}· τα μεταδεδομένα είναι ασυνεπή.",
+    "MediaFileSystems.MfsDefaultFile": "Αρχείο Macintosh"
+  }
+}

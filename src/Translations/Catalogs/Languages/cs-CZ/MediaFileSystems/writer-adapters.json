@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Obraz média v reprezentaci nesmí být null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Počet v reprezentaci média překračuje podporovaný rozsah celých čísel se znaménkem.",
+    "MediaFileSystems.WriterAdapterId": "Je vyžadován identifikátor komponenty pro zápis obrazu média.",
+    "MediaFileSystems.WriterAdapterFormats": "Identifikátory cílového formátu nemohou být prázdné.",
+    "MediaFileSystems.WriterAdapterExtensions": "Výstupní rozšíření nemůže být prázdné.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Jsou vyžadovány validační a výstupní funkce komponenty zápisu.",
+    "MediaFileSystems.WriterAdapterPath": "Je vyžadována výstupní cesta komponenty zápisu.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Komponenta zápisu '{0}' nemůže získat požadovanou reprezentaci média.",
+    "MediaFileSystems.WriterAdapterTarget": "Komponenta zápisu '{0}' nepřijímá cílový formát '{1}' s příponou '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Komponenta zápisu '{0}' neoznámila platné výstupní soubory.",
+    "MediaFileSystems.WriterCommodoreTransform": "Formát zdroje Commodore '{0}' nemůže být zapsán jako '{1}' bez geometrické transformace."
+  }
+}

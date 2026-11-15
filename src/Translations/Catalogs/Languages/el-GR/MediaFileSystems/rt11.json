@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Το αρχικό μπλοκ RT-11 δεν είναι έγκυρο (υπογραφή '{0}', μπλοκ καταλόγου {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Το RT-11 τμήμα {0} στο μπλοκ {1} έχει αριθμό τμήματος εκτός εμβέλειας.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 τμήμα {0} στο μπλοκ {1} σχηματίζει έναν κύκλο.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 τμήμα {0} στο μπλοκ {1} είναι έξω από την εικόνα.",
+    "MediaFileSystems.Rt11SegmentMissing": "Το τμήμα RT-11 {0} στο μπλοκ {1} έχει ζεύγος μπλοκ που λείπει ή έχει περικοπεί.",
+    "MediaFileSystems.Rt11EntrySize": "Το τμήμα RT-11 {0} δηλώνει μη έγκυρο μέγεθος καταχώρησης {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "Η καταχώρηση RT-11 στο μπλοκ δεδομένων {0}, όφσετ {1}, έχει ένα κενό όνομα.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: μπλοκ RT-11 λείπουν ή έχουν περικοπεί: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Προσωρινό αρχείο RT-11",
+    "MediaFileSystems.Rt11Permanent": "RT-11 αρχείο"
+  }
+}

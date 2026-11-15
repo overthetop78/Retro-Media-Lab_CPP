@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Η εικόνα {0} με τους τομείς {1}-byte δεν περιέχει έναν υποστηριζόμενο κατάλογο Atari DOS.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Λείπει ο τομέας καταλόγου {0}.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Τομέας καταλόγου {0}, η καταχώρηση {1} δεν είναι έγκυρη καταχώρηση αρχείου Atari DOS και αγνοήθηκε.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Λείπει ο τομέας δεδομένων Atari DOS {1}.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Η αλυσίδα δεδομένων Atari DOS είναι κυκλική στον τομέα {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: τομέας {1} ανήκει στο αρχείο {3}, αναμένεται {2}.",
+    "MediaFileSystems.AtariDosOpen": "Ο τομέας καταλόγου {1}, καταχώρηση {2} ('{0}') είναι ακόμα ανοικτός για έξοδο και αγνοήθηκε.",
+    "MediaFileSystems.AtariDosTruncated": "Ο τομέας δεδομένων {1} για το '{0}' είναι πολύ μικρός για να συγκρατήσει τη σύνδεση του.",
+    "MediaFileSystems.AtariDosPremature": "Το αρχείο '{0}' δηλώνει τομείς {1}, αλλά η αλυσίδα του τελειώνει μετά το {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Το κενό αρχείο '{0}' αναφέρεται απροσδόκητα στον τομέα {1}.",
+    "MediaFileSystems.AtariDosBounded": "Το αρχείο '{0}' περιορίζεται στους {1} τομείς που δηλώνει ο κατάλογος, ενώ η αλυσίδα συνεχίζεται στον τομέα {2}.",
+    "MediaFileSystems.AtariDosShared": "Το αρχείο '{0}' μοιράζεται {3} τομείς από τον τομέα {2} με το '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Ο τομέας δεδομένων {1} για το '{0}' δηλώνει {2} bytes αλλά μόνο {3} είναι διαθέσιμα."
+  }
+}

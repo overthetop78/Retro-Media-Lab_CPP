@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "פריסת הדיסק CP/M אינה נתמכת עבור פורמט {0}",
+    "MediaFileSystems.CpmUnsupportedDirectory": "התמונה אינה מכילה ספריית CP/M נתמכת עבור התבנית {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: בלוק ההקצאה של CP/M מספר {1} בהיסט {2} נמצא מחוץ לתמונה שגודלה {3} בתים.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: בלוק ההקצאה של CP/M מספר {1} חוצה בלוק לוגי חסר.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: בלוק ההקצאה של CP/M מספר {1} חוצה בלוק לוגי קטוע.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: קיימת יותר מהפניה אחת לבלוק ההקצאה של CP/M מספר {1}.",
+    "MediaFileSystems.CpmImageMissing": "תמונת CP/M מכילה {0} בלוקים לוגיים חסרים.",
+    "MediaFileSystems.CpmImageTruncated": "תמונת CP/M מכילה {0} בלוקים לוגיים קטועים.",
+    "MediaFileSystems.CpmInvalidLayout": "פריסת CP/M אינה תקינה (היסט הספרייה={0}, תחילת ההקצאה={1}, רשומות הספרייה={2}, גודל ההקצאה={3}, בלוקי הספרייה={4}).",
+    "MediaFileSystems.CpmUserArea": "משתמש CP/M {0}"
+  }
+}

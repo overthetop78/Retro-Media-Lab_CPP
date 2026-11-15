@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Den optiske logiske lengden kan ikke være negativ.",
+    "MediaFileSystems.OpticalMetadataOnly": "Denne gamle mediedeskriptoren inneholder kun metadata og har ingen lesbar datakilde.",
+    "MediaFileSystems.OpticalIndexNumber": "Den optiske sporindeksen må være mellom 0 og 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Den optiske dimensjonen «{0}» må være positiv.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optisk dimensjon «{0}» kan ikke være negativ.",
+    "MediaFileSystems.OpticalDataSource": "En optisk spordatakilde er nødvendig.",
+    "MediaFileSystems.OpticalUserWindow": "Brukerdatavinduet overstiger én lagret sektor.",
+    "MediaFileSystems.OpticalTrackSource": "Spordata overstiger kilden.",
+    "MediaFileSystems.OpticalSubchannelSource": "Underkanalmål krever en underkanalkilde.",
+    "MediaFileSystems.OpticalSubchannelRange": "Underkanaldataene overstiger kilden.",
+    "MediaFileSystems.OpticalPregapOffset": "En lagret pregap kilde forskyvning krever lagrede pregap sektorer.",
+    "MediaFileSystems.OpticalPregapRange": "Den lagrede pregap overstiger kilden.",
+    "MediaFileSystems.OpticalStoredDestination": "Destinasjonen må inneholde nøyaktig én lagret sektor.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektoren er utenfor den lagrede pregap.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektoren er utenfor det optiske sporet.",
+    "MediaFileSystems.OpticalNullTrack": "Et optisk spor kan ikke være null."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Um endereço de alcance de dados de mídia não pode ser negativo.",
+    "MediaFileSystems.BlockRangeLength": "O comprimento da faixa de dados dos meios deve ser positivo.",
+    "MediaFileSystems.BlockSourceOffset": "Um deslocamento de fonte de faixa de dados de mídia não pode ser negativo.",
+    "MediaFileSystems.BlockSourceNull": "Um intervalo de mídia armazenado requer uma fonte de dados.",
+    "MediaFileSystems.BlockSourceRange": "O intervalo mapeado excede sua fonte de dados.",
+    "MediaFileSystems.BlockNonStoredSource": "Apenas os intervalos armazenados podem referenciar uma fonte de dados.",
+    "MediaFileSystems.BlockNonStoredOffset": "Um intervalo não armazenado não pode ter um deslocamento de origem.",
+    "MediaFileSystems.BlockLogicalLength": "O comprimento lógico da mídia não pode ser negativo.",
+    "MediaFileSystems.BlockLogicalBlockSize": "O tamanho lógico do bloco deve ser positivo.",
+    "MediaFileSystems.BlockCompleteBlocks": "O comprimento lógico deve conter blocos lógicos completos.",
+    "MediaFileSystems.BlockGeometryOutside": "A geometria declarada excede a capacidade lógica dos meios.",
+    "MediaFileSystems.BlockRangeOutside": "Uma faixa de blocos excede o comprimento lógico da mídia.",
+    "MediaFileSystems.BlockRangeOverlap": "Os intervalos de blocos não devem sobrepor-se.",
+    "MediaFileSystems.BlockReadAddress": "O endereço lógico lido não pode ser negativo.",
+    "MediaFileSystems.BlockReadRange": "O intervalo lógico solicitado excede a capacidade de mídia.",
+    "MediaFileSystems.BlockRangeMissing": "Nenhum intervalo de dados multimédia cobre o endereço lógico {0}.",
+    "MediaFileSystems.BlockUnavailable": "Endereço lógico {0} não está disponível na imagem de origem.",
+    "MediaFileSystems.BlockRangeKind": "Tipo de intervalo de dados de mídia não suportado {0}.",
+    "MediaFileSystems.BlockOverflow": "O cálculo do bloco de mídia excede o intervalo assinado suportado.",
+    "MediaFileSystems.BlockGeometryValue": "O parâmetro de geometria do disco rígido {0} deve ser positivo.",
+    "MediaFileSystems.BlockDriveCount": "O acesso mecânico deve abranger um número positivo de bytes.",
+    "MediaFileSystems.BlockNullImage": "É necessária uma imagem de bloco."
+  }
+}

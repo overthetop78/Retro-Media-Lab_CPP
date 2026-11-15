@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Valoarea canonică COHERENT conține octeți {0}; {1} sunt necesare.",
+    "Media.CoherentPointerLength": "Pointerul COHERENT conține octeți {0}; sunt necesare {1}.",
+    "Media.CoherentInvalidSuperblock": "Imaginea nu conține un sistem de fișiere COHERENT valid.",
+    "Media.CoherentDeclaredBlocks": "COHERENT declară {0} blocuri, dar sunt disponibile numai {1}.",
+    "Media.CoherentMissingSuperblock": "Lipseşte un bloc COHERENT necesar.",
+    "Media.CoherentInodeZone": "Zona inodă COHERENT se termină la blocul {0}, în afara sistemului de fișiere de blocuri {1}.",
+    "Media.CoherentNullInode": "Inodul COHERENT zero este invalid.",
+    "Media.CoherentInodeOutside": "COHERENT inod {0} se află în afara zonei inode a octeților {1}.",
+    "Media.CoherentFileTooLarge": "Lungimea fișierului COHERENT de octeți {0} nu poate fi reprezentată în memorie.",
+    "Media.CoherentDirectUnavailable": "{0}: blocul direct COHERENT {1} lipsește sau se află în afara imaginii.",
+    "Media.CoherentIndirectUnavailable": "{0}: bloc indirect COHERENT {1} la nivel {2} lipseşte sau în afara imaginii.",
+    "Media.CoherentIndirectRepeated": "{0}: bloc indirect COHERENT {1} la nivel {2} este menţionat de mai multe ori.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT director inode {1} formează un ciclu.",
+    "Media.CoherentDirectoryRepeated": "{0}: directorul COHERENT inode {1} a fost deja vizitat.",
+    "Media.CoherentChildUnreadable": "{0}: inodul descendent COHERENT nu poate fi citit.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT octeți lipsesc și rămân poziționate ca zerouri.",
+    "Media.CoherentDepth": "{0}: limita de adâncime a dosarului COHERENT a fost atinsă la adâncime {1}.",
+    "Media.CoherentInodeDescription": "Inod COHERENT {0}"
+  }
+}

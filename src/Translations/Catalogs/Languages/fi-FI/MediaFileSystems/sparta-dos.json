@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Levykuva '{0}' ei sisällä kelvollista SpartaDOS-taltiota.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS-sektori {0} puuttuu.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS-sektori {0} on alueen 1..{1} ulkopuolella.",
+    "MediaFileSystems.SpartaMapLoop": "SpartaDOS-sektorikarttojen ketju muodostaa silmukan sektorissa {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS-sektorin kartta {0} viittaa edeltäjään {2} {1}:n sijaan.",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS-hakemistopuu muodostaa silmukan hakemistossa, jonka kartta alkaa sektorista {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "SpartaDOS-hakemisto sektorissa {0} ilmoittaa virheellisen koon {1} tavua."
+  }
+}

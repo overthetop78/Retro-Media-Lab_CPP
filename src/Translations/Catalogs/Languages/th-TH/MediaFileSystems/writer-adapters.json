@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "อิมเมจของสื่อไม่สามารถว่างได้",
+    "MediaFileSystems.RepresentationCountOverflow": "ตัวนับของรูปแทนสื่อเกินช่วงจำนวนเต็มแบบมีเครื่องหมายที่รองรับ",
+    "MediaFileSystems.WriterAdapterId": "ต้องระบุตัวระบุของคอมโพเนนต์เขียนอิมเมจสื่อ",
+    "MediaFileSystems.WriterAdapterFormats": "ตัวระบุรูปแบบปลายทางไม่สามารถว่างไว้ได้",
+    "MediaFileSystems.WriterAdapterExtensions": "ส่วนขยายการแสดงผลไม่สามารถว่างได้",
+    "MediaFileSystems.WriterAdapterCallbacks": "ต้องมีฟังก์ชันตรวจสอบและเขียนของคอมโพเนนต์เขียนสื่อ",
+    "MediaFileSystems.WriterAdapterPath": "ต้องระบุพาธเอาต์พุตของคอมโพเนนต์เขียนสื่อ",
+    "MediaFileSystems.WriterAdapterRepresentation": "ผู้เขียน '{0}' ไม่สามารถแยกตัวแสดงสื่อที่ต้องการได้",
+    "MediaFileSystems.WriterAdapterTarget": "ผู้เขียน '{0}' ไม่ยอมรับเป้าหมาย '{1}' ด้วยนามสกุล '{2}'",
+    "MediaFileSystems.WriterAdapterProduced": "คอมโพเนนต์เขียน '{0}' ไม่ได้รายงานไฟล์เอาต์พุตที่ถูกต้อง",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore รูปแบบของแหล่งกําเนิด '{0}' ไม่สามารถเขียนเป็น '{1}' ได้โดยไม่มีการแปลงเรขาคณิต"
+  }
+}

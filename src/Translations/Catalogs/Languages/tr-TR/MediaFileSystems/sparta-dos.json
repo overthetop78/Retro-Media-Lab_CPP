@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Disk görüntüsü '{0}' geçerli bir SpartaDOS birimi içermiyor.",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS sektörü {0} eksik.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS sektörü {0}, 1..{1} aralığının dışında.",
+    "MediaFileSystems.SpartaMapLoop": "SpartaDOS sektör haritası zinciri {0} sektöründe döngü oluşturuyor.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS sektör haritası {0}, önceki harita olarak {1} yerine {2} değerini gösteriyor.",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS dizin ağacı, haritası {0} sektöründe başlayan dizinde döngü oluşturuyor.",
+    "MediaFileSystems.SpartaDirectoryLength": "SpartaDOS dizini {0} sektöründe {1} baytlık geçersiz bir boyut bildiriyor."
+  }
+}

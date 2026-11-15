@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Der COHERENT kanonische Wert enthält {0} Bytes; {1} sind erforderlich.",
+    "Media.CoherentPointerLength": "Der COHERENT Blockpointer enthält {0} Bytes; {1} sind erforderlich.",
+    "Media.CoherentInvalidSuperblock": "Das Bild enthält kein gültiges COHERENT-Dateisystem.",
+    "Media.CoherentDeclaredBlocks": "COHERENT deklariert {0} Blöcke, aber nur {1} sind verfügbar.",
+    "Media.CoherentMissingSuperblock": "Ein erforderlicher COHERENT Superblock Block fehlt.",
+    "Media.CoherentInodeZone": "Die COHERENT Inode-Zone endet am Block {0}, außerhalb des Dateisystems von {1} Blöcken.",
+    "Media.CoherentNullInode": "COHERENT-Inode null ist ungültig.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} befindet sich außerhalb der Inode-Zone von {1} Bytes.",
+    "Media.CoherentFileTooLarge": "Die COHERENT Dateilänge von {0} Bytes kann nicht im Speicher dargestellt werden.",
+    "Media.CoherentDirectUnavailable": "{0}: Der direkte COHERENT-Block {1} fehlt oder liegt außerhalb des Abbilds.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT indirekter Block {1} auf Ebene {2} fehlt oder außerhalb des Bildes.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT indirekter Block {1} auf Ebene {2} wird mehr als einmal referenziert.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT-Verzeichnis-Inode {1} bildet einen Zyklus.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT-Verzeichnis-Inode {1} wurde bereits durchlaufen.",
+    "Media.CoherentChildUnreadable": "{0}: Der untergeordnete COHERENT-Inode kann nicht gelesen werden.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT Bytes fehlen und bleiben als Nullen positioniert.",
+    "Media.CoherentDepth": "{0}: die COHERENT Verzeichnis-Tiefengrenze wurde in der Tiefe {1} erreicht.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

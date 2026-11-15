@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Das {0}-Bild mit {1}-Byte-Sektoren enthält kein unterstütztes Atari DOS-Verzeichnis.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Verzeichnissektor {0} fehlt.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Verzeichnissektor {0}, Eintrag {1} ist kein gültiger Atari DOS-Dateieintrag und wurde ignoriert.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS Datensektor {1} fehlt.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS Datenkette ist zyklisch im Sektor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: Sektor {1} gehört zur Datei {3}, erwartet wurde {2}.",
+    "MediaFileSystems.AtariDosOpen": "Verzeichnissektor {1}, Eintrag {2} ('{0}') ist noch offen für die Ausgabe und wurde ignoriert.",
+    "MediaFileSystems.AtariDosTruncated": "Der Datensektor {1} für '{0}' ist zu kurz, um seinen Link zu enthalten.",
+    "MediaFileSystems.AtariDosPremature": "Datei '{0}' deklariert {1} Sektoren, aber ihre Kette endet nach {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Die leere Datei '{0}' verweist unerwartet auf den Sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Die Datei '{0}' ist auf {1} Verzeichnissektoren beschränkt, während die zugrunde liegende Kette auf Sektor {2} fortgesetzt wird.",
+    "MediaFileSystems.AtariDosShared": "Datei '{0}' teilt {3} Sektoren aus Sektor {2} mit '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Datensektor {1} für '{0}' deklariert {2} Bytes, aber nur {3} sind verfügbar."
+  }
+}

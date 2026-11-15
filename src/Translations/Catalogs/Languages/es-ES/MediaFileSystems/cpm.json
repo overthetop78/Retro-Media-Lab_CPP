@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "El diseño de disco CP/M no es compatible con el formato {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "La imagen no contiene un directorio CP/M compatible para formato {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: El bloque de asignación CP/M {1} en el desplazamiento {2} está fuera de la imagen de {3} bytes.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: bloque de asignación CP/M {1} cruza un bloque lógico perdido.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: bloque de asignación CP/M {1} cruza un bloque lógico truncado.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: El bloque de asignación CP/M {1} se hace referencia más de una vez.",
+    "MediaFileSystems.CpmImageMissing": "La imagen CP/M contiene {0} bloques lógicos ausentes.",
+    "MediaFileSystems.CpmImageTruncated": "La imagen CP/M contiene {0} bloques lógicos truncados.",
+    "MediaFileSystems.CpmInvalidLayout": "La disposición CP/M no es válida (desplazamiento del directorio={0}, inicio de asignación={1}, entradas del directorio={2}, tamaño de asignación={3}, bloques del directorio={4}).",
+    "MediaFileSystems.CpmUserArea": "Usuario CP/M {0}"
+  }
+}

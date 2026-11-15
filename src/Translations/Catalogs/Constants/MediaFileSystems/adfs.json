@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "The image has no supported ADFS catalogue ({0}-byte blocks, {1} blocks).",
+    "Media.AdfsInvalidDirectory": "ADFS directory {0} is invalid or incomplete.",
+    "Media.AdfsDepth": "The ADFS directory depth limit was reached at depth {0}.",
+    "Media.AdfsCycle": "ADFS directory {0} is cyclic or referenced more than once.",
+    "Media.AdfsInvalidRange": "{0}: invalid ADFS address {1}, offset {2}, length {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS address {1} at offset {2} requires missing block {3}.",
+    "Media.AdfsIntegrity": "ADFS block {0} has invalid recorded integrity.",
+    "Media.AdfsBlockVolume": "ADFS requires an addressable sector or block volume.",
+    "Media.AdfsSectorCount": "ADFS sector count {0} is outside the supported range."
+  }
+}

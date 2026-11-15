@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Το οπτικό λογικό μήκος δεν μπορεί να είναι αρνητικό.",
+    "MediaFileSystems.OpticalMetadataOnly": "Αυτός ο κληρονομικός περιγραφέας μέσων περιέχει μεταδεδομένα μόνο και δεν έχει αναγνώσιμη πηγή δεδομένων.",
+    "MediaFileSystems.OpticalIndexNumber": "Ο δείκτης οπτικής τροχιάς πρέπει να είναι μεταξύ 0 και 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Η οπτική διάσταση '{0}' πρέπει να είναι θετική.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Η οπτική διάσταση '{0}' δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.OpticalDataSource": "Απαιτείται οπτική πηγή δεδομένων τροχιάς.",
+    "MediaFileSystems.OpticalUserWindow": "Το παράθυρο δεδομένων χρήστη υπερβαίνει έναν αποθηκευμένο τομέα.",
+    "MediaFileSystems.OpticalTrackSource": "Τα δεδομένα του κομματιού υπερβαίνουν την πηγή του.",
+    "MediaFileSystems.OpticalSubchannelSource": "Οι διαστάσεις του υποκαναλιού απαιτούν μια πηγή υποκαναλιού.",
+    "MediaFileSystems.OpticalSubchannelRange": "Τα δεδομένα του υποκαναλιού υπερβαίνουν την πηγή του.",
+    "MediaFileSystems.OpticalPregapOffset": "Ένα αποθηκευμένο pregap όφσετ πηγής απαιτεί αποθηκευμένους τομείς pregap.",
+    "MediaFileSystems.OpticalPregapRange": "Το αποθηκευμένο pregap υπερβαίνει την πηγή του.",
+    "MediaFileSystems.OpticalStoredDestination": "Ο προορισμός πρέπει να περιέχει ακριβώς έναν αποθηκευμένο τομέα.",
+    "MediaFileSystems.OpticalStoredPregap": "Ο τομέας είναι έξω από το αποθηκευμένο pregap.",
+    "MediaFileSystems.OpticalRelativeSector": "Ο τομέας είναι έξω από την οπτική τροχιά.",
+    "MediaFileSystems.OpticalNullTrack": "Ένα οπτικό κομμάτι δεν μπορεί να είναι κενό."
+  }
+}

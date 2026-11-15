@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Khối khởi đầu RT-11 không hợp lệ (chữ ký '{0}', khối thư mục {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Phân đoạn RT-11 {0} tại khối {1} có số phân đoạn nằm ngoài phạm vi.",
+    "MediaFileSystems.Rt11SegmentCycle": "Phân đoạn RT-11 {0} tại khối {1} tạo thành vòng lặp.",
+    "MediaFileSystems.Rt11SegmentOutside": "Phân đoạn RT-11 {0} tại khối {1} nằm ngoài ảnh đĩa.",
+    "MediaFileSystems.Rt11SegmentMissing": "Phân đoạn RT-11 {0} tại khối {1} có cặp khối bị thiếu hoặc bị cắt cụt.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 đoạn {0} tuyên bố kích cỡ mục nhập không hợp lệ {1} byte.",
+    "MediaFileSystems.Rt11EmptyName": "Mục RT-11 tại khối dữ liệu {0}, độ lệch {1}, có tên trống.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: các khối RT-11 bị thiếu hoặc bị cắt đứt: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Tập tin RT-11 tạm thời",
+    "MediaFileSystems.Rt11Permanent": "Tập tin RT-11"
+  }
+}

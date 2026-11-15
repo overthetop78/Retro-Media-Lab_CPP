@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "L'adresse d'une plage de données du support ne peut pas être négative.",
+    "MediaFileSystems.BlockRangeLength": "La longueur d'une plage de données du support doit être positive.",
+    "MediaFileSystems.BlockSourceOffset": "Le décalage dans la source d'une plage de données ne peut pas être négatif.",
+    "MediaFileSystems.BlockSourceNull": "Une plage de données stockées nécessite une source de données.",
+    "MediaFileSystems.BlockSourceRange": "La plage mappée dépasse sa source de données.",
+    "MediaFileSystems.BlockNonStoredSource": "Seules les plages stockées peuvent faire référence à une source de données.",
+    "MediaFileSystems.BlockNonStoredOffset": "Une plage non stockée ne peut pas avoir de décalage dans une source.",
+    "MediaFileSystems.BlockLogicalLength": "La longueur logique des médias ne peut être négative.",
+    "MediaFileSystems.BlockLogicalBlockSize": "La taille logique du bloc doit être positive.",
+    "MediaFileSystems.BlockCompleteBlocks": "La longueur logique doit contenir des blocs logiques complets.",
+    "MediaFileSystems.BlockGeometryOutside": "La géométrie déclarée dépasse la capacité logique des médias.",
+    "MediaFileSystems.BlockRangeOutside": "Une plage de blocs dépasse la longueur logique du support.",
+    "MediaFileSystems.BlockRangeOverlap": "Les plages de blocs ne doivent pas se chevaucher.",
+    "MediaFileSystems.BlockReadAddress": "L'adresse logique de lecture ne peut être négative.",
+    "MediaFileSystems.BlockReadRange": "La plage logique demandée dépasse la capacité du support.",
+    "MediaFileSystems.BlockRangeMissing": "Aucune plage de données médias ne couvre l'adresse logique {0}.",
+    "MediaFileSystems.BlockUnavailable": "L'adresse logique {0} n'est pas disponible dans l'image source.",
+    "MediaFileSystems.BlockRangeKind": "Type de plage de données du support non pris en charge : {0}.",
+    "MediaFileSystems.BlockOverflow": "Le calcul du bloc média dépasse la plage signée supportée.",
+    "MediaFileSystems.BlockGeometryValue": "Le paramètre de géométrie du disque dur {0} doit être positif.",
+    "MediaFileSystems.BlockDriveCount": "L'accès mécanique doit couvrir un nombre positif d'octets.",
+    "MediaFileSystems.BlockNullImage": "Une image de bloc est nécessaire."
+  }
+}

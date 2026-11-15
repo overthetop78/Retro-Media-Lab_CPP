@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Логическая длина не может быть отрицательной.",
+    "MediaFileSystems.OpticalMetadataOnly": "Этот устаревший медиа-дескриптор содержит только метаданные и не имеет читаемого источника данных.",
+    "MediaFileSystems.OpticalIndexNumber": "Индекс оптической дорожки должен быть от 0 до 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Оптический размер {0} должен быть положительным.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Оптический размер {0} не может быть отрицательным.",
+    "MediaFileSystems.OpticalDataSource": "Требуется оптический источник данных.",
+    "MediaFileSystems.OpticalUserWindow": "Окно данных пользователя превышает один сектор.",
+    "MediaFileSystems.OpticalTrackSource": "Данные дорожки превышают ее источник.",
+    "MediaFileSystems.OpticalSubchannelSource": "Субканальные размеры требуют субканального источника.",
+    "MediaFileSystems.OpticalSubchannelRange": "Субканальные данные превышают их источник.",
+    "MediaFileSystems.OpticalPregapOffset": "Смещение хранимого источника прегапа требует хранимых секторов прегапа.",
+    "MediaFileSystems.OpticalPregapRange": "Сохраненный прегап превышает его источник.",
+    "MediaFileSystems.OpticalStoredDestination": "Место назначения должно содержать ровно один хранимый сектор.",
+    "MediaFileSystems.OpticalStoredPregap": "Сектор находится за пределами сохраненного прегапа.",
+    "MediaFileSystems.OpticalRelativeSector": "Сектор находится за пределами оптической трассы.",
+    "MediaFileSystems.OpticalNullTrack": "Оптическая дорожка не может быть нулевой."
+  }
+}

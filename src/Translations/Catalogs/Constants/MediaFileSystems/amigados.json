@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "The image has no supported AmigaDOS boot block.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} is not supported.",
+    "Media.AmigaInvalidRoot": "AmigaDOS root block {0} is invalid.",
+    "Media.AmigaRootChecksum": "AmigaDOS root block {0} has an invalid checksum.",
+    "Media.AmigaDirectoryChain": "The AmigaDOS directory chain at block {0} is invalid or cyclic.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS directory entry block {0} is missing.",
+    "Media.AmigaMissingData": "AmigaDOS file data block {0} is missing.",
+    "Media.AmigaOfsType": "OFS data block {0} has unexpected type {1}.",
+    "Media.AmigaDataChecksum": "OFS data block {0} has an invalid checksum.",
+    "Media.AmigaInvalidExtension": "AmigaDOS file extension block {0} is invalid, cyclic or missing.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS file extension block {0} has invalid structure or checksum.",
+    "Media.AmigaTruncatedFile": "AmigaDOS file content is truncated: expected {0} bytes, read {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap block {0} is missing.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap block {0} has an invalid checksum.",
+    "Media.AmigaDepth": "The AmigaDOS directory depth limit was reached at depth {0}.",
+    "Media.AmigaRecovered": "Recovered {0} AmigaDOS catalogue entries from valid headers because the root block is unavailable.",
+    "Media.AmigaWriterVariant": "AmigaDOS variant {0} cannot be created by this module.",
+    "Media.AmigaWriterGeometry": "Image format {0} is not a supported AmigaDOS geometry.",
+    "Media.AmigaDiskFull": "The target AmigaDOS volume has insufficient free blocks.",
+    "Media.AmigaInvalidEntry": "Migration entry {0} cannot be represented on AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS block {0} is incomplete: {1} bytes are available.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS block {0} has invalid recorded integrity.",
+    "Media.AmigaFileSize": "AmigaDOS file length {0} exceeds the supported range."
+  }
+}

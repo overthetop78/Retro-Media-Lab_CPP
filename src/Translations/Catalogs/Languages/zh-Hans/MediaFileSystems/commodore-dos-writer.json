@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmWriteType": "默认Commodore DOS文件类型{0}必须是SEQ,PRG,USR或REL.",
+    "MediaFileSystems.CbmWriteRecordLength": "默认REL记录长度必须大于零.",
+    "MediaFileSystems.CbmWriteFormat": "Commodore DOS的目标格式\"{0}\"是不支持的.",
+    "MediaFileSystems.CbmWriteEntry": "条目\"{0}\"不能存储在Commodore DOS 根目录中.",
+    "MediaFileSystems.CbmWriteFull": "Commodore DOS 卷没有足够的可用块。",
+    "MediaFileSystems.CbmWriteRelativeSize": "REL文件\"{0}\"超过了经典的侧扇区容量."
+  }
+}

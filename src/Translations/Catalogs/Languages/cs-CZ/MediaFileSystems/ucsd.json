@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Adresář UCSD v bloku {0} není rozpoznán; neplatné bloky: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: bloky UCSD chybí nebo jsou zkrácené: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Bloky adresáře UCSD p-System chybí nebo jsou zkrácené: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Položka UCSD {0} má neplatný název '{1}'.",
+    "MediaFileSystems.UcsdRange": "Položka UCSD {0} ('{1}') používá neplatný rozsah [{2}, {3}) v {4} blocích.",
+    "MediaFileSystems.UcsdOverlap": "Záznam UCSD {0} ({1}) překrývá bloky {2}.",
+    "MediaFileSystems.UcsdCount": "Adresář UCSD uvádí {0} souborů, ale bylo nalezeno {1} platných položek.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: poslední blok UCSD uvádí {1} bajtů.",
+    "MediaFileSystems.UcsdTypeUntyped": "Soubor UCSD bez typu",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD externí diskový soubor",
+    "MediaFileSystems.UcsdTypeCode": "Soubor kódů UCSD",
+    "MediaFileSystems.UcsdTypeText": "UCSD textový soubor",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD info soubor",
+    "MediaFileSystems.UcsdTypeData": "UCSD datový soubor",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD grafický soubor",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD foto soubor",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD zabezpečený adresář"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Źródło mediów nie może być zerowe.",
+    "MediaFileSystems.ContextSourcePath": "Podstawowa ścieżka źródłowa nie może być pusta ani biała.",
+    "MediaFileSystems.ContextPageSize": "Rozmiar strony rozpoznawania musi być pozytywny.",
+    "MediaFileSystems.ContextKnownLength": "Znana długość źródła nie może być ujemna.",
+    "MediaFileSystems.ContextLengthOverflow": "Długość źródła mediów przekracza obsługiwany zakres podpisany.",
+    "MediaFileSystems.ContextReadOffset": "Uznanie odczytu nie może być negatywne.",
+    "MediaFileSystems.ContextReadCount": "Liczba odczytów nie może być ujemna.",
+    "MediaFileSystems.ContextReadRange": "Wymagany zakres przekracza długość źródła.",
+    "MediaFileSystems.ContextFullRead": "Pełne źródło nie może być załadowane do jednego bufora pamięci. Zamiast tego użyj ograniczonych odczytów.",
+    "MediaFileSystems.ContextPageEnded": "Źródło mediów skończyło się na bajcie {0} czytając stronę buforową.",
+    "MediaFileSystems.DocumentFormatId": "Wymagany jest uznany identyfikator formatu.",
+    "MediaFileSystems.DocumentRepresentation": "Wymagane jest reprezentowanie mediów z informacjami o reprezentacji publicznej."
+  }
+}

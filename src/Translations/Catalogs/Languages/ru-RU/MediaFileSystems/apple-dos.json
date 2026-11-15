@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Каталог Apple DOS, на который ссылается VTOC на дорожке {0}, в секторе {1}, отсутствует или недействителен.",
+    "MediaFileSystems.AppleDosCatalogChain": "Каталоговый сектор Apple DOS {0}/{1} отсутствует или цикличен.",
+    "MediaFileSystems.AppleDosAddress": "Адрес Apple DOS {1}/{2} для {0} находится вне геометрии диска.",
+    "MediaFileSystems.AppleDosListCycle": "Список треков/секторов для {0} цикличен при {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Список треков/секторов для {0} отсутствует в {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Сектор данных {1}/{2} для {0} отсутствует.",
+    "MediaFileSystems.AppleDosSize": "Файл {0} объявляет число секторов {1}, но при обходе найдено {2}.",
+    "MediaFileSystems.AppleDosWriteFormat": "Целевой формат Apple DOS {0} не поддерживается.",
+    "MediaFileSystems.AppleDosWriteFull": "В Apple DOS не хватает секторов каталогов и данных.",
+    "MediaFileSystems.AppleDosWriteVolume": "Имя тома Apple DOS {0} должно иметь вид DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS поддерживает только файлы с доступным содержимым в корневом каталоге.",
+    "MediaFileSystems.AppleDosBinarySize": "Двоичный файл Apple DOS не может превышать 65535 байтов.",
+    "MediaFileSystems.AppleDosWriteName": "Имя файла Apple DOS {0} не может быть закодировано в записи каталога.",
+    "MediaFileSystems.AppleDosTypeText": "Текст",
+    "MediaFileSystems.AppleDosTypeBinary": "Двоичный",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Перемещаемый",
+    "MediaFileSystems.AppleDosTypeFile": "Файл"
+  }
+}

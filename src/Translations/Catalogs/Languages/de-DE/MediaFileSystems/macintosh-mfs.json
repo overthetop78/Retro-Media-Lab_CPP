@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Das Datenträgerabbild enthält kein Volume {0}; erkannte Signatur: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: Block {2} des Dateidatenstroms {1} fehlt.",
+    "MediaFileSystems.MacIncompleteData": "{0}: Dateidatenstrom {1} enthält {2} Bytes; erwartet: {3}.",
+    "MediaFileSystems.MacAllocationSize": "Die Zuordnungsgröße {1} für Volume {0} muss ein von null verschiedenes Vielfaches von {2} Bytes sein.",
+    "MediaFileSystems.MacFreeCount": "Volume {0} meldet {1} freie Zuordnungsblöcke von insgesamt {2} Blöcken.",
+    "MediaFileSystems.MfsMapTruncated": "Die MFS-Zuordnungstabelle für {0} Zuordnungen enthält {1} Bytes; erforderlich: {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Der MFS-Verzeichniseintrag in Block {0} bei Offset {1} ist ungültig.",
+    "MediaFileSystems.MfsChain": "{0}: Die Zuordnungskette des Dateidatenstroms {1} ist ungültig (Zyklus={2}, außerhalb der Tabelle={3}, vorzeitiges Ende={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: Dateidatenstrom {1} meldet {2} Bytes ab Cluster {3}; die Metadaten sind inkonsistent.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-Datei"
+  }
+}

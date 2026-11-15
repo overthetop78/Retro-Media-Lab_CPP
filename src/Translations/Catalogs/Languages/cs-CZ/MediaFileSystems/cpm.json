@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Rozvržení disku CP/M není podporováno pro formát {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Obraz neobsahuje podporovaný adresář CP/M pro formát {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: Alokační blok CP/M {1} na posunu {2} leží mimo obraz o velikosti {3} bajtů.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M alokační blok {1} protíná chybějící logický blok.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M alokační blok {1} prochází zkráceným logickým blokem.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M alokační blok {1} se odkazuje více než jednou.",
+    "MediaFileSystems.CpmImageMissing": "Obraz CP/M obsahuje {0} chybějících logických bloků.",
+    "MediaFileSystems.CpmImageTruncated": "Obraz CP/M obsahuje {0} zkrácených logických bloků.",
+    "MediaFileSystems.CpmInvalidLayout": "Rozvržení CP/M je neplatné (posun adresáře = {0}, alokační původ = {1}, položky adresáře = {2}, alokační velikost = {3}, adresářové bloky = {4}).",
+    "MediaFileSystems.CpmUserArea": "Uživatel CP/M {0}"
+  }
+}

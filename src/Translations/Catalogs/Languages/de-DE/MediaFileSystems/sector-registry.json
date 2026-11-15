@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "Der Dateisystemleser bei index {0} ist null.",
+    "MediaFileSystems.RegistryEmptyReaderId": "Der Dateisystemleser bei index {0} hat eine leere Kennung.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Mehrere Dateisystemleser haben die Kennung '{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Kein Dateisystemleser hat die Kennung \"{0}\".",
+    "MediaFileSystems.RegistryNullImage": "Ein Sektorbild kann nicht null sein.",
+    "MediaFileSystems.AtariKFileUnsupported": "Das Sektorbild ist keine Atari K-file Festplatte, die KBoot verwendet.",
+    "MediaFileSystems.AtariBootUnsupported": "Das Sektorbild enthält kein vollständiges Atari-Bootprogramm.",
+    "MediaFileSystems.AtariClkUnsupported": "Das Sektorbild ist keine Atari CLK Grafik-Bibliothek.",
+    "MediaFileSystems.AtariClkIncomplete": "Der Katalog deklariert {0} Bytes, aber die Sektorkette enthält {1} Bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK Grafik"
+  }
+}

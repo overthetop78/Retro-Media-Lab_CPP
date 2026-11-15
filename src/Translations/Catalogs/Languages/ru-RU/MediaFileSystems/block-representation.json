@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Адрес диапазона медиаданных не может быть отрицательным.",
+    "MediaFileSystems.BlockRangeLength": "Длина медиаданных должна быть положительной.",
+    "MediaFileSystems.BlockSourceOffset": "Смещение медиа-источника данных не может быть отрицательным.",
+    "MediaFileSystems.BlockSourceNull": "Хранимый медиа-диапазон требует источника данных.",
+    "MediaFileSystems.BlockSourceRange": "Диапазон отображения превышает его источник данных.",
+    "MediaFileSystems.BlockNonStoredSource": "Только сохраненные диапазоны могут ссылаться на источник данных.",
+    "MediaFileSystems.BlockNonStoredOffset": "Нехраняемый диапазон не может иметь смещения источника.",
+    "MediaFileSystems.BlockLogicalLength": "Логическая длина не может быть отрицательной.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Размер логического блока должен быть положительным.",
+    "MediaFileSystems.BlockCompleteBlocks": "Логическая длина должна содержать полные логические блоки.",
+    "MediaFileSystems.BlockGeometryOutside": "Заявленная геометрия превышает логическую медиаемкость.",
+    "MediaFileSystems.BlockRangeOutside": "Диапазон блоков превышает логическую длину среды.",
+    "MediaFileSystems.BlockRangeOverlap": "Диапазон блоков не должен перекрываться.",
+    "MediaFileSystems.BlockReadAddress": "Логический адрес чтения не может быть отрицательным.",
+    "MediaFileSystems.BlockReadRange": "Запрашиваемый логический диапазон превышает возможности средств массовой информации.",
+    "MediaFileSystems.BlockRangeMissing": "Диапазон данных не охватывает логический адрес {0}.",
+    "MediaFileSystems.BlockUnavailable": "Логический адрес {0} недоступен в исходном изображении.",
+    "MediaFileSystems.BlockRangeKind": "Неподдерживаемые медиаданные диапазона вида {0}.",
+    "MediaFileSystems.BlockOverflow": "Расчет медиаблока превышает поддерживаемый подписанный диапазон.",
+    "MediaFileSystems.BlockGeometryValue": "Параметр геометрии жесткого диска {0} должен быть положительным.",
+    "MediaFileSystems.BlockDriveCount": "Механический доступ должен покрывать положительное количество байтов.",
+    "MediaFileSystems.BlockNullImage": "Требуется блок-изображение."
+  }
+}

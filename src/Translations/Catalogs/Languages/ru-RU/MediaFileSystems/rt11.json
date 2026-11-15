@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Начальный блок RT-11 недопустим (сигнатура '{0}', блок каталога {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Сегмент RT-11 {0} на блоке {1} имеет номер сегмента вне диапазона.",
+    "MediaFileSystems.Rt11SegmentCycle": "Сегмент RT-11 {0} в блоке {1} образует цикл.",
+    "MediaFileSystems.Rt11SegmentOutside": "Сегмент RT-11 {0} в блоке {1} находится за пределами образа диска.",
+    "MediaFileSystems.Rt11SegmentMissing": "Сегмент RT-11 {0} в блоке {1} имеет отсутствующую или усеченную пару блоков.",
+    "MediaFileSystems.Rt11EntrySize": "Сегмент RT-11 {0} объявляет недопустимый размер записи: {1} байт.",
+    "MediaFileSystems.Rt11EmptyName": "Запись RT-11 в блоке данных {0}, смещение {1}, имеет пустое имя.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: блоки RT-11 отсутствуют или усечены: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Предварительный файл RT-11",
+    "MediaFileSystems.Rt11Permanent": "Файл RT-11"
+  }
+}

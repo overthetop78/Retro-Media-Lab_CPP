@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENT kanoninen arvo sisältää {0} tavua; {1} vaaditaan.",
+    "Media.CoherentPointerLength": "COHERENT-blokkiosoitin sisältää {0} tavua; {1} vaaditaan.",
+    "Media.CoherentInvalidSuperblock": "Kuva ei sisällä voimassa olevaa COHERENT-tiedostojärjestelmää.",
+    "Media.CoherentDeclaredBlocks": "COHERENT ilmoittaa {0} lohkot mutta vain {1} ovat saatavilla.",
+    "Media.CoherentMissingSuperblock": "Tarvittava COHERENT-superlohko puuttuu.",
+    "Media.CoherentInodeZone": "COHERENT-inode-alue päättyy lohkoon {0} {1} lohkojen tiedostojärjestelmän ulkopuolella.",
+    "Media.CoherentNullInode": "COHERENT inode 0 on virheellinen.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} on {1} tavujen inodivyöhykkeen ulkopuolella.",
+    "Media.CoherentFileTooLarge": "{0} tavun COHERENT-tiedoston pituutta ei voi esittää muistissa.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT suora lohko {1} puuttuu tai ulkopuolella kuvan.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT epäsuora lohko {1} tasolla {2} puuttuu tai kuvan ulkopuolella.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT epäsuora lohko {1} tasolla {2} viitataan useammin kuin kerran.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT-hakemiston inode {1} muodostaa syklin.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT kansion inode {1} on jo vieraillut.",
+    "Media.CoherentChildUnreadable": "{0}: COHERENT-alihakemiston inodea ei voi lukea.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT-tavuja puuttuu ja ne pysyvät nollina.",
+    "Media.CoherentDepth": "{0}: COHERENT-hakemiston syvyysraja saavutettiin syvyydessä {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "Den valda volymen Famicom Disk System är inte läsbar.",
+    "MediaFileSystems.FdsSideCount": "Famicom Disk System sidräkning saknas eller ogiltig.",
+    "MediaFileSystems.FdsSideLength": "Famicom Disk System sidlängd saknas eller ogiltig.",
+    "MediaFileSystems.FdsNoFiles": "Inget giltigt Famicom Disk System-filblock hittades.",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System sida {0} har ingen giltig disk information block.",
+    "MediaFileSystems.FdsFileCount": "Famicom Disk System sida {0} har ingen giltig filräkning block.",
+    "MediaFileSystems.FdsFileHeader": "Famicom Disk System sida {0} har en ogiltig fil header.",
+    "MediaFileSystems.FdsIncomplete": "Famicom Disk System-fil {0} på sidan {1} har ofullständiga data."
+  }
+}

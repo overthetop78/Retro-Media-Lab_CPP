@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "المستند ليس صورة ISO لقرص ضوئي.",
+    "MediaFileSystems.GameCubeNotImage": "الوثيقة ليست صورة لعبة",
+    "MediaFileSystems.GameCubeTrackRequired": "\"اللعبة الأولى تتطلب بيانات المسار البصري\"",
+    "MediaFileSystems.GameCubeNoTrack": "ولا يوجد أي مسار بيانات لحجم &quot; غاميكوب &quot; .",
+    "MediaFileSystems.GameCubeSectorSize": "وتقتضي مؤسسة &quot; غاميكوب &quot; 2048 قطاعاً بصرياً.",
+    "MediaFileSystems.GameCubeHeader": "رئيس أقراص اللعبة غير صحيح",
+    "MediaFileSystems.GameCubeDescriptor": "مُخطّط (اللعبة الأولى) غير صحيح.",
+    "MediaFileSystems.GameCubeRoot": "الدخول الجذري لـ (اللعبة الأولى) غير صحيح",
+    "MediaFileSystems.GameCubeCount": "إحصاء دخول (الألعاب الأولى) غير صحيح",
+    "MediaFileSystems.GameCubeDepth": "شجرة دليل لعبة كابي فيست عميقة جدا.",
+    "MediaFileSystems.GameCubeDirectoryRange": "The GameCube FST directory range is invalid.",
+    "MediaFileSystems.GameCubeContentLimit": "ملف اللعبة{0}أكبر من الحد الأقصى للمحتوى ولم يتم تحميله",
+    "MediaFileSystems.GameCubeNameOffset": "The GameCube FST name compensate is outside the string table.",
+    "MediaFileSystems.GameCubeSectorData": "The GameCube optical sector has no readable data.",
+    "MediaFileSystems.GameCubeExtent": "The GameCube FST extent is outside the optical track.",
+    "MediaFileSystems.GameCubeOverflow": "وتتجاوز قيمة &quot; لعبة كاب &quot; النطاق الرقمي المدعوم."
+  }
+}

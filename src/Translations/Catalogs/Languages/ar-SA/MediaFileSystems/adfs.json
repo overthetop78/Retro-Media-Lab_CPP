@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "لا تحتوي الصورة على فهرس ADFS مدعوم (حجم الكتلة {0} بايت، وعدد الكتل {1}).",
+    "Media.AdfsInvalidDirectory": "دليل ADFS ‏{0} غير صالح أو غير مكتمل.",
+    "Media.AdfsDepth": "تم بلوغ الحد الأقصى لعمق أدلة ADFS عند العمق {0}.",
+    "Media.AdfsCycle": "دليل ADFS ‏{0} يشكل حلقة أو تمت الإشارة إليه أكثر من مرة.",
+    "Media.AdfsInvalidRange": "{0}: عنوان ADFS ‏{1} أو الإزاحة {2} أو الطول {3} غير صالح.",
+    "Media.AdfsMissingBlock": "{0}: يتطلب عنوان ADFS ‏{1} عند الإزاحة {2} الكتلة المفقودة {3}.",
+    "Media.AdfsIntegrity": "تشير معلومات السلامة المسجلة لكتلة ADFS ‏{0} إلى وجود خلل.",
+    "Media.AdfsBlockVolume": "يتطلب ADFS وحدة تخزين يمكن الوصول إلى قطاعاتها أو كتلها مباشرة.",
+    "Media.AdfsSectorCount": "عدد قطاعات ADFS ‏{0} خارج النطاق المدعوم."
+  }
+}

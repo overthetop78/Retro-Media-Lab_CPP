@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Формат изображения «{0}» не содержит поддерживаемую файловую систему CBM DOS.",
+    "MediaFileSystems.CbmDirectoryCycle": "Цепочка каталогов CBM DOS циклична при {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Сектор каталогов CBM DOS {0}/{1} отсутствует.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Сектор каталогов CBM DOS {0}/{1} содержит только {2} байты.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Координация каталога CBM DOS {0}/{1} недействительна.",
+    "MediaFileSystems.CbmFileCycle": "{0}: цепь циклична при {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: координата {1}/{2} неверна.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: сектор {1}/{2} усечен.",
+    "MediaFileSystems.CbmFileMissing": "{0}: сектор {1}/{2} отсутствует.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: окончательное число {1} является недействительным.",
+    "MediaFileSystems.CbmCapacity": "{0}: Цепь CBM DOS превышает емкость изображения.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM, требуемый при {0}/{1}, отсутствует.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} усечен до {2} байтов.",
+    "MediaFileSystems.PetsciiLength": "Длина поля PETSCII {0} не должна быть отрицательной.",
+    "MediaFileSystems.PetsciiTooLong": "Значение PETSCII превышает {0} символов.",
+    "MediaFileSystems.PetsciiCharacter": "Символ «{0}» нельзя представить поддерживаемым подмножеством PETSCII.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, открыт",
+    "MediaFileSystems.CbmTypeLocked": "{0}, заблокирован",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, открыт, заблокирован"
+  }
+}

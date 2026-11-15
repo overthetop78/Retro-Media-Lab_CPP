@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Το μπλοκ πληροφοριών τόμου {0} λείπει ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Το μπλοκ καταλόγου {0} λείπει ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: η ροή δεδομένων: το μπλοκ {1} λείπει ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: η ροή δεδομένων περιέχει {1} byte· αναμένονται {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: η ροή δεδομένων δηλώνει {1} byte από τη συστάδα {2}· τα μεταδεδομένα είναι ασυνεπή.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: η ροή δεδομένων: η αλυσίδα κατανομής περιέχει κύκλο.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: η ροή δεδομένων: η αλυσίδα κατανομής αναφέρεται εκτός του χάρτη κατανομής.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: η ροή δεδομένων: η αλυσίδα κατανομής τελειώνει πριν διατεθούν όλες οι απαιτούμενες συστάδες.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: η ροή πόρων: το μπλοκ {1} λείπει ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: η ροή πόρων περιέχει {1} byte· αναμένονται {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: η ροή πόρων δηλώνει {1} byte από τη συστάδα {2}· τα μεταδεδομένα είναι ασυνεπή.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: η ροή πόρων: η αλυσίδα κατανομής περιέχει κύκλο.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: η ροή πόρων: η αλυσίδα κατανομής αναφέρεται εκτός του χάρτη κατανομής.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: η ροή πόρων: η αλυσίδα κατανομής τελειώνει πριν διατεθούν όλες οι απαιτούμενες συστάδες."
+  }
+}

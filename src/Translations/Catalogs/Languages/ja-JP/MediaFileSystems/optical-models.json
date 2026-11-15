@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "光学メディアの論理長を負の値にすることはできません。",
+    "MediaFileSystems.OpticalMetadataOnly": "この旧形式のメディア記述子にはメタデータのみが含まれ、読み取り可能なデータソースがありません。",
+    "MediaFileSystems.OpticalIndexNumber": "光学トラックのインデックスは 0 から 99 の間でなければなりません。",
+    "MediaFileSystems.OpticalPositiveDimension": "光学パラメーター '{0}' は正の値である必要があります。",
+    "MediaFileSystems.OpticalNonNegativeDimension": "光学パラメーター '{0}' を負の値にすることはできません。",
+    "MediaFileSystems.OpticalDataSource": "光学トラックのデータソースが必要です。",
+    "MediaFileSystems.OpticalUserWindow": "ユーザーのデータウィンドウが1つの保存されたセクターを上回ります。",
+    "MediaFileSystems.OpticalTrackSource": "トラックデータがソースの範囲を超えています。",
+    "MediaFileSystems.OpticalSubchannelSource": "サブチャネル次元はサブチャネルのソースを必要とします。",
+    "MediaFileSystems.OpticalSubchannelRange": "サブチャネルのデータがソースを超えた。",
+    "MediaFileSystems.OpticalPregapOffset": "保存されたプレギャップのソースのオフセットは保存されたプレギャップのセクターを要求します。",
+    "MediaFileSystems.OpticalPregapRange": "保存されたプレギャップは、そのソースを上回ります。",
+    "MediaFileSystems.OpticalStoredDestination": "宛先は、正確に1つの保存されたセクターを含む必要があります。",
+    "MediaFileSystems.OpticalStoredPregap": "セクターは保存されたプレギャップの外にあります。",
+    "MediaFileSystems.OpticalRelativeSector": "セクターが光学トラックの範囲外です。",
+    "MediaFileSystems.OpticalNullTrack": "光学トラックを null にすることはできません。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Disk görüntüsünün {0} sayfasında etiketli bir Lisa dosya sistemi yok.",
+    "MediaFileSystems.LisaMissingPage": "Lisa dosyası 0x{0} içinde {1} sayfası eksik.",
+    "MediaFileSystems.LisaTruncatedMddf": "Lisa MDDF sayfası {0} bayt içeriyor; {1} bayt gerekiyor.",
+    "MediaFileSystems.LisaInvalidTag": "Lisa mantıksal bloğu {0}, {1} baytlık bir etikete sahip; {2} bayt gerekiyor.",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa dosyası 0x{0}, {1} sayfasının birden fazla kopyasını içeriyor.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Kullanılabilir etiketler olmadan Lisa boş alanı belirlenemez.",
+    "MediaFileSystems.LisaFileDescription": "Lisa dosyası ${0}"
+  }
+}

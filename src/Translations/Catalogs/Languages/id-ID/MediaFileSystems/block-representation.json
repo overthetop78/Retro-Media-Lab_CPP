@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Sebuah alamat jangkauan data media tidak dapat negatif.",
+    "MediaFileSystems.BlockRangeLength": "Panjang jangkauan data media harus positif.",
+    "MediaFileSystems.BlockSourceOffset": "Ofset sumber data media tidak dapat negatif.",
+    "MediaFileSystems.BlockSourceNull": "Jangkauan media yang tersimpan memerlukan sumber data.",
+    "MediaFileSystems.BlockSourceRange": "Jangkauan dipetakan melebihi sumber datanya.",
+    "MediaFileSystems.BlockNonStoredSource": "Hanya rentang tersimpan yang dapat mereferensikan sumber data.",
+    "MediaFileSystems.BlockNonStoredOffset": "Jarak yang tidak disimpan tidak dapat memiliki ofset sumber.",
+    "MediaFileSystems.BlockLogicalLength": "Panjang media logis tidak dapat negatif.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Ukuran blok logikal harus positif.",
+    "MediaFileSystems.BlockCompleteBlocks": "Panjang logis harus berisi blok logis lengkap.",
+    "MediaFileSystems.BlockGeometryOutside": "Geometri yang dideklarasikan melebihi kapasitas media logis.",
+    "MediaFileSystems.BlockRangeOutside": "Jangkauan blok melebihi panjang media logis.",
+    "MediaFileSystems.BlockRangeOverlap": "Batas blok tidak boleh tumpang tindih.",
+    "MediaFileSystems.BlockReadAddress": "Alamat baca logis tidak dapat negatif.",
+    "MediaFileSystems.BlockReadRange": "Jangkauan logis yang diminta melebihi kapasitas media.",
+    "MediaFileSystems.BlockRangeMissing": "Tak ada jangkauan data media yang mencakup alamat logikal {0}.",
+    "MediaFileSystems.BlockUnavailable": "Alamat logikal {0} tidak tersedia dalam gambar sumber.",
+    "MediaFileSystems.BlockRangeKind": "Jangkauan data media tak didukung jenis {0}.",
+    "MediaFileSystems.BlockOverflow": "Perhitungan blok media melebihi jangkauan signed yang didukung.",
+    "MediaFileSystems.BlockGeometryValue": "Parameter geometri hard disk {0} harus positif.",
+    "MediaFileSystems.BlockDriveCount": "Akses mekanis harus mencakup sejumlah byte positif.",
+    "MediaFileSystems.BlockNullImage": "Gambar blok diperlukan."
+  }
+}

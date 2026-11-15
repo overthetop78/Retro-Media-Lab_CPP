@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Formát obrazu „{0}“ neobsahuje podporovaný souborový systém CBM DOS.",
+    "MediaFileSystems.CbmDirectoryCycle": "Řetězec adresáře CBM DOS obsahuje cyklus na {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Sektor adresářů CBM DOS {0} / {1} chybí.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Sektor adresářů CBM DOS {0} / {1} obsahuje pouze {2} bajty.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Koordinace adresáře CBM DOS {0} / {1} je neplatná.",
+    "MediaFileSystems.CbmFileCycle": "{0}: řetězec je cyklický při {1} / {2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: souřadnice {1} / {2} je neplatná.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sektor {1} / {2} je zkrácen.",
+    "MediaFileSystems.CbmFileMissing": "{0}: sektor {1} / {2} chybí.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: konečný počet {1} je neplatný.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS řetězec překračuje obrazovou kapacitu.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM potřebné v {0} / {1} chybí.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} je zkrácen na {2} bajtů.",
+    "MediaFileSystems.PetsciiLength": "Délka pole PETSCII {0} nesmí být záporná.",
+    "MediaFileSystems.PetsciiTooLong": "Hodnota PETSCII překračuje znaky {0}.",
+    "MediaFileSystems.PetsciiCharacter": "Znak \"{0}\" nemůže být reprezentován podporovanou podskupinou PETSCII.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, otevřený",
+    "MediaFileSystems.CbmTypeLocked": "{0}, uzamčený",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, otevřený, uzamčený"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "無法識別區塊 {0} 中的 UCSD 目錄；無效區塊：{1}。",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}：UCSD 區塊遺失或遭截斷：{1}。",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System 目錄區塊遺失或遭截斷：{0}。",
+    "MediaFileSystems.UcsdInvalidName": "UCSD 項目 {0} 的名稱 '{1}' 無效。",
+    "MediaFileSystems.UcsdRange": "UCSD 項目 {0} ('{1}') 在 {4} 個區塊中使用了無效範圍 [{2}, {3})。",
+    "MediaFileSystems.UcsdOverlap": "UCSD 項目 {0} ('{1}') 與區塊 {2} 重疊。",
+    "MediaFileSystems.UcsdCount": "UCSD 目錄宣告了 {0} 個檔案，但找到 {1} 個有效項目。",
+    "MediaFileSystems.UcsdLastBytes": "{0}：最後一個 UCSD 區塊宣告了 {1} 位元組。",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD 無類型檔案",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD 外部磁碟檔案",
+    "MediaFileSystems.UcsdTypeCode": "UCSD 程式碼檔案",
+    "MediaFileSystems.UcsdTypeText": "UCSD 文字檔案",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD 資訊檔案",
+    "MediaFileSystems.UcsdTypeData": "UCSD 資料檔案",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD 圖形檔案",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD 相片檔案",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD 安全目錄"
+  }
+}

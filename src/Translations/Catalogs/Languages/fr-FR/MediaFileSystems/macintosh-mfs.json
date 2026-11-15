@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "L’image ne contient pas de volume {0} ; signature observée : 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0} : le bloc {2} du flux de fichier {1} est manquant.",
+    "MediaFileSystems.MacIncompleteData": "{0} : le flux de fichier {1} contient {2} octets ; {3} attendus.",
+    "MediaFileSystems.MacAllocationSize": "La taille d’allocation {1} du volume {0} doit être un multiple non nul de {2} octets.",
+    "MediaFileSystems.MacFreeCount": "Le volume {0} déclare {1} blocs d’allocation libres sur {2} blocs au total.",
+    "MediaFileSystems.MfsMapTruncated": "La carte MFS pour {0} allocations contient {1} octets ; {2} requis.",
+    "MediaFileSystems.MfsDirectoryEntry": "L’entrée du répertoire MFS au bloc {0}, décalage {1}, est invalide.",
+    "MediaFileSystems.MfsChain": "{0} : la chaîne d’allocation du flux de fichier {1} est invalide (cycle={2}, hors carte={3}, fin prématurée={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0} : le flux de fichier {1} déclare {2} octets à partir du cluster {3} ; les métadonnées sont incohérentes.",
+    "MediaFileSystems.MfsDefaultFile": "Fichier Macintosh"
+  }
+}

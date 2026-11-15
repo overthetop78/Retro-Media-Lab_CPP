@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Tilavuuslähdön on oltava ei-negatiivinen: {0}.",
+    "MediaFileSystems.VolumeLength": "Tilavuuden pituuden on oltava positiivinen: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Tarvitaan määrällinen alkuperä.",
+    "MediaFileSystems.VolumePartitionNumber": "Osanumeron on oltava positiivinen: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Istunnon numeron on oltava positiivinen: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Kappalenumeron on oltava positiivinen: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Tilavuusalue ylittää tuetut 64-bittiset rajat.",
+    "MediaFileSystems.WholeVolumeRequired": "Alan tiedostojärjestelmän lukija tarvitsee määrän, joka kattaa koko alan kuvan."
+  }
+}

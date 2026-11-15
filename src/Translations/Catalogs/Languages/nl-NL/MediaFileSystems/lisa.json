@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Het schijfkopiebestand bevat geen Lisa-bestandssysteem met tags in zijn {0} pagina’s.",
+    "MediaFileSystems.LisaMissingPage": "In Lisa-bestand 0x{0} ontbreekt pagina {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "De Lisa MDDF-pagina bevat {0} bytes; {1} vereist.",
+    "MediaFileSystems.LisaInvalidTag": "Het logische Lisa-blok {0} heeft een tag van {1} bytes; {2} vereist.",
+    "MediaFileSystems.LisaDuplicatePage": "Lisa-bestand 0x{0} bevat meerdere kopieën van pagina {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "De vrije ruimte van Lisa kan niet worden bepaald zonder bruikbare tags.",
+    "MediaFileSystems.LisaFileDescription": "Lisa-bestand ${0}"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Розмітка диска CP/M не підтримується для формату {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Образ диска не містить підтримуваного каталогу CP/M для формату {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: блок розміщення CP/M {1} за зміщенням {2} виходить за межі образу розміром {3} байтів.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: блок розміщення CP/M {1} перетинає відсутній логічний блок.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: блок розміщення CP/M {1} перетинає усічений логічний блок.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: на блок розміщення CP/M {1} є більше одного посилання.",
+    "MediaFileSystems.CpmImageMissing": "Образ CP/M містить {0} відсутніх логічних блоків.",
+    "MediaFileSystems.CpmImageTruncated": "Образ CP/M містить {0} усічених логічних блоків.",
+    "MediaFileSystems.CpmInvalidLayout": "Розмітка CP/M недійсна (зміщення каталогу={0}, початок розміщення={1}, записів каталогу={2}, розмір одиниці розміщення={3}, блоків каталогу={4}).",
+    "MediaFileSystems.CpmUserArea": "Користувач CP/M {0}"
+  }
+}

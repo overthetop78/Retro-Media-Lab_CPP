@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "La imagen no contiene un bloque de arranque AmigaDOS compatible.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS variante de arranque {0} no es compatible.",
+    "Media.AmigaInvalidRoot": "El bloque raíz de AmigaDOS {0} es inválido.",
+    "Media.AmigaRootChecksum": "El bloque raíz de AmigaDOS {0} tiene una comprobación inválida.",
+    "Media.AmigaDirectoryChain": "La cadena de directorios de AmigaDOS en el bloque {0} es inválida o cíclica.",
+    "Media.AmigaMissingDirectoryEntry": "El bloque de entrada del directorio AmigaDOS {0} está desaparecido.",
+    "Media.AmigaMissingData": "Falta el bloque de datos de archivos de AmigaDOS {0}.",
+    "Media.AmigaOfsType": "El bloque de datos OFS {0} tiene un tipo inesperado {1}.",
+    "Media.AmigaDataChecksum": "El bloque de datos OFS {0} tiene una suma de comprobación no válida.",
+    "Media.AmigaInvalidExtension": "El bloque de extensión de archivo AmigaDOS {0} es inválido, cíclico o desaparecido.",
+    "Media.AmigaExtensionChecksum": "El bloque de extensión de archivo AmigaDOS {0} tiene estructura o chequesum inválido.",
+    "Media.AmigaTruncatedFile": "El contenido del archivo AmigaDOS está truncado: se esperaban {0} bytes y se leyeron {1}.",
+    "Media.AmigaMissingBitmap": "Falta el bloque de mapa de asignación AmigaDOS {0}.",
+    "Media.AmigaBitmapChecksum": "El bloque de mapa de asignación AmigaDOS {0} tiene una suma de comprobación no válida.",
+    "Media.AmigaDepth": "El límite de profundidad del directorio AmigaDOS se alcanzó en profundidad {0}.",
+    "Media.AmigaRecovered": "Se recuperaron {0} entradas del catálogo AmigaDOS a partir de cabeceras válidas porque el bloque raíz no está disponible.",
+    "Media.AmigaWriterVariant": "La variante AmigaDOS {0} no puede ser creada por este módulo.",
+    "Media.AmigaWriterGeometry": "El formato de imagen {0} no es una geometría AmigaDOS compatible.",
+    "Media.AmigaDiskFull": "El volumen de AmigaDOS objetivo no tiene bloques libres suficientes.",
+    "Media.AmigaInvalidEntry": "La entrada de migración {0} no puede ser representada en AmigaDOS.",
+    "Media.AmigaShortBlock": "El bloque AmigaDOS {0} es incompleto: {1} bytes están disponibles.",
+    "Media.AmigaRecordedIntegrity": "El bloque AmigaDOS {0} tiene integridad registrada inválida.",
+    "Media.AmigaFileSize": "La longitud del archivo AmigaDOS {0} supera el rango soportado."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "映像格式「{0}」未包含受支援的 CBM DOS 檔案系統。",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS 目錄鏈在 {0}/{1} 出現循環。",
+    "MediaFileSystems.CbmDirectoryMissing": "缺少 CBM DOS 目錄磁區 {0}/{1}。",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS 目錄磁區 {0}/{1} 只有 {2} 位元組。",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS 目錄座標 {0}/{1} 無效。",
+    "MediaFileSystems.CbmFileCycle": "{0}：鏈在 {1}/{2} 出現循環。",
+    "MediaFileSystems.CbmFileCoordinate": "{0}：座標 {1}/{2} 無效。",
+    "MediaFileSystems.CbmFileTruncated": "{0}：磁區 {1}/{2} 的資料不完整。",
+    "MediaFileSystems.CbmFileMissing": "{0}：缺少磁區 {1}/{2}。",
+    "MediaFileSystems.CbmFileFinalCount": "{0}：最終計數 {1} 無效。",
+    "MediaFileSystems.CbmCapacity": "{0}：CBM DOS 鏈超過映像容量。",
+    "MediaFileSystems.CbmBamMissing": "缺少 {0}/{1} 處必需的 CBM DOS BAM。",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} 的資料不完整，只有 {2} 位元組。",
+    "MediaFileSystems.PetsciiLength": "PETSCII 欄位長度 {0} 不得為負數。",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII 值超過 {0} 個字元。",
+    "MediaFileSystems.PetsciiCharacter": "受支援的 PETSCII 子集無法表示字元「{0}」。",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, 未關閉",
+    "MediaFileSystems.CbmTypeLocked": "{0}, 已鎖定",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, 未關閉, 已鎖定"
+  }
+}

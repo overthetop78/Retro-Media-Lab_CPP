@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Obraz nie ma obsługiwanego bloku startowego AmigaDOS.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS wariant rozruchu {0} nie jest obsługiwane.",
+    "Media.AmigaInvalidRoot": "Blok korzeniowy AmigaDOS {0} jest nieprawidłowy.",
+    "Media.AmigaRootChecksum": "Blok główny AmigaDOS {0} ma nieprawidłową sumę kontrolną.",
+    "Media.AmigaDirectoryChain": "Łańcuch katalogowy AmigaDOS w bloku {0} jest nieprawidłowy lub cykliczny.",
+    "Media.AmigaMissingDirectoryEntry": "Brakuje bloku wejścia katalogu AmigaDOS {0}.",
+    "Media.AmigaMissingData": "Brakuje bloku danych AmigaDOS {0}.",
+    "Media.AmigaOfsType": "Blok danych OFS {0} ma nieoczekiwany typ {1}.",
+    "Media.AmigaDataChecksum": "Blok danych OFS {0} ma nieprawidłową sumę kontrolną.",
+    "Media.AmigaInvalidExtension": "Rozszerzenie pliku AmigaDOS bloku {0} jest nieprawidłowe, cykliczne lub brakuje.",
+    "Media.AmigaExtensionChecksum": "Rozszerzenie pliku AmigaDOS bloku {0} ma nieprawidłową strukturę lub sumę kontrolną.",
+    "Media.AmigaTruncatedFile": "Zawartość pliku AmigaDOS jest ucięta: oczekiwano {0} bajtów, odczytano {1}.",
+    "Media.AmigaMissingBitmap": "Brakuje bloku bitmap AmigaDOS {0}.",
+    "Media.AmigaBitmapChecksum": "Blok mapy bitowej AmigaDOS {0} ma nieprawidłową sumę kontrolną.",
+    "Media.AmigaDepth": "Limit głębokości katalogu AmigaDOS został osiągnięty na głębokości {0}.",
+    "Media.AmigaRecovered": "Odzyskano {0} wpisów katalogu AmigaDOS z prawidłowych nagłówków, ponieważ blok główny jest niedostępny.",
+    "Media.AmigaWriterVariant": "Wariant AmigaDOS {0} nie może być tworzony przez ten moduł.",
+    "Media.AmigaWriterGeometry": "Format obrazka {0} nie jest obsługiwaną geometrią AmigaDOS.",
+    "Media.AmigaDiskFull": "Docelowa objętość AmigaDOS nie ma wystarczających wolnych bloków.",
+    "Media.AmigaInvalidEntry": "Wpis migracyjny {0} nie może być reprezentowany na AmigaDOS.",
+    "Media.AmigaShortBlock": "Blok AmigaDOS {0} jest niekompletny: dostępne są bajty {1}.",
+    "Media.AmigaRecordedIntegrity": "Blok AmigaDOS {0} ma nieprawidłowe zapisane informacje o integralności.",
+    "Media.AmigaFileSize": "Długość pliku AmigaDOS {0} przekracza obsługiwany zakres."
+  }
+}

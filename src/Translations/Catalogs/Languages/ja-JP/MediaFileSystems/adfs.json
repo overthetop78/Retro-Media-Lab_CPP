@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "サポートされているADFSカタログ({0}-バイトブロック、{1}ブロック)はありません。",
+    "Media.AdfsInvalidDirectory": "ADFS ディレクトリ {0} は無効または不完全です。",
+    "Media.AdfsDepth": "ADFS ディレクトリの深さ制限は、深さ {0} に達しました。",
+    "Media.AdfsCycle": "ADFS ディレクトリ {0} は循環しているか、複数回参照されています。",
+    "Media.AdfsInvalidRange": "{0}: 無効な ADFS アドレス {1}、オフセット {2}、長さ {3}。",
+    "Media.AdfsMissingBlock": "{0}: オフセット {2} で ADFS アドレス {1} が欠落ブロック {3} を要求します。",
+    "Media.AdfsIntegrity": "ADFS ブロック {0} の記録済み整合性情報は無効です。",
+    "Media.AdfsBlockVolume": "ADFS にはセクターまたはブロックに直接アクセスできるボリュームが必要です。",
+    "Media.AdfsSectorCount": "ADFS セクターのカウント {0} はサポート範囲外です。"
+  }
+}

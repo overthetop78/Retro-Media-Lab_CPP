@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Disk görüntüsü bir {0} birimi içermiyor; okunan imza: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: fork {1} içindeki {2} bloğu eksik.",
+    "MediaFileSystems.MacIncompleteData": "{0}: fork {1}, {2} bayt içeriyor; beklenen {3} bayt.",
+    "MediaFileSystems.MacAllocationSize": "{0} biriminin {1} tahsis boyutu, {2} baytın pozitif bir katı olmalıdır.",
+    "MediaFileSystems.MacFreeCount": "{0} birimi, toplam {2} tahsis bloğundan {1} tanesinin boş olduğunu bildiriyor.",
+    "MediaFileSystems.MfsMapTruncated": "{0} tahsis birimi için MFS haritası {1} bayt içeriyor; {2} bayt gerekiyor.",
+    "MediaFileSystems.MfsDirectoryEntry": "{0} bloğundaki {1} konumunda bulunan MFS dizin girdisi geçersiz.",
+    "MediaFileSystems.MfsChain": "{0}: fork {1} tahsis zinciri geçersiz (döngü={2}, harita dışında={3}, erken son={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: fork {1}, {3} kümesinden başlayarak {2} bayt bildiriyor; üst veriler tutarsız.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh dosyası"
+  }
+}

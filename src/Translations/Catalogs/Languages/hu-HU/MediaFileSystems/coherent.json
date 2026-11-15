@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "A COHERENT kanonikai értéke {0} bytes; {1} szükséges.",
+    "Media.CoherentPointerLength": "A COHERENT blokkmutató {0} bájtokat tartalmaz; {1} szükséges.",
+    "Media.CoherentInvalidSuperblock": "A kép nem tartalmaz érvényes COHERENT fájlrendszert.",
+    "Media.CoherentDeclaredBlocks": "COHERENT kijelenti, hogy {0} blokkok állnak rendelkezésre, de csak {1} áll rendelkezésre.",
+    "Media.CoherentMissingSuperblock": "Hiányzik egy szükséges COHERENT szuperblokk.",
+    "Media.CoherentInodeZone": "A COHERENT inode-zóna a(z) {0}. blokknál ér véget, a(z) {1} blokkból álló fájlrendszeren kívül.",
+    "Media.CoherentNullInode": "A COHERENT inode 0 érvénytelen.",
+    "Media.CoherentInodeOutside": "A COHERENT inode {0} kívül esik a {1} bájt inode zónáján.",
+    "Media.CoherentFileTooLarge": "A {0} bájt COHERENT fájl hossza nem jeleníthető meg a memóriában.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT közvetlen {1} blokk hiányzik vagy kívül a kép.",
+    "Media.CoherentIndirectUnavailable": "{0}: A COHERENT közvetett blokkja {1} a {2} szinten hiányzik vagy kívül esik a képen.",
+    "Media.CoherentIndirectRepeated": "{0}: A COHERENT közvetett blokkja {1} a {2} szinten többször is szerepel.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT könyvtár inode {1} létrehoz egy ciklust.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT könyvtár inode {1} már meglátogatták.",
+    "Media.CoherentChildUnreadable": "{0}: a COHERENT gyermek inode nem olvasható.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT bájtok hiányoznak, és továbbra is nullák.",
+    "Media.CoherentDepth": "{0}: a COHERENT könyvtár mélységi határértékét a {1} mélységben érték el.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

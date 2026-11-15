@@ -1,0 +1,13 @@
+#include "Internal.h"
+namespace RetroMediaLab::MediaFileSystems::SpartaDos::Internal {
+using namespace Constants;
+void validateSector(std::int32_t number,std::uint64_t total){if(number<FirstSectorNumber||std::uint64_t(number)>total)throw MediaError(DiagnosticCode::SpartaSectorRange,{std::to_string(number),std::to_string(total)});}
+std::shared_ptr<const SectorBlock> trySector(const SectorImage& image,std::int32_t number,std::stop_token token){checkCancellation(token);if(number<FirstSectorNumber||std::uint64_t(number)>image.blockCount())return {};return image.block(std::uint64_t(number-FirstSectorNumber),token);}
+std::shared_ptr<const SectorBlock> sector(const SectorImage& image,std::int32_t number,std::stop_token token){validateSector(number,image.blockCount());auto block=trySector(image,number,token);if(!block)throw MediaError(DiagnosticCode::SpartaMissingSector,{std::to_string(number)});return block;}
+std::optional<Header> header(const SectorImage& image,std::stop_token token){
+    const auto block=trySector(image,BootSectorNumber,token);if(!block||block->data.size()<MinimumBootSectorLength||block->data[IdentificationOffset]!=Identification)return {};const auto bytes=Bytes(block->data);Header value;
+    value.total=Binary::little<std::uint16_t>(bytes,TotalSectorCountOffset);value.root=Binary::little<std::uint16_t>(bytes,RootDirectoryMapOffset);value.free=Binary::little<std::uint16_t>(bytes,FreeSectorCountOffset);value.bitmapCount=bytes[BitmapSectorCountOffset];value.firstBitmap=Binary::little<std::uint16_t>(bytes,FirstBitmapSectorOffset);const auto sizeCode=bytes[SectorSizeOffset];value.size=sizeCode==SingleDensitySectorSizeCode?SingleDensitySectorSizeCode:sizeCode==DoubleDensitySectorSizeCode?DoubleDensitySectorSize:0;value.version=bytes[VersionOffset];
+    if(std::uint64_t(value.total)!=image.blockCount()||value.total<=0||value.free>value.total||value.root<=0||value.root>value.total||value.bitmapCount<=0||value.firstBitmap<=0||value.firstBitmap+value.bitmapCount-1>value.total||std::uint32_t(value.size)!=image.geometry().blockSize||(value.version!=Version1&&value.version!=Version2))return {};
+    const auto tracks=bytes[TrackCountOffset];value.firstFile=Binary::little<std::uint16_t>(bytes,FirstFileAllocationSectorOffset);value.firstDirectory=Binary::little<std::uint16_t>(bytes,FirstDirectoryAllocationSectorOffset);value.name=name(bytes.subspan(VolumeNameOffset,VolumeNameLength));value.tracks=tracks&TrackMask;value.doubleSided=(tracks&SideMask)!=0;value.sequence=bytes[VolumeSequenceOffset];value.random=bytes[VolumeRandomOffset];value.bootMap=Binary::little<std::uint16_t>(bytes,BootFileMapOffset);value.writeProtected=bytes[WriteLockOffset]==WriteLocked;return value;
+}
+}

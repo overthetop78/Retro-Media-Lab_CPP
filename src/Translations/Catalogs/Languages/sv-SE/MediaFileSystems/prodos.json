@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ProDOS/SOS-volymhuvudet i block {0} känns inte igen (observerat värde ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS-katalogblock {1} överskrider maximalt djup på nivå {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS-katalogblock {0} är ogiltigt (cykel={1}, återanvänt={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS-indexblock {2} är ogiltigt (cykel={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS-huvudindexblock {2} är ogiltigt.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS-datablock {2} saknas, ligger utanför diskavbildningen eller har ogiltig storlek.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): {2} byte rekonstruerade av {3} förväntade byte.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS-bitmappsblock {0} saknas eller har ogiltig storlek.",
+    "MediaFileSystems.ProDosTotal": "ProDOS-volymen anger {0} block, men diskavbildningen innehåller {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS-målformatet '{0}' stöds inte.",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS-volymen har inte tillräckligt med block eller katalogposter.",
+    "MediaFileSystems.ProDosGeometry": "Målgeometrin för ProDOS eller kartan över sektoradresser är ogiltig.",
+    "MediaFileSystems.ProDosEntry": "ProDOS-posten '{0}' kan inte skrivas.",
+    "MediaFileSystems.ProDosFileLength": "ProDOS-filen '{0}' överskrider längdfältet på 24 bitar.",
+    "MediaFileSystems.ProDosName": "ProDOS-namnet '{0}' är ogiltigt.",
+    "MediaFileSystems.ProDosTypeText": "Text",
+    "MediaFileSystems.ProDosTypeBinary": "Binär",
+    "MediaFileSystems.ProDosTypeDirectory": "Katalog",
+    "MediaFileSystems.ProDosTypeVariables": "Variabler",
+    "MediaFileSystems.ProDosTypeSystem": "System"
+  }
+}

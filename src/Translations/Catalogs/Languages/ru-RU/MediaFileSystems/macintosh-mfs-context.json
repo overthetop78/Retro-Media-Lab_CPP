@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Блок информации о томе {0} отсутствует или имеет недопустимый размер.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Блок каталога {0} отсутствует или имеет недопустимый размер.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: блок {1} потока данных отсутствует или имеет недопустимый размер.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: содержимое потока данных имеет размер {1} байтов; ожидалось {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: метаданные потока данных объявляют {1} байтов начиная с кластера {2}; метаданные противоречивы.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: цепочка распределения потока данных содержит цикл.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: цепочка распределения потока данных ссылается на позицию за пределами карты распределения.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: цепочка распределения потока данных заканчивается до того, как доступны все требуемые кластеры.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: блок {1} потока ресурсов отсутствует или имеет недопустимый размер.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: содержимое потока ресурсов имеет размер {1} байтов; ожидалось {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: метаданные потока ресурсов объявляют {1} байтов начиная с кластера {2}; метаданные противоречивы.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: цепочка распределения потока ресурсов содержит цикл.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: цепочка распределения потока ресурсов ссылается на позицию за пределами карты распределения.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: цепочка распределения потока ресурсов заканчивается до того, как доступны все требуемые кластеры."
+  }
+}

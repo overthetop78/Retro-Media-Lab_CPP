@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Un început de volum trebuie să fie non- negativ: {0}.",
+    "MediaFileSystems.VolumeLength": "O lungime a volumului trebuie să fie pozitivă: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Este necesară o origine a volumului.",
+    "MediaFileSystems.VolumePartitionNumber": "Un număr de partiţie trebuie să fie pozitiv: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Numărul sesiunii trebuie să fie pozitiv: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Un număr de cale trebuie să fie pozitiv: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Intervalul de volum depășește limitele de 64 biți semnate.",
+    "MediaFileSystems.WholeVolumeRequired": "Cititorul de fișiere din sector necesită un volum care să acopere întreaga imagine sectorială."
+  }
+}

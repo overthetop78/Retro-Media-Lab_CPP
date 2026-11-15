@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "L’immagine non contiene un blocco di avvio AmigaDOS supportato.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} non è supportato.",
+    "Media.AmigaInvalidRoot": "Il blocco radice di AmigaDOS {0} non è valido.",
+    "Media.AmigaRootChecksum": "Il blocco radice AmigaDOS {0} ha un checksum non valido.",
+    "Media.AmigaDirectoryChain": "La catena di directory AmigaDOS al blocco {0} è non valida o ciclica.",
+    "Media.AmigaMissingDirectoryEntry": "Manca il blocco di ingresso directory AmigaDOS {0}.",
+    "Media.AmigaMissingData": "Il blocco di dati di file AmigaDOS {0} manca.",
+    "Media.AmigaOfsType": "Il blocco dati OFS {0} ha un tipo inaspettato {1}.",
+    "Media.AmigaDataChecksum": "Il blocco dati OFS {0} ha un controllo non valido.",
+    "Media.AmigaInvalidExtension": "Il blocco dell'estensione del file AmigaDOS {0} non è valido, ciclico o mancante.",
+    "Media.AmigaExtensionChecksum": "Il blocco dell'estensione del file AmigaDOS {0} ha una struttura o un checksum non validi.",
+    "Media.AmigaTruncatedFile": "Il contenuto di file AmigaDOS è troncato: atteso {0} byte, letto {1}.",
+    "Media.AmigaMissingBitmap": "Manca il blocco bitmap di AmigaDOS {0}.",
+    "Media.AmigaBitmapChecksum": "Il blocco bitmap AmigaDOS {0} ha un checksum non valido.",
+    "Media.AmigaDepth": "Il limite di profondità della directory AmigaDOS è stato raggiunto a profondità {0}.",
+    "Media.AmigaRecovered": "Recuperato {0} Le voci del catalogo AmigaDOS da intestazioni valide perché il blocco radice non è disponibile.",
+    "Media.AmigaWriterVariant": "La variante AmigaDOS {0} non può essere creata da questo modulo.",
+    "Media.AmigaWriterGeometry": "Il formato immagine {0} non è una geometria AmigaDOS supportata.",
+    "Media.AmigaDiskFull": "Il volume AmigaDOS di destinazione ha blocchi liberi insufficienti.",
+    "Media.AmigaInvalidEntry": "La voce di migrazione {0} non può essere rappresentata su AmigaDOS.",
+    "Media.AmigaShortBlock": "Il blocco AmigaDOS {0} è incompleto: {1} byte sono disponibili.",
+    "Media.AmigaRecordedIntegrity": "Il blocco AmigaDOS {0} ha un'integrità registrata non valida.",
+    "Media.AmigaFileSize": "La lunghezza del file AmigaDOS {0} supera l'intervallo supportato."
+  }
+}

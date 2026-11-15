@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "ولا يمكن أن يكون عنوان نطاق البيانات الإعلامية سلبيا.",
+    "MediaFileSystems.BlockRangeLength": "ويجب أن يكون طول نطاق البيانات الإعلامية إيجابيا.",
+    "MediaFileSystems.BlockSourceOffset": "ولا يمكن أن يكون التعويض عن نطاق البيانات الإعلامية سلبياً.",
+    "MediaFileSystems.BlockSourceNull": "ويتطلب النطاق المخزن لوسائط الإعلام مصدرا للبيانات.",
+    "MediaFileSystems.BlockSourceRange": "ويتجاوز النطاق المحدد مصدر بياناته.",
+    "MediaFileSystems.BlockNonStoredSource": "فقط النطاقات المخزنة يمكنها الرجوع إلى مصدر البيانات",
+    "MediaFileSystems.BlockNonStoredOffset": "A non-stored range cannot have a source compensate.",
+    "MediaFileSystems.BlockLogicalLength": "ولا يمكن أن يكون طول وسائط الإعلام المنطقي سلبيا.",
+    "MediaFileSystems.BlockLogicalBlockSize": "يجب أن يكون الحجم المنطقي إيجابياً",
+    "MediaFileSystems.BlockCompleteBlocks": "ويجب أن يتضمن الطول المنطقي لبنات منطقية كاملة.",
+    "MediaFileSystems.BlockGeometryOutside": "ويتجاوز الهندسة المعلن عنها قدرة وسائط الإعلام المنطقية.",
+    "MediaFileSystems.BlockRangeOutside": "A block range exceeds the logical media length.",
+    "MediaFileSystems.BlockRangeOverlap": "يجب ألا تتداخل النطاقات",
+    "MediaFileSystems.BlockReadAddress": "عنوان القراءة المنطقي لا يمكن أن يكون سلبيا.",
+    "MediaFileSystems.BlockReadRange": "ويتجاوز النطاق المنطقي المطلوب قدرة وسائط الإعلام.",
+    "MediaFileSystems.BlockRangeMissing": "No media data range covers logical address {0}.",
+    "MediaFileSystems.BlockUnavailable": "العنوان المنطقي {0} غير متاح في صورة المصدر.",
+    "MediaFileSystems.BlockRangeKind": "Unsupported media data range kind {0}.",
+    "MediaFileSystems.BlockOverflow": "ويتجاوز حساب مجموعة وسائط الإعلام النطاق الموقع المدعوم.",
+    "MediaFileSystems.BlockGeometryValue": "The hard disk geometry parameter {0} must be positive.",
+    "MediaFileSystems.BlockDriveCount": "ويجب أن يغطي الوصول الميكانيكي عدداً إيجابياً من الأقراص.",
+    "MediaFileSystems.BlockNullImage": "لا بد من وجود صورة"
+  }
+}

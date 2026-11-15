@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Formato immagine '{0}' non contiene un filesystem CBM DOS supportato.",
+    "MediaFileSystems.CbmDirectoryCycle": "La catena di directory CBM DOS è ciclica a {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Manca il settore delle directory CBM DOS {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Il settore delle directory CBM DOS {0}/{1} contiene solo {2} byte.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "La coordinate della directory CBM DOS {0}/{1} non è valida.",
+    "MediaFileSystems.CbmFileCycle": "{0}: la catena è ciclica a {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: la coordinate {1}/{2} è invalida.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: il settore {1}/{2} è troncato.",
+    "MediaFileSystems.CbmFileMissing": "{0}: settore {1}/{2} manca.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: il conteggio finale {1} è invalido.",
+    "MediaFileSystems.CbmCapacity": "{0}: la catena CBM DOS supera la capacità dell'immagine.",
+    "MediaFileSystems.CbmBamMissing": "Manca il CBM DOS BAM richiesto al {0}/{1}.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} è troncato a {2} byte.",
+    "MediaFileSystems.PetsciiLength": "La lunghezza del campo PETSCII {0} non deve essere negativa.",
+    "MediaFileSystems.PetsciiTooLong": "Il valore PETSCII supera i caratteri {0}.",
+    "MediaFileSystems.PetsciiCharacter": "Il carattere '{0}' non può essere rappresentato dal sottoinsieme PETSCII supportato.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, aperto",
+    "MediaFileSystems.CbmTypeLocked": "{0}, bloccato",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, aperto, bloccato"
+  }
+}

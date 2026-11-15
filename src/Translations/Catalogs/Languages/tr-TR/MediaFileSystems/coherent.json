@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENT kanonik değeri {0} bayt içeriyor; {1} bayt gereklidir.",
+    "Media.CoherentPointerLength": "COHERENT blok işaretçisi {0} bayt içeriyor; {1} bayt gereklidir.",
+    "Media.CoherentInvalidSuperblock": "Görüntü geçerli bir COHERENT dosyası sistemi içermiyor.",
+    "Media.CoherentDeclaredBlocks": "COHERENT {0} bloklar ancak sadece {1} mevcuttur.",
+    "Media.CoherentMissingSuperblock": "Gerekli COHERENT süperblock bloğu eksik.",
+    "Media.CoherentInodeZone": "COHERENT inode bölgesi {0} bloğunda, {1} bloktan oluşan dosya sisteminin dışında bitiyor.",
+    "Media.CoherentNullInode": "COHERENT inode zero geçersizdir.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0}, {1} baytlık inode bölgesinin dışındadır.",
+    "Media.CoherentFileTooLarge": "{0} baytlık COHERENT dosya uzunluğu bellekte temsil edilemez.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT doğrudan blok {1} görüntünün dışında veya eksik.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT dolaylı blok {1} seviyesinde {2} eksik veya görüntü dışında.",
+    "Media.CoherentIndirectRepeated": "{0}: {2}. seviyedeki COHERENT dolaylı blok {1}, birden fazla kez referans alınıyor.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT directory inode {1} bir döngü oluşturur.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT directory inode {1} zaten ziyaret edilmiştir.",
+    "Media.CoherentChildUnreadable": "{0}: COHERENT çocuk inode okunamaz.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT bytes eksik ve sıfırlar olarak konumlandırılıyor.",
+    "Media.CoherentDepth": "{0}: COHERENT dizin derinliği sınırına {1} derinliğinde ulaşıldı.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "文档不是光学ISO图像.",
+    "MediaFileSystems.GameCubeNotImage": "此文档不是 GameCube 图像 。",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST需要光学轨道数据.",
+    "MediaFileSystems.GameCubeNoTrack": "GameCube FST 卷没有数据轨.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST需要2048字节光学扇区.",
+    "MediaFileSystems.GameCubeHeader": "GameCube 盘头无效 。",
+    "MediaFileSystems.GameCubeDescriptor": "GameCube FST 描述器无效 。",
+    "MediaFileSystems.GameCubeRoot": "GameCube FST 根项无效 。",
+    "MediaFileSystems.GameCubeCount": "GameCube FST 条目计数无效 。",
+    "MediaFileSystems.GameCubeDepth": "GameCube FST目录树太深了.",
+    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST 目录范围无效.",
+    "MediaFileSystems.GameCubeContentLimit": "GameCube 文件\"{0}\"大于内容限制,没有被载入.",
+    "MediaFileSystems.GameCubeNameOffset": "GameCube FST名称偏移在字符串表外.",
+    "MediaFileSystems.GameCubeSectorData": "GameCube光学部门没有可读数据.",
+    "MediaFileSystems.GameCubeExtent": "GameCube FST范围位于光学轨道外.",
+    "MediaFileSystems.GameCubeOverflow": "GameCube FST 值超过了支持的数字范围."
+  }
+}

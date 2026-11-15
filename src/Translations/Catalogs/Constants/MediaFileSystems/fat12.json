@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Invalid sector image dimension {0}: {1}.",
+    "Media.SectorInvalidFormatId": "The sector image format identifier is empty or invalid: {0}.",
+    "Media.SectorDuplicateBlock": "Logical sector {0} occurs more than once in the image.",
+    "Media.SectorBlockOutside": "Logical sector {0} is outside the image containing {1} sectors.",
+    "Media.SectorCapacityShort": "The declared sector image capacity {0} is smaller than the available data length {1}.",
+    "Media.SectorMissingBlock": "Logical sector {0} is missing.",
+    "Media.SectorInvalidBlockSize": "Logical sector {0} contains {1} bytes instead of {2}.",
+    "Media.FatUnsupportedBoot": "Image format {0} has no supported FAT12 file system: the boot sector is missing or truncated.",
+    "Media.FatUnsupportedLayout": "Image format {0} has no supported FAT12 file system (sector size {1}, sectors per cluster {2}, reserved sectors {3}, FAT copies {4}, root entries {5}, sectors per FAT {6}).",
+    "Media.FatInvalidChain": "The FAT chain of {0} is invalid or cyclic at cluster {1}.",
+    "Media.FatTruncatedTable": "The FAT12 entry for cluster {0} is truncated.",
+    "Media.FatMissingSectors": "Sector range {0} to {1} is incomplete.",
+    "Media.FatDepthLimit": "The FAT directory nesting limit was reached at {0} (depth {1}).",
+    "Media.FatMissingSector": "FAT sector {0} contains {1} bytes instead of {2}.",
+    "Media.FatCyclicChain": "{0}: the FAT12 chain is cyclic at cluster {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 cluster {1} is outside the data range.",
+    "Media.FatIncompleteContent": "{0}: the declared size is {1} bytes but only {2} bytes are available.",
+    "Media.FatUnsupportedGeometry": "Image format {0} is not a supported FAT12 geometry.",
+    "Media.FatDiskFull": "The target FAT12 volume does not have enough free clusters or directory entries.",
+    "Media.FatInvalidEntry": "Migration entry {0} cannot be represented as a FAT12 short-name entry.",
+    "Media.FatDirectoryCycle": "Directory {0} reuses FAT12 cluster {1}, which has already been expanded.",
+    "Media.FatIntegrityInvalid": "FAT sector {0} has invalid recorded integrity.",
+    "Media.FatResourceLimit": "The FAT12 extraction limit was reached while reading {0}."
+  }
+}

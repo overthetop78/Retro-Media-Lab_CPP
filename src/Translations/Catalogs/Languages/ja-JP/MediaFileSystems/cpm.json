@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M ディスクのレイアウトは、{0} のフォーマットではサポートされていません。",
+    "MediaFileSystems.CpmUnsupportedDirectory": "イメージには形式 {0} に対応する CP/M ディレクトリが含まれていません。",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: オフセット {2} の CP/M 割り当てブロック {1} は、{3} バイトのイメージの範囲外です。",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M 割り当てブロック {1} は欠落した論理ブロックにまたがっています。",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M 割り当てブロック {1} は切り詰められた論理ブロックにまたがっています。",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M 割り当てブロック {1} は複数回参照されます。",
+    "MediaFileSystems.CpmImageMissing": "CP/M イメージには {0} 個の欠落した論理ブロックが含まれています。",
+    "MediaFileSystems.CpmImageTruncated": "CP/M イメージには {0} 個の切り詰められた論理ブロックが含まれています。",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M レイアウトが無効です（ディレクトリのオフセット={0}、割り当て開始位置={1}、ディレクトリエントリ数={2}、割り当てサイズ={3}、ディレクトリブロック数={4}）。",
+    "MediaFileSystems.CpmUserArea": "CP/M ユーザー {0}"
+  }
+}

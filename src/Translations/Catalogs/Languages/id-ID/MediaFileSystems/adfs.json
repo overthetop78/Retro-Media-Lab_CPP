@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Citra tidak memiliki katalog ADFS yang didukung (blok berukuran {0} byte, {1} blok).",
+    "Media.AdfsInvalidDirectory": "Direktori ADFS {0} tak valid atau tak lengkap.",
+    "Media.AdfsDepth": "Batas kedalaman direktori ADFS dicapai pada kedalaman {0}.",
+    "Media.AdfsCycle": "Direktori ADFS {0} adalah siklik atau direferensikan lebih dari sekali.",
+    "Media.AdfsInvalidRange": "{0}: alamat ADFS tidak valid {1}, ofset {2}, panjang {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS alamat {1} di ofset {2} membutuhkan blok yang hilang {3}.",
+    "Media.AdfsIntegrity": "Blok ADFS {0} memiliki integritas rekaman tidak valid.",
+    "Media.AdfsBlockVolume": "ADFS memerlukan volume dengan akses langsung ke sektor atau blok.",
+    "Media.AdfsSectorCount": "Jumlah sektor ADFS {0} diluar jangkauan yang didukung."
+  }
+}

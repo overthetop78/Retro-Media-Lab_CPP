@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 ホームブロックは無効です (シグネチャ '{0}'、ディレクトリブロック {1})。",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11 セグメント {0} ブロック {1} では、範囲外のセグメント番号があります。",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 セグメント {0} はブロック {1} でサイクルを形成します。",
+    "MediaFileSystems.Rt11SegmentOutside": "ブロック {1} の RT-11 セグメント {0} はイメージの外にあります。",
+    "MediaFileSystems.Rt11SegmentMissing": "ブロック {1} の RT-11 セグメント {0} のブロックペアが存在しないか、途中で切れています。",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 セグメント {0} は {1} バイトの無効なエントリーサイズを宣言します。",
+    "MediaFileSystems.Rt11EmptyName": "データブロック{0}、オフセット{1}のRT-11エントリは、空の名前を持っています。",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 ブロックが存在しないか、途中で切れています: {1}。",
+    "MediaFileSystems.Rt11Tentative": "暫定RT-11ファイル",
+    "MediaFileSystems.Rt11Permanent": "RT-11 ファイル"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Η κανονική τιμή COHERENT περιέχει bytes {0}; {1} απαιτούνται.",
+    "Media.CoherentPointerLength": "Ο δείκτης μπλοκ COHERENT περιέχει {0} byte· απαιτούνται {1}.",
+    "Media.CoherentInvalidSuperblock": "Η εικόνα δεν περιέχει ένα έγκυρο σύστημα αρχείων COHERENT.",
+    "Media.CoherentDeclaredBlocks": "COHERENT δηλώνει {0} μπλοκ, αλλά μόνο {1} είναι διαθέσιμα.",
+    "Media.CoherentMissingSuperblock": "Λείπει ένα απαιτούμενο μπλοκ του υπερμπλοκ COHERENT.",
+    "Media.CoherentInodeZone": "Η ζώνη COHERENT inode τελειώνει στο μπλοκ {0}, έξω από το σύστημα αρχείων των μπλοκ {1}.",
+    "Media.CoherentNullInode": "COHERENT inode μηδέν είναι άκυρη.",
+    "Media.CoherentInodeOutside": "Η COHERENT inode {0} είναι έξω από την inode ζώνη των bytes {1}.",
+    "Media.CoherentFileTooLarge": "Το μήκος αρχείου COHERENT των bytes {0} δεν μπορεί να αναπαρασταθεί στη μνήμη.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT άμεσο μπλοκ {1} λείπει ή έξω από την εικόνα.",
+    "Media.CoherentIndirectUnavailable": "{0}: Λείπει ή εκτός της εικόνας το έμμεσο μπλοκ του COHERENT {1} στο επίπεδο {2}.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT έμμεσο μπλοκ {1} στο επίπεδο {2} αναφέρεται περισσότερες από μία φορές.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT κατάλογος inode {1} σχηματίζει έναν κύκλο.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT κατάλογος inode {1} έχει ήδη επισκεφθεί.",
+    "Media.CoherentChildUnreadable": "{0}: η inode παιδί COHERENT δεν μπορεί να διαβαστεί.",
+    "Media.CoherentMissingBytes": "{0}: Τα bytes {1} COHERENT λείπουν και παραμένουν τοποθετημένα ως μηδενικά.",
+    "Media.CoherentDepth": "{0}: το όριο βάθους καταλόγου COHERENT επιτεύχθηκε σε βάθος {1}.",
+    "Media.CoherentInodeDescription": "COHERENT ινόδιο {0}"
+  }
+}

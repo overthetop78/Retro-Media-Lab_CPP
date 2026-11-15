@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Ảnh không chứa danh mục ADFS được hỗ trợ (khối {0} byte, {1} khối).",
+    "Media.AdfsInvalidDirectory": "ADFS Thư mục {0} không hợp lệ hoặc không đầy đủ.",
+    "Media.AdfsDepth": "Giới hạn độ sâu của thư mục ADFS ở độ sâu {0}.",
+    "Media.AdfsCycle": "Thư mục ADFS {0} tạo vòng lặp hoặc được tham chiếu nhiều lần.",
+    "Media.AdfsInvalidRange": "{0}: địa chỉ ADFS {1}, độ lệch {2} hoặc độ dài {3} không hợp lệ.",
+    "Media.AdfsMissingBlock": "{0}: địa chỉ ADFS {1} tại độ lệch {2} cần khối {3} đang bị thiếu.",
+    "Media.AdfsIntegrity": "ADFS khối {0} đã ghi lại sự toàn vẹn không hợp lệ.",
+    "Media.AdfsBlockVolume": "ADFS yêu cầu ổ đĩa có thể truy cập trực tiếp các sector hoặc khối.",
+    "Media.AdfsSectorCount": "Số sector ADFS {0} nằm ngoài phạm vi được hỗ trợ."
+  }
+}

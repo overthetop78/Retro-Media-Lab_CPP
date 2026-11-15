@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Érvénytelen ágazati képméret {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Az ágazati képformátum azonosítója üres vagy érvénytelen: {0}.",
+    "Media.SectorDuplicateBlock": "Logikai szektor {0} többször fordul elő a képben.",
+    "Media.SectorBlockOutside": "A(z) {0} logikai szektor kívül esik a(z) {1} szektort tartalmazó képen.",
+    "Media.SectorCapacityShort": "A bejelentett ágazati képkapacitás {0} kisebb, mint a rendelkezésre álló adathossz {1}.",
+    "Media.SectorMissingBlock": "A(z) {0} logikai szektor hiányzik.",
+    "Media.SectorInvalidBlockSize": "A logikai ágazat {0} {1} bájtot tartalmaz {2} helyett.",
+    "Media.FatUnsupportedBoot": "A {0} képformátumnak nincs támogatott FAT12 fájlrendszere: hiányzik vagy csonka.",
+    "Media.FatUnsupportedLayout": "Kép formátuma {0} nem támogatott FAT12 fájlrendszer (szektor mérete {1}, ágazatok csoportonként {2}, fenntartott ágazatok {3}, FAT másolatok {4}, root bejegyzések {5}, ágazatok FAT {6}).",
+    "Media.FatInvalidChain": "A {0} FAT lánc érvénytelen vagy ciklikus a cluster {1} -nél.",
+    "Media.FatTruncatedTable": "Az FAT12 bejegyzés a klaszter esetében: {0} csonka.",
+    "Media.FatMissingSectors": "A szektortartomány {0} - {1} nem teljes.",
+    "Media.FatDepthLimit": "A FAT könyvtár fészkelési határa {0} (mélység {1}) volt.",
+    "Media.FatMissingSector": "A FAT szektor {0} {1} bájtot tartalmaz {2} helyett.",
+    "Media.FatCyclicChain": "{0}: a FAT12 lánc a {1} klaszteren ciklikus.",
+    "Media.FatClusterOutsideRange": "{0}: A FAT12 klaszter {1} kívül esik az adattartományon.",
+    "Media.FatIncompleteContent": "{0}: a megadott méret {1} bájt, de csak {2} bájt áll rendelkezésre.",
+    "Media.FatUnsupportedGeometry": "A {0} képformátum nem támogatott FAT12 geometria.",
+    "Media.FatDiskFull": "A cél FAT12 köteten nincs elegendő szabad klaszter vagy könyvtárbejegyzés.",
+    "Media.FatInvalidEntry": "Migrációs bejegyzés {0} nem képviselhető FAT12 rövidnév bejegyzésként.",
+    "Media.FatDirectoryCycle": "A {0} könyvtár újrahasználja az FAT12 clustert {1}, amely már bővült.",
+    "Media.FatIntegrityInvalid": "A FAT szektor ({0}) érvénytelen.",
+    "Media.FatResourceLimit": "A FAT12 extrakciós határértéket a {0} olvasás során érték el."
+  }
+}

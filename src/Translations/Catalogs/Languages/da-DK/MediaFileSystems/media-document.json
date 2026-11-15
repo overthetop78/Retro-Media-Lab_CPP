@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Mediekilden kan ikke være null.",
+    "MediaFileSystems.ContextSourcePath": "Den primære mediekilde kan ikke være tom eller blank.",
+    "MediaFileSystems.ContextPageSize": "Sidestørrelsen skal være positiv.",
+    "MediaFileSystems.ContextKnownLength": "Den kendte kildelængde kan ikke være negativ.",
+    "MediaFileSystems.ContextLengthOverflow": "Mediekilde længden overstiger det understøttede underskrevne område.",
+    "MediaFileSystems.ContextReadOffset": "Den genkendelseslæste forskydning kan ikke være negativ.",
+    "MediaFileSystems.ContextReadCount": "Anerkendelsestællingen kan ikke være negativ.",
+    "MediaFileSystems.ContextReadRange": "Det ønskede område overstiger kildelængden.",
+    "MediaFileSystems.ContextFullRead": "Den komplette kilde kan ikke indlæses i én memory buffer. Brug begrænsede lyde i stedet.",
+    "MediaFileSystems.ContextPageEnded": "Mediekilden sluttede ved byte {0}, mens du læste en cacheret side.",
+    "MediaFileSystems.DocumentFormatId": "Der kræves en anerkendt format-identifikator.",
+    "MediaFileSystems.DocumentRepresentation": "Der kræves en medierepræsentation med oplysninger om den offentlige repræsentation."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Obraz '{0}' neobsahuje platný svazek SpartaDOS.",
+    "MediaFileSystems.SpartaMissingSector": "Sektor SpartaDOS {0} chybí.",
+    "MediaFileSystems.SpartaSectorRange": "Sektor SpartaDOS {0} je mimo rozsah 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Řetězec map sektorů SpartaDOS tvoří smyčku v sektoru {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Mapa sektoru SpartaDOS {0} odkazuje na předchůdce {2} místo {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Adresářový strom SpartaDOS tvoří smyčku v adresáři, jehož mapa začíná v sektoru {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Adresář SpartaDOS v sektoru {0} označuje neplatnou velikost {1} bajtů."
+  }
+}

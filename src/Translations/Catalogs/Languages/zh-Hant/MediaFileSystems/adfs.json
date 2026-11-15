@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "映像不包含支援的 ADFS 目錄（每個區塊 {0} 位元組，共 {1} 個區塊）。",
+    "Media.AdfsInvalidDirectory": "ADFS 目錄 {0} 無效或不完整。",
+    "Media.AdfsDepth": "在深度 {0} 處達到了 ADFS 目錄深度限制。",
+    "Media.AdfsCycle": "ADFS 目錄 {0} 存在循環參照或被多次參照。",
+    "Media.AdfsInvalidRange": "{0}：ADFS 位址 {1}、位移 {2} 或長度 {3} 無效。",
+    "Media.AdfsMissingBlock": "{0}：ADFS 位址 {1} 在位移 {2} 處需要缺少的區塊 {3}。",
+    "Media.AdfsIntegrity": "ADFS 區塊 {0} 的記錄完整性資訊無效。",
+    "Media.AdfsBlockVolume": "ADFS 需要可直接定址磁區或區塊的磁碟區。",
+    "Media.AdfsSectorCount": "ADFS 磁區數 {0} 超出了支援範圍。"
+  }
+}

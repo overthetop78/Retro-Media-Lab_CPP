@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Zdroj médií nemůže být nulový.",
+    "MediaFileSystems.ContextSourcePath": "Primární media zdrojová cesta nemůže být prázdná nebo Whitespace.",
+    "MediaFileSystems.ContextPageSize": "Rozpoznávací velikost stránky musí být pozitivní.",
+    "MediaFileSystems.ContextKnownLength": "Známá délka zdroje nemůže být záporná.",
+    "MediaFileSystems.ContextLengthOverflow": "Délka zdroje média přesahuje podporovaný podepsaný rozsah.",
+    "MediaFileSystems.ContextReadOffset": "Rozpoznání odečtu nemůže být záporné.",
+    "MediaFileSystems.ContextReadCount": "Rozpoznávání čtení nemůže být negativní.",
+    "MediaFileSystems.ContextReadRange": "Požadovaný rozsah překračuje délku zdroje.",
+    "MediaFileSystems.ContextFullRead": "Kompletní zdroj nelze načíst do jednoho paměti. Použít ohraničené čtení místo.",
+    "MediaFileSystems.ContextPageEnded": "Zdroj médií skončil na byte {0} při čtení cached stránky.",
+    "MediaFileSystems.DocumentFormatId": "Požaduje se identifikátor uznaného formátu.",
+    "MediaFileSystems.DocumentRepresentation": "Vyžaduje se zastoupení médií s informacemi o veřejném zastoupení."
+  }
+}

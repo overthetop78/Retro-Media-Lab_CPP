@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Kanonická hodnota COHERENT obsahuje {0} bajty; {1} jsou nutné.",
+    "Media.CoherentPointerLength": "Ukazatel bloku COHERENT obsahuje {0} bajty; {1} jsou nutné.",
+    "Media.CoherentInvalidSuperblock": "Obrázek neobsahuje platný souborový systém COHERENT.",
+    "Media.CoherentDeclaredBlocks": "COHERENT deklaruje {0} bloků, ale k dispozici je pouze {1}.",
+    "Media.CoherentMissingSuperblock": "Chybí požadovaný superblok COHERENT.",
+    "Media.CoherentInodeZone": "Zóna INODE COHERENT končí v bloku {0}, mimo souborový systém {1} bloků.",
+    "Media.CoherentNullInode": "COHERENT inode nula je neplatná.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} je mimo oblast inode {1} bytes.",
+    "Media.CoherentFileTooLarge": "Délka souboru COHERENT {0} bajtů nemůže být reprezentována v paměti.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT přímý blok {1} chybí nebo mimo obraz.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT nepřímý blok {1} na úrovni {2} chybí nebo mimo obraz.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT nepřímý blok {1} na úrovni {2} se odkazuje více než jednou.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT adresář inode {1} tvoří cyklus.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT adresář inode {1} byl již navštíven.",
+    "Media.CoherentChildUnreadable": "{0}: podřízený inode COHERENT nelze přečíst.",
+    "Media.CoherentMissingBytes": "{0}: chybí {1} bajtů COHERENT a jejich pozice zůstávají vyplněny nulami.",
+    "Media.CoherentDepth": "{0}: limit hloubky adresáře COHERENT byl dosažen v hloubce {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

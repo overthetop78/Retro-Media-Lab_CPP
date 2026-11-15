@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "ค่ามาตรฐาน COHERENT มี {0} ไบต์ ต้องการ {1} ไบต์",
+    "Media.CoherentPointerLength": "ตัวชี้บล็อก COHERENT มี {0} ไบต์ ต้องการ {1} ไบต์",
+    "Media.CoherentInvalidSuperblock": "อิมเมจไม่มีระบบไฟล์ COHERENT ที่ถูกต้อง",
+    "Media.CoherentDeclaredBlocks": "COHERENT ระบุ {0} บล็อก แต่มีเพียง {1} บล็อกที่ใช้ได้",
+    "Media.CoherentMissingSuperblock": "บล็อกที่จำเป็นของซูเปอร์บล็อก COHERENT ขาดหายไป",
+    "Media.CoherentInodeZone": "เขต inode ของ COHERENT สิ้นสุดที่บล็อก {0} ซึ่งอยู่นอกระบบไฟล์ที่มี {1} บล็อก",
+    "Media.CoherentNullInode": "COHERENT inode หมายเลขศูนย์ไม่ถูกต้อง",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} อยู่นอกเขต inode ขนาด {1} ไบต์",
+    "Media.CoherentFileTooLarge": "ไม่สามารถแทนความยาวไฟล์ COHERENT ขนาด {0} ไบต์ในหน่วยความจำได้",
+    "Media.CoherentDirectUnavailable": "{0}: บล็อกโดยตรง COHERENT {1} ขาดหายไปหรืออยู่นอกอิมเมจ",
+    "Media.CoherentIndirectUnavailable": "{0}: บล็อกทางอ้อม COHERENT {1} ที่ระดับ {2} ขาดหายไปหรืออยู่นอกอิมเมจ",
+    "Media.CoherentIndirectRepeated": "{0}: บล็อกทางอ้อม COHERENT {1} ที่ระดับ {2} ถูกอ้างอิงมากกว่าหนึ่งครั้ง",
+    "Media.CoherentDirectoryCycle": "{0}: inode ไดเรกทอรี COHERENT {1} สร้างวงจร",
+    "Media.CoherentDirectoryRepeated": "{0}: inode ไดเรกทอรี COHERENT {1} ถูกสำรวจแล้ว",
+    "Media.CoherentChildUnreadable": "{0}: ไม่สามารถอ่าน inode ลูกของ COHERENT ได้",
+    "Media.CoherentMissingBytes": "{0}: ขาดข้อมูล COHERENT {1} ไบต์ โดยตำแหน่งดังกล่าวยังเป็นศูนย์",
+    "Media.CoherentDepth": "{0}: ถึงขีดจำกัดความลึกของไดเรกทอรี COHERENT ที่ความลึก {1}",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

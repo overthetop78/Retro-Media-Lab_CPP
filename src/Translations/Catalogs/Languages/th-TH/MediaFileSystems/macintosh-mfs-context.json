@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "บล็อกข้อมูลโวลุม {0} หายไปหรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "บล็อกไดเรกทอรี {0} หายไปหรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: บล็อก {1} ของ fork ข้อมูล หายไปหรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: fork ข้อมูล มีข้อมูล {1} ไบต์ แต่ควรมี {2} ไบต์",
+    "MediaFileSystems.MfsDataMetadata": "{0}: fork ข้อมูล ระบุข้อมูล {1} ไบต์จากคลัสเตอร์ {2} เมทาดาทาไม่สอดคล้องกัน",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: ห่วงโซ่การจัดสรรของ fork ข้อมูล มีการวนซ้ำ",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: ห่วงโซ่การจัดสรรของ fork ข้อมูล อ้างอิงตำแหน่งนอกตารางการจัดสรร",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: ห่วงโซ่การจัดสรรของ fork ข้อมูล สิ้นสุดก่อนที่จะมีคลัสเตอร์ที่จำเป็นครบทั้งหมด",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: บล็อก {1} ของ fork ทรัพยากร หายไปหรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: fork ทรัพยากร มีข้อมูล {1} ไบต์ แต่ควรมี {2} ไบต์",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: fork ทรัพยากร ระบุข้อมูล {1} ไบต์จากคลัสเตอร์ {2} เมทาดาทาไม่สอดคล้องกัน",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: ห่วงโซ่การจัดสรรของ fork ทรัพยากร มีการวนซ้ำ",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: ห่วงโซ่การจัดสรรของ fork ทรัพยากร อ้างอิงตำแหน่งนอกตารางการจัดสรร",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: ห่วงโซ่การจัดสรรของ fork ทรัพยากร สิ้นสุดก่อนที่จะมีคลัสเตอร์ที่จำเป็นครบทั้งหมด"
+  }
+}

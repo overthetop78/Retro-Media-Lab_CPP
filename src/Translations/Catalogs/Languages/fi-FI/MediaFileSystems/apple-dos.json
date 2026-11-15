@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Apple DOS -luettelo, johon VTOC viittaa raidalla {0}, sektorissa {1}, puuttuu tai on virheellinen.",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS -luettelosektori {0}/{1} puuttuu tai kuuluu silmukkaan.",
+    "MediaFileSystems.AppleDosAddress": "Apple DOS -osoite {1}/{2} tiedostolle {0} on levyn geometrian ulkopuolella.",
+    "MediaFileSystems.AppleDosListCycle": "Tiedoston {0} raita-/sektoriluettelo muodostaa silmukan kohdassa {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Tiedoston {0} raita-/sektoriluettelo puuttuu kohdasta {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Tiedoston {0} datasektori {1}/{2} puuttuu.",
+    "MediaFileSystems.AppleDosSize": "Tiedosto {0} ilmoittaa {1} sektoria, mutta läpi käytiin {2} sektoria.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS -kohdemuotoa {0} ei tueta.",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOS -taltiolla ei ole riittävästi luettelo- tai datasektoreita.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS -taltion nimen {0} on oltava muodossa DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS tukee vain tiedostoja, joiden sisältö on saatavilla juuriluettelossa.",
+    "MediaFileSystems.AppleDosBinarySize": "Apple DOS -binääritiedosto ei saa ylittää 65535 tavua.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS -tiedostonimeä {0} ei voi koodata luettelomerkintään.",
+    "MediaFileSystems.AppleDosTypeText": "Teksti",
+    "MediaFileSystems.AppleDosTypeBinary": "Binäärinen",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Uudelleensijoitettava",
+    "MediaFileSystems.AppleDosTypeFile": "Tiedosto"
+  }
+}

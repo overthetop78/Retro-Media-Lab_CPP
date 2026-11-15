@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Blok awal RT-11 tidak valid (tanda tangan '{0}', blok direktori {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "Segmen RT-11 {0} pada blok {1} memiliki nomor segmen di luar rentang.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segmen {0} di blok {1} membentuk sebuah siklus.",
+    "MediaFileSystems.Rt11SegmentOutside": "Segmen RT-11 {0} pada blok {1} berada di luar citra disk.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segmen {0} di blok {1} memiliki pasangan blok yang hilang atau dipotong.",
+    "MediaFileSystems.Rt11EntrySize": "Segmen RT-11 {0} menyatakan ukuran entri tidak valid sebesar {1} bita.",
+    "MediaFileSystems.Rt11EmptyName": "Entri RT-11 pada blok data {0}, ofset {1}, memiliki nama kosong.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 blok hilang atau dipotong: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Berkas RT-11 sementara",
+    "MediaFileSystems.Rt11Permanent": "Berkas RT-11"
+  }
+}

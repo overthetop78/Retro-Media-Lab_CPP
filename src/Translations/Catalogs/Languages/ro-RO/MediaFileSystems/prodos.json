@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Antetul volumului ProDOS/SOS din blocul {0} nu este recunoscut (valoare observată ${1}).",
+    "MediaFileSystems.ProDosDepth": "Blocul de director ProDOS {1} depășește adâncimea maximă la nivelul {0}.",
+    "MediaFileSystems.ProDosDirectory": "Blocul de director ProDOS {0} este nevalid (ciclu={1}, reutilizat={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): blocul de index ProDOS {2} este nevalid (ciclu={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): blocul de index principal ProDOS {2} este nevalid.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): blocul de date ProDOS {2} lipsește, se află în afara imaginii de disc sau are o dimensiune nevalidă.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): s-au reconstruit {2} octeți din cei {3} octeți așteptați.",
+    "MediaFileSystems.ProDosBitmap": "Blocul bitmap ProDOS {0} lipsește sau are o dimensiune nevalidă.",
+    "MediaFileSystems.ProDosTotal": "Volumul ProDOS declară {0} blocuri, dar imaginea de disc conține {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Formatul țintă ProDOS '{0}' nu este acceptat.",
+    "MediaFileSystems.ProDosDiskFull": "Volumul ProDOS nu are suficiente blocuri sau intrări de director.",
+    "MediaFileSystems.ProDosGeometry": "Geometria țintă ProDOS sau harta adreselor de sectoare este nevalidă.",
+    "MediaFileSystems.ProDosEntry": "Intrarea ProDOS '{0}' nu poate fi scrisă.",
+    "MediaFileSystems.ProDosFileLength": "Fișierul ProDOS '{0}' depășește câmpul de lungime pe 24 de biți.",
+    "MediaFileSystems.ProDosName": "Numele ProDOS '{0}' este nevalid.",
+    "MediaFileSystems.ProDosTypeText": "Text",
+    "MediaFileSystems.ProDosTypeBinary": "Binar",
+    "MediaFileSystems.ProDosTypeDirectory": "Director",
+    "MediaFileSystems.ProDosTypeVariables": "Variabile",
+    "MediaFileSystems.ProDosTypeSystem": "Sistem"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Avbildningen innehåller ingen ADFS-katalog som stöds (block på {0} byte, {1} block).",
+    "Media.AdfsInvalidDirectory": "ADFS katalog {0} är ogiltig eller ofullständig.",
+    "Media.AdfsDepth": "ADFS-katalogens djupgräns nåddes på djupet {0}.",
+    "Media.AdfsCycle": "ADFS katalog {0} är cyklisk eller refereras mer än en gång.",
+    "Media.AdfsInvalidRange": "{0}: ogiltig ADFS-adress {1}, förskjutning {2}, längd {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS-adressen {1} vid förskjutning {2} kräver det saknade blocket {3}.",
+    "Media.AdfsIntegrity": "ADFS block {0} har ogiltig registrerad integritet.",
+    "Media.AdfsBlockVolume": "ADFS kräver en adresserbar sektor eller blockvolym.",
+    "Media.AdfsSectorCount": "ADFS sektor räkna {0} ligger utanför det stödda intervallet."
+  }
+}

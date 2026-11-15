@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "트랙 {0}, 섹터 {1}의 VTOC가 가리키는 Apple DOS 카탈로그가 없거나 잘못되었습니다.",
+    "MediaFileSystems.AppleDosCatalogChain": "Apple DOS 카탈로그 섹터 {0}/{1}이(가) 없거나 순환 참조됩니다.",
+    "MediaFileSystems.AppleDosAddress": "{0}의 Apple DOS 주소 {1}/{2}이(가) 디스크 지오메트리 범위를 벗어납니다.",
+    "MediaFileSystems.AppleDosListCycle": "{0}의 트랙/섹터 목록이 {1}/{2}에서 순환 참조됩니다.",
+    "MediaFileSystems.AppleDosListMissing": "{0}의 트랙/섹터 목록이 {1}/{2}에 없습니다.",
+    "MediaFileSystems.AppleDosDataMissing": "{0}의 데이터 섹터 {1}/{2}이(가) 없습니다.",
+    "MediaFileSystems.AppleDosSize": "파일 {0}에 선언된 섹터 수는 {1}개이지만 실제로 순회한 섹터 수는 {2}개입니다.",
+    "MediaFileSystems.AppleDosWriteFormat": "Apple DOS 대상 형식 {0}은(는) 지원되지 않습니다.",
+    "MediaFileSystems.AppleDosWriteFull": "Apple DOS 볼륨에 카탈로그 또는 데이터 섹터가 부족합니다.",
+    "MediaFileSystems.AppleDosWriteVolume": "Apple DOS 볼륨 이름 {0}은(는) DOS-nnn 형식이어야 합니다.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS는 루트 카탈로그에 있고 내용을 사용할 수 있는 파일만 지원합니다.",
+    "MediaFileSystems.AppleDosBinarySize": "Apple DOS 이진 파일은 65535바이트를 초과할 수 없습니다.",
+    "MediaFileSystems.AppleDosWriteName": "Apple DOS 파일 이름 {0}을(를) 카탈로그 항목에 인코딩할 수 없습니다.",
+    "MediaFileSystems.AppleDosTypeText": "텍스트",
+    "MediaFileSystems.AppleDosTypeBinary": "이진",
+    "MediaFileSystems.AppleDosTypeRelocatable": "재배치 가능",
+    "MediaFileSystems.AppleDosTypeFile": "파일"
+  }
+}

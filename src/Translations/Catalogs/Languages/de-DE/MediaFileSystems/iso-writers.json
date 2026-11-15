@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "Das ISO-Image ist leer oder nicht auf 2048-Byte-Sektoren ausgerichtet.",
+    "MediaFileSystems.IsoContainerChanged": "Die ISO-Bildlänge änderte sich nach der Erkennung.",
+    "MediaFileSystems.IsoWriteProfile": "Das optische Dokument kann nicht als verlustfreies Single-Track-ISO-Image geschrieben werden.",
+    "MediaFileSystems.WriterRegistryNull": "Ein Media Image Writer kann nicht null sein.",
+    "MediaFileSystems.WriterRegistryDuplicate": "Media Image Writer Identifier '{0}' wird mehr als einmal registriert.",
+    "MediaFileSystems.WriterTargetFormat": "Eine Zielmedienformatkennung ist erforderlich.",
+    "MediaFileSystems.WriterTargetExtension": "Eine Zielmediendateierweiterung ist erforderlich."
+  }
+}

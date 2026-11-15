@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Virheellinen sektorin kuvan ulottuvuus {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Sektorikuvamuodon tunniste on tyhjä tai virheellinen: {0}.",
+    "Media.SectorDuplicateBlock": "Looginen sektori {0} esiintyy useammin kuin kerran kuvassa.",
+    "Media.SectorBlockOutside": "Looginen sektori {0} on kuvan ulkopuolella, joka sisältää {1} sektoreita.",
+    "Media.SectorCapacityShort": "Ilmoitettu sektorin kuvakapasiteetti {0} on pienempi kuin käytettävissä olevan tiedon pituus {1}.",
+    "Media.SectorMissingBlock": "Looginen sektori {0} puuttuu.",
+    "Media.SectorInvalidBlockSize": "Looginen sektori {0} sisältää {1} tavua {2}:n sijaan.",
+    "Media.FatUnsupportedBoot": "Kuvamuoto {0} ei ole tuettu FAT12 tiedostojärjestelmä: käynnistyssektori puuttuu tai tynkä.",
+    "Media.FatUnsupportedLayout": "Kuvamuoto {0} ei sisällä tuettua FAT12-tiedostojärjestelmää (alakoko {1}, sektoreita klusteria kohti {2}, varattuja sektoreita {3}, FAT-kopioita {4}, juurimerkintää {5}, sektoreita kohti FAT {6}).",
+    "Media.FatInvalidChain": "{0}:n FAT-ketju on virheellinen tai syklinen klusterissa {1}.",
+    "Media.FatTruncatedTable": "Klusterin {0} FAT12 merkintä on typistetty.",
+    "Media.FatMissingSectors": "Sektorialue {0} - {1} on puutteellinen.",
+    "Media.FatDepthLimit": "FAT-hakemiston pesimisraja saavutettiin osoitteessa {0} (syvä {1}).",
+    "Media.FatMissingSector": "FAT-sektori {0} sisältää {1} tavua {2}:n sijaan.",
+    "Media.FatCyclicChain": "{0}: FAT12-ketju on syklinen klusterissa {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12-klusteri {1} on data-alueen ulkopuolella.",
+    "Media.FatIncompleteContent": "{0}: ilmoitettu koko on {1} tavua, mutta vain {2} tavua on saatavilla.",
+    "Media.FatUnsupportedGeometry": "Kuvamuoto {0} ei ole tuettu FAT12-geometria.",
+    "Media.FatDiskFull": "Kohde FAT12 -tilavuudessa ei ole riittävästi vapaita klustereita tai hakemistoja.",
+    "Media.FatInvalidEntry": "Siirtomerkintää {0} ei voi esittää FAT12-lyhytnimimerkintänä.",
+    "Media.FatDirectoryCycle": "Kansio {0} käyttää FAT12 klusteria {1}, jota on jo laajennettu.",
+    "Media.FatIntegrityInvalid": "FAT-sektorilla {0} on virheellinen tallennettu eheys.",
+    "Media.FatResourceLimit": "FAT12-poimintaraja saavutettiin luettaessa kohdetta {0}."
+  }
+}

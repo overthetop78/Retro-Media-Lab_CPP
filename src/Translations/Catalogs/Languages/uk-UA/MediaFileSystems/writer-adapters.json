@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Образ представлення носія не може бути null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Лічильник представлення носія перевищує підтримуваний діапазон цілих чисел зі знаком.",
+    "MediaFileSystems.WriterAdapterId": "Потрібен ідентифікатор компонента запису образів носіїв.",
+    "MediaFileSystems.WriterAdapterFormats": "Цільові ідентифікатори формату не можуть бути порожніми.",
+    "MediaFileSystems.WriterAdapterExtensions": "Вихідні розширення не можуть бути порожніми.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Потрібні функції перевірки та виведення компонента запису носіїв.",
+    "MediaFileSystems.WriterAdapterPath": "Потрібен вихідний шлях компонента запису носіїв.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Компонент запису '{0}' не може отримати потрібне представлення носія.",
+    "MediaFileSystems.WriterAdapterTarget": "Компонент запису '{0}' не приймає цільовий формат '{1}' з розширенням '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Компонент запису '{0}' не повідомив про коректні вихідні файли.",
+    "MediaFileSystems.WriterCommodoreTransform": "Формат джерела Commodore '{0}' не може бути написаний як '{1}' без перетворення геометрії."
+  }
+}

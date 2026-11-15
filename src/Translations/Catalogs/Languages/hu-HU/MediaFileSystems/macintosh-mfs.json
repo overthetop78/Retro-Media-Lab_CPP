@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "A lemezkép nem tartalmaz {0} kötetet; észlelt aláírás: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: a(z) {1} fájl-adatfolyam {2}. blokkja hiányzik.",
+    "MediaFileSystems.MacIncompleteData": "{0}: a(z) {1} fájl-adatfolyam {2} bájtot tartalmaz; a várt mennyiség {3}.",
+    "MediaFileSystems.MacAllocationSize": "A(z) {0} kötet {1} foglalási méretének {2} bájt nem nulla többszörösének kell lennie.",
+    "MediaFileSystems.MacFreeCount": "A(z) {0} kötet {1} szabad foglalási blokkot jelez az összesen {2} blokkból.",
+    "MediaFileSystems.MfsMapTruncated": "A(z) {0} foglaláshoz tartozó MFS-térkép {1} bájtot tartalmaz; szükséges: {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Az MFS könyvtárbejegyzése a(z) {0}. blokk {1} eltolásánál érvénytelen.",
+    "MediaFileSystems.MfsChain": "{0}: a(z) {1} fájl-adatfolyam foglalási lánca érvénytelen (ciklus={2}, térképen kívül={3}, idő előtti vég={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: a(z) {1} fájl-adatfolyam {2} bájtot jelez a(z) {3}. klasztertől; a metaadatok következetlenek.",
+    "MediaFileSystems.MfsDefaultFile": "Macintosh-fájl"
+  }
+}

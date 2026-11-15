@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Ảnh không chứa khối khởi động AmigaDOS được hỗ trợ.",
+    "Media.AmigaUnsupportedVariant": "Không hỗ trợ biến thế giày AmigaDOS{0}.",
+    "Media.AmigaInvalidRoot": "AmigaDOS khối gốc {0} không hợp lệ.",
+    "Media.AmigaRootChecksum": "AmigaDOS khối gốc {0} có một tổng kiểm tra không hợp lệ.",
+    "Media.AmigaDirectoryChain": "Dây chuyền thư mục AmigaDOS tại khối {0} là không hợp lệ hay chu kỳ.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS khối mục nhập thư mục {0} mất tích.",
+    "Media.AmigaMissingData": "AmigaDOS khối dữ liệu {0} mất tích.",
+    "Media.AmigaOfsType": "OFS khối dữ liệu {0} có kiểu bất ngờ {1}.",
+    "Media.AmigaDataChecksum": "OFS khối dữ liệu {0} có một tổng kiểm tra không hợp lệ.",
+    "Media.AmigaInvalidExtension": "AmigaDOS khối mở rộng tập tin {0} không hợp lệ, chu kỳ hay mất tích.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS khối mở rộng tập tin {0} có cấu trúc hoặc tổng kiểm tra không hợp lệ.",
+    "Media.AmigaTruncatedFile": "Nội dung tệp AmigaDOS bị cắt ngắn: dự kiến {0} byte, đã đọc {1} byte.",
+    "Media.AmigaMissingBitmap": "Thiếu khối bản đồ phân bổ AmigaDOS {0}.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap block{0} có một tổng kiểm tra không hợp lệ.",
+    "Media.AmigaDepth": "Giới hạn độ sâu của thư mục AmigaDOS ở độ sâu {0}.",
+    "Media.AmigaRecovered": "Tìm lại {0} AmigaDOS Mục lục từ đầu trang hợp lệ vì khối gốc không sẵn sàng.",
+    "Media.AmigaWriterVariant": "AmigaDOS biến thể {0} không thể được tạo ra bởi môđun này.",
+    "Media.AmigaWriterGeometry": "Định dạng ảnh{0} không phải là một hình học AmigaDOS được hỗ trợ.",
+    "Media.AmigaDiskFull": "Mục tiêu của âm lượng AmigaDOS đã không đủ các khối tự do.",
+    "Media.AmigaInvalidEntry": "Mục nhập chuyển {0} không thể được đại diện trên AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS khối {0} không đầy đủ: {1} byte có sẵn.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS khối {0} đã ghi lại sự toàn vẹn không hợp lệ.",
+    "Media.AmigaFileSize": "AmigaDOS Chiều dài tập tin {0} Vượt quá phạm vi được hỗ trợ."
+  }
+}

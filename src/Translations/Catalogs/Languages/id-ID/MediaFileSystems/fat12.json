@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Dimensi gambar sektor tak valid {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Pengenal format sektor kosong atau tak valid: {0}.",
+    "Media.SectorDuplicateBlock": "Sektor logikal {0} terjadi lebih dari sekali dalam gambar.",
+    "Media.SectorBlockOutside": "Sektor logikal {0} di luar gambar yang memuat {1} sektor.",
+    "Media.SectorCapacityShort": "Kapasitas citra sektor yang dideklarasikan {0} lebih kecil dari panjang data yang tersedia {1}.",
+    "Media.SectorMissingBlock": "Logis sektor {0} hilang.",
+    "Media.SectorInvalidBlockSize": "Sektor logikal {0} memuat {1} bytes daripada {2}.",
+    "Media.FatUnsupportedBoot": "Format gambar {0} tidak didukung FAT12 sistem berkas: sektor boot hilang atau dipotong.",
+    "Media.FatUnsupportedLayout": "Format gambar {0} tidak didukung FAT12 sistem berkas (ukuran sektor {1}, sektor per cluster {2}, direserve sektor {3}, FAT salinan {4}, masukan root {5}, sektor per FAT {6}).",
+    "Media.FatInvalidChain": "Rantai FAT dari {0} tidak valid atau siklik di cluster {1}.",
+    "Media.FatTruncatedTable": "Entri FAT12 untuk cluster {0} terpotong.",
+    "Media.FatMissingSectors": "Batas sektor {0} ke {1} tidak lengkap.",
+    "Media.FatDepthLimit": "Batas tingkat direktori FAT tercapai pada {0} (kedalaman {1}).",
+    "Media.FatMissingSector": "FAT sektor {0} berisi {1} bytes daripada {2}.",
+    "Media.FatCyclicChain": "{0}: rantai FAT12 siklik pada cluster {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 cluster {1} diluar jangkauan data.",
+    "Media.FatIncompleteContent": "{0}: ukuran yang dideklarasikan adalah {1} bytes tetapi hanya {2} bytes tersedia.",
+    "Media.FatUnsupportedGeometry": "Format gambar {0} bukan geometri FAT12 yang didukung.",
+    "Media.FatDiskFull": "Target volume FAT12 tidak memiliki cukup cluster bebas atau masukan direktori.",
+    "Media.FatInvalidEntry": "Entri migrasi {0} tidak dapat diwakili sebagai entri FAT12 nama pendek.",
+    "Media.FatDirectoryCycle": "Direktori {0} memakai kembali FAT12 cluster {1}, yang telah diperluas.",
+    "Media.FatIntegrityInvalid": "FAT sektor {0} memiliki integritas rekaman tidak valid.",
+    "Media.FatResourceLimit": "Batas ekstraksi FAT12 dicapai ketika membaca {0}."
+  }
+}

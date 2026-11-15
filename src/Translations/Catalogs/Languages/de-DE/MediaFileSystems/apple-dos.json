@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Der Apple DOS-Katalog, auf den der VTOC bei Spur {0}, Sektor {1} verweist, fehlt oder ist ungültig.",
+    "MediaFileSystems.AppleDosCatalogChain": "Der Apple DOS-Katalogsektor {0}/{1} fehlt oder gehört zu einer Schleife.",
+    "MediaFileSystems.AppleDosAddress": "Die Apple DOS-Adresse {1}/{2} für {0} liegt außerhalb der Plattengeometrie.",
+    "MediaFileSystems.AppleDosListCycle": "Die Spur-/Sektorliste für {0} bildet bei {1}/{2} eine Schleife.",
+    "MediaFileSystems.AppleDosListMissing": "Die Spur-/Sektorliste für {0} fehlt bei {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Der Datensektor {1}/{2} für {0} fehlt.",
+    "MediaFileSystems.AppleDosSize": "Die Datei {0} gibt {1} Sektoren an, aber {2} Sektoren wurden durchlaufen.",
+    "MediaFileSystems.AppleDosWriteFormat": "Das Apple DOS-Zielformat {0} wird nicht unterstützt.",
+    "MediaFileSystems.AppleDosWriteFull": "Das Apple DOS-Volume hat nicht genügend Katalog- oder Datensektoren.",
+    "MediaFileSystems.AppleDosWriteVolume": "Der Apple DOS-Volumename {0} muss das Format DOS-nnn haben.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS unterstützt nur Dateien mit verfügbarem Inhalt im Stammkatalog.",
+    "MediaFileSystems.AppleDosBinarySize": "Eine binäre Apple DOS-Datei darf 65535 Byte nicht überschreiten.",
+    "MediaFileSystems.AppleDosWriteName": "Der Apple DOS-Dateiname {0} kann nicht in einem Katalogeintrag kodiert werden.",
+    "MediaFileSystems.AppleDosTypeText": "Text",
+    "MediaFileSystems.AppleDosTypeBinary": "Binär",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relokierbar",
+    "MediaFileSystems.AppleDosTypeFile": "Datei"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "La longueur optique logique ne peut être négative.",
+    "MediaFileSystems.OpticalMetadataOnly": "Ce descripteur des médias ne contient que des métadonnées et n'a aucune source de données lisible.",
+    "MediaFileSystems.OpticalIndexNumber": "Le numéro d’index de piste optique doit être compris entre 0 et 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "La dimension optique « {0} » doit être positive.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "La dimension optique « {0} » ne peut être négative.",
+    "MediaFileSystems.OpticalDataSource": "Une source de données de piste optique est requise.",
+    "MediaFileSystems.OpticalUserWindow": "La fenêtre de données utilisateur dépasse un secteur stocké.",
+    "MediaFileSystems.OpticalTrackSource": "Les données de la piste dépassent leur source.",
+    "MediaFileSystems.OpticalSubchannelSource": "Les dimensions des sous-canaux nécessitent une source de sous-canaux.",
+    "MediaFileSystems.OpticalSubchannelRange": "Les données du sous-canal dépassent sa source.",
+    "MediaFileSystems.OpticalPregapOffset": "Un décalage source de prégap stocké exige la présence de secteurs de prégap stockés.",
+    "MediaFileSystems.OpticalPregapRange": "Le prégap stocké dépasse sa source.",
+    "MediaFileSystems.OpticalStoredDestination": "La destination doit contenir exactement un secteur stocké.",
+    "MediaFileSystems.OpticalStoredPregap": "Le secteur est en dehors du prégap stocké.",
+    "MediaFileSystems.OpticalRelativeSector": "Le secteur est en dehors de la piste optique.",
+    "MediaFileSystems.OpticalNullTrack": "Une piste optique ne peut être nulle."
+  }
+}

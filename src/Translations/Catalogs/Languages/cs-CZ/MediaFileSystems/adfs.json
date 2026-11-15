@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Obraz neobsahuje podporovaný katalog ADFS (bloky o velikosti {0} bajtů, {1} bloků).",
+    "Media.AdfsInvalidDirectory": "ADFS adresář {0} je neplatný nebo neúplný.",
+    "Media.AdfsDepth": "Hloubka adresáře ADFS byla dosažena v hloubce {0}.",
+    "Media.AdfsCycle": "ADFS adresář {0} je cyklický nebo je více než jednou odkazován.",
+    "Media.AdfsInvalidRange": "{0}: neplatná adresa ADFS {1}, posun {2}, délka {3}.",
+    "Media.AdfsMissingBlock": "{0}: adresa ADFS {1} na posunu {2} vyžaduje chybějící blok {3}.",
+    "Media.AdfsIntegrity": "ADFS blok {0} má neplatnou zaznamenanou integritu.",
+    "Media.AdfsBlockVolume": "ADFS vyžaduje svazek s přímým přístupem k sektorům nebo blokům.",
+    "Media.AdfsSectorCount": "Počet sektorů ADFS {0} je mimo podporovaný rozsah."
+  }
+}

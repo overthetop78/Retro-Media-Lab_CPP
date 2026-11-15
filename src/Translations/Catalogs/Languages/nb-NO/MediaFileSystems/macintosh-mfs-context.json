@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Voluminformasjonsblokk {0} mangler eller har ugyldig størrelse.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Katalogblokk {0} mangler eller har ugyldig størrelse.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: blokk {1} i dataforken mangler eller har ugyldig størrelse.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: dataforken inneholder {1} byte; forventet {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: dataforken oppgir {1} byte fra klynge {2}; metadataene er inkonsistente.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: allokeringskjeden for dataforken inneholder en løkke.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: allokeringskjeden for dataforken viser utenfor allokeringskartet.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: allokeringskjeden for dataforken slutter før alle nødvendige klynger er tilgjengelige.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: blokk {1} i ressursforken mangler eller har ugyldig størrelse.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: ressursforken inneholder {1} byte; forventet {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: ressursforken oppgir {1} byte fra klynge {2}; metadataene er inkonsistente.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: allokeringskjeden for ressursforken inneholder en løkke.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: allokeringskjeden for ressursforken viser utenfor allokeringskartet.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: allokeringskjeden for ressursforken slutter før alle nødvendige klynger er tilgjengelige."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Η κεφαλίδα τόμου ProDOS/SOS στο μπλοκ {0} δεν αναγνωρίζεται (τιμή που διαβάστηκε: ${1}).",
+    "MediaFileSystems.ProDosDepth": "Το μπλοκ καταλόγου ProDOS {1} υπερβαίνει το μέγιστο βάθος στο επίπεδο {0}.",
+    "MediaFileSystems.ProDosDirectory": "Το μπλοκ καταλόγου ProDOS {0} δεν είναι έγκυρο (κύκλος={1}, επαναχρησιμοποιήθηκε={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): Το μπλοκ ευρετηρίου ProDOS {2} δεν είναι έγκυρο (κύκλος={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): Το κύριο μπλοκ δείκτη ProDOS {2} είναι άκυρο.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): Το μπλοκ δεδομένων ProDOS {2} λείπει, βρίσκεται εκτός του ειδώλου δίσκου ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): ανακατασκευασμένα bytes {2} από τα αναμενόμενα bytes {3}.",
+    "MediaFileSystems.ProDosBitmap": "Το μπλοκ bitmap του ProDOS {0} λείπει ή έχει μη έγκυρο μέγεθος.",
+    "MediaFileSystems.ProDosTotal": "Ο τόμος ProDOS δηλώνει {0} μπλοκ, αλλά το είδωλο δίσκου περιέχει {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Η μορφή στόχου ProDOS '{0}' δεν υποστηρίζεται.",
+    "MediaFileSystems.ProDosDiskFull": "Ο τόμος ProDOS δεν έχει αρκετά μπλοκ ή καταχωρήσεις καταλόγου.",
+    "MediaFileSystems.ProDosGeometry": "Η γεωμετρία ProDOS προορισμού ή ο χάρτης διευθύνσεων τομέων δεν είναι έγκυρος.",
+    "MediaFileSystems.ProDosEntry": "Η καταχώρηση ProDOS '{0}' δεν είναι εγγράψιμη.",
+    "MediaFileSystems.ProDosFileLength": "Το αρχείο ProDOS ' {0}' υπερβαίνει το πεδίο μήκους 24-bit.",
+    "MediaFileSystems.ProDosName": "Το όνομα ProDOS '{0}' είναι άκυρο.",
+    "MediaFileSystems.ProDosTypeText": "Κείμενο",
+    "MediaFileSystems.ProDosTypeBinary": "Δυαδικό",
+    "MediaFileSystems.ProDosTypeDirectory": "Κατάλογος",
+    "MediaFileSystems.ProDosTypeVariables": "Μεταβλητές",
+    "MediaFileSystems.ProDosTypeSystem": "Σύστημα"
+  }
+}

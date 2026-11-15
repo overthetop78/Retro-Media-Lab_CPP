@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Header volume ProDOS / SOS dalam blok {0} tidak dikenal (nilai yang diamati ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS direktori blok {1} melebihi kedalaman maksimum pada tingkat {0}.",
+    "MediaFileSystems.ProDosDirectory": "Blok direktori ProDOS {0} tidak valid (siklus={1}, digunakan kembali={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): Blok indeks ProDOS {2} tidak valid (siklus={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): Blok indeks utama ProDOS {2} tidak valid.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): Blok data ProDOS {2} hilang, berada di luar citra disk, atau memiliki ukuran yang tidak valid.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): Berhasil merekonstruksi {2} byte dari {3} byte yang diharapkan.",
+    "MediaFileSystems.ProDosBitmap": "Blok peta bit ProDOS {0} hilang atau memiliki ukuran yang tidak valid.",
+    "MediaFileSystems.ProDosTotal": "Volume ProDOS menyatakan {0} blok, tetapi citra disk berisi {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Format target ProDOS '{0}' tidak didukung.",
+    "MediaFileSystems.ProDosDiskFull": "Volume ProDOS tidak memiliki cukup blok atau masukan direktori.",
+    "MediaFileSystems.ProDosGeometry": "Target geometri ProDOS atau peta alamat sektor tidak valid.",
+    "MediaFileSystems.ProDosEntry": "Entri ProDOS '{0}' tidak dapat ditulisi.",
+    "MediaFileSystems.ProDosFileLength": "Berkas ProDOS '{0}' melebihi ruas panjang 24- bit.",
+    "MediaFileSystems.ProDosName": "Nama ProDOS '{0}' tak valid.",
+    "MediaFileSystems.ProDosTypeText": "Teks",
+    "MediaFileSystems.ProDosTypeBinary": "Biner",
+    "MediaFileSystems.ProDosTypeDirectory": "Direktori",
+    "MediaFileSystems.ProDosTypeVariables": "Variabel",
+    "MediaFileSystems.ProDosTypeSystem": "Sistem"
+  }
+}

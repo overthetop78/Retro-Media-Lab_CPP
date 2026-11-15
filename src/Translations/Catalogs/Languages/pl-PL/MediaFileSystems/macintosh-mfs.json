@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.MacInvalidVolume": "Obraz dysku nie zawiera woluminu {0}; odczytana sygnatura: 0x{1}.",
+    "MediaFileSystems.MacMissingBlock": "{0}: brakuje bloku {2} strumienia fork {1}.",
+    "MediaFileSystems.MacIncompleteData": "{0}: strumień fork {1} zawiera {2} bajtów; oczekiwano {3}.",
+    "MediaFileSystems.MacAllocationSize": "Rozmiar jednostki alokacji {1} woluminu {0} musi być dodatnią wielokrotnością {2} bajtów.",
+    "MediaFileSystems.MacFreeCount": "Wolumin {0} zgłasza {1} wolnych bloków alokacji z łącznej liczby {2}.",
+    "MediaFileSystems.MfsMapTruncated": "Mapa MFS dla {0} jednostek alokacji zawiera {1} bajtów; wymagane jest {2}.",
+    "MediaFileSystems.MfsDirectoryEntry": "Wpis katalogu MFS w bloku {0}, na pozycji {1}, jest nieprawidłowy.",
+    "MediaFileSystems.MfsChain": "{0}: łańcuch alokacji strumienia fork {1} jest nieprawidłowy (pętla={2}, poza mapą={3}, przedwczesny koniec={4}).",
+    "MediaFileSystems.MfsForkMetadata": "{0}: strumień fork {1} deklaruje {2} bajtów od klastra {3}; metadane są niespójne.",
+    "MediaFileSystems.MfsDefaultFile": "Plik Macintosh"
+  }
+}

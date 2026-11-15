@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "De schijfkopie bevat geen ondersteund AmigaDOS-opstartblok.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS bootvariant {0} wordt niet ondersteund.",
+    "Media.AmigaInvalidRoot": "AmigaDOS hoofdblok {0} is ongeldig.",
+    "Media.AmigaRootChecksum": "AmigaDOS rootblok {0} heeft een ongeldige controlesom.",
+    "Media.AmigaDirectoryChain": "De AmigaDOS directory ketting op blok {0} is ongeldig of cyclisch.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS-ingangsblok {0} ontbreekt.",
+    "Media.AmigaMissingData": "AmigaDOS-bestandsblok {0} ontbreekt.",
+    "Media.AmigaOfsType": "OFS datablok {0} heeft onverwacht type {1}.",
+    "Media.AmigaDataChecksum": "OFS-datablok {0} heeft een ongeldig controlesom.",
+    "Media.AmigaInvalidExtension": "AmigaDOS bestandsextensie blok {0} is ongeldig, cyclisch of ontbreekt.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS bestandsextensie blok {0} heeft een ongeldige structuur of controlesom.",
+    "Media.AmigaTruncatedFile": "AmigaDOS-bestandsinhoud is afgekapt: verwachte {0} bytes, lees {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap blok {0} ontbreekt.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap blok {0} heeft een ongeldig controlesom.",
+    "Media.AmigaDepth": "De AmigaDOS-mapdieptelimiet werd bereikt op diepte {0}.",
+    "Media.AmigaRecovered": "{0} AmigaDOS-catalogusvermeldingen hersteld uit geldige headers omdat het hoofdblok niet beschikbaar is.",
+    "Media.AmigaWriterVariant": "AmigaDOS variant {0} kan niet door deze module worden aangemaakt.",
+    "Media.AmigaWriterGeometry": "Schijfkopieformaat {0} heeft geen ondersteunde AmigaDOS-geometrie.",
+    "Media.AmigaDiskFull": "Het doel AmigaDOS volume heeft onvoldoende vrije blokken.",
+    "Media.AmigaInvalidEntry": "Migratie-invoer {0} kan niet worden weergegeven op AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS blok {0} is onvolledig: {1} bytes zijn beschikbaar.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS-blok {0} heeft ongeldige geregistreerde integriteit.",
+    "Media.AmigaFileSize": "AmigaDOS bestandslengte {0} overschrijdt het ondersteunde bereik."
+  }
+}

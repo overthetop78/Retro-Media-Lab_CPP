@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Định dạng ảnh «{0}» không chứa hệ thống tập tin CBM DOS được hỗ trợ.",
+    "MediaFileSystems.CbmDirectoryCycle": "Chuỗi thư mục CBM DOS tạo vòng lặp tại {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Thiếu cung từ thư mục CBM DOS {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryTruncated": "Cung từ thư mục CBM DOS {0}/{1} chỉ chứa {2} byte.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Tọa độ thư mục CBM DOS {0}/{1} không hợp lệ.",
+    "MediaFileSystems.CbmFileCycle": "{0}: chuỗi tạo vòng lặp tại {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: tọa độ {1}/{2} không hợp lệ.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: cung từ {1}/{2} bị thiếu dữ liệu.",
+    "MediaFileSystems.CbmFileMissing": "{0}: thiếu cung từ {1}/{2}.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: số đếm cuối {1} không hợp lệ.",
+    "MediaFileSystems.CbmCapacity": "{0}: chuỗi CBM DOS vượt quá dung lượng ảnh.",
+    "MediaFileSystems.CbmBamMissing": "Thiếu CBM DOS BAM bắt buộc tại {0}/{1}.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} bị thiếu dữ liệu, chỉ còn {2} byte.",
+    "MediaFileSystems.PetsciiLength": "Độ dài trường PETSCII {0} không được âm.",
+    "MediaFileSystems.PetsciiTooLong": "Giá trị PETSCII vượt quá {0} ký tự.",
+    "MediaFileSystems.PetsciiCharacter": "Không thể biểu diễn ký tự «{0}» bằng tập con PETSCII được hỗ trợ.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, chưa đóng",
+    "MediaFileSystems.CbmTypeLocked": "{0}, đã khóa",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, chưa đóng, đã khóa"
+  }
+}

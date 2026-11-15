@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ไม่รู้จักส่วนหัวโวลุ่ม ProDOS/SOS ในบล็อก {0} (ค่าที่อ่านได้ ${1})",
+    "MediaFileSystems.ProDosDepth": "บล็อกไดเรกทอรี ProDOS {1} เกินความลึกสูงสุดที่ระดับ {0}",
+    "MediaFileSystems.ProDosDirectory": "บล็อกไดเรกทอรี ProDOS {0} ไม่ถูกต้อง (วนซ้ำ={1}, ใช้ซ้ำ={2})",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): บล็อกดัชนี ProDOS {2} ไม่ถูกต้อง (วนซ้ำ={3})",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): บล็อกดัชนีหลัก ProDOS {2} ไม่ถูกต้อง",
+    "MediaFileSystems.ProDosData": "{0} ({1}): บล็อกข้อมูล ProDOS {2} ขาดหาย อยู่นอกอิมเมจดิสก์ หรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): สร้างข้อมูลกลับคืน {2} ไบต์จากที่คาดไว้ {3} ไบต์",
+    "MediaFileSystems.ProDosBitmap": "บล็อกบิตแมป ProDOS {0} ขาดหายหรือมีขนาดไม่ถูกต้อง",
+    "MediaFileSystems.ProDosTotal": "โวลุ่ม ProDOS ระบุ {0} บล็อก แต่อิมเมจดิสก์มี {1} บล็อก",
+    "MediaFileSystems.ProDosWriteFormat": "ไม่รองรับรูปแบบเป้าหมาย ProDOS '{0}'",
+    "MediaFileSystems.ProDosDiskFull": "โวลุ่ม ProDOS มีบล็อกหรือรายการไดเรกทอรีไม่เพียงพอ",
+    "MediaFileSystems.ProDosGeometry": "รูปทรงดิสก์ ProDOS เป้าหมายหรือแผนผังที่อยู่เซกเตอร์ไม่ถูกต้อง",
+    "MediaFileSystems.ProDosEntry": "ไม่สามารถเขียนรายการ ProDOS '{0}' ได้",
+    "MediaFileSystems.ProDosFileLength": "ไฟล์ ProDOS '{0}' เกินขีดจำกัดของช่องความยาวขนาด 24 บิต",
+    "MediaFileSystems.ProDosName": "ชื่อ ProDOS '{0}' ไม่ถูกต้อง",
+    "MediaFileSystems.ProDosTypeText": "ข้อความ",
+    "MediaFileSystems.ProDosTypeBinary": "ไบนารี",
+    "MediaFileSystems.ProDosTypeDirectory": "ไดเรกทอรี",
+    "MediaFileSystems.ProDosTypeVariables": "ตัวแปร",
+    "MediaFileSystems.ProDosTypeSystem": "ระบบ"
+  }
+}

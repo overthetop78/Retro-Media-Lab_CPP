@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Format gambar '{0}' tak memuat sistem berkas CBM DOS yang didukung.",
+    "MediaFileSystems.CbmDirectoryCycle": "Rantai direktori CBM DOS adalah siklik di {0} / {1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "Sektor direktori CBM DOS {0} / {1} hilang.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS sektor direktori {0} / {1} hanya berisi {2} bytes.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "Koordinat direktori CBM DOS {0} / {1} tak valid.",
+    "MediaFileSystems.CbmFileCycle": "{0}: Rantai ini siklik di {1} / {2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: koordinat {1} / {2} tidak valid.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sektor {1} / {2} terpotong.",
+    "MediaFileSystems.CbmFileMissing": "{0}: sektor {1} / {2} hilang.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: jumlah akhir {1} tidak valid.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS rantai melebihi kapasitas gambar.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM yang diperlukan pada {0} / {1} hilang.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0} / {1} dipotong ke {2} bytes.",
+    "MediaFileSystems.PetsciiLength": "Panjang ruas PETSCII {0} tak boleh negatif.",
+    "MediaFileSystems.PetsciiTooLong": "Nilai PETSCII melebihi karakter {0}.",
+    "MediaFileSystems.PetsciiCharacter": "Karakter '{0}' tidak dapat diwakili oleh subset PETSCII yang didukung.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, terbuka",
+    "MediaFileSystems.CbmTypeLocked": "{0}, terkunci",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, terbuka, terkunci"
+  }
+}

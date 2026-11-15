@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "ディスクイメージ '{0}' に有効な SpartaDOS ボリュームがありません。",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS セクター {0} が見つかりません。",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS のセクター {0} は外部の範囲 1..{1} です。",
+    "MediaFileSystems.SpartaMapLoop": "SpartaDOSセクターのマップチェーンは、セクター {0} でループします。",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS セクターマップ {0} は、前のマップとして {1} ではなく {2} を参照しています。",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS ディレクトリツリーが、マップがセクター {0} で始まるディレクトリで循環しています。",
+    "MediaFileSystems.SpartaDirectoryLength": "セクター {0} の SpartaDOS ディレクトリは {1} バイトの無効なサイズを宣言します。"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Ugyldig sektorbilleddimension {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Sektorens billedformat-identifikator er tom eller ugyldig: {0}.",
+    "Media.SectorDuplicateBlock": "Logisk sektor {0} forekommer mere end én gang i billedet.",
+    "Media.SectorBlockOutside": "Logisk sektor {0} er uden for billedet indeholder {1} sektorer.",
+    "Media.SectorCapacityShort": "Den angivne sektor billedkapacitet {0} er mindre end den tilgængelige data længde {1}.",
+    "Media.SectorMissingBlock": "Logisk sektor {0} mangler.",
+    "Media.SectorInvalidBlockSize": "Logisk sektor {0} indeholder {1} bytes i stedet for {2}.",
+    "Media.FatUnsupportedBoot": "Billedformat {0} har ingen understøttet FAT12 filsystem: boot sektor mangler eller trunkeres.",
+    "Media.FatUnsupportedLayout": "Billedformat {0} har ingen understøttet FAT12 filsystem (sektor størrelse {1}, sektorer pr klynge {2}, reserverede sektorer {3}, FAT kopier {4}, root poster {5}, sektorer pr FAT {6}).",
+    "Media.FatInvalidChain": "FAT kæden af {0} er ugyldig eller cyklisk ved klynge {1}.",
+    "Media.FatTruncatedTable": "FAT12 indgangen til klynge {0} er afkortet.",
+    "Media.FatMissingSectors": "Sektor område {0} til {1} er ufuldstændig.",
+    "Media.FatDepthLimit": "Den FAT mappe redegrænse blev nået på {0} (dybde {1}).",
+    "Media.FatMissingSector": "FAT sektor {0} indeholder {1} bytes i stedet for {2}.",
+    "Media.FatCyclicChain": "{0}: FAT12 kæden er cyklisk ved klynge {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 klynge {1} er uden for dataområdet.",
+    "Media.FatIncompleteContent": "{0}: den angivne størrelse er {1} bytes, men kun {2} bytes er tilgængelige.",
+    "Media.FatUnsupportedGeometry": "Billedformat {0} er ikke en understøttet FAT12 geometri.",
+    "Media.FatDiskFull": "FAT12-måldisken har ikke nok ledige klynger eller mappeposter.",
+    "Media.FatInvalidEntry": "Migrationsindgang {0} kan ikke repræsenteres som en FAT12 kort- navneindgang.",
+    "Media.FatDirectoryCycle": "Mappe {0} genbruger FAT12 klynge {1}, som allerede er blevet udvidet.",
+    "Media.FatIntegrityInvalid": "FAT sektor {0} har ugyldig registreret integritet.",
+    "Media.FatResourceLimit": "FAT12-udtrækningsgrænsen blev nået under læsning af {0}."
+  }
+}

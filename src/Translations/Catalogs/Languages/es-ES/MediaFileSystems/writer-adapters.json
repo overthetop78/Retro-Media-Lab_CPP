@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Una imagen de representación multimedia no puede ser nula.",
+    "MediaFileSystems.RepresentationCountOverflow": "El contador de la representación del medio supera el rango admitido de enteros con signo.",
+    "MediaFileSystems.WriterAdapterId": "Se requiere un identificador de escritor de imágenes de medios.",
+    "MediaFileSystems.WriterAdapterFormats": "Los identificadores de formato objetivo no pueden estar vacíos.",
+    "MediaFileSystems.WriterAdapterExtensions": "Las extensiones de salida no pueden estar vacías.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Se requieren validación de escritores de medios y callbacks de salida.",
+    "MediaFileSystems.WriterAdapterPath": "Se requiere un camino de salida de escritor de medios.",
+    "MediaFileSystems.WriterAdapterRepresentation": "El componente de escritura '{0}' no puede extraer su representación mediática requerida.",
+    "MediaFileSystems.WriterAdapterTarget": "El componente de escritura '{0}' no acepta el objetivo '{1}' con extensión '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "El componente de escritura '{0}' no reportó archivos producidos válidos.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore formato fuente '{0}' no puede ser escrito como '{1}' sin una transformación geometría."
+  }
+}

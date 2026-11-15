@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENTのcanonical値は{0}バイト、{1}は必須です。",
+    "Media.CoherentPointerLength": "COHERENTブロックポインタには{0}バイト、{1}は必須です。",
+    "Media.CoherentInvalidSuperblock": "イメージに有効な COHERENT ファイルシステムがありません。",
+    "Media.CoherentDeclaredBlocks": "COHERENTは{0}ブロックを宣言しますが、{1}のみが利用可能です。",
+    "Media.CoherentMissingSuperblock": "必須のCOHERENTスーパーブロックブロックが欠落しています。",
+    "Media.CoherentInodeZone": "COHERENT inode ゾーンは、{1} ブロックのファイルシステム外にあるブロック {0} で終了します。",
+    "Media.CoherentNullInode": "COHERENT inodeゼロは無効です。",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} は {1} バイトの inode ゾーン外にあります。",
+    "Media.CoherentFileTooLarge": "{0}バイトのCOHERENTファイルの長さはメモリ内で表現できません。",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT 直接ブロック {1} が欠落しているか、画像の外にある。",
+    "Media.CoherentIndirectUnavailable": "{0}: レベル {2} の COHERENT 間接ブロック {1} が欠落しているか、イメージの外にある。",
+    "Media.CoherentIndirectRepeated": "{0}: レベル {2} の COHERENT 間接ブロック {1} が複数回参照されています。",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENTディレクトリ inode {1} はサイクルを生成します。",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENTディレクトリ inode {1} は既に訪問されました。",
+    "Media.CoherentChildUnreadable": "{0}: COHERENT 子 inode を読み取れません。",
+    "Media.CoherentMissingBytes": "{0}: {1} バイトの COHERENT データが欠落し、その位置はゼロのままです。",
+    "Media.CoherentDepth": "{0}: COHERENTディレクトリの深さの制限が深さ {1} に達しました。",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

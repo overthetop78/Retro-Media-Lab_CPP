@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Bildeformatet «{0}» inneholder ikke et støttet CBM DOS-filsystem.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS-katalogkjeden er syklisk ved {0}/{1}.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS-katalogsektoren {0}/{1} mangler.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS-katalogsektoren {0}/{1} inneholder bare {2} bytes.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS- mappe koordinat {0}/{1} er ugyldig.",
+    "MediaFileSystems.CbmFileCycle": "{0}: Kjeden er syklisk ved {1}/{2}.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: Koordinat {1}/{2} er ugyldig.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: Sektor {1}/{2} er avkortet.",
+    "MediaFileSystems.CbmFileMissing": "{0}: Sektor {1}/{2} mangler.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: Endelig telling {1} er ugyldig.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS-kjeden overstiger bildekapasiteten.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM kreves ved {0}/{1} mangler.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} er avkortet til {2} bytes.",
+    "MediaFileSystems.PetsciiLength": "PETSCII-feltlengden {0} må ikke være negativ.",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII-verdien overstiger {0} tegn.",
+    "MediaFileSystems.PetsciiCharacter": "Teiknet «{0}» kan ikke representeres av den støttede underdelen PETSCII.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, åpen",
+    "MediaFileSystems.CbmTypeLocked": "{0}, låst",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, åpen, låst"
+  }
+}

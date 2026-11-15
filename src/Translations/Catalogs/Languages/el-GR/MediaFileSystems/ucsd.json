@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Ο κατάλογος UCSD στο μπλοκ {0} δεν αναγνωρίζεται· μη έγκυρα μπλοκ: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: μπλοκ UCSD λείπουν ή έχουν περικοπεί: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Μπλοκ καταλόγου UCSD p-System λείπουν ή έχουν περικοπεί: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Η καταχώρηση UCSD {0} έχει μη έγκυρο όνομα '{1}'.",
+    "MediaFileSystems.UcsdRange": "Η καταχώρηση UCSD {0} ('{1}') χρησιμοποιεί μη έγκυρο εύρος [{2}, {3}) σε {4} μπλοκ.",
+    "MediaFileSystems.UcsdOverlap": "Η καταχώρηση UCSD {0} (' {1}') επικαλύπτει τα μπλοκ {2}.",
+    "MediaFileSystems.UcsdCount": "Ο κατάλογος UCSD δηλώνει {0} αρχεία, αλλά βρέθηκαν {1} έγκυρες καταχωρήσεις.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: το τελευταίο μπλοκ UCSD δηλώνει {1} byte.",
+    "MediaFileSystems.UcsdTypeUntyped": "Αρχείο UCSD χωρίς τύπο",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD αρχείο εξωτερικού δίσκου",
+    "MediaFileSystems.UcsdTypeCode": "Αρχείο κώδικα UCSD",
+    "MediaFileSystems.UcsdTypeText": "Αρχείο κειμένου UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Αρχείο πληροφοριών UCSD",
+    "MediaFileSystems.UcsdTypeData": "Αρχείο δεδομένων UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Αρχείο γραφικών UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "Αρχείο φωτογραφίας UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Ασφαλής κατάλογος UCSD"
+  }
+}

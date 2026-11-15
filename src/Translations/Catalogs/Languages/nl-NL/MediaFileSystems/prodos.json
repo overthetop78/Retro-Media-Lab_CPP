@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "De ProDOS/SOS-volumekop in blok {0} wordt niet herkend (waargenomen waarde ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS-mapblok {1} overschrijdt de maximale diepte op niveau {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS-mapblok {0} is ongeldig (cyclus={1}, hergebruikt={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS-indexblok {2} is ongeldig (cyclus={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS-hoofdindexblok {2} is ongeldig.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS-gegevensblok {2} ontbreekt, ligt buiten het schijfkopiebestand of heeft een ongeldige grootte.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): {2} bytes gereconstrueerd van de {3} verwachte bytes.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS-bitmapblok {0} ontbreekt of heeft een ongeldige grootte.",
+    "MediaFileSystems.ProDosTotal": "Het ProDOS-volume vermeldt {0} blokken, maar het schijfkopiebestand bevat {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Het ProDOS-doelformaat '{0}' wordt niet ondersteund.",
+    "MediaFileSystems.ProDosDiskFull": "Het ProDOS-volume heeft onvoldoende blokken of mapitems.",
+    "MediaFileSystems.ProDosGeometry": "De ProDOS-doelgeometrie of de tabel met sectoradressen is ongeldig.",
+    "MediaFileSystems.ProDosEntry": "Het ProDOS-item '{0}' kan niet worden geschreven.",
+    "MediaFileSystems.ProDosFileLength": "Het ProDOS-bestand '{0}' overschrijdt het 24-bits lengteveld.",
+    "MediaFileSystems.ProDosName": "De ProDOS-naam '{0}' is ongeldig.",
+    "MediaFileSystems.ProDosTypeText": "Tekst",
+    "MediaFileSystems.ProDosTypeBinary": "Binair",
+    "MediaFileSystems.ProDosTypeDirectory": "Map",
+    "MediaFileSystems.ProDosTypeVariables": "Variabelen",
+    "MediaFileSystems.ProDosTypeSystem": "Systeem"
+  }
+}

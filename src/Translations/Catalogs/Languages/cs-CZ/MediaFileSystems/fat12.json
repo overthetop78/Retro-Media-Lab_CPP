@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Neplatná sektorová obrazová dimenze {0}: {1}.",
+    "Media.SectorInvalidFormatId": "Identifikátor formátu obrazu v sektoru je prázdný nebo neplatný: {0}.",
+    "Media.SectorDuplicateBlock": "Logický sektor {0} se v obraze vyskytuje více než jednou.",
+    "Media.SectorBlockOutside": "Logický sektor {0} je mimo obraz obsahující {1} sektory.",
+    "Media.SectorCapacityShort": "Deklarovaná obrazová kapacita sektoru {0} je menší než dostupná délka dat {1}.",
+    "Media.SectorMissingBlock": "Logický sektor {0} chybí.",
+    "Media.SectorInvalidBlockSize": "Logický sektor {0} obsahuje {1} bajty místo {2}.",
+    "Media.FatUnsupportedBoot": "Formát obrázku {0} nemá podporovaný FAT12 souborový systém: sektor boot chybí nebo je zkrácen.",
+    "Media.FatUnsupportedLayout": "Formát obrázku {0} nemá podporovaný souborový systém FAT12 (velikost sektoru {1}, sektory na cluster {2}, vyhrazené sektory {3}, FAT kopie {4}, kořenové položky {5}, sektory na FAT {6}).",
+    "Media.FatInvalidChain": "Řetěz FAT {0} je neplatný nebo cyklický ve clusteru {1}.",
+    "Media.FatTruncatedTable": "Záznam FAT12 pro cluster {0} je zkrácen.",
+    "Media.FatMissingSectors": "Sektorový rozsah {0} až {1} je neúplný.",
+    "Media.FatDepthLimit": "Limit hnízda adresáře FAT byl dosažen v {0} (hloubka {1}).",
+    "Media.FatMissingSector": "FAT sector {0} obsahuje {1} bajty místo {2}.",
+    "Media.FatCyclicChain": "{0}: FAT12 řetězec je cyklický ve clusteru {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 cluster {1} je mimo datový rozsah.",
+    "Media.FatIncompleteContent": "{0}: deklarovaná velikost je {1} bajtů, ale k dispozici je pouze {2} bajtů.",
+    "Media.FatUnsupportedGeometry": "Formát obrázku {0} není podporovaná geometrie FAT12.",
+    "Media.FatDiskFull": "Cílový objem FAT12 nemá dostatek volných klastrů nebo záznamů adresářů.",
+    "Media.FatInvalidEntry": "Migrační položku {0} nelze zapsat jako položku s krátkým názvem FAT12.",
+    "Media.FatDirectoryCycle": "Adresář {0} znovu používá FAT12 cluster {1}, který již byl rozšířen.",
+    "Media.FatIntegrityInvalid": "Sektor FAT {0} má neplatnou zaznamenanou integritu.",
+    "Media.FatResourceLimit": "Při čtení {0} bylo dosaženo limitu extrakce FAT12."
+  }
+}

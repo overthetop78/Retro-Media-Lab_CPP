@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Obraz '{0}' nie zawiera poprawnego wolumenu SpartaDOS.",
+    "MediaFileSystems.SpartaMissingSector": "Brakuje sektora SpartaDOS {0}.",
+    "MediaFileSystems.SpartaSectorRange": "Sektor SpartaDOS {0} jest poza zasięgiem 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Łańcuch map sektorów SpartaDOS tworzy pętlę w sektorze {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Mapa sektora SpartaDOS {0} dotyczy poprzednika {2} zamiast {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Drzewo katalogów SpartaDOS tworzy pętlę w katalogu, którego mapa zaczyna się w sektorze {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Katalog SpartaDOS w sektorze {0} deklaruje nieprawidłowy rozmiar: {1} bajtów."
+  }
+}

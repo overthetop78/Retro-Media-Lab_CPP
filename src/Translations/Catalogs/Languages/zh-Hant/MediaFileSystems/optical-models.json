@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "光碟的邏輯長度不能為負值。",
+    "MediaFileSystems.OpticalMetadataOnly": "此舊版媒體描述項只包含中繼資料，沒有可讀取的資料來源。",
+    "MediaFileSystems.OpticalIndexNumber": "光碟軌道索引必須介於 0 到 99 之間。",
+    "MediaFileSystems.OpticalPositiveDimension": "光碟參數 '{0}' 必須為正值。",
+    "MediaFileSystems.OpticalNonNegativeDimension": "光碟參數 '{0}' 不能為負值。",
+    "MediaFileSystems.OpticalDataSource": "必須提供光碟軌道的資料來源。",
+    "MediaFileSystems.OpticalUserWindow": "使用者資料範圍超過一個已儲存的磁區。",
+    "MediaFileSystems.OpticalTrackSource": "軌道資料超出其來源範圍。",
+    "MediaFileSystems.OpticalSubchannelSource": "子通道尺寸需要子通道資料來源。",
+    "MediaFileSystems.OpticalSubchannelRange": "子通道資料超出其來源範圍。",
+    "MediaFileSystems.OpticalPregapOffset": "指定已儲存 pregap 的來源位移時，必須存在已儲存的 pregap 磁區。",
+    "MediaFileSystems.OpticalPregapRange": "已儲存的 pregap 超出其來源範圍。",
+    "MediaFileSystems.OpticalStoredDestination": "目的緩衝區必須恰好容納一個已儲存的磁區。",
+    "MediaFileSystems.OpticalStoredPregap": "磁區位於已儲存的 pregap 範圍之外。",
+    "MediaFileSystems.OpticalRelativeSector": "磁區位於光碟軌道範圍之外。",
+    "MediaFileSystems.OpticalNullTrack": "光碟軌道不能為 null。"
+  }
+}

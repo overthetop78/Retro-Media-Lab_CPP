@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "La longitud lógica óptica no puede ser negativa.",
+    "MediaFileSystems.OpticalMetadataOnly": "Este descriptor multimedia heredado contiene metadatos solamente y no tiene fuente de datos legible.",
+    "MediaFileSystems.OpticalIndexNumber": "El índice de pista óptica debe estar entre 0 y 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "La dimensión óptica '{0}' debe ser positiva.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "La dimensión óptica \"{0}\" no puede ser negativa.",
+    "MediaFileSystems.OpticalDataSource": "Se requiere una fuente de datos de pista óptica.",
+    "MediaFileSystems.OpticalUserWindow": "La ventana de datos del usuario supera un sector almacenado.",
+    "MediaFileSystems.OpticalTrackSource": "Los datos de la pista exceden su fuente.",
+    "MediaFileSystems.OpticalSubchannelSource": "Las dimensiones del subcanal requieren una fuente de subcanal.",
+    "MediaFileSystems.OpticalSubchannelRange": "Los datos del subcanal exceden su fuente.",
+    "MediaFileSystems.OpticalPregapOffset": "Un offset de fuente de pregap almacenado requiere sectores de pregap almacenados.",
+    "MediaFileSystems.OpticalPregapRange": "El pregap almacenado supera su fuente.",
+    "MediaFileSystems.OpticalStoredDestination": "El destino debe contener exactamente un sector almacenado.",
+    "MediaFileSystems.OpticalStoredPregap": "El sector está fuera del pregap almacenado.",
+    "MediaFileSystems.OpticalRelativeSector": "El sector está fuera de la vía óptica.",
+    "MediaFileSystems.OpticalNullTrack": "Una pista óptica no puede ser nula."
+  }
+}

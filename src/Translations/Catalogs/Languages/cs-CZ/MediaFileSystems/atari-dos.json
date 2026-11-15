@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Obraz {0} se sektory o velikosti {1} bajtů neobsahuje podporovaný adresář Atari DOS.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Adresářový sektor {0} chybí.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Sektor adresáře {0}, položka {1}, není platnou položkou souboru Atari DOS a byl ignorován.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOS datový sektor {1} chybí.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOS datový řetězec je cyklický v sektoru {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: sektor {1} patří do souboru {3}, očekávaný {2}.",
+    "MediaFileSystems.AtariDosOpen": "Sektor adresáře {1}, položka {2} ('{0}'), je stále otevřený pro zápis a byl ignorován.",
+    "MediaFileSystems.AtariDosTruncated": "Datový sektor {1} pro \"{0}\" je příliš krátký na to, aby obsahoval jeho odkaz.",
+    "MediaFileSystems.AtariDosPremature": "Soubor '{0}' deklaruje {1} sektorů, ale jeho řetězec končí po {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Prázdný soubor '{0}' nečekaně odkazuje na sektor {1}.",
+    "MediaFileSystems.AtariDosBounded": "Soubor '{0}' je omezen na {1} sektorů deklarovaných v položce adresáře, zatímco řetězec pokračuje v sektoru {2}.",
+    "MediaFileSystems.AtariDosShared": "Soubor '{0}' sdílí {3} sektorů od sektoru {2} se souborem '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Datový sektor {1} pro soubor '{0}' deklaruje {2} bajtů, ale k dispozici je pouze {3}."
+  }
+}

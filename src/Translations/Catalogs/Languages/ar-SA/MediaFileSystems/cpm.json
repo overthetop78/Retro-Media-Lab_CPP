@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "تخطيط قرص CP/M غير مدعوم للتنسيق {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "لا تحتوي الصورة على دليل CP/M مدعوم للتنسيق {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: كتلة تخصيص CP/M رقم {1} عند الإزاحة {2} خارج الصورة البالغ حجمها {3} بايت.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: كتلة تخصيص CP/M رقم {1} تعبر كتلة منطقية مفقودة.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: كتلة تخصيص CP/M رقم {1} تعبر كتلة منطقية مبتورة.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: تمت الإشارة إلى كتلة تخصيص CP/M رقم {1} أكثر من مرة.",
+    "MediaFileSystems.CpmImageMissing": "تحتوي صورة CP/M على {0} من الكتل المنطقية المفقودة.",
+    "MediaFileSystems.CpmImageTruncated": "تحتوي صورة CP/M على {0} من الكتل المنطقية المبتورة.",
+    "MediaFileSystems.CpmInvalidLayout": "تخطيط CP/M غير صالح (إزاحة الدليل={0}، بداية التخصيص={1}، إدخالات الدليل={2}، حجم التخصيص={3}، كتل الدليل={4}).",
+    "MediaFileSystems.CpmUserArea": "مستخدم CP/M {0}"
+  }
+}

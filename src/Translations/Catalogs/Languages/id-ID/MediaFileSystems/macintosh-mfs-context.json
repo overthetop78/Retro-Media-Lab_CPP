@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Blok informasi volume {0} hilang atau ukurannya tidak valid.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Blok direktori {0} hilang atau ukurannya tidak valid.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: aliran data: blok {1} hilang atau ukurannya tidak valid.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: aliran data berisi {1} bita; diharapkan {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: aliran data menyatakan {1} bita mulai dari klaster {2}; metadata tidak konsisten.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: aliran data: rantai alokasi berisi siklus.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: aliran data: rantai alokasi merujuk ke luar peta alokasi.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: aliran data: rantai alokasi berakhir sebelum semua klaster yang diperlukan tersedia.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: aliran sumber daya: blok {1} hilang atau ukurannya tidak valid.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: aliran sumber daya berisi {1} bita; diharapkan {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: aliran sumber daya menyatakan {1} bita mulai dari klaster {2}; metadata tidak konsisten.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: aliran sumber daya: rantai alokasi berisi siklus.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: aliran sumber daya: rantai alokasi merujuk ke luar peta alokasi.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: aliran sumber daya: rantai alokasi berakhir sebelum semua klaster yang diperlukan tersedia."
+  }
+}

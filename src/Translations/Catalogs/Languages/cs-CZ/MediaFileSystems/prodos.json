@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Hlavička svazku ProDOS/SOS v bloku {0} není rozpoznána (zjištěná hodnota ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS adresářový blok {1} překračuje maximální hloubku na úrovni {0}.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS adresářový blok {0} je neplatný (cyklus = {1}, znovu použit = {2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): Indexový blok ProDOS {2} je neplatný (cyklus={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): Hlavní indexový blok ProDOS {2} je neplatný.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): Datový blok ProDOS {2} chybí, leží mimo obraz disku nebo má neplatnou velikost.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): Bylo rekonstruováno {2} bajtů z očekávaných {3} bajtů.",
+    "MediaFileSystems.ProDosBitmap": "Blok bitmapy ProDOS {0} chybí nebo má neplatnou velikost.",
+    "MediaFileSystems.ProDosTotal": "Svazek ProDOS deklaruje {0} bloků, ale obraz disku obsahuje {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Cílový formát ProDOS '{0}' není podporován.",
+    "MediaFileSystems.ProDosDiskFull": "Svazek ProDOS nemá dostatek bloků nebo položek adresáře.",
+    "MediaFileSystems.ProDosGeometry": "Cílová geometrie ProDOS nebo mapa adres sektoru je neplatná.",
+    "MediaFileSystems.ProDosEntry": "Záznam ProDOS '{0}' není zapisovatelný.",
+    "MediaFileSystems.ProDosFileLength": "Soubor ProDOS '{0}' překračuje pole o délce 24 bitů.",
+    "MediaFileSystems.ProDosName": "Název ProDOS '{0}' je neplatný.",
+    "MediaFileSystems.ProDosTypeText": "Text",
+    "MediaFileSystems.ProDosTypeBinary": "Binární",
+    "MediaFileSystems.ProDosTypeDirectory": "Adresář",
+    "MediaFileSystems.ProDosTypeVariables": "Proměnné",
+    "MediaFileSystems.ProDosTypeSystem": "Systém"
+  }
+}

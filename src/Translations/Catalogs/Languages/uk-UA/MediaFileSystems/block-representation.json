@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Не може бути негативним.",
+    "MediaFileSystems.BlockRangeLength": "Довжина діапазону даних ЗМІ повинна бути позитивним.",
+    "MediaFileSystems.BlockSourceOffset": "Не може бути негативним.",
+    "MediaFileSystems.BlockSourceNull": "Збережений медіа діапазон вимагає джерела даних.",
+    "MediaFileSystems.BlockSourceRange": "Перевищений діапазон даних.",
+    "MediaFileSystems.BlockNonStoredSource": "Тільки збережені діапазони можуть вказувати джерело даних.",
+    "MediaFileSystems.BlockNonStoredOffset": "Не зберігайте вихід з джерела.",
+    "MediaFileSystems.BlockLogicalLength": "Не може бути негативним.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Розмір логічного блоку повинен бути позитивним.",
+    "MediaFileSystems.BlockCompleteBlocks": "Логічна довжина повинна містити повні логічні блоки.",
+    "MediaFileSystems.BlockGeometryOutside": "Задекларована геометрія перевищила логічну медіаємність.",
+    "MediaFileSystems.BlockRangeOutside": "Діапазон блоків перевищує довжину логічних носіїв.",
+    "MediaFileSystems.BlockRangeOverlap": "Блокові діапазони не повинні перекриття.",
+    "MediaFileSystems.BlockReadAddress": "Логічна адреса не може бути негативною.",
+    "MediaFileSystems.BlockReadRange": "Вимаганий логічний діапазон перевищує медіаємність.",
+    "MediaFileSystems.BlockRangeMissing": "Немає медіа діапазону даних охоплює логічну адресу {0}.",
+    "MediaFileSystems.BlockUnavailable": "Логічна адреса {0} є недоступним у вихідному зображенні.",
+    "MediaFileSystems.BlockRangeKind": "Unsupported медіа діапазону даних {0}.",
+    "MediaFileSystems.BlockOverflow": "Розрахунок медіаблоку перевищує підписаний діапазон.",
+    "MediaFileSystems.BlockGeometryValue": "Параметри геометрії жорсткого диска {0} повинні бути позитивними.",
+    "MediaFileSystems.BlockDriveCount": "Механічний доступ повинен покрити позитивну кількість байтів.",
+    "MediaFileSystems.BlockNullImage": "Для цього необхідно блокувати зображення."
+  }
+}

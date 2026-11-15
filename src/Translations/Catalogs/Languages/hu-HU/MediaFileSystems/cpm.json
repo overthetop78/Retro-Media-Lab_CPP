@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "A CP/M lemez elrendezése nem támogatott formátum: {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "A kép nem tartalmaz támogatott CP/M könyvtárat formátumhoz {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: A(z) {2} eltolásnál található {1}. CP/M-foglalási blokk kívül esik a(z) {3} bájtos lemezképen.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M hozzárendelési blokk {1} átlépi a hiányzó logikai blokkot.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M hozzárendelési blokk {1} keresztezi a csonka logikai blokkot.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: A CP/M hozzárendelési blokk {1} egynél többször kerül említésre.",
+    "MediaFileSystems.CpmImageMissing": "A CP/M kép {0} hiányzó logikai blokkokat tartalmaz.",
+    "MediaFileSystems.CpmImageTruncated": "A CP/M kép {0} csonkított logikai blokkokat tartalmaz.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M elrendezés érvénytelen (könyvtár offset = {0}, hozzárendelés eredete = {1}, könyvtárbejegyzés = {2}, hozzárendelés mérete = {3}, könyvtárblokkok = {4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M felhasználó {0}"
+  }
+}

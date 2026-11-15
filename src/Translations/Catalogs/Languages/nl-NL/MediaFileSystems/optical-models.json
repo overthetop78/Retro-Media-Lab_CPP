@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "De optische logische lengte kan niet negatief zijn.",
+    "MediaFileSystems.OpticalMetadataOnly": "Deze legacy media descriptor bevat alleen metadata en heeft geen leesbare gegevensbron.",
+    "MediaFileSystems.OpticalIndexNumber": "De optische spoorindex moet tussen 0 en 99 liggen.",
+    "MediaFileSystems.OpticalPositiveDimension": "Optische dimensie '{0}' moet positief zijn.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optische dimensie '{0}' kan niet negatief zijn.",
+    "MediaFileSystems.OpticalDataSource": "Een optische spoorgegevensbron is vereist.",
+    "MediaFileSystems.OpticalUserWindow": "Het gebruikersgegevensvenster overschrijdt één opgeslagen sector.",
+    "MediaFileSystems.OpticalTrackSource": "De trackgegevens overtreffen de bron.",
+    "MediaFileSystems.OpticalSubchannelSource": "Subkanaalafmetingen vereisen een subkanaalbron.",
+    "MediaFileSystems.OpticalSubchannelRange": "De subkanaalgegevens overtreffen de bron.",
+    "MediaFileSystems.OpticalPregapOffset": "Een opgeslagen pregap bron offset vereist opgeslagen pregap sectoren.",
+    "MediaFileSystems.OpticalPregapRange": "De opgeslagen pregap overtreft de bron.",
+    "MediaFileSystems.OpticalStoredDestination": "De bestemming moet precies één opgeslagen sector bevatten.",
+    "MediaFileSystems.OpticalStoredPregap": "De sector ligt buiten de opgeslagen pregap.",
+    "MediaFileSystems.OpticalRelativeSector": "De sector ligt buiten het optische spoor.",
+    "MediaFileSystems.OpticalNullTrack": "Een optische spoor kan niet nul zijn."
+  }
+}

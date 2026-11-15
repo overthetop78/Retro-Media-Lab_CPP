@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "O imagine de reprezentare media nu poate fi nulă.",
+    "MediaFileSystems.RepresentationCountOverflow": "Contorul reprezentării suportului depășește intervalul acceptat pentru numere întregi cu semn.",
+    "MediaFileSystems.WriterAdapterId": "Este necesar un identificator de imagine media.",
+    "MediaFileSystems.WriterAdapterFormats": "Identificatorii formatului țintă nu pot fi goi.",
+    "MediaFileSystems.WriterAdapterExtensions": "Extensiile de ieșire nu pot fi goale.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Validarea scriitorilor media și apelurile de ieșire sunt necesare.",
+    "MediaFileSystems.WriterAdapterPath": "Este nevoie de o cale de ieșire media scriitor.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Componenta de scriere '{0}' nu poate extrage reprezentarea necesară a suportului.",
+    "MediaFileSystems.WriterAdapterTarget": "Componenta de scriere '{0}' nu acceptă formatul țintă '{1}' cu extensia '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Componenta de scriere '{0}' nu a raportat fișiere de ieșire valide.",
+    "MediaFileSystems.WriterCommodoreTransform": "Formatul sursă Commodore \"{0} \" nu poate fi scris ca \" {1} \" fără o transformare geometrică."
+  }
+}

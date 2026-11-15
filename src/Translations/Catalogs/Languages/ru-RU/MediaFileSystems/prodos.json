@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "Заголовок тома ProDOS/SOS в блоке {0} не распознан (прочитанное значение ${1}).",
+    "MediaFileSystems.ProDosDepth": "Блок каталога ProDOS {1} превышает максимальную глубину на уровне {0}.",
+    "MediaFileSystems.ProDosDirectory": "Блок каталога ProDOS {0} недействителен (цикл={1}, повторно использован={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): блок индекса ProDOS {2} недействителен (цикл={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): блок главного индекса ProDOS {2} недействителен.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): блок данных ProDOS {2} отсутствует, находится за пределами образа диска или имеет неверный размер.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): восстановлено {2} байтов из ожидаемых {3} байтов.",
+    "MediaFileSystems.ProDosBitmap": "Блок битовой карты ProDOS {0} отсутствует или имеет неверный размер.",
+    "MediaFileSystems.ProDosTotal": "Том ProDOS объявляет {0} блоков, но образ диска содержит {1}.",
+    "MediaFileSystems.ProDosWriteFormat": "Целевой формат ProDOS «{0}» не поддерживается.",
+    "MediaFileSystems.ProDosDiskFull": "В томе ProDOS недостаточно блоков или записей каталога.",
+    "MediaFileSystems.ProDosGeometry": "Целевая геометрия ProDOS или карта адресов секторов недействительна.",
+    "MediaFileSystems.ProDosEntry": "Невозможно записать элемент ProDOS «{0}».",
+    "MediaFileSystems.ProDosFileLength": "Файл ProDOS «{0}» превышает 24-битное поле длины.",
+    "MediaFileSystems.ProDosName": "Имя ProDOS «{0}» недействительно.",
+    "MediaFileSystems.ProDosTypeText": "Текст",
+    "MediaFileSystems.ProDosTypeBinary": "Двоичный",
+    "MediaFileSystems.ProDosTypeDirectory": "Каталог",
+    "MediaFileSystems.ProDosTypeVariables": "Переменные",
+    "MediaFileSystems.ProDosTypeSystem": "Система"
+  }
+}

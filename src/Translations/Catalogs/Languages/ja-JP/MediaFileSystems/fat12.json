@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "無効なセクターイメージ次元 {0}: {1}.",
+    "Media.SectorInvalidFormatId": "セクターイメージのフォーマット識別子は空か無効です: {0}.",
+    "Media.SectorDuplicateBlock": "論理セクター {0} がイメージ内に複数存在します。",
+    "Media.SectorBlockOutside": "論理セクター {0} は、{1} セクターを含むイメージの範囲外です。",
+    "Media.SectorCapacityShort": "宣言されたセクターの画像容量 {0} は、利用可能なデータの長さ {1} よりも小さくなります。",
+    "Media.SectorMissingBlock": "論理セクター {0} がありません。",
+    "Media.SectorInvalidBlockSize": "ロジカルセクター {0} には {2} ではなく {1} バイトが含まれています。",
+    "Media.FatUnsupportedBoot": "イメージ形式 {0} に対応する FAT12 ファイルシステムがありません。ブートセクターが欠落または切り詰められています。",
+    "Media.FatUnsupportedLayout": "イメージ形式 {0} に対応する FAT12 ファイルシステムがありません（セクターサイズ {1}、クラスター当たりのセクター数 {2}、予約セクター数 {3}、FAT コピー数 {4}、ルートエントリー数 {5}、FAT 当たりのセクター数 {6}）。",
+    "Media.FatInvalidChain": "{0} の FAT チェーンは、クラスター {1} で無効または循環しています。",
+    "Media.FatTruncatedTable": "クラスター {0} の FAT12 エントリーが切り詰められています。",
+    "Media.FatMissingSectors": "セクター範囲 {0} から {1} は不完全です。",
+    "Media.FatDepthLimit": "{0} で FAT ディレクトリーの階層数の上限に達しました（深さ {1}）。",
+    "Media.FatMissingSector": "FATのセクター{0}は{2}の代りに{1}バイトを含んでいます。",
+    "Media.FatCyclicChain": "{0}: FAT12チェーンはクラスター {1} でサイクリックです。",
+    "Media.FatClusterOutsideRange": "{0}: FAT12 クラスター {1} はデータ範囲外です。",
+    "Media.FatIncompleteContent": "{0}: 宣言されたサイズは {1} バイトですが、 {2} バイトのみ利用可能です。",
+    "Media.FatUnsupportedGeometry": "画像形式 {0} は FAT12 ジオメトリをサポートしていません。",
+    "Media.FatDiskFull": "書き込み先の FAT12 ボリュームに、十分な空きクラスターまたはディレクトリーエントリーがありません。",
+    "Media.FatInvalidEntry": "移行エントリ {0} は FAT12 の短縮名エントリとして表現できません。",
+    "Media.FatDirectoryCycle": "ディレクトリ {0} は既に展開されている FAT12 クラスター {1} を再利用します。",
+    "Media.FatIntegrityInvalid": "FAT セクター {0} の記録済み整合性情報が無効です。",
+    "Media.FatResourceLimit": "FAT12 抽出限界は {0} を読みながら到達しました。"
+  }
+}

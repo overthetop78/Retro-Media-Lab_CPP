@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 起始區塊無效 (簽章「{0}」，目錄區塊 {1})。",
+    "MediaFileSystems.Rt11SegmentRange": "區塊 {1} 上的 RT-11 區段 {0} 的區段編號超出範圍。",
+    "MediaFileSystems.Rt11SegmentCycle": "區塊 {1} 上的 RT-11 區段 {0} 形成循環。",
+    "MediaFileSystems.Rt11SegmentOutside": "區塊 {1} 上的 RT-11 區段 {0} 位於磁碟映像之外。",
+    "MediaFileSystems.Rt11SegmentMissing": "區塊 {1} 上的 RT-11 區段 {0} 的區塊對遺失或被截斷。",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 區段 {0} 宣告了無效的項目大小：{1} 位元組。",
+    "MediaFileSystems.Rt11EmptyName": "資料區塊 {0}、位移 {1} 處的 RT-11 項目名稱為空。",
+    "MediaFileSystems.Rt11MissingContent": "{0}：RT-11 區塊遺失或被截斷：{1}。",
+    "MediaFileSystems.Rt11Tentative": "暫時 RT-11 檔案",
+    "MediaFileSystems.Rt11Permanent": "RT-11 檔案"
+  }
+}

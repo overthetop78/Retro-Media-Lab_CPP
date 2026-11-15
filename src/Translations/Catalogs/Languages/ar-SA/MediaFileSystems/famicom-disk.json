@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "The selected Famicom Disk System volume is not readable.",
+    "MediaFileSystems.FdsSideCount": "The Famicom Disk System العد الجانبي مفقود أو غير صحيح",
+    "MediaFileSystems.FdsSideLength": "The Famicom Disk System side length is missing or invalid.",
+    "MediaFileSystems.FdsNoFiles": "No valid Famicom Disk System file block was found.",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} has no valid disk information block.",
+    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} has no valid file count block.",
+    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} has an invalid file header.",
+    "MediaFileSystems.FdsIncomplete": "Famicom Disk System file {0} on side {1} has incomplete data."
+  }
+}

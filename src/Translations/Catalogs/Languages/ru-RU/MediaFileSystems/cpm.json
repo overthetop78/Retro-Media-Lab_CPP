@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Разметка диска CP/M не поддерживается для формата {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Образ диска не содержит поддерживаемого каталога CP/M для формата {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: блок распределения CP/M {1} по смещению {2} находится за пределами образа размером {3} байтов.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: блок распределения CP/M {1} пересекает отсутствующий логический блок.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: блок распределения CP/M {1} пересекает усечённый логический блок.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: на блок распределения CP/M {1} имеется более одной ссылки.",
+    "MediaFileSystems.CpmImageMissing": "Образ CP/M содержит {0} отсутствующих логических блоков.",
+    "MediaFileSystems.CpmImageTruncated": "Образ CP/M содержит {0} усечённых логических блоков.",
+    "MediaFileSystems.CpmInvalidLayout": "Разметка CP/M недопустима (смещение каталога={0}, начало распределения={1}, записей каталога={2}, размер единицы распределения={3}, блоков каталога={4}).",
+    "MediaFileSystems.CpmUserArea": "Пользователь CP/M {0}"
+  }
+}

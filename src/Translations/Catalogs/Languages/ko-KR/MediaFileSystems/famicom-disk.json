@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.FdsUnsupported": "선택한 Famicom Disk System 볼륨은 읽을 수 없습니다.",
+    "MediaFileSystems.FdsSideCount": "Famicom Disk System side count는 누락되거나 무효합니다.",
+    "MediaFileSystems.FdsSideLength": "Famicom Disk System 측면 길이가 누락되거나 무효합니다.",
+    "MediaFileSystems.FdsNoFiles": "Famicom Disk System 파일 블록이 없습니다.",
+    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0}에는 유효 디스크 정보 블록이 없습니다.",
+    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0}에는 유효한 파일 카운트 블록이 없습니다.",
+    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0}에는 잘못된 파일 헤더가 있습니다.",
+    "MediaFileSystems.FdsIncomplete": "Famicom Disk System file {0} 에 side {1} 에 불완전한 데이터가 있습니다."
+  }
+}

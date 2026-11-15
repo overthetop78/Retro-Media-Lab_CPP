@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.RegistryNullReader": "De bestandssysteemlezer op index {0} is nul.",
+    "MediaFileSystems.RegistryEmptyReaderId": "De bestandssysteemlezer bij index {0} heeft een lege identificatie.",
+    "MediaFileSystems.RegistryDuplicateReaderId": "Meerdere bestandssysteemlezers hebben identificatie \"{0}'.",
+    "MediaFileSystems.RegistryUnknownReaderId": "Geen enkele bestandssysteemlezer heeft een identificatiecode \"{0}'.",
+    "MediaFileSystems.RegistryNullImage": "Een sectorbeeld kan niet nul zijn.",
+    "MediaFileSystems.AtariKFileUnsupported": "De sector image is geen Atari K-file schijf met behulp van KBoot.",
+    "MediaFileSystems.AtariBootUnsupported": "Het sectorafbeelding bevat geen compleet Atari bootprogramma.",
+    "MediaFileSystems.AtariClkUnsupported": "De sector image is geen Atari CLK grafische-bibliotheek schijf.",
+    "MediaFileSystems.AtariClkIncomplete": "De catalogus verklaart {0} bytes, maar de sectorketen bevat {1} bytes.",
+    "MediaFileSystems.AtariClkGraphic": "Atari CLK grafisch"
+  }
+}

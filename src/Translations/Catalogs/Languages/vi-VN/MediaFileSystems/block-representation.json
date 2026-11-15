@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaFileSystems.BlockRangeAddress": "Một địa chỉ dữ liệu khu vực không thể là tiêu cực.",
+    "MediaFileSystems.BlockRangeLength": "Một dữ liệu truyền thông có độ dài phải là dương.",
+    "MediaFileSystems.BlockSourceOffset": "Một bù đắp dữ liệu phương tiện không thể là tiêu cực.",
+    "MediaFileSystems.BlockSourceNull": "Một phạm vi truyền thông lưu trữ yêu cầu một nguồn dữ liệu.",
+    "MediaFileSystems.BlockSourceRange": "Phạm vi bản đồ vượt quá nguồn dữ liệu của nó.",
+    "MediaFileSystems.BlockNonStoredSource": "Chỉ có phạm vi được lưu mới có thể tham khảo một nguồn dữ liệu.",
+    "MediaFileSystems.BlockNonStoredOffset": "Một phạm vi không được chỉnh sửa không thể có một sự bù đắp nguồn.",
+    "MediaFileSystems.BlockLogicalLength": "Độ dài phương tiện truyền thông logic không thể là âm.",
+    "MediaFileSystems.BlockLogicalBlockSize": "Kích thước khối logic phải dương tính.",
+    "MediaFileSystems.BlockCompleteBlocks": "Chiều dài hợp lý phải chứa những khối hoàn toàn logic.",
+    "MediaFileSystems.BlockGeometryOutside": "Việc công bố hình học vượt quá khả năng truyền thông logic.",
+    "MediaFileSystems.BlockRangeOutside": "Một dãy nhà vượt quá chiều dài phương tiện truyền thông logic.",
+    "MediaFileSystems.BlockRangeOverlap": "Phạm vi không thể chồng chéo.",
+    "MediaFileSystems.BlockReadAddress": "Địa chỉ đọc logic không thể là tiêu cực.",
+    "MediaFileSystems.BlockReadRange": "Phạm vi hợp lý được yêu cầu vượt quá khả năng truyền thông.",
+    "MediaFileSystems.BlockRangeMissing": "Không có dữ liệu truyền thông nào bao gồm địa chỉ logic{0}.",
+    "MediaFileSystems.BlockUnavailable": "Địa chỉ luân lý {0} không có trong ảnh gốc.",
+    "MediaFileSystems.BlockRangeKind": "Không được hỗ trợ trong phạm vi dữ liệu phương tiện loại{0}.",
+    "MediaFileSystems.BlockOverflow": "Phương tiện truyền thông tính toán vượt quá phạm vi đã được ký.",
+    "MediaFileSystems.BlockGeometryValue": "Tham số hình học cứng{0} phải là dương.",
+    "MediaFileSystems.BlockDriveCount": "Các truy cập máy móc phải bao gồm một số byte tích cực.",
+    "MediaFileSystems.BlockNullImage": "Cần phải chặn ảnh."
+  }
+}

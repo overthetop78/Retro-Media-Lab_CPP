@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "Образ ISO порожній або його довжина не вирівняна до секторів розміром 2048 байтів.",
+    "MediaFileSystems.IsoContainerChanged": "Довжина зображення ISO змінюється після розпізнавання.",
+    "MediaFileSystems.IsoWriteProfile": "Оптичний документ не можна записати як образ ISO з однією доріжкою без втрати даних.",
+    "MediaFileSystems.WriterRegistryNull": "Компонент запису образів носіїв не може бути null.",
+    "MediaFileSystems.WriterRegistryDuplicate": "Ідентифікатор компонента запису образів носіїв '{0}' зареєстрований більше одного разу.",
+    "MediaFileSystems.WriterTargetFormat": "Необхідний ідентифікатор цільового формату медіа.",
+    "MediaFileSystems.WriterTargetExtension": "Необхідне розширення цільового медіафайлу."
+  }
+}

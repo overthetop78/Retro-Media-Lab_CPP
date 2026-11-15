@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "En volymstart måste vara icke-negativ: {0}.",
+    "MediaFileSystems.VolumeLength": "En volymlängd måste vara positiv: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Ett volym ursprung krävs.",
+    "MediaFileSystems.VolumePartitionNumber": "Ett partitionsnummer måste vara positivt: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Ett sessionsnummer måste vara positivt: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Ett spårnummer måste vara positivt: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Volymintervallet överstiger de stödda signerade 64-bitarsgränserna.",
+    "MediaFileSystems.WholeVolumeRequired": "Den sektorsfilsystemläsare kräver en volym som täcker hela sektorns bild."
+  }
+}

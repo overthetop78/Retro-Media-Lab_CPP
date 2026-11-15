@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "'{0}' のイメージ形式は、サポートされている CBM DOS ファイルシステムを含んでいません。",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOSディレクトリチェーンは、{0}/{1} でサイクリックです。",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOSディレクトリのセクター {0}/{1} は欠落しています。",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOSディレクトリのセクター {0}/{1} は {2} バイトだけしか含まれていません。",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS ディレクトリーは {0}/{1} が無効です。",
+    "MediaFileSystems.CbmFileCycle": "{0}: チェーンは {1}/{2} でサイクリックです。",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: 座標 {1}/{2} が無効です。",
+    "MediaFileSystems.CbmFileTruncated": "{0}: セクター {1}/{2} のデータが不完全です。",
+    "MediaFileSystems.CbmFileMissing": "{0}: セクター {1}/{2} が見つかりません。",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: 最後のカウント {1} は無効です。",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOSチェーンは画像容量を上回ります。",
+    "MediaFileSystems.CbmBamMissing": "{0}/{1} で要求される CBM DOS BAM は欠落しています。",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} のデータは不完全で、{2} バイトしかありません。",
+    "MediaFileSystems.PetsciiLength": "PETSCII フィールドの長さ {0} は負の値にできません。",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII は {0} 文字を超える値です。",
+    "MediaFileSystems.PetsciiCharacter": "'{0}' は、サポートされている PETSCII サブセットでは表現できません。",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, 未クローズ",
+    "MediaFileSystems.CbmTypeLocked": "{0}, ロック",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, 未クローズ, ロック"
+  }
+}

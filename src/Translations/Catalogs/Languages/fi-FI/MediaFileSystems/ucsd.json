@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Lohkon {0} UCSD-hakemistoa ei tunnisteta; virheelliset lohkot: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD-lohkoja puuttuu tai ne ovat katkenneet: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System -hakemistolohkoja puuttuu tai ne ovat katkenneet: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD-merkinnän {0} nimi '{1}' on virheellinen.",
+    "MediaFileSystems.UcsdRange": "UCSD-merkintä {0} ('{1}') käyttää virheellistä aluetta [{2}, {3}) yhteensä {4} lohkossa.",
+    "MediaFileSystems.UcsdOverlap": "UCSD-merkintä {0} ('{1}') käyttää päällekkäisiä lohkoja {2}.",
+    "MediaFileSystems.UcsdCount": "UCSD-hakemisto ilmoittaa {0} tiedostoa, mutta löytyi {1} kelvollista merkintää.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: Lopullinen UCSD- lohko ilmoittaa {1} tavua.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD-tiedosto ilman tyyppiä",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD ulkoinen levytiedosto",
+    "MediaFileSystems.UcsdTypeCode": "UCSD-kooditiedosto",
+    "MediaFileSystems.UcsdTypeText": "UCSD-tekstitiedosto",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD- infotiedosto",
+    "MediaFileSystems.UcsdTypeData": "UCSD-datatiedosto",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD-grafiikkatiedosto",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD-kuvatiedosto",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD-turvakansio"
+  }
+}

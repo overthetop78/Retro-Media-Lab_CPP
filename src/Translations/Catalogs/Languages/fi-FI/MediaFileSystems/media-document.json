@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaFileSystems.ContextSourceNull": "Medialähde ei voi olla nolla.",
+    "MediaFileSystems.ContextSourcePath": "Ensisijainen medialähdepolku ei voi olla tyhjä tai tyhjä tila.",
+    "MediaFileSystems.ContextPageSize": "Tunnustussivun koon on oltava positiivinen.",
+    "MediaFileSystems.ContextKnownLength": "Tunnettu lähdepituus ei voi olla negatiivinen.",
+    "MediaFileSystems.ContextLengthOverflow": "Medialähteen pituus ylittää tuetun allekirjoitetun alueen.",
+    "MediaFileSystems.ContextReadOffset": "Tunnustuksen lukeminen ei voi olla negatiivinen.",
+    "MediaFileSystems.ContextReadCount": "Tunnustusluku ei voi olla negatiivinen.",
+    "MediaFileSystems.ContextReadRange": "Pyydetty alue ylittää lähteen pituuden.",
+    "MediaFileSystems.ContextFullRead": "Täydellistä lähdettä ei voida ladata yhteen muistipuskuriin. Käytä rajoitettu lukee sen sijaan.",
+    "MediaFileSystems.ContextPageEnded": "Medialähde päättyi tavulla {0} luettaessa välimuistisivua.",
+    "MediaFileSystems.DocumentFormatId": "Tarvitaan tunnustettu muototunniste.",
+    "MediaFileSystems.DocumentRepresentation": "Tarvitaan tiedotusvälineiden edustajia, joilla on julkista edustusta."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "RT-11 başlangıç bloğu geçersiz (imza '{0}', dizin bloğu {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "{1} bloğundaki RT-11 segmenti {0}, aralık dışında bir segment numarasına sahip.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} blokta {1} bir döngü oluşturur.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} blokta {1} resmin dışındadır.",
+    "MediaFileSystems.Rt11SegmentMissing": "{1} bloğundaki RT-11 segmenti {0} için blok çifti eksik veya kesilmiş.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 segmenti {0}, {1} baytlık geçersiz bir kayıt boyutu bildiriyor.",
+    "MediaFileSystems.Rt11EmptyName": "{0} veri bloğunda, {1} uzaklığındaki RT-11 kaydının adı boş.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 blokları eksik veya kesilmiş: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Geçici RT-11 dosyası",
+    "MediaFileSystems.Rt11Permanent": "RT-11 dosya"
+  }
+}

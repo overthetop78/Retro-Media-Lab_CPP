@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.SectorInvalidGeometry": "Ongeldige sectorafbeelding {0}: {1}.",
+    "Media.SectorInvalidFormatId": "De sectornaam voor afbeeldingsformaat is leeg of ongeldig: {0}.",
+    "Media.SectorDuplicateBlock": "Logische sector {0} komt meer dan eens voor in de afbeelding.",
+    "Media.SectorBlockOutside": "Logische sector {0} staat buiten het beeld met {1} sectoren.",
+    "Media.SectorCapacityShort": "De opgegeven sectorafbeeldingscapaciteit {0} is kleiner dan de beschikbare datalengte {1}.",
+    "Media.SectorMissingBlock": "Logische sector {0} ontbreekt.",
+    "Media.SectorInvalidBlockSize": "Logische sector {0} bevat {1} bytes in plaats van {2}.",
+    "Media.FatUnsupportedBoot": "Afbeeldingsformaat {0} heeft geen ondersteund FAT12 bestandssysteem: de opstartsector ontbreekt of wordt afgebroken.",
+    "Media.FatUnsupportedLayout": "Afbeeldingsformaat {0} heeft geen ondersteund FAT12-bestandssysteem (sectorgrootte {1}, sectoren per cluster {2}, gereserveerde sectoren {3}, FAT-kopieën {4}, root-items {5}, sectoren per FAT {6}).",
+    "Media.FatInvalidChain": "De FAT-keten van {0} is ongeldig of cyclisch in cluster {1}.",
+    "Media.FatTruncatedTable": "De FAT12 ingang voor cluster {0} is afgekapt.",
+    "Media.FatMissingSectors": "Sectorbereik {0} tot {1} is onvolledig.",
+    "Media.FatDepthLimit": "De limiet voor FAT-mappennest werd bereikt op {0} (diepte {1}).",
+    "Media.FatMissingSector": "FAT-sector {0} bevat {1} bytes in plaats van {2}.",
+    "Media.FatCyclicChain": "{0}: de FAT12-keten is cyclisch in cluster {1}.",
+    "Media.FatClusterOutsideRange": "{0}: FAT12-cluster {1} ligt buiten het databereik.",
+    "Media.FatIncompleteContent": "{0}: de opgegeven grootte is {1} bytes, maar alleen {2} bytes zijn beschikbaar.",
+    "Media.FatUnsupportedGeometry": "Afbeeldingsformaat {0} is geen ondersteunde FAT12 geometrie.",
+    "Media.FatDiskFull": "Het doel FAT12 volume heeft niet genoeg vrije clusters of directory ingangen.",
+    "Media.FatInvalidEntry": "Migratie-item {0} kan niet als een FAT12-item met een korte naam worden weergegeven.",
+    "Media.FatDirectoryCycle": "Map {0} gebruikt FAT12 cluster {1}, die al is uitgebreid.",
+    "Media.FatIntegrityInvalid": "FAT-sector {0} heeft ongeldige geregistreerde integriteit.",
+    "Media.FatResourceLimit": "De FAT12 extractielimiet werd bereikt tijdens het lezen van {0}."
+  }
+}

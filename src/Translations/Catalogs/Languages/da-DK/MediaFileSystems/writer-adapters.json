@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Et billede af mediernes repræsentation kan ikke være nul.",
+    "MediaFileSystems.RepresentationCountOverflow": "Tælleren i medierepræsentationen overskrider det understøttede interval for heltal med fortegn.",
+    "MediaFileSystems.WriterAdapterId": "Der kræves en medie- billedskriver- identifikator.",
+    "MediaFileSystems.WriterAdapterFormats": "Identifikatorer til målformat kan ikke være tomme.",
+    "MediaFileSystems.WriterAdapterExtensions": "Output extensions kan ikke være tom.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Medieskrivervalidering og output callbacks er påkrævet.",
+    "MediaFileSystems.WriterAdapterPath": "Der kræves en medieskriver- udgangsti.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Skrivekomponenten '{0}' kan ikke hente den krævede medierepræsentation.",
+    "MediaFileSystems.WriterAdapterTarget": "Skriver '{0}' accepterer ikke målet '{1}' med udvidelse '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Writer '{0} rapporterede ikke gyldige producerede filer.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore source format '{0}' kan ikke skrives som '{1}' uden en geometri transformation."
+  }
+}

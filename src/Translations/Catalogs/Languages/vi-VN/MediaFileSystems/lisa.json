@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "Ảnh đĩa không chứa hệ thống tập tin Lisa có thẻ trong {0} trang của nó.",
+    "MediaFileSystems.LisaMissingPage": "Tập tin Lisa 0x{0} thiếu trang {1}.",
+    "MediaFileSystems.LisaTruncatedMddf": "Trang Lisa MDDF chứa {0} byte; cần {1} byte.",
+    "MediaFileSystems.LisaInvalidTag": "Khối logic Lisa {0} có thẻ dài {1} byte; cần {2} byte.",
+    "MediaFileSystems.LisaDuplicatePage": "Tập tin Lisa 0x{0} chứa nhiều bản sao của trang {1}.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "Không thể xác định dung lượng trống của Lisa nếu không có thẻ sử dụng được.",
+    "MediaFileSystems.LisaFileDescription": "Tập tin Lisa ${0}"
+  }
+}

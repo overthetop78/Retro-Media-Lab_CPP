@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "En bild medierepresentation kan inte vara null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Räknaren i medierepresentationen överskrider det stödda intervallet för heltal med tecken.",
+    "MediaFileSystems.WriterAdapterId": "En identifierare för mediebildens skrivkomponent krävs.",
+    "MediaFileSystems.WriterAdapterFormats": "Målformatidentifierare kan inte vara tomma.",
+    "MediaFileSystems.WriterAdapterExtensions": "Utgångsförlängningar kan inte vara tomma.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Validerings- och utdatafunktioner för medieskrivaren krävs.",
+    "MediaFileSystems.WriterAdapterPath": "En utdatasökväg för medieskrivaren krävs.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Skrivkomponenten \"{0}\" kan inte utvinna sin nödvändiga medierepresentation.",
+    "MediaFileSystems.WriterAdapterTarget": "Skrivkomponenten \"{0}\" accepterar inte målet \"{1}\" med förlängning \"{2}\".",
+    "MediaFileSystems.WriterAdapterProduced": "Skrivkomponenten \"{0}\" rapporterade inte giltiga producerade filer.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore-källformat \"{0}\" kan inte skrivas som \"{1}\" utan en geometritransformation."
+  }
+}

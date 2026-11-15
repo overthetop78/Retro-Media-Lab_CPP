@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "COHERENTs kanoniska värde innehåller {0} byte; {1} krävs.",
+    "Media.CoherentPointerLength": "COHERENT blockpekaren innehåller {0} byte; {1} krävs.",
+    "Media.CoherentInvalidSuperblock": "Bilden innehåller inte ett giltigt COHERENT-filsystem.",
+    "Media.CoherentDeclaredBlocks": "COHERENT förklarar {0} block men endast {1} finns tillgängliga.",
+    "Media.CoherentMissingSuperblock": "En nödvändig COHERENT superblock block saknas.",
+    "Media.CoherentInodeZone": "COHERENT inode zone slutar vid block {0}, utanför filsystemet av {1} block.",
+    "Media.CoherentNullInode": "COHERENT inode noll är ogiltig.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} ligger utanför inode zonen av {1} byte.",
+    "Media.CoherentFileTooLarge": "COHERENT fillängden på {0} byte kan inte representeras i minnet.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT direkt block {1} saknas eller utanför bilden.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT indirekt block {1} på nivå {2} saknas eller utanför bilden.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT indirekt block {1} på nivå {2} refereras mer än en gång.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT-katalogens inode {1} bildar en cykel.",
+    "Media.CoherentDirectoryRepeated": "{0}: COHERENT-katalogens inode {1} har redan besökts.",
+    "Media.CoherentChildUnreadable": "{0}: COHERENT-barninoden kan inte läsas.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT byte saknas och förbli positionerade som nollor.",
+    "Media.CoherentDepth": "{0}: Gränsen för COHERENT-katalogen nåddes på djupet {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

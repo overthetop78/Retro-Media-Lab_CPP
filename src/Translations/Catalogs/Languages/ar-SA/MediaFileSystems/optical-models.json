@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "والطول المنطقي البصري لا يمكن أن يكون سلبيا.",
+    "MediaFileSystems.OpticalMetadataOnly": "يحتوي وصف الوسائط القديم هذا على بيانات وصفية فقط، ولا يحتوي على مصدر بيانات قابل للقراءة.",
+    "MediaFileSystems.OpticalIndexNumber": "يجب أن يكون رقم فهرس المسار الضوئي بين 0 و99.",
+    "MediaFileSystems.OpticalPositiveDimension": "البعد الضوئي{0}يجب أن يكون إيجابيا.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "البعد الضوئي{0}لا يمكن أن يكون سلبياً",
+    "MediaFileSystems.OpticalDataSource": "ويلزم وجود مصدر بيانات بصري.",
+    "MediaFileSystems.OpticalUserWindow": "وتتجاوز نافذة بيانات المستخدمين قطاعا مخزنا واحدا.",
+    "MediaFileSystems.OpticalTrackSource": "وتتجاوز بيانات المسار مصدرها.",
+    "MediaFileSystems.OpticalSubchannelSource": "تحتاج الأبعاد الفرعية إلى مصدر فرعي.",
+    "MediaFileSystems.OpticalSubchannelRange": "وتتجاوز البيانات الفرعية مصدرها.",
+    "MediaFileSystems.OpticalPregapOffset": "تتطلب إزاحة مصدر الفاصل السابق المخزن وجود قطاعات مخزنة لهذا الفاصل.",
+    "MediaFileSystems.OpticalPregapRange": "يتجاوز الفاصل السابق المخزن حدود مصدره.",
+    "MediaFileSystems.OpticalStoredDestination": "المقصد يجب أن يحتوي على قطاع واحد مخزن",
+    "MediaFileSystems.OpticalStoredPregap": "القطاع خارج الفاصل السابق المخزن.",
+    "MediaFileSystems.OpticalRelativeSector": "والقطاع خارج المسار البصري.",
+    "MediaFileSystems.OpticalNullTrack": "المسار البصري لا يمكن أن يكون باطلا."
+  }
+}

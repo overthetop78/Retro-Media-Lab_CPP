@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Ein Mediendarstellungsbild kann nicht null sein.",
+    "MediaFileSystems.RepresentationCountOverflow": "Der Zähler der Mediendarstellung überschreitet den unterstützten Bereich vorzeichenbehafteter Ganzzahlen.",
+    "MediaFileSystems.WriterAdapterId": "Ein Media Image Writer Identifier ist erforderlich.",
+    "MediaFileSystems.WriterAdapterFormats": "Zielformatbezeichner können nicht leer sein.",
+    "MediaFileSystems.WriterAdapterExtensions": "Output-Erweiterungen können nicht leer sein.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Validierungs- und Ausgabefunktionen der Medienschreibkomponente sind erforderlich.",
+    "MediaFileSystems.WriterAdapterPath": "Ein Media Writer Ausgabepfad ist erforderlich.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Der Schreiber '{0}' kann die erforderliche Mediendarstellung nicht extrahieren.",
+    "MediaFileSystems.WriterAdapterTarget": "Der Schreiber '{0}' akzeptiert das Ziel '{1}' nicht mit der Erweiterung '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Writer '{0}' hat keine gültigen produzierten Dateien gemeldet.",
+    "MediaFileSystems.WriterCommodoreTransform": "Das Commodore-Quellformat '{0}' kann nicht ohne Geometrietransformation als '{1}' geschrieben werden."
+  }
+}

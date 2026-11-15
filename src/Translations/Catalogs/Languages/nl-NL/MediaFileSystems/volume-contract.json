@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Een volumestart moet niet negatief zijn: {0}.",
+    "MediaFileSystems.VolumeLength": "Een volumelengte moet positief zijn: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Een volume oorsprong is vereist.",
+    "MediaFileSystems.VolumePartitionNumber": "Een partitienummer moet positief zijn: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Een sessienummer moet positief zijn: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Een nummernummer moet positief zijn: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Het volumebereik overschrijdt de ondersteunde 64-bit grenzen.",
+    "MediaFileSystems.WholeVolumeRequired": "De sector-bestandssysteemlezer heeft een volume nodig dat het gehele sectorbeeld bestrijkt."
+  }
+}

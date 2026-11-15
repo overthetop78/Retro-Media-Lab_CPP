@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Nilai canonikal COHERENT memuat {0} bytes; {1} dibutuhkan.",
+    "Media.CoherentPointerLength": "Penunjuk blok COHERENT memuat {0} bytes; {1} dibutuhkan.",
+    "Media.CoherentInvalidSuperblock": "Gambar tidak berisi sebuah sistem berkas COHERENT yang valid.",
+    "Media.CoherentDeclaredBlocks": "COHERENT mendeklarasikan {0} blocks tetapi hanya {1} yang tersedia.",
+    "Media.CoherentMissingSuperblock": "Sebuah blok super COHERENT yang hilang.",
+    "Media.CoherentInodeZone": "Zona inode COHERENT berakhir di blok {0}, diluar sistem berkas dari {1} blok.",
+    "Media.CoherentNullInode": "inode COHERENT nol tidak valid.",
+    "Media.CoherentInodeOutside": "inode COHERENT {0} diluar zona inode dari {1} bytes.",
+    "Media.CoherentFileTooLarge": "Panjang berkas COHERENT dari {0} bytes tidak dapat direpresentasikan dalam memori.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT blok langsung {1} hilang atau di luar gambar.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT blok tidak langsung {1} pada level {2} hilang atau diluar gambar.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT blok tidak langsung {1} di tingkat {2} direferensikan lebih dari sekali.",
+    "Media.CoherentDirectoryCycle": "{0}: Direktori COHERENT inode {1} membentuk sebuah siklus.",
+    "Media.CoherentDirectoryRepeated": "{0}: direktori COHERENT inode {1} telah dikunjungi.",
+    "Media.CoherentChildUnreadable": "{0}: inode anak COHERENT tidak dapat dibaca.",
+    "Media.CoherentMissingBytes": "{0}: {1} Bita COHERENT hilang dan tetap diposisikan sebagai nol.",
+    "Media.CoherentDepth": "{0}: batas kedalaman direktori COHERENT dicapai pada kedalaman {1}.",
+    "Media.CoherentInodeDescription": "inode COHERENT {0}"
+  }
+}

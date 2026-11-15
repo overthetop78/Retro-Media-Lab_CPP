@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "O valor canónico COHERENT contém bytes {0}; {1} são necessários.",
+    "Media.CoherentPointerLength": "O ponteiro de bloco COHERENT contém {0} bytes; {1} são necessários.",
+    "Media.CoherentInvalidSuperblock": "A imagem não contém um sistema de arquivos COHERENT válido.",
+    "Media.CoherentDeclaredBlocks": "COHERENT declara que os blocos {0} mas apenas {1} estão disponíveis.",
+    "Media.CoherentMissingSuperblock": "Falta um bloco necessário do superbloco COHERENT.",
+    "Media.CoherentInodeZone": "A zona de inodo COHERENT termina no bloco {0}, fora do sistema de ficheiros dos blocos {1}.",
+    "Media.CoherentNullInode": "O inodo COHERENT zero é inválido.",
+    "Media.CoherentInodeOutside": "O inodo COHERENT {0} está fora da zona do inodo de {1} bytes.",
+    "Media.CoherentFileTooLarge": "O tamanho do ficheiro COHERENT de {0} bytes não pode ser representado na memória.",
+    "Media.CoherentDirectUnavailable": "{0}: O bloco direto COHERENT {1} está ausente ou fora da imagem.",
+    "Media.CoherentIndirectUnavailable": "{0}: Bloco indireto COHERENT {1} no nível {2} está faltando ou fora da imagem.",
+    "Media.CoherentIndirectRepeated": "{0}: O bloco indireto COHERENT {1} no nível {2} é referenciado mais de uma vez.",
+    "Media.CoherentDirectoryCycle": "{0}: O inodo de directório COHERENT {1} forma um ciclo.",
+    "Media.CoherentDirectoryRepeated": "{0}: O inodo de directório COHERENT {1} já foi visitado.",
+    "Media.CoherentChildUnreadable": "{0}: não é possível ler o inodo filho COHERENT.",
+    "Media.CoherentMissingBytes": "{0}: {1} Os bytes COHERENT estão faltando e permanecem posicionados como zeros.",
+    "Media.CoherentDepth": "{0}: o limite de profundidade do directório COHERENT foi atingido na profundidade {1}.",
+    "Media.CoherentInodeDescription": "Inodo COHERENT {0}"
+  }
+}

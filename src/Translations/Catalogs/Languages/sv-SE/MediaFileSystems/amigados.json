@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Avbildningen innehåller inget AmigaDOS-startblock som stöds.",
+    "Media.AmigaUnsupportedVariant": "AmigaDOS boot variant {0} stöds inte.",
+    "Media.AmigaInvalidRoot": "AmigaDOS root block {0} är ogiltig.",
+    "Media.AmigaRootChecksum": "AmigaDOS-rotblocket {0} har en ogiltig kontrollsumma.",
+    "Media.AmigaDirectoryChain": "AmigaDOS-katalogen i block {0} är ogiltig eller cyklisk.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS katalog inträde block {0} saknas.",
+    "Media.AmigaMissingData": "AmigaDOS fildatablock {0} saknas.",
+    "Media.AmigaOfsType": "OFS datablock {0} har oväntad typ {1}.",
+    "Media.AmigaDataChecksum": "OFS datablock {0} har en ogiltig kontrollsumma.",
+    "Media.AmigaInvalidExtension": "AmigaDOS filtillägg block {0} är ogiltig, cyklisk eller saknas.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS filtillägg block {0} har ogiltig struktur eller kontrollsumma.",
+    "Media.AmigaTruncatedFile": "AmigaDOS-filens innehåll är avkortat: {0} byte förväntades, {1} lästes.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap block {0} saknas.",
+    "Media.AmigaBitmapChecksum": "AmigaDOS bitmap block {0} har en ogiltig kontrollsumma.",
+    "Media.AmigaDepth": "AmigaDOS-katalogens djupgräns nåddes på djupet {0}.",
+    "Media.AmigaRecovered": "Återställd {0} AmigaDOS katalogposter från giltiga rubriker eftersom rotblocket inte är tillgängligt.",
+    "Media.AmigaWriterVariant": "AmigaDOS variant {0} kan inte skapas av denna modul.",
+    "Media.AmigaWriterGeometry": "Bildformat {0} är inte en stödd AmigaDOS geometri.",
+    "Media.AmigaDiskFull": "Målet AmigaDOS-volymen har otillräckliga fria block.",
+    "Media.AmigaInvalidEntry": "Migrationspost {0} kan inte representeras på AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS block {0} är ofullständig: {1} byte finns tillgängliga.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS block {0} har ogiltig registrerad integritet.",
+    "Media.AmigaFileSize": "AmigaDOS fillängd {0} överstiger det stödda intervallet."
+  }
+}

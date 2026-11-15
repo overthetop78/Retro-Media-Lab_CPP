@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Bố trí đĩa CP/M không được hỗ trợ cho định dạng {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Ảnh đĩa không chứa thư mục CP/M được hỗ trợ cho định dạng {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: khối cấp phát CP/M {1} tại vị trí {2} nằm ngoài ảnh đĩa dài {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: khối cấp phát CP/M {1} đi qua một khối logic bị thiếu.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: khối cấp phát CP/M {1} đi qua một khối logic bị cắt ngắn.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: khối cấp phát CP/M {1} được tham chiếu nhiều lần.",
+    "MediaFileSystems.CpmImageMissing": "Ảnh đĩa CP/M chứa {0} khối logic bị thiếu.",
+    "MediaFileSystems.CpmImageTruncated": "Ảnh đĩa CP/M chứa {0} khối logic bị cắt ngắn.",
+    "MediaFileSystems.CpmInvalidLayout": "Bố trí CP/M không hợp lệ (vị trí thư mục={0}, điểm bắt đầu cấp phát={1}, mục thư mục={2}, kích thước cấp phát={3}, khối thư mục={4}).",
+    "MediaFileSystems.CpmUserArea": "Người dùng CP/M {0}"
+  }
+}

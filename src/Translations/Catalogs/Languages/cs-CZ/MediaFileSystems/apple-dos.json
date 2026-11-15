@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Katalog Apple DOS odkazovaný z VTOC na stopě {0}, sektoru {1}, chybí nebo je neplatný.",
+    "MediaFileSystems.AppleDosCatalogChain": "Sektor katalogu Apple DOS {0}/{1} chybí nebo je součástí cyklu.",
+    "MediaFileSystems.AppleDosAddress": "Adresa Apple DOS {1}/{2} pro {0} je mimo geometrii disku.",
+    "MediaFileSystems.AppleDosListCycle": "Seznam stop a sektorů souboru {0} tvoří cyklus na adrese {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Seznam stop a sektorů souboru {0} chybí na adrese {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Datový sektor {1}/{2} souboru {0} chybí.",
+    "MediaFileSystems.AppleDosSize": "Soubor {0} uvádí {1} sektorů, ale bylo projito {2} sektorů.",
+    "MediaFileSystems.AppleDosWriteFormat": "Cílový formát Apple DOS {0} není podporován.",
+    "MediaFileSystems.AppleDosWriteFull": "Svazek Apple DOS nemá dostatek sektorů pro katalog nebo data.",
+    "MediaFileSystems.AppleDosWriteVolume": "Název svazku Apple DOS {0} musí mít formát DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS podporuje pouze soubory s dostupným obsahem v kořenovém katalogu.",
+    "MediaFileSystems.AppleDosBinarySize": "Binární soubor Apple DOS nesmí překročit 65535 bajtů.",
+    "MediaFileSystems.AppleDosWriteName": "Název souboru Apple DOS {0} nelze zakódovat do položky katalogu.",
+    "MediaFileSystems.AppleDosTypeText": "Text",
+    "MediaFileSystems.AppleDosTypeBinary": "Binární",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relokovatelný",
+    "MediaFileSystems.AppleDosTypeFile": "Soubor"
+  }
+}

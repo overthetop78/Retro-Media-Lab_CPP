@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.IsoContainerLength": "L'image ISO est vide ou n'est pas alignée sur les secteurs de 2048 octets.",
+    "MediaFileSystems.IsoContainerChanged": "La longueur de l'image ISO a changé après la reconnaissance.",
+    "MediaFileSystems.IsoWriteProfile": "Le document optique ne peut pas être écrit sans perte sous forme d’image ISO à une seule piste.",
+    "MediaFileSystems.WriterRegistryNull": "Un composant d’écriture d’images de médias ne peut pas être nul.",
+    "MediaFileSystems.WriterRegistryDuplicate": "L’identifiant du composant d’écriture d’images de médias « {0} » est enregistré plusieurs fois.",
+    "MediaFileSystems.WriterTargetFormat": "Un identifiant de format multimédia cible est nécessaire.",
+    "MediaFileSystems.WriterTargetExtension": "Une extension de fichier multimédia cible est requise."
+  }
+}

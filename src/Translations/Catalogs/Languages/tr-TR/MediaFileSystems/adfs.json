@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Media.AdfsUnsupportedImage": "Görüntü, desteklenen bir ADFS kataloğu içermiyor ({0} baytlık bloklar, {1} blok).",
+    "Media.AdfsInvalidDirectory": "ADFS dizini {0} geçersiz veya eksik.",
+    "Media.AdfsDepth": "ADFS dizin derinliği sınırına {0} derinliğinde ulaşıldı.",
+    "Media.AdfsCycle": "ADFS dizini {0} döngü oluşturuyor veya birden fazla kez başvuruluyor.",
+    "Media.AdfsInvalidRange": "{0}: geçersiz ADFS adresi {1}, ofset {2} veya uzunluk {3}.",
+    "Media.AdfsMissingBlock": "{0}: ADFS adresi {1}, {2} ofsetinde eksik blok {3} gerektiriyor.",
+    "Media.AdfsIntegrity": "ADFS bloğu {0} için kaydedilen bütünlük bilgisi geçersiz.",
+    "Media.AdfsBlockVolume": "ADFS, sektörlerine veya bloklarına doğrudan erişilebilen bir birim gerektirir.",
+    "Media.AdfsSectorCount": "ADFS sektör sayısı {0}, desteklenen aralığın dışında."
+  }
+}

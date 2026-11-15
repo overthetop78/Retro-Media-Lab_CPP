@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "ブロック{0}のProDOS/SOSのボリュームヘッダは認識されません(保存値${1})。",
+    "MediaFileSystems.ProDosDepth": "ProDOS ディレクトリブロック {1} は、レベル {0} で最大深さを超過します。",
+    "MediaFileSystems.ProDosDirectory": "ProDOSディレクトリブロック{0}は無効です（循環={1}、再利用={2}）。",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOSインデックスブロック{2}は無効です（循環={3}）。",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS マスターインデックスブロック {2} は無効です。",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOSデータブロック{2}が存在しないか、ディスクイメージの範囲外か、サイズが無効です。",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): 想定された{3}バイトのうち{2}バイトを再構築しました。",
+    "MediaFileSystems.ProDosBitmap": "ProDOSビットマップブロック{0}が欠落しているか、無効なサイズがある。",
+    "MediaFileSystems.ProDosTotal": "ProDOSボリュームは{0}ブロックを宣言していますが、ディスクイメージには{1}ブロックがあります。",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS ターゲット形式 '{0}' はサポートされていません。",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS のボリュームには十分なブロックやディレクトリエントリはありません。",
+    "MediaFileSystems.ProDosGeometry": "ターゲット ProDOS ジオメトリまたはセクターアドレスマップが無効です。",
+    "MediaFileSystems.ProDosEntry": "ProDOS エントリー '{0}' は書き込みできません。",
+    "MediaFileSystems.ProDosFileLength": "ProDOSファイル '{0}' は 24 ビットの長さフィールドを超える。",
+    "MediaFileSystems.ProDosName": "ProDOS名 '{0}' は無効です。",
+    "MediaFileSystems.ProDosTypeText": "テキスト",
+    "MediaFileSystems.ProDosTypeBinary": "バイナリ",
+    "MediaFileSystems.ProDosTypeDirectory": "ディレクトリ",
+    "MediaFileSystems.ProDosTypeVariables": "変数",
+    "MediaFileSystems.ProDosTypeSystem": "システム"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "Obrázek nemá žádný podporovaný blok AmigaDOS.",
+    "Media.AmigaUnsupportedVariant": "Varianta bota AmigaDOS {0} není podporována.",
+    "Media.AmigaInvalidRoot": "Kořenový blok AmigaDOS {0} je neplatný.",
+    "Media.AmigaRootChecksum": "Kořenový blok AmigaDOS {0} má neplatný kontrolní součet.",
+    "Media.AmigaDirectoryChain": "Soubor adresářů AmigaDOS v bloku {0} je neplatný nebo cyklický.",
+    "Media.AmigaMissingDirectoryEntry": "AmigaDOS vstupní blok adresáře {0} chybí.",
+    "Media.AmigaMissingData": "Chybí datový blok AmigaDOS souboru {0}.",
+    "Media.AmigaOfsType": "Datový blok OFS {0} má neočekávaný typ {1}.",
+    "Media.AmigaDataChecksum": "Datový blok OFS {0} má neplatný kontrolní součet.",
+    "Media.AmigaInvalidExtension": "Prodlužovací blok souboru AmigaDOS {0} je neplatný, cyklický nebo chybí.",
+    "Media.AmigaExtensionChecksum": "AmigaDOS blok rozšíření souboru {0} má neplatnou strukturu nebo kontrolní součet.",
+    "Media.AmigaTruncatedFile": "Obsah souboru AmigaDOS je zkrácený: očekáváno {0} bajtů, přečteno {1}.",
+    "Media.AmigaMissingBitmap": "AmigaDOS bitmap blok {0} chybí.",
+    "Media.AmigaBitmapChecksum": "Blok bitmapy AmigaDOS {0} má neplatný kontrolní součet.",
+    "Media.AmigaDepth": "Hloubka adresáře AmigaDOS byla dosažena v hloubce {0}.",
+    "Media.AmigaRecovered": "Získané zpět {0} Katalogové položky AmigaDOS z platných hlaviček, protože kořenový blok není k dispozici.",
+    "Media.AmigaWriterVariant": "Variantu AmigaDOS {0} nelze vytvořit tímto modulem.",
+    "Media.AmigaWriterGeometry": "Formát obrázku {0} není podporovaná geometrie AmigaDOS.",
+    "Media.AmigaDiskFull": "Cíl AmigaDOS objem má nedostatečné volné bloky.",
+    "Media.AmigaInvalidEntry": "Migrační vstup {0} nelze zastupovat na AmigaDOS.",
+    "Media.AmigaShortBlock": "AmigaDOS blok {0} je neúplný: {1} bajty jsou k dispozici.",
+    "Media.AmigaRecordedIntegrity": "AmigaDOS blok {0} má neplatnou zaznamenanou integritu.",
+    "Media.AmigaFileSize": "AmigaDOS délka souboru {0} přesahuje podporovaný rozsah."
+  }
+}

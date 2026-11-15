@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "Không nhận diện được thư mục UCSD tại khối {0}; các khối không hợp lệ: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: Các khối UCSD bị mất hay bị cắt: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "Các khối thư mục UCSD p-System bị thiếu hoặc bị cắt ngắn: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "Mục UCSD {0} có tên không hợp lệ '{1}'.",
+    "MediaFileSystems.UcsdRange": "Mục UCSD {0} ('{1}') dùng phạm vi không hợp lệ [{2}, {3}) trong {4} khối.",
+    "MediaFileSystems.UcsdOverlap": "Mục UCSD {0} ('{1}') chồng lấp các khối {2}.",
+    "MediaFileSystems.UcsdCount": "Thư mục UCSD khai báo {0} tập tin, nhưng chỉ tìm thấy {1} mục hợp lệ.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: khối UCSD cuối cùng tuyên bố {1} byte.",
+    "MediaFileSystems.UcsdTypeUntyped": "Tập tin UCSD không có kiểu",
+    "MediaFileSystems.UcsdTypeExternalDisk": "Tập tin đĩa ngoài UCSD",
+    "MediaFileSystems.UcsdTypeCode": "Tập tin mã UCSD",
+    "MediaFileSystems.UcsdTypeText": "Tập tin văn bản UCSD",
+    "MediaFileSystems.UcsdTypeInfo": "Tập tin thông tin UCSD",
+    "MediaFileSystems.UcsdTypeData": "Tập tin dữ liệu UCSD",
+    "MediaFileSystems.UcsdTypeGraphics": "Tập tin đồ hoạ UCSD",
+    "MediaFileSystems.UcsdTypePhoto": "Tập tin ảnh chụp UCSD",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "Thư mục bảo mật UCSD"
+  }
+}

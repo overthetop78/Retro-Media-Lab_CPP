@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "CP/M-disklayoutet understøttes ikke for format {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Billedet indeholder ikke en understøttet CP/M mappe til format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: CP/M-allokeringsblok {1} ved forskydning {2} er uden for diskbilledet på {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: CP/M fordelingsblok {1} krydser en manglende logisk blok.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: CP/M fordelingsblok {1} krydser en afkortet logisk blok.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: CP/M tildelingsblok {1} refereres mere end én gang.",
+    "MediaFileSystems.CpmImageMissing": "CP/M billede indeholder {0} manglende logiske blokke.",
+    "MediaFileSystems.CpmImageTruncated": "CP/M billede indeholder {0} trunkerede logiske blokke.",
+    "MediaFileSystems.CpmInvalidLayout": "CP/M layout er ugyldig (mappeforskydning = {0}, tildelingsoprindelse = {1}, mappeindgange = {2}, tildelingsstørrelse = {3}, mappeblokke = {4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M bruger {0}"
+  }
+}

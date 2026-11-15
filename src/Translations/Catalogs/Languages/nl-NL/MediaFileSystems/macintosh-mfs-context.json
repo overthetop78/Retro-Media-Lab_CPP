@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "Volume-informatieblok {0} ontbreekt of heeft een ongeldige grootte.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "Directoryblok {0} ontbreekt of heeft een ongeldige grootte.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: blok {1} van de datafork ontbreekt of heeft een ongeldige grootte.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: de datafork bevat {1} bytes; verwacht werden {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: de datafork geeft {1} bytes vanaf cluster {2} aan; de metadata zijn inconsistent.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: de allocatieketen van de datafork bevat een lus.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: de allocatieketen van de datafork verwijst naar een positie buiten de allocatietabel.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: de allocatieketen van de datafork eindigt voordat alle vereiste clusters beschikbaar zijn.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: blok {1} van de resourcefork ontbreekt of heeft een ongeldige grootte.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: de resourcefork bevat {1} bytes; verwacht werden {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: de resourcefork geeft {1} bytes vanaf cluster {2} aan; de metadata zijn inconsistent.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: de allocatieketen van de resourcefork bevat een lus.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: de allocatieketen van de resourcefork verwijst naar een positie buiten de allocatietabel.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: de allocatieketen van de resourcefork eindigt voordat alle vereiste clusters beschikbaar zijn."
+  }
+}

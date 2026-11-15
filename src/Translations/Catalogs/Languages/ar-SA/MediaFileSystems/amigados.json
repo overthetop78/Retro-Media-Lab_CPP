@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "Media.AmigaUnsupportedBoot": "لا تحتوي الصورة على كتلة إقلاع AmigaDOS مدعومة.",
+    "Media.AmigaUnsupportedVariant": "نوع إقلاع AmigaDOS ‏{0} غير مدعوم.",
+    "Media.AmigaInvalidRoot": "كتلة جذر AmigaDOS ‏{0} غير صالحة.",
+    "Media.AmigaRootChecksum": "المجموع الاختباري لكتلة جذر AmigaDOS ‏{0} غير صالح.",
+    "Media.AmigaDirectoryChain": "سلسلة دليل AmigaDOS عند الكتلة {0} غير صالحة أو دورية.",
+    "Media.AmigaMissingDirectoryEntry": "كتلة إدخال دليل AmigaDOS ‏{0} مفقودة.",
+    "Media.AmigaMissingData": "كتلة بيانات ملف AmigaDOS ‏{0} مفقودة.",
+    "Media.AmigaOfsType": "كتلة بيانات OFS ‏{0} لها نوع غير متوقع {1}.",
+    "Media.AmigaDataChecksum": "المجموع الاختباري لكتلة بيانات OFS ‏{0} غير صالح.",
+    "Media.AmigaInvalidExtension": "كتلة امتداد ملف AmigaDOS ‏{0} غير صالحة أو دورية أو مفقودة.",
+    "Media.AmigaExtensionChecksum": "بنية كتلة امتداد ملف AmigaDOS ‏{0} أو مجموعها الاختباري غير صالح.",
+    "Media.AmigaTruncatedFile": "محتوى ملف AmigaDOS مبتور: المتوقع {0} بايت، والمقروء {1}.",
+    "Media.AmigaMissingBitmap": "كتلة خريطة تخصيص AmigaDOS ‏{0} مفقودة.",
+    "Media.AmigaBitmapChecksum": "المجموع الاختباري لكتلة خريطة تخصيص AmigaDOS ‏{0} غير صالح.",
+    "Media.AmigaDepth": "تم بلوغ الحد الأقصى لعمق أدلة AmigaDOS عند العمق {0}.",
+    "Media.AmigaRecovered": "تم استعادة {0} إدخالات من فهرس AmigaDOS من ترويسات صالحة لأن كتلة الجذر غير متاحة.",
+    "Media.AmigaWriterVariant": "لا تستطيع هذه الوحدة إنشاء نوع AmigaDOS ‏{0}.",
+    "Media.AmigaWriterGeometry": "تنسيق الصورة {0} ليس هندسة AmigaDOS مدعومة.",
+    "Media.AmigaDiskFull": "لا تحتوي وحدة تخزين AmigaDOS الهدف على كتل حرة كافية.",
+    "Media.AmigaInvalidEntry": "لا يمكن تمثيل إدخال الترحيل {0} على AmigaDOS.",
+    "Media.AmigaShortBlock": "كتلة AmigaDOS ‏{0} غير مكتملة: يتوفر {1} بايت.",
+    "Media.AmigaRecordedIntegrity": "تشير معلومات السلامة المسجلة لكتلة AmigaDOS ‏{0} إلى وجود خلل.",
+    "Media.AmigaFileSize": "طول ملف AmigaDOS ‏{0} خارج النطاق المدعوم."
+  }
+}

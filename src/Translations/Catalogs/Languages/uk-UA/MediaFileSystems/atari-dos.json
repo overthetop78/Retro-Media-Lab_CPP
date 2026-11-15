@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "Образ {0} із секторами розміром {1} байтів не містить підтримуваного каталогу Atari DOS.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Сектор каталогу {0} відсутній.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Сектор каталогу {0}, запис {1}, не є припустимим записом файлу Atari DOS, тому його проігноровано.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: сектор даних Atari DOS {1} відсутній.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: ланцюжок даних Atari DOS містить цикл у секторі {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: сектор {1} належить файлу {3}; очікувався {2}.",
+    "MediaFileSystems.AtariDosOpen": "Сектор каталогу {1}, запис {2} («{0}»), досі відкритий для запису, тому його проігноровано.",
+    "MediaFileSystems.AtariDosTruncated": "Сектор даних {1} файлу «{0}» закороткий для розміщення посилання.",
+    "MediaFileSystems.AtariDosPremature": "Файл «{0}» оголошує {1} секторів, але його ланцюжок закінчується після {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Порожній файл «{0}» несподівано посилається на сектор {1}.",
+    "MediaFileSystems.AtariDosBounded": "Файл «{0}» обмежений {1} секторами, оголошеними в записі каталогу, тоді як основний ланцюжок продовжується в секторі {2}.",
+    "MediaFileSystems.AtariDosShared": "Файл «{0}» спільно використовує з файлом «{1}» {3} секторів починаючи із сектора {2}.",
+    "MediaFileSystems.AtariDosUsedLength": "Сектор даних {1} файлу «{0}» оголошує {2} байтів, але доступно лише {3}."
+  }
+}

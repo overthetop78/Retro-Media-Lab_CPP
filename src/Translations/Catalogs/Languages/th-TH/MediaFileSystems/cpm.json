@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "ไม่รองรับการจัดวางดิสก์ CP/M สำหรับรูปแบบ {0}",
+    "MediaFileSystems.CpmUnsupportedDirectory": "อิมเมจดิสก์ไม่มีไดเรกทอรี CP/M ที่รองรับสำหรับรูปแบบ {0}",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: บล็อกการจัดสรร CP/M {1} ที่ออฟเซต {2} อยู่นอกอิมเมจขนาด {3} ไบต์",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: บล็อกการจัดสรร CP/M {1} คร่อมบล็อกเชิงตรรกะที่ขาดหายไป",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: บล็อกการจัดสรร CP/M {1} คร่อมบล็อกเชิงตรรกะที่ถูกตัดทอน",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: บล็อกการจัดสรร CP/M {1} ถูกอ้างอิงมากกว่าหนึ่งครั้ง",
+    "MediaFileSystems.CpmImageMissing": "อิมเมจ CP/M มีบล็อกเชิงตรรกะที่ขาดหายไป {0} บล็อก",
+    "MediaFileSystems.CpmImageTruncated": "อิมเมจ CP/M มีบล็อกเชิงตรรกะที่ถูกตัดทอน {0} บล็อก",
+    "MediaFileSystems.CpmInvalidLayout": "การจัดวาง CP/M ไม่ถูกต้อง (ออฟเซตไดเรกทอรี={0}, จุดเริ่มต้นการจัดสรร={1}, รายการไดเรกทอรี={2}, ขนาดการจัดสรร={3}, บล็อกไดเรกทอรี={4})",
+    "MediaFileSystems.CpmUserArea": "ผู้ใช้ CP/M {0}"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "תמונת הדיסק '{0}' אינה מכילה אמצעי אחסון SpartaDOS תקין.",
+    "MediaFileSystems.SpartaMissingSector": "מגזר SpartaDOS {0} חסר.",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS מגזר {0} הוא מחוץ לטווח 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "שרשרת מפות המגזרים של SpartaDOS יוצרת לולאה במגזר {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS המפה {0} מתייחסת לקודמו {2} במקום {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "עץ הספריות של SpartaDOS יוצר לולאה בספרייה שהמפה שלה מתחילה במגזר {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "ספריית SpartaDOS במגזר {0} מצהירה על גודל לא תקין של {1} בתים."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "Image format \"{0}\" desteklenen bir CBM DOS dosya sistemi içermiyor.",
+    "MediaFileSystems.CbmDirectoryCycle": "CBM DOS directory zinciri {0}/{1}'de döngüdür.",
+    "MediaFileSystems.CbmDirectoryMissing": "CBM DOS rehberi sektörü {0}/{1} eksik.",
+    "MediaFileSystems.CbmDirectoryTruncated": "CBM DOS rehberi sektörü {0}/{1} sadece {2} bytes içerir.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "CBM DOS rehberi {0}/{1} geçersizdir.",
+    "MediaFileSystems.CbmFileCycle": "{0}: Zincir {1}/{2}'de döngüdür.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: koordinat {1}/{2} geçersizdir.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: sektör {1}/{2} eksiktir.",
+    "MediaFileSystems.CbmFileMissing": "{0}: Sektör {1}/{2} eksik.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: Son sayı {1} geçersizdir.",
+    "MediaFileSystems.CbmCapacity": "{0}: CBM DOS zinciri görüntü kapasitesini aşıyor.",
+    "MediaFileSystems.CbmBamMissing": "CBM DOS BAM {0}/{1} eksik.",
+    "MediaFileSystems.CbmBamTruncated": "CBM DOS BAM {0}/{1} eksiktir; yalnızca {2} bayt içerir.",
+    "MediaFileSystems.PetsciiLength": "PETSCII alanı uzunluğu {0} negatif olmamalıdır.",
+    "MediaFileSystems.PetsciiTooLong": "PETSCII değeri {0} karakterleri aşıyor.",
+    "MediaFileSystems.PetsciiCharacter": "Karakter \"{0}\" desteklenen PETSCII alt set tarafından temsil edilemez.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, açık",
+    "MediaFileSystems.CbmTypeLocked": "{0}, kilitli",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, açık, kilitli"
+  }
+}

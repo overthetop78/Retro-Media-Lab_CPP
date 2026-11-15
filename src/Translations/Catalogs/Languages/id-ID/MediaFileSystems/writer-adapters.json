@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Sebuah gambar representasi media tidak dapat kosong.",
+    "MediaFileSystems.RepresentationCountOverflow": "Penghitung representasi media melebihi rentang bilangan bulat bertanda yang didukung.",
+    "MediaFileSystems.WriterAdapterId": "Pengenal penulis gambar media diperlukan.",
+    "MediaFileSystems.WriterAdapterFormats": "Identifier format target tidak dapat kosong.",
+    "MediaFileSystems.WriterAdapterExtensions": "Ekstensi keluaran tidak dapat kosong.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Fungsi validasi dan penulisan komponen penulis media diperlukan.",
+    "MediaFileSystems.WriterAdapterPath": "Jalur keluaran penulis media diperlukan.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Penulis '{0}' tidak dapat mengekstrak representasi media yang diperlukan.",
+    "MediaFileSystems.WriterAdapterTarget": "Penulis '{0}' tak menerima target '{1}' dengan ekstensi '{2}'.",
+    "MediaFileSystems.WriterAdapterProduced": "Penulis '{0}' tak melaporkan berkas yang dihasilkan valid.",
+    "MediaFileSystems.WriterCommodoreTransform": "Format sumber Commodore '{0}' tidak dapat ditulis sebagai '{1}' tanpa sebuah transformasi geometri."
+  }
+}

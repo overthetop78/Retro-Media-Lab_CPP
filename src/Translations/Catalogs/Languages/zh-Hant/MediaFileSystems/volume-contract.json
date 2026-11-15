@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "卷起必须非负起:{0}.",
+    "MediaFileSystems.VolumeLength": "音量长度必须是正数 :{0}.",
+    "MediaFileSystems.VolumeOrigin": "需要批量来源。",
+    "MediaFileSystems.VolumePartitionNumber": "分区编号必须是正数 :{0}.",
+    "MediaFileSystems.VolumeSessionNumber": "会话编号必须是正数 :{0}.",
+    "MediaFileSystems.VolumeTrackNumber": "音轨编号必须是正数 :{0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "音量范围超过了所支持的已签名的64位边框.",
+    "MediaFileSystems.WholeVolumeRequired": "扇区文件系统阅读器需要一卷,涵盖整个扇区图像."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "MediaFileSystems.UcsdUnrecognized": "The UCSD directory at block {0} is not recognized; invalid blocks: {1}.",
+    "MediaFileSystems.UcsdMissingBlocks": "{0}: UCSD blocks are missing or truncated: {1}.",
+    "MediaFileSystems.UcsdMissingDirectory": "UCSD p-System directory blocks are missing or truncated: {0}.",
+    "MediaFileSystems.UcsdInvalidName": "UCSD entry {0} has an invalid name '{1}'.",
+    "MediaFileSystems.UcsdRange": "UCSD entry {0} ('{1}') uses invalid range [{2}, {3}) in {4} blocks.",
+    "MediaFileSystems.UcsdOverlap": "UCSD entry {0} ('{1}') overlaps blocks {2}.",
+    "MediaFileSystems.UcsdCount": "The UCSD directory declares {0} files, but {1} valid entries were found.",
+    "MediaFileSystems.UcsdLastBytes": "{0}: the final UCSD block declares {1} bytes.",
+    "MediaFileSystems.UcsdTypeUntyped": "UCSD untyped file",
+    "MediaFileSystems.UcsdTypeExternalDisk": "UCSD external disk file",
+    "MediaFileSystems.UcsdTypeCode": "UCSD code file",
+    "MediaFileSystems.UcsdTypeText": "UCSD text file",
+    "MediaFileSystems.UcsdTypeInfo": "UCSD info file",
+    "MediaFileSystems.UcsdTypeData": "UCSD data file",
+    "MediaFileSystems.UcsdTypeGraphics": "UCSD graphics file",
+    "MediaFileSystems.UcsdTypePhoto": "UCSD photo file",
+    "MediaFileSystems.UcsdTypeSecureDirectory": "UCSD secure directory"
+  },
+  "invariants": []
+}

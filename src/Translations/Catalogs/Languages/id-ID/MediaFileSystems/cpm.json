@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.CpmMissingLayout": "Tata letak diska CP/M tidak didukung untuk format {0}.",
+    "MediaFileSystems.CpmUnsupportedDirectory": "Citra tidak memuat direktori CP/M yang didukung untuk format {0}.",
+    "MediaFileSystems.CpmAllocationOutside": "{0}: Blok alokasi CP/M {1} pada ofset {2} berada di luar citra berukuran {3} byte.",
+    "MediaFileSystems.CpmMissingLogicalBlock": "{0}: Blok alokasi CP/M {1} melintasi blok logika yang hilang.",
+    "MediaFileSystems.CpmTruncatedLogicalBlock": "{0}: Blok alokasi CP/M {1} melintasi blok logika terpotong.",
+    "MediaFileSystems.CpmDuplicateAllocation": "{0}: Blok alokasi CP/M {1} direferensikan lebih dari sekali.",
+    "MediaFileSystems.CpmImageMissing": "Citra CP/M berisi {0} blok logis yang hilang.",
+    "MediaFileSystems.CpmImageTruncated": "Citra CP/M berisi {0} blok logis yang terpotong.",
+    "MediaFileSystems.CpmInvalidLayout": "Tata letak CP/M tak valid (direktori ofset = {0}, alokasi asal = {1}, entri direktori = {2}, ukuran alokasi = {3}, blok direktori = {4}).",
+    "MediaFileSystems.CpmUserArea": "CP/M pengguna {0}"
+  }
+}

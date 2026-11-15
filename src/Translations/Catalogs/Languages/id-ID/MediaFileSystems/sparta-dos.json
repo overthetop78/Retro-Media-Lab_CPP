@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "Citra disk '{0}' tidak berisi volume SpartaDOS yang valid.",
+    "MediaFileSystems.SpartaMissingSector": "Sektor SpartaDOS {0} hilang.",
+    "MediaFileSystems.SpartaSectorRange": "Sektor SpartaDOS {0} berada di luar jangkauan 1..{1}.",
+    "MediaFileSystems.SpartaMapLoop": "Rantai peta sektor SpartaDOS membentuk lingkaran pada sektor {0}.",
+    "MediaFileSystems.SpartaMapBackLink": "Peta sektor SpartaDOS {0} mengacu pada pendahulu {2} daripada {1}.",
+    "MediaFileSystems.SpartaDirectoryLoop": "Pohon direktori SpartaDOS membentuk lingkaran pada direktori yang petanya dimulai di sektor {0}.",
+    "MediaFileSystems.SpartaDirectoryLength": "Direktori SpartaDOS pada sektor {0} menyatakan ukuran tidak valid sebesar {1} bita."
+  }
+}

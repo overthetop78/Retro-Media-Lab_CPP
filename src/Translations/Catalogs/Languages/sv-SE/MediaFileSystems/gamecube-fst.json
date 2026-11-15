@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Dokumentet är inte en optisk ISO-bild.",
+    "MediaFileSystems.GameCubeNotImage": "Dokumentet är inte en GameCube-bild.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST kräver optiska spårdata.",
+    "MediaFileSystems.GameCubeNoTrack": "Inget dataspår är tillgängligt för GameCube FST-volymen.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST kräver 2048-byte optiska sektorer.",
+    "MediaFileSystems.GameCubeHeader": "GameCube disc header är ogiltig.",
+    "MediaFileSystems.GameCubeDescriptor": "GameCube FST-beskrivningen är ogiltig.",
+    "MediaFileSystems.GameCubeRoot": "GameCube FST root-posten är ogiltig.",
+    "MediaFileSystems.GameCubeCount": "GameCube FST-antalet är ogiltigt.",
+    "MediaFileSystems.GameCubeDepth": "GameCube FST-katalogen är för djup.",
+    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST-katalogen är ogiltig.",
+    "MediaFileSystems.GameCubeContentLimit": "GameCube-filen \"{0}\" är större än innehållsgränsen och laddades inte.",
+    "MediaFileSystems.GameCubeNameOffset": "GameCube FST-namnkompensationen ligger utanför strängbordet.",
+    "MediaFileSystems.GameCubeSectorData": "Den optiska sektorn GameCube har inga läsbara data.",
+    "MediaFileSystems.GameCubeExtent": "GameCube FST är utanför det optiska spåret.",
+    "MediaFileSystems.GameCubeOverflow": "GameCube FST-värdet överstiger det stödda numeriska intervallet."
+  }
+}

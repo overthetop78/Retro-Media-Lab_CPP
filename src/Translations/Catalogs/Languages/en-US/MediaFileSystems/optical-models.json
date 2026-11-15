@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "The optical logical length cannot be negative.",
+    "MediaFileSystems.OpticalMetadataOnly": "This legacy media descriptor contains metadata only and has no readable data source.",
+    "MediaFileSystems.OpticalIndexNumber": "The optical track index must be between 0 and 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Optical dimension '{0}' must be positive.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Optical dimension '{0}' cannot be negative.",
+    "MediaFileSystems.OpticalDataSource": "An optical track data source is required.",
+    "MediaFileSystems.OpticalUserWindow": "The user data window exceeds one stored sector.",
+    "MediaFileSystems.OpticalTrackSource": "The track data exceeds its source.",
+    "MediaFileSystems.OpticalSubchannelSource": "Subchannel dimensions require a subchannel source.",
+    "MediaFileSystems.OpticalSubchannelRange": "The subchannel data exceeds its source.",
+    "MediaFileSystems.OpticalPregapOffset": "A stored pregap source offset requires stored pregap sectors.",
+    "MediaFileSystems.OpticalPregapRange": "The stored pregap exceeds its source.",
+    "MediaFileSystems.OpticalStoredDestination": "The destination must contain exactly one stored sector.",
+    "MediaFileSystems.OpticalStoredPregap": "The sector is outside the stored pregap.",
+    "MediaFileSystems.OpticalRelativeSector": "The sector is outside the optical track.",
+    "MediaFileSystems.OpticalNullTrack": "An optical track cannot be null."
+  }
+}

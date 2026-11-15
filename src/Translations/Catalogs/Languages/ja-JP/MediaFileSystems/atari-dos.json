@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "{1} バイトのセクターを持つイメージ {0} には、対応する Atari DOS ディレクトリが含まれていません。",
+    "MediaFileSystems.AtariDosDirectoryMissing": "ディレクトリセクター {0} が見つかりません。",
+    "MediaFileSystems.AtariDosDirectoryEntry": "ディレクトリセクター {0}, エントリ {1} は、有効な Atari DOS ファイルエントリではなく、無視されました。",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Atari DOSのデータセクター {1} が見つかりません。",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: Atari DOSのデータチェーンは、セクター {1} でサイクリックです。",
+    "MediaFileSystems.AtariDosOwner": "{0}: セクター {1} はファイル {3} に属しています。期待値は {2} です。",
+    "MediaFileSystems.AtariDosOpen": "ディレクトリセクター {1}, エントリ {2} ('{0}') はまだ出力のために開いており、無視されました。",
+    "MediaFileSystems.AtariDosTruncated": "'{0}' のデータセクター {1} は、チェーンのリンクを格納するには短すぎます。",
+    "MediaFileSystems.AtariDosPremature": "ファイル '{0}' は {1} セクターを宣言しますが、{2} の後のチェーンは終了します。",
+    "MediaFileSystems.AtariDosEmptyData": "空のファイル '{0}' が予期せずセクター {1} を参照しています。",
+    "MediaFileSystems.AtariDosBounded": "ファイル '{0}' はディレクトリで宣言された {1} セクターに制限されていますが、チェーンはセクター {2} へ続いています。",
+    "MediaFileSystems.AtariDosShared": "ファイル '{0}' はセクター {2} からの {3} セクターを '{1}' と共有しています。",
+    "MediaFileSystems.AtariDosUsedLength": "'{0}' のデータセクター {1} は {2} バイトを宣言していますが、利用可能なのは {3} バイトのみです。"
+  }
+}

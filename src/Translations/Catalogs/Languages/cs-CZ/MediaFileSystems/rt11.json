@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaFileSystems.Rt11Home": "Úvodní blok RT-11 je neplatný (signatura '{0}', blok adresáře {1}).",
+    "MediaFileSystems.Rt11SegmentRange": "RT-11 segment {0} v bloku {1} má číslo segmentu mimo rozsah.",
+    "MediaFileSystems.Rt11SegmentCycle": "RT-11 segment {0} v bloku {1} tvoří cyklus.",
+    "MediaFileSystems.Rt11SegmentOutside": "RT-11 segment {0} v bloku {1} je mimo obraz.",
+    "MediaFileSystems.Rt11SegmentMissing": "RT-11 segment {0} v bloku {1} má chybějící nebo zkrácený pár bloků.",
+    "MediaFileSystems.Rt11EntrySize": "RT-11 segment {0} označuje neplatnou velikost záznamu {1} bajtů.",
+    "MediaFileSystems.Rt11EmptyName": "Záznam RT-11 v datovém bloku {0}, ofset {1}, má prázdné jméno.",
+    "MediaFileSystems.Rt11MissingContent": "{0}: RT-11 bloky chybí nebo jsou zkráceny: {1}.",
+    "MediaFileSystems.Rt11Tentative": "Prozatímní soubor RT-11",
+    "MediaFileSystems.Rt11Permanent": "Soubor RT-11"
+  }
+}

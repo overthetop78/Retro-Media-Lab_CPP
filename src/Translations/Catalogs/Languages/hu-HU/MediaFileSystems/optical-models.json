@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Az optikai logikai hossz nem lehet negatív.",
+    "MediaFileSystems.OpticalMetadataOnly": "Ez a hagyományos médialeíró csak metaadatokat tartalmaz, és nincs olvasható adatforrása.",
+    "MediaFileSystems.OpticalIndexNumber": "Az optikai pályaindexnek 0 és 99 között kell lennie.",
+    "MediaFileSystems.OpticalPositiveDimension": "A '{0}' optikai dimenziónak pozitívnak kell lennie.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Az '{0}' optikai dimenzió nem lehet negatív.",
+    "MediaFileSystems.OpticalDataSource": "Optikai pálya adatforrás szükséges.",
+    "MediaFileSystems.OpticalUserWindow": "A felhasználói adatablak meghaladja az egy tárolt szektort.",
+    "MediaFileSystems.OpticalTrackSource": "A pálya adatai meghaladják a forrását.",
+    "MediaFileSystems.OpticalSubchannelSource": "Alcsatornaméretekhez alcsatornaforrás szükséges.",
+    "MediaFileSystems.OpticalSubchannelRange": "Az alcsatorna adatai meghaladják a forrását.",
+    "MediaFileSystems.OpticalPregapOffset": "A tárolt pregap forráseltolásához tárolt pregap szektorok szükségesek.",
+    "MediaFileSystems.OpticalPregapRange": "A tárolt pregap túllépi a forrás határait.",
+    "MediaFileSystems.OpticalStoredDestination": "A célállomásnak pontosan egy tárolt szektort kell tartalmaznia.",
+    "MediaFileSystems.OpticalStoredPregap": "A szektor a tárolt pregap területén kívül van.",
+    "MediaFileSystems.OpticalRelativeSector": "A szektor kívül esik az optikai pályán.",
+    "MediaFileSystems.OpticalNullTrack": "Az optikai sáv nem lehet nulla."
+  }
+}

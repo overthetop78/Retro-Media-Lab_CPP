@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "A VTOC által a(z) {0}. sáv {1}. szektorán hivatkozott Apple DOS katalógus hiányzik vagy érvénytelen.",
+    "MediaFileSystems.AppleDosCatalogChain": "Az Apple DOS {0}/{1} katalógusszektora hiányzik vagy ciklus része.",
+    "MediaFileSystems.AppleDosAddress": "A(z) {0} Apple DOS címe ({1}/{2}) kívül esik a lemez geometriáján.",
+    "MediaFileSystems.AppleDosListCycle": "A(z) {0} sáv-/szektorlistája ciklust alkot a(z) {1}/{2} címen.",
+    "MediaFileSystems.AppleDosListMissing": "A(z) {0} sáv-/szektorlistája hiányzik a(z) {1}/{2} címen.",
+    "MediaFileSystems.AppleDosDataMissing": "A(z) {0} {1}/{2} adatszektora hiányzik.",
+    "MediaFileSystems.AppleDosSize": "A(z) {0} fájl {1} szektort ad meg, de {2} szektor lett bejárva.",
+    "MediaFileSystems.AppleDosWriteFormat": "Az Apple DOS {0} célformátuma nem támogatott.",
+    "MediaFileSystems.AppleDosWriteFull": "Az Apple DOS köteten nincs elegendő katalógus- vagy adatszektor.",
+    "MediaFileSystems.AppleDosWriteVolume": "Az Apple DOS kötet {0} nevének DOS-nnn formátumúnak kell lennie.",
+    "MediaFileSystems.AppleDosWriteEntry": "Az Apple DOS csak a gyökérkatalógusban elérhető tartalmú fájlokat támogatja.",
+    "MediaFileSystems.AppleDosBinarySize": "Egy Apple DOS bináris fájl nem haladhatja meg a 65535 bájtot.",
+    "MediaFileSystems.AppleDosWriteName": "Az Apple DOS {0} fájlneve nem kódolható katalógusbejegyzésbe.",
+    "MediaFileSystems.AppleDosTypeText": "Szöveg",
+    "MediaFileSystems.AppleDosTypeBinary": "Bináris",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Áthelyezhető",
+    "MediaFileSystems.AppleDosTypeFile": "Fájl"
+  }
+}

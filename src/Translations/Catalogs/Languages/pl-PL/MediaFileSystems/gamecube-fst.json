@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Dokument nie jest optycznym obrazem ISO.",
+    "MediaFileSystems.GameCubeNotImage": "Dokument nie jest obrazem GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST wymaga danych optycznych.",
+    "MediaFileSystems.GameCubeNoTrack": "Brak ścieżki danych dla głośności FST GameCube.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST wymaga 2048- bajtowych sektorów optycznych.",
+    "MediaFileSystems.GameCubeHeader": "Nagłówek dysku GameCube jest nieprawidłowy.",
+    "MediaFileSystems.GameCubeDescriptor": "Deskryptor FST GameCube jest nieprawidłowy.",
+    "MediaFileSystems.GameCubeRoot": "Wpis korzenia GameCube FST jest nieprawidłowy.",
+    "MediaFileSystems.GameCubeCount": "Liczba wpisów GameCube FST jest nieprawidłowa.",
+    "MediaFileSystems.GameCubeDepth": "Drzewo katalogowe GameCube FST jest zbyt głębokie.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Zakres katalogów GameCube FST jest nieprawidłowy.",
+    "MediaFileSystems.GameCubeContentLimit": "Plik GameCube 'a' {0} 'jest większy niż limit zawartości i nie został załadowany.",
+    "MediaFileSystems.GameCubeNameOffset": "Przesunięcie nazwy FST GameCube znajduje się poza tabelą strun.",
+    "MediaFileSystems.GameCubeSectorData": "Sektor optyczny GameCube nie ma czytelnych danych.",
+    "MediaFileSystems.GameCubeExtent": "GameCube FST jest poza torem optycznym.",
+    "MediaFileSystems.GameCubeOverflow": "Wartość FST GameCube przekracza obsługiwany zakres liczbowy."
+  }
+}

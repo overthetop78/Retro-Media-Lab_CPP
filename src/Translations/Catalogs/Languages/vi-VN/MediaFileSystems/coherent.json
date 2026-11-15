@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Giá trị chuẩn COHERENT chứa {0} byte; cần {1} byte.",
+    "Media.CoherentPointerLength": "Con trỏ khối COHERENT chứa {0} byte; cần {1} byte.",
+    "Media.CoherentInvalidSuperblock": "Ảnh không chứa hệ thống tập tin COHERENT hợp lệ.",
+    "Media.CoherentDeclaredBlocks": "COHERENT tuyên bố {0} khối nhưng chỉ {1} sẵn sàng.",
+    "Media.CoherentMissingSuperblock": "Thiếu một khối bắt buộc của siêu khối COHERENT.",
+    "Media.CoherentInodeZone": "Vùng inode COHERENT kết thúc tại khối {0}, nằm ngoài hệ thống tập tin gồm {1} khối.",
+    "Media.CoherentNullInode": "COHERENT nút 0 không hợp lệ.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} nằm ngoài vùng inode có kích thước {1} byte.",
+    "Media.CoherentFileTooLarge": "Không thể biểu diễn chiều dài tập tin COHERENT {0} byte trong bộ nhớ.",
+    "Media.CoherentDirectUnavailable": "{0}: khối trực tiếp COHERENT {1} bị thiếu hoặc nằm ngoài ảnh đĩa.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT khối gián tiếp {1} ở cấp {2} bị mất tích hoặc nằm ngoài hình ảnh.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT gián tiếp khối {1} ở cấp {2} được tham chiếu nhiều lần.",
+    "Media.CoherentDirectoryCycle": "{0}: COHERENT Inode thư mục {1} Tạo thành một chu kỳ.",
+    "Media.CoherentDirectoryRepeated": "{0}: thư mục COHERENT inode {1} đã được viếng thăm.",
+    "Media.CoherentChildUnreadable": "{0}: không thể đọc inode con COHERENT.",
+    "Media.CoherentMissingBytes": "{0}: {1} COHERENT byte mất tích và vẫn còn nguyên vị trí số không.",
+    "Media.CoherentDepth": "{0}: giới hạn độ sâu của thư mục COHERENT đã đạt đến độ sâu {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

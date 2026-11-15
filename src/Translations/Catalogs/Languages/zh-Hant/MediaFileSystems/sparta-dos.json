@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.SpartaUnsupported": "磁碟映像「{0}」不包含有效的 SpartaDOS 磁碟區。",
+    "MediaFileSystems.SpartaMissingSector": "SpartaDOS 磁區 {0} 遺失。",
+    "MediaFileSystems.SpartaSectorRange": "SpartaDOS 磁區 {0} 超出範圍 1..{1}。",
+    "MediaFileSystems.SpartaMapLoop": "SpartaDOS 磁區對映鏈在磁區 {0} 處形成循環。",
+    "MediaFileSystems.SpartaMapBackLink": "SpartaDOS 磁區對映 {0} 指向前驅 {2}，而非 {1}。",
+    "MediaFileSystems.SpartaDirectoryLoop": "SpartaDOS 目錄樹在其對映從磁區 {0} 開始的目錄處形成循環。",
+    "MediaFileSystems.SpartaDirectoryLength": "磁區 {0} 處的 SpartaDOS 目錄宣告了無效的大小：{1} 位元組。"
+  }
+}

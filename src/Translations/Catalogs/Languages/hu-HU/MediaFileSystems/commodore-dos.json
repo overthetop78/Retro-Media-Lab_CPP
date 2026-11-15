@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.CbmUnsupported": "A '{0}' képformátum nem tartalmaz támogatott CBM DOS fájlrendszert.",
+    "MediaFileSystems.CbmDirectoryCycle": "A CBM DOS könyvtárlánc ciklikus a {0} / {1} -nél.",
+    "MediaFileSystems.CbmDirectoryMissing": "A CBM DOS könyvtárszektor {0} / {1} hiányzik.",
+    "MediaFileSystems.CbmDirectoryTruncated": "A CBM DOS könyvtár szektor {0} / {1} csak {2} bájtot tartalmaz.",
+    "MediaFileSystems.CbmDirectoryCoordinate": "A CBM DOS könyvtár koordináta {0} / {1} érvénytelen.",
+    "MediaFileSystems.CbmFileCycle": "{0}: a lánc a {1} / {2}-nél ciklikus.",
+    "MediaFileSystems.CbmFileCoordinate": "{0}: a koordináta {1} / {2} érvénytelen.",
+    "MediaFileSystems.CbmFileTruncated": "{0}: az ágazat {1} / {2} csonka.",
+    "MediaFileSystems.CbmFileMissing": "{0}: {1} / {2} ágazat hiányzik.",
+    "MediaFileSystems.CbmFileFinalCount": "{0}: a végső szám {1} érvénytelen.",
+    "MediaFileSystems.CbmCapacity": "{0}: a CBM DOS lánc meghaladja a képkapacitást.",
+    "MediaFileSystems.CbmBamMissing": "A {0} / {1} -nél szükséges CBM DOS BAM hiányzik.",
+    "MediaFileSystems.CbmBamTruncated": "A CBM DOS BAM {0} / {1} a {2} bájtokra csonkítva.",
+    "MediaFileSystems.PetsciiLength": "A PETSCII mező hossza {0} nem lehet negatív.",
+    "MediaFileSystems.PetsciiTooLong": "A PETSCII értéke meghaladja a {0} karaktert.",
+    "MediaFileSystems.PetsciiCharacter": "A \"{0}\" karaktert nem képviselheti a támogatott PETSCII alcsoport.",
+    "MediaFileSystems.CbmType": "{0}",
+    "MediaFileSystems.CbmTypeOpen": "{0}, nyitott",
+    "MediaFileSystems.CbmTypeLocked": "{0}, zárolt",
+    "MediaFileSystems.CbmTypeOpenLocked": "{0}, nyitott, zárolt"
+  }
+}

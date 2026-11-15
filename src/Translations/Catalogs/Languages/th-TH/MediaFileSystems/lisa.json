@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "อิมเมจดิสก์ไม่มีระบบไฟล์ Lisa ที่มีแท็กในหน้าทั้งหมด {0} หน้า",
+    "MediaFileSystems.LisaMissingPage": "ไฟล์ Lisa 0x{0} ไม่มีหน้า {1}",
+    "MediaFileSystems.LisaTruncatedMddf": "หน้า Lisa MDDF มี {0} ไบต์ แต่ต้องมี {1} ไบต์",
+    "MediaFileSystems.LisaInvalidTag": "บล็อกเชิงตรรกะ Lisa {0} มีแท็กขนาด {1} ไบต์ แต่ต้องมี {2} ไบต์",
+    "MediaFileSystems.LisaDuplicatePage": "ไฟล์ Lisa 0x{0} มีสำเนาของหน้า {1} หลายชุด",
+    "MediaFileSystems.LisaUnknownFreeSpace": "ไม่สามารถระบุพื้นที่ว่างของ Lisa ได้หากไม่มีแท็กที่ใช้งานได้",
+    "MediaFileSystems.LisaFileDescription": "ไฟล์ Lisa ${0}"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "A imagem {0} com setores de {1} bytes não contém um diretório Atari DOS suportado.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "O setor de diretório {0} está em falta.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "O setor de diretório {0}, entrada {1}, não é uma entrada de ficheiro Atari DOS válida e foi ignorado.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: o setor de dados Atari DOS {1} está em falta.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: a cadeia de dados Atari DOS contém um ciclo no setor {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: o setor {1} pertence ao ficheiro {3}; era esperado {2}.",
+    "MediaFileSystems.AtariDosOpen": "O setor de diretório {1}, entrada {2} ('{0}'), continua aberto para escrita e foi ignorado.",
+    "MediaFileSystems.AtariDosTruncated": "O setor de dados {1} de '{0}' é demasiado curto para conter a sua ligação.",
+    "MediaFileSystems.AtariDosPremature": "O ficheiro '{0}' declara {1} setores, mas a sua cadeia termina após {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "O ficheiro vazio '{0}' referencia inesperadamente o setor {1}.",
+    "MediaFileSystems.AtariDosBounded": "O ficheiro '{0}' está limitado aos {1} setores declarados na entrada de diretório, enquanto a cadeia subjacente continua no setor {2}.",
+    "MediaFileSystems.AtariDosShared": "O ficheiro '{0}' partilha {3} setores a partir do setor {2} com '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "O setor de dados {1} de '{0}' declara {2} bytes, mas apenas {3} estão disponíveis."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaFileSystems.AtariDosUnsupportedDirectory": "L'immagine {0} con settori di {1} byte non contiene una directory Atari DOS supportata.",
+    "MediaFileSystems.AtariDosDirectoryMissing": "Settore directory {0} manca.",
+    "MediaFileSystems.AtariDosDirectoryEntry": "Settore directory {0}, l'entrata {1} non è una voce valida del file Atari DOS ed è stata ignorata.",
+    "MediaFileSystems.AtariDosDataMissing": "{0}: Manca il settore dati Atari DOS {1}.",
+    "MediaFileSystems.AtariDosChainCycle": "{0}: La catena di dati Atari DOS è ciclica nel settore {1}.",
+    "MediaFileSystems.AtariDosOwner": "{0}: settore {1} appartiene al file {3}, previsto {2}.",
+    "MediaFileSystems.AtariDosOpen": "Settore directory {1}, la voce {2} ('{0}') è ancora aperta per l'output ed è stata ignorata.",
+    "MediaFileSystems.AtariDosTruncated": "Il settore dei dati {1} per '{0}' è troppo breve per contenere il suo collegamento.",
+    "MediaFileSystems.AtariDosPremature": "Il file '{0}' dichiara settori {1}, ma la sua catena termina dopo {2}.",
+    "MediaFileSystems.AtariDosEmptyData": "Il file vuoto '{0}' fa riferimento inaspettatamente al settore {1}.",
+    "MediaFileSystems.AtariDosBounded": "Il file '{0}' è limitato ai {1} settori dichiarati nella sua voce di directory, mentre la catena continua al settore {2}.",
+    "MediaFileSystems.AtariDosShared": "Il file '{0}' condivide {3} settori, a partire dal settore {2}, con '{1}'.",
+    "MediaFileSystems.AtariDosUsedLength": "Il settore dei dati {1} per '{0}' dichiara {2} byte ma solo {3} sono disponibili."
+  }
+}

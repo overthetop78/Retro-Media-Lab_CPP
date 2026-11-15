@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaFileSystems.VolumeStart": "Початок об'єму повинен бути негативним: {0}.",
+    "MediaFileSystems.VolumeLength": "Довжина об'єму повинна бути позитивним: {0}.",
+    "MediaFileSystems.VolumeOrigin": "Необхідний обсяг.",
+    "MediaFileSystems.VolumePartitionNumber": "Номер розділу повинен бути позитивним: {0}.",
+    "MediaFileSystems.VolumeSessionNumber": "Номер сеансу повинен бути позитивним: {0}.",
+    "MediaFileSystems.VolumeTrackNumber": "Номер доріжки повинен бути позитивним: {0}.",
+    "MediaFileSystems.VolumeRangeOverflow": "Діапазон об'єму перевищує підтримувані 64-розрядні межі.",
+    "MediaFileSystems.WholeVolumeRequired": "Зчитувач файлової системи сектора вимагає об'єму, що охоплює весь сектор зображення."
+  }
+}

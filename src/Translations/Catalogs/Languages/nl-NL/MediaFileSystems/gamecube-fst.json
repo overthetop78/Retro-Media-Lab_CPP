@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Het document is geen optisch ISO-beeld.",
+    "MediaFileSystems.GameCubeNotImage": "Het document is geen GameCube-afbeelding.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST vereist optische spoorgegevens.",
+    "MediaFileSystems.GameCubeNoTrack": "Er is geen datatrack beschikbaar voor het FST-volume van GameCube.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST vereist 2048-byte optische sectoren.",
+    "MediaFileSystems.GameCubeHeader": "De GameCube-schijfheader is ongeldig.",
+    "MediaFileSystems.GameCubeDescriptor": "De GameCube FST-descriptor is ongeldig.",
+    "MediaFileSystems.GameCubeRoot": "De GameCube FST root ingang is ongeldig.",
+    "MediaFileSystems.GameCubeCount": "De GameCube FST-invoer is ongeldig.",
+    "MediaFileSystems.GameCubeDepth": "De GameCube FST directory boom is te diep.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Het bereik van de GameCube FST-map is ongeldig.",
+    "MediaFileSystems.GameCubeContentLimit": "GameCube-bestand '{0}' is groter dan de inhoudslimiet en is niet geladen.",
+    "MediaFileSystems.GameCubeNameOffset": "De GameCube FST naam offset is buiten de string tabel.",
+    "MediaFileSystems.GameCubeSectorData": "De optische sector van GameCube heeft geen leesbare gegevens.",
+    "MediaFileSystems.GameCubeExtent": "De GameCube FST-omvang ligt buiten het optische spoor.",
+    "MediaFileSystems.GameCubeOverflow": "De GameCube FST-waarde overschrijdt het ondersteunde numerieke bereik."
+  }
+}

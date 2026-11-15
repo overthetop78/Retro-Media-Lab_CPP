@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaFileSystems.AppleDosCatalogMissing": "Catalogul Apple DOS menționat de VTOC la pista {0}, sectorul {1} lipsește sau nu este valid.",
+    "MediaFileSystems.AppleDosCatalogChain": "Sectorul de catalog Apple DOS {0}/{1} lipsește sau face parte dintr-un ciclu.",
+    "MediaFileSystems.AppleDosAddress": "Adresa Apple DOS {1}/{2} pentru {0} este în afara geometriei discului.",
+    "MediaFileSystems.AppleDosListCycle": "Lista de piste/sectoare pentru {0} este ciclică la {1}/{2}.",
+    "MediaFileSystems.AppleDosListMissing": "Lista de piste/sectoare pentru {0} lipsește la {1}/{2}.",
+    "MediaFileSystems.AppleDosDataMissing": "Sectorul de date {1}/{2} pentru {0} lipsește.",
+    "MediaFileSystems.AppleDosSize": "Fișierul {0} declară {1} sectoare, dar au fost parcurse {2} sectoare.",
+    "MediaFileSystems.AppleDosWriteFormat": "Formatul țintă Apple DOS {0} nu este acceptat.",
+    "MediaFileSystems.AppleDosWriteFull": "Volumul Apple DOS nu are suficiente sectoare de catalog sau de date.",
+    "MediaFileSystems.AppleDosWriteVolume": "Numele volumului Apple DOS {0} trebuie să utilizeze DOS-nnn.",
+    "MediaFileSystems.AppleDosWriteEntry": "Apple DOS suportă doar fișiere cu conținut disponibil în catalogul rădăcină.",
+    "MediaFileSystems.AppleDosBinarySize": "Un fișier binar Apple DOS nu poate depăși 65535 de octeți.",
+    "MediaFileSystems.AppleDosWriteName": "Numele fișierului Apple DOS {0} nu poate fi codificat într-o intrare de catalog.",
+    "MediaFileSystems.AppleDosTypeText": "Text",
+    "MediaFileSystems.AppleDosTypeBinary": "Binar",
+    "MediaFileSystems.AppleDosTypeRelocatable": "Relocabil",
+    "MediaFileSystems.AppleDosTypeFile": "Fișier"
+  }
+}

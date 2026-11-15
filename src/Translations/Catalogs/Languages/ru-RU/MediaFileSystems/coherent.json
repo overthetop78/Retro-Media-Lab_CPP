@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Media.CoherentCanonicalLength": "Каноническое значение COHERENT содержит байты {0}; требуется {1}.",
+    "Media.CoherentPointerLength": "Блок-указатель COHERENT содержит {0} байты; {1} необходимы.",
+    "Media.CoherentInvalidSuperblock": "Изображение не содержит действительной файловой системы COHERENT.",
+    "Media.CoherentDeclaredBlocks": "COHERENT объявляет блоки {0}, но доступны только {1}.",
+    "Media.CoherentMissingSuperblock": "Необходимый блок суперблока COHERENT отсутствует.",
+    "Media.CoherentInodeZone": "Инодная зона COHERENT заканчивается на блоке {0}, вне файловой системы блоков {1}.",
+    "Media.CoherentNullInode": "Нулевой inode COHERENT недопустим.",
+    "Media.CoherentInodeOutside": "COHERENT inode {0} находится за пределами инодной зоны {1} байтов.",
+    "Media.CoherentFileTooLarge": "Длина файла COHERENT {0} байтов не может быть представлена в памяти.",
+    "Media.CoherentDirectUnavailable": "{0}: COHERENT прямой блок {1} отсутствует или находится вне изображения.",
+    "Media.CoherentIndirectUnavailable": "{0}: COHERENT косвенный блок {1} на уровне {2} отсутствует или находится вне изображения.",
+    "Media.CoherentIndirectRepeated": "{0}: COHERENT косвенный блок {1} на уровне {2} упоминается более одного раза.",
+    "Media.CoherentDirectoryCycle": "{0}: Инод каталога COHERENT {1} образует цикл.",
+    "Media.CoherentDirectoryRepeated": "{0}: каталог COHERENT inode {1} уже посетили.",
+    "Media.CoherentChildUnreadable": "{0}: невозможно прочитать дочерний inode COHERENT.",
+    "Media.CoherentMissingBytes": "{0}: байты {1} COHERENT отсутствуют и остаются позиционированными как нули.",
+    "Media.CoherentDepth": "{0}: предел глубины каталога COHERENT был достигнут на глубине {1}.",
+    "Media.CoherentInodeDescription": "COHERENT inode {0}"
+  }
+}

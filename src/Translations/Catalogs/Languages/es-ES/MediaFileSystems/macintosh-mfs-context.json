@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaFileSystems.MfsVolumeBlockMissing": "El bloque de información del volumen {0} falta o tiene un tamaño no válido.",
+    "MediaFileSystems.MfsDirectoryBlockMissing": "El bloque de directorio {0} falta o tiene un tamaño no válido.",
+    "MediaFileSystems.MfsDataBlockMissing": "{0}: el flujo de datos: el bloque {1} falta o tiene un tamaño no válido.",
+    "MediaFileSystems.MfsDataIncomplete": "{0}: el flujo de datos contiene {1} bytes; se esperaban {2}.",
+    "MediaFileSystems.MfsDataMetadata": "{0}: el flujo de datos declara {1} bytes desde el clúster {2}; los metadatos son incoherentes.",
+    "MediaFileSystems.MfsDataChainCycle": "{0}: el flujo de datos: la cadena de asignación contiene un ciclo.",
+    "MediaFileSystems.MfsDataChainOutside": "{0}: el flujo de datos: la cadena de asignación hace referencia fuera del mapa de asignación.",
+    "MediaFileSystems.MfsDataChainPremature": "{0}: el flujo de datos: la cadena de asignación termina antes de que estén disponibles todos los clústeres necesarios.",
+    "MediaFileSystems.MfsResourceBlockMissing": "{0}: el flujo de recursos: el bloque {1} falta o tiene un tamaño no válido.",
+    "MediaFileSystems.MfsResourceIncomplete": "{0}: el flujo de recursos contiene {1} bytes; se esperaban {2}.",
+    "MediaFileSystems.MfsResourceMetadata": "{0}: el flujo de recursos declara {1} bytes desde el clúster {2}; los metadatos son incoherentes.",
+    "MediaFileSystems.MfsResourceChainCycle": "{0}: el flujo de recursos: la cadena de asignación contiene un ciclo.",
+    "MediaFileSystems.MfsResourceChainOutside": "{0}: el flujo de recursos: la cadena de asignación hace referencia fuera del mapa de asignación.",
+    "MediaFileSystems.MfsResourceChainPremature": "{0}: el flujo de recursos: la cadena de asignación termina antes de que estén disponibles todos los clústeres necesarios."
+  }
+}

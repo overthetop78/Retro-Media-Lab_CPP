@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaFileSystems.RepresentationImageNull": "Et mediebilde kan ikke være null.",
+    "MediaFileSystems.RepresentationCountOverflow": "Telleren i medierepresentasjonen overskrider det støttede området for heltall med fortegn.",
+    "MediaFileSystems.WriterAdapterId": "En identifikator for mediebilde er nødvendig.",
+    "MediaFileSystems.WriterAdapterFormats": "Målformatidentifikatorer kan ikke være tomme.",
+    "MediaFileSystems.WriterAdapterExtensions": "Utvidelser kan ikke være tomme.",
+    "MediaFileSystems.WriterAdapterCallbacks": "Det kreves validering av medieskrivere og utgangstilbakekallinger.",
+    "MediaFileSystems.WriterAdapterPath": "Det kreves en utgangsbane for medieskrivere.",
+    "MediaFileSystems.WriterAdapterRepresentation": "Skrivekomponenten «{0}» kan ikke hente den nødvendige medierepresentasjonen.",
+    "MediaFileSystems.WriterAdapterTarget": "Writer «{0}» aksepterer ikke målet «{1}» med utvidelsen «{2}».",
+    "MediaFileSystems.WriterAdapterProduced": "Skrivekomponenten «{0}» rapporterte ikke gyldige utdatafiler.",
+    "MediaFileSystems.WriterCommodoreTransform": "Commodore kildeformat «{0}» kan ikke skrives som '{1}' uten en geometritransformasjon."
+  }
+}

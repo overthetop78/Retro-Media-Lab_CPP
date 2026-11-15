@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "O comprimento lógico óptico não pode ser negativo.",
+    "MediaFileSystems.OpticalMetadataOnly": "Este descritor de mídia legado contém apenas metadados e não tem fonte de dados legível.",
+    "MediaFileSystems.OpticalIndexNumber": "O índice óptico da via deve estar compreendido entre 0 e 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "A dimensão óptica «{0}» deve ser positiva.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "A dimensão óptica '{0}' não pode ser negativa.",
+    "MediaFileSystems.OpticalDataSource": "É necessária uma fonte óptica de dados da via.",
+    "MediaFileSystems.OpticalUserWindow": "A janela de dados do usuário excede um setor armazenado.",
+    "MediaFileSystems.OpticalTrackSource": "Os dados da faixa excedem sua fonte.",
+    "MediaFileSystems.OpticalSubchannelSource": "As dimensões subcanais requerem uma fonte subcanal.",
+    "MediaFileSystems.OpticalSubchannelRange": "Os dados do subcanal excedem sua fonte.",
+    "MediaFileSystems.OpticalPregapOffset": "Um offset de fonte pré-gap armazenado requer setores pré-gap armazenados.",
+    "MediaFileSystems.OpticalPregapRange": "O pré-gap armazenado excede sua fonte.",
+    "MediaFileSystems.OpticalStoredDestination": "O destino deve conter exactamente um sector armazenado.",
+    "MediaFileSystems.OpticalStoredPregap": "O setor está fora do pré-gap armazenado.",
+    "MediaFileSystems.OpticalRelativeSector": "O sector está fora da via óptica.",
+    "MediaFileSystems.OpticalNullTrack": "Uma faixa óptica não pode ser nula."
+  }
+}

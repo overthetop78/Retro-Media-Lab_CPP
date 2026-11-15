@@ -1,0 +1,76 @@
+#pragma once
+#include "../FileCore/Constants.h"
+#include <cstdint>
+#include <string_view>
+namespace RetroMediaLab::MediaFileSystems::Adfs::Constants {
+inline constexpr int UnitSize = FileCore::Constants::FileCoreUnitSize;
+inline constexpr int BlockSize = 1024;
+inline constexpr int DirectorySize = 2048;
+inline constexpr int BbcDirectorySize = 1280;
+inline constexpr int EntryCount = 77;
+inline constexpr int BbcEntryCount = 47;
+inline constexpr int EntrySize = 26;
+inline constexpr int EntriesOffset = 5;
+inline constexpr int NameLength = 10;
+inline constexpr int LoadOffset = 10;
+inline constexpr int ExecuteOffset = 14;
+inline constexpr int LengthOffset = 18;
+inline constexpr int AddressOffset = 22;
+inline constexpr int AttributesOffset = 25;
+inline constexpr int DirectoryAttribute = 8;
+inline constexpr int TailOffset = EntriesOffset + EntryCount * EntrySize;
+inline constexpr int TitleOffset = TailOffset + 6;
+inline constexpr int DirectoryNameOffset = TailOffset + 25;
+inline constexpr int ParentOffset = TailOffset + 3;
+inline constexpr int BbcNameOffset = 1228;
+inline constexpr int BbcTitleOffset = 1241;
+inline constexpr int BbcParentOffset = 1238;
+inline constexpr int TitleLength = 19;
+inline constexpr int SignatureSize = 4;
+inline constexpr int FooterOffset = 5;
+inline constexpr int SequenceOffset = 6;
+inline constexpr int MaximumDepth = 64;
+inline constexpr int BbcRootAddress = 2;
+inline constexpr int DRootAddress = 4;
+inline constexpr int FirstFreeSector = 7;
+inline constexpr int DFirstFreeUnit = (DRootAddress * UnitSize + DirectorySize) / UnitSize;
+inline constexpr int DBlockCount = 800;
+inline constexpr int InterleavedHeads = 2;
+inline constexpr int InterleavedSectors = 16;
+inline constexpr int FirstNameOffset = FileCore::Constants::FirstNameOffset;
+inline constexpr int SecondNameOffset = FileCore::Constants::SecondNameOffset;
+inline constexpr int HalfNameLength = FileCore::Constants::HalfNameLength;
+inline constexpr int TotalUnitsOffset = 0xfc;
+inline constexpr int FreeEndOffset = 0x1fe;
+inline constexpr int UInt24Size = FileCore::Constants::UInt24Size;
+inline constexpr std::uint32_t UInt24Maximum = 0xffffff;
+inline constexpr int BitsPerByte = FileCore::Constants::BitsPerByte;
+inline constexpr int ByteMask = FileCore::Constants::ByteMask;
+inline constexpr int ChecksumStartOffset = 254;
+inline constexpr int MapByteCount = 512;
+inline constexpr int CheckSecondByteShift = 16;
+inline constexpr int WordBytes = FileCore::Constants::WordBytes;
+inline constexpr int CheckRotation = 13;
+inline constexpr int BbcAttributeShift = 7;
+inline constexpr char Space = ' ';
+inline constexpr char RootName = '$';
+inline constexpr char UpperFirst = 'A';
+inline constexpr char LowerFirst = 'a';
+inline constexpr char LowerLast = 'z';
+inline constexpr std::string_view Hugo = "Hugo";
+inline constexpr std::string_view Nick = "Nick";
+inline constexpr std::string_view FileSystemId = "acorn-adfs";
+inline constexpr std::uint32_t TimestampMask = 0xfff00000;
+inline constexpr std::uint32_t TypeMask = 0xfff;
+inline constexpr int HighTimeBits = 32;
+inline constexpr int EpochYear = 1900;
+inline constexpr int CentisecondsPerSecond = 100;
+inline constexpr int NanosecondsPerCentisecond = 10000000;
+inline constexpr int AddressHexWidth = 8;
+inline constexpr int TypeHexWidth = 3;
+inline constexpr char HexPadding = '0';
+inline constexpr std::string_view RiscDescription = "RISC OS file type &";
+inline constexpr std::string_view LoadDescription = ", load &";
+inline constexpr std::string_view AdfsDescription = "ADFS load &";
+inline constexpr std::string_view ExecuteDescription = ", execute &";
+}

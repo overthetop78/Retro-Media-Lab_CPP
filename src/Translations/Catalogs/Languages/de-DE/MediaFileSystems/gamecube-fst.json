@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.GameCubeNotIso": "Das Dokument ist kein optisches ISO-Bild.",
+    "MediaFileSystems.GameCubeNotImage": "Das Dokument ist kein GameCube-Bild.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST benötigt optische Spurdaten.",
+    "MediaFileSystems.GameCubeNoTrack": "Für das GameCube FST-Volume ist keine Datenspur verfügbar.",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST benötigt 2048-Byte optische Sektoren.",
+    "MediaFileSystems.GameCubeHeader": "Der GameCube Disc Header ist ungültig.",
+    "MediaFileSystems.GameCubeDescriptor": "Der GameCube FST-Deskriptor ist ungültig.",
+    "MediaFileSystems.GameCubeRoot": "Der GameCube FST Root-Eintrag ist ungültig.",
+    "MediaFileSystems.GameCubeCount": "Die GameCube FST-Eintragszahl ist ungültig.",
+    "MediaFileSystems.GameCubeDepth": "Der GameCube FST-Verzeichnisbaum ist zu tief.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Der GameCube FST-Verzeichnisbereich ist ungültig.",
+    "MediaFileSystems.GameCubeContentLimit": "Die GameCube-Datei '{0}' ist größer als das Inhaltslimit und wurde nicht geladen.",
+    "MediaFileSystems.GameCubeNameOffset": "Der GameCube FST Name Offset befindet sich außerhalb der String-Tabelle.",
+    "MediaFileSystems.GameCubeSectorData": "Der optische Sektor GameCube hat keine lesbaren Daten.",
+    "MediaFileSystems.GameCubeExtent": "Der GameCube FST-Ausschnitt befindet sich außerhalb der optischen Spur.",
+    "MediaFileSystems.GameCubeOverflow": "Der GameCube FST-Wert übersteigt den unterstützten numerischen Bereich."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaFileSystems.OpticalLogicalLength": "Panjang logika optik tidak dapat negatif.",
+    "MediaFileSystems.OpticalMetadataOnly": "Deskripsi media warisan ini hanya berisi metadata dan tidak memiliki sumber data yang dapat dibaca.",
+    "MediaFileSystems.OpticalIndexNumber": "Indeks trek optik harus antara 0 dan 99.",
+    "MediaFileSystems.OpticalPositiveDimension": "Dimensi optik '{0}' harus positif.",
+    "MediaFileSystems.OpticalNonNegativeDimension": "Dimensi optik '{0}' tidak dapat negatif.",
+    "MediaFileSystems.OpticalDataSource": "Sumber data trek optik diperlukan.",
+    "MediaFileSystems.OpticalUserWindow": "Jendela data pengguna melebihi satu sektor tersimpan.",
+    "MediaFileSystems.OpticalTrackSource": "Data trek melebihi sumbernya.",
+    "MediaFileSystems.OpticalSubchannelSource": "Dimensi subchannel memerlukan sumber subsaluran.",
+    "MediaFileSystems.OpticalSubchannelRange": "Data subchannel melebihi sumbernya.",
+    "MediaFileSystems.OpticalPregapOffset": "Ofset sumber yang disimpan memerlukan sektor pregap yang tersimpan.",
+    "MediaFileSystems.OpticalPregapRange": "Pregap tersimpan melebihi sumbernya.",
+    "MediaFileSystems.OpticalStoredDestination": "Tujuan harus berisi tepat satu sektor yang tersimpan.",
+    "MediaFileSystems.OpticalStoredPregap": "Sektor berada di luar pregap yang tersimpan.",
+    "MediaFileSystems.OpticalRelativeSector": "Sektor berada di luar jalur optik.",
+    "MediaFileSystems.OpticalNullTrack": "Sebuah trek optik tidak dapat kosong."
+  }
+}

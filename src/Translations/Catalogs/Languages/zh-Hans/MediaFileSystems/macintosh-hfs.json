@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaFileSystems.HfsCatalogBlockMissing": "目录数据流的块 {0} 缺失。",
+    "MediaFileSystems.HfsCatalogIncomplete": "目录数据流包含 {0} 字节；预期为 {1} 字节。",
+    "MediaFileSystems.HfsCatalogTruncated": "HFS 目录包含 {0} 字节；需要 {1} 字节。",
+    "MediaFileSystems.HfsNoRecords": "HFS 目录不包含任何可读取的记录。",
+    "MediaFileSystems.MacDirectoryCycle": "Macintosh 目录 {0} 在目录记录中形成循环。",
+    "MediaFileSystems.HfsDirectory": "目录"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaFileSystems.ProDosUnsupported": "블록 {0}의 ProDOS/SOS 볼륨 헤더를 인식할 수 없습니다(읽은 값: ${1}).",
+    "MediaFileSystems.ProDosDepth": "ProDOS 디렉토리 블록 {1}는 레벨 {0}에서 최대 깊이를 초과합니다.",
+    "MediaFileSystems.ProDosDirectory": "ProDOS 디렉터리 블록 {0}이(가) 잘못되었습니다(순환={1}, 재사용={2}).",
+    "MediaFileSystems.ProDosIndex": "{0} ({1}): ProDOS 인덱스 블록 {2}이(가) 잘못되었습니다(순환={3}).",
+    "MediaFileSystems.ProDosMaster": "{0} ({1}): ProDOS 마스터 인덱스 블록 {2}는 유효하지 않습니다.",
+    "MediaFileSystems.ProDosData": "{0} ({1}): ProDOS 데이터 블록 {2}이(가) 없거나, 디스크 이미지 범위 밖에 있거나, 크기가 잘못되었습니다.",
+    "MediaFileSystems.ProDosTruncated": "{0} ({1}): 예상된 {3}바이트 중 {2}바이트를 재구성했습니다.",
+    "MediaFileSystems.ProDosBitmap": "ProDOS 비트맵 블록 {0}가 누락되거나 잘못된 크기가 있습니다.",
+    "MediaFileSystems.ProDosTotal": "ProDOS 볼륨에 선언된 블록 수는 {0}개이지만 디스크 이미지에는 {1}개가 있습니다.",
+    "MediaFileSystems.ProDosWriteFormat": "ProDOS 대상 형식 '{0}'은 지원되지 않습니다.",
+    "MediaFileSystems.ProDosDiskFull": "ProDOS 볼륨은 충분한 블록이나 디렉토리 항목이 없습니다.",
+    "MediaFileSystems.ProDosGeometry": "대상 ProDOS 기하학 또는 섹터 주소 맵은 유효하지 않습니다.",
+    "MediaFileSystems.ProDosEntry": "ProDOS 항목 '{0}'은 쓸 수 없습니다.",
+    "MediaFileSystems.ProDosFileLength": "ProDOS 파일 '{0}'은 24비트 길이 필드를 초과합니다.",
+    "MediaFileSystems.ProDosName": "ProDOS 이름 '{0}'은 유효하지 않습니다.",
+    "MediaFileSystems.ProDosTypeText": "텍스트",
+    "MediaFileSystems.ProDosTypeBinary": "이진",
+    "MediaFileSystems.ProDosTypeDirectory": "디렉터리",
+    "MediaFileSystems.ProDosTypeVariables": "변수",
+    "MediaFileSystems.ProDosTypeSystem": "시스템"
+  }
+}

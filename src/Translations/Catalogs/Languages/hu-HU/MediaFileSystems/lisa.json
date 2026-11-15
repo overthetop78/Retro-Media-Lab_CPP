@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaFileSystems.LisaMissingTaggedSystem": "A lemezkép {0} oldala között nincs címkékkel ellátott Lisa fájlrendszer.",
+    "MediaFileSystems.LisaMissingPage": "A 0x{0} Lisa fájlból hiányzik a(z) {1}. oldal.",
+    "MediaFileSystems.LisaTruncatedMddf": "A Lisa MDDF oldal {0} bájtot tartalmaz; {1} szükséges.",
+    "MediaFileSystems.LisaInvalidTag": "A(z) {0}. logikai Lisa blokk címkéje {1} bájtos; {2} szükséges.",
+    "MediaFileSystems.LisaDuplicatePage": "A 0x{0} Lisa fájl a(z) {1}. oldal több példányát tartalmazza.",
+    "MediaFileSystems.LisaUnknownFreeSpace": "A Lisa szabad területe nem határozható meg használható címkék nélkül.",
+    "MediaFileSystems.LisaFileDescription": "Lisa fájl ${0}"
+  }
+}
