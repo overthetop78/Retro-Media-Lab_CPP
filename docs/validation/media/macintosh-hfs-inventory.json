@@ -1,0 +1,44 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsCatalogReader.cs",
+    "sha256": "e7e09c5dc611dccf77c22bd57396ad8a27eea6475126c19cf999df886b299e35",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsCatalogRecord.cs",
+    "sha256": "c85ebdc50346d7c678ebe5279264bfb816b54fae508c04b644bd80cc9585f2b9",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsDirectoryBuilder.cs",
+    "sha256": "f21bcab1ac2a706714a2b30b144e48b6eb728896f039045fcfcf8a81bcd0317e",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsExtentReader.cs",
+    "sha256": "57df0f387f0961f11c6e38d5bdd46af3ab5de8a536271ef3526c050625dec74c",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsExtentResult.cs",
+    "sha256": "7e9ef894c5921aa84fc458ebb55b058f7c23e1f354ec89fa681f823c1164d187",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsFileSystemLayout.cs",
+    "sha256": "6473aaf51c2e4ac1c098c785b106a279450a67d905449c739b4bf19f2a8f8c34",
+    "status": "ported",
+    "note": "Port lecteur HFS classique conforme au C#"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Hfs/MacHfsFileSystemReader.cs",
+    "sha256": "ba6853243f926b5ca814d5a4d0c1aa8335085fc998e91d72a706e45ed08ad347",
+    "status": "partial",
+    "note": "Lecture complète ; CatalogFormatIds/registre non exposés"
+  }
+]

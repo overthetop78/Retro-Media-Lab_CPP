@@ -1,0 +1,98 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdBlockReader.cs",
+    "sha256": "bc2009b572d3e4481fa21ad5b5e5d7813fbb63fe0b41b7f8a54e2c8da0bff669",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdBlockReadResult.cs",
+    "sha256": "9fa2b663c5b00b703604c8457dd737a5b3500d8da25f91400a9ea1c552e68bd3",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdByteOrder.cs",
+    "sha256": "9b6c4bb1ff966b4b041d5519417c1f01d8db18b84e7a2c2a8749ee4bb0354cc2",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdDate.cs",
+    "sha256": "06015b08f66b580e240b91b47b504d6867aa9a251774d578d31b0ea8bd00e254",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdDirectoryEntriesResult.cs",
+    "sha256": "02814de3de805df5fa20a845c1b068949e9fefdf4d76b0304dba6d677bb9085f",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdDirectoryEntryReader.cs",
+    "sha256": "9c3356f1977b6b97339a015ad94fe085d0f418f224110175817308ef5096009b",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdDirectoryHeader.cs",
+    "sha256": "e84d952dc4966a6c8094541bd53067975200d6930cef96848f346200131f61fb",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdDirectoryHeaderReader.cs",
+    "sha256": "260810199fffb631f0f16ca4274d5b0b7555a396415b8b65f2eca10320b09ba8",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileContent.cs",
+    "sha256": "c52d310f6495c759b7a4107dc7bb8e8d28d43a959dc49bd05ee8fd1855e11722",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileContentReader.cs",
+    "sha256": "501a16854fda86ce05d2f082199b5235aae03fa3841ada562dd32dafc2249f00",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileKind.cs",
+    "sha256": "c0afde6758049f01d5ddb5657666efcb9323ab5ad183ebd98b9036d112568b89",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileSystemExceptions.cs",
+    "sha256": "27da3b18b3f96243c89f353af734e26344da7a1440d70abd10d6b2cbfc84ead3",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileSystemLayout.cs",
+    "sha256": "66f161d3237f77ba2e2ced2908736675b7d9216999ac715d77322d29854134a4",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdFileSystemReader.cs",
+    "sha256": "be3964d5e5ee9a702f0bfe20b1312e66b633d7773adb02d8b4d02a7eec966d40",
+    "status": "partial",
+    "note": "Lecture et filtre CanRead portés ; propriété CatalogFormatIds/registre non exposés"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdName.cs",
+    "sha256": "b92f2d1527dcea3e2ab504add4fd1b7d2179b65773ba2d9f5e0f17a41afad368",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Ucsd/UcsdPrimitives.cs",
+    "sha256": "360bd6183aff90c31c16374180b6a91e8c23b8da5ca4b46880a5933c5b94d6bd",
+    "status": "ported",
+    "note": "Port fonctionnel UCSD p-System"
+  }
+]

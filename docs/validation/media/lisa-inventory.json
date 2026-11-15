@@ -1,0 +1,115 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaCatalogReader.cs",
+    "sha256": "32decb247ad4c2d6bd496eff468bbeee984eb860c928feafaff4e03c90d10cd1",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Catalog.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/Lisa.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaCatalogVersion.cs",
+    "sha256": "7eb9dcb8a5a2580001181f2e93e48464caadd58c9b605cd100487957b7a6380b",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/VolumeHeader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Constants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaFileContent.cs",
+    "sha256": "3fa2898e2375276c48868271bd1fdea27254e5d5423bfae7dab958a1dc207617",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaFileContentReader.cs",
+    "sha256": "a39ae0767a2c68dc759c3c7cbd4e188af6b4b3c25169786d6311c2836f959ff4",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Content.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaFileSystemExceptions.cs",
+    "sha256": "48c7ab48d7f19aaa1a039a95ccb506f17153fabb5b8f6be1e957d9366e893012",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Reader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Content.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/VolumeHeader.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaFileSystemLayout.cs",
+    "sha256": "5166a5992400f78677755adf6bde28eedb00db1fe568449db45dae3cbdf68cea",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Constants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaFileSystemReader.cs",
+    "sha256": "2bae15053df721784999b6103db797df0562de3a1ab0cc5ca47ea5ef2e869f37",
+    "status": "partial",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions; CatalogFormatIds/registre global restant, filtre AppleLisaOffice effectif dans CanRead",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Reader.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaMddf.cs",
+    "sha256": "de1af1474801292603d2cb97c30c1ac0e10afc9884b6b4adc1202bc70c8597ef",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaMddfReader.cs",
+    "sha256": "a487c12b891b6890cec527ba0c5a28b09f697c3ba77cce90d377e5a419c60171",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/VolumeHeader.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaPageTag.cs",
+    "sha256": "d9747b3b6f8e6c55ae73fa3c16fccaec18df1fa749004dff409db284690c4aa1",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaPageTagReader.cs",
+    "sha256": "739c27ebad86e3bee1e41233e05742fe72fa9226bbc8f7418779ba455f448f49",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Lisa/Tags.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Lisa/LisaVolumeHeader.cs",
+    "sha256": "e5ff8c28b20a02c158e83debc99632f650088382c23a7b870a4678147d970674",
+    "status": "ported",
+    "note": "Port Lisa sectoriel complet,72comparaisons C# et3annulations; tags,MDDF,catalogues,contenus,noms/versions",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Recognition.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AppleRecognitionConstants.h"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+# Macintosh MFS — 15 novembre 2026
+
+Le banc compile 24 fichiers C# originaux : les neuf classes MFS, les trois helpers communs Macintosh et les contrats/définitions nécessaires. Les algorithmes de référence ne sont pas réécrits ; seule l’interface IFileSystemReader est limitée à ses quatre membres sectoriels pour isoler ce banc du futur adaptateur document/volume. Les images synthétiques fournissent des blocs et des paramètres, sans reproduire les algorithmes de lecture.
+
+Les 24 empreintes correspondent à l’inventaire courant. Empreinte SHA-256 du manifeste ordonné chemin/empreinte : `226225df623f8d48fd2200997e3499bf90761a922fad11aa997b5d94bfa16860`.
+
+63 cas comparatifs C#/C++ passent sans différence. Ils couvrent les 256 caractères MacRoman et le tri d’un volume contenant 256 noms, le remplacement du séparateur, les bornes temporelles et int64, les références uint32 saturées, les cartes paires/impaires jusqu’à 640 allocations, les longueurs limites des forks, les forks vides, le choix données/ressources, les métadonnées incohérentes, les cycles et chaînes hors carte/prématurées, les blocs absents/tronqués, les signatures et tailles d’allocation invalides, les comptes libres invalides et les répertoires hors image.
+
+Les comparaisons portent sur reconnaissance, nom et identifiant du volume, capacité/espace libre, dates, chaque entrée (nom/type/taille/commentaire/attributs/référence/validité et SHA-256 du contenu), et catégories/nombre/ordre des avertissements. Aucun défaut de lecture C++ n’a été trouvé dans ces 63 cas. La revue croisée HFS a ensuite identifié un cas absent : les types Finder composés uniquement de tabulations/espaces ASCII devaient employer le commentaire de repli, conformément à IsNullOrWhiteSpace. Le helper partagé est corrigé pour ce cas ; les types mixtes restent inchangés. Les fixtures ciblées HFS du bloc76 couvrent cette correction sans répéter les 63 cas MFS. Cette comparaison établit la fidélité aux chemins C# exercés, sans prétendre prouver l’absence de tout défaut dans le C#.
+
+Une correction de localisation distincte remplace les descripteurs fixes français par des clés spécialisées, sans changer les octets, les conditions d’acceptation ni le nombre/ordre des avertissements. Après cette modification, seuls 14 cas ciblés vérifient clés et tableaux d’arguments pour volume/répertoire, données/ressources, blocs absents, tailles incomplètes, métadonnées et trois causes de chaîne. Les noms dynamiques « volume », « répertoire », « données » et « ressources » vérifient qu’aucune substitution par valeur ne transforme un nom de fichier. Les 14 cas passent ; deux annulations déjà demandées passent également. Les 63 contenus ne sont pas relancés inutilement.
+
+Les helpers Finder/tri et l’enum ForkKind sont ensuite déplacés vers les primitives communes pour HFS, sans changement algorithmique. Leur compilation sera incluse dans le build groupé HFS ; aucun nouveau passage des 63 contenus n’est justifié par ce simple déplacement.
+
+Les catalogues génériques et contextuels des 29 langues ont été relus conjointement par deux agents, les paramètres comparés à Constants et en-US vérifié identique à la base. Aucun média réel n’est embarqué, aucun test ajouté au workflow GitHub. L’intégration registre et adaptateurs reste explicitement hors de cette validation sectorielle.
+
+L’inventaire a été vérifié et intégré par l’agent parent. Après son accord, le banc temporaire et tous ses artefacts ont été supprimés.

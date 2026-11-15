@@ -1,0 +1,80 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11BlockPairReader.cs",
+    "sha256": "13cedc37fe9ee2eb0debe0a430d5046af5f46eba79d8b0158da337181211e331",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11BlockPairResult.cs",
+    "sha256": "af27e3b8bc99cf262b78698d823cb82a7e42aeae3ee7fb0aa0b5790f09356a1d",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11Date.cs",
+    "sha256": "f52902ad43fd0c67266e51cd2f1ee5a826883bd0c7d68780b134245bb0907af9",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11DirectoryEntryStatus.cs",
+    "sha256": "74371788bcc6b34c46163414db14f8ae39682b99097f0f7914eecaa05b642bd8",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11DirectoryReader.cs",
+    "sha256": "b78aa2aa3914171a5ba770e252f78f8903bac9e6212f1360b0c9229cc9af2fac",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11FileContent.cs",
+    "sha256": "63f82e8200e881f12cfa916c794d22c6aec1a2ca1d039d545ce871b5e28fc5ea",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11FileContentReader.cs",
+    "sha256": "f01aa8b5a23864680ee35074fd709bdb47ff2f06cd4c1be218b13bfd5ecf2131",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11FileSystemExceptions.cs",
+    "sha256": "41e2a7e779feb782f80722cb3bb576c8f5df41d1648ba553d8b6dc7384a8a6fa",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11FileSystemLayout.cs",
+    "sha256": "17156dda2c00e58ab040e3b4b4a78e7a015e1ccded1e16f310856a292c255c83",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11FileSystemReader.cs",
+    "sha256": "01d76a0b7b4d6b8bbc83f008455fdb1fc88b3d81fa0a008b1325a8d8bdf1d981",
+    "status": "partial",
+    "note": "Lecture et filtre CanRead portés ; CatalogFormatIds/registre non exposés"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11HomeBlockProbe.cs",
+    "sha256": "e6f2993958d8f15295d61030c7d9d2baf81e8fb6642dda83f2f161ceabde97b3",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11Primitives.cs",
+    "sha256": "37d961909f33bf4386d44ca09776f81fa37f209d7e211c46b8cb3f3de4d20b3c",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Dec/Rt11/Rt11Radix50.cs",
+    "sha256": "910c10585c5bf8b1685894d97baa2adc7d1bf57ccc811ff7f2afbb6cc143265f",
+    "status": "ported",
+    "note": "Port fonctionnel RT-11"
+  }
+]

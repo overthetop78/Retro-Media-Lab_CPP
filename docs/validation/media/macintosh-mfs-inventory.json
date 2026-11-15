@@ -1,0 +1,119 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsAllocationChain.cs",
+    "sha256": "22681b1cb199dd55449b40ccf0db6f081d67e54bc0c84f408eba2f1c670feac0",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Internal.h",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Allocation.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsAllocationMap.cs",
+    "sha256": "3d9c6d69159b59039261a8b294a0df9f9815f6c92d2bcb130da5822f408cd799",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Internal.h",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Allocation.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsBlockReader.cs",
+    "sha256": "b0efe7e2857d4743c0b145bc8c1fdffb0ac6d4df9264cfd877e377fdc062d543",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Fork.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsBlockReadResult.cs",
+    "sha256": "b14baf78e67b989b431d01fcbb8e3f80fe2be04f753f01127fda3128631e1b24",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsDirectoryReader.cs",
+    "sha256": "f1f3770af9a6d8be5d63fc6760c33878d1902b46606eb8b6ee1ea2a19979b77f",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Directory.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Primitives.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsFileSystemLayout.cs",
+    "sha256": "90f6589ef2cb84a918260ef02b41dd7df3cc14f1695ccb1af4c812b5b5d28f93",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Constants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsFileSystemReader.cs",
+    "sha256": "dbe025f0c4e65edcfd498e9ad1aa6f6fbb18e838e4a0415ff2c5ffa4e510b25b",
+    "status": "partial",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations; CatalogFormatIds et registre/adaptateur document restent au bloc registre global",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Reader.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/MacMfs.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsForkReader.cs",
+    "sha256": "1cd28204c53079358c634b95e19d888f54e444e360789e74a3bc79dfb6c997d9",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Fork.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/Mfs/MacMfsForkResult.cs",
+    "sha256": "31022ce9ae0ce1615ccfd9ea8b2b6a57e493d3dab6f749b0aad250438e1cf21e",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/MacFileSystemPrimitives.cs",
+    "sha256": "0b8168ea4df288ab9cea6bf0dd0a43958e2b476e4c0bf411db9666d03bc933f2",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Primitives.h",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Primitives.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/MacRomanTable.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/MacFileSystemTime.cs",
+    "sha256": "162df6d51709f1187a869a457452e03619fddaceff522a8b72611c4ff6ac7689",
+    "status": "ported",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Primitives.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/Macintosh/MacFileSystemExceptions.cs",
+    "sha256": "50a932c0e466281c875897573f5c13307c4f8e833e4665bf331ca9400a0df94f",
+    "status": "partial",
+    "note": "Port MFS complet des algorithmes sectoriels, carte12bits, forks et métadonnées; vérification63cas C# +14sites diagnostiques +2annulations; seuls helpers appelés MFS portés, helpers HFS suivis au bloc76",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Fork.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Reader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Allocation.cpp",
+      "src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Directory.cpp"
+    ]
+  }
+]

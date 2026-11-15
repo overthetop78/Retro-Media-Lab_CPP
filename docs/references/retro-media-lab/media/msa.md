@@ -1,0 +1,9 @@
+# Atari ST et conteneur MSA
+
+Les sept classes C# de `Images/Formats/Floppy/Msa` sont la référence du conteneur. La géométrie `AtariStGeometry`, dépendance du writer, est portée séparément dans `Formats/St` pour être réutilisable sans dupliquer ses neuf profils. Les valeurs sont celles du catalogue C# : 180/360/400/440/720/800/810/880/1440 Kio. Le constructeur vérifie les dimensions positives et le produit de capacité entier signé ; l’identifiant générique conserve la division entière par 1024.
+
+`Msa/Rle.cpp` partage le codec entre reader et writer. Le marqueur 0xe5 introduit la valeur et un compteur 16 bits big-endian. Le writer encode obligatoirement le marqueur et compresse une répétition seulement à partir de cinq octets ; quatre restent littéraux. Les répétitions plus longues que 65535 sont découpées. Le décodeur exige consommation totale de l’entrée et production exacte de la longueur attendue, avec refus des séquences tronquées, comptes nuls et dépassements.
+
+Le reader valide signature, 1 à 36 secteurs, une ou deux têtes et cylindres 0 à 255. Les captures partielles conservent leurs indices de cylindres et blocs logiques ; la capacité décrite va jusqu’au dernier cylindre inclus. Une longueur de piste égale à la taille décompressée indique une piste brute, même si elle contient le marqueur RLE. Les octets après la dernière piste sont ignorés comme dans la source.
+
+Le writer accepte uniquement une image correspondant exactement à un profil ST connu de secteurs de 512 octets. Il lit les secteurs par leur indice logique, valide présence et taille, puis choisit la compression seulement si elle est strictement plus courte. L’écriture par chemin émet en-tête et pistes successives par le service atomique existant ; elle ne construit pas inutilement une copie complète du conteneur. Le builder mémoire partage ce producteur pour les comparaisons. RAII conserve la destination sur erreur ou annulation.

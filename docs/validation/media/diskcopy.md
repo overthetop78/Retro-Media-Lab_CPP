@@ -1,0 +1,13 @@
+# Validation DiskCopy 4.2 — 15 novembre 2026
+
+Le banc temporaire compile **58 sources C# originales**, dont l’intégralité du lecteur/writer DiskCopy, les métadonnées, le lecteur brut Apple et ses modèles/dépendances réels. Aucune logique de référence n’est réécrite. Les empreintes correspondent à l’inventaire ; manifeste : `ac1ba37824d02892d2562d931945517b8be1ead2ceabbf7ef2058b2c7557b6d4`.
+
+Les **225 cas initiaux** couvrent checksums pairs/impairs, longueurs variées, noms 0/5/63/64/255 octets, charges génériques/Lisa/Macintosh, tags absents/incomplets/mal dimensionnés, tailles compensées 511/513, blocs absents, mot privé, plages déclarées, débordement 32 bits, en-têtes tronqués, checksums valides/absents/invalides, PREBOOT, signatures Macintosh, métadonnées présentes/absentes/partielles et formats numériques. Les sorties comparent en-têtes sérialisés par leur SHA-256 intégral, géométries, adresses de chaque bloc, tailles et octets des données/tags, nom et états d’intégrité. Les catégories de refus sont normalisées ; les textes traduits ne sont pas comparés à l’anglais C#.
+
+**222 cas initiaux identiques ; trois défauts de compatibilité Base64 trouvés et corrigés** : Qt acceptait des chaînes sans padding (`QQ`, `A`, `AAA`) que Convert.FromBase64String refuse. Le port exige désormais une longueur multiple de quatre après retrait des seuls SP/TAB/CR/LF, puis utilise le décodeur Qt strict. **89 contrôles ciblés de la correction passent sans différence**, incluant les trois cas, placements de `=`, caractères de contrôle et espaces Unicode refusés. Les 222 parcours non affectés n’ont pas été rejoués.
+
+**Quatre contrôles natifs supplémentaires passent** : écriture par chemin identique aux octets du builder, propagation de l’annulation, conservation du fichier préexistant après annulation, puis écriture avec nom dérivé du chemin. Les ressources de fichiers et répertoire temporaire sont nettoyées par RAII même si un contrôle échoue.
+
+Les bibliothèques Debug sont compilées de façon groupée avec les autres agents ; Metadata.cpp a ensuite fait l’objet d’un rebuild incrémental pour la correction Base64. Les 29 traductions DiskCopy ont été relues et corrigées ; paramètres et invariants DiskCopy/Macintosh/ProDOS/Lisa sont vérifiés. La validation des frontières et littéraux est coordonnée au niveau du projet.
+
+Le banc et ses artefacts temporaires ont été supprimés après le contrôle final coordonné. Aucun test n’est ajouté au workflow GitHub. Les factories C# d’exceptions InvalidDataChecksum/InvalidTagChecksum, non appelées par le lecteur actuel, ne sont pas exposées comme fonctions portées ; les états d’intégrité faux sont conservés sans exception.

@@ -1,0 +1,132 @@
+{
+  "source_manifest": [
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Contracts/MediaVolumeDescriptor.cs",
+      "sha256": "c6563db5f6eddb1d23cf0afd229b1c9ba975651d5608b628ce5883c408253b70"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaSourceDescriptor.cs",
+      "sha256": "923860227798dc71d6c5d82b8d69240a464ff2d07e91bfd8a0e0346a10842d3a"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaImageDocument.cs",
+      "sha256": "c8e2012ddda168c100a112c7d81425140c26a1626905dbb1eab3abc9a5266715"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaImageRepresentation.cs",
+      "sha256": "9a75016af7d672bda08834c404688a8c5aa49c6cac24f0ae79edb3f593b1ae18"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaBlockRepresentation.cs",
+      "sha256": "c706f4a69be9f3f8d10f5cc914f03c459f14ef7802dfa63458e3e453b2a3a64c"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaSectorRepresentation.cs",
+      "sha256": "1c860fb67fbbaf940beebe6ed0d1ffbba4bea6e4aea80313752cd6a9da924883"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaOpticalRepresentation.cs",
+      "sha256": "baf6b386f1a1528be03f58f1c44efad998323afa307dadb355a9f7684d91186e"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/IMediaOpticalTrack.cs",
+      "sha256": "d3949d3c21e4306e4873b5b855683217b54ef6e433184e7047a0d38a8b729b02"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Interfaces/Exploration/IMediaVolumeDetector.cs",
+      "sha256": "cb7513d0c116f5a5131fd625f0be0d75221907f77ac423831daf4b357941ba84"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Contracts/MediaVolumeDetectionResult.cs",
+      "sha256": "c87344752d7f1dac036f6d4eb45f7a4648cc2f61fef1067820e602299d380531"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Constants/MediaVolumeOrigins.cs",
+      "sha256": "66f0284b90cc324b1f24ca2540051a7297337bb3d3456921719aac68ad4357c2"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Constants/PartitionTableIds.cs",
+      "sha256": "82aa000b63363df2710b4a6c7f94751b06adc5d0ebee83d50dfb4394d23fb21a"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Functions/Crc32Functions.cs",
+      "sha256": "f85752f1ccbc2f0daeb7f2f8e2eea85f3b48e483f59a7772a23dc6e250ebadfa"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Exploration/Partitioning/MbrVolumeDetector.cs",
+      "sha256": "565b3d22e6fd4ec3d241efbc6df37d5b8bfd4728fc4f9d67ab70daaa1cc87123"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Exploration/Partitioning/GptVolumeDetector.cs",
+      "sha256": "2249c58b132143d62fbf222d06a78be32f8efbde5defed7f331cd76f91b7d86f"
+    },
+    {
+      "source": "src/RetroMediaLab.MediaFileSystems/Exploration/Partitioning/WholeMediaVolumeDetector.cs",
+      "sha256": "d6559e6a68df06bd3f1b82a58ebfee3283aca0ae8aa7faa418cb11306a9e7be4"
+    }
+  ],
+  "selected_comparisons": [
+    {
+      "fileSystemId": null,
+      "length": 512,
+      "name": null,
+      "ok": true,
+      "origin": "direct-volume",
+      "partitionId": null,
+      "partitionNumber": null,
+      "partitionTable": null,
+      "partitionType": null,
+      "sessionNumber": null,
+      "start": 0,
+      "trackNumber": null
+    },
+    {
+      "error": "ArgumentOutOfRangeException",
+      "ok": false,
+      "parameter": "length"
+    },
+    {
+      "error": "ArgumentException",
+      "ok": false,
+      "parameter": "origin"
+    },
+    {
+      "declined": false,
+      "diagnostics": 0,
+      "ok": true,
+      "volumes": [
+        {
+          "fileSystemId": null,
+          "length": 1024,
+          "name": "Volume Δ",
+          "origin": "partition",
+          "partitionId": "00112233-4455-6677-8899-aabbccddeeff",
+          "partitionNumber": 1,
+          "partitionTable": "gpt",
+          "partitionType": "0fc63daf-8483-4772-8e79-3d69d8477de4",
+          "sessionNumber": null,
+          "start": 2560,
+          "trackNumber": null
+        }
+      ]
+    },
+    {
+      "declined": false,
+      "diagnostics": 1,
+      "ok": true,
+      "volumes": []
+    },
+    {
+      "error": "IOException",
+      "ok": false
+    }
+  ],
+  "native_checks": {
+    "blockCancelled": true,
+    "blockRead": true,
+    "document": true,
+    "opticalCancelled": true,
+    "opticalData": true
+  },
+  "note": "Resultats des six comparaisons et cinq controles natifs anterieurs ; aucun nouveau lancement des batteries."
+}

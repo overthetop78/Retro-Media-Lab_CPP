@@ -1,0 +1,74 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosDirectoryFlags.cs",
+    "sha256": "800385b48284f2448f2f2aab5385b06a7066cfeb591aff3cc9e2874889b1b1f2",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosDirectoryReader.cs",
+    "sha256": "11e49e09995d5a5574607b95aaf8ecf9daa0974a80a01cc1287ba1f7a1d28580",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosDiskHeader.cs",
+    "sha256": "af6d6cde032c6bb48efc1c08d219626ee3ed93b0146d86627dba026d373a9e12",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosDiskReader.cs",
+    "sha256": "822c7a3b41365572c7ff69fe51c221118815e3dc58cdc25c6c15c5cb5e33d423",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosFileData.cs",
+    "sha256": "eff2d1d79ae47f08f5eb2c25beb0cb55ac98839812e16336e2b7a1780f501c40",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosFileReader.cs",
+    "sha256": "caff59a70d51f78b3c80db8230bae1978e8049cc75c2b0f3d0384246907f4955",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosFileSystemExceptions.cs",
+    "sha256": "1c8e5960ffc953ecfe62b3161c13b8a12fdc2a30106dbeef7e6b6167599b3f24",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosFileSystemLayout.cs",
+    "sha256": "b241ce39e2d97bad90ec2803f273b4c133d100e4e829902267a6b8b359255da0",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosFileSystemReader.cs",
+    "sha256": "d0a7879bb968a9be14dcec00a6468e9b029e7b8bec82e1612ce93bc8d18940e2",
+    "status": "partial",
+    "note": "Lecture complète ; CatalogFormatIds/registre non exposés"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosNameCodec.cs",
+    "sha256": "a0374cbb46c6f6e8723d17037483dc0c864856cd7d27d6d9476adfe11196e2fb",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosSectorAllocation.cs",
+    "sha256": "b0e424d15346afaa52ac8608f716b8d342c041c3e49c3ef7b3e8921f9ba28e9b",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/SpartaDos/SpartaDosSectorMapReader.cs",
+    "sha256": "414817934d50363461fc09ee1a292523c792b4ec9a5f4ae6029f857661d1463a",
+    "status": "ported",
+    "note": "Port fonctionnel SpartaDOS 1.x/2.x"
+  }
+]

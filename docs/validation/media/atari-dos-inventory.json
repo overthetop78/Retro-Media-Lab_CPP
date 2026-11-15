@@ -1,0 +1,151 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosAllocationAnalyzer.cs",
+    "sha256": "eafba018bef22b43a88a8cc26a2086cbb26d1d72d118bf0f59fa3bcc7d11498a",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Allocation.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosDirectoryEntry.cs",
+    "sha256": "66d7c3653de1008aacfafd14d2d9c1100994e72a84855c956cd0fe48b29d608d",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Internal.h",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosDirectoryFlags.cs",
+    "sha256": "386b4ee0b2338fddec7f2264ba87718b05990b3ef98caf52df41bfa9cbdcbf2b",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Constants.h",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDosConstants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosDirectoryLocation.cs",
+    "sha256": "1e10d3d5183c649c85d8eebf1c1c934f65b904e931bee5a1673fb0e78772c33d",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Directory.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosDirectoryReader.cs",
+    "sha256": "9ef4a24c63a6732091be76a9899788129b0e802d314bef0de530a9c9694ce197",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Directory.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosFileData.cs",
+    "sha256": "12e6415623a530ff8255cc81e63f704064ff3d46ae563fc3423e79aad5bcda0d",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/File.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Allocation.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosFileReader.cs",
+    "sha256": "d6c3df24943aab9b18d3e5dac9a3b891494a0bc9ec90ab34dc0e5c9aba38cc90",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/File.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosFileSystemExceptions.cs",
+    "sha256": "3ee382fe7b3edbf3e753dc329ba4e8ec34c1a2a938678128cf0fb22bcffd97e7",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Directory.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/File.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Allocation.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Reader.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosFileSystemLayout.cs",
+    "sha256": "c52bf5ef194a1487184685325e4d3c16a5c93de5dd0adc1a8e3a279583e5de4d",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Constants.h",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Primitives.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDosConstants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosFileSystemReader.cs",
+    "sha256": "22b50c015735c4ea4e5b2a6830aa2259882b4db9dcb9d619b3d5bfe067789432",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Reader.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosNameCodec.cs",
+    "sha256": "2beb557608ba81979a1eb76fa407322a9e497c909139c1831165e6a77a08f4d0",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Primitives.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosSectorChain.cs",
+    "sha256": "2a7248c08685b48cb3608efbe2a0a0a16cc34030f96560483aa4d52224efb4b2",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/File.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosVtocReader.cs",
+    "sha256": "bdd33a7ed39fcb638c74d5209e11a45fb3ef791132e06de7e74cc2e5ef8ef925",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Primitives.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Atari/Dos/AtariDosWarnings.cs",
+    "sha256": "21344f10440c036df97f120c11f2ba11c9843b7485bf32f6983edf5261c42ef2",
+    "status": "ported",
+    "note": "Port Atari DOS/MyDOS complet, API/helpers et CatalogFormatIds exacts publics;106cas C#comparatifs et5annulations; branchementregistre global séparé",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Directory.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/File.cpp",
+      "src/MediaFileSystems/src/FileSystems/Atari/Dos/Allocation.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/AtariDos.h"
+    ]
+  }
+]

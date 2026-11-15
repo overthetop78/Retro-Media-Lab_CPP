@@ -1,0 +1,124 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/AmstradCpmDiskSpecification.cs",
+    "sha256": "5f685ca11d056d3ce11a67a0ef47b75afb6044838d78a990392b208d58178384",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/CpmLayoutConstants.h",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/Cpm.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/AmstradCpmFileSystemReader.cs",
+    "sha256": "767e7214db1734d7fe30993f619410141b46b53999702b410c24a6e84a16924f",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Reader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Content.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/Cpm.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/AmstradCpmLayout.cs",
+    "sha256": "6b1b5ec15012e84e7b22eba0b991984862f72b2e694166864a4a261c82d8a012",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/CpmLayoutConstants.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmDirectoryReader.cs",
+    "sha256": "8dc97c0efa28659bc4ddf8b7ff30428e4b7324669d97db2f27a1226a6a6056a2",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Directory.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Content.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmEpsonLayoutDetector.cs",
+    "sha256": "193ecc578e4fbbd659dea4cb8b4f5a9b282faddfd60f566016413c0122faf368",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmExtent.cs",
+    "sha256": "a3ac94bdbb3cdf62dde99230558f17fb3d67e7c24bc313210adc82256e8a9266",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Internal.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmExtentKeyComparer.cs",
+    "sha256": "87fc366130e5aaf3398ec63209cfe7237c40a9232950f83449005b0cd8253062",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Directory.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmFileSystemExceptions.cs",
+    "sha256": "d76a21266ee0b882facef56652842cc92ad0152d56cc0b3e45d40bceb1046532",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Reader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Content.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmFileSystemReader.cs",
+    "sha256": "2ce25150abcbaceccee57a24ed663f3f4c0408ff91bba6ef870a43e35f985f11",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Reader.cpp",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Content.cpp",
+      "src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/Cpm.h"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmFormat.cs",
+    "sha256": "fe85c48f1dfdf963acc979705c72b047e5a169546c96a1c84423382aba69702d",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Constants.h",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Directory.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmLayout.cs",
+    "sha256": "f02475992cae03c5c65bf9fa6d488e818ad543eee009d7a4d2a27900126263de",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Internal.h",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp"
+    ]
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Cpm/CpmLayoutCatalog.cs",
+    "sha256": "f03863c27126e03d99acf71d38f669af104654ff1d1f7d2e01c0e2925285cb73",
+    "status": "ported",
+    "note": "Port CP/M générique/Amstrad complet, ensemblesCatalogFormatIds exacts publics,77cascomparatifs C#et5annulations; branchementsregistre global séparés",
+    "cpp": [
+      "src/MediaFileSystems/src/FileSystems/Cpm/Constants.h",
+      "src/MediaFileSystems/src/FileSystems/Cpm/Layout.cpp"
+    ]
+  }
+]

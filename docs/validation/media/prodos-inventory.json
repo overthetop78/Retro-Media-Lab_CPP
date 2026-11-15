@@ -1,0 +1,116 @@
+[
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosBitmapReader.cs",
+    "sha256": "a3f51491aca7cd5d38377749e652050b4f752ca9364dfe763a7c6b0d8b48478f",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosBitmapResult.cs",
+    "sha256": "eeffdd142f4a7501aee749cb4bd86097fb88f07b9c06689f86120f8e6f3c5db3",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosDateTime.cs",
+    "sha256": "253af4ff797caf8d7d7a41d25dda85866c5dc9e8e409b185132a09d83241b4f0",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosDirectoryReader.cs",
+    "sha256": "aab28a8831984d99d520448d49b89c788f085092f049a869225dcec455952b2f",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosDirectoryResult.cs",
+    "sha256": "e2821fd6567d0c6dd715cb797adc01e1c723f87d24ef602be757eecc0699445f",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileContent.cs",
+    "sha256": "a6efb0e27635fe7398466440ac51e235a23b152fa5000e5b51d75a5ae8defeb1",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileContentReader.cs",
+    "sha256": "ebc1d4534840f2e6d67571d7225e988870f1221c90ff2366738d79f1447af303",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileSystemExceptions.cs",
+    "sha256": "3206fa5edef945d9727b7babe42528d3fff507b1d00e4d6440c8bb513506e3f9",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileSystemLayout.cs",
+    "sha256": "705ce324038e023988fee880a33d105aa1137c47b56169226624daed8a071c05",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileSystemReader.cs",
+    "sha256": "4cadf37b912977d48438b49576a2c828abef6fffe1888e6fb93292a0e5234fe5",
+    "status": "partial",
+    "note": "CatalogFormatIds/registre non exposés ; lecture complète"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileType.cs",
+    "sha256": "c80db9f9afe140f3007be69e716f812b20b3da51be468a20d9551d39cebef0b4",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosFileTypeNames.cs",
+    "sha256": "6e48615d5bdfe0619706b9c4c33e3f5754855369dc5b2e99bc00a39b23911f32",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosNamePolicy.cs",
+    "sha256": "11c13dc2b8d357d3d9ffdc956378a5cb88ddf9249666d1cc541674c128a2a44b",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosPrimitives.cs",
+    "sha256": "ffa2c206e9eb766e71c33b7aac5f0daf71daf2785510e0cc35861b0da340b12b",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosStorageType.cs",
+    "sha256": "1cafff5c9bb42e3f7a0c77511615f375e73137999ca26835f18ef1264b2109d8",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosVolumeHeaderInfo.cs",
+    "sha256": "18cc6f41e764d0bc7e78d22ab23ad3444f87553a7e067d771fdd67d516356aef",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosVolumeHeaderReader.cs",
+    "sha256": "15ee0cd48104f8811431b574b39739480b9f0ea1dd37ada28e814af8fedc3a77",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosVolumeWriter.cs",
+    "sha256": "a80166b3861ff3356ab6f5e3e007813e33c9c1620d9dbbc1af24f12b22725763",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  },
+  {
+    "source": "src/RetroMediaLab.MediaFileSystems/FileSystems/Apple/ProDos/ProDosVolumeWriterExceptions.cs",
+    "sha256": "cd784eaf1ad72a5d9953659fcf31e0697813749680d16e94852fafecdc7990a9",
+    "status": "ported",
+    "note": "Port fonctionnel ProDOS/SOS"
+  }
+]
