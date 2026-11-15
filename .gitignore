@@ -23,3 +23,7 @@
 *.user
 *.VC.db
 *.VC.opendb
+
+# Caches Python produits par les scripts
+__pycache__/
+*.py[cod]

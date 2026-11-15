@@ -9,18 +9,29 @@ CATALOGS = ROOT / "src/Translations/Catalogs"
 
 def protect(text, words):
     saved = []
-    for word in sorted(set(words), key=len, reverse=True):
+    patterns = []
+    for word in sorted(set(words), key=lambda value: (-len(value), value)):
         if not word:
             continue
-        pattern = re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)")
-        def replace(match):
-            token = f"ZXQ{len(saved)}QXZ"
-            saved.append((token, match.group()))
-            return token
-        text = pattern.sub(replace, text)
-    return text, saved
+        escaped = re.escape(word)
+        if re.fullmatch(r"\{[^{}]+\}", word):
+            patterns.append(escaped)
+        else:
+            patterns.append(r"(?<!\w)" + escaped + r"(?!\w)")
+    if not patterns:
+        return text, saved
+    def replace(match):
+        token = f"ZXQ{len(saved)}QXZ"
+        saved.append((token, match.group()))
+        return token
+    return re.sub("|".join(patterns), replace, text), saved
 
 def translate_preserving_invariants(translator, text, words):
+    words = list(words) + re.findall(r"(?<!\w)-?\d+(?:\.\d+)?(?!\w)", text)
+    # Keep sentence context when the model already preserves technical names and parameters.
+    whole = translator.translate(text)
+    if all(whole.count(word) == text.count(word) for word in set(words) if word):
+        return whole
     protected, saved = protect(text, words)
     translated = translator.translate(protected)
     if all(translated.count(token) == 1 for token, _ in saved):
