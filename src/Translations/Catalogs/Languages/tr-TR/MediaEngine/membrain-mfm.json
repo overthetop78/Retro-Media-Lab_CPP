@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM {0} alanının {1} değeri sıfır ile {2} arasında olmalıdır.",
+    "MediaEngine.MembrainSectorSize": "Membrain sektörleri 512 bayt içerir; {0} bayt alındı.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 bayt, işaret FE, başlık CRC {3}, veri CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 bayt, işaret {3}, veri bloğu, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, sektör başlığı, kesilmiş",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC mevcut değil, kesilmiş",
+    "MediaEngine.MembrainUnpaired": "Eşleştirilmemiş Membrain verileri, veri bloğu"
+  }
+}

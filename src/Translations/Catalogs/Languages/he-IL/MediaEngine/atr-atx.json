@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "פורמט היעד ATR ‏'{0}' אינו נתמך.",
+    "MediaEngine.AtrIncompatibleImage": "דמות הסקטורים '{0}' מכילה {1} סקטורים ו-{2} בתים; פרופיל ATR ‏'{3}' דורש {4} סקטורים ו-{5} בתים.",
+    "MediaEngine.AtrMissingSector": "סקטור ATR ‏{0} חסר.",
+    "MediaEngine.AtrSectorSize": "סקטור ATR ‏{0} מכיל {1} בתים; הצפי הוא {2}.",
+    "MediaEngine.AtrHeader": "כותרת ATR אינה תקינה: אורך {0} בתים (מינימום {1}), חתימה {2} (הצפי הוא {3}).",
+    "MediaEngine.AtrUnsupportedSize": "גודל סקטור ATR של {0} בתים אינו נתמך; הצפי הוא {1} בתים.",
+    "MediaEngine.AtrPayloadLength": "אורך נתוני ATR הוא {0} בתים; הכותרת מצהירה על {1} בתים.",
+    "MediaEngine.AtrTruncatedPayload": "נתוני ATR באורך {0} בתים אינם מכילים אזור אתחול של {1} בתים ואחריו סקטורים שלמים של {2} בתים.",
+    "MediaEngine.AtrSectorCount": "גודל הסקטור Atari ATR ‏{0} ומספר הסקטורים {1} חייבים להיות גדולים מאפס.",
+    "MediaEngine.AtxHeader": "כותרת קובץ ATX חסרה או אינה תקינה.",
+    "MediaEngine.AtxTrackOffset": "מיקום נתוני המסילות של ATX נמצא מחוץ לקובץ.",
+    "MediaEngine.AtxTrackCycle": "שרשרת המסילות של ATX מכילה לולאה.",
+    "MediaEngine.AtxTrackBounds": "מסילת ATX חורגת מגבולות הקובץ.",
+    "MediaEngine.AtxTrackNumber": "מסילת ATX ‏{0} נמצאת מחוץ לגיאומטריה הנתמכת של 40 מסילות.",
+    "MediaEngine.AtxSectorCount": "מסילת ATX ‏{0} מכילה יותר מדי רשומות סקטורים.",
+    "MediaEngine.AtxListBounds": "רשימת הסקטורים של מסילת ATX ‏{0} חורגת מגבול המסילה.",
+    "MediaEngine.AtxSectorNumber": "מסילת ATX ‏{0} מכילה סקטור לא תקין {1}.",
+    "MediaEngine.AtxDataBounds": "נתוני מסילת ATX ‏{0}, סקטור {1}, חורגים מגבול המסילה.",
+    "MediaEngine.AtxNoSectors": "דמות ATX אינה מכילה רשומת סקטור קריאה.",
+    "MediaEngine.AtxLargeOffset": "מיקום החלק ATX ‏'{0}' גדול מדי.",
+    "MediaEngine.AtxTruncated": "החלק ATX ‏'{0}' קטוע."
+  }
+}

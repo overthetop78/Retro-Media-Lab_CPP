@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "ค่า {1} ของฟิลด์ {0} ใน Membrain MFM ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.MembrainSectorSize": "เซกเตอร์ Membrain มี 512 ไบต์ ได้รับ {0} ไบต์",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 ไบต์, เครื่องหมาย FE, CRC ส่วนหัว {3}, CRC ข้อมูล {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 ไบต์, เครื่องหมาย {3}, บล็อกข้อมูล, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, ส่วนหัวเซกเตอร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC ไม่พร้อมใช้งาน, ข้อมูลถูกตัดทอน",
+    "MediaEngine.MembrainUnpaired": "ข้อมูล Membrain ที่ไม่ได้จับคู่, บล็อกข้อมูล"
+  }
+}

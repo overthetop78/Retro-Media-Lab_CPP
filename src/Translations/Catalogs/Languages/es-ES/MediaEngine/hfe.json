@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "El encabezado HFE falta o está truncado.",
+    "MediaEngine.HfeRevision": "Revisión HFE {0} no es compatible.",
+    "MediaEngine.HfeGeometry": "La geometría HFE o la tasa de bits es inválida.",
+    "MediaEngine.HfeTable": "La tabla de pistas HFE está fuera de los límites.",
+    "MediaEngine.HfeTiming": "La temporización HFE no puede representarse con la resolución requerida.",
+    "MediaEngine.HfeTrackLength": "La pista HFE {0} tiene una longitud no válida.",
+    "MediaEngine.HfeTrackData": "Los datos de la pista HFE {0}/{1} están fuera de los límites.",
+    "MediaEngine.HfeRateOpcode": "La pista HFE v3 {0}/{1} tiene un parámetro de tasa de bits igual a cero en el código de operación.",
+    "MediaEngine.HfeEmptyTrack": "La pista HFE v3 {0}/{1} no contiene celdas de bits.",
+    "MediaEngine.HfeTracks": "HFE requiere al menos una pista.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 requiere la misma codificación para todas las pistas.",
+    "MediaEngine.HfeEncoding": "La codificación {0} no puede ser escrita como HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 requiere la misma tasa de bits para todas las pistas.",
+    "MediaEngine.HfeMissingTrack": "Falta el cilindro HFE {0}.",
+    "MediaEngine.HfeTrackAddress": "Una pista HFE está fuera de la geometría declarada.",
+    "MediaEngine.HfeDuplicateTrack": "La pista HFE {0}/{1} está duplicada.",
+    "MediaEngine.HfeLimit": "El contenedor HFE supera sus límites de tamaño o valor soportados.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 requiere un segmento de tiempo uniforme por pista.",
+    "MediaEngine.HfeRevolutions": "HFE no puede conservar estas revoluciones separadas de flujo magnético.",
+    "MediaEngine.HfePadding": "HFE v1 requeriría relleno o longitudes de pista distintas entre los cabezales.",
+    "MediaEngine.HfeScpEncoding": "El tipo de disco SCP {0} no tiene codificación HFE v1 sin pérdidas.",
+    "MediaEngine.HfeFluxBounds": "Los intervalos de flujo superan la duración del índice.",
+    "MediaEngine.HfeWeak": "La escritura HFE v3 no puede preservar regiones débiles.",
+    "MediaEngine.HfeWeakFeature": "Opcode de datos aleatorios HFE v3",
+    "MediaEngine.HfeIndexFeature": "Opcode índice HFE v3",
+    "MediaEngine.FluxConversionTiming": "La temporización del flujo no puede representarse como celdas de bits uniformes.",
+    "MediaEngine.FluxConversionBounds": "Los intervalos de flujo o segmentos de tiempo exceden la duración de la pista.",
+    "MediaEngine.FluxConversionRange": "La conversión de flujo supera el tamaño soportado o el rango numérico."
+  }
+}

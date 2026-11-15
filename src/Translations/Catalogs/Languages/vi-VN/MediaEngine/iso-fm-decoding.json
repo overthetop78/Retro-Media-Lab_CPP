@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} byte, dấu FE, N{4}, CRC tiêu đề {5}, CRC dữ liệu {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} byte, dấu FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, dấu F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Chưa phân loại ISO FM DataAddressMark, dấu FB",
+    "MediaEngine.FmUnpairedDeleted": "Chưa phân loại ISO FM DeletedDataAddressMark, dấu F8",
+    "MediaEngine.FmRevolutionTiming": "Thời gian vòng quay ISO FM không nhất quán: chỉ mục {0} ticks, thời lượng ô {1} ticks, tổng khoảng thời gian {2} ticks."
+  }
+}

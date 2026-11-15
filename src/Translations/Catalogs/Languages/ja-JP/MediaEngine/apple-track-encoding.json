@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "{0} ビットの列は {1} バイトに収まりません。",
+    "MediaEngine.BitPackingCount": "ビット数 {0} は正の値でなければなりません。",
+    "MediaEngine.BitPackingRange": "ビットのパッキング サイズは支えられた範囲を超過します。",
+    "MediaEngine.AppleTrackUnsupported": "ソース形式 '{1}' は {0} としてエンコードできません。",
+    "MediaEngine.AppleTrackGeometry": "{0} シリンダー、 {1} ヘッド、 {2} の各トラックのセクタを持つ Apple II ジオメトリはエンコードできません。",
+    "MediaEngine.AppleTrackSector": "{0} セクター {1}:{2} は {4} の代わりに {3} バイトが含まれています。",
+    "MediaEngine.AppleTrackTooLong": "{0} トラック {1} には {2} ビット、最大 {3} が含まれています。",
+    "MediaEngine.AppleTrackDuplicate": "Apple II のトラック {0} には重複する物理セクター番号 {1} が含まれています。",
+    "MediaEngine.NibTrackCount": "NIBライターは、少なくとも1つのトラックが必要です。 {0} を受け取った。",
+    "MediaEngine.NibTrackLength": "NIB トラック {0} には {1} ビット、最大 {2} が含まれています。"
+  }
+}

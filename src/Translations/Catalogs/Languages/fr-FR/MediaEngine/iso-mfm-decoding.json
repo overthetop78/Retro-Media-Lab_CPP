@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Le nombre d’octets du flux binaire {0} doit être compris entre zéro et {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} octets, marque FE, N{4}, CRC d’en-tête {5}, CRC des données {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} octets, marque FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} octets, marque F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Non classé ISO MFM Sync, marque {0}",
+    "MediaEngine.MfmUnpaired": "Non classé ISO MFM DataAddressMark, marque FB",
+    "MediaEngine.MfmUnpairedDeleted": "Non classé ISO MFM DeletedDataAddressMark, marque F8"
+  }
+}

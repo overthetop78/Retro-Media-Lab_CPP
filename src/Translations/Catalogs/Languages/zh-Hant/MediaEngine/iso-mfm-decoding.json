@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "位元流的位元組數 {0} 必須介於零和 {1} 之間。",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} 位元組, 標記 FE, N{4}, 標頭CRC {5}, 資料CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} 位元組, 標記 FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} 位元組, 標記 F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "未分類 ISO MFM Sync, 標記 {0}",
+    "MediaEngine.MfmUnpaired": "未分類 ISO MFM DataAddressMark, 標記 FB",
+    "MediaEngine.MfmUnpairedDeleted": "未分類 ISO MFM DeletedDataAddressMark, 標記 F8"
+  }
+}

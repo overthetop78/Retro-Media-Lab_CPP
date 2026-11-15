@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP трек {0} присутствует более одного раза.",
+    "MediaEngine.ScpTrackOutside": "SCP-трек {0} находится вне заявленного диапазона {1} до {2}.",
+    "MediaEngine.ScpWriteAddress": "SCP-трек {0} не соответствует заявленному адресу: цилиндр {1}, головка {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP-трек {0} содержит {1} обороты; {2} необходимы.",
+    "MediaEngine.ScpZeroInterval": "SCP трек {0}, оборот {1}, содержит интервал потока нулевой длины.",
+    "MediaEngine.ScpOutput": "Отсутствует функция обратного вызова для вывода SCP."
+  }
+}

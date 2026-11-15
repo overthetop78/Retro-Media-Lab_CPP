@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} byte, mærke FE, N{4}, header-CRC {5}, data-CRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} byte, mærke FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, mærke F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Uklassificeret ISO FM DataAddressMark, mærke FB",
+    "MediaEngine.FmUnpairedDeleted": "Uklassificeret ISO FM DeletedDataAddressMark, mærke F8",
+    "MediaEngine.FmRevolutionTiming": "Tidsmålingen for ISO FM-omdrejningen er inkonsistent: indeks {0} ticks, cellevarighed {1} ticks, summen af intervaller {2} ticks."
+  }
+}

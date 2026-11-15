@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE-headeren mangler eller er avkortet.",
+    "MediaEngine.HfeRevision": "HFE revisjon {0} støttes ikke.",
+    "MediaEngine.HfeGeometry": "HFE-geometrien eller bithastigheten er ugyldig.",
+    "MediaEngine.HfeTable": "HFE-sportabellen er utenfor grensene.",
+    "MediaEngine.HfeTiming": "HFE-timing kan ikke representeres med den nødvendige oppløsningen.",
+    "MediaEngine.HfeTrackLength": "HFE spor {0} har en ugyldig lengde.",
+    "MediaEngine.HfeTrackData": "HFE-spor {0}/{1}-data er utenfor grensene.",
+    "MediaEngine.HfeRateOpcode": "HFE v3-spor {0}/{1} har en bithastighetsparameter på null i operasjonskoden.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 spor {0}/{1} inneholder ingen celler.",
+    "MediaEngine.HfeTracks": "HFE krever minst ett spor.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 krever samme koding for alle spor.",
+    "MediaEngine.HfeEncoding": "Koding {0} kan ikke skrives som HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 krever samme bithastighet for alle spor.",
+    "MediaEngine.HfeMissingTrack": "HFE sylinder {0} mangler.",
+    "MediaEngine.HfeTrackAddress": "Et HFE-spor er utenfor den deklarerte geometrien.",
+    "MediaEngine.HfeDuplicateTrack": "HFE spor {0}/{1} er duplisert.",
+    "MediaEngine.HfeLimit": "HFE beholderen overstiger sin støttede størrelse eller verdigrenser.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 krever ett jevnt timingsegment per spor.",
+    "MediaEngine.HfeRevolutions": "HFE kan ikke bevare disse separate magnetiske fluksomdreiningene.",
+    "MediaEngine.HfePadding": "HFE v1 ville kreve utfylling eller ulike sporlengder mellom hodene.",
+    "MediaEngine.HfeScpEncoding": "SCP disktype {0} har ingen tapsfri HFE v1-kode.",
+    "MediaEngine.HfeFluxBounds": "Fluksintervallene overstiger indeksens varighet.",
+    "MediaEngine.HfeWeak": "Skriving av HFE v3 kan ikke bevare svake områder.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 tilfeldig data opcode",
+    "MediaEngine.HfeIndexFeature": "HFE v3 indeks opcode",
+    "MediaEngine.FluxConversionTiming": "Flux timing kan ikke representeres som enhetlige bitceller.",
+    "MediaEngine.FluxConversionBounds": "Fluksintervallene eller tidssegmentene overstiger sporvarigheten.",
+    "MediaEngine.FluxConversionRange": "Fluxkonverteringen overstiger det understøttede størrelses- eller numeriske område."
+  }
+}

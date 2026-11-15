@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Az NorthStar szektorok 512 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.NorthstarCylinderRange": "A NorthStar cilinder {0} értékének nulla és {1} között kell lennie.",
+    "MediaEngine.NorthstarSectorRange": "A NorthStar {0} szektorszámának nulla és {1} között kell lennie.",
+    "MediaEngine.NorthstarWindowCapacity": "A NorthStar index időtartama meghaladja a támogatott bitcellák számát.",
+    "MediaEngine.NorthstarHardAddressRange": "A NorthStar C{0} H{1} cím minden koordinátájának egy bájton kell elférnie.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} bájt, jelölő FB, ellenőrző összeg {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, hardveres szektorblokk, csonkolt"
+  }
+}

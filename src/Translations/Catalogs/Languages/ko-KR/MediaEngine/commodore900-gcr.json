@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "실린더 {0}는 0과 {1} 사이에 있어야 합니다.",
+    "MediaEngine.TrackHead": "트랙 헤드 {0}은 0부터 {1} 사이여야 합니다.",
+    "MediaEngine.TrackMissingSectors": "적어도 하나의 섹터가 필요합니다;받은 {0}.",
+    "MediaEngine.TrackEmpty": "인코더 {0}는 비트 셀을 생산하지 않습니다.",
+    "MediaEngine.TrackHex": "원본 hexadecimal 텍스트는 유효하지 않습니다.",
+    "MediaEngine.TrackBinaryCharacter": "이진 텍스트의 위치 {1}에 «{0}»이 있습니다. 0과 1만 허용됩니다.",
+    "MediaEngine.TrackNegativeGap": "갭 길이 {0}은 음수일 수 없습니다.",
+    "MediaEngine.TrackSectorNumber": "섹터 번호 {0}은 0부터 {1} 사이여야 합니다.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 섹터에는 {0} 바이트가 포함되어 있습니다. {1} 바이트를 받았습니다.",
+    "MediaEngine.C900GcrSync": "분류되지 않은 Commodore 900 CommodoreSync, GCR 동기화",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} 바이트, 체크섬 {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} 바이트, 체크섬 {4}",
+    "MediaEngine.C900GcrUnpaired": "짝이 없는 Commodore 900 데이터, 데이터 블록, 체크섬 {0}",
+    "MediaEngine.IntegrityValid": "유효",
+    "MediaEngine.IntegrityInvalid": "무효",
+    "MediaEngine.IntegrityUnavailable": "사용 불가"
+  }
+}

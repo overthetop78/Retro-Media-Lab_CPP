@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Độ phân giải thời gian SCP phải dương; nhận được {0}.",
+    "MediaEngine.ScpExtended": "Phương tiện SCP mở rộng không phải ảnh đĩa mềm.",
+    "MediaEngine.ScpSignature": "Tập tin không chứa chữ ký SCP.",
+    "MediaEngine.ScpRevolutions": "Số vòng quay SCP {0} không hợp lệ.",
+    "MediaEngine.ScpTrackRange": "Phạm vi rãnh SCP từ {0} đến {1} không hợp lệ.",
+    "MediaEngine.ScpWidth": "Độ rộng ô bit SCP {0} không được hỗ trợ.",
+    "MediaEngine.ScpHeads": "Bộ chọn đầu đọc SCP {0} không hợp lệ.",
+    "MediaEngine.ScpTrackSignature": "Rãnh {0} không có chữ ký TRK; bộ mô tả chứa số rãnh {1}.",
+    "MediaEngine.ScpTrackMismatch": "Mục {0} trong bảng rãnh trỏ đến rãnh {1}.",
+    "MediaEngine.ScpHeaderSection": "Phần đầu SCP không đầy đủ hoặc không hợp lệ tại độ lệch {0}; cần {1} byte.",
+    "MediaEngine.ScpTableSection": "Bảng độ lệch rãnh SCP không đầy đủ hoặc không hợp lệ tại độ lệch {0}; cần {1} byte.",
+    "MediaEngine.ScpTrackSection": "Phần đầu rãnh SCP {0} không đầy đủ hoặc không hợp lệ tại độ lệch {1}; cần {2} byte.",
+    "MediaEngine.ScpFluxSection": "Dữ liệu từ thông của rãnh SCP {0}, vòng quay {1}, không đầy đủ hoặc không hợp lệ tại độ lệch {2}; cần {3} byte.",
+    "MediaEngine.ScpOverflow": "Kích thước, vị trí, khoảng thời gian hoặc vòng quay ghép SCP vượt quá phạm vi số được hỗ trợ.",
+    "MediaEngine.ScpTrackAddress": "Số rãnh SCP {0} nằm ngoài bảng rãnh.",
+    "MediaEngine.ScpNoRevolution": "Rãnh SCP không chứa vòng quay nào để giải mã.",
+    "MediaEngine.ScpNoC900Sectors": "Không giải mã được bất kỳ cung từ Commodore 900 GCR nào từ ảnh SCP."
+  }
+}

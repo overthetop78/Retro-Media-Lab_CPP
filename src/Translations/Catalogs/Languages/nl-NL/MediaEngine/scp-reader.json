@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "De SCP-tijdresolutie moet positief zijn; ontvangen {0}.",
+    "MediaEngine.ScpExtended": "Extended SCP media zijn geen floppy images.",
+    "MediaEngine.ScpSignature": "Het bestand bevat geen SCP handtekening.",
+    "MediaEngine.ScpRevolutions": "Het aantal SCP-omwentelingen {0} is ongeldig.",
+    "MediaEngine.ScpTrackRange": "Het SCP-trackbereik {0} naar {1} is ongeldig.",
+    "MediaEngine.ScpWidth": "De SCP bit-celbreedte {0} wordt niet ondersteund.",
+    "MediaEngine.ScpHeads": "De SCP hoofdselectie {0} is ongeldig.",
+    "MediaEngine.ScpTrackSignature": "Track {0} heeft geen TRK handtekening; de descriptor bevat tracknummer {1}.",
+    "MediaEngine.ScpTrackMismatch": "Tracktabelinvoer {0} wijst naar track {1}.",
+    "MediaEngine.ScpHeaderSection": "De SCP-koptekst is onvolledig of ongeldig bij offset {0}; {1} bytes zijn vereist.",
+    "MediaEngine.ScpTableSection": "De SCP track-offset tabel is onvolledig of ongeldig bij offset {0}; {1} bytes zijn vereist.",
+    "MediaEngine.ScpTrackSection": "De header van SCP track {0} is onvolledig of ongeldig bij offset {1}; {2} bytes zijn vereist.",
+    "MediaEngine.ScpFluxSection": "De flux van SCP track {0}, omwenteling {1}, is onvolledig of ongeldig bij offset {2}; {3} bytes zijn vereist.",
+    "MediaEngine.ScpOverflow": "Een SCP-grootte, positie, interval of verbonden omwenteling overschrijdt het ondersteunde numerieke bereik.",
+    "MediaEngine.ScpTrackAddress": "Het SCP nummer {0} staat buiten de tracktabel.",
+    "MediaEngine.ScpNoRevolution": "De SCP-track bevat geen omwenteling om te decoderen.",
+    "MediaEngine.ScpNoC900Sectors": "Geen Commodore 900 GCR-sectoren konden gedecodeerd worden van de SCP-afbeelding."
+  }
+}

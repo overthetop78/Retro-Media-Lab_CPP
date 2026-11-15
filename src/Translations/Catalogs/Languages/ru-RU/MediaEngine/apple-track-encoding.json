@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Последовательность из {0} бит не помещается в {1} байт.",
+    "MediaEngine.BitPackingCount": "Количество бит {0} должно быть положительным.",
+    "MediaEngine.BitPackingRange": "Размер упаковки бит превышает поддерживаемый диапазон.",
+    "MediaEngine.AppleTrackUnsupported": "Исходный формат «{1}» нельзя закодировать как {0}.",
+    "MediaEngine.AppleTrackGeometry": "Геометрию Apple II с {0} цилиндрами, {1} головками и {2} секторами на дорожку невозможно закодировать.",
+    "MediaEngine.AppleTrackSector": "Сектор {0} {1}:{2} содержит {3} байт вместо {4}.",
+    "MediaEngine.AppleTrackTooLong": "Дорожка {0} {1} содержит {2} бит; максимум: {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Дорожка Apple II {0} содержит повторяющийся физический номер сектора {1}.",
+    "MediaEngine.NibTrackCount": "Для записи NIB требуется хотя бы одна дорожка; получено: {0}.",
+    "MediaEngine.NibTrackLength": "Дорожка NIB {0} содержит {1} бит; максимум: {2}."
+  }
+}

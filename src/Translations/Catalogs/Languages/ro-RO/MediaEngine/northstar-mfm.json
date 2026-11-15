@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Sectoarele NorthStar conțin 512 octeți; primiți {0} octeți.",
+    "MediaEngine.NorthstarCylinderRange": "Cilindrul NorthStar {0} trebuie să fie între zero și {1}.",
+    "MediaEngine.NorthstarSectorRange": "Numărul de sector NorthStar {0} trebuie să fie între zero și {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Durata indicelui NorthStar depășește numărul de celule de biți acceptat.",
+    "MediaEngine.NorthstarHardAddressRange": "Fiecare coordonată a adresei NorthStar C{0} H{1} trebuie să încapă într-un octet.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} octeți, marcaj FB, sumă de control {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, bloc de sector hardware, trunchiat"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Värdet {1} i TYCOM-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.TycomSectorSize": "TYCOM-sektorer innehåller 128 byte; tog emot {0} byte.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, markering {2}, header-CRC {3}, data-CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, header-CRC {2}, data-CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 byte, markering FE, header-CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 byte, markering {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, sektorhuvud, avkortat",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, markering {0}, sektordata, avkortat",
+    "MediaEngine.TycomUnpaired": "Oklassificerad TYCOM FormatData, markering {0}, data"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Apple Macintosh 섹터는 512바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.IwmAddressRange": "Apple IWM GCR 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} 바이트, 주소 체크섬 {4}, 데이터 체크섬 {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} 바이트, 체크섬 {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, 체크섬 사용 불가, 잘림",
+    "MediaEngine.IwmUnpaired": "연결되지 않은 Apple Macintosh 데이터, 데이터 프롤로그"
+  }
+}

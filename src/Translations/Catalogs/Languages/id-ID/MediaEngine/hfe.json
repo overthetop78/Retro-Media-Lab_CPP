@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Header HFE hilang atau dipotong.",
+    "MediaEngine.HfeRevision": "Revisi HFE {0} tidak didukung.",
+    "MediaEngine.HfeGeometry": "Geometri HFE atau laju bit tidak valid.",
+    "MediaEngine.HfeTable": "Tabel trek HFE berada di luar batas.",
+    "MediaEngine.HfeTiming": "Waktu HFE tidak dapat diwakili pada resolusi yang diperlukan.",
+    "MediaEngine.HfeTrackLength": "Trek HFE {0} memiliki panjang yang tidak valid.",
+    "MediaEngine.HfeTrackData": "Data trek HFE {0}/{1} berada di luar batas.",
+    "MediaEngine.HfeRateOpcode": "Trek HFE v3 {0}/{1} memiliki parameter laju bit bernilai nol pada kode operasi.",
+    "MediaEngine.HfeEmptyTrack": "Trek HFE v3 {0}/{1} tidak berisi sel bit.",
+    "MediaEngine.HfeTracks": "HFE memerlukan setidaknya satu trek.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 memerlukan pengodean yang sama untuk semua trek.",
+    "MediaEngine.HfeEncoding": "Pengkodean {0} tidak dapat ditulis sebagai HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 memerlukan laju bit yang sama untuk semua trek.",
+    "MediaEngine.HfeMissingTrack": "Silinder HFE {0} hilang.",
+    "MediaEngine.HfeTrackAddress": "Trek HFE berada di luar geometri yang dinyatakan.",
+    "MediaEngine.HfeDuplicateTrack": "HFE track {0} / {1} digandakan.",
+    "MediaEngine.HfeLimit": "Kontainer HFE melebihi ukuran atau batas nilainya.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 membutuhkan satu segmen waktu seragam per trek.",
+    "MediaEngine.HfeRevolutions": "HFE tidak dapat mempertahankan putaran fluks magnetik terpisah ini.",
+    "MediaEngine.HfePadding": "HFE v1 akan memerlukan pengisian atau panjang trek yang berbeda antar kepala.",
+    "MediaEngine.HfeScpEncoding": "Jenis disk SCP {0} tidak memiliki pengodean HFE v1 tanpa kehilangan data.",
+    "MediaEngine.HfeFluxBounds": "Interval fluks melebihi durasi indeks.",
+    "MediaEngine.HfeWeak": "Penulisan HFE v3 tidak dapat mempertahankan daerah lemah.",
+    "MediaEngine.HfeWeakFeature": "Opkode data acak HFE v3",
+    "MediaEngine.HfeIndexFeature": "HFE v3 indeks opcode",
+    "MediaEngine.FluxConversionTiming": "Pewaktuan fluks tidak dapat direpresentasikan sebagai sel bit seragam.",
+    "MediaEngine.FluxConversionBounds": "Flux interval atau segmen waktu melebihi durasi trek.",
+    "MediaEngine.FluxConversionRange": "Konversi flux melebihi ukuran atau jangkauan numerik yang didukung."
+  }
+}

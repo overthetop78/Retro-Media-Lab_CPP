@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "L'immagine non contiene un intestazione ImageDisk: commento terminator a {0}, lunghezza file {1} byte.",
+    "MediaEngine.ImdTruncated": "La sezione ImageDisk {0} in offset {1} è troncata: {2} byte sono necessari, {3} sono disponibili.",
+    "MediaEngine.ImdTrackHeader": "L'intestazione della pista ImageDisk non è valida: la modalità {0}, il numero del settore {1}.",
+    "MediaEngine.ImdSizeCode": "Il codice formato settore ImageDisk {0} non è valido.",
+    "MediaEngine.ImdRecordType": "Il tipo di record del settore ImageDisk {0} non è valido.",
+    "MediaEngine.ImdNoSectors": "L'immagine ImageDisk non contiene settori.",
+    "MediaEngine.ImdNoTracks": "L'immagine ImageDisk non contiene tracce.",
+    "MediaEngine.ImdWriteTrack": "L'intestazione della pista ImageDisk non è rappresentabile.",
+    "MediaEngine.ImdWriteSector": "Un record del settore ImageDisk non è valido.",
+    "MediaEngine.ImdCompressed": "Un settore ImageDisk compresso non contiene un byte ripetuto.",
+    "MediaEngine.ImdMetadataMode": "I metadati ImageDisk contengono una modalità di traccia non valida.",
+    "MediaEngine.ImdMetadataRecord": "I metadati ImageDisk contengono un tipo di record del settore non valido.",
+    "MediaEngine.ImdMetadataSize": "I metadati ImageDisk contengono una dimensione del settore non valida.",
+    "MediaEngine.ImdMetadataBlock": "I metadati ImageDisk non corrispondono al blocco logico '{0}'.",
+    "MediaEngine.ImdMetadataCount": "Il conteggio dei metadati ImageDisk non corrisponde all'immagine del settore.",
+    "MediaEngine.ImdMetadata": "I metadati ImageDisk non sono validi.",
+    "MediaEngine.ImdEpsonGeometry": "La geometria dell'immagine di Epson non corrisponde al suo identificatore di formato.",
+    "MediaEngine.ImdEpsonSize": "{0}:{1}:{2} ha una dimensione non valida.",
+    "MediaEngine.ImdEpsonDuplicate": "Il settore Epson {0}:{1}:{2} è duplicato.",
+    "MediaEngine.EpsonFormat": "Il formato selezionato '{0}' non è un formato Epson QX-10 supportato.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicare la geometria Epson QX-10: {0}."
+  }
+}

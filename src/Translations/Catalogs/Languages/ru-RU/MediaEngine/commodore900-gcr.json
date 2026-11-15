@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Трековый цилиндр {0} должен находиться между нулем и {1}.",
+    "MediaEngine.TrackHead": "Голова трека {0} должна находиться между нулем и {1}.",
+    "MediaEngine.TrackMissingSectors": "Требуется по крайней мере один сектор; получено {0}.",
+    "MediaEngine.TrackEmpty": "Кодер {0} не производит битовых ячеек.",
+    "MediaEngine.TrackHex": "Исходный шестнадцатеричный текст недопустим.",
+    "MediaEngine.TrackBinaryCharacter": "Бинарный текст содержит '{0}' в позиции {1}; допускаются только ноль и один.",
+    "MediaEngine.TrackNegativeGap": "Длина разрыва {0} не должна быть отрицательной.",
+    "MediaEngine.TrackSectorNumber": "Номер сектора {0} должен быть между нулем и {1}.",
+    "MediaEngine.C900GcrSectorSize": "Секторы Commodore 900 содержат {0} байт; получено {1} байт.",
+    "MediaEngine.C900GcrSync": "Неклассифицированный Commodore 900 CommodoreSync, синхронизация GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} байт, контрольная сумма {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} байт, контрольная сумма {4}",
+    "MediaEngine.C900GcrUnpaired": "Несопоставленные данные Commodore 900, блок данных, контрольная сумма {0}",
+    "MediaEngine.IntegrityValid": "верна",
+    "MediaEngine.IntegrityInvalid": "неверна",
+    "MediaEngine.IntegrityUnavailable": "недоступна"
+  }
+}

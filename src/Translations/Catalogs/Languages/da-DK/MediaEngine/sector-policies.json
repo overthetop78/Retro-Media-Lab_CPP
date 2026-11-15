@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "En identifikator for enkoderen er påkrævet.",
+    "MediaEngine.PolicyFormats": "Mindst én formatidentifikator er påkrævet og må ikke være tom eller kun indeholde mellemrum.",
+    "MediaEngine.PolicyPrefixes": "Mindst ét formatpræfiks er påkrævet og må ikke være tomt eller kun indeholde mellemrum.",
+    "MediaEngine.PolicyNull": "En regel for sektorrekonstruktion må ikke være null.",
+    "MediaEngine.PolicyNullBlock": "Et element til sektorrekonstruktion må ikke indeholde en null-reference til en blok.",
+    "MediaEngine.PolicyRareUnknown": "Der er ingen registreret profil til sjælden kodning for formatet '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare-cylinder {0} skal være mellem 0 og {1}.",
+    "MediaEngine.PolicyJfdDensity": "JFD-sporet har ingen brugbar tæthedskode.",
+    "MediaEngine.PolicyAddressRange": "Adresseværdien {0} ligger uden for området for et 32-bit heltal med fortegn."
+  }
+}

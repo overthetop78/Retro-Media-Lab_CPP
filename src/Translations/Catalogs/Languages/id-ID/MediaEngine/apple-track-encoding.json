@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Urutan dari {0} bit tidak cocok dalam {1} bytes.",
+    "MediaEngine.BitPackingCount": "Jumlah bit {0} harus positif.",
+    "MediaEngine.BitPackingRange": "Ukuran pengepakan bit melebihi jangkauan yang didukung.",
+    "MediaEngine.AppleTrackUnsupported": "Format sumber '{1}' tak dapat dikodekan sebagai {0}.",
+    "MediaEngine.AppleTrackGeometry": "Geometri Apple II dengan {0} silinder, {1} kepala dan {2} sektor per trek tidak dapat dikodekan.",
+    "MediaEngine.AppleTrackSector": "Sektor {1}:{2} pada {0} berisi {3} byte, bukan {4}.",
+    "MediaEngine.AppleTrackTooLong": "{0} trek {1} berisi {2} bit; maksimum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II track {0} memuat duplikasi sektor fisik nomor {1}.",
+    "MediaEngine.NibTrackCount": "Penulis NIB memerlukan setidaknya satu trek; diterima {0}.",
+    "MediaEngine.NibTrackLength": "Trek NIB {0} memuat {1} bit; maksimum {2}."
+  }
+}

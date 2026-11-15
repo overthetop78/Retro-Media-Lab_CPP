@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg（数据）：需要{0}字节有效数据或{1}字节完整块；收到{2}字节。",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg（系统）：需要{0}字节有效数据或{1}字节完整块；收到{2}字节。",
+    "MediaEngine.ArburgBlockCapacity": "Arburg块容量{1}必须在支持的大小范围内容纳{0}字节有效数据及两个校验和字节。",
+    "MediaEngine.ArburgUsefulSize": "Arburg有效字节数必须大于或等于零；收到{0}。",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 字节, 数据块, 校验和 {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 字节, 系统块, 校验和 {0}"
+  }
+}

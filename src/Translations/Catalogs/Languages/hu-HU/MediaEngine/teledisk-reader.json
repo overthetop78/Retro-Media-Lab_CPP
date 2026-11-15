@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "A TeleDisk képfejléc szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0CommentHeaderTruncated": "A TeleDisk megjegyzésfejléc szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0CommentTruncated": "A TeleDisk megjegyzés szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0TrackTruncated": "A TeleDisk sávfejléc szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0SectorTruncated": "A TeleDisk szektorfejléc szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0DataHeaderTruncated": "A TeleDisk szektoradat-fejléc szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0DataTruncated": "A TeleDisk szektoradatok szakasza csonka a(z) {0} eltolásnál: {1} bájt szükséges, {2} érhető el.",
+    "MediaEngine.Td0Signature": "A kép nem egy TeleDisk kép.",
+    "MediaEngine.Td0HeaderCrc": "A TeleDisk fejléc CRC érvénytelen: várható 0x {0}, kiszámított 0x {1}.",
+    "MediaEngine.Td0CommentCrc": "A TeleDisk comment CRC érvénytelen: várható 0x {0}, kiszámított 0x {1}.",
+    "MediaEngine.Td0TrackCrc": "A TeleDisk {0}/{1} sáv CRC-je érvénytelen: várt 0x{2}, számított 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "A TeleDisk szektor {0} / {1} / {2} CRC érvénytelen: várható 0x {3}, kiszámított 0x {4}.",
+    "MediaEngine.Td0SizeCode": "A TeleDisk szektor {0} / {1} / {2} érvénytelen méretű kódja {3}.",
+    "MediaEngine.Td0MissingData": "A TeleDisk {0}/{1}/{2} szektornak nincs kódolt adata a(z) {3} eltolásnál.",
+    "MediaEngine.Td0NoSectors": "A TeleDisk kép nem tartalmaz szektorokat."
+  }
+}

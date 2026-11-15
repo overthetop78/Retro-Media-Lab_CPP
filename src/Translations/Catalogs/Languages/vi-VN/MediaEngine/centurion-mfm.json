@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Giá trị {1} của trường {0} Centurion MFM phải nằm giữa không và {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} byte, CRC tiêu đề {4}, CRC dữ liệu {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} byte, khóa {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, dấu sector, bị cắt ngắn",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC không khả dụng, bị cắt ngắn",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, khóa không được hỗ trợ {0}, bị cắt ngắn",
+    "MediaEngine.CenturionUnpaired": "Dữ liệu Centurion chưa ghép cặp, khối dữ liệu"
+  }
+}

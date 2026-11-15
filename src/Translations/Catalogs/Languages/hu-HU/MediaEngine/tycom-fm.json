@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Az TYCOM {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.TycomSectorSize": "Az TYCOM szektorok 128 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bájt, jel {2}, fejléc CRC {3}, adat CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bájt, fejléc CRC {2}, adat CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 bájt, jel FE, fejléc CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 bájt, jel {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, szektorfejléc, csonkolt",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, jel {0}, szektoradatok, csonkolt",
+    "MediaEngine.TycomUnpaired": "Nem osztályozott TYCOM FormatData, jel {0}, adatok"
+  }
+}

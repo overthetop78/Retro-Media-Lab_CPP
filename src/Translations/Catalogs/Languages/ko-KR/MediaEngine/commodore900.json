@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 실린더 {0}이 0부터 {1}까지의 범위 밖에 있습니다.",
+    "MediaEngine.C900Block": "Commodore 900 논리 블록 {0}은 범위 0에서 {1} 밖에 있습니다.",
+    "MediaEngine.C900Address": "Commodore 900 주소 {0}/{1}/{2}은 유효하지 않습니다. 머리는 0과 {3} 사이이며, 이 실린더에서 0과 {4} 사이의 섹터가 있어야 합니다.",
+    "MediaEngine.C900Content": "{0} 바이트의 이미지는 인식 된 COHERENT superblock을 포함하지 않습니다.",
+    "MediaEngine.C900Alignment": "COHERENT 이미지 길이 {0}바이트는 섹터 크기 {1}바이트로 나누어떨어지지 않습니다.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT는 {0} 블록을 선언하지만 이미지는 {1} 만 포함되어 있습니다.",
+    "MediaEngine.C900Capacity": "COHERENT 이미지에는 {0}개 블록이 있지만 Commodore 900 지오메트리는 최대 {1}개 블록을 지원합니다.",
+    "MediaEngine.C900WriterGeometry": "섹터 이미지가 Commodore 900의 구역별 지오메트리를 사용하지 않습니다.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 논리 블록 {0}이 필요한 물리적 섹터 순서와 일치하지 않습니다."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "De waarde {1} van Centurion MFM-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} bytes, header-CRC {4}, data-CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} bytes, sleutel {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, sectormarkering, afgekapt",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC niet beschikbaar, afgekapt",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, niet-ondersteunde sleutel {0}, afgekapt",
+    "MediaEngine.CenturionUnpaired": "Ongepaarde Centurion-gegevens, gegevensblok"
+  }
+}

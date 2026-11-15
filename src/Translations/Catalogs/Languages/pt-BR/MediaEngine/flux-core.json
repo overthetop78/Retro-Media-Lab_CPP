@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "A duração da célula de bits de fluxo {0} é inválida; ela deve ser finita e pelo menos um tique.",
+    "MediaEngine.FluxSizeLimit": "Os dados de fluxo excedem o tamanho suportado na memória.",
+    "MediaEngine.FluxInvalidBit": "Um valor de bits de fluxo não é zero nem um.",
+    "MediaEngine.FluxInvalidMaximum": "O número máximo de células por intervalo de fluxo {0} deve ser positivo.",
+    "MediaEngine.FluxZeroCell": "A duração da célula de bits de fluxo não deve ser zero.",
+    "MediaEngine.FluxZeroIndex": "A duração do índice de rotação de fluxo não deve ser zero.",
+    "MediaEngine.FluxIntervalOverflow": "O intervalo de fluxo de {0} células em {1} ticks por célula excede o intervalo inteiro suportado.",
+    "MediaEngine.GcrCoordinates": "As coordenadas GCR são inválidas: deslocamento {0}, contagem de byte {1}, passada {2}."
+  }
+}

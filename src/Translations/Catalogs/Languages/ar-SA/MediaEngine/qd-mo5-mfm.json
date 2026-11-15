@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "قيمة الحقل {0} في QD MO5 هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.QdSectorSize": "تحتوي قطاعات QD MO5 على 128 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 بايت, علامة FB, ترويسة {1}, مجموع تحقق البيانات {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 بايت, علامة {1}, المجموع الاختباري {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, ترويسة القطاع, مبتور",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, بيانات القطاع, المجموع الاختباري غير متاحة, مبتور",
+    "MediaEngine.QdUnpaired": "بيانات QD MO5 غير مقترنة, علامة {0}, بيانات القطاع"
+  }
+}

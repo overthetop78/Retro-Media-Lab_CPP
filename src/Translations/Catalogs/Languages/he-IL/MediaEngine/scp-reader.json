@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "רזולוציית הזמן של SCP חייבת להיות חיובית; התקבל {0}.",
+    "MediaEngine.ScpExtended": "מדיות SCP מורחבות אינן דמויות של תקליטונים.",
+    "MediaEngine.ScpSignature": "הקובץ אינו מכיל חתימת SCP.",
+    "MediaEngine.ScpRevolutions": "מספר הסיבובים של SCP, ‏{0}, אינו תקין.",
+    "MediaEngine.ScpTrackRange": "טווח רצועות SCP מ־{0} עד {1} אינו תקין.",
+    "MediaEngine.ScpWidth": "רוחב תא הסיבית של SCP, ‏{0}, אינו נתמך.",
+    "MediaEngine.ScpHeads": "בורר הראש של SCP, ‏{0}, אינו תקין.",
+    "MediaEngine.ScpTrackSignature": "לרצועה {0} אין חתימת TRK; המתאר מכיל את מספר הרצועה {1}.",
+    "MediaEngine.ScpTrackMismatch": "רשומה {0} בטבלת הרצועות מצביעה על רצועה {1}.",
+    "MediaEngine.ScpHeaderSection": "כותרת SCP אינה שלמה או אינה תקינה בהיסט {0}; נדרשים {1} בתים.",
+    "MediaEngine.ScpTableSection": "טבלת היסטי רצועות SCP אינה שלמה או אינה תקינה בהיסט {0}; נדרשים {1} בתים.",
+    "MediaEngine.ScpTrackSection": "כותרת רצועת SCP מספר {0} אינה שלמה או אינה תקינה בהיסט {1}; נדרשים {2} בתים.",
+    "MediaEngine.ScpFluxSection": "השטף של רצועת SCP מספר {0}, סיבוב {1}, אינו שלם או אינו תקין בהיסט {2}; נדרשים {3} בתים.",
+    "MediaEngine.ScpOverflow": "גודל, מיקום, מרווח או סיבוב מחובר של SCP חורגים מהטווח המספרי הנתמך.",
+    "MediaEngine.ScpTrackAddress": "מספר רצועת SCP, ‏{0}, נמצא מחוץ לטבלת הרצועות.",
+    "MediaEngine.ScpNoRevolution": "רצועת SCP אינה מכילה סיבוב לפענוח.",
+    "MediaEngine.ScpNoC900Sectors": "לא ניתן היה לפענח שום מגזר Commodore 900 GCR מדמות SCP."
+  }
+}

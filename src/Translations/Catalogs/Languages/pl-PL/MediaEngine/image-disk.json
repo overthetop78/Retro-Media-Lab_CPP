@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Obraz nie zawiera nagłówka ImageDisk: terminator komentarzy na {0}, długość pliku {1} bajtów.",
+    "MediaEngine.ImdTruncated": "Sekcja ImageDisk {0} przy przesunięciu {1} jest okrojona: {2} bajty są wymagane, {3} są dostępne.",
+    "MediaEngine.ImdTrackHeader": "Nagłówek ścieżki ImageDisk jest nieprawidłowy: tryb {0}, liczba sektorów {1}.",
+    "MediaEngine.ImdSizeCode": "Kod sektora ImageDisk {0} jest nieprawidłowy.",
+    "MediaEngine.ImdRecordType": "Sektorowy rekord ImageDisk {0} jest nieprawidłowy.",
+    "MediaEngine.ImdNoSectors": "Obraz ImageDisk nie zawiera żadnych sektorów.",
+    "MediaEngine.ImdNoTracks": "Obraz ImageDisk nie zawiera śladów.",
+    "MediaEngine.ImdWriteTrack": "Nagłówek ścieżki ImageDisk nie jest odtwarzalny.",
+    "MediaEngine.ImdWriteSector": "Rekord sektora ImageDisk jest nieprawidłowy.",
+    "MediaEngine.ImdCompressed": "Skompresowany sektor ImageDisk nie zawiera jednego powtarzanego bajtu.",
+    "MediaEngine.ImdMetadataMode": "Metadane ImageDisk zawierają nieprawidłowy tryb toru.",
+    "MediaEngine.ImdMetadataRecord": "Metadane ImageDisk zawierają nieprawidłowy typ rekordu sektorowego.",
+    "MediaEngine.ImdMetadataSize": "Metadane ImageDisk zawierają nieprawidłowy rozmiar sektora.",
+    "MediaEngine.ImdMetadataBlock": "Metadane ImageDisk nie pasują do bloku logicznego '{0}'.",
+    "MediaEngine.ImdMetadataCount": "Liczba bloków metadanych ImageDisk nie pasuje do obrazu sektora.",
+    "MediaEngine.ImdMetadata": "Metadane ImageDisk są nieprawidłowe.",
+    "MediaEngine.ImdEpsonGeometry": "Geometria obrazu Epson nie odpowiada identyfikatorowi formatu.",
+    "MediaEngine.ImdEpsonSize": "Epson sector {0}: {1}: {2} ma nieprawidłowy rozmiar.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson sector {0}: {1}: {2} jest zduplikowany.",
+    "MediaEngine.EpsonFormat": "Wybrany format '{0}' nie jest obsługiwanym formatem Epson QX-10.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplikat geometrii Epson QX-10: {0}."
+  }
+}

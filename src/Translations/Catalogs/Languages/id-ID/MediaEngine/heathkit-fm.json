@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Sektor Heathkit berisi 256 byte; diterima {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Nilai {1} pada bidang {0} Heathkit FM harus antara nol dan {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Rekaman Heathkit harus berisi setidaknya satu byte checksum.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, volume {4}, checksum header {5}, checksum data {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, checksum {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, header sektor perangkat keras, terpotong",
+    "MediaEngine.HeathkitUnpaired": "Data Heathkit tanpa pasangan, blok data"
+  }
+}

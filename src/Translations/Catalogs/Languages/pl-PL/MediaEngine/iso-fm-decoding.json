@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik FE, N{4}, CRC nagłówka {5}, CRC danych {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Niesklasyfikowane ISO FM DataAddressMark, znacznik FB",
+    "MediaEngine.FmUnpairedDeleted": "Niesklasyfikowane ISO FM DeletedDataAddressMark, znacznik F8",
+    "MediaEngine.FmRevolutionTiming": "Parametry czasowe obrotu ISO FM są niespójne: indeks {0} ticks, czas komórki {1} ticks, suma interwałów {2} ticks."
+  }
+}

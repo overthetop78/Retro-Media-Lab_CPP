@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "L'intestazione Amstrad DSK è troncata.",
+    "MediaEngine.CpcDskSignature": "Il file non è un'immagine CPCEMU DSK.",
+    "MediaEngine.CpcDskGeometry": "La geometria Amstrad DSK non è valida.",
+    "MediaEngine.CpcDskExtendedTable": "La tabella di traccia Amstrad DSK estesa non è valida in pista {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "La traccia Amstrad DSK {0} è troncata.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} ha un intestazione non valida.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} ha una tabella di settore non valida.",
+    "MediaEngine.CpcDskSectorTruncated": "Il settore DSK Amstrad {0}:{1}:{2} è troncato.",
+    "MediaEngine.CpcDskNoSectors": "L'immagine Amstrad DSK non contiene settori.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} occupa {1} byte e supera il limite del contenitore di 65280 byte.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} utilizza una rappresentazione del settore assente, variabile o non nominale che richiede EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Il contenitore Amstrad DSK non può essere scritto: la geometria dichiarata e la collezione di tracce non sono d'accordo.",
+    "MediaEngine.CpcDskTrackIndex": "Il contenitore Amstrad DSK non può essere scritto: indice di traccia {0} appare in posizione {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Il contenitore Amstrad DSK non può essere scritto: traccia {0} contiene troppi descrittori del settore.",
+    "MediaEngine.CpcDskUniformTracks": "Il contenitore Amstrad DSK non può essere scritto: DSK standard richiede una dimensione uniforme della traccia.",
+    "MediaEngine.CpcDskBuilderGeometry": "Il contenitore Amstrad DSK non può essere scritto: la geometria supera i limiti CPCEMU.",
+    "MediaEngine.CpcDskNativeMetadata": "Il contenitore Amstrad DSK non può essere scritto: i metadati del settore nativo mancano di ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "Il contenitore Amstrad DSK non può essere scritto: la dimensione del settore {0} non è rappresentabile da un codice formato CPCEMU.",
+    "MediaEngine.CpcDskOverflow": "La dimensione dei dati CPCEMU DSK supera l'intervallo supportato.",
+    "MediaEngine.CpcDskRecordedAddress": "L'indirizzo CPCEMU registrato {0}:{1}:{2} non può essere rappresentato da un solo byte."
+  }
+}

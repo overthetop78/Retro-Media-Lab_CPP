@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.MembrainSectorSize": "Membrain 扇区包含 512 字节；收到 {0} 字节。",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 字节, 标记 FE, 头部CRC {3}, 数据CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 字节, 标记 {3}, 数据块, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, 扇区头, 截断",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC 不可用, 截断",
+    "MediaEngine.MembrainUnpaired": "未配对的 Membrain 数据, 数据块"
+  }
+}

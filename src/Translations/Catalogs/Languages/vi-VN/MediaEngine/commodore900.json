@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Trụ Commodore 900 {0} nằm ngoài phạm vi từ 0 đến {1}.",
+    "MediaEngine.C900Block": "Khối logic Commodore 900 {0} nằm ngoài phạm vi từ 0 đến {1}.",
+    "MediaEngine.C900Address": "Địa chỉ Commodore 900 {0}/{1}/{2} không hợp lệ; đầu đọc phải từ 0 đến {3} và sector phải từ 0 đến {4} trên trụ này.",
+    "MediaEngine.C900Content": "Ảnh đĩa {0} byte không chứa siêu khối COHERENT được nhận dạng.",
+    "MediaEngine.C900Alignment": "Chiều dài ảnh đĩa COHERENT {0} byte không chia hết cho kích thước sector {1} byte.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT khai báo {0} khối nhưng ảnh đĩa chỉ chứa {1}.",
+    "MediaEngine.C900Capacity": "Ảnh đĩa COHERENT chứa {0} khối nhưng cấu trúc hình học Commodore 900 hỗ trợ tối đa {1}.",
+    "MediaEngine.C900WriterGeometry": "Ảnh sector không sử dụng cấu trúc hình học chia vùng của Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Khối logic Commodore 900 {0} không khớp thứ tự sector vật lý yêu cầu."
+  }
+}

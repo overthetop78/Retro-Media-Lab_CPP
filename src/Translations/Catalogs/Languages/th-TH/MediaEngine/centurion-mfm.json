@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "ค่า {1} ของฟิลด์ {0} ใน Centurion MFM ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} ไบต์, CRC ส่วนหัว {4}, CRC ข้อมูล {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} ไบต์, คีย์ {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, เครื่องหมายเซกเตอร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC ไม่พร้อมใช้งาน, ข้อมูลถูกตัดทอน",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, คีย์ที่ไม่รองรับ {0}, ข้อมูลถูกตัดทอน",
+    "MediaEngine.CenturionUnpaired": "ข้อมูล Centurion ที่ไม่ได้จับคู่, บล็อกข้อมูล"
+  }
+}

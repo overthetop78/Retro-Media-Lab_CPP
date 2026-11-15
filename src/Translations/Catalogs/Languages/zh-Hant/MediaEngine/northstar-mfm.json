@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar 磁區包含 512 位元組；收到 {0} 位元組。",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar 磁柱 {0} 必須介於零與 {1} 之間。",
+    "MediaEngine.NorthstarSectorRange": "NorthStar 磁區號 {0} 必須介於零與 {1} 之間。",
+    "MediaEngine.NorthstarWindowCapacity": "NorthStar 索引時間超過支援的位元單元數量。",
+    "MediaEngine.NorthstarHardAddressRange": "NorthStar 位址 C{0} H{1} 的每個座標必須能存入一個位元組。",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標記 FB, 檢查碼 {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, 硬磁區區塊, 截斷"
+  }
+}

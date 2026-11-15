@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Ο αριθμός byte της ροής bit {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} byte, σήμα FE, N{4}, CRC κεφαλίδας {5}, CRC δεδομένων {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} byte, σήμα FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, σήμα F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Μη ταξινομημένο ISO MFM Sync, σήμα {0}",
+    "MediaEngine.MfmUnpaired": "Μη ταξινομημένο ISO MFM DataAddressMark, σήμα FB",
+    "MediaEngine.MfmUnpairedDeleted": "Μη ταξινομημένο ISO MFM DeletedDataAddressMark, σήμα F8"
+  }
+}

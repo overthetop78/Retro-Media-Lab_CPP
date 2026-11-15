@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR-kohdemuotoa '{0}' ei tueta.",
+    "MediaEngine.AtrIncompatibleImage": "Sektorikuva '{0}' sisältää {1} sektoria ja {2} tavua; ATR-profiili '{3}' vaatii {4} sektoria ja {5} tavua.",
+    "MediaEngine.AtrMissingSector": "ATR-sektori {0} puuttuu.",
+    "MediaEngine.AtrSectorSize": "ATR-sektori {0} sisältää {1} tavua; odotettiin {2}.",
+    "MediaEngine.AtrHeader": "ATR-otsikko on virheellinen: pituus {0} tavua (vähintään {1}), tunniste {2} (odotettiin {3}).",
+    "MediaEngine.AtrUnsupportedSize": "ATR-sektorikokoa {0} tavua ei tueta; odotettiin {1} tavua.",
+    "MediaEngine.AtrPayloadLength": "ATR-datan pituus on {0} tavua; otsikko ilmoittaa {1} tavua.",
+    "MediaEngine.AtrTruncatedPayload": "ATR-data, jonka pituus on {0} tavua, ei sisällä {1} tavun käynnistysaluetta ja sitä seuraavia kokonaisia {2} tavun sektoreita.",
+    "MediaEngine.AtrSectorCount": "Atari ATR-sektorikoon {0} ja sektorimäärän {1} on oltava suurempia kuin nolla.",
+    "MediaEngine.AtxHeader": "ATX-tiedoston otsikko puuttuu tai on virheellinen.",
+    "MediaEngine.AtxTrackOffset": "ATX-raitatietojen sijainti on tiedoston ulkopuolella.",
+    "MediaEngine.AtxTrackCycle": "ATX-raitaketju sisältää silmukan.",
+    "MediaEngine.AtxTrackBounds": "ATX-raita ulottuu tiedoston ulkopuolelle.",
+    "MediaEngine.AtxTrackNumber": "ATX-raita {0} on tuetun 40 raidan geometrian ulkopuolella.",
+    "MediaEngine.AtxSectorCount": "ATX-raita {0} sisältää liikaa sektoritietueita.",
+    "MediaEngine.AtxListBounds": "ATX-raidan {0} sektoriluettelo ylittää raidan rajan.",
+    "MediaEngine.AtxSectorNumber": "ATX-raita {0} sisältää virheellisen sektorin {1}.",
+    "MediaEngine.AtxDataBounds": "ATX-raidan {0}, sektorin {1}, tiedot ylittävät raidan rajan.",
+    "MediaEngine.AtxNoSectors": "ATX-kuva ei sisällä luettavaa sektoritietuetta.",
+    "MediaEngine.AtxLargeOffset": "ATX-osan '{0}' sijainti on liian suuri.",
+    "MediaEngine.AtxTruncated": "ATX-osa '{0}' on katkaistu."
+  }
+}

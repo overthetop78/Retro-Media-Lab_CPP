@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "De ruwe afbeeldingslengte {0} is leeg of geen veelvoud van {1} bytes.",
+    "Media.RawUnknownGeometry": "Geen ondersteunde ruwe beeldgeometrie komt overeen met {0} bytes.",
+    "Media.MsxInvalidBoot": "De afbeelding van {0} bytes bevat geen ondersteunde MSX-opstartsector.",
+    "Media.MsxUnsupportedGeometry": "Geen MSX-geometrie komt overeen met {0} bytes en mediadescriptor {1}.",
+    "Media.UnsupportedRawFormat": "Raw afbeeldingsformaat {0} wordt niet ondersteund.",
+    "Media.RawGeometryMismatch": "Afbeelding {0} heeft geometrie {1}; doel {2} vereist geometrie {3}.",
+    "Media.RawSectorMissing": "Logische sector {0} ontbreekt en kan niet naar een volledige ruwe afbeelding worden geschreven.",
+    "Media.RawSectorSize": "Logische sector {0} bevat {1} bytes in plaats van {2}.",
+    "Media.AtomicOpen": "Kan de tijdelijke uitvoer voor {0} niet aanmaken.",
+    "Media.AtomicWrite": "Kan de tijdelijke uitvoer voor {0} niet schrijven.",
+    "Media.AtomicCommit": "Kan het volledige uitvoerbestand {0} niet publiceren.",
+    "Media.Cancelled": "De operatie op het opslagmedium werd geannuleerd."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Mindst én fluxdekoder skal registreres.",
+    "MediaEngine.RegistryNullDecoder": "Flux dekoder på position {0} er nul.",
+    "MediaEngine.RegistryInvalidId": "Flux dekoder på position {0} har en tom identifikator.",
+    "MediaEngine.RegistryDuplicate": "En fluxdekoder med identifikator '{0}' er allerede registreret.",
+    "MediaEngine.RegistryUnknown": "Ingen fluxdekoder er registreret med id '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "En fluxregistrering af én omdrejning kræves til afkodning.",
+    "MediaEngine.RegistryNoAutomatic": "Ingen registreret fluxdekoder deltager i automatisk detektion."
+  }
+}

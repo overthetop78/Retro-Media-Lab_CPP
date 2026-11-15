@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit-sektorer innehåller 256 byte; tog emot {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Värdet {1} i Heathkit FM-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "En Heathkit-post måste innehålla minst en kontrollsummebyte.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, volym {4}, kontrollsumma för huvud {5}, kontrollsumma för data {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, kontrollsumma {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, hårdsektorhuvud, avkortat",
+    "MediaEngine.HeathkitUnpaired": "Oparade Heathkit-data, datablock"
+  }
+}

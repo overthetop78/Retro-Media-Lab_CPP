@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "QD MO5 {0} alanının {1} değeri sıfır ile {2} arasında olmalıdır.",
+    "MediaEngine.QdSectorSize": "QD MO5 sektörleri 128 bayt içerir; {0} bayt alındı.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 bayt, işaret FB, başlık {1}, veri sağlama toplamı {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 bayt, işaret {1}, sağlama toplamı {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, sektör başlığı, kesilmiş",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, sektör verisi, sağlama toplamı kullanılamıyor, kesilmiş",
+    "MediaEngine.QdUnpaired": "Eşleştirilmemiş QD MO5 verileri, işaret {0}, sektör verisi"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (data): diperlukan {0} byte data berguna atau {1} byte blok lengkap; diterima {2} byte.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (sistem): diperlukan {0} byte data berguna atau {1} byte blok lengkap; diterima {2} byte.",
+    "MediaEngine.ArburgBlockCapacity": "Kapasitas blok Arburg {1} harus menampung {0} byte data berguna dan dua byte checksum dalam batas ukuran yang didukung.",
+    "MediaEngine.ArburgUsefulSize": "Jumlah byte data berguna Arburg tidak boleh negatif; diterima {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 byte, blok data, checksum {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 byte, blok sistem, checksum {0}"
+  }
+}

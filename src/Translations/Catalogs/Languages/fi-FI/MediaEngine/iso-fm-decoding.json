@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} tavua, merkki FE, N{4}, otsikon CRC {5}, datan CRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} tavua, merkki FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} tavua, merkki F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Luokittelematon ISO FM DataAddressMark, merkki FB",
+    "MediaEngine.FmUnpairedDeleted": "Luokittelematon ISO FM DeletedDataAddressMark, merkki F8",
+    "MediaEngine.FmRevolutionTiming": "ISO FM -kierroksen ajoitus on epäjohdonmukainen: indeksi {0} ticks, solun kesto {1} ticks, välien summa {2} ticks."
+  }
+}

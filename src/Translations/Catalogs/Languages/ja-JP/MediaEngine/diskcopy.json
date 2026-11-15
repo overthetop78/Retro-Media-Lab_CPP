@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "DiskCopyヘッダーが途中で切れています。",
+    "MediaEngine.DiskCopyPrivateWord": "DiskCopyのプライベートワードは{0}です。期待値は{1}です。",
+    "MediaEngine.DiskCopyPayload": "DiskCopyのペイロードが無効です。",
+    "MediaEngine.DiskCopyTags": "DiskCopyイメージは、認識可能なMacintosh/ProDOSイメージでもタグ付きLisaイメージでもありません。",
+    "MediaEngine.DiskCopyChecksumBytes": "DiskCopyチェックサムには偶数個のバイトが必要です。受け取ったバイト数：{0}。",
+    "MediaEngine.DiskCopyRange": "DiskCopyの長さがサポート範囲を超えています。",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopyには完全なセクターイメージが必要です。",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopyでは論理ブロックごとに合計512バイトが必要です。",
+    "MediaEngine.DiskCopyLayoutTags": "各DiskCopyタグは12バイトでなければなりません。",
+    "MediaEngine.DiskCopyMetadataIncomplete": "DiskCopyメタデータが不完全です。",
+    "MediaEngine.DiskCopyMetadataName": "DiskCopyの名前メタデータが無効です。",
+    "MediaEngine.DiskCopyMetadataFormat": "DiskCopyの形式メタデータが無効です。",
+    "MediaEngine.DiskCopyMetadataChecksum": "DiskCopyのチェックサムメタデータ'{0}'が無効です。"
+  }
+}

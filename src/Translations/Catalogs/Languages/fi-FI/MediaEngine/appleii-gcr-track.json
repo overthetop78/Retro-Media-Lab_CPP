@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Apple II GCR -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II -raidalla on 13 sektoria koodaukselle 5-and-3 tai 16 koodaukselle 6-and-2; saatiin {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} tavua, V{4}, osoitteen tarkistussumma {5}, datan tarkistussumma {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} tavua, 13 sektoria V{4}, osoitteen tarkistussumma {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} tavua, tarkistussumma {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} tavua, 13 sektoria, tarkistussumma {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, tarkistussumma ei saatavilla, katkaistu",
+    "MediaEngine.AppleIIUnpaired": "Parittamaton Apple II -data, datan esiosa D5 AA AD"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Sector image '{0}' with geometry {1}x{2}x{3} and block size {4} cannot be written as MSA.",
+    "MediaEngine.MsaMissingSector": "MSA logical sector {0} ({1}:{2}:{3}) is missing.",
+    "MediaEngine.MsaSectorSize": "MSA logical sector {0} contains {1} bytes; expected {2}.",
+    "MediaEngine.MsaHeader": "The MSA header is invalid; the file contains {0} bytes.",
+    "MediaEngine.MsaGeometry": "The MSA geometry is invalid: {0} sectors, {1} heads, cylinders {2} to {3}.",
+    "MediaEngine.MsaTruncatedTable": "The MSA track-length field for cylinder {0}, head {1}, at offset {2} is truncated: {3} bytes available.",
+    "MediaEngine.MsaTruncatedTrack": "MSA track {0}:{1} at offset {2} declares {3} bytes, {4} are available.",
+    "MediaEngine.MsaTruncatedRun": "The compressed run in MSA track {0}:{1} at packed offset {2} is truncated within {3} bytes.",
+    "MediaEngine.MsaInvalidRun": "The compressed run in MSA track {0}:{1} at packed offset {2} has count {3}; {4} of {5} output bytes were already written.",
+    "MediaEngine.MsaUnpackedLength": "MSA track {0}:{1} consumed {2} of {3} compressed bytes and produced {4} of {5} expected bytes."
+  },
+  "invariants": []
+}

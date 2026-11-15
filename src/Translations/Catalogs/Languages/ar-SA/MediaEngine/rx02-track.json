@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "قيمة الحقل {0} في DEC RX02 هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.Rx02SizeCode": "رمز حجم RX02 {0} لا يطابق {1} بايت.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, رأس قطاع, مبتور",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} بايت, CRC الرأس {4}, CRC البيانات {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} بايت, علامة {4}, {5}, CRC الرأس {6}, CRC البيانات {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} بايت, علامة {4}, {5}, CRC البيانات {6}",
+    "MediaEngine.Rx02Unpaired": "غير مصنف DEC RX02 FormatData, علامة {0}, بيانات"
+  }
+}

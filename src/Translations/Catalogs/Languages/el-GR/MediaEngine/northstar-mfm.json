@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Οι τομείς NorthStar περιέχουν 512 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.NorthstarCylinderRange": "Ο κύλινδρος NorthStar {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.NorthstarSectorRange": "Ο αριθμός τομέα NorthStar {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Η διάρκεια δείκτη NorthStar υπερβαίνει το υποστηριζόμενο πλήθος κελιών bit.",
+    "MediaEngine.NorthstarHardAddressRange": "Κάθε συντεταγμένη της διεύθυνσης NorthStar C{0} H{1} πρέπει να χωρά σε ένα byte.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} byte, δείκτης FB, άθροισμα ελέγχου {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, μπλοκ τομέα υλικού, περικομμένο"
+  }
+}

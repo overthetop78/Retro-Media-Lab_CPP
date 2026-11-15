@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "רצף של {0} ביטים אינו נכנס ל־{1} בתים.",
+    "MediaEngine.BitPackingCount": "מספר הביטים {0} חייב להיות חיובי.",
+    "MediaEngine.BitPackingRange": "גודל אריזת הביטים חורג מהטווח הנתמך.",
+    "MediaEngine.AppleTrackUnsupported": "פורמט המקור \"{1}\" אינו יכול להיות מקודד כמו {0}.",
+    "MediaEngine.AppleTrackGeometry": "לא ניתן לקודד גאומטריית Apple II עם {0} גלילים, {1} ראשים ו־{2} מגזרים למסילה.",
+    "MediaEngine.AppleTrackSector": "מגזר {1}:{2} של {0} מכיל {3} בתים במקום {4}.",
+    "MediaEngine.AppleTrackTooLong": "מסילה {1} של {0} מכילה {2} ביטים; המרב {3}.",
+    "MediaEngine.AppleTrackDuplicate": "מסילת Apple II מספר {0} מכילה מספר מגזר פיזי כפול {1}.",
+    "MediaEngine.NibTrackCount": "כותב NIB דורש מסילה אחת לפחות; התקבלו {0}.",
+    "MediaEngine.NibTrackLength": "מסילת NIB מספר {0} מכילה {1} ביטים; המרב {2}."
+  }
+}

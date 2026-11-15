@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Η εικόνα δεν περιέχει κεφαλίδα ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Μη έγκυρη εγγραφή ApriDisk στο byte {0}.",
+    "MediaEngine.ApridiskOverflow": "Το μήκος εγγραφής ApriDisk υπερβαίνει το όριο προσημασμένου ακεραίου 32 bit.",
+    "MediaEngine.ApridiskTruncated": "Η εγγραφή ApriDisk στο byte {0} είναι περικομμένη.",
+    "MediaEngine.ApridiskAddress": "ApriDisk διεύθυνση τομέα {0}/{1}/{2} είναι έξω από τη γεωμετρία ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Η εικόνα ApriDisk περιέχει χρήσιμους τομείς {0} αντί για {1}.",
+    "MediaEngine.ApridiskSectorLength": "Ένας τομέας ApriDisk περιέχει {0} bytes αντί {1}.",
+    "MediaEngine.ApridiskCompression": "Μη υποστηριζόμενη συμπίεση τομέα ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "Ένας συμπιεσμένος τομέας του ApriDisk επεκτείνεται πέρα από 512 bytes.",
+    "MediaEngine.ApridiskWriteGeometry": "Η εικόνα τομέα δεν χρησιμοποιεί τη γεωμετρία ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Το είδωλο DEC RX02 περιέχει {0} byte· ένα πλήρες φυσικό είδωλο απαιτεί {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Η εικόνα του τομέα δεν χρησιμοποιεί τη γεωμετρία DEC RX02."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZ 헤더가 유효하지 않습니다.",
+    "MediaEngine.WozDiskType": "WOZ 디스크 유형 {0}은(는) 지원되지 않습니다. 5.25인치 Apple II 디스크가 필요합니다.",
+    "MediaEngine.WozMissingChunk": "필수 WOZ 청크 '{0}'이(가) 없거나 불완전합니다.",
+    "MediaEngine.WozTruncatedChunk": "WOZ 청크 '{0}'이(가) 잘렸습니다.",
+    "MediaEngine.WozTrackReference": "WOZ 트랙 {0}이(가) 범위를 벗어난 설명자 {1}을(를) 참조합니다.",
+    "MediaEngine.WozCrc": "WOZ CRC32가 유효하지 않습니다. 저장 값: {0}, 계산 값: {1}.",
+    "MediaEngine.WozChunkId": "WOZ 청크 식별자 '{0}'은(는) 정확히 네 개의 ASCII 문자를 포함해야 합니다.",
+    "MediaEngine.WozTrackCount": "WOZ1 쓰기 모듈이 {0}개의 트랙을 받았습니다. 허용 범위는 1부터 {1}까지입니다.",
+    "MediaEngine.WozTrackLength": "WOZ1 트랙 {0}에 {1}비트가 포함되어 있습니다. 최댓값은 {2}입니다.",
+    "MediaEngine.AppleNoRwtsSectors": "{1}개 트랙에서 디코딩한 {0}개 섹터 중 유효한 Apple II RWTS18 섹터가 없습니다."
+  }
+}

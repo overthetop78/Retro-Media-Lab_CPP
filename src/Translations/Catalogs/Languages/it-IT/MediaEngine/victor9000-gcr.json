@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "I settori Victor 9000 contengono 512 byte; ricevuti {0} byte.",
+    "MediaEngine.VictorSectorRange": "Il numero di settore Victor 9000 {0} deve essere compreso tra zero e {1}.",
+    "MediaEngine.VictorMarkerLength": "I marcatori Victor 9000 devono raggiungere la posizione di bit 49; ricevuti {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} byte, intestazione {4}, somma di controllo dati {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} byte, marcatore {4}, blocco dati, somma di controllo {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, somma di controllo non disponibile, troncato",
+    "MediaEngine.VictorUnpaired": "Dati Victor 9000 non associati, blocco dati"
+  }
+}

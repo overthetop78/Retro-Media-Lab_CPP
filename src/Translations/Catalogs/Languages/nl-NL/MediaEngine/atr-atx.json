@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR-doelformaat '{0}' wordt niet ondersteund.",
+    "MediaEngine.AtrIncompatibleImage": "Sectorafbeelding '{0}' bevat {1} sectoren en {2} bytes; ATR-profiel '{3}' vereist {4} sectoren en {5} bytes.",
+    "MediaEngine.AtrMissingSector": "ATR-sector {0} ontbreekt.",
+    "MediaEngine.AtrSectorSize": "ATR sector {0} bevat {1} bytes; verwacht {2}.",
+    "MediaEngine.AtrHeader": "De ATR-header is ongeldig: lengte {0} bytes (minimum {1}), signatuur {2} (verwacht {3}).",
+    "MediaEngine.AtrUnsupportedSize": "De ATR-sectorgrootte {0} bytes wordt niet ondersteund; verwachte {1} bytes.",
+    "MediaEngine.AtrPayloadLength": "De ATR-payloadlengte is {0} bytes; de header vermeldt {1} bytes.",
+    "MediaEngine.AtrTruncatedPayload": "De ATR payloadlengte {0} bytes bevat geen {1}-byte opstartgebied gevolgd door complete {2}-byte sectoren.",
+    "MediaEngine.AtrSectorCount": "De Atari ATR sectorgrootte {0} en het aantal sectoren {1} moeten positief zijn.",
+    "MediaEngine.AtxHeader": "De ATX-bestandskop ontbreekt of is ongeldig.",
+    "MediaEngine.AtxTrackOffset": "De ATX track-data offset ligt buiten het bestand.",
+    "MediaEngine.AtxTrackCycle": "De ATX track chain bevat een cyclus.",
+    "MediaEngine.AtxTrackBounds": "Een ATX track strekt zich uit buiten het bestand.",
+    "MediaEngine.AtxTrackNumber": "ATX track {0} ligt buiten de ondersteunde 40-track geometrie.",
+    "MediaEngine.AtxSectorCount": "ATX track {0} bevat te veel sectorrecords.",
+    "MediaEngine.AtxListBounds": "De sectorlijst van ATX-track {0} passeert de spoorgrens.",
+    "MediaEngine.AtxSectorNumber": "ATX track {0} bevat ongeldige sector {1}.",
+    "MediaEngine.AtxDataBounds": "De gegevens van ATX track {0}, sector {1}, overschrijden de spoorgrens.",
+    "MediaEngine.AtxNoSectors": "De ATX-afbeelding bevat geen leesbaar sectorrecord.",
+    "MediaEngine.AtxLargeOffset": "De ATX {0} offset is te groot.",
+    "MediaEngine.AtxTruncated": "Het ATX-veld {0} is afgekapt."
+  }
+}

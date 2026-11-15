@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE başlığı eksik veya kesilmiş.",
+    "MediaEngine.HfeRevision": "HFE revizyonu {0} desteklenmez.",
+    "MediaEngine.HfeGeometry": "HFE geometrisi veya bit hızı geçersiz.",
+    "MediaEngine.HfeTable": "HFE iz tablosu sınırların dışında.",
+    "MediaEngine.HfeTiming": "HFE zamanlaması gerekli çözünürlükte temsil edilemiyor.",
+    "MediaEngine.HfeTrackLength": "HFE izi {0} geçersiz uzunlukta.",
+    "MediaEngine.HfeTrackData": "HFE izi {0}/{1} verileri sınırların dışında.",
+    "MediaEngine.HfeRateOpcode": "HFE v3 izi {0}/{1} sıfır değerli bit hızı işlem kodu parametresi içeriyor.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 izi {0}/{1} hiçbir hücre içermiyor.",
+    "MediaEngine.HfeTracks": "HFE en az bir iz gerektirir.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1, tüm parçalar için bir kodlama gerektirir.",
+    "MediaEngine.HfeEncoding": "{0} kodlaması HFE v1 olarak yazılamaz.",
+    "MediaEngine.HfeUniformRate": "HFE v1 tüm izler için aynı bit hızını gerektirir.",
+    "MediaEngine.HfeMissingTrack": "HFE silindir {0} eksik.",
+    "MediaEngine.HfeTrackAddress": "Bir HFE pisti, ilan edilen geometri dışındadır.",
+    "MediaEngine.HfeDuplicateTrack": "HFE izi {0}/{1} yinelenmiş.",
+    "MediaEngine.HfeLimit": "HFE konteyneri desteklenen boyutunu veya değer sınırlarını aşıyor.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 her iz için tek bir sabit zamanlama bölümü gerektirir.",
+    "MediaEngine.HfeRevolutions": "HFE bu ayrı akı devirlerini koruyamıyor.",
+    "MediaEngine.HfePadding": "HFE v1 dolgu veya eşit olmayan kafa uzunlukları gerektirir.",
+    "MediaEngine.HfeScpEncoding": "SCP disk türü {0} için kayıpsız HFE v1 kodlaması yok.",
+    "MediaEngine.HfeFluxBounds": "flux aralıkları indeks süresini aşıyor.",
+    "MediaEngine.HfeWeak": "HFE v3 yazımı zayıf bölgeleri koruyamıyor.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 rastgele veri işlem kodu",
+    "MediaEngine.HfeIndexFeature": "HFE v3 indeks işlem kodu",
+    "MediaEngine.FluxConversionTiming": "Akı zamanlaması sabit süreli bit hücreleri olarak temsil edilemiyor.",
+    "MediaEngine.FluxConversionBounds": "Akı aralıkları veya zamanlama bölümleri iz süresini aşıyor.",
+    "MediaEngine.FluxConversionRange": "flux dönüşümü desteklenen boyutu veya sayısal aralığı aşıyor."
+  }
+}

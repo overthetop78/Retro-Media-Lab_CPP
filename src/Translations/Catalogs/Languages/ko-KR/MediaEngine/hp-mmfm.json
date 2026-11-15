@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM 바이트 쌍 교환에는 짝수 개의 바이트가 필요합니다. {0}개를 받았습니다.",
+    "MediaEngine.HpAddressRange": "HP MMFM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.HpSectorSize": "HP MMFM 섹터는 256바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} 바이트, 헤더 CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} 바이트, 데이터 CRC {4}"
+  }
+}

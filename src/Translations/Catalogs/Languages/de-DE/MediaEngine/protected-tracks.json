@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Der Zylinder der geschützten Spur {0} darf nicht negativ sein.",
+    "MediaEngine.ProtectedHead": "Die Kopfnummer der geschützten Spur {0} darf nicht negativ sein.",
+    "MediaEngine.ProtectedNoContent": "Eine geschützte Spur erfordert Bitzellen oder Flussdaten von Umdrehungen.",
+    "MediaEngine.ProtectedMetadataNoBits": "Bitbezogenes Timing, Strukturen und Merkmale erfordern Bitzellen.",
+    "MediaEngine.ProtectedRange": "Die Bereiche {0} einer geschützten Spur müssen eine positive Länge haben und in {1} Bitzellen passen.",
+    "MediaEngine.ProtectedTiming": "Die Dauer einer Bitzelle der geschützten Spur muss endlich und positiv sein.",
+    "MediaEngine.ProtectedResolution": "Die Zeitauflösung der Flussdaten {0} ns muss positiv sein.",
+    "MediaEngine.ProtectedImageEmpty": "Ein geschütztes Spurbild erfordert mindestens eine Spur.",
+    "MediaEngine.ProtectedImageDuplicate": "Geschützte Spur {0}/{1} ist dupliziert."
+  }
+}

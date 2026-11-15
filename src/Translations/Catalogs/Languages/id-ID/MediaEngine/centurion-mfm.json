@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Nilai {1} pada bidang {0} Centurion MFM harus antara nol dan {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} byte, CRC header {4}, CRC data {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} byte, kunci {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, penanda sektor, terpotong",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC tidak tersedia, terpotong",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, kunci tidak didukung {0}, terpotong",
+    "MediaEngine.CenturionUnpaired": "Data Centurion tanpa pasangan, blok data"
+  }
+}

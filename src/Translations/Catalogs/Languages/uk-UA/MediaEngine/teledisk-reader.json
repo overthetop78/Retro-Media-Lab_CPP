@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Розділ TeleDisk «заголовок образу» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Розділ TeleDisk «заголовок коментаря» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0CommentTruncated": "Розділ TeleDisk «коментар» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0TrackTruncated": "Розділ TeleDisk «заголовок доріжки» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0SectorTruncated": "Розділ TeleDisk «заголовок сектора» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0DataHeaderTruncated": "Розділ TeleDisk «заголовок даних сектора» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0DataTruncated": "Розділ TeleDisk «дані сектора» обірвано за зміщенням {0}: потрібно {1} байтів, доступно {2}.",
+    "MediaEngine.Td0Signature": "Зображення не є зображенням TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Заголовок TeleDisk CRC недійсний: очікуваний 0x{0}, розрахований 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Коментар TeleDisk CRC недійсний: очікуваний 0x{0}, розрахований 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "TeleDisk трек {0}/{1} CRC недійсний: очікуваний 0x{2}, розрахований 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk сектор {0} / {1} / {2} CRC недійсний: очікуваний 0x{3}, розрахований 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk сектор {0} / {1} / {2} має недійсний розмір код {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk сектор {0} / {1} / {2} не має кодованих даних в офсеті {3}.",
+    "MediaEngine.Td0NoSectors": "Зображення TeleDisk не містить секторів."
+  }
+}

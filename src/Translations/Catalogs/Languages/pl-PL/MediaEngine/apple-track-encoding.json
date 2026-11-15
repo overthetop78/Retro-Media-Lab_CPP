@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Sekwencja {0} bitów nie mieści się w {1} bajtach.",
+    "MediaEngine.BitPackingCount": "Liczba bitów {0} musi być dodatnia.",
+    "MediaEngine.BitPackingRange": "Rozmiar pakowania bitów przekracza obsługiwany zakres.",
+    "MediaEngine.AppleTrackUnsupported": "Formatu źródłowego „{1}” nie można zakodować jako {0}.",
+    "MediaEngine.AppleTrackGeometry": "Nie można zakodować geometrii Apple II z {0} cylindrami, {1} głowicami i {2} sektorami na ścieżkę.",
+    "MediaEngine.AppleTrackSector": "Sektor {0} {1}:{2} zawiera {3} bajtów zamiast {4}.",
+    "MediaEngine.AppleTrackTooLong": "Ścieżka {0} {1} zawiera {2} bitów; maksimum: {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Ścieżka Apple II {0} zawiera powtórzony fizyczny numer sektora {1}.",
+    "MediaEngine.NibTrackCount": "Funkcja zapisu NIB wymaga co najmniej jednej ścieżki; otrzymano {0}.",
+    "MediaEngine.NibTrackLength": "Ścieżka NIB {0} zawiera {1} bitów; maksimum: {2}."
+  }
+}

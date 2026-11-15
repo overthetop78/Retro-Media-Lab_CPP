@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Verdien {1} i Apple II GCR-feltet {0} må være mellom null og {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II-spor inneholder 13 sektorer for 5-and-3 eller 16 for 6-and-2; mottatt {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, V{4}, adressekontrollsum {5}, datakontrollsum {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, 13 sektorer V{4}, adressekontrollsum {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, kontrollsum {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, 13 sektorer, kontrollsum {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, kontrollsum utilgjengelig, avkortet",
+    "MediaEngine.AppleIIUnpaired": "Uparede Apple II-data, dataprolog D5 AA AD"
+  }
+}

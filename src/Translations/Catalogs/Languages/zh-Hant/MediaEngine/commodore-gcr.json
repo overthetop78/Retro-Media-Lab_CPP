@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Commodore GCR 屬性 {0} 的值 {1} 必須介於零和 {2} 之間。",
+    "MediaEngine.CbmGcrDiskTrack": "Commodore 磁碟磁軌 {0} 必須介於 {1} 和 {2} 之間。",
+    "MediaEngine.CbmGcrSectorSize": "Commodore 磁區包含 {0} 位元組；實際收到 {1} 位元組。",
+    "MediaEngine.CbmGcrSync": "未分類 Commodore CommodoreSync, 同步 GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 位元組, 資料區塊, 資料校驗和 {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} 位元組, 標頭校驗和 {4}, 資料校驗和 {5}"
+  }
+}

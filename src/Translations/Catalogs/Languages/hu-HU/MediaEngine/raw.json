@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "A nyers képhossz {0} üres vagy nem többszöröse {1} bájtoknak.",
+    "Media.RawUnknownGeometry": "Nem támogatott nyers képgeometria illeszkedik a {0} bájtokba.",
+    "Media.MsxInvalidBoot": "A {0} bájt képe nem tartalmaz támogatott MSX boot szektort.",
+    "Media.MsxUnsupportedGeometry": "Az MSX geometria nem felel meg a {0} bájtnak és a média leírónak {1}.",
+    "Media.UnsupportedRawFormat": "Nyers képformátum {0} nem támogatott.",
+    "Media.RawGeometryMismatch": "A kép {0} geometria {1}; a cél {2} szükséges geometria {3}.",
+    "Media.RawSectorMissing": "A {0} logikai szektor hiányzik, és nem írható teljes képre.",
+    "Media.RawSectorSize": "A logikai ágazat {0} {1} bájtot tartalmaz {2} helyett.",
+    "Media.AtomicOpen": "Nem sikerült létrehozni a {0} ideiglenes kimenetét.",
+    "Media.AtomicWrite": "Nem sikerült beírni az ideiglenes kimenetet {0}.",
+    "Media.AtomicCommit": "Nem sikerült közzétenni a teljes kimeneti fájlt {0}.",
+    "Media.Cancelled": "Az adathordozón végzett művelet megszakítva."
+  }
+}

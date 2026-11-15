@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.StTargetFormat": "Atari ST target format '{0}' is not catalogued.",
+    "MediaEngine.StLossyGeometry": "Atari ST image {0} ({1}, {2} bytes) cannot be transformed without loss to {3} ({4}, {5} bytes).",
+    "MediaEngine.StSourceMissing": "Atari ST source sector {0} is missing; geometry conversion would require inventing its contents.",
+    "MediaEngine.StLogicalSize": "Atari ST logical sector {0} contains {1} bytes; expected {2}.",
+    "MediaEngine.StWriterFormat": "Sector image '{0}' is not an Atari ST image with {1}-byte blocks."
+  }
+}

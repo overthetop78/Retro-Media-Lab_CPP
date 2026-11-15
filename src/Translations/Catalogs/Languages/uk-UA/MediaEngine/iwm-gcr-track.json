@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Сектори Apple Macintosh містять 512 байтів; отримано {0} байтів.",
+    "MediaEngine.IwmAddressRange": "Значення {1} поля {0} Apple IWM GCR має бути між нулем і {2}.",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} байтів, контрольна сума адреси {4}, контрольна сума даних {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} байтів, контрольна сума {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, контрольна сума недоступна, обрізано",
+    "MediaEngine.IwmUnpaired": "Непарні дані Apple Macintosh, пролог даних"
+  }
+}

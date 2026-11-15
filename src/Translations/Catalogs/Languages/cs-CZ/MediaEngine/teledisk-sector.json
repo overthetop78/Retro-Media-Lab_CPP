@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sektor {0} / {1} / {2} má opakované užitečné zatížení {3} bytů; {4} bytes jsou povinné.",
+    "MediaEngine.Td0EncodingTruncated": "Sektor TeleDisk {0} / {1} / {2} kódování {3} je zkrácen na ofsetu {4}: {5} bytes potřebné, {6} k dispozici.",
+    "MediaEngine.Td0EncodingUnsupported": "Sektor TeleDisk {0} / {1} / {2} používá nepodporované kódování {3}.",
+    "MediaEngine.Td0DecodedLength": "Sektor TeleDisk {0} / {1} / {2} kódování {3} rozšiřuje na {4} bytes místo {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Počet opakování sektoru TeleDisk překračuje rozsah 16bitového celého čísla bez znaménka."
+  }
+}

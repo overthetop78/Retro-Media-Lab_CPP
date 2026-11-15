@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Un identifiant d’encodeur est obligatoire.",
+    "MediaEngine.PolicyFormats": "Au moins un identifiant de format non vide et non composé uniquement d’espaces est obligatoire.",
+    "MediaEngine.PolicyPrefixes": "Au moins un préfixe de format non vide et non composé uniquement d’espaces est obligatoire.",
+    "MediaEngine.PolicyNull": "Une politique de reconstruction sectorielle ne peut pas être nulle.",
+    "MediaEngine.PolicyNullBlock": "Un élément de reconstruction sectorielle ne peut pas contenir un bloc nul.",
+    "MediaEngine.PolicyRareUnknown": "Aucun profil d’encodage rare n’est enregistré pour le format « {0} ».",
+    "MediaEngine.PolicyLisaCylinder": "Le cylindre Lisa FileWare {0} doit être compris entre 0 et {1}.",
+    "MediaEngine.PolicyJfdDensity": "La piste JFD n’a pas de code de densité utilisable.",
+    "MediaEngine.PolicyAddressRange": "La valeur d’adresse {0} dépasse les limites d’un entier signé de 32 bits."
+  }
+}

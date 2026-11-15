@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 válec {0} je mimo rozsah nula na {1}.",
+    "MediaEngine.C900Block": "Commodore 900 logický blok {0} je mimo rozsah nula na {1}.",
+    "MediaEngine.C900Address": "Commodore 900 adresa {0} / {1} / {2} je neplatná; hlava musí být mezi nulou a {3}, a sektor mezi nulou a {4} na tomto válci.",
+    "MediaEngine.C900Content": "Obrázek {0} bajtů neobsahuje uznávaný superblok COHERENT.",
+    "MediaEngine.C900Alignment": "Délka obrázku COHERENT bajtů {0} není dělitelná velikostí sektoru {1} bajtů.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT prohlašuje {0} bloky, ale obrázek obsahuje pouze {1}.",
+    "MediaEngine.C900Capacity": "Obrázek COHERENT obsahuje {0} bloky, ale geometrie Commodore 900 podporuje maximálně {1}.",
+    "MediaEngine.C900WriterGeometry": "Sektorový obraz nepoužívá zónovou geometrii Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Logický blok Commodore 900 {0} neodpovídá požadovanému fyzickému pořadí sektorů."
+  }
+}

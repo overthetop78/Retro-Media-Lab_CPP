@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.TycomSectorSize": "TYCOM 섹터는 128바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 바이트, 마크 {2}, 헤더 CRC {3}, 데이터 CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 바이트, 헤더 CRC {2}, 데이터 CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 바이트, 마크 FE, 헤더 CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 바이트, 마크 {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, 섹터 헤더, 잘림",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, 마크 {0}, 섹터 데이터, 잘림",
+    "MediaEngine.TycomUnpaired": "미분류 TYCOM FormatData, 마크 {0}, 데이터"
+  }
+}

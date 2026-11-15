@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "A bitfolyam bájtjainak száma {0} nulla és {1} között kell legyen.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} bájt, jel FE, N{4}, fejléc CRC {5}, adat CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} bájt, jel FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bájt, jel F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Nem osztályozott ISO MFM Sync, jel {0}",
+    "MediaEngine.MfmUnpaired": "Nem osztályozott ISO MFM DataAddressMark, jel FB",
+    "MediaEngine.MfmUnpairedDeleted": "Nem osztályozott ISO MFM DeletedDataAddressMark, jel F8"
+  }
+}

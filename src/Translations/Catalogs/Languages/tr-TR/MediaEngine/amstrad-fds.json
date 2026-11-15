@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF AMS! kartuş başlığı eksik.",
+    "MediaEngine.CprLength": "CPR RIFF uzunluğu geçersizdir.",
+    "MediaEngine.CprChunkRange": "CPR chunk '{0} RIFF konteynerini aşıyor.",
+    "MediaEngine.CprDuplicate": "CPR bankası \"{0} tekrarlanır.",
+    "MediaEngine.CprLargeBank": "CPR bankası “{0} 16 KiB sayfasının ötesinde yer alıyor; haritalanmadılar.",
+    "MediaEngine.CprUnknownChunk": "RIFF chunk '{0} bir CPR kartuş bankası değildir.",
+    "MediaEngine.CprChunkHeader": "CPR RIFF konteyneri bir korunk başlığı içinde biter.",
+    "MediaEngine.CprNoBanks": "CPR görüntüsü, cb31 kartuş bankası aracılığıyla cb00 içerir.",
+    "MediaEngine.CprWrite": "Blok belgesi tam bir CPR kartuşu olarak yazılamaz.",
+    "MediaEngine.RomCorpus": "CPC ROM uzunluğu, kanıtlanmış korpus profilleri dışındadır.",
+    "MediaEngine.RomNoData": "CPC ROM hiçbir banka verilerini içeriyor.",
+    "MediaEngine.RomBankLimit": "CPC ROM 32 kartuş bankasını aşıyor.",
+    "MediaEngine.RomIncomplete": "Son CPC ROM bankası eksik ve icat edilmeden açığa çıkar.",
+    "MediaEngine.RomWrite": "Blok belgesi zorlayıcı CPC ROM bankaları içermez.",
+    "MediaEngine.FdsSource": "Seçilen kaynak Famicom Disk System görüntüsü değildir.",
+    "MediaEngine.FdsSides": "Famicom Disk System görüntüsü tam taraf içermiyor.",
+    "MediaEngine.FdsNoSide": "Famicom Disk System görüntüsü hiçbir taraf değildir.",
+    "MediaEngine.FdsCount": "Famicom Disk System taraf sayısı onun başlığıyla eşleşmez.",
+    "MediaEngine.FdsUndeclared": "FDS başlığı bir taraf saymıyor; sayı depolanan verilerden alındı.",
+    "MediaEngine.FdsWrite": "Blok belgesi tam Famicom Disk System tarafını içermiyor.",
+    "MediaEngine.FdsHeader": "Kaynak FDS başlığı eksik.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad kartuş"
+  }
+}

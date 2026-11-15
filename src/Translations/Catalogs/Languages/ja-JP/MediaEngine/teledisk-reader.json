@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk の イメージヘッダー がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk の コメントヘッダー がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk の コメント がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk の トラックヘッダー がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk の セクターヘッダー がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk の セクターデータヘッダー がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0DataTruncated": "TeleDisk の セクターデータ がオフセット {0} で途切れています。必要なバイト数は {1}、利用可能なバイト数は {2} です。",
+    "MediaEngine.Td0Signature": "TeleDiskイメージではありません。",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk ヘッダーの CRC は無効です: 期待 0x{0}, 計算 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "TeleDiskコメントCRCは無効です:期待される0x{0}、計算された0x{1}。",
+    "MediaEngine.Td0TrackCrc": "TeleDiskトラック{0}/{1} CRC は無効です: 0x{2}, 計算された 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk セクター {0}/{1}/{2} CRC は無効です: 想定される 0x{3}, 計算された 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk セクター {0}/{1}/{2} は無効なサイズコード {3} を持っています。",
+    "MediaEngine.Td0MissingData": "TeleDisk セクター {0}/{1}/{2} は、オフセット {3} でエンコードされたデータがありません。",
+    "MediaEngine.Td0NoSectors": "TeleDiskのイメージには、セクタがありません。"
+  }
+}

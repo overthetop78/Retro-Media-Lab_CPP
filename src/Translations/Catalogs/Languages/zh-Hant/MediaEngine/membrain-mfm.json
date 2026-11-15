@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.MembrainSectorSize": "Membrain 磁區包含 512 位元組；收到 {0} 位元組。",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 位元組, 標記 FE, 標頭CRC {3}, 資料CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 位元組, 標記 {3}, 資料區塊, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, 磁區標頭, 截斷",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC 不可用, 截斷",
+    "MediaEngine.MembrainUnpaired": "未配對的 Membrain 資料, 資料區塊"
+  }
+}

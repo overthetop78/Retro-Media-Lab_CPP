@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 silindir {0}, {1}'e aralığı sıfır dışındadır.",
+    "MediaEngine.C900Block": "Commodore 900 mantıksal blok {0}, {1}'e aralığın dışındadır.",
+    "MediaEngine.C900Address": "Commodore 900 adresi {0}/{1}/{2} geçersizdir; başın sıfır ve {3} ve bu silindir üzerinde sıfır ve {4} arasında olması gerekir.",
+    "MediaEngine.C900Content": "{0} baytlık görüntü, tanınan bir COHERENT süper bloğu içermiyor.",
+    "MediaEngine.C900Alignment": "{0} baytlık COHERENT görüntü uzunluğu, {1} baytlık sektör boyutuna tam bölünemez.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT {0} bloklarını ancak görüntü sadece {1} içeriyor.",
+    "MediaEngine.C900Capacity": "COHERENT görüntüsü {0} blok içeriyor ancak Commodore 900 geometrisi en fazla {1} bloğu destekliyor.",
+    "MediaEngine.C900WriterGeometry": "Sektör imajı, bölgenin Commodore 900 geometrisini kullanmıyor.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 mantıksal blok {0} gerekli fiziksel sektör düzenine uymaz."
+  }
+}

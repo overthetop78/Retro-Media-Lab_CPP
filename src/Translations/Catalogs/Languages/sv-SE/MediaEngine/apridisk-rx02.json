@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Bilden innehåller inte en ACT Apricot ApriDisk-rubrik.",
+    "MediaEngine.ApridiskRecord": "Ogiltig ApriDisk-post vid byte {0}.",
+    "MediaEngine.ApridiskOverflow": "ApriDisk-postens längd överskrider gränsen för ett 32-bitars heltal med tecken.",
+    "MediaEngine.ApridiskTruncated": "ApriDisk-posten vid byte {0} är avklippt.",
+    "MediaEngine.ApridiskAddress": "ApriDisk sektor adress {0}/{1}/{2} ligger utanför ACT Apricot PC/Xi geometri.",
+    "MediaEngine.ApridiskCount": "ApriDisk-bilden innehåller {0} användbara sektorer istället för {1}.",
+    "MediaEngine.ApridiskSectorLength": "En ApriDisk-sektor innehåller {0} byte istället för {1}.",
+    "MediaEngine.ApridiskCompression": "ApriDisk-sektorkomprimeringen stöds inte: {0}.",
+    "MediaEngine.ApridiskExpansion": "En ApriDisk komprimerad sektor expanderar utöver 512 byte.",
+    "MediaEngine.ApridiskWriteGeometry": "Sektorbilden använder inte ACT Apricot PC/Xi geometri.",
+    "MediaEngine.Rx02ImageLength": "DEC RX02-dumpen innehåller {0} byte; en fullständig fysisk dumpning kräver {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Sektorbilden använder inte DEC RX02-geometrin."
+  }
+}

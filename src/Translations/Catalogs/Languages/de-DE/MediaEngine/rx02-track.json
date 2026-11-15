@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Der Wert {1} des DEC RX02 -Feldes {0} muss zwischen null und {2} liegen.",
+    "MediaEngine.Rx02SizeCode": "RX02-Größencode {0} entspricht nicht {1} Bytes.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, Sektorheader, abgeschnitten",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} Bytes, Header-CRC {4}, Daten-CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} Bytes, Markierung {4}, {5}, Header-CRC {6}, Daten-CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} Bytes, Markierung {4}, {5}, Daten-CRC {6}",
+    "MediaEngine.Rx02Unpaired": "Nicht klassifiziert DEC RX02 FormatData, Markierung {0}, Daten"
+  }
+}

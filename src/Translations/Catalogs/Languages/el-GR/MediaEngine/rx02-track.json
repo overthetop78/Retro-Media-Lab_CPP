@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Η τιμή {1} του πεδίου {0} DEC RX02 πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.Rx02SizeCode": "Ο κωδικός μεγέθους RX02 {0} δεν αντιστοιχεί σε {1} byte.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, κεφαλίδα τομέα, περικομμένη",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, CRC κεφαλίδας {4}, CRC δεδομένων {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, σήμα {4}, {5}, CRC κεφαλίδας {6}, CRC δεδομένων {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} byte, σήμα {4}, {5}, CRC δεδομένων {6}",
+    "MediaEngine.Rx02Unpaired": "Μη ταξινομημένο DEC RX02 FormatData, σήμα {0}, δεδομένα"
+  }
+}

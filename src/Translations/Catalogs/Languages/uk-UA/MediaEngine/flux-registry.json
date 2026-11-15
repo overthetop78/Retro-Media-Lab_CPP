@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Потрібно зареєструвати принаймні один декодер магнітного потоку.",
+    "MediaEngine.RegistryNullDecoder": "Декодер потоку в позиції {0} відсутній.",
+    "MediaEngine.RegistryInvalidId": "Декодер потоку в позиції {0} має порожній ідентифікатор.",
+    "MediaEngine.RegistryDuplicate": "Декодер потоку з ідентифікатором '{0}' уже зареєстрований.",
+    "MediaEngine.RegistryUnknown": "Декодер потоку з ідентифікатором '{0}' не зареєстрований.",
+    "MediaEngine.RegistryNullRevolution": "Для декодування потрібен запис потоку одного оберту.",
+    "MediaEngine.RegistryNoAutomatic": "Жоден зареєстрований декодер потоку не бере участі в автоматичному виявленні."
+  }
+}

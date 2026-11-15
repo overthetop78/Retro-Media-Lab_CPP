@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "At least one flux decoder must be registered.",
+    "MediaEngine.RegistryNullDecoder": "The flux decoder at position {0} is null.",
+    "MediaEngine.RegistryInvalidId": "The flux decoder at position {0} has an empty identifier.",
+    "MediaEngine.RegistryDuplicate": "A flux decoder with identifier '{0}' is already registered.",
+    "MediaEngine.RegistryUnknown": "No flux decoder is registered with identifier '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "A flux revolution is required for decoding.",
+    "MediaEngine.RegistryNoAutomatic": "No registered flux decoder participates in automatic detection."
+  }
+}

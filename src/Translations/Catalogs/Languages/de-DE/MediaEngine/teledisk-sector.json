@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "Der TeleDisk-Sektor {0}/{1}/{2} hat eine wiederholte Nutzlast von {3} Bytes; {4} Bytes sind erforderlich.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk-Sektor {0}/{1}/{2}-Kodierung {3} wird mit Offset {4} gekürzt: {5} Bytes erforderlich, {6} verfügbar.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sector {0}/{1}/{2} verwendet nicht unterstützte Kodierung {3}.",
+    "MediaEngine.Td0DecodedLength": "Der TeleDisk-Sektor {0}/{1}/{2}-Codierung {3} erweitert sich zu {4}-Bytes anstelle von {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Die Wiederholungszahl des TeleDisk-Sektors überschreitet das unsignierte 16-Bit-Limit."
+  }
+}

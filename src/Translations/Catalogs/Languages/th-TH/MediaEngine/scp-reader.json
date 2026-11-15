@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "ความละเอียดเวลา SCP จะต้องเป็นบวก; ได้รับ {0}",
+    "MediaEngine.ScpExtended": "สื่อแบบ SCP ที่ขยายออกไป ไม่ใช่รูปภาพแบบฟลอปปี้",
+    "MediaEngine.ScpSignature": "แฟ้มไม่มีลายเซ็น SCP อยู่",
+    "MediaEngine.ScpRevolutions": "จำนวนรอบการหมุน SCP {0} ไม่ถูกต้อง",
+    "MediaEngine.ScpTrackRange": "ช่วงแทร็ก SCP จาก {0} ถึง {1} ไม่ถูกต้อง",
+    "MediaEngine.ScpWidth": "ยังไม่รองรับความกว้างของบิตเซลล์ของ SCP {0}",
+    "MediaEngine.ScpHeads": "เลือกหัว SCP {0} ไม่ถูกต้อง",
+    "MediaEngine.ScpTrackSignature": "แทร็ก {0} ไม่มีลายเซ็น TRK; ตัวบรรยายมีหมายเลขแทร็ก {1}",
+    "MediaEngine.ScpTrackMismatch": "รายการ {0} ในตารางแทร็กชี้ไปยังแทร็ก {1}",
+    "MediaEngine.ScpHeaderSection": "หัว SCP ไม่สมบูรณ์หรือใช้งานไม่ได้ที่ออฟเซ็ต {0}. {1} จําเป็น ต้อง มี ไบต์.",
+    "MediaEngine.ScpTableSection": "ตารางติดตาม SCP ไม่สมบูรณ์หรือใช้งานไม่ได้ที่ออฟเซ็ต {0}; ต้องการ {1} ไบต์",
+    "MediaEngine.ScpTrackSection": "ส่วนหัวของแทร็ก SCP {0} ไม่สมบูรณ์หรือไม่ถูกต้องที่ออฟเซ็ต {1}; ต้องการ {2} ไบต์",
+    "MediaEngine.ScpFluxSection": "ข้อมูลฟลักซ์ของแทร็ก SCP {0} รอบการหมุน {1} ไม่สมบูรณ์หรือไม่ถูกต้องที่ออฟเซ็ต {2}; ต้องการ {3} ไบต์",
+    "MediaEngine.ScpOverflow": "ขนาด ตำแหน่ง ช่วงเวลา หรือรอบการหมุน SCP ที่เชื่อมต่อกันเกินช่วงตัวเลขที่รองรับ",
+    "MediaEngine.ScpTrackAddress": "แทร็กหมายเลข {0} อยู่นอกตารางแทร็ค",
+    "MediaEngine.ScpNoRevolution": "แทร็ก SCP ไม่มีรอบการหมุนสำหรับถอดรหัส",
+    "MediaEngine.ScpNoC900Sectors": "ไม่สามารถถอดรหัสเซกเตอร์ Commodore 900 GCR ใดจากอิมเมจ SCP ได้"
+  }
+}

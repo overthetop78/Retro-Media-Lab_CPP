@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Apple Macintoshセクターは512バイトです。受信したバイト数：{0}。",
+    "MediaEngine.IwmAddressRange": "Apple IWM GCR のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} バイト, アドレスチェックサム {4}, データチェックサム {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} バイト, チェックサム {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, チェックサム 利用不可, 切り詰められています",
+    "MediaEngine.IwmUnpaired": "未対応の Apple Macintosh データ、データプロローグ"
+  }
+}

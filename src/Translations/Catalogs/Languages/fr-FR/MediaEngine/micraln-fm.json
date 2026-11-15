@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.MicralSectorSize": "Un secteur Micral N contient 128 octets ; {0} octets reçus.",
+    "MediaEngine.MicralSectorRange": "Le numéro de secteur Micral N {0} doit être compris entre zéro et {1}.",
+    "MediaEngine.MicralBlock": "Micral N FormatHeader, C{0} H{1} R{2}, {3} octets, marque FF, somme de contrôle {4}",
+    "MediaEngine.MicralTruncated": "Micral N FormatHeader, bloc à sectorisation matérielle, somme de contrôle indisponible, tronqué"
+  }
+}

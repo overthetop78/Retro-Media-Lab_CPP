@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk-kuvan otsikko offset {0} on katkaistu: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk kommentin otsikko offset {0} on tynkätty: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk-kommentti offset {0} on tynkätty: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk-raiteen otsake offset {0} on katkaistu: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk-sektorin otsikko offset {0} on tynkätty: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk-sektorin datan otsikko offset {0} on tynkätty: {1} tavua odotetaan, {2} saatavilla.",
+    "MediaEngine.Td0DataTruncated": "TeleDisk-sektorin tiedot on katkaistu kohdassa {0}: odotettu {1} tavua, saatavilla {2}.",
+    "MediaEngine.Td0Signature": "Kuva ei ole TeleDisk-kuva.",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk-otsikko CRC on virheellinen: odotettavissa 0x{0}, laskettu 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "TeleDisk- kommentti CRC on virheellinen: odotettu 0x{0}, laskettu 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "TeleDisk-raita {0}/{1} CRC on virheellinen: odotettu 0x{2}, laskettu 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk-sektori {0}/{1}/{2} CRC on virheellinen: odotettu 0x{3}, laskettu 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk-sektorilla {0}/{1}/{2} on virheellinen kokokoodi {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk-sektorilla {0}/{1}/{2} ei ole koodattuja tietoja offset {3}.",
+    "MediaEngine.Td0NoSectors": "TeleDisk-kuva ei sisällä sektoreita."
+  }
+}

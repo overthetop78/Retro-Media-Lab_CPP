@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "เซกเตอร์ Victor 9000 มี 512 ไบต์ ได้รับ {0} ไบต์",
+    "MediaEngine.VictorSectorRange": "หมายเลขเซกเตอร์ Victor 9000 {0} ต้องอยู่ระหว่างศูนย์กับ {1}",
+    "MediaEngine.VictorMarkerLength": "ตัวทำเครื่องหมาย Victor 9000 ต้องถึงตำแหน่งบิต 49; ได้รับ {0} บิต",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} ไบต์, ส่วนหัว {4}, ผลรวมตรวจสอบข้อมูล {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย {4}, บล็อกข้อมูล, ผลรวมตรวจสอบ {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, ผลรวมตรวจสอบ ไม่พร้อมใช้งาน, ถูกตัดทอน",
+    "MediaEngine.VictorUnpaired": "ข้อมูล Victor 9000 ที่ไม่มีคู่, บล็อกข้อมูล"
+  }
+}

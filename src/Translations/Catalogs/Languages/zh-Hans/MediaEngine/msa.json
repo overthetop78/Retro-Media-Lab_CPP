@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "扇区图像 '{0}' 的几何参数为 {1}x{2}x{3}、块大小为 {4}，无法写为 MSA。",
+    "MediaEngine.MsaMissingSector": "缺少 MSA 逻辑扇区 {0}（{1}:{2}:{3}）。",
+    "MediaEngine.MsaSectorSize": "MSA 逻辑扇区 {0} 包含 {1} 字节；应为 {2} 字节。",
+    "MediaEngine.MsaHeader": "MSA 文件头无效；文件包含 {0} 字节。",
+    "MediaEngine.MsaGeometry": "MSA 几何参数无效：{0} 个扇区、{1} 个磁头、柱面 {2} 至 {3}。",
+    "MediaEngine.MsaTruncatedTable": "柱面 {0}、磁头 {1} 在偏移 {2} 处的 MSA 磁道长度字段被截断：仅有 {3} 字节。",
+    "MediaEngine.MsaTruncatedTrack": "MSA 磁道 {0}:{1} 在偏移 {2} 处声明了 {3} 字节，但只有 {4} 字节可用。",
+    "MediaEngine.MsaTruncatedRun": "MSA 磁道 {0}:{1} 的压缩序列在压缩数据偏移 {2} 处被截断，压缩数据长度为 {3} 字节。",
+    "MediaEngine.MsaInvalidRun": "MSA 磁道 {0}:{1} 的压缩序列在压缩数据偏移 {2} 处的重复计数为 {3}；已写入 {5} 个输出字节中的 {4} 个。",
+    "MediaEngine.MsaUnpackedLength": "MSA 磁道 {0}:{1} 消耗了 {3} 个压缩字节中的 {2} 个，并生成了预期 {5} 字节中的 {4} 个。"
+  }
+}

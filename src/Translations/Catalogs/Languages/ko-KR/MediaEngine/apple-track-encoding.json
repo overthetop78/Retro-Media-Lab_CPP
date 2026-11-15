@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "{0} 비트의 순서는 {1} 바이트에 적합하지 않습니다.",
+    "MediaEngine.BitPackingCount": "비트 수 {0}은 양수여야 합니다.",
+    "MediaEngine.BitPackingRange": "비트 패킹 크기는 지원된 범위를 초과합니다.",
+    "MediaEngine.AppleTrackUnsupported": "소스 형식 '{1}'은 {0}으로 인코딩 할 수 없습니다.",
+    "MediaEngine.AppleTrackGeometry": "{0} 실린더와 Apple II 기하학, {1} 헤드 및 {2} 트랙 당 부문은 인코딩 할 수 없습니다.",
+    "MediaEngine.AppleTrackSector": "{0} 섹터 {1}:{2}에는 {4} 바이트가 아닌 {3} 바이트가 있습니다.",
+    "MediaEngine.AppleTrackTooLong": "{0} 트랙 {1} 포함 {2} 비트; 최대 {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II 트랙 {0}에는 중복된 물리 섹터 번호 {1}이 있습니다.",
+    "MediaEngine.NibTrackCount": "NIB 기록기는 하나 이상의 트랙이 필요합니다. 받은 트랙 수: {0}.",
+    "MediaEngine.NibTrackLength": "NIB 트랙 {0} 포함 {1} 비트; 최대 {2}."
+  }
+}

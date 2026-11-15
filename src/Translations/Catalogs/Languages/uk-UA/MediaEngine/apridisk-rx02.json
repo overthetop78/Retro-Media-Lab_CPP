@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Образ не містить заголовка ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Недійсний запис ApriDisk у байті {0}.",
+    "MediaEngine.ApridiskOverflow": "Довжина запису ApriDisk перевищує межу 32-бітного цілого числа зі знаком.",
+    "MediaEngine.ApridiskTruncated": "Запис ApriDisk у байті {0} обрізаний.",
+    "MediaEngine.ApridiskAddress": "Адреса сектора ApriDisk {0}/{1}/{2} за межами геометрії ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Образ ApriDisk містить {0} придатних секторів замість {1}.",
+    "MediaEngine.ApridiskSectorLength": "ApriDisk сектор містить {0} байти замість {1}.",
+    "MediaEngine.ApridiskCompression": "Непідтримуване стиснення сектора ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "ApriDisk стиснений сектор розширюється за 512 байтів.",
+    "MediaEngine.ApridiskWriteGeometry": "Зображення сектора не використовує геометрію ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Образ DEC RX02 містить {0} байтів; повний фізичний образ потребує {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Зображення сектору не використовує геометрію DEC RX02."
+  }
+}

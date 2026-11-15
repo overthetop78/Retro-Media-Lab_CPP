@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "The RIFF AMS! cartridge header is missing.",
+    "MediaEngine.CprLength": "The CPR RIFF length is invalid.",
+    "MediaEngine.CprChunkRange": "CPR chunk '{0}' exceeds the RIFF container.",
+    "MediaEngine.CprDuplicate": "CPR bank '{0}' is duplicated.",
+    "MediaEngine.CprLargeBank": "CPR bank '{0}' contains bytes beyond its 16 KiB page; they were not mapped.",
+    "MediaEngine.CprUnknownChunk": "RIFF chunk '{0}' is not a CPR cartridge bank.",
+    "MediaEngine.CprChunkHeader": "The CPR RIFF container ends inside a chunk header.",
+    "MediaEngine.CprNoBanks": "The CPR image contains no cb00 through cb31 cartridge bank.",
+    "MediaEngine.CprWrite": "The block document cannot be written as a complete CPR cartridge.",
+    "MediaEngine.RomCorpus": "The CPC ROM length is outside the demonstrated corpus profiles.",
+    "MediaEngine.RomNoData": "The CPC ROM contains no bank data.",
+    "MediaEngine.RomBankLimit": "The CPC ROM exceeds 32 cartridge banks.",
+    "MediaEngine.RomIncomplete": "The last CPC ROM bank is incomplete and is exposed without invented padding.",
+    "MediaEngine.RomWrite": "The block document does not contain contiguous CPC ROM banks.",
+    "MediaEngine.FdsSource": "The selected source is not a Famicom Disk System image.",
+    "MediaEngine.FdsSides": "The Famicom Disk System image does not contain complete sides.",
+    "MediaEngine.FdsNoSide": "The Famicom Disk System image contains no side.",
+    "MediaEngine.FdsCount": "The Famicom Disk System side count does not match its header.",
+    "MediaEngine.FdsUndeclared": "The FDS header does not declare a side count; the count was taken from the stored data.",
+    "MediaEngine.FdsWrite": "The block document does not contain complete Famicom Disk System sides.",
+    "MediaEngine.FdsHeader": "The source FDS header is missing.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad cartridge"
+  }
+}

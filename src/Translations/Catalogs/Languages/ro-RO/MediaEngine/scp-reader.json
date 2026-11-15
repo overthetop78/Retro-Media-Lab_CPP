@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Rezoluția temporală SCP trebuie să fie pozitivă; valoare primită: {0}.",
+    "MediaEngine.ScpExtended": "Suporturile SCP extinse nu sunt imagini de dischetă.",
+    "MediaEngine.ScpSignature": "Fișierul nu conține o semnătură SCP.",
+    "MediaEngine.ScpRevolutions": "Numărul rotațiilor SCP {0} este invalid.",
+    "MediaEngine.ScpTrackRange": "Gama de linii SCP {0} până la {1} este invalidă.",
+    "MediaEngine.ScpWidth": "Lăţimea celulei biţi SCP {0} nu este suportată.",
+    "MediaEngine.ScpHeads": "Selectorul capului SCP {0} este invalid.",
+    "MediaEngine.ScpTrackSignature": "Linia {0} nu are semnătură TRK; descriptorul conține numărul liniei {1}.",
+    "MediaEngine.ScpTrackMismatch": "Intrarea {0} din tabelul pistelor indică pista {1}.",
+    "MediaEngine.ScpHeaderSection": "Antetul SCP este incomplet sau invalid la offset {0}; sunt necesare octeți {1}.",
+    "MediaEngine.ScpTableSection": "Tabelul deplasărilor pistelor SCP este incomplet sau invalid la deplasarea {0}; sunt necesari {1} octeți.",
+    "MediaEngine.ScpTrackSection": "Capul liniei SCP {0} este incomplet sau invalid la offset {1}; sunt necesare octeți {2}.",
+    "MediaEngine.ScpFluxSection": "Fluxul liniei SCP {0}, revoluţia {1}, este incomplet sau invalid la compensare {2}; sunt necesare octeţi {3}.",
+    "MediaEngine.ScpOverflow": "O dimensiune SCP, poziție, interval sau revoluție unite depășește intervalul numeric susținut.",
+    "MediaEngine.ScpTrackAddress": "Numărul pistei SCP {0} este în afara tabelului pistelor.",
+    "MediaEngine.ScpNoRevolution": "Linia SCP nu conţine nici o rotație de decodat.",
+    "MediaEngine.ScpNoC900Sectors": "Niciun sector Commodore 900 GCR nu a putut fi decodat din imaginea SCP."
+  }
+}

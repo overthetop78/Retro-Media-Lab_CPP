@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "L'image secteur « {0} » avec géométrie {1}x{2}x{3} et taille du bloc {4} ne peut pas être écrite comme MSA.",
+    "MediaEngine.MsaMissingSector": "Le secteur logique de MSA {0} ({1}:{2}:{3}) est manquant.",
+    "MediaEngine.MsaSectorSize": "Le secteur logique MSA {0} contient {1} octets ; {2} attendus.",
+    "MediaEngine.MsaHeader": "L'en-tête MSA est invalide; le fichier contient {0} octets.",
+    "MediaEngine.MsaGeometry": "La géométrie MSA est invalide : secteurs {0}, têtes {1}, cylindres {2} à {3}.",
+    "MediaEngine.MsaTruncatedTable": "Le champ de longueur de piste MSA du cylindre {0}, tête {1}, à la position {2}, est tronqué : {3} octets disponibles.",
+    "MediaEngine.MsaTruncatedTrack": "La piste MSA {0}:{1} à offset {2} déclare {3} octets, {4} sont disponibles.",
+    "MediaEngine.MsaTruncatedRun": "La séquence compressée de la piste MSA {0}:{1}, à la position {2} dans les données compressées, est tronquée dans les {3} octets.",
+    "MediaEngine.MsaInvalidRun": "La séquence compressée de la piste MSA {0}:{1}, à la position {2}, annonce {3} répétitions ; {4} des {5} octets de sortie ont déjà été écrits.",
+    "MediaEngine.MsaUnpackedLength": "La piste MSA {0}:{1} a consommé {2} des {3} octets compressés et produit {4} des {5} octets attendus."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sector {0}/{1}/{2} heeft een herhaalde lading van {3} bytes; {4} bytes zijn vereist.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk sector {0}/{1}/{2} codering {3} is afgekapt op offset {4}: {5} bytes vereist, {6} beschikbaar.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sector {0}/{1}/{2} gebruikt niet-ondersteunde codering {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sector {0}/{1}/{2} codering {3} breidt uit naar {4} bytes in plaats van {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Het aantal herhalingen van de TeleDisk-sector overschrijdt de limiet van een 16-bits geheel getal zonder teken."
+  }
+}

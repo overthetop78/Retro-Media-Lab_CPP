@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Kooderin tunniste on pakollinen.",
+    "MediaEngine.PolicyFormats": "Tarvitaan vähintään yksi muototunniste, joka ei ole tyhjä eikä sisällä pelkkiä välilyöntejä.",
+    "MediaEngine.PolicyPrefixes": "Tarvitaan vähintään yksi muodon etuliite, joka ei ole tyhjä eikä sisällä pelkkiä välilyöntejä.",
+    "MediaEngine.PolicyNull": "Sektorien uudelleenmuodostussääntö ei saa olla null.",
+    "MediaEngine.PolicyNullBlock": "Sektorien uudelleenmuodostuksen kohde ei saa sisältää null-viittausta lohkoon.",
+    "MediaEngine.PolicyRareUnknown": "Muodolle '{0}' ei ole rekisteröity harvinaisen koodauksen profiilia.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare -sylinterin {0} on oltava välillä 0–{1}.",
+    "MediaEngine.PolicyJfdDensity": "JFD-uralla ei ole käyttökelpoista tiheyskoodia.",
+    "MediaEngine.PolicyAddressRange": "Osoitearvo {0} on etumerkillisen 32-bittisen kokonaisluvun alueen ulkopuolella."
+  }
+}

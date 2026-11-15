@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "De waarde {1} van AED 6200P-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} bytes, header-CRC {4}, data-CRC {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} bytes, markering {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, markering C6, afgekapt",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC niet beschikbaar, afgekapt",
+    "MediaEngine.AedUnpaired": "Ongepaarde AED 6200P-gegevens"
+  }
+}

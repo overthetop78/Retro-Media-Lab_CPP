@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Victor 9000 -sektorit sisältävät 512 tavua; saatiin {0} tavua.",
+    "MediaEngine.VictorSectorRange": "Victor 9000 -sektorinumeron {0} on oltava nollan ja {1} välillä.",
+    "MediaEngine.VictorMarkerLength": "Victor 9000 -merkkien on ulotuttava bittikohtaan 49; saatiin {0} bittiä.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} tavua, otsake {4}, datan tarkistussumma {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} tavua, merkki {4}, datalohko, tarkistussumma {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, tarkistussumma ei saatavilla, katkaistu",
+    "MediaEngine.VictorUnpaired": "Parittamaton Victor 9000 -data, datalohko"
+  }
+}

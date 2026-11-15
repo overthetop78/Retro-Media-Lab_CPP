@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MfmAddressRange": "ISO MFM field {0} value {1} must be between zero and {2}.",
+    "MediaEngine.MfmSizeCode": "ISO MFM size code {0} describes {1} bytes; received {2} bytes.",
+    "MediaEngine.TrackPhysicalCapacity": "Physical {0} track {1}.{2} cannot retain all sectors within {3} bit cells at the selected timing.",
+    "MediaEngine.SectorUnsupportedSize": "Unsupported sector size: {0} bytes.",
+    "MediaEngine.SectorUnsupportedSizeCode": "Sector size code {0} must be between zero and {1}."
+  }
+}

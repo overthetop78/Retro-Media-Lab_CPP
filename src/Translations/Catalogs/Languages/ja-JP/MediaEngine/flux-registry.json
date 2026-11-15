@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "少なくとも1つの磁束デコーダーを登録する必要があります。",
+    "MediaEngine.RegistryNullDecoder": "位置 {0} の磁束デコーダーがありません。",
+    "MediaEngine.RegistryInvalidId": "位置 {0} の磁束デコーダーの識別子が空です。",
+    "MediaEngine.RegistryDuplicate": "識別子 '{0}' の磁束デコーダーは既に登録されています。",
+    "MediaEngine.RegistryUnknown": "識別子 '{0}' の磁束デコーダーは登録されていません。",
+    "MediaEngine.RegistryNullRevolution": "デコードには1回転分の磁束記録が必要です。",
+    "MediaEngine.RegistryNoAutomatic": "自動検出に参加する登録済み磁束デコーダーがありません。"
+  }
+}

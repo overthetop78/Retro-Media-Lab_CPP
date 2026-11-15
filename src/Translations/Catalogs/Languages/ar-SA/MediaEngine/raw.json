@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "طول الصورة الخام {0} صفر أو ليس من مضاعفات {1} بايت.",
+    "Media.RawUnknownGeometry": "لا توجد هندسة صورة خام مدعومة تطابق {0} بايت.",
+    "Media.MsxInvalidBoot": "لا تحتوي الصورة ذات {0} بايت على قطاع إقلاع MSX مدعوم.",
+    "Media.MsxUnsupportedGeometry": "لا توجد هندسة MSX تطابق {0} بايت وواصف الوسيط {1}.",
+    "Media.UnsupportedRawFormat": "تنسيق الصورة الخام {0} غير مدعوم.",
+    "Media.RawGeometryMismatch": "للصورة {0} الهندسة {1}؛ ويتطلب الهدف {2} الهندسة {3}.",
+    "Media.RawSectorMissing": "القطاع المنطقي {0} مفقود ولا يمكن كتابته إلى صورة خام كاملة.",
+    "Media.RawSectorSize": "يحتوي القطاع المنطقي {0} على {1} بايت بدلًا من {2}.",
+    "Media.AtomicOpen": "لا يمكن خلق الناتج المؤقت {0}",
+    "Media.AtomicWrite": "لا يمكن كتابة الناتج المؤقت {0}",
+    "Media.AtomicCommit": "لا يمكن نشر ملف الناتج الكامل {0}",
+    "Media.Cancelled": "تم إلغاء العملية على وسيط التخزين."
+  }
+}

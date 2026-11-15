@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.TycomSectorSize": "TYCOM 磁區包含 128 位元組；收到 {0} 位元組。",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 位元組, 標記 {2}, 標頭CRC {3}, 資料CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 位元組, 標頭CRC {2}, 資料CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 位元組, 標記 FE, 標頭CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 位元組, 標記 {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, 磁區標頭, 截斷",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, 標記 {0}, 磁區資料, 截斷",
+    "MediaEngine.TycomUnpaired": "未分類 TYCOM FormatData, 標記 {0}, 資料"
+  }
+}

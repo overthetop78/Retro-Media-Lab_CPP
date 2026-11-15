@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "El encabezado DiskCopy está truncado.",
+    "MediaEngine.DiskCopyPrivateWord": "La palabra privada de DiskCopy es {0}; valor esperado: {1}.",
+    "MediaEngine.DiskCopyPayload": "La carga útil DiskCopy es inválida.",
+    "MediaEngine.DiskCopyTags": "La imagen DiskCopy no es ni una imagen reconocida de Macintosh/ProDOS ni una imagen etiquetada de Lisa.",
+    "MediaEngine.DiskCopyChecksumBytes": "El checksum DiskCopy requiere un número par de bytes; recibidos: {0}.",
+    "MediaEngine.DiskCopyRange": "Una longitud DiskCopy excede el rango soportado.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy requiere una imagen sectorial completa.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy requiere un total de 512 bytes por bloque lógico.",
+    "MediaEngine.DiskCopyLayoutTags": "Cada etiqueta DiskCopy debe contener 12 bytes.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Los metadatos DiskCopy son incompletos.",
+    "MediaEngine.DiskCopyMetadataName": "Los metadatos de nombre DiskCopy son inválidos.",
+    "MediaEngine.DiskCopyMetadataFormat": "Los metadatos de formato DiskCopy son inválidos.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Los metadatos de checksum DiskCopy '{0}' no son válidos."
+  }
+}

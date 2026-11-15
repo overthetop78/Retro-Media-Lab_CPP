@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Rozdzielczość czasu SCP musi być dodatnia; otrzymana {0}.",
+    "MediaEngine.ScpExtended": "Rozszerzone media SCP nie są dyskietkami.",
+    "MediaEngine.ScpSignature": "Plik nie zawiera podpisu SCP.",
+    "MediaEngine.ScpRevolutions": "Liczba obrotów SCP {0} jest nieprawidłowa.",
+    "MediaEngine.ScpTrackRange": "Zakres toru SCP od {0} do {1} jest nieprawidłowy.",
+    "MediaEngine.ScpWidth": "Szerokość komórek bitowych SCP {0} nie jest obsługiwana.",
+    "MediaEngine.ScpHeads": "Wybór głowy SCP {0} jest nieprawidłowy.",
+    "MediaEngine.ScpTrackSignature": "Track {0} nie ma podpisu TRK; deskryptor zawiera numer utworu {1}.",
+    "MediaEngine.ScpTrackMismatch": "Wpis tabeli utworów {0} wskazuje na ścieżkę {1}.",
+    "MediaEngine.ScpHeaderSection": "Nagłówek SCP jest niekompletny lub niepoprawny przy przesunięciu {0}; wymagane są bajty {1}.",
+    "MediaEngine.ScpTableSection": "Tabela Track- offset SCP jest niekompletna lub niepoprawna przy przesunięciu {0}; wymagane są bajty {1}.",
+    "MediaEngine.ScpTrackSection": "Nagłówek ścieżki SCP {0} jest niekompletny lub niepoprawny przy przesunięciu {1}; wymagane są bajty {2}.",
+    "MediaEngine.ScpFluxSection": "Strumień toru SCP {0}, obrót {1}, jest niekompletny lub niepoprawny przy przesunięciu {2}; wymagane są bajty {3}.",
+    "MediaEngine.ScpOverflow": "Rozmiar SCP, pozycja, przedział lub połączona obrót przekracza obsługiwany zakres liczbowy.",
+    "MediaEngine.ScpTrackAddress": "Numer utworu SCP {0} znajduje się poza tabelą.",
+    "MediaEngine.ScpNoRevolution": "Ścieżka SCP nie zawiera obrotu do dekodowania.",
+    "MediaEngine.ScpNoC900Sectors": "Z obrazu SCP nie można było odszyfrować żadnych sektorów Commodore 900 GCR."
+  }
+}

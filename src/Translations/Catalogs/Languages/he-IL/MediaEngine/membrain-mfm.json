@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "הערך {1} בשדה {0} של Membrain MFM חייב להיות בין אפס ל-{2}.",
+    "MediaEngine.MembrainSectorSize": "סקטורי Membrain מכילים 512 בתים; התקבלו {0} בתים.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 בתים, סימון FE, CRC כותרת {3}, CRC נתונים {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 בתים, סימון {3}, בלוק נתונים, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, כותרת מגזר, קטועה",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC לא זמין, קטועה",
+    "MediaEngine.MembrainUnpaired": "נתוני Membrain לא מזווגים, בלוק נתונים"
+  }
+}

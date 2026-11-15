@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Секторы Heathkit содержат 256 байт; получено {0} байт.",
+    "MediaEngine.HeathkitAddressRange": "Значение {1} поля {0} Heathkit FM должно быть между нулём и {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Запись Heathkit должна содержать хотя бы один байт контрольной суммы.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} байт, том {4}, контрольная сумма заголовка {5}, контрольная сумма данных {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} байт, контрольная сумма {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, заголовок аппаратного сектора, усечён",
+    "MediaEngine.HeathkitUnpaired": "Непарные данные Heathkit, блок данных"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Le format cible ATR « {0} » n’est pas pris en charge.",
+    "MediaEngine.AtrIncompatibleImage": "L’image sectorielle « {0} » contient {1} secteurs et {2} octets ; le profil ATR « {3} » nécessite {4} secteurs et {5} octets.",
+    "MediaEngine.AtrMissingSector": "Le secteur ATR {0} est absent.",
+    "MediaEngine.AtrSectorSize": "Le secteur ATR {0} contient {1} octets ; {2} sont attendus.",
+    "MediaEngine.AtrHeader": "L’en-tête ATR est invalide : longueur {0} octets (minimum {1}), signature {2} (attendue {3}).",
+    "MediaEngine.AtrUnsupportedSize": "La taille sectorielle ATR de {0} octets n’est pas prise en charge ; {1} octets sont attendus.",
+    "MediaEngine.AtrPayloadLength": "La charge utile ATR contient {0} octets ; l’en-tête en déclare {1}.",
+    "MediaEngine.AtrTruncatedPayload": "La charge utile ATR de {0} octets ne contient pas une zone d’amorçage de {1} octets suivie de secteurs complets de {2} octets.",
+    "MediaEngine.AtrSectorCount": "La taille sectorielle Atari ATR {0} et le nombre de secteurs {1} doivent être strictement positifs.",
+    "MediaEngine.AtxHeader": "L’en-tête du fichier ATX est absent ou invalide.",
+    "MediaEngine.AtxTrackOffset": "Le décalage des données de pistes ATX est hors du fichier.",
+    "MediaEngine.AtxTrackCycle": "La chaîne de pistes ATX contient un cycle.",
+    "MediaEngine.AtxTrackBounds": "Une piste ATX dépasse les limites du fichier.",
+    "MediaEngine.AtxTrackNumber": "La piste ATX {0} est hors de la géométrie de 40 pistes prise en charge.",
+    "MediaEngine.AtxSectorCount": "La piste ATX {0} contient trop d’enregistrements de secteurs.",
+    "MediaEngine.AtxListBounds": "La liste des secteurs de la piste ATX {0} dépasse la limite de la piste.",
+    "MediaEngine.AtxSectorNumber": "La piste ATX {0} contient le secteur invalide {1}.",
+    "MediaEngine.AtxDataBounds": "Les données de la piste ATX {0}, secteur {1}, dépassent la limite de la piste.",
+    "MediaEngine.AtxNoSectors": "L’image ATX ne contient aucun enregistrement de secteur lisible.",
+    "MediaEngine.AtxLargeOffset": "Le décalage ATX « {0} » est trop grand.",
+    "MediaEngine.AtxTruncated": "La partie ATX « {0} » est tronquée."
+  }
+}

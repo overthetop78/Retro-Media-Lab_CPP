@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Количество байтов битового потока {0} должно быть между нулём и {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} байт, метка FE, N{4}, CRC заголовка {5}, CRC данных {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} байт, метка FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} байт, метка F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Неклассифицировано ISO MFM Sync, метка {0}",
+    "MediaEngine.MfmUnpaired": "Неклассифицировано ISO MFM DataAddressMark, метка FB",
+    "MediaEngine.MfmUnpairedDeleted": "Неклассифицировано ISO MFM DeletedDataAddressMark, метка F8"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MicropolisSectorSize": "Micropolis-Sektoren enthalten 256 Bytes; {0} Bytes empfangen.",
+    "MediaEngine.MicropolisSectorRange": "Die Micropolis-Sektornummer {0} muss zwischen null und {1} liegen.",
+    "MediaEngine.MicropolisRecordInput": "Die Eingabe des Micropolis-Datensatzes enthält {0} Bytes; höchstens {1} Bytes passen in den Datensatz.",
+    "MediaEngine.MicropolisRecord": "Micropolis FormatHeader, C{0} H{1} R{2}, {3} Bytes, Markierung FF, Prüfsumme {4}",
+    "MediaEngine.MicropolisTruncated": "Micropolis FormatHeader, Sektor, abgeschnitten"
+  }
+}

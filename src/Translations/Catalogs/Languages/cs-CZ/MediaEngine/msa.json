@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Obraz sektorů '{0}' s geometrií {1}x{2}x{3} a velikostí bloku {4} nelze zapsat jako MSA.",
+    "MediaEngine.MsaMissingSector": "Logický sektor MSA {0} ({1}: {2}: {3}) chybí.",
+    "MediaEngine.MsaSectorSize": "MSA logický sektor {0} obsahuje {1} bajty; očekává se {2}.",
+    "MediaEngine.MsaHeader": "Záhlaví MSA je neplatné; soubor obsahuje {0} bajty.",
+    "MediaEngine.MsaGeometry": "Geometrie MSA je neplatná: {0} sektory, {1} hlavy, válce {2} až {3}.",
+    "MediaEngine.MsaTruncatedTable": "Pole délky stopy MSA pro válec {0}, hlavu {1}, na posunu {2} je zkrácené: k dispozici je {3} bajtů.",
+    "MediaEngine.MsaTruncatedTrack": "Stopa MSA {0}:{1} na posunu {2} deklaruje {3} bajtů, k dispozici je {4}.",
+    "MediaEngine.MsaTruncatedRun": "Komprimovaná sekvence ve stopě MSA {0}:{1} na posunu {2} v komprimovaných datech je zkrácená v rozsahu {3} bajtů.",
+    "MediaEngine.MsaInvalidRun": "Komprimovaná sekvence ve stopě MSA {0}:{1} na posunu {2} má délku {3}; již bylo zapsáno {4} z {5} výstupních bajtů.",
+    "MediaEngine.MsaUnpackedLength": "Stopa MSA {0}:{1} spotřebovala {2} z {3} komprimovaných bajtů a vytvořila {4} z {5} očekávaných bajtů."
+  }
+}

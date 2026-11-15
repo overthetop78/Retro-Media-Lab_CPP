@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "Värdet {1} i QD MO5-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.QdSectorSize": "QD MO5-sektorer innehåller 128 byte; tog emot {0} byte.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 byte, markering FB, huvud {1}, kontrollsumma för data {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 byte, markering {1}, kontrollsumma {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, sektorhuvud, avkortat",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, sektordata, kontrollsumma inte tillgänglig, avkortat",
+    "MediaEngine.QdUnpaired": "Oparade QD MO5-data, markering {0}, sektordata"
+  }
+}

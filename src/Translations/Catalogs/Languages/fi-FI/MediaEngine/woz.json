@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZ-otsikko on virheellinen.",
+    "MediaEngine.WozDiskType": "WOZ-levytyyppiä {0} ei tueta; tarvitaan 5.25 tuuman Apple II -levyke.",
+    "MediaEngine.WozMissingChunk": "Vaadittu WOZ-lohko '{0}' puuttuu tai on puutteellinen.",
+    "MediaEngine.WozTruncatedChunk": "WOZ-lohko '{0}' on katkennut.",
+    "MediaEngine.WozTrackReference": "WOZ-raita {0} viittaa sallitun alueen ulkopuolella olevaan kuvaajaan {1}.",
+    "MediaEngine.WozCrc": "WOZ CRC32 on virheellinen: tallennettu arvo {0}, laskettu arvo {1}.",
+    "MediaEngine.WozChunkId": "WOZ-lohkon tunnisteen '{0}' on sisällettävä täsmälleen neljä ASCII-merkkiä.",
+    "MediaEngine.WozTrackCount": "WOZ1-kirjoitustoiminto vastaanotti {0} raitaa; odotettu määrä on 1–{1}.",
+    "MediaEngine.WozTrackLength": "WOZ1-raita {0} sisältää {1} bittiä; enimmäismäärä on {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Yhtään kelvollista Apple II RWTS18 -sektoria ei löytynyt {1} raidalta purettujen {0} sektorin joukosta."
+  }
+}

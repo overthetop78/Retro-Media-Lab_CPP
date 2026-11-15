@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "يجب أن تكون قيمة سمة Commodore GCR {0}، وهي {1}، بين الصفر و{2}.",
+    "MediaEngine.CbmGcrDiskTrack": "يجب أن يكون مسار قرص Commodore {0} بين {1} و{2}.",
+    "MediaEngine.CbmGcrSectorSize": "تحتوي قطاعات Commodore على {0} بايت؛ تم استلام {1} بايت.",
+    "MediaEngine.CbmGcrSync": "غير مصنف Commodore CommodoreSync, مزامنة GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 بايت, كتلة بيانات, المجموع الاختباري للبيانات {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} بايت, المجموع الاختباري للرأس {4}, المجموع الاختباري للبيانات {5}"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Η μορφή προορισμού ATR '{0}' δεν υποστηρίζεται.",
+    "MediaEngine.AtrIncompatibleImage": "Το είδωλο τομέων '{0}' περιέχει {1} τομείς και {2} byte· το προφίλ ATR '{3}' απαιτεί {4} τομείς και {5} byte.",
+    "MediaEngine.AtrMissingSector": "Ο τομέας ATR {0} λείπει.",
+    "MediaEngine.AtrSectorSize": "Ο τομέας ATR {0} περιέχει {1} byte· αναμένονται {2}.",
+    "MediaEngine.AtrHeader": "Η κεφαλίδα ATR είναι άκυρη: μήκος {0} byte (ελάχιστο {1}), υπογραφή {2} (αναμενόμενη {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Το μέγεθος τομέα ATR {0} byte δεν υποστηρίζεται· αναμένονται {1} byte.",
+    "MediaEngine.AtrPayloadLength": "Το μήκος δεδομένων ATR είναι {0} byte· η κεφαλίδα δηλώνει {1} byte.",
+    "MediaEngine.AtrTruncatedPayload": "Τα δεδομένα ATR μήκους {0} byte δεν περιέχουν περιοχή εκκίνησης {1} byte ακολουθούμενη από πλήρεις τομείς {2} byte.",
+    "MediaEngine.AtrSectorCount": "Το μέγεθος τομέα Atari ATR {0} και ο αριθμός τομέων {1} πρέπει να είναι μεγαλύτερα από μηδέν.",
+    "MediaEngine.AtxHeader": "Η κεφαλίδα αρχείου ATX λείπει ή είναι άκυρη.",
+    "MediaEngine.AtxTrackOffset": "Η θέση των δεδομένων ιχνών ATX βρίσκεται εκτός του αρχείου.",
+    "MediaEngine.AtxTrackCycle": "Η αλυσίδα ιχνών ATX περιέχει κύκλο.",
+    "MediaEngine.AtxTrackBounds": "Ένα ίχνος ATX εκτείνεται εκτός του αρχείου.",
+    "MediaEngine.AtxTrackNumber": "Το ίχνος ATX {0} βρίσκεται εκτός της υποστηριζόμενης γεωμετρίας 40 ιχνών.",
+    "MediaEngine.AtxSectorCount": "Το ίχνος ATX {0} περιέχει υπερβολικά πολλές εγγραφές τομέων.",
+    "MediaEngine.AtxListBounds": "Η λίστα τομέων του ίχνους ATX {0} υπερβαίνει το όριο του ίχνους.",
+    "MediaEngine.AtxSectorNumber": "Το ίχνος ATX {0} περιέχει άκυρο τομέα {1}.",
+    "MediaEngine.AtxDataBounds": "Τα δεδομένα του ίχνους ATX {0}, τομέας {1}, υπερβαίνουν το όριο του ίχνους.",
+    "MediaEngine.AtxNoSectors": "Το είδωλο ATX δεν περιέχει αναγνώσιμη εγγραφή τομέα.",
+    "MediaEngine.AtxLargeOffset": "Η θέση του τμήματος ATX '{0}' είναι υπερβολικά μεγάλη.",
+    "MediaEngine.AtxTruncated": "Το τμήμα ATX '{0}' είναι περικομμένο."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "The RIFF AMS! ไม่พบส่วนหัวของตลับหมึก",
+    "MediaEngine.CprLength": "เดอะ CPR RIFF ความยาวไม่ถูกต้อง!",
+    "MediaEngine.CprChunkRange": "CPR ย่อย '{0}' มีส่วนเกินของกล่อง RIFF",
+    "MediaEngine.CprDuplicate": "CPR Bank '{0}' ถูกทําซ้ํา",
+    "MediaEngine.CprLargeBank": "CPR Bank '{0}' บรรจุข้อมูลที่เกิน 16 กิโลไบต์; ไม่มีการโยง",
+    "MediaEngine.CprUnknownChunk": "RIFF กรุ๊ป '{0}' ไม่ใช่ธนาคารตลับหมึก CPR",
+    "MediaEngine.CprChunkHeader": "กล่อง CPR RIFF สิ้นสุดลงภายในหัวชิ้น",
+    "MediaEngine.CprNoBanks": "ภาพ CPR ไม่มี cb00 ผ่านธนาคาร cb31",
+    "MediaEngine.CprWrite": "เอกสารบล็อกไม่สามารถเขียนเป็นตลับหมึก CPR ได้สมบูรณ์",
+    "MediaEngine.RomCorpus": "ความยาวของ CPC รอม อยู่นอกประวัติของคอร์ปัส",
+    "MediaEngine.RomNoData": "CPC รอมไม่มีข้อมูลธนาคาร",
+    "MediaEngine.RomBankLimit": "CPC รอมเกิน 32 ธนาคารตลับ",
+    "MediaEngine.RomIncomplete": "CPC รอมแบงค์สุดท้ายไม่สมบูรณ์ และถูกเปิดโปงโดยไม่ถูกประดิษฐ์ขึ้น",
+    "MediaEngine.RomWrite": "เอกสารบล็อกไม่มีธนาคาร CPC ที่ต่อเนื่อง",
+    "MediaEngine.FdsSource": "แหล่งที่เลือกไม่ใช่อิมเมจ Famicom Disk System",
+    "MediaEngine.FdsSides": "เดอะ Famicom Disk System อิมเมจไม่มีด้านที่สมบูรณ์",
+    "MediaEngine.FdsNoSide": "เดอะ Famicom Disk System ภาพไม่มีด้าน",
+    "MediaEngine.FdsCount": "เดอะ Famicom Disk System จํานวนด้านไม่ตรงกับส่วนหัว",
+    "MediaEngine.FdsUndeclared": "ส่วนหัวแบบ FDS ไม่ได้ประกาศจํานวนด้าน; จํานวนที่นํามาจากข้อมูลที่เก็บไว้",
+    "MediaEngine.FdsWrite": "เอกสารบล็อคยังไม่มีส่วนสมบูรณ์ Famicom Disk System ด้าน",
+    "MediaEngine.FdsHeader": "ไม่มีหัวข้อมูลแหล่ง FDS",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad ตลับหมึก"
+  }
+}

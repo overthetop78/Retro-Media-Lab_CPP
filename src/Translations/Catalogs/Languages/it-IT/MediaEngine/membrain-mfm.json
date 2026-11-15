@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Il valore {1} del campo {0} Membrain MFM deve essere compreso tra zero e {2}.",
+    "MediaEngine.MembrainSectorSize": "I settori Membrain contengono 512 byte; ricevuti {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, marcatore FE, CRC intestazione {3}, CRC dati {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, marcatore {3}, blocco dati, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, intestazione di settore, troncata",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC non disponibile, troncata",
+    "MediaEngine.MembrainUnpaired": "Dati Membrain non abbinati, blocco dati"
+  }
+}

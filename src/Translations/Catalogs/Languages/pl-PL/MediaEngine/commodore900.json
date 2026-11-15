@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 cylinder {0} jest poza zakresem zero do {1}.",
+    "MediaEngine.C900Block": "Commodore 900 blok logiczny {0} jest poza zakresem od 0 do {1}.",
+    "MediaEngine.C900Address": "Commodore 900 adres {0} / {1} / {2} jest nieważny; głowa musi być między zerem a {3}, a sektor między zerem a {4} na tym cylindrze.",
+    "MediaEngine.C900Content": "Obraz bajtów {0} nie zawiera rozpoznanego superbloku COHERENT.",
+    "MediaEngine.C900Alignment": "Długość bajtów {0} obrazu COHERENT nie jest podzielna przez rozmiar bajtów sektora {1}.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT deklaruje bloki {0}, ale obraz zawiera tylko {1}.",
+    "MediaEngine.C900Capacity": "Obraz COHERENT zawiera bloki {0}, ale geometria Commodore 900 obsługuje najwyżej {1}.",
+    "MediaEngine.C900WriterGeometry": "Obraz sektorowy nie używa strefowej geometrii Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Blok logiczny Commodore 900 {0} nie pasuje do wymaganego porządku sektora fizycznego."
+  }
+}

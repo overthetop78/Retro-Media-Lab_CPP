@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Cílový formát ATR '{0}' není podporován.",
+    "MediaEngine.AtrIncompatibleImage": "Obraz sektorů '{0}' obsahuje {1} sektorů a {2} bajtů; profil ATR '{3}' vyžaduje {4} sektorů a {5} bajtů.",
+    "MediaEngine.AtrMissingSector": "Sektor ATR {0} chybí.",
+    "MediaEngine.AtrSectorSize": "Sektor ATR {0} obsahuje {1} bajtů; očekáváno je {2}.",
+    "MediaEngine.AtrHeader": "Záhlaví ATR je neplatné: délka {0} bajtů (minimum {1}), signatura {2} (očekávána {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Velikost sektoru ATR {0} bajtů není podporována; očekáváno je {1} bajtů.",
+    "MediaEngine.AtrPayloadLength": "Datová část ATR má délku {0} bajtů; záhlaví uvádí {1} bajtů.",
+    "MediaEngine.AtrTruncatedPayload": "Datová část ATR o délce {0} bajtů neobsahuje spouštěcí oblast o velikosti {1} bajtů následovanou úplnými sektory o velikosti {2} bajtů.",
+    "MediaEngine.AtrSectorCount": "Velikost sektoru Atari ATR {0} a počet sektorů {1} musí být větší než nula.",
+    "MediaEngine.AtxHeader": "Záhlaví souboru ATX chybí nebo je neplatné.",
+    "MediaEngine.AtxTrackOffset": "Pozice dat stop ATX leží mimo soubor.",
+    "MediaEngine.AtxTrackCycle": "Řetězec stop ATX obsahuje cyklus.",
+    "MediaEngine.AtxTrackBounds": "Stopa ATX přesahuje konec souboru.",
+    "MediaEngine.AtxTrackNumber": "Stopa ATX {0} je mimo podporovanou geometrii se 40 stopami.",
+    "MediaEngine.AtxSectorCount": "Stopa ATX {0} obsahuje příliš mnoho záznamů sektorů.",
+    "MediaEngine.AtxListBounds": "Seznam sektorů stopy ATX {0} překračuje hranici stopy.",
+    "MediaEngine.AtxSectorNumber": "Stopa ATX {0} obsahuje neplatný sektor {1}.",
+    "MediaEngine.AtxDataBounds": "Data stopy ATX {0}, sektoru {1}, překračují hranici stopy.",
+    "MediaEngine.AtxNoSectors": "Obraz ATX neobsahuje žádný čitelný záznam sektoru.",
+    "MediaEngine.AtxLargeOffset": "Pozice části ATX '{0}' je příliš velká.",
+    "MediaEngine.AtxTruncated": "Část ATX '{0}' je neúplná."
+  }
+}

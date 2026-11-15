@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "A kép nem tartalmaz ImageDisk fejlécet: komment terminator at {0}, file length {1} bytes.",
+    "MediaEngine.ImdTruncated": "Az ImageDisk {0} szakasz offline {1} csonka: {2} bájt szükséges, {3} áll rendelkezésre.",
+    "MediaEngine.ImdTrackHeader": "Az ImageDisk pályafejléc érvénytelen: mód {0}, szektorszám {1}.",
+    "MediaEngine.ImdSizeCode": "Az ImageDisk ágazati méretkód {0} érvénytelen.",
+    "MediaEngine.ImdRecordType": "Az ImageDisk szektor- rekord típus {0} érvénytelen.",
+    "MediaEngine.ImdNoSectors": "Az ImageDisk kép nem tartalmaz szektorokat.",
+    "MediaEngine.ImdNoTracks": "Az ImageDisk kép nem tartalmaz számokat.",
+    "MediaEngine.ImdWriteTrack": "Az ImageDisk pályafejléc nem reprezentatív.",
+    "MediaEngine.ImdWriteSector": "Az ImageDisk szektor rekordja érvénytelen.",
+    "MediaEngine.ImdCompressed": "A tömörített ImageDisk szektor nem tartalmaz egy ismétlődő bájtot.",
+    "MediaEngine.ImdMetadataMode": "Az ImageDisk metaadatok érvénytelen sávot tartalmaznak.",
+    "MediaEngine.ImdMetadataRecord": "Az ImageDisk metaadatok érvénytelen ágazati rekordtípust tartalmaznak.",
+    "MediaEngine.ImdMetadataSize": "Az ImageDisk metaadatok érvénytelen szektorméretet tartalmaznak.",
+    "MediaEngine.ImdMetadataBlock": "Az ImageDisk metaadatok nem felelnek meg a '{0}' logikai blokknak.",
+    "MediaEngine.ImdMetadataCount": "Az ImageDisk metaadatok blokkszáma nem egyezik az ágazati képpel.",
+    "MediaEngine.ImdMetadata": "Az ImageDisk metaadatai érvénytelenek.",
+    "MediaEngine.ImdEpsonGeometry": "Az Epson képgeometria nem egyezik a formátum azonosítójával.",
+    "MediaEngine.ImdEpsonSize": "Epson szektor {0}: {1}: {2} érvénytelen méretű.",
+    "MediaEngine.ImdEpsonDuplicate": "Az epson ágazat {0}: {1}: {2} másolódik.",
+    "MediaEngine.EpsonFormat": "A kiválasztott formátum \"{0}\" nem támogatott Epson QX-10 formátum.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicate Epson QX-10 geometria: {0}."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標頭CRC {4}, 資料CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} 位元組, 鍵 {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, 磁區標記, 截斷",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC 不可用, 截斷",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, 不支援的鍵 {0}, 截斷",
+    "MediaEngine.CenturionUnpaired": "未配對的 Centurion 資料, 資料區塊"
+  }
+}

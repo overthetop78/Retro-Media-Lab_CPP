@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "A imagem do setor '{0}' com geometria {1}x{2}x{3} e tamanho do bloco {4} não pode ser escrita como MSA.",
+    "MediaEngine.MsaMissingSector": "Falta o setor lógico do MSA {0} ({1}:{2}:{3}).",
+    "MediaEngine.MsaSectorSize": "O sector lógico do MSA {0} contém bytes {1}; {2} esperado.",
+    "MediaEngine.MsaHeader": "O cabeçalho MSA é inválido; o arquivo contém {0} bytes.",
+    "MediaEngine.MsaGeometry": "A geometria do MSA é inválida: sectores {0}, cabeças {1}, cilindros {2} a {3}.",
+    "MediaEngine.MsaTruncatedTable": "O campo MSA de comprimento da faixa para o cilindro {0}, cabeça {1}, no deslocamento {2} é truncado: {3} bytes disponíveis.",
+    "MediaEngine.MsaTruncatedTrack": "A faixa MSA {0}:{1} no deslocamento {2} declara {3} bytes, {4} estão disponíveis.",
+    "MediaEngine.MsaTruncatedRun": "A sequência comprimida na pista MSA {0}:{1}, no deslocamento {2} dos dados compactados, está truncada dentro de {3} bytes.",
+    "MediaEngine.MsaInvalidRun": "A sequência comprimida na pista MSA {0}:{1}, no deslocamento {2} dos dados compactados, tem contagem {3}; {4} de {5} bytes de saída já foram escritos.",
+    "MediaEngine.MsaUnpackedLength": "A pista MSA {0}:{1} consumiu {2} de {3} bytes comprimidos e produziu {4} de {5} bytes esperados."
+  }
+}

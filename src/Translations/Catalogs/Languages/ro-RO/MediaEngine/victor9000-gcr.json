@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Sectoarele Victor 9000 conțin 512 octeți; primiți {0} octeți.",
+    "MediaEngine.VictorSectorRange": "Numărul de sector Victor 9000 {0} trebuie să fie între zero și {1}.",
+    "MediaEngine.VictorMarkerLength": "Marcajele Victor 9000 trebuie să ajungă la poziția de bit 49; primit: {0} biți.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} octeți, antet {4}, sumă de control a datelor {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} octeți, marcaj {4}, bloc de date, sumă de control {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, sumă de control indisponibilă, trunchiat",
+    "MediaEngine.VictorUnpaired": "Date Victor 9000 neasociate, bloc de date"
+  }
+}

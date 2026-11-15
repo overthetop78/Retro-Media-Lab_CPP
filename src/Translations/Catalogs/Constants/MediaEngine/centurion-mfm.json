@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM field {0} value {1} must be between zero and {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} bytes, header CRC {4}, data CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} bytes, key {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, sector mark, truncated",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC unavailable, truncated",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, unsupported key {0}, truncated",
+    "MediaEngine.CenturionUnpaired": "Unpaired Centurion data, data block"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "تحتوي قطاعات NorthStar على 512 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.NorthstarCylinderRange": "يجب أن يكون رقم أسطوانة NorthStar {0} بين صفر و{1}.",
+    "MediaEngine.NorthstarSectorRange": "يجب أن يكون رقم قطاع NorthStar وهو {0} بين صفر و{1}.",
+    "MediaEngine.NorthstarWindowCapacity": "تتجاوز مدة فهرس NorthStar عدد الخلايا المدعوم.",
+    "MediaEngine.NorthstarHardAddressRange": "يجب أن تلائم كل إحداثية من عنوان NorthStar C{0} H{1} بايتًا واحدًا.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} بايت, العلامة FB, المجموع الاختباري {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, كتلة قطاع مادي, مبتورة"
+  }
+}

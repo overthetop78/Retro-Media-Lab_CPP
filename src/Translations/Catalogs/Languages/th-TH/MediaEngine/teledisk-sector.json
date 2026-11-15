@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "เซกเตอร์ TeleDisk {0}/{1}/{2} มีข้อมูลซ้ำ {3} ไบต์ แต่ต้องการ {4} ไบต์",
+    "MediaEngine.Td0EncodingTruncated": "การเข้ารหัส {3} ของเซกเตอร์ TeleDisk {0}/{1}/{2} ถูกตัดที่ออฟเซต {4}: ต้องการ {5} ไบต์ แต่มี {6} ไบต์",
+    "MediaEngine.Td0EncodingUnsupported": "เซกเตอร์ TeleDisk {0}/{1}/{2} ใช้การเข้ารหัส {3} ที่ไม่รองรับ",
+    "MediaEngine.Td0DecodedLength": "การเข้ารหัส {3} ของเซกเตอร์ TeleDisk {0}/{1}/{2} ขยายเป็น {4} ไบต์ แทนที่จะเป็น {5} ไบต์",
+    "MediaEngine.Td0RepetitionOverflow": "จำนวนการทำซ้ำของเซกเตอร์ TeleDisk เกินขีดจำกัดของจำนวนเต็มไม่มีเครื่องหมาย 16 บิต"
+  }
+}

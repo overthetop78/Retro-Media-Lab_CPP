@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP 時間解析度必須為正數；收到 {0}。",
+    "MediaEngine.ScpExtended": "擴充 SCP 媒體不是軟碟映像。",
+    "MediaEngine.ScpSignature": "檔案不包含 SCP 簽章。",
+    "MediaEngine.ScpRevolutions": "SCP 旋轉圈數 {0} 無效。",
+    "MediaEngine.ScpTrackRange": "SCP 磁軌範圍 {0} 至 {1} 無效。",
+    "MediaEngine.ScpWidth": "不支援 SCP 位元單元寬度 {0}。",
+    "MediaEngine.ScpHeads": "SCP 磁頭選擇值 {0} 無效。",
+    "MediaEngine.ScpTrackSignature": "磁軌 {0} 沒有 TRK 簽章；描述元包含磁軌編號 {1}。",
+    "MediaEngine.ScpTrackMismatch": "磁軌表項目 {0} 指向磁軌 {1}。",
+    "MediaEngine.ScpHeaderSection": "位移 {0} 處的 SCP 檔頭不完整或無效；需要 {1} 位元組。",
+    "MediaEngine.ScpTableSection": "位移 {0} 處的 SCP 磁軌位移表不完整或無效；需要 {1} 位元組。",
+    "MediaEngine.ScpTrackSection": "位移 {1} 處的 SCP 磁軌 {0} 標頭不完整或無效；需要 {2} 位元組。",
+    "MediaEngine.ScpFluxSection": "位移 {2} 處的 SCP 磁軌 {0} 第 {1} 圈的磁通資料不完整或無效；需要 {3} 位元組。",
+    "MediaEngine.ScpOverflow": "SCP 的大小、位置、間隔或串接後的旋轉圈長超出支援的數值範圍。",
+    "MediaEngine.ScpTrackAddress": "SCP 磁軌編號 {0} 超出磁軌表範圍。",
+    "MediaEngine.ScpNoRevolution": "SCP 磁軌沒有可解碼的旋轉資料。",
+    "MediaEngine.ScpNoC900Sectors": "無法從 SCP 映像中解碼出任何 Commodore 900 GCR 磁區。"
+  }
+}

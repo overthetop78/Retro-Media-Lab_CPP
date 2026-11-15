@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Wartość {1} pola {0} DEC RX02 musi mieścić się między zerem a {2}.",
+    "MediaEngine.Rx02SizeCode": "Kod rozmiaru RX02 {0} nie odpowiada {1} bajtom.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, nagłówek sektora, ucięty",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} bajtów, CRC nagłówka {4}, CRC danych {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} bajtów, znacznik {4}, {5}, CRC nagłówka {6}, CRC danych {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} bajtów, znacznik {4}, {5}, CRC danych {6}",
+    "MediaEngine.Rx02Unpaired": "Niesklasyfikowane DEC RX02 FormatData, znacznik {0}, dane"
+  }
+}

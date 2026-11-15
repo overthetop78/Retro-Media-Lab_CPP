@@ -1,0 +1,11 @@
+#include "Msa.h"
+#include "Constants.h"
+#include <RetroMediaLab/MediaEngine/Diagnostics.h>
+#include <algorithm>
+namespace RetroMediaLab::MediaEngine::Msa {
+std::vector<std::uint8_t> pack(MediaFileSystems::Bytes source){using namespace Constants;std::vector<std::uint8_t> result;for(std::size_t position=0;position<source.size();){const auto value=source[position];std::size_t count=1;while(position+count<source.size()&&source[position+count]==value&&count<MaximumRun)++count;if(value==Marker||count>RunSize){result.push_back(Marker);result.push_back(value);result.push_back(std::uint8_t(count>>BitsPerByte));result.push_back(std::uint8_t(count));}else result.insert(result.end(),source.begin()+std::ptrdiff_t(position),source.begin()+std::ptrdiff_t(position+count));position+=count;}return result;}
+std::vector<std::uint8_t> unpack(MediaFileSystems::Bytes packed,std::int32_t expected,std::int32_t cylinder,std::int32_t head){using namespace Constants;if(expected<0)throw MediaError(DiagnosticCode::MsaUnpackedLength,{std::to_string(cylinder),std::to_string(head),std::to_string(0),std::to_string(packed.size()),std::to_string(0),std::to_string(expected)});std::vector<std::uint8_t> output(std::size_t(expected),0);std::size_t input=0,written=0;
+ while(input<packed.size()&&written<output.size()){if(packed[input]!=Marker){output[written++]=packed[input++];continue;}if(packed.size()-input<RunSize)throw MediaError(DiagnosticCode::MsaTruncatedRun,{std::to_string(cylinder),std::to_string(head),std::to_string(input),std::to_string(packed.size())});const auto value=packed[input+ValueOffset];const auto count=(std::uint32_t(packed[input+CountOffset])<<BitsPerByte)|packed[input+CountOffset+1];input+=RunSize;if(!count||count>output.size()-written)throw MediaError(DiagnosticCode::MsaInvalidRun,{std::to_string(cylinder),std::to_string(head),std::to_string(input-RunSize),std::to_string(count),std::to_string(written),std::to_string(expected)});std::fill_n(output.begin()+std::ptrdiff_t(written),count,value);written+=count;}
+ if(input!=packed.size()||written!=output.size())throw MediaError(DiagnosticCode::MsaUnpackedLength,{std::to_string(cylinder),std::to_string(head),std::to_string(input),std::to_string(packed.size()),std::to_string(written),std::to_string(expected)});return output;
+}
+}

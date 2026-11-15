@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "La longitud de la imagen cruda {0} está vacía o no un múltiple de {1} bytes.",
+    "Media.RawUnknownGeometry": "Ninguna geometría de imagen en bruto compatible corresponde a {0} bytes.",
+    "Media.MsxInvalidBoot": "La imagen de {0} bytes no contiene un sector de arranque compatible con MSX.",
+    "Media.MsxUnsupportedGeometry": "Ninguna geometría MSX corresponde a {0} bytes y al descriptor de medio {1}.",
+    "Media.UnsupportedRawFormat": "El formato de imagen cruda {0} no es compatible.",
+    "Media.RawGeometryMismatch": "Imagen {0} tiene geometría {1}; objetivo {2} requiere geometría {3}.",
+    "Media.RawSectorMissing": "El sector lógico {0} falta y no puede ser escrito a una imagen cruda completa.",
+    "Media.RawSectorSize": "El sector lógico {0} contiene {1} bytes en lugar de {2}.",
+    "Media.AtomicOpen": "No se puede crear la salida temporal para {0}.",
+    "Media.AtomicWrite": "No puede escribir la salida temporal para {0}.",
+    "Media.AtomicCommit": "No se puede publicar el archivo de salida completo {0}.",
+    "Media.Cancelled": "La operación en el medio de almacenamiento fue cancelada."
+  }
+}

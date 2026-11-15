@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "AED 6200P 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} 바이트, 헤더 CRC {4}, 데이터 CRC {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} 바이트, 마크 {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, 마크 C6, 잘림",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC 사용 불가, 잘림",
+    "MediaEngine.AedUnpaired": "짝이 없는 AED 6200P 데이터"
+  }
+}

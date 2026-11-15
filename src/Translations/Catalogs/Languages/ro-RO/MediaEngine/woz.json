@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Antetul WOZ nu este valid.",
+    "MediaEngine.WozDiskType": "Tipul de disc WOZ {0} nu este acceptat; este necesar un disc Apple II de 5,25 inchi.",
+    "MediaEngine.WozMissingChunk": "Blocul WOZ obligatoriu '{0}' lipsește sau este incomplet.",
+    "MediaEngine.WozTruncatedChunk": "Blocul WOZ '{0}' este trunchiat.",
+    "MediaEngine.WozTrackReference": "Pista WOZ {0} face referire la descriptorul {1}, aflat în afara limitelor.",
+    "MediaEngine.WozCrc": "WOZ CRC32 nu este valid: valoare stocată {0}, calculată {1}.",
+    "MediaEngine.WozChunkId": "Identificatorul blocului WOZ '{0}' trebuie să conțină exact patru caractere ASCII.",
+    "MediaEngine.WozTrackCount": "Modulul de scriere WOZ1 a primit {0} piste; se așteptau între 1 și {1}.",
+    "MediaEngine.WozTrackLength": "Pista WOZ1 {0} conține {1} biți; maximul este {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Nu a fost găsit niciun sector Apple II RWTS18 valid printre {0} sectoare decodificate din {1} piste."
+  }
+}

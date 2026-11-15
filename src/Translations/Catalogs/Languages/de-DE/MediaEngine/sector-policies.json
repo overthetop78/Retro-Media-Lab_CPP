@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Eine Encoderkennung ist erforderlich.",
+    "MediaEngine.PolicyFormats": "Mindestens eine Formatkennung ist erforderlich; sie darf weder leer sein noch nur aus Leerzeichen bestehen.",
+    "MediaEngine.PolicyPrefixes": "Mindestens ein Formatpräfix ist erforderlich; es darf weder leer sein noch nur aus Leerzeichen bestehen.",
+    "MediaEngine.PolicyNull": "Eine Regel zur Sektorrekonstruktion darf nicht null sein.",
+    "MediaEngine.PolicyNullBlock": "Ein Eintrag zur Sektorrekonstruktion darf keinen Nullverweis auf einen Block enthalten.",
+    "MediaEngine.PolicyRareUnknown": "Für das Format '{0}' ist kein seltenes Kodierungsprofil registriert.",
+    "MediaEngine.PolicyLisaCylinder": "Der Lisa FileWare-Zylinder {0} muss zwischen 0 und {1} liegen.",
+    "MediaEngine.PolicyJfdDensity": "Die JFD-Spur hat keinen verwendbaren Dichtecode.",
+    "MediaEngine.PolicyAddressRange": "Der Adresswert {0} liegt außerhalb des Wertebereichs einer vorzeichenbehafteten 32-Bit-Ganzzahl."
+  }
+}

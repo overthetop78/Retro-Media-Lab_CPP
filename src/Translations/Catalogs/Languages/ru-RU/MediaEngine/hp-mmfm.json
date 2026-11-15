@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "Перестановка пар HP MMFM требует чётного числа байтов; получено {0}.",
+    "MediaEngine.HpAddressRange": "Значение {1} поля {0} HP MMFM должно быть между нулём и {2}.",
+    "MediaEngine.HpSectorSize": "Секторы HP MMFM содержат 256 байт; получено {0} байт.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} байт, CRC заголовка {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} байт, CRC данных {4}"
+  }
+}

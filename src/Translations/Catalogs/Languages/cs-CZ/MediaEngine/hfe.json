@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE hlavička chybí nebo je zkrácena.",
+    "MediaEngine.HfeRevision": "HFE revize {0} není podporována.",
+    "MediaEngine.HfeGeometry": "Geometrie HFE nebo bitová rychlost je neplatná.",
+    "MediaEngine.HfeTable": "Tabulka stop HFE je mimo meze.",
+    "MediaEngine.HfeTiming": "Časování HFE nelze reprezentovat v požadovaném rozlišení.",
+    "MediaEngine.HfeTrackLength": "Stopa HFE {0} má neplatnou délku.",
+    "MediaEngine.HfeTrackData": "Data stopy HFE {0}/{1} jsou mimo meze.",
+    "MediaEngine.HfeRateOpcode": "Stopa HFE v3 {0}/{1} má nulový parametr bitové rychlosti operačního kódu.",
+    "MediaEngine.HfeEmptyTrack": "Stopa HFE v3 {0}/{1} neobsahuje žádné bitové buňky.",
+    "MediaEngine.HfeTracks": "HFE vyžaduje alespoň jednu stopu.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 vyžaduje stejné kódování pro všechny stopy.",
+    "MediaEngine.HfeEncoding": "Kódování {0} nelze zapsat jako HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 vyžaduje stejnou bitovou rychlost pro všechny stopy.",
+    "MediaEngine.HfeMissingTrack": "HFE válec {0} chybí.",
+    "MediaEngine.HfeTrackAddress": "HFE stopa je mimo deklarovanou geometrii.",
+    "MediaEngine.HfeDuplicateTrack": "HFE stopa {0} / {1} je duplikována.",
+    "MediaEngine.HfeLimit": "Kontejner HFE překračuje své podporované limity velikosti nebo hodnoty.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 vyžaduje jeden rovnoměrný časový úsek na stopu.",
+    "MediaEngine.HfeRevolutions": "HFE nemůže zachovat tyto oddělené otáčky toku.",
+    "MediaEngine.HfePadding": "HFE v1 by vyžadovalo doplnění nebo nestejné délky stop mezi hlavami.",
+    "MediaEngine.HfeScpEncoding": "Typ SCP disku {0} nemá žádné bezztrátové kódování HFE v1.",
+    "MediaEngine.HfeFluxBounds": "Intervaly toku překračují dobu trvání indexu.",
+    "MediaEngine.HfeWeak": "Zápis HFE v3 nedokáže zachovat slabé oblasti.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 opcode náhodných dat",
+    "MediaEngine.HfeIndexFeature": "Kód indexu HFE v3",
+    "MediaEngine.FluxConversionTiming": "Časování magnetického toku nelze reprezentovat jako rovnoměrné bitové buňky.",
+    "MediaEngine.FluxConversionBounds": "Intervaly magnetického toku nebo časové úseky přesahují dobu trvání stopy.",
+    "MediaEngine.FluxConversionRange": "Konverze toku přesahuje podporovanou velikost nebo číselný rozsah."
+  }
+}

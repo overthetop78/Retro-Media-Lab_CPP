@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Μια ακολουθία {0} bit δεν χωρά σε {1} byte.",
+    "MediaEngine.BitPackingCount": "Ο αριθμός bit {0} πρέπει να είναι θετικός.",
+    "MediaEngine.BitPackingRange": "Το μέγεθος συσκευασίας bit υπερβαίνει το υποστηριζόμενο εύρος.",
+    "MediaEngine.AppleTrackUnsupported": "Η μορφή πηγής ' {1}' δεν μπορεί να κωδικοποιηθεί ως {0}.",
+    "MediaEngine.AppleTrackGeometry": "Η γεωμετρία Apple II με {0} κυλίνδρους, {1} κεφαλές και {2} τομείς ανά τροχιά δεν μπορεί να κωδικοποιηθεί.",
+    "MediaEngine.AppleTrackSector": "{0} ο τομέας {1}: {2} περιέχει {3} bytes αντί {4}.",
+    "MediaEngine.AppleTrackTooLong": "Η τροχιά {1} του {0} περιέχει {2} bit· μέγιστο {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Η τροχιά Apple II {0} περιέχει διπλό αριθμό φυσικού τομέα {1}.",
+    "MediaEngine.NibTrackCount": "Ο εγγραφέας NIB απαιτεί τουλάχιστον μία τροχιά· ελήφθησαν {0}.",
+    "MediaEngine.NibTrackLength": "Η τροχιά NIB {0} περιέχει {1} bit· μέγιστο {2}."
+  }
+}

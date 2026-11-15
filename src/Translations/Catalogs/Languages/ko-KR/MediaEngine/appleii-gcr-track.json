@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Apple II GCR 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II 트랙은 5-and-3의 경우 13섹터, 6-and-2의 경우 16섹터입니다. 받은 값: {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 바이트, V{4}, 주소 체크섬 {5}, 데이터 체크섬 {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 바이트, 13섹터 V{4}, 주소 체크섬 {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} 바이트, 체크섬 {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} 바이트, 13섹터, 체크섬 {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, 체크섬 사용 불가, 잘림",
+    "MediaEngine.AppleIIUnpaired": "연결되지 않은 Apple II 데이터, 데이터 프롤로그 D5 AA AD"
+  }
+}

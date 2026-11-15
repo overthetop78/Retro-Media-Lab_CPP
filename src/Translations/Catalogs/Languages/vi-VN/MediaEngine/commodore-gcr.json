@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Giá trị {1} của thuộc tính Commodore GCR {0} phải nằm giữa không và {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Rãnh đĩa Commodore {0} phải nằm giữa {1} và {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Các cung Commodore chứa {0} byte; đã nhận {1} byte.",
+    "MediaEngine.CbmGcrSync": "Chưa phân loại Commodore CommodoreSync, đồng bộ GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 byte, khối dữ liệu, tổng kiểm tra dữ liệu {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} byte, tổng kiểm tra tiêu đề {4}, tổng kiểm tra dữ liệu {5}"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP Track {0} está presente más de una vez.",
+    "MediaEngine.ScpTrackOutside": "SCP track {0} está fuera del rango declarado {1} a {2}.",
+    "MediaEngine.ScpWriteAddress": "La pista SCP {0} no coincide con la dirección declarada: cilindro {1}, cabeza {2}.",
+    "MediaEngine.ScpWriteRevolutions": "La vía SCP {0} contiene {1} revoluciones; {2} son necesarias.",
+    "MediaEngine.ScpZeroInterval": "La vía SCP {0}, revolución {1}, contiene un intervalo de flujo de cero longitud.",
+    "MediaEngine.ScpOutput": "Falta el callback de salida SCP."
+  }
+}

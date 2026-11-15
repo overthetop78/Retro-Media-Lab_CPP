@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "エンコーダーの識別子が必要です。",
+    "MediaEngine.PolicyFormats": "空でも空白だけでもない形式識別子が、少なくとも1つ必要です。",
+    "MediaEngine.PolicyPrefixes": "空でも空白だけでもない形式の接頭辞が、少なくとも1つ必要です。",
+    "MediaEngine.PolicyNull": "セクター再構築ルールをnullにすることはできません。",
+    "MediaEngine.PolicyNullBlock": "セクター再構築項目にnullのブロックを含めることはできません。",
+    "MediaEngine.PolicyRareUnknown": "形式 '{0}' に対応する特殊なエンコードプロファイルは登録されていません。",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare のシリンダー {0} は0から {1} の範囲である必要があります。",
+    "MediaEngine.PolicyJfdDensity": "JFDトラックに使用可能な密度コードがありません。",
+    "MediaEngine.PolicyAddressRange": "アドレス値 {0} は符号付き32ビット整数の範囲外です。"
+  }
+}

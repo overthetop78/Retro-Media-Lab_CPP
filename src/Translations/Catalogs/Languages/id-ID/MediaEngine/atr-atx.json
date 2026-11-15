@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Format tujuan ATR '{0}' tidak didukung.",
+    "MediaEngine.AtrIncompatibleImage": "Citra sektor '{0}' berisi {1} sektor dan {2} byte; profil ATR '{3}' memerlukan {4} sektor dan {5} byte.",
+    "MediaEngine.AtrMissingSector": "Sektor ATR {0} tidak ada.",
+    "MediaEngine.AtrSectorSize": "Sektor ATR {0} berisi {1} byte; yang diharapkan {2}.",
+    "MediaEngine.AtrHeader": "Header ATR tidak valid: panjang {0} byte (minimum {1}), penanda {2} (diharapkan {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Ukuran sektor ATR {0} byte tidak didukung; diharapkan {1} byte.",
+    "MediaEngine.AtrPayloadLength": "Panjang data ATR adalah {0} byte; header menyatakan {1} byte.",
+    "MediaEngine.AtrTruncatedPayload": "Data ATR sepanjang {0} byte tidak memuat area boot {1} byte yang diikuti sektor lengkap berukuran {2} byte.",
+    "MediaEngine.AtrSectorCount": "Ukuran sektor Atari ATR {0} dan jumlah sektor {1} harus lebih besar dari nol.",
+    "MediaEngine.AtxHeader": "Header berkas ATX tidak ada atau tidak valid.",
+    "MediaEngine.AtxTrackOffset": "Posisi data trek ATX berada di luar berkas.",
+    "MediaEngine.AtxTrackCycle": "Rantai trek ATX berisi siklus.",
+    "MediaEngine.AtxTrackBounds": "Sebuah trek ATX melampaui batas berkas.",
+    "MediaEngine.AtxTrackNumber": "Trek ATX {0} berada di luar geometri 40 trek yang didukung.",
+    "MediaEngine.AtxSectorCount": "Trek ATX {0} berisi terlalu banyak rekaman sektor.",
+    "MediaEngine.AtxListBounds": "Daftar sektor trek ATX {0} melewati batas trek.",
+    "MediaEngine.AtxSectorNumber": "Trek ATX {0} berisi sektor tidak valid {1}.",
+    "MediaEngine.AtxDataBounds": "Data trek ATX {0}, sektor {1}, melewati batas trek.",
+    "MediaEngine.AtxNoSectors": "Citra ATX tidak berisi rekaman sektor yang dapat dibaca.",
+    "MediaEngine.AtxLargeOffset": "Posisi bagian ATX '{0}' terlalu besar.",
+    "MediaEngine.AtxTruncated": "Bagian ATX '{0}' terpotong."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "生イメージの長さ {0} はゼロか、{1} バイトの倍数ではありません。",
+    "Media.RawUnknownGeometry": "{0} バイトに一致する、対応済みの生イメージのジオメトリがありません。",
+    "Media.MsxInvalidBoot": "{0}バイトの画像は、サポートされているMSXブートセクタは含まれていません。",
+    "Media.MsxUnsupportedGeometry": "MSX ジオメトリは {0} バイトとメディア記述子 {1} にマッチしません。",
+    "Media.UnsupportedRawFormat": "生の画像形式 {0} はサポートされていません。",
+    "Media.RawGeometryMismatch": "Image {0} はジオメトリ {1} を持っています。 {2} はジオメトリ {3} が必要です。",
+    "Media.RawSectorMissing": "論理セクター {0} がないため、完全な生イメージに書き込めません。",
+    "Media.RawSectorSize": "ロジカルセクター {0} には {2} ではなく {1} バイトが含まれています。",
+    "Media.AtomicOpen": "{0} の一時的な出力を作成できません。",
+    "Media.AtomicWrite": "{0} の一時的な出力を記述できません。",
+    "Media.AtomicCommit": "完全な出力ファイル {0} を公開できません。",
+    "Media.Cancelled": "記憶媒体の操作はキャンセルされました。"
+  }
+}

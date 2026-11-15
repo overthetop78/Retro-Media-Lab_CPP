@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "磁束ビットセルの長さ {0} は無効です。有限値かつ 1 ティック以上でなければなりません。",
+    "MediaEngine.FluxSizeLimit": "磁束データがメモリ上でサポートされるサイズを超えています。",
+    "MediaEngine.FluxInvalidBit": "磁束ビット値が 0 でも 1 でもありません。",
+    "MediaEngine.FluxInvalidMaximum": "磁束間隔あたりの最大セル数 {0} は正でなければなりません。",
+    "MediaEngine.FluxZeroCell": "磁束ビットセルの長さは 0 にできません。",
+    "MediaEngine.FluxZeroIndex": "磁束回転のインデックス時間は 0 にできません。",
+    "MediaEngine.FluxIntervalOverflow": "{0} セル、セルあたり {1} ticksの磁束間隔は、サポートされる整数範囲を超えています。",
+    "MediaEngine.GcrCoordinates": "GCR 座標は無効です。オフセット {0}、バイト数 {1}、ステップ {2}。"
+  }
+}

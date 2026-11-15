@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Sektory Heathkit zawierają 256 bajtów; otrzymano {0} bajtów.",
+    "MediaEngine.HeathkitAddressRange": "Wartość {1} pola {0} Heathkit FM musi mieścić się między zerem a {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Rekord Heathkit musi zawierać przynajmniej jeden bajt sumy kontrolnej.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} bajtów, wolumin {4}, suma kontrolna nagłówka {5}, suma kontrolna danych {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} bajtów, suma kontrolna {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, nagłówek sektora sprzętowego, ucięty",
+    "MediaEngine.HeathkitUnpaired": "Niesparowane dane Heathkit, blok danych"
+  }
+}

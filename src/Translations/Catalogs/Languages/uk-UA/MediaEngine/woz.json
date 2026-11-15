@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Заголовок WOZ недійсний.",
+    "MediaEngine.WozDiskType": "Тип диска WOZ {0} не підтримується; потрібен диск Apple II розміром 5,25 дюйма.",
+    "MediaEngine.WozMissingChunk": "Обов’язковий блок WOZ '{0}' відсутній або неповний.",
+    "MediaEngine.WozTruncatedChunk": "Блок WOZ '{0}' обрізано.",
+    "MediaEngine.WozTrackReference": "Доріжка WOZ {0} посилається на дескриптор {1} поза допустимими межами.",
+    "MediaEngine.WozCrc": "Контрольна сума WOZ CRC32 неправильна: збережено {0}, обчислено {1}.",
+    "MediaEngine.WozChunkId": "Ідентифікатор блоку WOZ '{0}' має містити рівно чотири символи ASCII.",
+    "MediaEngine.WozTrackCount": "Модуль запису WOZ1 отримав {0} доріжок; очікувалося від 1 до {1}.",
+    "MediaEngine.WozTrackLength": "Доріжка WOZ1 {0} містить {1} бітів; максимум — {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Серед {0} декодованих секторів із {1} доріжок не знайдено жодного дійсного сектора Apple II RWTS18."
+  }
+}

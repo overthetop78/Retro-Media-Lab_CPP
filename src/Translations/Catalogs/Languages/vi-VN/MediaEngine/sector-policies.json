@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Phải có mã định danh bộ mã hóa.",
+    "MediaEngine.PolicyFormats": "Phải có ít nhất một mã định danh định dạng không rỗng và không chỉ chứa khoảng trắng.",
+    "MediaEngine.PolicyPrefixes": "Phải có ít nhất một tiền tố định dạng không rỗng và không chỉ chứa khoảng trắng.",
+    "MediaEngine.PolicyNull": "Quy tắc tái tạo sector không được là null.",
+    "MediaEngine.PolicyNullBlock": "Mục tái tạo sector không được chứa tham chiếu null đến khối.",
+    "MediaEngine.PolicyRareUnknown": "Không có cấu hình mã hóa đặc biệt nào được đăng ký cho định dạng '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Số trụ Lisa FileWare {0} phải nằm trong khoảng từ 0 đến {1}.",
+    "MediaEngine.PolicyJfdDensity": "Rãnh JFD không có mã mật độ dùng được.",
+    "MediaEngine.PolicyAddressRange": "Giá trị địa chỉ {0} nằm ngoài phạm vi số nguyên có dấu 32 bit."
+  }
+}

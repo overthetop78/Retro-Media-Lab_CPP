@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "De afbeelding bevat geen ACT Apricot ApriDisk header.",
+    "MediaEngine.ApridiskRecord": "Ongeldige ApriDisk record op byte {0}.",
+    "MediaEngine.ApridiskOverflow": "De lengte van het ApriDisk-record overschrijdt de grens van een 32-bits geheel getal met teken.",
+    "MediaEngine.ApridiskTruncated": "De ApriDisk record op byte {0} is ingekort.",
+    "MediaEngine.ApridiskAddress": "ApriDisk sectoradres {0}/{1}/{2} ligt buiten de ACT Apricot PC/Xi geometrie.",
+    "MediaEngine.ApridiskCount": "De afbeelding van ApriDisk bevat {0} bruikbare sectoren in plaats van {1}.",
+    "MediaEngine.ApridiskSectorLength": "Een ApriDisk-sector bevat {0} bytes in plaats van {1}.",
+    "MediaEngine.ApridiskCompression": "Niet-ondersteunde ApriDisk sector compressie: {0}.",
+    "MediaEngine.ApridiskExpansion": "Een ApriDisk gecomprimeerde sector breidt verder uit dan 512 bytes.",
+    "MediaEngine.ApridiskWriteGeometry": "Het sectorbeeld maakt geen gebruik van de ACT Apricot PC/Xi geometrie.",
+    "MediaEngine.Rx02ImageLength": "De DEC RX02 dump bevat {0} bytes; een volledige fysieke dump vereist {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Het sectorbeeld maakt geen gebruik van de DEC RX02 geometrie."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "The image does not contain an ImageDisk header: comment terminator at {0}, file length {1} bytes.",
+    "MediaEngine.ImdTruncated": "The ImageDisk {0} section at offset {1} is truncated: {2} bytes are required, {3} are available.",
+    "MediaEngine.ImdTrackHeader": "The ImageDisk track header is invalid: mode {0}, sector count {1}.",
+    "MediaEngine.ImdSizeCode": "The ImageDisk sector-size code {0} is invalid.",
+    "MediaEngine.ImdRecordType": "The ImageDisk sector-record type {0} is invalid.",
+    "MediaEngine.ImdNoSectors": "The ImageDisk image contains no sectors.",
+    "MediaEngine.ImdNoTracks": "The ImageDisk image contains no tracks.",
+    "MediaEngine.ImdWriteTrack": "The ImageDisk track header is not representable.",
+    "MediaEngine.ImdWriteSector": "An ImageDisk sector record is invalid.",
+    "MediaEngine.ImdCompressed": "A compressed ImageDisk sector does not contain one repeated byte.",
+    "MediaEngine.ImdMetadataMode": "The ImageDisk metadata contains an invalid track mode.",
+    "MediaEngine.ImdMetadataRecord": "The ImageDisk metadata contains an invalid sector record type.",
+    "MediaEngine.ImdMetadataSize": "The ImageDisk metadata contains an invalid sector size.",
+    "MediaEngine.ImdMetadataBlock": "The ImageDisk metadata does not match logical block '{0}'.",
+    "MediaEngine.ImdMetadataCount": "The ImageDisk metadata block count does not match the sector image.",
+    "MediaEngine.ImdMetadata": "The ImageDisk metadata is invalid.",
+    "MediaEngine.ImdEpsonGeometry": "The Epson image geometry does not match its format identifier.",
+    "MediaEngine.ImdEpsonSize": "Epson sector {0}:{1}:{2} has an invalid size.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson sector {0}:{1}:{2} is duplicated.",
+    "MediaEngine.EpsonFormat": "The selected format '{0}' is not a supported Epson QX-10 format.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicate Epson QX-10 geometry: {0}."
+  },
+  "invariants": []
+}

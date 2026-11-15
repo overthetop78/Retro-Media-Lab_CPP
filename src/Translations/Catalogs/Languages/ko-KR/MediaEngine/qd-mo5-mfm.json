@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "QD MO5 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.QdSectorSize": "QD MO5 섹터는 128바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 바이트, 마크 FB, 헤더 {1}, 데이터 체크섬 {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 바이트, 마크 {1}, 체크섬 {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, 섹터 헤더, 잘림",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, 섹터 데이터, 체크섬 사용 불가, 잘림",
+    "MediaEngine.QdUnpaired": "짝이 없는 QD MO5 데이터, 마크 {0}, 섹터 데이터"
+  }
+}

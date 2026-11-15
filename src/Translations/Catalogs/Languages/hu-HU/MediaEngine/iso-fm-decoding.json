@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} bájt, jel FE, N{4}, fejléc CRC {5}, adat CRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} bájt, jel FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bájt, jel F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Nem osztályozott ISO FM DataAddressMark, jel FB",
+    "MediaEngine.FmUnpairedDeleted": "Nem osztályozott ISO FM DeletedDataAddressMark, jel F8",
+    "MediaEngine.FmRevolutionTiming": "Az ISO FM fordulat időzítése nem következetes: index {0} ticks, cellaidő {1} ticks, időközök összege {2} ticks."
+  }
+}

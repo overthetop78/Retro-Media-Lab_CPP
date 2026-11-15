@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (veri): {0} yararlı veri baytı veya {1} baytlık tam blok gerekli; alınan: {2} bayt.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (sistem): {0} yararlı veri baytı veya {1} baytlık tam blok gerekli; alınan: {2} bayt.",
+    "MediaEngine.ArburgBlockCapacity": "Arburg blok kapasitesi {1}, desteklenen boyut sınırı içinde {0} yararlı veri baytını ve iki sağlama toplamı baytını barındırmalıdır.",
+    "MediaEngine.ArburgUsefulSize": "Arburg yararlı bayt sayısı negatif olamaz; alınan: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 bayt, veri bloğu, sağlama toplamı {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 bayt, sistem bloğu, sağlama toplamı {0}"
+  }
+}

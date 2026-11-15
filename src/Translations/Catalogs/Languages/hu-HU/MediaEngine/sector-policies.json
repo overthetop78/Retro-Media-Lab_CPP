@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "A kódoló azonosítója kötelező.",
+    "MediaEngine.PolicyFormats": "Legalább egy formátumazonosító szükséges, amely nem üres és nem csak szóközökből áll.",
+    "MediaEngine.PolicyPrefixes": "Legalább egy formátumelőtag szükséges, amely nem üres és nem csak szóközökből áll.",
+    "MediaEngine.PolicyNull": "A szektorok rekonstruálási szabálya nem lehet null.",
+    "MediaEngine.PolicyNullBlock": "A szektorrekonstrukció eleme nem tartalmazhat null blokkhivatkozást.",
+    "MediaEngine.PolicyRareUnknown": "A(z) '{0}' formátumhoz nincs regisztrált ritka kódolási profil.",
+    "MediaEngine.PolicyLisaCylinder": "A Lisa FileWare {0} hengerének 0 és {1} között kell lennie.",
+    "MediaEngine.PolicyJfdDensity": "A JFD-sávnak nincs használható sűrűségkódja.",
+    "MediaEngine.PolicyAddressRange": "A(z) {0} címérték kívül esik az előjeles 32 bites egész szám tartományán."
+  }
+}

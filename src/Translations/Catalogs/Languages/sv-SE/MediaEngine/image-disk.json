@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Bilden innehåller inte en ImageDisk-rubrik: kommentarterminator på {0}, fillängd {1} byte.",
+    "MediaEngine.ImdTruncated": "ImageDisk {0} avsnittet vid kompensation {1} är truncated: {2} byte krävs, {3} finns tillgängliga.",
+    "MediaEngine.ImdTrackHeader": "ImageDisk spårrubriken är ogiltig: läge {0}, sektor räkna {1}.",
+    "MediaEngine.ImdSizeCode": "ImageDisk-sektorns storlekskod {0} är ogiltig.",
+    "MediaEngine.ImdRecordType": "ImageDisk-sektorns inspelningstyp {0} är ogiltig.",
+    "MediaEngine.ImdNoSectors": "Bilden ImageDisk innehåller inga sektorer.",
+    "MediaEngine.ImdNoTracks": "Bilden ImageDisk innehåller inga spår.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk spårrubriken är inte representativ.",
+    "MediaEngine.ImdWriteSector": "En ImageDisk sektor rekord är ogiltig.",
+    "MediaEngine.ImdCompressed": "En komprimerad ImageDisk-sektor innehåller inte en upprepad byte.",
+    "MediaEngine.ImdMetadataMode": "ImageDisk metadata innehåller ett ogiltigt spårläge.",
+    "MediaEngine.ImdMetadataRecord": "ImageDisk metadata innehåller en ogiltig sektor rekordtyp.",
+    "MediaEngine.ImdMetadataSize": "ImageDisk metadata innehåller en ogiltig sektorstorlek.",
+    "MediaEngine.ImdMetadataBlock": "ImageDisk metadata matchar inte logiskt block \"{0}\".",
+    "MediaEngine.ImdMetadataCount": "ImageDisk metadatablockantal matchar inte sektorns bild.",
+    "MediaEngine.ImdMetadata": "ImageDisk metadata är ogiltig.",
+    "MediaEngine.ImdEpsonGeometry": "Epsons bildgeometri stämmer inte överens med dess formatidentifierare.",
+    "MediaEngine.ImdEpsonSize": "Epson-sektorn {0}:{1}:{2} har en ogiltig storlek.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson-sektorn {0}:{1}:{2} är duplicerad.",
+    "MediaEngine.EpsonFormat": "Det valda formatet \"{0}\" är inte ett format Epson QX-10.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicera Epson QX-10 geometri: {0}."
+  }
+}

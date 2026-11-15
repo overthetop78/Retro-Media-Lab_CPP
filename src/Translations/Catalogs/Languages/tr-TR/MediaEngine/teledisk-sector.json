@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sektörü {0}/{1}/{2}, {3} baytlık tekrarlanan yük içeriyor; {4} bayt gerekli.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk sektörü {0}/{1}/{2}, kodlama {3}: {4} ofsetinde kesilmiş; {5} bayt gerekli, {6} bayt mevcut.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sektörü {0}/{1}/{2}, desteklenmeyen {3} kodlamasını kullanıyor.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sektörü {0}/{1}/{2}, kodlama {3}: {5} yerine {4} bayta açılıyor.",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk sektörü tekrar sayısı işaretsiz 16 bit tamsayı sınırını aşıyor."
+  }
+}

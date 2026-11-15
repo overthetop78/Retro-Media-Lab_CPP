@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit -sektorit sisältävät 256 tavua; saatiin {0} tavua.",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.HeathkitRecordEmpty": "Heathkit-tietueessa on oltava vähintään yksi tarkistussummatavu.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} tavua, taltio {4}, otsikon tarkistussumma {5}, datan tarkistussumma {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} tavua, tarkistussumma {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, laitteistosektorin otsake, katkaistu",
+    "MediaEngine.HeathkitUnpaired": "Parittamaton Heathkit-data, datalohko"
+  }
+}

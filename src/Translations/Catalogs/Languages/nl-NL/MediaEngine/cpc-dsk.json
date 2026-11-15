@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "De Amstrad DSK header is afgekapt.",
+    "MediaEngine.CpcDskSignature": "Het bestand is geen CPCEMU DSK-image.",
+    "MediaEngine.CpcDskGeometry": "De Amstrad DSK geometrie is ongeldig.",
+    "MediaEngine.CpcDskExtendedTable": "De uitgebreide Amstrad DSK tracktabel is ongeldig op track {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK track {0} is afgekapt.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} heeft een ongeldige header.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} heeft een ongeldige sectortabel.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}:{1}:{2} is afgekapt.",
+    "MediaEngine.CpcDskNoSectors": "De Amstrad DSK afbeelding bevat geen sectoren.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} neemt {1} bytes in beslag en overschrijdt de 65280-byte containerlimiet.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} gebruikt een afwezige, variabele of niet-numerieke sectorrepresentatie die EDSK vereist.",
+    "MediaEngine.CpcDskTrackCollection": "De Amstrad DSK container kan niet worden geschreven: de opgegeven geometrie en spoorverzameling zijn het niet eens.",
+    "MediaEngine.CpcDskTrackIndex": "De Amstrad DSK container kan niet geschreven worden: track index {0} verschijnt op positie {1}.",
+    "MediaEngine.CpcDskTooManySectors": "De Amstrad DSK container kan niet worden geschreven: track {0} bevat te veel sectordescriptoren.",
+    "MediaEngine.CpcDskUniformTracks": "De Amstrad DSK container kan niet worden geschreven: standaard DSK vereist één uniforme spoorgrootte.",
+    "MediaEngine.CpcDskBuilderGeometry": "De Amstrad DSK container kan niet worden geschreven: de geometrie overschrijdt de CPCEMU grenzen.",
+    "MediaEngine.CpcDskNativeMetadata": "De Amstrad DSK-container kan niet worden geschreven: metadata van de inheemse sector ontbreekt ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "De Amstrad DSK-container kan niet worden geschreven: sectorgrootte {0} is niet representatief voor een CPCEMU-groottecode.",
+    "MediaEngine.CpcDskOverflow": "De CPCEMU DSK-datagrootte overtreft het ondersteunde bereik.",
+    "MediaEngine.CpcDskRecordedAddress": "Opgenomen CPCEMU-adres {0}:{1}:{2} kan niet worden weergegeven door velden met één byte."
+  }
+}

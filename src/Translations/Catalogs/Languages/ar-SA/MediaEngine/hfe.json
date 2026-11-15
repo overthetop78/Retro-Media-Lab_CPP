@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "ترويسة HFE مفقودة أو مبتورة.",
+    "MediaEngine.HfeRevision": "مراجعة HFE {0} غير مدعومة.",
+    "MediaEngine.HfeGeometry": "هندسة HFE أو معدل البتات غير صالح.",
+    "MediaEngine.HfeTable": "جدول مسارات HFE خارج الحدود.",
+    "MediaEngine.HfeTiming": "لا يمكن تمثيل توقيت HFE بالدقة المطلوبة.",
+    "MediaEngine.HfeTrackLength": "طول مسار HFE {0} غير صالح.",
+    "MediaEngine.HfeTrackData": "بيانات مسار HFE {0}/{1} خارج الحدود.",
+    "MediaEngine.HfeRateOpcode": "مسار HFE v3 {0}/{1} يحتوي على معامل معدل بتات صفري في رمز العملية.",
+    "MediaEngine.HfeEmptyTrack": "مسار HFE v3 {0}/{1} لا يحتوي على خلايا بتات.",
+    "MediaEngine.HfeTracks": "يتطلب HFE مسارًا واحدًا على الأقل.",
+    "MediaEngine.HfeUniformEncoding": "يتطلب HFE v1 ترميزًا واحدًا لجميع المسارات.",
+    "MediaEngine.HfeEncoding": "لا يمكن كتابة الترميز {0} بصيغة HFE v1.",
+    "MediaEngine.HfeUniformRate": "يتطلب HFE v1 معدل بتات واحدًا لجميع المسارات.",
+    "MediaEngine.HfeMissingTrack": "أسطوانة HFE {0} مفقودة.",
+    "MediaEngine.HfeTrackAddress": "يوجد مسار HFE خارج الهندسة المعلنة.",
+    "MediaEngine.HfeDuplicateTrack": "مسار HFE {0}/{1} مكرر.",
+    "MediaEngine.HfeLimit": "تتجاوز حاوية HFE حدود الحجم أو القيم المدعومة.",
+    "MediaEngine.HfeUniformTiming": "يتطلب HFE v1 مقطع توقيت موحدًا واحدًا لكل مسار.",
+    "MediaEngine.HfeRevolutions": "لا يمكن لـ HFE الحفاظ على دورات التدفق المغناطيسي المنفصلة هذه.",
+    "MediaEngine.HfePadding": "سيتطلب HFE v1 إضافة حشو أو أطوالًا غير متساوية للمسارات بين الرؤوس.",
+    "MediaEngine.HfeScpEncoding": "نوع قرص SCP {0} ليس له ترميز HFE v1 دون فقدان.",
+    "MediaEngine.HfeFluxBounds": "تتجاوز الفواصل الزمنية للتدفق مدة الفهرس.",
+    "MediaEngine.HfeWeak": "لا يمكن لكتابة HFE v3 الحفاظ على المناطق الضعيفة.",
+    "MediaEngine.HfeWeakFeature": "رمز عملية البيانات العشوائية HFE v3",
+    "MediaEngine.HfeIndexFeature": "رمز عملية الفهرس HFE v3",
+    "MediaEngine.FluxConversionTiming": "لا يمكن تمثيل توقيت التدفق كخلايا بتات موحدة.",
+    "MediaEngine.FluxConversionBounds": "تتجاوز فواصل التدفق أو مقاطع التوقيت مدة المسار.",
+    "MediaEngine.FluxConversionRange": "يتجاوز تحويل التدفق الحجم أو النطاق العددي المدعوم."
+  }
+}

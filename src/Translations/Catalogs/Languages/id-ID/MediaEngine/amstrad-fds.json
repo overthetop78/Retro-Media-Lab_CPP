@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF AMS! cartridge header hilang.",
+    "MediaEngine.CprLength": "Panjang CPR RIFF tidak valid.",
+    "MediaEngine.CprChunkRange": "CPR chunk '{0}' melebihi kontainer RIFF.",
+    "MediaEngine.CprDuplicate": "CPR bank '{0}' digandakan.",
+    "MediaEngine.CprLargeBank": "CPR bank '{0}' memuat bytes di luar 16 halaman KiB; mereka tidak dipetakan.",
+    "MediaEngine.CprUnknownChunk": "RIFF potongan '{0}' bukan sebuah cartridge CPR.",
+    "MediaEngine.CprChunkHeader": "Kontainer CPR RIFF berakhir di dalam header sepotong.",
+    "MediaEngine.CprNoBanks": "Gambar CPR tidak berisi cb00 melalui cb31 cartridge bank.",
+    "MediaEngine.CprWrite": "Dokumen blok tidak dapat ditulis sebagai kartrid CPR lengkap.",
+    "MediaEngine.RomCorpus": "Panjang ROM CPC berada di luar profil corpus yang ditunjukkan.",
+    "MediaEngine.RomNoData": "ROM CPC tidak berisi data bank.",
+    "MediaEngine.RomBankLimit": "ROM CPC melebihi 32 bank cartridge.",
+    "MediaEngine.RomIncomplete": "Bank ROM CPC terakhir tidak lengkap dan terbuka tanpa padding ditemukan.",
+    "MediaEngine.RomWrite": "Dokumen blok tidak memuat bank ROM CPC yang kontiguous.",
+    "MediaEngine.FdsSource": "Sumber yang dipilih bukan gambar Famicom Disk System.",
+    "MediaEngine.FdsSides": "Gambar Famicom Disk System tidak berisi sisi lengkap.",
+    "MediaEngine.FdsNoSide": "Gambar Famicom Disk System tidak memiliki sisi.",
+    "MediaEngine.FdsCount": "Jumlah sisi Famicom Disk System tidak cocok dengan header nya.",
+    "MediaEngine.FdsUndeclared": "Header FDS tidak mendeklarasikan hitungan sisi; jumlah diambil dari data yang tersimpan.",
+    "MediaEngine.FdsWrite": "Dokumen blok tidak berisi lengkap Famicom Disk System samping.",
+    "MediaEngine.FdsHeader": "Header FDS sumber hilang.",
+    "MediaEngine.AmstradCartridgeVolume": "Cartridge Amstrad"
+  }
+}

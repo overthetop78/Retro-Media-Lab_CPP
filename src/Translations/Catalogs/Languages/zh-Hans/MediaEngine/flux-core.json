@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "磁通位单元持续时间 {0} 无效；它必须为有限值且至少为一个时钟计时单位。",
+    "MediaEngine.FluxSizeLimit": "磁通数据超出内存中支持的大小。",
+    "MediaEngine.FluxInvalidBit": "磁通位值既不是零也不是一。",
+    "MediaEngine.FluxInvalidMaximum": "每个磁通间隔的最大单元数 {0} 必须为正。",
+    "MediaEngine.FluxZeroCell": "磁通位单元持续时间不能为零。",
+    "MediaEngine.FluxZeroIndex": "磁通旋转索引持续时间不能为零。",
+    "MediaEngine.FluxIntervalOverflow": "包含 {0} 个单元、每单元 {1} ticks的磁通间隔超出支持的整数范围。",
+    "MediaEngine.GcrCoordinates": "GCR 坐标无效：偏移 {0}，字节数 {1}，步长 {2}。"
+  }
+}

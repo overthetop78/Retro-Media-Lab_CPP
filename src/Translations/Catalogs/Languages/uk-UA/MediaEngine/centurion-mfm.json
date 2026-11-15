@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Значення {1} поля {0} Centurion MFM має бути між нулем і {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} байтів, CRC заголовка {4}, CRC даних {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} байтів, ключ {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, позначка сектора, обрізаний",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC недоступна, обрізаний",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, непідтримуваний ключ {0}, обрізаний",
+    "MediaEngine.CenturionUnpaired": "Непарні дані Centurion, блок даних"
+  }
+}

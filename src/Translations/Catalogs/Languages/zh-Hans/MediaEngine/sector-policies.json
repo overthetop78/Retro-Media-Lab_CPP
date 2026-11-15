@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "必须提供编码器标识符。",
+    "MediaEngine.PolicyFormats": "必须提供至少一个非空且不全为空白的格式标识符。",
+    "MediaEngine.PolicyPrefixes": "必须提供至少一个非空且不全为空白的格式前缀。",
+    "MediaEngine.PolicyNull": "扇区重建规则不能为 null。",
+    "MediaEngine.PolicyNullBlock": "扇区重建项不能包含 null 数据块。",
+    "MediaEngine.PolicyRareUnknown": "未注册格式 '{0}' 对应的特殊编码配置。",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare 柱面 {0} 必须在 0 到 {1} 之间。",
+    "MediaEngine.PolicyJfdDensity": "JFD 磁道没有可用的密度代码。",
+    "MediaEngine.PolicyAddressRange": "地址值 {0} 超出32位有符号整数的范围。"
+  }
+}

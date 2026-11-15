@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF-AMS! Patronhodet mangler.",
+    "MediaEngine.CprLength": "CPR RIFF lengden er ugyldig.",
+    "MediaEngine.CprChunkRange": "CPR-biten «{0}» overstiger RIFF-beholderen.",
+    "MediaEngine.CprDuplicate": "CPR-banken «{0}» er duplisert.",
+    "MediaEngine.CprLargeBank": "CPR bank «{0}» inneholder byte utover sin 16 KiB siden; de ble ikke kartlagt.",
+    "MediaEngine.CprUnknownChunk": "RIFF bit «{0}» er ikke en CPR patron bank.",
+    "MediaEngine.CprChunkHeader": "CPR RIFF beholderen ender inne i en bit header.",
+    "MediaEngine.CprNoBanks": "CPR-bildet inneholder ingen cb00 gjennom cb31-patronbanken.",
+    "MediaEngine.CprWrite": "Blokkdokumentet kan ikke skrives som en komplett CPR-patron.",
+    "MediaEngine.RomCorpus": "CPC ROM-lengden er utenfor de demonstrerte corpus-profilene.",
+    "MediaEngine.RomNoData": "CPC ROM inneholder ingen bankdata.",
+    "MediaEngine.RomBankLimit": "CPC-ROM overstiger 32 patronbanker.",
+    "MediaEngine.RomIncomplete": "Den siste CPC ROM-banken er ufullstendig og eksponeres uten oppfunnet polstring.",
+    "MediaEngine.RomWrite": "Blokkdokumentet inneholder ikke sammenhengende CPC ROM-banker.",
+    "MediaEngine.FdsSource": "Den valgte kilden er ikke et Famicom Disk System-bilde.",
+    "MediaEngine.FdsSides": "Famicom Disk System-bildet inneholder ikke komplette sider.",
+    "MediaEngine.FdsNoSide": "Famicom Disk System-bildet inneholder ingen side.",
+    "MediaEngine.FdsCount": "Sidetellingen til Famicom Disk System samsvarer ikke med overskriften.",
+    "MediaEngine.FdsUndeclared": "FDS-hodet erklærer ikke et sidetall; tellingen ble tatt fra de lagrede dataene.",
+    "MediaEngine.FdsWrite": "Blokkdokumentet inneholder ikke komplette Famicom Disk System-sider.",
+    "MediaEngine.FdsHeader": "FDS-hodet mangler.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad patron"
+  }
+}

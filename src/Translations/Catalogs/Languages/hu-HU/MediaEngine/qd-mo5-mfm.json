@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "Az QD MO5 {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.QdSectorSize": "Az QD MO5 szektorok 128 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 bájt, jel FB, fejléc {1}, adatok ellenőrzőösszege {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 bájt, jel {1}, ellenőrző összeg {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, szektorfejléc, csonkolt",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, szektoradatok, ellenőrző összeg nem érhető el, csonkolt",
+    "MediaEngine.QdUnpaired": "Párosítatlan QD MO5-adatok, jel {0}, szektoradatok"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.Td0TrackMap": "The TeleDisk track map is not representable.",
+    "MediaEngine.Td0CommentLength": "The TeleDisk comment is too long.",
+    "MediaEngine.Td0Availability": "TeleDisk sector {0}/{1}/{2} has inconsistent availability flags and data.",
+    "MediaEngine.Td0WriteSectorLength": "TeleDisk sector {0}/{1}/{2} has {3} bytes instead of {4}.",
+    "MediaEngine.Td0BlockSize": "Sector size {0} cannot be represented by TeleDisk.",
+    "MediaEngine.Td0ByteRange": "The TeleDisk value {0} cannot be represented by an unsigned byte."
+  }
+}

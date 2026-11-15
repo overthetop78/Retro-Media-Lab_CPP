@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Разрешение времени SCP должно быть положительным; получено {0}.",
+    "MediaEngine.ScpExtended": "Расширенные носители SCP не являются образами дискет.",
+    "MediaEngine.ScpSignature": "Файл не содержит подписи SCP.",
+    "MediaEngine.ScpRevolutions": "Число оборотов SCP {0} недопустимо.",
+    "MediaEngine.ScpTrackRange": "Диапазон треков SCP {0} - {1} недействителен.",
+    "MediaEngine.ScpWidth": "Ширина битовых ячеек SCP {0} не поддерживается.",
+    "MediaEngine.ScpHeads": "Значение выбора головки SCP {0} недопустимо.",
+    "MediaEngine.ScpTrackSignature": "Трек {0} не имеет подписи TRK; дескриптор содержит номер трека {1}.",
+    "MediaEngine.ScpTrackMismatch": "Таблица {0} указывает на {1}.",
+    "MediaEngine.ScpHeaderSection": "Заголовок SCP является неполным или недействительным при смещении {0}; требуются байты {1}.",
+    "MediaEngine.ScpTableSection": "Таблица SCP track-offset является неполной или недействительной при смещении {0}; требуются байты {1}.",
+    "MediaEngine.ScpTrackSection": "Заголовок SCP трека {0} является неполным или недействительным при смещении {1}; {2} байты необходимы.",
+    "MediaEngine.ScpFluxSection": "Поток SCP-трека {0}, оборот {1}, является неполным или недействительным при смещении {2}; {3} байты необходимы.",
+    "MediaEngine.ScpOverflow": "Размер SCP, положение, интервал или объединенная оборот превышают поддерживаемый численный диапазон.",
+    "MediaEngine.ScpTrackAddress": "Номер трека SCP {0} находится вне таблицы треков.",
+    "MediaEngine.ScpNoRevolution": "Дорожка SCP не содержит оборотов для декодирования.",
+    "MediaEngine.ScpNoC900Sectors": "Секторы Commodore 900 GCR не могут быть декодированы из изображения SCP."
+  }
+}

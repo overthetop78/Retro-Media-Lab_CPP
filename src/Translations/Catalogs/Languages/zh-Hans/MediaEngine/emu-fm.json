@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.EmuSectorSize": "E-mu 扇区包含 3584 字节；收到 {0} 字节。",
+    "MediaEngine.EmuAddressRange": "E-mu FM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.EmuHeader": "E-mu FormatHeader, C{0} H{1} R{2}, {3} 字节, CRC {4}, CRC {5}",
+    "MediaEngine.EmuData": "E-mu FormatData, C{0} H{1} R{2}, {3} 字节, CRC {4}",
+    "MediaEngine.EmuUnclassified": "未分类的 E-mu Emulator FormatHeader，头部/数据标记"
+  }
+}

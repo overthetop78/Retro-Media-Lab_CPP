@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "ค่า {1} ของฟิลด์ {0} ใน TYCOM ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.TycomSectorSize": "เซกเตอร์ TYCOM มี 128 ไบต์ ได้รับ {0} ไบต์",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 ไบต์, เครื่องหมาย {2}, CRC ส่วนหัว {3}, CRC ข้อมูล {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 ไบต์, CRC ส่วนหัว {2}, CRC ข้อมูล {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 ไบต์, เครื่องหมาย FE, CRC ส่วนหัว {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 ไบต์, เครื่องหมาย {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, ส่วนหัวเซกเตอร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, เครื่องหมาย {0}, ข้อมูลเซกเตอร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.TycomUnpaired": "ยังไม่จำแนก TYCOM FormatData, เครื่องหมาย {0}, ข้อมูล"
+  }
+}

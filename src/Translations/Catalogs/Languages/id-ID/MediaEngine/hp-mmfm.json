@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "Permutasi pasangan HP MMFM memerlukan jumlah byte genap; diterima {0}.",
+    "MediaEngine.HpAddressRange": "Nilai {1} pada bidang {0} HP MMFM harus antara nol dan {2}.",
+    "MediaEngine.HpSectorSize": "Sektor HP MMFM berisi 256 byte; diterima {0} byte.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} byte, CRC header {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} byte, CRC data {4}"
+  }
+}

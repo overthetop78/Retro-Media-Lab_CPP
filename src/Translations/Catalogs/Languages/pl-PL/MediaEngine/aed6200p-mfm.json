@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "Wartość {1} pola {0} AED 6200P musi mieścić się między zerem a {2}.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} bajtów, CRC nagłówka {4}, CRC danych {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} bajtów, znacznik {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, znacznik C6, ucięty",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC niedostępne, ucięty",
+    "MediaEngine.AedUnpaired": "Niesparowane dane AED 6200P"
+  }
+}

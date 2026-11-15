@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Cilindrul de cale {0} trebuie să fie între 0 şi {1}.",
+    "MediaEngine.TrackHead": "Capul de cale {0} trebuie să fie între zero și {1}.",
+    "MediaEngine.TrackMissingSectors": "Este necesar cel puţin un sector; primit {0}.",
+    "MediaEngine.TrackEmpty": "Codorul {0} nu a produs celule de biți.",
+    "MediaEngine.TrackHex": "Textul hexazecimal brut este invalid.",
+    "MediaEngine.TrackBinaryCharacter": "Textul binar conţine \"{0} \" în poziţia {1}; numai zero şi unul sunt permise.",
+    "MediaEngine.TrackNegativeGap": "Lungimea Gap {0} nu trebuie să fie negativă.",
+    "MediaEngine.TrackSectorNumber": "Numărul sectorului {0} trebuie să fie între zero şi {1}.",
+    "MediaEngine.C900GcrSectorSize": "Sectoarele Commodore 900 conţin octeţi {0}; octeţi primiţi {1}.",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync neclasificat, sincronizare GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} octeți, sumă de control {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} octeți, sumă de control {4}",
+    "MediaEngine.C900GcrUnpaired": "Date Commodore 900 neasociate, bloc de date, sumă de control {0}",
+    "MediaEngine.IntegrityValid": "validă",
+    "MediaEngine.IntegrityInvalid": "nevalidă",
+    "MediaEngine.IntegrityUnavailable": "indisponibilă"
+  }
+}

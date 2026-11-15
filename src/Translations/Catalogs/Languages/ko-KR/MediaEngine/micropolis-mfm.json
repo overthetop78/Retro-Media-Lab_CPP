@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MicropolisSectorSize": "Micropolis 섹터는 256바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.MicropolisSectorRange": "Micropolis 섹터 번호 {0}은 0과 {1} 사이여야 합니다.",
+    "MediaEngine.MicropolisRecordInput": "Micropolis 레코드 입력에는 {0}바이트가 있습니다. 레코드에는 최대 {1}바이트가 들어갑니다.",
+    "MediaEngine.MicropolisRecord": "Micropolis FormatHeader, C{0} H{1} R{2}, {3} 바이트, 마커 FF, 체크섬 {4}",
+    "MediaEngine.MicropolisTruncated": "Micropolis FormatHeader, 섹터, 잘림"
+  }
+}

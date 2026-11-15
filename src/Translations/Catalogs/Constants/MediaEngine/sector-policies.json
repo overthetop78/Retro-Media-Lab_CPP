@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "An encoder identifier is required for the sector reconstruction policy.",
+    "MediaEngine.PolicyFormats": "At least one nonblank format identifier is required for the sector reconstruction policy.",
+    "MediaEngine.PolicyPrefixes": "At least one nonblank format prefix is required for the sector reconstruction policy.",
+    "MediaEngine.PolicyNull": "A sector reconstruction policy cannot be null.",
+    "MediaEngine.PolicyNullBlock": "A sector reconstruction item cannot contain a null block.",
+    "MediaEngine.PolicyRareUnknown": "No rare encoding profile is registered for format '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare cylinder {0} must be between 0 and {1}.",
+    "MediaEngine.PolicyJfdDensity": "The JFD track has no usable density code.",
+    "MediaEngine.PolicyAddressRange": "Sector reconstruction address value {0} cannot be represented as a 32-bit signed integer."
+  }
+}

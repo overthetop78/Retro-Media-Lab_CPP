@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK-hodet er avkortet.",
+    "MediaEngine.CpcDskSignature": "Filen er ikke et CPCEMU DSK-bilde.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK-geometrien er ugyldig.",
+    "MediaEngine.CpcDskExtendedTable": "Den utvidede Amstrad DSK-sportabellen er ugyldig ved spor {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK spor {0} er avkortet.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK spor {0} har en ugyldig header.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK spor {0} har en ugyldig sektortabell.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sektor {0}:{1}: {2} er avkortet.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK-bildet inneholder ingen sektorer.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK-spor {0} opptar {1} bytes og overstiger 65280-bytebeholdergrensen.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK spor {0} bruker en fraværende, variabel størrelse eller ikke-nominell sektor representasjon som krever EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK-beholderen kan ikke skrives: den deklarerte geometri og sporsamling er uenig.",
+    "MediaEngine.CpcDskTrackIndex": "Amstrad DSK-beholderen kan ikke skrives: sporindeks {0} vises i posisjon {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Amstrad DSK-beholderen kan ikke skrives: spor {0} inneholder for mange sektordeskriptorer.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK beholder kan ikke skrives: standard DSK krever én ensartet sporstørrelse.",
+    "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK beholder kan ikke skrives: geometrien overstiger CPCEMU-grensene.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-beholderen kan ikke skrives: Metadata mangler ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK-beholderen kan ikke skrives: sektorstørrelse {0} kan ikke representeres med en CPCEMU-størrelseskode.",
+    "MediaEngine.CpcDskOverflow": "Datastørrelsen på CPCEMU DSK overstiger det støttede området.",
+    "MediaEngine.CpcDskRecordedAddress": "Opptakt CPCEMU-adresse {0}:{1}: {2} kan ikke representeres av ett byte-felt."
+  }
+}

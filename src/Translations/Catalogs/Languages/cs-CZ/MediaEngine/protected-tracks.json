@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Číslo válce chráněné stopy {0} nesmí být záporné.",
+    "MediaEngine.ProtectedHead": "Číslo hlavy chráněné stopy {0} nesmí být záporné.",
+    "MediaEngine.ProtectedNoContent": "Chráněná stopa vyžaduje bitové buňky nebo otáčky magnetického toku.",
+    "MediaEngine.ProtectedMetadataNoBits": "Časování, struktury a vlastnosti vztažené k bitům vyžadují bitové buňky.",
+    "MediaEngine.ProtectedRange": "Rozsahy {0} chráněné stopy musí mít kladnou délku a vejít se do {1} bitových buněk.",
+    "MediaEngine.ProtectedTiming": "Délka bitové buňky chráněné stopy musí být konečná a kladná.",
+    "MediaEngine.ProtectedResolution": "Časové rozlišení magnetického toku {0} ns musí být kladné.",
+    "MediaEngine.ProtectedImageEmpty": "Obraz chráněných stop vyžaduje alespoň jednu stopu.",
+    "MediaEngine.ProtectedImageDuplicate": "Chráněná trať {0} / {1} je duplikována."
+  }
+}

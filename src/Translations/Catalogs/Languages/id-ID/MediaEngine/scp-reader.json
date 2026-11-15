@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Resolusi waktu SCP harus positif; diterima {0}.",
+    "MediaEngine.ScpExtended": "Media SCP extended bukan gambar floppy.",
+    "MediaEngine.ScpSignature": "Berkas ini tidak berisi tanda-tangan SCP.",
+    "MediaEngine.ScpRevolutions": "Jumlah revolusi SCP {0} tidak valid.",
+    "MediaEngine.ScpTrackRange": "Jangkauan trek SCP {0} ke {1} tak valid.",
+    "MediaEngine.ScpWidth": "Lebar bit-cell SCP {0} tidak didukung.",
+    "MediaEngine.ScpHeads": "Pemilih kepala SCP {0} tak valid.",
+    "MediaEngine.ScpTrackSignature": "Trek {0} tak memiliki tanda-tangan TRK; deskripsi memuat nomor trek {1}.",
+    "MediaEngine.ScpTrackMismatch": "Entri {0} pada tabel trek menunjuk ke trek {1}.",
+    "MediaEngine.ScpHeaderSection": "Header SCP tidak lengkap atau tidak valid di ofset {0}; {1} bytes dibutuhkan.",
+    "MediaEngine.ScpTableSection": "Tabel track-offset SCP tidak lengkap atau tidak valid di ofset {0}; {1} byte dibutuhkan.",
+    "MediaEngine.ScpTrackSection": "Kepala trek SCP {0} tak lengkap atau tak valid di ofset {1}; {2} byte diperlukan.",
+    "MediaEngine.ScpFluxSection": "Flux dari trek SCP {0}, revolusi {1}, tidak lengkap atau tidak valid di ofset {2}; {3} bytes dibutuhkan.",
+    "MediaEngine.ScpOverflow": "Ukuran SCP, posisi, interval atau revolusi bergabung melebihi jangkauan numerik yang didukung.",
+    "MediaEngine.ScpTrackAddress": "Nomor trek SCP {0} di luar tabel trek.",
+    "MediaEngine.ScpNoRevolution": "Trek SCP tidak berisi revolusi untuk memecahkan kode.",
+    "MediaEngine.ScpNoC900Sectors": "Tidak ada sektor Commodore 900 GCR yang dapat didekode dari citra SCP."
+  }
+}

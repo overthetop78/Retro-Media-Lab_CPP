@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "ค่า {1} ของฟิลด์ {0} ใน AED 6200P ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} ไบต์, CRC ส่วนหัว {4}, CRC ข้อมูล {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} ไบต์, เครื่องหมาย {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, เครื่องหมาย C6, ข้อมูลถูกตัดทอน",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC ไม่พร้อมใช้งาน, ข้อมูลถูกตัดทอน",
+    "MediaEngine.AedUnpaired": "ข้อมูล AED 6200P ที่ไม่ได้จับคู่"
+  }
+}

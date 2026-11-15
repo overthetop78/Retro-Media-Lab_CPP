@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "The WOZ header is invalid.",
+    "MediaEngine.WozDiskType": "WOZ disk type {0} is not supported; an Apple II 5.25-inch disk is required.",
+    "MediaEngine.WozMissingChunk": "The required WOZ chunk '{0}' is missing or incomplete.",
+    "MediaEngine.WozTruncatedChunk": "The WOZ chunk '{0}' is truncated.",
+    "MediaEngine.WozTrackReference": "WOZ track {0} references out-of-bounds descriptor {1}.",
+    "MediaEngine.WozCrc": "The WOZ CRC32 is invalid: stored {0}, computed {1}.",
+    "MediaEngine.WozChunkId": "WOZ chunk identifier '{0}' must contain exactly four ASCII characters.",
+    "MediaEngine.WozTrackCount": "The WOZ1 writer received {0} tracks; expected between 1 and {1}.",
+    "MediaEngine.WozTrackLength": "WOZ1 track {0} contains {1} bits; maximum {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "No valid Apple II RWTS18 sector was found among {0} decoded sectors from {1} tracks."
+  }
+}

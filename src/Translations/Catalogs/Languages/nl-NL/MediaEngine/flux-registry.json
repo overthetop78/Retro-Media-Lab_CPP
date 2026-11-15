@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Ten minste één flux decoder moet worden geregistreerd.",
+    "MediaEngine.RegistryNullDecoder": "De flux decoder op positie {0} is nul.",
+    "MediaEngine.RegistryInvalidId": "De flux decoder op positie {0} heeft een lege identificatie.",
+    "MediaEngine.RegistryDuplicate": "Een flux decoder met identificatie '{0}' is al geregistreerd.",
+    "MediaEngine.RegistryUnknown": "Geen flux decoder is geregistreerd met identificatiecode '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "Voor het decoderen is een fluxopname van één omwenteling nodig.",
+    "MediaEngine.RegistryNoAutomatic": "Geen geregistreerde flux decoder neemt deel aan automatische detectie."
+  }
+}

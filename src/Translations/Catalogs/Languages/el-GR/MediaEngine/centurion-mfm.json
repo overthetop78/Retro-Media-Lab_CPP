@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Η τιμή {1} του πεδίου {0} Centurion MFM πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} byte, CRC κεφαλίδας {4}, CRC δεδομένων {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} byte, κλειδί {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, σήμα τομέα, περικομμένη",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC μη διαθέσιμο, περικομμένη",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, μη υποστηριζόμενο κλειδί {0}, περικομμένη",
+    "MediaEngine.CenturionUnpaired": "Μη συζευγμένα δεδομένα Centurion, μπλοκ δεδομένων"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (data): der kræves {0} nyttedata-byte eller {1} byte for en komplet blok; modtaget {2} byte.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (system): der kræves {0} nyttedata-byte eller {1} byte for en komplet blok; modtaget {2} byte.",
+    "MediaEngine.ArburgBlockCapacity": "Arburg-blokkens kapacitet {1} skal rumme {0} nyttedata-byte og to kontrolsum-byte inden for den understøttede størrelsesgrænse.",
+    "MediaEngine.ArburgUsefulSize": "Antallet af nyttedata-byte i Arburg må ikke være negativt; modtaget {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 bytes, datablok, kontrolsum {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 bytes, systemblok, kontrolsum {0}"
+  }
+}

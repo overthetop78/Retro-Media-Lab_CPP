@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk-delen bildhuvud är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk-delen kommentarhuvud är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk-delen kommentar är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk-delen spårhuvud är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk-delen sektorhuvud är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk-delen sektordatahuvud är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0DataTruncated": "TeleDisk-delen sektordata är avkortad vid offset {0}: {1} byte förväntades, {2} finns tillgängliga.",
+    "MediaEngine.Td0Signature": "Bilden är inte en TeleDisk-bild.",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk-rubriken CRC är ogiltig: förväntad 0x{0}, beräknad 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "TeleDisk kommentar CRC är ogiltig: förväntad 0x{0}, beräknad 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "TeleDisk spår {0}/{1} CRC är ogiltig: förväntad 0x{2}, beräknad 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk-sektorn {0}/{1}/{2} CRC är ogiltig: förväntad 0x{3}, beräknad 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sektor {0}/{1}/{2} har ogiltig storlek kod {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk sektor {0}/{1}/{2} har inga kodade data vid kompensation {3}.",
+    "MediaEngine.Td0NoSectors": "TeleDisk bild innehåller inga sektorer."
+  }
+}

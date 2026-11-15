@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Цільовий формат ATR '{0}' не підтримується.",
+    "MediaEngine.AtrIncompatibleImage": "Сектор зображення '{0}' містить {1} сектори і {2} байти; Профіль ATR '{3}' вимагає {4} секторів і {5} байтів.",
+    "MediaEngine.AtrMissingSector": "ATR сектор {0} відсутні.",
+    "MediaEngine.AtrSectorSize": "ATR сектор {0} містить {1} байтів; очікувано {2}.",
+    "MediaEngine.AtrHeader": "Заголовок ATR некоректний: довжина {0} байтів (мінімум {1}), сигнатура {2} (очікується {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Розмір ATR {0} байтів не підтримується; очікувано {1} байтів.",
+    "MediaEngine.AtrPayloadLength": "Довжина навантаження ATR - {0} байтів; заголовок оголошується {1} байтів.",
+    "MediaEngine.AtrTruncatedPayload": "Корисні дані ATR завдовжки {0} байтів не містять завантажувальної області розміром {1} байтів із подальшими повними секторами по {2} байтів.",
+    "MediaEngine.AtrSectorCount": "Розмір сектору Atari ATR {0} і кількість секторів {1} повинен бути позитивним.",
+    "MediaEngine.AtxHeader": "Заголовок файлів ATX відсутній або невірний.",
+    "MediaEngine.AtxTrackOffset": "Зміщення даних доріжок ATX розташоване поза файлом.",
+    "MediaEngine.AtxTrackCycle": "Ланцюжок доріжок ATX містить цикл.",
+    "MediaEngine.AtxTrackBounds": "Доріжка ATX виходить за межі файлу.",
+    "MediaEngine.AtxTrackNumber": "Доріжка ATX {0} виходить за межі підтримуваної геометрії із 40 доріжок.",
+    "MediaEngine.AtxSectorCount": "Доріжка ATX {0} містить забагато записів секторів.",
+    "MediaEngine.AtxListBounds": "Список секторів треку ATX {0} переходить на межі треку.",
+    "MediaEngine.AtxSectorNumber": "ATX трек {0} містить недійсний сектор {1}.",
+    "MediaEngine.AtxDataBounds": "Дані доріжки ATX {0}, сектора {1}, виходять за межі доріжки.",
+    "MediaEngine.AtxNoSectors": "Образ ATX не містить жодного читабельного запису сектора.",
+    "MediaEngine.AtxLargeOffset": "ATX {0} офсет занадто великий.",
+    "MediaEngine.AtxTruncated": "ATX {0} обрізається."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Thời lượng ô bit từ thông {0} không hợp lệ; phải là giá trị hữu hạn và ít nhất một tick.",
+    "MediaEngine.FluxSizeLimit": "Dữ liệu từ thông vượt quá kích thước được hỗ trợ trong bộ nhớ.",
+    "MediaEngine.FluxInvalidBit": "Giá trị bit từ thông không phải là 0 hoặc 1.",
+    "MediaEngine.FluxInvalidMaximum": "Số ô tối đa trên mỗi khoảng từ thông {0} phải là số dương.",
+    "MediaEngine.FluxZeroCell": "Thời lượng ô bit từ thông không được bằng 0.",
+    "MediaEngine.FluxZeroIndex": "Thời lượng chỉ mục vòng quay từ thông không được bằng 0.",
+    "MediaEngine.FluxIntervalOverflow": "Khoảng từ thông gồm {0} ô với {1} ticks trên mỗi ô vượt quá phạm vi số nguyên được hỗ trợ.",
+    "MediaEngine.GcrCoordinates": "Tọa độ GCR không hợp lệ: độ lệch {0}, số byte {1}, bước {2}."
+  }
+}

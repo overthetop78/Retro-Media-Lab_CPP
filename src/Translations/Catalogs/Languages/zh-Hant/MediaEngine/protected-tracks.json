@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "受保護磁軌的磁柱編號 {0} 不能為負數。",
+    "MediaEngine.ProtectedHead": "受保護磁軌的磁頭編號 {0} 不能為負數。",
+    "MediaEngine.ProtectedNoContent": "受保護磁軌需要位元單元或旋轉的磁通資料。",
+    "MediaEngine.ProtectedMetadataNoBits": "與位元相關的時序、結構和特徵需要位元單元。",
+    "MediaEngine.ProtectedRange": "受保護磁軌的 {0} 範圍必須具有正長度並位於 {1} 個位元單元內。",
+    "MediaEngine.ProtectedTiming": "受保護磁軌的位元單元持續時間必須是有限正數。",
+    "MediaEngine.ProtectedResolution": "磁通資料的時間解析度 {0} ns 必須為正數。",
+    "MediaEngine.ProtectedImageEmpty": "受保護磁軌映像至少需要一條磁軌。",
+    "MediaEngine.ProtectedImageDuplicate": "受保護磁軌 {0}/{1} 重複。"
+  }
+}

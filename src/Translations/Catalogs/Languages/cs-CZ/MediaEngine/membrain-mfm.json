@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Hodnota {1} pole {0} Membrain MFM musí být mezi nulou a {2}.",
+    "MediaEngine.MembrainSectorSize": "Sektory Membrain obsahují 512 bajtů; přijato {0} bajtů.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 bajtů, značka FE, CRC hlavičky {3}, CRC dat {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 bajtů, značka {3}, datový blok, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, hlavička sektoru, zkrácená",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC nedostupná, zkrácená",
+    "MediaEngine.MembrainUnpaired": "Nespárovaná data Membrain, datový blok"
+  }
+}

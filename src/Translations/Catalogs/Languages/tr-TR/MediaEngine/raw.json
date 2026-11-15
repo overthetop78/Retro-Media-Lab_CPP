@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Ham görüntü uzunluğu {0}, sıfır veya {1} baytın katı değil.",
+    "Media.RawUnknownGeometry": "{0} bayt ile eşleşen desteklenen ham görüntü geometrisi yok.",
+    "Media.MsxInvalidBoot": "{0} bytes desteklenen MSX boot sektörü içermiyor.",
+    "Media.MsxUnsupportedGeometry": "{0} bayt ve ortam tanımlayıcısı {1} ile eşleşen MSX geometrisi yok.",
+    "Media.UnsupportedRawFormat": "Raw image format {0} desteklenmez.",
+    "Media.RawGeometryMismatch": "Resim {0} geometriye sahiptir {1}; hedef {2} geometri gerektirir {3}.",
+    "Media.RawSectorMissing": "Mantıksal sektör {0} eksik ve tam bir ham görüntü için yazılamaz.",
+    "Media.RawSectorSize": "Mantıksal sektör {0}, {2} yerine {1} bayt içeriyor.",
+    "Media.AtomicOpen": "{0} için geçici çıktı yaratamaz.",
+    "Media.AtomicWrite": "{0} için geçici çıktı yazamaz.",
+    "Media.AtomicCommit": "Tamamlanan dosyayı {0} yayınlayamaz.",
+    "Media.Cancelled": "Depolama ortamındaki operasyon iptal edildi."
+  }
+}

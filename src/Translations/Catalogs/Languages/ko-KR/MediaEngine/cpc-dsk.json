@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK 헤더는 truncated입니다.",
+    "MediaEngine.CpcDskSignature": "파일은 CPCEMU DSK 이미지가 아닙니다.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK 기하학은 유효하지 않습니다.",
+    "MediaEngine.CpcDskExtendedTable": "확장 된 Amstrad DSK 트랙 테이블은 트랙 {0}에서 유효하지 않습니다.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK 트랙 {0}은 truncated.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK 트랙 {0}는 잘못된 헤더가 있습니다.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK 트랙 {0}는 잘못된 섹터 테이블이 있습니다.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK 분야 {0}:{1}:{2}는 truncated.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK 이미지에는 섹터가 없습니다.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK 트랙 {0}은 {1} 바이트를 점유하고 65280 바이트 컨테이너 제한을 초과합니다.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0}는 EDSK가 요구하는 absent, variable-size 또는 non-nominal sector 표현을 사용합니다.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK 컨테이너는 작성할 수 없습니다 : 선언 된 기하학 및 트랙 수집 불명.",
+    "MediaEngine.CpcDskTrackIndex": "Amstrad DSK 컨테이너는 작성할 수 없습니다: 트랙 인덱스 {0} 위치 {1}에 나타납니다.",
+    "MediaEngine.CpcDskTooManySectors": "Amstrad DSK 컨테이너는 작성할 수 없습니다 : 트랙 {0}은 너무 많은 분야의 원고가 포함되어 있습니다.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK 콘테이너는 쓸 수 없습니다: 표준 DSK는 1개의 획일한 궤도 크기를 요구합니다.",
+    "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK 컨테이너는 작성할 수 없습니다. 기하학은 CPCEMU 한계를 초과합니다.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK 컨테이너는 작성할 수 없습니다. 기본 부문 메타데이터는 ST1/ST2가 부족합니다.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK 컨테이너는 작성할 수 없습니다. 분야 크기 {0}는 CPCEMU 크기 코드로 표현할 수 없습니다.",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK 데이터 크기는 지원 범위를 초과합니다.",
+    "MediaEngine.CpcDskRecordedAddress": "녹화된 CPCEMU 주소 {0}:{1}:{2}은 한 바이트 필드에 의해 표시될 수 없습니다."
+  }
+}

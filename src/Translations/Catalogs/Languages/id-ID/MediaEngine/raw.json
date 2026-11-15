@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Panjang citra mentah {0} kosong atau bukan kelipatan dari {1} bytes.",
+    "Media.RawUnknownGeometry": "Tidak didukung geometri gambar mentah cocok {0} bytes.",
+    "Media.MsxInvalidBoot": "Image dari {0} bytes tidak memuat sebuah sektor boot MSX yang didukung.",
+    "Media.MsxUnsupportedGeometry": "Tidak ada geometri MSX yang cocok dengan {0} bytes dan deskripsi media {1}.",
+    "Media.UnsupportedRawFormat": "Format gambar mentah {0} tidak didukung.",
+    "Media.RawGeometryMismatch": "Gambar {0} memiliki geometri {1}; target {2} membutuhkan geometri {3}.",
+    "Media.RawSectorMissing": "Sektor logikal {0} hilang dan tidak dapat ditulis ke gambar mentah lengkap.",
+    "Media.RawSectorSize": "Sektor logikal {0} memuat {1} bytes daripada {2}.",
+    "Media.AtomicOpen": "Tidak dapat membuat keluaran sementara untuk {0}.",
+    "Media.AtomicWrite": "Tidak dapat menulis keluaran sementara untuk {0}.",
+    "Media.AtomicCommit": "Tidak dapat menerbitkan berkas keluaran lengkap {0}.",
+    "Media.Cancelled": "Operasi pada media penyimpanan dibatalkan."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "O secvență de {0} biți nu încape în {1} octeți.",
+    "MediaEngine.BitPackingCount": "Numărul de biți {0} trebuie să fie pozitiv.",
+    "MediaEngine.BitPackingRange": "Dimensiunea împachetării biților depășește intervalul acceptat.",
+    "MediaEngine.AppleTrackUnsupported": "Formatul sursă „{1}” nu poate fi codificat ca {0}.",
+    "MediaEngine.AppleTrackGeometry": "Geometria Apple II cu {0} cilindri, {1} capete și {2} sectoare pe pistă nu poate fi codificată.",
+    "MediaEngine.AppleTrackSector": "Sectorul {0} {1}:{2} conține {3} octeți în loc de {4}.",
+    "MediaEngine.AppleTrackTooLong": "Pista {0} {1} conține {2} biți; maximum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Pista Apple II {0} conține numărul de sector fizic duplicat {1}.",
+    "MediaEngine.NibTrackCount": "Funcția de scriere NIB necesită cel puțin o pistă; a primit {0}.",
+    "MediaEngine.NibTrackLength": "Pista NIB {0} conține {1} biți; maximum {2}."
+  }
+}

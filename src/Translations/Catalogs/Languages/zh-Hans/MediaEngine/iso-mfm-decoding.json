@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "比特流字节数 {0} 必须介于零和 {1} 之间。",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 FE, N{4}, 头部CRC {5}, 数据CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "未分类 ISO MFM Sync, 标记 {0}",
+    "MediaEngine.MfmUnpaired": "未分类 ISO MFM DataAddressMark, 标记 FB",
+    "MediaEngine.MfmUnpairedDeleted": "未分类 ISO MFM DeletedDataAddressMark, 标记 F8"
+  }
+}

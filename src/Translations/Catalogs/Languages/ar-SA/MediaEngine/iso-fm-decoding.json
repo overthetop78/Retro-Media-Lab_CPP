@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} بايت, علامة FE, N{4}, CRC الرأس {5}, CRC البيانات {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} بايت, علامة FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} بايت, علامة F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "غير مصنف ISO FM DataAddressMark, علامة FB",
+    "MediaEngine.FmUnpairedDeleted": "غير مصنف ISO FM DeletedDataAddressMark, علامة F8",
+    "MediaEngine.FmRevolutionTiming": "توقيت دوران ISO FM غير متسق: الفهرس {0} ticks، مدة الخلية {1} ticks، مجموع الفواصل المرصودة {2} ticks."
+  }
+}

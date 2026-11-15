@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk τομέας {0}/{1}/{2} έχει ένα επαναλαμβανόμενο ωφέλιμο φορτίο των bytes {3}; {4} bytes απαιτούνται.",
+    "MediaEngine.Td0EncodingTruncated": "Η κωδικοποίηση {3} του τομέα TeleDisk {0}/{1}/{2} έχει αποκοπεί στη μετατόπιση {4}: απαιτούνται {5} byte, διαθέσιμα {6}.",
+    "MediaEngine.Td0EncodingUnsupported": "Ο τομέας TeleDisk {0}/ {1}/ {2} χρησιμοποιεί μη υποστηριζόμενη κωδικοποίηση {3}.",
+    "MediaEngine.Td0DecodedLength": "Ο τομέας TeleDisk {0}/ {1}/ {2} κωδικοποίηση {3} επεκτείνεται σε bytes {4} αντί για {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Ο αριθμός επαναλήψεων του τομέα TeleDisk υπερβαίνει το όριο μη προσημασμένου ακεραίου 16 bit."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Commodore GCR 属性 {0} 的值 {1} 必须介于零和 {2} 之间。",
+    "MediaEngine.CbmGcrDiskTrack": "Commodore 磁盘磁道 {0} 必须介于 {1} 和 {2} 之间。",
+    "MediaEngine.CbmGcrSectorSize": "Commodore 扇区包含 {0} 字节；实际收到 {1} 字节。",
+    "MediaEngine.CbmGcrSync": "未分类 Commodore CommodoreSync, 同步 GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 字节, 数据块, 数据校验和 {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} 字节, 头部校验和 {4}, 数据校验和 {5}"
+  }
+}

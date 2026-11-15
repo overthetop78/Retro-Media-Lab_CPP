@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Sectoarele Heathkit conțin 256 octeți; primiți {0} octeți.",
+    "MediaEngine.HeathkitAddressRange": "Valoarea {1} a câmpului {0} Heathkit FM trebuie să fie între zero și {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "O înregistrare Heathkit trebuie să conțină cel puțin un octet de sumă de control.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} octeți, volum {4}, sumă de control antet {5}, sumă de control date {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} octeți, sumă de control {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, antet de sector hardware, trunchiat",
+    "MediaEngine.HeathkitUnpaired": "Date Heathkit fără pereche, bloc de date"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "The Amstrad DSK header is truncated.",
+    "MediaEngine.CpcDskSignature": "The file is not a CPCEMU DSK image.",
+    "MediaEngine.CpcDskGeometry": "The Amstrad DSK geometry is invalid.",
+    "MediaEngine.CpcDskExtendedTable": "The extended Amstrad DSK track table is invalid at track {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK track {0} is truncated.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} has an invalid header.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} has an invalid sector table.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}:{1}:{2} is truncated.",
+    "MediaEngine.CpcDskNoSectors": "The Amstrad DSK image contains no sectors.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} occupies {1} bytes and exceeds the 65280-byte container limit.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} uses an absent, variable-size or non-nominal sector representation that requires EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "The Amstrad DSK container cannot be written: the declared geometry and track collection disagree.",
+    "MediaEngine.CpcDskTrackIndex": "The Amstrad DSK container cannot be written: track index {0} appears at position {1}.",
+    "MediaEngine.CpcDskTooManySectors": "The Amstrad DSK container cannot be written: track {0} contains too many sector descriptors.",
+    "MediaEngine.CpcDskUniformTracks": "The Amstrad DSK container cannot be written: standard DSK requires one uniform track size.",
+    "MediaEngine.CpcDskBuilderGeometry": "The Amstrad DSK container cannot be written: the geometry exceeds CPCEMU limits.",
+    "MediaEngine.CpcDskNativeMetadata": "The Amstrad DSK container cannot be written: native sector metadata lacks ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "The Amstrad DSK container cannot be written: sector size {0} is not representable by a CPCEMU size code.",
+    "MediaEngine.CpcDskOverflow": "The CPCEMU DSK data size exceeds the supported range.",
+    "MediaEngine.CpcDskRecordedAddress": "Recorded CPCEMU address {0}:{1}:{2} cannot be represented by one-byte fields."
+  },
+  "invariants": []
+}

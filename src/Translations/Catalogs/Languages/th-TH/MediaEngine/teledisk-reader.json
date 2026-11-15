@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "ส่วน ส่วนหัวอิมเมจ ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0CommentHeaderTruncated": "ส่วน ส่วนหัวข้อคิดเห็น ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0CommentTruncated": "ส่วน ข้อคิดเห็น ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0TrackTruncated": "ส่วน ส่วนหัวแทร็ก ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0SectorTruncated": "ส่วน ส่วนหัวเซกเตอร์ ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0DataHeaderTruncated": "ส่วน ส่วนหัวข้อมูลเซกเตอร์ ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0DataTruncated": "ส่วน ข้อมูลเซกเตอร์ ของ TeleDisk ถูกตัดที่ออฟเซต {0}: ต้องการ {1} ไบต์ แต่มี {2} ไบต์",
+    "MediaEngine.Td0Signature": "อิมเมจนี้ไม่ใช่อิมเมจ TeleDisk",
+    "MediaEngine.Td0HeaderCrc": "CRC ส่วนหัว TeleDisk ไม่ถูกต้อง: ค่าที่คาดไว้ 0x{0} ค่าที่คำนวณได้ 0x{1}",
+    "MediaEngine.Td0CommentCrc": "CRC ข้อคิดเห็น TeleDisk ไม่ถูกต้อง: ค่าที่คาดไว้ 0x{0} ค่าที่คำนวณได้ 0x{1}",
+    "MediaEngine.Td0TrackCrc": "CRC แทร็ก TeleDisk {0}/{1} ไม่ถูกต้อง: ค่าที่คาดไว้ 0x{2} ค่าที่คำนวณได้ 0x{3}",
+    "MediaEngine.Td0SectorCrc": "CRC เซกเตอร์ TeleDisk {0}/{1}/{2} ไม่ถูกต้อง: ค่าที่คาดไว้ 0x{3} ค่าที่คำนวณได้ 0x{4}",
+    "MediaEngine.Td0SizeCode": "เซกเตอร์ TeleDisk {0}/{1}/{2} มีรหัสขนาด {3} ที่ไม่ถูกต้อง",
+    "MediaEngine.Td0MissingData": "เซกเตอร์ TeleDisk {0}/{1}/{2} ไม่มีข้อมูลที่เข้ารหัสที่ออฟเซต {3}",
+    "MediaEngine.Td0NoSectors": "อิมเมจ TeleDisk ไม่มีเซกเตอร์"
+  }
+}

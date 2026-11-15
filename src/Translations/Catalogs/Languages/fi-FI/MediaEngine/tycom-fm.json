@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.TycomSectorSize": "TYCOM -sektorit sisältävät 128 tavua; saatiin {0} tavua.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 tavua, merkki {2}, otsikon CRC {3}, datan CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 tavua, otsikon CRC {2}, datan CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 tavua, merkki FE, otsikon CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 tavua, merkki {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, sektoriotsake, katkaistu",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, merkki {0}, sektoridata, katkaistu",
+    "MediaEngine.TycomUnpaired": "Luokittelematon TYCOM FormatData, merkki {0}, data"
+  }
+}

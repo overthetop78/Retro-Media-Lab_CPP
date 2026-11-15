@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.EmuSectorSize": "E-mu-Sektoren enthalten 3584 Bytes; {0} Bytes empfangen.",
+    "MediaEngine.EmuAddressRange": "Der Wert {1} des E-mu FM-Feldes {0} muss zwischen null und {2} liegen.",
+    "MediaEngine.EmuHeader": "E-mu FormatHeader, C{0} H{1} R{2}, {3} Bytes, CRC {4}, CRC {5}",
+    "MediaEngine.EmuData": "E-mu FormatData, C{0} H{1} R{2}, {3} Bytes, CRC {4}",
+    "MediaEngine.EmuUnclassified": "Nicht klassifiziertes E-mu Emulator FormatHeader, Header-/Datenmarkierung"
+  }
+}

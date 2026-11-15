@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "인코더 식별자가 필요합니다.",
+    "MediaEngine.PolicyFormats": "비어 있거나 공백으로만 구성되지 않은 형식 식별자가 하나 이상 필요합니다.",
+    "MediaEngine.PolicyPrefixes": "비어 있거나 공백으로만 구성되지 않은 형식 접두사가 하나 이상 필요합니다.",
+    "MediaEngine.PolicyNull": "섹터 재구성 규칙은 null일 수 없습니다.",
+    "MediaEngine.PolicyNullBlock": "섹터 재구성 항목에 null 블록이 포함될 수 없습니다.",
+    "MediaEngine.PolicyRareUnknown": "형식 '{0}'에 대한 특수 인코딩 프로필이 등록되어 있지 않습니다.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare 실린더 {0}은 0부터 {1} 사이여야 합니다.",
+    "MediaEngine.PolicyJfdDensity": "JFD 트랙에 사용 가능한 밀도 코드가 없습니다.",
+    "MediaEngine.PolicyAddressRange": "주소 값 {0}은 부호 있는 32비트 정수 범위를 벗어납니다."
+  }
+}

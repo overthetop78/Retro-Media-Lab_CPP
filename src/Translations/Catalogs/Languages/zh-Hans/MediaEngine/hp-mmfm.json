@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM 成对交换需要偶数字节；收到 {0} 字节。",
+    "MediaEngine.HpAddressRange": "HP MMFM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.HpSectorSize": "HP MMFM 扇区包含 256 字节；收到 {0} 字节。",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} 字节, 头部CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} 字节, 数据CRC {4}"
+  }
+}

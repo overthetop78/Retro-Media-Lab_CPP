@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Amiga-odd/even-codering vereist een even aantal bytes; {0} bytes ontvangen.",
+    "MediaEngine.AmigaMfmParityRange": "Ongeldig Amiga-pariteitsbereik: offset {0}, aantal {1}, beschikbaar {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Amiga-sectoren bevatten 512 bytes; {0} bytes ontvangen.",
+    "MediaEngine.AmigaMfmAddressRange": "Waarde {1} van Amiga-MFM-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} bytes, headercontrolesom {4}, datacontrolesom {5}"
+  }
+}

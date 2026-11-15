@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "הערך {1} בשדה {0} של Centurion MFM חייב להיות בין אפס ל-{2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} בתים, CRC כותרת {4}, CRC נתונים {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} בתים, מפתח {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, סימון מגזר, קטועה",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC לא זמין, קטועה",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, מפתח שאינו נתמך {0}, קטועה",
+    "MediaEngine.CenturionUnpaired": "נתוני Centurion לא מזווגים, בלוק נתונים"
+  }
+}

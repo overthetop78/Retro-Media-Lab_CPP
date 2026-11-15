@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MicropolisSectorSize": "I settori Micropolis contengono 256 byte; ricevuti {0} byte.",
+    "MediaEngine.MicropolisSectorRange": "Il numero di settore Micropolis {0} deve essere compreso tra zero e {1}.",
+    "MediaEngine.MicropolisRecordInput": "I dati in ingresso del record Micropolis contengono {0} byte; il record può contenere al massimo {1} byte.",
+    "MediaEngine.MicropolisRecord": "Micropolis FormatHeader, C{0} H{1} R{2}, {3} byte, marcatore FF, somma di controllo {4}",
+    "MediaEngine.MicropolisTruncated": "Micropolis FormatHeader, settore, troncato"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Сектори NorthStar містять 512 байтів; отримано {0} байтів.",
+    "MediaEngine.NorthstarCylinderRange": "Циліндр NorthStar {0} має бути між нулем і {1}.",
+    "MediaEngine.NorthstarSectorRange": "Номер сектора NorthStar {0} має бути між нулем і {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Тривалість індексу NorthStar перевищує підтримувану кількість бітових комірок.",
+    "MediaEngine.NorthstarHardAddressRange": "Кожна координата адреси NorthStar C{0} H{1} має вміщуватися в один байт.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} байтів, мітка FB, контрольна сума {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, блок апаратного сектора, обрізаний"
+  }
+}

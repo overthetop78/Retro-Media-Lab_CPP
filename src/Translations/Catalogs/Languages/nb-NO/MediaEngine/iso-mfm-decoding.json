@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Antall byte i bitstrømmen {0} må være mellom null og {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} byte, merke FE, N{4}, header-CRC {5}, data-CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} byte, merke FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, merke F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Uklassifisert ISO MFM Sync, merke {0}",
+    "MediaEngine.MfmUnpaired": "Uklassifisert ISO MFM DataAddressMark, merke FB",
+    "MediaEngine.MfmUnpairedDeleted": "Uklassifisert ISO MFM DeletedDataAddressMark, merke F8"
+  }
+}

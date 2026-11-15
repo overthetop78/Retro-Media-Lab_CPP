@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Значення {1} поля {0} Apple II GCR має бути між нулем і {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Доріжки Apple II містять 13 секторів для 5-and-3 або 16 для 6-and-2; отримано {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} байтів, V{4}, контрольна сума адреси {5}, контрольна сума даних {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} байтів, 13 секторів V{4}, контрольна сума адреси {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} байтів, контрольна сума {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} байтів, 13 секторів, контрольна сума {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, контрольна сума недоступна, обрізано",
+    "MediaEngine.AppleIIUnpaired": "Непарні дані Apple II, пролог даних D5 AA AD"
+  }
+}

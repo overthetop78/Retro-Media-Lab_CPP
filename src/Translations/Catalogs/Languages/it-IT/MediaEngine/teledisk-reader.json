@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "L'intestazione dell'immagine TeleDisk a offset {0} è troncata: {1} byte previste, {2} disponibili.",
+    "MediaEngine.Td0CommentHeaderTruncated": "L'intestazione del commento TeleDisk a offset {0} è troncata: {1} byte previste, {2} disponibile.",
+    "MediaEngine.Td0CommentTruncated": "Il commento TeleDisk a offset {0} è troncato: {1} byte previste, {2} disponibile.",
+    "MediaEngine.Td0TrackTruncated": "L'intestazione della pista TeleDisk a offset {0} è troncata: {1} byte previste, {2} disponibili.",
+    "MediaEngine.Td0SectorTruncated": "L'intestazione del settore TeleDisk a offset {0} è troncata: {1} byte previste, {2} disponibili.",
+    "MediaEngine.Td0DataHeaderTruncated": "L'intestazione dati del settore TeleDisk a offset {0} è troncata: {1} byte previste, {2} disponibili.",
+    "MediaEngine.Td0DataTruncated": "I dati del settore TeleDisk in offset {0} sono troncati: {1} byte previste, {2} disponibili.",
+    "MediaEngine.Td0Signature": "L'immagine non è un'immagine TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "L'intestazione TeleDisk CRC non è valida: previsto 0x{0}, calcolato 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Il commento di TeleDisk CRC non è valido: previsto 0x{0}, calcolato 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "La traccia TeleDisk {0}/{1} CRC è invalida: prevista 0x{2}, calcolata 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "Il settore TeleDisk {0}/{1}/{2} CRC non è valido: previsto 0x{3}, calcolato 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Il settore TeleDisk {0}/{1}/{2} ha un codice di dimensioni non valide {3}.",
+    "MediaEngine.Td0MissingData": "Il settore TeleDisk {0}/{1}/{2} non ha dati codificati in offset {3}.",
+    "MediaEngine.Td0NoSectors": "L'immagine TeleDisk non contiene settori."
+  }
+}

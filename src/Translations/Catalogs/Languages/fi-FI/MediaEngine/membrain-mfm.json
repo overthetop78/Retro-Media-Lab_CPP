@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.MembrainSectorSize": "Membrain -sektorit sisältävät 512 tavua; saatiin {0} tavua.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 tavua, merkki FE, otsikon CRC {3}, datan CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 tavua, merkki {3}, datalohko, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, sektoriotsake, katkaistu",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC ei saatavilla, katkaistu",
+    "MediaEngine.MembrainUnpaired": "Parittamaton Membrain-data, datalohko"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Ảnh không chứa phần đầu ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Bản ghi ApriDisk không hợp lệ tại byte {0}.",
+    "MediaEngine.ApridiskOverflow": "Chiều dài bản ghi ApriDisk vượt quá giới hạn số nguyên có dấu 32 bit.",
+    "MediaEngine.ApridiskTruncated": "Bản ghi ApriDisk tại byte {0} bị cắt ngắn.",
+    "MediaEngine.ApridiskAddress": "Địa chỉ sector ApriDisk {0}/{1}/{2} nằm ngoài cấu trúc đĩa ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Ảnh ApriDisk chứa {0} sector sử dụng được thay vì {1}.",
+    "MediaEngine.ApridiskSectorLength": "Một khu vực ApriDisk chứa {0} byte thay vì {1}.",
+    "MediaEngine.ApridiskCompression": "Việc nén khu vực ApriDisk không được hỗ trợ:{0}.",
+    "MediaEngine.ApridiskExpansion": "Một khu vực nén ApriDisk mở rộng hơn 512 byte.",
+    "MediaEngine.ApridiskWriteGeometry": "Ảnh sector không sử dụng cấu trúc đĩa ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Ảnh DEC RX02 chứa {0} byte; ảnh vật lý đầy đủ cần {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Ảnh sector không sử dụng cấu trúc đĩa DEC RX02."
+  }
+}

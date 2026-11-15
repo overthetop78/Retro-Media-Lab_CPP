@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Numer cylindra chronionej ścieżki {0} nie może być ujemny.",
+    "MediaEngine.ProtectedHead": "Numer głowicy chronionej ścieżki {0} nie może być ujemny.",
+    "MediaEngine.ProtectedNoContent": "Chroniona ścieżka wymaga komórek bitowych lub danych strumienia magnetycznego z obrotów.",
+    "MediaEngine.ProtectedMetadataNoBits": "Parametry czasowe, struktury i cechy odnoszące się do bitów wymagają komórek bitowych.",
+    "MediaEngine.ProtectedRange": "Zakresy {0} chronionej ścieżki muszą mieć dodatnią długość i mieścić się w {1} komórkach bitowych.",
+    "MediaEngine.ProtectedTiming": "Czas komórki bitowej chronionej ścieżki musi być skończony i dodatni.",
+    "MediaEngine.ProtectedResolution": "Rozdzielczość czasowa strumienia magnetycznego {0} ns musi być dodatnia.",
+    "MediaEngine.ProtectedImageEmpty": "Obraz chronionych ścieżek wymaga co najmniej jednej ścieżki.",
+    "MediaEngine.ProtectedImageDuplicate": "Chroniony tor {0} / {1} jest zduplikowany."
+  }
+}

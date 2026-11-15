@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} בתים, סימון FE, N{4}, CRC כותרת {5}, CRC נתונים {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} בתים, סימון FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} בתים, סימון F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "לא מסווג ISO FM DataAddressMark, סימון FB",
+    "MediaEngine.FmUnpairedDeleted": "לא מסווג ISO FM DeletedDataAddressMark, סימון F8",
+    "MediaEngine.FmRevolutionTiming": "תזמון הסיבוב של ISO FM אינו עקבי: אינדקס {0} ticks, משך תא {1} ticks, סכום המרווחים {2} ticks."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "Сектор TeleDisk {0}/{1}/{2} имеет повторяющуюся полезную нагрузку {3} байтов; {4} байты необходимы.",
+    "MediaEngine.Td0EncodingTruncated": "Сектор TeleDisk {0}/{1}/{2} кодирования {3} усечен при смещении {4}: {5} байт требуется, {6} доступно.",
+    "MediaEngine.Td0EncodingUnsupported": "Сектор TeleDisk {0}/{1}/{2} использует неподдерживаемое кодирование {3}.",
+    "MediaEngine.Td0DecodedLength": "Сектор TeleDisk {0}/{1}/{2} кодирования {3} расширяется до {4} байтов вместо {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Число повторов сектора TeleDisk превышает предел 16-битного целого числа без знака."
+  }
+}

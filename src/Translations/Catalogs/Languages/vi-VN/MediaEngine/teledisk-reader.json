@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Phần đầu mục ảnh đĩa của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Phần đầu mục chú thích của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0CommentTruncated": "Phần chú thích của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0TrackTruncated": "Phần đầu mục rãnh của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0SectorTruncated": "Phần đầu mục sector của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0DataHeaderTruncated": "Phần đầu mục dữ liệu sector của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0DataTruncated": "Phần dữ liệu sector của TeleDisk bị cắt tại độ lệch {0}: cần {1} byte, hiện có {2} byte.",
+    "MediaEngine.Td0Signature": "Ảnh đĩa này không phải ảnh TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "CRC đầu mục TeleDisk không hợp lệ: giá trị dự kiến 0x{0}, tính được 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "CRC chú thích TeleDisk không hợp lệ: giá trị dự kiến 0x{0}, tính được 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "CRC rãnh TeleDisk {0}/{1} không hợp lệ: giá trị dự kiến 0x{2}, tính được 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "CRC sector TeleDisk {0}/{1}/{2} không hợp lệ: giá trị dự kiến 0x{3}, tính được 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Sector TeleDisk {0}/{1}/{2} có mã kích thước {3} không hợp lệ.",
+    "MediaEngine.Td0MissingData": "Sector TeleDisk {0}/{1}/{2} không có dữ liệu đã mã hóa tại độ lệch {3}.",
+    "MediaEngine.Td0NoSectors": "Ảnh đĩa TeleDisk không chứa sector nào."
+  }
+}

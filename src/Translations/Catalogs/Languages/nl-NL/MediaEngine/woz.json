@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "De WOZ-header is ongeldig.",
+    "MediaEngine.WozDiskType": "WOZ-schijftype {0} wordt niet ondersteund; een Apple II-schijf van 5,25 inch is vereist.",
+    "MediaEngine.WozMissingChunk": "Het vereiste WOZ-blok '{0}' ontbreekt of is onvolledig.",
+    "MediaEngine.WozTruncatedChunk": "Het WOZ-blok '{0}' is afgekapt.",
+    "MediaEngine.WozTrackReference": "WOZ-spoor {0} verwijst naar descriptor {1}, die buiten het geldige bereik ligt.",
+    "MediaEngine.WozCrc": "De WOZ CRC32 is ongeldig: opgeslagen {0}, berekend {1}.",
+    "MediaEngine.WozChunkId": "De WOZ-blokidentificatie '{0}' moet precies vier ASCII-tekens bevatten.",
+    "MediaEngine.WozTrackCount": "De WOZ1-schrijver ontving {0} sporen; verwacht werd een aantal tussen 1 en {1}.",
+    "MediaEngine.WozTrackLength": "WOZ1-spoor {0} bevat {1} bits; maximaal {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Er is geen geldige Apple II RWTS18-sector gevonden tussen {0} gedecodeerde sectoren uit {1} sporen."
+  }
+}

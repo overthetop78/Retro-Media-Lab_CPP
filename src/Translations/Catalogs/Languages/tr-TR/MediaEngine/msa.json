@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "'{0}' sektör görüntüsü, {1}x{2}x{3} geometrisi ve {4} blok boyutuyla MSA olarak yazılamaz.",
+    "MediaEngine.MsaMissingSector": "MSA mantıksal sektörü {0} ({1}:{2}:{3}) eksik.",
+    "MediaEngine.MsaSectorSize": "MSA mantıksal sektörü {0}, {1} bayt içeriyor; beklenen {2}.",
+    "MediaEngine.MsaHeader": "MSA başlığı geçersiz; dosya {0} bayt içeriyor.",
+    "MediaEngine.MsaGeometry": "MSA geometrisi geçersiz: {0} sektör, {1} kafa, {2} ile {3} arası silindirler.",
+    "MediaEngine.MsaTruncatedTable": "Silindir {0}, kafa {1} için MSA iz uzunluğu alanı {2} konumunda kesilmiş: {3} bayt kullanılabilir.",
+    "MediaEngine.MsaTruncatedTrack": "MSA izi {0}:{1}, {2} konumunda {3} bayt bildiriyor; {4} bayt kullanılabilir.",
+    "MediaEngine.MsaTruncatedRun": "MSA izi {0}:{1} içindeki sıkıştırılmış dizi, paketlenmiş verideki {2} konumunda {3} bayt içinde kesilmiş.",
+    "MediaEngine.MsaInvalidRun": "MSA izi {0}:{1} içindeki sıkıştırılmış dizinin paketlenmiş verideki {2} konumunda tekrar sayısı {3}; {5} çıktı baytının {4} baytı zaten yazılmış.",
+    "MediaEngine.MsaUnpackedLength": "MSA izi {0}:{1}, {3} sıkıştırılmış baytın {2} baytını kullandı ve beklenen {5} baytın {4} baytını üretti."
+  }
+}

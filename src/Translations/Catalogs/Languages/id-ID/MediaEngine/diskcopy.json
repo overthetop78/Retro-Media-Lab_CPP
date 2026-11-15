@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Header DiskCopy terpotong.",
+    "MediaEngine.DiskCopyPrivateWord": "Kata privat DiskCopy adalah {0}; diduga {1}.",
+    "MediaEngine.DiskCopyPayload": "Muatan DiskCopy tak valid.",
+    "MediaEngine.DiskCopyTags": "Citra DiskCopy bukan citra Macintosh/ProDOS yang dikenali maupun citra Lisa dengan tag.",
+    "MediaEngine.DiskCopyChecksumBytes": "Checksum DiskCopy memerlukan jumlah byte genap; diterima: {0}.",
+    "MediaEngine.DiskCopyRange": "Panjang DiskCopy melebihi jangkauan yang didukung.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy memerlukan citra sektor yang lengkap.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy memerlukan total 512 byte per blok logis.",
+    "MediaEngine.DiskCopyLayoutTags": "Setiap tag DiskCopy harus memuat 12 bytes.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Metadata DiskCopy tidak lengkap.",
+    "MediaEngine.DiskCopyMetadataName": "Metadata nama DiskCopy tidak valid.",
+    "MediaEngine.DiskCopyMetadataFormat": "Format metadata DiskCopy tak valid.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Metadata checksum DiskCopy '{0}' tak valid."
+  }
+}

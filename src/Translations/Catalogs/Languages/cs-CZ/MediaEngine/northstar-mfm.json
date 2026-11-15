@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Sektory NorthStar obsahují 512 bajtů; přijato {0} bajtů.",
+    "MediaEngine.NorthstarCylinderRange": "Číslo cylindru NorthStar {0} musí být mezi nulou a {1}.",
+    "MediaEngine.NorthstarSectorRange": "Číslo sektoru NorthStar {0} musí být mezi nulou a {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Doba indexu NorthStar překračuje podporovaný počet buněk.",
+    "MediaEngine.NorthstarHardAddressRange": "Každá souřadnice adresy NorthStar C{0} H{1} se musí vejít do jednoho bajtu.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} bajtů, značka FB, kontrolní součet {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, blok hardwarového sektoru, zkrácený"
+  }
+}

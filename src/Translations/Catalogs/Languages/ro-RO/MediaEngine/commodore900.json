@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 cilindru {0} este în afara intervalului zero la {1}.",
+    "MediaEngine.C900Block": "Commodore 900 bloc logic {0} este în afara intervalului 0 la {1}.",
+    "MediaEngine.C900Address": "Adresa Commodore 900 {0}/ {1}/ {2} este invalidă; capul trebuie să fie între zero şi {3}, iar sectorul între 0 şi {4} pe acest cilindru.",
+    "MediaEngine.C900Content": "Imaginea octeților {0} nu conține un superbloc recunoscut COHERENT.",
+    "MediaEngine.C900Alignment": "Lungimea imaginii COHERENTe a octeților {0} nu este divizibilă cu dimensiunea sectorului de octeți {1}.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT declară {0} blocuri, dar imaginea conţine numai {1}.",
+    "MediaEngine.C900Capacity": "Imaginea COHERENT conține blocuri {0}, dar Commodore 900 suportă cel mult {1}.",
+    "MediaEngine.C900WriterGeometry": "Imaginea din sector nu utilizează geometria zonei Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Blocul logic Commodore 900 {0} nu corespunde cu ordinea fizică necesară."
+  }
+}

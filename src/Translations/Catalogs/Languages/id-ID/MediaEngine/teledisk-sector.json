@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sektor {0} / {1} / {2} memiliki muatan berulang dari {3} bytes; {4} byte diperlukan.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk sektor {0}/{1}/{2} encoding {3} dipotong di ofset {4}: {5} byte dibutuhkan, {6} tersedia.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sektor {0} / {1} / {2} menggunakan pengkodean tidak didukung {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sektor {0}/{1}/{2} encoding {3} mengembang ke {4} byte daripada byte {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Jumlah pengulangan sektor TeleDisk melebihi batas bilangan bulat 16-bit tanpa tanda."
+  }
+}

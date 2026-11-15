@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Sectorafbeelding '{0}' met geometrie {1}x{2}x{3} en blokgrootte {4} kunnen niet als MSA worden geschreven.",
+    "MediaEngine.MsaMissingSector": "MSA logische sector {0} ({1}:{2}:{3}) ontbreekt.",
+    "MediaEngine.MsaSectorSize": "MSA logische sector {0} bevat {1} bytes; verwacht {2}.",
+    "MediaEngine.MsaHeader": "De MSA header is ongeldig; het bestand bevat {0} bytes.",
+    "MediaEngine.MsaGeometry": "De MSA-geometrie is ongeldig: {0} sectoren, {1} koppen, cilinders {2} tot {3}.",
+    "MediaEngine.MsaTruncatedTable": "Het MSA track-length veld voor cilinder {0}, kop {1}, op offset {2} is afgekapt: {3} bytes beschikbaar.",
+    "MediaEngine.MsaTruncatedTrack": "MSA track {0}:{1} op offset {2} declareert {3} bytes, {4} zijn beschikbaar.",
+    "MediaEngine.MsaTruncatedRun": "De gecomprimeerde run in MSA track {0}:{1} op packed offset {2} is afgekapt binnen {3} bytes.",
+    "MediaEngine.MsaInvalidRun": "De gecomprimeerde reeks in MSA-spoor {0}:{1} op gepakte offset {2} heeft herhalingsaantal {3}; {4} van {5} uitvoerbytes zijn al geschreven.",
+    "MediaEngine.MsaUnpackedLength": "MSA track {0}:{1} geconsumeerd {2} van {3} gecomprimeerde bytes en geproduceerd {4} van {5} verwachte bytes."
+  }
+}

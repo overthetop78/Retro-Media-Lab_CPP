@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "De waarde {1} van Membrain MFM-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.MembrainSectorSize": "Membrain-sectoren bevatten 512 bytes; {0} bytes ontvangen.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 bytes, markering FE, header-CRC {3}, data-CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 bytes, markering {3}, datablok, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, sectorheader, afgekapt",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC niet beschikbaar, afgekapt",
+    "MediaEngine.MembrainUnpaired": "Ongepaarde Membrain-gegevens, gegevensblok"
+  }
+}

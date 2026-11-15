@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP spår {0} är närvarande mer än en gång.",
+    "MediaEngine.ScpTrackOutside": "SCP spår {0} ligger utanför det deklarerade intervallet {1} till {2}.",
+    "MediaEngine.ScpWriteAddress": "SCP-spår {0} stämmer inte med den angivna adressen: cylinder {1}, huvud {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP-spår {0} innehåller {1} varv; {2} krävs.",
+    "MediaEngine.ScpZeroInterval": "SCP-spår {0}, varv {1}, innehåller ett flödesintervall med längden noll.",
+    "MediaEngine.ScpOutput": "SCP output callback saknas."
+  }
+}

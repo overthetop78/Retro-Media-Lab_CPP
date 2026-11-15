@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Legalább egy fluxus dekódert regisztrálni kell.",
+    "MediaEngine.RegistryNullDecoder": "A fluxus dekóder a {0} pozícióban nulla.",
+    "MediaEngine.RegistryInvalidId": "A {0} pozícióban lévő fluxus dekóder egy üres azonosítóval rendelkezik.",
+    "MediaEngine.RegistryDuplicate": "A '{0}' azonosítójú fluxusdekóder már regisztrálva van.",
+    "MediaEngine.RegistryUnknown": "A fluxusdekóder nincs bejegyezve \"{0}\" azonosítóval.",
+    "MediaEngine.RegistryNullRevolution": "A dekódoláshoz egy fordulat fluxusfelvétele szükséges.",
+    "MediaEngine.RegistryNoAutomatic": "Nincs regisztrált fluxus dekóder, ami részt venne az automatikus észlelésben."
+  }
+}

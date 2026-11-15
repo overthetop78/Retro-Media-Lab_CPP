@@ -1,0 +1,33 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "The HFE header is missing or truncated.",
+    "MediaEngine.HfeRevision": "HFE revision {0} is not supported.",
+    "MediaEngine.HfeGeometry": "The HFE geometry or bit rate is invalid.",
+    "MediaEngine.HfeTable": "The HFE track table is out of bounds.",
+    "MediaEngine.HfeTiming": "HFE timing cannot be represented at the required resolution.",
+    "MediaEngine.HfeTrackLength": "HFE track {0} has an invalid length.",
+    "MediaEngine.HfeTrackData": "HFE track {0}/{1} data is out of bounds.",
+    "MediaEngine.HfeRateOpcode": "HFE v3 track {0}/{1} has a zero bit-rate opcode parameter.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 track {0}/{1} contains no cells.",
+    "MediaEngine.HfeTracks": "HFE requires at least one track.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 requires one encoding for all tracks.",
+    "MediaEngine.HfeEncoding": "Encoding {0} cannot be written as HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 requires one bit rate for all tracks.",
+    "MediaEngine.HfeMissingTrack": "HFE cylinder {0} is missing.",
+    "MediaEngine.HfeTrackAddress": "An HFE track is outside the declared geometry.",
+    "MediaEngine.HfeDuplicateTrack": "HFE track {0}/{1} is duplicated.",
+    "MediaEngine.HfeLimit": "The HFE container exceeds its supported size or value limits.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 requires one uniform timing segment per track.",
+    "MediaEngine.HfeRevolutions": "HFE cannot preserve these separate flux revolutions.",
+    "MediaEngine.HfePadding": "HFE v1 would require padding or unequal head lengths.",
+    "MediaEngine.HfeScpEncoding": "SCP disk type {0} has no lossless HFE v1 encoding.",
+    "MediaEngine.HfeFluxBounds": "The flux intervals exceed the index duration.",
+    "MediaEngine.HfeWeak": "HFE v3 writing cannot preserve weak regions.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 random data opcode",
+    "MediaEngine.HfeIndexFeature": "HFE v3 index opcode",
+    "MediaEngine.FluxConversionTiming": "Flux timing cannot be represented as uniform bit cells.",
+    "MediaEngine.FluxConversionBounds": "The flux intervals or timing segments exceed the track duration.",
+    "MediaEngine.FluxConversionRange": "The flux conversion exceeds the supported size or numeric range."
+  },
+  "invariants": []
+}

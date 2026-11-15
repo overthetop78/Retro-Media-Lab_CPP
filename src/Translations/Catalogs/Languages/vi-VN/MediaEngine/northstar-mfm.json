@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Các vùng NorthStar chứa 512 byte; đã nhận {0} byte.",
+    "MediaEngine.NorthstarCylinderRange": "Trụ NorthStar {0} phải nằm trong khoảng từ không đến {1}.",
+    "MediaEngine.NorthstarSectorRange": "Số sector NorthStar {0} phải nằm giữa không và {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Thời gian chỉ mục NorthStar vượt quá số ô bit được hỗ trợ.",
+    "MediaEngine.NorthstarHardAddressRange": "Mỗi tọa độ của địa chỉ NorthStar C{0} H{1} phải nằm trong một byte.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} byte, dấu FB, tổng kiểm tra {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, khối sector phần cứng, bị cắt ngắn"
+  }
+}

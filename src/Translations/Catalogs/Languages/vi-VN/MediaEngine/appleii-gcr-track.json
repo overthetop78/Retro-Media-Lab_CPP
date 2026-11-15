@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Giá trị {1} của trường {0} Apple II GCR phải nằm giữa không và {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Rãnh Apple II chứa 13 sector cho 5-and-3 hoặc 16 sector cho 6-and-2; nhận được {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, V{4}, tổng kiểm tra địa chỉ {5}, tổng kiểm tra dữ liệu {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, 13 sector V{4}, tổng kiểm tra địa chỉ {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, tổng kiểm tra {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, 13 sector, tổng kiểm tra {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, tổng kiểm tra không khả dụng, bị cắt ngắn",
+    "MediaEngine.AppleIIUnpaired": "Dữ liệu Apple II chưa ghép cặp, phần mở đầu dữ liệu D5 AA AD"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "이미지는 ImageDisk 헤더를 포함하지 않습니다 : {0}, 파일 길이 {1} 바이트의 댓글 종료기.",
+    "MediaEngine.ImdTruncated": "ImageDisk {0} 섹션 상쇄 {1}는 {2} 바이트가 필요합니다. {3}는 사용할 수 있습니다.",
+    "MediaEngine.ImdTrackHeader": "ImageDisk 트랙 헤더는 유효하지 않습니다 : 모드 {0}, 필드 카운트 {1}.",
+    "MediaEngine.ImdSizeCode": "ImageDisk sector-size code {0}는 유효하지 않습니다.",
+    "MediaEngine.ImdRecordType": "ImageDisk sector-record type {0}는 유효하지 않습니다.",
+    "MediaEngine.ImdNoSectors": "ImageDisk 이미지에는 섹터가 없습니다.",
+    "MediaEngine.ImdNoTracks": "ImageDisk 이미지에는 트랙이 없습니다.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk 트랙 헤더는 표현할 수 없습니다.",
+    "MediaEngine.ImdWriteSector": "ImageDisk 섹터 레코드는 유효하지 않습니다.",
+    "MediaEngine.ImdCompressed": "압축된 ImageDisk 분야는 1개의 반복된 바이트를 포함하지 않습니다.",
+    "MediaEngine.ImdMetadataMode": "ImageDisk metadata는 잘못된 트랙 모드를 포함합니다.",
+    "MediaEngine.ImdMetadataRecord": "ImageDisk metadata는 잘못된 섹터 레코드 유형을 포함합니다.",
+    "MediaEngine.ImdMetadataSize": "ImageDisk metadata는 잘못된 섹터 크기를 포함합니다.",
+    "MediaEngine.ImdMetadataBlock": "ImageDisk 메타데이터는 논리 블록 '{0}'과 일치하지 않습니다.",
+    "MediaEngine.ImdMetadataCount": "ImageDisk metadata block count는 섹터 이미지와 일치하지 않습니다.",
+    "MediaEngine.ImdMetadata": "ImageDisk 메타데이터는 유효하지 않습니다.",
+    "MediaEngine.ImdEpsonGeometry": "Epson 이미지 기하학은 그것의 체재 식별자 일치하지 않습니다.",
+    "MediaEngine.ImdEpsonSize": "Epson sector {0}:{1}:{2}에는 잘못된 크기가 있습니다.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson 분야 {0}:{1}:{2}는 중복됩니다.",
+    "MediaEngine.EpsonFormat": "선택한 형식 '{0}'은 지원되는 Epson QX-10 형식이 아닙니다.",
+    "MediaEngine.EpsonGeometryDuplicate": "중복 Epson QX-10 기하학: {0}."
+  }
+}

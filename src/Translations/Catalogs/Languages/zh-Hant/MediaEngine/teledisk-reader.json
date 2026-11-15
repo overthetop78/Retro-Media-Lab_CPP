@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk 的映像標頭在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk 的註解標頭在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk 的註解在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk 的磁軌標頭在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk 的磁區標頭在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk 的磁區資料標頭在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0DataTruncated": "TeleDisk 的磁區資料在位移 {0} 處截斷：需要 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Td0Signature": "此映像不是 TeleDisk 映像。",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk 標頭 CRC 無效：預期為 0x{0}，計算值為 0x{1}。",
+    "MediaEngine.Td0CommentCrc": "TeleDisk 註解 CRC 無效：預期為 0x{0}，計算值為 0x{1}。",
+    "MediaEngine.Td0TrackCrc": "TeleDisk 磁軌 {0}/{1} 的 CRC 無效：預期為 0x{2}，計算值為 0x{3}。",
+    "MediaEngine.Td0SectorCrc": "TeleDisk 磁區 {0}/{1}/{2} 的 CRC 無效：預期為 0x{3}，計算值為 0x{4}。",
+    "MediaEngine.Td0SizeCode": "TeleDisk 磁區 {0}/{1}/{2} 的大小代碼 {3} 無效。",
+    "MediaEngine.Td0MissingData": "TeleDisk 磁區 {0}/{1}/{2} 在位移 {3} 處沒有編碼資料。",
+    "MediaEngine.Td0NoSectors": "TeleDisk 映像不包含磁區。"
+  }
+}

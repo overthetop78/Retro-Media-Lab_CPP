@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (данные): требуется {0} байт полезных данных или {1} байт полного блока; получено {2} байт.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (система): требуется {0} байт полезных данных или {1} байт полного блока; получено {2} байт.",
+    "MediaEngine.ArburgBlockCapacity": "Ёмкость блока Arburg {1} должна вмещать {0} байт полезных данных и два байта контрольной суммы в пределах поддерживаемого размера.",
+    "MediaEngine.ArburgUsefulSize": "Количество полезных байтов Arburg должно быть неотрицательным; получено: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 байт, блок данных, контрольная сумма {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 байт, системный блок, контрольная сумма {0}"
+  }
+}

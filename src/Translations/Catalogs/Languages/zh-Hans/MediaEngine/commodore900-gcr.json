@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "磁道柱面 {0} 必须介于零和 {1} 之间。",
+    "MediaEngine.TrackHead": "磁道磁头 {0} 必须介于零和 {1} 之间。",
+    "MediaEngine.TrackMissingSectors": "至少需要一个扇区；收到 {0} 个。",
+    "MediaEngine.TrackEmpty": "编码器 {0} 未产生任何位单元。",
+    "MediaEngine.TrackHex": "原始十六进制文本无效。",
+    "MediaEngine.TrackBinaryCharacter": "二进制文本在位置 {1} 包含“{0}”；只允许零和一。",
+    "MediaEngine.TrackNegativeGap": "间隙长度 {0} 不能为负。",
+    "MediaEngine.TrackSectorNumber": "扇区号 {0} 必须介于零和 {1} 之间。",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 扇区包含 {0} 字节；收到 {1} 字节。",
+    "MediaEngine.C900GcrSync": "未分类的 Commodore 900 CommodoreSync，GCR 同步",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader，C{0} H{1} R{2}，{3} 字节，校验和 {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData，C{0} H{1} R{2}，{3} 字节，校验和 {4}",
+    "MediaEngine.C900GcrUnpaired": "未配对的 Commodore 900 数据，数据块，校验和 {0}",
+    "MediaEngine.IntegrityValid": "有效",
+    "MediaEngine.IntegrityInvalid": "无效",
+    "MediaEngine.IntegrityUnavailable": "不可用"
+  }
+}

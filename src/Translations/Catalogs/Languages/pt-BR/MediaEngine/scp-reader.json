@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "A resolução de tempo SCP deve ser positiva; recebido {0}.",
+    "MediaEngine.ScpExtended": "Mídia SCP estendida não são imagens de disquetes.",
+    "MediaEngine.ScpSignature": "O ficheiro não contém uma assinatura SCP.",
+    "MediaEngine.ScpRevolutions": "A contagem da revolução SCP {0} é inválida.",
+    "MediaEngine.ScpTrackRange": "A faixa SCP {0} a {1} é inválida.",
+    "MediaEngine.ScpWidth": "A largura da célula de bits SCP {0} não é suportada.",
+    "MediaEngine.ScpHeads": "O seletor de cabeça SCP {0} é inválido.",
+    "MediaEngine.ScpTrackSignature": "A faixa {0} não tem assinatura TRK; o descritor contém o número da faixa {1}.",
+    "MediaEngine.ScpTrackMismatch": "Entrada da tabela de faixas {0} aponta para a faixa {1}.",
+    "MediaEngine.ScpHeaderSection": "O cabeçalho SCP está incompleto ou inválido no offset {0}; {1} são necessários bytes.",
+    "MediaEngine.ScpTableSection": "A tabela SCP track-offset é incompleta ou inválida no offset {0}; {1} bytes são necessários.",
+    "MediaEngine.ScpTrackSection": "O cabeçalho da faixa SCP {0} está incompleto ou inválido no deslocamento {1}; {2} são necessários bytes.",
+    "MediaEngine.ScpFluxSection": "O fluxo da faixa SCP {0}, revolução {1}, é incompleto ou inválido em offset {2}; {3} bytes são necessários.",
+    "MediaEngine.ScpOverflow": "Um tamanho, posição, intervalo ou rotação SCP concatenada excede o intervalo numérico suportado.",
+    "MediaEngine.ScpTrackAddress": "O número da faixa SCP {0} está fora da tabela da faixa.",
+    "MediaEngine.ScpNoRevolution": "A faixa SCP não contém nenhuma revolução para decodificar.",
+    "MediaEngine.ScpNoC900Sectors": "Nenhum setor Commodore 900 GCR poderia ser decodificado da imagem SCP."
+  }
+}

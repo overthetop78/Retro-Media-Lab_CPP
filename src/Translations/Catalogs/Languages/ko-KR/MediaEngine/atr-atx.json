@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR 대상 형식 '{0}'은 지원되지 않습니다.",
+    "MediaEngine.AtrIncompatibleImage": "섹터 이미지 '{0}'에는 {1}개 섹터와 {2}바이트가 있습니다. ATR 프로필 '{3}'에는 {4}개 섹터와 {5}바이트가 필요합니다.",
+    "MediaEngine.AtrMissingSector": "ATR 섹터 {0}이 없습니다.",
+    "MediaEngine.AtrSectorSize": "ATR 섹터 {0}은 {1}바이트입니다. {2}바이트가 필요합니다.",
+    "MediaEngine.AtrHeader": "ATR 헤더가 잘못되었습니다. 길이 {0}바이트(최소 {1}), 시그니처 {2}(필요한 값 {3}).",
+    "MediaEngine.AtrUnsupportedSize": "ATR 섹터 크기 {0}바이트는 지원되지 않습니다. {1}바이트가 필요합니다.",
+    "MediaEngine.AtrPayloadLength": "ATR 데이터 길이는 {0}바이트이지만 헤더는 {1}바이트로 선언합니다.",
+    "MediaEngine.AtrTruncatedPayload": "길이가 {0}바이트인 ATR 데이터에 {1}바이트 부팅 영역과 그 뒤를 잇는 완전한 {2}바이트 섹터들이 없습니다.",
+    "MediaEngine.AtrSectorCount": "Atari ATR 섹터 크기 {0}과 섹터 수 {1}은 0보다 커야 합니다.",
+    "MediaEngine.AtxHeader": "ATX 파일 헤더가 없거나 잘못되었습니다.",
+    "MediaEngine.AtxTrackOffset": "ATX 트랙 데이터 오프셋이 파일 범위 밖에 있습니다.",
+    "MediaEngine.AtxTrackCycle": "ATX 트랙 체인에 순환이 있습니다.",
+    "MediaEngine.AtxTrackBounds": "ATX 트랙이 파일 범위를 벗어납니다.",
+    "MediaEngine.AtxTrackNumber": "ATX 트랙 {0}은 지원되는 40트랙 지오메트리 범위 밖에 있습니다.",
+    "MediaEngine.AtxSectorCount": "ATX 트랙 {0}에 섹터 레코드가 너무 많습니다.",
+    "MediaEngine.AtxListBounds": "ATX 트랙 {0}의 섹터 목록이 트랙 경계를 넘습니다.",
+    "MediaEngine.AtxSectorNumber": "ATX 트랙 {0}에 잘못된 섹터 {1}이 있습니다.",
+    "MediaEngine.AtxDataBounds": "ATX 트랙 {0}, 섹터 {1}의 데이터가 트랙 경계를 넘습니다.",
+    "MediaEngine.AtxNoSectors": "ATX 이미지에 읽을 수 있는 섹터 레코드가 없습니다.",
+    "MediaEngine.AtxLargeOffset": "ATX '{0}' 오프셋이 너무 큽니다.",
+    "MediaEngine.AtxTruncated": "ATX '{0}' 부분이 잘렸습니다."
+  }
+}

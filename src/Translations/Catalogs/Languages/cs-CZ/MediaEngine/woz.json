@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Záhlaví WOZ je neplatné.",
+    "MediaEngine.WozDiskType": "Typ disku WOZ {0} není podporován; je vyžadována disketa Apple II o velikosti 5.25 palce.",
+    "MediaEngine.WozMissingChunk": "Požadovaná část WOZ '{0}' chybí nebo je neúplná.",
+    "MediaEngine.WozTruncatedChunk": "Část WOZ '{0}' je zkrácená.",
+    "MediaEngine.WozTrackReference": "Stopa WOZ {0} odkazuje na deskriptor {1} mimo povolený rozsah.",
+    "MediaEngine.WozCrc": "CRC32 WOZ je neplatné: uložená hodnota {0}, vypočtená {1}.",
+    "MediaEngine.WozChunkId": "Identifikátor části WOZ '{0}' musí obsahovat přesně čtyři znaky ASCII.",
+    "MediaEngine.WozTrackCount": "Zapisovací modul WOZ1 obdržel {0} stop; očekává se 1 až {1}.",
+    "MediaEngine.WozTrackLength": "Stopa WOZ1 {0} obsahuje {1} bitů; maximum je {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Mezi {0} dekódovanými sektory z {1} stop nebyl nalezen žádný platný sektor Apple II RWTS18."
+  }
+}

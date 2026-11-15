@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Заголовок Amstrad DSK усечен.",
+    "MediaEngine.CpcDskSignature": "Файл не является изображением CPCEMU DSK.",
+    "MediaEngine.CpcDskGeometry": "Геометрия Amstrad DSK недействительна.",
+    "MediaEngine.CpcDskExtendedTable": "Расширенная дорожная таблица Amstrad DSK недействительна на дорожке {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK трек {0} усечен.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK трек {0} имеет неверный заголовок.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK трек {0} имеет недействительный сектор таблицы.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK сектор {0}:{1}:{2} усечен.",
+    "MediaEngine.CpcDskNoSectors": "Изображение Amstrad DSK не содержит секторов.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} занимает {1} байты и превышает лимит контейнера 65280 байт.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} использует отсутствующее, переменное или неноминальное представление сектора, которое требует EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Контейнер Amstrad DSK не может быть написан: заявленная геометрия и коллекция треков не согласуются.",
+    "MediaEngine.CpcDskTrackIndex": "Контейнер Amstrad DSK не может быть записан: индекс трека {0} появляется в позиции {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Контейнер Amstrad DSK писать нельзя: трек {0} содержит слишком много секторных дескрипторов.",
+    "MediaEngine.CpcDskUniformTracks": "Контейнер Amstrad DSK не может быть записан: стандартный DSK требует одного равномерного размера дорожки.",
+    "MediaEngine.CpcDskBuilderGeometry": "Контейнер Amstrad DSK не может быть записан: геометрия превышает пределы CPCEMU.",
+    "MediaEngine.CpcDskNativeMetadata": "Контейнер Amstrad DSK не может быть записан: в метаданных родного сектора отсутствует ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "Контейнер Amstrad DSK не может быть записан: размер сектора {0} не может быть представлен кодом размера CPCEMU.",
+    "MediaEngine.CpcDskOverflow": "Размер данных CPCEMU DSK превышает поддерживаемый диапазон.",
+    "MediaEngine.CpcDskRecordedAddress": "Записанный адрес CPCEMU {0}:{1}:{2} не может быть представлен однобайтовыми полями."
+  }
+}

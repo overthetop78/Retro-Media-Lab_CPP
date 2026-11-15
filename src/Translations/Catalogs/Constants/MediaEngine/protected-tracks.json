@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Protected track cylinder {0} must not be negative.",
+    "MediaEngine.ProtectedHead": "Protected track head {0} must not be negative.",
+    "MediaEngine.ProtectedNoContent": "A protected track requires bit cells or flux revolutions.",
+    "MediaEngine.ProtectedMetadataNoBits": "Bit-oriented timing, structures and features require bit cells.",
+    "MediaEngine.ProtectedRange": "Protected track {0} ranges must have positive length and fit within {1} bit cells.",
+    "MediaEngine.ProtectedTiming": "Protected track cell duration must be finite and positive.",
+    "MediaEngine.ProtectedResolution": "Flux tick resolution {0} ns must be positive.",
+    "MediaEngine.ProtectedImageEmpty": "A protected track image requires at least one track.",
+    "MediaEngine.ProtectedImageDuplicate": "Protected track {0}/{1} is duplicated."
+  }
+}

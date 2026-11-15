@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit-Sektoren enthalten 256 Bytes; {0} Bytes empfangen.",
+    "MediaEngine.HeathkitAddressRange": "Der Wert {1} des Heathkit FM-Feldes {0} muss zwischen null und {2} liegen.",
+    "MediaEngine.HeathkitRecordEmpty": "Ein Heathkit-Datensatz muss mindestens ein Prüfsummenbyte enthalten.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} Bytes, Volume {4}, Header-Prüfsumme {5}, Daten-Prüfsumme {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} Bytes, Prüfsumme {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, Header eines hardwaresektorierten Mediums, abgeschnitten",
+    "MediaEngine.HeathkitUnpaired": "Ungepaarte Heathkit-Daten, Datenblock"
+  }
+}

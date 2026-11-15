@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "לא ניתן לכתוב את תמונת הסקטורים '{0}' עם הגאומטריה {1}x{2}x{3} וגודל הבלוק {4} בתבנית MSA.",
+    "MediaEngine.MsaMissingSector": "הסקטור הלוגי MSA מספר {0} ({1}:{2}:{3}) חסר.",
+    "MediaEngine.MsaSectorSize": "הסקטור הלוגי MSA מספר {0} מכיל {1} בתים; הגודל הצפוי הוא {2}.",
+    "MediaEngine.MsaHeader": "כותרת MSA אינה תקינה; הקובץ מכיל {0} בתים.",
+    "MediaEngine.MsaGeometry": "הגאומטריה של MSA אינה תקינה: {0} סקטורים, {1} ראשים, צילינדרים {2} עד {3}.",
+    "MediaEngine.MsaTruncatedTable": "שדה אורך המסילה של MSA לצילינדר {0}, ראש {1}, בהיסט {2} קטוע: {3} בתים זמינים.",
+    "MediaEngine.MsaTruncatedTrack": "מסילת MSA מספר {0}:{1} בהיסט {2} מצהירה על {3} בתים, אך זמינים {4}.",
+    "MediaEngine.MsaTruncatedRun": "הרצף הדחוס במסילת MSA מספר {0}:{1} בהיסט הדחוס {2} קטוע בתוך {3} בתים.",
+    "MediaEngine.MsaInvalidRun": "אורך הרצף הדחוס במסילת MSA מספר {0}:{1} בהיסט {2} הוא {3}; כבר נכתבו {4} מתוך {5} בתי הפלט.",
+    "MediaEngine.MsaUnpackedLength": "מסילת MSA מספר {0}:{1} צרכה {2} מתוך {3} בתים דחוסים והפיקה {4} מתוך {5} הבתים הצפויים."
+  }
+}

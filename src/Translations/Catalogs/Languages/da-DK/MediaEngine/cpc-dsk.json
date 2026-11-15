@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK header er afkortet.",
+    "MediaEngine.CpcDskSignature": "Filen er ikke et CPCEMU DSK billede.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK geometri er ugyldig.",
+    "MediaEngine.CpcDskExtendedTable": "Den udvidede Amstrad DSK-bane tabel er ugyldig på spor {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK track {0} er afkortet.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} har en ugyldig header.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} har en ugyldig sektortabel.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}: {1}: {2} er afkortet.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK billedet indeholder ingen sektorer.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} optager {1} bytes og overskrider 65280- byte containergrænsen.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} bruger en fraværende, variabel størrelse eller ikke-nominel sektorrepræsentation, der kræver EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK-beholderen kan ikke skrives: den erklærede geometri og sporsamling er uenig.",
+    "MediaEngine.CpcDskTrackIndex": "Amstrad DSK beholder kan ikke skrives: spor indeks {0} vises på position {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Amstrad DSK-beholderen kan ikke skrives: spor {0} indeholder for mange sektordeskriptorer.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK beholder kan ikke skrives: standard DSK kræver en ensartet sporstørrelse.",
+    "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK-beholderen kan ikke skrives: Geometrien overskrider CPCEMU-grænserne.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK container kan ikke skrives: native sektor metadata mangler ST1 / ST2.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK-containeren kan ikke skrives: Sektorstørrelse {0} er ikke repræsenteret ved en CPCEMU-størrelseskode.",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK datastørrelsen overstiger det støttede interval.",
+    "MediaEngine.CpcDskRecordedAddress": "Optaget CPCEMU adresse {0}: {1}: {2} kan ikke repræsenteres af en-byte felter."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "ไม่มีรูปภาพอยู่ ImageDisk หัวจดหมาย: ตัวป้อนข้อความอยู่ที่ {0}ชื่อแฟ้ม {1} ไบต์",
+    "MediaEngine.ImdTruncated": "เดอะ ImageDisk {0} หัวข้อที่ออฟเซ็ต {1} ถูกปรับให้พอดี: {2} จําเป็น ต้อง มี วัน ผ่าน ไป {3} ว่างอยู่",
+    "MediaEngine.ImdTrackHeader": "ImageDisk header ไม่ถูกต้อง: โหมด {0}, จํานวนภาคที่นับ {1}",
+    "MediaEngine.ImdSizeCode": "ImageDisk โค้ด Size {0} ใช้งานไม่ได้",
+    "MediaEngine.ImdRecordType": "ขนาด ImageDisk กรุ๊ป {0} ไม่ถูกต้อง",
+    "MediaEngine.ImdNoSectors": "เดอะ ImageDisk ภาพไม่มีส่วน",
+    "MediaEngine.ImdNoTracks": "เดอะ ImageDisk ภาพไม่มีร่องเสียง",
+    "MediaEngine.ImdWriteTrack": "เดอะ ImageDisk ไม่สามารถแสดงส่วนหัวเพลงได้",
+    "MediaEngine.ImdWriteSector": "ขนาด ImageDisk สถิติภาคนั้นใช้ไม่ได้",
+    "MediaEngine.ImdCompressed": "การบีบอัด ImageDisk ส่วนไม่บรรจุข้อมูลซ้ําไปซ้ํามา",
+    "MediaEngine.ImdMetadataMode": "เดอะ ImageDisk ข้อมูลกํากับภาพมีโหมดแทร็กไม่ถูกต้อง",
+    "MediaEngine.ImdMetadataRecord": "เดอะ ImageDisk ข้อมูลกํากับภาพมีชนิดของการบันทึกส่วนไม่ถูกต้อง",
+    "MediaEngine.ImdMetadataSize": "เดอะ ImageDisk ข้อมูลกํากับภาพมีขนาดส่วนที่ไม่ถูกต้อง",
+    "MediaEngine.ImdMetadataBlock": "เดอะ ImageDisk ข้อมูลกํากับภาพไม่เข้าคู่กับบล็อคตรรกะ{0}'.",
+    "MediaEngine.ImdMetadataCount": "เดอะ ImageDisk จํานวนของบล็อคข้อมูลไม่ตรงกับค่าส่วนภาพ",
+    "MediaEngine.ImdMetadata": "เดอะ ImageDisk ข้อมูลกํากับภาพไม่ถูกต้อง",
+    "MediaEngine.ImdEpsonGeometry": "เรขาคณิตภาพแบบ Epson ไม่ตรงกับรูปแบบตัวระบุ",
+    "MediaEngine.ImdEpsonSize": "Epson ภาค {0}: {1}: ZXZ: {2} มีขนาดไม่ถูกต้อง",
+    "MediaEngine.ImdEpsonDuplicate": "ส่วนเอปสัน {0}-{1}-{2} มันเลียนแบบ",
+    "MediaEngine.EpsonFormat": "รูปแบบที่เลือกไว้ '{0}' ไม่ใช่รูปแบบ Epson QX-10 ที่รองรับ",
+    "MediaEngine.EpsonGeometryDuplicate": "เรขาคณิต Epson QX-10: {0}"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Die Rohbildlänge {0} ist leer oder nicht ein Vielfaches von {1} Bytes.",
+    "Media.RawUnknownGeometry": "Keine unterstützte Rohbildgeometrie stimmt mit {0} Bytes überein.",
+    "Media.MsxInvalidBoot": "Das Image von {0} Bytes enthält keinen unterstützten MSX-Bootsektor.",
+    "Media.MsxUnsupportedGeometry": "Keine MSX Geometrie entspricht {0} Bytes und Media Descriptor {1}.",
+    "Media.UnsupportedRawFormat": "Das Rohbildformat {0} wird nicht unterstützt.",
+    "Media.RawGeometryMismatch": "Bild {0} hat Geometrie {1}; Ziel {2} erfordert Geometrie {3}.",
+    "Media.RawSectorMissing": "Der logische Sektor {0} fehlt und kann nicht in ein vollständiges Rohbild geschrieben werden.",
+    "Media.RawSectorSize": "Der logische Sektor {0} enthält {1} Bytes anstelle von {2}.",
+    "Media.AtomicOpen": "Kann die temporäre Ausgabe für {0} nicht erstellen.",
+    "Media.AtomicWrite": "Kann die temporäre Ausgabe für {0} nicht schreiben.",
+    "Media.AtomicCommit": "Kann die komplette Ausgabedatei {0} nicht veröffentlichen.",
+    "Media.Cancelled": "Der Vorgang auf dem Speichermedium wurde abgebrochen."
+  }
+}

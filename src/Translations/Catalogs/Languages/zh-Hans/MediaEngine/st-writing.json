@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.StTargetFormat": "Atari ST 目标格式“{0}”不在目录中。",
+    "MediaEngine.StLossyGeometry": "Atari ST 映像 {0}（{1}，{2} 字节）无法无损转换为 {3}（{4}，{5} 字节）。",
+    "MediaEngine.StSourceMissing": "缺少 Atari ST 源扇区 {0}；转换几何结构将需要凭空生成其内容。",
+    "MediaEngine.StLogicalSize": "Atari ST 逻辑扇区 {0} 包含 {1} 字节，应为 {2} 字节。",
+    "MediaEngine.StWriterFormat": "扇区映像“{0}”不是块大小为 {1} 字节的 Atari ST 映像。"
+  }
+}

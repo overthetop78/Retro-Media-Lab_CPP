@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "이미지는 ACT Apricot ApriDisk 헤더를 포함하지 않습니다.",
+    "MediaEngine.ApridiskRecord": "byte {0}에서 잘못된 ApriDisk 레코드.",
+    "MediaEngine.ApridiskOverflow": "ApriDisk 레코드 길이가 부호 있는 32비트 정수의 한계를 초과합니다.",
+    "MediaEngine.ApridiskTruncated": "바이트 {0}의 ApriDisk 레코드가 잘렸습니다.",
+    "MediaEngine.ApridiskAddress": "ApriDisk 섹터 주소 {0}/{1}/{2}는 ACT Apricot PC/Xi 기하학 밖에 있습니다.",
+    "MediaEngine.ApridiskCount": "ApriDisk 이미지에는 필요한 {1}개 대신 사용 가능한 섹터 {0}개가 있습니다.",
+    "MediaEngine.ApridiskSectorLength": "ApriDisk 섹터에는 필요한 {1}바이트 대신 {0}바이트가 있습니다.",
+    "MediaEngine.ApridiskCompression": "지원되지 않는 ApriDisk 섹터 압축: {0}.",
+    "MediaEngine.ApridiskExpansion": "ApriDisk 압축 섹터는 512 바이트를 초과합니다.",
+    "MediaEngine.ApridiskWriteGeometry": "분야 이미지는 ACT Apricot PC/Xi 기하학을 사용하지 않습니다.",
+    "MediaEngine.Rx02ImageLength": "DEC RX02 덤프는 {0} 바이트를 포함합니다; 완전한 물리적 덤프는 {1}를 요구합니다.",
+    "MediaEngine.Rx02WriteGeometry": "분야 이미지는 DEC RX02 기하학을 사용하지 않습니다."
+  }
+}

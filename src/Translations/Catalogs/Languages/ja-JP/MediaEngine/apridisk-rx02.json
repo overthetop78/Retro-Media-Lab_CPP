@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "ACT Apricot ApriDisk ヘッダーはイメージに含まれていません。",
+    "MediaEngine.ApridiskRecord": "バイト{0}で無効なApriDiskレコード。",
+    "MediaEngine.ApridiskOverflow": "ApriDisk レコード長が符号付き32ビット整数の上限を超えています。",
+    "MediaEngine.ApridiskTruncated": "バイト {0} の ApriDisk レコードは途中で切れています。",
+    "MediaEngine.ApridiskAddress": "ApriDiskセクターアドレス{0}/{1}/{2}はACT Apricot PC/Xiジオメトリの外部にあります。",
+    "MediaEngine.ApridiskCount": "ApriDisk イメージには、{1} の代わりに {0} 使用可能なセクタが含まれています。",
+    "MediaEngine.ApridiskSectorLength": "ApriDisk セクターには {0} バイトが含まれていますが、{1} バイトが必要です。",
+    "MediaEngine.ApridiskCompression": "サポートされていない ApriDisk セクターの圧縮: {0}.",
+    "MediaEngine.ApridiskExpansion": "ApriDisk 圧縮されたセクターは、512 バイトを超えて拡大します。",
+    "MediaEngine.ApridiskWriteGeometry": "セクターイメージは、ACT Apricot PC/Xiジオメトリを使用しません。",
+    "MediaEngine.Rx02ImageLength": "DEC RX02 ダンプは {0} バイトが含まれています。完全な物理ダンプは {1} が必要です。",
+    "MediaEngine.Rx02WriteGeometry": "セクターイメージは DEC RX02 ジオメトリを使用しません。"
+  }
+}

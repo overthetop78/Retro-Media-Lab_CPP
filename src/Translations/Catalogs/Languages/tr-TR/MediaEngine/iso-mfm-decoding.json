@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Bit akışındaki bayt sayısı {0}, sıfır ile {1} arasında olmalıdır.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} bayt, işaret FE, N{4}, başlık CRC {5}, veri CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} bayt, işaret FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bayt, işaret F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Sınıflandırılmamış ISO MFM Sync, işaret {0}",
+    "MediaEngine.MfmUnpaired": "Sınıflandırılmamış ISO MFM DataAddressMark, işaret FB",
+    "MediaEngine.MfmUnpairedDeleted": "Sınıflandırılmamış ISO MFM DeletedDataAddressMark, işaret F8"
+  }
+}

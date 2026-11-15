@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Кількість байтів бітового потоку {0} має бути між нулем і {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} байтів, позначка FE, N{4}, CRC заголовка {5}, CRC даних {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} байтів, позначка FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} байтів, позначка F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Некласифіковано ISO MFM Sync, позначка {0}",
+    "MediaEngine.MfmUnpaired": "Некласифіковано ISO MFM DataAddressMark, позначка FB",
+    "MediaEngine.MfmUnpairedDeleted": "Некласифіковано ISO MFM DeletedDataAddressMark, позначка F8"
+  }
+}

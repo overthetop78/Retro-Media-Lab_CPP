@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Die SCP-Zeitauflösung muss positiv sein; empfangen {0}.",
+    "MediaEngine.ScpExtended": "Erweiterte SCP-Medien sind keine Diskettenbilder.",
+    "MediaEngine.ScpSignature": "Die Datei enthält keine SCP Signatur.",
+    "MediaEngine.ScpRevolutions": "Die Anzahl der SCP-Umdrehungen {0} ist ungültig.",
+    "MediaEngine.ScpTrackRange": "Der SCP-Trackbereich {0} bis {1} ist ungültig.",
+    "MediaEngine.ScpWidth": "Die SCP-Bitzellenbreite {0} wird nicht unterstützt.",
+    "MediaEngine.ScpHeads": "Der SCP-Kopfselektor {0} ist ungültig.",
+    "MediaEngine.ScpTrackSignature": "Track {0} hat keine TRK-Signatur; der Deskriptor enthält die Tracknummer {1}.",
+    "MediaEngine.ScpTrackMismatch": "Spurtabelleneintrag {0} verweist auf Spur {1}.",
+    "MediaEngine.ScpHeaderSection": "Der SCP-Header ist unvollständig oder ungültig bei Offset {0}; {1} Bytes sind erforderlich.",
+    "MediaEngine.ScpTableSection": "Die SCP Track-Offset-Tabelle ist unvollständig oder ungültig bei Offset {0}; {1} Bytes sind erforderlich.",
+    "MediaEngine.ScpTrackSection": "Der Header der SCP-Spur {0} ist unvollständig oder ungültig bei Offset {1}; {2} Bytes sind erforderlich.",
+    "MediaEngine.ScpFluxSection": "Der Fluss der SCP-Spur {0}, Umdrehung {1}, ist unvollständig oder ungültig bei Offset {2}; {3} Bytes sind erforderlich.",
+    "MediaEngine.ScpOverflow": "Eine SCP-Größe, Position, Intervall oder verbundene Umdrehung überschreitet den unterstützten numerischen Bereich.",
+    "MediaEngine.ScpTrackAddress": "Die SCP-Tracknummer {0} befindet sich außerhalb der Track-Tabelle.",
+    "MediaEngine.ScpNoRevolution": "Die SCP-Spur enthält keine Umdrehung zum Dekodieren.",
+    "MediaEngine.ScpNoC900Sectors": "Keine Commodore 900 GCR Sektoren konnten aus dem SCP Bild decodiert werden."
+  }
+}

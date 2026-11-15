@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR-målformatet '{0}' understøttes ikke.",
+    "MediaEngine.AtrIncompatibleImage": "Sektorbilledet '{0}' indeholder {1} sektorer og {2} byte; ATR-profilen '{3}' kræver {4} sektorer og {5} byte.",
+    "MediaEngine.AtrMissingSector": "ATR-sektor {0} mangler.",
+    "MediaEngine.AtrSectorSize": "ATR-sektor {0} indeholder {1} byte; forventet {2}.",
+    "MediaEngine.AtrHeader": "ATR-headeren er ugyldig: længde {0} byte (minimum {1}), signatur {2} (forventet {3}).",
+    "MediaEngine.AtrUnsupportedSize": "ATR-sektorstørrelsen {0} byte understøttes ikke; forventet {1} byte.",
+    "MediaEngine.AtrPayloadLength": "ATR-datadelen er {0} byte lang; headeren angiver {1} byte.",
+    "MediaEngine.AtrTruncatedPayload": "ATR-datadelen på {0} byte indeholder ikke et startområde på {1} byte efterfulgt af komplette sektorer på {2} byte.",
+    "MediaEngine.AtrSectorCount": "Atari ATR-sektorstørrelsen {0} og sektorantallet {1} skal være større end nul.",
+    "MediaEngine.AtxHeader": "ATX-filens header mangler eller er ugyldig.",
+    "MediaEngine.AtxTrackOffset": "Positionen for ATX-spordata ligger uden for filen.",
+    "MediaEngine.AtxTrackCycle": "ATX-sporkæden indeholder en cyklus.",
+    "MediaEngine.AtxTrackBounds": "Et ATX-spor strækker sig uden for filen.",
+    "MediaEngine.AtxTrackNumber": "ATX-spor {0} ligger uden for den understøttede geometri med 40 spor.",
+    "MediaEngine.AtxSectorCount": "ATX-spor {0} indeholder for mange sektorposter.",
+    "MediaEngine.AtxListBounds": "Sektorlisten for ATX-spor {0} krydser sporets grænse.",
+    "MediaEngine.AtxSectorNumber": "ATX-spor {0} indeholder ugyldig sektor {1}.",
+    "MediaEngine.AtxDataBounds": "Data for ATX-spor {0}, sektor {1}, krydser sporets grænse.",
+    "MediaEngine.AtxNoSectors": "ATX-diskbilledet indeholder ingen læsbar sektorpost.",
+    "MediaEngine.AtxLargeOffset": "Positionen for ATX-delen '{0}' er for stor.",
+    "MediaEngine.AtxTruncated": "ATX-delen '{0}' er afkortet."
+  }
+}

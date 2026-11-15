@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Pengodean Amiga odd/even memerlukan jumlah byte genap; diterima {0} byte.",
+    "MediaEngine.AmigaMfmParityRange": "Rentang paritas Amiga tidak valid: offset {0}, jumlah {1}, tersedia {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Sektor Amiga berisi 512 byte; diterima {0} byte.",
+    "MediaEngine.AmigaMfmAddressRange": "Nilai {1} pada bidang Amiga MFM {0} harus antara nol dan {2}.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} byte, checksum header {4}, checksum data {5}"
+  }
+}

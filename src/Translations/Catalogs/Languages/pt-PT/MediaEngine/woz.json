@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "O cabeçalho WOZ é inválido.",
+    "MediaEngine.WozDiskType": "O tipo de disco WOZ {0} não é suportado; é necessário um disco Apple II de 5,25 polegadas.",
+    "MediaEngine.WozMissingChunk": "O bloco WOZ obrigatório '{0}' está em falta ou incompleto.",
+    "MediaEngine.WozTruncatedChunk": "O bloco WOZ '{0}' está truncado.",
+    "MediaEngine.WozTrackReference": "A pista WOZ {0} faz referência ao descritor {1}, que está fora dos limites.",
+    "MediaEngine.WozCrc": "O WOZ CRC32 é inválido: guardado {0}, calculado {1}.",
+    "MediaEngine.WozChunkId": "O identificador do bloco WOZ '{0}' deve conter exatamente quatro carateres ASCII.",
+    "MediaEngine.WozTrackCount": "O módulo de escrita WOZ1 recebeu {0} pistas; eram esperadas entre 1 e {1}.",
+    "MediaEngine.WozTrackLength": "A pista WOZ1 {0} contém {1} bits; o máximo é {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Não foi encontrado nenhum setor Apple II RWTS18 válido entre {0} setores descodificados de {1} pistas."
+  }
+}

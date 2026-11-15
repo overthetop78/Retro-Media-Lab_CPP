@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Заголовок WOZ недопустим.",
+    "MediaEngine.WozDiskType": "Тип диска WOZ {0} не поддерживается; требуется диск Apple II размером 5,25 дюйма.",
+    "MediaEngine.WozMissingChunk": "Обязательный блок WOZ '{0}' отсутствует или неполон.",
+    "MediaEngine.WozTruncatedChunk": "Блок WOZ '{0}' усечён.",
+    "MediaEngine.WozTrackReference": "Дорожка WOZ {0} ссылается на дескриптор {1}, находящийся вне допустимого диапазона.",
+    "MediaEngine.WozCrc": "Контрольная сумма WOZ CRC32 неверна: сохранено {0}, вычислено {1}.",
+    "MediaEngine.WozChunkId": "Идентификатор блока WOZ '{0}' должен содержать ровно четыре символа ASCII.",
+    "MediaEngine.WozTrackCount": "Модуль записи WOZ1 получил {0} дорожек; ожидалось от 1 до {1}.",
+    "MediaEngine.WozTrackLength": "Дорожка WOZ1 {0} содержит {1} битов; максимум — {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Среди {0} декодированных секторов с {1} дорожек не найдено ни одного допустимого сектора Apple II RWTS18."
+  }
+}

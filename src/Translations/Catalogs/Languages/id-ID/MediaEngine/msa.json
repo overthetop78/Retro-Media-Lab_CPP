@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Citra sektor '{0}' dengan geometri {1}x{2}x{3} dan ukuran blok {4} tidak dapat ditulis sebagai MSA.",
+    "MediaEngine.MsaMissingSector": "Sektor logikal MSA {0} ({1}: {2}: {3}) hilang.",
+    "MediaEngine.MsaSectorSize": "Sektor logis MSA {0} berisi {1} byte; seharusnya {2}.",
+    "MediaEngine.MsaHeader": "Header MSA tidak valid; berkas berisi {0} bytes.",
+    "MediaEngine.MsaGeometry": "Geometri MSA tidak valid: {0} sektor, {1} kepala, silinder {2} hingga {3}.",
+    "MediaEngine.MsaTruncatedTable": "ruas track-length MSA untuk cylinder {0}, head {1}, di ofset {2} dipotong: {3} byte tersedia.",
+    "MediaEngine.MsaTruncatedTrack": "Trek MSA {0}: {1} di ofset {2} mendeklarasikan {3} bytes, {4} tersedia.",
+    "MediaEngine.MsaTruncatedRun": "Urutan terkompresi pada trek MSA {0}:{1} di ofset data terkompresi {2} terpotong dalam {3} byte.",
+    "MediaEngine.MsaInvalidRun": "Urutan terkompresi pada trek MSA {0}:{1} di ofset {2} memiliki panjang {3}; {4} dari {5} byte keluaran sudah ditulis.",
+    "MediaEngine.MsaUnpackedLength": "Trek MSA {0}:{1} menggunakan {2} dari {3} byte terkompresi dan menghasilkan {4} dari {5} byte yang diharapkan."
+  }
+}

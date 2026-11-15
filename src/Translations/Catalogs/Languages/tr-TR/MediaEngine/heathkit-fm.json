@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit sektörleri 256 bayt içerir; {0} bayt alındı.",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM {0} alanının {1} değeri sıfır ile {2} arasında olmalıdır.",
+    "MediaEngine.HeathkitRecordEmpty": "Bir Heathkit kaydı en az bir sağlama toplamı baytı içermelidir.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} bayt, birim {4}, başlık sağlama toplamı {5}, veri sağlama toplamı {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} bayt, sağlama toplamı {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, donanım sektör başlığı, kesilmiş",
+    "MediaEngine.HeathkitUnpaired": "Eşleştirilmemiş Heathkit verileri, veri bloğu"
+  }
+}

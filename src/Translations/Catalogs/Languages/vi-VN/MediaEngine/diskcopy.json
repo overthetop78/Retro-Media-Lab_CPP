@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Phần đầu DiskCopy bị cắt ngắn.",
+    "MediaEngine.DiskCopyPrivateWord": "Từ riêng của DiskCopy là {0}; giá trị mong đợi: {1}.",
+    "MediaEngine.DiskCopyPayload": "Dữ liệu tải của DiskCopy không hợp lệ.",
+    "MediaEngine.DiskCopyTags": "Ảnh đĩa DiskCopy không phải ảnh Macintosh/ProDOS được nhận diện và cũng không phải ảnh Lisa có thẻ.",
+    "MediaEngine.DiskCopyChecksumBytes": "Tổng kiểm tra DiskCopy yêu cầu số byte chẵn; số byte nhận được: {0}.",
+    "MediaEngine.DiskCopyRange": "Độ dài DiskCopy vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy yêu cầu một ảnh đĩa theo cung hoàn chỉnh.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy yêu cầu tổng cộng 512 byte cho mỗi khối lôgic.",
+    "MediaEngine.DiskCopyLayoutTags": "Mỗi thẻ DiskCopy phải chứa 12 byte.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Siêu dữ liệu DiskCopy không đầy đủ.",
+    "MediaEngine.DiskCopyMetadataName": "Siêu dữ liệu tên DiskCopy không hợp lệ.",
+    "MediaEngine.DiskCopyMetadataFormat": "Siêu dữ liệu định dạng DiskCopy không hợp lệ.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Siêu dữ liệu tổng kiểm tra DiskCopy '{0}' không hợp lệ."
+  }
+}

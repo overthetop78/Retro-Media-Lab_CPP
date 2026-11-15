@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "{0} bitlik bir dizi {1} bayta sığmaz.",
+    "MediaEngine.BitPackingCount": "Bit sayısı {0} pozitif olmalıdır.",
+    "MediaEngine.BitPackingRange": "Bit paketleme boyutu desteklenen aralığı aşıyor.",
+    "MediaEngine.AppleTrackUnsupported": "Kaynak biçimi '{1}', {0} olarak kodlanamaz.",
+    "MediaEngine.AppleTrackGeometry": "{0} silindir, {1} kafa ve iz başına {2} sektör içeren Apple II geometrisi kodlanamaz.",
+    "MediaEngine.AppleTrackSector": "{0} sektörü {1}:{2}, {4} yerine {3} bayt içeriyor.",
+    "MediaEngine.AppleTrackTooLong": "{0} izi {1}, {2} bit içeriyor; en fazla {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II izi {0}, yinelenen fiziksel sektör numarası {1} içeriyor.",
+    "MediaEngine.NibTrackCount": "NIB yazıcısı en az bir iz gerektirir; alınan: {0}.",
+    "MediaEngine.NibTrackLength": "NIB izi {0}, {1} bit içeriyor; en fazla {2}."
+  }
+}

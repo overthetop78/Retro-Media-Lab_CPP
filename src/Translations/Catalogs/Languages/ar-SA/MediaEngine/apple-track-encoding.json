@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "لا تتسع {1} بايت لتسلسل من {0} بت.",
+    "MediaEngine.BitPackingCount": "يجب أن يكون عدد البتات {0} موجبًا.",
+    "MediaEngine.BitPackingRange": "يتجاوز حجم حزم البتات النطاق المدعوم.",
+    "MediaEngine.AppleTrackUnsupported": "لا يمكن ترميز تنسيق المصدر '{1}' بصيغة {0}.",
+    "MediaEngine.AppleTrackGeometry": "لا يمكن ترميز هندسة Apple II ذات {0} أسطوانات و{1} رؤوس و{2} قطاعات لكل مسار.",
+    "MediaEngine.AppleTrackSector": "يحتوي القطاع {1}:{2} في {0} على {3} بايت بدلاً من {4}.",
+    "MediaEngine.AppleTrackTooLong": "يحتوي المسار {1} في {0} على {2} بت؛ الحد الأقصى {3}.",
+    "MediaEngine.AppleTrackDuplicate": "يحتوي مسار Apple II رقم {0} على رقم قطاع مادي مكرر {1}.",
+    "MediaEngine.NibTrackCount": "تتطلب أداة كتابة NIB مسارًا واحدًا على الأقل؛ تم استلام {0}.",
+    "MediaEngine.NibTrackLength": "يحتوي مسار NIB رقم {0} على {1} بت؛ الحد الأقصى {2}."
+  }
+}

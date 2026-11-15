@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "A imagem não contém um cabeçalho do ImageDisk: terminador de comentários em {0}, tamanho do arquivo {1} bytes.",
+    "MediaEngine.ImdTruncated": "A seção ImageDisk {0} no offset {1} é truncada: {2} bytes são necessários, {3} estão disponíveis.",
+    "MediaEngine.ImdTrackHeader": "O cabeçalho da faixa ImageDisk é inválido: modo {0}, contagem do setor {1}.",
+    "MediaEngine.ImdSizeCode": "O código de tamanho do setor do ImageDisk {0} é inválido.",
+    "MediaEngine.ImdRecordType": "O tipo de registro do setor do ImageDisk {0} é inválido.",
+    "MediaEngine.ImdNoSectors": "A imagem ImageDisk não contém setores.",
+    "MediaEngine.ImdNoTracks": "A imagem do ImageDisk não contém faixas.",
+    "MediaEngine.ImdWriteTrack": "O cabeçalho da faixa ImageDisk não é representável.",
+    "MediaEngine.ImdWriteSector": "Um registro do setor ImageDisk é inválido.",
+    "MediaEngine.ImdCompressed": "Um setor comprimido do ImageDisk não contém um byte repetido.",
+    "MediaEngine.ImdMetadataMode": "Os metadados do ImageDisk contêm um modo de faixa inválido.",
+    "MediaEngine.ImdMetadataRecord": "Os metadados do ImageDisk contêm um tipo de registo de sector inválido.",
+    "MediaEngine.ImdMetadataSize": "Os metadados do ImageDisk contêm um tamanho de setor inválido.",
+    "MediaEngine.ImdMetadataBlock": "Os metadados ImageDisk não correspondem ao bloco lógico '{0}'.",
+    "MediaEngine.ImdMetadataCount": "A contagem de blocos de metadados do ImageDisk não corresponde à imagem do setor.",
+    "MediaEngine.ImdMetadata": "Os metadados do ImageDisk são inválidos.",
+    "MediaEngine.ImdEpsonGeometry": "A geometria da imagem de Epson não corresponde ao seu identificador de formato.",
+    "MediaEngine.ImdEpsonSize": "Sector Epson {0}:{1}:{2} tem um tamanho inválido.",
+    "MediaEngine.ImdEpsonDuplicate": "O sector Epson {0}:{1}:{2} é duplicado.",
+    "MediaEngine.EpsonFormat": "O formato selecionado '{0}' não é um formato Epson QX-10 suportado.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicar a geometria de Epson QX-10: {0}."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE ヘッダーが存在しないか、途中で切れています。",
+    "MediaEngine.HfeRevision": "HFEリビジョン {0} はサポートされていません。",
+    "MediaEngine.HfeGeometry": "HFEジオメトリまたはビットレートは無効です。",
+    "MediaEngine.HfeTable": "HFE トラックテーブルが範囲外です。",
+    "MediaEngine.HfeTiming": "必要な解像度ではHFEタイミングは表現できません。",
+    "MediaEngine.HfeTrackLength": "HFEトラック{0}は無効な長さを持っています。",
+    "MediaEngine.HfeTrackData": "HFE トラック {0}/{1} のデータが範囲外です。",
+    "MediaEngine.HfeRateOpcode": "HFE v3 トラック {0}/{1} のビットレートオペコードのパラメーターがゼロです。",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 トラック {0}/{1} にビットセルがありません。",
+    "MediaEngine.HfeTracks": "HFEは、少なくとも1つのトラックが必要です。",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 ではすべてのトラックに同じエンコーディングが必要です。",
+    "MediaEngine.HfeEncoding": "{0} を HFE v1 として書き込むことはできません。",
+    "MediaEngine.HfeUniformRate": "HFE v1 ではすべてのトラックに同じビットレートが必要です。",
+    "MediaEngine.HfeMissingTrack": "HFEシリンダー {0} が見つかりません。",
+    "MediaEngine.HfeTrackAddress": "HFEトラックは宣言された幾何学の外にあります。",
+    "MediaEngine.HfeDuplicateTrack": "HFEトラック{0}/{1}は重複しています。",
+    "MediaEngine.HfeLimit": "HFEコンテナは、対応するサイズや値の制限を超える。",
+    "MediaEngine.HfeUniformTiming": "HFEのv1はトラックごとの1つの均一タイミングの区分を要求します。",
+    "MediaEngine.HfeRevolutions": "HFE はこれらの独立した磁束の回転を保持できません。",
+    "MediaEngine.HfePadding": "HFE v1 ではパディング、またはヘッド間で異なるトラック長が必要になります。",
+    "MediaEngine.HfeScpEncoding": "SCP ディスクタイプ {0} は、ロスレス HFE v1 エンコーディングがありません。",
+    "MediaEngine.HfeFluxBounds": "磁束の時間間隔がインデックスの持続時間を超えています。",
+    "MediaEngine.HfeWeak": "HFE v3の書き込みは、弱い領域を維持することはできません。",
+    "MediaEngine.HfeWeakFeature": "HFE v3 ランダムデータオペコード",
+    "MediaEngine.HfeIndexFeature": "HFEのv3の索引のオペコード",
+    "MediaEngine.FluxConversionTiming": "磁束のタイミングを均一なビットセルとして表現できません。",
+    "MediaEngine.FluxConversionBounds": "フラックス間隔またはタイミングセグメントは、トラックの所要時間を上回ります。",
+    "MediaEngine.FluxConversionRange": "フラックス変換は、サポートされているサイズや数値範囲を超える。"
+  }
+}

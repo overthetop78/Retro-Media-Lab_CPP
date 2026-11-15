@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "원시 이미지 길이 {0}가 0이거나 {1}바이트의 배수가 아닙니다.",
+    "Media.RawUnknownGeometry": "{0}바이트와 일치하는 지원되는 원시 이미지 기하 정보가 없습니다.",
+    "Media.MsxInvalidBoot": "{0} 바이트의 이미지는 지원된 MSX 부트 섹터를 포함하지 않습니다.",
+    "Media.MsxUnsupportedGeometry": "{0}바이트 및 미디어 기술자 {1}와 일치하는 MSX 기하 정보가 없습니다.",
+    "Media.UnsupportedRawFormat": "Raw image format {0}는 지원되지 않습니다.",
+    "Media.RawGeometryMismatch": "이미지 {0}에는 기하학 {1}이 있습니다. 대상 {2}에는 기하학 {3}이 필요합니다.",
+    "Media.RawSectorMissing": "논리 섹터 {0}가 없어 완전한 원시 이미지에 쓸 수 없습니다.",
+    "Media.RawSectorSize": "논리 섹터 {0}에 {2}바이트 대신 {1}바이트가 있습니다.",
+    "Media.AtomicOpen": "{0}의 임시 출력을 만들 수 없습니다.",
+    "Media.AtomicWrite": "{0}에 대한 임시 출력을 작성할 수 없습니다.",
+    "Media.AtomicCommit": "완전한 출력 파일 {0}을 게시할 수 없습니다.",
+    "Media.Cancelled": "저장 매체의 가동은 취소되었습니다."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "قيمة الحقل {0} في Membrain MFM هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.MembrainSectorSize": "تحتوي قطاعات Membrain على 512 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 بايت, علامة FE, CRC الرأس {3}, CRC البيانات {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 بايت, علامة {3}, كتلة بيانات, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, ترويسة القطاع, مبتور",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC غير متاح, مبتور",
+    "MediaEngine.MembrainUnpaired": "بيانات Membrain غير مقترنة, كتلة بيانات"
+  }
+}

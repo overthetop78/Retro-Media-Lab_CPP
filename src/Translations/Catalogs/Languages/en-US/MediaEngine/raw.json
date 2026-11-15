@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "The raw image length {0} is empty or not a multiple of {1} bytes.",
+    "Media.RawUnknownGeometry": "No supported raw image geometry matches {0} bytes.",
+    "Media.MsxInvalidBoot": "The image of {0} bytes does not contain a supported MSX boot sector.",
+    "Media.MsxUnsupportedGeometry": "No MSX geometry matches {0} bytes and media descriptor {1}.",
+    "Media.UnsupportedRawFormat": "Raw image format {0} is not supported.",
+    "Media.RawGeometryMismatch": "Image {0} has geometry {1}; target {2} requires geometry {3}.",
+    "Media.RawSectorMissing": "Logical sector {0} is missing and cannot be written to a complete raw image.",
+    "Media.RawSectorSize": "Logical sector {0} contains {1} bytes instead of {2}.",
+    "Media.AtomicOpen": "Cannot create the temporary output for {0}.",
+    "Media.AtomicWrite": "Cannot write the temporary output for {0}.",
+    "Media.AtomicCommit": "Cannot publish the complete output file {0}.",
+    "Media.Cancelled": "The operation on the storage medium was cancelled."
+  }
+}

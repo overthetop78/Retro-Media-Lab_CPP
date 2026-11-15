@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Sektor NorthStar berisi 512 byte; diterima {0} byte.",
+    "MediaEngine.NorthstarCylinderRange": "Silinder NorthStar {0} harus berada antara nol dan {1}.",
+    "MediaEngine.NorthstarSectorRange": "Nomor sektor NorthStar {0} harus antara nol dan {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Durasi indeks NorthStar melebihi jumlah sel bit yang didukung.",
+    "MediaEngine.NorthstarHardAddressRange": "Setiap koordinat alamat NorthStar C{0} H{1} harus muat dalam satu byte.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} byte, penanda FB, checksum {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, blok sektor perangkat keras, terpotong"
+  }
+}

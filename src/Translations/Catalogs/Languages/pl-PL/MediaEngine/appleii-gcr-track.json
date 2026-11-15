@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Wartość {1} pola {0} Apple II GCR musi mieścić się między zerem a {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Ścieżki Apple II zawierają 13 sektorów dla 5-and-3 lub 16 dla 6-and-2; otrzymano {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bajtów, V{4}, suma kontrolna adresu {5}, suma kontrolna danych {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bajtów, 13 sektorów V{4}, suma kontrolna adresu {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} bajtów, suma kontrolna {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} bajtów, 13 sektorów, suma kontrolna {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, suma kontrolna niedostępna, ucięte",
+    "MediaEngine.AppleIIUnpaired": "Niesparowane dane Apple II, prolog danych D5 AA AD"
+  }
+}

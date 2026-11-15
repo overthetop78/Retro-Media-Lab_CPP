@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Az Membrain MFM {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.MembrainSectorSize": "Az Membrain szektorok 512 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 bájt, jel FE, fejléc CRC {3}, adat CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 bájt, jel {3}, adatblokk, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, szektorfejléc, csonkolt",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC nem elérhető, csonkolt",
+    "MediaEngine.MembrainUnpaired": "Párosítatlan Membrain-adatok, adatblokk"
+  }
+}

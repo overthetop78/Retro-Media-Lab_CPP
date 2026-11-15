@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Der HFE-Header fehlt oder ist abgeschnitten.",
+    "MediaEngine.HfeRevision": "HFE Revision {0} wird nicht unterstützt.",
+    "MediaEngine.HfeGeometry": "Die HFE-Geometrie oder Bitrate ist ungültig.",
+    "MediaEngine.HfeTable": "Die HFE-Track-Tabelle ist außerhalb der Grenzen.",
+    "MediaEngine.HfeTiming": "Das HFE-Timing lässt sich nicht mit der erforderlichen Auflösung darstellen.",
+    "MediaEngine.HfeTrackLength": "HFE Track {0} hat eine ungültige Länge.",
+    "MediaEngine.HfeTrackData": "Die Daten der HFE-Spur {0}/{1} liegen außerhalb der Grenzen.",
+    "MediaEngine.HfeRateOpcode": "Die HFE v3-Spur {0}/{1} hat einen Bitraten-Opcode-Parameter mit dem Wert null.",
+    "MediaEngine.HfeEmptyTrack": "Die HFE v3-Spur {0}/{1} enthält keine Bitzellen.",
+    "MediaEngine.HfeTracks": "HFE benötigt mindestens eine Spur.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 erfordert dieselbe Kodierung für alle Spuren.",
+    "MediaEngine.HfeEncoding": "Die Kodierung {0} kann nicht als HFE v1 geschrieben werden.",
+    "MediaEngine.HfeUniformRate": "HFE v1 erfordert dieselbe Bitrate für alle Spuren.",
+    "MediaEngine.HfeMissingTrack": "HFE Zylinder {0} fehlt.",
+    "MediaEngine.HfeTrackAddress": "Eine HFE-Spur liegt außerhalb der angegebenen Geometrie.",
+    "MediaEngine.HfeDuplicateTrack": "HFE Track {0}/{1} ist dupliziert.",
+    "MediaEngine.HfeLimit": "Der HFE-Container überschreitet seine unterstützten Größen- oder Wertgrenzen.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 erfordert ein einheitliches Zeitsegment pro Spur.",
+    "MediaEngine.HfeRevolutions": "HFE kann diese getrennten Magnetflussumdrehungen nicht erhalten.",
+    "MediaEngine.HfePadding": "HFE v1 würde Auffüllung oder ungleiche Spurlängen zwischen den Köpfen erfordern.",
+    "MediaEngine.HfeScpEncoding": "Der SCP-Diskettentyp {0} besitzt keine verlustfreie HFE v1-Kodierung.",
+    "MediaEngine.HfeFluxBounds": "Die Flussintervalle überschreiten die Indexdauer.",
+    "MediaEngine.HfeWeak": "HFE v3-Schreiben kann schwache Regionen nicht bewahren.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 Opcode für Zufallsdaten",
+    "MediaEngine.HfeIndexFeature": "HFE v3 Indexopcode",
+    "MediaEngine.FluxConversionTiming": "Das Magnetfluss-Timing lässt sich nicht als gleichmäßige Bitzellen darstellen.",
+    "MediaEngine.FluxConversionBounds": "Die Flußintervalle bzw. Zeitabschnitte überschreiten die Spurdauer.",
+    "MediaEngine.FluxConversionRange": "Die Flussumwandlung überschreitet die unterstützte Größe oder den numerischen Bereich."
+  }
+}

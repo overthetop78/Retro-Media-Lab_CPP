@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Verdien {1} i Centurion MFM-feltet {0} må være mellom null og {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} byte, header-CRC {4}, data-CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} byte, nøkkel {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, sektormarkering, avkortet",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC utilgjengelig, avkortet",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, nøkkel som ikke støttes {0}, avkortet",
+    "MediaEngine.CenturionUnpaired": "Uparede Centurion-data, datablokk"
+  }
+}

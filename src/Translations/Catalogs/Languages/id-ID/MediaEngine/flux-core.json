@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Durasi sel bit fluks {0} tidak valid; harus bernilai terbatas dan setidaknya satu tick.",
+    "MediaEngine.FluxSizeLimit": "Data flux melebihi ukuran memori in- yang didukung.",
+    "MediaEngine.FluxInvalidBit": "Nilai flux bit tidak nol atau satu.",
+    "MediaEngine.FluxInvalidMaximum": "Jumlah maksimum sel per tahap interval {0} harus positif.",
+    "MediaEngine.FluxZeroCell": "Durasi sel bit flux tidak boleh nol.",
+    "MediaEngine.FluxZeroIndex": "Indeks revolusi flux tidak boleh nol.",
+    "MediaEngine.FluxIntervalOverflow": "Interval fluks {0} sel pada {1} ticks per sel melebihi rentang bilangan bulat yang didukung.",
+    "MediaEngine.GcrCoordinates": "Koordinat GCR tidak valid: ofset {0}, byte dihitung {1}, langkah {2}."
+  }
+}

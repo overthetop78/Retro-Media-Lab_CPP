@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "映像不包含 ACT Apricot ApriDisk 標頭。",
+    "MediaEngine.ApridiskRecord": "位元組 {0} 處的 ApriDisk 記錄無效。",
+    "MediaEngine.ApridiskOverflow": "ApriDisk 記錄長度超出了32位元帶正負號整數的上限。",
+    "MediaEngine.ApridiskTruncated": "位元組 {0} 處的 ApriDisk 記錄已截斷。",
+    "MediaEngine.ApridiskAddress": "ApriDisk 磁區位址 {0}/{1}/{2} 超出了 ACT Apricot PC/Xi 的磁碟幾何範圍。",
+    "MediaEngine.ApridiskCount": "ApriDisk 映像包含 {0} 個可用磁區，而非 {1} 個。",
+    "MediaEngine.ApridiskSectorLength": "ApriDisk 磁區包含 {0} 位元組，而非 {1} 位元組。",
+    "MediaEngine.ApridiskCompression": "不支援的 ApriDisk 磁區壓縮：{0}。",
+    "MediaEngine.ApridiskExpansion": "ApriDisk 磁區解壓縮後超過512位元組。",
+    "MediaEngine.ApridiskWriteGeometry": "磁區映像不使用 ACT Apricot PC/Xi 磁碟幾何結構。",
+    "MediaEngine.Rx02ImageLength": "DEC RX02 映像包含 {0} 位元組；完整的實體映像需要 {1} 位元組。",
+    "MediaEngine.Rx02WriteGeometry": "磁區映像不使用 DEC RX02 磁碟幾何結構。"
+  }
+}

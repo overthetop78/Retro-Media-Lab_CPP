@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Formatul țintă ATR \"{0} \" nu este susținut.",
+    "MediaEngine.AtrIncompatibleImage": "Imaginea sectorială \"{0} \" conţine sectoare {1} şi octeţi {2}; profil ATR \" {3} \" necesită sectoare {4} şi octeţi {5}.",
+    "MediaEngine.AtrMissingSector": "ATR sector {0} lipsește.",
+    "MediaEngine.AtrSectorSize": "Sectorul ATR {0} conţine octeţi {1}; se aşteaptă {2}.",
+    "MediaEngine.AtrHeader": "antetul ATR este invalid: lungime {0} octeţi (minimă {1}), semnătură {2} (prevăzută {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Dimensiunea sectorului ATR {0} octeţi nu este susţinută; octeţi aşteptaţi {1}.",
+    "MediaEngine.AtrPayloadLength": "Lungimea sarcinii utile ATR este {0} octeți; antetul declară {1} octeți.",
+    "MediaEngine.AtrTruncatedPayload": "Lungimea sarcinii utile ATR {0} octeți nu conține o suprafață de boot {1}-byte urmată de sectoare complete {2}-byte.",
+    "MediaEngine.AtrSectorCount": "Atari ATR dimensiunea sectorului {0} și numărul de sectoare {1} trebuie să fie pozitive.",
+    "MediaEngine.AtxHeader": "Antetul de fișiere ATX lipsește sau este invalid.",
+    "MediaEngine.AtxTrackOffset": "Offset-ul de date de cale ATX este în afara fișierului.",
+    "MediaEngine.AtxTrackCycle": "Lanţul de cale ATX conţine un ciclu.",
+    "MediaEngine.AtxTrackBounds": "O pistă ATX se extinde în afara fișierului.",
+    "MediaEngine.AtxTrackNumber": "Pista ATX {0} este în afara geometriei acceptate de 40 de piste.",
+    "MediaEngine.AtxSectorCount": "Track ATX {0} conține prea multe înregistrări sectoriale.",
+    "MediaEngine.AtxListBounds": "Lista de sectoare a pistei ATX {0} depășește limita pistei.",
+    "MediaEngine.AtxSectorNumber": "Track ATX {0} conţine sector invalid {1}.",
+    "MediaEngine.AtxDataBounds": "Datele pistei ATX {0}, sectorul {1}, depășesc limita pistei.",
+    "MediaEngine.AtxNoSectors": "Imaginea ATX nu conţine nici un record sector lizibil.",
+    "MediaEngine.AtxLargeOffset": "Offset-ul ATX {0} este prea mare.",
+    "MediaEngine.AtxTruncated": "ATX {0} este trunchiat."
+  }
+}

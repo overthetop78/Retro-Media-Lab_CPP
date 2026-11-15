@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "จำนวนไบต์ในบิตสตรีม {0} ต้องอยู่ระหว่างศูนย์และ {1}",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย FE, N{4}, CRC ส่วนหัว {5}, CRC ข้อมูล {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "ยังไม่จำแนก ISO MFM Sync, เครื่องหมาย {0}",
+    "MediaEngine.MfmUnpaired": "ยังไม่จำแนก ISO MFM DataAddressMark, เครื่องหมาย FB",
+    "MediaEngine.MfmUnpairedDeleted": "ยังไม่จำแนก ISO MFM DeletedDataAddressMark, เครื่องหมาย F8"
+  }
+}

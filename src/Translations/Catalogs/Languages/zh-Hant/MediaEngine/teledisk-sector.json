@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk 磁區 {0}/{1}/{2} 的重複酬載為 {3} 位元組，需要 {4} 位元組。",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk 磁區 {0}/{1}/{2} 的編碼 {3} 在位移 {4} 處截斷：需要 {5} 位元組，可用 {6} 位元組。",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk 磁區 {0}/{1}/{2} 使用不支援的編碼 {3}。",
+    "MediaEngine.Td0DecodedLength": "TeleDisk 磁區 {0}/{1}/{2} 的編碼 {3} 解壓縮後為 {4} 位元組，而非 {5} 位元組。",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk 磁區重複次數超過 16 位元無號整數的上限。"
+  }
+}

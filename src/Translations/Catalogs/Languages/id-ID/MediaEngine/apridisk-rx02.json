@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Gambar tidak berisi ACT Apricot ApriDisk tajuk.",
+    "MediaEngine.ApridiskRecord": "rekaman ApriDisk tidak valid pada byte {0}.",
+    "MediaEngine.ApridiskOverflow": "Panjang rekaman ApriDisk melebihi batas bilangan bulat bertanda 32-bit.",
+    "MediaEngine.ApridiskTruncated": "Rekaman ApriDisk pada byte {0} dipotong.",
+    "MediaEngine.ApridiskAddress": "ApriDisk alamat sektor {0}/{1}/{2} berada di luar ACT Apricot PC/Xi geometri.",
+    "MediaEngine.ApridiskCount": "Citra ApriDisk berisi {0} sektor yang dapat digunakan, bukan {1}.",
+    "MediaEngine.ApridiskSectorLength": "Sektor ApriDisk berisi {0} byte, bukan {1}.",
+    "MediaEngine.ApridiskCompression": "Kompresi sektor ApriDisk tidak didukung: {0}.",
+    "MediaEngine.ApridiskExpansion": "Sektor ApriDisk yang didekompresi melebihi 512 byte.",
+    "MediaEngine.ApridiskWriteGeometry": "Gambar sektor tidak menggunakan geometri ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "dump DEC RX02 berisi {0} bytes; sebuah dump fisik lengkap membutuhkan {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Gambar sektor tidak menggunakan geometri DEC RX02."
+  }
+}

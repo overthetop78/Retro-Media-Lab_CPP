@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Värdet {1} i DEC RX02 -fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.Rx02SizeCode": "RX02-storlekskod {0} motsvarar inte {1} byte.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, sektorhuvud, avkortat",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, header-CRC {4}, data-CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, markering {4}, {5}, header-CRC {6}, data-CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} byte, markering {4}, {5}, data-CRC {6}",
+    "MediaEngine.Rx02Unpaired": "Oklassificerad DEC RX02 FormatData, markering {0}, data"
+  }
+}

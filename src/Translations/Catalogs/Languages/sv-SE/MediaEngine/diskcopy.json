@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "DiskCopy-huvudet är avkortat.",
+    "MediaEngine.DiskCopyPrivateWord": "DiskCopys privata ord är {0}; förväntat {1}.",
+    "MediaEngine.DiskCopyPayload": "DiskCopy payload är ogiltig.",
+    "MediaEngine.DiskCopyTags": "DiskCopy-bilden är varken en erkänd Macintosh/ProDOS-bild eller en märkt Lisa-bild.",
+    "MediaEngine.DiskCopyChecksumBytes": "En DiskCopy-kontrollsumma kräver ett jämnt antal byte; mottagen {0}.",
+    "MediaEngine.DiskCopyRange": "En DiskCopy längd överstiger det stödda intervallet.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy kräver en komplett sektorsbild.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy kräver totalt 512 byte per logiskt block.",
+    "MediaEngine.DiskCopyLayoutTags": "Varje DiskCopy-tagg måste innehålla 12 byte.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "DiskCopy metadata är ofullständig.",
+    "MediaEngine.DiskCopyMetadataName": "DiskCopy namn metadata är ogiltig.",
+    "MediaEngine.DiskCopyMetadataFormat": "DiskCopy-formatet metadata är ogiltigt.",
+    "MediaEngine.DiskCopyMetadataChecksum": "DiskCopy-kontrollsummetadata '{0}' är ogiltiga."
+  }
+}

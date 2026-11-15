@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "אורך התמונה הגולמית {0} הוא אפס או אינו כפולה של {1} בתים.",
+    "Media.RawUnknownGeometry": "אין גאומטריית תמונה גולמית נתמכת המתאימה ל־{0} בתים.",
+    "Media.MsxInvalidBoot": "התמונה בגודל {0} בתים אינה מכילה מגזר אתחול MSX נתמך.",
+    "Media.MsxUnsupportedGeometry": "אין גאומטריית MSX המתאימה ל־{0} בתים ולמתאר המדיה {1}.",
+    "Media.UnsupportedRawFormat": "פורמט התמונה של Raw {0} אינו נתמך.",
+    "Media.RawGeometryMismatch": "תמונה {0} יש גיאומטריה {1}; המטרה {2} דורשת גאומטריה {3}.",
+    "Media.RawSectorMissing": "מגזר לוגי {0} חסר ולא ניתן לכתוב לדימוי גלם מלא.",
+    "Media.RawSectorSize": "המגזר הלוגי {0} מכיל {1} בתים במקום {2}.",
+    "Media.AtomicOpen": "לא יכול ליצור את הפלט הזמני של {0}.",
+    "Media.AtomicWrite": "לא ניתן לכתוב את הפלט הזמני של {0}.",
+    "Media.AtomicCommit": "לא ניתן לפרסם את קובץ הפלט המלא {0}.",
+    "Media.Cancelled": "הפעולה על אמצעי האחסון בוטלה."
+  }
+}

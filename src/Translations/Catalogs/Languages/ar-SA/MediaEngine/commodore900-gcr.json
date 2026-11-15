@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "يجب أن تكون أسطوانة المسار {0} بين صفر و{1}.",
+    "MediaEngine.TrackHead": "يجب أن يكون رأس المسار {0} بين صفر و{1}.",
+    "MediaEngine.TrackMissingSectors": "يلزم قطاع واحد على الأقل؛ تم استلام {0}.",
+    "MediaEngine.TrackEmpty": "لم ينتج المرمّز {0} أي خلايا بت.",
+    "MediaEngine.TrackHex": "النص السداسي العشري الخام غير صالح.",
+    "MediaEngine.TrackBinaryCharacter": "يحتوي النص الثنائي على «{0}» في الموضع {1}؛ يُسمح فقط بصفر وواحد.",
+    "MediaEngine.TrackNegativeGap": "يجب ألا يكون طول الفجوة {0} سالبًا.",
+    "MediaEngine.TrackSectorNumber": "يجب أن يكون رقم القطاع {0} بين صفر و{1}.",
+    "MediaEngine.C900GcrSectorSize": "تحتوي قطاعات Commodore 900 على {0} بايت؛ تم استلام {1} بايت.",
+    "MediaEngine.C900GcrSync": "مزامنة Commodore 900 CommodoreSync غير مصنفة، مزامنة GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader، C{0} H{1} R{2}، {3} بايت، المجموع الاختباري {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData، C{0} H{1} R{2}، {3} بايت، المجموع الاختباري {4}",
+    "MediaEngine.C900GcrUnpaired": "بيانات Commodore 900 غير مقترنة، كتلة بيانات، المجموع الاختباري {0}",
+    "MediaEngine.IntegrityValid": "صحيحة",
+    "MediaEngine.IntegrityInvalid": "غير صحيحة",
+    "MediaEngine.IntegrityUnavailable": "غير متاحة"
+  }
+}

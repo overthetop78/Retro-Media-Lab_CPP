@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Заголовок DiskCopy обрізаний.",
+    "MediaEngine.DiskCopyPrivateWord": "Службове слово DiskCopy: {0}; очікується {1}.",
+    "MediaEngine.DiskCopyPayload": "Дані DiskCopy недійсні.",
+    "MediaEngine.DiskCopyTags": "Образ DiskCopy не є ані розпізнаним образом Macintosh/ProDOS, ані образом Lisa з тегами.",
+    "MediaEngine.DiskCopyChecksumBytes": "Контрольна сума DiskCopy потребує парної кількості байтів; отримано {0}.",
+    "MediaEngine.DiskCopyRange": "Довжина DiskCopy перевищує підтримуваний діапазон.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy потребує повного секторного образу.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy потребує загалом 512 байтів на логічний блок.",
+    "MediaEngine.DiskCopyLayoutTags": "Кожен тег DiskCopy має містити 12 байтів.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Метадані DiskCopy неповні.",
+    "MediaEngine.DiskCopyMetadataName": "Метадані назви DiskCopy недійсні.",
+    "MediaEngine.DiskCopyMetadataFormat": "Метадані формату DiskCopy недійсні.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Метадані контрольної суми DiskCopy '{0}' недійсні."
+  }
+}

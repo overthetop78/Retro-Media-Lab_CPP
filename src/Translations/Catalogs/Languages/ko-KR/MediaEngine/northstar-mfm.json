@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar 섹터는 512바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar 실린더 {0}은 0과 {1} 사이여야 합니다.",
+    "MediaEngine.NorthstarSectorRange": "NorthStar 섹터 번호 {0}은 0과 {1} 사이여야 합니다.",
+    "MediaEngine.NorthstarWindowCapacity": "NorthStar 인덱스 시간이 지원되는 비트 셀 수를 초과합니다.",
+    "MediaEngine.NorthstarHardAddressRange": "NorthStar 주소 C{0} H{1}의 각 좌표는 1바이트에 들어가야 합니다.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} 바이트, 마커 FB, 체크섬 {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, 하드 섹터 블록, 잘림"
+  }
+}

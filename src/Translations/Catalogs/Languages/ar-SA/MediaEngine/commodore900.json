@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "أسطوانة Commodore 900 رقم {0} خارج النطاق من صفر إلى {1}.",
+    "MediaEngine.C900Block": "كتلة Commodore 900 المنطقية {0} خارج النطاق من صفر إلى {1}.",
+    "MediaEngine.C900Address": "عنوان Commodore 900 ‏{0}/{1}/{2} غير صالح؛ يجب أن يكون الرأس بين صفر و{3} والقطاع بين صفر و{4} على هذه الأسطوانة.",
+    "MediaEngine.C900Content": "الصورة التي يبلغ حجمها {0} بايت لا تحتوي على كتلة فائقة COHERENT معروفة.",
+    "MediaEngine.C900Alignment": "طول صورة COHERENT البالغ {0} بايت غير قابل للقسمة على حجم القطاع البالغ {1} بايت.",
+    "MediaEngine.C900DeclaredBlocks": "يعلن COHERENT عن {0} كتلة، لكن الصورة تحتوي على {1} فقط.",
+    "MediaEngine.C900Capacity": "تحتوي صورة COHERENT على {0} كتلة، لكن هندسة Commodore 900 تدعم {1} كحد أقصى.",
+    "MediaEngine.C900WriterGeometry": "لا تستخدم صورة القطاعات هندسة Commodore 900 المقسمة إلى مناطق.",
+    "MediaEngine.C900BlockAddress": "كتلة Commodore 900 المنطقية {0} لا تطابق الترتيب الفيزيائي المطلوب للقطاعات."
+  }
+}

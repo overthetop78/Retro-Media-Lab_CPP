@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "The SCP time resolution must be positive; received {0}.",
+    "MediaEngine.ScpExtended": "Extended SCP media are not floppy images.",
+    "MediaEngine.ScpSignature": "The file does not contain an SCP signature.",
+    "MediaEngine.ScpRevolutions": "The SCP revolution count {0} is invalid.",
+    "MediaEngine.ScpTrackRange": "The SCP track range {0} to {1} is invalid.",
+    "MediaEngine.ScpWidth": "The SCP bit-cell width {0} is not supported.",
+    "MediaEngine.ScpHeads": "The SCP head selector {0} is invalid.",
+    "MediaEngine.ScpTrackSignature": "Track {0} has no TRK signature; the descriptor contains track number {1}.",
+    "MediaEngine.ScpTrackMismatch": "Track table entry {0} points to track {1}.",
+    "MediaEngine.ScpHeaderSection": "The SCP header is incomplete or invalid at offset {0}; {1} bytes are required.",
+    "MediaEngine.ScpTableSection": "The SCP track-offset table is incomplete or invalid at offset {0}; {1} bytes are required.",
+    "MediaEngine.ScpTrackSection": "The header of SCP track {0} is incomplete or invalid at offset {1}; {2} bytes are required.",
+    "MediaEngine.ScpFluxSection": "The flux of SCP track {0}, revolution {1}, is incomplete or invalid at offset {2}; {3} bytes are required.",
+    "MediaEngine.ScpOverflow": "An SCP size, position, interval or joined revolution exceeds the supported numeric range.",
+    "MediaEngine.ScpTrackAddress": "The SCP track number {0} is outside the track table.",
+    "MediaEngine.ScpNoRevolution": "The SCP track contains no revolution to decode.",
+    "MediaEngine.ScpNoC900Sectors": "No Commodore 900 GCR sectors could be decoded from the SCP image."
+  }
+}

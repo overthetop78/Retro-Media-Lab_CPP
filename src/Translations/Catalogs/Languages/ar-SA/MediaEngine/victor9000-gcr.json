@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "تحتوي قطاعات Victor 9000 على 512 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.VictorSectorRange": "يجب أن يكون رقم قطاع Victor 9000 وهو {0} بين صفر و{1}.",
+    "MediaEngine.VictorMarkerLength": "يجب أن تصل علامات Victor 9000 إلى إزاحة البت 49؛ تم استلام {0} بت.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} بايت, الرأس {4}, المجموع الاختباري للبيانات {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} بايت, العلامة {4}, كتلة بيانات, المجموع الاختباري {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, المجموع الاختباري غير متاح, مبتور",
+    "MediaEngine.VictorUnpaired": "بيانات Victor 9000 غير مقترنة, كتلة بيانات"
+  }
+}

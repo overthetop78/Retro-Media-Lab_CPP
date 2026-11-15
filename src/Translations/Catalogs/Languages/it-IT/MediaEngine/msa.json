@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "L'immagine del settore '{0}' con la geometria {1}x{2}x{3} e la dimensione del blocco {4} non può essere scritta come MSA.",
+    "MediaEngine.MsaMissingSector": "Il settore logico MSA {0} ({1}:{2}:{3}) manca.",
+    "MediaEngine.MsaSectorSize": "Il settore logico MSA {0} contiene {1} byte; previsto {2}.",
+    "MediaEngine.MsaHeader": "L'intestazione MSA non è valida; il file contiene {0} byte.",
+    "MediaEngine.MsaGeometry": "La geometria MSA non è valida: {0} settori, {1} teste, cilindri {2} a {3}.",
+    "MediaEngine.MsaTruncatedTable": "Il campo della lunghezza della traccia MSA per il cilindro {0}, testina {1}, all'offset {2} è troncato: {3} byte disponibili.",
+    "MediaEngine.MsaTruncatedTrack": "MSA track {0}:{1} in offset {2} dichiara {3} byte, {4} sono disponibili.",
+    "MediaEngine.MsaTruncatedRun": "La sequenza compressa nella traccia MSA {0}:{1} all'offset compresso {2} è troncata entro {3} byte.",
+    "MediaEngine.MsaInvalidRun": "La sequenza compressa nella traccia MSA {0}:{1} all'offset compresso {2} ha lunghezza {3}; sono già stati scritti {4} dei {5} byte di uscita.",
+    "MediaEngine.MsaUnpackedLength": "La traccia MSA {0}:{1} ha consumato {2} dei {3} byte compressi e prodotto {4} dei {5} byte previsti."
+  }
+}

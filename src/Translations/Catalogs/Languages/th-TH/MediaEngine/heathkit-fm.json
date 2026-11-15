@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "เซกเตอร์ Heathkit มี 256 ไบต์ ได้รับ {0} ไบต์",
+    "MediaEngine.HeathkitAddressRange": "ค่า {1} ของฟิลด์ {0} ใน Heathkit FM ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.HeathkitRecordEmpty": "ระเบียน Heathkit ต้องมีไบต์ผลรวมตรวจสอบอย่างน้อยหนึ่งไบต์",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} ไบต์, โวลุม {4}, ผลรวมตรวจสอบส่วนหัว {5}, ผลรวมตรวจสอบข้อมูล {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} ไบต์, ผลรวมตรวจสอบ {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, ส่วนหัวเซกเตอร์ฮาร์ดแวร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.HeathkitUnpaired": "ข้อมูล Heathkit ที่ไม่ได้จับคู่, บล็อกข้อมูล"
+  }
+}

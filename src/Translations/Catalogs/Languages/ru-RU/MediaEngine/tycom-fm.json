@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Значение {1} поля {0} TYCOM должно быть между нулём и {2}.",
+    "MediaEngine.TycomSectorSize": "Секторы TYCOM содержат 128 байт; получено {0} байт.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 байт, метка {2}, CRC заголовка {3}, CRC данных {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 байт, CRC заголовка {2}, CRC данных {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 байт, метка FE, CRC заголовка {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 байт, метка {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, заголовок сектора, усечён",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, метка {0}, данные сектора, усечён",
+    "MediaEngine.TycomUnpaired": "Неклассифицировано TYCOM FormatData, метка {0}, данные"
+  }
+}

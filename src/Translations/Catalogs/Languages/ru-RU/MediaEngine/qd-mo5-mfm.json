@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "Значение {1} поля {0} QD MO5 должно быть между нулём и {2}.",
+    "MediaEngine.QdSectorSize": "Секторы QD MO5 содержат 128 байт; получено {0} байт.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 байт, метка FB, заголовок {1}, контрольная сумма данных {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 байт, метка {1}, контрольная сумма {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, заголовок сектора, усечён",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, данные сектора, контрольная сумма недоступна, усечён",
+    "MediaEngine.QdUnpaired": "Непарные данные QD MO5, метка {0}, данные сектора"
+  }
+}

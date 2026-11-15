@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "Permutace párů HP MMFM vyžaduje sudý počet bajtů; přijato {0}.",
+    "MediaEngine.HpAddressRange": "Hodnota {1} pole {0} HP MMFM musí být mezi nulou a {2}.",
+    "MediaEngine.HpSectorSize": "Sektory HP MMFM obsahují 256 bajtů; přijato {0} bajtů.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} bajtů, CRC hlavičky {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} bajtů, CRC dat {4}"
+  }
+}

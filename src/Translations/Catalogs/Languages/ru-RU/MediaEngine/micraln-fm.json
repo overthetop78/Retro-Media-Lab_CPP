@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.MicralSectorSize": "Секторы Micral N содержат 128 байт; получено {0} байт.",
+    "MediaEngine.MicralSectorRange": "Номер сектора Micral N {0} должен быть между нулём и {1}.",
+    "MediaEngine.MicralBlock": "Micral N FormatHeader, C{0} H{1} R{2}, {3} байт, метка FF, контрольная сумма {4}",
+    "MediaEngine.MicralTruncated": "Micral N FormatHeader, блок с аппаратной разбивкой на секторы, контрольная сумма недоступна, усечено"
+  }
+}

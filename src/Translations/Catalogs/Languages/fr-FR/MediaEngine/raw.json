@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "La taille de l’image brute {0} est nulle ou n’est pas un multiple de {1} octets.",
+    "Media.RawUnknownGeometry": "Aucune géométrie d'image brute prise en charge ne correspond à {0} octets.",
+    "Media.MsxInvalidBoot": "L’image de {0} octets ne contient pas de secteur d’amorçage MSX pris en charge.",
+    "Media.MsxUnsupportedGeometry": "Aucune géométrie MSX ne correspond à {0} octets et au descripteur de média {1}.",
+    "Media.UnsupportedRawFormat": "Le format d'image brute {0} n'est pas pris en charge.",
+    "Media.RawGeometryMismatch": "L’image {0} a pour géométrie {1} ; la cible {2} exige la géométrie {3}.",
+    "Media.RawSectorMissing": "Le secteur logique {0} est manquant et ne peut pas être écrit sur une image brute complète.",
+    "Media.RawSectorSize": "Le secteur logique {0} contient {1} octets au lieu de {2}.",
+    "Media.AtomicOpen": "Impossible de créer la sortie temporaire pour {0}.",
+    "Media.AtomicWrite": "Impossible d'écrire la sortie temporaire pour {0}.",
+    "Media.AtomicCommit": "Impossible de publier le fichier de sortie complet {0}.",
+    "Media.Cancelled": "L’opération sur le média a été annulée."
+  }
+}

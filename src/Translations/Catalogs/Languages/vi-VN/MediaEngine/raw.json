@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Độ dài ảnh thô {0} bằng không hoặc không phải là bội số của {1} byte.",
+    "Media.RawUnknownGeometry": "Không có hình học ảnh thô được hỗ trợ nào khớp với {0} byte.",
+    "Media.MsxInvalidBoot": "Ảnh của {0} không chứa phân khu khởi động MSX được hỗ trợ.",
+    "Media.MsxUnsupportedGeometry": "Không có hình học MSX phù hợp với{0} byte và phương tiện truyền thông descriptor{1}.",
+    "Media.UnsupportedRawFormat": "Không hỗ trợ định dạng ảnh thô {0}.",
+    "Media.RawGeometryMismatch": "Ảnh{0} có hình học{1}; mục tiêu{2} yêu cầu hình học{3}.",
+    "Media.RawSectorMissing": "Thiếu phân khu logic {0}, không thể ghi ảnh thô hoàn chỉnh.",
+    "Media.RawSectorSize": "Khu vực lý luận{0} chứa{1} byte thay vì{2}.",
+    "Media.AtomicOpen": "Không thể tạo kết xuất tạm thời cho{0}.",
+    "Media.AtomicWrite": "Không thể ghi kết xuất tạm thời cho{0}.",
+    "Media.AtomicCommit": "Không thể xuất tập tin xuất đầy đủ{0}.",
+    "Media.Cancelled": "Thao tác trên phương tiện lưu trữ đã bị hủy."
+  }
+}

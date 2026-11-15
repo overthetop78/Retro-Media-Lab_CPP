@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Значение {1} атрибута Commodore GCR {0} должно быть между нулём и {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Дорожка диска Commodore {0} должна быть между {1} и {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Секторы Commodore содержат {0} байт; получено {1} байт.",
+    "MediaEngine.CbmGcrSync": "Не классифицировано Commodore CommodoreSync, синхронизация GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 байт, блок данных, контрольная сумма данных {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} байт, контрольная сумма заголовка {4}, контрольная сумма данных {5}"
+  }
+}

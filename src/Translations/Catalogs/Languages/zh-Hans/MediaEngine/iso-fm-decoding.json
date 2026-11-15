@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 FE, N{4}, 头部CRC {5}, 数据CRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} 字节, 标记 F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "未分类 ISO FM DataAddressMark, 标记 FB",
+    "MediaEngine.FmUnpairedDeleted": "未分类 ISO FM DeletedDataAddressMark, 标记 F8",
+    "MediaEngine.FmRevolutionTiming": "ISO FM旋转时序不一致：索引 {0} ticks，单元格持续时间 {1} ticks，间隔总和 {2} ticks。"
+  }
+}

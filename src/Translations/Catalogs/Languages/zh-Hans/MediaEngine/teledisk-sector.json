@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk 扇区 {0}/{1}/{2} 的重复载荷为 {3} 字节，需要 {4} 字节。",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk 扇区 {0}/{1}/{2} 的编码 {3} 在偏移 {4} 处截断：需要 {5} 字节，可用 {6} 字节。",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk 扇区 {0}/{1}/{2} 使用不支持的编码 {3}。",
+    "MediaEngine.Td0DecodedLength": "TeleDisk 扇区 {0}/{1}/{2} 的编码 {3} 解压后为 {4} 字节，而非 {5} 字节。",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk 扇区重复次数超过 16 位无符号整数的上限。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Часова роздільна здатність SCP має бути додатною; отримано {0}.",
+    "MediaEngine.ScpExtended": "Розширені носії SCP не є образами дискет.",
+    "MediaEngine.ScpSignature": "Файл не містить підпису SCP.",
+    "MediaEngine.ScpRevolutions": "Кількість обертів SCP {0} недійсна.",
+    "MediaEngine.ScpTrackRange": "Діапазон треків SCP {0} до {1} недійсний.",
+    "MediaEngine.ScpWidth": "Ширина SCP bit-cell {0} не підтримується.",
+    "MediaEngine.ScpHeads": "Значення вибору головки SCP {0} недопустиме.",
+    "MediaEngine.ScpTrackSignature": "Відстеження {0} не має підпису TRK; дескриптор містить номер треку {1}.",
+    "MediaEngine.ScpTrackMismatch": "Запис {0} таблиці доріжок вказує на доріжку {1}.",
+    "MediaEngine.ScpHeaderSection": "Заголовок SCP є неповним або недійсним у офсеті {0}; {1} байтів.",
+    "MediaEngine.ScpTableSection": "Табличка SCP відстежується неповною або недійсною в офсеті {0}; {1} байти обов'язкові.",
+    "MediaEngine.ScpTrackSection": "Заголовок SCP track {0} є неповним або недійсним у офсеті {1}; {2} байти обов'язкові.",
+    "MediaEngine.ScpFluxSection": "Флюс SCP track {0}, оберт {1}, неповний або невірний при офсеті {2}; {3} байти необхідні.",
+    "MediaEngine.ScpOverflow": "Розмір SCP, положення, інтервал або перетворена оберт перевищує підтримуваний нумерний діапазон.",
+    "MediaEngine.ScpTrackAddress": "Номер треку SCP {0} знаходиться за межами таблиці доріжки.",
+    "MediaEngine.ScpNoRevolution": "Доріжка SCP не містить обертів для декодування.",
+    "MediaEngine.ScpNoC900Sectors": "Не вдалося декодувати жодного сектора Commodore 900 GCR з образу SCP."
+  }
+}

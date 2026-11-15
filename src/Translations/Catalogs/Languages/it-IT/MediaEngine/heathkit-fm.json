@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "I settori Heathkit contengono 256 byte; ricevuti {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Il valore {1} del campo {0} Heathkit FM deve essere compreso tra zero e {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Un record Heathkit deve contenere almeno un byte di checksum.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, volume {4}, checksum intestazione {5}, checksum dati {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, somma di controllo {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, intestazione di settore hardware, troncata",
+    "MediaEngine.HeathkitUnpaired": "Dati Heathkit non abbinati, blocco dati"
+  }
+}

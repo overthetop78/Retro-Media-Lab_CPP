@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Sektory Heathkit obsahují 256 bajtů; přijato {0} bajtů.",
+    "MediaEngine.HeathkitAddressRange": "Hodnota {1} pole {0} Heathkit FM musí být mezi nulou a {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Záznam Heathkit musí obsahovat alespoň bajt kontrolního součtu.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} bajtů, svazek {4}, kontrolní součet hlavičky {5}, kontrolní součet dat {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} bajtů, kontrolní součet {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, hlavička hardwarového sektoru, zkrácená",
+    "MediaEngine.HeathkitUnpaired": "Nespárovaná data Heathkit, datový blok"
+  }
+}

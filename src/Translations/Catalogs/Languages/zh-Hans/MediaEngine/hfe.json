@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE 文件头缺失或被截断。",
+    "MediaEngine.HfeRevision": "不支持 HFE 修订版 {0}。",
+    "MediaEngine.HfeGeometry": "HFE 几何参数或比特率无效。",
+    "MediaEngine.HfeTable": "HFE 磁道表超出范围。",
+    "MediaEngine.HfeTiming": "无法以要求的时间分辨率表示 HFE 时序。",
+    "MediaEngine.HfeTrackLength": "HFE 磁道 {0} 的长度无效。",
+    "MediaEngine.HfeTrackData": "HFE 磁道 {0}/{1} 的数据超出范围。",
+    "MediaEngine.HfeRateOpcode": "HFE v3 磁道 {0}/{1} 的比特率操作码参数为零。",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 磁道 {0}/{1} 不包含位单元。",
+    "MediaEngine.HfeTracks": "HFE 至少需要一条磁道。",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 要求所有磁道使用同一种编码。",
+    "MediaEngine.HfeEncoding": "无法将编码 {0} 写为 HFE v1。",
+    "MediaEngine.HfeUniformRate": "HFE v1 要求所有磁道使用同一比特率。",
+    "MediaEngine.HfeMissingTrack": "缺少 HFE 柱面 {0}。",
+    "MediaEngine.HfeTrackAddress": "HFE 磁道超出声明的几何范围。",
+    "MediaEngine.HfeDuplicateTrack": "HFE 磁道 {0}/{1} 重复。",
+    "MediaEngine.HfeLimit": "HFE 容器超出支持的大小或数值限制。",
+    "MediaEngine.HfeUniformTiming": "HFE v1 要求每条磁道只有一个均匀时序段。",
+    "MediaEngine.HfeRevolutions": "HFE 无法保留这些独立的磁通旋转周期。",
+    "MediaEngine.HfePadding": "HFE v1 将需要填充或不相等的磁头数据长度。",
+    "MediaEngine.HfeScpEncoding": "SCP 磁盘类型 {0} 没有无损的 HFE v1 编码。",
+    "MediaEngine.HfeFluxBounds": "磁通间隔超出索引持续时间。",
+    "MediaEngine.HfeWeak": "HFE v3 写入无法保留弱磁区。",
+    "MediaEngine.HfeWeakFeature": "HFE v3 随机数据操作码",
+    "MediaEngine.HfeIndexFeature": "HFE v3 索引操作码",
+    "MediaEngine.FluxConversionTiming": "无法将磁通时序表示为均匀的位单元。",
+    "MediaEngine.FluxConversionBounds": "磁通间隔或时序段超出磁道持续时间。",
+    "MediaEngine.FluxConversionRange": "磁通转换超出支持的大小或数值范围。"
+  }
+}

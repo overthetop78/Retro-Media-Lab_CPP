@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "ส่วนหัวแบบ Amstrad DSK ถูกปรับให้ทํางาน",
+    "MediaEngine.CpcDskSignature": "แฟ้มไม่ใช่อิมเมจ CPCEMU DSK",
+    "MediaEngine.CpcDskGeometry": "เรขาคณิตของ Amstrad DSK ไม่ถูกต้อง",
+    "MediaEngine.CpcDskExtendedTable": "ตารางแทร็คแบบ Amstrad DSK ที่ขยายแล้วไม่ถูกต้องที่ร่อง {0}",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK Language {0} ถูกปรับให้พอดี",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK แทร็ก {0} มีส่วนหัวที่ใช้ไม่ได้",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK แทร็ก {0} มีตารางภาคที่ใช้ไม่ได้",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK ส่วน {0}-{1}-{2} ถูกตัดสิทธิ์",
+    "MediaEngine.CpcDskNoSectors": "อิมเมจของ Amstrad DSK ไม่มีส่วน",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK แทร็ก {0} About {1} ไบต์ และเกินขีดจํากัดของ 65280-byte",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK Language {0} ใช้เครื่องหมาย Unk, ขนาดตัวแปร หรือไม่ใช่ภาคที่ต้องใช้ EDSK",
+    "MediaEngine.CpcDskTrackCollection": "The Amstrad DSK ไม่สามารถเขียนได้: เรขาคณิตและแทร็คที่ประกาศแล้วไม่ตรงกัน",
+    "MediaEngine.CpcDskTrackIndex": "เดอะ Amstrad DSK ไม่สามารถเขียนกล่องได้: {0} ปรากฏตัวในตําแหน่ง {1}.",
+    "MediaEngine.CpcDskTooManySectors": "เดอะ Amstrad DSK ไม่สามารถเขียนได้: {0} มีตัวสะกดส่วนมากเกินไป",
+    "MediaEngine.CpcDskUniformTracks": "เดอะ Amstrad DSK ไม่สามารถเขียนกล่องได้: stander DSK ต้องการขนาดติดตามแบบเครื่องแบบ",
+    "MediaEngine.CpcDskBuilderGeometry": "เดอะ Amstrad DSK ไม่สามารถเขียนได้: เรขาคณิตเกิน CPCEMU ลิมิต",
+    "MediaEngine.CpcDskNativeMetadata": "The Amstrad DSK ไม่สามารถเขียนได้: ข้อมูลกํากับภาพท้องถิ่นขาด ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "เดอะ Amstrad DSK ไม่สามารถเขียนได้: ขนาดส่วน {0} ไม่สามารถแทนได้ด้วย CPCEMU ขนาดรหัส",
+    "MediaEngine.CpcDskOverflow": "ขนาดของ CPCEMU DSK เกินช่วงที่รองรับ",
+    "MediaEngine.CpcDskRecordedAddress": "บันทึก CPCEMU ที่อยู่ {0}-{1}-{2} ไม่สามารถแทนได้โดยสาขาเดียว"
+  }
+}

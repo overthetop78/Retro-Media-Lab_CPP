@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "A HFE fejléc hiányzik vagy csonka.",
+    "MediaEngine.HfeRevision": "A HFE revízió {0} nem támogatott.",
+    "MediaEngine.HfeGeometry": "A HFE geometria vagy bitráta érvénytelen.",
+    "MediaEngine.HfeTable": "A HFE sávtáblázata kívül esik a határokon.",
+    "MediaEngine.HfeTiming": "A HFE időzítése nem ábrázolható a szükséges felbontással.",
+    "MediaEngine.HfeTrackLength": "A HFE {0} sáv hossza érvénytelen.",
+    "MediaEngine.HfeTrackData": "A HFE {0}/{1} sáv adatai kívül esnek a határokon.",
+    "MediaEngine.HfeRateOpcode": "A HFE v3 {0}/{1} sáv műveleti kódjának bitrátaparamétere nulla.",
+    "MediaEngine.HfeEmptyTrack": "A HFE v3 {0}/{1} sáv nem tartalmaz bitcellákat.",
+    "MediaEngine.HfeTracks": "A HFE legalább egy sávot igényel.",
+    "MediaEngine.HfeUniformEncoding": "A HFE v1 minden sávhoz azonos kódolást igényel.",
+    "MediaEngine.HfeEncoding": "A {0} kódolást nem lehet HFE v1-ként írni.",
+    "MediaEngine.HfeUniformRate": "A HFE v1 minden sávhoz azonos bitrátát igényel.",
+    "MediaEngine.HfeMissingTrack": "A {0} HFE henger hiányzik.",
+    "MediaEngine.HfeTrackAddress": "Egy HFE-sáv kívül esik a megadott geometrián.",
+    "MediaEngine.HfeDuplicateTrack": "A HFE {0}/{1} sáv kétszer szerepel.",
+    "MediaEngine.HfeLimit": "A HFE konténer meghaladja a támogatott méret- vagy értékhatárait.",
+    "MediaEngine.HfeUniformTiming": "A HFE v1 sávonként egyetlen egyenletes időzítési szegmenst igényel.",
+    "MediaEngine.HfeRevolutions": "A HFE nem tudja megőrizni ezeket a különálló mágnesesfluxus-fordulatokat.",
+    "MediaEngine.HfePadding": "A HFE v1 kitöltést vagy a fejek között eltérő sávhosszakat igényelne.",
+    "MediaEngine.HfeScpEncoding": "A(z) {0} SCP-lemeztípusnak nincs veszteségmentes HFE v1-kódolása.",
+    "MediaEngine.HfeFluxBounds": "A fluxusintervallumok meghaladják az index időtartamát.",
+    "MediaEngine.HfeWeak": "A HFE v3 írás nem képes megőrizni a gyenge régiókat.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 véletlen adatok műveleti kódja",
+    "MediaEngine.HfeIndexFeature": "HFE v3 index opkód",
+    "MediaEngine.FluxConversionTiming": "A mágneses fluxus időzítése nem ábrázolható egyenletes bitcellákként.",
+    "MediaEngine.FluxConversionBounds": "A fluxusintervallumok vagy időzítési szegmensek meghaladják a sáv időtartamát.",
+    "MediaEngine.FluxConversionRange": "A fluxusátalakítás meghaladja a támogatott méretet vagy numerikus tartományt."
+  }
+}

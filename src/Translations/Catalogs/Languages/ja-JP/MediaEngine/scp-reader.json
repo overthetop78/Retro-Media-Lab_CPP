@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP 時間の解像度は正でなければなりません。{0} を受信します。",
+    "MediaEngine.ScpExtended": "拡張されたSCPメディアは、フロッピー画像ではありません。",
+    "MediaEngine.ScpSignature": "ファイルが SCP 署名を含んでいません。",
+    "MediaEngine.ScpRevolutions": "SCP の回転数 {0} は無効です。",
+    "MediaEngine.ScpTrackRange": "SCP トラック範囲 {0}～{1} は無効です。",
+    "MediaEngine.ScpWidth": "SCPビットセル幅 {0} はサポートされていません。",
+    "MediaEngine.ScpHeads": "SCP ヘッドセレクター {0} は無効です。",
+    "MediaEngine.ScpTrackSignature": "トラック {0} に TRK 署名がありません。記述子のトラック番号は {1} です。",
+    "MediaEngine.ScpTrackMismatch": "トラックテーブルのエントリ {0} はトラック {1} を指しています。",
+    "MediaEngine.ScpHeaderSection": "SCP ヘッダーは、オフセット {0} で不完全または無効です。 {1} バイトが必要です。",
+    "MediaEngine.ScpTableSection": "SCP のトラックオフセットテーブルは、オフセット {0} で不完全または無効です。 {1} バイトが必要です。",
+    "MediaEngine.ScpTrackSection": "SCP トラック {0} のヘッダは、オフセット {1} で不完全または無効です。 {2} バイトが必要です。",
+    "MediaEngine.ScpFluxSection": "SCP トラック {0}、回転 {1} の磁束データはオフセット {2} で不完全または無効です。{3} バイトが必要です。",
+    "MediaEngine.ScpOverflow": "SCP のサイズ、位置、間隔、または結合された回転はサポートされた数値範囲を超過します。",
+    "MediaEngine.ScpTrackAddress": "SCP トラック番号 {0} はトラックテーブルの外にあります。",
+    "MediaEngine.ScpNoRevolution": "SCP トラックにデコード可能な回転データがありません。",
+    "MediaEngine.ScpNoC900Sectors": "SCP イメージから Commodore 900 GCR セクターをデコードできませんでした。"
+  }
+}

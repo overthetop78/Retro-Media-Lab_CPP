@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Un secteur Heathkit contient 256 octets ; {0} octets reçus.",
+    "MediaEngine.HeathkitAddressRange": "La valeur {1} du champ {0} Heathkit FM doit être comprise entre zéro et {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Un record Heathkit doit contenir au moins un octet de somme de contrôle.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} octets, volume {4}, somme de contrôle de l’en-tête {5}, somme de contrôle des données {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} octets, somme de contrôle {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, en-tête de secteur matériel, tronqué",
+    "MediaEngine.HeathkitUnpaired": "Données Heathkit non appairées, bloc de données"
+  }
+}

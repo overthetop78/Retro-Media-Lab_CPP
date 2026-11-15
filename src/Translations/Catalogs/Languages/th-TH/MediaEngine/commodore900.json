@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "ไซลินเดอร์ Commodore 900 {0} อยู่นอกช่วง 0 ถึง {1}",
+    "MediaEngine.C900Block": "บล็อกตรรกะ Commodore 900 {0} อยู่นอกช่วง 0 ถึง {1}",
+    "MediaEngine.C900Address": "ที่อยู่ Commodore 900 {0}/{1}/{2} ไม่ถูกต้อง หัวอ่านต้องอยู่ระหว่าง 0 ถึง {3} และเซกเตอร์ต้องอยู่ระหว่าง 0 ถึง {4} บนไซลินเดอร์นี้",
+    "MediaEngine.C900Content": "อิมเมจขนาด {0} ไบต์ไม่มีซูเปอร์บล็อก COHERENT ที่รู้จัก",
+    "MediaEngine.C900Alignment": "ความยาวอิมเมจ COHERENT {0} ไบต์หารด้วยขนาดเซกเตอร์ {1} ไบต์ไม่ลงตัว",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT ระบุ {0} บล็อก แต่อิมเมจมีเพียง {1} บล็อก",
+    "MediaEngine.C900Capacity": "อิมเมจ COHERENT มี {0} บล็อก แต่เรขาคณิต Commodore 900 รองรับได้สูงสุด {1} บล็อก",
+    "MediaEngine.C900WriterGeometry": "อิมเมจเซกเตอร์ไม่ได้ใช้เรขาคณิตแบบแบ่งโซนของ Commodore 900",
+    "MediaEngine.C900BlockAddress": "บล็อกตรรกะ Commodore 900 {0} ไม่ตรงกับลำดับเซกเตอร์ทางกายภาพที่กำหนด"
+  }
+}

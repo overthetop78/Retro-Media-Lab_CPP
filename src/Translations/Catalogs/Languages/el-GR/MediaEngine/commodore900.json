@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 κύλινδρος {0} είναι εκτός του εύρους μηδέν έως {1}.",
+    "MediaEngine.C900Block": "Commodore 900 λογικό μπλοκ {0} είναι έξω από το εύρος μηδέν σε {1}.",
+    "MediaEngine.C900Address": "Η διεύθυνση Commodore 900 {0}/ {1}/ {2} είναι άκυρη. Η κεφαλή πρέπει να είναι μεταξύ μηδέν και {3}, και ο τομέας μεταξύ μηδέν και {4} σε αυτόν τον κύλινδρο.",
+    "MediaEngine.C900Content": "Η εικόνα των bytes {0} δεν περιέχει ένα αναγνωρισμένο υπερμπλοκ COHERENT.",
+    "MediaEngine.C900Alignment": "Το μήκος εικόνας COHERENT των bytes {0} δεν διαιρείται από το μέγεθος του τομέα των bytes {1}.",
+    "MediaEngine.C900DeclaredBlocks": "Το COHERENT δηλώνει {0} μπλοκ αλλά η εικόνα περιέχει μόνο {1}.",
+    "MediaEngine.C900Capacity": "Η COHERENT εικόνα περιέχει μπλοκ {0} αλλά Commodore 900 γεωμετρία υποστηρίζει το πολύ {1}.",
+    "MediaEngine.C900WriterGeometry": "Η εικόνα του τομέα δεν χρησιμοποιεί τη ζώνη Commodore 900 γεωμετρία.",
+    "MediaEngine.C900BlockAddress": "Το λογικό μπλοκ Commodore 900 {0} δεν αντιστοιχεί στην απαιτούμενη φυσική σειρά τομέων."
+  }
+}

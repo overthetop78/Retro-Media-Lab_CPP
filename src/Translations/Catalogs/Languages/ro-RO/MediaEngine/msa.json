@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Imaginea sectorială \"{0} \" cu geometrie {1} x {2} x {3} şi mărimea blocului {4} nu poate fi scrisă ca MSA.",
+    "MediaEngine.MsaMissingSector": "Sectorul logic MSA {0} ({1}:{2}:{3}) lipsește.",
+    "MediaEngine.MsaSectorSize": "Sectorul logic MSA {0} conţine octeţi {1}; se aşteaptă {2}.",
+    "MediaEngine.MsaHeader": "Antetul MSA este invalid; fișierul conține octeți {0}.",
+    "MediaEngine.MsaGeometry": "Geometria MSA este invalidă: {0} sectoare, {1} capete, cilindri {2} până la {3}.",
+    "MediaEngine.MsaTruncatedTable": "Câmpul lungimii pistei MSA pentru cilindrul {0}, capul {1}, la deplasamentul {2}, este trunchiat: {3} octeți disponibili.",
+    "MediaEngine.MsaTruncatedTrack": "MSA track {0}: {1} la offset {2} declară {3} bytes, {4} sunt disponibile.",
+    "MediaEngine.MsaTruncatedRun": "Secvența comprimată din pista MSA {0}:{1}, la deplasamentul {2} din datele împachetate, este trunchiată în cei {3} octeți.",
+    "MediaEngine.MsaInvalidRun": "Secvența comprimată din pista MSA {0}:{1}, la deplasamentul {2} din datele împachetate, are numărul de repetări {3}; au fost deja scriși {4} din {5} octeți de ieșire.",
+    "MediaEngine.MsaUnpackedLength": "Pista MSA {0}:{1} a consumat {2} din {3} octeți comprimați și a produs {4} din {5} octeți așteptați."
+  }
+}

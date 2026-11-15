@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "La valeur {1} du champ {0} DEC RX02 doit être comprise entre zéro et {2}.",
+    "MediaEngine.Rx02SizeCode": "Le code de taille RX02 {0} ne correspond pas à {1} octets.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, en-tête de secteur, tronqué",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} octets, CRC d’en-tête {4}, CRC des données {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} octets, marque {4}, {5}, CRC d’en-tête {6}, CRC des données {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} octets, marque {4}, {5}, CRC des données {6}",
+    "MediaEngine.Rx02Unpaired": "Non classé DEC RX02 FormatData, marque {0}, données"
+  }
+}

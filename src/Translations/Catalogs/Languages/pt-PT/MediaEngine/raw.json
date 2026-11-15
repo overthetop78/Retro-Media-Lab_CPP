@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "O comprimento bruto da imagem {0} está vazio ou não é um múltiplo de {1} bytes.",
+    "Media.RawUnknownGeometry": "Nenhuma geometria de imagem bruta suportada corresponde a {0} bytes.",
+    "Media.MsxInvalidBoot": "A imagem de {0} bytes não contém um setor de inicialização MSX suportado.",
+    "Media.MsxUnsupportedGeometry": "Sem correspondências de geometria MSX {0} bytes e descritor de mídia {1}.",
+    "Media.UnsupportedRawFormat": "O formato de imagem RAW {0} não é suportado.",
+    "Media.RawGeometryMismatch": "Imagem {0} tem geometria {1}; alvo {2} requer geometria {3}.",
+    "Media.RawSectorMissing": "O setor lógico {0} está faltando e não pode ser escrito para uma imagem bruta completa.",
+    "Media.RawSectorSize": "O sector lógico {0} contém {1} bytes em vez de {2}.",
+    "Media.AtomicOpen": "Não é possível criar a saída temporária para {0}.",
+    "Media.AtomicWrite": "Não é possível gravar o resultado temporário para {0}.",
+    "Media.AtomicCommit": "Não foi possível publicar o ficheiro de saída completo {0}.",
+    "Media.Cancelled": "A operação no meio de armazenamento foi cancelada."
+  }
+}

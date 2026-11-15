@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "En azından bir flux decoder kayıtlı olmalıdır.",
+    "MediaEngine.RegistryNullDecoder": "Konumdaki flux decoder {0} null.",
+    "MediaEngine.RegistryInvalidId": "{0} konumundaki flux decoder boş bir tanımlayıcıya sahiptir.",
+    "MediaEngine.RegistryDuplicate": "'{0}' tanımlayıcısına sahip bir akı kod çözücüsü zaten kayıtlı.",
+    "MediaEngine.RegistryUnknown": "'{0}' tanımlayıcısına sahip kayıtlı bir akı kod çözücüsü yok.",
+    "MediaEngine.RegistryNullRevolution": "Kod çözme için bir dönüşün akı kaydı gereklidir.",
+    "MediaEngine.RegistryNoAutomatic": "Kayıtlı hiçbir akı kod çözücüsü otomatik algılamaya katılmıyor."
+  }
+}

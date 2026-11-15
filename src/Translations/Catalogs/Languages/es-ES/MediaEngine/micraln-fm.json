@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.MicralSectorSize": "Los sectores Micral N contienen 128 bytes; se recibieron {0} bytes.",
+    "MediaEngine.MicralSectorRange": "El número de sector Micral N {0} debe estar entre cero y {1}.",
+    "MediaEngine.MicralBlock": "Micral N FormatHeader, C{0} H{1} R{2}, {3} bytes, marca FF, suma de comprobación {4}",
+    "MediaEngine.MicralTruncated": "Micral N FormatHeader, bloque con sectorización por hardware, suma de comprobación no disponible, truncado"
+  }
+}

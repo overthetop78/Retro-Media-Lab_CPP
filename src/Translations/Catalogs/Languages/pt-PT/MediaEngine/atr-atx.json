@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "O formato de destino ATR '{0}' não é suportado.",
+    "MediaEngine.AtrIncompatibleImage": "A imagem do sector '{0}' contém sectores {1} e {2} bytes; o perfil ATR '{3}' requer sectores {4} e {5} bytes.",
+    "MediaEngine.AtrMissingSector": "Falta o setor ATR {0}.",
+    "MediaEngine.AtrSectorSize": "O setor ATR {0} contém {1} bytes; {2} esperado.",
+    "MediaEngine.AtrHeader": "O cabeçalho ATR é inválido: comprimento {0} bytes (mínimo {1}), assinatura {2} (esperado {3}).",
+    "MediaEngine.AtrUnsupportedSize": "O tamanho do setor ATR {0} bytes não é suportado; bytes {1} esperados.",
+    "MediaEngine.AtrPayloadLength": "O comprimento da carga útil ATR é {0} bytes; o cabeçalho declara {1} bytes.",
+    "MediaEngine.AtrTruncatedPayload": "O comprimento da carga útil do ATR {0} bytes não contém uma área de inicialização {1}-byte seguida de setores {2}-byte completos.",
+    "MediaEngine.AtrSectorCount": "A dimensão do sector Atari ATR {0} e a contagem do sector {1} devem ser positivas.",
+    "MediaEngine.AtxHeader": "O cabeçalho do arquivo ATX está faltando ou inválido.",
+    "MediaEngine.AtxTrackOffset": "O deslocamento ATX track-data está fora do arquivo.",
+    "MediaEngine.AtxTrackCycle": "A cadeia ATX contém um ciclo.",
+    "MediaEngine.AtxTrackBounds": "Uma faixa ATX se estende fora do arquivo.",
+    "MediaEngine.AtxTrackNumber": "ATX track {0} está fora da geometria de 40 faixas suportada.",
+    "MediaEngine.AtxSectorCount": "A pista ATX {0} contém registos de setor em excesso.",
+    "MediaEngine.AtxListBounds": "A lista de setores da faixa ATX {0} cruza o limite da faixa.",
+    "MediaEngine.AtxSectorNumber": "ATX track {0} contém setor inválido {1}.",
+    "MediaEngine.AtxDataBounds": "Os dados da faixa ATX {0}, setor {1}, cruzam o limite da faixa.",
+    "MediaEngine.AtxNoSectors": "A imagem ATX não contém nenhum registro de setor legível.",
+    "MediaEngine.AtxLargeOffset": "O deslocamento ATX {0} é muito grande.",
+    "MediaEngine.AtxTruncated": "O ATX {0} está truncado."
+  }
+}

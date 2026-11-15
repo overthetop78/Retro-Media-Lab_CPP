@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Jumlah byte aliran bit {0} harus antara nol dan {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} byte, penanda FE, N{4}, CRC header {5}, CRC data {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} byte, penanda FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, penanda F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Belum diklasifikasikan ISO MFM Sync, penanda {0}",
+    "MediaEngine.MfmUnpaired": "Belum diklasifikasikan ISO MFM DataAddressMark, penanda FB",
+    "MediaEngine.MfmUnpairedDeleted": "Belum diklasifikasikan ISO MFM DeletedDataAddressMark, penanda F8"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM {0} alanının {1} değeri sıfır ile {2} arasında olmalıdır.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} bayt, başlık CRC {4}, veri CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} bayt, anahtar {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, sektör işareti, kesilmiş",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC mevcut değil, kesilmiş",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, desteklenmeyen anahtar {0}, kesilmiş",
+    "MediaEngine.CenturionUnpaired": "Eşleştirilmemiş Centurion verileri, veri bloğu"
+  }
+}

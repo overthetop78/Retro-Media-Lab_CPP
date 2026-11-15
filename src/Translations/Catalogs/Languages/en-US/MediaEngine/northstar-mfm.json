@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar sectors contain 512 bytes; received {0} bytes.",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar cylinder {0} must be between zero and {1}.",
+    "MediaEngine.NorthstarSectorRange": "NorthStar sector number {0} must be between zero and {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "The NorthStar index duration exceeds the supported cell count.",
+    "MediaEngine.NorthstarHardAddressRange": "NorthStar hard-sector address C{0} H{1} must fit in one byte per coordinate.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} bytes, mark FB, checksum {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, hard-sector block, truncated"
+  }
+}

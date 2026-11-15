@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreWriteGeometry": "Commodore DOS image '{0}' with geometry {1} tracks, {2} sides and {3} blocks cannot be written as D64 or D71.",
+    "MediaEngine.CommodoreWriteMissing": "Commodore DOS logical block {0} is missing.",
+    "MediaEngine.CommodoreWriteSize": "Commodore DOS logical block {0} contains {1} bytes; expected {2}.",
+    "MediaEngine.CommodoreWriteDiagnostic": "Commodore DOS logical block {0} has no diagnostic code to preserve in the error map."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} байт, метка FE, N{4}, CRC заголовка {5}, CRC данных {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} байт, метка FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} байт, метка F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Неклассифицировано ISO FM DataAddressMark, метка FB",
+    "MediaEngine.FmUnpairedDeleted": "Неклассифицировано ISO FM DeletedDataAddressMark, метка F8",
+    "MediaEngine.FmRevolutionTiming": "Временные параметры оборота ISO FM не согласованы: индекс {0} ticks, длительность ячейки {1} ticks, сумма интервалов {2} ticks."
+  }
+}

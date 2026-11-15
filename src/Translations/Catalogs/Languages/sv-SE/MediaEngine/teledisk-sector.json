@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sektor {0}/{1}/{2} har en upprepad nyttolast av {3} byte; {4} byte krävs.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk-sektor {0}/{1}/{2}, kodning {3}, är avkortad vid offset {4}: {5} byte krävs, {6} finns tillgängliga.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sektor {0}/{1}/{2} använder ostödd kodning {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sektor {0}/{1}/{2} kodning {3} expanderar till {4} byte istället för {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk-sektorns repetitionsräkning överstiger den osignerade 16-bitarsgränsen."
+  }
+}

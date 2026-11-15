@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Záhlaví DiskCopy je zkrácené.",
+    "MediaEngine.DiskCopyPrivateWord": "Soukromé slovo DiskCopy je {0}; očekává se {1}.",
+    "MediaEngine.DiskCopyPayload": "Datový obsah DiskCopy je neplatný.",
+    "MediaEngine.DiskCopyTags": "Obraz DiskCopy není rozpoznaný obraz Macintosh/ProDOS ani obraz Lisa se značkami.",
+    "MediaEngine.DiskCopyChecksumBytes": "Kontrolní součet DiskCopy vyžaduje sudý počet bajtů; přijato: {0}.",
+    "MediaEngine.DiskCopyRange": "Délka DiskCopy přesahuje podporovaný rozsah.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy vyžaduje úplný sektorový obraz.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy vyžaduje celkem 512 bajtů na logický blok.",
+    "MediaEngine.DiskCopyLayoutTags": "Každá značka DiskCopy musí obsahovat 12 bajtů.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Metadata DiskCopy jsou neúplná.",
+    "MediaEngine.DiskCopyMetadataName": "Metadata názvu DiskCopy jsou neplatná.",
+    "MediaEngine.DiskCopyMetadataFormat": "Metadata formátu DiskCopy jsou neplatná.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Metadata kontrolního součtu DiskCopy '{0}' jsou neplatná."
+  }
+}

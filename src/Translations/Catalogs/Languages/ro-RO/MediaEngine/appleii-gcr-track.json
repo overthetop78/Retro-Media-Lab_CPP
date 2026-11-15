@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Valoarea {1} a câmpului {0} Apple II GCR trebuie să fie între zero și {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Pistele Apple II conțin 13 sectoare pentru 5-and-3 sau 16 pentru 6-and-2; primit: {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} octeți, V{4}, sumă de control a adresei {5}, sumă de control a datelor {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} octeți, 13 sectoare V{4}, sumă de control a adresei {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} octeți, sumă de control {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} octeți, 13 sectoare, sumă de control {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, sumă de control indisponibilă, trunchiat",
+    "MediaEngine.AppleIIUnpaired": "Date Apple II neasociate, prolog de date D5 AA AD"
+  }
+}

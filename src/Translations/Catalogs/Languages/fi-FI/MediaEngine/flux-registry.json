@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Vähintään yksi magneettivuon dekooderi on rekisteröitävä.",
+    "MediaEngine.RegistryNullDecoder": "Magneettivuon dekooderi kohdassa {0} puuttuu.",
+    "MediaEngine.RegistryInvalidId": "Magneettivuon dekooderin tunniste kohdassa {0} on tyhjä.",
+    "MediaEngine.RegistryDuplicate": "Magneettivuon dekooderi tunnisteella '{0}' on jo rekisteröity.",
+    "MediaEngine.RegistryUnknown": "Magneettivuon dekooderia tunnisteella '{0}' ei ole rekisteröity.",
+    "MediaEngine.RegistryNullRevolution": "Dekoodaus vaatii yhden kierroksen magneettivuon tallenteen.",
+    "MediaEngine.RegistryNoAutomatic": "Yksikään rekisteröity magneettivuon dekooderi ei osallistu automaattiseen tunnistukseen."
+  }
+}

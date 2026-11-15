@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 シリンダー {0} は範囲を 0 から {1} に外にあります。",
+    "MediaEngine.C900Block": "Commodore 900 論理ブロック {0} は範囲 0 から {1} の外にあります。",
+    "MediaEngine.C900Address": "Commodore 900 アドレス {0}/{1}/{2} は無効です; ヘッドはゼロと {3} の間で、このシリンダーのゼロと {4} 間のセクターでなければなりません。",
+    "MediaEngine.C900Content": "{0}バイトの画像は、認識されたCOHERENTスーパーブロックを含んでいません。",
+    "MediaEngine.C900Alignment": "COHERENT イメージの長さ {0} バイトは、セクターサイズ {1} バイトで割り切れません。",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT は {0} ブロックを宣言しますが、画像には {1} のみが含まれています。",
+    "MediaEngine.C900Capacity": "COHERENT イメージには {0} ブロックありますが、Commodore 900 ジオメトリの上限は {1} ブロックです。",
+    "MediaEngine.C900WriterGeometry": "セクターイメージは、ゾーン化されたCommodore 900ジオメトリを使用しません。",
+    "MediaEngine.C900BlockAddress": "Commodore 900 論理ブロック {0} は、必要な物理セクター順序と一致しません。"
+  }
+}

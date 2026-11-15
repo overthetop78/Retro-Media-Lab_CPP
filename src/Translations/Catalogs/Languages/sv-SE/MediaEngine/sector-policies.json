@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "En identifierare för kodaren krävs.",
+    "MediaEngine.PolicyFormats": "Minst en formatidentifierare krävs och får inte vara tom eller enbart innehålla blanksteg.",
+    "MediaEngine.PolicyPrefixes": "Minst ett formatprefix krävs och får inte vara tomt eller enbart innehålla blanksteg.",
+    "MediaEngine.PolicyNull": "En regel för sektorrekonstruktion får inte vara null.",
+    "MediaEngine.PolicyNullBlock": "Ett objekt för sektorrekonstruktion får inte innehålla en nullreferens till ett block.",
+    "MediaEngine.PolicyRareUnknown": "Ingen profil för sällsynt kodning är registrerad för formatet '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare-cylinder {0} måste vara mellan 0 och {1}.",
+    "MediaEngine.PolicyJfdDensity": "JFD-spåret har ingen användbar täthetskod.",
+    "MediaEngine.PolicyAddressRange": "Adressvärdet {0} ligger utanför intervallet för ett 32-bitars heltal med tecken."
+  }
+}

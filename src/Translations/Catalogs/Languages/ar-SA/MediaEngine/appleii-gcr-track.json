@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "قيمة الحقل {0} في Apple II GCR هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "تحتوي مسارات Apple II على 13 قطاعًا لترميز 5-and-3 أو 16 قطاعًا لترميز 6-and-2؛ العدد المستلم {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} بايت, V{4}, المجموع الاختباري للعنوان {5}, المجموع الاختباري للبيانات {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} بايت, 13 قطاعًا V{4}, المجموع الاختباري للعنوان {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} بايت, المجموع الاختباري {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} بايت, 13 قطاعًا, المجموع الاختباري {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, المجموع الاختباري غير متاح, مبتور",
+    "MediaEngine.AppleIIUnpaired": "بيانات Apple II غير مقترنة، تمهيد البيانات D5 AA AD"
+  }
+}

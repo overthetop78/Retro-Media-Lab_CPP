@@ -1,0 +1,454 @@
+#pragma once
+#include <string_view>
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view DefinitionFile="MediaEngine.DefinitionFile";
+inline constexpr std::string_view DefinitionCycle="MediaEngine.DefinitionCycle";
+inline constexpr std::string_view DefinitionSyntax="MediaEngine.DefinitionSyntax";
+inline constexpr std::string_view DefinitionValue="MediaEngine.DefinitionValue";
+inline constexpr std::string_view EpsonWriteGeometry="MediaEngine.EpsonWriteGeometry";
+inline constexpr std::string_view EpsonWriteDuplicate="MediaEngine.EpsonWriteDuplicate";
+inline constexpr std::string_view EpsonWriteMissing="MediaEngine.EpsonWriteMissing";
+inline constexpr std::string_view EpsonWriteSize="MediaEngine.EpsonWriteSize";
+inline constexpr std::string_view EpsonWriteSourceFormat="MediaEngine.EpsonWriteSourceFormat";
+
+inline constexpr std::string_view AppleFileSystemChange="MediaEngine.AppleFileSystemChange";
+inline constexpr std::string_view AppleOutputExtension="MediaEngine.AppleOutputExtension";
+
+inline constexpr std::string_view StTargetFormat="MediaEngine.StTargetFormat";
+inline constexpr std::string_view StLossyGeometry="MediaEngine.StLossyGeometry";
+inline constexpr std::string_view StSourceMissing="MediaEngine.StSourceMissing";
+inline constexpr std::string_view StLogicalSize="MediaEngine.StLogicalSize";
+inline constexpr std::string_view StWriterFormat="MediaEngine.StWriterFormat";
+
+inline constexpr std::string_view Td0TrackMap="MediaEngine.Td0TrackMap";
+inline constexpr std::string_view Td0CommentLength="MediaEngine.Td0CommentLength";
+inline constexpr std::string_view Td0Availability="MediaEngine.Td0Availability";
+inline constexpr std::string_view Td0WriteSectorLength="MediaEngine.Td0WriteSectorLength";
+inline constexpr std::string_view Td0BlockSize="MediaEngine.Td0BlockSize";
+inline constexpr std::string_view Td0ByteRange="MediaEngine.Td0ByteRange";
+
+inline constexpr std::string_view Td0ImageTruncated="MediaEngine.Td0ImageTruncated";
+inline constexpr std::string_view Td0CommentHeaderTruncated="MediaEngine.Td0CommentHeaderTruncated";
+inline constexpr std::string_view Td0CommentTruncated="MediaEngine.Td0CommentTruncated";
+inline constexpr std::string_view Td0TrackTruncated="MediaEngine.Td0TrackTruncated";
+inline constexpr std::string_view Td0SectorTruncated="MediaEngine.Td0SectorTruncated";
+inline constexpr std::string_view Td0DataHeaderTruncated="MediaEngine.Td0DataHeaderTruncated";
+inline constexpr std::string_view Td0DataTruncated="MediaEngine.Td0DataTruncated";
+inline constexpr std::string_view Td0Signature="MediaEngine.Td0Signature";
+inline constexpr std::string_view Td0HeaderCrc="MediaEngine.Td0HeaderCrc";
+inline constexpr std::string_view Td0CommentCrc="MediaEngine.Td0CommentCrc";
+inline constexpr std::string_view Td0TrackCrc="MediaEngine.Td0TrackCrc";
+inline constexpr std::string_view Td0SectorCrc="MediaEngine.Td0SectorCrc";
+inline constexpr std::string_view Td0SizeCode="MediaEngine.Td0SizeCode";
+inline constexpr std::string_view Td0MissingData="MediaEngine.Td0MissingData";
+inline constexpr std::string_view Td0NoSectors="MediaEngine.Td0NoSectors";
+
+inline constexpr std::string_view Td0AdvancedLimit="MediaEngine.Td0AdvancedLimit";
+inline constexpr std::string_view Td0RepeatedPayload="MediaEngine.Td0RepeatedPayload";
+inline constexpr std::string_view Td0EncodingTruncated="MediaEngine.Td0EncodingTruncated";
+inline constexpr std::string_view Td0EncodingUnsupported="MediaEngine.Td0EncodingUnsupported";
+inline constexpr std::string_view Td0DecodedLength="MediaEngine.Td0DecodedLength";
+inline constexpr std::string_view Td0RepetitionOverflow="MediaEngine.Td0RepetitionOverflow";
+
+inline constexpr std::string_view ApridiskHeader="MediaEngine.ApridiskHeader";
+inline constexpr std::string_view ApridiskRecord="MediaEngine.ApridiskRecord";
+inline constexpr std::string_view ApridiskOverflow="MediaEngine.ApridiskOverflow";
+inline constexpr std::string_view ApridiskTruncated="MediaEngine.ApridiskTruncated";
+inline constexpr std::string_view ApridiskAddress="MediaEngine.ApridiskAddress";
+inline constexpr std::string_view ApridiskCount="MediaEngine.ApridiskCount";
+inline constexpr std::string_view ApridiskSectorLength="MediaEngine.ApridiskSectorLength";
+inline constexpr std::string_view ApridiskCompression="MediaEngine.ApridiskCompression";
+inline constexpr std::string_view ApridiskExpansion="MediaEngine.ApridiskExpansion";
+inline constexpr std::string_view ApridiskWriteGeometry="MediaEngine.ApridiskWriteGeometry";
+inline constexpr std::string_view Rx02ImageLength="MediaEngine.Rx02ImageLength";
+inline constexpr std::string_view Rx02WriteGeometry="MediaEngine.Rx02WriteGeometry";
+
+inline constexpr std::string_view XfdLength="MediaEngine.XfdLength";
+inline constexpr std::string_view XfdPadding="MediaEngine.XfdPadding";
+inline constexpr std::string_view AtomDskCatalogue="MediaEngine.AtomDskCatalogue";
+
+inline constexpr std::string_view EpsonRawExplicit="MediaEngine.EpsonRawExplicit";
+inline constexpr std::string_view EpsonRawLength="MediaEngine.EpsonRawLength";
+
+inline constexpr std::string_view HardDiskRawNullDocument="MediaEngine.HardDiskRawNullDocument";
+inline constexpr std::string_view HardDiskRawIntent="MediaEngine.HardDiskRawIntent";
+inline constexpr std::string_view HardDiskRawAlignment="MediaEngine.HardDiskRawAlignment";
+inline constexpr std::string_view HardDiskRawChanged="MediaEngine.HardDiskRawChanged";
+inline constexpr std::string_view HardDiskRawWrite="MediaEngine.HardDiskRawWrite";
+
+inline constexpr std::string_view ReaderNullDocument="MediaEngine.ReaderNullDocument";
+inline constexpr std::string_view ReaderAllRejected="MediaEngine.ReaderAllRejected";
+inline constexpr std::string_view ReaderNoneAccepted="MediaEngine.ReaderNoneAccepted";
+
+inline constexpr std::string_view ReaderRegistryNull="MediaEngine.ReaderRegistryNull";
+inline constexpr std::string_view AppleContainerUnrecognized="MediaEngine.AppleContainerUnrecognized";
+inline constexpr std::string_view ImageEncodingLogical="MediaEngine.ImageEncodingLogical";
+inline constexpr std::string_view ImageEncodingPolicy="MediaEngine.ImageEncodingPolicy";
+inline constexpr std::string_view ImageEncodingNoTrack="MediaEngine.ImageEncodingNoTrack";
+inline constexpr std::string_view ImageEncodingDuration="MediaEngine.ImageEncodingDuration";
+inline constexpr std::string_view PolicyEncoderId="MediaEngine.PolicyEncoderId";
+inline constexpr std::string_view PolicyFormats="MediaEngine.PolicyFormats";
+inline constexpr std::string_view PolicyPrefixes="MediaEngine.PolicyPrefixes";
+inline constexpr std::string_view PolicyNull="MediaEngine.PolicyNull";
+inline constexpr std::string_view PolicyNullBlock="MediaEngine.PolicyNullBlock";
+inline constexpr std::string_view PolicyRareUnknown="MediaEngine.PolicyRareUnknown";
+inline constexpr std::string_view PolicyLisaCylinder="MediaEngine.PolicyLisaCylinder";
+inline constexpr std::string_view PolicyJfdDensity="MediaEngine.PolicyJfdDensity";
+inline constexpr std::string_view PolicyAddressRange="MediaEngine.PolicyAddressRange";
+inline constexpr std::string_view EncoderRegistryNull="MediaEngine.EncoderRegistryNull";
+inline constexpr std::string_view EncoderRegistryInvalidId="MediaEngine.EncoderRegistryInvalidId";
+inline constexpr std::string_view EncoderRegistryDuplicate="MediaEngine.EncoderRegistryDuplicate";
+inline constexpr std::string_view EncoderRegistryUnknown="MediaEngine.EncoderRegistryUnknown";
+inline constexpr std::string_view TycomAddressRange="MediaEngine.TycomAddressRange";
+inline constexpr std::string_view TycomSectorSize="MediaEngine.TycomSectorSize";
+inline constexpr std::string_view QdAddressRange="MediaEngine.QdAddressRange";
+inline constexpr std::string_view QdSectorSize="MediaEngine.QdSectorSize";
+inline constexpr std::string_view MembrainAddressRange="MediaEngine.MembrainAddressRange";
+inline constexpr std::string_view MembrainSectorSize="MediaEngine.MembrainSectorSize";
+inline constexpr std::string_view ArburgDataPayloadSize="MediaEngine.ArburgDataPayloadSize";
+inline constexpr std::string_view ArburgSystemPayloadSize="MediaEngine.ArburgSystemPayloadSize";
+inline constexpr std::string_view ArburgBlockCapacity="MediaEngine.ArburgBlockCapacity";
+inline constexpr std::string_view ArburgUsefulSize="MediaEngine.ArburgUsefulSize";
+inline constexpr std::string_view AedAddressRange="MediaEngine.AedAddressRange";
+inline constexpr std::string_view CenturionAddressRange="MediaEngine.CenturionAddressRange";
+inline constexpr std::string_view HpPairCount="MediaEngine.HpPairCount",HpAddressRange="MediaEngine.HpAddressRange",HpSectorSize="MediaEngine.HpSectorSize";
+inline constexpr std::string_view Rx02AddressRange="MediaEngine.Rx02AddressRange",Rx02SizeCode="MediaEngine.Rx02SizeCode";
+inline constexpr std::string_view FmUnsupportedAddressMark="MediaEngine.FmUnsupportedAddressMark",Rx02SectorSize="MediaEngine.Rx02SectorSize",Rx02M2FmNegativeStart="MediaEngine.Rx02M2FmNegativeStart";
+inline constexpr std::string_view DataGeneralSectorSize="MediaEngine.DataGeneralSectorSize",DataGeneralAddressRange="MediaEngine.DataGeneralAddressRange";
+inline constexpr std::string_view HeathkitSectorSize="MediaEngine.HeathkitSectorSize",HeathkitAddressRange="MediaEngine.HeathkitAddressRange",HeathkitRecordEmpty="MediaEngine.HeathkitRecordEmpty";
+inline constexpr std::string_view NorthstarSectorSize="MediaEngine.NorthstarSectorSize",NorthstarCylinderRange="MediaEngine.NorthstarCylinderRange",NorthstarSectorRange="MediaEngine.NorthstarSectorRange",NorthstarWindowCapacity="MediaEngine.NorthstarWindowCapacity",NorthstarHardAddressRange="MediaEngine.NorthstarHardAddressRange";
+inline constexpr std::string_view MicropolisSectorSize="MediaEngine.MicropolisSectorSize",MicropolisSectorRange="MediaEngine.MicropolisSectorRange",MicropolisRecordInput="MediaEngine.MicropolisRecordInput";
+inline constexpr std::string_view EmuSectorSize="MediaEngine.EmuSectorSize",EmuAddressRange="MediaEngine.EmuAddressRange";
+inline constexpr std::string_view MicralSectorSize="MediaEngine.MicralSectorSize",MicralSectorRange="MediaEngine.MicralSectorRange";
+inline constexpr std::string_view VictorSectorSize="MediaEngine.VictorSectorSize",VictorSectorRange="MediaEngine.VictorSectorRange",VictorMarkerLength="MediaEngine.VictorMarkerLength";
+inline constexpr std::string_view IwmSectorSize="MediaEngine.IwmSectorSize",IwmAddressRange="MediaEngine.IwmAddressRange";
+inline constexpr std::string_view IwmTaggedSize="MediaEngine.IwmTaggedSize",IwmSymbolLength="MediaEngine.IwmSymbolLength";
+inline constexpr std::string_view Rwts18TrackLayout="MediaEngine.Rwts18TrackLayout",Rwts18AddressRange="MediaEngine.Rwts18AddressRange";
+inline constexpr std::string_view Rwts18SectorSize="MediaEngine.Rwts18SectorSize",Rwts18PayloadLength="MediaEngine.Rwts18PayloadLength";
+inline constexpr std::string_view AppleIIAddressRange="MediaEngine.AppleIIAddressRange",AppleIISectorsPerTrack="MediaEngine.AppleIISectorsPerTrack";
+inline constexpr std::string_view AppleLatchCount="MediaEngine.AppleLatchCount";
+inline constexpr std::string_view AppleLatchOffset="MediaEngine.AppleLatchOffset";
+inline constexpr std::string_view AppleIISectorSize="MediaEngine.AppleIISectorSize";
+inline constexpr std::string_view AmigaMfmOddCount="MediaEngine.AmigaMfmOddCount";
+inline constexpr std::string_view AmigaMfmParityRange="MediaEngine.AmigaMfmParityRange";
+inline constexpr std::string_view AmigaMfmSectorSize="MediaEngine.AmigaMfmSectorSize";
+inline constexpr std::string_view AmigaMfmAddressRange="MediaEngine.AmigaMfmAddressRange";
+inline constexpr std::string_view RegistryEmpty="MediaEngine.RegistryEmpty";
+inline constexpr std::string_view RegistryNullDecoder="MediaEngine.RegistryNullDecoder";
+inline constexpr std::string_view RegistryInvalidId="MediaEngine.RegistryInvalidId";
+inline constexpr std::string_view RegistryDuplicate="MediaEngine.RegistryDuplicate";
+inline constexpr std::string_view RegistryUnknown="MediaEngine.RegistryUnknown";
+inline constexpr std::string_view RegistryNullRevolution="MediaEngine.RegistryNullRevolution";
+inline constexpr std::string_view RegistryNoAutomatic="MediaEngine.RegistryNoAutomatic";
+inline constexpr std::string_view IsoNoDecoders="MediaEngine.IsoNoDecoders",IsoDecoderMissing="MediaEngine.IsoDecoderMissing";
+inline constexpr std::string_view ProtectedCylinder="MediaEngine.ProtectedCylinder";
+inline constexpr std::string_view ProtectedHead="MediaEngine.ProtectedHead";
+inline constexpr std::string_view ProtectedNoContent="MediaEngine.ProtectedNoContent";
+inline constexpr std::string_view ProtectedMetadataNoBits="MediaEngine.ProtectedMetadataNoBits";
+inline constexpr std::string_view ProtectedRange="MediaEngine.ProtectedRange";
+inline constexpr std::string_view ProtectedTiming="MediaEngine.ProtectedTiming";
+inline constexpr std::string_view ProtectedResolution="MediaEngine.ProtectedResolution";
+inline constexpr std::string_view ProtectedImageEmpty="MediaEngine.ProtectedImageEmpty";
+inline constexpr std::string_view ProtectedImageDuplicate="MediaEngine.ProtectedImageDuplicate";
+inline constexpr std::string_view IsoNoAddressedCandidates="MediaEngine.IsoNoAddressedCandidates";
+inline constexpr std::string_view IsoEmptyCandidates="MediaEngine.IsoEmptyCandidates";
+inline constexpr std::string_view IsoCandidateData="MediaEngine.IsoCandidateData";
+inline constexpr std::string_view IsoGeometryOverflow="MediaEngine.IsoGeometryOverflow";
+inline constexpr std::string_view IsoSectorIndexMissing="MediaEngine.IsoSectorIndexMissing";
+inline constexpr std::string_view FmRevolutionTiming="MediaEngine.FmRevolutionTiming";
+inline constexpr std::string_view FmAddressRange="MediaEngine.FmAddressRange",FmSizeCode="MediaEngine.FmSizeCode";
+inline constexpr std::string_view ScpNo1581Sectors="MediaEngine.ScpNo1581Sectors",ScpNoUsable1581Sectors="MediaEngine.ScpNoUsable1581Sectors";
+inline constexpr std::string_view BitReadCount="MediaEngine.BitReadCount";
+inline constexpr std::string_view MfmAddressRange="MediaEngine.MfmAddressRange";
+inline constexpr std::string_view MfmSizeCode="MediaEngine.MfmSizeCode";
+inline constexpr std::string_view TrackPhysicalCapacity="MediaEngine.TrackPhysicalCapacity";
+inline constexpr std::string_view SectorUnsupportedSize="MediaEngine.SectorUnsupportedSize";
+inline constexpr std::string_view SectorUnsupportedSizeCode="MediaEngine.SectorUnsupportedSizeCode";
+inline constexpr std::string_view ScpNoCommodoreSectors="MediaEngine.ScpNoCommodoreSectors";
+inline constexpr std::string_view CbmGcrAttributeRange="MediaEngine.CbmGcrAttributeRange";
+inline constexpr std::string_view CbmGcrDiskTrack="MediaEngine.CbmGcrDiskTrack";
+inline constexpr std::string_view CbmGcrSectorSize="MediaEngine.CbmGcrSectorSize";
+inline constexpr std::string_view CommodoreWriteGeometry="MediaEngine.CommodoreWriteGeometry";
+inline constexpr std::string_view CommodoreWriteMissing="MediaEngine.CommodoreWriteMissing";
+inline constexpr std::string_view CommodoreWriteSize="MediaEngine.CommodoreWriteSize";
+inline constexpr std::string_view CommodoreWriteDiagnostic="MediaEngine.CommodoreWriteDiagnostic";
+inline constexpr std::string_view Domain = "MediaEngine";
+inline constexpr std::string_view RawInvalidLength = "Media.RawInvalidLength";
+inline constexpr std::string_view RawUnknownGeometry = "Media.RawUnknownGeometry";
+inline constexpr std::string_view MsxInvalidBoot = "Media.MsxInvalidBoot";
+inline constexpr std::string_view MsxUnsupportedGeometry = "Media.MsxUnsupportedGeometry";
+inline constexpr std::string_view UnsupportedRawFormat = "Media.UnsupportedRawFormat";
+inline constexpr std::string_view RawGeometryMismatch = "Media.RawGeometryMismatch";
+inline constexpr std::string_view RawSectorMissing = "Media.RawSectorMissing";
+inline constexpr std::string_view RawSectorSize = "Media.RawSectorSize";
+inline constexpr std::string_view AtomicOpen = "Media.AtomicOpen";
+inline constexpr std::string_view AtomicWrite = "Media.AtomicWrite";
+inline constexpr std::string_view AtomicCommit = "Media.AtomicCommit";
+inline constexpr std::string_view Cancelled = "Media.Cancelled";
+inline constexpr std::string_view DfsUnknownExtension = "Media.DfsUnknownExtension";
+inline constexpr std::string_view DfsIncompleteImage = "Media.DfsIncompleteImage";
+inline constexpr std::string_view DfsUnsupportedGeometry = "Media.DfsUnsupportedGeometry";
+inline constexpr std::string_view DfsUnsupportedTarget = "Media.DfsUnsupportedTarget";
+inline constexpr std::string_view AdfInvalidLength="MediaEngine.AdfInvalidLength";
+inline constexpr std::string_view AdfUnsupportedFormat="MediaEngine.AdfUnsupportedFormat";
+inline constexpr std::string_view AdfNoAcornCatalogue="MediaEngine.AdfNoAcornCatalogue";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view C900Cylinder="MediaEngine.C900Cylinder";
+inline constexpr std::string_view C900Block="MediaEngine.C900Block";
+inline constexpr std::string_view C900Address="MediaEngine.C900Address";
+inline constexpr std::string_view C900Content="MediaEngine.C900Content";
+inline constexpr std::string_view C900Alignment="MediaEngine.C900Alignment";
+inline constexpr std::string_view C900DeclaredBlocks="MediaEngine.C900DeclaredBlocks";
+inline constexpr std::string_view C900Capacity="MediaEngine.C900Capacity";
+inline constexpr std::string_view C900WriterGeometry="MediaEngine.C900WriterGeometry";
+inline constexpr std::string_view C900BlockAddress="MediaEngine.C900BlockAddress";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view FluxInvalidCell="MediaEngine.FluxInvalidCell";
+inline constexpr std::string_view FluxSizeLimit="MediaEngine.FluxSizeLimit";
+inline constexpr std::string_view FluxInvalidBit="MediaEngine.FluxInvalidBit";
+inline constexpr std::string_view FluxInvalidMaximum="MediaEngine.FluxInvalidMaximum";
+inline constexpr std::string_view FluxZeroCell="MediaEngine.FluxZeroCell";
+inline constexpr std::string_view FluxZeroIndex="MediaEngine.FluxZeroIndex";
+inline constexpr std::string_view FluxIntervalOverflow="MediaEngine.FluxIntervalOverflow";
+inline constexpr std::string_view GcrCoordinates="MediaEngine.GcrCoordinates";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view TrackCylinder="MediaEngine.TrackCylinder";
+inline constexpr std::string_view TrackHead="MediaEngine.TrackHead";
+inline constexpr std::string_view TrackMissingSectors="MediaEngine.TrackMissingSectors";
+inline constexpr std::string_view TrackEmpty="MediaEngine.TrackEmpty";
+inline constexpr std::string_view TrackHex="MediaEngine.TrackHex";
+inline constexpr std::string_view TrackBinaryCharacter="MediaEngine.TrackBinaryCharacter";
+inline constexpr std::string_view TrackNegativeGap="MediaEngine.TrackNegativeGap";
+inline constexpr std::string_view TrackSectorNumber="MediaEngine.TrackSectorNumber";
+inline constexpr std::string_view C900GcrSectorSize="MediaEngine.C900GcrSectorSize";
+inline constexpr std::string_view ScpResolution = "MediaEngine.ScpResolution";
+inline constexpr std::string_view ScpExtended = "MediaEngine.ScpExtended";
+inline constexpr std::string_view ScpSignature = "MediaEngine.ScpSignature";
+inline constexpr std::string_view ScpRevolutions = "MediaEngine.ScpRevolutions";
+inline constexpr std::string_view ScpTrackRange = "MediaEngine.ScpTrackRange";
+inline constexpr std::string_view ScpWidth = "MediaEngine.ScpWidth";
+inline constexpr std::string_view ScpHeads = "MediaEngine.ScpHeads";
+inline constexpr std::string_view ScpTrackSignature = "MediaEngine.ScpTrackSignature";
+inline constexpr std::string_view ScpTrackMismatch = "MediaEngine.ScpTrackMismatch";
+inline constexpr std::string_view ScpHeaderSection = "MediaEngine.ScpHeaderSection";
+inline constexpr std::string_view ScpTableSection = "MediaEngine.ScpTableSection";
+inline constexpr std::string_view ScpTrackSection = "MediaEngine.ScpTrackSection";
+inline constexpr std::string_view ScpFluxSection = "MediaEngine.ScpFluxSection";
+inline constexpr std::string_view ScpOverflow = "MediaEngine.ScpOverflow";
+inline constexpr std::string_view ScpTrackAddress = "MediaEngine.ScpTrackAddress";
+inline constexpr std::string_view ScpNoRevolution = "MediaEngine.ScpNoRevolution";
+inline constexpr std::string_view ScpNoC900Sectors = "MediaEngine.ScpNoC900Sectors";
+inline constexpr std::string_view ScpDuplicateTrack = "MediaEngine.ScpDuplicateTrack";
+inline constexpr std::string_view ScpTrackOutside = "MediaEngine.ScpTrackOutside";
+inline constexpr std::string_view ScpWriteAddress = "MediaEngine.ScpWriteAddress";
+inline constexpr std::string_view ScpWriteRevolutions = "MediaEngine.ScpWriteRevolutions";
+inline constexpr std::string_view ScpZeroInterval = "MediaEngine.ScpZeroInterval";
+inline constexpr std::string_view ScpOutput = "MediaEngine.ScpOutput";
+inline constexpr std::string_view CommodoreImageLength = "MediaEngine.CommodoreImageLength";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view AppleGeometryCylinder="MediaEngine.AppleGeometryCylinder";
+inline constexpr std::string_view AppleGeometryHeads="MediaEngine.AppleGeometryHeads";
+inline constexpr std::string_view AppleGeometryBlock="MediaEngine.AppleGeometryBlock";
+inline constexpr std::string_view AppleGeometryMacBlock="MediaEngine.AppleGeometryMacBlock";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view AppleOrderSector="MediaEngine.AppleOrderSector";
+inline constexpr std::string_view AppleRawUnrecognized="MediaEngine.AppleRawUnrecognized";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view AppleWriteAddress="MediaEngine.AppleWriteAddress";}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view TwoImgSignature="MediaEngine.TwoImgSignature";
+inline constexpr std::string_view TwoImgVersion="MediaEngine.TwoImgVersion";
+inline constexpr std::string_view TwoImgHeader="MediaEngine.TwoImgHeader";
+inline constexpr std::string_view TwoImgDataRange="MediaEngine.TwoImgDataRange";
+inline constexpr std::string_view TwoImgFormat="MediaEngine.TwoImgFormat";
+inline constexpr std::string_view TwoImgOverflow="MediaEngine.TwoImgOverflow";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view DiskCopyHeader="MediaEngine.DiskCopyHeader";
+inline constexpr std::string_view DiskCopyPrivateWord="MediaEngine.DiskCopyPrivateWord";
+inline constexpr std::string_view DiskCopyPayload="MediaEngine.DiskCopyPayload";
+inline constexpr std::string_view DiskCopyTags="MediaEngine.DiskCopyTags";
+inline constexpr std::string_view DiskCopyChecksumBytes="MediaEngine.DiskCopyChecksumBytes";
+inline constexpr std::string_view DiskCopyRange="MediaEngine.DiskCopyRange";
+inline constexpr std::string_view DiskCopyLayoutIncomplete="MediaEngine.DiskCopyLayoutIncomplete";
+inline constexpr std::string_view DiskCopyLayoutSize="MediaEngine.DiskCopyLayoutSize";
+inline constexpr std::string_view DiskCopyLayoutTags="MediaEngine.DiskCopyLayoutTags";
+inline constexpr std::string_view DiskCopyMetadataIncomplete="MediaEngine.DiskCopyMetadataIncomplete";
+inline constexpr std::string_view DiskCopyMetadataName="MediaEngine.DiskCopyMetadataName";
+inline constexpr std::string_view DiskCopyMetadataFormat="MediaEngine.DiskCopyMetadataFormat";
+inline constexpr std::string_view DiskCopyMetadataChecksum="MediaEngine.DiskCopyMetadataChecksum";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view WozHeader="MediaEngine.WozHeader";
+inline constexpr std::string_view WozDiskType="MediaEngine.WozDiskType";
+inline constexpr std::string_view WozMissingChunk="MediaEngine.WozMissingChunk";
+inline constexpr std::string_view WozTruncatedChunk="MediaEngine.WozTruncatedChunk";
+inline constexpr std::string_view WozTrackReference="MediaEngine.WozTrackReference";
+inline constexpr std::string_view WozCrc="MediaEngine.WozCrc";
+inline constexpr std::string_view WozChunkId="MediaEngine.WozChunkId";
+inline constexpr std::string_view WozTrackCount="MediaEngine.WozTrackCount";
+inline constexpr std::string_view WozTrackLength="MediaEngine.WozTrackLength";
+inline constexpr std::string_view AppleNoRwtsSectors="MediaEngine.AppleNoRwtsSectors";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+
+inline constexpr std::string_view BitPackingCapacity="MediaEngine.BitPackingCapacity";
+inline constexpr std::string_view BitPackingCount="MediaEngine.BitPackingCount";
+inline constexpr std::string_view BitPackingRange="MediaEngine.BitPackingRange";
+inline constexpr std::string_view AppleTrackUnsupported="MediaEngine.AppleTrackUnsupported";
+inline constexpr std::string_view AppleTrackGeometry="MediaEngine.AppleTrackGeometry";
+inline constexpr std::string_view AppleTrackSector="MediaEngine.AppleTrackSector";
+inline constexpr std::string_view AppleTrackTooLong="MediaEngine.AppleTrackTooLong";
+inline constexpr std::string_view AppleTrackDuplicate="MediaEngine.AppleTrackDuplicate";
+inline constexpr std::string_view NibTrackCount="MediaEngine.NibTrackCount";
+inline constexpr std::string_view NibTrackLength="MediaEngine.NibTrackLength";
+inline constexpr std::string_view HfeHeader="MediaEngine.HfeHeader";
+inline constexpr std::string_view HfeRevision="MediaEngine.HfeRevision";
+inline constexpr std::string_view HfeGeometry="MediaEngine.HfeGeometry";
+inline constexpr std::string_view HfeTable="MediaEngine.HfeTable";
+inline constexpr std::string_view HfeTiming="MediaEngine.HfeTiming";
+inline constexpr std::string_view HfeTrackLength="MediaEngine.HfeTrackLength";
+inline constexpr std::string_view HfeTrackData="MediaEngine.HfeTrackData";
+inline constexpr std::string_view HfeRateOpcode="MediaEngine.HfeRateOpcode";
+inline constexpr std::string_view HfeEmptyTrack="MediaEngine.HfeEmptyTrack";
+inline constexpr std::string_view HfeTracks="MediaEngine.HfeTracks";
+inline constexpr std::string_view HfeUniformEncoding="MediaEngine.HfeUniformEncoding";
+inline constexpr std::string_view HfeEncoding="MediaEngine.HfeEncoding";
+inline constexpr std::string_view HfeUniformRate="MediaEngine.HfeUniformRate";
+inline constexpr std::string_view HfeMissingTrack="MediaEngine.HfeMissingTrack";
+inline constexpr std::string_view HfeTrackAddress="MediaEngine.HfeTrackAddress";
+inline constexpr std::string_view HfeDuplicateTrack="MediaEngine.HfeDuplicateTrack";
+inline constexpr std::string_view HfeLimit="MediaEngine.HfeLimit";
+inline constexpr std::string_view HfeUniformTiming="MediaEngine.HfeUniformTiming";
+inline constexpr std::string_view HfeRevolutions="MediaEngine.HfeRevolutions";
+inline constexpr std::string_view HfePadding="MediaEngine.HfePadding";
+inline constexpr std::string_view HfeScpEncoding="MediaEngine.HfeScpEncoding";
+inline constexpr std::string_view HfeFluxBounds="MediaEngine.HfeFluxBounds";
+inline constexpr std::string_view HfeWeak="MediaEngine.HfeWeak";
+inline constexpr std::string_view FluxConversionTiming="MediaEngine.FluxConversionTiming";
+inline constexpr std::string_view FluxConversionBounds="MediaEngine.FluxConversionBounds";
+inline constexpr std::string_view FluxConversionRange="MediaEngine.FluxConversionRange";
+inline constexpr std::string_view FluxConversionInterval="MediaEngine.FluxConversionInterval";
+inline constexpr std::string_view MsaUnsupportedImage="MediaEngine.MsaUnsupportedImage";
+inline constexpr std::string_view MsaMissingSector="MediaEngine.MsaMissingSector";
+inline constexpr std::string_view MsaSectorSize="MediaEngine.MsaSectorSize";
+inline constexpr std::string_view MsaHeader="MediaEngine.MsaHeader";
+inline constexpr std::string_view MsaGeometry="MediaEngine.MsaGeometry";
+inline constexpr std::string_view MsaTruncatedTable="MediaEngine.MsaTruncatedTable";
+inline constexpr std::string_view MsaTruncatedTrack="MediaEngine.MsaTruncatedTrack";
+inline constexpr std::string_view MsaTruncatedRun="MediaEngine.MsaTruncatedRun";
+inline constexpr std::string_view MsaInvalidRun="MediaEngine.MsaInvalidRun";
+inline constexpr std::string_view MsaUnpackedLength="MediaEngine.MsaUnpackedLength";
+inline constexpr std::string_view StCylinderCount="MediaEngine.StCylinderCount";
+inline constexpr std::string_view StHeadCount="MediaEngine.StHeadCount";
+inline constexpr std::string_view StSectorCount="MediaEngine.StSectorCount";
+inline constexpr std::string_view StCapacityOverflow="MediaEngine.StCapacityOverflow";
+inline constexpr std::string_view AtrUnsupportedFormat="MediaEngine.AtrUnsupportedFormat";
+inline constexpr std::string_view AtrIncompatibleImage="MediaEngine.AtrIncompatibleImage";
+inline constexpr std::string_view AtrMissingSector="MediaEngine.AtrMissingSector";
+inline constexpr std::string_view AtrSectorSize="MediaEngine.AtrSectorSize";
+inline constexpr std::string_view AtrHeader="MediaEngine.AtrHeader";
+inline constexpr std::string_view AtrUnsupportedSize="MediaEngine.AtrUnsupportedSize";
+inline constexpr std::string_view AtrPayloadLength="MediaEngine.AtrPayloadLength";
+inline constexpr std::string_view AtrTruncatedPayload="MediaEngine.AtrTruncatedPayload";
+inline constexpr std::string_view AtrSectorCount="MediaEngine.AtrSectorCount";
+inline constexpr std::string_view AtxHeader="MediaEngine.AtxHeader";
+inline constexpr std::string_view AtxTrackOffset="MediaEngine.AtxTrackOffset";
+inline constexpr std::string_view AtxTrackCycle="MediaEngine.AtxTrackCycle";
+inline constexpr std::string_view AtxTrackBounds="MediaEngine.AtxTrackBounds";
+inline constexpr std::string_view AtxTrackNumber="MediaEngine.AtxTrackNumber";
+inline constexpr std::string_view AtxSectorCount="MediaEngine.AtxSectorCount";
+inline constexpr std::string_view AtxListBounds="MediaEngine.AtxListBounds";
+inline constexpr std::string_view AtxSectorNumber="MediaEngine.AtxSectorNumber";
+inline constexpr std::string_view AtxDataBounds="MediaEngine.AtxDataBounds";
+inline constexpr std::string_view AtxNoSectors="MediaEngine.AtxNoSectors";
+inline constexpr std::string_view AtxLargeOffset="MediaEngine.AtxLargeOffset";
+inline constexpr std::string_view AtxTruncated="MediaEngine.AtxTruncated";
+inline constexpr std::string_view ImdSignature="MediaEngine.ImdSignature";
+inline constexpr std::string_view ImdTruncated="MediaEngine.ImdTruncated";
+inline constexpr std::string_view ImdTrackHeader="MediaEngine.ImdTrackHeader";
+inline constexpr std::string_view ImdSizeCode="MediaEngine.ImdSizeCode";
+inline constexpr std::string_view ImdRecordType="MediaEngine.ImdRecordType";
+inline constexpr std::string_view ImdNoSectors="MediaEngine.ImdNoSectors";
+inline constexpr std::string_view ImdNoTracks="MediaEngine.ImdNoTracks";
+inline constexpr std::string_view ImdWriteTrack="MediaEngine.ImdWriteTrack";
+inline constexpr std::string_view ImdWriteSector="MediaEngine.ImdWriteSector";
+inline constexpr std::string_view ImdCompressed="MediaEngine.ImdCompressed";
+inline constexpr std::string_view ImdMetadataMode="MediaEngine.ImdMetadataMode";
+inline constexpr std::string_view ImdMetadataRecord="MediaEngine.ImdMetadataRecord";
+inline constexpr std::string_view ImdMetadataSize="MediaEngine.ImdMetadataSize";
+inline constexpr std::string_view ImdMetadataBlock="MediaEngine.ImdMetadataBlock";
+inline constexpr std::string_view ImdMetadataCount="MediaEngine.ImdMetadataCount";
+inline constexpr std::string_view ImdMetadata="MediaEngine.ImdMetadata";
+inline constexpr std::string_view ImdEpsonGeometry="MediaEngine.ImdEpsonGeometry";
+inline constexpr std::string_view ImdEpsonSize="MediaEngine.ImdEpsonSize";
+inline constexpr std::string_view ImdEpsonDuplicate="MediaEngine.ImdEpsonDuplicate";
+inline constexpr std::string_view EpsonFormat="MediaEngine.EpsonFormat";
+inline constexpr std::string_view EpsonGeometryDuplicate="MediaEngine.EpsonGeometryDuplicate";
+inline constexpr std::string_view CpcDskHeader="MediaEngine.CpcDskHeader";
+inline constexpr std::string_view CpcDskSignature="MediaEngine.CpcDskSignature";
+inline constexpr std::string_view CpcDskGeometry="MediaEngine.CpcDskGeometry";
+inline constexpr std::string_view CpcDskExtendedTable="MediaEngine.CpcDskExtendedTable";
+inline constexpr std::string_view CpcDskTrackTruncated="MediaEngine.CpcDskTrackTruncated";
+inline constexpr std::string_view CpcDskTrackHeader="MediaEngine.CpcDskTrackHeader";
+inline constexpr std::string_view CpcDskSectorTable="MediaEngine.CpcDskSectorTable";
+inline constexpr std::string_view CpcDskSectorTruncated="MediaEngine.CpcDskSectorTruncated";
+inline constexpr std::string_view CpcDskNoSectors="MediaEngine.CpcDskNoSectors";
+inline constexpr std::string_view CpcDskExtendedLarge="MediaEngine.CpcDskExtendedLarge";
+inline constexpr std::string_view CpcDskStandardRepresentation="MediaEngine.CpcDskStandardRepresentation";
+inline constexpr std::string_view CpcDskTrackCollection="MediaEngine.CpcDskTrackCollection";
+inline constexpr std::string_view CpcDskTrackIndex="MediaEngine.CpcDskTrackIndex";
+inline constexpr std::string_view CpcDskTooManySectors="MediaEngine.CpcDskTooManySectors";
+inline constexpr std::string_view CpcDskUniformTracks="MediaEngine.CpcDskUniformTracks";
+inline constexpr std::string_view CpcDskBuilderGeometry="MediaEngine.CpcDskBuilderGeometry";
+inline constexpr std::string_view CpcDskNativeMetadata="MediaEngine.CpcDskNativeMetadata";
+inline constexpr std::string_view CpcDskSizeCode="MediaEngine.CpcDskSizeCode";
+inline constexpr std::string_view CpcDskOverflow="MediaEngine.CpcDskOverflow";
+inline constexpr std::string_view CpcDskRecordedAddress="MediaEngine.CpcDskRecordedAddress";
+inline constexpr std::string_view CprHeader="MediaEngine.CprHeader";
+inline constexpr std::string_view CprLength="MediaEngine.CprLength";
+inline constexpr std::string_view CprChunkRange="MediaEngine.CprChunkRange";
+inline constexpr std::string_view CprDuplicate="MediaEngine.CprDuplicate";
+inline constexpr std::string_view CprLargeBank="MediaEngine.CprLargeBank";
+inline constexpr std::string_view CprUnknownChunk="MediaEngine.CprUnknownChunk";
+inline constexpr std::string_view CprChunkHeader="MediaEngine.CprChunkHeader";
+inline constexpr std::string_view CprNoBanks="MediaEngine.CprNoBanks";
+inline constexpr std::string_view CprWrite="MediaEngine.CprWrite";
+inline constexpr std::string_view RomCorpus="MediaEngine.RomCorpus";
+inline constexpr std::string_view RomNoData="MediaEngine.RomNoData";
+inline constexpr std::string_view RomBankLimit="MediaEngine.RomBankLimit";
+inline constexpr std::string_view RomIncomplete="MediaEngine.RomIncomplete";
+inline constexpr std::string_view RomWrite="MediaEngine.RomWrite";
+inline constexpr std::string_view FdsSource="MediaEngine.FdsSource";
+inline constexpr std::string_view FdsSides="MediaEngine.FdsSides";
+inline constexpr std::string_view FdsNoSide="MediaEngine.FdsNoSide";
+inline constexpr std::string_view FdsCount="MediaEngine.FdsCount";
+inline constexpr std::string_view FdsUndeclared="MediaEngine.FdsUndeclared";
+inline constexpr std::string_view FdsWrite="MediaEngine.FdsWrite";
+inline constexpr std::string_view FdsHeader="MediaEngine.FdsHeader";
+}

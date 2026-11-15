@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Sporsylinder {0} må være mellom null og {1}.",
+    "MediaEngine.TrackHead": "Sporhodet {0} må være mellom null og {1}.",
+    "MediaEngine.TrackMissingSectors": "Minst én sektor er nødvendig; mottatt {0}.",
+    "MediaEngine.TrackEmpty": "Koder {0} produserte ingen bitceller.",
+    "MediaEngine.TrackHex": "Den råheksiske teksten er ugyldig.",
+    "MediaEngine.TrackBinaryCharacter": "Binærtekst inneholder «{0}» på posisjon {1}; bare null og én er tillatt.",
+    "MediaEngine.TrackNegativeGap": "Gaplengde {0} må ikke være negativ.",
+    "MediaEngine.TrackSectorNumber": "Sektornummer {0} må være mellom null og {1}.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 sektorer inneholder {0} bytes; mottatt {1} bytes.",
+    "MediaEngine.C900GcrSync": "Uklassifisert Commodore 900 CommodoreSync, GCR-synkronisering",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} byte, kontrollsum {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} byte, kontrollsum {4}",
+    "MediaEngine.C900GcrUnpaired": "Uparrede Commodore 900-data, datablokk, kontrollsum {0}",
+    "MediaEngine.IntegrityValid": "gyldig",
+    "MediaEngine.IntegrityInvalid": "ugyldig",
+    "MediaEngine.IntegrityUnavailable": "utilgjengelig"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Der Wert {1} des TYCOM-Feldes {0} muss zwischen null und {2} liegen.",
+    "MediaEngine.TycomSectorSize": "TYCOM-Sektoren enthalten 128 Bytes; {0} Bytes empfangen.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 Bytes, Markierung {2}, Header-CRC {3}, Daten-CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 Bytes, Header-CRC {2}, Daten-CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 Bytes, Markierung FE, Header-CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 Bytes, Markierung {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, Sektorheader, abgeschnitten",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, Markierung {0}, Sektordaten, abgeschnitten",
+    "MediaEngine.TycomUnpaired": "Nicht klassifiziert TYCOM FormatData, Markierung {0}, Daten"
+  }
+}

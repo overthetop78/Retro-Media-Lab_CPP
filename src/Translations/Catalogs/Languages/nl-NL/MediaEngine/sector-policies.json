@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Een encoderidentificatie is vereist.",
+    "MediaEngine.PolicyFormats": "Minstens één formaatidentificatie is vereist en mag niet leeg zijn of alleen spaties bevatten.",
+    "MediaEngine.PolicyPrefixes": "Minstens één formaatvoorvoegsel is vereist en mag niet leeg zijn of alleen spaties bevatten.",
+    "MediaEngine.PolicyNull": "Een regel voor sectorreconstructie mag niet null zijn.",
+    "MediaEngine.PolicyNullBlock": "Een sectorreconstructie-item mag geen null-verwijzing naar een blok bevatten.",
+    "MediaEngine.PolicyRareUnknown": "Voor formaat '{0}' is geen profiel voor zeldzame codering geregistreerd.",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare-cilinder {0} moet tussen 0 en {1} liggen.",
+    "MediaEngine.PolicyJfdDensity": "De JFD-track heeft geen bruikbare dichtheidscode.",
+    "MediaEngine.PolicyAddressRange": "Adreswaarde {0} valt buiten het bereik van een 32-bits geheel getal met teken."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Je vyžadován identifikátor kodéru.",
+    "MediaEngine.PolicyFormats": "Je vyžadován alespoň jeden identifikátor formátu, který není prázdný ani složený pouze z mezer.",
+    "MediaEngine.PolicyPrefixes": "Je vyžadována alespoň jedna předpona formátu, která není prázdná ani složená pouze z mezer.",
+    "MediaEngine.PolicyNull": "Pravidlo rekonstrukce sektorů nemůže být null.",
+    "MediaEngine.PolicyNullBlock": "Položka rekonstrukce sektorů nemůže obsahovat odkaz null na blok.",
+    "MediaEngine.PolicyRareUnknown": "Pro formát '{0}' není registrován profil vzácného kódování.",
+    "MediaEngine.PolicyLisaCylinder": "Číslo válce Lisa FileWare {0} musí být v rozsahu 0 až {1}.",
+    "MediaEngine.PolicyJfdDensity": "Stopa JFD nemá použitelný kód hustoty.",
+    "MediaEngine.PolicyAddressRange": "Hodnota adresy {0} je mimo rozsah 32bitového celého čísla se znaménkem."
+  }
+}

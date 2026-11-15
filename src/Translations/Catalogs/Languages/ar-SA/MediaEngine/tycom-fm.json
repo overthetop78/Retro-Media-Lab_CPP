@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "قيمة الحقل {0} في TYCOM هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.TycomSectorSize": "تحتوي قطاعات TYCOM على 128 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 بايت, علامة {2}, CRC الرأس {3}, CRC البيانات {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 بايت, CRC الرأس {2}, CRC البيانات {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 بايت, علامة FE, CRC الرأس {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 بايت, علامة {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, ترويسة القطاع, مبتور",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, علامة {0}, بيانات القطاع, مبتور",
+    "MediaEngine.TycomUnpaired": "غير مصنف TYCOM FormatData, علامة {0}, بيانات"
+  }
+}

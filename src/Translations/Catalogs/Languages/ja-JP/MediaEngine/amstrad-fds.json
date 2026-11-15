@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF AMS!(ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ・ザ カートリッジのヘッダーは欠落しています。",
+    "MediaEngine.CprLength": "CPR RIFFの長さは無効です。",
+    "MediaEngine.CprChunkRange": "CPRチャンク '{0}' は RIFF コンテナを上回ります。",
+    "MediaEngine.CprDuplicate": "CPR銀行 '{0}' は重複しています。",
+    "MediaEngine.CprLargeBank": "CPR 銀行 '{0}' には、16 KiB ページを超えるバイトが含まれている。マッピングされていない。",
+    "MediaEngine.CprUnknownChunk": "RIFFチャンク '{0}' は CPR カートリッジ銀行ではありません。",
+    "MediaEngine.CprChunkHeader": "CPR RIFFコンテナはチャンクヘッダー内に終了します。",
+    "MediaEngine.CprNoBanks": "CPRイメージはcb00をcb31カートリッジ銀行を通して含んでいます。",
+    "MediaEngine.CprWrite": "ブロック文書は完全なCPRカートリッジとして記述できません。",
+    "MediaEngine.RomCorpus": "CPC ROMの長さは、実証済みのコルパスプロファイルの外にあります。",
+    "MediaEngine.RomNoData": "CPC ROM は銀行データを含んでいません。",
+    "MediaEngine.RomBankLimit": "CPC ROM は 32 のカートリッジ銀行を超過します。",
+    "MediaEngine.RomIncomplete": "最後のCPC ROM銀行は不完全であり、発明されたパディングなしで露出されます。",
+    "MediaEngine.RomWrite": "ブロック文書は、連続したCPC ROM銀行を含んでいません。",
+    "MediaEngine.FdsSource": "選択したソースはFamicom Disk Systemイメージではありません。",
+    "MediaEngine.FdsSides": "Famicom Disk Systemのイメージは完全な側面を含んでいません。",
+    "MediaEngine.FdsNoSide": "Famicom Disk Systemのイメージは側面を含みません。",
+    "MediaEngine.FdsCount": "Famicom Disk System 側のカウントはヘッダーに一致しません。",
+    "MediaEngine.FdsUndeclared": "FDS ヘッダはサイドカウントを宣言しません。 保存されたデータからカウントが取られました。",
+    "MediaEngine.FdsWrite": "ブロック文書には、Famicom Disk System 側は含まれていません。",
+    "MediaEngine.FdsHeader": "ソース FDS ヘッダが欠落しています。",
+    "MediaEngine.AmstradCartridgeVolume": "Amstradのカートリッジ"
+  }
+}

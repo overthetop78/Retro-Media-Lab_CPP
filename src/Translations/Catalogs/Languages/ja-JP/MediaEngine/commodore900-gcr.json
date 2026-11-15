@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "トラックのシリンダー {0} は 0 から {1} の間でなければなりません。",
+    "MediaEngine.TrackHead": "ヘッド {0} は 0 と {1} の間になければなりません。",
+    "MediaEngine.TrackMissingSectors": "少なくとも1つのセクターが必要です。{0} を受信します。",
+    "MediaEngine.TrackEmpty": "エンコーダー {0} はビットセルを生成しませんでした。",
+    "MediaEngine.TrackHex": "生の16進数のテキストは無効です。",
+    "MediaEngine.TrackBinaryCharacter": "バイナリテキストは、位置 {1} で '{0}' が含まれています。 0 と 1 だけが許可されます。",
+    "MediaEngine.TrackNegativeGap": "ギャップ長 {0} を負の値にはできません。",
+    "MediaEngine.TrackSectorNumber": "セクター番号 {0} は 0 と {1} の間でなければなりません。",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 セクターには {0} バイトが含まれています。{1} バイトを受け取りました。",
+    "MediaEngine.C900GcrSync": "未分類のCommodore 900のCommodoreSync、GCRのsync",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader、C{0} H{1} R{2}、{3}バイト、チェックサム{4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData、C{0} H{1} R{2}、{3}バイト、チェックサム{4}",
+    "MediaEngine.C900GcrUnpaired": "対応するヘッダーのない Commodore 900 データ、データブロック、チェックサム {0}",
+    "MediaEngine.IntegrityValid": "有効",
+    "MediaEngine.IntegrityInvalid": "無効",
+    "MediaEngine.IntegrityUnavailable": "利用不可"
+  }
+}

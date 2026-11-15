@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Apple II GCR 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II 磁道在 5-and-3 格式下包含13扇区，在 6-and-2 格式下包含16扇区；收到 {0}。",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 字节, V{4}, 地址校验和 {5}, 数据校验和 {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 字节, 13扇区 V{4}, 地址校验和 {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} 字节, 校验和 {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} 字节, 13扇区, 校验和 {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, 校验和 不可用, 已截断",
+    "MediaEngine.AppleIIUnpaired": "未配对的 Apple II 数据，数据前导 D5 AA AD"
+  }
+}

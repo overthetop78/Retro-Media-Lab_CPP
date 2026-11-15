@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "המקטע כותרת התמונה ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0CommentHeaderTruncated": "המקטע כותרת ההערה ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0CommentTruncated": "המקטע ההערה ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0TrackTruncated": "המקטע כותרת המסלול ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0SectorTruncated": "המקטע כותרת המגזר ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0DataHeaderTruncated": "המקטע כותרת נתוני המגזר ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0DataTruncated": "המקטע נתוני המגזר ב־TeleDisk קטוע בהיסט {0}: נדרשים {1} בתים, זמינים {2}.",
+    "MediaEngine.Td0Signature": "התמונה אינה תמונת TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "CRC כותרת TeleDisk אינו תקין: צפוי 0x{0}, חושב 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "CRC הערת TeleDisk אינו תקין: צפוי 0x{0}, חושב 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "CRC מסלול TeleDisk ‏{0}/{1} אינו תקין: צפוי 0x{2}, חושב 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "CRC מגזר TeleDisk ‏{0}/{1}/{2} אינו תקין: צפוי 0x{3}, חושב 0x{4}.",
+    "MediaEngine.Td0SizeCode": "למגזר TeleDisk ‏{0}/{1}/{2} קוד גודל לא תקין {3}.",
+    "MediaEngine.Td0MissingData": "למגזר TeleDisk ‏{0}/{1}/{2} אין נתונים מקודדים בהיסט {3}.",
+    "MediaEngine.Td0NoSectors": "תמונת TeleDisk אינה מכילה מגזרים."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP-aikaresoluution on oltava positiivinen; vastaanotettu {0}.",
+    "MediaEngine.ScpExtended": "Laajennetut SCP-mediat eivät ole levykkeitä.",
+    "MediaEngine.ScpSignature": "Tiedostossa ei ole SCP- allekirjoitusta.",
+    "MediaEngine.ScpRevolutions": "SCP:n kierrosluku {0} on virheellinen.",
+    "MediaEngine.ScpTrackRange": "SCP-raita-alue {0} - {1} on virheellinen.",
+    "MediaEngine.ScpWidth": "SCP-bittisolun leveys {0} ei ole tuettu.",
+    "MediaEngine.ScpHeads": "SCP päävalitsin {0} on virheellinen.",
+    "MediaEngine.ScpTrackSignature": "Raidalla {0} ei ole TRK-allekirjoitusta; kuvaaja sisältää raidan numeron {1}.",
+    "MediaEngine.ScpTrackMismatch": "Raitataulukon kohta {0} osoittaa raitaan {1}.",
+    "MediaEngine.ScpHeaderSection": "SCP-otsikko on epätäydellinen tai virheellinen offset {0}; {1} tavua vaaditaan.",
+    "MediaEngine.ScpTableSection": "SCP-raitojen siirtymätaulukko on puutteellinen tai virheellinen siirtymässä {0}; tarvitaan {1} tavua.",
+    "MediaEngine.ScpTrackSection": "SCP-raidan {0} otsikko on epätäydellinen tai virheellinen offset {1}; {2} tavua vaaditaan.",
+    "MediaEngine.ScpFluxSection": "SCP-raidan {0} virta, kierros {1}, on epätäydellinen tai virheellinen offset {2}; {3} tavua vaaditaan.",
+    "MediaEngine.ScpOverflow": "SCP-koko, sijainti, väli tai yhdistetty kierros ylittää tuetun numeerisen alueen.",
+    "MediaEngine.ScpTrackAddress": "SCP-raitanumero {0} on ratataulukon ulkopuolella.",
+    "MediaEngine.ScpNoRevolution": "SCP-raita ei sisällä dekoodattavaa kierrosta.",
+    "MediaEngine.ScpNoC900Sectors": "Yhtään Commodore 900 GCR-sektoria ei voitu purkaa SCP-kuvasta."
+  }
+}

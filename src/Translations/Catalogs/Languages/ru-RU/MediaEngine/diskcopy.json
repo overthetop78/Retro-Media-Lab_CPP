@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Заголовок DiskCopy усечен.",
+    "MediaEngine.DiskCopyPrivateWord": "Частное слово DiskCopy — {0}; ожидаемое {1}.",
+    "MediaEngine.DiskCopyPayload": "Полезная нагрузка DiskCopy недействительна.",
+    "MediaEngine.DiskCopyTags": "Образ DiskCopy не является ни распознанным образом Macintosh/ProDOS, ни образом Lisa с тегами.",
+    "MediaEngine.DiskCopyChecksumBytes": "Контрольная сумма DiskCopy требует четного количества байтов; получен {0}.",
+    "MediaEngine.DiskCopyRange": "Длина DiskCopy превышает поддерживаемый диапазон.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy требует полного секторного образа.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy требует 512 байт на логический блок.",
+    "MediaEngine.DiskCopyLayoutTags": "Каждый тег DiskCopy должен содержать 12 байт.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Метаданные DiskCopy являются неполными.",
+    "MediaEngine.DiskCopyMetadataName": "Метаданные имени DiskCopy недействительны.",
+    "MediaEngine.DiskCopyMetadataFormat": "Метаданные формата DiskCopy недействительны.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Метаданные контрольной суммы DiskCopy '{0}' недействительны."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "磁區映像 '{0}' 的幾何參數為 {1}x{2}x{3}、區塊大小為 {4}，無法寫為 MSA。",
+    "MediaEngine.MsaMissingSector": "缺少 MSA 邏輯磁區 {0}（{1}:{2}:{3}）。",
+    "MediaEngine.MsaSectorSize": "MSA 邏輯磁區 {0} 包含 {1} 位元組；應為 {2} 位元組。",
+    "MediaEngine.MsaHeader": "MSA 檔頭無效；檔案包含 {0} 位元組。",
+    "MediaEngine.MsaGeometry": "MSA 幾何參數無效：{0} 個磁區、{1} 個磁頭、磁柱 {2} 至 {3}。",
+    "MediaEngine.MsaTruncatedTable": "磁柱 {0}、磁頭 {1} 在位移 {2} 處的 MSA 磁軌長度欄位遭截斷：僅有 {3} 位元組。",
+    "MediaEngine.MsaTruncatedTrack": "MSA 磁軌 {0}:{1} 在位移 {2} 處宣告了 {3} 位元組，但只有 {4} 位元組可用。",
+    "MediaEngine.MsaTruncatedRun": "MSA 磁軌 {0}:{1} 的壓縮序列在壓縮資料位移 {2} 處遭截斷，壓縮資料長度為 {3} 位元組。",
+    "MediaEngine.MsaInvalidRun": "MSA 磁軌 {0}:{1} 的壓縮序列在壓縮資料位移 {2} 處的重複次數為 {3}；已寫入 {5} 個輸出位元組中的 {4} 個。",
+    "MediaEngine.MsaUnpackedLength": "MSA 磁軌 {0}:{1} 消耗了 {3} 個壓縮位元組中的 {2} 個，並產生了預期 {5} 位元組中的 {4} 個。"
+  }
+}

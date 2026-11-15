@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "يجب أن تحتوي حمولة Arburg (بيانات) على {0} بايت مفيد أو {1} بايت للكتلة الكاملة؛ تم استلام {2} بايت.",
+    "MediaEngine.ArburgSystemPayloadSize": "يجب أن تحتوي حمولة Arburg (نظام) على {0} بايت مفيد أو {1} بايت للكتلة الكاملة؛ تم استلام {2} بايت.",
+    "MediaEngine.ArburgBlockCapacity": "سعة كتلة Arburg هي {1} لعدد {0} بايت مفيد؛ يجب توفير بايتين للمجموع الاختباري ضمن حد الحجم المدعوم.",
+    "MediaEngine.ArburgUsefulSize": "يجب أن يكون عدد البايتات المفيدة في Arburg غير سالب؛ القيمة المستلمة {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 بايت, كتلة بيانات, المجموع الاختباري {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 بايت, كتلة نظام, المجموع الاختباري {0}"
+  }
+}

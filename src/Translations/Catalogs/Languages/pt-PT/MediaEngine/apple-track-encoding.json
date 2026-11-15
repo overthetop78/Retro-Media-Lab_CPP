@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Uma sequência de {0} bits não cabe em {1} bytes.",
+    "MediaEngine.BitPackingCount": "A quantidade de bits {0} deve ser positiva.",
+    "MediaEngine.BitPackingRange": "O tamanho do empacotamento de bits excede o intervalo suportado.",
+    "MediaEngine.AppleTrackUnsupported": "O formato de origem '{1}' não pode ser codificado como {0}.",
+    "MediaEngine.AppleTrackGeometry": "A geometria Apple II com {0} cilindros, {1} cabeças e {2} setores por pista não pode ser codificada.",
+    "MediaEngine.AppleTrackSector": "O setor {0} {1}:{2} contém {3} bytes em vez de {4}.",
+    "MediaEngine.AppleTrackTooLong": "A pista {0} {1} contém {2} bits; máximo: {3}.",
+    "MediaEngine.AppleTrackDuplicate": "A pista Apple II {0} contém o número de setor físico duplicado {1}.",
+    "MediaEngine.NibTrackCount": "O gravador NIB exige pelo menos uma pista; recebeu {0}.",
+    "MediaEngine.NibTrackLength": "A pista NIB {0} contém {1} bits; máximo: {2}."
+  }
+}

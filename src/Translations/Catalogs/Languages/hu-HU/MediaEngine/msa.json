@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Az '{0}' szektor geometriai ábráját {1} x {2} x {3} és a blokk méretét {4} nem lehet MSA-ként írni.",
+    "MediaEngine.MsaMissingSector": "Az MSA logikai szektora {0} ({1}: {2}: {3}) hiányzik.",
+    "MediaEngine.MsaSectorSize": "Az MSA logikai szektora {0} {1} bájtot tartalmaz; várható {2}.",
+    "MediaEngine.MsaHeader": "Az MSA fejléc érvénytelen; a fájl {0} bájtot tartalmaz.",
+    "MediaEngine.MsaGeometry": "Az MSA geometria érvénytelen: {0} szektor, {1} fejek, hengerek {2} - {3}.",
+    "MediaEngine.MsaTruncatedTable": "Az MSA sávhosszmezője a(z) {0}. hengerhez és {1}. fejhez a(z) {2} eltolásnál csonka: {3} bájt érhető el.",
+    "MediaEngine.MsaTruncatedTrack": "A(z) {0}:{1} MSA-sáv a(z) {2} eltolásnál {3} bájtot jelez, de {4} érhető el.",
+    "MediaEngine.MsaTruncatedRun": "A tömörített futást az MSA pályán {0}: {1} csomagolt ofszet esetén {2} a {3} bájtokon belül csonkítják.",
+    "MediaEngine.MsaInvalidRun": "A tömörített futtatás az MSA pályán {0}: {1} csomagolt offset esetén {2} értéke {3}; {4} a {5} kimeneti bájt már meg van írva.",
+    "MediaEngine.MsaUnpackedLength": "MSA track {0}: {1} fogyasztott {2} a {3} tömörített bájtból, és előállított {4} a {5} várható bájtból."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "لا تحتوي الصورة على ترويسة ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "سجل ApriDisk غير صالح عند البايت {0}.",
+    "MediaEngine.ApridiskOverflow": "طول سجل ApriDisk يتجاوز حد العدد الصحيح ذي الإشارة من 32 بت.",
+    "MediaEngine.ApridiskTruncated": "سجل ApriDisk عند البايت {0} مبتور.",
+    "MediaEngine.ApridiskAddress": "عنوان قطاع ApriDisk ‏{0}/{1}/{2} خارج هندسة ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "تحتوي صورة ApriDisk على {0} قطاعًا قابلًا للاستخدام بدلًا من {1}.",
+    "MediaEngine.ApridiskSectorLength": "يحتوي قطاع ApriDisk على {0} بايت بدلًا من {1}.",
+    "MediaEngine.ApridiskCompression": "ضغط قطاع ApriDisk غير مدعوم: {0}.",
+    "MediaEngine.ApridiskExpansion": "يتجاوز حجم قطاع ApriDisk المضغوط بعد فك الضغط 512 بايت.",
+    "MediaEngine.ApridiskWriteGeometry": "لا تستخدم صورة القطاعات هندسة ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "تحتوي صورة DEC RX02 على {0} بايت؛ تتطلب الصورة الفيزيائية الكاملة {1}.",
+    "MediaEngine.Rx02WriteGeometry": "لا تستخدم صورة القطاعات هندسة DEC RX02."
+  }
+}

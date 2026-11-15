@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Το τμήμα TeleDisk «κεφαλίδα εικόνας» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Το τμήμα TeleDisk «κεφαλίδα σχολίου» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0CommentTruncated": "Το τμήμα TeleDisk «σχόλιο» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0TrackTruncated": "Το τμήμα TeleDisk «κεφαλίδα ίχνους» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0SectorTruncated": "Το τμήμα TeleDisk «κεφαλίδα τομέα» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0DataHeaderTruncated": "Το τμήμα TeleDisk «κεφαλίδα δεδομένων τομέα» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0DataTruncated": "Το τμήμα TeleDisk «δεδομένα τομέα» έχει αποκοπεί στη μετατόπιση {0}: απαιτούνται {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Td0Signature": "Η εικόνα δεν είναι εικόνα TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Η κεφαλίδα TeleDisk CRC δεν είναι έγκυρη: αναμένεται 0x{0}, υπολογίζεται 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Το σχόλιο TeleDisk CRC είναι άκυρο: αναμένεται 0x{0}, υπολογίζεται 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Το κομμάτι TeleDisk {0}/ {1} CRC δεν είναι έγκυρο: αναμένεται 0x{2}, υπολογιζόμενο 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "Ο τομέας TeleDisk {0}/ {1}/ {2} CRC είναι άκυρος: αναμένεται 0x{3}, υπολογίζεται 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Ο τομέας TeleDisk {0}/ {1}/ {2} δεν έχει έγκυρο κωδικό μεγέθους {3}.",
+    "MediaEngine.Td0MissingData": "Ο τομέας TeleDisk {0}/ {1}/ {2} δεν έχει κωδικοποιημένα δεδομένα στο όφσετ {3}.",
+    "MediaEngine.Td0NoSectors": "Η εικόνα TeleDisk δεν περιέχει τομείς."
+  }
+}

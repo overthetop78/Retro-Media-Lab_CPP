@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Värdet {1} i Membrain MFM-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.MembrainSectorSize": "Membrain-sektorer innehåller 512 byte; tog emot {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, markering FE, header-CRC {3}, data-CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, markering {3}, datablock, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, sektorhuvud, avkortat",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC otillgänglig, avkortat",
+    "MediaEngine.MembrainUnpaired": "Oparade Membrain-data, datablock"
+  }
+}

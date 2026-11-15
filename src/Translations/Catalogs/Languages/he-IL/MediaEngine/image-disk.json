@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "התמונה אינה מכילה ראשי תיבות של ImageDisk: comment terminator at {0}, אורך הקובץ {1} Bytes.",
+    "MediaEngine.ImdTruncated": "הקטע של ImageDisk {0} ב- offset {1} הוא truncated: {2} Bytes נדרשים, {3} זמינים.",
+    "MediaEngine.ImdTrackHeader": "ראשי תיבות של ImageDisk Track Header הוא invalid: Mode {0}, ספירת המגזר {1}",
+    "MediaEngine.ImdSizeCode": "The The The ImageDisk קוד בגודל מגזר {0} זה לא חוקי.",
+    "MediaEngine.ImdRecordType": "סוג ImageDisk - {0} הוא לא חוקי.",
+    "MediaEngine.ImdNoSectors": "התמונה של ImageDisk אינה מכילה מגזרים.",
+    "MediaEngine.ImdNoTracks": "תמונת ImageDisk אינה מכילה מסלולים.",
+    "MediaEngine.ImdWriteTrack": "ראשי תיבות של ImageDisk אינם מייצגים.",
+    "MediaEngine.ImdWriteSector": "שיא מגזר ImageDisk הוא לא חוקי.",
+    "MediaEngine.ImdCompressed": "מגזר ImageDisk דחוס אינו מכיל אחד חזרות.",
+    "MediaEngine.ImdMetadataMode": "metadata ImageDisk מכיל מצב מסלול לא חוקי.",
+    "MediaEngine.ImdMetadataRecord": "metadata ImageDisk מכיל סוג שיא של מגזר לא חוקי.",
+    "MediaEngine.ImdMetadataSize": "metadata ImageDisk מכיל גודל מגזר לא חוקי.",
+    "MediaEngine.ImdMetadataBlock": "ה- ImageDisk metadata אינו תואם לבלוק הלוגי \"{0}\".",
+    "MediaEngine.ImdMetadataCount": "ספירת בלוק metadata metadata ImageDisk אינה תואמת את תמונת המגזר.",
+    "MediaEngine.ImdMetadata": "metadata metadata ImageDisk הוא לא חוקי.",
+    "MediaEngine.ImdEpsonGeometry": "הגיאומטריה של הדימוי של Epson אינה תואמת את מזהה הפורמט שלה.",
+    "MediaEngine.ImdEpsonSize": "מגזר Epson {0}:{1}:{2} הוא בגודל לא חוקי.",
+    "MediaEngine.ImdEpsonDuplicate": "מגזר Epson {0}:{1}:{2} משוכפל.",
+    "MediaEngine.EpsonFormat": "הפורמט שנבחר ' {0} הוא לא פורמט Epson QX-10 נתמך.",
+    "MediaEngine.EpsonGeometryDuplicate": "Auplicate Epson QX-10 גיאומטריה: {0}"
+  }
+}

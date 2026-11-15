@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Sekvence {0} bitů se nevejde do {1} bajtů.",
+    "MediaEngine.BitPackingCount": "Počet bitů {0} musí být kladný.",
+    "MediaEngine.BitPackingRange": "Velikost balení bitů přesahuje podporovaný rozsah.",
+    "MediaEngine.AppleTrackUnsupported": "Formát zdroje '{1}' nelze kódovat jako {0}.",
+    "MediaEngine.AppleTrackGeometry": "Geometrie Apple II s {0} válci, {1} hlavami a {2} sektory na trať nelze kódovat.",
+    "MediaEngine.AppleTrackSector": "Sektor {1}:{2} formátu {0} obsahuje {3} bajtů místo {4}.",
+    "MediaEngine.AppleTrackTooLong": "Stopa {1} formátu {0} obsahuje {2} bitů; maximum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Stopa Apple II {0} obsahuje duplicitní číslo fyzického sektoru {1}.",
+    "MediaEngine.NibTrackCount": "Zapisovač NIB vyžaduje alespoň jednu stopu; přijato {0}.",
+    "MediaEngine.NibTrackLength": "Stopa NIB {0} obsahuje {1} bitů; maximum {2}."
+  }
+}

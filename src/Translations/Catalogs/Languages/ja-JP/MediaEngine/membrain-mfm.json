@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.MembrainSectorSize": "Membrainセクターは512バイトです。受信したバイト数：{0}。",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 バイト, マーク FE, ヘッダーCRC {3}, データCRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 バイト, マーク {3}, データブロック, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, セクターヘッダー, 途中で切断",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC 利用不可, 途中で切断",
+    "MediaEngine.MembrainUnpaired": "未対応付けの Membrain データ, データブロック"
+  }
+}

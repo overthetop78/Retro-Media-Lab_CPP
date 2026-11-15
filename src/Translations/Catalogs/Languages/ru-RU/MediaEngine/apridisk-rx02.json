@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Изображение не содержит заголовок ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Недействительная запись ApriDisk на байте {0}.",
+    "MediaEngine.ApridiskOverflow": "Длина записи ApriDisk превышает предел 32-битного целого числа со знаком.",
+    "MediaEngine.ApridiskTruncated": "Запись ApriDisk на байте {0} усечена.",
+    "MediaEngine.ApridiskAddress": "Адрес сектора ApriDisk {0}/{1}/{2} находится за пределами геометрии ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Изображение ApriDisk содержит {0} полезные сектора вместо {1}.",
+    "MediaEngine.ApridiskSectorLength": "Сектор ApriDisk содержит {0} байты вместо {1}.",
+    "MediaEngine.ApridiskCompression": "Неподдерживаемое сжатие сектора ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "Сжатый сектор ApriDisk расширяется более чем на 512 байт.",
+    "MediaEngine.ApridiskWriteGeometry": "Изображение сектора не использует геометрию ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Образ DEC RX02 содержит {0} байт; для полного физического образа требуется {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Изображение сектора не использует геометрию DEC RX02."
+  }
+}

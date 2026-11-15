@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Η κεφαλίδα WOZ είναι άκυρη.",
+    "MediaEngine.WozDiskType": "Ο τύπος δίσκου WOZ {0} δεν υποστηρίζεται· απαιτείται δισκέτα Apple II 5.25 ιντσών.",
+    "MediaEngine.WozMissingChunk": "Το απαιτούμενο τμήμα WOZ '{0}' λείπει ή είναι ελλιπές.",
+    "MediaEngine.WozTruncatedChunk": "Το τμήμα WOZ '{0}' είναι περικομμένο.",
+    "MediaEngine.WozTrackReference": "Η τροχιά WOZ {0} αναφέρεται στον περιγραφέα {1}, ο οποίος βρίσκεται εκτός ορίων.",
+    "MediaEngine.WozCrc": "Το WOZ CRC32 είναι άκυρο: αποθηκευμένη τιμή {0}, υπολογισμένη τιμή {1}.",
+    "MediaEngine.WozChunkId": "Το αναγνωριστικό τμήματος WOZ '{0}' πρέπει να περιέχει ακριβώς τέσσερις χαρακτήρες ASCII.",
+    "MediaEngine.WozTrackCount": "Η μονάδα εγγραφής WOZ1 έλαβε {0} τροχιές· αναμένονται από 1 έως {1}.",
+    "MediaEngine.WozTrackLength": "Η τροχιά WOZ1 {0} περιέχει {1} bit· το μέγιστο είναι {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Δεν βρέθηκε έγκυρος τομέας Apple II RWTS18 ανάμεσα σε {0} αποκωδικοποιημένους τομείς από {1} τροχιές."
+  }
+}

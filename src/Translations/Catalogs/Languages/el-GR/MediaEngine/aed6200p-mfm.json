@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "Η τιμή {1} του πεδίου {0} AED 6200P πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} byte, CRC κεφαλίδας {4}, CRC δεδομένων {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} byte, σήμα {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, σήμα C6, περικομμένη",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC μη διαθέσιμο, περικομμένη",
+    "MediaEngine.AedUnpaired": "Μη συζευγμένα δεδομένα AED 6200P"
+  }
+}

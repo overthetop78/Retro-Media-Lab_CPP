@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Необходимо зарегистрировать хотя бы один декодер потока.",
+    "MediaEngine.RegistryNullDecoder": "Декодер потока в положении {0} является нулевым.",
+    "MediaEngine.RegistryInvalidId": "Декодер потока в положении {0} имеет пустой идентификатор.",
+    "MediaEngine.RegistryDuplicate": "Декодер потока с идентификатором {0} уже зарегистрирован.",
+    "MediaEngine.RegistryUnknown": "Декодер потока не регистрируется с идентификатором '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "Для декодирования требуется запись потока одного оборота.",
+    "MediaEngine.RegistryNoAutomatic": "Ни один зарегистрированный декодер потока не участвует в автоматическом обнаружении."
+  }
+}

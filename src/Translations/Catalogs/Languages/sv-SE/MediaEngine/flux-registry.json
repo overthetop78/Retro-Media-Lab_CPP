@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Minst en flux decoder måste registreras.",
+    "MediaEngine.RegistryNullDecoder": "flux decoder på position {0} är null.",
+    "MediaEngine.RegistryInvalidId": "Flyxavkodaren på position {0} har en tom identifierare.",
+    "MediaEngine.RegistryDuplicate": "En fluxavkodare med identifierare \"{0}\" är redan registrerad.",
+    "MediaEngine.RegistryUnknown": "Ingen fluxavkodare är registrerad med identifieraren \"{0}\".",
+    "MediaEngine.RegistryNullRevolution": "En fluxinspelning av ett varv krävs för avkodning.",
+    "MediaEngine.RegistryNoAutomatic": "Inga registrerade flux decoder deltar i automatisk detektering."
+  }
+}

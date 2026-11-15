@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Заголовок HFE отсутствует или усечен.",
+    "MediaEngine.HfeRevision": "Редакция HFE {0} не поддерживается.",
+    "MediaEngine.HfeGeometry": "Геометрия HFE или битрейт недействительны.",
+    "MediaEngine.HfeTable": "Таблица дорожек HFE выходит за границы.",
+    "MediaEngine.HfeTiming": "Тайминги HFE невозможно представить с требуемым разрешением.",
+    "MediaEngine.HfeTrackLength": "Дорожка HFE {0} имеет недопустимую длину.",
+    "MediaEngine.HfeTrackData": "Данные дорожки HFE {0}/{1} выходят за границы.",
+    "MediaEngine.HfeRateOpcode": "Дорожка HFE v3 {0}/{1} имеет нулевой параметр битрейта в коде операции.",
+    "MediaEngine.HfeEmptyTrack": "Дорожка HFE v3 {0}/{1} не содержит битовых ячеек.",
+    "MediaEngine.HfeTracks": "Для HFE требуется хотя бы одна дорожка.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 требует одинакового кодирования для всех дорожек.",
+    "MediaEngine.HfeEncoding": "Кодирование {0} не может быть записано как HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 требует одинакового битрейта для всех дорожек.",
+    "MediaEngine.HfeMissingTrack": "Цилиндр HFE {0} отсутствует.",
+    "MediaEngine.HfeTrackAddress": "Дорожка HFE находится за пределами заявленной геометрии.",
+    "MediaEngine.HfeDuplicateTrack": "Трек HFE {0}/{1} дублируется.",
+    "MediaEngine.HfeLimit": "Контейнер HFE превышает поддерживаемые ограничения размера или значений.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 требует одного равномерного сегмента времени на дорожку.",
+    "MediaEngine.HfeRevolutions": "HFE не может сохранить эти отдельные обороты магнитного потока.",
+    "MediaEngine.HfePadding": "HFE v1 потребовал бы заполнения или различной длины дорожек между головками.",
+    "MediaEngine.HfeScpEncoding": "SCP диск типа {0} не имеет кодирования HFE v1 без потерь.",
+    "MediaEngine.HfeFluxBounds": "Интервалы потока превышают продолжительность индекса.",
+    "MediaEngine.HfeWeak": "HFE v3 не может сохранять слабые области.",
+    "MediaEngine.HfeWeakFeature": "Код операции случайных данных HFE v3",
+    "MediaEngine.HfeIndexFeature": "Индекс HFE v3 opcode",
+    "MediaEngine.FluxConversionTiming": "Тайминги магнитного потока невозможно представить равномерными битовыми ячейками.",
+    "MediaEngine.FluxConversionBounds": "Интервалы потока или временные сегменты превышают продолжительность трека.",
+    "MediaEngine.FluxConversionRange": "Преобразование потока превышает поддерживаемый размер или числовой диапазон."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Victor 9000 扇区包含 512 字节；收到 {0} 字节。",
+    "MediaEngine.VictorSectorRange": "Victor 9000 扇区号 {0} 必须在零和 {1} 之间。",
+    "MediaEngine.VictorMarkerLength": "Victor 9000 标记必须延伸至位49；收到 {0} 位。",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} 字节, 头部 {4}, 数据校验和 {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} 字节, 标记 {4}, 数据块, 校验和 {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, 校验和 不可用, 已截断",
+    "MediaEngine.VictorUnpaired": "未配对的 Victor 9000 数据, 数据块"
+  }
+}

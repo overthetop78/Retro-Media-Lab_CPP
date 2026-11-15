@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "Про нас RIFF AMS! картридж відсутній.",
+    "MediaEngine.CprLength": "Довжина CPR RIFF недійсна.",
+    "MediaEngine.CprChunkRange": "CPR роз'єм '{0}' перевищує контейнер RIFF.",
+    "MediaEngine.CprDuplicate": "CPR банк '{0}' дублюється.",
+    "MediaEngine.CprLargeBank": "CPR bank '{0}' містить байти за його 16 КАБ сторінку; вони не були на карті.",
+    "MediaEngine.CprUnknownChunk": "RIFF ганча '{0}' не є банком картриджа CPR.",
+    "MediaEngine.CprChunkHeader": "Контейнер CPR RIFF завершується всередині круглого головка.",
+    "MediaEngine.CprNoBanks": "CPR зображення не містить cb00 через cb31 патронний банк.",
+    "MediaEngine.CprWrite": "Блок документа не може бути написаний як повний картридж CPR.",
+    "MediaEngine.RomCorpus": "Довжина CPC ROM зовні демонстрованих профілів корпу.",
+    "MediaEngine.RomNoData": "КПК ROM не містить банківських даних.",
+    "MediaEngine.RomBankLimit": "CPC ROM перевищує 32 патронних банків.",
+    "MediaEngine.RomIncomplete": "Останній КПК ROM банк неповний і без придушення.",
+    "MediaEngine.RomWrite": "Блок документа не містить контигузованих банків ROM.",
+    "MediaEngine.FdsSource": "Вибране джерело не зображення Famicom Disk System.",
+    "MediaEngine.FdsSides": "Зображення Famicom Disk System не містить повних сторін.",
+    "MediaEngine.FdsNoSide": "Зображення Famicom Disk System не містить боків.",
+    "MediaEngine.FdsCount": "Підрахунок Famicom Disk System не відповідає заголовку.",
+    "MediaEngine.FdsUndeclared": "Заголовок FDS не оголошується на бокових підрахунках, кількість було взято з збережених даних.",
+    "MediaEngine.FdsWrite": "Блок документа не містить повноти Famicom Disk System боків.",
+    "MediaEngine.FdsHeader": "Випадковий заголовок FDS відсутній.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad картридж"
+  }
+}

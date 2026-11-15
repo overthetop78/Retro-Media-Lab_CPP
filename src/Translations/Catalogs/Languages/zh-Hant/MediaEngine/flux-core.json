@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "磁通位元單元持續時間 {0} 無效；它必須為有限值且至少為一個時脈計時單位。",
+    "MediaEngine.FluxSizeLimit": "磁通資料超出記憶體中支援的大小。",
+    "MediaEngine.FluxInvalidBit": "磁通位元值既不是零也不是一。",
+    "MediaEngine.FluxInvalidMaximum": "每個磁通間隔的最大單元數 {0} 必須為正。",
+    "MediaEngine.FluxZeroCell": "磁通位元單元持續時間不能為零。",
+    "MediaEngine.FluxZeroIndex": "磁通旋轉索引持續時間不能為零。",
+    "MediaEngine.FluxIntervalOverflow": "包含 {0} 個單元、每單元 {1} ticks的磁通間隔超出支援的整數範圍。",
+    "MediaEngine.GcrCoordinates": "GCR 座標無效：偏移 {0}，位元組數 {1}，步長 {2}。"
+  }
+}

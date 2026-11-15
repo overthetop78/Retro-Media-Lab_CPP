@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM のバイト対の入れ替えには偶数個のバイトが必要です。{0} 個受け取りました。",
+    "MediaEngine.HpAddressRange": "HP MMFM のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.HpSectorSize": "HP MMFMセクターは256バイトです。受信したバイト数：{0}。",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} バイト, ヘッダーCRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} バイト, データCRC {4}"
+  }
+}

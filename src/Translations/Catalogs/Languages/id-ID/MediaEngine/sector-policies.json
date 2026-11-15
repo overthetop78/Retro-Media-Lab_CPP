@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Pengenal enkoder wajib diisi.",
+    "MediaEngine.PolicyFormats": "Diperlukan setidaknya satu pengenal format yang tidak kosong dan tidak hanya berisi spasi.",
+    "MediaEngine.PolicyPrefixes": "Diperlukan setidaknya satu prefiks format yang tidak kosong dan tidak hanya berisi spasi.",
+    "MediaEngine.PolicyNull": "Aturan rekonstruksi sektor tidak boleh null.",
+    "MediaEngine.PolicyNullBlock": "Item rekonstruksi sektor tidak boleh memuat referensi null ke blok.",
+    "MediaEngine.PolicyRareUnknown": "Tidak ada profil pengkodean langka yang terdaftar untuk format '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Silinder Lisa FileWare {0} harus berada antara 0 dan {1}.",
+    "MediaEngine.PolicyJfdDensity": "Trek JFD tidak memiliki kode kepadatan yang dapat digunakan.",
+    "MediaEngine.PolicyAddressRange": "Nilai alamat {0} berada di luar rentang bilangan bulat bertanda 32 bit."
+  }
+}

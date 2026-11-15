@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "DEC RX02 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.Rx02SizeCode": "RX02 大小代碼 {0} 與 {1} 位元組不符。",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, 磁區標頭, 截斷",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標頭CRC {4}, 資料CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標記 {4}, {5}, 標頭CRC {6}, 資料CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} 位元組, 標記 {4}, {5}, 資料CRC {6}",
+    "MediaEngine.Rx02Unpaired": "未分類 DEC RX02 FormatData, 標記 {0}, 資料"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "The TeleDisk image header at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0CommentHeaderTruncated": "The TeleDisk comment header at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0CommentTruncated": "The TeleDisk comment at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0TrackTruncated": "The TeleDisk track header at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0SectorTruncated": "The TeleDisk sector header at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0DataHeaderTruncated": "The TeleDisk sector data header at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0DataTruncated": "The TeleDisk sector data at offset {0} is truncated: {1} bytes expected, {2} available.",
+    "MediaEngine.Td0Signature": "The image is not a TeleDisk image.",
+    "MediaEngine.Td0HeaderCrc": "The TeleDisk header CRC is invalid: expected 0x{0}, calculated 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "The TeleDisk comment CRC is invalid: expected 0x{0}, calculated 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "The TeleDisk track {0}/{1} CRC is invalid: expected 0x{2}, calculated 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "The TeleDisk sector {0}/{1}/{2} CRC is invalid: expected 0x{3}, calculated 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sector {0}/{1}/{2} has invalid size code {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk sector {0}/{1}/{2} has no encoded data at offset {3}.",
+    "MediaEngine.Td0NoSectors": "The TeleDisk image contains no sectors."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Кодирование Amiga odd/even требует чётного числа байтов; получено {0} байт.",
+    "MediaEngine.AmigaMfmParityRange": "Недопустимый диапазон чётности Amiga: смещение {0}, количество {1}, доступно {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Секторы Amiga содержат 512 байт; получено {0} байт.",
+    "MediaEngine.AmigaMfmAddressRange": "Значение {1} поля Amiga MFM {0} должно быть между нулём и {2}.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} байт, контрольная сумма заголовка {4}, контрольная сумма данных {5}"
+  }
+}

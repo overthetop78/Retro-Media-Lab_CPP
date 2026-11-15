@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Header gambar TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Header komentar TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0CommentTruncated": "Komentar TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0TrackTruncated": "Header trek TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0SectorTruncated": "Header sektor TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0DataHeaderTruncated": "Header data sektor TeleDisk pada ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0DataTruncated": "Data sektor TeleDisk di ofset {0} terpotong: {1} bytes diduga, {2} tersedia.",
+    "MediaEngine.Td0Signature": "Gambar ini bukan gambar TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "CRC header TeleDisk tidak valid: diduga 0x {0}, dihitung 0x {1}.",
+    "MediaEngine.Td0CommentCrc": "CRC komentar TeleDisk tidak valid: diduga 0x {0}, dihitung 0x {1}.",
+    "MediaEngine.Td0TrackCrc": "Trek TeleDisk {0} / {1} CRC tidak valid: diduga 0x {2}, dihitung 0x {3}.",
+    "MediaEngine.Td0SectorCrc": "Sektor TeleDisk {0} / {1} / {2} CRC tidak valid: diduga 0x {3}, dihitung 0x {4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sektor {0}/{1}/{2} memiliki kode ukuran tidak valid {3}.",
+    "MediaEngine.Td0MissingData": "Sektor TeleDisk {0} / {1} / {2} tak memiliki data tersandi di ofset {3}.",
+    "MediaEngine.Td0NoSectors": "Image TeleDisk tidak berisi sektor."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Au moins un décodeur de flux doit être enregistré.",
+    "MediaEngine.RegistryNullDecoder": "Le décodeur de flux en position {0} est nul.",
+    "MediaEngine.RegistryInvalidId": "Le décodeur de flux en position {0} a un identifiant vide.",
+    "MediaEngine.RegistryDuplicate": "Un décodeur de flux avec l'identificateur « {0} » est déjà enregistré.",
+    "MediaEngine.RegistryUnknown": "Aucun décodeur de flux n'est enregistré avec l'identificateur « {0} ».",
+    "MediaEngine.RegistryNullRevolution": "Une révolution de flux est nécessaire pour le décodage.",
+    "MediaEngine.RegistryNoAutomatic": "Aucun décodeur de flux enregistré ne participe à la détection automatique."
+  }
+}

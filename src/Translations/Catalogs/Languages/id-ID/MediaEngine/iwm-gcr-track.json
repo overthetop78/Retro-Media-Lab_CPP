@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Sektor Apple Macintosh berisi 512 byte; diterima {0} byte.",
+    "MediaEngine.IwmAddressRange": "Nilai {1} pada bidang {0} Apple IWM GCR harus antara nol dan {2}.",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} byte, checksum alamat {4}, checksum data {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} byte, checksum {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, checksum tidak tersedia, terpotong",
+    "MediaEngine.IwmUnpaired": "Data Apple Macintosh tanpa pasangan, prolog data"
+  }
+}

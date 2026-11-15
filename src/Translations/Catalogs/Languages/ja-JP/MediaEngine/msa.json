@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "ジオメトリが {1}x{2}x{3}、ブロックサイズが {4} のセクターイメージ '{0}' は MSA として書き込めません。",
+    "MediaEngine.MsaMissingSector": "MSA 論理セクター {0} ({1}:{2}:{3}) が欠落しています。",
+    "MediaEngine.MsaSectorSize": "MSA 論理セクター {0} は {1} バイトです。期待値は {2} バイトです。",
+    "MediaEngine.MsaHeader": "MSA ヘッダは無効です。ファイルには{0}バイトが含まれています。",
+    "MediaEngine.MsaGeometry": "MSA ジオメトリは無効です: {0} セクター、 {1} ヘッド、シリンダ {2} を {3} へ。",
+    "MediaEngine.MsaTruncatedTable": "シリンダー {0}、ヘッド {1} のオフセット {2} にある MSA トラック長フィールドが切り詰められています。利用可能なのは {3} バイトです。",
+    "MediaEngine.MsaTruncatedTrack": "オフセット {2} で MSA のトラック {0}:{1} は {3} バイトを宣言します。 {4} は利用できます。",
+    "MediaEngine.MsaTruncatedRun": "MSA トラック {0}:{1} の圧縮データのオフセット {2} にある圧縮列が、{3} バイトの範囲内で切り詰められています。",
+    "MediaEngine.MsaInvalidRun": "MSA トラック {0}:{1} の圧縮オフセット {2} にある圧縮列の長さは {3} です。出力 {5} バイトのうち {4} バイトが既に書き込まれています。",
+    "MediaEngine.MsaUnpackedLength": "MSA トラック {0}:{1} は圧縮データ {3} バイトのうち {2} バイトを消費し、期待値 {5} バイトのうち {4} バイトを生成しました。"
+  }
+}

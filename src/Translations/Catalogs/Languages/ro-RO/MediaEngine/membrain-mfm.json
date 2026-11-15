@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Valoarea {1} a câmpului {0} Membrain MFM trebuie să fie între zero și {2}.",
+    "MediaEngine.MembrainSectorSize": "Sectoarele Membrain conțin 512 octeți; primiți {0} octeți.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 octeți, marcaj FE, CRC antet {3}, CRC date {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 octeți, marcaj {3}, bloc de date, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, antet de sector, trunchiat",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC indisponibil, trunchiat",
+    "MediaEngine.MembrainUnpaired": "Date Membrain fără pereche, bloc de date"
+  }
+}

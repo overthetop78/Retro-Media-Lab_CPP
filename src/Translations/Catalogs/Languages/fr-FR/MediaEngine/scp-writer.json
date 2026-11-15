@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "La piste SCP {0} est présente plusieurs fois.",
+    "MediaEngine.ScpTrackOutside": "La piste SCP {0} est hors de la plage déclarée de {1} à {2}.",
+    "MediaEngine.ScpWriteAddress": "La piste SCP {0} ne correspond pas à l’adresse déclarée : cylindre {1}, tête {2}.",
+    "MediaEngine.ScpWriteRevolutions": "La piste SCP {0} contient {1} révolutions ; {2} sont nécessaires.",
+    "MediaEngine.ScpZeroInterval": "La piste SCP {0}, révolution {1}, contient un intervalle de flux de durée nulle.",
+    "MediaEngine.ScpOutput": "La fonction de rappel de sortie SCP est absente."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "يتطلب تبديل أزواج HP MMFM عددًا زوجيًا من البايتات؛ تم استلام {0}.",
+    "MediaEngine.HpAddressRange": "قيمة الحقل {0} في HP MMFM هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.HpSectorSize": "تحتوي قطاعات HP MMFM على 256 بايت؛ تم استلام {0} بايت.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} بايت, CRC الرأس {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} بايت, CRC البيانات {4}"
+  }
+}

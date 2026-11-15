@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "อิมเมจไม่มีส่วนหัว ACT Apricot ApriDisk",
+    "MediaEngine.ApridiskRecord": "ระเบียน ApriDisk ไม่ถูกต้องที่ไบต์ {0}",
+    "MediaEngine.ApridiskOverflow": "ความยาวระเบียน ApriDisk เกินขีดจำกัดของจำนวนเต็มแบบมีเครื่องหมาย 32 บิต",
+    "MediaEngine.ApridiskTruncated": "ระเบียน ApriDisk ที่ไบต์ {0} ถูกตัดขาด",
+    "MediaEngine.ApridiskAddress": "ที่อยู่เซกเตอร์ ApriDisk {0}/{1}/{2} อยู่นอกโครงสร้างดิสก์ ACT Apricot PC/Xi",
+    "MediaEngine.ApridiskCount": "อิมเมจ ApriDisk มีเซกเตอร์ที่ใช้ได้ {0} เซกเตอร์แทนที่จะเป็น {1}",
+    "MediaEngine.ApridiskSectorLength": "เซกเตอร์ ApriDisk มี {0} ไบต์แทนที่จะเป็น {1}",
+    "MediaEngine.ApridiskCompression": "ไม่รองรับการบีบอัดเซกเตอร์ ApriDisk: {0}",
+    "MediaEngine.ApridiskExpansion": "เซกเตอร์ ApriDisk หลังคลายการบีบอัดมีขนาดเกิน 512 ไบต์",
+    "MediaEngine.ApridiskWriteGeometry": "อิมเมจเซกเตอร์ไม่ได้ใช้โครงสร้างดิสก์ ACT Apricot PC/Xi",
+    "MediaEngine.Rx02ImageLength": "อิมเมจ DEC RX02 มี {0} ไบต์; อิมเมจทางกายภาพที่สมบูรณ์ต้องมี {1}",
+    "MediaEngine.Rx02WriteGeometry": "อิมเมจเซกเตอร์ไม่ได้ใช้โครงสร้างดิสก์ DEC RX02"
+  }
+}

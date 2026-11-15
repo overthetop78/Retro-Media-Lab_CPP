@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "A kép nem tartalmaz ACT Apricot ApriDisk fejlécet.",
+    "MediaEngine.ApridiskRecord": "Érvénytelen ApriDisk rekord a byte {0}-nél.",
+    "MediaEngine.ApridiskOverflow": "Az ApriDisk rekord hossza meghaladja az előjeles 32 bites egész szám határát.",
+    "MediaEngine.ApridiskTruncated": "Az ApriDisk rekord a byte {0} -ban csonkított.",
+    "MediaEngine.ApridiskAddress": "ApriDisk szektor címe {0} / {1} / {2} kívül esik a ACT Apricot PC/Xi geometrián.",
+    "MediaEngine.ApridiskCount": "Az ApriDisk lemezkép {0} használható szektort tartalmaz {1} helyett.",
+    "MediaEngine.ApridiskSectorLength": "Az ApriDisk szektor {0} bájtot tartalmaz {1} helyett.",
+    "MediaEngine.ApridiskCompression": "Támogatatlan ApriDisk szektor tömörítése: {0}.",
+    "MediaEngine.ApridiskExpansion": "Az ApriDisk tömörített szektora meghaladja az 512 bájtot.",
+    "MediaEngine.ApridiskWriteGeometry": "A szektorkép nem használja a ACT Apricot PC/Xi geometriát.",
+    "MediaEngine.Rx02ImageLength": "A DEC RX02 lemezkép {0} bájtot tartalmaz; a teljes fizikai lemezképhez {1} szükséges.",
+    "MediaEngine.Rx02WriteGeometry": "A szektorkép nem használja a DEC RX02 geometriát."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Apple II GCR 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II 磁軌在 5-and-3 格式下包含13磁區，在 6-and-2 格式下包含16磁區；收到 {0}。",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 位元組, V{4}, 位址檢查碼 {5}, 資料檢查碼 {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} 位元組, 13磁區 V{4}, 位址檢查碼 {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} 位元組, 檢查碼 {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} 位元組, 13磁區, 檢查碼 {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, 檢查碼 無法使用, 已截斷",
+    "MediaEngine.AppleIIUnpaired": "未配對的 Apple II 資料，資料前導 D5 AA AD"
+  }
+}

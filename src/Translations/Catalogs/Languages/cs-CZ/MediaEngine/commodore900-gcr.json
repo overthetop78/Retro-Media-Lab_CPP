@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Cylindr stopy {0} musí být mezi nulou a {1}.",
+    "MediaEngine.TrackHead": "Hlava stopy {0} musí být mezi nulou a {1}.",
+    "MediaEngine.TrackMissingSectors": "Vyžaduje se minimálně jeden sektor, přijatý {0}.",
+    "MediaEngine.TrackEmpty": "Enkodér {0} nevytvářel žádné bitové buňky.",
+    "MediaEngine.TrackHex": "Hexadecimální text je neplatný.",
+    "MediaEngine.TrackBinaryCharacter": "Binární text obsahuje \"{0}\" na pozici {1}; je povoleno pouze nula a jedna.",
+    "MediaEngine.TrackNegativeGap": "Délka otvoru {0} nesmí být negativní.",
+    "MediaEngine.TrackSectorNumber": "Sektor číslo {0} musí být mezi nulou a {1}.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 sektorů obsahuje {0} bytes; přijímá {1} bytes.",
+    "MediaEngine.C900GcrSync": "Nezařazený Commodore 900 CommodoreSync, synchronizace GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} bajtů, kontrolní součet {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} bajtů, kontrolní součet {4}",
+    "MediaEngine.C900GcrUnpaired": "Nespárovaná data Commodore 900, datový blok, kontrolní součet {0}",
+    "MediaEngine.IntegrityValid": "platný",
+    "MediaEngine.IntegrityInvalid": "neplatný",
+    "MediaEngine.IntegrityUnavailable": "nedostupný"
+  }
+}

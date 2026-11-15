@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "The DiskCopy header is truncated.",
+    "MediaEngine.DiskCopyPrivateWord": "The DiskCopy private word is {0}; expected {1}.",
+    "MediaEngine.DiskCopyPayload": "The DiskCopy payload is invalid.",
+    "MediaEngine.DiskCopyTags": "The DiskCopy image is neither a recognized Macintosh/ProDOS image nor a tagged Lisa image.",
+    "MediaEngine.DiskCopyChecksumBytes": "A DiskCopy checksum requires an even number of bytes; received {0}.",
+    "MediaEngine.DiskCopyRange": "A DiskCopy length exceeds the supported range.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy requires a complete sector image.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy requires a total of 512 bytes per logical block.",
+    "MediaEngine.DiskCopyLayoutTags": "Every DiskCopy tag must contain 12 bytes.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "The DiskCopy metadata is incomplete.",
+    "MediaEngine.DiskCopyMetadataName": "The DiskCopy name metadata is invalid.",
+    "MediaEngine.DiskCopyMetadataFormat": "The DiskCopy format metadata is invalid.",
+    "MediaEngine.DiskCopyMetadataChecksum": "The DiskCopy checksum metadata '{0}' is invalid."
+  }
+}

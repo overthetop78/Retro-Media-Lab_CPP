@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Imaginea nu conține un antet ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "ApriDisk înregistrare nevalidă la byte {0}.",
+    "MediaEngine.ApridiskOverflow": "Lungimea înregistrării ApriDisk depășește limita unui întreg pe 32 de biți cu semn.",
+    "MediaEngine.ApridiskTruncated": "Recordul ApriDisk la byte {0} este trunchiat.",
+    "MediaEngine.ApridiskAddress": "Adresa ApriDisk sector {0}/{1}/{2} este în afara geometriei ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Imaginea ApriDisk conține sectoare {0} utilizabile în loc de {1}.",
+    "MediaEngine.ApridiskSectorLength": "Un sector ApriDisk conține octeți {0} în loc de {1}.",
+    "MediaEngine.ApridiskCompression": "Compresie fără suport în sectorul ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "Un sector comprimat ApriDisk se extinde dincolo de 512 octeți.",
+    "MediaEngine.ApridiskWriteGeometry": "Imaginea din sector nu utilizează geometria ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Imaginea DEC RX02 conține {0} octeți; o imagine fizică completă necesită {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Imaginea din sector nu utilizează geometria DEC RX02."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "De duur van fluxbitcel {0} is ongeldig; deze moet eindig zijn en minstens één kloktik bedragen.",
+    "MediaEngine.FluxSizeLimit": "De fluxgegevens overschrijden de ondersteunde in-geheugengrootte.",
+    "MediaEngine.FluxInvalidBit": "Een flux bit waarde is nul noch één.",
+    "MediaEngine.FluxInvalidMaximum": "Het maximale aantal cellen per fluxinterval {0} moet positief zijn.",
+    "MediaEngine.FluxZeroCell": "De flux bit-cel duur mag niet nul zijn.",
+    "MediaEngine.FluxZeroIndex": "De flux-revolutie-index mag niet nul duren.",
+    "MediaEngine.FluxIntervalOverflow": "Het fluxinterval van {0} cellen met {1} ticks per cel overschrijdt het ondersteunde gehele bereik.",
+    "MediaEngine.GcrCoordinates": "GCR-coördinaten zijn ongeldig: offset {0}, bytetelling {1}, stap {2}."
+  }
+}

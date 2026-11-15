@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "Giá trị {1} của trường {0} AED 6200P phải nằm giữa không và {2}.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} byte, CRC tiêu đề {4}, CRC dữ liệu {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} byte, dấu {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, dấu C6, bị cắt ngắn",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC không khả dụng, bị cắt ngắn",
+    "MediaEngine.AedUnpaired": "Dữ liệu AED 6200P chưa ghép cặp"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Časové rozlišení SCP musí být kladné; přijaté {0}.",
+    "MediaEngine.ScpExtended": "Rozšířená SCP média nejsou diskety.",
+    "MediaEngine.ScpSignature": "Soubor neobsahuje podpis SCP.",
+    "MediaEngine.ScpRevolutions": "Počet otáček SCP {0} je neplatný.",
+    "MediaEngine.ScpTrackRange": "Rozsah stop SCP {0} až {1} je neplatný.",
+    "MediaEngine.ScpWidth": "Šířka bit- buněk SCP {0} není podporována.",
+    "MediaEngine.ScpHeads": "Volič hlavy SCP {0} je neplatný.",
+    "MediaEngine.ScpTrackSignature": "Track {0} nemá žádný podpis TRK; deskriptor obsahuje číslo stopy {1}.",
+    "MediaEngine.ScpTrackMismatch": "Zápis do tabulky {0} ukazuje na stopu {1}.",
+    "MediaEngine.ScpHeaderSection": "Záhlaví SCP je neúplné nebo neplatné při posunu {0}; {1} bajty jsou povinné.",
+    "MediaEngine.ScpTableSection": "Tabulka posunů stop SCP je neúplná nebo neplatná na posunu {0}; je potřeba {1} bajtů.",
+    "MediaEngine.ScpTrackSection": "Záhlaví SCP track {0} je neúplné nebo neplatné při ofsetu {1}; {2} bajty jsou povinné.",
+    "MediaEngine.ScpFluxSection": "Průtok SCP stopy {0}, otáčka {1}, je neúplný nebo neplatný při ofsetu {2}; {3} bytes jsou povinné.",
+    "MediaEngine.ScpOverflow": "Velikost, poloha, interval nebo spojená otáčka SCP překračují podporovaný číselný rozsah.",
+    "MediaEngine.ScpTrackAddress": "Číslo stopy SCP {0} je mimo tabulku stop.",
+    "MediaEngine.ScpNoRevolution": "Stopa SCP neobsahuje žádnou otáčku k dekódování.",
+    "MediaEngine.ScpNoC900Sectors": "Žádné sektory Commodore 900 GCR nelze dekódovat z obrazu SCP."
+  }
+}

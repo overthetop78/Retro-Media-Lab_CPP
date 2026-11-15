@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Durata celulei de biți a fluxului {0} este nevalidă; trebuie să fie finită și de cel puțin un tact.",
+    "MediaEngine.FluxSizeLimit": "Datele privind fluxul depășesc dimensiunea în memorie susținută.",
+    "MediaEngine.FluxInvalidBit": "O valoare biți flux nu este nici zero, nici unul.",
+    "MediaEngine.FluxInvalidMaximum": "Numărul maxim de celule per interval de flux {0} trebuie să fie pozitiv.",
+    "MediaEngine.FluxZeroCell": "Durata fluxului de biți-celule nu trebuie să fie zero.",
+    "MediaEngine.FluxZeroIndex": "Durata indicelui de revoluție a fluxului nu trebuie să fie zero.",
+    "MediaEngine.FluxIntervalOverflow": "Intervalul de flux de {0} celule la {1} ticks pe celulă depășește intervalul de numere întregi acceptat.",
+    "MediaEngine.GcrCoordinates": "Coordonatele GCR sunt invalide: offset {0}, octet conta {1}, pas {2}."
+  }
+}

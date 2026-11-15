@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Victor 9000-sektorer inneholder 512 byte; mottok {0} byte.",
+    "MediaEngine.VictorSectorRange": "Victor 9000-sektornummer {0} må være mellom null og {1}.",
+    "MediaEngine.VictorMarkerLength": "Victor 9000-markører må nå bitposisjon 49; mottatt {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} byte, header {4}, datakontrollsum {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} byte, merke {4}, datablokk, kontrollsum {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, kontrollsum utilgjengelig, avkortet",
+    "MediaEngine.VictorUnpaired": "Uparede Victor 9000-data, datablokk"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Beschermde spoorcilinder {0} mag niet negatief zijn.",
+    "MediaEngine.ProtectedHead": "Beschermde spoorkop {0} mag niet negatief zijn.",
+    "MediaEngine.ProtectedNoContent": "Een beschermd spoor vereist bitcellen of fluxgegevens van omwentelingen.",
+    "MediaEngine.ProtectedMetadataNoBits": "Timing, structuren en kenmerken die naar bits verwijzen vereisen bitcellen.",
+    "MediaEngine.ProtectedRange": "De bereiken {0} van het beschermde spoor moeten een positieve lengte hebben en binnen {1} bitcellen passen.",
+    "MediaEngine.ProtectedTiming": "De duur van een bitcel van het beschermde spoor moet eindig en positief zijn.",
+    "MediaEngine.ProtectedResolution": "De tijdresolutie van de fluxgegevens {0} ns moet positief zijn.",
+    "MediaEngine.ProtectedImageEmpty": "Een beschermd spoorbeeld vereist minstens één spoor.",
+    "MediaEngine.ProtectedImageDuplicate": "Beschermde track {0}/{1} wordt gedupliceerd."
+  }
+}

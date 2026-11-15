@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "En sekvens af {0} bits passer ikke i {1} bytes.",
+    "MediaEngine.BitPackingCount": "Bittælling {0} skal være positiv.",
+    "MediaEngine.BitPackingRange": "Størrelsen af bitpakningen overstiger det understøttede område.",
+    "MediaEngine.AppleTrackUnsupported": "Kildeformat '{1}' kan ikke kodes som {0}.",
+    "MediaEngine.AppleTrackGeometry": "Apple II geometri med {0} cylindre, {1} hoveder og {2} sektorer per spor kan ikke kodes.",
+    "MediaEngine.AppleTrackSector": "{0} sektor {1}: {2} indeholder {3} bytes i stedet for {4}.",
+    "MediaEngine.AppleTrackTooLong": "{0} spor {1} indeholder {2} bits; maximum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II-spor {0} indeholder det dobbelte fysiske sektornummer {1}.",
+    "MediaEngine.NibTrackCount": "NIB-skrivefunktionen kræver mindst ét spor; modtaget {0}.",
+    "MediaEngine.NibTrackLength": "NIB-spor {0} indeholder {1} bits; maksimum {2}."
+  }
+}

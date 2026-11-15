@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Nagłówek obrazu TeleDisk przy przesunięciu {0} jest skrócony: {1} bajty spodziewane, {2} dostępne.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Nagłówek komentarza TeleDisk na offsecie {0} jest skrócony: {1} bajty spodziewane, {2} dostępne.",
+    "MediaEngine.Td0CommentTruncated": "Komentarz TeleDisk przy przesunięciu {0} jest skrócony: {1} bajty spodziewane, {2} dostępne.",
+    "MediaEngine.Td0TrackTruncated": "Nagłówek ścieżki TeleDisk przy przesunięciu {0} jest skrócony: {1} bajty spodziewane, {2} dostępne.",
+    "MediaEngine.Td0SectorTruncated": "Nagłówek sektora TeleDisk przy przesunięciu {0} jest skrócony: spodziewane bajty {1}, dostępne {2}.",
+    "MediaEngine.Td0DataHeaderTruncated": "Nagłówek danych sektora TeleDisk przy przesunięciu {0} jest skrócony: spodziewane bajty {1}, dostępne {2}.",
+    "MediaEngine.Td0DataTruncated": "Dane sektora TeleDisk przy przesunięciu {0} są okrojone: spodziewane bajty {1}, dostępne {2}.",
+    "MediaEngine.Td0Signature": "Obraz nie jest obrazem TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Nagłówek TeleDisk CRC jest nieprawidłowy: spodziewany 0x {0}, obliczony 0x {1}.",
+    "MediaEngine.Td0CommentCrc": "Komentarz TeleDisk CRC jest nieprawidłowy: spodziewany 0x {0}, obliczony 0x {1}.",
+    "MediaEngine.Td0TrackCrc": "Tor TeleDisk {0} / {1} CRC jest nieprawidłowy: spodziewany 0x {2}, obliczony 0x {3}.",
+    "MediaEngine.Td0SectorCrc": "Sektor TeleDisk {0} / {1} / {2} CRC jest nieprawidłowy: spodziewany 0x {3}, obliczony 0x {4}.",
+    "MediaEngine.Td0SizeCode": "Sektor TeleDisk {0} / {1} / {2} ma nieprawidłowy kod rozmiaru {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk sector {0} / {1} / {2} nie ma zakodowanych danych przy przesunięciu {3}.",
+    "MediaEngine.Td0NoSectors": "Obraz TeleDisk nie zawiera żadnych sektorów."
+  }
+}

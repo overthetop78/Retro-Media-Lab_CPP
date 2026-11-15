@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "צילינדר הרצועה {0} חייב להיות בין אפס ל-{1}.",
+    "MediaEngine.TrackHead": "ראש הרצועה {0} חייב להיות בין אפס ל-{1}.",
+    "MediaEngine.TrackMissingSectors": "נדרש מגזר אחד לפחות; התקבלו {0}.",
+    "MediaEngine.TrackEmpty": "המקודד {0} לא הפיק תאי ביט.",
+    "MediaEngine.TrackHex": "הטקסט ההקסדצימלי הגולמי אינו תקין.",
+    "MediaEngine.TrackBinaryCharacter": "הטקסט הבינארי מכיל «{0}» במיקום {1}; מותרים רק אפס ואחד.",
+    "MediaEngine.TrackNegativeGap": "אורך המרווח {0} אינו יכול להיות שלילי.",
+    "MediaEngine.TrackSectorNumber": "מספר המגזר {0} חייב להיות בין אפס ל-{1}.",
+    "MediaEngine.C900GcrSectorSize": "מגזרי Commodore 900 מכילים {0} בתים; התקבלו {1} בתים.",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync לא מסווג, סנכרון GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} בתים, סכום ביקורת {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} בתים, סכום ביקורת {4}",
+    "MediaEngine.C900GcrUnpaired": "נתוני Commodore 900 ללא התאמה, בלוק נתונים, סכום ביקורת {0}",
+    "MediaEngine.IntegrityValid": "תקין",
+    "MediaEngine.IntegrityInvalid": "לא תקין",
+    "MediaEngine.IntegrityUnavailable": "לא זמין"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Apple II GCR のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.AppleIISectorsPerTrack": "Apple II トラックは 5-and-3 では13セクター、6-and-2 では16セクターです。受信値: {0}。",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} バイト, V{4}, アドレスチェックサム {5}, データチェックサム {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} バイト, 13セクター V{4}, アドレスチェックサム {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} バイト, チェックサム {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} バイト, 13セクター, チェックサム {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, チェックサム 利用不可, 切り詰められています",
+    "MediaEngine.AppleIIUnpaired": "未対応の Apple II データ、データプロローグ D5 AA AD"
+  }
+}

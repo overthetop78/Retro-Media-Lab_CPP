@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "保護トラックのシリンダー番号 {0} は負数にできません。",
+    "MediaEngine.ProtectedHead": "保護トラックのヘッド番号 {0} は負数にできません。",
+    "MediaEngine.ProtectedNoContent": "保護トラックにはビットセルまたは回転の磁束データが必要です。",
+    "MediaEngine.ProtectedMetadataNoBits": "ビットに関連するタイミング、構造、特徴にはビットセルが必要です。",
+    "MediaEngine.ProtectedRange": "保護トラックの {0} 範囲は長さが正で、{1} ビットセル内に収まる必要があります。",
+    "MediaEngine.ProtectedTiming": "保護トラックのビットセル時間は有限の正数でなければなりません。",
+    "MediaEngine.ProtectedResolution": "磁束データの時間分解能 {0} ns は正数でなければなりません。",
+    "MediaEngine.ProtectedImageEmpty": "保護トラックイメージには少なくとも1本のトラックが必要です。",
+    "MediaEngine.ProtectedImageDuplicate": "保護トラック {0}/{1} が重複しています。"
+  }
+}

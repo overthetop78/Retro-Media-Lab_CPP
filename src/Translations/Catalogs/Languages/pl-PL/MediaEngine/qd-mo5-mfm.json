@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "Wartość {1} pola {0} QD MO5 musi mieścić się między zerem a {2}.",
+    "MediaEngine.QdSectorSize": "Sektory QD MO5 zawierają 128 bajtów; otrzymano {0} bajtów.",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 bajtów, znacznik FB, nagłówek {1}, suma kontrolna danych {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 bajtów, znacznik {1}, suma kontrolna {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, nagłówek sektora, ucięty",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, dane sektora, suma kontrolna niedostępna, ucięty",
+    "MediaEngine.QdUnpaired": "Niesparowane dane QD MO5, znacznik {0}, dane sektora"
+  }
+}

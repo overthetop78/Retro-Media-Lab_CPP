@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Sektorikuva \"{0}\" geometrialla {1}x{2}x{3} ja lohkon kokoa {4} ei voida kirjoittaa MSA:na.",
+    "MediaEngine.MsaMissingSector": "MSA looginen sektori {0} ({1}:{2}:{3}) puuttuu.",
+    "MediaEngine.MsaSectorSize": "MSA looginen sektori {0} sisältää {1} tavua; odotettu {2}.",
+    "MediaEngine.MsaHeader": "MSA-otsikko on virheellinen; tiedosto sisältää {0} tavua.",
+    "MediaEngine.MsaGeometry": "MSA-geometria on virheellinen: {0} sektorit, {1} päät, sylinterit {2} - {3}.",
+    "MediaEngine.MsaTruncatedTable": "MSA-raidan pituuskenttä sylinterille {0}, päälle {1}, siirtymässä {2} on katkaistu: {3} tavua saatavilla.",
+    "MediaEngine.MsaTruncatedTrack": "MSA-raita {0}:{1} offset {2} ilmoittaa {3} tavua, {4} on saatavilla.",
+    "MediaEngine.MsaTruncatedRun": "MSA-raidan {0}:{1} pakattu jakso siirtymässä {2} on katkaistu {3} tavun alueella.",
+    "MediaEngine.MsaInvalidRun": "MSA-raidan {0}:{1} pakatun jakson pituus siirtymässä {2} on {3}; {4} tavua {5} tulostavusta on jo kirjoitettu.",
+    "MediaEngine.MsaUnpackedLength": "MSA-raita {0}:{1} käytti {2} tavua {3} pakatusta tavusta ja tuotti {4} tavua {5} odotetusta tavusta."
+  }
+}

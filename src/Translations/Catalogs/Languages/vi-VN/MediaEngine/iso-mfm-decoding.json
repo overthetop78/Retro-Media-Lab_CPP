@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Số byte của luồng bit {0} phải nằm giữa không và {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} byte, dấu FE, N{4}, CRC tiêu đề {5}, CRC dữ liệu {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} byte, dấu FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, dấu F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Chưa phân loại ISO MFM Sync, dấu {0}",
+    "MediaEngine.MfmUnpaired": "Chưa phân loại ISO MFM DataAddressMark, dấu FB",
+    "MediaEngine.MfmUnpairedDeleted": "Chưa phân loại ISO MFM DeletedDataAddressMark, dấu F8"
+  }
+}

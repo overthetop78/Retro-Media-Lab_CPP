@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Apple Macintosh 磁區包含 512 位元組；收到 {0} 位元組。",
+    "MediaEngine.IwmAddressRange": "Apple IWM GCR 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} 位元組, 位址檢查碼 {4}, 資料檢查碼 {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} 位元組, 檢查碼 {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, 檢查碼 無法使用, 已截斷",
+    "MediaEngine.IwmUnpaired": "未配對的 Apple Macintosh 資料，資料前導"
+  }
+}

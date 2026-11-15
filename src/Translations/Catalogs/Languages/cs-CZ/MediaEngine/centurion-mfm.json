@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Hodnota {1} pole {0} Centurion MFM musí být mezi nulou a {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} bajtů, CRC hlavičky {4}, CRC dat {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} bajtů, klíč {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, značka sektoru, zkrácená",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC nedostupná, zkrácená",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, nepodporovaný klíč {0}, zkrácená",
+    "MediaEngine.CenturionUnpaired": "Nespárovaná data Centurion, datový blok"
+  }
+}

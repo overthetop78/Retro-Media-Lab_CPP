@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP track {0} está presente mais de uma vez.",
+    "MediaEngine.ScpTrackOutside": "A faixa SCP {0} está fora do intervalo declarado {1} a {2}.",
+    "MediaEngine.ScpWriteAddress": "A faixa SCP {0} não corresponde ao endereço declarado: cilindro {1}, cabeça {2}.",
+    "MediaEngine.ScpWriteRevolutions": "A faixa SCP {0} contém revoluções {1}; {2} são necessárias.",
+    "MediaEngine.ScpZeroInterval": "A trilha SCP {0}, rotação {1}, contém um intervalo de fluxo de duração zero.",
+    "MediaEngine.ScpOutput": "Falta a função de retorno de saída SCP."
+  }
+}

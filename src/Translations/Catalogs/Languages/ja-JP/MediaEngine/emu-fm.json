@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.EmuSectorSize": "E-muセクターは3584バイトです。受信したバイト数：{0}。",
+    "MediaEngine.EmuAddressRange": "E-mu FM のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.EmuHeader": "E-mu FormatHeader, C{0} H{1} R{2}, {3} バイト, CRC {4}, CRC {5}",
+    "MediaEngine.EmuData": "E-mu FormatData, C{0} H{1} R{2}, {3} バイト, CRC {4}",
+    "MediaEngine.EmuUnclassified": "未分類の E-mu Emulator FormatHeader、ヘッダー/データマーカー"
+  }
+}

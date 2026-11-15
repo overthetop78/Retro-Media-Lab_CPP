@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Nilai {1} pada bidang {0} Membrain MFM harus antara nol dan {2}.",
+    "MediaEngine.MembrainSectorSize": "Sektor Membrain berisi 512 byte; diterima {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, penanda FE, CRC header {3}, CRC data {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, penanda {3}, blok data, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, header sektor, terpotong",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC tidak tersedia, terpotong",
+    "MediaEngine.MembrainUnpaired": "Data Membrain tanpa pasangan, blok data"
+  }
+}

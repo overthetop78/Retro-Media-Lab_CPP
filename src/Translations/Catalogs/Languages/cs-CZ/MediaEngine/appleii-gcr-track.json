@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Hodnota {1} pole {0} Apple II GCR musí být mezi nulou a {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Stopy Apple II obsahují 13 sektorů pro 5-and-3 nebo 16 sektorů pro 6-and-2; přijato {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bajtů, V{4}, kontrolní součet adresy {5}, kontrolní součet dat {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bajtů, 13 sektorů V{4}, kontrolní součet adresy {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} bajtů, kontrolní součet {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} bajtů, 13 sektorů, kontrolní součet {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, kontrolní součet nedostupný, zkráceno",
+    "MediaEngine.AppleIIUnpaired": "Nespárovaná data Apple II, datový prolog D5 AA AD"
+  }
+}

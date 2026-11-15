@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Este necesar un identificator de codor.",
+    "MediaEngine.PolicyFormats": "Este necesar cel puțin un identificator de format care nu este gol și nu conține doar spații.",
+    "MediaEngine.PolicyPrefixes": "Este necesar cel puțin un prefix de format care nu este gol și nu conține doar spații.",
+    "MediaEngine.PolicyNull": "O regulă de reconstrucție a sectoarelor nu poate fi null.",
+    "MediaEngine.PolicyNullBlock": "Un element de reconstrucție a sectoarelor nu poate conține o referință null la un bloc.",
+    "MediaEngine.PolicyRareUnknown": "Nu este înregistrat niciun profil de codare rară pentru formatul '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Cilindrul Lisa FileWare {0} trebuie să fie între 0 și {1}.",
+    "MediaEngine.PolicyJfdDensity": "Pista JFD nu are un cod de densitate utilizabil.",
+    "MediaEngine.PolicyAddressRange": "Valoarea adresei {0} depășește intervalul unui număr întreg cu semn pe 32 de biți."
+  }
+}

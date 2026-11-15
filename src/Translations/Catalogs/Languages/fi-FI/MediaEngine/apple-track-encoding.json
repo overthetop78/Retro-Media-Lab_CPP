@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "{0} bittien sarja ei sovi {1} tavuihin.",
+    "MediaEngine.BitPackingCount": "Bittimäärän {0} on oltava positiivinen.",
+    "MediaEngine.BitPackingRange": "Bittipakkauksen koko ylittää tuetun alueen.",
+    "MediaEngine.AppleTrackUnsupported": "Lähdemuotoa \"{1}\" ei voida koodata nimellä {0}.",
+    "MediaEngine.AppleTrackGeometry": "Apple II -geometriaa, jossa on {0} sylinteriä, {1} päätä ja {2} sektoria raitaa kohden, ei voida koodata.",
+    "MediaEngine.AppleTrackSector": "{0} sektori {1}:{2} sisältää {3} tavua {4}:n sijaan.",
+    "MediaEngine.AppleTrackTooLong": "Muodon {0} raita {1} sisältää {2} bittiä; enintään {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II -raita {0} sisältää kaksinkertaisen fyysisen sektorin numeron {1}.",
+    "MediaEngine.NibTrackCount": "NIB-kirjoitin tarvitsee vähintään yhden raidan; saatu {0}.",
+    "MediaEngine.NibTrackLength": "NIB-raita {0} sisältää {1} bittiä; suurin {2}."
+  }
+}

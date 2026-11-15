@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZヘッダーが無効です。",
+    "MediaEngine.WozDiskType": "WOZディスクタイプ{0}はサポートされていません。5.25インチのApple IIディスクが必要です。",
+    "MediaEngine.WozMissingChunk": "必須のWOZチャンク'{0}'が存在しないか、不完全です。",
+    "MediaEngine.WozTruncatedChunk": "WOZチャンク'{0}'が途中で切れています。",
+    "MediaEngine.WozTrackReference": "WOZトラック{0}は範囲外の記述子{1}を参照しています。",
+    "MediaEngine.WozCrc": "WOZ CRC32が無効です。保存値：{0}、計算値：{1}。",
+    "MediaEngine.WozChunkId": "WOZチャンク識別子'{0}'は正確に4文字のASCIIでなければなりません。",
+    "MediaEngine.WozTrackCount": "WOZ1書き込み処理が{0}トラックを受け取りました。許容範囲は1～{1}です。",
+    "MediaEngine.WozTrackLength": "WOZ1トラック{0}には{1}ビットが含まれています。上限は{2}ビットです。",
+    "MediaEngine.AppleNoRwtsSectors": "{1}トラックからデコードされた{0}セクターの中に、有効なApple II RWTS18セクターが見つかりませんでした。"
+  }
+}

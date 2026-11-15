@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (ข้อมูล): ต้องมีข้อมูลใช้งาน {0} ไบต์ หรือบล็อกเต็ม {1} ไบต์; ได้รับ {2} ไบต์",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (ระบบ): ต้องมีข้อมูลใช้งาน {0} ไบต์ หรือบล็อกเต็ม {1} ไบต์; ได้รับ {2} ไบต์",
+    "MediaEngine.ArburgBlockCapacity": "ความจุบล็อก Arburg {1} ต้องรองรับข้อมูลใช้งาน {0} ไบต์และเช็กซัมสองไบต์ ภายในขีดจำกัดขนาดที่รองรับ",
+    "MediaEngine.ArburgUsefulSize": "จำนวนไบต์ข้อมูลใช้งาน Arburg ต้องไม่ติดลบ; ได้รับ {0}",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 ไบต์, บล็อกข้อมูล, ผลรวมตรวจสอบ {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 ไบต์, บล็อกระบบ, ผลรวมตรวจสอบ {0}"
+  }
+}

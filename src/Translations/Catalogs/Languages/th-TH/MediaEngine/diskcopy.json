@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "ส่วนหัว DiskCopy ถูกตัดทอน",
+    "MediaEngine.DiskCopyPrivateWord": "เวิร์ดเฉพาะของ DiskCopy คือ {0} ค่าที่คาดไว้คือ {1}",
+    "MediaEngine.DiskCopyPayload": "ข้อมูลส่วนเนื้อหาของ DiskCopy ไม่ถูกต้อง",
+    "MediaEngine.DiskCopyTags": "อิมเมจ DiskCopy ไม่ใช่อิมเมจ Macintosh/ProDOS ที่รู้จัก หรืออิมเมจ Lisa ที่มีแท็ก",
+    "MediaEngine.DiskCopyChecksumBytes": "เช็กซัม DiskCopy ต้องใช้จำนวนไบต์เป็นเลขคู่ จำนวนที่ได้รับ: {0}",
+    "MediaEngine.DiskCopyRange": "ความยาวของ DiskCopy เกินช่วงที่รองรับ",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy ต้องใช้อิมเมจเซกเตอร์ที่สมบูรณ์",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy ต้องใช้ข้อมูลรวม 512 ไบต์ต่อบล็อกตรรกะ",
+    "MediaEngine.DiskCopyLayoutTags": "แท็ก DiskCopy แต่ละรายการต้องมีขนาด 12 ไบต์",
+    "MediaEngine.DiskCopyMetadataIncomplete": "ข้อมูลเมตาของ DiskCopy ไม่ครบถ้วน",
+    "MediaEngine.DiskCopyMetadataName": "ข้อมูลเมตาของชื่อ DiskCopy ไม่ถูกต้อง",
+    "MediaEngine.DiskCopyMetadataFormat": "ข้อมูลเมตาของรูปแบบ DiskCopy ไม่ถูกต้อง",
+    "MediaEngine.DiskCopyMetadataChecksum": "ข้อมูลเมตาของเช็กซัม DiskCopy '{0}' ไม่ถูกต้อง"
+  }
+}

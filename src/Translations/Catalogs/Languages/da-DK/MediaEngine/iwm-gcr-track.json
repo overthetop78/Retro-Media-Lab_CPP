@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Apple Macintosh-sektorer indeholder 512 bytes; modtog {0} bytes.",
+    "MediaEngine.IwmAddressRange": "Værdien {1} i Apple IWM GCR-feltet {0} skal være mellem nul og {2}.",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} bytes, adressekontrolsum {4}, datakontrolsum {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} bytes, kontrolsum {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, kontrolsum utilgængelig, afkortet",
+    "MediaEngine.IwmUnpaired": "Uparrede Apple Macintosh-data, dataprolog"
+  }
+}

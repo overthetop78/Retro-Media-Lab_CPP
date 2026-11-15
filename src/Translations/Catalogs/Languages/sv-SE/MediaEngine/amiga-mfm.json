@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Amiga odd/even-kodning kräver ett jämnt antal byte; tog emot {0} byte.",
+    "MediaEngine.AmigaMfmParityRange": "Ogiltigt Amiga-paritetsintervall: förskjutning {0}, antal {1}, tillgängliga {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Amiga-sektorer innehåller 512 byte; tog emot {0} byte.",
+    "MediaEngine.AmigaMfmAddressRange": "Värdet {1} i Amiga MFM-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} byte, kontrollsumma för huvud {4}, kontrollsumma för data {5}"
+  }
+}

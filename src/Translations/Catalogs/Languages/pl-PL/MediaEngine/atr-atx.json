@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Format docelowy ATR '{0}' nie jest obsługiwany.",
+    "MediaEngine.AtrIncompatibleImage": "Obraz sektora '{0}' zawiera sektory {1} i {2} bajty; profil ATR '{3}' wymaga sektorów {4} i {5} bajtów.",
+    "MediaEngine.AtrMissingSector": "Brakuje sektora ATR {0}.",
+    "MediaEngine.AtrSectorSize": "Sektor ATR {0} zawiera {1} bajty; spodziewane {2}.",
+    "MediaEngine.AtrHeader": "Nagłówek ATR jest nieprawidłowy: długość {0} bajtów (minimum {1}), podpis {2} (oczekiwany {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Rozmiar bajtów sektora ATR {0} nie jest wspierany; oczekuje się bajtów {1}.",
+    "MediaEngine.AtrPayloadLength": "Długość ładunku ATR to {0} bajty; nagłówek deklaruje bajty {1}.",
+    "MediaEngine.AtrTruncatedPayload": "Długość transmisji ATR {0} bajtów nie zawiera obszaru startowego {1} -bajtów, a następnie kompletnych sektorów {2} -bajtów.",
+    "MediaEngine.AtrSectorCount": "Wielkość sektora Atari ATR {0} i liczba sektorów {1} muszą być dodatnie.",
+    "MediaEngine.AtxHeader": "Brak nagłówka pliku ATX lub jest nieprawidłowy.",
+    "MediaEngine.AtxTrackOffset": "Offset danych ATX jest poza plikiem.",
+    "MediaEngine.AtxTrackCycle": "Łańcuch toru ATX zawiera cykl.",
+    "MediaEngine.AtxTrackBounds": "Ścieżka ATX rozciąga się poza plik.",
+    "MediaEngine.AtxTrackNumber": "Ścieżka ATX {0} jest poza obsługiwaną geometrią 40- ścieżki.",
+    "MediaEngine.AtxSectorCount": "Ścieżka ATX {0} zawiera zbyt wiele rekordów sektorowych.",
+    "MediaEngine.AtxListBounds": "Lista sektorów toru ATX {0} przekracza granicę toru.",
+    "MediaEngine.AtxSectorNumber": "Ścieżka ATX {0} zawiera nieprawidłowy sektor {1}.",
+    "MediaEngine.AtxDataBounds": "Dane dotyczące toru ATX {0}, sektora {1}, przekraczają granicę toru.",
+    "MediaEngine.AtxNoSectors": "Obraz ATX nie zawiera żadnego czytelnego rekordu sektora.",
+    "MediaEngine.AtxLargeOffset": "Offset ATX {0} jest zbyt duży.",
+    "MediaEngine.AtxTruncated": "Pole ATX {0} jest ucięte."
+  }
+}

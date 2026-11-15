@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZ 头部无效。",
+    "MediaEngine.WozDiskType": "不支持 WOZ 磁盘类型 {0}；需要 5.25 英寸的 Apple II 磁盘。",
+    "MediaEngine.WozMissingChunk": "必需的 WOZ 块 '{0}' 缺失或不完整。",
+    "MediaEngine.WozTruncatedChunk": "WOZ 块 '{0}' 已被截断。",
+    "MediaEngine.WozTrackReference": "WOZ 磁道 {0} 引用了超出范围的描述符 {1}。",
+    "MediaEngine.WozCrc": "WOZ CRC32 无效：已存储 {0}，计算结果为 {1}。",
+    "MediaEngine.WozChunkId": "WOZ 块标识符 '{0}' 必须恰好包含四个 ASCII 字符。",
+    "MediaEngine.WozTrackCount": "WOZ1 写入模块收到 {0} 条磁道；应为 1 到 {1} 条。",
+    "MediaEngine.WozTrackLength": "WOZ1 磁道 {0} 包含 {1} 位；最大值为 {2}。",
+    "MediaEngine.AppleNoRwtsSectors": "在从 {1} 条磁道解码出的 {0} 个扇区中，未找到有效的 Apple II RWTS18 扇区。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Циліндр доріжки {0} має бути між нулем і {1}.",
+    "MediaEngine.TrackHead": "Головка доріжки {0} має бути між нулем і {1}.",
+    "MediaEngine.TrackMissingSectors": "Принаймні один сектор необхідний; отримав {0}.",
+    "MediaEngine.TrackEmpty": "Encoder {0} виробляється не біт клітин.",
+    "MediaEngine.TrackHex": "Сирий шістнадцятковий текст недійсний.",
+    "MediaEngine.TrackBinaryCharacter": "Binary text містить '{0}' на позиції {1}; дозволено тільки нульовий і один.",
+    "MediaEngine.TrackNegativeGap": "Довжина Gap {0} не повинно бути негативним.",
+    "MediaEngine.TrackSectorNumber": "Сектор No {0} повинен бути між нуль і {1}.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 секторів містить {0} байтів; отримав {1} байтів.",
+    "MediaEngine.C900GcrSync": "Некласифікований Commodore 900 CommodoreSync, синхронізація GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} байтів, контрольна сума {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} байтів, контрольна сума {4}",
+    "MediaEngine.C900GcrUnpaired": "Незіставлені дані Commodore 900, блок даних, контрольна сума {0}",
+    "MediaEngine.IntegrityValid": "правильна",
+    "MediaEngine.IntegrityInvalid": "неправильна",
+    "MediaEngine.IntegrityUnavailable": "недоступна"
+  }
+}

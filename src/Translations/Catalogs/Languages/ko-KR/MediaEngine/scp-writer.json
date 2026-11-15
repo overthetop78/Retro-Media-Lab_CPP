@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP 트랙 {0}이(가) 중복되어 있습니다.",
+    "MediaEngine.ScpTrackOutside": "SCP 트랙 {0}은(는) 선언된 범위 {1}~{2} 밖에 있습니다.",
+    "MediaEngine.ScpWriteAddress": "SCP 트랙 {0}은(는) 선언된 주소와 일치하지 않습니다. 실린더 {1}, 헤드 {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP 트랙 {0}에는 {1}회전이 포함되어 있습니다. {2}회전이 필요합니다.",
+    "MediaEngine.ScpZeroInterval": "SCP 트랙 {0}, 회전 {1}에 길이가 0인 자속 간격이 포함되어 있습니다.",
+    "MediaEngine.ScpOutput": "SCP 출력 콜백이 없습니다."
+  }
+}

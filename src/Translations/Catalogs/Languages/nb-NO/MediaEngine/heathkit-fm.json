@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit-sektorer inneholder 256 byte; mottok {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Verdien {1} i Heathkit FM-feltet {0} må være mellom null og {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "En Heathkit-post må inneholde minst én kontrollsumbyte.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, volum {4}, kontrollsum for hode {5}, kontrollsum for data {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, kontrollsum {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, hardsektorhode, avkortet",
+    "MediaEngine.HeathkitUnpaired": "Uparede Heathkit-data, datablokk"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Il cilindro della traccia protetta {0} non deve essere negativo.",
+    "MediaEngine.ProtectedHead": "Testa di traccia protetta {0} non deve essere negativa.",
+    "MediaEngine.ProtectedNoContent": "Una traccia protetta richiede celle di bit o dati di flusso delle rotazioni.",
+    "MediaEngine.ProtectedMetadataNoBits": "Temporizzazione, strutture e caratteristiche riferite ai bit richiedono celle di bit.",
+    "MediaEngine.ProtectedRange": "Gli intervalli {0} della traccia protetta devono avere lunghezza positiva e rientrare in {1} celle di bit.",
+    "MediaEngine.ProtectedTiming": "La durata della cella della traccia protetta deve essere finita e positiva.",
+    "MediaEngine.ProtectedResolution": "La risoluzione temporale del flusso {0} ns deve essere positiva.",
+    "MediaEngine.ProtectedImageEmpty": "Un’immagine di tracce protette richiede almeno una traccia.",
+    "MediaEngine.ProtectedImageDuplicate": "La traccia protetta {0}/{1} è duplicata."
+  }
+}

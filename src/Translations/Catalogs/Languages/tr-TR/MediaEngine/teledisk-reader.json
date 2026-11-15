@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk görüntü başlığı bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk yorum başlığı bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk yorum bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk iz başlığı bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk sektör başlığı bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk sektör verisi başlığı bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0DataTruncated": "TeleDisk sektör verisi bölümü {0} ofsetinde kesilmiş: {1} bayt bekleniyor, {2} bayt mevcut.",
+    "MediaEngine.Td0Signature": "Görüntü bir TeleDisk görüntüsü değil.",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk başlık CRC değeri geçersiz: beklenen 0x{0}, hesaplanan 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "TeleDisk yorum CRC değeri geçersiz: beklenen 0x{0}, hesaplanan 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "TeleDisk izi {0}/{1} için CRC geçersiz: beklenen 0x{2}, hesaplanan 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk sektörü {0}/{1}/{2} için CRC geçersiz: beklenen 0x{3}, hesaplanan 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sektörü {0}/{1}/{2} için boyut kodu {3} geçersiz.",
+    "MediaEngine.Td0MissingData": "TeleDisk sektörü {0}/{1}/{2}, {3} ofsetinde kodlanmış veri içermiyor.",
+    "MediaEngine.Td0NoSectors": "TeleDisk görüntüsü hiç sektör içermiyor."
+  }
+}

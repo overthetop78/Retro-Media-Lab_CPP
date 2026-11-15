@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Amiga odd/even 编码要求偶数个字节；收到 {0} 字节。",
+    "MediaEngine.AmigaMfmParityRange": "Amiga 奇偶校验范围无效：偏移 {0}，数量 {1}，可用 {2}。",
+    "MediaEngine.AmigaMfmSectorSize": "Amiga 扇区包含 512 字节；收到 {0} 字节。",
+    "MediaEngine.AmigaMfmAddressRange": "Amiga MFM 字段 {0} 的值 {1} 必须在零到 {2} 之间。",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync，C{0} H{1} R{2}，{3} 字节，头部校验和 {4}，数据校验和 {5}"
+  }
+}

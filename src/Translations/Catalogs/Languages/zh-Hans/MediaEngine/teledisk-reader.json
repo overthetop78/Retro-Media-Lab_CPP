@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk 的映像头在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk 的注释头在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk 的注释在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk 的磁道头在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk 的扇区头在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk 的扇区数据头在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0DataTruncated": "TeleDisk 的扇区数据在偏移 {0} 处截断：需要 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Td0Signature": "此映像不是 TeleDisk 映像。",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk 头部 CRC 无效：预期为 0x{0}，计算值为 0x{1}。",
+    "MediaEngine.Td0CommentCrc": "TeleDisk 注释 CRC 无效：预期为 0x{0}，计算值为 0x{1}。",
+    "MediaEngine.Td0TrackCrc": "TeleDisk 磁道 {0}/{1} 的 CRC 无效：预期为 0x{2}，计算值为 0x{3}。",
+    "MediaEngine.Td0SectorCrc": "TeleDisk 扇区 {0}/{1}/{2} 的 CRC 无效：预期为 0x{3}，计算值为 0x{4}。",
+    "MediaEngine.Td0SizeCode": "TeleDisk 扇区 {0}/{1}/{2} 的大小代码 {3} 无效。",
+    "MediaEngine.Td0MissingData": "TeleDisk 扇区 {0}/{1}/{2} 在偏移 {3} 处没有编码数据。",
+    "MediaEngine.Td0NoSectors": "TeleDisk 映像不包含扇区。"
+  }
+}

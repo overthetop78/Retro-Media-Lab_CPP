@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Изображение не содержит заголовок ImageDisk: терминатор комментариев на {0}, длина файла {1} байт.",
+    "MediaEngine.ImdTruncated": "Раздел ImageDisk {0} при смещении {1} усечен: {2} байты необходимы, {3} доступны.",
+    "MediaEngine.ImdTrackHeader": "Заголовок трека ImageDisk недействителен: режим {0}, граф сектора {1}.",
+    "MediaEngine.ImdSizeCode": "Код размера сектора ImageDisk {0} является недействительным.",
+    "MediaEngine.ImdRecordType": "Секторная запись ImageDisk {0} является недействительной.",
+    "MediaEngine.ImdNoSectors": "Изображение ImageDisk не содержит секторов.",
+    "MediaEngine.ImdNoTracks": "Изображение ImageDisk не содержит следов.",
+    "MediaEngine.ImdWriteTrack": "Заголовок трека ImageDisk не может быть представлен.",
+    "MediaEngine.ImdWriteSector": "Запись сектора ImageDisk недействительна.",
+    "MediaEngine.ImdCompressed": "Сжатый сектор ImageDisk не содержит один повторяющийся байт.",
+    "MediaEngine.ImdMetadataMode": "Метаданные ImageDisk содержат недействительный режим трека.",
+    "MediaEngine.ImdMetadataRecord": "Метаданные ImageDisk содержат недействительный тип записи сектора.",
+    "MediaEngine.ImdMetadataSize": "Метаданные ImageDisk содержат недействительный размер сектора.",
+    "MediaEngine.ImdMetadataBlock": "Метаданные ImageDisk не соответствуют логическому блоку {0}.",
+    "MediaEngine.ImdMetadataCount": "Количество блоков метаданных ImageDisk не соответствует сектору изображения.",
+    "MediaEngine.ImdMetadata": "Метаданные ImageDisk неверны.",
+    "MediaEngine.ImdEpsonGeometry": "Геометрия изображения Epson не соответствует идентификатору формата.",
+    "MediaEngine.ImdEpsonSize": "Сектор Эпсона {0}:{1}:{2} имеет недействительный размер.",
+    "MediaEngine.ImdEpsonDuplicate": "Сектор Эпсона {0}:{1}:{2} дублируется.",
+    "MediaEngine.EpsonFormat": "Выбранный формат «{0}» не является поддерживаемым форматом Epson QX-10.",
+    "MediaEngine.EpsonGeometryDuplicate": "Дублированная геометрия Epson QX-10: {0}."
+  }
+}

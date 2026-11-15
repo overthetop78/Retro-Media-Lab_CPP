@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "Сектор TeleDisk {0}/{1}/{2} містить повторювані дані розміром {3} байтів; потрібно {4} байтів.",
+    "MediaEngine.Td0EncodingTruncated": "Кодування {3} сектора TeleDisk {0}/{1}/{2} обірване за зміщенням {4}: потрібно {5} байтів, доступно {6}.",
+    "MediaEngine.Td0EncodingUnsupported": "Сектор TeleDisk {0}/{1}/{2} використовує непідтримуване кодування {3}.",
+    "MediaEngine.Td0DecodedLength": "Кодування {3} сектора TeleDisk {0}/{1}/{2} розгортається до {4} байтів замість {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Кількість повторів сектора TeleDisk перевищує межу 16-бітового беззнакового цілого числа."
+  }
+}

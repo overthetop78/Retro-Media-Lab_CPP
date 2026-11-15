@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR hedef biçimi '{0}' desteklenmiyor.",
+    "MediaEngine.AtrIncompatibleImage": "'{0}' sektör görüntüsü {1} sektör ve {2} bayt içeriyor; ATR profili '{3}' ise {4} sektör ve {5} bayt gerektiriyor.",
+    "MediaEngine.AtrMissingSector": "ATR sektörü {0} eksik.",
+    "MediaEngine.AtrSectorSize": "ATR sektörü {0}, {1} bayt içeriyor; beklenen {2}.",
+    "MediaEngine.AtrHeader": "ATR başlığı geçersiz: uzunluk {0} bayt (en az {1}), imza {2} (beklenen {3}).",
+    "MediaEngine.AtrUnsupportedSize": "ATR sektör boyutu {0} bayt desteklenmiyor; beklenen {1} bayt.",
+    "MediaEngine.AtrPayloadLength": "ATR veri uzunluğu {0} bayt; başlık {1} bayt bildiriyor.",
+    "MediaEngine.AtrTruncatedPayload": "{0} baytlık ATR verisi, ardından tam {2} baytlık sektörler gelen {1} baytlık bir önyükleme alanı içermiyor.",
+    "MediaEngine.AtrSectorCount": "Atari ATR sektör boyutu {0} ve sektör sayısı {1} pozitif olmalıdır.",
+    "MediaEngine.AtxHeader": "ATX dosya başlığı eksik veya geçersiz.",
+    "MediaEngine.AtxTrackOffset": "ATX iz verisi ofseti dosyanın dışında.",
+    "MediaEngine.AtxTrackCycle": "ATX iz zinciri bir döngü içeriyor.",
+    "MediaEngine.AtxTrackBounds": "Bir ATX izi dosyanın dışına taşıyor.",
+    "MediaEngine.AtxTrackNumber": "ATX izi {0}, desteklenen 40 izli geometrinin dışında.",
+    "MediaEngine.AtxSectorCount": "ATX izi {0} çok fazla sektör kaydı içeriyor.",
+    "MediaEngine.AtxListBounds": "ATX izi {0} sektör listesi iz sınırını aşıyor.",
+    "MediaEngine.AtxSectorNumber": "ATX izi {0} geçersiz sektör {1} içeriyor.",
+    "MediaEngine.AtxDataBounds": "ATX izi {0}, sektör {1} verileri iz sınırını aşıyor.",
+    "MediaEngine.AtxNoSectors": "ATX görüntüsü okunabilir sektör kaydı içermiyor.",
+    "MediaEngine.AtxLargeOffset": "ATX {0} ofseti çok büyük.",
+    "MediaEngine.AtxTruncated": "ATX {0} alanı kesilmiş."
+  }
+}

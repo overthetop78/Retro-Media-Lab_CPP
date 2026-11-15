@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "Sectorul TeleDisk {0}/ {1}/ {2} are o încărcătură utilă repetată de octeţi {3}; sunt necesare octeţi {4}.",
+    "MediaEngine.Td0EncodingTruncated": "Codarea {3} a sectorului TeleDisk {0}/{1}/{2} este trunchiată la deplasamentul {4}: sunt necesari {5} octeți, disponibili {6}.",
+    "MediaEngine.Td0EncodingUnsupported": "Sectorul TeleDisk {0}/ {1}/ {2} utilizează codare nesusţinută {3}.",
+    "MediaEngine.Td0DecodedLength": "Sectorul TeleDisk {0}/ {1}/ {2} codare {3} se extinde la octeți {4} în loc de {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Numărul de repetări ale sectorului TeleDisk depășește limita unui întreg fără semn pe 16 biți."
+  }
+}

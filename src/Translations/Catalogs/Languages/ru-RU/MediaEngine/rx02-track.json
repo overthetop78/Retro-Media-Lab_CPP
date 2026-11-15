@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Значение {1} поля {0} DEC RX02 должно быть между нулём и {2}.",
+    "MediaEngine.Rx02SizeCode": "Код размера RX02 {0} не соответствует {1} байтам.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, заголовок сектора, усечён",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} байт, CRC заголовка {4}, CRC данных {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} байт, метка {4}, {5}, CRC заголовка {6}, CRC данных {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} байт, метка {4}, {5}, CRC данных {6}",
+    "MediaEngine.Rx02Unpaired": "Неклассифицировано DEC RX02 FormatData, метка {0}, данные"
+  }
+}

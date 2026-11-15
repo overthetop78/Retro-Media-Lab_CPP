@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "De TeleDisk-koptekst op offset {0} is afgekapt: {1} bytes worden verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0CommentHeaderTruncated": "De TeleDisk commentaarkop op offset {0} is afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0CommentTruncated": "De TeleDisk commentaar op offset {0} is afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0TrackTruncated": "De TeleDisk track header op offset {0} is afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0SectorTruncated": "De TeleDisk sectorkoptekst bij offset {0} is afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0DataHeaderTruncated": "De TeleDisk-datakoptekst bij offset {0} is afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0DataTruncated": "De TeleDisk-sectorgegevens op offset {0} zijn afgekapt: {1} bytes verwacht, {2} beschikbaar.",
+    "MediaEngine.Td0Signature": "De afbeelding is geen TeleDisk afbeelding.",
+    "MediaEngine.Td0HeaderCrc": "De TeleDisk header CRC is ongeldig: verwacht 0x{0}, berekend 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Het commentaar van TeleDisk CRC is ongeldig: verwacht 0x{0}, berekend 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "De TeleDisk track {0}/{1} CRC is ongeldig: verwacht 0x{2}, berekend 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "De TeleDisk sector {0}/{1}/{2} CRC is ongeldig: verwacht 0x{3}, berekend 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sector {0}/{1}/{2} heeft ongeldige groottecode {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk sector {0}/{1}/{2} heeft geen gecodeerde gegevens op offset {3}.",
+    "MediaEngine.Td0NoSectors": "De TeleDisk afbeelding bevat geen sectoren."
+  }
+}

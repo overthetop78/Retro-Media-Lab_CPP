@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkitセクターは256バイトです。受信したバイト数：{0}。",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.HeathkitRecordEmpty": "Heathkit レコードには、少なくとも1バイトのチェックサムが必要です。",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3}バイト, ボリューム {4}, ヘッダーチェックサム {5}, データチェックサム {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} バイト, チェックサム {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, ハードセクターヘッダー, 途中で切断",
+    "MediaEngine.HeathkitUnpaired": "未対応付けの Heathkit データ, データブロック"
+  }
+}

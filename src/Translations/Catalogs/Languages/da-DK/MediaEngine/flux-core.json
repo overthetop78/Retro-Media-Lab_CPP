@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Fluxbitcellens varighed {0} er ugyldig; den skal være endelig og mindst ét tick.",
+    "MediaEngine.FluxSizeLimit": "Fluxdataene overstiger den understøttede in- memory størrelse.",
+    "MediaEngine.FluxInvalidBit": "En flux bit værdi er hverken nul eller en.",
+    "MediaEngine.FluxInvalidMaximum": "Det maksimale antal celler pr. fluxinterval {0} skal være positivt.",
+    "MediaEngine.FluxZeroCell": "Varigheden af flux bitcelle må ikke være nul.",
+    "MediaEngine.FluxZeroIndex": "Varigheden af fluxrevolutionsindekset må ikke være nul.",
+    "MediaEngine.FluxIntervalOverflow": "Fluxintervallet for {0} celler med {1} ticks pr. celle overstiger det understøttede heltalsinterval.",
+    "MediaEngine.GcrCoordinates": "GCR-koordinaterne er ugyldige: forskydning {0}, antal bytes {1}, trin {2}."
+  }
+}

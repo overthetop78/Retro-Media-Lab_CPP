@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "ビットストリームのバイト数 {0} はゼロから {1} の範囲でなければなりません。",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} バイト, マーク FE, N{4}, ヘッダーCRC {5}, データCRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} バイト, マーク FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} バイト, マーク F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "未分類 ISO MFM Sync, マーク {0}",
+    "MediaEngine.MfmUnpaired": "未分類 ISO MFM DataAddressMark, マーク FB",
+    "MediaEngine.MfmUnpairedDeleted": "未分類 ISO MFM DeletedDataAddressMark, マーク F8"
+  }
+}

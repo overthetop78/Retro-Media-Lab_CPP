@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP 磁軌 {0} 重複出現。",
+    "MediaEngine.ScpTrackOutside": "SCP 磁軌 {0} 超出宣告的範圍 {1} 至 {2}。",
+    "MediaEngine.ScpWriteAddress": "SCP 磁軌 {0} 與宣告的位址不符：磁柱 {1}，磁頭 {2}。",
+    "MediaEngine.ScpWriteRevolutions": "SCP 磁軌 {0} 包含 {1} 圈旋轉資料；需要 {2} 圈。",
+    "MediaEngine.ScpZeroInterval": "SCP 磁軌 {0} 第 {1} 圈包含時長為零的磁通間隔。",
+    "MediaEngine.ScpOutput": "缺少 SCP 輸出回呼函式。"
+  }
+}

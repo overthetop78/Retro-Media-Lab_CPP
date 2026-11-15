@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "必須提供編碼器識別碼。",
+    "MediaEngine.PolicyFormats": "必須提供至少一個非空且不全為空白的格式識別碼。",
+    "MediaEngine.PolicyPrefixes": "必須提供至少一個非空且不全為空白的格式前綴。",
+    "MediaEngine.PolicyNull": "磁區重建規則不能為 null。",
+    "MediaEngine.PolicyNullBlock": "磁區重建項目不能包含 null 資料區塊。",
+    "MediaEngine.PolicyRareUnknown": "未註冊格式 '{0}' 對應的特殊編碼設定。",
+    "MediaEngine.PolicyLisaCylinder": "Lisa FileWare 磁柱 {0} 必須介於 0 到 {1} 之間。",
+    "MediaEngine.PolicyJfdDensity": "JFD 磁軌沒有可用的密度代碼。",
+    "MediaEngine.PolicyAddressRange": "位址值 {0} 超出32位元帶正負號整數的範圍。"
+  }
+}

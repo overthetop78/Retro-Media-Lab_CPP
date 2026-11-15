@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Das ATR-Zielformat '{0}' wird nicht unterstützt.",
+    "MediaEngine.AtrIncompatibleImage": "Das Sektorabbild '{0}' enthält {1} Sektoren und {2} Bytes; das ATR-Profil '{3}' erfordert {4} Sektoren und {5} Bytes.",
+    "MediaEngine.AtrMissingSector": "ATR-Sektor {0} fehlt.",
+    "MediaEngine.AtrSectorSize": "ATR-Sektor {0} enthält {1} Bytes; erwartet werden {2}.",
+    "MediaEngine.AtrHeader": "Der ATR-Header ist ungültig: Länge {0} Bytes (Minimum {1}), Signatur {2} (erwartet {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Die ATR-Sektorgröße von {0} Bytes wird nicht unterstützt; erwartet werden {1} Bytes.",
+    "MediaEngine.AtrPayloadLength": "Die ATR-Nutzdaten haben eine Länge von {0} Bytes; der Header gibt {1} Bytes an.",
+    "MediaEngine.AtrTruncatedPayload": "Die ATR-Nutzdaten mit {0} Bytes enthalten keinen Bootbereich von {1} Bytes, auf den vollständige Sektoren von {2} Bytes folgen.",
+    "MediaEngine.AtrSectorCount": "Die Atari ATR-Sektorgröße {0} und die Sektoranzahl {1} müssen größer als null sein.",
+    "MediaEngine.AtxHeader": "Der ATX-Dateiheader fehlt oder ist ungültig.",
+    "MediaEngine.AtxTrackOffset": "Der Offset der ATX-Spurdaten liegt außerhalb der Datei.",
+    "MediaEngine.AtxTrackCycle": "Die ATX-Spurkette enthält einen Zyklus.",
+    "MediaEngine.AtxTrackBounds": "Eine ATX-Spur reicht über das Dateiende hinaus.",
+    "MediaEngine.AtxTrackNumber": "ATX-Spur {0} liegt außerhalb der unterstützten Geometrie mit 40 Spuren.",
+    "MediaEngine.AtxSectorCount": "ATX-Spur {0} enthält zu viele Sektordatensätze.",
+    "MediaEngine.AtxListBounds": "Die Sektorliste von ATX-Spur {0} überschreitet die Spurgrenze.",
+    "MediaEngine.AtxSectorNumber": "ATX-Spur {0} enthält den ungültigen Sektor {1}.",
+    "MediaEngine.AtxDataBounds": "Die Daten von ATX-Spur {0}, Sektor {1}, überschreiten die Spurgrenze.",
+    "MediaEngine.AtxNoSectors": "Das ATX-Abbild enthält keinen lesbaren Sektordatensatz.",
+    "MediaEngine.AtxLargeOffset": "Der Offset des ATX-Abschnitts '{0}' ist zu groß.",
+    "MediaEngine.AtxTruncated": "Der ATX-Abschnitt '{0}' ist abgeschnitten."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Ảnh không có tiêu đề ImageDisk: Chú giải thuật ngữ chú thích ở{0}, chiều dài tập tin{1}.",
+    "MediaEngine.ImdTruncated": "Hạt ImageDisk {0} phần bù đắp {1} bị cắt đứt: {2} byte được yêu cầu, {3} sẵn sàng.",
+    "MediaEngine.ImdTrackHeader": "Bộ theo dõi ImageDisk không hợp lệ: chế độ{0}, khu vực đếm{1}.",
+    "MediaEngine.ImdSizeCode": "Mã ImageDisk kích thước khu vực {0} không hợp lệ.",
+    "MediaEngine.ImdRecordType": "Hạt ImageDisk Kiểu vùng {0} không hợp lệ.",
+    "MediaEngine.ImdNoSectors": "Hình ảnh của ImageDisk không chứa phân khu.",
+    "MediaEngine.ImdNoTracks": "Ảnh của ImageDisk không có dấu vết.",
+    "MediaEngine.ImdWriteTrack": "Bộ theo dõi ImageDisk không đại diện được.",
+    "MediaEngine.ImdWriteSector": "Một hồ sơ khu vực ImageDisk không hợp lệ.",
+    "MediaEngine.ImdCompressed": "Một khu vực ImageDisk nén không chứa một byte lặp đi lặp lại.",
+    "MediaEngine.ImdMetadataMode": "Siêu dữ liệu ImageDisk chứa một chế độ theo dõi sai.",
+    "MediaEngine.ImdMetadataRecord": "Siêu dữ liệu ImageDisk chứa một kiểu hồ sơ phân khu không hợp lệ.",
+    "MediaEngine.ImdMetadataSize": "Siêu dữ liệu ImageDisk chứa một kích cỡ phân khu không hợp lệ.",
+    "MediaEngine.ImdMetadataBlock": "Siêu dữ liệu ImageDisk không khớp với khối logic {0}.",
+    "MediaEngine.ImdMetadataCount": "Số lượng siêu dữ liệu ImageDisk không khớp với ảnh phân khu.",
+    "MediaEngine.ImdMetadata": "Siêu dữ liệu ImageDisk không hợp lệ.",
+    "MediaEngine.ImdEpsonGeometry": "Hình học Epson không khớp với định dạng của nó.",
+    "MediaEngine.ImdEpsonSize": "Khu vực Epson{0}:{1}:{2} có một kích cỡ không hợp lệ.",
+    "MediaEngine.ImdEpsonDuplicate": "Khu vực Epson{0}:{1}:{2} đã được nhân đôi.",
+    "MediaEngine.EpsonFormat": "Định dạng đã chọn '{0}' không phải là một định dạng Epson QX-10 được hỗ trợ.",
+    "MediaEngine.EpsonGeometryDuplicate": "Nhân bản hình học Epson QX-10: {0}."
+  }
+}

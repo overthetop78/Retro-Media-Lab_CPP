@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Послідовність із {0} бітів не вміщується в {1} байтів.",
+    "MediaEngine.BitPackingCount": "Кількість бітів {0} має бути додатною.",
+    "MediaEngine.BitPackingRange": "Розмір пакування бітів перевищує підтримуваний діапазон.",
+    "MediaEngine.AppleTrackUnsupported": "Формат джерела «{1}» неможливо закодувати як {0}.",
+    "MediaEngine.AppleTrackGeometry": "Геометрію Apple II з {0} циліндрами, {1} головками та {2} секторами на доріжку неможливо закодувати.",
+    "MediaEngine.AppleTrackSector": "Сектор {0} {1}:{2} містить {3} байтів замість {4}.",
+    "MediaEngine.AppleTrackTooLong": "Доріжка {0} {1} містить {2} бітів; максимум: {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Доріжка Apple II {0} містить повторений фізичний номер сектора {1}.",
+    "MediaEngine.NibTrackCount": "Для запису NIB потрібна щонайменше одна доріжка; отримано: {0}.",
+    "MediaEngine.NibTrackLength": "Доріжка NIB {0} містить {1} бітів; максимум: {2}."
+  }
+}

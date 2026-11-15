@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Nagłówka HFE brakuje lub jest on ucięty.",
+    "MediaEngine.HfeRevision": "Korekta HFE {0} nie jest obsługiwana.",
+    "MediaEngine.HfeGeometry": "Geometria lub szybkość bitowa HFE jest nieprawidłowa.",
+    "MediaEngine.HfeTable": "Tablica ścieżek HFE wykracza poza granice.",
+    "MediaEngine.HfeTiming": "Nie można przedstawić taktowania HFE z wymaganą rozdzielczością.",
+    "MediaEngine.HfeTrackLength": "Ścieżka HFE {0} ma nieprawidłową długość.",
+    "MediaEngine.HfeTrackData": "Dane ścieżki HFE {0}/{1} wykraczają poza granice.",
+    "MediaEngine.HfeRateOpcode": "Ścieżka HFE v3 {0}/{1} ma zerowy parametr szybkości bitowej w kodzie operacji.",
+    "MediaEngine.HfeEmptyTrack": "Ścieżka HFE v3 {0}/{1} nie zawiera komórek bitowych.",
+    "MediaEngine.HfeTracks": "HFE wymaga co najmniej jednej ścieżki.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 wymaga tego samego kodowania dla wszystkich ścieżek.",
+    "MediaEngine.HfeEncoding": "Kodowanie {0} nie może być zapisane jako HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 wymaga tej samej szybkości bitowej dla wszystkich ścieżek.",
+    "MediaEngine.HfeMissingTrack": "Brak cylindra HFE {0}.",
+    "MediaEngine.HfeTrackAddress": "Ścieżka HFE jest poza deklarowaną geometrią.",
+    "MediaEngine.HfeDuplicateTrack": "Ścieżka HFE {0} / {1} jest powielona.",
+    "MediaEngine.HfeLimit": "Kontener HFE przekracza obsługiwany rozmiar lub wartości graniczne.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 wymaga jednego jednolitego segmentu czasowego na ścieżkę.",
+    "MediaEngine.HfeRevolutions": "HFE nie może zachować tych oddzielnych obrotów strumienia magnetycznego.",
+    "MediaEngine.HfePadding": "HFE v1 wymagałoby dopełnienia lub różnych długości ścieżek między głowicami.",
+    "MediaEngine.HfeScpEncoding": "Typ dysku SCP {0} nie posiada bezstratnego kodowania HFE v1.",
+    "MediaEngine.HfeFluxBounds": "Przedziały przepływu przekraczają czas trwania indeksu.",
+    "MediaEngine.HfeWeak": "Zapis HFE v3 nie może zachować obszarów słabych.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 losowy opcode danych",
+    "MediaEngine.HfeIndexFeature": "HFE v3 index opcode",
+    "MediaEngine.FluxConversionTiming": "Taktowania strumienia magnetycznego nie można przedstawić jako jednolitych komórek bitowych.",
+    "MediaEngine.FluxConversionBounds": "Przedziały strumienia lub segmenty czasowe przekraczają czas trwania toru.",
+    "MediaEngine.FluxConversionRange": "Konwersja strumienia przekracza obsługiwany rozmiar lub zakres liczbowy."
+  }
+}

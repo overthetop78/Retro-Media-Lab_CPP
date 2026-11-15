@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "A permutação em pares HP MMFM exige um número par de bytes; recebidos {0}.",
+    "MediaEngine.HpAddressRange": "O valor {1} do campo {0} HP MMFM deve estar entre zero e {2}.",
+    "MediaEngine.HpSectorSize": "Os setores HP MMFM contêm 256 bytes; recebidos {0} bytes.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} bytes, CRC do cabeçalho {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} bytes, CRC dos dados {4}"
+  }
+}

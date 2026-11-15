@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HardDiskRawIntent": "沒有標頭的硬碟映像需要明確選擇格式或具有 MBR/GPT 簽章。",
+    "MediaEngine.HardDiskRawAlignment": "原始映像長度不是邏輯區塊大小 {0} 位元組的整數倍。",
+    "MediaEngine.HardDiskRawChanged": "原始映像長度在辨識後發生了變化。",
+    "MediaEngine.HardDiskRawWrite": "無法將媒體文件寫為完整的原始硬碟映像。",
+    "MediaEngine.HardDiskRawNullDocument": "媒體文件不能是空參照。"
+  }
+}

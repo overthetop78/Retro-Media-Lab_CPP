@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "DEC RX02 -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.Rx02SizeCode": "RX02-kokokoodi {0} ei vastaa {1} tavua.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, sektorin otsake, katkaistu",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} tavua, otsikon CRC {4}, datan CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} tavua, merkki {4}, {5}, otsikon CRC {6}, datan CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} tavua, merkki {4}, {5}, datan CRC {6}",
+    "MediaEngine.Rx02Unpaired": "Luokittelematon DEC RX02 FormatData, merkki {0}, data"
+  }
+}

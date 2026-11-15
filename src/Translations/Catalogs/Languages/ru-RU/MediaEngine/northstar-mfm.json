@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "Секторы NorthStar содержат 512 байт; получено {0} байт.",
+    "MediaEngine.NorthstarCylinderRange": "Цилиндр NorthStar {0} должен быть между нулём и {1}.",
+    "MediaEngine.NorthstarSectorRange": "Номер сектора NorthStar {0} должен быть между нулём и {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "Длительность индекса NorthStar превышает поддерживаемое число битовых ячеек.",
+    "MediaEngine.NorthstarHardAddressRange": "Каждая координата адреса NorthStar C{0} H{1} должна помещаться в один байт.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} байт, метка FB, контрольная сумма {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, блок аппаратного сектора, усечён"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "De RIFF AMS! De patroonkop ontbreekt.",
+    "MediaEngine.CprLength": "De CPR RIFF lengte is ongeldig.",
+    "MediaEngine.CprChunkRange": "CPR brokje '{0}' overtreft de RIFF container.",
+    "MediaEngine.CprDuplicate": "CPR-bank '{0}' wordt gedupliceerd.",
+    "MediaEngine.CprLargeBank": "CPR-bank '{0}' bevat bytes voorbij de 16 KiB-pagina; ze zijn niet in kaart gebracht.",
+    "MediaEngine.CprUnknownChunk": "RIFF brokje '{0}' is geen CPR cartridge bank.",
+    "MediaEngine.CprChunkHeader": "De CPR RIFF container eindigt in een brok header.",
+    "MediaEngine.CprNoBanks": "De CPR afbeelding bevat geen cb00 via cb31 cartridge bank.",
+    "MediaEngine.CprWrite": "Het blokdocument kan niet worden geschreven als een complete CPR cartridge.",
+    "MediaEngine.RomCorpus": "De CPC ROM-lengte ligt buiten de aangetoonde corpusprofielen.",
+    "MediaEngine.RomNoData": "De CPC ROM bevat geen bankgegevens.",
+    "MediaEngine.RomBankLimit": "De CPC ROM overschrijdt 32 cartridgebanken.",
+    "MediaEngine.RomIncomplete": "De laatste SCB ROM bank is onvolledig en is blootgesteld zonder vulling.",
+    "MediaEngine.RomWrite": "Het blokdocument bevat geen aaneengesloten CPC-ROM-banken.",
+    "MediaEngine.FdsSource": "De geselecteerde bron is geen Famicom Disk System afbeelding.",
+    "MediaEngine.FdsSides": "De Famicom Disk System afbeelding bevat geen volledige zijkanten.",
+    "MediaEngine.FdsNoSide": "De Famicom Disk System afbeelding bevat geen zijde.",
+    "MediaEngine.FdsCount": "De Famicom Disk System zijtelling komt niet overeen met de kop.",
+    "MediaEngine.FdsUndeclared": "De FDS-header geeft geen zijtelling aan; de telling is genomen uit de opgeslagen gegevens.",
+    "MediaEngine.FdsWrite": "Het blokdocument bevat geen volledige Famicom Disk System zijden.",
+    "MediaEngine.FdsHeader": "De bron FDS header ontbreekt.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad cartridge"
+  }
+}

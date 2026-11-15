@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (data): tarvitaan {0} hyötytavua tai {1} tavun kokonainen lohko; vastaanotettu {2} tavua.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (järjestelmä): tarvitaan {0} hyötytavua tai {1} tavun kokonainen lohko; vastaanotettu {2} tavua.",
+    "MediaEngine.ArburgBlockCapacity": "Arburg-lohkon kapasiteetin {1} on mahdutettava {0} hyötytavua ja kaksi tarkistussummatavua tuetun kokorajan puitteissa.",
+    "MediaEngine.ArburgUsefulSize": "Arburg-hyötytavujen määrä ei saa olla negatiivinen; saatu {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 tavua, datalohko, tarkistussumma {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 tavua, järjestelmälohko, tarkistussumma {0}"
+  }
+}

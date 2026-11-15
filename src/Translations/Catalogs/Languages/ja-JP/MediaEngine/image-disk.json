@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "ImageDisk ヘッダ: {0} のコメント ターミネーター、ファイルの長さ {1} バイトは含まれません。",
+    "MediaEngine.ImdTruncated": "オフセット {1} の ImageDisk {0} セクションは truncated: {2} バイトが必要です。 {3} は利用できます。",
+    "MediaEngine.ImdTrackHeader": "ImageDisk トラックヘッダーは無効です: モード {0}, セクターは {1} をカウントします。",
+    "MediaEngine.ImdSizeCode": "ImageDisk セクターサイズのコード {0} は無効です。",
+    "MediaEngine.ImdRecordType": "ImageDisk セクターレコードタイプ {0} は無効です。",
+    "MediaEngine.ImdNoSectors": "ImageDisk イメージには、セクタがありません。",
+    "MediaEngine.ImdNoTracks": "ImageDisk のイメージはトラックを含まない。",
+    "MediaEngine.ImdWriteTrack": "ImageDiskトラックヘッダーは表れません。",
+    "MediaEngine.ImdWriteSector": "ImageDiskセクターレコードは無効です。",
+    "MediaEngine.ImdCompressed": "圧縮された ImageDisk セクターには 1 つの繰り返しバイトが含まれていません。",
+    "MediaEngine.ImdMetadataMode": "ImageDiskメタデータには、無効なトラックモードが含まれています。",
+    "MediaEngine.ImdMetadataRecord": "ImageDiskメタデータには、無効なセクターレコードタイプが含まれています。",
+    "MediaEngine.ImdMetadataSize": "ImageDiskメタデータには、無効なセクタサイズが含まれています。",
+    "MediaEngine.ImdMetadataBlock": "ImageDiskメタデータは論理ブロック '{0}' と一致しません。",
+    "MediaEngine.ImdMetadataCount": "ImageDiskメタデータブロックカウントは、セクタイメージと一致しません。",
+    "MediaEngine.ImdMetadata": "ImageDiskメタデータは無効です。",
+    "MediaEngine.ImdEpsonGeometry": "エプソン画像ジオメトリは、その形式の識別子に一致しません。",
+    "MediaEngine.ImdEpsonSize": "Epson のセクター {0}:{1}:{2} に無効なサイズがあります。",
+    "MediaEngine.ImdEpsonDuplicate": "Epson のセクター {0}:{1}:{2} は重複します。",
+    "MediaEngine.EpsonFormat": "選択された形式 '{0}' は、Epson QX-10 形式をサポートしていません。",
+    "MediaEngine.EpsonGeometryDuplicate": "Epson QX-10の幾何学を複製して下さい:{0}。"
+  }
+}

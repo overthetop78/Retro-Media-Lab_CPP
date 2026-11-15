@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar 扇区包含 512 字节；收到 {0} 字节。",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar 柱面 {0} 必须介于零与 {1} 之间。",
+    "MediaEngine.NorthstarSectorRange": "NorthStar 扇区号 {0} 必须在零和 {1} 之间。",
+    "MediaEngine.NorthstarWindowCapacity": "NorthStar 索引时间超过支持的位单元数量。",
+    "MediaEngine.NorthstarHardAddressRange": "NorthStar 地址 C{0} H{1} 的每个坐标必须能存入一个字节。",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} 字节, 标记 FB, 校验和 {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, 硬扇区块, 截断"
+  }
+}

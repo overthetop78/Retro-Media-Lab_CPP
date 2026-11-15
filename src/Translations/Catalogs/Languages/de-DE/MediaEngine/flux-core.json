@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Die Flux-Bitzellendauer {0} ist ungültig; sie muss endlich und mindestens ein Tick sein.",
+    "MediaEngine.FluxSizeLimit": "Die Flussdaten überschreiten die unterstützte In-Memory-Größe.",
+    "MediaEngine.FluxInvalidBit": "Ein Fluxbitwert ist weder Null noch Eins.",
+    "MediaEngine.FluxInvalidMaximum": "Die maximale Anzahl von Zellen pro Flussintervall {0} muss positiv sein.",
+    "MediaEngine.FluxZeroCell": "Die Dauer der Flussbitzellen darf nicht Null sein.",
+    "MediaEngine.FluxZeroIndex": "Die Dauer des Flußumdrehungsindex darf nicht Null sein.",
+    "MediaEngine.FluxIntervalOverflow": "Das Flussintervall von {0} Zellen bei {1} ticks pro Zelle überschreitet den unterstützten ganzzahligen Bereich.",
+    "MediaEngine.GcrCoordinates": "GCR-Koordinaten sind ungültig: Offset {0}, Bytezahl {1}, Schritt {2}."
+  }
+}

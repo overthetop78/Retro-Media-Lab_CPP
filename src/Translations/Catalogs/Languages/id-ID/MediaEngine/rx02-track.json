@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Nilai {1} pada bidang {0} DEC RX02 harus antara nol dan {2}.",
+    "MediaEngine.Rx02SizeCode": "Kode ukuran RX02 {0} tidak sesuai dengan {1} byte.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, header sektor, terpotong",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, CRC header {4}, CRC data {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, penanda {4}, {5}, CRC header {6}, CRC data {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} byte, penanda {4}, {5}, CRC data {6}",
+    "MediaEngine.Rx02Unpaired": "Belum diklasifikasikan DEC RX02 FormatData, penanda {0}, data"
+  }
+}

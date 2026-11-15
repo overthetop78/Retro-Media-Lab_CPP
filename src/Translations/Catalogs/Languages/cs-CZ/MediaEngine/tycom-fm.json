@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Hodnota {1} pole {0} TYCOM musí být mezi nulou a {2}.",
+    "MediaEngine.TycomSectorSize": "Sektory TYCOM obsahují 128 bajtů; přijato {0} bajtů.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bajtů, značka {2}, CRC hlavičky {3}, CRC dat {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bajtů, CRC hlavičky {2}, CRC dat {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 bajtů, značka FE, CRC hlavičky {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 bajtů, značka {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, hlavička sektoru, zkrácená",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, značka {0}, data sektoru, zkrácená",
+    "MediaEngine.TycomUnpaired": "Neklasifikovaný TYCOM FormatData, značka {0}, data"
+  }
+}

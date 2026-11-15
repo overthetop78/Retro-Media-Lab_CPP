@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Wymagany jest identyfikator kodera.",
+    "MediaEngine.PolicyFormats": "Wymagany jest co najmniej jeden identyfikator formatu, który nie jest pusty ani złożony wyłącznie ze spacji.",
+    "MediaEngine.PolicyPrefixes": "Wymagany jest co najmniej jeden prefiks formatu, który nie jest pusty ani złożony wyłącznie ze spacji.",
+    "MediaEngine.PolicyNull": "Reguła rekonstrukcji sektorów nie może być pusta.",
+    "MediaEngine.PolicyNullBlock": "Element rekonstrukcji sektorów nie może zawierać pustego odwołania do bloku.",
+    "MediaEngine.PolicyRareUnknown": "Nie zarejestrowano profilu rzadkiego kodowania dla formatu '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Numer cylindra Lisa FileWare {0} musi mieścić się między 0 a {1}.",
+    "MediaEngine.PolicyJfdDensity": "Ścieżka JFD nie ma użytecznego kodu gęstości.",
+    "MediaEngine.PolicyAddressRange": "Wartość adresu {0} przekracza zakres 32-bitowej liczby całkowitej ze znakiem."
+  }
+}

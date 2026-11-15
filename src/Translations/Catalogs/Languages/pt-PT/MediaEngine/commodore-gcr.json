@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Commodore GCR atributo {0} valor {1} deve estar entre zero e {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Commodore faixa de disco {0} deve ser entre {1} e {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Os setores Commodore contêm bytes {0}; receberam bytes {1}.",
+    "MediaEngine.CbmGcrSync": "Não classificado Commodore CommodoreSync, sincronização GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 bytes, bloco de dados, soma de verificação dos dados {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} bytes, soma de verificação do cabeçalho {4}, soma de verificação dos dados {5}"
+  }
+}

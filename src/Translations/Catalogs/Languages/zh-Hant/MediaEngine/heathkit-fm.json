@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit 磁區包含 256 位元組；收到 {0} 位元組。",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.HeathkitRecordEmpty": "Heathkit 記錄必須至少包含一個檢查碼位元組。",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} 位元組, 磁碟區 {4}, 標頭檢查碼 {5}, 資料檢查碼 {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} 位元組, 檢查碼 {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, 硬磁區標頭, 截斷",
+    "MediaEngine.HeathkitUnpaired": "未配對的 Heathkit 資料, 資料區塊"
+  }
+}

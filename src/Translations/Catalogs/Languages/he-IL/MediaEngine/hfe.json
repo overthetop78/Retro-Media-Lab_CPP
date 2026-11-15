@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "כותרת HFE חסרה או קטועה.",
+    "MediaEngine.HfeRevision": "גרסת HFE {0} אינה נתמכת.",
+    "MediaEngine.HfeGeometry": "הגאומטריה של HFE או קצב הסיביות אינם תקינים.",
+    "MediaEngine.HfeTable": "טבלת המסלולים של HFE חורגת מהגבולות.",
+    "MediaEngine.HfeTiming": "לא ניתן לייצג את תזמון HFE ברזולוציה הדרושה.",
+    "MediaEngine.HfeTrackLength": "אורך מסלול HFE {0} אינו תקין.",
+    "MediaEngine.HfeTrackData": "נתוני מסלול HFE {0}/{1} חורגים מהגבולות.",
+    "MediaEngine.HfeRateOpcode": "מסלול HFE v3 {0}/{1} מכיל פרמטר קצב סיביות שערכו אפס בקוד הפעולה.",
+    "MediaEngine.HfeEmptyTrack": "מסלול HFE v3 {0}/{1} אינו מכיל תאי סיביות.",
+    "MediaEngine.HfeTracks": "HFE דורש לפחות מסלול אחד.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 דורש קידוד זהה לכל המסלולים.",
+    "MediaEngine.HfeEncoding": "לא ניתן לכתוב את הקידוד {0} בתור HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 דורש קצב סיביות זהה לכל המסלולים.",
+    "MediaEngine.HfeMissingTrack": "גליל HFE {0} חסר.",
+    "MediaEngine.HfeTrackAddress": "מסלול HFE נמצא מחוץ לגאומטריה המוצהרת.",
+    "MediaEngine.HfeDuplicateTrack": "מסלול HFE {0}/{1} מופיע פעמיים.",
+    "MediaEngine.HfeLimit": "מכל HFE חורג ממגבלות הגודל או הערכים הנתמכים.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 דורש מקטע תזמון אחיד אחד לכל מסלול.",
+    "MediaEngine.HfeRevolutions": "HFE אינו יכול לשמר את סיבובי השטף המגנטי הנפרדים האלה.",
+    "MediaEngine.HfePadding": "HFE v1 ידרוש מילוי או אורכי מסלול שונים בין הראשים.",
+    "MediaEngine.HfeScpEncoding": "לסוג דיסק SCP {0} אין קידוד HFE v1 ללא אובדן.",
+    "MediaEngine.HfeFluxBounds": "מרווחי השטף חורגים ממשך האינדקס.",
+    "MediaEngine.HfeWeak": "כתיבת HFE v3 אינה יכולה לשמר אזורים חלשים.",
+    "MediaEngine.HfeWeakFeature": "קוד פעולה של נתונים אקראיים ב-HFE v3",
+    "MediaEngine.HfeIndexFeature": "קוד פעולה של אינדקס ב-HFE v3",
+    "MediaEngine.FluxConversionTiming": "לא ניתן לייצג את תזמון השטף כתאי סיביות אחידים.",
+    "MediaEngine.FluxConversionBounds": "מרווחי השטף או מקטעי התזמון חורגים ממשך המסלול.",
+    "MediaEngine.FluxConversionRange": "המרת השטף חורגת מהגודל או הטווח המספרי הנתמכים."
+  }
+}

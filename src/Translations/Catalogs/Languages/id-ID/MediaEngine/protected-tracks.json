@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Tabung trek terproteksi {0} tak boleh negatif.",
+    "MediaEngine.ProtectedHead": "Kepala trek dilindungi {0} tidak boleh negatif.",
+    "MediaEngine.ProtectedNoContent": "Trek terproteksi memerlukan sel bit atau data fluks putaran.",
+    "MediaEngine.ProtectedMetadataNoBits": "Waktu, struktur, dan fitur yang mengacu pada bit memerlukan sel bit.",
+    "MediaEngine.ProtectedRange": "Rentang {0} pada trek terproteksi harus memiliki panjang positif dan muat dalam {1} sel bit.",
+    "MediaEngine.ProtectedTiming": "Durasi sel bit trek terproteksi harus berhingga dan positif.",
+    "MediaEngine.ProtectedResolution": "Resolusi waktu fluks {0} ns harus positif.",
+    "MediaEngine.ProtectedImageEmpty": "Sebuah gambar trek dilindungi membutuhkan setidaknya satu trek.",
+    "MediaEngine.ProtectedImageDuplicate": "Trek terproteksi {0} / {1} digandakan."
+  }
+}

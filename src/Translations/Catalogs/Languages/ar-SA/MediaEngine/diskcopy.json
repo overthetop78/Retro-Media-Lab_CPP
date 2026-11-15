@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "ترويسة DiskCopy مبتورة.",
+    "MediaEngine.DiskCopyPrivateWord": "الكلمة الخاصة في DiskCopy هي {0}؛ القيمة المتوقعة: {1}.",
+    "MediaEngine.DiskCopyPayload": "حمولة DiskCopy غير صالحة.",
+    "MediaEngine.DiskCopyTags": "صورة DiskCopy ليست صورة Macintosh/ProDOS معروفة ولا صورة Lisa ذات وسوم.",
+    "MediaEngine.DiskCopyChecksumBytes": "يتطلب المجموع الاختباري في DiskCopy عددًا زوجيًا من البايتات؛ العدد المستلم: {0}.",
+    "MediaEngine.DiskCopyRange": "يتجاوز أحد أطوال DiskCopy النطاق المدعوم.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "يتطلب DiskCopy صورة قطاعات كاملة.",
+    "MediaEngine.DiskCopyLayoutSize": "يتطلب DiskCopy إجمالي 512 بايت لكل كتلة منطقية.",
+    "MediaEngine.DiskCopyLayoutTags": "يجب أن يحتوي كل وسم DiskCopy على 12 بايت.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "بيانات DiskCopy الوصفية غير مكتملة.",
+    "MediaEngine.DiskCopyMetadataName": "بيانات اسم DiskCopy الوصفية غير صالحة.",
+    "MediaEngine.DiskCopyMetadataFormat": "بيانات تنسيق DiskCopy الوصفية غير صالحة.",
+    "MediaEngine.DiskCopyMetadataChecksum": "بيانات المجموع الاختباري الوصفية '{0}' في DiskCopy غير صالحة."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "L’en-tête RIFF AMS! de la cartouche est absent.",
+    "MediaEngine.CprLength": "La longueur CPR RIFF est invalide.",
+    "MediaEngine.CprChunkRange": "Le bloc CPR « {0} » dépasse le conteneur RIFF.",
+    "MediaEngine.CprDuplicate": "La banque CPR '{0}' est dupliquée.",
+    "MediaEngine.CprLargeBank": "La banque CPR « {0} » dépasse sa page de 16 KiB ; les octets supplémentaires ne sont pas mappés.",
+    "MediaEngine.CprUnknownChunk": "Le bloc RIFF « {0} » n’est pas une banque de cartouche CPR.",
+    "MediaEngine.CprChunkHeader": "Le conteneur RIFF CPR se termine au milieu d’un en-tête de bloc.",
+    "MediaEngine.CprNoBanks": "L’image CPR ne contient aucune banque de cartouche de cb00 à cb31.",
+    "MediaEngine.CprWrite": "Le document bloc ne peut pas être écrit en tant que cartouche complète CPR.",
+    "MediaEngine.RomCorpus": "La longueur du CPC ROM est en dehors des profils de corpus démontrés.",
+    "MediaEngine.RomNoData": "La ROM CPC ne contient aucune donnée de banque.",
+    "MediaEngine.RomBankLimit": "La ROM CPC dépasse 32 banques de cartouche.",
+    "MediaEngine.RomIncomplete": "La dernière banque de ROM CPC est incomplète ; elle est exposée sans ajout de remplissage.",
+    "MediaEngine.RomWrite": "Le document de blocs ne contient pas de banques de ROM CPC contiguës.",
+    "MediaEngine.FdsSource": "La source sélectionnée n'est pas une image Famicom Disk System.",
+    "MediaEngine.FdsSides": "L’image Famicom Disk System ne contient pas de faces complètes.",
+    "MediaEngine.FdsNoSide": "L’image Famicom Disk System ne contient aucune face.",
+    "MediaEngine.FdsCount": "Le nombre de faces Famicom Disk System ne correspond pas à l’en-tête.",
+    "MediaEngine.FdsUndeclared": "L’en-tête FDS ne déclare pas le nombre de faces ; celui-ci provient des données stockées.",
+    "MediaEngine.FdsWrite": "Le document de blocs ne contient pas de faces Famicom Disk System complètes.",
+    "MediaEngine.FdsHeader": "L'en-tête FDS source est manquant.",
+    "MediaEngine.AmstradCartridgeVolume": "Cartouche Amstrad"
+  }
+}

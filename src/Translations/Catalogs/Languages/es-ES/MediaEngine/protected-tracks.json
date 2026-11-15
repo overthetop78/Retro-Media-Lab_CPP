@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "El cilindro de pista protegido {0} no debe ser negativo.",
+    "MediaEngine.ProtectedHead": "Cabeza de pista protegida {0} no debe ser negativa.",
+    "MediaEngine.ProtectedNoContent": "Una pista protegida requiere celdas de bits o datos de flujo de revoluciones.",
+    "MediaEngine.ProtectedMetadataNoBits": "La temporización, las estructuras y las características referidas a bits requieren celdas de bits.",
+    "MediaEngine.ProtectedRange": "Los intervalos {0} de la pista protegida deben tener longitud positiva y caber en {1} celdas de bits.",
+    "MediaEngine.ProtectedTiming": "La duración de celda de la pista protegida debe ser finita y positiva.",
+    "MediaEngine.ProtectedResolution": "La resolución temporal del flujo {0} ns debe ser positiva.",
+    "MediaEngine.ProtectedImageEmpty": "Una imagen de pista protegida requiere al menos una pista.",
+    "MediaEngine.ProtectedImageDuplicate": "Se duplica la pista protegida {0}/{1}."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Az Amstrad DSK fejléc csonka.",
+    "MediaEngine.CpcDskSignature": "A fájl nem CPCEMU DSK kép.",
+    "MediaEngine.CpcDskGeometry": "Az Amstrad DSK geometria érvénytelen.",
+    "MediaEngine.CpcDskExtendedTable": "A kiterjesztett Amstrad DSK pálya asztal érvénytelen a {0} pályán.",
+    "MediaEngine.CpcDskTrackTruncated": "Az Amstrad DSK pályája {0} csonkított.",
+    "MediaEngine.CpcDskTrackHeader": "Az Amstrad DSK track {0} egy érvénytelen fejléc.",
+    "MediaEngine.CpcDskSectorTable": "Az Amstrad DSK track {0} érvénytelen ágazati táblával rendelkezik.",
+    "MediaEngine.CpcDskSectorTruncated": "Az Amstrad DSK szektor {0}: {1}: {2} csonka.",
+    "MediaEngine.CpcDskNoSectors": "Az Amstrad DSK kép nem tartalmaz szektorokat.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} foglalja el {1} bájt és meghaladja a 65280- byte konténer határértéket.",
+    "MediaEngine.CpcDskStandardRepresentation": "Az Amstrad DSK track {0} az EDSK-t igénylő hiányzó, változó méretű vagy nem nominális ágazati képviseletet használ.",
+    "MediaEngine.CpcDskTrackCollection": "Az Amstrad DSK konténer nem írható le: a bejelentett geometria és a vágánygyűjtés nem ért egyet.",
+    "MediaEngine.CpcDskTrackIndex": "Az Amstrad DSK tartály nem írható le: a pályaindex {0} a {1} pozícióban jelenik meg.",
+    "MediaEngine.CpcDskTooManySectors": "Az Amstrad DSK konténer nem írható le: a {0} szám túl sok ágazati jellemzőt tartalmaz.",
+    "MediaEngine.CpcDskUniformTracks": "Az Amstrad DSK konténer nem írható le: a standard DSK egy egységes vágányméretet igényel.",
+    "MediaEngine.CpcDskBuilderGeometry": "A Amstrad DSK tartály nem írható le: a geometria meghaladja a CPCEMU határértékeket.",
+    "MediaEngine.CpcDskNativeMetadata": "Az Amstrad DSK konténer nem írható le: a natív szektorbeli metaadatok hiányoznak az ST1 / ST2-ből.",
+    "MediaEngine.CpcDskSizeCode": "A Amstrad DSK konténer nem írható le: a {0} ágazat mérete nem tekinthető CPCEMU méretkódnak.",
+    "MediaEngine.CpcDskOverflow": "A CPCEMU DSK adatmérete meghaladja a támogatott tartományt.",
+    "MediaEngine.CpcDskRecordedAddress": "Rögzített CPCEMU cím {0}: {1}: {2} nem képviselhetők egybájtos mezők."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (δεδομένα): απαιτούνται {0} ωφέλιμα byte ή {1} byte πλήρους μπλοκ· ελήφθησαν {2} byte.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (σύστημα): απαιτούνται {0} ωφέλιμα byte ή {1} byte πλήρους μπλοκ· ελήφθησαν {2} byte.",
+    "MediaEngine.ArburgBlockCapacity": "Η χωρητικότητα {1} του μπλοκ Arburg πρέπει να χωρά {0} ωφέλιμα byte και δύο byte αθροίσματος ελέγχου, εντός του υποστηριζόμενου ορίου μεγέθους.",
+    "MediaEngine.ArburgUsefulSize": "Το πλήθος ωφέλιμων byte Arburg δεν πρέπει να είναι αρνητικό· ελήφθη {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 byte, μπλοκ δεδομένων, άθροισμα ελέγχου {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 byte, μπλοκ συστήματος, άθροισμα ελέγχου {0}"
+  }
+}

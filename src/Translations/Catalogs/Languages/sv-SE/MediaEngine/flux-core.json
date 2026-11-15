@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Fluxbitcellens varaktighet {0} är ogiltig; den måste vara ändlig och minst ett klocktick.",
+    "MediaEngine.FluxSizeLimit": "Fluxdata överstiger den stödda minnesstorleken.",
+    "MediaEngine.FluxInvalidBit": "Ett fluxbitvärde är varken noll eller ett.",
+    "MediaEngine.FluxInvalidMaximum": "Det maximala antalet celler per fluxintervall {0} måste vara positivt.",
+    "MediaEngine.FluxZeroCell": "Flux bitcell varaktighet får inte vara noll.",
+    "MediaEngine.FluxZeroIndex": "Varaktigheten för fluxrevolutionen får inte vara noll.",
+    "MediaEngine.FluxIntervalOverflow": "Fluxintervallet med {0} celler och {1} ticks per cell överstiger det stödda heltalsintervallet.",
+    "MediaEngine.GcrCoordinates": "GCR-koordinaterna är ogiltiga: förskjutning {0}, antal byte {1}, steg {2}."
+  }
+}

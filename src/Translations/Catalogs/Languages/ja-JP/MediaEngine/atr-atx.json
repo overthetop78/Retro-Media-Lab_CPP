@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR 出力形式 '{0}' はサポートされていません。",
+    "MediaEngine.AtrIncompatibleImage": "セクターイメージ '{0}' は {1} セクター、{2} バイトです。ATR プロファイル '{3}' には {4} セクター、{5} バイトが必要です。",
+    "MediaEngine.AtrMissingSector": "ATR セクター {0} がありません。",
+    "MediaEngine.AtrSectorSize": "ATR セクター {0} は {1} バイトですが、{2} バイトが必要です。",
+    "MediaEngine.AtrHeader": "ATR ヘッダーが無効です。長さは {0} バイト（最小 {1}）、シグネチャは {2}（必要な値 {3}）です。",
+    "MediaEngine.AtrUnsupportedSize": "ATR セクターサイズ {0} バイトはサポートされていません。{1} バイトが必要です。",
+    "MediaEngine.AtrPayloadLength": "ATR データ長は {0} バイトですが、ヘッダーでは {1} バイトと指定されています。",
+    "MediaEngine.AtrTruncatedPayload": "長さ {0} バイトの ATR データには、{1} バイトのブート領域に続く完全な {2} バイトのセクター群がありません。",
+    "MediaEngine.AtrSectorCount": "Atari ATR のセクターサイズ {0} とセクター数 {1} は 0 より大きい必要があります。",
+    "MediaEngine.AtxHeader": "ATX ファイルヘッダーが存在しないか無効です。",
+    "MediaEngine.AtxTrackOffset": "ATX トラックデータのオフセットがファイル範囲外です。",
+    "MediaEngine.AtxTrackCycle": "ATX トラックチェーンに循環があります。",
+    "MediaEngine.AtxTrackBounds": "ATX トラックがファイル範囲を超えています。",
+    "MediaEngine.AtxTrackNumber": "ATX トラック {0} は、サポートされる 40 トラックのジオメトリ範囲外です。",
+    "MediaEngine.AtxSectorCount": "ATX トラック {0} にセクターレコードが多すぎます。",
+    "MediaEngine.AtxListBounds": "ATX トラック {0} のセクターリストがトラック境界を超えています。",
+    "MediaEngine.AtxSectorNumber": "ATX トラック {0} に無効なセクター {1} があります。",
+    "MediaEngine.AtxDataBounds": "ATX トラック {0}、セクター {1} のデータがトラック境界を超えています。",
+    "MediaEngine.AtxNoSectors": "ATX イメージに読み取り可能なセクターレコードがありません。",
+    "MediaEngine.AtxLargeOffset": "ATX の '{0}' オフセットが大きすぎます。",
+    "MediaEngine.AtxTruncated": "ATX の '{0}' 部分が切り詰められています。"
+  }
+}

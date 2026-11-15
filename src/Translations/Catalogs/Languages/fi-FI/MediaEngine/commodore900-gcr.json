@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Uran sylinterin {0} on oltava nollan ja {1} välillä.",
+    "MediaEngine.TrackHead": "Uran pään {0} on oltava nollan ja {1} välillä.",
+    "MediaEngine.TrackMissingSectors": "Tarvitaan vähintään yksi sektori; vastaanotettu {0}.",
+    "MediaEngine.TrackEmpty": "Koodaaja {0} ei tuottanut bittisoluja.",
+    "MediaEngine.TrackHex": "Raaka heksadesimaalinen teksti on virheellinen.",
+    "MediaEngine.TrackBinaryCharacter": "Binääriteksti sisältää \"{0}\" kohdassa {1}; vain nolla ja yksi on sallittu.",
+    "MediaEngine.TrackNegativeGap": "Välin pituus {0} ei saa olla negatiivinen.",
+    "MediaEngine.TrackSectorNumber": "Sektorin numero {0} on oltava nollan ja {1} välillä.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900-sektorit sisältävät {0}-tavuja; vastaanotetut {1}-tavut.",
+    "MediaEngine.C900GcrSync": "Luokittelematon Commodore 900 CommodoreSync, GCR-synkronointi",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} tavua, tarkistussumma {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} tavua, tarkistussumma {4}",
+    "MediaEngine.C900GcrUnpaired": "Parittamaton Commodore 900 -data, datalohko, tarkistussumma {0}",
+    "MediaEngine.IntegrityValid": "kelvollinen",
+    "MediaEngine.IntegrityInvalid": "virheellinen",
+    "MediaEngine.IntegrityUnavailable": "ei saatavilla"
+  }
+}

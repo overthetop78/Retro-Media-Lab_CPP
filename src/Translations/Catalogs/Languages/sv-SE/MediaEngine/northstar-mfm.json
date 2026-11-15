@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar-sektorer innehåller 512 byte; tog emot {0} byte.",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar-cylinder {0} måste vara mellan noll och {1}.",
+    "MediaEngine.NorthstarSectorRange": "NorthStar-sektornummer {0} måste ligga mellan noll och {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "NorthStar-indexperioden överskrider det antal bitceller som stöds.",
+    "MediaEngine.NorthstarHardAddressRange": "Varje koordinat i NorthStar-adressen C{0} H{1} måste rymmas i en byte.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} byte, markering FB, kontrollsumma {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, hårdsektorblock, avkortat"
+  }
+}

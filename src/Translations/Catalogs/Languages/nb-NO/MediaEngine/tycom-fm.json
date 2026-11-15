@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Verdien {1} i TYCOM-feltet {0} må være mellom null og {2}.",
+    "MediaEngine.TycomSectorSize": "TYCOM-sektorer inneholder 128 byte; mottok {0} byte.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, merke {2}, header-CRC {3}, data-CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, header-CRC {2}, data-CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 byte, merke FE, header-CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 byte, merke {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, sektorhode, avkortet",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, merke {0}, sektordata, avkortet",
+    "MediaEngine.TycomUnpaired": "Uklassifisert TYCOM FormatData, merke {0}, data"
+  }
+}

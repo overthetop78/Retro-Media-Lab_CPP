@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "Az AED 6200P {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} bájt, fejléc CRC {4}, adat CRC {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} bájt, jel {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, jel C6, csonkolt",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC nem elérhető, csonkolt",
+    "MediaEngine.AedUnpaired": "Párosítatlan AED 6200P-adatok"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "Ścieżka SCP {0} jest obecna więcej niż raz.",
+    "MediaEngine.ScpTrackOutside": "Ścieżka SCP {0} znajduje się poza zadeklarowanym zakresem od {1} do {2}.",
+    "MediaEngine.ScpWriteAddress": "Ścieżka SCP {0} nie odpowiada zadeklarowanemu adresowi: cylinder {1}, głowica {2}.",
+    "MediaEngine.ScpWriteRevolutions": "Ścieżka SCP {0} zawiera {1} obroty; {2} są wymagane.",
+    "MediaEngine.ScpZeroInterval": "Ścieżka SCP {0}, obrót {1}, zawiera przedział strumienia magnetycznego o zerowej długości.",
+    "MediaEngine.ScpOutput": "Brak funkcji zwrotnej wyjścia SCP."
+  }
+}

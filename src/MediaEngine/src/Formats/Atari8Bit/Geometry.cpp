@@ -1,0 +1,9 @@
+#include "Geometry.h"
+#include "../../Primitives/Identifiers.h"
+#include <RetroMediaLab/MediaEngine/Diagnostics.h>
+namespace RetroMediaLab::MediaEngine::Atari8Bit {
+std::string formatId(std::int32_t size,std::int32_t count){using namespace Constants;if(size==SingleSize&&count>0&&count<=StandardCount)return std::string(Atari90);if(size==SingleSize&&count==EnhancedCount)return std::string(Atari130);if(size==SingleSize&&count==ExtendedCount)return std::string(Atari140);if(size==DoubleSize&&count==StandardCount)return std::string(Atari180);if(size<=0||count<=0)throw MediaError(DiagnosticCode::AtrSectorCount,{std::to_string(size),std::to_string(count)});return std::string(AtariAtrPrefix)+std::to_string(size)+std::string(1,FormatSeparator)+std::to_string(count);}
+MediaFileSystems::SectorGeometry geometry(std::int32_t size,std::int32_t count){using namespace Constants;MediaFileSystems::SectorGeometry g;g.blockSize=std::uint32_t(size);g.heads=Heads;g.formatId=formatId(size,count);g.cylinders=LinearCylinders;g.sectorsPerTrack=std::uint32_t(count);g.addressing=MediaFileSystems::SectorAddressingKind::Logical;if((size==SingleSize&&count>0&&count<=StandardCount)||(size==DoubleSize&&count==StandardCount)){g.cylinders=Cylinders;g.sectorsPerTrack=StandardSectors;g.addressing=MediaFileSystems::SectorAddressingKind::Physical;}else if(size==SingleSize&&(count==EnhancedCount||count==ExtendedCount)){g.cylinders=Cylinders;g.sectorsPerTrack=count==EnhancedCount?EnhancedSectors:ExtendedSectors;g.addressing=MediaFileSystems::SectorAddressingKind::Physical;}return g;}
+std::optional<Constants::Profile> profile(std::string_view id){for(const auto& p:Constants::Profiles)if(Primitives::asciiIdentifierEqualsIgnoreCase(id,p.id))return p;return {};}
+std::uint32_t payloadLength(const Constants::Profile& p) noexcept{using namespace Constants;return p.sectorSize==SingleSize?p.sectorCount*p.sectorSize:BootCount*SingleSize+(p.sectorCount-BootCount)*p.sectorSize;}
+}

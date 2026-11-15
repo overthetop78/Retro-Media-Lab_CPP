@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Заголовок HFE відсутній або обрізаний.",
+    "MediaEngine.HfeRevision": "HFE версія {0} не підтримується.",
+    "MediaEngine.HfeGeometry": "Геометрія HFE або бітова швидкість некоректна.",
+    "MediaEngine.HfeTable": "Таблиця треків HFE виходить з меж.",
+    "MediaEngine.HfeTiming": "Часові характеристики HFE не можна подати з потрібною роздільною здатністю.",
+    "MediaEngine.HfeTrackLength": "HFE трек {0} має недійсну довжину.",
+    "MediaEngine.HfeTrackData": "HFE трек {0}/{1} дані з меж.",
+    "MediaEngine.HfeRateOpcode": "Доріжка HFE v3 {0}/{1} має нульовий параметр коду операції бітової швидкості.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 трек {0}/{1} не містить клітин.",
+    "MediaEngine.HfeTracks": "HFE вимагає принаймні однієї доріжки.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 вимагає одного кодування для всіх треків.",
+    "MediaEngine.HfeEncoding": "Кодування {0} не можна записати як HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 потребує однакової бітової швидкості для всіх доріжок.",
+    "MediaEngine.HfeMissingTrack": "HFE циліндр {0} відсутні.",
+    "MediaEngine.HfeTrackAddress": "Доріжка HFE виходить за межі заявленої геометрії.",
+    "MediaEngine.HfeDuplicateTrack": "HFE трек {0}/{1} дублюється.",
+    "MediaEngine.HfeLimit": "Контейнер HFE перевищує підтримувані обмеження розміру або значень.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 вимагає одного рівномірного сегмента часу на трек.",
+    "MediaEngine.HfeRevolutions": "HFE не може зберегти ці окремі оберти потоку.",
+    "MediaEngine.HfePadding": "HFE v1 потребуватиме заповнення або різної довжини даних головок.",
+    "MediaEngine.HfeScpEncoding": "Тип диска SCP {0} не має кодування HFE v1 без втрат.",
+    "MediaEngine.HfeFluxBounds": "Проміжки флюсу перевищують тривалість індексу.",
+    "MediaEngine.HfeWeak": "HFE v3 не може зберігати слабкі регіони.",
+    "MediaEngine.HfeWeakFeature": "Код операції випадкових даних HFE v3",
+    "MediaEngine.HfeIndexFeature": "Код операції індексу HFE v3",
+    "MediaEngine.FluxConversionTiming": "Часові характеристики потоку не можна подати як бітові комірки однакової тривалості.",
+    "MediaEngine.FluxConversionBounds": "Проміжки флюсу або часові сегменти перевищують тривалість треку.",
+    "MediaEngine.FluxConversionRange": "Перетворення флюсу перевищує підтримуваний розмір або числовий діапазон."
+  }
+}

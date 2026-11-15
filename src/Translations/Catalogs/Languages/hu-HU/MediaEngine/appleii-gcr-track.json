@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Az Apple II GCR {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.AppleIISectorsPerTrack": "Az Apple II sávok 13 szektort tartalmaznak 5-and-3 vagy 16 szektort 6-and-2 kódolásnál; kapott érték: {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bájt, V{4}, cím ellenőrző összege {5}, adat ellenőrző összege {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} bájt, 13 szektor V{4}, cím ellenőrző összege {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} bájt, ellenőrző összeg {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} bájt, 13 szektor, ellenőrző összeg {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, ellenőrző összeg nem elérhető, csonkolva",
+    "MediaEngine.AppleIIUnpaired": "Párosítatlan Apple II adatok, adatprológus D5 AA AD"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} байтів, позначка FE, N{4}, CRC заголовка {5}, CRC даних {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} байтів, позначка FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} байтів, позначка F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Некласифіковано ISO FM DataAddressMark, позначка FB",
+    "MediaEngine.FmUnpairedDeleted": "Некласифіковано ISO FM DeletedDataAddressMark, позначка F8",
+    "MediaEngine.FmRevolutionTiming": "Часові параметри оберту ISO FM неузгоджені: індекс {0} ticks, тривалість комірки {1} ticks, сума інтервалів {2} ticks."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP zaman çözünürlüğü pozitif olmalıdır; alınan değer: {0}.",
+    "MediaEngine.ScpExtended": "Genişletilmiş SCP ortamları disket görüntüsü değildir.",
+    "MediaEngine.ScpSignature": "Dosya bir SCP imzası içermiyor.",
+    "MediaEngine.ScpRevolutions": "SCP dönüş sayısı {0} geçersizdir.",
+    "MediaEngine.ScpTrackRange": "SCP iz aralığı {0} ile {1} geçersizdir.",
+    "MediaEngine.ScpWidth": "SCP bit hücre genişliği {0} desteklenmez.",
+    "MediaEngine.ScpHeads": "SCP kafa seçicisi {0} geçersizdir.",
+    "MediaEngine.ScpTrackSignature": "İz {0} için TRK imzası yoktur; tanımlayıcı {1} iz numarasını içerir.",
+    "MediaEngine.ScpTrackMismatch": "İz tablosundaki {0} girdisi {1} izine işaret eder.",
+    "MediaEngine.ScpHeaderSection": "{0} ofsetindeki SCP başlığı eksik veya geçersizdir; {1} bayt gereklidir.",
+    "MediaEngine.ScpTableSection": "{0} ofsetindeki SCP iz ofset tablosu eksik veya geçersizdir; {1} bayt gereklidir.",
+    "MediaEngine.ScpTrackSection": "{1} ofsetindeki SCP iz {0} başlığı eksik veya geçersizdir; {2} bayt gereklidir.",
+    "MediaEngine.ScpFluxSection": "{2} ofsetindeki SCP iz {0}, dönüş {1} akısı eksik veya geçersizdir; {3} bayt gereklidir.",
+    "MediaEngine.ScpOverflow": "SCP boyutu, konumu, aralığı veya birleştirilmiş dönüşü desteklenen sayısal aralığı aşıyor.",
+    "MediaEngine.ScpTrackAddress": "SCP iz numarası {0} iz tablosunun dışındadır.",
+    "MediaEngine.ScpNoRevolution": "SCP izi çözümlenecek dönüş içermiyor.",
+    "MediaEngine.ScpNoC900Sectors": "SCP görüntüsünden hiçbir Commodore 900 GCR sektörü çözümlenemedi."
+  }
+}

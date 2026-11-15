@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Liczba bajtów strumienia bitów {0} musi być między zerem a {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik FE, N{4}, CRC nagłówka {5}, CRC danych {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bajtów, znacznik F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Niesklasyfikowane ISO MFM Sync, znacznik {0}",
+    "MediaEngine.MfmUnpaired": "Niesklasyfikowane ISO MFM DataAddressMark, znacznik FB",
+    "MediaEngine.MfmUnpairedDeleted": "Niesklasyfikowane ISO MFM DeletedDataAddressMark, znacznik F8"
+  }
+}

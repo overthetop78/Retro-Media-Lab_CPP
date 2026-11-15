@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "De HFE-header ontbreekt of wordt ingekort.",
+    "MediaEngine.HfeRevision": "HFE-revisie {0} wordt niet ondersteund.",
+    "MediaEngine.HfeGeometry": "De HFE geometrie of bitsnelheid is ongeldig.",
+    "MediaEngine.HfeTable": "De HFE-sporentabel ligt buiten de grenzen.",
+    "MediaEngine.HfeTiming": "HFE timing kan niet worden weergegeven bij de vereiste resolutie.",
+    "MediaEngine.HfeTrackLength": "HFE-track {0} heeft een ongeldige lengte.",
+    "MediaEngine.HfeTrackData": "HFE-track {0}/{1}-gegevens zijn buiten bereik.",
+    "MediaEngine.HfeRateOpcode": "HFE v3-spoor {0}/{1} heeft een bitsnelheidsparameter met waarde nul in de opcode.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3-spoor {0}/{1} bevat geen bitcellen.",
+    "MediaEngine.HfeTracks": "HFE vereist minstens één spoor.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 vereist dezelfde codering voor alle sporen.",
+    "MediaEngine.HfeEncoding": "Codering {0} kan niet geschreven worden als HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 vereist dezelfde bitsnelheid voor alle sporen.",
+    "MediaEngine.HfeMissingTrack": "HFE-cilinder {0} ontbreekt.",
+    "MediaEngine.HfeTrackAddress": "Een HFE-spoor ligt buiten de opgegeven geometrie.",
+    "MediaEngine.HfeDuplicateTrack": "HFE-spoor {0}/{1} komt dubbel voor.",
+    "MediaEngine.HfeLimit": "De HFE container overschrijdt de ondersteunde grootte of waardelimieten.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 vereist een uniform tijdsegment per spoor.",
+    "MediaEngine.HfeRevolutions": "HFE kan deze afzonderlijke magnetische fluxomwentelingen niet behouden.",
+    "MediaEngine.HfePadding": "HFE v1 zou opvulling of ongelijke spoorlengtes tussen de koppen vereisen.",
+    "MediaEngine.HfeScpEncoding": "SCP-schijftype {0} heeft geen verliesloze HFE v1-codering.",
+    "MediaEngine.HfeFluxBounds": "De fluxintervallen overschrijden de indexduur.",
+    "MediaEngine.HfeWeak": "HFE v3 schrijven kan zwakke gebieden niet behouden.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 willekeurige data opcode",
+    "MediaEngine.HfeIndexFeature": "HFE v3 index opcode",
+    "MediaEngine.FluxConversionTiming": "Flux timing kan niet worden weergegeven als uniforme bit cellen.",
+    "MediaEngine.FluxConversionBounds": "De fluxintervallen of tijdsegmenten overschrijden de spoorduur.",
+    "MediaEngine.FluxConversionRange": "De fluxconversie overschrijdt de ondersteunde grootte of het numerieke bereik."
+  }
+}

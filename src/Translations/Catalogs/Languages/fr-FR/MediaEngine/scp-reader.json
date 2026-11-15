@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "La résolution temporelle SCP doit être positive ; valeur reçue : {0}.",
+    "MediaEngine.ScpExtended": "Les supports SCP étendus ne sont pas des images de disquettes.",
+    "MediaEngine.ScpSignature": "Le fichier ne contient pas de signature SCP.",
+    "MediaEngine.ScpRevolutions": "Le nombre de révolutions SCP {0} est invalide.",
+    "MediaEngine.ScpTrackRange": "La plage de pistes SCP de {0} à {1} est invalide.",
+    "MediaEngine.ScpWidth": "La largeur de cellule de bit SCP {0} n’est pas prise en charge.",
+    "MediaEngine.ScpHeads": "Le sélecteur de tête SCP {0} est invalide.",
+    "MediaEngine.ScpTrackSignature": "La piste {0} n’a pas de signature TRK ; le descripteur contient le numéro de piste {1}.",
+    "MediaEngine.ScpTrackMismatch": "L’entrée {0} de la table des pistes pointe vers la piste {1}.",
+    "MediaEngine.ScpHeaderSection": "L’en-tête SCP est incomplet ou invalide au décalage {0} ; {1} octets sont nécessaires.",
+    "MediaEngine.ScpTableSection": "La table des décalages de pistes SCP est incomplète ou invalide au décalage {0} ; {1} octets sont nécessaires.",
+    "MediaEngine.ScpTrackSection": "L’en-tête de la piste SCP {0} est incomplet ou invalide au décalage {1} ; {2} octets sont nécessaires.",
+    "MediaEngine.ScpFluxSection": "Le flux de la piste SCP {0}, révolution {1}, est incomplet ou invalide au décalage {2} ; {3} octets sont nécessaires.",
+    "MediaEngine.ScpOverflow": "Une taille, une position, un intervalle ou une révolution SCP raccordée dépasse la plage numérique prise en charge.",
+    "MediaEngine.ScpTrackAddress": "Le numéro de piste SCP {0} est hors de la table des pistes.",
+    "MediaEngine.ScpNoRevolution": "La piste SCP ne contient aucune révolution à décoder.",
+    "MediaEngine.ScpNoC900Sectors": "Aucun secteur Commodore 900 GCR n’a pu être décodé depuis l’image SCP."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "QD MO5 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.QdSectorSize": "QD MO5 扇区包含 128 字节；收到 {0} 字节。",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 字节, 标记 FB, 头部 {1}, 数据校验和 {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 字节, 标记 {1}, 校验和 {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, 扇区头, 截断",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, 扇区数据, 校验和 不可用, 截断",
+    "MediaEngine.QdUnpaired": "未配对的 QD MO5 数据, 标记 {0}, 扇区数据"
+  }
+}

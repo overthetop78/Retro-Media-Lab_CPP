@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (dane): wymagane {0} bajtów danych użytkowych lub {1} bajtów pełnego bloku; otrzymano {2} bajtów.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (system): wymagane {0} bajtów danych użytkowych lub {1} bajtów pełnego bloku; otrzymano {2} bajtów.",
+    "MediaEngine.ArburgBlockCapacity": "Pojemność bloku Arburg {1} musi pomieścić {0} bajtów danych użytkowych i dwa bajty sumy kontrolnej w obsługiwanym limicie rozmiaru.",
+    "MediaEngine.ArburgUsefulSize": "Liczba bajtów danych użytkowych Arburg nie może być ujemna; otrzymano {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 bajtów, blok danych, suma kontrolna {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 bajtów, blok systemowy, suma kontrolna {0}"
+  }
+}

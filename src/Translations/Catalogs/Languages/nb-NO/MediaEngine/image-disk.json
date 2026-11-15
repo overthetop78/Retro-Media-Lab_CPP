@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Bildet inneholder ikke en ImageDisk-topptekst: kommentarterminator på {0}, fillengde {1} bytes.",
+    "MediaEngine.ImdTruncated": "ImageDisk {0} seksjonen ved offset {1} er avkortet: {2} bytes er nødvendig, {3} er tilgjengelig.",
+    "MediaEngine.ImdTrackHeader": "ImageDisk sporhodet er ugyldig: modus {0}, sektor teller {1}.",
+    "MediaEngine.ImdSizeCode": "ImageDisk sektorstørrelse kode {0} er ugyldig.",
+    "MediaEngine.ImdRecordType": "ImageDisk sektoren-record type {0} er ugyldig.",
+    "MediaEngine.ImdNoSectors": "ImageDisk-bildet inneholder ingen sektorer.",
+    "MediaEngine.ImdNoTracks": "Bildet i ImageDisk inneholder ingen spor.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk-sporhodet kan ikke representeres.",
+    "MediaEngine.ImdWriteSector": "En ImageDisk sektorrekord er ugyldig.",
+    "MediaEngine.ImdCompressed": "En komprimert ImageDisk-sektor inneholder ikke én gjentatt byte.",
+    "MediaEngine.ImdMetadataMode": "Metadataene i ImageDisk inneholder en ugyldig spormodus.",
+    "MediaEngine.ImdMetadataRecord": "Metadataene i ImageDisk inneholder en ugyldig sektorposttype.",
+    "MediaEngine.ImdMetadataSize": "Metadataene i ImageDisk inneholder en ugyldig sektorstørrelse.",
+    "MediaEngine.ImdMetadataBlock": "Metadataene i ImageDisk passer ikke til logisk blokk «{0}».",
+    "MediaEngine.ImdMetadataCount": "ImageDisk-metadatablokk-telling samsvarer ikke med sektorbildet.",
+    "MediaEngine.ImdMetadata": "ImageDisk-metadata er ugyldige.",
+    "MediaEngine.ImdEpsonGeometry": "Epson-bildegeometrien matcher ikke formatidentifikatoren.",
+    "MediaEngine.ImdEpsonSize": "Epson-sektoren {0}:{1}: {2} har en ugyldig størrelse.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson-sektoren {0}:{1}: {2} er duplisert.",
+    "MediaEngine.EpsonFormat": "Det valgte formatet «{0}» er ikke et støttet Epson QX-10-format.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplisert Epson QX-10-geometri: {0}."
+  }
+}

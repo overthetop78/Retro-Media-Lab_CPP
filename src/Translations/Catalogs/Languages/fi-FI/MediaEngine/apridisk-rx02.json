@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Kuva ei sisällä ACT Apricot ApriDisk-otsikkoa.",
+    "MediaEngine.ApridiskRecord": "Virheellinen ApriDisk-tietue tavussa {0}.",
+    "MediaEngine.ApridiskOverflow": "ApriDisk-tietueen pituus ylittää etumerkillisen 32-bittisen kokonaisluvun rajan.",
+    "MediaEngine.ApridiskTruncated": "ApriDisk-tietue tavussa {0} on katkennut.",
+    "MediaEngine.ApridiskAddress": "ApriDisk-sektoriosoite {0}/{1}/{2} on ACT Apricot PC/Xi -geometrian ulkopuolella.",
+    "MediaEngine.ApridiskCount": "ApriDiskin kuva sisältää {0} käyttökelpoisia sektoreita {1}:n sijaan.",
+    "MediaEngine.ApridiskSectorLength": "ApriDisk-sektori sisältää {0} tavua {1}:n sijaan.",
+    "MediaEngine.ApridiskCompression": "Tukematon ApriDisk-sektorin pakkaus: {0}.",
+    "MediaEngine.ApridiskExpansion": "ApriDisk-sektorin purettu koko ylittää 512 tavua.",
+    "MediaEngine.ApridiskWriteGeometry": "Sektorikuva ei käytä ACT Apricot PC/Xi -geometriaa.",
+    "MediaEngine.Rx02ImageLength": "DEC RX02 -kuva sisältää {0} tavua; täydellinen fyysinen kuva vaatii {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Sektorikuva ei käytä DEC RX02 -geometriaa."
+  }
+}

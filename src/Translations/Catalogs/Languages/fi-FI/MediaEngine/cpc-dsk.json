@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK:n otsikko on katkaistu.",
+    "MediaEngine.CpcDskSignature": "Tiedosto ei ole CPCEMU DSK kuva.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK geometria on virheellinen.",
+    "MediaEngine.CpcDskExtendedTable": "Laajennettu Amstrad DSK-raitataulukko on virheellinen raidalla {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK -raita {0} on tynkätty.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK-raidassa {0} on virheellinen otsikko.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK-raidassa {0} on virheellinen sektoritaulukko.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}:{1}:{2} on tynkätty.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK -kuva ei sisällä sektoreita.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK -raita {0} on {1} tavua ja ylittää 65280-tavuisen konttirajan.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK -raita {0} käyttää poissaolevaa, muuttuvakokoista tai ei-nimellistä sektoriedustusta, joka edellyttää EDSK:ta.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK -säiliötä ei voi kirjoittaa: ilmoitettu geometria ja ratakokoelma ovat eri mieltä.",
+    "MediaEngine.CpcDskTrackIndex": "Amstrad DSK -säiliötä ei voi kirjoittaa: rataindeksi {0} ilmestyy {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Amstrad DSK -konttia ei voi kirjoittaa: kappale {0} sisältää liian monta alakohtaista kuvaajaa.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK -säiliötä ei voi kirjoittaa: standardi DSK vaatii yhden yhtenäisen raidekoon.",
+    "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK -säiliötä ei voida kirjoittaa: geometria ylittää CPCEMU-rajat.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK -konttia ei voi kirjoittaa: syntyperäiseltä sektorilta puuttuu ST1/ST2 metatietoa.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK -konttia ei voi kirjoittaa: toimialakokoa {0} ei voida esittää CPCEMU-kokokoodilla.",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK -tietojen koko ylittää tuetun vaihteluvälin.",
+    "MediaEngine.CpcDskRecordedAddress": "Tallennettua CPCEMU-osoitetta {0}:{1}:{2} ei voi edustaa yksitavuiset kentät."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HardDiskRawIntent": "A headerless hard disk image requires an explicit format choice or an MBR/GPT signature.",
+    "MediaEngine.HardDiskRawAlignment": "The raw image length is not aligned to {0} byte logical blocks.",
+    "MediaEngine.HardDiskRawChanged": "The raw image length changed after recognition.",
+    "MediaEngine.HardDiskRawWrite": "The media document cannot be written as a complete raw hard disk image.",
+    "MediaEngine.HardDiskRawNullDocument": "The media document cannot be null."
+  }
+}

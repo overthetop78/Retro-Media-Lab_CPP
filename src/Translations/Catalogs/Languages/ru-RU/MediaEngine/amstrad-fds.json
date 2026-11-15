@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF AMS! Заголовок картриджа отсутствует.",
+    "MediaEngine.CprLength": "Длина CPR RIFF недействительна.",
+    "MediaEngine.CprChunkRange": "CPR-куска '{0}' превышает контейнер RIFF.",
+    "MediaEngine.CprDuplicate": "Банк CPR «{0}» дублируется.",
+    "MediaEngine.CprLargeBank": "CPR-банк «{0}» содержит байты за пределами своей 16-киб страницы; они не были отображены.",
+    "MediaEngine.CprUnknownChunk": "RIFF chunk '{0}' не является картриджем CPR.",
+    "MediaEngine.CprChunkHeader": "Контейнер CPR RIFF заканчивается внутри заголовка.",
+    "MediaEngine.CprNoBanks": "Изображение CPR не содержит картриджей cb00-Cb31.",
+    "MediaEngine.CprWrite": "Блок-документ не может быть записан как полный CPR-картридж.",
+    "MediaEngine.RomCorpus": "Длина ПЗУ КПК находится за пределами продемонстрированных профилей корпуса.",
+    "MediaEngine.RomNoData": "ПЗУ КПК не содержит банковских данных.",
+    "MediaEngine.RomBankLimit": "CPC ROM превышает 32 картриджных банка.",
+    "MediaEngine.RomIncomplete": "Последний банк КПК ROM является неполным и выставляется без придуманной прокладки.",
+    "MediaEngine.RomWrite": "Блок-документ не содержит смежных банков CPC ROM.",
+    "MediaEngine.FdsSource": "Выбранный источник не является изображением Famicom Disk System.",
+    "MediaEngine.FdsSides": "Изображение Famicom Disk System не содержит полных сторон.",
+    "MediaEngine.FdsNoSide": "Изображение Famicom Disk System не содержит сторон.",
+    "MediaEngine.FdsCount": "Количество сторон Famicom Disk System не совпадает с его заголовком.",
+    "MediaEngine.FdsUndeclared": "Заголовок FDS не декларирует подсчет сторон; подсчет был взят из сохраненных данных.",
+    "MediaEngine.FdsWrite": "Блок-документ не содержит полных сторон Famicom Disk System.",
+    "MediaEngine.FdsHeader": "Заголовок источника FDS отсутствует.",
+    "MediaEngine.AmstradCartridgeVolume": "Картридж Amstrad"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} 바이트, 헤더 CRC {4}, 데이터 CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} 바이트, 키 {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, 섹터 마크, 잘림",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC 사용 불가, 잘림",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, 지원되지 않는 키 {0}, 잘림",
+    "MediaEngine.CenturionUnpaired": "짝이 없는 Centurion 데이터, 데이터 블록"
+  }
+}

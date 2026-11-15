@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "הערך {1} בשדה {0} של DEC RX02 חייב להיות בין אפס ל-{2}.",
+    "MediaEngine.Rx02SizeCode": "קוד הגודל RX02 {0} אינו תואם ל־{1} בתים.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, כותרת מגזר, קטועה",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} בתים, CRC כותרת {4}, CRC נתונים {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} בתים, סימון {4}, {5}, CRC כותרת {6}, CRC נתונים {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} בתים, סימון {4}, {5}, CRC נתונים {6}",
+    "MediaEngine.Rx02Unpaired": "לא מסווג DEC RX02 FormatData, סימון {0}, נתונים"
+  }
+}

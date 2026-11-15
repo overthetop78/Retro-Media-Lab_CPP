@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Lungimea imaginii brute {0} este goală sau nu este un multiplu de octeți {1}.",
+    "Media.RawUnknownGeometry": "Nici o geometrie a imaginii brute nu se potrivește cu octeți {0}.",
+    "Media.MsxInvalidBoot": "Imaginea octeților {0} nu conține un sector de boot MSX sprijinit.",
+    "Media.MsxUnsupportedGeometry": "Nici o geometrie MSX nu se potrivește cu octeți {0} și descriptor media {1}.",
+    "Media.UnsupportedRawFormat": "Format de imagine brută {0} nu este suportat.",
+    "Media.RawGeometryMismatch": "Image {0} are geometrie {1}; țintă {2} necesită geometrie {3}.",
+    "Media.RawSectorMissing": "Sectorul logic {0} lipsește și nu poate fi scris pe o imagine brută completă.",
+    "Media.RawSectorSize": "Sectorul logic {0} conține octeți {1} în loc de {2}.",
+    "Media.AtomicOpen": "Nu pot crea ieşirea temporară pentru {0}.",
+    "Media.AtomicWrite": "Nu pot scrie ieşirea temporară pentru {0}.",
+    "Media.AtomicCommit": "Nu se poate publica fișierul complet de ieșire {0}.",
+    "Media.Cancelled": "Operaţiunea de pe suportul de stocare a fost anulată."
+  }
+}

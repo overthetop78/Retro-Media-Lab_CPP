@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "O cilindro da via {0} deve estar entre zero e {1}.",
+    "MediaEngine.TrackHead": "A cabeça da faixa {0} deve estar entre zero e {1}.",
+    "MediaEngine.TrackMissingSectors": "É necessário pelo menos um sector, recebido {0}.",
+    "MediaEngine.TrackEmpty": "O codificador {0} não produziu células de bits.",
+    "MediaEngine.TrackHex": "O texto hexadecimal bruto é inválido.",
+    "MediaEngine.TrackBinaryCharacter": "O texto binário contém '{0}' na posição {1}; apenas zero e um são permitidos.",
+    "MediaEngine.TrackNegativeGap": "O comprimento do intervalo {0} não deve ser negativo.",
+    "MediaEngine.TrackSectorNumber": "O número do sector {0} deve estar entre zero e {1}.",
+    "MediaEngine.C900GcrSectorSize": "Os setores Commodore 900 contêm bytes {0}; receberam bytes {1}.",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync não classificado, sincronização GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} bytes, soma de verificação {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} bytes, soma de verificação {4}",
+    "MediaEngine.C900GcrUnpaired": "Dados Commodore 900 não emparelhados, bloco de dados, soma de verificação {0}",
+    "MediaEngine.IntegrityValid": "válida",
+    "MediaEngine.IntegrityInvalid": "inválida",
+    "MediaEngine.IntegrityUnavailable": "indisponível"
+  }
+}

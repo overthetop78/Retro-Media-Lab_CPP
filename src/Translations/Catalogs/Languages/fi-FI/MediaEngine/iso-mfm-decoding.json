@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Bittivirran tavumäärän {0} on oltava nollan ja {1} välillä.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} tavua, merkki FE, N{4}, otsikon CRC {5}, datan CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} tavua, merkki FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} tavua, merkki F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Luokittelematon ISO MFM Sync, merkki {0}",
+    "MediaEngine.MfmUnpaired": "Luokittelematon ISO MFM DataAddressMark, merkki FB",
+    "MediaEngine.MfmUnpairedDeleted": "Luokittelematon ISO MFM DeletedDataAddressMark, merkki F8"
+  }
+}

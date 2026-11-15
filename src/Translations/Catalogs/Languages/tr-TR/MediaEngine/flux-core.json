@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Akı bit hücresi süresi {0} geçersizdir; sonlu ve en az bir saat tikine eşit olmalıdır.",
+    "MediaEngine.FluxSizeLimit": "flux verileri desteklenen in-memory boyutunu aşıyor.",
+    "MediaEngine.FluxInvalidBit": "Bir flux bit değeri ne sıfır ne de bir.",
+    "MediaEngine.FluxInvalidMaximum": "flux aralığı başına maksimum hücre sayısı {0} pozitif olmalıdır.",
+    "MediaEngine.FluxZeroCell": "flux bit hücre süresi sıfır olmamalıdır.",
+    "MediaEngine.FluxZeroIndex": "flux devrimi indeks süresi sıfır olmamalıdır.",
+    "MediaEngine.FluxIntervalOverflow": "Hücre başına {1} ticks ile {0} hücrelik akı aralığı desteklenen tam sayı aralığını aşıyor.",
+    "MediaEngine.GcrCoordinates": "GCR koordinatları geçersiz: ofset {0}, bayt sayısı {1}, adım {2}."
+  }
+}

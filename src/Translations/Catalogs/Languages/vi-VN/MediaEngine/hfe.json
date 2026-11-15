@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Phần đầu HFE bị thiếu hoặc bị cắt ngắn.",
+    "MediaEngine.HfeRevision": "Không hỗ trợ việc sửa đổi HFE {0}.",
+    "MediaEngine.HfeGeometry": "Tỷ lệ hình học hoặc bit HFE là không hợp lệ.",
+    "MediaEngine.HfeTable": "Bảng rãnh HFE nằm ngoài giới hạn.",
+    "MediaEngine.HfeTiming": "Không thể biểu diễn thời gian HFE ở độ phân giải yêu cầu.",
+    "MediaEngine.HfeTrackLength": "Rãnh HFE {0} có độ dài không hợp lệ.",
+    "MediaEngine.HfeTrackData": "Dữ liệu rãnh HFE {0}/{1} nằm ngoài giới hạn.",
+    "MediaEngine.HfeRateOpcode": "Rãnh HFE v3 {0}/{1} có tham số mã lệnh tốc độ bit bằng không.",
+    "MediaEngine.HfeEmptyTrack": "Rãnh HFE v3 {0}/{1} không chứa ô bit nào.",
+    "MediaEngine.HfeTracks": "HFE yêu cầu ít nhất một rãnh.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 yêu cầu cùng một kiểu mã hóa cho mọi rãnh.",
+    "MediaEngine.HfeEncoding": "Không thể ghi kiểu mã hóa {0} dưới dạng HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 yêu cầu cùng một tốc độ bit cho mọi rãnh.",
+    "MediaEngine.HfeMissingTrack": "Thiếu trụ HFE {0}.",
+    "MediaEngine.HfeTrackAddress": "Một rãnh HFE nằm ngoài hình học đã khai báo.",
+    "MediaEngine.HfeDuplicateTrack": "Rãnh HFE {0}/{1} bị trùng lặp.",
+    "MediaEngine.HfeLimit": "Hộp HFE vượt quá giới hạn kích cỡ hoặc giá trị được hỗ trợ.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 yêu cầu một đoạn thời gian đồng nhất cho mỗi rãnh.",
+    "MediaEngine.HfeRevolutions": "HFE không thể giữ các vòng quay từ thông riêng biệt này.",
+    "MediaEngine.HfePadding": "HFE v1 sẽ yêu cầu phần đệm hoặc độ dài dữ liệu đầu đọc không bằng nhau.",
+    "MediaEngine.HfeScpEncoding": "Loại đĩa SCP {0} không có kiểu mã hóa HFE v1 không mất dữ liệu.",
+    "MediaEngine.HfeFluxBounds": "Khoảng thời gian luồng vượt quá thời gian chỉ số.",
+    "MediaEngine.HfeWeak": "Việc ghi HFE v3 không thể giữ các vùng yếu.",
+    "MediaEngine.HfeWeakFeature": "Mã lệnh dữ liệu ngẫu nhiên HFE v3",
+    "MediaEngine.HfeIndexFeature": "Mã lệnh chỉ mục HFE v3",
+    "MediaEngine.FluxConversionTiming": "Không thể biểu diễn thời gian từ thông bằng các ô bit có thời lượng đồng nhất.",
+    "MediaEngine.FluxConversionBounds": "Các khoảng từ thông hoặc đoạn thời gian vượt quá thời lượng rãnh.",
+    "MediaEngine.FluxConversionRange": "Sự chuyển đổi luồng vượt quá kích thước hoặc phạm vi số được hỗ trợ."
+  }
+}

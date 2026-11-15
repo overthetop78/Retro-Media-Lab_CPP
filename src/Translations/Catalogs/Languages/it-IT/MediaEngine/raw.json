@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "La lunghezza dell'immagine grezza {0} è vuota o non un multiplo di {1} byte.",
+    "Media.RawUnknownGeometry": "Nessuna geometria delle immagini grezze supportata corrisponde a {0} byte.",
+    "Media.MsxInvalidBoot": "L'immagine di {0} bytes non contiene un settore di avvio MSX supportato.",
+    "Media.MsxUnsupportedGeometry": "Nessuna geometria MSX corrisponde a {0} byte e descrittore multimediale {1}.",
+    "Media.UnsupportedRawFormat": "Il formato di immagine raw {0} non è supportato.",
+    "Media.RawGeometryMismatch": "L'immagine {0} ha la geometria {1}; il bersaglio {2} richiede la geometria {3}.",
+    "Media.RawSectorMissing": "Il settore logico {0} manca e non può essere scritto a un'immagine raw completa.",
+    "Media.RawSectorSize": "Il settore logico {0} contiene {1} byte invece di {2}.",
+    "Media.AtomicOpen": "Non è possibile creare l'output temporaneo per {0}.",
+    "Media.AtomicWrite": "Non può scrivere l'output temporaneo per {0}.",
+    "Media.AtomicCommit": "Non è possibile pubblicare il file completo di output {0}.",
+    "Media.Cancelled": "L'operazione sul mezzo di stoccaggio è stata annullata."
+  }
+}

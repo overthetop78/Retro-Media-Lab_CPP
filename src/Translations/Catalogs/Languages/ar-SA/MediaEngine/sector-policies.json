@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "يجب تحديد معرّف للمرمز.",
+    "MediaEngine.PolicyFormats": "يجب تحديد معرّف تنسيق واحد على الأقل، ولا يجوز أن يكون فارغًا أو مكوّنًا من مسافات فقط.",
+    "MediaEngine.PolicyPrefixes": "يجب تحديد بادئة تنسيق واحدة على الأقل، ولا يجوز أن تكون فارغة أو مكوّنة من مسافات فقط.",
+    "MediaEngine.PolicyNull": "لا يجوز أن تكون قاعدة إعادة بناء القطاعات مفقودة.",
+    "MediaEngine.PolicyNullBlock": "لا يجوز أن يحتوي عنصر إعادة بناء القطاعات على كتلة مفقودة.",
+    "MediaEngine.PolicyRareUnknown": "لا يوجد ملف تعريف ترميز نادر مسجّل للتنسيق '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "يجب أن يكون رقم أسطوانة Lisa FileWare، وهو {0}، بين 0 و{1}.",
+    "MediaEngine.PolicyJfdDensity": "لا يحتوي مسار JFD على رمز كثافة صالح للاستخدام.",
+    "MediaEngine.PolicyAddressRange": "قيمة العنوان {0} خارج نطاق العدد الصحيح الموقّع ذي 32 بت."
+  }
+}

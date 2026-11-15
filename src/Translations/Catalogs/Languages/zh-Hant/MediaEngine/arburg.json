@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg（資料）：需要{0}位元組有效資料或{1}位元組完整區塊；收到{2}位元組。",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg（系統）：需要{0}位元組有效資料或{1}位元組完整區塊；收到{2}位元組。",
+    "MediaEngine.ArburgBlockCapacity": "Arburg區塊容量{1}必須在支援的大小範圍內容納{0}位元組有效資料及兩個檢查碼位元組。",
+    "MediaEngine.ArburgUsefulSize": "Arburg有效位元組數必須大於或等於零；收到{0}。",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 位元組, 資料區塊, 檢查碼 {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 位元組, 系統區塊, 檢查碼 {0}"
+  }
+}

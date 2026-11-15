@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "DiskCopy 헤더가 잘렸습니다.",
+    "MediaEngine.DiskCopyPrivateWord": "DiskCopy 전용 워드는 {0}입니다. 예상 값: {1}.",
+    "MediaEngine.DiskCopyPayload": "DiskCopy 페이로드가 유효하지 않습니다.",
+    "MediaEngine.DiskCopyTags": "DiskCopy 이미지는 인식 가능한 Macintosh/ProDOS 이미지도 태그가 있는 Lisa 이미지도 아닙니다.",
+    "MediaEngine.DiskCopyChecksumBytes": "DiskCopy 체크섬에는 짝수 개의 바이트가 필요합니다. 받은 바이트 수: {0}.",
+    "MediaEngine.DiskCopyRange": "DiskCopy 길이가 지원 범위를 초과합니다.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy에는 완전한 섹터 이미지가 필요합니다.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy에는 논리 블록마다 총 512바이트가 필요합니다.",
+    "MediaEngine.DiskCopyLayoutTags": "각 DiskCopy 태그는 12바이트여야 합니다.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "DiskCopy 메타데이터가 불완전합니다.",
+    "MediaEngine.DiskCopyMetadataName": "DiskCopy 이름 메타데이터가 유효하지 않습니다.",
+    "MediaEngine.DiskCopyMetadataFormat": "DiskCopy 형식 메타데이터가 유효하지 않습니다.",
+    "MediaEngine.DiskCopyMetadataChecksum": "DiskCopy 체크섬 메타데이터 '{0}'이(가) 유효하지 않습니다."
+  }
+}

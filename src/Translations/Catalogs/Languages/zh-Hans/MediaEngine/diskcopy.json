@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "DiskCopy 标头被截断。",
+    "MediaEngine.DiskCopyPrivateWord": "DiskCopy 专用字为 {0}；预期值为 {1}。",
+    "MediaEngine.DiskCopyPayload": "DiskCopy 有效载荷无效。",
+    "MediaEngine.DiskCopyTags": "DiskCopy 映像既不是可识别的 Macintosh/ProDOS 映像，也不是带有标签的 Lisa 映像。",
+    "MediaEngine.DiskCopyChecksumBytes": "DiskCopy 校验和要求字节数为偶数；收到 {0} 字节。",
+    "MediaEngine.DiskCopyRange": "DiskCopy 长度超出支持的范围。",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy 要求完整的扇区映像。",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy 要求每个逻辑块共 512 字节。",
+    "MediaEngine.DiskCopyLayoutTags": "每个 DiskCopy 标签必须包含 12 字节。",
+    "MediaEngine.DiskCopyMetadataIncomplete": "DiskCopy 元数据不完整。",
+    "MediaEngine.DiskCopyMetadataName": "DiskCopy 名称元数据无效。",
+    "MediaEngine.DiskCopyMetadataFormat": "DiskCopy 格式元数据无效。",
+    "MediaEngine.DiskCopyMetadataChecksum": "DiskCopy 校验和元数据 '{0}' 无效。"
+  }
+}

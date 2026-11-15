@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Η τιμή {1} του πεδίου {0} Membrain MFM πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.MembrainSectorSize": "Οι τομείς Membrain περιέχουν 512 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, σήμα FE, CRC κεφαλίδας {3}, CRC δεδομένων {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, σήμα {3}, μπλοκ δεδομένων, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, κεφαλίδα τομέα, περικομμένη",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC μη διαθέσιμο, περικομμένη",
+    "MediaEngine.MembrainUnpaired": "Μη συζευγμένα δεδομένα Membrain, μπλοκ δεδομένων"
+  }
+}

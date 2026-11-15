@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "L'image ne contient pas d'en-tête ImageDisk : comment terminator à {0}, longueur de fichier {1} octets.",
+    "MediaEngine.ImdTruncated": "La section ImageDisk {0} à offset {1} est tronquée : {2} octets sont requis, {3} sont disponibles.",
+    "MediaEngine.ImdTrackHeader": "L'en-tête de la piste ImageDisk est invalide : mode {0}, secteur count {1}.",
+    "MediaEngine.ImdSizeCode": "Le code de taille du secteur ImageDisk {0} est invalide.",
+    "MediaEngine.ImdRecordType": "Le type d'enregistrement secteur ImageDisk {0} est invalide.",
+    "MediaEngine.ImdNoSectors": "L'image ImageDisk ne contient aucun secteur.",
+    "MediaEngine.ImdNoTracks": "L'image ImageDisk ne contient aucune trace.",
+    "MediaEngine.ImdWriteTrack": "L'en-tête de piste ImageDisk n'est pas représentatif.",
+    "MediaEngine.ImdWriteSector": "Un enregistrement de secteur ImageDisk est invalide.",
+    "MediaEngine.ImdCompressed": "Un secteur d'ImageDisk compressé ne contient pas un octet répété.",
+    "MediaEngine.ImdMetadataMode": "Les métadonnées ImageDisk contiennent un mode de piste invalide.",
+    "MediaEngine.ImdMetadataRecord": "Les métadonnées ImageDisk contiennent un type d'enregistrement de secteur invalide.",
+    "MediaEngine.ImdMetadataSize": "Les métadonnées ImageDisk contiennent une taille de secteur invalide.",
+    "MediaEngine.ImdMetadataBlock": "Les métadonnées ImageDisk ne correspondent pas au bloc logique « {0} ».",
+    "MediaEngine.ImdMetadataCount": "Le nombre de blocs de métadonnées ImageDisk ne correspond pas à l'image du secteur.",
+    "MediaEngine.ImdMetadata": "Les métadonnées ImageDisk sont invalides.",
+    "MediaEngine.ImdEpsonGeometry": "La géométrie de l'image Epson ne correspond pas à son identifiant de format.",
+    "MediaEngine.ImdEpsonSize": "Le secteur Epson {0}:{1}:{2} a une taille non valide.",
+    "MediaEngine.ImdEpsonDuplicate": "Le secteur Epson {0}:{1}:{2} est dupliqué.",
+    "MediaEngine.EpsonFormat": "Le format sélectionné « {0} » n'est pas un format Epson QX-10 pris en charge.",
+    "MediaEngine.EpsonGeometryDuplicate": "Géométrie Epson QX-10 en double : {0}."
+  }
+}

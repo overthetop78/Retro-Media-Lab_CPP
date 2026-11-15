@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Záhlaví snímku TeleDisk v posunu {0} je zkráceno: {1} bajty očekávané, {2} k dispozici.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Záhlaví komentářů TeleDisk v posunu {0} je zkráceno: {1} bajty se očekávají, {2} k dispozici.",
+    "MediaEngine.Td0CommentTruncated": "Komentář TeleDisk na ofsetu {0} je zkrácen: {1} bajtů očekávané, {2} k dispozici.",
+    "MediaEngine.Td0TrackTruncated": "Záhlaví stopy TeleDisk na posunu {0} je neúplné: očekáváno {1} bajtů, dostupných {2}.",
+    "MediaEngine.Td0SectorTruncated": "Záhlaví sektoru TeleDisk v ofsetu {0} je zkráceno: Očekávané bajty {1}, {2} k dispozici.",
+    "MediaEngine.Td0DataHeaderTruncated": "Záhlaví sektorů TeleDisk v posunu {0} je zkráceno: {1} bajtů očekávané, {2} dostupné.",
+    "MediaEngine.Td0DataTruncated": "Údaje z sektoru TeleDisk na ofsetu {0} jsou zkráceny: Očekávané bajty {1}, dostupné {2}.",
+    "MediaEngine.Td0Signature": "Obrázek není obraz TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "CRC v hlavičce TeleDisk je neplatné: očekáváno 0x {0}, vypočteno 0x {1}.",
+    "MediaEngine.Td0CommentCrc": "Komentář TeleDisk CRC je neplatný: očekávaný 0x{0}, vypočtený 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Stopa TeleDisk {0} / {1} CRC je neplatná: očekáváno 0x {2}, vypočteno 0x {3}.",
+    "MediaEngine.Td0SectorCrc": "Sektor TeleDisk {0} / {1} / {2} CRC je neplatný: očekávané 0x {3}, vypočtené 0x {4}.",
+    "MediaEngine.Td0SizeCode": "Sektor TeleDisk {0} / {1} / {2} má neplatný velikostní kód {3}.",
+    "MediaEngine.Td0MissingData": "Sektor TeleDisk {0} / {1} / {2} nemá kódovaná data na ofsetu {3}.",
+    "MediaEngine.Td0NoSectors": "Obrázek TeleDisk neobsahuje žádné sektory."
+  }
+}

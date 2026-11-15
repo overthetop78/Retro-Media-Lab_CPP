@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Valoarea {1} a câmpului {0} DEC RX02 trebuie să fie între zero și {2}.",
+    "MediaEngine.Rx02SizeCode": "Codul de dimensiune RX02 {0} nu corespunde cu {1} octeți.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, antet de sector, trunchiat",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} octeți, CRC antet {4}, CRC date {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} octeți, marcaj {4}, {5}, CRC antet {6}, CRC date {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} octeți, marcaj {4}, {5}, CRC date {6}",
+    "MediaEngine.Rx02Unpaired": "Neclasificat DEC RX02 FormatData, marcaj {0}, date"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Beskyttet sporsylinder {0} må ikke være negativ.",
+    "MediaEngine.ProtectedHead": "Beskyttet sporhode {0} må ikke være negativt.",
+    "MediaEngine.ProtectedNoContent": "Et beskyttet spor krever bitceller eller fluksdata fra omdreininger.",
+    "MediaEngine.ProtectedMetadataNoBits": "Bitbasert tidsinformasjon, strukturer og egenskaper krever bitceller.",
+    "MediaEngine.ProtectedRange": "Områdene {0} i et beskyttet spor må ha positiv lengde og passe innenfor {1} bitceller.",
+    "MediaEngine.ProtectedTiming": "Bitcellens varighet i et beskyttet spor må være endelig og positiv.",
+    "MediaEngine.ProtectedResolution": "Tidsoppløsningen for fluksdata {0} ns må være positiv.",
+    "MediaEngine.ProtectedImageEmpty": "Et beskyttet sporbilde krever minst ett spor.",
+    "MediaEngine.ProtectedImageDuplicate": "Beskyttet spor {0}/{1} er duplisert."
+  }
+}

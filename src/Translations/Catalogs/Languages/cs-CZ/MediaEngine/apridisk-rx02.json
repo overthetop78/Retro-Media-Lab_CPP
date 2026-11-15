@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Obrázek neobsahuje hlavičku ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Neplatný ApriDisk záznam na byte {0}.",
+    "MediaEngine.ApridiskOverflow": "Délka záznamu ApriDisk překračuje limit 32bitového celého čísla se znaménkem.",
+    "MediaEngine.ApridiskTruncated": "ApriDisk záznam na byte {0} je zkrácen.",
+    "MediaEngine.ApridiskAddress": "Adresa sektoru ApriDisk {0} / {1} / {2} je mimo geometrii ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "ApriDisk obraz obsahuje {0} použitelné sektory místo {1}.",
+    "MediaEngine.ApridiskSectorLength": "Sektor ApriDisk obsahuje místo {1} {0} bajty.",
+    "MediaEngine.ApridiskCompression": "Nepodporovaná komprese sektoru ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "Dekomprimovaný sektor ApriDisk přesahuje 512 bajtů.",
+    "MediaEngine.ApridiskWriteGeometry": "Obraz sektorů nepoužívá geometrii ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Obraz DEC RX02 obsahuje {0} bajtů; úplný fyzický obraz vyžaduje {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Obraz sektorů nepoužívá geometrii DEC RX02."
+  }
+}

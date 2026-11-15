@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "Il RIFF AMS! Manca l'intestazione della cartuccia.",
+    "MediaEngine.CprLength": "La lunghezza CPR RIFF non è valida.",
+    "MediaEngine.CprChunkRange": "CPR chunk '{0}' supera il contenitore RIFF.",
+    "MediaEngine.CprDuplicate": "La banca CPR '{0}' è duplicata.",
+    "MediaEngine.CprLargeBank": "CPR banca '{0}' contiene byte oltre la sua pagina 16 KiB; non sono stati mappati.",
+    "MediaEngine.CprUnknownChunk": "RIFF chunk '{0}' non è una banca di cartucce CPR.",
+    "MediaEngine.CprChunkHeader": "Il contenitore CPR RIFF termina all'interno di un intestazione a pezzi.",
+    "MediaEngine.CprNoBanks": "L'immagine CPR non contiene cb00 attraverso la banca della cartuccia cb31.",
+    "MediaEngine.CprWrite": "Il documento di blocco non può essere scritto come una cartuccia CPR completa.",
+    "MediaEngine.RomCorpus": "La lunghezza CPC ROM è al di fuori dei profili corpus dimostrati.",
+    "MediaEngine.RomNoData": "La CPC ROM non contiene dati bancari.",
+    "MediaEngine.RomBankLimit": "La CPC ROM supera 32 cartucce.",
+    "MediaEngine.RomIncomplete": "L'ultima banca CPC ROM è incompleta ed è esposta senza imbottitura inventata.",
+    "MediaEngine.RomWrite": "Il documento di blocco non contiene banche CPC ROM contigue.",
+    "MediaEngine.FdsSource": "La sorgente selezionata non è un'immagine Famicom Disk System.",
+    "MediaEngine.FdsSides": "L'immagine Famicom Disk System non contiene lati completi.",
+    "MediaEngine.FdsNoSide": "L'immagine Famicom Disk System non contiene alcuna parte.",
+    "MediaEngine.FdsCount": "Il conteggio laterale Famicom Disk System non corrisponde all'intestazione.",
+    "MediaEngine.FdsUndeclared": "L'intestazione FDS non dichiara un conteggio laterale; il conteggio è stato prelevato dai dati memorizzati.",
+    "MediaEngine.FdsWrite": "Il documento di blocco non contiene lati Famicom Disk System completi.",
+    "MediaEngine.FdsHeader": "Manca l'intestazione FDS.",
+    "MediaEngine.AmstradCartridgeVolume": "Cartuccia Amstrad"
+  }
+}

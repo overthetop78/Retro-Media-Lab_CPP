@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Das Bild enthält keinen ImageDisk-Header: comment terminator at {0}, file length {1} bytes.",
+    "MediaEngine.ImdTruncated": "Der ImageDisk {0}-Abschnitt im Offset {1} ist gekürzt: {2} Bytes sind erforderlich, {3} sind verfügbar.",
+    "MediaEngine.ImdTrackHeader": "Der ImageDisk Track Header ist ungültig: mode {0}, sector count {1}.",
+    "MediaEngine.ImdSizeCode": "Der ImageDisk Sektorgrößencode {0} ist ungültig.",
+    "MediaEngine.ImdRecordType": "Der Sektordatensatztyp ImageDisk {0} ist ungültig.",
+    "MediaEngine.ImdNoSectors": "Das ImageDisk-Bild enthält keine Sektoren.",
+    "MediaEngine.ImdNoTracks": "Das ImageDisk-Bild enthält keine Spuren.",
+    "MediaEngine.ImdWriteTrack": "Der ImageDisk Track Header ist nicht darstellbar.",
+    "MediaEngine.ImdWriteSector": "Ein ImageDisk-Sektordatensatz ist ungültig.",
+    "MediaEngine.ImdCompressed": "Ein komprimierter ImageDisk-Sektor enthält kein wiederholtes Byte.",
+    "MediaEngine.ImdMetadataMode": "Die ImageDisk-Metadaten enthalten einen ungültigen Track-Modus.",
+    "MediaEngine.ImdMetadataRecord": "Die ImageDisk-Metadaten enthalten einen ungültigen Sektordatensatztyp.",
+    "MediaEngine.ImdMetadataSize": "Die ImageDisk-Metadaten enthalten eine ungültige Sektorgröße.",
+    "MediaEngine.ImdMetadataBlock": "Die ImageDisk Metadaten stimmen nicht mit dem logischen Block '{0}' überein.",
+    "MediaEngine.ImdMetadataCount": "Die Anzahl der Metadatenblocks von ImageDisk stimmt nicht mit dem Sektorbild überein.",
+    "MediaEngine.ImdMetadata": "Die ImageDisk Metadaten sind ungültig.",
+    "MediaEngine.ImdEpsonGeometry": "Die Epson-Bildgeometrie stimmt nicht mit ihrer Formatkennung überein.",
+    "MediaEngine.ImdEpsonSize": "Der Epson-Sektor {0}:{1}:{2} hat eine ungültige Größe.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson Sektor {0}:{1}:{2} ist dupliziert.",
+    "MediaEngine.EpsonFormat": "Das gewählte Format '{0}' ist kein unterstütztes Epson QX-10 Format.",
+    "MediaEngine.EpsonGeometryDuplicate": "Doppelte Epson QX-10 Geometrie: {0}."
+  }
+}

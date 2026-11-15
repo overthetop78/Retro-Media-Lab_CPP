@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFFAMS号! 弹匣头不见了 。",
+    "MediaEngine.CprLength": "CPR RIFF 长度无效 。",
+    "MediaEngine.CprChunkRange": "CPR 块'{0}' 超过 RIFF 容器 。",
+    "MediaEngine.CprDuplicate": "CPR 银行'{0}' 被复制 。",
+    "MediaEngine.CprLargeBank": "CPR bank \"{0}\" 包含超过其 16 KiB 页面的字节; 没有映射它们 。",
+    "MediaEngine.CprUnknownChunk": "RIFF 块\"{0}\" 不是一个 CPR 弹匣库 。",
+    "MediaEngine.CprChunkHeader": "CPR RIFF 容器在一个块头内结束.",
+    "MediaEngine.CprNoBanks": "CPR图像中包含没有cb00到cb31弹匣库.",
+    "MediaEngine.CprWrite": "块文档不能被写成完整的CPR弹匣.",
+    "MediaEngine.RomCorpus": "CPC ROM的长度在演示物状外.",
+    "MediaEngine.RomNoData": "产品总分类ROM没有银行数据。",
+    "MediaEngine.RomBankLimit": "CPCROM超过32个弹匣库.",
+    "MediaEngine.RomIncomplete": "上个CPC ROM库不完整,在没有被发明出垫片的情况下被曝光.",
+    "MediaEngine.RomWrite": "块文件不含相接相接的CPC ROM库.",
+    "MediaEngine.FdsSource": "选中的源不是 Famicom Disk System 图像。",
+    "MediaEngine.FdsSides": "Famicom Disk System图像不包含完整的侧面.",
+    "MediaEngine.FdsNoSide": "Famicom Disk System的图像没有侧面.",
+    "MediaEngine.FdsCount": "Famicom Disk System的侧数与其头数不符.",
+    "MediaEngine.FdsUndeclared": "FDS 页眉不声明边数;计数取自所存储的数据.",
+    "MediaEngine.FdsWrite": "块文档没有包含完整的Famicom Disk System侧.",
+    "MediaEngine.FdsHeader": "源代码FDS头缺失.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad弹匣"
+  }
+}

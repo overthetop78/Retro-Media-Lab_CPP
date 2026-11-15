@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Η τιμή {1} του πεδίου {0} TYCOM πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.TycomSectorSize": "Οι τομείς TYCOM περιέχουν 128 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, σήμα {2}, CRC κεφαλίδας {3}, CRC δεδομένων {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, CRC κεφαλίδας {2}, CRC δεδομένων {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 byte, σήμα FE, CRC κεφαλίδας {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 byte, σήμα {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, κεφαλίδα τομέα, περικομμένη",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, σήμα {0}, δεδομένα τομέα, περικομμένη",
+    "MediaEngine.TycomUnpaired": "Μη ταξινομημένο TYCOM FormatData, σήμα {0}, δεδομένα"
+  }
+}

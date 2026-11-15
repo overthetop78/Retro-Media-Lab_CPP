@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "AED 6200P -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} tavua, otsikon CRC {4}, datan CRC {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} tavua, merkki {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, merkki C6, katkaistu",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC ei saatavilla, katkaistu",
+    "MediaEngine.AedUnpaired": "Parittamaton AED 6200P-data"
+  }
+}

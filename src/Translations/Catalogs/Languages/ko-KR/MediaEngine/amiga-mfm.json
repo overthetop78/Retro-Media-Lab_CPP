@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Amiga odd/even 인코딩에는 짝수 개의 바이트가 필요합니다. 받은 바이트 수: {0}.",
+    "MediaEngine.AmigaMfmParityRange": "잘못된 Amiga 패리티 범위: 오프셋 {0}, 개수 {1}, 사용 가능 {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Amiga 섹터는 512바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.AmigaMfmAddressRange": "Amiga MFM 필드 {0}의 값 {1}은 0 이상 {2} 이하여야 합니다.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3}바이트, 헤더 체크섬 {4}, 데이터 체크섬 {5}"
+  }
+}

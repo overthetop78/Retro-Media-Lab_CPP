@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Görüntü bir ACT Apricot ApriDisk başlığı içermiyor.",
+    "MediaEngine.ApridiskRecord": "{0}. baytta geçersiz ApriDisk kaydı.",
+    "MediaEngine.ApridiskOverflow": "ApriDisk kayıt uzunluğu, işaretli 32 bit tamsayı sınırını aşıyor.",
+    "MediaEngine.ApridiskTruncated": "{0}. bayttaki ApriDisk kaydı kesilmiş.",
+    "MediaEngine.ApridiskAddress": "ApriDisk sektör adresi {0}/{1}/{2} ACT Apricot PC/Xi geometrisi dışındadır.",
+    "MediaEngine.ApridiskCount": "ApriDisk görüntüsü, {1} yerine {0} kullanılabilir sektörler içeriyor.",
+    "MediaEngine.ApridiskSectorLength": "Bir ApriDisk sektörü, gerekli {1} bayt yerine {0} bayt içeriyor.",
+    "MediaEngine.ApridiskCompression": "Desteksiz ApriDisk sektör sıkıştırması: {0}.",
+    "MediaEngine.ApridiskExpansion": "Sıkıştırılmış bir ApriDisk sektörü açıldığında 512 baytı aşıyor.",
+    "MediaEngine.ApridiskWriteGeometry": "Sektör imajı ACT Apricot PC/Xi geometrisini kullanmıyor.",
+    "MediaEngine.Rx02ImageLength": "DEC RX02 kalıbı {0} bayt içeriyor; eksiksiz bir fiziksel kalıp {1} bayt gerektirir.",
+    "MediaEngine.Rx02WriteGeometry": "Sektör imajı DEC RX02 geometrisini kullanmıyor."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} bayt, işaret FE, N{4}, başlık CRC {5}, veri CRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} bayt, işaret FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bayt, işaret F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Sınıflandırılmamış ISO FM DataAddressMark, işaret FB",
+    "MediaEngine.FmUnpairedDeleted": "Sınıflandırılmamış ISO FM DeletedDataAddressMark, işaret F8",
+    "MediaEngine.FmRevolutionTiming": "ISO FM dönüş zamanlaması tutarsız: indeks {0} ticks, hücre süresi {1} ticks, aralık toplamı {2} ticks."
+  }
+}

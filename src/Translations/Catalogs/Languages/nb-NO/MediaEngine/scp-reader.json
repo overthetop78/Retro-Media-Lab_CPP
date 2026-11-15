@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP-tidsoppløsningen må være positiv, mottatt {0}.",
+    "MediaEngine.ScpExtended": "Utvidede SCP-medier er ikke diskettbilder.",
+    "MediaEngine.ScpSignature": "Filen inneholder ikke en SCP-signatur.",
+    "MediaEngine.ScpRevolutions": "Antall SCP-omdreininger {0} er ugyldig.",
+    "MediaEngine.ScpTrackRange": "SCP-sporområdet {0} til {1} er ugyldig.",
+    "MediaEngine.ScpWidth": "SCP-bitcellebredden {0} støttes ikke.",
+    "MediaEngine.ScpHeads": "SCP-hodevelgeren {0} er ugyldig.",
+    "MediaEngine.ScpTrackSignature": "Spor {0} har ingen TRK-signatur; deskriptoren inneholder spornummer {1}.",
+    "MediaEngine.ScpTrackMismatch": "Oppføring {0} i sportabellen peker på spor {1}.",
+    "MediaEngine.ScpHeaderSection": "SCP-hodet er ufullstendig eller ugyldig ved offset {0}; {1} byte er nødvendig.",
+    "MediaEngine.ScpTableSection": "SCP-tabellen over sporforskyvninger er ufullstendig eller ugyldig ved forskyvning {0}; {1} byte kreves.",
+    "MediaEngine.ScpTrackSection": "Hovedet til SCP-spor {0} er ufullstendig eller ugyldig ved offset {1}; {2} byte er nødvendig.",
+    "MediaEngine.ScpFluxSection": "Fluxen til SCP spor {0}, omdreining {1}, er ufullstendig eller ugyldig ved offset {2}; {3} byte er nødvendig.",
+    "MediaEngine.ScpOverflow": "En SCP-størrelse, posisjon, intervall eller sammenkoblet omdreining overstiger det understøttede numeriske området.",
+    "MediaEngine.ScpTrackAddress": "SCP spor nummer {0} er utenfor spor tabellen.",
+    "MediaEngine.ScpNoRevolution": "SCP-sporet inneholder ingen omdreining å dekode.",
+    "MediaEngine.ScpNoC900Sectors": "Ingen Commodore 900 GCR-sektorer kan dekodes fra SCP-bildet."
+  }
+}

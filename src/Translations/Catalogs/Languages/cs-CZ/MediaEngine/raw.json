@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Surová délka obrázku {0} je prázdná nebo není násobkem {1} bajtů.",
+    "Media.RawUnknownGeometry": "Žádná podporovaná geometrie surového obrazu neodpovídá velikosti {0} bajtů.",
+    "Media.MsxInvalidBoot": "Obrázek {0} bajtů neobsahuje podporovaný sektor MSX boot.",
+    "Media.MsxUnsupportedGeometry": "Žádná geometrie MSX neodpovídá velikosti {0} bajtů a deskriptoru média {1}.",
+    "Media.UnsupportedRawFormat": "Syrový formát obrázku {0} není podporován.",
+    "Media.RawGeometryMismatch": "Obrázek {0} má geometrii {1}; cíl {2} vyžaduje geometrii {3}.",
+    "Media.RawSectorMissing": "Logický sektor {0} chybí a nemůže být zapsán do úplného syrového obrazu.",
+    "Media.RawSectorSize": "Logický sektor {0} obsahuje {1} bajty místo {2}.",
+    "Media.AtomicOpen": "Nelze vytvořit dočasný výstup pro {0}.",
+    "Media.AtomicWrite": "Nelze zapsat dočasný výstup pro {0}.",
+    "Media.AtomicCommit": "Nelze zveřejnit kompletní výstupní soubor {0}.",
+    "Media.Cancelled": "Operace na paměťovém médiu byla zrušena."
+  }
+}

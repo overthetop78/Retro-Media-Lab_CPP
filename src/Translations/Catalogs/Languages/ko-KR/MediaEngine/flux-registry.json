@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "자속 디코더를 하나 이상 등록해야 합니다.",
+    "MediaEngine.RegistryNullDecoder": "위치 {0}의 자속 디코더가 없습니다.",
+    "MediaEngine.RegistryInvalidId": "위치 {0}의 자속 디코더 식별자가 비어 있습니다.",
+    "MediaEngine.RegistryDuplicate": "식별자가 '{0}'인 자속 디코더가 이미 등록되어 있습니다.",
+    "MediaEngine.RegistryUnknown": "식별자가 '{0}'인 자속 디코더가 등록되어 있지 않습니다.",
+    "MediaEngine.RegistryNullRevolution": "디코딩하려면 한 회전의 자속 기록이 필요합니다.",
+    "MediaEngine.RegistryNoAutomatic": "등록된 자속 디코더 중 자동 감지에 참여하는 디코더가 없습니다."
+  }
+}

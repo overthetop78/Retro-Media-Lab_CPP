@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Mindestens ein Flussdecoder muss registriert werden.",
+    "MediaEngine.RegistryNullDecoder": "Der Flussdecoder an Position {0} ist Null.",
+    "MediaEngine.RegistryInvalidId": "Der Flussdecoder an Position {0} hat eine leere Kennung.",
+    "MediaEngine.RegistryDuplicate": "Ein Flux-Decoder mit der Kennung '{0}' ist bereits registriert.",
+    "MediaEngine.RegistryUnknown": "Kein Flussdecoder ist mit der Kennung '{0}' registriert.",
+    "MediaEngine.RegistryNullRevolution": "Für die Decodierung ist eine Flussumdrehung erforderlich.",
+    "MediaEngine.RegistryNoAutomatic": "Kein registrierter Flussdecoder nimmt an der automatischen Erkennung teil."
+  }
+}

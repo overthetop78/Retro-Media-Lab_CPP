@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "La section « en-tête d’image » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0CommentHeaderTruncated": "La section « en-tête de commentaire » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0CommentTruncated": "La section « commentaire » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0TrackTruncated": "La section « en-tête de piste » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0SectorTruncated": "La section « en-tête de secteur » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0DataHeaderTruncated": "La section « en-tête des données sectorielles » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0DataTruncated": "La section « données sectorielles » de TeleDisk est tronquée à la position {0} : {1} octets attendus, {2} disponibles.",
+    "MediaEngine.Td0Signature": "L’image n’est pas une image TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Le CRC de l’en-tête TeleDisk est invalide : attendu 0x{0}, calculé 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Le CRC du commentaire TeleDisk est invalide : attendu 0x{0}, calculé 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Le CRC de la piste TeleDisk {0}/{1} est invalide : attendu 0x{2}, calculé 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "Le CRC du secteur TeleDisk {0}/{1}/{2} est invalide : attendu 0x{3}, calculé 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Le secteur TeleDisk {0}/{1}/{2} possède un code de taille invalide : {3}.",
+    "MediaEngine.Td0MissingData": "Le secteur TeleDisk {0}/{1}/{2} n’a aucune donnée encodée à la position {3}.",
+    "MediaEngine.Td0NoSectors": "L’image TeleDisk ne contient aucun secteur."
+  }
+}

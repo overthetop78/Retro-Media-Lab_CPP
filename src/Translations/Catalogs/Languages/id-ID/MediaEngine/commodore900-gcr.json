@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Silinder trek {0} harus antara nol dan {1}.",
+    "MediaEngine.TrackHead": "Kepala trek {0} harus berada antara nol dan {1}.",
+    "MediaEngine.TrackMissingSectors": "Setidaknya satu sektor diperlukan; diterima {0}.",
+    "MediaEngine.TrackEmpty": "Enkoder {0} tidak menghasilkan sel bit.",
+    "MediaEngine.TrackHex": "Teks heksadesimal mentah tidak valid.",
+    "MediaEngine.TrackBinaryCharacter": "Teks biner memuat '{0}' pada posisi {1}; hanya nol dan satu yang diijinkan.",
+    "MediaEngine.TrackNegativeGap": "Panjang gap {0} tak boleh negatif.",
+    "MediaEngine.TrackSectorNumber": "Nomor sektor {0} harus antara nol dan {1}.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 sektor berisi {0} bytes; diterima {1} bytes.",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync belum diklasifikasikan, sinkronisasi GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} byte, checksum {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} byte, checksum {4}",
+    "MediaEngine.C900GcrUnpaired": "Data Commodore 900 tanpa pasangan, blok data, checksum {0}",
+    "MediaEngine.IntegrityValid": "valid",
+    "MediaEngine.IntegrityInvalid": "tidak valid",
+    "MediaEngine.IntegrityUnavailable": "tidak tersedia"
+  }
+}

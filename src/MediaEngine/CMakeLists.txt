@@ -1,0 +1,361 @@
+add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Definitions/Layout.cpp
+  src/Formats/Definitions/Reader.cpp
+  src/Sources/DriveRandomAccessData.cpp
+  src/Sources/UnavailableRandomAccessData.cpp
+  src/Models/Optical/Track.cpp
+  src/Models/Optical/Image.cpp
+  src/Models/Optical/DriveBinding.cpp
+  src/Models/Sectors/Representation.cpp
+  src/Models/Blocks/Ranges.cpp
+  src/Models/Blocks/Reader.cpp
+  src/Models/Blocks/DriveBinding.cpp
+  src/Models/Blocks/Copy.cpp
+  src/Images/MediaDocument.cpp
+  src/Images/RecognitionContext.cpp
+  src/Images/Writers.cpp
+  src/Images/WriterRegistry.cpp
+  src/Formats/HardDisk/Raw/Reader.cpp
+  src/Formats/HardDisk/Raw/Writer.cpp
+  src/Images/ReaderRegistry.cpp
+  src/Images/RecognitionResult.cpp
+  src/Images/ExplorationMapper.cpp
+  src/Images/MediaExplorer.cpp
+  src/Images/ReadRejection.cpp
+  src/Images/DocumentFactory.cpp
+  src/Images/WriterAdapters.cpp
+  src/Models/Flux/Representation.cpp
+  src/Formats/CommodoreDisks/Adapters.cpp
+  src/Formats/Atari/Adapters.cpp
+  src/Formats/ImageDisk/Adapter.cpp
+  src/Formats/CpcDsk/Adapter.cpp
+  src/Formats/Hfe/Adapter.cpp
+  src/Formats/St/Transform.cpp
+  src/Formats/St/Writer.cpp
+  src/Formats/St/Detection.cpp
+  src/Formats/Optical/Iso/Reader.cpp
+  src/Formats/Optical/Iso/Writer.cpp
+  src/Formats/Cartridge/Cpr.cpp
+  src/Formats/Cartridge/Rom.cpp
+  src/Formats/Cartridge/Fds.cpp
+  src/Formats/Cartridge/Writers.cpp
+  src/Formats/Raw/WriterAdapters.cpp
+  src/Formats/Commodore900/WriterAdapter.cpp
+  src/Formats/AcornAtom/WriterAdapter.cpp
+  src/Formats/Raw/UcsdWriter.cpp
+  src/Formats/TeleDisk/Writer.cpp
+  src/Formats/TeleDisk/HeaderFactory.cpp
+  src/Formats/TeleDisk/Reader.cpp
+  src/Formats/TeleDisk/SectorImage.cpp
+  src/Formats/TeleDisk/Adapter.cpp
+  src/Formats/TeleDisk/SectorCodec.cpp
+  src/Formats/TeleDisk/Advanced.cpp
+  # Codecs
+  src/Codecs/Crc16.cpp
+  src/Codecs/FmAddressMarks.cpp
+  src/Codecs/RotatingChecksum.cpp
+  # Codecs/Aed6200p
+  src/Codecs/Aed6200p/Decoder.cpp
+  src/Codecs/Aed6200p/Encoder.cpp
+  src/Codecs/Aed6200p/Fields.cpp
+  # Codecs/Amiga
+  src/Codecs/Amiga/Decoder.cpp
+  src/Codecs/Amiga/Encoder.cpp
+  src/Codecs/Amiga/OddEven.cpp
+  src/Codecs/Amiga/Parity.cpp
+  # Codecs/Apple
+  src/Codecs/Apple/BitLatch.cpp
+  # Codecs/AppleII
+  src/Codecs/AppleII/Address.cpp
+  src/Codecs/AppleII/Decoder.cpp
+  src/Codecs/AppleII/Encoder.cpp
+  src/Codecs/AppleII/FiveAndThree.cpp
+  src/Codecs/AppleII/SixAndTwo.cpp
+  # Codecs/AppleIwm
+  src/Codecs/AppleIwm/Decode.cpp
+  src/Codecs/AppleIwm/Decoder.cpp
+  src/Codecs/AppleIwm/Encode.cpp
+  src/Codecs/AppleIwm/Encoder.cpp
+  # Codecs/AppleRwts18
+  src/Codecs/AppleRwts18/Decoder.cpp
+  src/Codecs/AppleRwts18/Encoder.cpp
+  src/Codecs/AppleRwts18/Payload.cpp
+  # Codecs/Arburg
+  src/Codecs/Arburg/Checksum.cpp
+  src/Codecs/Arburg/Decoder.cpp
+  src/Codecs/Arburg/Encoder.cpp
+  src/Codecs/Arburg/System.cpp
+  # Codecs/Centurion
+  src/Codecs/Centurion/Decoder.cpp
+  src/Codecs/Centurion/Encoder.cpp
+  src/Codecs/Centurion/Fields.cpp
+  # Codecs/Commodore
+  src/Codecs/Commodore/Commodore1541Decoder.cpp
+  src/Codecs/Commodore/Commodore1541Encoder.cpp
+  src/Codecs/Commodore/Commodore900Decoder.cpp
+  src/Codecs/Commodore/Commodore900Encoder.cpp
+  src/Codecs/Commodore/Gcr.cpp
+  # Codecs/DataGeneral
+  src/Codecs/DataGeneral/Checksum.cpp
+  src/Codecs/DataGeneral/Decoder.cpp
+  src/Codecs/DataGeneral/Encoder.cpp
+  # Codecs/DecRx02
+  src/Codecs/DecRx02/Decoder.cpp
+  src/Codecs/DecRx02/Descriptions.cpp
+  src/Codecs/DecRx02/Encoder.cpp
+  src/Codecs/DecRx02/Format.cpp
+  src/Codecs/DecRx02/M2Fm.cpp
+  # Codecs/Emu
+  src/Codecs/Emu/Decoder.cpp
+  src/Codecs/Emu/Encoder.cpp
+  # Codecs/Heathkit
+  src/Codecs/Heathkit/Decoder.cpp
+  src/Codecs/Heathkit/Encoder.cpp
+  src/Codecs/Heathkit/Record.cpp
+  # Codecs/HpMmfm
+  src/Codecs/HpMmfm/Decoder.cpp
+  src/Codecs/HpMmfm/Encoder.cpp
+  src/Codecs/HpMmfm/Payload.cpp
+  # Codecs/Iso
+  src/Codecs/Iso/FmDecoder.cpp
+  src/Codecs/Iso/FmEncoder.cpp
+  src/Codecs/Iso/FmFields.cpp
+  src/Codecs/Iso/FmRead.cpp
+  src/Codecs/Iso/FmTiming.cpp
+  src/Codecs/Iso/MfmDecoder.cpp
+  src/Codecs/Iso/MfmEncoder.cpp
+  src/Codecs/Iso/MfmFields.cpp
+  src/Codecs/Iso/MfmPll.cpp
+  src/Codecs/Iso/MfmRead.cpp
+  # Codecs/Membrain
+  src/Codecs/Membrain/Address.cpp
+  src/Codecs/Membrain/Decoder.cpp
+  src/Codecs/Membrain/Encoder.cpp
+  src/Codecs/Membrain/Fields.cpp
+  # Codecs/MicralN
+  src/Codecs/MicralN/Checksum.cpp
+  src/Codecs/MicralN/Decoder.cpp
+  src/Codecs/MicralN/Encoder.cpp
+  # Codecs/Micropolis
+  src/Codecs/Micropolis/Decoder.cpp
+  src/Codecs/Micropolis/Encoder.cpp
+  src/Codecs/Micropolis/Record.cpp
+  # Codecs/Northstar
+  src/Codecs/Northstar/Address.cpp
+  src/Codecs/Northstar/Decoder.cpp
+  src/Codecs/Northstar/Encoder.cpp
+  # Codecs/Raw
+  src/Codecs/Raw/Raw.cpp
+  # Codecs/Tycom
+  src/Codecs/Tycom/Decoder.cpp
+  src/Codecs/Tycom/Encoder.cpp
+  src/Codecs/Tycom/Fields.cpp
+  # Codecs/Victor9000
+  src/Codecs/Victor9000/Decoder.cpp
+  src/Codecs/Victor9000/Encoder.cpp
+  src/Codecs/Victor9000/Fields.cpp
+  # Codecs/QdMo5
+  src/Codecs/QdMo5/Decoder.cpp
+  src/Codecs/QdMo5/Encoder.cpp
+  src/Codecs/QdMo5/Fields.cpp
+  # Common
+  src/Diagnostics.cpp
+  # Composition
+  src/Composition/FluxCodecs.cpp
+  src/Composition/SectorPolicies.cpp
+  # Decoding
+  src/Decoding/Confidence.cpp
+  src/Decoding/LocalizedText.cpp
+  src/Decoding/Registry.cpp
+  src/Decoding/Scoring.cpp
+  # Encoding
+  src/Encoding/Bits.cpp
+  src/Encoding/ProtectedImage.cpp
+  src/Encoding/RareProfiles.cpp
+  src/Encoding/Registry.cpp
+  src/Encoding/SectorImageEncoder.cpp
+  src/Encoding/Timings.cpp
+  src/Encoding/Track.cpp
+  # Exploration
+  src/Exploration/SectorExploration.cpp
+  src/Formats/TwoImg/Reader.cpp
+  src/Formats/TwoImg/Writer.cpp
+  src/Formats/Nib/Reader.cpp
+  src/Formats/DiskCopy/Reader.cpp
+  src/Formats/DiskCopy/Writer.cpp
+  src/Formats/DiskCopy/Metadata.cpp
+  src/Formats/Woz/Reader.cpp
+  src/Formats/Woz/Writer.cpp
+  src/Formats/Apple/DecodedTracks.cpp
+  src/Formats/Msa/Rle.cpp
+  src/Formats/Msa/Reader.cpp
+  src/Formats/Msa/Writer.cpp
+  src/Formats/St/Geometry.cpp
+  src/Formats/Atari8Bit/Geometry.cpp
+  src/Formats/Atr/Layout.cpp
+  src/Formats/Atr/Reader.cpp
+  src/Formats/Atr/Writer.cpp
+  src/Formats/Atx/Reader.cpp
+  src/Formats/Epson/Geometry.cpp
+  src/Formats/ImageDisk/Models.cpp
+  src/Formats/ImageDisk/Reader.cpp
+  src/Formats/ImageDisk/Writer.cpp
+  src/Formats/ImageDisk/Metadata.cpp
+  src/Formats/ImageDisk/Builder.cpp
+  src/Formats/CpcDsk/Reader.cpp
+  src/Formats/CpcDsk/Builder.cpp
+  src/Formats/CpcDsk/Writer.cpp
+  src/Models/Sectors/UniformLayout.cpp
+  src/Models/Flux/Conversion.cpp
+  src/Formats/Hfe/Models.cpp
+  src/Formats/Hfe/Reader.cpp
+  src/Formats/Hfe/Writer.cpp
+  src/Formats/Hfe/ProtectedImage.cpp
+  src/Formats/Hfe/V3Writer.cpp
+  src/Encoding/BitPacker.cpp
+  src/Formats/Apple/TrackEncoding.cpp
+  src/Formats/Nib/Writer.cpp
+  # Formats/Apple
+  src/Formats/Apple/Geometry.cpp
+  src/Formats/Apple/Probe.cpp
+  src/Formats/Apple/RawReader.cpp
+  src/Formats/Adf/Adapter.cpp
+  src/Formats/BbcDfs/Adapter.cpp
+  src/Formats/Raw/Adapters.cpp
+  src/Formats/Raw/ImgReader.cpp
+  src/Formats/Xfd/Reader.cpp
+  src/Formats/Apridisk/Reader.cpp
+  src/Formats/Apridisk/Writer.cpp
+  src/Formats/Apridisk/Adapter.cpp
+  src/Formats/Rx02/Reader.cpp
+  src/Formats/Rx02/Writer.cpp
+  src/Formats/Rx02/Adapter.cpp
+  src/Formats/AcornAtom/Reader.cpp
+  src/Formats/Raw/SpecializedReaders.cpp
+  src/Formats/Epson/RawReader.cpp
+  src/Formats/Epson/RawWriter.cpp
+  src/Formats/Epson/WriterAdapter.cpp
+  src/Formats/ImageDisk/WriterAdapter.cpp
+  src/Formats/Adf/WriterAdapters.cpp
+  src/Formats/BbcDfs/WriterAdapter.cpp
+  src/Formats/CpcDsk/WriterAdapter.cpp
+  src/Formats/Apple/Writing.cpp
+  src/Formats/Apple/WriterAdapters.cpp
+  src/Formats/Apple/Adapter.cpp
+  src/Formats/Apple/ContainerRouter.cpp
+  src/Formats/Apple/RawWriter.cpp
+  src/Formats/Apple/SectorOrder.cpp
+  # Formats/Adf
+  src/Formats/Adf/Geometry.cpp
+  src/Formats/Adf/Partial.cpp
+  src/Formats/Adf/Reader.cpp
+  src/Formats/Adf/Writer.cpp
+  # Formats/BbcDfs
+  src/Formats/BbcDfs/Reader.cpp
+  src/Formats/BbcDfs/Writer.cpp
+  # Formats/Commodore900
+  src/Formats/Commodore900/FluxReader.cpp
+  src/Formats/Commodore900/Geometry.cpp
+  src/Formats/Commodore900/Reader.cpp
+  src/Formats/Commodore900/Writer.cpp
+  # Formats/CommodoreDisks
+  src/Formats/CommodoreDisks/FluxReader.cpp
+  src/Formats/CommodoreDisks/GcrReconstruction.cpp
+  src/Formats/CommodoreDisks/Layouts.cpp
+  src/Formats/CommodoreDisks/MfmReconstruction.cpp
+  src/Formats/CommodoreDisks/Reader.cpp
+  src/Formats/CommodoreDisks/Router.cpp
+  src/Formats/CommodoreDisks/Writer.cpp
+  # Formats/Raw
+  src/Formats/Raw/Geometry.cpp
+  src/Formats/Raw/Reader.cpp
+  src/Formats/Raw/Writer.cpp
+  # Formats/Scp
+  src/Formats/Scp/DiskTypes.cpp
+  src/Formats/Scp/SectorConverter.cpp
+  src/Formats/Scp/Models.cpp
+  src/Formats/Scp/ProtectedImage.cpp
+  src/Formats/Scp/OutputImage.cpp
+  src/Formats/Scp/Reader.cpp
+  src/Formats/Scp/Synthetic.cpp
+  src/Formats/Scp/Windows.cpp
+  src/Formats/Scp/Writer.cpp
+  # Models/Flux
+  src/Models/Flux/BitReader.cpp
+  src/Models/Flux/Bitstream.cpp
+  src/Models/Flux/ProtectedTrack.cpp
+  src/Models/Flux/ProtectedTrackImage.cpp
+  src/Models/Flux/Revolution.cpp
+  src/Models/Flux/Timing.cpp
+  src/Models/Flux/Transitions.cpp
+  # Models/Sectors
+  src/Models/Sectors/LinearSectorWriter.cpp
+  src/Models/Sectors/SectorImages.cpp
+  src/Models/Sectors/SizeCodes.cpp
+  # Reconstruction/Iso
+  src/Reconstruction/Iso/Builder.cpp
+  src/Reconstruction/Iso/Candidates.cpp
+  src/Reconstruction/Iso/CaptureCache.cpp
+  src/Reconstruction/Iso/Collection.cpp
+  src/Reconstruction/Iso/Collector.cpp
+  src/Reconstruction/Iso/Measurement.cpp
+  src/Reconstruction/Iso/Normalizer.cpp
+  src/Reconstruction/Iso/Score.cpp
+  # Reconstruction/Sector
+  src/Reconstruction/Sector/Policy.cpp
+  src/Reconstruction/Sector/Matching.cpp
+  src/Reconstruction/Sector/Apple.cpp
+  src/Reconstruction/Sector/Commodore.cpp
+  src/Reconstruction/Sector/OtherFamilies.cpp
+  src/Reconstruction/Sector/Registry.cpp
+  # Visualization
+  src/Visualization/SectorFluxVisualizer.cpp
+  # Sources
+  src/Sources/AtomicImageWriter.cpp
+  src/Sources/RandomAccessSources.cpp)
+target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
+target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems)
+set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
+install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
+
+
+qt_add_resources(RetroMediaLab.MediaEngine DiskDefinitionsData
+  PREFIX "/MediaEngine/DiskDefinitions" BASE src/Formats/Definitions/Data
+  FILES
+    src/Formats/Definitions/Data/diskdefs.cfg
+    src/Formats/Definitions/Data/diskdefs_acorn.cfg
+    src/Formats/Definitions/Data/diskdefs_akai.cfg
+    src/Formats/Definitions/Data/diskdefs_amiga.cfg
+    src/Formats/Definitions/Data/diskdefs_apple2.cfg
+    src/Formats/Definitions/Data/diskdefs_atari.cfg
+    src/Formats/Definitions/Data/diskdefs_atarist.cfg
+    src/Formats/Definitions/Data/diskdefs_coco.cfg
+    src/Formats/Definitions/Data/diskdefs_commodore.cfg
+    src/Formats/Definitions/Data/diskdefs_datageneral.cfg
+    src/Formats/Definitions/Data/diskdefs_dec.cfg
+    src/Formats/Definitions/Data/diskdefs_dragon.cfg
+    src/Formats/Definitions/Data/diskdefs_eagle.cfg
+    src/Formats/Definitions/Data/diskdefs_ensoniq.cfg
+    src/Formats/Definitions/Data/diskdefs_epson.cfg
+    src/Formats/Definitions/Data/diskdefs_gem.cfg
+    src/Formats/Definitions/Data/diskdefs_hp.cfg
+    src/Formats/Definitions/Data/diskdefs_ibm.cfg
+    src/Formats/Definitions/Data/diskdefs_kaypro.cfg
+    src/Formats/Definitions/Data/diskdefs_luxor.cfg
+    src/Formats/Definitions/Data/diskdefs_mac.cfg
+    src/Formats/Definitions/Data/diskdefs_micropolis.cfg
+    src/Formats/Definitions/Data/diskdefs_mm1.cfg
+    src/Formats/Definitions/Data/diskdefs_msx.cfg
+    src/Formats/Definitions/Data/diskdefs_northstar.cfg
+    src/Formats/Definitions/Data/diskdefs_occ1.cfg
+    src/Formats/Definitions/Data/diskdefs_olivetti.cfg
+    src/Formats/Definitions/Data/diskdefs_pc98.cfg
+    src/Formats/Definitions/Data/diskdefs_raw.cfg
+    src/Formats/Definitions/Data/diskdefs_sci.cfg
+    src/Formats/Definitions/Data/diskdefs_sega.cfg
+    src/Formats/Definitions/Data/diskdefs_thomson.cfg
+    src/Formats/Definitions/Data/diskdefs_tsc.cfg
+    src/Formats/Definitions/Data/diskdefs_xerox.cfg
+    src/Formats/Definitions/Data/diskdefs_zx.cfg
+)

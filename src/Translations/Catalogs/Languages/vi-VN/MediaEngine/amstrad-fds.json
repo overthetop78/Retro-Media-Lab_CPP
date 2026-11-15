@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "RIFF AMS! Đầu đạn bị thiếu.",
+    "MediaEngine.CprLength": "Hạt CPR RIFF Độ dài không hợp lệ.",
+    "MediaEngine.CprChunkRange": "CPR Phần '{0}Vượt quá RIFF container.",
+    "MediaEngine.CprDuplicate": "Ngân hàng CPR '{0}' bị nhân đôi.",
+    "MediaEngine.CprLargeBank": "CPR ngân hàng{0}'Trong đó có byte ngoài nó 16 KiB page; chúng không được vẽ bản đồ.",
+    "MediaEngine.CprUnknownChunk": "RIFF Phần '{0}'không phải là' CPR Ngân hàng đạn dược.",
+    "MediaEngine.CprChunkHeader": "Hạt CPR RIFF Công-te-nơ kết thúc trong một cái đầu máy.",
+    "MediaEngine.CprNoBanks": "Hình ảnh CPR không chứa cb00 thông qua ngân hàng cb31.",
+    "MediaEngine.CprWrite": "Tài liệu khối không thể được ghi như một tài liệu hoàn chỉnh CPR Đạn.",
+    "MediaEngine.RomCorpus": "Chiều dài CPC ROM nằm bên ngoài hồ sơ đã được chứng minh.",
+    "MediaEngine.RomNoData": "Không có dữ liệu ngân hàng.",
+    "MediaEngine.RomBankLimit": "CPC ROM vượt quá 32 ngân hàng đạn dược.",
+    "MediaEngine.RomIncomplete": "Ngân hàng cuối cùng của CPC ROM không đầy đủ và bị phơi bày mà không được phát minh.",
+    "MediaEngine.RomWrite": "Tài liệu khối không chứa các ngân hàng CPC ROM liên tục.",
+    "MediaEngine.FdsSource": "Nguồn đã chọn không phải là một Famicom Disk System hình ảnh.",
+    "MediaEngine.FdsSides": "Ảnh Famicom Disk System không chứa các mặt hoàn chỉnh.",
+    "MediaEngine.FdsNoSide": "Ảnh Famicom Disk System không có mặt.",
+    "MediaEngine.FdsCount": "Số lượng đếm bên Famicom Disk System không khớp với đầu trang của nó.",
+    "MediaEngine.FdsUndeclared": "Người đứng đầu FDS không tuyên bố số đếm phụ; số lượng được lấy từ dữ liệu lưu trữ.",
+    "MediaEngine.FdsWrite": "Tài liệu khối không chứa hoàn tất Famicom Disk System Bên này.",
+    "MediaEngine.FdsHeader": "Nguồn gốc FDS đã bị mất.",
+    "MediaEngine.AmstradCartridgeVolume": "Hộp Amstrad"
+  }
+}

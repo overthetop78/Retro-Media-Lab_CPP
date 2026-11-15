@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Сектори Victor 9000 містять 512 байтів; отримано {0} байтів.",
+    "MediaEngine.VictorSectorRange": "Номер сектора Victor 9000 {0} має бути між нулем і {1}.",
+    "MediaEngine.VictorMarkerLength": "Маркери Victor 9000 мають досягати бітової позиції 49; отримано {0} бітів.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} байтів, заголовок {4}, контрольна сума даних {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} байтів, мітка {4}, блок даних, контрольна сума {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, контрольна сума недоступна, обрізано",
+    "MediaEngine.VictorUnpaired": "Непарні дані Victor 9000, блок даних"
+  }
+}

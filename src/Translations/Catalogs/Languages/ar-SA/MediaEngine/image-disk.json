@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "The image does not contain an ImageDisk header: comment terminator at {0}, file length {1} bytes.",
+    "MediaEngine.ImdTruncated": "The ImageDisk {0} section at compensate {1} is truncated: {2} bytes are required, {3} are available.",
+    "MediaEngine.ImdTrackHeader": "The ImageDisk track header is invalid: mode {0}, sector count {1}.",
+    "MediaEngine.ImdSizeCode": "The ImageDisk sector-size code {0} is invalid.",
+    "MediaEngine.ImdRecordType": "The ImageDisk sector-record type {0} is invalid.",
+    "MediaEngine.ImdNoSectors": "The ImageDisk image contains no sectors.",
+    "MediaEngine.ImdNoTracks": "لا توجد آثار في صورة ImageDisk.",
+    "MediaEngine.ImdWriteTrack": "ولا يمكن تمثيل رئيس جهاز تتبع ImageDisk.",
+    "MediaEngine.ImdWriteSector": "وسجل قطاعي من طراز ImageDisk غير صحيح.",
+    "MediaEngine.ImdCompressed": "A compressed ImageDisk sector does not contain one repeated byte.",
+    "MediaEngine.ImdMetadataMode": "The ImageDisk metadata contains an invalid track mode.",
+    "MediaEngine.ImdMetadataRecord": "The ImageDisk metadata contains an invalid sector record type.",
+    "MediaEngine.ImdMetadataSize": "The ImageDisk metadata contains an invalid sector size.",
+    "MediaEngine.ImdMetadataBlock": "The ImageDisk البيانات الفوقية لا تتطابق مع الحي المنطقي{0}'.",
+    "MediaEngine.ImdMetadataCount": "The ImageDisk metadata block count does not match the sector image.",
+    "MediaEngine.ImdMetadata": "The ImageDisk البيانات الوصفية باطلة",
+    "MediaEngine.ImdEpsonGeometry": "مُجمّع صور (إبسون) لا يطابق مُحدّد شكله.",
+    "MediaEngine.ImdEpsonSize": "Epson sector {0}: {1}: {2} له حجم غير صحيح.",
+    "MediaEngine.ImdEpsonDuplicate": "Epson sector {0}: {1}: {2} مكرر.",
+    "MediaEngine.EpsonFormat": "الشكل المختار{0}ليس مدعوماً Epson QX-10 شكل",
+    "MediaEngine.EpsonGeometryDuplicate": "Doplicate Epson QX-10 geometry: {0}."
+  }
+}

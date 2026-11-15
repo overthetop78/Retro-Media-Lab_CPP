@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP track {0} is present more than once.",
+    "MediaEngine.ScpTrackOutside": "SCP track {0} is outside the declared range {1} to {2}.",
+    "MediaEngine.ScpWriteAddress": "SCP track {0} does not match the declared address: cylinder {1}, head {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP track {0} contains {1} revolutions; {2} are required.",
+    "MediaEngine.ScpZeroInterval": "SCP track {0}, revolution {1}, contains a zero-length flux interval.",
+    "MediaEngine.ScpOutput": "The SCP output callback is missing."
+  }
+}

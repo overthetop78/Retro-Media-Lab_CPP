@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "يجب أن تكون دقة التوقيت في SCP موجبة؛ القيمة المستلمة {0}.",
+    "MediaEngine.ScpExtended": "وسائط SCP الموسعة ليست صور أقراص مرنة.",
+    "MediaEngine.ScpSignature": "لا يحتوي الملف على توقيع SCP.",
+    "MediaEngine.ScpRevolutions": "عدد دورات SCP وهو {0} غير صالح.",
+    "MediaEngine.ScpTrackRange": "نطاق مسارات SCP من {0} إلى {1} غير صالح.",
+    "MediaEngine.ScpWidth": "عرض خلية البت في SCP وهو {0} غير مدعوم.",
+    "MediaEngine.ScpHeads": "محدد رأس SCP وهو {0} غير صالح.",
+    "MediaEngine.ScpTrackSignature": "المسار {0} لا يحتوي على توقيع TRK؛ يحتوي الواصف على رقم المسار {1}.",
+    "MediaEngine.ScpTrackMismatch": "يشير المدخل {0} في جدول المسارات إلى المسار {1}.",
+    "MediaEngine.ScpHeaderSection": "ترويسة SCP غير مكتملة أو غير صالحة عند الإزاحة {0}؛ يلزم {1} بايت.",
+    "MediaEngine.ScpTableSection": "جدول إزاحات مسارات SCP غير مكتمل أو غير صالح عند الإزاحة {0}؛ يلزم {1} بايت.",
+    "MediaEngine.ScpTrackSection": "ترويسة مسار SCP رقم {0} غير مكتملة أو غير صالحة عند الإزاحة {1}؛ يلزم {2} بايت.",
+    "MediaEngine.ScpFluxSection": "تدفق مسار SCP رقم {0}، الدورة {1}، غير مكتمل أو غير صالح عند الإزاحة {2}؛ يلزم {3} بايت.",
+    "MediaEngine.ScpOverflow": "يتجاوز حجم أو موضع أو فاصل أو دورة مدمجة في SCP النطاق العددي المدعوم.",
+    "MediaEngine.ScpTrackAddress": "رقم مسار SCP وهو {0} خارج جدول المسارات.",
+    "MediaEngine.ScpNoRevolution": "لا يحتوي مسار SCP على أي دورة لفك ترميزها.",
+    "MediaEngine.ScpNoC900Sectors": "تعذر فك ترميز أي قطاع Commodore 900 GCR من صورة SCP."
+  }
+}

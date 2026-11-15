@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM-paarverwisseling vereist een even aantal bytes; {0} ontvangen.",
+    "MediaEngine.HpAddressRange": "De waarde {1} van HP MMFM-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.HpSectorSize": "HP MMFM-sectoren bevatten 256 bytes; {0} bytes ontvangen.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} bytes, header-CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} bytes, data-CRC {4}"
+  }
+}

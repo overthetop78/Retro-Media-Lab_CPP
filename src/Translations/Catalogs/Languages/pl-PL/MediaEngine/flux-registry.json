@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Należy zarejestrować co najmniej jeden dekoder strumieniowy.",
+    "MediaEngine.RegistryNullDecoder": "Dekoder strumienia w pozycji {0} jest zerowy.",
+    "MediaEngine.RegistryInvalidId": "Dekoder strumienia w pozycji {0} ma pusty identyfikator.",
+    "MediaEngine.RegistryDuplicate": "Dekoder strumieniowy z identyfikatorem '{0}' jest już zarejestrowany.",
+    "MediaEngine.RegistryUnknown": "Żaden dekoder strumieniowy nie jest zarejestrowany z identyfikatorem '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "Do dekodowania wymagany jest zapis strumienia magnetycznego jednego obrotu.",
+    "MediaEngine.RegistryNoAutomatic": "Żaden z zarejestrowanych dekoderów strumieni nie uczestniczy w automatycznym wykrywaniu."
+  }
+}

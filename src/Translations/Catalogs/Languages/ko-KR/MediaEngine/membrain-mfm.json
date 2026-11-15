@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Membrain MFM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.MembrainSectorSize": "Membrain 섹터는 512바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 바이트, 마크 FE, 헤더 CRC {3}, 데이터 CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 바이트, 마크 {3}, 데이터 블록, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, 섹터 헤더, 잘림",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC 사용 불가, 잘림",
+    "MediaEngine.MembrainUnpaired": "짝이 없는 Membrain 데이터, 데이터 블록"
+  }
+}

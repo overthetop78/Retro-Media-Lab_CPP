@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "I settori NorthStar contengono 512 byte; ricevuti {0} byte.",
+    "MediaEngine.NorthstarCylinderRange": "Il cilindro NorthStar {0} deve essere compreso tra zero e {1}.",
+    "MediaEngine.NorthstarSectorRange": "Il numero di settore NorthStar {0} deve essere compreso tra zero e {1}.",
+    "MediaEngine.NorthstarWindowCapacity": "La durata dell’indice NorthStar supera il numero di celle supportato.",
+    "MediaEngine.NorthstarHardAddressRange": "Ogni coordinata dell’indirizzo NorthStar C{0} H{1} deve rientrare in un byte.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} byte, marcatore FB, somma di controllo {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, blocco di settore hardware, troncato"
+  }
+}

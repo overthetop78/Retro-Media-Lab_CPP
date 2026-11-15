@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Imaginea nu conține un antet ImageDisk: comentariu terminator la {0}, lungimea fișierului {1} octeți.",
+    "MediaEngine.ImdTruncated": "Sectiunea ImageDisk {0} la offset {1} este trunchiata: sunt necesare bytes {2}, {3} sunt disponibile.",
+    "MediaEngine.ImdTrackHeader": "Antetul de cale ImageDisk este invalid: mod {0}, număr de sector {1}.",
+    "MediaEngine.ImdSizeCode": "Codul de mărime a sectorului ImageDisk {0} este invalid.",
+    "MediaEngine.ImdRecordType": "Tipul de înregistrare a sectorului ImageDisk {0} este invalid.",
+    "MediaEngine.ImdNoSectors": "Imaginea ImageDisk nu conține sectoare.",
+    "MediaEngine.ImdNoTracks": "Imaginea ImageDisk nu conţine urme.",
+    "MediaEngine.ImdWriteTrack": "Antetul de cale ImageDisk nu este reprezentativ.",
+    "MediaEngine.ImdWriteSector": "Un record al sectorului ImageDisk este invalid.",
+    "MediaEngine.ImdCompressed": "Un sector comprimat ImageDisk nu conține un octet repetat.",
+    "MediaEngine.ImdMetadataMode": "Metadatele ImageDisk conțin un mod de cale invalid.",
+    "MediaEngine.ImdMetadataRecord": "Metadatele ImageDisk conțin un tip de înregistrare în sector invalid.",
+    "MediaEngine.ImdMetadataSize": "Metadatele ImageDisk conțin o dimensiune nevalidă a sectorului.",
+    "MediaEngine.ImdMetadataBlock": "Metadatele ImageDisk nu corespund blocului logic \"{0} .\"",
+    "MediaEngine.ImdMetadataCount": "Numărul blocului de metadate ImageDisk nu corespunde imaginii sectorului.",
+    "MediaEngine.ImdMetadata": "Metadatele ImageDisk sunt invalide.",
+    "MediaEngine.ImdEpsonGeometry": "Geometria imaginii Epson nu corespunde identificatorului de format.",
+    "MediaEngine.ImdEpsonSize": "Sectorul Epson {0}:{1}:{2} are o dimensiune invalidă.",
+    "MediaEngine.ImdEpsonDuplicate": "Sectorul Epson {0}: {1}: {2} este duplicat.",
+    "MediaEngine.EpsonFormat": "Formatul selectat \"{0} \" nu este un format Epson QX-10 sprijinit.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicate Epson QX-10 geometrie: {0}."
+  }
+}

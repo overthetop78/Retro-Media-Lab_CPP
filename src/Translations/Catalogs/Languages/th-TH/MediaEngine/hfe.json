@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "ส่วนหัว HFE หายไปหรือถูกตัดทอน",
+    "MediaEngine.HfeRevision": "ยังไม่รองรับ HFE รุ่น {0}",
+    "MediaEngine.HfeGeometry": "เรขาคณิตหรืออัตราบิต HFE ไม่ถูกต้อง",
+    "MediaEngine.HfeTable": "ตารางแทร็ค HFE ไม่อยู่ในขอบเขต",
+    "MediaEngine.HfeTiming": "ไม่สามารถแสดงเวลาของ HFE ด้วยความละเอียดที่ต้องการได้",
+    "MediaEngine.HfeTrackLength": "แทร็ก HFE {0} มีความยาวไม่ถูกต้อง",
+    "MediaEngine.HfeTrackData": "ข้อมูลแทร็ก HFE {0}/{1} อยู่นอกขอบเขต",
+    "MediaEngine.HfeRateOpcode": "แทร็ก HFE v3 {0}/{1} มีพารามิเตอร์คำสั่งอัตราบิตเป็นศูนย์",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 แทร็ก {0}/{1} ไม่มีเซลล์อยู่",
+    "MediaEngine.HfeTracks": "HFE ต้องการอย่างน้อยหนึ่งร่อง",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 ต้องใช้การเข้ารหัสเดียวกันสำหรับทุกแทร็ก",
+    "MediaEngine.HfeEncoding": "การเข้ารหัส {0} ไม่สามารถเขียนเป็น HFE v1 ได้",
+    "MediaEngine.HfeUniformRate": "HFE v1 ต้องใช้อัตราบิตเดียวกันสำหรับทุกแทร็ก",
+    "MediaEngine.HfeMissingTrack": "กระบอก HFE {0} หายไป",
+    "MediaEngine.HfeTrackAddress": "แทร็ค HFE อยู่นอกเรขาคณิตประกาศ",
+    "MediaEngine.HfeDuplicateTrack": "แทร็ก HFE {0}/{1} ซ้ำกัน",
+    "MediaEngine.HfeLimit": "กล่อง HFE เกินขนาดหรือข้อจํากัดค่าที่รองรับ",
+    "MediaEngine.HfeUniformTiming": "HFE v1 ต้องใช้ช่วงเวลาสม่ำเสมอหนึ่งช่วงต่อแทร็ก",
+    "MediaEngine.HfeRevolutions": "HFE ไม่สามารถรักษารอบการหมุนของฟลักซ์ที่แยกกันเหล่านี้ได้",
+    "MediaEngine.HfePadding": "HFE v1 จะต้องเติมข้อมูลหรือใช้ความยาวของหัวอ่านที่ไม่เท่ากัน",
+    "MediaEngine.HfeScpEncoding": "ดิสก์ SCP ชนิด {0} ไม่มีการเข้ารหัส HFE v1 แบบไม่สูญเสียข้อมูล",
+    "MediaEngine.HfeFluxBounds": "ช่วงของฟลุกซ์เกินระยะเวลาดัชนี",
+    "MediaEngine.HfeWeak": "HFE v3 การเขียนไม่สามารถรักษาส่วนที่อ่อนแอไว้ได้",
+    "MediaEngine.HfeWeakFeature": "คำสั่งข้อมูลสุ่ม HFE v3",
+    "MediaEngine.HfeIndexFeature": "คำสั่งดัชนี HFE v3",
+    "MediaEngine.FluxConversionTiming": "ไม่สามารถแสดงเวลาของฟลักซ์เป็นเซลล์บิตที่มีระยะเวลาสม่ำเสมอได้",
+    "MediaEngine.FluxConversionBounds": "ช่วงฟลักซ์หรือช่วงเวลาเกินระยะเวลาของแทร็ก",
+    "MediaEngine.FluxConversionRange": "การแปลงฟลักเกินขนาดหรือช่วงตัวเลขที่รองรับ"
+  }
+}

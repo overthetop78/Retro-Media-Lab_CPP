@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "ה- Amstrad DSK מכוון.",
+    "MediaEngine.CpcDskSignature": "הקובץ אינו תמונה של CPCEMU DSK.",
+    "MediaEngine.CpcDskGeometry": "הגיאומטריה של Amstrad DSK אינה בתוקף.",
+    "MediaEngine.CpcDskExtendedTable": "שולחן המסלול Amstrad DSK המורחבת הוא invalid at track {0}",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK עוקב אחר {0}.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} יש ראש לא חוקי.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} יש שולחן מגזר לא חוקי.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK מגזר {0}:{1}: {2} הוא truncated.",
+    "MediaEngine.CpcDskNoSectors": "התמונה של Amstrad DSK אינה מכילה מגזרים.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} תופס את {1} es ו עולה על גבול מיכל 65280-byte.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} משתמש בייצוג מגזר לא-נומינאלי או לא-נומינאלי הדורש EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "מיכל DSK Amstrad לא ניתן לכתוב: הגיאומטריה המוצהרת ואוסף המסלול לא מסכימים.",
+    "MediaEngine.CpcDskTrackIndex": "מיכל DSK Amstrad לא ניתן לכתוב: track index {0} מופיע במיקום {1}",
+    "MediaEngine.CpcDskTooManySectors": "מיכל DSK Amstrad לא ניתן לכתוב: track {0} מכיל יותר מדי תיאורי מגזר.",
+    "MediaEngine.CpcDskUniformTracks": "מיכל DSK Amstrad לא יכול להיות כתוב: DSK סטנדרטי דורש גודל מסלול אחיד אחד.",
+    "MediaEngine.CpcDskBuilderGeometry": "מיכל DSK Amstrad לא ניתן לכתוב: הגיאומטריה עולה על גבולות CPCEMU.",
+    "MediaEngine.CpcDskNativeMetadata": "מיכל DSK Amstrad לא ניתן לכתוב: metadata של המגזר המקומי חסר ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "מיכל DSK Amstrad לא ניתן לכתוב: גודל המגזר {0} אינו מיוצג על ידי קוד בגודל CPCEMU.",
+    "MediaEngine.CpcDskOverflow": "גודל נתוני CPCEMU DSK עולה על הטווח הנתמך.",
+    "MediaEngine.CpcDskRecordedAddress": "רשומות CPCEMU כתובת {0}:{1}:{2} אי אפשר לייצג שדות חד-צדדיים."
+  }
+}

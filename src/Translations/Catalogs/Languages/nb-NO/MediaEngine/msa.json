@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Sektorbilde '{0}' med geometri {1}x{2}x{3} og blokkstørrelse {4} kan ikke skrives som MSA.",
+    "MediaEngine.MsaMissingSector": "MSA logisk sektor {0} ({1}: {2}:{3}) mangler.",
+    "MediaEngine.MsaSectorSize": "MSA logisk sektor {0} inneholder {1} bytes; forventet {2}.",
+    "MediaEngine.MsaHeader": "MSA-hodet er ugyldig; filen inneholder {0} byte.",
+    "MediaEngine.MsaGeometry": "MSA-geometrien er ugyldig: {0} sektorer, {1} hoder, sylindere {2} til {3}.",
+    "MediaEngine.MsaTruncatedTable": "MSA-sporlengdefeltet for sylinder {0}, hode {1}, ved forskyvning {2} er avkortet: {3} byte tilgjengelig.",
+    "MediaEngine.MsaTruncatedTrack": "MSA spor {0}:{1} ved offset {2} erklærer {3} bytes, {4} er tilgjengelig.",
+    "MediaEngine.MsaTruncatedRun": "Den komprimerte sekvensen i MSA-spor {0}:{1} ved pakket forskyvning {2} er avkortet innenfor {3} byte.",
+    "MediaEngine.MsaInvalidRun": "Den komprimerte sekvensen i MSA-spor {0}:{1} ved pakket forskyvning {2} har repetisjonsantall {3}; {4} av {5} utbyte er allerede skrevet.",
+    "MediaEngine.MsaUnpackedLength": "MSA-spor {0}:{1} brukt {2} av {3} komprimerte byte og produsert {4} av {5} forventet byte."
+  }
+}

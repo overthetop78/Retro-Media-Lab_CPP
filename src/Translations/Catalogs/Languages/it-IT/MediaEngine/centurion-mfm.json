@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Il valore {1} del campo {0} Centurion MFM deve essere compreso tra zero e {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} byte, CRC intestazione {4}, CRC dati {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} byte, chiave {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, marcatore di settore, troncata",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC non disponibile, troncata",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, chiave non supportata {0}, troncata",
+    "MediaEngine.CenturionUnpaired": "Dati Centurion non abbinati, blocco dati"
+  }
+}

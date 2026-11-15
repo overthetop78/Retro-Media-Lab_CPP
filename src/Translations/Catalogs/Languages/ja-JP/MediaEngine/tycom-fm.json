@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.TycomSectorSize": "TYCOMセクターは128バイトです。受信したバイト数：{0}。",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 バイト, マーク {2}, ヘッダーCRC {3}, データCRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 バイト, ヘッダーCRC {2}, データCRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 バイト, マーク FE, ヘッダーCRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 バイト, マーク {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, セクターヘッダー, 途中で切断",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, マーク {0}, セクターデータ, 途中で切断",
+    "MediaEngine.TycomUnpaired": "未分類 TYCOM FormatData, マーク {0}, データ"
+  }
+}

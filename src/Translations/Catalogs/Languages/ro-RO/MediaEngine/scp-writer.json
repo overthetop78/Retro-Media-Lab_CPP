@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP track {0} este prezent de mai multe ori.",
+    "MediaEngine.ScpTrackOutside": "Linia SCP {0} este în afara intervalului declarat {1} până la {2}.",
+    "MediaEngine.ScpWriteAddress": "Linia SCP {0} nu corespunde adresei declarate: cilindru {1}, cap {2}.",
+    "MediaEngine.ScpWriteRevolutions": "Pista SCP {0} conține {1} rotații; sunt necesare {2}.",
+    "MediaEngine.ScpZeroInterval": "Pista SCP {0}, rotația {1}, conține un interval de flux cu durată zero.",
+    "MediaEngine.ScpOutput": "Lipsește funcția de apel invers pentru ieșirea SCP."
+  }
+}

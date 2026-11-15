@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Η ανάλυση του χρόνου SCP πρέπει να είναι θετική· έλαβε {0}.",
+    "MediaEngine.ScpExtended": "Τα εκτεταμένα μέσα SCP δεν είναι εικόνες δισκέτας.",
+    "MediaEngine.ScpSignature": "Το αρχείο δεν περιέχει υπογραφή SCP.",
+    "MediaEngine.ScpRevolutions": "Ο αριθμός περιστροφών SCP {0} δεν είναι έγκυρος.",
+    "MediaEngine.ScpTrackRange": "Το εύρος κομματιών SCP {0} έως {1} δεν είναι έγκυρο.",
+    "MediaEngine.ScpWidth": "Το πλάτος των bit κυττάρων της SCP {0} δεν υποστηρίζεται.",
+    "MediaEngine.ScpHeads": "Ο επιλογέας κεφαλής SCP {0} δεν είναι έγκυρος.",
+    "MediaEngine.ScpTrackSignature": "Το track {0} δεν έχει υπογραφή TRK· ο περιγραφέας περιέχει αριθμό κομματιών {1}.",
+    "MediaEngine.ScpTrackMismatch": "Η καταχώρηση {0} του πίνακα διαδρομών δείχνει στη διαδρομή {1}.",
+    "MediaEngine.ScpHeaderSection": "Η κεφαλίδα SCP είναι ελλιπής ή άκυρη σε όφσετ {0}; {1} ψηφιολέξεις απαιτούνται.",
+    "MediaEngine.ScpTableSection": "Ο πίνακας track-offset SCP είναι ελλιπής ή άκυρος στην όφσετ {0}; {1} bytes απαιτούνται.",
+    "MediaEngine.ScpTrackSection": "Η κεφαλίδα του κομματιού SCP {0} είναι ελλιπής ή άκυρη στο όφσετ {1}; {2} απαιτούνται bytes.",
+    "MediaEngine.ScpFluxSection": "Η ροή του SCP track {0}, περιστροφή {1}, είναι ελλιπής ή άκυρη στην όφσετ {2}; {3} ψηφιολέξεις απαιτούνται.",
+    "MediaEngine.ScpOverflow": "Ένα SCP μέγεθος, θέση, διάστημα ή ενωμένη περιστροφή υπερβαίνει το υποστηριζόμενο αριθμητικό εύρος.",
+    "MediaEngine.ScpTrackAddress": "Ο αριθμός κομματιού του SCP {0} είναι έξω από τον πίνακα του κομματιού.",
+    "MediaEngine.ScpNoRevolution": "Η διαδρομή SCP δεν περιέχει περιστροφή για αποκωδικοποίηση.",
+    "MediaEngine.ScpNoC900Sectors": "Κανένας τομέας Commodore 900 GCR δεν θα μπορούσε να αποκωδικοποιηθεί από την εικόνα SCP."
+  }
+}

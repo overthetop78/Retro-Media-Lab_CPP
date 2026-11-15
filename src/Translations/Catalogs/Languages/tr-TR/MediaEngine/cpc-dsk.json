@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK'nın başlığı, işgal edildi.",
+    "MediaEngine.CpcDskSignature": "Dosya bir CPCEMU DSK görüntüsü değildir.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK geometrisi geçersizdir.",
+    "MediaEngine.CpcDskExtendedTable": "genişletilmiş Amstrad DSK takip masası {0}'i takip ediyor.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK pisti {0} truncated.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK takip {0} geçersiz bir başlığı vardır.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK pisti {0} geçersiz bir sektör masasına sahiptir.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sektörü {0}:{1}:{2} truncated.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK görüntüsü hiçbir sektör değildir.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK pisti {0} {1} inekler ve 65280-bayt konteyner sınırı aşıyor.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK takip {0} EDSK gerektiren, değişken olmayan veya non-nominal sektör temsilini kullanır.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK konteyneri yazılamaz: ilan edilen geometri ve takip koleksiyonu aynı fikirde değildir.",
+    "MediaEngine.CpcDskTrackIndex": "Amstrad DSK konteyneri yazılamaz: index {0} pozisyonda görünüyor {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Amstrad DSK konteyneri yazılamaz: {0} çok fazla sektör tanımlayıcı içerir.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK konteyneri yazılamaz: standart DSK tek bir kova boyutu gerektirir.",
+    "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK konteyneri yazılamaz: Geometri CPCEMU sınırlarını aşıyor.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK konteyneri yazılamaz: yerel sektör metadata ST1/ST2 eksikliği var.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK konteyneri yazılamaz: Sektör büyüklüğü {0} bir CPCEMU boyut kodu tarafından temsil edilemez.",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK veri büyüklüğü desteklenen aralığı aşıyor.",
+    "MediaEngine.CpcDskRecordedAddress": "Kayıt edilen CPCEMU adresi {0}:{1}:{2} bir-bayra tarafından temsil edilemez."
+  }
+}

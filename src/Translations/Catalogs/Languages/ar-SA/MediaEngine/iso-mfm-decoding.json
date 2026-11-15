@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "يجب أن يكون عدد بايتات تدفق البتات {0} بين صفر و{1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} بايت, علامة FE, N{4}, CRC الرأس {5}, CRC البيانات {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} بايت, علامة FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} بايت, علامة F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "غير مصنف ISO MFM Sync, علامة {0}",
+    "MediaEngine.MfmUnpaired": "غير مصنف ISO MFM DataAddressMark, علامة FB",
+    "MediaEngine.MfmUnpairedDeleted": "غير مصنف ISO MFM DeletedDataAddressMark, علامة F8"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย FE, N{4}, CRC ส่วนหัว {5}, CRC ข้อมูล {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "ยังไม่จำแนก ISO FM DataAddressMark, เครื่องหมาย FB",
+    "MediaEngine.FmUnpairedDeleted": "ยังไม่จำแนก ISO FM DeletedDataAddressMark, เครื่องหมาย F8",
+    "MediaEngine.FmRevolutionTiming": "เวลาหมุนรอบ ISO FM ไม่สอดคล้องกัน: ดัชนี {0} ticks, ระยะเวลาเซลล์ {1} ticks, ผลรวมช่วงเวลา {2} ticks"
+  }
+}

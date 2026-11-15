@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "ترويسة WOZ غير صالحة.",
+    "MediaEngine.WozDiskType": "نوع قرص WOZ ‏{0} غير مدعوم؛ يلزم قرص Apple II بحجم 5.25 بوصة.",
+    "MediaEngine.WozMissingChunk": "مقطع WOZ المطلوب '{0}' مفقود أو غير مكتمل.",
+    "MediaEngine.WozTruncatedChunk": "مقطع WOZ ‏'{0}' مبتور.",
+    "MediaEngine.WozTrackReference": "يشير مسار WOZ ‏{0} إلى واصف خارج الحدود رقمه {1}.",
+    "MediaEngine.WozCrc": "قيمة CRC32 في WOZ غير صالحة: المخزنة {0}، والمحسوبة {1}.",
+    "MediaEngine.WozChunkId": "يجب أن يحتوي معرّف مقطع WOZ ‏'{0}' على أربعة محارف ASCII بالضبط.",
+    "MediaEngine.WozTrackCount": "استقبل برنامج الكتابة WOZ1 عدد {0} من المسارات؛ العدد المتوقع بين 1 و{1}.",
+    "MediaEngine.WozTrackLength": "يحتوي مسار WOZ1 ‏{0} على {1} بت؛ الحد الأقصى {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "لم يُعثر على أي قطاع Apple II RWTS18 صالح ضمن {0} من القطاعات المفككة من {1} من المسارات."
+  }
+}

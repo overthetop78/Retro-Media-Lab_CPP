@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "A sequence of {0} bits does not fit in {1} bytes.",
+    "MediaEngine.BitPackingCount": "The bit count {0} must be positive.",
+    "MediaEngine.BitPackingRange": "The bit packing size exceeds the supported range.",
+    "MediaEngine.AppleTrackUnsupported": "Source format '{1}' cannot be encoded as {0}.",
+    "MediaEngine.AppleTrackGeometry": "Apple II geometry with {0} cylinders, {1} heads and {2} sectors per track cannot be encoded.",
+    "MediaEngine.AppleTrackSector": "{0} sector {1}:{2} contains {3} bytes instead of {4}.",
+    "MediaEngine.AppleTrackTooLong": "{0} track {1} contains {2} bits; maximum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II track {0} contains duplicate physical sector number {1}.",
+    "MediaEngine.NibTrackCount": "The NIB writer requires at least one track; received {0}.",
+    "MediaEngine.NibTrackLength": "NIB track {0} contains {1} bits; maximum {2}."
+  }
+}

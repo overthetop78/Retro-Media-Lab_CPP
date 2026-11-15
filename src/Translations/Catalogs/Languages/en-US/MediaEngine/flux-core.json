@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "The flux bit-cell duration {0} is invalid; it must be finite and at least one tick.",
+    "MediaEngine.FluxSizeLimit": "The flux data exceeds the supported in-memory size.",
+    "MediaEngine.FluxInvalidBit": "A flux bit value is neither zero nor one.",
+    "MediaEngine.FluxInvalidMaximum": "The maximum number of cells per flux interval {0} must be positive.",
+    "MediaEngine.FluxZeroCell": "The flux bit-cell duration must not be zero.",
+    "MediaEngine.FluxZeroIndex": "The flux revolution index duration must not be zero.",
+    "MediaEngine.FluxIntervalOverflow": "The flux interval of {0} cells at {1} ticks per cell exceeds the supported integer range.",
+    "MediaEngine.GcrCoordinates": "GCR coordinates are invalid: offset {0}, byte count {1}, stride {2}."
+  }
+}

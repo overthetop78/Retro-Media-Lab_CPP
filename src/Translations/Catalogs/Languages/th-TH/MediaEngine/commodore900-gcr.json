@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "ไซลินเดอร์ของแทร็ก {0} ต้องอยู่ระหว่างศูนย์ถึง {1}",
+    "MediaEngine.TrackHead": "หัวอ่านแทร็ก {0} ต้องอยู่ระหว่างศูนย์ถึง {1}",
+    "MediaEngine.TrackMissingSectors": "ต้องมีอย่างน้อยหนึ่งเซกเตอร์ ได้รับ {0}",
+    "MediaEngine.TrackEmpty": "ตัวเข้ารหัส {0} ไม่ได้สร้างบิตเซลล์",
+    "MediaEngine.TrackHex": "ข้อความฐานสิบหกดิบไม่ถูกต้อง",
+    "MediaEngine.TrackBinaryCharacter": "ข้อความไบนารีมี «{0}» ที่ตำแหน่ง {1} อนุญาตเฉพาะศูนย์และหนึ่ง",
+    "MediaEngine.TrackNegativeGap": "ความยาวช่องว่าง {0} ต้องไม่เป็นลบ",
+    "MediaEngine.TrackSectorNumber": "หมายเลขเซกเตอร์ {0} ต้องอยู่ระหว่างศูนย์ถึง {1}",
+    "MediaEngine.C900GcrSectorSize": "เซกเตอร์ Commodore 900 มี {0} ไบต์ ได้รับ {1} ไบต์",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync ที่ยังไม่จัดประเภท การซิงก์ GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} ไบต์, เช็กซัม {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} ไบต์, เช็กซัม {4}",
+    "MediaEngine.C900GcrUnpaired": "ข้อมูล Commodore 900 ที่ไม่มีคู่ บล็อกข้อมูล เช็กซัม {0}",
+    "MediaEngine.IntegrityValid": "ถูกต้อง",
+    "MediaEngine.IntegrityInvalid": "ไม่ถูกต้อง",
+    "MediaEngine.IntegrityUnavailable": "ไม่พร้อมใช้งาน"
+  }
+}

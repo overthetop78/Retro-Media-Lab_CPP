@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Amiga odd/even 編碼要求偶數個位元組；收到 {0} 位元組。",
+    "MediaEngine.AmigaMfmParityRange": "Amiga 同位元檢查範圍無效：位移 {0}，數量 {1}，可用 {2}。",
+    "MediaEngine.AmigaMfmSectorSize": "Amiga 磁區包含 512 位元組；收到 {0} 位元組。",
+    "MediaEngine.AmigaMfmAddressRange": "Amiga MFM 欄位 {0} 的值 {1} 必須在零到 {2} 之間。",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync，C{0} H{1} R{2}，{3} 位元組，標頭檢查碼 {4}，資料檢查碼 {5}"
+  }
+}

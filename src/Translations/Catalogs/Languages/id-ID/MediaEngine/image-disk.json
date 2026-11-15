@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Image tidak memuat header ImageDisk: pengakhir komentar pada {0}, panjang berkas {1} bytes.",
+    "MediaEngine.ImdTruncated": "Daerah ImageDisk {0} di ofset {1} dipotong: {2} byte diperlukan, {3} tersedia.",
+    "MediaEngine.ImdTrackHeader": "Tajuk trek ImageDisk tak valid: mode {0}, sektor menghitung {1}.",
+    "MediaEngine.ImdSizeCode": "ImageDisk sector- size code {0} tidak valid.",
+    "MediaEngine.ImdRecordType": "Tipe rekaman ImageDisk {0} tak valid.",
+    "MediaEngine.ImdNoSectors": "Image ImageDisk tidak berisi sektor.",
+    "MediaEngine.ImdNoTracks": "Image ImageDisk tidak memiliki trek.",
+    "MediaEngine.ImdWriteTrack": "Tajuk trek ImageDisk tidak dapat direpresentasikan.",
+    "MediaEngine.ImdWriteSector": "Rekor sektor ImageDisk tak valid.",
+    "MediaEngine.ImdCompressed": "Sebuah terkompresi sektor ImageDisk tidak berisi satu byte berulang.",
+    "MediaEngine.ImdMetadataMode": "Metadata ImageDisk berisi mode trek tidak valid.",
+    "MediaEngine.ImdMetadataRecord": "Metadata ImageDisk berisi tipe rekaman sektor yang tidak valid.",
+    "MediaEngine.ImdMetadataSize": "Metadata ImageDisk berisi ukuran sektor yang tidak valid.",
+    "MediaEngine.ImdMetadataBlock": "Metadata ImageDisk tidak cocok dengan blok logical '{0}'.",
+    "MediaEngine.ImdMetadataCount": "Jumlah blok metadata ImageDisk tidak cocok dengan gambar sektor.",
+    "MediaEngine.ImdMetadata": "Metadata ImageDisk tidak valid.",
+    "MediaEngine.ImdEpsonGeometry": "Geometri gambar Epson tidak cocok dengan identifier format nya.",
+    "MediaEngine.ImdEpsonSize": "Sektor epson {0}: {1}: {2} memiliki ukuran yang tidak valid.",
+    "MediaEngine.ImdEpsonDuplicate": "Sektor epson {0}: {1}: {2} digandakan.",
+    "MediaEngine.EpsonFormat": "Format yang dipilih '{0}' bukan suatu format Epson QX-10 yang didukung.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplikasi geometri Epson QX-10: {0}."
+  }
+}

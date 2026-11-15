@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Không hỗ trợ định dạng đích ATR '{0}'.",
+    "MediaEngine.AtrIncompatibleImage": "Ảnh sector '{0}' chứa {1} sector và {2} byte; cấu hình ATR '{3}' yêu cầu {4} sector và {5} byte.",
+    "MediaEngine.AtrMissingSector": "Thiếu sector ATR {0}.",
+    "MediaEngine.AtrSectorSize": "Sector ATR {0} chứa {1} byte; cần {2} byte.",
+    "MediaEngine.AtrHeader": "Phần đầu ATR không hợp lệ: độ dài {0} byte (tối thiểu {1}), chữ ký {2} (cần {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Không hỗ trợ kích thước sector ATR {0} byte; cần {1} byte.",
+    "MediaEngine.AtrPayloadLength": "Độ dài dữ liệu ATR là {0} byte; phần đầu khai báo {1} byte.",
+    "MediaEngine.AtrTruncatedPayload": "Dữ liệu ATR dài {0} byte không chứa vùng khởi động {1} byte theo sau bởi các sector đầy đủ {2} byte.",
+    "MediaEngine.AtrSectorCount": "Kích thước sector Atari ATR {0} và số sector {1} phải dương.",
+    "MediaEngine.AtxHeader": "Phần đầu tệp ATX bị thiếu hoặc không hợp lệ.",
+    "MediaEngine.AtxTrackOffset": "Độ dời dữ liệu rãnh ATX nằm ngoài tệp.",
+    "MediaEngine.AtxTrackCycle": "Chuỗi rãnh ATX có vòng lặp.",
+    "MediaEngine.AtxTrackBounds": "Một rãnh ATX vượt ra ngoài tệp.",
+    "MediaEngine.AtxTrackNumber": "Rãnh ATX {0} nằm ngoài hình học 40 rãnh được hỗ trợ.",
+    "MediaEngine.AtxSectorCount": "Rãnh ATX {0} chứa quá nhiều bản ghi sector.",
+    "MediaEngine.AtxListBounds": "Danh sách sector của rãnh ATX {0} vượt quá giới hạn rãnh.",
+    "MediaEngine.AtxSectorNumber": "Rãnh ATX {0} chứa sector {1} không hợp lệ.",
+    "MediaEngine.AtxDataBounds": "Dữ liệu của rãnh ATX {0}, sector {1}, vượt quá giới hạn rãnh.",
+    "MediaEngine.AtxNoSectors": "Ảnh ATX không chứa bản ghi sector đọc được.",
+    "MediaEngine.AtxLargeOffset": "Độ dời ATX {0} quá lớn.",
+    "MediaEngine.AtxTruncated": "Trường ATX {0} bị cắt ngắn."
+  }
+}

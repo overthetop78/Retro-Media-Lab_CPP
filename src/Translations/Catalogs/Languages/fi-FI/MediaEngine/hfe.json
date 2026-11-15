@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE-otsikko puuttuu tai on katkaistu.",
+    "MediaEngine.HfeRevision": "HFE-revisiota {0} ei tueta.",
+    "MediaEngine.HfeGeometry": "HFE-geometria tai bittinopeus on virheellinen.",
+    "MediaEngine.HfeTable": "HFE-raitojen taulukko on rajojen ulkopuolella.",
+    "MediaEngine.HfeTiming": "HFE- ajoitusta ei voida esittää vaaditussa resoluutiossa.",
+    "MediaEngine.HfeTrackLength": "HFE-raidan {0} pituus on virheellinen.",
+    "MediaEngine.HfeTrackData": "HFE-raidan {0}/{1} tiedot ovat rajojen ulkopuolella.",
+    "MediaEngine.HfeRateOpcode": "HFE v3 -raidan {0}/{1} operaatiokoodin bittinopeusparametri on nolla.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 -raita {0}/{1} ei sisällä bittisoluja.",
+    "MediaEngine.HfeTracks": "HFE vaatii vähintään yhden raidan.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 vaatii saman koodauksen kaikille raidoille.",
+    "MediaEngine.HfeEncoding": "Koodausta {0} ei voida kirjoittaa nimellä HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 vaatii saman bittinopeuden kaikille raidoille.",
+    "MediaEngine.HfeMissingTrack": "HFE-sylinteri {0} puuttuu.",
+    "MediaEngine.HfeTrackAddress": "HFE-rata on ilmoitetun geometrian ulkopuolella.",
+    "MediaEngine.HfeDuplicateTrack": "HFE-raita {0}/{1} esiintyy kahdesti.",
+    "MediaEngine.HfeLimit": "HFE-säiliö ylittää tuetut koko- tai arvorajat.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 vaatii yhden tasaisen ajoitusjakson raitaa kohti.",
+    "MediaEngine.HfeRevolutions": "HFE ei voi säilyttää näitä erillisiä magneettivuon kierroksia.",
+    "MediaEngine.HfePadding": "HFE v1 vaatisi täytettä tai eripituisia raitoja lukupäiden välillä.",
+    "MediaEngine.HfeScpEncoding": "SCP-levytyypillä {0} ei ole häviötöntä HFE v1 -koodausta.",
+    "MediaEngine.HfeFluxBounds": "Vuonvälit ylittävät indeksin keston.",
+    "MediaEngine.HfeWeak": "HFE v3 kirjoitus ei voi säilyttää heikkoja alueita.",
+    "MediaEngine.HfeWeakFeature": "HFE v3:n satunnaisdatan operaatiokoodi",
+    "MediaEngine.HfeIndexFeature": "HFE v3-indeksin opcode",
+    "MediaEngine.FluxConversionTiming": "Magneettivuon ajoitusta ei voida esittää tasaisina bittisoluina.",
+    "MediaEngine.FluxConversionBounds": "Vuon aikavälit tai ajoitusjaksot ylittävät raidan keston.",
+    "MediaEngine.FluxConversionRange": "Vuon muuntaminen ylittää tuetun koon tai numeerisen alueen."
+  }
+}

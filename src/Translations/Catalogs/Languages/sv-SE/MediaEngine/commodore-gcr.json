@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Commodore GCR attribut {0} värde {1} måste vara mellan noll och {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Commodore disk track {0} måste vara mellan {1} och {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Commodore sektorer innehåller {0} byte, mottagna {1} byte.",
+    "MediaEngine.CbmGcrSync": "Oklassificerad Commodore CommodoreSync, synkronisering GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 byte, datablock, datakontrollsumma {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} byte, huvudkontrollsumma {4}, datakontrollsumma {5}"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg（データ）: 有効データ{0}バイト、または完全なブロック{1}バイトが必要です。受信: {2}バイト。",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg（システム）: 有効データ{0}バイト、または完全なブロック{1}バイトが必要です。受信: {2}バイト。",
+    "MediaEngine.ArburgBlockCapacity": "Arburgブロックの容量{1}は、対応するサイズ上限内で有効データ{0}バイトとチェックサム2バイトを格納できる必要があります。",
+    "MediaEngine.ArburgUsefulSize": "Arburgの有効バイト数は0以上である必要があります。受信: {0}。",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 バイト, データブロック, チェックサム {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 バイト, システムブロック, チェックサム {0}"
+  }
+}

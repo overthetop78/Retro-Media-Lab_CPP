@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "Η μετάθεση ζευγών HP MMFM απαιτεί άρτιο πλήθος byte· ελήφθησαν {0}.",
+    "MediaEngine.HpAddressRange": "Η τιμή {1} του πεδίου {0} HP MMFM πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.HpSectorSize": "Οι τομείς HP MMFM περιέχουν 256 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} byte, CRC κεφαλίδας {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} byte, CRC δεδομένων {4}"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStarセクターは512バイトです。受信したバイト数：{0}。",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar のシリンダー {0} はゼロから {1} の範囲で指定してください。",
+    "MediaEngine.NorthstarSectorRange": "NorthStar のセクター番号 {0} は、ゼロから {1} の範囲である必要があります。",
+    "MediaEngine.NorthstarWindowCapacity": "NorthStar のインデックス時間が対応可能なビットセル数を超えています。",
+    "MediaEngine.NorthstarHardAddressRange": "NorthStar アドレス C{0} H{1} の各座標は1バイトに収まる必要があります。",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} バイト, マーカー FB, チェックサム {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, ハードセクターブロック, 途中で切断"
+  }
+}

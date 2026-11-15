@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HardDiskRawIntent": "没有头部的硬盘镜像需要明确选择格式或具有 MBR/GPT 签名。",
+    "MediaEngine.HardDiskRawAlignment": "原始镜像长度不是逻辑块大小 {0} 字节的整数倍。",
+    "MediaEngine.HardDiskRawChanged": "原始镜像长度在识别后发生了变化。",
+    "MediaEngine.HardDiskRawWrite": "无法将介质文档写为完整的原始硬盘镜像。",
+    "MediaEngine.HardDiskRawNullDocument": "介质文档不能是空引用。"
+  }
+}

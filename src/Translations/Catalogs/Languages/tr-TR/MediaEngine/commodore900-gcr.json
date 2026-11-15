@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "İz silindiri {0}, sıfır ile {1} arasında olmalıdır.",
+    "MediaEngine.TrackHead": "İz kafası {0}, sıfır ile {1} arasında olmalıdır.",
+    "MediaEngine.TrackMissingSectors": "En az bir sektör gereklidir; {0}.",
+    "MediaEngine.TrackEmpty": "Kodlayıcı {0} hiçbir bit hücresi üretmedi.",
+    "MediaEngine.TrackHex": "Çiğ hexadecimal text geçersizdir.",
+    "MediaEngine.TrackBinaryCharacter": "İkili metin \"{0}\" pozisyonda {1} içerir; sadece sıfır ve bir tanesine izin verilir.",
+    "MediaEngine.TrackNegativeGap": "Gap uzunluğu {0} negatif olmamalıdır.",
+    "MediaEngine.TrackSectorNumber": "Sektör numarası {0} sıfır ve {1}. arasında olmalıdır",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 sektörleri {0} bytes içerir; {1} bytes.",
+    "MediaEngine.C900GcrSync": "Sınıflandırılmamış Commodore 900 CommodoreSync, GCR senkronizasyonu",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} bayt, sağlama toplamı {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} bayt, sağlama toplamı {4}",
+    "MediaEngine.C900GcrUnpaired": "Eşleştirilmemiş Commodore 900 verileri, veri bloğu, sağlama toplamı {0}",
+    "MediaEngine.IntegrityValid": "geçerli",
+    "MediaEngine.IntegrityInvalid": "geçersiz",
+    "MediaEngine.IntegrityUnavailable": "kullanılamıyor"
+  }
+}

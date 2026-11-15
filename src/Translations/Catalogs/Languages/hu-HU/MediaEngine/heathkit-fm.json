@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Az Heathkit szektorok 256 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.HeathkitAddressRange": "Az Heathkit FM {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.HeathkitRecordEmpty": "A Heathkit-rekordnak legalább egy ellenőrzőösszeg-bájtot kell tartalmaznia.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} bájt, kötet {4}, fejléc ellenőrzőösszege {5}, adatok ellenőrzőösszege {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} bájt, ellenőrző összeg {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, hardveres szektorfejléc, csonkolt",
+    "MediaEngine.HeathkitUnpaired": "Párosítatlan Heathkit-adatok, adatblokk"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "A TeleDisk ágazat {0} / {1} / {2} rendelkezik a {3} bájtok többszöri hasznos terhelésével; a {4} bájtok szükségesek.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk ágazat {0} / {1} / {2} kódolás {3} csonkítva {4}: {5} bájt szükséges, {6} elérhető.",
+    "MediaEngine.Td0EncodingUnsupported": "A TeleDisk szektor {0} / {1} / {2} nem támogatott kódolást használ {3}.",
+    "MediaEngine.Td0DecodedLength": "A TeleDisk {0}/{1}/{2} szektor {3} kódolása {4} bájtra bomlik ki az elvárt {5} helyett.",
+    "MediaEngine.Td0RepetitionOverflow": "A TeleDisk szektor ismétlésszáma meghaladja az előjel nélküli 16 bites egész szám határát."
+  }
+}

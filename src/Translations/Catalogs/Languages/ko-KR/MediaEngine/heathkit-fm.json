@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit 섹터는 256바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.HeathkitRecordEmpty": "Heathkit 레코드에는 체크섬 바이트가 하나 이상 있어야 합니다.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3}바이트, 볼륨 {4}, 헤더 체크섬 {5}, 데이터 체크섬 {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} 바이트, 체크섬 {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, 하드 섹터 헤더, 잘림",
+    "MediaEngine.HeathkitUnpaired": "짝이 없는 Heathkit 데이터, 데이터 블록"
+  }
+}

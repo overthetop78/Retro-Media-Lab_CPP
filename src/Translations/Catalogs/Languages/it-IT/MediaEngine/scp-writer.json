@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "La traccia di SCP {0} è presente più di una volta.",
+    "MediaEngine.ScpTrackOutside": "La traccia di SCP {0} è fuori dall'intervallo dichiarato {1} a {2}.",
+    "MediaEngine.ScpWriteAddress": "La traccia di SCP {0} non corrisponde all'indirizzo dichiarato: cilindro {1}, testa {2}.",
+    "MediaEngine.ScpWriteRevolutions": "La traccia di SCP {0} contiene {1} rivoluzioni; {2} sono necessarie.",
+    "MediaEngine.ScpZeroInterval": "SCP track {0}, rivoluzione {1}, contiene un intervallo di flusso di lunghezza zero.",
+    "MediaEngine.ScpOutput": "Manca la funzione di callback di uscita SCP."
+  }
+}

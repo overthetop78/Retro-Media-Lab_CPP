@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Sektorbild '{0}' mit Geometrie {1}x{2}x{3} und Blockgröße {4} kann nicht als MSA geschrieben werden.",
+    "MediaEngine.MsaMissingSector": "MSA logischer Sektor {0} ({1}:{2}:{3}) fehlt.",
+    "MediaEngine.MsaSectorSize": "MSA logischer Sektor {0} enthält {1} Bytes; erwartet {2}.",
+    "MediaEngine.MsaHeader": "Der MSA-Header ist ungültig; die Datei enthält {0} Bytes.",
+    "MediaEngine.MsaGeometry": "Die MSA-Geometrie ist ungültig: {0} Sektoren, {1} Köpfe, Zylinder {2} bis {3}.",
+    "MediaEngine.MsaTruncatedTable": "Das MSA-Spurlängenfeld für Zylinder {0}, Kopf {1}, bei Offset {2} ist abgeschnitten: {3} Bytes verfügbar.",
+    "MediaEngine.MsaTruncatedTrack": "MSA-Spur {0}:{1} bei Offset {2} gibt {3} Bytes an, {4} sind verfügbar.",
+    "MediaEngine.MsaTruncatedRun": "Der komprimierte Lauf in der MSA-Spur {0}:{1} bei gepacktem Offset {2} wird innerhalb von {3} Bytes gekürzt.",
+    "MediaEngine.MsaInvalidRun": "Der komprimierte Lauf in der MSA-Spur {0}:{1} bei gepacktem Offset {2} hat die Anzahl {3}; {4} von {5} Ausgangsbytes bereits geschrieben.",
+    "MediaEngine.MsaUnpackedLength": "MSA Track {0}:{1} verbraucht {2} von {3} komprimierten Bytes und erzeugt {4} von {5} erwarteten Bytes."
+  }
+}

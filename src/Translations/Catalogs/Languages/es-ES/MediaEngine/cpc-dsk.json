@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "El encabezado de Amstrad DSK está truncado.",
+    "MediaEngine.CpcDskSignature": "El archivo no es una imagen CPCEMU DSK.",
+    "MediaEngine.CpcDskGeometry": "La geometría Amstrad DSK es inválida.",
+    "MediaEngine.CpcDskExtendedTable": "La tabla de pistas ampliada de Amstrad DSK es inválida en la pista {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK Track {0} está truncada.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK Track {0} tiene un encabezado inválido.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK Track {0} tiene una tabla de sector inválida.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}:{1}:{2} is truncated.",
+    "MediaEngine.CpcDskNoSectors": "La imagen de Amstrad DSK no contiene sectores.",
+    "MediaEngine.CpcDskExtendedLarge": "La vía Amstrad EDSK {0} ocupa {1} bytes y excede el límite de contenedores de 65280 bytes.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} utiliza una representación del sector ausente, variable o no nominal que requiere EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "El contenedor Amstrad DSK no puede ser escrito: la geometría declarada y la colección de pistas discrepan.",
+    "MediaEngine.CpcDskTrackIndex": "El contenedor Amstrad DSK no puede ser escrito: el índice de pista {0} aparece en la posición {1}.",
+    "MediaEngine.CpcDskTooManySectors": "El contenedor Amstrad DSK no puede ser escrito: la pista {0} contiene demasiados descriptores del sector.",
+    "MediaEngine.CpcDskUniformTracks": "El contenedor Amstrad DSK no se puede escribir: DSK estándar requiere un tamaño de pista uniforme.",
+    "MediaEngine.CpcDskBuilderGeometry": "No se puede escribir el contenedor Amstrad DSK: la geometría supera los límites CPCEMU.",
+    "MediaEngine.CpcDskNativeMetadata": "No se puede escribir el contenedor Amstrad DSK: los metadatos del sector nativo carecen de ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "El contenedor Amstrad DSK no puede ser escrito: tamaño sector {0} no es representable por un código de tamaño CPCEMU.",
+    "MediaEngine.CpcDskOverflow": "El tamaño de los datos CPCEMU DSK supera el rango soportado.",
+    "MediaEngine.CpcDskRecordedAddress": "Dirección registrada de CPCEMU {0}:{1}:{2} no puede ser representada por campos de un byte."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "A {0} bit szekvencia nem illeszkedik a {1} bájtokba.",
+    "MediaEngine.BitPackingCount": "A bitek {0} számának pozitívnak kell lennie.",
+    "MediaEngine.BitPackingRange": "A csomag mérete meghaladja a támogatott tartományt.",
+    "MediaEngine.AppleTrackUnsupported": "A \"{1}\" forrásformátum nem kódolható {0} -ként.",
+    "MediaEngine.AppleTrackGeometry": "Az Apple II geometria a {0} henger, {1} fej és {2} szektor pályánkénti kódolása nem lehetséges.",
+    "MediaEngine.AppleTrackSector": "{0} szektor {1}: A {2} {3} bájtot tartalmaz a {4} helyett.",
+    "MediaEngine.AppleTrackTooLong": "A(z) {0} {1}. sávja {2} bitet tartalmaz; maximum {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Az Apple II {0}. sávja ismétlődő fizikai szektorszámot tartalmaz: {1}.",
+    "MediaEngine.NibTrackCount": "A NIB íróhoz legalább egy pálya szükséges; {0}-t kapott.",
+    "MediaEngine.NibTrackLength": "A NIB {0}. sávja {1} bitet tartalmaz; maximum {2}."
+  }
+}

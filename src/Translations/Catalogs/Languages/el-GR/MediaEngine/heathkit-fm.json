@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Οι τομείς Heathkit περιέχουν 256 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Η τιμή {1} του πεδίου {0} Heathkit FM πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Μια εγγραφή Heathkit πρέπει να περιέχει τουλάχιστον ένα byte αθροίσματος ελέγχου.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, τόμος {4}, άθροισμα ελέγχου κεφαλίδας {5}, άθροισμα ελέγχου δεδομένων {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, άθροισμα ελέγχου {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, κεφαλίδα τομέα υλικού, περικομμένη",
+    "MediaEngine.HeathkitUnpaired": "Μη συζευγμένα δεδομένα Heathkit, μπλοκ δεδομένων"
+  }
+}

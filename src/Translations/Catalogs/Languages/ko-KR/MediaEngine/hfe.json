@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "HFE 헤더가 없거나 잘렸습니다.",
+    "MediaEngine.HfeRevision": "HFE 개정 {0}는 지원되지 않습니다.",
+    "MediaEngine.HfeGeometry": "HFE 기하학 또는 비트율은 유효하지 않습니다.",
+    "MediaEngine.HfeTable": "HFE 트랙 테이블이 범위를 벗어났습니다.",
+    "MediaEngine.HfeTiming": "HFE 타이밍은 필수 해상도로 표현할 수 없습니다.",
+    "MediaEngine.HfeTrackLength": "HFE 트랙 {0} 잘못된 길이가 있습니다.",
+    "MediaEngine.HfeTrackData": "HFE 트랙 {0}/{1} 데이터는 경계에서 벗어납니다.",
+    "MediaEngine.HfeRateOpcode": "HFE v3 트랙 {0}/{1}의 비트율 연산 코드 매개변수가 0입니다.",
+    "MediaEngine.HfeEmptyTrack": "HFE v3 트랙 {0}/{1}에 비트 셀이 없습니다.",
+    "MediaEngine.HfeTracks": "HFE에는 최소한 하나의 트랙이 필요합니다.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1은 모든 트랙에 동일한 인코딩을 요구합니다.",
+    "MediaEngine.HfeEncoding": "인코딩 {0} HFE v1로 작성할 수 없습니다.",
+    "MediaEngine.HfeUniformRate": "HFE v1은 모든 트랙에 동일한 비트율을 요구합니다.",
+    "MediaEngine.HfeMissingTrack": "HFE 실린더 {0}가 누락되었습니다.",
+    "MediaEngine.HfeTrackAddress": "HFE 트랙은 선언 된 기하학 밖에 있습니다.",
+    "MediaEngine.HfeDuplicateTrack": "HFE 트랙 {0}/{1}은 복제됩니다.",
+    "MediaEngine.HfeLimit": "HFE 컨테이너는 지원된 크기 또는 값 제한을 초과합니다.",
+    "MediaEngine.HfeUniformTiming": "HFE v1는 궤도 당 1개의 획일한 타이밍 세그먼트를 요구합니다.",
+    "MediaEngine.HfeRevolutions": "HFE는 이러한 별도의 자기 선속 회전을 보존할 수 없습니다.",
+    "MediaEngine.HfePadding": "HFE v1은 채우기 또는 헤드 간에 서로 다른 트랙 길이를 요구합니다.",
+    "MediaEngine.HfeScpEncoding": "SCP 디스크 유형 {0}에는 무손실 HFE v1 인코딩이 없습니다.",
+    "MediaEngine.HfeFluxBounds": "자기 선속의 시간 간격이 인덱스 지속 시간을 초과합니다.",
+    "MediaEngine.HfeWeak": "HFE v3 쓰기는 약한 지역을 보존할 수 없습니다.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 임의 데이터 opcode",
+    "MediaEngine.HfeIndexFeature": "HFE v3 인덱스 opcode",
+    "MediaEngine.FluxConversionTiming": "자기 선속의 타이밍을 균일한 비트 셀로 표현할 수 없습니다.",
+    "MediaEngine.FluxConversionBounds": "자기 선속 간격이나 타이밍 구간이 트랙 지속 시간을 초과합니다.",
+    "MediaEngine.FluxConversionRange": "플럭스 변환은 지원된 크기 또는 숫자 범위를 초과합니다."
+  }
+}

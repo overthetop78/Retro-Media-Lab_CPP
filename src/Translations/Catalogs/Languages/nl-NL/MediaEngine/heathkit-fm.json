@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit-sectoren bevatten 256 bytes; {0} bytes ontvangen.",
+    "MediaEngine.HeathkitAddressRange": "De waarde {1} van Heathkit FM-veld {0} moet tussen nul en {2} liggen.",
+    "MediaEngine.HeathkitRecordEmpty": "Een Heathkit-record moet ten minste één controlesombyte bevatten.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} bytes, volume {4}, headercontrolesom {5}, datacontrolesom {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} bytes, controlesom {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, header van een hardwaresector, afgekapt",
+    "MediaEngine.HeathkitUnpaired": "Ongepaarde Heathkit-gegevens, gegevensblok"
+  }
+}

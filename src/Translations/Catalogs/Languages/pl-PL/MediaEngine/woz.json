@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Nagłówek WOZ jest nieprawidłowy.",
+    "MediaEngine.WozDiskType": "Typ dysku WOZ {0} nie jest obsługiwany; wymagany jest dysk Apple II o rozmiarze 5,25 cala.",
+    "MediaEngine.WozMissingChunk": "Wymagany blok WOZ '{0}' nie istnieje lub jest niekompletny.",
+    "MediaEngine.WozTruncatedChunk": "Blok WOZ '{0}' jest ucięty.",
+    "MediaEngine.WozTrackReference": "Ścieżka WOZ {0} odwołuje się do deskryptora {1} spoza prawidłowego zakresu.",
+    "MediaEngine.WozCrc": "Suma WOZ CRC32 jest nieprawidłowa: zapisana {0}, obliczona {1}.",
+    "MediaEngine.WozChunkId": "Identyfikator bloku WOZ '{0}' musi zawierać dokładnie cztery znaki ASCII.",
+    "MediaEngine.WozTrackCount": "Moduł zapisu WOZ1 otrzymał {0} ścieżek; oczekiwano od 1 do {1}.",
+    "MediaEngine.WozTrackLength": "Ścieżka WOZ1 {0} zawiera {1} bitów; maksymalnie {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Nie znaleziono prawidłowego sektora Apple II RWTS18 wśród {0} zdekodowanych sektorów z {1} ścieżek."
+  }
+}

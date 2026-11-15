@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Valoarea {1} a câmpului {0} TYCOM trebuie să fie între zero și {2}.",
+    "MediaEngine.TycomSectorSize": "Sectoarele TYCOM conțin 128 octeți; primiți {0} octeți.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 octeți, marcaj {2}, CRC antet {3}, CRC date {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 octeți, CRC antet {2}, CRC date {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 octeți, marcaj FE, CRC antet {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 octeți, marcaj {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, antet de sector, trunchiat",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, marcaj {0}, date de sector, trunchiat",
+    "MediaEngine.TycomUnpaired": "Neclasificat TYCOM FormatData, marcaj {0}, date"
+  }
+}

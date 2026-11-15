@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Almeno un decoder del flusso deve essere registrato.",
+    "MediaEngine.RegistryNullDecoder": "Il decoder del flusso in posizione {0} è nullo.",
+    "MediaEngine.RegistryInvalidId": "Il decoder del flusso in posizione {0} ha un identificatore vuoto.",
+    "MediaEngine.RegistryDuplicate": "Un decoder flux con identificatore '{0}' è già registrato.",
+    "MediaEngine.RegistryUnknown": "Nessun decoder flux è registrato con l'identificatore '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "Per la decodifica è necessaria una registrazione del flusso di un giro.",
+    "MediaEngine.RegistryNoAutomatic": "Nessun decoder registrato Flux partecipa al rilevamento automatico."
+  }
+}

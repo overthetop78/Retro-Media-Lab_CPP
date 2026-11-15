@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM-parbyte kräver ett jämnt antal byte; {0} mottagna.",
+    "MediaEngine.HpAddressRange": "Värdet {1} i HP MMFM-fältet {0} måste ligga mellan noll och {2}.",
+    "MediaEngine.HpSectorSize": "HP MMFM-sektorer innehåller 256 byte; tog emot {0} byte.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} byte, header-CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} byte, data-CRC {4}"
+  }
+}

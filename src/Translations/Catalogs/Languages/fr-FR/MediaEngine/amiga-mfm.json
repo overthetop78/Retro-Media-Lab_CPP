@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "Le codage odd/even Amiga exige un nombre pair d’octets ; {0} octets reçus.",
+    "MediaEngine.AmigaMfmParityRange": "Plage de parité Amiga invalide : position {0}, nombre {1}, disponibles {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "Un secteur Amiga contient 512 octets ; {0} octets reçus.",
+    "MediaEngine.AmigaMfmAddressRange": "Le champ Amiga MFM {0}, de valeur {1}, doit être compris entre zéro et {2}.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} octets, somme de contrôle de l’en-tête {4}, somme de contrôle des données {5}"
+  }
+}

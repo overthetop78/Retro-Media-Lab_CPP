@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP 时间分辨率必须为正数；收到 {0}。",
+    "MediaEngine.ScpExtended": "扩展 SCP 介质不是软盘映像。",
+    "MediaEngine.ScpSignature": "文件不包含 SCP 签名。",
+    "MediaEngine.ScpRevolutions": "SCP 旋转周数 {0} 无效。",
+    "MediaEngine.ScpTrackRange": "SCP 磁道范围 {0} 至 {1} 无效。",
+    "MediaEngine.ScpWidth": "不支持 SCP 位单元宽度 {0}。",
+    "MediaEngine.ScpHeads": "SCP 磁头选择值 {0} 无效。",
+    "MediaEngine.ScpTrackSignature": "磁道 {0} 没有 TRK 签名；描述符包含磁道编号 {1}。",
+    "MediaEngine.ScpTrackMismatch": "磁道表条目 {0} 指向磁道 {1}。",
+    "MediaEngine.ScpHeaderSection": "偏移 {0} 处的 SCP 文件头不完整或无效；需要 {1} 字节。",
+    "MediaEngine.ScpTableSection": "偏移 {0} 处的 SCP 磁道偏移表不完整或无效；需要 {1} 字节。",
+    "MediaEngine.ScpTrackSection": "偏移 {1} 处的 SCP 磁道 {0} 头部不完整或无效；需要 {2} 字节。",
+    "MediaEngine.ScpFluxSection": "偏移 {2} 处的 SCP 磁道 {0} 第 {1} 圈的磁通数据不完整或无效；需要 {3} 字节。",
+    "MediaEngine.ScpOverflow": "SCP 的大小、位置、间隔或拼接后的旋转周长超出支持的数值范围。",
+    "MediaEngine.ScpTrackAddress": "SCP 磁道编号 {0} 超出磁道表范围。",
+    "MediaEngine.ScpNoRevolution": "SCP 磁道没有可解码的旋转数据。",
+    "MediaEngine.ScpNoC900Sectors": "无法从 SCP 映像中解码出任何 Commodore 900 GCR 扇区。"
+  }
+}

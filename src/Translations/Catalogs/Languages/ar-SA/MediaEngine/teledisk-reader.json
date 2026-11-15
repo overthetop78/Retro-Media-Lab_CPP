@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "قسم رأس الصورة في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0CommentHeaderTruncated": "قسم رأس التعليق في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0CommentTruncated": "قسم التعليق في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0TrackTruncated": "قسم رأس المسار في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0SectorTruncated": "قسم رأس القطاع في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0DataHeaderTruncated": "قسم رأس بيانات القطاع في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0DataTruncated": "قسم بيانات القطاع في TeleDisk مبتور عند الإزاحة {0}: المتوقع {1} بايت، والمتاح {2}.",
+    "MediaEngine.Td0Signature": "الصورة ليست صورة TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "CRC رأس TeleDisk غير صحيح: المتوقع 0x{0}، والمحسوب 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "CRC تعليق TeleDisk غير صحيح: المتوقع 0x{0}، والمحسوب 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "CRC مسار TeleDisk ‏{0}/{1} غير صحيح: المتوقع 0x{2}، والمحسوب 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "CRC قطاع TeleDisk ‏{0}/{1}/{2} غير صحيح: المتوقع 0x{3}، والمحسوب 0x{4}.",
+    "MediaEngine.Td0SizeCode": "قطاع TeleDisk ‏{0}/{1}/{2} له رمز حجم غير صالح {3}.",
+    "MediaEngine.Td0MissingData": "قطاع TeleDisk ‏{0}/{1}/{2} لا يحتوي على بيانات مشفرة عند الإزاحة {3}.",
+    "MediaEngine.Td0NoSectors": "صورة TeleDisk لا تحتوي على قطاعات."
+  }
+}

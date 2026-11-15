@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MicropolisSectorSize": "Micropolis 扇区包含 256 字节；收到 {0} 字节。",
+    "MediaEngine.MicropolisSectorRange": "Micropolis 扇区号 {0} 必须在零和 {1} 之间。",
+    "MediaEngine.MicropolisRecordInput": "Micropolis 记录输入包含 {0} 字节；记录最多容纳 {1} 字节。",
+    "MediaEngine.MicropolisRecord": "Micropolis FormatHeader, C{0} H{1} R{2}, {3} 字节, 标记 FF, 校验和 {4}",
+    "MediaEngine.MicropolisTruncated": "Micropolis FormatHeader, 扇区, 截断"
+  }
+}

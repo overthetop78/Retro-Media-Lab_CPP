@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "HP MMFM 成對交換需要偶數個位元組；收到 {0} 個位元組。",
+    "MediaEngine.HpAddressRange": "HP MMFM 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.HpSectorSize": "HP MMFM 磁區包含 256 位元組；收到 {0} 位元組。",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標頭CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} 位元組, 資料CRC {4}"
+  }
+}

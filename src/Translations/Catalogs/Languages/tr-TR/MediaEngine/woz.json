@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZ başlığı geçersiz.",
+    "MediaEngine.WozDiskType": "WOZ disk türü {0} desteklenmiyor; 5,25 inçlik bir Apple II diski gerekiyor.",
+    "MediaEngine.WozMissingChunk": "Gerekli WOZ bloğu '{0}' eksik veya tamamlanmamış.",
+    "MediaEngine.WozTruncatedChunk": "WOZ bloğu '{0}' kesilmiş.",
+    "MediaEngine.WozTrackReference": "WOZ izi {0}, sınırların dışındaki {1} tanımlayıcısına başvuruyor.",
+    "MediaEngine.WozCrc": "WOZ CRC32 geçersiz: saklanan {0}, hesaplanan {1}.",
+    "MediaEngine.WozChunkId": "WOZ blok tanımlayıcısı '{0}' tam olarak dört ASCII karakteri içermelidir.",
+    "MediaEngine.WozTrackCount": "WOZ1 yazma modülü {0} iz aldı; 1 ile {1} arasında olması bekleniyordu.",
+    "MediaEngine.WozTrackLength": "WOZ1 izi {0}, {1} bit içeriyor; en fazla {2} olabilir.",
+    "MediaEngine.AppleNoRwtsSectors": "{1} izden çözümlenen {0} sektör arasında geçerli bir Apple II RWTS18 sektörü bulunamadı."
+  }
+}

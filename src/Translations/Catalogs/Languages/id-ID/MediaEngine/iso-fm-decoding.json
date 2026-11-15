@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} byte, penanda FE, N{4}, CRC header {5}, CRC data {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} byte, penanda FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} byte, penanda F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Belum diklasifikasikan ISO FM DataAddressMark, penanda FB",
+    "MediaEngine.FmUnpairedDeleted": "Belum diklasifikasikan ISO FM DeletedDataAddressMark, penanda F8",
+    "MediaEngine.FmRevolutionTiming": "Waktu putaran ISO FM tidak konsisten: indeks {0} ticks, durasi sel {1} ticks, jumlah interval {2} ticks."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "Потрібен ідентифікатор кодувальника.",
+    "MediaEngine.PolicyFormats": "Потрібен принаймні один ідентифікатор формату, який не порожній і не складається лише з пробілів.",
+    "MediaEngine.PolicyPrefixes": "Потрібен принаймні один префікс формату, який не порожній і не складається лише з пробілів.",
+    "MediaEngine.PolicyNull": "Правило відновлення секторів не може бути порожнім посиланням.",
+    "MediaEngine.PolicyNullBlock": "Елемент відновлення секторів не може містити порожнє посилання на блок.",
+    "MediaEngine.PolicyRareUnknown": "Для формату '{0}' не зареєстровано профіль рідкісного кодування.",
+    "MediaEngine.PolicyLisaCylinder": "Номер циліндра Lisa FileWare {0} має бути від 0 до {1}.",
+    "MediaEngine.PolicyJfdDensity": "Доріжка JFD не має придатного коду щільності.",
+    "MediaEngine.PolicyAddressRange": "Значення адреси {0} виходить за межі 32-бітного цілого числа зі знаком."
+  }
+}

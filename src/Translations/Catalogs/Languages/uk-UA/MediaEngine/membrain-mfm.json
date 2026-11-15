@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Значення {1} поля {0} Membrain MFM має бути між нулем і {2}.",
+    "MediaEngine.MembrainSectorSize": "Сектори Membrain містять 512 байтів; отримано {0} байтів.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 байтів, позначка FE, CRC заголовка {3}, CRC даних {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 байтів, позначка {3}, блок даних, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, заголовок сектора, обрізаний",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC недоступна, обрізаний",
+    "MediaEngine.MembrainUnpaired": "Непарні дані Membrain, блок даних"
+  }
+}

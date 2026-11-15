@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.NorthstarSectorSize": "NorthStar-sectoren bevatten 512 bytes; {0} bytes ontvangen.",
+    "MediaEngine.NorthstarCylinderRange": "NorthStar-cilinder {0} moet tussen nul en {1} liggen.",
+    "MediaEngine.NorthstarSectorRange": "NorthStar-sectornummer {0} moet tussen nul en {1} liggen.",
+    "MediaEngine.NorthstarWindowCapacity": "De NorthStar-indexduur overschrijdt het ondersteunde aantal bitcellen.",
+    "MediaEngine.NorthstarHardAddressRange": "Elke coördinaat van het NorthStar-adres C{0} H{1} moet in één byte passen.",
+    "MediaEngine.NorthstarHeader": "NorthStar FormatHeader, C{0} H{1} R{2}, {3} bytes, markering FB, controlesom {4}",
+    "MediaEngine.NorthstarTruncated": "NorthStar FormatHeader, blok van een hardwaresector, afgekapt"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "{0} 位元的序列無法存入 {1} 位元組。",
+    "MediaEngine.BitPackingCount": "位元數 {0} 必須為正數。",
+    "MediaEngine.BitPackingRange": "位元封裝大小超出支援的範圍。",
+    "MediaEngine.AppleTrackUnsupported": "來源格式「{1}」無法編碼為 {0}。",
+    "MediaEngine.AppleTrackGeometry": "無法編碼具有 {0} 個磁柱、{1} 個磁頭和每磁軌 {2} 個磁區的 Apple II 磁碟結構。",
+    "MediaEngine.AppleTrackSector": "{0} 磁區 {1}:{2} 包含 {3} 位元組，而非 {4} 位元組。",
+    "MediaEngine.AppleTrackTooLong": "{0} 磁軌 {1} 包含 {2} 位元；最多允許 {3} 位元。",
+    "MediaEngine.AppleTrackDuplicate": "Apple II 磁軌 {0} 包含重複的實體磁區編號 {1}。",
+    "MediaEngine.NibTrackCount": "NIB 寫入器至少需要一條磁軌；收到 {0} 條。",
+    "MediaEngine.NibTrackLength": "NIB 磁軌 {0} 包含 {1} 位元；最多允許 {2} 位元。"
+  }
+}

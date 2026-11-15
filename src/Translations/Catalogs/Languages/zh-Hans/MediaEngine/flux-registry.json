@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "必须注册至少一个磁通解码器。",
+    "MediaEngine.RegistryNullDecoder": "位置 {0} 的磁通解码器为空。",
+    "MediaEngine.RegistryInvalidId": "位置 {0} 的磁通解码器标识符为空。",
+    "MediaEngine.RegistryDuplicate": "标识符为 '{0}' 的磁通解码器已注册。",
+    "MediaEngine.RegistryUnknown": "未注册标识符为 '{0}' 的磁通解码器。",
+    "MediaEngine.RegistryNullRevolution": "解码需要一圈磁通记录。",
+    "MediaEngine.RegistryNoAutomatic": "没有已注册的磁通解码器参与自动检测。"
+  }
+}

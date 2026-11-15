@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HardDiskRawIntent": "Une image de disque dur sans en-tête nécessite un choix de format explicite ou une signature MBR/GPT.",
+    "MediaEngine.HardDiskRawAlignment": "La longueur de l’image brute n’est pas un multiple de la taille des blocs logiques de {0} octets.",
+    "MediaEngine.HardDiskRawChanged": "La longueur de l'image brute a changé après la reconnaissance.",
+    "MediaEngine.HardDiskRawWrite": "Le document média ne peut pas être écrit comme une image brute complète de disque dur.",
+    "MediaEngine.HardDiskRawNullDocument": "Le document média ne peut pas être une référence nulle."
+  }
+}

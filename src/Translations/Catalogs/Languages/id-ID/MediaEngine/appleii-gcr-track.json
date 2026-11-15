@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Nilai {1} pada bidang {0} Apple II GCR harus antara nol dan {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Trek Apple II berisi 13 sektor untuk 5-and-3 atau 16 untuk 6-and-2; diterima {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, V{4}, checksum alamat {5}, checksum data {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, 13 sektor V{4}, checksum alamat {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, checksum {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, 13 sektor, checksum {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, checksum tidak tersedia, terpotong",
+    "MediaEngine.AppleIIUnpaired": "Data Apple II tanpa pasangan, prolog data D5 AA AD"
+  }
+}

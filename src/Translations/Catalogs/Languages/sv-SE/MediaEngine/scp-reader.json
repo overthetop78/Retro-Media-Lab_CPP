@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP-tidsupplösningen måste vara positiv; mottagen {0}.",
+    "MediaEngine.ScpExtended": "Extended SCP media är inte floppy bilder.",
+    "MediaEngine.ScpSignature": "Filen innehåller inte en SCP-signatur.",
+    "MediaEngine.ScpRevolutions": "Antalet SCP-varv {0} är ogiltigt.",
+    "MediaEngine.ScpTrackRange": "SCP-spårområdet {0} till {1} är ogiltigt.",
+    "MediaEngine.ScpWidth": "SCP bit-cell bredd {0} stöds inte.",
+    "MediaEngine.ScpHeads": "SCP-huvudväljaren {0} är ogiltig.",
+    "MediaEngine.ScpTrackSignature": "Spåra {0} har ingen TRK signatur; beskrivningen innehåller spårnummer {1}.",
+    "MediaEngine.ScpTrackMismatch": "Post {0} i spårtabellen pekar på spår {1}.",
+    "MediaEngine.ScpHeaderSection": "SCP-huvudet är ofullständigt eller ogiltigt vid offset {0}; {1} byte krävs.",
+    "MediaEngine.ScpTableSection": "SCP-tabellen över spåroffset är ofullständig eller ogiltig vid offset {0}; {1} byte krävs.",
+    "MediaEngine.ScpTrackSection": "Huvudet för SCP-spår {0} är ofullständigt eller ogiltigt vid offset {1}; {2} byte krävs.",
+    "MediaEngine.ScpFluxSection": "Flödet för SCP-spår {0}, varv {1}, är ofullständigt eller ogiltigt vid offset {2}; {3} byte krävs.",
+    "MediaEngine.ScpOverflow": "En SCP-storlek, position, intervall eller sammanfogad varv överstiger det stödda numeriska intervallet.",
+    "MediaEngine.ScpTrackAddress": "SCP spårnummer {0} ligger utanför spårbordet.",
+    "MediaEngine.ScpNoRevolution": "SCP-spåret innehåller inget varv att avkoda.",
+    "MediaEngine.ScpNoC900Sectors": "Inga Commodore 900 GCR-sektorer kan avkodas från SCP-bilden."
+  }
+}

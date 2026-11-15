@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Nagłówek Amstrad DSK jest skrócony.",
+    "MediaEngine.CpcDskSignature": "Plik nie jest obrazem CPCEMU DSK.",
+    "MediaEngine.CpcDskGeometry": "Geometria DSK firmy Amstrad jest nieprawidłowa.",
+    "MediaEngine.CpcDskExtendedTable": "Wydłużona tabela utworów Amstrad DSK jest nieprawidłowa na torze {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Ścieżka DSK Amstrad {0} jest okrojona.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} ma nieprawidłowy nagłówek.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} posiada nieprawidłową tabelę sektorową.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}: {1}: {2} jest skrócony.",
+    "MediaEngine.CpcDskNoSectors": "Obraz Amstrad DSK nie zawiera żadnych sektorów.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} zajmuje bajty {1} i przekracza limit 65280- bajtowych pojemników.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} wykorzystuje nieobecny, zmienny rozmiar lub nienominalną reprezentację sektora wymagającą EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Kontener Amstrad DSK nie może być napisany: deklarowana geometria i kolekcja torów nie zgadzają się.",
+    "MediaEngine.CpcDskTrackIndex": "Kontener DSK firmy Amstrad nie może być napisany: wskaźnik ścieżki {0} pojawia się w pozycji {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Kontener Amstrad DSK nie może być napisany: utwór {0} zawiera zbyt wiele deskryptorów sektorowych.",
+    "MediaEngine.CpcDskUniformTracks": "Kontener Amstrad DSK nie może być napisany: standardowy DSK wymaga jednego jednolitego rozmiaru toru.",
+    "MediaEngine.CpcDskBuilderGeometry": "Kontener Amstrad DSK nie może być napisany: geometria przekracza granice CPCEMU.",
+    "MediaEngine.CpcDskNativeMetadata": "Kontener Amstrad DSK nie może być napisany: rodzime metadane sektora nie posiadają ST1 / ST2.",
+    "MediaEngine.CpcDskSizeCode": "Kontener Amstrad DSK nie może być napisany: wielkość sektora {0} nie może być reprezentowana przez kod wielkości CPCEMU.",
+    "MediaEngine.CpcDskOverflow": "Rozmiar danych CPCEMU DSK przekracza obsługiwany zakres.",
+    "MediaEngine.CpcDskRecordedAddress": "Nagrany adres CPCEMU {0}: {1}: {2} nie może być reprezentowany przez pola jednobajtowe."
+  }
+}

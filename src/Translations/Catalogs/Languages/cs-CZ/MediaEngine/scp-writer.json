@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP stopa {0} je přítomna více než jednou.",
+    "MediaEngine.ScpTrackOutside": "SCP stopa {0} je mimo deklarovaný rozsah {1} až {2}.",
+    "MediaEngine.ScpWriteAddress": "Stopa SCP {0} neodpovídá deklarované adrese: válec {1}, hlava {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP stopa {0} obsahuje {1} otáčky; {2} jsou nutné.",
+    "MediaEngine.ScpZeroInterval": "Stopa SCP {0}, otáčka {1}, obsahuje interval magnetického toku nulové délky.",
+    "MediaEngine.ScpOutput": "Chybí výstupní zpětné volání SCP."
+  }
+}

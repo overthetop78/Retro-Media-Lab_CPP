@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR target format '{0}' is not supported.",
+    "MediaEngine.AtrIncompatibleImage": "Sector image '{0}' contains {1} sectors and {2} bytes; ATR profile '{3}' requires {4} sectors and {5} bytes.",
+    "MediaEngine.AtrMissingSector": "ATR sector {0} is missing.",
+    "MediaEngine.AtrSectorSize": "ATR sector {0} contains {1} bytes; expected {2}.",
+    "MediaEngine.AtrHeader": "The ATR header is invalid: length {0} bytes (minimum {1}), signature {2} (expected {3}).",
+    "MediaEngine.AtrUnsupportedSize": "The ATR sector size {0} bytes is not supported; expected {1} bytes.",
+    "MediaEngine.AtrPayloadLength": "The ATR payload length is {0} bytes; the header declares {1} bytes.",
+    "MediaEngine.AtrTruncatedPayload": "The ATR payload length {0} bytes does not contain a {1}-byte boot area followed by complete {2}-byte sectors.",
+    "MediaEngine.AtrSectorCount": "The Atari ATR sector size {0} and sector count {1} must be positive.",
+    "MediaEngine.AtxHeader": "The ATX file header is missing or invalid.",
+    "MediaEngine.AtxTrackOffset": "The ATX track-data offset is outside the file.",
+    "MediaEngine.AtxTrackCycle": "The ATX track chain contains a cycle.",
+    "MediaEngine.AtxTrackBounds": "An ATX track extends outside the file.",
+    "MediaEngine.AtxTrackNumber": "ATX track {0} is outside the supported 40-track geometry.",
+    "MediaEngine.AtxSectorCount": "ATX track {0} contains too many sector records.",
+    "MediaEngine.AtxListBounds": "The sector list of ATX track {0} crosses the track boundary.",
+    "MediaEngine.AtxSectorNumber": "ATX track {0} contains invalid sector {1}.",
+    "MediaEngine.AtxDataBounds": "The data of ATX track {0}, sector {1}, crosses the track boundary.",
+    "MediaEngine.AtxNoSectors": "The ATX image contains no readable sector record.",
+    "MediaEngine.AtxLargeOffset": "The ATX {0} offset is too large.",
+    "MediaEngine.AtxTruncated": "The ATX {0} is truncated."
+  },
+  "invariants": []
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "A RIFF AMS! A töltényfej hiányzik.",
+    "MediaEngine.CprLength": "A CPR RIFF hossza érvénytelen.",
+    "MediaEngine.CprChunkRange": "CPR darabos \"{0}\"meghaladja RIFF tartály.",
+    "MediaEngine.CprDuplicate": "Az \"{0}\" CPR bank másolódik.",
+    "MediaEngine.CprLargeBank": "Az \"{0}\" CPR bank 16 KiB oldalán túl is tartalmaz bájtokat; ezeket nem térképezték fel.",
+    "MediaEngine.CprUnknownChunk": "A RIFF \"{0}\" nem egy CPR patron bank.",
+    "MediaEngine.CprChunkHeader": "A CPR RIFF tartály egy fejlécben ér véget.",
+    "MediaEngine.CprNoBanks": "Az CPR kép nem tartalmaz cb00-tól Cb31-es patron bankot.",
+    "MediaEngine.CprWrite": "A blokk dokumentum nem írható le teljes CPR patronként.",
+    "MediaEngine.RomCorpus": "A CPC ROM hossza kívül esik a bizonyított corpus profilokon.",
+    "MediaEngine.RomNoData": "A CPC ROM nem tartalmaz banki adatokat.",
+    "MediaEngine.RomBankLimit": "A CPC ROM meghaladja a 32 patront.",
+    "MediaEngine.RomIncomplete": "Az utolsó CPC ROM bank hiányos, és feltalálatlan párnázat nélkül kerül nyilvánosságra.",
+    "MediaEngine.RomWrite": "A csoportdokumentum nem tartalmaz összefüggő CPC ROM-bankokat.",
+    "MediaEngine.FdsSource": "A kiválasztott forrás nem egy Famicom Disk System kép.",
+    "MediaEngine.FdsSides": "A Famicom Disk System kép nem tartalmaz teljes oldalakat.",
+    "MediaEngine.FdsNoSide": "A Famicom Disk System kép nem tartalmaz oldalakat.",
+    "MediaEngine.FdsCount": "A Famicom Disk System oldalszáma nem egyezik a fejlécével.",
+    "MediaEngine.FdsUndeclared": "Az FDS fejléc nem jelent oldalszámot; a számot a tárolt adatokból vették.",
+    "MediaEngine.FdsWrite": "A blokk dokumentum nem tartalmazza a Famicom Disk System teljes oldalait.",
+    "MediaEngine.FdsHeader": "A forrás FDS fejléc hiányzik.",
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad patron"
+  }
+}

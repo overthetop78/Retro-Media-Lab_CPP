@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "הדימות אינו מכיל כותרת ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "רשומת ApriDisk לא תקינה בבייט {0}.",
+    "MediaEngine.ApridiskOverflow": "אורך רשומת ApriDisk חורג ממגבלת מספר שלם עם סימן בגודל 32 סיביות.",
+    "MediaEngine.ApridiskTruncated": "רשומת ApriDisk בבייט {0} קטועה.",
+    "MediaEngine.ApridiskAddress": "כתובת סקטור ApriDisk ‏{0}/{1}/{2} חורגת מגאומטריית ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "דימות ApriDisk מכיל {0} סקטורים שמישים במקום {1}.",
+    "MediaEngine.ApridiskSectorLength": "סקטור ApriDisk מכיל {0} בתים במקום {1}.",
+    "MediaEngine.ApridiskCompression": "דחיסת סקטור ApriDisk אינה נתמכת: {0}.",
+    "MediaEngine.ApridiskExpansion": "סקטור ApriDisk לאחר פריסה חורג מ־512 בתים.",
+    "MediaEngine.ApridiskWriteGeometry": "דימות הסקטורים אינו משתמש בגאומטריית ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "דימות DEC RX02 מכיל {0} בתים; דימות פיזי מלא דורש {1}.",
+    "MediaEngine.Rx02WriteGeometry": "דימות הסקטורים אינו משתמש בגאומטריית DEC RX02."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM -kentän {0} arvon {1} on oltava nollan ja {2} välillä.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} tavua, otsikon CRC {4}, datan CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} tavua, avain {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, sektorimerkki, katkaistu",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC ei saatavilla, katkaistu",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, avain ei ole tuettu {0}, katkaistu",
+    "MediaEngine.CenturionUnpaired": "Parittamaton Centurion-data, datalohko"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sector {0}/{1}/{2} has a repeated payload of {3} bytes; {4} bytes are required.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk sector {0}/{1}/{2} encoding {3} is truncated at offset {4}: {5} bytes required, {6} available.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sector {0}/{1}/{2} uses unsupported encoding {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sector {0}/{1}/{2} encoding {3} expands to {4} bytes instead of {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "The TeleDisk sector repetition count exceeds the unsigned 16-bit limit."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Η εικόνα δεν περιέχει κεφαλίδα ImageDisk: comment terminator at {0}, Μήκος αρχείου {1} bytes.",
+    "MediaEngine.ImdTruncated": "Η ενότητα ImageDisk {0} στο όφσετ {1} είναι περιτυλιγμένη: {2} απαιτούνται bytes, {3} είναι διαθέσιμες.",
+    "MediaEngine.ImdTrackHeader": "Η επικεφαλίδα κομματιών ImageDisk δεν είναι έγκυρη: λειτουργία {0}, αριθμός τομέα {1}.",
+    "MediaEngine.ImdSizeCode": "Ο κωδικός μεγέθους τομέα ImageDisk {0} δεν είναι έγκυρος.",
+    "MediaEngine.ImdRecordType": "Ο τύπος εγγραφής τομέα του ImageDisk {0} είναι άκυρος.",
+    "MediaEngine.ImdNoSectors": "Η εικόνα ImageDisk δεν περιέχει τομείς.",
+    "MediaEngine.ImdNoTracks": "Η εικόνα ImageDisk δεν περιέχει ίχνη.",
+    "MediaEngine.ImdWriteTrack": "Η κεφαλίδα κομματιών ImageDisk δεν αναπαριστάται.",
+    "MediaEngine.ImdWriteSector": "Μια εγγραφή τομέα ImageDisk είναι άκυρη.",
+    "MediaEngine.ImdCompressed": "Ένας συμπιεσμένος τομέας ImageDisk δεν περιέχει ένα επαναλαμβανόμενο byte.",
+    "MediaEngine.ImdMetadataMode": "Τα μεταδεδομένα ImageDisk περιέχουν μια μη έγκυρη λειτουργία κομματιού.",
+    "MediaEngine.ImdMetadataRecord": "Τα μεταδεδομένα ImageDisk περιέχουν έναν μη έγκυρο τύπο εγγραφής τομέα.",
+    "MediaEngine.ImdMetadataSize": "Τα μεταδεδομένα ImageDisk περιέχουν ένα μη έγκυρο μέγεθος τομέα.",
+    "MediaEngine.ImdMetadataBlock": "Τα μεταδεδομένα ImageDisk δεν ταιριάζουν με το λογικό μπλοκ '{0}'.",
+    "MediaEngine.ImdMetadataCount": "Η καταμέτρηση των μεταδεδομένων ImageDisk δεν ταιριάζει με την εικόνα του τομέα.",
+    "MediaEngine.ImdMetadata": "Τα μεταδεδομένα ImageDisk είναι άκυρα.",
+    "MediaEngine.ImdEpsonGeometry": "Η γεωμετρία εικόνας Epson δεν ταιριάζει με το αναγνωριστικό μορφής της.",
+    "MediaEngine.ImdEpsonSize": "Ο τομέας Epson {0}: {1}:{2} έχει μη έγκυρο μέγεθος.",
+    "MediaEngine.ImdEpsonDuplicate": "Ο τομέας Epson {0}: {1}: {2} αναπαράγεται.",
+    "MediaEngine.EpsonFormat": "Η επιλεγμένη μορφή '{0}' δεν είναι υποστηριζόμενη μορφή Epson QX-10.",
+    "MediaEngine.EpsonGeometryDuplicate": "Διπλή γεωμετρία Epson QX-10: {0}."
+  }
+}

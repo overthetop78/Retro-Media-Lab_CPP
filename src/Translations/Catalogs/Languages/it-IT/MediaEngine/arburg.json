@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (dati): sono richiesti {0} byte utili o {1} byte di blocco completo; ricevuti {2} byte.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (sistema): sono richiesti {0} byte utili o {1} byte di blocco completo; ricevuti {2} byte.",
+    "MediaEngine.ArburgBlockCapacity": "La capacità {1} del blocco Arburg deve contenere {0} byte utili e due byte di checksum entro il limite di dimensione supportato.",
+    "MediaEngine.ArburgUsefulSize": "Il numero di byte utili Arburg non può essere negativo; ricevuto: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 byte, blocco dati, somma di controllo {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 byte, blocco di sistema, somma di controllo {0}"
+  }
+}

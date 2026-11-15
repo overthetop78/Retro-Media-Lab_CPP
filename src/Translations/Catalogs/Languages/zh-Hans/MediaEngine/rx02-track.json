@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "DEC RX02 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.Rx02SizeCode": "RX02 大小代码 {0} 与 {1} 字节不匹配。",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, 扇区头, 截断",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 字节, 头部CRC {4}, 数据CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 字节, 标记 {4}, {5}, 头部CRC {6}, 数据CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} 字节, 标记 {4}, {5}, 数据CRC {6}",
+    "MediaEngine.Rx02Unpaired": "未分类 DEC RX02 FormatData, 标记 {0}, 数据"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "การสลับคู่ไบต์ HP MMFM ต้องใช้จำนวนไบต์เป็นเลขคู่ ได้รับ {0}",
+    "MediaEngine.HpAddressRange": "ค่า {1} ของฟิลด์ {0} ใน HP MMFM ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.HpSectorSize": "เซกเตอร์ HP MMFM มี 256 ไบต์ ได้รับ {0} ไบต์",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} ไบต์, CRC ส่วนหัว {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} ไบต์, CRC ข้อมูล {4}"
+  }
+}

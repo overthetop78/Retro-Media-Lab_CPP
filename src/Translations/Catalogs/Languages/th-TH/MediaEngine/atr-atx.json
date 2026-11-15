@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ไม่รองรับรูปแบบเป้าหมาย ATR '{0}'",
+    "MediaEngine.AtrIncompatibleImage": "อิมเมจเซกเตอร์ '{0}' มี {1} เซกเตอร์และ {2} ไบต์ แต่โพรไฟล์ ATR '{3}' ต้องการ {4} เซกเตอร์และ {5} ไบต์",
+    "MediaEngine.AtrMissingSector": "เซกเตอร์ ATR {0} หายไป",
+    "MediaEngine.AtrSectorSize": "เซกเตอร์ ATR {0} มี {1} ไบต์ แต่ต้องการ {2} ไบต์",
+    "MediaEngine.AtrHeader": "ส่วนหัว ATR ไม่ถูกต้อง: ความยาว {0} ไบต์ (ขั้นต่ำ {1}) ลายเซ็น {2} (ต้องการ {3})",
+    "MediaEngine.AtrUnsupportedSize": "ไม่รองรับขนาดเซกเตอร์ ATR {0} ไบต์ ต้องการ {1} ไบต์",
+    "MediaEngine.AtrPayloadLength": "ข้อมูล ATR มีความยาว {0} ไบต์ แต่ส่วนหัวระบุ {1} ไบต์",
+    "MediaEngine.AtrTruncatedPayload": "ข้อมูล ATR ความยาว {0} ไบต์ไม่มีพื้นที่บูตขนาด {1} ไบต์ ตามด้วยเซกเตอร์เต็มขนาด {2} ไบต์",
+    "MediaEngine.AtrSectorCount": "ขนาดเซกเตอร์ Atari ATR {0} และจำนวนเซกเตอร์ {1} ต้องเป็นบวก",
+    "MediaEngine.AtxHeader": "ส่วนหัวไฟล์ ATX หายไปหรือไม่ถูกต้อง",
+    "MediaEngine.AtxTrackOffset": "ออฟเซ็ตข้อมูลแทร็ก ATX อยู่นอกไฟล์",
+    "MediaEngine.AtxTrackCycle": "สายโซ่แทร็ก ATX มีวงวน",
+    "MediaEngine.AtxTrackBounds": "แทร็ก ATX ขยายออกนอกไฟล์",
+    "MediaEngine.AtxTrackNumber": "แทร็ก ATX {0} อยู่นอกเรขาคณิต 40 แทร็กที่รองรับ",
+    "MediaEngine.AtxSectorCount": "แทร็ก ATX {0} มีระเบียนเซกเตอร์มากเกินไป",
+    "MediaEngine.AtxListBounds": "รายการเซกเตอร์ของแทร็ก ATX {0} ข้ามขอบเขตแทร็ก",
+    "MediaEngine.AtxSectorNumber": "แทร็ก ATX {0} มีเซกเตอร์ {1} ที่ไม่ถูกต้อง",
+    "MediaEngine.AtxDataBounds": "ข้อมูลแทร็ก ATX {0} เซกเตอร์ {1} ข้ามขอบเขตแทร็ก",
+    "MediaEngine.AtxNoSectors": "อิมเมจ ATX ไม่มีระเบียนเซกเตอร์ที่อ่านได้",
+    "MediaEngine.AtxLargeOffset": "ออฟเซ็ต ATX {0} ใหญ่เกินไป",
+    "MediaEngine.AtxTruncated": "ข้อมูล ATX {0} ถูกตัดทอน"
+  }
+}

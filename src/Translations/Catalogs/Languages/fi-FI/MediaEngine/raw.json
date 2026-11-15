@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Raa'an kuvan pituus {0} on tyhjä tai ei useita {1} tavuja.",
+    "Media.RawUnknownGeometry": "Ei tuettua kuvageometriaa vastaa {0} tavua.",
+    "Media.MsxInvalidBoot": "{0} tavun kuva ei sisällä tuettua MSX- käynnistyssektoria.",
+    "Media.MsxUnsupportedGeometry": "Ei MSX-geometriaa {0} tavuja ja mediakuvaajaa {1}.",
+    "Media.UnsupportedRawFormat": "Raakakuvan muotoa {0} ei tueta.",
+    "Media.RawGeometryMismatch": "Kuvassa {0} on geometria {1}; kohde {2} vaatii geometrian {3}.",
+    "Media.RawSectorMissing": "Looginen sektori {0} puuttuu, eikä sitä voi kirjoittaa täydelliseen raakakuvaan.",
+    "Media.RawSectorSize": "Looginen sektori {0} sisältää {1} tavua {2}:n sijaan.",
+    "Media.AtomicOpen": "Väliaikaista ulostuloa ei voitu luoda {0}.",
+    "Media.AtomicWrite": "Väliaikaista tulostetta ei voi kirjoittaa {0}.",
+    "Media.AtomicCommit": "Täydellistä tulostustiedostoa {0} ei voi julkaista.",
+    "Media.Cancelled": "Tallennusvälineen toiminto peruutettiin."
+  }
+}

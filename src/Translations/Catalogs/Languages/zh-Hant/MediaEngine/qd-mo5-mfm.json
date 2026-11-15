@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.QdAddressRange": "QD MO5 欄位 {0} 的值 {1} 必須介於零與 {2} 之間。",
+    "MediaEngine.QdSectorSize": "QD MO5 磁區包含 128 位元組；收到 {0} 位元組。",
+    "MediaEngine.QdHeader": "QD MO5 FormatHeader, C0 H0 R{0}, 128 位元組, 標記 FB, 標頭 {1}, 資料檢查碼 {2}",
+    "MediaEngine.QdData": "QD MO5 FormatData, C0 H0 R{0}, 128 位元組, 標記 {1}, 檢查碼 {2}",
+    "MediaEngine.QdTruncatedHeader": "QD MO5 FormatHeader, 磁區標頭, 截斷",
+    "MediaEngine.QdTruncatedData": "QD MO5 FormatData, 磁區資料, 檢查碼 無法使用, 截斷",
+    "MediaEngine.QdUnpaired": "未配對的 QD MO5 資料, 標記 {0}, 磁區資料"
+  }
+}

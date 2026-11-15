@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Antetul de imagine TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Antetul de comentarii TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0CommentTruncated": "Comentariu TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0TrackTruncated": "Antetul pistei TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0SectorTruncated": "Antetul sectorului TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0DataHeaderTruncated": "Antetul de date din sectorul TeleDisk la offset {0} este trunchiat: {1} octeţi aşteptaţi, {2} disponibil.",
+    "MediaEngine.Td0DataTruncated": "Datele din sectorul TeleDisk la deplasamentul {0} sunt trunchiate: {1} octeţi aşteptaţi, {2} disponibili.",
+    "MediaEngine.Td0Signature": "Imaginea nu este o imagine TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Antetul TeleDisk CRC este invalid: se aşteaptă 0x{0}, calculat 0x {1}.",
+    "MediaEngine.Td0CommentCrc": "Comentariu TeleDisk CRC este invalid: se aşteaptă 0x{0}, calculat 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Pista TeleDisk {0}/ {1} CRC este invalidă: se aşteaptă 0x {2}, calculată 0x {3}.",
+    "MediaEngine.Td0SectorCrc": "Sectorul TeleDisk {0}/ {1}/ {2} CRC este invalid: se aşteaptă 0x{3}, calculat 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Sectorul TeleDisk {0}/ {1}/ {2} are cod de mărime invalid {3}.",
+    "MediaEngine.Td0MissingData": "Sectorul TeleDisk {0}/ {1}/ {2} nu are date codificate la deplasamentul {3}.",
+    "MediaEngine.Td0NoSectors": "Imaginea TeleDisk nu conţine sectoare."
+  }
+}

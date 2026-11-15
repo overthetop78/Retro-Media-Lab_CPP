@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP track {0} is meerdere malen aanwezig.",
+    "MediaEngine.ScpTrackOutside": "SCP track {0} ligt buiten het aangegeven bereik {1} tot {2}.",
+    "MediaEngine.ScpWriteAddress": "SCP-spoor {0} komt niet overeen met het opgegeven adres: cilinder {1}, hoofd {2}.",
+    "MediaEngine.ScpWriteRevolutions": "SCP track {0} bevat {1} omwentelingen; {2} zijn vereist.",
+    "MediaEngine.ScpZeroInterval": "SCP-track {0}, omwenteling {1}, bevat een fluxinterval met lengte nul.",
+    "MediaEngine.ScpOutput": "De SCP uitvoer callback ontbreekt."
+  }
+}

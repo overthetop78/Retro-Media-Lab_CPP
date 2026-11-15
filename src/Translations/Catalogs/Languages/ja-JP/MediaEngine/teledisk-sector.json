@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDiskセクター {0}/{1}/{2} は {3} バイトの繰り返しペイロードを持っています。 {4} バイトが必要です。",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk セクター {0}/{1}/{2} のエンコーディング {3} はオフセット {4} で途切れています。必要なバイト数は {5}、利用可能なバイト数は {6} です。",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk セクター {0}/{1}/{2} はサポートされていないエンコーディング {3} を使用します。",
+    "MediaEngine.Td0DecodedLength": "TeleDisk セクター {0}/{1}/{2} エンコーディング {3} は {5} ではなく {4} バイトに拡大します。",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk セクターの繰り返し回数が符号なし16ビット整数の上限を超えています。"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Spoorcilinder {0} moet tussen nul en {1} liggen.",
+    "MediaEngine.TrackHead": "Spoorkop {0} moet tussen nul en {1} liggen.",
+    "MediaEngine.TrackMissingSectors": "Ten minste één sector is vereist; ontvangen {0}.",
+    "MediaEngine.TrackEmpty": "Encoder {0} produceerde geen bitcellen.",
+    "MediaEngine.TrackHex": "De rauwe hexadecimale tekst is ongeldig.",
+    "MediaEngine.TrackBinaryCharacter": "Binaire tekst bevat \"{0}' op positie {1}; slechts nul en één is toegestaan.",
+    "MediaEngine.TrackNegativeGap": "Gaplengte {0} mag niet negatief zijn.",
+    "MediaEngine.TrackSectorNumber": "Sectornummer {0} moet tussen nul en {1} liggen.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 sectoren bevatten {0} bytes; ontvangen {1} bytes.",
+    "MediaEngine.C900GcrSync": "Niet-geclassificeerde Commodore 900 CommodoreSync, GCR-synchronisatie",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} bytes, controlesom {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} bytes, controlesom {4}",
+    "MediaEngine.C900GcrUnpaired": "Ongekoppelde Commodore 900-gegevens, gegevensblok, controlesom {0}",
+    "MediaEngine.IntegrityValid": "geldig",
+    "MediaEngine.IntegrityInvalid": "ongeldig",
+    "MediaEngine.IntegrityUnavailable": "niet beschikbaar"
+  }
+}

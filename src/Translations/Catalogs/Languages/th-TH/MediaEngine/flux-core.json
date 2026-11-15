@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "ระยะเวลาบิตเซลล์ของฟลักซ์ {0} ไม่ถูกต้อง ต้องเป็นค่าจำกัดและอย่างน้อยหนึ่งหน่วยเวลา",
+    "MediaEngine.FluxSizeLimit": "ข้อมูลฟลักซ์เกินขนาดที่รองรับในหน่วยความจำ",
+    "MediaEngine.FluxInvalidBit": "ค่าบิตของฟลักซ์ไม่ใช่ศูนย์หรือหนึ่ง",
+    "MediaEngine.FluxInvalidMaximum": "จำนวนเซลล์สูงสุดต่อช่วงฟลักซ์ {0} ต้องเป็นบวก",
+    "MediaEngine.FluxZeroCell": "ระยะเวลาบิตเซลล์ของฟลักซ์ต้องไม่เป็นศูนย์",
+    "MediaEngine.FluxZeroIndex": "ระยะเวลาอินเด็กซ์ของรอบฟลักซ์ต้องไม่เป็นศูนย์",
+    "MediaEngine.FluxIntervalOverflow": "ช่วงฟลักซ์ {0} เซลล์ที่ {1} ticksต่อเซลล์เกินช่วงจำนวนเต็มที่รองรับ",
+    "MediaEngine.GcrCoordinates": "พิกัด GCR ไม่ถูกต้อง: ออฟเซ็ต {0} จำนวนไบต์ {1} ระยะก้าว {2}"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP 磁道 {0} 重复出现。",
+    "MediaEngine.ScpTrackOutside": "SCP 磁道 {0} 超出声明的范围 {1} 至 {2}。",
+    "MediaEngine.ScpWriteAddress": "SCP 磁道 {0} 与声明的地址不匹配：柱面 {1}，磁头 {2}。",
+    "MediaEngine.ScpWriteRevolutions": "SCP 磁道 {0} 包含 {1} 圈旋转数据；需要 {2} 圈。",
+    "MediaEngine.ScpZeroInterval": "SCP 磁道 {0} 第 {1} 圈包含时长为零的磁通间隔。",
+    "MediaEngine.ScpOutput": "缺少 SCP 输出回调函数。"
+  }
+}

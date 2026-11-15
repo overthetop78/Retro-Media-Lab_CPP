@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.CprHeader": "AMS RIFF! Brak nagłówka.",
+    "MediaEngine.CprLength": "Długość RIFF CPR jest nieprawidłowa.",
+    "MediaEngine.CprChunkRange": "Odłamek CPR '{0}' przekracza kontener RIFF.",
+    "MediaEngine.CprDuplicate": "CPR bank '{0}' jest duplikowany.",
+    "MediaEngine.CprLargeBank": "Bank CPR '{0}' zawiera bajty powyżej 16 stron KiB; nie zostały one odwzorowane.",
+    "MediaEngine.CprUnknownChunk": "RIFF \"{0}\" nie jest bankiem wkładów CPR.",
+    "MediaEngine.CprChunkHeader": "Kontener CPR RIFF kończy się wewnątrz nagłówka.",
+    "MediaEngine.CprNoBanks": "Obraz CPR nie zawiera cb00 do banku wkładów cb31.",
+    "MediaEngine.CprWrite": "Dokument blokowy nie może być napisany jako kompletny wkład CPR.",
+    "MediaEngine.RomCorpus": "Długość CPC ROM jest poza wykazanymi profilami korpusu.",
+    "MediaEngine.RomNoData": "CPC ROM nie zawiera danych bankowych.",
+    "MediaEngine.RomBankLimit": "CPC ROM przekracza 32 banki wkładów.",
+    "MediaEngine.RomIncomplete": "Ostatni bank CPC ROM jest niekompletny i jest narażony bez wymyślonych okładzin.",
+    "MediaEngine.RomWrite": "Dokument blokowy nie zawiera przyległych banków CPC ROM.",
+    "MediaEngine.FdsSource": "Wybrane źródło nie jest obrazem Famicom Disk System.",
+    "MediaEngine.FdsSides": "Obraz Famicom Disk System nie zawiera pełnych boków.",
+    "MediaEngine.FdsNoSide": "Obraz Famicom Disk System nie zawiera strony.",
+    "MediaEngine.FdsCount": "Licznik boczny Famicom Disk System nie pasuje do nagłówka.",
+    "MediaEngine.FdsUndeclared": "Nagłówek FDS nie deklaruje liczby bocznej; liczba została pobrana z zapisanych danych.",
+    "MediaEngine.FdsWrite": "Dokument blokowy nie zawiera kompletnych boków Famicom Disk System.",
+    "MediaEngine.FdsHeader": "Brakuje nagłówka FDS źródłowego.",
+    "MediaEngine.AmstradCartridgeVolume": "wkład Amstrad"
+  }
+}

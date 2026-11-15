@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "磁軌磁柱 {0} 必須介於零和 {1} 之間。",
+    "MediaEngine.TrackHead": "磁軌磁頭 {0} 必須介於零和 {1} 之間。",
+    "MediaEngine.TrackMissingSectors": "至少需要一個磁區；收到 {0} 個。",
+    "MediaEngine.TrackEmpty": "編碼器 {0} 未產生任何位元單元。",
+    "MediaEngine.TrackHex": "原始十六進位文字無效。",
+    "MediaEngine.TrackBinaryCharacter": "二進位文字在位置 {1} 包含「{0}」；只允許零和一。",
+    "MediaEngine.TrackNegativeGap": "間隙長度 {0} 不能為負。",
+    "MediaEngine.TrackSectorNumber": "磁區號 {0} 必須介於零和 {1} 之間。",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 磁區包含 {0} 位元組；收到 {1} 位元組。",
+    "MediaEngine.C900GcrSync": "未分類的 Commodore 900 CommodoreSync，GCR 同步",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader，C{0} H{1} R{2}，{3} 位元組，檢查碼 {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData，C{0} H{1} R{2}，{3} 位元組，檢查碼 {4}",
+    "MediaEngine.C900GcrUnpaired": "未配對的 Commodore 900 資料，資料區塊，檢查碼 {0}",
+    "MediaEngine.IntegrityValid": "有效",
+    "MediaEngine.IntegrityInvalid": "無效",
+    "MediaEngine.IntegrityUnavailable": "無法使用"
+  }
+}

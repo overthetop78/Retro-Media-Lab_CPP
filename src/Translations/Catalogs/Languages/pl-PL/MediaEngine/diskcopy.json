@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "Nagłówek DiskCopy jest skrócony.",
+    "MediaEngine.DiskCopyPrivateWord": "Prywatne słowo DiskCopy to {0}; spodziewane {1}.",
+    "MediaEngine.DiskCopyPayload": "Ładunek użyteczny DiskCopy jest nieprawidłowy.",
+    "MediaEngine.DiskCopyTags": "Obraz DiskCopy nie jest rozpoznanym obrazem Macintosh/ProDOS ani obrazem Lisa ze znacznikami.",
+    "MediaEngine.DiskCopyChecksumBytes": "Suma kontrolna DiskCopy wymaga parzystej liczby bajtów; otrzymano {0}.",
+    "MediaEngine.DiskCopyRange": "Długość DiskCopy przekracza obsługiwany zakres.",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy wymaga pełnego obrazu sektorowego.",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy wymaga łącznie 512 bajtów na blok logiczny.",
+    "MediaEngine.DiskCopyLayoutTags": "Każdy znacznik DiskCopy musi zawierać 12 bajtów.",
+    "MediaEngine.DiskCopyMetadataIncomplete": "Metadane DiskCopy są niekompletne.",
+    "MediaEngine.DiskCopyMetadataName": "Metadane nazwy DiskCopy są nieprawidłowe.",
+    "MediaEngine.DiskCopyMetadataFormat": "Metadane formatu DiskCopy są nieprawidłowe.",
+    "MediaEngine.DiskCopyMetadataChecksum": "Metadane sumy kontrolnej DiskCopy '{0}' są nieprawidłowe."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "הערך {1} בשדה {0} של TYCOM חייב להיות בין אפס ל-{2}.",
+    "MediaEngine.TycomSectorSize": "סקטורי TYCOM מכילים 128 בתים; התקבלו {0} בתים.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 בתים, סימון {2}, CRC כותרת {3}, CRC נתונים {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 בתים, CRC כותרת {2}, CRC נתונים {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 בתים, סימון FE, CRC כותרת {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 בתים, סימון {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, כותרת מגזר, קטועה",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, סימון {0}, נתוני מגזר, קטועה",
+    "MediaEngine.TycomUnpaired": "לא מסווג TYCOM FormatData, סימון {0}, נתונים"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "Giá trị {1} của trường {0} TYCOM phải nằm giữa không và {2}.",
+    "MediaEngine.TycomSectorSize": "Các vùng TYCOM chứa 128 byte; đã nhận {0} byte.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, dấu {2}, CRC tiêu đề {3}, CRC dữ liệu {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 byte, CRC tiêu đề {2}, CRC dữ liệu {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 byte, dấu FE, CRC tiêu đề {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 byte, dấu {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, đầu mục sector, bị cắt ngắn",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, dấu {0}, dữ liệu sector, bị cắt ngắn",
+    "MediaEngine.TycomUnpaired": "Chưa phân loại TYCOM FormatData, dấu {0}, dữ liệu"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Sektor Victor 9000 berisi 512 byte; diterima {0} byte.",
+    "MediaEngine.VictorSectorRange": "Nomor sektor Victor 9000 {0} harus antara nol dan {1}.",
+    "MediaEngine.VictorMarkerLength": "Penanda Victor 9000 harus mencapai posisi bit 49; diterima {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} byte, header {4}, checksum data {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} byte, penanda {4}, blok data, checksum {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, checksum tidak tersedia, terpotong",
+    "MediaEngine.VictorUnpaired": "Data Victor 9000 tanpa pasangan, blok data"
+  }
+}

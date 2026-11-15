@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "原始图像长度为 {0} 为空或不是 {1} 字节的倍数 。",
+    "Media.RawUnknownGeometry": "没有支持的原始图像几何匹配 {0} 字节 。",
+    "Media.MsxInvalidBoot": "{0}字节的图像不包含一个支持的 MSX 启动扇区 。",
+    "Media.MsxUnsupportedGeometry": "没有MSX几何匹配{0}字节和媒体描述符{1}.",
+    "Media.UnsupportedRawFormat": "不支持原始图像格式{0} 。",
+    "Media.RawGeometryMismatch": "图像{0}有几何{1};目标{2}需要几何{3}.",
+    "Media.RawSectorMissing": "逻辑扇区 {0} 已缺失, 无法写入完整的原始图像 。",
+    "Media.RawSectorSize": "逻辑扇区{0}包含{1}字节,而不是{2}.",
+    "Media.AtomicOpen": "无法为 {0} 创建临时输出 。",
+    "Media.AtomicWrite": "无法写入 {0} 的临时输出 。",
+    "Media.AtomicCommit": "无法发布完整的输出文件{0} 。",
+    "Media.Cancelled": "存储介质操作已取消。"
+  }
+}

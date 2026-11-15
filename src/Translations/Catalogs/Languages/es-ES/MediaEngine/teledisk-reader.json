@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "El encabezado de imagen de TeleDisk en offset {0} está truncado: {1} bytes esperados, {2} disponible.",
+    "MediaEngine.Td0CommentHeaderTruncated": "El encabezado de comentarios de TeleDisk en offset {0} está truncado: {1} bytes esperados, {2} disponible.",
+    "MediaEngine.Td0CommentTruncated": "El comentario TeleDisk en offset {0} está truncado: {1} bytes esperado, {2} disponible.",
+    "MediaEngine.Td0TrackTruncated": "El encabezado de la pista TeleDisk en offset {0} está truncado: {1} bytes esperados, {2} disponible.",
+    "MediaEngine.Td0SectorTruncated": "El encabezado del sector TeleDisk en offset {0} está truncado: {1} bytes esperados, {2} disponible.",
+    "MediaEngine.Td0DataHeaderTruncated": "El encabezado de datos del sector TeleDisk en offset {0} está truncado: {1} bytes esperados, {2} disponible.",
+    "MediaEngine.Td0DataTruncated": "Los datos del sector TeleDisk en offset {0} están truncados: {1} bytes esperados, {2} disponibles.",
+    "MediaEngine.Td0Signature": "La imagen no es una imagen de TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "El encabezado de TeleDisk CRC es inválido: esperado 0x{0}, calculado 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "El comentario de TeleDisk CRC es inválido: esperado 0x{0}, calculado 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "El CRC de la pista TeleDisk {0}/{1} no es válido: se esperaba 0x{2}, se calculó 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "El CRC del sector TeleDisk {0}/{1}/{2} no es válido: se esperaba 0x{3}, se calculó 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sector {0}/{1}/{2} tiene código de tamaño inválido {3}.",
+    "MediaEngine.Td0MissingData": "TeleDisk sector {0}/{1}/{2} no tiene datos codificados en offset {3}.",
+    "MediaEngine.Td0NoSectors": "La imagen de TeleDisk no contiene sectores."
+  }
+}

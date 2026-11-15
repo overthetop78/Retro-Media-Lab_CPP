@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Az ATR célformátum '{0}' nem támogatott.",
+    "MediaEngine.AtrIncompatibleImage": "A(z) '{0}' szektorkép {1} szektort és {2} bájtot tartalmaz; a(z) '{3}' ATR-profil {4} szektort és {5} bájtot igényel.",
+    "MediaEngine.AtrMissingSector": "A(z) {0}. ATR-szektor hiányzik.",
+    "MediaEngine.AtrSectorSize": "A(z) {0}. ATR-szektor {1} bájtot tartalmaz; az elvárt érték {2}.",
+    "MediaEngine.AtrHeader": "Az ATR-fejléc érvénytelen: hossz {0} bájt (minimum {1}), szignatúra {2} (elvárt {3}).",
+    "MediaEngine.AtrUnsupportedSize": "A(z) {0} bájtos ATR-szektorméret nem támogatott; az elvárt méret {1} bájt.",
+    "MediaEngine.AtrPayloadLength": "Az ATR-adatok hossza {0} bájt; a fejléc {1} bájtot ad meg.",
+    "MediaEngine.AtrTruncatedPayload": "A(z) {0} bájt hosszú ATR-adatok nem tartalmaznak {1} bájtos indítóterületet, amelyet teljes, {2} bájtos szektorok követnek.",
+    "MediaEngine.AtrSectorCount": "Az Atari ATR szektorméretének ({0}) és szektorszámának ({1}) nullánál nagyobbnak kell lennie.",
+    "MediaEngine.AtxHeader": "Az ATX-fájl fejléce hiányzik vagy érvénytelen.",
+    "MediaEngine.AtxTrackOffset": "Az ATX sávadatainak pozíciója a fájlon kívül van.",
+    "MediaEngine.AtxTrackCycle": "Az ATX sávlánca ciklust tartalmaz.",
+    "MediaEngine.AtxTrackBounds": "Egy ATX-sáv túlnyúlik a fájlon.",
+    "MediaEngine.AtxTrackNumber": "A(z) {0}. ATX-sáv kívül esik a támogatott 40 sávos geometrián.",
+    "MediaEngine.AtxSectorCount": "A(z) {0}. ATX-sáv túl sok szektorrekordot tartalmaz.",
+    "MediaEngine.AtxListBounds": "A(z) {0}. ATX-sáv szektorlistája túllépi a sáv határát.",
+    "MediaEngine.AtxSectorNumber": "A(z) {0}. ATX-sáv érvénytelen szektort tartalmaz: {1}.",
+    "MediaEngine.AtxDataBounds": "A(z) {0}. ATX-sáv {1}. szektorának adatai túllépik a sáv határát.",
+    "MediaEngine.AtxNoSectors": "Az ATX-kép nem tartalmaz olvasható szektorrekordot.",
+    "MediaEngine.AtxLargeOffset": "Az ATX '{0}' részének pozíciója túl nagy.",
+    "MediaEngine.AtxTruncated": "Az ATX '{0}' része csonkolt."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Chuỗi {0} bit không vừa trong {1} byte.",
+    "MediaEngine.BitPackingCount": "Số lượng bit {0} phải là số dương.",
+    "MediaEngine.BitPackingRange": "Kích thước đóng gói bit vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.AppleTrackUnsupported": "Không thể mã hóa định dạng nguồn '{1}' thành {0}.",
+    "MediaEngine.AppleTrackGeometry": "Không thể mã hóa cấu trúc đĩa Apple II có {0} xi lanh, {1} đầu đọc và {2} cung từ trên mỗi rãnh.",
+    "MediaEngine.AppleTrackSector": "Cung từ {0} {1}:{2} chứa {3} byte thay vì {4}.",
+    "MediaEngine.AppleTrackTooLong": "Rãnh {0} {1} chứa {2} bit; tối đa {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Rãnh Apple II {0} chứa số cung từ vật lý {1} bị trùng.",
+    "MediaEngine.NibTrackCount": "Bộ ghi NIB yêu cầu ít nhất một rãnh; đã nhận {0}.",
+    "MediaEngine.NibTrackLength": "Rãnh NIB {0} chứa {1} bit; tối đa {2}."
+  }
+}

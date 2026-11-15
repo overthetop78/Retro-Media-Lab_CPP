@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "O setor de TeleDisk {0}/{1}/{2} tem uma carga útil repetida de {3} bytes; {4} bytes são necessários.",
+    "MediaEngine.Td0EncodingTruncated": "O setor de TeleDisk {0}/{1}/{2} de codificação {3} é truncado no deslocamento {4}: {5} de bytes necessários, {6} disponível.",
+    "MediaEngine.Td0EncodingUnsupported": "O setor de TeleDisk {0}/{1}/{2} usa codificação não suportada {3}.",
+    "MediaEngine.Td0DecodedLength": "O setor de TeleDisk {0}/{1}/{2} codificação {3} expande para {4} bytes em vez de {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "A contagem de repetições do setor TeleDisk excede o limite de um inteiro de 16 bits sem sinal."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "SCP 시간 해상도는 양수여야 합니다. 받은 값: {0}.",
+    "MediaEngine.ScpExtended": "확장 SCP 미디어는 플로피 디스크 이미지가 아닙니다.",
+    "MediaEngine.ScpSignature": "파일은 SCP 서명을 포함하지 않습니다.",
+    "MediaEngine.ScpRevolutions": "SCP 회전 수 {0}이(가) 올바르지 않습니다.",
+    "MediaEngine.ScpTrackRange": "SCP 트랙 범위 {0}에서 {1}은 유효하지 않습니다.",
+    "MediaEngine.ScpWidth": "SCP 비트 셀 너비 {0}은(는) 지원되지 않습니다.",
+    "MediaEngine.ScpHeads": "SCP 헤드 선택 값 {0}이(가) 올바르지 않습니다.",
+    "MediaEngine.ScpTrackSignature": "{0}에는 TRK 서명이 없습니다. descriptor는 트랙 번호 {1}를 포함합니다.",
+    "MediaEngine.ScpTrackMismatch": "트랙 테이블 항목 {0}은(는) 트랙 {1}을(를) 가리킵니다.",
+    "MediaEngine.ScpHeaderSection": "오프셋 {0}의 SCP 헤더가 불완전하거나 올바르지 않습니다. {1}바이트가 필요합니다.",
+    "MediaEngine.ScpTableSection": "오프셋 {0}의 SCP 트랙 오프셋 테이블이 불완전하거나 올바르지 않습니다. {1}바이트가 필요합니다.",
+    "MediaEngine.ScpTrackSection": "오프셋 {1}의 SCP 트랙 {0} 헤더가 불완전하거나 올바르지 않습니다. {2}바이트가 필요합니다.",
+    "MediaEngine.ScpFluxSection": "오프셋 {2}의 SCP 트랙 {0}, 회전 {1}의 자속 데이터가 불완전하거나 올바르지 않습니다. {3}바이트가 필요합니다.",
+    "MediaEngine.ScpOverflow": "SCP 크기, 위치, 간격 또는 연결된 회전이 지원되는 숫자 범위를 초과합니다.",
+    "MediaEngine.ScpTrackAddress": "SCP 트랙 번호 {0}는 트랙 테이블 밖에 있습니다.",
+    "MediaEngine.ScpNoRevolution": "SCP 트랙에 디코딩할 회전 데이터가 없습니다.",
+    "MediaEngine.ScpNoC900Sectors": "Commodore 900 GCR 섹터는 SCP 이미지에서 디코딩 할 수 없습니다."
+  }
+}

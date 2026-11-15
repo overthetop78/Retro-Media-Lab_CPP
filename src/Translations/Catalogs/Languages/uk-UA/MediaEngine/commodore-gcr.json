@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Commodore GCR атрибут {0} значення {1} має бути між нуль і {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Commodore дискової доріжки {0} повинні бути між {1} і {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Commodore сектори містять {0} байти; отримані {1} байти.",
+    "MediaEngine.CbmGcrSync": "Некласифікований Commodore CommodoreSync, синхронізація GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 байтів, блок даних, контрольна сума даних {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} байтів, контрольна сума заголовка {4}, контрольна сума даних {5}"
+  }
+}

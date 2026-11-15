@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Οι τομείς Victor 9000 περιέχουν 512 byte· ελήφθησαν {0} byte.",
+    "MediaEngine.VictorSectorRange": "Ο αριθμός τομέα Victor 9000 {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.VictorMarkerLength": "Οι δείκτες Victor 9000 πρέπει να φτάνουν στη θέση bit 49· λήφθηκαν {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} byte, κεφαλίδα {4}, άθροισμα ελέγχου δεδομένων {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} byte, δείκτης {4}, μπλοκ δεδομένων, άθροισμα ελέγχου {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, άθροισμα ελέγχου μη διαθέσιμο, περικομμένο",
+    "MediaEngine.VictorUnpaired": "Μη συζευγμένα δεδομένα Victor 9000, μπλοκ δεδομένων"
+  }
+}

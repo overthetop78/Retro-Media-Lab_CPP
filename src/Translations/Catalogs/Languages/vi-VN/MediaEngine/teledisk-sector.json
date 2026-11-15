@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk phần {0}/{1}/{2} có hàng loạt {3} byte; {4} byte được yêu cầu.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk phần {0}/{1}/{2} Mã hóa {3} bị cắt đứt tại bù đắp {4}: {5} byte yêu cầu, {6} sẵn sàng.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk phần {0}/{1}/{2} sử dụng bộ mã không được hỗ trợ {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk phần {0}/{1}/{2} Mã hóa {3} mở rộng tới {4} byte thay vì {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Số lần lặp của sector TeleDisk vượt quá giới hạn số nguyên 16 bit không dấu."
+  }
+}

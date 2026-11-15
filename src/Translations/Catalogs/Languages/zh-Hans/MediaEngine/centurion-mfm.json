@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Centurion MFM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} 字节, 头部CRC {4}, 数据CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} 字节, 键 {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, 扇区标记, 截断",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC 不可用, 截断",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, 不支持的键 {0}, 截断",
+    "MediaEngine.CenturionUnpaired": "未配对的 Centurion 数据, 数据块"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Az Centurion MFM {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} bájt, fejléc CRC {4}, adat CRC {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} bájt, kulcs {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, szektorjelölő, csonkolt",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC nem elérhető, csonkolt",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, nem támogatott kulcs {0}, csonkolt",
+    "MediaEngine.CenturionUnpaired": "Párosítatlan Centurion-adatok, adatblokk"
+  }
+}

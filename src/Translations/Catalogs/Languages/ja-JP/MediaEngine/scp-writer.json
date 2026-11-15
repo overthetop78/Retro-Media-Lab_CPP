@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "SCP トラック {0} が重複しています。",
+    "MediaEngine.ScpTrackOutside": "SCP トラック {0} は宣言された範囲 {1}～{2} の外にあります。",
+    "MediaEngine.ScpWriteAddress": "SCP トラック {0} は宣言されたアドレスと一致しません。シリンダー {1}、ヘッド {2}。",
+    "MediaEngine.ScpWriteRevolutions": "SCP トラック {0} には {1} 回転が含まれています。{2} 回転が必要です。",
+    "MediaEngine.ScpZeroInterval": "SCP トラック {0}、回転 {1} に長さゼロの磁束間隔が含まれています。",
+    "MediaEngine.ScpOutput": "SCP 出力コールバックがありません。"
+  }
+}

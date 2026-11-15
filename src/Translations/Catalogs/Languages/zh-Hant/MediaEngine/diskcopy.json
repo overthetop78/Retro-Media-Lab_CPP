@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.DiskCopyHeader": "DiskCopy 標頭被截斷。",
+    "MediaEngine.DiskCopyPrivateWord": "DiskCopy 專用字為 {0}；預期值為 {1}。",
+    "MediaEngine.DiskCopyPayload": "DiskCopy 有效負載無效。",
+    "MediaEngine.DiskCopyTags": "DiskCopy 映像既不是可識別的 Macintosh/ProDOS 映像，也不是附有標籤的 Lisa 映像。",
+    "MediaEngine.DiskCopyChecksumBytes": "DiskCopy 總和檢查碼要求位元組數為偶數；收到 {0} 位元組。",
+    "MediaEngine.DiskCopyRange": "DiskCopy 長度超出支援的範圍。",
+    "MediaEngine.DiskCopyLayoutIncomplete": "DiskCopy 要求完整的磁區映像。",
+    "MediaEngine.DiskCopyLayoutSize": "DiskCopy 要求每個邏輯區塊共 512 位元組。",
+    "MediaEngine.DiskCopyLayoutTags": "每個 DiskCopy 標籤必須包含 12 位元組。",
+    "MediaEngine.DiskCopyMetadataIncomplete": "DiskCopy 中繼資料不完整。",
+    "MediaEngine.DiskCopyMetadataName": "DiskCopy 名稱中繼資料無效。",
+    "MediaEngine.DiskCopyMetadataFormat": "DiskCopy 格式中繼資料無效。",
+    "MediaEngine.DiskCopyMetadataChecksum": "DiskCopy 總和檢查碼中繼資料 '{0}' 無效。"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "ต้องระบุตัวระบุของตัวเข้ารหัส",
+    "MediaEngine.PolicyFormats": "ต้องมีตัวระบุรูปแบบอย่างน้อยหนึ่งรายการที่ไม่ว่างและไม่ได้มีเพียงช่องว่าง",
+    "MediaEngine.PolicyPrefixes": "ต้องมีคำนำหน้ารูปแบบอย่างน้อยหนึ่งรายการที่ไม่ว่างและไม่ได้มีเพียงช่องว่าง",
+    "MediaEngine.PolicyNull": "กฎการสร้างเซกเตอร์ใหม่ต้องไม่เป็น null",
+    "MediaEngine.PolicyNullBlock": "รายการสร้างเซกเตอร์ใหม่ต้องไม่มีการอ้างอิง null ไปยังบล็อก",
+    "MediaEngine.PolicyRareUnknown": "ไม่มีโปรไฟล์การเข้ารหัสแบบพิเศษที่ลงทะเบียนสำหรับรูปแบบ '{0}'",
+    "MediaEngine.PolicyLisaCylinder": "หมายเลขกระบอกของ Lisa FileWare {0} ต้องอยู่ระหว่าง 0 ถึง {1}",
+    "MediaEngine.PolicyJfdDensity": "แทร็ก JFD ไม่มีรหัสความหนาแน่นที่ใช้ได้",
+    "MediaEngine.PolicyAddressRange": "ค่าที่อยู่ {0} อยู่นอกช่วงของจำนวนเต็มแบบมีเครื่องหมายขนาด 32 บิต"
+  }
+}

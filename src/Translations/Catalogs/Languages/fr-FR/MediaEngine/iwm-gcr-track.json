@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Un secteur Apple Macintosh contient 512 octets ; {0} octets reçus.",
+    "MediaEngine.IwmAddressRange": "La valeur {1} du champ {0} Apple IWM GCR doit être comprise entre zéro et {2}.",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} octets, somme de contrôle de l’adresse {4}, somme de contrôle des données {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} octets, somme de contrôle {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, somme de contrôle indisponible, tronqué",
+    "MediaEngine.IwmUnpaired": "Données Apple Macintosh non appairées, prologue de données"
+  }
+}

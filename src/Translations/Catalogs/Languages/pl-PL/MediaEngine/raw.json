@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Surowa długość obrazu {0} jest pusta lub nie jest wielokrotnością bajtów {1}.",
+    "Media.RawUnknownGeometry": "Brak obsługiwanej pierwotnej geometrii obrazu pasuje do bajtów {0}.",
+    "Media.MsxInvalidBoot": "Obraz bajtów {0} nie zawiera wspieranego sektora startowego MSX.",
+    "Media.MsxUnsupportedGeometry": "Geometria MSX nie pasuje do bajtów {0} i deskryptora mediów {1}.",
+    "Media.UnsupportedRawFormat": "Surowy format obrazu {0} nie jest obsługiwany.",
+    "Media.RawGeometryMismatch": "Obraz {0} posiada geometrię {1}; cel {2} wymaga geometrii {3}.",
+    "Media.RawSectorMissing": "Brakuje sektora logicznego {0} i nie można go zapisać na kompletny obraz.",
+    "Media.RawSectorSize": "Sektor logiczny {0} zawiera bajty {1} zamiast {2}.",
+    "Media.AtomicOpen": "Nie można utworzyć tymczasowego wyjścia dla {0}.",
+    "Media.AtomicWrite": "Nie można zapisać tymczasowego wyjścia dla {0}.",
+    "Media.AtomicCommit": "Nie można opublikować pełnego pliku wyjściowego {0}.",
+    "Media.Cancelled": "Operacja na nośniku została odwołana."
+  }
+}

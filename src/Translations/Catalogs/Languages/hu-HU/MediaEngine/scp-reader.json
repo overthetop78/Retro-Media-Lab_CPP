@@ -1,0 +1,21 @@
+{
+  "strings": {
+    "MediaEngine.ScpResolution": "Az SCP időfelbontásának pozitívnak kell lennie; {0}-t kapott.",
+    "MediaEngine.ScpExtended": "A kiterjesztett SCP média nem floppy képek.",
+    "MediaEngine.ScpSignature": "A fájl nem tartalmaz SCP aláírást.",
+    "MediaEngine.ScpRevolutions": "Az SCP fordulatainak száma {0} érvénytelen.",
+    "MediaEngine.ScpTrackRange": "Az SCP pályatartomány {0} és {1} között érvénytelen.",
+    "MediaEngine.ScpWidth": "Az SCP bit- sejt szélessége {0} nem támogatott.",
+    "MediaEngine.ScpHeads": "A SCP fej választó {0} érvénytelen.",
+    "MediaEngine.ScpTrackSignature": "A (z) {0} szám nem rendelkezik TRK-aláírással; a leírás az {1} számot tartalmazza.",
+    "MediaEngine.ScpTrackMismatch": "A sávtáblázat {0} bejegyzése az {1} sávra mutat.",
+    "MediaEngine.ScpHeaderSection": "A SCP fejléc nem teljes vagy érvénytelen az offset {0}; {1} bájt szükséges.",
+    "MediaEngine.ScpTableSection": "Az SCP sáveltolási táblázata hiányos vagy érvénytelen a(z) {0} eltolásnál; {1} bájt szükséges.",
+    "MediaEngine.ScpTrackSection": "Az SCP {0} sáv fejléce hiányos vagy érvénytelen a(z) {1} eltolásnál; {2} bájt szükséges.",
+    "MediaEngine.ScpFluxSection": "Az SCP {0} sáv {1} fordulatának fluxusa hiányos vagy érvénytelen a(z) {2} eltolásnál; {3} bájt szükséges.",
+    "MediaEngine.ScpOverflow": "Egy SCP méret, pozíció, időköz vagy összekapcsolt fordulat túllépi a támogatott számtartományt.",
+    "MediaEngine.ScpTrackAddress": "Az SCP {0} sávszáma kívül esik a sávtáblázaton.",
+    "MediaEngine.ScpNoRevolution": "Az SCP sáv nem tartalmaz dekódolható fordulatot.",
+    "MediaEngine.ScpNoC900Sectors": "A Commodore 900 GCR szektort nem lehet dekódolni az SCP-képből."
+  }
+}

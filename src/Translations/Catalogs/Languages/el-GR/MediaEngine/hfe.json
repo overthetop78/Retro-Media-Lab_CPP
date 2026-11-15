@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Η κεφαλίδα HFE λείπει ή είναι περικομμένη.",
+    "MediaEngine.HfeRevision": "Η αναθεώρηση του HFE {0} δεν υποστηρίζεται.",
+    "MediaEngine.HfeGeometry": "Η γεωμετρία HFE ή ο ρυθμός bit δεν είναι έγκυρος.",
+    "MediaEngine.HfeTable": "Ο πίνακας τροχιών HFE είναι εκτός ορίων.",
+    "MediaEngine.HfeTiming": "Ο χρονισμός HFE δεν μπορεί να αναπαρασταθεί στην απαιτούμενη ανάλυση.",
+    "MediaEngine.HfeTrackLength": "Η τροχιά HFE {0} έχει μη έγκυρο μήκος.",
+    "MediaEngine.HfeTrackData": "Τα δεδομένα της τροχιάς HFE {0}/{1} είναι εκτός ορίων.",
+    "MediaEngine.HfeRateOpcode": "Η τροχιά HFE v3 {0}/{1} έχει μηδενική παράμετρο ρυθμού bit στον κωδικό λειτουργίας.",
+    "MediaEngine.HfeEmptyTrack": "Η τροχιά HFE v3 {0}/{1} δεν περιέχει κελιά bit.",
+    "MediaEngine.HfeTracks": "Το HFE απαιτεί τουλάχιστον μία τροχιά.",
+    "MediaEngine.HfeUniformEncoding": "Το HFE v1 απαιτεί την ίδια κωδικοποίηση για όλες τις τροχιές.",
+    "MediaEngine.HfeEncoding": "Η κωδικοποίηση {0} δεν μπορεί να γραφτεί ως HFE v1.",
+    "MediaEngine.HfeUniformRate": "Το HFE v1 απαιτεί τον ίδιο ρυθμό bit για όλες τις τροχιές.",
+    "MediaEngine.HfeMissingTrack": "Λείπει ο κύλινδρος HFE {0}.",
+    "MediaEngine.HfeTrackAddress": "Μια τροχιά HFE βρίσκεται εκτός της δηλωμένης γεωμετρίας.",
+    "MediaEngine.HfeDuplicateTrack": "Η τροχιά HFE {0}/{1} εμφανίζεται δύο φορές.",
+    "MediaEngine.HfeLimit": "Το δοχείο HFE υπερβαίνει τα υποστηριζόμενα όρια μεγέθους ή τιμής.",
+    "MediaEngine.HfeUniformTiming": "Το HFE v1 απαιτεί ένα ομοιόμορφο τμήμα χρονισμού ανά τροχιά.",
+    "MediaEngine.HfeRevolutions": "Το HFE δεν μπορεί να διατηρήσει αυτές τις ξεχωριστές περιστροφές μαγνητικής ροής.",
+    "MediaEngine.HfePadding": "Το HFE v1 θα απαιτούσε συμπλήρωση ή άνισα μήκη τροχιών μεταξύ των κεφαλών.",
+    "MediaEngine.HfeScpEncoding": "Ο τύπος δίσκου SCP {0} δεν έχει κωδικοποίηση HFE v1 χωρίς απώλειες.",
+    "MediaEngine.HfeFluxBounds": "Τα διαστήματα ροής υπερβαίνουν τη διάρκεια του δείκτη.",
+    "MediaEngine.HfeWeak": "HFE v3 γραφή δεν μπορεί να διατηρήσει τις ασθενείς περιοχές.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 τυχαίος opcode δεδομένων",
+    "MediaEngine.HfeIndexFeature": "opcode δείκτη HFE v3",
+    "MediaEngine.FluxConversionTiming": "Ο χρονισμός της μαγνητικής ροής δεν μπορεί να αναπαρασταθεί ως ομοιόμορφα κελιά bit.",
+    "MediaEngine.FluxConversionBounds": "Τα διαστήματα ροής ή τα τμήματα χρονισμού υπερβαίνουν τη διάρκεια της τροχιάς.",
+    "MediaEngine.FluxConversionRange": "Η μετατροπή ροής υπερβαίνει το υποστηριζόμενο μέγεθος ή αριθμητικό εύρος."
+  }
+}

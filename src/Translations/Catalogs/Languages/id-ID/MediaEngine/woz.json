@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Header WOZ tidak valid.",
+    "MediaEngine.WozDiskType": "Jenis disk WOZ {0} tidak didukung; diperlukan disket Apple II berukuran 5.25 inci.",
+    "MediaEngine.WozMissingChunk": "Potongan WOZ wajib '{0}' hilang atau tidak lengkap.",
+    "MediaEngine.WozTruncatedChunk": "Potongan WOZ '{0}' terpotong.",
+    "MediaEngine.WozTrackReference": "Trek WOZ {0} merujuk ke deskriptor {1} yang berada di luar batas.",
+    "MediaEngine.WozCrc": "WOZ CRC32 tidak valid: nilai tersimpan {0}, nilai terhitung {1}.",
+    "MediaEngine.WozChunkId": "Pengenal potongan WOZ '{0}' harus berisi tepat empat karakter ASCII.",
+    "MediaEngine.WozTrackCount": "Modul penulisan WOZ1 menerima {0} trek; jumlah yang diharapkan antara 1 dan {1}.",
+    "MediaEngine.WozTrackLength": "Trek WOZ1 {0} berisi {1} bit; batas maksimumnya {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Tidak ditemukan sektor Apple II RWTS18 yang valid di antara {0} sektor yang didekode dari {1} trek."
+  }
+}

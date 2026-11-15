@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 циліндр {0} поза діапазоном нуль до {1}.",
+    "MediaEngine.C900Block": "Commodore 900 логічний блок {0} є поза діапазоном нуль до {1}.",
+    "MediaEngine.C900Address": "Commodore 900 адреса {0}/{1}/{2} недійсний; глава повинна бути між нуль і {3}, а сектор між нуль і {4} на цьому циліндрі.",
+    "MediaEngine.C900Content": "Зображення {0} байтів не містить позначеного суперблока COHERENT.",
+    "MediaEngine.C900Alignment": "Довжина зображення COHERENT {0} байтів не дивидимий за розміром сектора {1} байтів.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT оголошує блоки {0}, але зображення містить тільки {1}.",
+    "MediaEngine.C900Capacity": "Образ COHERENT містить {0} блоків, але геометрія Commodore 900 підтримує щонайбільше {1}.",
+    "MediaEngine.C900WriterGeometry": "Посекторний образ не використовує зонну геометрію Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 логічний блок {0} не відповідає обов'язковому порядку фізичного сектору."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "Valoarea {1} a câmpului {0} Centurion MFM trebuie să fie între zero și {2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} octeți, CRC antet {4}, CRC date {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} octeți, cheie {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, marcaj de sector, trunchiat",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC indisponibil, trunchiat",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, cheie neacceptată {0}, trunchiat",
+    "MediaEngine.CenturionUnpaired": "Date Centurion fără pereche, bloc de date"
+  }
+}

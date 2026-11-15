@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AedAddressRange": "AED 6200P 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.AedHeader": "AED 6200P FormatHeader, C{0} H{1} R{2}, {3} 字节, 头部CRC {4}, 数据CRC {5}",
+    "MediaEngine.AedData": "AED 6200P FormatData, C0 H0 R0, {0} 字节, 标记 {1}, CRC {2}",
+    "MediaEngine.AedTruncatedHeader": "AED 6200P FormatHeader, 标记 C6, 截断",
+    "MediaEngine.AedTruncatedData": "AED 6200P FormatData, CRC 不可用, 截断",
+    "MediaEngine.AedUnpaired": "未配对的 AED 6200P 数据"
+  }
+}

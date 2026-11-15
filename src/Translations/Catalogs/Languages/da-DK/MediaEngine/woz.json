@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "WOZ-headeren er ugyldig.",
+    "MediaEngine.WozDiskType": "WOZ-disktypen {0} understøttes ikke; en Apple II-diskette på 5.25 tommer er påkrævet.",
+    "MediaEngine.WozMissingChunk": "Den påkrævede WOZ-blok '{0}' mangler eller er ufuldstændig.",
+    "MediaEngine.WozTruncatedChunk": "WOZ-blokken '{0}' er afkortet.",
+    "MediaEngine.WozTrackReference": "WOZ-spor {0} henviser til deskriptor {1} uden for det tilladte område.",
+    "MediaEngine.WozCrc": "WOZ CRC32 er ugyldig: gemt værdi {0}, beregnet værdi {1}.",
+    "MediaEngine.WozChunkId": "WOZ-blokidentifikatoren '{0}' skal indeholde præcis fire ASCII-tegn.",
+    "MediaEngine.WozTrackCount": "WOZ1-skrivefunktionen modtog {0} spor; forventet antal er mellem 1 og {1}.",
+    "MediaEngine.WozTrackLength": "WOZ1-spor {0} indeholder {1} bit; maksimum er {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Ingen gyldig Apple II RWTS18-sektor blev fundet blandt {0} afkodede sektorer fra {1} spor."
+  }
+}

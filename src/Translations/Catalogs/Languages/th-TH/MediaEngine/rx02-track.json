@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "ค่า {1} ของฟิลด์ {0} ใน DEC RX02 ต้องอยู่ระหว่างศูนย์กับ {2}",
+    "MediaEngine.Rx02SizeCode": "รหัสขนาด RX02 {0} ไม่ตรงกับ {1} ไบต์",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, ส่วนหัวเซกเตอร์, ข้อมูลถูกตัดทอน",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} ไบต์, CRC ส่วนหัว {4}, CRC ข้อมูล {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย {4}, {5}, CRC ส่วนหัว {6}, CRC ข้อมูล {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} ไบต์, เครื่องหมาย {4}, {5}, CRC ข้อมูล {6}",
+    "MediaEngine.Rx02Unpaired": "ยังไม่จำแนก DEC RX02 FormatData, เครื่องหมาย {0}, ข้อมูล"
+  }
+}

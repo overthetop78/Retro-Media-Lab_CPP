@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 henger {0} kívül esik a 0-tól {1} -ig terjedő tartományon.",
+    "MediaEngine.C900Block": "Commodore 900 logikai blokk {0} kívül esik a 0-tól {1} -ig terjedő tartományon.",
+    "MediaEngine.C900Address": "A Commodore 900 cím {0} / {1} / {2} érvénytelen; a fejnek 0 és {3} között kell lennie, és ezen a hengeren a 0 és {4} közötti szektornak.",
+    "MediaEngine.C900Content": "A {0} bájt képe nem tartalmaz elismert COHERENT szuperblokkot.",
+    "MediaEngine.C900Alignment": "A {0} bájt COHERENT képhosszúsága nem osztható a {1} bájt szektorméretével.",
+    "MediaEngine.C900DeclaredBlocks": "A COHERENT kijelenti, hogy {0} blokkok, de a kép csak {1}-t tartalmaz.",
+    "MediaEngine.C900Capacity": "A COHERENT kép a {0} blokkokat tartalmazza, de a Commodore 900 geometria legfeljebb {1} -t támogatja.",
+    "MediaEngine.C900WriterGeometry": "A szektorkép nem használja a Commodore 900 zónás geometriáját.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 logikai blokk {0} nem felel meg a szükséges fizikai szektor rend."
+  }
+}

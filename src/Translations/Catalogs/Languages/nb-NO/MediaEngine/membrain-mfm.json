@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Verdien {1} i Membrain MFM-feltet {0} må være mellom null og {2}.",
+    "MediaEngine.MembrainSectorSize": "Membrain-sektorer inneholder 512 byte; mottok {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, merke FE, header-CRC {3}, data-CRC {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, merke {3}, datablokk, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, sektorhode, avkortet",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC utilgjengelig, avkortet",
+    "MediaEngine.MembrainUnpaired": "Uparede Membrain-data, datablokk"
+  }
+}

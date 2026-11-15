@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "A nyomtávhenger {0} értéke nulla és {1} között kell, hogy legyen.",
+    "MediaEngine.TrackHead": "A pályafejnek {0} és {1} között kell lennie.",
+    "MediaEngine.TrackMissingSectors": "Legalább egy szektor szükséges; kapott szektorok száma: {0}.",
+    "MediaEngine.TrackEmpty": "Encoder {0} nem termelt bitsejtek.",
+    "MediaEngine.TrackHex": "A nyers hexadecimális szöveg érvénytelen.",
+    "MediaEngine.TrackBinaryCharacter": "A Binary text \"{0}\" -t tartalmaz a {1} pozícióban; csak nulla és egy megengedett.",
+    "MediaEngine.TrackNegativeGap": "A rés hossza ({0}) nem lehet negatív.",
+    "MediaEngine.TrackSectorNumber": "A {0} szektornak nulla és {1} között kell lennie.",
+    "MediaEngine.C900GcrSectorSize": "Commodore 900 szektor tartalmaz {0} bájt; kapott {1} bájt.",
+    "MediaEngine.C900GcrSync": "Nem besorolt Commodore 900 CommodoreSync, GCR-szinkron",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} bájt, ellenőrző összeg {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} bájt, ellenőrző összeg {4}",
+    "MediaEngine.C900GcrUnpaired": "Párosítatlan Commodore 900 adatok, adatblokk, ellenőrző összeg {0}",
+    "MediaEngine.IntegrityValid": "érvényes",
+    "MediaEngine.IntegrityInvalid": "érvénytelen",
+    "MediaEngine.IntegrityUnavailable": "nem érhető el"
+  }
+}

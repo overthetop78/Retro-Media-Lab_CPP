@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Ο κύλινδρος του κομματιού {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.TrackHead": "Η κεφαλή του κομματιού {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.TrackMissingSectors": "Τουλάχιστον ένας τομέας απαιτείται, ελήφθη {0}.",
+    "MediaEngine.TrackEmpty": "Ο κωδικοποιητής {0} δεν παρήγαγε κύτταρα bit.",
+    "MediaEngine.TrackHex": "Το ακατέργαστο δεκαεξαδικό κείμενο είναι άκυρο.",
+    "MediaEngine.TrackBinaryCharacter": "Το δυαδικό κείμενο περιέχει το '{0}' στη θέση {1}; επιτρέπεται μόνο το μηδέν και το ένα.",
+    "MediaEngine.TrackNegativeGap": "Το μήκος του Gap {0} δεν πρέπει να είναι αρνητικό.",
+    "MediaEngine.TrackSectorNumber": "Ο αριθμός τομέα {0} πρέπει να είναι μεταξύ μηδέν και {1}.",
+    "MediaEngine.C900GcrSectorSize": "Οι τομείς Commodore 900 περιέχουν ψηφιολέξεις {0}· έλαβαν ψηφιολέξεις {1}.",
+    "MediaEngine.C900GcrSync": "Μη ταξινομημένο Commodore 900 CommodoreSync, συγχρονισμός GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} byte, άθροισμα ελέγχου {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} byte, άθροισμα ελέγχου {4}",
+    "MediaEngine.C900GcrUnpaired": "Μη αντιστοιχισμένα δεδομένα Commodore 900, μπλοκ δεδομένων, άθροισμα ελέγχου {0}",
+    "MediaEngine.IntegrityValid": "έγκυρο",
+    "MediaEngine.IntegrityInvalid": "μη έγκυρο",
+    "MediaEngine.IntegrityUnavailable": "μη διαθέσιμο"
+  }
+}

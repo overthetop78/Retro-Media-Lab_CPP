@@ -1,0 +1,20 @@
+{
+  "strings": {
+    "MediaEngine.TrackCylinder": "Trụ của rãnh {0} phải nằm giữa 0 và {1}.",
+    "MediaEngine.TrackHead": "Đầu đọc của rãnh {0} phải nằm giữa 0 và {1}.",
+    "MediaEngine.TrackMissingSectors": "Cần ít nhất một sector; đã nhận {0}.",
+    "MediaEngine.TrackEmpty": "Bộ mã hóa {0} không tạo ra ô bit nào.",
+    "MediaEngine.TrackHex": "Văn bản thập lục phân thô không hợp lệ.",
+    "MediaEngine.TrackBinaryCharacter": "Văn bản nhị phân chứa '{0}' tại vị trí {1}; chỉ có 0 và 1 được chấp nhận.",
+    "MediaEngine.TrackNegativeGap": "Chiều dài khoảng trống {0} không được âm.",
+    "MediaEngine.TrackSectorNumber": "Số sector {0} phải nằm giữa 0 và {1}.",
+    "MediaEngine.C900GcrSectorSize": "Các sector Commodore 900 chứa {0} byte; đã nhận {1} byte.",
+    "MediaEngine.C900GcrSync": "Commodore 900 CommodoreSync chưa phân loại, đồng bộ GCR",
+    "MediaEngine.C900GcrHeader": "Commodore 900 CommodoreHeader, C{0} H{1} R{2}, {3} byte, tổng kiểm tra {4}",
+    "MediaEngine.C900GcrData": "Commodore 900 FormatData, C{0} H{1} R{2}, {3} byte, tổng kiểm tra {4}",
+    "MediaEngine.C900GcrUnpaired": "Dữ liệu Commodore 900 chưa ghép cặp, khối dữ liệu, tổng kiểm tra {0}",
+    "MediaEngine.IntegrityValid": "hợp lệ",
+    "MediaEngine.IntegrityInvalid": "không hợp lệ",
+    "MediaEngine.IntegrityUnavailable": "không khả dụng"
+  }
+}

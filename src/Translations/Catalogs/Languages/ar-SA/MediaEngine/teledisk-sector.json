@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "قطاع TeleDisk ‏{0}/{1}/{2} يحتوي على حمولة متكررة بحجم {3} بايت؛ المطلوب {4} بايت.",
+    "MediaEngine.Td0EncodingTruncated": "ترميز {3} لقطاع TeleDisk ‏{0}/{1}/{2} مبتور عند الإزاحة {4}: المطلوب {5} بايت، والمتاح {6}.",
+    "MediaEngine.Td0EncodingUnsupported": "قطاع TeleDisk ‏{0}/{1}/{2} يستخدم الترميز غير المدعوم {3}.",
+    "MediaEngine.Td0DecodedLength": "ترميز {3} لقطاع TeleDisk ‏{0}/{1}/{2} ينتج {4} بايت بدلاً من {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "عدد تكرارات قطاع TeleDisk يتجاوز حد عدد صحيح غير موقّع من 16 بت."
+  }
+}

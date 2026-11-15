@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "El formato de destino ATR '{0}' no es compatible.",
+    "MediaEngine.AtrIncompatibleImage": "La imagen de sectores '{0}' contiene {1} sectores y {2} bytes; el perfil ATR '{3}' requiere {4} sectores y {5} bytes.",
+    "MediaEngine.AtrMissingSector": "Falta el sector ATR {0}.",
+    "MediaEngine.AtrSectorSize": "El sector ATR {0} contiene {1} bytes; se esperaban {2}.",
+    "MediaEngine.AtrHeader": "El encabezado ATR no es válido: longitud de {0} bytes (mínimo {1}), firma {2} (se esperaba {3}).",
+    "MediaEngine.AtrUnsupportedSize": "El tamaño de sector ATR de {0} bytes no es compatible; se esperaban {1} bytes.",
+    "MediaEngine.AtrPayloadLength": "Los datos ATR tienen una longitud de {0} bytes; el encabezado declara {1} bytes.",
+    "MediaEngine.AtrTruncatedPayload": "Los datos ATR de {0} bytes no contienen un área de arranque de {1} bytes seguida de sectores completos de {2} bytes.",
+    "MediaEngine.AtrSectorCount": "El tamaño de sector Atari ATR {0} y el número de sectores {1} deben ser mayores que cero.",
+    "MediaEngine.AtxHeader": "El encabezado del archivo ATX falta o no es válido.",
+    "MediaEngine.AtxTrackOffset": "El desplazamiento de los datos de pistas ATX está fuera del archivo.",
+    "MediaEngine.AtxTrackCycle": "La cadena de pistas ATX contiene un ciclo.",
+    "MediaEngine.AtxTrackBounds": "Una pista ATX se extiende fuera del archivo.",
+    "MediaEngine.AtxTrackNumber": "La pista ATX {0} está fuera de la geometría admitida de 40 pistas.",
+    "MediaEngine.AtxSectorCount": "La pista ATX {0} contiene demasiados registros de sector.",
+    "MediaEngine.AtxListBounds": "La lista de sectores de la pista ATX {0} sobrepasa el límite de la pista.",
+    "MediaEngine.AtxSectorNumber": "La pista ATX {0} contiene el sector no válido {1}.",
+    "MediaEngine.AtxDataBounds": "Los datos de la pista ATX {0}, sector {1}, sobrepasan el límite de la pista.",
+    "MediaEngine.AtxNoSectors": "La imagen ATX no contiene ningún registro de sector legible.",
+    "MediaEngine.AtxLargeOffset": "El desplazamiento de la sección ATX '{0}' es demasiado grande.",
+    "MediaEngine.AtxTruncated": "La sección ATX '{0}' está truncada."
+  }
+}

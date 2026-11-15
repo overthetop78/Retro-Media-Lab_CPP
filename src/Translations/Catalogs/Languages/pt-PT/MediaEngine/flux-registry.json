@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Pelo menos um decodificador de fluxo deve ser registrado.",
+    "MediaEngine.RegistryNullDecoder": "O decodificador de fluxo na posição {0} é nulo.",
+    "MediaEngine.RegistryInvalidId": "O decodificador de fluxo na posição {0} tem um identificador vazio.",
+    "MediaEngine.RegistryDuplicate": "Um decodificador de fluxo com identificador '{0}' já está registrado.",
+    "MediaEngine.RegistryUnknown": "Nenhum decodificador de fluxo está registrado com o identificador '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "É necessário um registo de fluxo de uma volta para a descodificação.",
+    "MediaEngine.RegistryNoAutomatic": "Nenhum decodificador de fluxo registrado participa na detecção automática."
+  }
+}

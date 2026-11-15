@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "ลำดับจำนวน {0} บิตไม่สามารถเก็บใน {1} ไบต์ได้",
+    "MediaEngine.BitPackingCount": "จำนวนบิต {0} ต้องเป็นค่าบวก",
+    "MediaEngine.BitPackingRange": "ขนาดการบรรจุบิตเกินช่วงที่รองรับ",
+    "MediaEngine.AppleTrackUnsupported": "ไม่สามารถเข้ารหัสรูปแบบต้นทาง '{1}' เป็น {0} ได้",
+    "MediaEngine.AppleTrackGeometry": "ไม่สามารถเข้ารหัสโครงสร้างดิสก์ Apple II ที่มี {0} ไซลินเดอร์ {1} หัวอ่าน และ {2} เซกเตอร์ต่อแทร็กได้",
+    "MediaEngine.AppleTrackSector": "เซกเตอร์ {0} {1}:{2} มี {3} ไบต์แทนที่จะเป็น {4} ไบต์",
+    "MediaEngine.AppleTrackTooLong": "แทร็ก {0} {1} มี {2} บิต สูงสุด {3} บิต",
+    "MediaEngine.AppleTrackDuplicate": "แทร็ก Apple II {0} มีหมายเลขเซกเตอร์ทางกายภาพ {1} ซ้ำกัน",
+    "MediaEngine.NibTrackCount": "ตัวเขียน NIB ต้องการอย่างน้อยหนึ่งแทร็ก แต่ได้รับ {0} แทร็ก",
+    "MediaEngine.NibTrackLength": "แทร็ก NIB {0} มี {1} บิต สูงสุด {2} บิต"
+  }
+}

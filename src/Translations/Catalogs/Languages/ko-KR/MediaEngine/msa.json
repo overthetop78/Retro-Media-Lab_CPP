@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "영역 이미지 '{0}' 지오메트리 {1}x{2}x{3}과 블록 크기 {4}은 MSA로 작성할 수 없습니다.",
+    "MediaEngine.MsaMissingSector": "MSA 논리 섹터 {0} ({1}:{2}:{3})이 누락되었습니다.",
+    "MediaEngine.MsaSectorSize": "MSA 논리 섹터 {0}은 {1}바이트입니다. 예상 크기는 {2}바이트입니다.",
+    "MediaEngine.MsaHeader": "MSA 헤더는 유효하지 않습니다. 파일에는 {0} 바이트가 포함되어 있습니다.",
+    "MediaEngine.MsaGeometry": "MSA 지오메트리가 잘못되었습니다: 섹터 {0}개, 헤드 {1}개, 실린더 {2}부터 {3}까지.",
+    "MediaEngine.MsaTruncatedTable": "실린더 {0}, 헤드 {1}, 오프셋 {2}의 MSA 트랙 길이 필드가 잘렸습니다. 사용 가능한 크기는 {3}바이트입니다.",
+    "MediaEngine.MsaTruncatedTrack": "오프셋 {2}의 MSA 트랙 {0}:{1}은 {3}바이트를 선언하지만 {4}바이트만 사용 가능합니다.",
+    "MediaEngine.MsaTruncatedRun": "MSA 트랙 {0}:{1}의 압축 오프셋 {2}에 있는 압축 구간이 {3}바이트 범위 내에서 잘렸습니다.",
+    "MediaEngine.MsaInvalidRun": "MSA 트랙 {0}:{1}의 압축 오프셋 {2}에 있는 압축 구간 길이는 {3}입니다. 출력 {5}바이트 중 {4}바이트가 이미 기록되었습니다.",
+    "MediaEngine.MsaUnpackedLength": "MSA 트랙 {0}:{1}은 압축 데이터 {3}바이트 중 {2}바이트를 사용하여 예상 {5}바이트 중 {4}바이트를 생성했습니다."
+  }
+}

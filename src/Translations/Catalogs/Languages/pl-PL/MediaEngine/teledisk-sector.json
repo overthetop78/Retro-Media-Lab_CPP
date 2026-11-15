@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk sector {0} / {1} / {2} ma powtarzające się obciążenie bierne bajtów {3}; wymagane są bajty {4}.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk sector {0} / {1} / {2} encoding {3} jest skrócony przy przesunięciu {4}: wymagane bajty {5}, dostępne {6}.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk sector {0} / {1} / {2} wykorzystuje nieobsługiwane kodowanie {3}.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk sektor {0} / {1} / {2} kodowanie {3} rozszerza się do bajtów {4} zamiast {5}.",
+    "MediaEngine.Td0RepetitionOverflow": "Liczba powtórzeń sektora TeleDisk przekracza zakres 16-bitowej liczby całkowitej bez znaku."
+  }
+}

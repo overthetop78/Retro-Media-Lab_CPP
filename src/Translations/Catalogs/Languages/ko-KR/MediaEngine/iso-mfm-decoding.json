@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "비트 스트림의 바이트 수 {0}는 0과 {1} 사이여야 합니다.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} 바이트, 마크 FE, N{4}, 헤더 CRC {5}, 데이터 CRC {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} 바이트, 마크 FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} 바이트, 마크 F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "미분류 ISO MFM Sync, 마크 {0}",
+    "MediaEngine.MfmUnpaired": "미분류 ISO MFM DataAddressMark, 마크 FB",
+    "MediaEngine.MfmUnpairedDeleted": "미분류 ISO MFM DeletedDataAddressMark, 마크 F8"
+  }
+}

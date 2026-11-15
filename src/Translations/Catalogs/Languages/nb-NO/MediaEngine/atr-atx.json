@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "ATR-målformatet «{0}» støttes ikke.",
+    "MediaEngine.AtrIncompatibleImage": "Sektorbilde «{0}» inneholder {1}-sektorer og {2}-bytes; ATR-profilen '{3}' krever {4}-sektorer og {5}-bytes.",
+    "MediaEngine.AtrMissingSector": "ATR-sektoren {0} mangler.",
+    "MediaEngine.AtrSectorSize": "ATR-sektoren {0} inneholder {1} bytes; forventet {2}.",
+    "MediaEngine.AtrHeader": "ATR-hodet er ugyldig: lengde {0} byte (minimum {1}), signatur {2} (forventet {3}).",
+    "MediaEngine.AtrUnsupportedSize": "ATR-sektorens størrelse {0} byte støttes ikke; forventet {1} bytes.",
+    "MediaEngine.AtrPayloadLength": "ATR nyttelast lengde er {0} bytes; overskriften erklærer {1} bytes.",
+    "MediaEngine.AtrTruncatedPayload": "ATR nyttelast lengde {0} byte inneholder ikke et {1}-byte oppstartsområde etterfulgt av komplette {2}-byte sektorer.",
+    "MediaEngine.AtrSectorCount": "Atari ATR sektorstørrelse {0} og sektortall {1} må være positive.",
+    "MediaEngine.AtxHeader": "ATX-filhodet mangler eller er ugyldig.",
+    "MediaEngine.AtxTrackOffset": "Forskyvningen til ATX-spordata er utenfor filen.",
+    "MediaEngine.AtxTrackCycle": "ATX-sporkjeden inneholder en syklus.",
+    "MediaEngine.AtxTrackBounds": "Et ATX-spor strekker seg utenfor filen.",
+    "MediaEngine.AtxTrackNumber": "ATX spor {0} er utenfor den understøttede 40-spors geometrien.",
+    "MediaEngine.AtxSectorCount": "ATX-spor {0} inneholder for mange sektorposter.",
+    "MediaEngine.AtxListBounds": "Sektorlisten over ATX spor {0} krysser sporgrensen.",
+    "MediaEngine.AtxSectorNumber": "ATX spor {0} inneholder ugyldig sektor {1}.",
+    "MediaEngine.AtxDataBounds": "Dataene til ATX spor {0}, sektor {1}, krysser sporgrensen.",
+    "MediaEngine.AtxNoSectors": "ATX-bildet inneholder ingen leselige sektorposter.",
+    "MediaEngine.AtxLargeOffset": "ATX {0} offset er for stort.",
+    "MediaEngine.AtxTruncated": "ATX {0} er avkortet."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "strings": {
+    "MediaEngine.HfeHeader": "Antetul HFE lipsește sau este trunchiat.",
+    "MediaEngine.HfeRevision": "Revizuirea HFE {0} nu este susținută.",
+    "MediaEngine.HfeGeometry": "Geometria HFE sau rata de biți este nevalidă.",
+    "MediaEngine.HfeTable": "Tabelul pistelor HFE depășește limitele.",
+    "MediaEngine.HfeTiming": "Temporizarea HFE nu poate fi reprezentată la rezoluția necesară.",
+    "MediaEngine.HfeTrackLength": "Pista HFE {0} are o lungime nevalidă.",
+    "MediaEngine.HfeTrackData": "Datele pistei HFE {0}/{1} depășesc limitele.",
+    "MediaEngine.HfeRateOpcode": "Pista HFE v3 {0}/{1} are parametrul ratei de biți egal cu zero în codul de operație.",
+    "MediaEngine.HfeEmptyTrack": "Pista HFE v3 {0}/{1} nu conține celule de biți.",
+    "MediaEngine.HfeTracks": "HFE necesită cel puțin o pistă.",
+    "MediaEngine.HfeUniformEncoding": "HFE v1 necesită aceeași codificare pentru toate pistele.",
+    "MediaEngine.HfeEncoding": "Codarea {0} nu poate fi scrisă ca HFE v1.",
+    "MediaEngine.HfeUniformRate": "HFE v1 necesită aceeași rată de biți pentru toate pistele.",
+    "MediaEngine.HfeMissingTrack": "Cilindrul HFE {0} lipseşte.",
+    "MediaEngine.HfeTrackAddress": "O pistă HFE este în afara geometriei declarate.",
+    "MediaEngine.HfeDuplicateTrack": "Pista HFE {0}/{1} este duplicată.",
+    "MediaEngine.HfeLimit": "Containerul HFE depășește limitele sale de dimensiune sau valori suportate.",
+    "MediaEngine.HfeUniformTiming": "HFE v1 necesită un singur segment de temporizare uniformă pe pistă.",
+    "MediaEngine.HfeRevolutions": "HFE nu poate păstra aceste rotații separate de flux magnetic.",
+    "MediaEngine.HfePadding": "HFE v1 ar necesita umplere sau lungimi de pistă diferite între capete.",
+    "MediaEngine.HfeScpEncoding": "Tipul de disc SCP {0} nu are codare HFE v1 fără pierderi.",
+    "MediaEngine.HfeFluxBounds": "Intervalele de flux depășesc durata indicelui.",
+    "MediaEngine.HfeWeak": "Scrierea HFE v3 nu poate păstra regiunile slabe.",
+    "MediaEngine.HfeWeakFeature": "HFE v3 opcode de date aleatorii",
+    "MediaEngine.HfeIndexFeature": "Opcode index HFE v3",
+    "MediaEngine.FluxConversionTiming": "Sincronizarea fluxului nu poate fi reprezentată ca celule de biți uniforme.",
+    "MediaEngine.FluxConversionBounds": "Intervalele de flux sau segmentele de timp depășesc durata pistei.",
+    "MediaEngine.FluxConversionRange": "Conversia fluxului depășește dimensiunea susținută sau gama numerică."
+  }
+}

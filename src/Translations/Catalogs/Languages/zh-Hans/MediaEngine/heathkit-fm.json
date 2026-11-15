@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Heathkit 扇区包含 256 字节；收到 {0} 字节。",
+    "MediaEngine.HeathkitAddressRange": "Heathkit FM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.HeathkitRecordEmpty": "Heathkit 记录必须至少包含一个校验和字节。",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} 字节, 卷 {4}, 头部校验和 {5}, 数据校验和 {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} 字节, 校验和 {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, 硬扇区头, 截断",
+    "MediaEngine.HeathkitUnpaired": "未配对的 Heathkit 数据, 数据块"
+  }
+}

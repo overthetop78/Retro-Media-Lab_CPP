@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HeathkitSectorSize": "Các vùng Heathkit chứa 256 byte; đã nhận {0} byte.",
+    "MediaEngine.HeathkitAddressRange": "Giá trị {1} của trường {0} Heathkit FM phải nằm giữa không và {2}.",
+    "MediaEngine.HeathkitRecordEmpty": "Bản ghi Heathkit phải chứa ít nhất một byte tổng kiểm tra.",
+    "MediaEngine.HeathkitHeader": "Heathkit FormatHeader, C{0} H{1} R{2}, {3} byte, ổ đĩa {4}, tổng kiểm tra tiêu đề {5}, tổng kiểm tra dữ liệu {6}",
+    "MediaEngine.HeathkitData": "Heathkit FormatData, C{0} H{1} R{2}, {3} byte, tổng kiểm tra {4}",
+    "MediaEngine.HeathkitTruncated": "Heathkit FormatHeader, tiêu đề sector phần cứng, bị cắt ngắn",
+    "MediaEngine.HeathkitUnpaired": "Dữ liệu Heathkit chưa ghép cặp, khối dữ liệu"
+  }
+}

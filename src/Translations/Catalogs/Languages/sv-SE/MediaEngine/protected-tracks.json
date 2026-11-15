@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Skyddad spårcylinder {0} får inte vara negativ.",
+    "MediaEngine.ProtectedHead": "Skyddat spårhuvud {0} får inte vara negativt.",
+    "MediaEngine.ProtectedNoContent": "Ett skyddat spår kräver bitceller eller flödesdata för varv.",
+    "MediaEngine.ProtectedMetadataNoBits": "Bitbaserad timing, strukturer och egenskaper kräver bitceller.",
+    "MediaEngine.ProtectedRange": "Områdena {0} i ett skyddat spår måste ha positiv längd och rymmas inom {1} bitceller.",
+    "MediaEngine.ProtectedTiming": "Bitcellens varaktighet i ett skyddat spår måste vara ändlig och positiv.",
+    "MediaEngine.ProtectedResolution": "Tidsupplösningen för flödesdata {0} ns måste vara positiv.",
+    "MediaEngine.ProtectedImageEmpty": "En skyddad spårbild kräver minst ett spår.",
+    "MediaEngine.ProtectedImageDuplicate": "Skyddat spår {0}/{1} är duplicerat."
+  }
+}

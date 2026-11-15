@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK 檔案標頭已截斷。",
+    "MediaEngine.CpcDskSignature": "文件不是CPCEMU DSK图像.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK 几何学无效 。",
+    "MediaEngine.CpcDskExtendedTable": "扩展的 Amstrad DSK 音轨表在音轨{0} 无效 。",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK track {0} 已截断 。",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK 音轨 {0} 有无效的标题 。",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} 有一个无效的扇区表 。",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK 扇区 {0} :{1}:{2} 已截断 。",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK 图像不包含扇形 。",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} 占据了{1}字节并超过了65280字节的容器限制 。",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} 使用缺位,可变大小或非名义部门代表,需要 EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK 容器无法被写入: 已声明的几何和轨迹收集有分歧.",
+    "MediaEngine.CpcDskTrackIndex": "无法写入 Amstrad DSK 容器: 轨迹索引{0} 出现在位置{1} 。",
+    "MediaEngine.CpcDskTooManySectors": "无法写入 Amstrad DSK 容器: track {0} 包含过多的扇区描述符 。",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK容器不能被写入:标准DSK需要一个统一的轨道大小.",
+    "MediaEngine.CpcDskBuilderGeometry": "这个 Amstrad DSK 无法写入容器: 几何超过 CPCEMU 限制。",
+    "MediaEngine.CpcDskNativeMetadata": "无法写入 Amstrad DSK 容器: 本地扇区元数据缺少 ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "这个 Amstrad DSK 无法写入容器:扇区大小 {0} 无法代表 a CPCEMU 大小代码。",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK数据大小超过所支持的范围.",
+    "MediaEngine.CpcDskRecordedAddress": "录音 CPCEMU地址:{0}:{1}:{2} 无法用一字节字段表示。"
+  }
+}

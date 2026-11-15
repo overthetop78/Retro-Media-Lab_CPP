@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Musí být registrován alespoň jeden dekodér.",
+    "MediaEngine.RegistryNullDecoder": "Dekodér toku v pozici {0} je nulový.",
+    "MediaEngine.RegistryInvalidId": "Dekodér toku v pozici {0} má prázdný identifikátor.",
+    "MediaEngine.RegistryDuplicate": "Už je registrován dekodér s identifikátorem '{0}'.",
+    "MediaEngine.RegistryUnknown": "Žádný dekodér není registrován s identifikátorem \"{0}\".",
+    "MediaEngine.RegistryNullRevolution": "Pro dekódování je nutný záznam magnetického toku jedné otáčky.",
+    "MediaEngine.RegistryNoAutomatic": "Žádný registrovaný dekodér toku se nepodílí na automatické detekci."
+  }
+}

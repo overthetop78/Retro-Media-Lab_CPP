@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.ImdSignature": "Obrázek neobsahuje hlavičku ImageDisk: terminátor komentářů na {0}, délka souboru {1} bytes.",
+    "MediaEngine.ImdTruncated": "ImageDisk {0} sekce na ofsetu {1} je zkrácen: {2} bytes jsou potřebné, {3} jsou k dispozici.",
+    "MediaEngine.ImdTrackHeader": "Záhlaví dráhy ImageDisk je neplatné: režim {0}, počet sektorů {1}.",
+    "MediaEngine.ImdSizeCode": "Kód velikosti sektoru ImageDisk {0} je neplatný.",
+    "MediaEngine.ImdRecordType": "Typ sektoru ImageDisk {0} je neplatný.",
+    "MediaEngine.ImdNoSectors": "Obrázek ImageDisk neobsahuje žádné sektory.",
+    "MediaEngine.ImdNoTracks": "Obrázek ImageDisk neobsahuje žádné stopy.",
+    "MediaEngine.ImdWriteTrack": "Záhlaví dráhy ImageDisk není reprezentativní.",
+    "MediaEngine.ImdWriteSector": "Záznam sektoru ImageDisk je neplatný.",
+    "MediaEngine.ImdCompressed": "Stlačený sektor ImageDisk neobsahuje jeden opakovaný byte.",
+    "MediaEngine.ImdMetadataMode": "Metadata ImageDisk obsahují neplatný režim sledování.",
+    "MediaEngine.ImdMetadataRecord": "Metadata ImageDisk obsahují neplatný typ záznamu v sektoru.",
+    "MediaEngine.ImdMetadataSize": "Metadata ImageDisk obsahují neplatnou velikost sektoru.",
+    "MediaEngine.ImdMetadataBlock": "Metadata ImageDisk neodpovídají logickému bloku '{0}'.",
+    "MediaEngine.ImdMetadataCount": "Blok metadat ImageDisk neodpovídá obrazu sektoru.",
+    "MediaEngine.ImdMetadata": "Metadata ImageDisk jsou neplatná.",
+    "MediaEngine.ImdEpsonGeometry": "Geometrie obrazu Epson neodpovídá identifikátoru formátu.",
+    "MediaEngine.ImdEpsonSize": "Epson sector {0}: {1}: {2} má neplatnou velikost.",
+    "MediaEngine.ImdEpsonDuplicate": "Sektor Epson {0}: {1}: {2} je duplikován.",
+    "MediaEngine.EpsonFormat": "Zvolený formát '{0}' není podporovaný formát Epson QX-10.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicitní geometrie Epson QX-10: {0}."
+  }
+}

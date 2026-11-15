@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "تنسيق ATR الهدف '{0}' غير مدعوم.",
+    "MediaEngine.AtrIncompatibleImage": "تحتوي صورة القطاعات '{0}' على {1} قطاعًا و{2} بايت؛ يتطلب ملف تعريف ATR ‏'{3}' عدد {4} قطاعات و{5} بايت.",
+    "MediaEngine.AtrMissingSector": "قطاع ATR ‏{0} مفقود.",
+    "MediaEngine.AtrSectorSize": "يحتوي قطاع ATR ‏{0} على {1} بايت؛ المتوقع {2}.",
+    "MediaEngine.AtrHeader": "ترويسة ATR غير صالحة: الطول {0} بايت (الحد الأدنى {1})، والتوقيع {2} (المتوقع {3}).",
+    "MediaEngine.AtrUnsupportedSize": "حجم قطاع ATR البالغ {0} بايت غير مدعوم؛ المتوقع {1} بايت.",
+    "MediaEngine.AtrPayloadLength": "طول بيانات ATR هو {0} بايت؛ تعلن الترويسة {1} بايت.",
+    "MediaEngine.AtrTruncatedPayload": "بيانات ATR بطول {0} بايت لا تتكون من منطقة إقلاع بحجم {1} بايت تتبعها قطاعات كاملة بحجم {2} بايت.",
+    "MediaEngine.AtrSectorCount": "يجب أن يكون حجم قطاع Atari ATR ‏{0} وعدد القطاعات {1} أكبر من الصفر.",
+    "MediaEngine.AtxHeader": "ترويسة ملف ATX مفقودة أو غير صالحة.",
+    "MediaEngine.AtxTrackOffset": "إزاحة بيانات المسارات في ATX خارج الملف.",
+    "MediaEngine.AtxTrackCycle": "تحتوي سلسلة مسارات ATX على حلقة.",
+    "MediaEngine.AtxTrackBounds": "يمتد أحد مسارات ATX إلى خارج الملف.",
+    "MediaEngine.AtxTrackNumber": "مسار ATX ‏{0} خارج الهندسة المدعومة ذات 40 مسارًا.",
+    "MediaEngine.AtxSectorCount": "يحتوي مسار ATX ‏{0} على عدد كبير جدًا من سجلات القطاعات.",
+    "MediaEngine.AtxListBounds": "تتجاوز قائمة قطاعات مسار ATX ‏{0} حدود المسار.",
+    "MediaEngine.AtxSectorNumber": "يحتوي مسار ATX ‏{0} على قطاع غير صالح {1}.",
+    "MediaEngine.AtxDataBounds": "تتجاوز بيانات مسار ATX ‏{0}، القطاع {1}، حدود المسار.",
+    "MediaEngine.AtxNoSectors": "لا تحتوي صورة ATX على أي سجل قطاع قابل للقراءة.",
+    "MediaEngine.AtxLargeOffset": "إزاحة ATX ‏'{0}' كبيرة جدًا.",
+    "MediaEngine.AtxTruncated": "جزء ATX ‏'{0}' مبتور."
+  }
+}

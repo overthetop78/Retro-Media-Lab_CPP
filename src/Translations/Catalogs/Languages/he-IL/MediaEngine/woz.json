@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "כותרת WOZ אינה תקינה.",
+    "MediaEngine.WozDiskType": "סוג דיסק WOZ ‏{0} אינו נתמך; נדרשת דיסקט Apple II בגודל 5.25 אינץ'.",
+    "MediaEngine.WozMissingChunk": "מקטע WOZ הנדרש '{0}' חסר או אינו שלם.",
+    "MediaEngine.WozTruncatedChunk": "מקטע WOZ ‏'{0}' קטוע.",
+    "MediaEngine.WozTrackReference": "מסילה {0} ב־WOZ מפנה למתאר {1} שנמצא מחוץ לטווח.",
+    "MediaEngine.WozCrc": "WOZ CRC32 אינו תקין: הערך השמור {0}, הערך המחושב {1}.",
+    "MediaEngine.WozChunkId": "מזהה המקטע WOZ ‏'{0}' חייב להכיל בדיוק ארבעה תווי ASCII.",
+    "MediaEngine.WozTrackCount": "תוכנית הכתיבה WOZ1 קיבלה {0} מסילות; המספר הצפוי הוא בין 1 ל־{1}.",
+    "MediaEngine.WozTrackLength": "מסילה {0} ב־WOZ1 מכילה {1} סיביות; המקסימום הוא {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "לא נמצא סקטור Apple II RWTS18 תקין מבין {0} סקטורים שפוענחו מתוך {1} מסילות."
+  }
+}

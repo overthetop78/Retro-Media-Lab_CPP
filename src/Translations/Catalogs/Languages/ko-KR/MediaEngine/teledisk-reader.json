@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "TeleDisk 이미지 헤더 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0CommentHeaderTruncated": "TeleDisk 주석 헤더 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0CommentTruncated": "TeleDisk 주석 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0TrackTruncated": "TeleDisk 트랙 헤더 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0SectorTruncated": "TeleDisk 섹터 헤더 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0DataHeaderTruncated": "TeleDisk 섹터 데이터 헤더 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0DataTruncated": "TeleDisk 섹터 데이터 부분이 오프셋 {0}에서 잘렸습니다. {1}바이트가 필요하지만 {2}바이트만 있습니다.",
+    "MediaEngine.Td0Signature": "이미지는 TeleDisk 이미지가 아닙니다.",
+    "MediaEngine.Td0HeaderCrc": "TeleDisk 헤더 CRC는 유효하지 않습니다. 예상 0x{0}, 계산 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "TeleDisk 댓글 CRC는 유효하지 않습니다 : 예상 0x{0}, 계산 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "TeleDisk 트랙 {0}/{1} CRC는 유효하지 않습니다. 예상 0x{2}, 계산 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "TeleDisk sector {0}/{1}/{2} CRC는 유효하지 않습니다: 예상 0x{3}, 계산 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sector {0}/{1}/{2} 는 잘못된 크기 코드 {3} 를 가지고 있습니다.",
+    "MediaEngine.Td0MissingData": "TeleDisk sector {0}/{1}/{2}에는 오프셋 {3}에 인코딩된 데이터가 없습니다.",
+    "MediaEngine.Td0NoSectors": "TeleDisk 이미지에는 섹터가 없습니다."
+  }
+}

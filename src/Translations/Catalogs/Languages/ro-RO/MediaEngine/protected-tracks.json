@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "Cilindrul de cale protejat {0} nu trebuie să fie negativ.",
+    "MediaEngine.ProtectedHead": "Capul de cale protejat {0} nu trebuie să fie negativ.",
+    "MediaEngine.ProtectedNoContent": "O pistă protejată necesită celule de biți sau date de flux ale rotațiilor.",
+    "MediaEngine.ProtectedMetadataNoBits": "Temporizarea, structurile și caracteristicile asociate biților necesită celule de biți.",
+    "MediaEngine.ProtectedRange": "Intervalele {0} ale pistei protejate trebuie să aibă lungime pozitivă și să încapă în {1} celule de biți.",
+    "MediaEngine.ProtectedTiming": "Durata celulei pistei protejate trebuie să fie finită și pozitivă.",
+    "MediaEngine.ProtectedResolution": "Rezoluția temporală a fluxului {0} ns trebuie să fie pozitivă.",
+    "MediaEngine.ProtectedImageEmpty": "O imagine de cale protejată necesită cel puțin o pistă.",
+    "MediaEngine.ProtectedImageDuplicate": "Piesa protejată {0}/ {1} este duplicată."
+  }
+}

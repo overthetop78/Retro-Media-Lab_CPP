@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Ảnh sector '{0}' có hình học {1}x{2}x{3} và kích thước khối {4} không thể ghi dưới dạng MSA.",
+    "MediaEngine.MsaMissingSector": "Thiếu sector logic MSA {0} ({1}:{2}:{3}).",
+    "MediaEngine.MsaSectorSize": "Sector logic MSA {0} chứa {1} byte; cần {2} byte.",
+    "MediaEngine.MsaHeader": "Phần đầu MSA không hợp lệ; tệp chứa {0} byte.",
+    "MediaEngine.MsaGeometry": "Hình học MSA không hợp lệ: {0} sector, {1} đầu đọc, các trụ từ {2} đến {3}.",
+    "MediaEngine.MsaTruncatedTable": "Trường độ dài rãnh MSA cho trụ {0}, đầu đọc {1}, tại độ dời {2} bị cắt ngắn: có {3} byte.",
+    "MediaEngine.MsaTruncatedTrack": "Rãnh MSA {0}:{1} tại độ dời {2} khai báo {3} byte; có {4} byte.",
+    "MediaEngine.MsaTruncatedRun": "Chuỗi nén trong rãnh MSA {0}:{1} tại độ dời {2} trong dữ liệu nén bị cắt ngắn trong {3} byte.",
+    "MediaEngine.MsaInvalidRun": "Chuỗi nén trong rãnh MSA {0}:{1} tại độ dời {2} trong dữ liệu nén có số lần lặp {3}; đã ghi {4} trong {5} byte đầu ra.",
+    "MediaEngine.MsaUnpackedLength": "Rãnh MSA {0}:{1} đã dùng {2} trong {3} byte nén và tạo {4} trong {5} byte dự kiến."
+  }
+}

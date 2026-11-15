@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.MsaUnsupportedImage": "Obraz sektora '{0}' z geometrią {1} x {2} x {3} i rozmiarem bloku {4} nie może być zapisany jako MSA.",
+    "MediaEngine.MsaMissingSector": "Brakuje sektora logicznego MSA {0} ({1}: {2}: {3}).",
+    "MediaEngine.MsaSectorSize": "Sektor logiczny MSA {0} zawiera {1} bajty; spodziewane {2}.",
+    "MediaEngine.MsaHeader": "Nagłówek MSA jest nieprawidłowy; plik zawiera bajty {0}.",
+    "MediaEngine.MsaGeometry": "Geometria MSA jest nieprawidłowa: {0} sektorów, {1} głowic, cylindry od {2} do {3}.",
+    "MediaEngine.MsaTruncatedTable": "Pole długości ścieżki MSA dla cylindra {0}, głowicy {1}, przy przesunięciu {2} jest ucięte: dostępnych {3} bajtów.",
+    "MediaEngine.MsaTruncatedTrack": "Ścieżka MSA {0}: {1} przy przesunięciu {2} deklaruje, że {3} bajty, {4} są dostępne.",
+    "MediaEngine.MsaTruncatedRun": "Skompresowana sekwencja na ścieżce MSA {0}:{1} przy przesunięciu {2} w spakowanych danych jest ucięta w obrębie {3} bajtów.",
+    "MediaEngine.MsaInvalidRun": "Skompresowana sekwencja na ścieżce MSA {0}:{1} przy przesunięciu {2} w spakowanych danych ma liczbę powtórzeń {3}; zapisano już {4} z {5} bajtów wyjściowych.",
+    "MediaEngine.MsaUnpackedLength": "Ścieżka MSA {0}: {1} zużyła {2} skompresowanych bajtów {3} i wytworzyła {4} przewidywanych bajtów {5}."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (date): sunt necesari {0} octeți utili sau {1} octeți pentru blocul complet; primiți {2} octeți.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (sistem): sunt necesari {0} octeți utili sau {1} octeți pentru blocul complet; primiți {2} octeți.",
+    "MediaEngine.ArburgBlockCapacity": "Capacitatea {1} a blocului Arburg trebuie să cuprindă {0} octeți utili și doi octeți de sumă de control, în limita dimensiunii acceptate.",
+    "MediaEngine.ArburgUsefulSize": "Numărul de octeți utili Arburg trebuie să fie nenegativ; primit: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 octeți, bloc de date, sumă de control {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 octeți, bloc de sistem, sumă de control {0}"
+  }
+}

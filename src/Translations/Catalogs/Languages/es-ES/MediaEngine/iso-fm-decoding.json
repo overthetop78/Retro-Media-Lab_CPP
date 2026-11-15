@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} bytes, marca FE, N{4}, CRC de cabecera {5}, CRC de datos {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} bytes, marca FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bytes, marca F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Sin clasificar ISO FM DataAddressMark, marca FB",
+    "MediaEngine.FmUnpairedDeleted": "Sin clasificar ISO FM DeletedDataAddressMark, marca F8",
+    "MediaEngine.FmRevolutionTiming": "La temporización de la rotación ISO FM es incoherente: índice {0} ticks, duración de celda {1} ticks, suma de intervalos {2} ticks."
+  }
+}

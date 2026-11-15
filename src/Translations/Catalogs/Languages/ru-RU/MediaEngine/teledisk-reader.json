@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Заголовок изображения TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Заголовок комментария TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0CommentTruncated": "Комментарий TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0TrackTruncated": "Заголовок трека TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0SectorTruncated": "Заголовок сектора TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0DataHeaderTruncated": "Заголовок данных сектора TeleDisk при смещении {0} усечен: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0DataTruncated": "Данные сектора TeleDisk при смещении {0} усечены: {1} ожидаемые байты, {2} доступны.",
+    "MediaEngine.Td0Signature": "Это не изображение TeleDisk.",
+    "MediaEngine.Td0HeaderCrc": "Заголовок TeleDisk CRC недействителен: ожидается 0x{0}, вычисляется 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Комментарий TeleDisk CRC недействителен: ожидается 0x{0}, вычисляется 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Трек TeleDisk {0}/{1} CRC недействителен: ожидаемый 0x{2}, рассчитанный 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "Сектор TeleDisk {0}/{1}/{2} CRC недействителен: ожидаемый 0x{3}, рассчитанный 0x{4}.",
+    "MediaEngine.Td0SizeCode": "Сектор TeleDisk {0}/{1}/{2} имеет недействительный код размера {3}.",
+    "MediaEngine.Td0MissingData": "Сектор TeleDisk {0}/{1}/{2} не имеет закодированных данных при смещении {3}.",
+    "MediaEngine.Td0NoSectors": "Изображение TeleDisk не содержит секторов."
+  }
+}

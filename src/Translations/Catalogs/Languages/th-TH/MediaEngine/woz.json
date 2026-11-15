@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "ส่วนหัว WOZ ไม่ถูกต้อง",
+    "MediaEngine.WozDiskType": "ไม่รองรับชนิดดิสก์ WOZ {0} ต้องใช้ดิสก์ Apple II ขนาด 5.25 นิ้ว",
+    "MediaEngine.WozMissingChunk": "บล็อก WOZ ที่จำเป็น '{0}' หายไปหรือไม่สมบูรณ์",
+    "MediaEngine.WozTruncatedChunk": "บล็อก WOZ '{0}' ถูกตัดทอน",
+    "MediaEngine.WozTrackReference": "แทร็ก WOZ {0} อ้างถึงตัวบรรยาย {1} ที่อยู่นอกขอบเขต",
+    "MediaEngine.WozCrc": "WOZ CRC32 ไม่ถูกต้อง: ค่าที่เก็บไว้ {0} ค่าที่คำนวณได้ {1}",
+    "MediaEngine.WozChunkId": "ตัวระบุบล็อก WOZ '{0}' ต้องมีอักขระ ASCII สี่ตัวพอดี",
+    "MediaEngine.WozTrackCount": "โมดูลเขียน WOZ1 ได้รับ {0} แทร็ก โดยต้องมีตั้งแต่ 1 ถึง {1} แทร็ก",
+    "MediaEngine.WozTrackLength": "แทร็ก WOZ1 {0} มี {1} บิต สูงสุดคือ {2} บิต",
+    "MediaEngine.AppleNoRwtsSectors": "ไม่พบเซกเตอร์ Apple II RWTS18 ที่ถูกต้องใน {0} เซกเตอร์ที่ถอดรหัสจาก {1} แทร็ก"
+  }
+}

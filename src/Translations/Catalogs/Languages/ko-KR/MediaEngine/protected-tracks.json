@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "보호된 트랙의 실린더 번호 {0}는 음수일 수 없습니다.",
+    "MediaEngine.ProtectedHead": "보호된 트랙의 헤드 번호 {0}는 음수일 수 없습니다.",
+    "MediaEngine.ProtectedNoContent": "보호된 트랙에는 비트 셀 또는 회전의 자속 데이터가 필요합니다.",
+    "MediaEngine.ProtectedMetadataNoBits": "비트에 연결된 타이밍, 구조 및 특징에는 비트 셀이 필요합니다.",
+    "MediaEngine.ProtectedRange": "보호된 트랙의 {0} 범위는 길이가 양수이고 {1} 비트 셀 안에 들어가야 합니다.",
+    "MediaEngine.ProtectedTiming": "보호된 트랙의 비트 셀 시간은 유한한 양수여야 합니다.",
+    "MediaEngine.ProtectedResolution": "자속 데이터의 시간 해상도 {0} ns는 양수여야 합니다.",
+    "MediaEngine.ProtectedImageEmpty": "보호된 트랙 이미지에는 트랙이 하나 이상 필요합니다.",
+    "MediaEngine.ProtectedImageDuplicate": "보호된 트랙 {0}/{1}이 중복되었습니다."
+  }
+}

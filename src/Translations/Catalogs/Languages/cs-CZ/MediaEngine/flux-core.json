@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Doba bitové buňky toku {0} je neplatná; musí být konečná a alespoň jeden tik.",
+    "MediaEngine.FluxSizeLimit": "Údaje o toku překračují podporovanou velikost in- memory.",
+    "MediaEngine.FluxInvalidBit": "Hodnota proudového bitu není ani nula, ani jedna.",
+    "MediaEngine.FluxInvalidMaximum": "Maximální počet buněk na interval toku {0} musí být kladný.",
+    "MediaEngine.FluxZeroCell": "Trvání bit- buněk nesmí být nulové.",
+    "MediaEngine.FluxZeroIndex": "Doba trvání indexu revoluce toku nesmí být nulová.",
+    "MediaEngine.FluxIntervalOverflow": "Interval toku {0} buněk při {1} ticks na buňku překračuje podporovaný celočíselný rozsah.",
+    "MediaEngine.GcrCoordinates": "GCR souřadnice jsou neplatné: posun {0}, počet bajtů {1}, krok {2}."
+  }
+}

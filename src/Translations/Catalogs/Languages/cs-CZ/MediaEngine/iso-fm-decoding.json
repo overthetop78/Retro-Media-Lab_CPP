@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} bajtů, značka FE, N{4}, CRC hlavičky {5}, CRC dat {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} bajtů, značka FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bajtů, značka F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "Neklasifikovaný ISO FM DataAddressMark, značka FB",
+    "MediaEngine.FmUnpairedDeleted": "Neklasifikovaný ISO FM DeletedDataAddressMark, značka F8",
+    "MediaEngine.FmRevolutionTiming": "Časování otáčky ISO FM není konzistentní: index {0} ticks, délka buňky {1} ticks, součet intervalů {2} ticks."
+  }
+}

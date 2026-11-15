@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (dữ liệu): cần {0} byte dữ liệu hữu ích hoặc {1} byte khối hoàn chỉnh; đã nhận {2} byte.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (hệ thống): cần {0} byte dữ liệu hữu ích hoặc {1} byte khối hoàn chỉnh; đã nhận {2} byte.",
+    "MediaEngine.ArburgBlockCapacity": "Dung lượng khối Arburg {1} phải chứa được {0} byte dữ liệu hữu ích và hai byte tổng kiểm tra trong giới hạn kích thước được hỗ trợ.",
+    "MediaEngine.ArburgUsefulSize": "Số byte dữ liệu hữu ích Arburg phải không âm; đã nhận {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 byte, khối dữ liệu, tổng kiểm tra {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 byte, khối hệ thống, tổng kiểm tra {0}"
+  }
+}

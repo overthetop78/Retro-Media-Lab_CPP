@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM {0} alanının {1} değeri sıfır ile {2} arasında olmalıdır.",
+    "MediaEngine.TycomSectorSize": "TYCOM sektörleri 128 bayt içerir; {0} bayt alındı.",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bayt, işaret {2}, başlık CRC {3}, veri CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 bayt, başlık CRC {2}, veri CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 bayt, işaret FE, başlık CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 bayt, işaret {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, sektör başlığı, kesilmiş",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, işaret {0}, sektör verisi, kesilmiş",
+    "MediaEngine.TycomUnpaired": "Sınıflandırılmamış TYCOM FormatData, işaret {0}, veri"
+  }
+}

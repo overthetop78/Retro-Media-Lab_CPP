@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Các vùng Victor 9000 chứa 512 byte; đã nhận {0} byte.",
+    "MediaEngine.VictorSectorRange": "Số sector Victor 9000 {0} phải nằm giữa không và {1}.",
+    "MediaEngine.VictorMarkerLength": "Dấu Victor 9000 phải đạt tới vị trí bit 49; nhận được {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} byte, tiêu đề {4}, tổng kiểm tra dữ liệu {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} byte, dấu {4}, khối dữ liệu, tổng kiểm tra {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, tổng kiểm tra không khả dụng, bị cắt ngắn",
+    "MediaEngine.VictorUnpaired": "Dữ liệu Victor 9000 chưa ghép cặp, khối dữ liệu"
+  }
+}

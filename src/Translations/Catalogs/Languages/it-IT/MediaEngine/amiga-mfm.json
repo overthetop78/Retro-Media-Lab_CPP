@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.AmigaMfmOddCount": "La codifica odd/even Amiga richiede un numero pari di byte; ricevuti {0} byte.",
+    "MediaEngine.AmigaMfmParityRange": "Intervallo di parità Amiga non valido: offset {0}, quantità {1}, disponibili {2}.",
+    "MediaEngine.AmigaMfmSectorSize": "I settori Amiga contengono 512 byte; ricevuti {0} byte.",
+    "MediaEngine.AmigaMfmAddressRange": "Il valore {1} del campo Amiga MFM {0} deve essere compreso tra zero e {2}.",
+    "MediaEngine.AmigaMfmStructure": "Amiga AmigaSync, C{0} H{1} R{2}, {3} byte, checksum intestazione {4}, checksum dati {5}"
+  }
+}

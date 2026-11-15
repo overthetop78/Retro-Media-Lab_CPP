@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (дані): потрібно {0} байтів корисних даних або {1} байтів повного блоку; отримано {2} байтів.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (система): потрібно {0} байтів корисних даних або {1} байтів повного блоку; отримано {2} байтів.",
+    "MediaEngine.ArburgBlockCapacity": "Місткість блоку Arburg {1} має вміщувати {0} байтів корисних даних і два байти контрольної суми в межах підтримуваного розміру.",
+    "MediaEngine.ArburgUsefulSize": "Кількість корисних байтів Arburg має бути невід’ємною; отримано: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 байтів, блок даних, контрольна сума {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 байтів, системний блок, контрольна сума {0}"
+  }
+}

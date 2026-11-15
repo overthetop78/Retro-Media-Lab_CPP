@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Td0RepeatedPayload": "TeleDisk-sektorilla {0}/{1}/{2} on toistuvia {3} tavuja; {4} tavuja tarvitaan.",
+    "MediaEngine.Td0EncodingTruncated": "TeleDisk-sektori {0}/{1}/{2} koodaus {3} on tynkätty offset {4}: {5} tavua vaaditaan, {6} saatavilla.",
+    "MediaEngine.Td0EncodingUnsupported": "TeleDisk-sektori {0}/{1}/{2} käyttää koodausta {3}, jota ei tueta.",
+    "MediaEngine.Td0DecodedLength": "TeleDisk-sektori {0}/{1}/{2} koodaus {3} laajenee {4} tavuihin {5}:n sijaan.",
+    "MediaEngine.Td0RepetitionOverflow": "TeleDisk-sektorin toistomäärä ylittää etumerkittömän 16-bittisen kokonaisluvun rajan."
+  }
+}

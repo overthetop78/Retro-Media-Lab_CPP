@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.HpPairCount": "A HP MMFM párcsere páros számú bájtot igényel; {0} érkezett.",
+    "MediaEngine.HpAddressRange": "Az HP MMFM {0} mezőjének {1} értéke nulla és {2} között kell legyen.",
+    "MediaEngine.HpSectorSize": "Az HP MMFM szektorok 256 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.HpHeader": "HP MMFM FormatHeader, C{0} H{1} R{2}, {3} bájt, fejléc CRC {4}",
+    "MediaEngine.HpData": "HP MMFM FormatData, C{0} H{1} R{2}, {3} bájt, adat CRC {4}"
+  }
+}

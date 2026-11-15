@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CbmGcrAttributeRange": "Η τιμή {1} του χαρακτηριστικού Commodore GCR {0} πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.CbmGcrDiskTrack": "Το ίχνος δίσκου Commodore {0} πρέπει να είναι μεταξύ {1} και {2}.",
+    "MediaEngine.CbmGcrSectorSize": "Οι τομείς Commodore περιέχουν {0} byte· ελήφθησαν {1} byte.",
+    "MediaEngine.CbmGcrSync": "Μη ταξινομημένο Commodore CommodoreSync, συγχρονισμός GCR",
+    "MediaEngine.CbmGcrData": "Commodore FormatData, C0 H0 R0, 256 byte, μπλοκ δεδομένων, άθροισμα ελέγχου δεδομένων {0}",
+    "MediaEngine.CbmGcrHeader": "Commodore CommodoreHeader, C{0} H{1} R{2}, {3} byte, άθροισμα ελέγχου κεφαλίδας {4}, άθροισμα ελέγχου δεδομένων {5}"
+  }
+}

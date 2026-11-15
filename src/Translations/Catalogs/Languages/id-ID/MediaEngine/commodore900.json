@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 cylinder {0} berada diluar jangkauan nol ke {1}.",
+    "MediaEngine.C900Block": "Commodore 900 blok logical {0} diluar jangkauan nol ke {1}.",
+    "MediaEngine.C900Address": "Commodore 900 alamat {0} / {1} / {2} tidak valid; kepala harus berada antara nol dan {3}, dan sektor antara nol dan {4} pada silinder ini.",
+    "MediaEngine.C900Content": "Image dari {0} bytes tidak berisi sebuah superblock COHERENT yang dikenal.",
+    "MediaEngine.C900Alignment": "Panjang gambar COHERENT dari {0} bytes tidak dapat dibagi oleh ukuran sektor dari {1} bytes.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT mendeklarasikan blok {0} tapi image hanya berisi {1}.",
+    "MediaEngine.C900Capacity": "Gambar COHERENT memuat {0} blocks tapi Commodore 900 geometri mendukung paling banyak {1}.",
+    "MediaEngine.C900WriterGeometry": "Citra sektor tidak menggunakan geometri berzona Commodore 900.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 blok logical {0} tidak cocok dengan urutan sektor fisik yang diperlukan."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AppleIIAddressRange": "Η τιμή {1} του πεδίου {0} Apple II GCR πρέπει να είναι μεταξύ μηδέν και {2}.",
+    "MediaEngine.AppleIISectorsPerTrack": "Οι πίστες Apple II περιέχουν 13 τομείς για 5-and-3 ή 16 για 6-and-2· λήφθηκαν {0}.",
+    "MediaEngine.AppleIIAddress": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, V{4}, άθροισμα ελέγχου διεύθυνσης {5}, άθροισμα ελέγχου δεδομένων {6}",
+    "MediaEngine.AppleIIAddressThirteen": "Apple II AppleAddress, C{0} H{1} R{2}, {3} byte, 13 τομείς V{4}, άθροισμα ελέγχου διεύθυνσης {5}",
+    "MediaEngine.AppleIIData": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, άθροισμα ελέγχου {4}",
+    "MediaEngine.AppleIIDataThirteen": "Apple II AppleData, C{0} H{1} R{2}, {3} byte, 13 τομείς, άθροισμα ελέγχου {4}",
+    "MediaEngine.AppleIITruncated": "Apple II AppleData, άθροισμα ελέγχου μη διαθέσιμο, περικομμένο",
+    "MediaEngine.AppleIIUnpaired": "Μη συζευγμένα δεδομένα Apple II, πρόλογος δεδομένων D5 AA AD"
+  }
+}

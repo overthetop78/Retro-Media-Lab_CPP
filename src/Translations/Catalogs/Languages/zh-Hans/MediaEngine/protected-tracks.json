@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.ProtectedCylinder": "受保护磁道的柱面编号 {0} 不能为负数。",
+    "MediaEngine.ProtectedHead": "受保护磁道的磁头编号 {0} 不能为负数。",
+    "MediaEngine.ProtectedNoContent": "受保护磁道需要位单元或旋转的磁通数据。",
+    "MediaEngine.ProtectedMetadataNoBits": "与位相关的时序、结构和特征需要位单元。",
+    "MediaEngine.ProtectedRange": "受保护磁道的 {0} 范围必须具有正长度并位于 {1} 个位单元内。",
+    "MediaEngine.ProtectedTiming": "受保护磁道的位单元持续时间必须是有限正数。",
+    "MediaEngine.ProtectedResolution": "磁通数据的时间分辨率 {0} ns 必须为正数。",
+    "MediaEngine.ProtectedImageEmpty": "受保护磁道映像至少需要一条磁道。",
+    "MediaEngine.ProtectedImageDuplicate": "受保护磁道 {0}/{1} 重复。"
+  }
+}

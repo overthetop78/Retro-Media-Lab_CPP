@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Victor 9000 磁區包含 512 位元組；收到 {0} 位元組。",
+    "MediaEngine.VictorSectorRange": "Victor 9000 磁區號 {0} 必須介於零與 {1} 之間。",
+    "MediaEngine.VictorMarkerLength": "Victor 9000 標記必須延伸至位元49；收到 {0} 位元。",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} 位元組, 標頭 {4}, 資料檢查碼 {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} 位元組, 標記 {4}, 資料區塊, 檢查碼 {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, 檢查碼 無法使用, 已截斷",
+    "MediaEngine.VictorUnpaired": "未配對的 Victor 9000 資料, 資料區塊"
+  }
+}

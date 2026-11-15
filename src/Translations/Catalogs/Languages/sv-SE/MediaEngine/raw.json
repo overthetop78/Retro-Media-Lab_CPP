@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "Den råa bildlängden {0} är tom eller inte en multipel av {1} byte.",
+    "Media.RawUnknownGeometry": "Inga stödda geometriska bilder matcher {0} byte.",
+    "Media.MsxInvalidBoot": "Bilden av {0} byte innehåller inte en stödd MSX boot sektor.",
+    "Media.MsxUnsupportedGeometry": "Ingen MSX geometri matchar {0} byte och media descriptor {1}.",
+    "Media.UnsupportedRawFormat": "Rå bildformat {0} stöds inte.",
+    "Media.RawGeometryMismatch": "Bild {0} har geometri {1}; mål {2} kräver geometri {3}.",
+    "Media.RawSectorMissing": "Logisk sektor {0} saknas och kan inte skrivas till en fullständig bild.",
+    "Media.RawSectorSize": "Logisk sektor {0} innehåller {1} byte istället för {2}.",
+    "Media.AtomicOpen": "Kan inte skapa den tillfälliga utgången för {0}.",
+    "Media.AtomicWrite": "Kan inte skriva den tillfälliga utgången för {0}.",
+    "Media.AtomicCommit": "Kan inte publicera hela utdatafilen {0}.",
+    "Media.Cancelled": "Verksamheten på lagringsmediet avbröts."
+  }
+}

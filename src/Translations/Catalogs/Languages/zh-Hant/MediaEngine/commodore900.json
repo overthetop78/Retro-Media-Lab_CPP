@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 磁柱 {0} 超出 0 到 {1} 的範圍。",
+    "MediaEngine.C900Block": "Commodore 900 邏輯區塊 {0} 超出 0 到 {1} 的範圍。",
+    "MediaEngine.C900Address": "Commodore 900 位址 {0}/{1}/{2} 無效；此磁柱的磁頭範圍為 0 到 {3}，磁區範圍為 0 到 {4}。",
+    "MediaEngine.C900Content": "大小為 {0} 位元組的映像不包含可辨識的 COHERENT 超級區塊。",
+    "MediaEngine.C900Alignment": "COHERENT 映像長度 {0} 位元組不能被磁區大小 {1} 位元組整除。",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT 宣告了 {0} 個區塊，但映像僅包含 {1} 個區塊。",
+    "MediaEngine.C900Capacity": "COHERENT 映像包含 {0} 個區塊，但 Commodore 900 幾何結構最多支援 {1} 個區塊。",
+    "MediaEngine.C900WriterGeometry": "磁區映像未使用 Commodore 900 分區幾何結構。",
+    "MediaEngine.C900BlockAddress": "Commodore 900 邏輯區塊 {0} 不符合所需的實體磁區順序。"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "צילינדר Commodore 900 מספר {0} נמצא מחוץ לטווח אפס עד {1}.",
+    "MediaEngine.C900Block": "בלוק לוגי {0} של Commodore 900 נמצא מחוץ לטווח אפס עד {1}.",
+    "MediaEngine.C900Address": "כתובת Commodore 900 ‏{0}/{1}/{2} אינה תקינה; הראש חייב להיות בין אפס ל-{3}, והמגזר בין אפס ל-{4} בצילינדר זה.",
+    "MediaEngine.C900Content": "הדמות בגודל {0} בתים אינה מכילה בלוק על מוכר של COHERENT.",
+    "MediaEngine.C900Alignment": "אורך דמות COHERENT של {0} בתים אינו מתחלק בגודל המגזר של {1} בתים.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT מצהיר על {0} בלוקים, אך הדמות מכילה רק {1}.",
+    "MediaEngine.C900Capacity": "דמות COHERENT מכילה {0} בלוקים, אך הגאומטריה של Commodore 900 תומכת לכל היותר ב-{1}.",
+    "MediaEngine.C900WriterGeometry": "דמות המגזרים אינה משתמשת בגאומטריה המחולקת לאזורים של Commodore 900.",
+    "MediaEngine.C900BlockAddress": "בלוק לוגי {0} של Commodore 900 אינו תואם לסדר הפיזי הנדרש של המגזרים."
+  }
+}

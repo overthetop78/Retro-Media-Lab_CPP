@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "Phần đầu WOZ không hợp lệ.",
+    "MediaEngine.WozDiskType": "Không hỗ trợ loại đĩa WOZ {0}; cần đĩa Apple II kích thước 5,25 inch.",
+    "MediaEngine.WozMissingChunk": "Khối WOZ bắt buộc '{0}' bị thiếu hoặc không đầy đủ.",
+    "MediaEngine.WozTruncatedChunk": "Khối WOZ '{0}' bị cắt cụt.",
+    "MediaEngine.WozTrackReference": "Rãnh WOZ {0} tham chiếu đến bộ mô tả {1} nằm ngoài giới hạn.",
+    "MediaEngine.WozCrc": "WOZ CRC32 không hợp lệ: giá trị lưu {0}, giá trị tính được {1}.",
+    "MediaEngine.WozChunkId": "Mã định danh khối WOZ '{0}' phải chứa đúng bốn ký tự ASCII.",
+    "MediaEngine.WozTrackCount": "Mô-đun ghi WOZ1 nhận được {0} rãnh; số rãnh phải nằm trong khoảng từ 1 đến {1}.",
+    "MediaEngine.WozTrackLength": "Rãnh WOZ1 {0} chứa {1} bit; tối đa là {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Không tìm thấy cung Apple II RWTS18 hợp lệ trong {0} cung được giải mã từ {1} rãnh."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FmHeader": "ISO FM IdAddressMark, C{0} H{1} R{2}, {3} バイト, マーク FE, N{4}, ヘッダーCRC {5}, データCRC {6}",
+    "MediaEngine.FmData": "ISO FM DataAddressMark, C{0} H{1} R{2}, {3} バイト, マーク FB, CRC {4}",
+    "MediaEngine.FmDeleted": "ISO FM DeletedDataAddressMark, C{0} H{1} R{2}, {3} バイト, マーク F8, CRC {4}",
+    "MediaEngine.FmUnpaired": "未分類 ISO FM DataAddressMark, マーク FB",
+    "MediaEngine.FmUnpairedDeleted": "未分類 ISO FM DeletedDataAddressMark, マーク F8",
+    "MediaEngine.FmRevolutionTiming": "ISO FMの回転タイミングが不整合です：インデックス {0} ticks、セル時間 {1} ticks、間隔の合計 {2} ticks。"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (adat): {0} hasznos bájt vagy {1} bájtos teljes blokk szükséges; érkezett: {2} bájt.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (rendszer): {0} hasznos bájt vagy {1} bájtos teljes blokk szükséges; érkezett: {2} bájt.",
+    "MediaEngine.ArburgBlockCapacity": "Az Arburg-blokk {1} kapacitásának {0} hasznos bájtot és két ellenőrzőösszeg-bájtot kell befogadnia a támogatott mérethatáron belül.",
+    "MediaEngine.ArburgUsefulSize": "Az Arburg hasznos bájtjainak száma nem lehet negatív; kapott érték: {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 bájt, adatblokk, ellenőrző összeg {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 bájt, rendszerblokk, ellenőrző összeg {0}"
+  }
+}

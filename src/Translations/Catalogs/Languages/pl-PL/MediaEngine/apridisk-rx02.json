@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.ApridiskHeader": "Obraz nie zawiera nagłówka ACT Apricot ApriDisk.",
+    "MediaEngine.ApridiskRecord": "Nieprawidłowy rekord ApriDisk na bajcie {0}.",
+    "MediaEngine.ApridiskOverflow": "Długość rekordu ApriDisk przekracza zakres 32-bitowej liczby całkowitej ze znakiem.",
+    "MediaEngine.ApridiskTruncated": "Rekord ApriDisk w bajcie {0} jest skrócony.",
+    "MediaEngine.ApridiskAddress": "Adres sektorowy ApriDisk {0} / {1} / {2} znajduje się poza geometrią ACT Apricot PC/Xi.",
+    "MediaEngine.ApridiskCount": "Obraz ApriDisk zawiera {0} użytecznych sektorów zamiast {1}.",
+    "MediaEngine.ApridiskSectorLength": "Sektor ApriDisk zawiera bajty {0} zamiast {1}.",
+    "MediaEngine.ApridiskCompression": "Nieobsługiwana kompresja sektora ApriDisk: {0}.",
+    "MediaEngine.ApridiskExpansion": "Skompresowany sektor ApriDisk rozszerza się o ponad 512 bajtów.",
+    "MediaEngine.ApridiskWriteGeometry": "Obraz sektora nie używa geometrii ACT Apricot PC/Xi.",
+    "MediaEngine.Rx02ImageLength": "Obraz DEC RX02 zawiera {0} bajtów; pełny obraz fizyczny wymaga {1}.",
+    "MediaEngine.Rx02WriteGeometry": "Obraz sektora nie używa geometrii DEC RX02."
+  }
+}

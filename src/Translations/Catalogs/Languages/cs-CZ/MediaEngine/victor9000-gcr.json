@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Sektory Victor 9000 obsahují 512 bajtů; přijato {0} bajtů.",
+    "MediaEngine.VictorSectorRange": "Číslo sektoru Victor 9000 {0} musí být mezi nulou a {1}.",
+    "MediaEngine.VictorMarkerLength": "Značky Victor 9000 musí dosáhnout bitové pozice 49; přijato {0} bitů.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} bajtů, hlavička {4}, kontrolní součet dat {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} bajtů, značka {4}, datový blok, kontrolní součet {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, kontrolní součet nedostupný, zkráceno",
+    "MediaEngine.VictorUnpaired": "Nespárovaná data Victor 9000, datový blok"
+  }
+}

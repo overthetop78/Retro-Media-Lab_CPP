@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.RegistryEmpty": "Trebuie înregistrat cel puțin un decodor de flux.",
+    "MediaEngine.RegistryNullDecoder": "Decodorul flux la poziţia {0} este nul.",
+    "MediaEngine.RegistryInvalidId": "Decodorul flux la poziția {0} are un identificator gol.",
+    "MediaEngine.RegistryDuplicate": "Un decodor de flux cu identificatorul '{0}' este deja înregistrat.",
+    "MediaEngine.RegistryUnknown": "Niciun decodor de flux nu este înregistrat cu identificatorul '{0}'.",
+    "MediaEngine.RegistryNullRevolution": "Pentru decodare este necesară înregistrarea fluxului unei rotații.",
+    "MediaEngine.RegistryNoAutomatic": "Niciun decodor de flux înregistrat nu participă la detectarea automată."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Giá trị {1} của trường {0} Membrain MFM phải nằm giữa không và {2}.",
+    "MediaEngine.MembrainSectorSize": "Các vùng Membrain chứa 512 byte; đã nhận {0} byte.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 byte, dấu FE, CRC tiêu đề {3}, CRC dữ liệu {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 byte, dấu {3}, khối dữ liệu, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, đầu mục sector, bị cắt ngắn",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC không khả dụng, bị cắt ngắn",
+    "MediaEngine.MembrainUnpaired": "Dữ liệu Membrain chưa ghép cặp, khối dữ liệu"
+  }
+}

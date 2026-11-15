@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CenturionAddressRange": "قيمة الحقل {0} في Centurion MFM هي {1} ويجب أن تكون بين صفر و{2}.",
+    "MediaEngine.CenturionHeader": "Centurion FormatHeader, C{0} H{1} R{2}, {3} بايت, CRC الرأس {4}, CRC البيانات {5}",
+    "MediaEngine.CenturionData": "Centurion FormatData, C{0} H{1} R{2}, {3} بايت, مفتاح {4}, CRC {5}",
+    "MediaEngine.CenturionTruncatedHeader": "Centurion FormatHeader, علامة القطاع, مبتور",
+    "MediaEngine.CenturionTruncatedData": "Centurion FormatData, CRC غير متاح, مبتور",
+    "MediaEngine.CenturionUnsupported": "Centurion FormatData, مفتاح غير مدعوم {0}, مبتور",
+    "MediaEngine.CenturionUnpaired": "بيانات Centurion غير مقترنة, كتلة بيانات"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "Czas trwania bit- komórki strumieniowej {0} jest niepoprawny; musi być skończony i musi być co najmniej jeden tik.",
+    "MediaEngine.FluxSizeLimit": "Dane o strumieniu przekraczają obsługiwany rozmiar pamięci.",
+    "MediaEngine.FluxInvalidBit": "Wartość bitu strumieniowego nie jest ani zerem, ani jednym.",
+    "MediaEngine.FluxInvalidMaximum": "Maksymalna liczba komórek w przedziale przepływu {0} musi być dodatnia.",
+    "MediaEngine.FluxZeroCell": "Czas trwania komórki bitowej nie może być zerowy.",
+    "MediaEngine.FluxZeroIndex": "Czas trwania wskaźnika obrotów strumieniowych nie może wynosić zero.",
+    "MediaEngine.FluxIntervalOverflow": "Przedział strumienia {0} komórek przy {1} ticks na komórkę przekracza obsługiwany zakres liczb całkowitych.",
+    "MediaEngine.GcrCoordinates": "Współrzędne GCR są nieprawidłowe: przesunięcie {0}, liczba bajtów {1}, krok {2}."
+  }
+}

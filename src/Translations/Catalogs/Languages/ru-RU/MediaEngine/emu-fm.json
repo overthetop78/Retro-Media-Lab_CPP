@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.EmuSectorSize": "Секторы E-mu содержат 3584 байт; получено {0} байт.",
+    "MediaEngine.EmuAddressRange": "Значение {1} поля {0} E-mu FM должно быть между нулём и {2}.",
+    "MediaEngine.EmuHeader": "E-mu FormatHeader, C{0} H{1} R{2}, {3} байт, CRC {4}, CRC {5}",
+    "MediaEngine.EmuData": "E-mu FormatData, C{0} H{1} R{2}, {3} байт, CRC {4}",
+    "MediaEngine.EmuUnclassified": "Неклассифицированная метка E-mu Emulator FormatHeader, метка заголовка/данных"
+  }
+}

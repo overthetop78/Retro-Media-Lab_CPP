@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Az Victor 9000 szektorok 512 bájtot tartalmaznak; kapott mennyiség: {0} bájt.",
+    "MediaEngine.VictorSectorRange": "A Victor 9000 {0} szektorszámának nulla és {1} között kell lennie.",
+    "MediaEngine.VictorMarkerLength": "A Victor 9000 jelölőknek a 49. bitpozícióig kell érniük; kapott méret: {0} bit.",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} bájt, fejléc {4}, adat ellenőrző összege {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} bájt, jelölő {4}, adatblokk, ellenőrző összeg {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, ellenőrző összeg nem elérhető, csonkolva",
+    "MediaEngine.VictorUnpaired": "Párosítatlan Victor 9000 adatok, adatblokk"
+  }
+}

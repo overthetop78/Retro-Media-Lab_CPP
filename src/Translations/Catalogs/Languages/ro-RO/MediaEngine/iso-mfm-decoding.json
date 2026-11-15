@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Numărul de octeți ai fluxului de biți {0} trebuie să fie între zero și {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} octeți, marcaj FE, N{4}, CRC antet {5}, CRC date {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} octeți, marcaj FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} octeți, marcaj F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Neclasificat ISO MFM Sync, marcaj {0}",
+    "MediaEngine.MfmUnpaired": "Neclasificat ISO MFM DataAddressMark, marcaj FB",
+    "MediaEngine.MfmUnpairedDeleted": "Neclasificat ISO MFM DeletedDataAddressMark, marcaj F8"
+  }
+}

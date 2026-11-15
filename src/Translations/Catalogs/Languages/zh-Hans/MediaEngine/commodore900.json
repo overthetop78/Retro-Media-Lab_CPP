@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 柱面 {0} 超出 0 到 {1} 的范围。",
+    "MediaEngine.C900Block": "Commodore 900 逻辑块 {0} 超出 0 到 {1} 的范围。",
+    "MediaEngine.C900Address": "Commodore 900 地址 {0}/{1}/{2} 无效；此柱面的磁头范围为 0 到 {3}，扇区范围为 0 到 {4}。",
+    "MediaEngine.C900Content": "大小为 {0} 字节的镜像不包含可识别的 COHERENT 超级块。",
+    "MediaEngine.C900Alignment": "COHERENT 镜像长度 {0} 字节不能被扇区大小 {1} 字节整除。",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT 声明了 {0} 个块，但镜像仅包含 {1} 个块。",
+    "MediaEngine.C900Capacity": "COHERENT 镜像包含 {0} 个块，但 Commodore 900 几何结构最多支持 {1} 个块。",
+    "MediaEngine.C900WriterGeometry": "扇区镜像未使用 Commodore 900 分区几何结构。",
+    "MediaEngine.C900BlockAddress": "Commodore 900 逻辑块 {0} 不符合所需的物理扇区顺序。"
+  }
+}

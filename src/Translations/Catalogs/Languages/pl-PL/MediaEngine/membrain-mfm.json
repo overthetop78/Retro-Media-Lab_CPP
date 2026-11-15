@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Wartość {1} pola {0} Membrain MFM musi mieścić się między zerem a {2}.",
+    "MediaEngine.MembrainSectorSize": "Sektory Membrain zawierają 512 bajtów; otrzymano {0} bajtów.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 bajtów, znacznik FE, CRC nagłówka {3}, CRC danych {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 bajtów, znacznik {3}, blok danych, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, nagłówek sektora, ucięty",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC niedostępne, ucięty",
+    "MediaEngine.MembrainUnpaired": "Niesparowane dane Membrain, blok danych"
+  }
+}

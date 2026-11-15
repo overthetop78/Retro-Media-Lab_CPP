@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.C900Cylinder": "Commodore 900 sylinteri {0} on alueen 0 ja {1} ulkopuolella.",
+    "MediaEngine.C900Block": "Commodore 900 looginen lohko {0} on alueen 0 ja {1} ulkopuolella.",
+    "MediaEngine.C900Address": "Commodore 900 osoite {0}/{1}/{2} on virheellinen; pään on oltava nollan ja {3} välillä ja tämän sylinterin ala nollan ja {4} välillä.",
+    "MediaEngine.C900Content": "{0} tavun kuva ei sisällä tunnustettua COHERENT superblockia.",
+    "MediaEngine.C900Alignment": "{0} tavun COHERENT-kuvan pituus ei ole jaollinen {1} tavujen sektorin koon mukaan.",
+    "MediaEngine.C900DeclaredBlocks": "COHERENT ilmoittaa {0} lohkot, mutta kuva sisältää vain {1}.",
+    "MediaEngine.C900Capacity": "COHERENT-kuva sisältää {0} lohkot, mutta Commodore 900 geometria tukee enintään {1}.",
+    "MediaEngine.C900WriterGeometry": "Sektorikuva ei käytä Commodore 900:n vyöhykegeometriaa.",
+    "MediaEngine.C900BlockAddress": "Commodore 900 looginen lohko {0} ei vastaa vaadittua fyysistä sektorijärjestystä."
+  }
+}

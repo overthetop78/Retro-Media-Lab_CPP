@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.BitPackingCapacity": "Een reeks van {0} bits past niet in {1} bytes.",
+    "MediaEngine.BitPackingCount": "Het aantal bits {0} moet positief zijn.",
+    "MediaEngine.BitPackingRange": "De grootte van de bitpakking overschrijdt het ondersteunde bereik.",
+    "MediaEngine.AppleTrackUnsupported": "Bronformaat '{1}' kan niet worden gecodeerd als {0}.",
+    "MediaEngine.AppleTrackGeometry": "Apple II-geometrie met {0} cilinders, {1} koppen en {2} sectoren per spoor kan niet worden gecodeerd.",
+    "MediaEngine.AppleTrackSector": "{0}-sector {1}:{2} bevat {3} bytes in plaats van {4}.",
+    "MediaEngine.AppleTrackTooLong": "{0}-spoor {1} bevat {2} bits; maximaal {3}.",
+    "MediaEngine.AppleTrackDuplicate": "Apple II-spoor {0} bevat een dubbel fysiek sectornummer {1}.",
+    "MediaEngine.NibTrackCount": "De NIB-schrijffunctie vereist minstens één spoor; ontvangen: {0}.",
+    "MediaEngine.NibTrackLength": "NIB-spoor {0} bevat {1} bits; maximaal {2}."
+  }
+}

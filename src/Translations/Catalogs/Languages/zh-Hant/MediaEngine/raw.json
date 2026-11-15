@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "Media.RawInvalidLength": "原始映像長度 {0} 為零或不是 {1} 位元組的倍數。",
+    "Media.RawUnknownGeometry": "沒有受支援的原始映像幾何配置符合 {0} 位元組。",
+    "Media.MsxInvalidBoot": "大小為 {0} 位元組的映像不包含受支援的 MSX 開機磁區。",
+    "Media.MsxUnsupportedGeometry": "沒有 MSX 幾何配置符合 {0} 位元組和媒體描述元 {1}。",
+    "Media.UnsupportedRawFormat": "不支援原始映像格式 {0}。",
+    "Media.RawGeometryMismatch": "映像 {0} 的幾何配置為 {1}；目標 {2} 需要幾何配置 {3}。",
+    "Media.RawSectorMissing": "缺少邏輯磁區 {0}，無法寫入完整的原始映像。",
+    "Media.RawSectorSize": "邏輯磁區 {0} 包含 {1} 位元組，而不是 {2} 位元組。",
+    "Media.AtomicOpen": "無法為 {0} 建立暫存輸出。",
+    "Media.AtomicWrite": "無法寫入 {0} 的暫存輸出。",
+    "Media.AtomicCommit": "無法發布完整的輸出檔案 {0}。",
+    "Media.Cancelled": "儲存媒體操作已取消。"
+  }
+}

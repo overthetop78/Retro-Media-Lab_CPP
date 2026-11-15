@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.BitReadCount": "Počet bajtů bitového proudu {0} musí být mezi nulou a {1}.",
+    "MediaEngine.MfmHeader": "ISO MFM IdAddressMark, C{0} H{1} R{2}, {3} bajtů, značka FE, N{4}, CRC hlavičky {5}, CRC dat {6}",
+    "MediaEngine.MfmData": "ISO MFM DataAddressMark, C{0} H{1} R{2}, {3} bajtů, značka FB, CRC {4}",
+    "MediaEngine.MfmDeleted": "ISO MFM DeletedDataAddressMark, C{0} H{1} R{2}, {3} bajtů, značka F8, CRC {4}",
+    "MediaEngine.MfmUnknown": "Neklasifikovaný ISO MFM Sync, značka {0}",
+    "MediaEngine.MfmUnpaired": "Neklasifikovaný ISO MFM DataAddressMark, značka FB",
+    "MediaEngine.MfmUnpairedDeleted": "Neklasifikovaný ISO MFM DeletedDataAddressMark, značka F8"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "DEC RX02 のフィールド {0} の値 {1} は、ゼロから {2} の範囲である必要があります。",
+    "MediaEngine.Rx02SizeCode": "RX02 サイズコード {0} は {1} バイトと一致しません。",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, セクターヘッダー, 途中で切断",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} バイト, ヘッダーCRC {4}, データCRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} バイト, マーク {4}, {5}, ヘッダーCRC {6}, データCRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} バイト, マーク {4}, {5}, データCRC {6}",
+    "MediaEngine.Rx02Unpaired": "未分類 DEC RX02 FormatData, マーク {0}, データ"
+  }
+}

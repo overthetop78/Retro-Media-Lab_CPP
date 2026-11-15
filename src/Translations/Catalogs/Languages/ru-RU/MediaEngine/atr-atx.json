@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "Целевой формат ATR «{0}» не поддерживается.",
+    "MediaEngine.AtrIncompatibleImage": "Изображение сектора '{0}' содержит {1} сектора и {2} байты; профиль ATR '{3}' требует {4} секторов и {5} байтов.",
+    "MediaEngine.AtrMissingSector": "Сектор ATR {0} отсутствует.",
+    "MediaEngine.AtrSectorSize": "Сектор ATR {0} содержит {1} байты; ожидаемый {2}.",
+    "MediaEngine.AtrHeader": "Заголовок ATR недействителен: длина {0} байтов (минимум {1}), подпись {2} (ожидаемый {3}).",
+    "MediaEngine.AtrUnsupportedSize": "Размер сектора ATR {0} байтов не поддерживается; ожидаемые {1} байты.",
+    "MediaEngine.AtrPayloadLength": "Длина полезной нагрузки ATR составляет {0} байт; заголовок объявляет {1} байт.",
+    "MediaEngine.AtrTruncatedPayload": "Длина полезной нагрузки ATR {0} байтов не содержит загрузочной области {1}-байт, за которой следуют полные секторы {2}-байт.",
+    "MediaEngine.AtrSectorCount": "Размер сектора Atari ATR {0} и количество сектора {1} должны быть положительными.",
+    "MediaEngine.AtxHeader": "Заголовок файла ATX отсутствует или недействителен.",
+    "MediaEngine.AtxTrackOffset": "Смещение трековых данных ATX находится вне файла.",
+    "MediaEngine.AtxTrackCycle": "Цепочка ATX содержит цикл.",
+    "MediaEngine.AtxTrackBounds": "Трек ATX выходит за пределы файла.",
+    "MediaEngine.AtxTrackNumber": "ATX трек {0} находится вне поддерживаемой 40-дорожечной геометрии.",
+    "MediaEngine.AtxSectorCount": "Дорожка ATX {0} содержит слишком много записей секторов.",
+    "MediaEngine.AtxListBounds": "Список секторов трассы ATX {0} пересекает границу трассы.",
+    "MediaEngine.AtxSectorNumber": "Трек ATX {0} содержит недействительный сектор {1}.",
+    "MediaEngine.AtxDataBounds": "Данные трека ATX {0}, сектор {1}, пересекают границу трека.",
+    "MediaEngine.AtxNoSectors": "Изображение ATX не содержит считываемой записи сектора.",
+    "MediaEngine.AtxLargeOffset": "Смещение ATX {0} слишком велико.",
+    "MediaEngine.AtxTruncated": "ATX {0} усечен."
+  }
+}

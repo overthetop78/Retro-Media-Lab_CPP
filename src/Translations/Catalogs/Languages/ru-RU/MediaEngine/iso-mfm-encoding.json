@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MfmAddressRange": "ISO MFM поле {0} значение {1} должно быть между нулем и {2}.",
+    "MediaEngine.MfmSizeCode": "Код размера ISO MFM {0} описывает {1} байты; принятые {2} байты.",
+    "MediaEngine.TrackPhysicalCapacity": "Физическая дорожка {0} {1}.{2} не может вместить все секторы в {3} битовых ячейках при выбранных временных параметрах.",
+    "MediaEngine.SectorUnsupportedSize": "Неподдерживаемый размер сектора: {0} байт.",
+    "MediaEngine.SectorUnsupportedSizeCode": "Код размера сектора {0} должен быть между нулем и {1}."
+  }
+}

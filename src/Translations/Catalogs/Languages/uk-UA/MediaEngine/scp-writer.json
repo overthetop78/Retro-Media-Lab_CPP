@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ScpDuplicateTrack": "Доріжка SCP {0} присутня більше одного разу.",
+    "MediaEngine.ScpTrackOutside": "Доріжка SCP {0} перебуває поза заявленим діапазоном від {1} до {2}.",
+    "MediaEngine.ScpWriteAddress": "Доріжка SCP {0} не відповідає заявленій адресі: циліндр {1}, головка {2}.",
+    "MediaEngine.ScpWriteRevolutions": "Доріжка SCP {0} містить {1} обертів; потрібно {2}.",
+    "MediaEngine.ScpZeroInterval": "Доріжка SCP {0}, оберт {1}, містить інтервал магнітного потоку нульової тривалості.",
+    "MediaEngine.ScpOutput": "Відсутня функція зворотного виклику для виводу SCP."
+  }
+}

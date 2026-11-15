@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.TycomAddressRange": "TYCOM 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.TycomSectorSize": "TYCOM 扇区包含 128 字节；收到 {0} 字节。",
+    "MediaEngine.TycomHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 128 字节, 标记 {2}, 头部CRC {3}, 数据CRC {4}",
+    "MediaEngine.TycomHeaderNoMark": "TYCOM FormatHeader, C{0} H0 R{1}, 128 字节, 头部CRC {2}, 数据CRC {3}",
+    "MediaEngine.TycomInvalidHeader": "TYCOM FormatHeader, C{0} H0 R{1}, 0 字节, 标记 FE, 头部CRC {2}",
+    "MediaEngine.TycomData": "TYCOM FormatData, C{0} H0 R{1}, 128 字节, 标记 {2}, CRC {3}",
+    "MediaEngine.TycomTruncatedHeader": "TYCOM FormatHeader, 扇区头, 截断",
+    "MediaEngine.TycomTruncatedData": "TYCOM FormatData, 标记 {0}, 扇区数据, 截断",
+    "MediaEngine.TycomUnpaired": "未分类 TYCOM FormatData, 标记 {0}, 数据"
+  }
+}

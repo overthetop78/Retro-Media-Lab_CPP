@@ -1,0 +1,25 @@
+{
+  "strings": {
+    "MediaEngine.AtrUnsupportedFormat": "不支持 ATR 目标格式 '{0}'。",
+    "MediaEngine.AtrIncompatibleImage": "扇区图像 '{0}' 包含 {1} 个扇区和 {2} 字节；ATR 配置 '{3}' 要求 {4} 个扇区和 {5} 字节。",
+    "MediaEngine.AtrMissingSector": "缺少 ATR 扇区 {0}。",
+    "MediaEngine.AtrSectorSize": "ATR 扇区 {0} 包含 {1} 字节；应为 {2} 字节。",
+    "MediaEngine.AtrHeader": "ATR 文件头无效：长度为 {0} 字节（至少 {1}），签名为 {2}（应为 {3}）。",
+    "MediaEngine.AtrUnsupportedSize": "不支持 {0} 字节的 ATR 扇区大小；应为 {1} 字节。",
+    "MediaEngine.AtrPayloadLength": "ATR 有效载荷长度为 {0} 字节；文件头声明了 {1} 字节。",
+    "MediaEngine.AtrTruncatedPayload": "{0} 字节的 ATR 有效载荷不包含 {1} 字节的引导区及其后完整的 {2} 字节扇区。",
+    "MediaEngine.AtrSectorCount": "Atari ATR 扇区大小 {0} 和扇区数量 {1} 必须为正数。",
+    "MediaEngine.AtxHeader": "ATX 文件头缺失或无效。",
+    "MediaEngine.AtxTrackOffset": "ATX 磁道数据偏移位于文件之外。",
+    "MediaEngine.AtxTrackCycle": "ATX 磁道链存在循环。",
+    "MediaEngine.AtxTrackBounds": "ATX 磁道超出文件范围。",
+    "MediaEngine.AtxTrackNumber": "ATX 磁道 {0} 超出支持的 40 磁道几何范围。",
+    "MediaEngine.AtxSectorCount": "ATX 磁道 {0} 包含过多的扇区记录。",
+    "MediaEngine.AtxListBounds": "ATX 磁道 {0} 的扇区列表超出磁道边界。",
+    "MediaEngine.AtxSectorNumber": "ATX 磁道 {0} 包含无效扇区 {1}。",
+    "MediaEngine.AtxDataBounds": "ATX 磁道 {0}、扇区 {1} 的数据超出磁道边界。",
+    "MediaEngine.AtxNoSectors": "ATX 图像不包含可读的扇区记录。",
+    "MediaEngine.AtxLargeOffset": "ATX {0} 偏移过大。",
+    "MediaEngine.AtxTruncated": "ATX {0} 字段被截断。"
+  }
+}

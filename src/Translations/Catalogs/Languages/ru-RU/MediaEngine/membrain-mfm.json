@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.MembrainAddressRange": "Значение {1} поля {0} Membrain MFM должно быть между нулём и {2}.",
+    "MediaEngine.MembrainSectorSize": "Секторы Membrain содержат 512 байт; получено {0} байт.",
+    "MediaEngine.MembrainHeader": "Membrain FormatHeader, C{0} H{1} R{2}, 512 байт, метка FE, CRC заголовка {3}, CRC данных {4}",
+    "MediaEngine.MembrainData": "Membrain FormatData, C{0} H{1} R{2}, 512 байт, метка {3}, блок данных, CRC {4}",
+    "MediaEngine.MembrainTruncatedHeader": "Membrain FormatHeader, заголовок сектора, усечён",
+    "MediaEngine.MembrainTruncatedData": "Membrain FormatData, CRC недоступна, усечён",
+    "MediaEngine.MembrainUnpaired": "Непарные данные Membrain, блок данных"
+  }
+}

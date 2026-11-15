@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.EmuSectorSize": "E-mu 섹터는 3584바이트입니다. 받은 바이트 수: {0}.",
+    "MediaEngine.EmuAddressRange": "E-mu FM 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.EmuHeader": "E-mu FormatHeader, C{0} H{1} R{2}, {3} 바이트, CRC {4}, CRC {5}",
+    "MediaEngine.EmuData": "E-mu FormatData, C{0} H{1} R{2}, {3} 바이트, CRC {4}",
+    "MediaEngine.EmuUnclassified": "분류되지 않은 E-mu Emulator FormatHeader, 헤더/데이터 마커"
+  }
+}

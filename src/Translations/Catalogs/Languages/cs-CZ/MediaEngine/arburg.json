@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.ArburgDataPayloadSize": "Arburg (data): je vyžadováno {0} užitečných bajtů nebo {1} bajtů celého bloku; přijato {2} bajtů.",
+    "MediaEngine.ArburgSystemPayloadSize": "Arburg (systém): je vyžadováno {0} užitečných bajtů nebo {1} bajtů celého bloku; přijato {2} bajtů.",
+    "MediaEngine.ArburgBlockCapacity": "Blok Arburg s kapacitou {1} musí pojmout {0} užitečných bajtů a dva bajty kontrolního součtu v podporovaném limitu velikosti.",
+    "MediaEngine.ArburgUsefulSize": "Počet užitečných bajtů Arburg nesmí být záporný; přijato {0}.",
+    "MediaEngine.ArburgData": "Arburg FormatData, C0 H0 R1, 2560 bajtů, datový blok, kontrolní součet {0}",
+    "MediaEngine.ArburgSystem": "Arburg FormatHeader, C0 H0 R1, 3840 bajtů, systémový blok, kontrolní součet {0}"
+  }
+}

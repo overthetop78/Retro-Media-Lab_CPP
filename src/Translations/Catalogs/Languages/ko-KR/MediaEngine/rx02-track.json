@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "DEC RX02 필드 {0}의 값 {1}은 0과 {2} 사이여야 합니다.",
+    "MediaEngine.Rx02SizeCode": "RX02 크기 코드 {0}은 {1}바이트와 일치하지 않습니다.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, 섹터 헤더, 잘림",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 바이트, 헤더 CRC {4}, 데이터 CRC {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} 바이트, 마크 {4}, {5}, 헤더 CRC {6}, 데이터 CRC {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} 바이트, 마크 {4}, {5}, 데이터 CRC {6}",
+    "MediaEngine.Rx02Unpaired": "미분류 DEC RX02 FormatData, 마크 {0}, 데이터"
+  }
+}

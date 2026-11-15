@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Rx02AddressRange": "Giá trị {1} của trường {0} DEC RX02 phải nằm giữa không và {2}.",
+    "MediaEngine.Rx02SizeCode": "Mã kích thước RX02 {0} không khớp với {1} byte.",
+    "MediaEngine.Rx02Truncated": "DEC RX02 FormatHeader, tiêu đề sector, bị cắt ngắn",
+    "MediaEngine.Rx02HeaderNoMark": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, CRC tiêu đề {4}, CRC dữ liệu {5}",
+    "MediaEngine.Rx02Header": "DEC RX02 FormatHeader, C{0} H{1} R{2}, {3} byte, dấu {4}, {5}, CRC tiêu đề {6}, CRC dữ liệu {7}",
+    "MediaEngine.Rx02Data": "DEC RX02 FormatData, C{0} H{1} R{2}, {3} byte, dấu {4}, {5}, CRC dữ liệu {6}",
+    "MediaEngine.Rx02Unpaired": "Chưa phân loại DEC RX02 FormatData, dấu {0}, dữ liệu"
+  }
+}

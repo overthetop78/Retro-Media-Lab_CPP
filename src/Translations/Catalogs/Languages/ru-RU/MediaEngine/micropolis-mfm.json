@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.MicropolisSectorSize": "Секторы Micropolis содержат 256 байт; получено {0} байт.",
+    "MediaEngine.MicropolisSectorRange": "Номер сектора Micropolis {0} должен быть между нулём и {1}.",
+    "MediaEngine.MicropolisRecordInput": "Входные данные записи Micropolis содержат {0} байт; запись вмещает не более {1} байт.",
+    "MediaEngine.MicropolisRecord": "Micropolis FormatHeader, C{0} H{1} R{2}, {3} байт, метка FF, контрольная сумма {4}",
+    "MediaEngine.MicropolisTruncated": "Micropolis FormatHeader, сектор, усечён"
+  }
+}

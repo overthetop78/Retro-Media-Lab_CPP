@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.FluxInvalidCell": "مدة خلية بت التدفق {0} غير صالحة؛ يجب أن تكون محدودة ولا تقل عن نبضة توقيت واحدة.",
+    "MediaEngine.FluxSizeLimit": "تتجاوز بيانات التدفق الحجم المدعوم في الذاكرة.",
+    "MediaEngine.FluxInvalidBit": "قيمة بت التدفق ليست صفرًا ولا واحدًا.",
+    "MediaEngine.FluxInvalidMaximum": "يجب أن يكون الحد الأقصى لعدد الخلايا لكل فاصل تدفق {0} موجبًا.",
+    "MediaEngine.FluxZeroCell": "يجب ألا تكون مدة خلية بت التدفق صفرًا.",
+    "MediaEngine.FluxZeroIndex": "يجب ألا تكون مدة فهرس دورة التدفق صفرًا.",
+    "MediaEngine.FluxIntervalOverflow": "فاصل التدفق البالغ {0} خلية عند {1} ticks لكل خلية يتجاوز نطاق الأعداد الصحيحة المدعوم.",
+    "MediaEngine.GcrCoordinates": "إحداثيات GCR غير صالحة: الإزاحة {0}، عدد البايتات {1}، الخطوة {2}."
+  }
+}

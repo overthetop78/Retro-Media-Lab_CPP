@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.PolicyEncoderId": "È richiesto un identificatore del codificatore.",
+    "MediaEngine.PolicyFormats": "È richiesto almeno un identificatore di formato non vuoto e non composto solo da spazi.",
+    "MediaEngine.PolicyPrefixes": "È richiesto almeno un prefisso di formato non vuoto e non composto solo da spazi.",
+    "MediaEngine.PolicyNull": "Una regola di ricostruzione dei settori non può essere nulla.",
+    "MediaEngine.PolicyNullBlock": "Un elemento di ricostruzione dei settori non può contenere un blocco nullo.",
+    "MediaEngine.PolicyRareUnknown": "Nessun profilo di codifica raro è registrato per il formato '{0}'.",
+    "MediaEngine.PolicyLisaCylinder": "Il cilindro Lisa FileWare {0} deve essere compreso tra 0 e {1}.",
+    "MediaEngine.PolicyJfdDensity": "La traccia JFD non ha un codice di densità utilizzabile.",
+    "MediaEngine.PolicyAddressRange": "Il valore di indirizzo {0} non rientra nell’intervallo di un intero con segno a 32 bit."
+  }
+}

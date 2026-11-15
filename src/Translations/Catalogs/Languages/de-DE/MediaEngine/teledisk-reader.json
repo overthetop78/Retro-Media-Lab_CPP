@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.Td0ImageTruncated": "Der TeleDisk Image Header bei Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0CommentHeaderTruncated": "Der TeleDisk-Kommentar-Header bei Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0CommentTruncated": "Der TeleDisk-Kommentar am Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0TrackTruncated": "Der TeleDisk Track Header bei Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0SectorTruncated": "Der Sektor-Header von TeleDisk bei Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0DataHeaderTruncated": "Der TeleDisk-Sektordaten-Header bei Offset {0} ist verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0DataTruncated": "Die TeleDisk-Sektordaten bei Offset {0} werden verkürzt: {1} Bytes erwartet, {2} verfügbar.",
+    "MediaEngine.Td0Signature": "Das Bild ist kein TeleDisk-Bild.",
+    "MediaEngine.Td0HeaderCrc": "Der TeleDisk-Header CRC ist ungültig: erwartet 0x{0}, berechnet 0x{1}.",
+    "MediaEngine.Td0CommentCrc": "Der TeleDisk-Kommentar CRC ist ungültig: erwartet 0x{0}, berechnet 0x{1}.",
+    "MediaEngine.Td0TrackCrc": "Die TeleDisk-Spur {0}/{1} CRC ist ungültig: erwartet 0x{2}, berechnet 0x{3}.",
+    "MediaEngine.Td0SectorCrc": "Der TeleDisk-Sektor {0}/{1}/{2} CRC ist ungültig: erwartet 0x{3}, berechnet 0x{4}.",
+    "MediaEngine.Td0SizeCode": "TeleDisk sector {0}/{1}/{2} hat einen ungültigen Größencode {3}.",
+    "MediaEngine.Td0MissingData": "Der TeleDisk-Sektor {0}/{1}/{2} hat keine kodierten Daten im Offset {3}.",
+    "MediaEngine.Td0NoSectors": "Das TeleDisk-Bild enthält keine Sektoren."
+  }
+}

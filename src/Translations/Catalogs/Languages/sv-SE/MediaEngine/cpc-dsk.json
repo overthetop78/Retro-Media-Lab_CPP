@@ -1,0 +1,24 @@
+{
+  "strings": {
+    "MediaEngine.CpcDskHeader": "Amstrad DSK header är truncated.",
+    "MediaEngine.CpcDskSignature": "Filen är inte en CPCEMU DSK-bild.",
+    "MediaEngine.CpcDskGeometry": "Amstrad DSK geometri är ogiltig.",
+    "MediaEngine.CpcDskExtendedTable": "Det utökade spårbordet Amstrad DSK är ogiltigt på rätt spår {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK spår {0} är truncated.",
+    "MediaEngine.CpcDskTrackHeader": "Amstrad DSK spår {0} har en ogiltig rubrik.",
+    "MediaEngine.CpcDskSectorTable": "Amstrad DSK spår {0} har en ogiltig sektor tabell.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sektor {0}:{1}:{2} är truncated.",
+    "MediaEngine.CpcDskNoSectors": "Amstrad DSK-bilden innehåller inga sektorer.",
+    "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK spår {0} upptar {1} byte och överstiger 65280-byte behållare gränsen.",
+    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK spår {0} använder en frånvarande, variabel storlek eller icke-nominell sektor representation som kräver EDSK.",
+    "MediaEngine.CpcDskTrackCollection": "Amstrad DSK-container kan inte skrivas: den deklarerade geometrin och spårsamlingen är oense.",
+    "MediaEngine.CpcDskTrackIndex": "Den Amstrad DSK behållare kan inte skrivas: spår index {0} visas på position {1}.",
+    "MediaEngine.CpcDskTooManySectors": "Behållaren Amstrad DSK kan inte skrivas: spår {0} innehåller för många sektorsbeskrivningar.",
+    "MediaEngine.CpcDskUniformTracks": "Amstrad DSK behållare kan inte skrivas: standard DSK kräver en enhetlig spårstorlek.",
+    "MediaEngine.CpcDskBuilderGeometry": "Den Amstrad DSK behållaren kan inte skrivas: geometrin överstiger CPCEMU gränser.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-container kan inte skrivas: inhemska metadata saknar ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK-container kan inte skrivas: sektorstorlek {0} är inte representerad av en CPCEMU-storlekskod.",
+    "MediaEngine.CpcDskOverflow": "CPCEMU DSK datastorlek överstiger det stödda intervallet.",
+    "MediaEngine.CpcDskRecordedAddress": "Inspelad CPCEMU-adress {0}:{1}:{2} kan inte representeras av ett-byte-fält."
+  }
+}

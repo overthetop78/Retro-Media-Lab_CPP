@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.VictorSectorSize": "Victor 9000セクターは512バイトです。受信したバイト数：{0}。",
+    "MediaEngine.VictorSectorRange": "Victor 9000 のセクター番号 {0} は、ゼロから {1} の範囲である必要があります。",
+    "MediaEngine.VictorMarkerLength": "Victor 9000 のマーカーはビット位置49まで必要です。受信サイズ: {0} ビット。",
+    "MediaEngine.VictorHeader": "Victor 9000 FormatHeader, C{0} H{1} R{2}, {3} バイト, ヘッダー {4}, データチェックサム {5}",
+    "MediaEngine.VictorData": "Victor 9000 FormatData, C{0} H{1} R{2}, {3} バイト, マーカー {4}, データブロック, チェックサム {5}",
+    "MediaEngine.VictorTruncated": "Victor 9000 FormatData, チェックサム 利用不可, 切り詰められています",
+    "MediaEngine.VictorUnpaired": "未対応の Victor 9000 データ、データプロローグ, データブロック"
+  }
+}

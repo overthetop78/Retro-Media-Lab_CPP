@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.IwmSectorSize": "Apple Macintosh 扇区包含 512 字节；收到 {0} 字节。",
+    "MediaEngine.IwmAddressRange": "Apple IWM GCR 字段 {0} 的值 {1} 必须在零和 {2} 之间。",
+    "MediaEngine.IwmAddress": "Apple Macintosh AppleAddress, C{0} H{1} R{2}, {3} 字节, 地址校验和 {4}, 数据校验和 {5}",
+    "MediaEngine.IwmData": "Apple Macintosh AppleData, C{0} H{1} R{2}, {3} 字节, 校验和 {4}",
+    "MediaEngine.IwmTruncated": "Apple Macintosh AppleData, 校验和 不可用, 已截断",
+    "MediaEngine.IwmUnpaired": "未配对的 Apple Macintosh 数据，数据前导"
+  }
+}

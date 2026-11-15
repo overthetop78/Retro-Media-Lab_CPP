@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.WozHeader": "A WOZ fejléce érvénytelen.",
+    "MediaEngine.WozDiskType": "A(z) {0} típusú WOZ-lemez nem támogatott; 5.25 hüvelykes Apple II-lemez szükséges.",
+    "MediaEngine.WozMissingChunk": "A kötelező WOZ-adatblokk '{0}' hiányzik vagy hiányos.",
+    "MediaEngine.WozTruncatedChunk": "A WOZ-adatblokk '{0}' csonka.",
+    "MediaEngine.WozTrackReference": "A(z) {0}. WOZ-sáv a tartományon kívüli {1}. leíróra hivatkozik.",
+    "MediaEngine.WozCrc": "A WOZ CRC32 érvénytelen: tárolt érték {0}, számított érték {1}.",
+    "MediaEngine.WozChunkId": "A WOZ-adatblokk '{0}' azonosítójának pontosan négy ASCII-karaktert kell tartalmaznia.",
+    "MediaEngine.WozTrackCount": "A WOZ1-íróprogram {0} sávot kapott; a várt szám 1 és {1} között van.",
+    "MediaEngine.WozTrackLength": "A(z) {0}. WOZ1-sáv {1} bitet tartalmaz; a maximum {2}.",
+    "MediaEngine.AppleNoRwtsSectors": "Nem található érvényes Apple II RWTS18-szektor a(z) {1} sávról dekódolt {0} szektor között."
+  }
+}
