@@ -1,7 +1,7 @@
 {
   "strings": {
-    "MediaEngine.SequentialModel": "Las coordenadas de longitud, tiempo o segmento de los medios de comunicación son inválidas.",
-    "MediaEngine.TapePcmProfile": "La tasa de muestra PCM, cuenta de canales, precisión, señalización o orden de byte es inválida.",
+    "MediaEngine.SequentialModel": "La longitud del medio secuencial, los tiempos o las coordenadas de los segmentos no son válidos.",
+    "MediaEngine.TapePcmProfile": "La frecuencia de muestreo PCM, el número de canales, la precisión, el signo o el orden de bytes no son válidos.",
     "MediaEngine.TapePcmData": "Los datos de PCM, canal, marco de muestra o tamaño de salida son inválidos o incompletos.",
     "MediaEngine.RawTapeWrite": "Se requiere un documento de cinta PCM válido para la salida RAW."
   }

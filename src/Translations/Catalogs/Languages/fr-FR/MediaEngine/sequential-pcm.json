@@ -1,8 +1,8 @@
 {
   "strings": {
-    "MediaEngine.SequentialModel": "La longueur, le moment ou les coordonnées du segment sont invalides.",
-    "MediaEngine.TapePcmProfile": "Le taux d'échantillonnage du PCM, le nombre de canaux, la précision, le signe ou l'octet sont invalides.",
-    "MediaEngine.TapePcmData": "Les données PCM, canal, cadre d'échantillonnage ou taille de sortie sont invalides ou incomplètes.",
-    "MediaEngine.RawTapeWrite": "Un document de bande PCM valide est requis pour la sortie RAW."
+    "MediaEngine.SequentialModel": "La longueur du média séquentiel, les temps ou les coordonnées des segments sont invalides.",
+    "MediaEngine.TapePcmProfile": "La fréquence d’échantillonnage PCM, le nombre de canaux, la précision, le signe ou l’ordre des octets est invalide.",
+    "MediaEngine.TapePcmData": "Les données PCM, le canal, la trame d’échantillons ou la taille de sortie sont invalides ou incomplets.",
+    "MediaEngine.RawTapeWrite": "Un document de bande PCM valide est nécessaire pour la sortie RAW."
   }
 }

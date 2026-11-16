@@ -1,7 +1,7 @@
 {
   "strings": {
     "MediaEngine.SequentialModel": "連続メディアの長さ、タイミング、セグメント座標が無効です。",
-    "MediaEngine.TapePcmProfile": "PCMのサンプルレート、チャンネル数、精度、記号、バイト順が無効です。",
+    "MediaEngine.TapePcmProfile": "PCMのサンプルレート、チャンネル数、精度、符号、またはバイト順が無効です。",
     "MediaEngine.TapePcmData": "PCMのデータ、チャネル、サンプル フレームまたは出力サイズが無効または不完全です。",
     "MediaEngine.RawTapeWrite": "RAW出力には有効なPCMテープのドキュメントが必要です。"
   }
