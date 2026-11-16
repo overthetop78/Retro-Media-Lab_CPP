@@ -5,7 +5,7 @@
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine {
 namespace C=AcornWinchester::Constants;
-void RuntimeDisk::State::updateMetadata(const std::map<std::string,std::string>& values){
+void RuntimeDisk::DecodedState::updateMetadata(const std::map<std::string,std::string>& values){
     writable();if(values.empty())return;
     const auto found=values.find(std::string(C::DescriptorKey));
     if(document->formatId()!=C::FormatId||!blocks()||values.size()!=1||found==values.end())throw MediaError(DiagnosticCode::AcornDscMetadata);
@@ -24,7 +24,7 @@ void RuntimeDisk::State::updateMetadata(const std::map<std::string,std::string>&
         std::vector<MediaFileSystems::MessageRecipe>(document->messages().begin(),document->messages().end()),std::move(metadata),std::vector<std::string>(document->diagnostics().begin(),document->diagnostics().end()));
     documentChanged=true;
 }
-void RuntimeDisk::State::prepareBlockFormat(const HardDiskGeometry& geometry){
+void RuntimeDisk::DecodedState::prepareBlockFormat(const HardDiskGeometry& geometry){
     writable();if(document->formatId()!=C::FormatId||!blocks()||!AcornWinchester::supportsGeometry(geometry))throw MediaError(DiagnosticCode::AcornDscGeometry);
     const auto previous=updated();const auto& image=dynamic_cast<const BlockImage&>(previous->representation());std::vector<DataRange> ranges;
     for(const auto& range:image.ranges()){

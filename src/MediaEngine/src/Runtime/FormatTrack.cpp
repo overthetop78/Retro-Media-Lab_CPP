@@ -20,7 +20,7 @@ ImageDisk::Mode mode(std::optional<std::int32_t> rate,std::optional<bool> mfm,co
     default:invalid();}
 }
 }
-void RuntimeDisk::State::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector> fields,std::optional<std::int32_t> dataRate,std::optional<bool> mfm){
+void RuntimeDisk::DecodedState::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector> fields,std::optional<std::int32_t> dataRate,std::optional<bool> mfm){
     writable();const auto pending=this->updated();
     const auto* representation=dynamic_cast<const SectorRepresentation*>(&pending->representation());if(!representation)invalid();
     auto previous=representation->imageOwner();RuntimeDetails::validateTrack(*previous,cylinder,head,fields);

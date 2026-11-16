@@ -2969,13 +2969,17 @@
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Policy.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Registry.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Registry.h" />
+    <ClCompile Include="src\MediaEngine\src\Runtime\DecodedDisk.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Disk.cpp" />
     <ClInclude Include="src\MediaEngine\src\Runtime\DiskState.h" />
     <ClInclude Include="src\MediaEngine\src\Runtime\FluxConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Runtime\FluxDisk.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\FluxTrackData.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\FormatTrack.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Metadata.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Runtime\MfmDisk.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Persistence.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Runtime\PhysicalStates.h" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Sectors.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\SectorTracks.cpp" />
     <ClInclude Include="src\MediaEngine\src\Runtime\SectorTracks.h" />

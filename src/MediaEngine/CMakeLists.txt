@@ -2,6 +2,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Runtime/FluxTrackData.cpp
   src/Runtime/Tracks.cpp
   src/Runtime/WinchesterTracks.cpp
+  src/Runtime/DecodedDisk.cpp
+  src/Runtime/FluxDisk.cpp
+  src/Runtime/MfmDisk.cpp
   src/Runtime/Disk.cpp
   src/Runtime/Sectors.cpp
   src/Runtime/Persistence.cpp

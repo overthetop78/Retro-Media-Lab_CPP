@@ -24,6 +24,7 @@ public:
     std::int32_t trackByteLength()const noexcept{return container_->header().trackDataLength();}
     std::uint32_t sampleRate()const noexcept{return container_->header().sampleRate();}std::uint32_t startNanoseconds()const noexcept{return container_->header().startNanoseconds();}
     const std::shared_ptr<const Container>& container()const noexcept{return container_;}
+    std::shared_ptr<Adaptec::SectorReader> sectorReader()const{return sectors();}
 private:
     std::shared_ptr<Adaptec::SectorReader> sectors()const;
     std::shared_ptr<const Container> container_;mutable std::mutex mutex_;mutable std::shared_ptr<Adaptec::SectorReader> sectors_;

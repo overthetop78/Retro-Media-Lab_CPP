@@ -17,7 +17,7 @@ namespace {
 std::int32_t dataRate(std::uint32_t cell,bool mfm){if(!cell)invalid();return static_cast<std::int32_t>(RuntimeDetails::FluxConstants::NanosecondsPerSecond/(std::uint64_t(cell)*(mfm?IsoFm::Constants::CellsPerDataBit:1)));}
 MediaDiskSector field(const M::SectorBlock& b){MediaDiskSector result;result.index=static_cast<std::int64_t>(b.logicalBlock);result.data=b.data;const auto address=b.recordedAddress.value_or(b.address);result.cylinder=RuntimeDetails::coordinate(address.cylinder);result.head=RuntimeDetails::coordinate(address.head);result.number=RuntimeDetails::coordinate(address.number);result.integrityValid=b.integrityValid;result.recordedSizeCode=b.recordedSizeCode;result.headerIntegrityValid=b.headerIntegrityValid;result.dataIntegrityValid=b.dataIntegrityValid;result.deletedDataMark=b.deletedDataMark;result.recordedErrorCheckCode=b.recordedErrorCheckCode;return result;}
 }
-FluxTrackData RuntimeDisk::State::readTrack(std::int32_t cylinder,std::int32_t head,std::string_view encoding,std::uint32_t cell,std::uint32_t period,const Encoding::Attributes& attributes){
+FluxTrackData RuntimeDisk::DecodedState::readTrack(std::int32_t cylinder,std::int32_t head,std::string_view encoding,std::uint32_t cell,std::uint32_t period,const Encoding::Attributes& attributes){
     alive();if(cylinder<0||head<0||cylinder>=cylinders()||head>=heads()||!cell||!period)invalid();
     if(auto found=writtenTracks.find({cylinder,head});found!=writtenTracks.end())return found->second;
     if(document->formatId()==AcornWinchester::Constants::FormatId&&blocks())return readWinchesterTrack(cylinder,head,period);
@@ -38,7 +38,7 @@ FluxTrackData RuntimeDisk::State::readTrack(std::int32_t cylinder,std::int32_t h
     }
     (void)encoding;(void)attributes;return FluxTrackData({FluxRevolutionData(period,std::move(track.revolution.intervals))});
 }
-void RuntimeDisk::State::writeTrackWindow(std::int32_t cylinder,std::int32_t head,std::string_view encoding,std::uint32_t cell,std::uint32_t period,std::uint32_t start,std::uint32_t duration,std::span<const std::uint32_t> offsets,const Encoding::Attributes& attributes,bool ending){
+void RuntimeDisk::DecodedState::writeTrackWindow(std::int32_t cylinder,std::int32_t head,std::string_view encoding,std::uint32_t cell,std::uint32_t period,std::uint32_t start,std::uint32_t duration,std::span<const std::uint32_t> offsets,const Encoding::Attributes& attributes,bool ending){
     writable();if(document->formatId()==AcornWinchester::Constants::FormatId&&blocks()){
         if(encoding!=Adaptec::Constants::EncodingId)invalid();writeWinchesterWindow(cylinder,head,period,start,duration,offsets,ending);return;
     }
@@ -62,7 +62,7 @@ void RuntimeDisk::State::writeTrackWindow(std::int32_t cylinder,std::int32_t hea
     }catch(...){writtenTracks.insert_or_assign(address,FluxTrackData({revolution}));throw;}
     writtenTracks.insert_or_assign(address,FluxTrackData({std::move(revolution)}));
 }
-void RuntimeDisk::State::retryTrackProjection(){
+void RuntimeDisk::DecodedState::retryTrackProjection(){
     auto winchester=winchesterProjectionErrors;for(const auto& [address,error]:winchester){
         try{projectWinchesterTrack(address.first,address.second);}catch(const MediaError&){throw MediaError(DiagnosticCode::RuntimeTrackProjection);}winchesterProjectionErrors.erase(address);
     }

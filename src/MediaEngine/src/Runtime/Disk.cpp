@@ -1,4 +1,4 @@
-#include "DiskState.h"
+#include "PhysicalStates.h"
 #include <QFileInfo>
 #include <limits>
 namespace RetroMediaLab::MediaEngine {
@@ -8,29 +8,37 @@ std::int32_t coordinate(std::int64_t value){if(value<std::numeric_limits<std::in
 DrivePosition position(std::int64_t index,MediaFileSystems::SectorAddress address){if(address.cylinder<0||address.head<0)return {0,0,-1,index};return {coordinate(address.cylinder),coordinate(address.head),coordinate(address.number),-1};}
 }
 RuntimeDisk::State::State(std::shared_ptr<RuntimeDetails::Services> engine,std::shared_ptr<const MediaDocument> source,bool allowed,bool owns):services(std::move(engine)),document(std::move(source)),ownsMechanics(owns){
-    if(!document||(document->mediaKind()!=MediaKind::Floppy&&document->mediaKind()!=MediaKind::HardDisk)||(!sectors()&&!blocks())||!document->mediaSource()->options().drive)throw MediaError(DiagnosticCode::RuntimeDiskRequest);
-    const auto path=QString::fromUtf8(document->mediaSource()->primaryPath());
-    const auto extension=std::filesystem::path(path.toStdU16String()).extension().u8string();
+    if(!document||!document->mediaSource()->options().drive)throw MediaError(DiagnosticCode::RuntimeDiskRequest);
+    const auto path=QString::fromUtf8(document->mediaSource()->primaryPath());const auto extension=std::filesystem::path(path.toStdU16String()).extension().u8string();
     readOnly=!allowed||!QFileInfo(path).isWritable()||!services->writing.registry().canWrite(*document,document->formatId(),std::string(extension.begin(),extension.end()));
 }
-RuntimeDisk::State::~State()noexcept{try{close();}catch(...) {}}
-const MediaFileSystems::SectorImage* RuntimeDisk::State::sectors()const{if(const auto* value=dynamic_cast<const SectorRepresentation*>(&document->representation()))return &value->image();return nullptr;}
-const BlockImage* RuntimeDisk::State::blocks()const{return dynamic_cast<const BlockImage*>(&document->representation());}
-std::int32_t RuntimeDisk::State::size()const{return sectors()?RuntimeDetails::coordinate(sectors()->geometry().blockSize):blocks()->logicalBlockSize();}
-std::int64_t RuntimeDisk::State::count()const{if(sectors()){if(sectors()->blockCount()>static_cast<std::uint64_t>(std::numeric_limits<std::int64_t>::max()))throw MediaError(DiagnosticCode::RuntimeDiskSector);return static_cast<std::int64_t>(sectors()->blockCount());}return blocks()->logicalBlockCount();}
-std::int64_t RuntimeDisk::State::cylinders()const{return sectors()?sectors()->geometry().cylinders:blocks()->geometry()?blocks()->geometry()->cylinders():0;}
-std::int32_t RuntimeDisk::State::heads()const{return sectors()?RuntimeDetails::coordinate(sectors()->geometry().heads):blocks()->geometry()?blocks()->geometry()->heads():0;}
-std::int32_t RuntimeDisk::State::sectorsPerTrack()const{return sectors()?RuntimeDetails::coordinate(sectors()->geometry().sectorsPerTrack):blocks()->geometry()?blocks()->geometry()->sectorsPerTrack():0;}
 void RuntimeDisk::State::alive()const{if(closed)throw MediaError(DiagnosticCode::RuntimeDiskClosed);}
-void RuntimeDisk::State::validate(std::int64_t index)const{alive();if(index<0||index>=count())throw MediaError(DiagnosticCode::RuntimeDiskSector);}
 void RuntimeDisk::State::writable()const{alive();if(readOnly)throw MediaError(DiagnosticCode::RuntimeDiskReadOnly);}
-bool RuntimeDisk::State::dirty()const{return !changes.empty()||documentChanged;}
+void RuntimeDisk::State::close(){
+    if(closed)return;std::exception_ptr failure;try{flush({});}catch(...){failure=std::current_exception();}
+    try{if(ownsMechanics)document->mediaSource()->options().drive->reset();}catch(...){if(!failure)failure=std::current_exception();}
+    clear();closed=true;if(failure)std::rethrow_exception(failure);
+}
+std::optional<std::int64_t> RuntimeDisk::State::findSector(std::int32_t,std::int32_t,std::int32_t)const{alive();return {};}
+std::vector<std::int64_t> RuntimeDisk::State::trackSectors(std::int32_t,std::int32_t)const{alive();return {};}
+MediaDiskSector RuntimeDisk::State::read(std::int64_t,std::stop_token token){alive();checkCancellation(token);throw MediaError(DiagnosticCode::RuntimeDiskSector);}
+void RuntimeDisk::State::write(std::int64_t,std::span<const std::uint8_t>,std::optional<bool>){alive();throw MediaError(DiagnosticCode::RuntimeDiskSector);}
+void RuntimeDisk::State::updateMetadata(const std::map<std::string,std::string>& values){alive();if(!values.empty())throw MediaError(DiagnosticCode::RuntimeDiskRequest);}
+void RuntimeDisk::State::prepareBlockFormat(const HardDiskGeometry&){alive();throw MediaError(DiagnosticCode::RuntimeDiskRequest);}
+void RuntimeDisk::State::formatTrack(std::int32_t,std::int32_t,std::span<const MediaDiskSector>,std::optional<std::int32_t>,std::optional<bool>){alive();throw MediaError(DiagnosticCode::RuntimeTrackProjection);}
 std::future<std::unique_ptr<RuntimeDisk>> RuntimeDisk::openAsync(std::filesystem::path path,bool writable,std::optional<std::string> format,std::stop_token token,std::shared_ptr<DriveMechanics> mechanics){
     return std::async(std::launch::async,[services=RuntimeDetails::defaultServices(),path=std::move(path),writable,format=std::move(format),token,mechanics=std::move(mechanics)]{
         checkCancellation(token);SourceOptions options;const auto u8=path.u8string();options.primaryPath.assign(u8.begin(),u8.end());options.requestedFormatId=format;options.drive=mechanics;options.trackDriveAccesses=false;
         auto document=services->reading.readingService().readAsync(std::make_shared<MediaSource>(std::move(options)),token).get();
-        try{return std::unique_ptr<RuntimeDisk>(new RuntimeDisk(std::make_shared<State>(services,document,writable,!mechanics)));}
-        catch(...){if(!mechanics&&document->mediaSource()->options().drive)try{document->mediaSource()->options().drive->reset();}catch(...){}throw;}
+        bool stateConstructed=false;
+        try{
+            std::shared_ptr<State> state;
+            if(dynamic_cast<const MfmEmu::Representation*>(&document->representation()))state=std::make_shared<MfmState>(services,document,writable,!mechanics);
+            else if(dynamic_cast<const FluxRepresentation*>(&document->representation()))state=std::make_shared<FluxState>(services,document,writable,!mechanics);
+            else state=std::make_shared<DecodedState>(services,document,writable,!mechanics);
+            stateConstructed=true;return std::unique_ptr<RuntimeDisk>(new RuntimeDisk(std::move(state)));
+        }
+        catch(...){if(!stateConstructed&&!mechanics&&document->mediaSource()->options().drive)try{document->mediaSource()->options().drive->reset();}catch(...){}throw;}
     });
 }
 RuntimeDisk::~RuntimeDisk()noexcept=default;

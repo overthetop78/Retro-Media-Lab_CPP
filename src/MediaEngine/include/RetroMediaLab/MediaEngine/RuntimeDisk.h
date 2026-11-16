@@ -20,7 +20,7 @@ struct MediaDiskSector {
     std::optional<bool> headerIntegrityValid,dataIntegrityValid,deletedDataMark;
     std::optional<std::uint8_t> recordedSizeCode;
 };
-// Decoded sector/block images. Physical flux and MFM runtimes are separate backends.
+// Sector/block, protected-flux and MFM containers use separate internal runtimes.
 // The caller serializes commands and calls close() to observe any final flush error.
 class RuntimeDisk final {
 public:
@@ -50,7 +50,7 @@ public:
     RETROMEDIALAB_MEDIAENGINE_API std::future<void> flushAsync(std::stop_token={});
     RETROMEDIALAB_MEDIAENGINE_API void close();
 private:
-    struct State;std::shared_ptr<State> state_;
+    struct State;struct DecodedState;struct FluxState;struct MfmState;std::shared_ptr<State> state_;
     explicit RuntimeDisk(std::shared_ptr<State> value):state_(std::move(value)){}
 };
 }

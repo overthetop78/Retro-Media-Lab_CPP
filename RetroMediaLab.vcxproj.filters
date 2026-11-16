@@ -10923,6 +10923,9 @@
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Registry.h">
       <Filter>src\MediaEngine\src\Reconstruction\Sector</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Runtime\DecodedDisk.cpp">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Runtime\Disk.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
@@ -10932,6 +10935,9 @@
     <ClInclude Include="src\MediaEngine\src\Runtime\FluxConstants.h">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Runtime\FluxDisk.cpp">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Runtime\FluxTrackData.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
@@ -10941,9 +10947,15 @@
     <ClCompile Include="src\MediaEngine\src\Runtime\Metadata.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Runtime\MfmDisk.cpp">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Runtime\Persistence.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Runtime\PhysicalStates.h">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Runtime\Sectors.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
