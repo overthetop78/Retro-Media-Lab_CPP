@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
+  src/Definitions/DisplayNames.cpp
   src/Exploration/FileTreeCursor.cpp
   src/Exploration/Composition/Interpretation.cpp
   src/Migration/Planning.cpp
@@ -145,3 +146,12 @@ target_include_directories(RetroMediaLab.MediaFileSystems PUBLIC "${CMAKE_CURREN
 target_link_libraries(RetroMediaLab.MediaFileSystems PRIVATE Qt6::Core RetroMediaLab.MediaAnalysis)
 set_target_properties(RetroMediaLab.MediaFileSystems PROPERTIES OUTPUT_NAME MediaFileSystems PREFIX "")
 install(TARGETS RetroMediaLab.MediaFileSystems RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
+
+set(fs_names_catalog "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs/Constants/MediaFileSystems/names.json")
+set(fs_names_header "${CMAKE_CURRENT_BINARY_DIR}/generated/FileSystemNamesData.h")
+add_custom_command(OUTPUT "${fs_names_header}"
+  COMMAND "${Python3_EXECUTABLE}" "${PROJECT_SOURCE_DIR}/scripts/translations/compile_fs_names.py"
+    --source "${fs_names_catalog}" --output "${fs_names_header}"
+  DEPENDS "${fs_names_catalog}" "${PROJECT_SOURCE_DIR}/scripts/translations/compile_fs_names.py" VERBATIM)
+target_sources(RetroMediaLab.MediaFileSystems PRIVATE "${fs_names_header}")
+target_include_directories(RetroMediaLab.MediaFileSystems PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/generated")

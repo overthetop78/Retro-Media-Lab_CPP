@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 namespace RetroMediaLab::MediaFileSystems::Adfs {
 namespace Internal {
@@ -29,7 +30,7 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
     for(const auto i:mapBlocks)if(const auto block=image.block(i,token);block&&!Internal::validIntegrity(*block)){context.mapIntegrity=false;context.warnings.push_back({DiagnosticCode::AdfsIntegrity,{std::to_string(i)}});}
     std::set<std::int32_t> visited;auto root=Internal::directory(context,context.resolver->rootAddress(),visited,0,context.mapIntegrity,token);
     FileSystemVolume result;result.name=context.resolver->volumeName().empty()?root.name:context.resolver->volumeName();
-    result.fileSystemId=Constants::FileSystemId;result.fileSystemDisplayName=Constants::FileSystemId;
+    result.fileSystemId=Constants::FileSystemId;applyFileSystemDisplayName(result,image.geometry());
     result.capacity=image.capacity();result.freeBytes=context.resolver->freeBytes();result.freeSpaceKnown=context.mapIntegrity&&root.integrity;
     result.entries=std::move(root.entries);result.warnings=std::move(context.warnings);return result;
 }

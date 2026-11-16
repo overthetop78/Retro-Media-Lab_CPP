@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 namespace RetroMediaLab::MediaFileSystems::Lisa {
 namespace {
@@ -16,7 +17,7 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
     for(const auto& page:pages){checkCancellation(token);if(!page.tag)volume.warnings.push_back({DiagnosticCode::LisaInvalidTag,{std::to_string(page.block->logicalBlock),std::to_string(page.block->tag?page.block->tag->size():0),std::to_string(Constants::TagLength)}});else{++taggedPages;if(page.tag->fileId==Constants::FreePageFileId||page.tag->fileId==Constants::AlternateFreePageFileId)++freePages;}}
     auto contents=Internal::contents(pages,volume.warnings,token);
     for(auto& [id,file]:contents){checkCancellation(token);const auto name=catalog.names.find(id);if(name==catalog.names.end())continue;FileSystemEntry entry;entry.name=name->second;entry.kind=EntryKind::File;entry.size=file.bytes.size();entry.comment=std::string(Constants::DefaultFilePrefix)+Internal::hex(id);entry.storageReference=std::int64_t(file.firstBlock);entry.metadataValid=file.valid;entry.content=std::move(file.bytes);entry.commentResourceKey=Constants::FileDescriptionKey;entry.commentTranslationDomain=Constants::TranslationDomain;entry.commentArguments={Internal::hex(id)};volume.entries.push_back(std::move(entry));}
-    volume.name=mddf.volumeName;volume.fileSystemId=Constants::Id;volume.fileSystemDisplayName=Constants::Id;volume.capacity=image.capacity();volume.freeBytes=freePages*image.geometry().blockSize;
+    volume.name=mddf.volumeName;volume.fileSystemId=Constants::Id;applyFileSystemDisplayName(volume,image.geometry(),mddf.version);volume.capacity=image.capacity();volume.freeBytes=freePages*image.geometry().blockSize;
     if(taggedPages==0)volume.warnings.push_back({DiagnosticCode::LisaUnknownFreeSpace,{}});return volume;
 }
 }

@@ -1,0 +1,28 @@
+# Noms affichés des systèmes de fichiers
+
+- [x] Service commun et données canoniques
+  - [x] Créer `src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h`, `src/MediaFileSystems/src/Definitions/DisplayNames.cpp` et `DisplayConstants.h` : choisir les noms et variantes C#, fournir libellé anglais de secours et clé/arguments traduisibles.
+  - [x] Créer `scripts/translations/compile_fs_names.py` et `src/Translations/Catalogs/Constants/MediaFileSystems/names.json` : générer le secours C++ depuis le catalogue canonique unique ; déclarer les noms invariants et les phrases traduisibles.
+  - [x] Créer les catalogues `src/Translations/Catalogs/Languages/*/MediaFileSystems/names.json` avec Argos et révision des libellés.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Acorn/Adfs/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Acorn/BbcDfs/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Amiga/Dos/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Amiga/Dos/Recovery.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Apple/Dos/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Apple/Lisa/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Hfs/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Apple/Macintosh/Mfs/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Apple/ProDos/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Atari/Dos/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Commodore/Coherent/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Commodore/Dos/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Dec/Rt11/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Fat/Fat12/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Ucsd/Reader.cpp` : utiliser le choix de libellé commun pour le résultat du lecteur.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Cpm/Reader.cpp` : appliquer les variantes CP/M et Amstrad à la sortie commune.
+  - [x] Modifier `src/MediaFileSystems/CMakeLists.txt`, `scripts/quality/audit_literals.py`, `RetroMediaLab.vcxproj` et `.filters` : intégrer le service et la génération.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Atari/BootDisk/Reader.cpp` : rattacher le nom affiché et sa traduction au service commun.
+  - [x] Modifier `src/MediaFileSystems/src/FileSystems/Atari/ClkGraphicsLibrary/Reader.cpp` : rattacher le nom affiché et sa traduction au service commun.
+- [x] Vérification ciblée
+  - [x] Créer `build/verification-filesystem-names/CMakeLists.txt` et `main.cpp` : variantes, arguments, noms de secours et identifiants inconnus ; aucun retest des algorithmes de fichiers.
+  - [x] Supprimer `build/verification-filesystem-names/` et ses artefacts après utilisation.

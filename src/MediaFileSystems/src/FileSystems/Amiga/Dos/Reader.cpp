@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include <algorithm>
 #include <bit>
@@ -53,7 +54,7 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
         if(!Internal::recordedIntegrity(*block))result.warnings.push_back({DiagnosticCode::AmigaRecordedIntegrity,{std::to_string(number)}});
         for(int offset=BitmapDataOffset;offset<BlockSize;offset+=WordSize)free+=std::popcount(Internal::unsignedInteger(block->data,offset));
     }
-    result.name=readName(root->data,OrdinaryNameOffset,OrdinaryNameMaximumLength);result.fileSystemId=fileSystemId(root->variant);result.fileSystemDisplayName=result.fileSystemId;
+    result.name=readName(root->data,OrdinaryNameOffset,OrdinaryNameMaximumLength);result.fileSystemId=fileSystemId(root->variant);applyFileSystemDisplayName(result,image.geometry());
     result.capacity=image.capacity();result.freeBytes=std::min(free,image.blockCount())*BlockSize;
     result.created=readTime(root->data,DateOffset);result.modified=readTime(root->data,VolumeModifiedDateOffset);return result;
 }

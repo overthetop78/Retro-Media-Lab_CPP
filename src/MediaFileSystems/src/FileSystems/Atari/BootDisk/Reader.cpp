@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Constants.h"
 #include "../FormatRecognition.h"
 #include <RetroMediaLab/MediaFileSystems/AtariDos.h>
@@ -10,5 +11,5 @@ bool bootDisk(const SectorImage& image,std::stop_token token){
     for(std::uint64_t index=0;index<count;++index){const auto sector=image.block(index,token);if(!sector||sector->data.size()<SectorSize)return false;}
     return !AtariDos::canRead(image,token)&&!kFile(image,token)&&!clk(image,token);
 }
-FileSystemVolume readBootDisk(const SectorImage& image,std::stop_token token){if(!bootDisk(image,token))throw MediaError(DiagnosticCode::AtariBootUnsupported);FileSystemVolume volume;volume.fileSystemId=Id;volume.fileSystemDisplayName=Display;volume.capacity=image.capacity();volume.freeSpaceKnown=false;volume.attributes={std::string(Bootable),std::string(Direct)};volume.bootable=true;return volume;}
+FileSystemVolume readBootDisk(const SectorImage& image,std::stop_token token){if(!bootDisk(image,token))throw MediaError(DiagnosticCode::AtariBootUnsupported);FileSystemVolume volume;volume.fileSystemId=Id;applyFileSystemDisplayName(volume,image.geometry());volume.capacity=image.capacity();volume.freeSpaceKnown=false;volume.attributes={std::string(Bootable),std::string(Direct)};volume.bootable=true;return volume;}
 }

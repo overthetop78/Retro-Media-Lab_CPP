@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include "../../../Primitives/Identifiers.h"
 namespace RetroMediaLab::MediaFileSystems::ProDos {
@@ -12,7 +13,7 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
     if(std::uint64_t(total)>image.blockCount()){volume.warnings.push_back({DiagnosticCode::ProDosTotal,{std::to_string(total),std::to_string(image.blockCount())}});total=std::int32_t(image.blockCount());}
     const auto bitmap=Internal::bitmap(image,header->bitmapBlock,total,volume.warnings,token);
     volume.freeBytes=bitmap.valid?std::uint64_t(bitmap.freeBlocks)*BlockSize:0;
-    volume.fileSystemId=Internal::sameId(image.geometry().formatId,Sos)?SosId:Id;volume.fileSystemDisplayName=volume.fileSystemId;
+    volume.fileSystemId=Internal::sameId(image.geometry().formatId,Sos)?SosId:Id;applyFileSystemDisplayName(volume,image.geometry());
     volume.capacity=std::uint64_t(total)*BlockSize;volume.entries=std::move(directory.entries);return volume;
 }
 }

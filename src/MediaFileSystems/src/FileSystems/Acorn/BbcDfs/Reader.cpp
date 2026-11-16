@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include <QString>
 #include <algorithm>
@@ -24,7 +25,7 @@ FileSystemVolume readSingle(const CatalogueView& image,std::stop_token token) {
     const Bytes names=namesBlock->data,metadata=metadataBlock->data;
     const auto header=decodeCatalogue(metadata);auto total=std::uint64_t(header.totalSectors);
     if(!total && same(image.geometry().formatId,AcornAtomDos))total=image.blockCount();
-    FileSystemVolume result;result.fileSystemId=FileSystemId;result.fileSystemDisplayName=FileSystemId;
+    FileSystemVolume result;result.fileSystemId=FileSystemId;applyFileSystemDisplayName(result,{});
     const auto title=decodeName(names.first(TitleFirstLength))+decodeName(metadata.first(TitleSecondLength));
     result.name=QString::fromUtf8(title).trimmed().toUtf8().toStdString();
     const bool catalogueValid=validIntegrity(*namesBlock) && validIntegrity(*metadataBlock);

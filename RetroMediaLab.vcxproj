@@ -47,6 +47,7 @@
     <None Include="scripts\quality\audit_media_architecture.py" />
     <None Include="scripts\translations\compile_catalog.py" />
     <None Include="scripts\translations\compile_errors.py" />
+    <None Include="scripts\translations\compile_fs_names.py" />
     <None Include="scripts\translations\ignores\common.txt" />
     <None Include="scripts\translations\translate.py" />
     <ClInclude Include="src\App\AppApi.h" />
@@ -3200,6 +3201,7 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FatBootSectorLayout.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileCore.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileCoreLayout.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemDisplayNames.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemIds.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemModels.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileTreeCursor.h" />
@@ -3231,6 +3233,8 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\VolumeConstants.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\VolumeDetectors.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Volumes.h" />
+    <ClInclude Include="src\MediaFileSystems\src\Definitions\DisplayConstants.h" />
+    <ClCompile Include="src\MediaFileSystems\src\Definitions\DisplayNames.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Diagnostics.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\AnalysisConstants.h" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Catalog.cpp" />
@@ -3643,6 +3647,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\prodos-timestamp.json" />
@@ -3856,6 +3861,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\prodos-timestamp.json" />
@@ -4069,6 +4075,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\prodos-timestamp.json" />
@@ -4282,6 +4289,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\prodos-timestamp.json" />
@@ -4495,6 +4503,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\prodos-timestamp.json" />
@@ -4708,6 +4717,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\prodos-timestamp.json" />
@@ -4921,6 +4931,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\prodos-timestamp.json" />
@@ -5134,6 +5145,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\prodos-timestamp.json" />
@@ -5347,6 +5359,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\prodos-timestamp.json" />
@@ -5560,6 +5573,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\prodos-timestamp.json" />
@@ -5773,6 +5787,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\prodos-timestamp.json" />
@@ -5986,6 +6001,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\prodos-timestamp.json" />
@@ -6199,6 +6215,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\prodos-timestamp.json" />
@@ -6412,6 +6429,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\prodos-timestamp.json" />
@@ -6625,6 +6643,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\prodos-timestamp.json" />
@@ -6838,6 +6857,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\prodos-timestamp.json" />
@@ -7051,6 +7071,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\prodos-timestamp.json" />
@@ -7264,6 +7285,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\prodos-timestamp.json" />
@@ -7477,6 +7499,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\prodos-timestamp.json" />
@@ -7690,6 +7713,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\prodos-timestamp.json" />
@@ -7903,6 +7927,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\prodos-timestamp.json" />
@@ -8116,6 +8141,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\prodos-timestamp.json" />
@@ -8329,6 +8355,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\prodos-timestamp.json" />
@@ -8542,6 +8569,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\prodos-timestamp.json" />
@@ -8755,6 +8783,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\prodos-timestamp.json" />
@@ -8968,6 +8997,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\prodos-timestamp.json" />
@@ -9181,6 +9211,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\prodos-timestamp.json" />
@@ -9394,6 +9425,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\prodos-timestamp.json" />
@@ -9607,6 +9639,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\prodos-timestamp.json" />
@@ -9820,6 +9853,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\media-exploration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\names.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\prodos-timestamp.json" />

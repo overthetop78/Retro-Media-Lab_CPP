@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include <RetroMediaLab/MediaFileSystems/AppleRecognition.h>
 #include <set>
@@ -45,7 +46,7 @@ Internal::FileData Internal::file(const SectorImage& image,std::int32_t track,st
 bool canRead(const SectorImage& image,std::stop_token token){return Internal::vtoc(image,token).has_value();}
 FileSystemVolume read(const SectorImage& image,std::stop_token token){
     const auto vtoc=Internal::vtoc(image,token);if(!vtoc)throw MediaError(DiagnosticCode::AppleDosCatalogMissing,{std::to_string(-1),std::to_string(-1)});
-    FileSystemVolume volume;volume.name=volumeName(vtoc->number);volume.fileSystemId=Id;volume.fileSystemDisplayName=Id;volume.capacity=image.capacity();volume.freeBytes=std::uint64_t(vtoc->freeSectors)*SectorSize;
+    FileSystemVolume volume;volume.name=volumeName(vtoc->number);volume.fileSystemId=Id;applyFileSystemDisplayName(volume,image.geometry());volume.capacity=image.capacity();volume.freeBytes=std::uint64_t(vtoc->freeSectors)*SectorSize;
     std::set<std::uint64_t> visited;auto track=vtoc->catalogTrack,sector=vtoc->catalogSector;
     while(track!=0){
         checkCancellation(token);

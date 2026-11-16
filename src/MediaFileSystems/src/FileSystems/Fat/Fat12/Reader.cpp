@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Fat12Internal.h"
 namespace RetroMediaLab::MediaFileSystems::Fat12 {
 using namespace FatConstants;
@@ -30,7 +31,7 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token) {
     const auto layout=readLayout(boot->data,image.blockCount(),image.geometry().formatId);if(!layout)throw Internal::unsupported(image,boot);
     if(boot->data.size()<=FatBootSectorLayout::MediaDescriptorOffset && !Internal::dosPlus(image))throw Internal::unsupported(image,boot);
     const auto media=descriptor(image,*boot,*layout,token);if(!media)throw Internal::unsupported(image,boot);
-    FileSystemVolume volume;volume.fileSystemId=Values::FileSystemId;volume.fileSystemDisplayName=Values::FileSystemId;volume.capacity=image.capacity();
+    FileSystemVolume volume;volume.fileSystemId=Values::FileSystemId;applyFileSystemDisplayName(volume,image.geometry());volume.capacity=image.capacity();
     const auto fat=Internal::bestTable(image,*layout,*media,volume.warnings,token);
     if(!fat.complete() || !Internal::usableTable(fat.bytes,*media,layout->clusterCount))throw Internal::unsupported(image,boot);
     const auto root=Internal::sectors(image,layout->rootStart,layout->rootSectors,volume.warnings,token);

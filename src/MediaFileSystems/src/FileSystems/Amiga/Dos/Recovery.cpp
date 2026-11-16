@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include <unordered_map>
 #include <limits>
@@ -50,6 +51,6 @@ std::optional<FileSystemVolume> recover(const SectorImage& image,std::stop_token
         if(c.parent==expected||parent==byNumber.end()||candidates[parent->second].kind!=EntryKind::Directory)volume.entries.push_back(build(index,{},0));
     }
     sort(volume.entries);volume.warnings.insert(volume.warnings.begin(),{DiagnosticCode::AmigaRecovered,{std::to_string(candidates.size())}});
-    volume.fileSystemId=fileSystemId(variant);volume.fileSystemDisplayName=volume.fileSystemId;volume.capacity=image.capacity();volume.freeSpaceKnown=false;return volume;
+    volume.fileSystemId=fileSystemId(variant);applyFileSystemDisplayName(volume,image.geometry());volume.capacity=image.capacity();volume.freeSpaceKnown=false;return volume;
 }
 }

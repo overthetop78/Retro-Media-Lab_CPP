@@ -1,3 +1,4 @@
+#include <RetroMediaLab/MediaFileSystems/FileSystemDisplayNames.h>
 #include "Internal.h"
 #include <QString>
 namespace RetroMediaLab::MediaFileSystems::MacMfs {
@@ -14,6 +15,6 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
     volume.name=Macintosh::pascalString(mdb,VolumeName,MaximumVolumeName);const auto map=Internal::AllocationMap::decode(Bytes(mdb).subspan(MapOffset,MapLength),allocationCount);
     volume.entries=Internal::directory(image,directoryStart,directoryLength,map,allocationStart,allocationSize,volume.warnings,token);volume.freeBytes=freeCount<=allocationCount?std::uint64_t(freeCount)*allocationSize:0;
     if(freeCount>allocationCount)volume.warnings.push_back({DiagnosticCode::MacFreeCount,{std::string(System),std::to_string(freeCount),std::to_string(allocationCount)}});
-    volume.fileSystemId=Id;volume.fileSystemDisplayName=Id;volume.capacity=image.capacity();volume.created=Macintosh::fromSeconds(Binary::big<std::uint32_t>(mdb,Created));volume.modified=Macintosh::fromSeconds(Binary::big<std::uint32_t>(mdb,Modified));return volume;
+    volume.fileSystemId=Id;applyFileSystemDisplayName(volume,image.geometry());volume.capacity=image.capacity();volume.created=Macintosh::fromSeconds(Binary::big<std::uint32_t>(mdb,Created));volume.modified=Macintosh::fromSeconds(Binary::big<std::uint32_t>(mdb,Modified));return volume;
 }
 }
