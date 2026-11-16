@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Cartridge/Console.cpp
+  src/Composition/Recognition.cpp
   src/Formats/Tape/Common/SignalIO.cpp
   src/Formats/Tape/Common/SignalBlocks.cpp
   src/Formats/Tape/Common/BlockIndex.cpp

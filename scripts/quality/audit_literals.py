@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TOKEN = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|(?:L|u8)?"(?:\\.|[^"\\])*"|(?:L)?\x27(?:\\.|[^\x27\\])*\x27|(?<![\w.])(?:0x[\da-fA-F]+|\d+\.\d+|\.\d+|\d+)(?![\w.])')
 CONSTANT_HEADERS = {
+    "src/MediaEngine/src/Formats/Cartridge/ConsoleConstants.h",
     "src/MediaEngine/include/RetroMediaLab/MediaEngine/TapeFormatIds.h",
     "src/MediaEngine/src/Formats/Tape/Common/SignalIoConstants.h",
     "src/MediaEngine/src/Audio/Constants.h",

@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ConsoleCartridgeRead="MediaEngine.ConsoleCartridgeRead";
+inline constexpr std::string_view ConsoleCartridgeMismatch="MediaEngine.ConsoleCartridgeMismatch";
+inline constexpr std::string_view ConsoleCartridgeLimit="MediaEngine.ConsoleCartridgeLimit";
+
 inline constexpr std::string_view TapeSignalFormat="MediaEngine.TapeSignalFormat";
 
 inline constexpr std::string_view FfmpegRequest="MediaEngine.FfmpegRequest";

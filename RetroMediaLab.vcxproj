@@ -389,6 +389,8 @@
     <ClInclude Include="src\MediaEngine\src\Codecs\Victor9000\Gcr.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\FluxCodecs.cpp" />
     <ClInclude Include="src\MediaEngine\src\Composition\FluxCodecs.h" />
+    <ClCompile Include="src\MediaEngine\src\Composition\Recognition.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Composition\Recognition.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\SectorPolicies.cpp" />
     <ClInclude Include="src\MediaEngine\src\Composition\SectorPolicies.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\SequentialMedia.cpp" />
@@ -561,6 +563,8 @@
     <ClCompile Include="src\MediaEngine\src\Formats\BbcDfs\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\BbcDfs\WriterAdapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\BbcDfs\WriterAdapter.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Cartridge\Console.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Cartridge\ConsoleConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Cartridge\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Cartridge\Cpr.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Cartridge\Fds.cpp" />
@@ -1506,6 +1510,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cpc-dsk.json" />
@@ -1696,6 +1701,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\cpc-dsk.json" />
@@ -1886,6 +1892,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\cpc-dsk.json" />
@@ -2076,6 +2083,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\cpc-dsk.json" />
@@ -2266,6 +2274,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\cpc-dsk.json" />
@@ -2456,6 +2465,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\cpc-dsk.json" />
@@ -2646,6 +2656,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\cpc-dsk.json" />
@@ -2836,6 +2847,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\cpc-dsk.json" />
@@ -3026,6 +3038,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\cpc-dsk.json" />
@@ -3216,6 +3229,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\cpc-dsk.json" />
@@ -3406,6 +3420,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\cpc-dsk.json" />
@@ -3596,6 +3611,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\cpc-dsk.json" />
@@ -3786,6 +3802,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\cpc-dsk.json" />
@@ -3976,6 +3993,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\cpc-dsk.json" />
@@ -4166,6 +4184,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\cpc-dsk.json" />
@@ -4356,6 +4375,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\cpc-dsk.json" />
@@ -4546,6 +4566,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\cpc-dsk.json" />
@@ -4736,6 +4757,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\cpc-dsk.json" />
@@ -4926,6 +4948,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\cpc-dsk.json" />
@@ -5116,6 +5139,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\cpc-dsk.json" />
@@ -5306,6 +5330,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\cpc-dsk.json" />
@@ -5496,6 +5521,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\cpc-dsk.json" />
@@ -5686,6 +5712,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\cpc-dsk.json" />
@@ -5876,6 +5903,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\cpc-dsk.json" />
@@ -6066,6 +6094,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\cpc-dsk.json" />
@@ -6256,6 +6285,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\cpc-dsk.json" />
@@ -6446,6 +6476,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\cpc-dsk.json" />
@@ -6636,6 +6667,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\cpc-dsk.json" />
@@ -6826,6 +6858,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\cpc-dsk.json" />
@@ -7016,6 +7049,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\console-cartridge.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\cpc-dsk.json" />
