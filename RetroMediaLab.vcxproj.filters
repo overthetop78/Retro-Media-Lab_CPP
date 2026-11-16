@@ -2814,6 +2814,12 @@
     <ClInclude Include="src\MediaEngine\src\Composition\SectorPolicies.h">
       <Filter>src\MediaEngine\src\Composition</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Composition\SequentialMedia.cpp">
+      <Filter>src\MediaEngine\src\Composition</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Composition\SequentialMedia.h">
+      <Filter>src\MediaEngine\src\Composition</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Decoding\Candidates.h">
       <Filter>src\MediaEngine\src\Decoding</Filter>
     </ClInclude>

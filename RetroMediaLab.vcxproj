@@ -386,6 +386,8 @@
     <ClInclude Include="src\MediaEngine\src\Composition\FluxCodecs.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\SectorPolicies.cpp" />
     <ClInclude Include="src\MediaEngine\src\Composition\SectorPolicies.h" />
+    <ClCompile Include="src\MediaEngine\src\Composition\SequentialMedia.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Composition\SequentialMedia.h" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Candidates.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Confidence.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Confidence.h" />
