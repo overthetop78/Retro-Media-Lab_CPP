@@ -770,6 +770,11 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Metadata.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Gdi\Constants.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Gdi\Container.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Gdi\Descriptor.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Gdi\Reader.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Gdi\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Iso\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Iso\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Iso\Reader.h" />
@@ -1289,6 +1294,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hfe.json" />
@@ -1448,6 +1454,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hfe.json" />
@@ -1607,6 +1614,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hfe.json" />
@@ -1766,6 +1774,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hfe.json" />
@@ -1925,6 +1934,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hfe.json" />
@@ -2084,6 +2094,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hfe.json" />
@@ -2243,6 +2254,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hfe.json" />
@@ -2402,6 +2414,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hfe.json" />
@@ -2561,6 +2574,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hfe.json" />
@@ -2720,6 +2734,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hfe.json" />
@@ -2879,6 +2894,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hfe.json" />
@@ -3038,6 +3054,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hfe.json" />
@@ -3197,6 +3214,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hfe.json" />
@@ -3356,6 +3374,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hfe.json" />
@@ -3515,6 +3534,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hfe.json" />
@@ -3674,6 +3694,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hfe.json" />
@@ -3833,6 +3854,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hfe.json" />
@@ -3992,6 +4014,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hfe.json" />
@@ -4151,6 +4174,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hfe.json" />
@@ -4310,6 +4334,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hfe.json" />
@@ -4469,6 +4494,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hfe.json" />
@@ -4628,6 +4654,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hfe.json" />
@@ -4787,6 +4814,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hfe.json" />
@@ -4946,6 +4974,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hfe.json" />
@@ -5105,6 +5134,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hfe.json" />
@@ -5264,6 +5294,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hfe.json" />
@@ -5423,6 +5454,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hfe.json" />
@@ -5582,6 +5614,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hfe.json" />
@@ -5741,6 +5774,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hfe.json" />
@@ -5900,6 +5934,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\formats.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\gdi.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hdd-raw.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hfe.json" />

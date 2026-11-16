@@ -46,6 +46,8 @@ La tâche 151 porte le profil HDD CHD V5 autonome non compressé : géométrie G
 
 La tâche 152 porte le lecteur CHD optique : layouts bruts/décodés, sources bornées avec cache sérialisé, CHTR/CHT2/DVD, pistes CD/DVD, index/pregaps/sous-canaux, propriétés et rejets. Compilation, contrôle ciblé, audit et catalogues réussis. Les hunks sont invalidés en cache avant décodage pour sécuriser la reprise après exception.
 
+La tâche 153 porte le bloc GDI complet : descripteur Unicode, pistes associées, sources partagées, métadonnées, lecture et écriture atomique multipiste. Les dispositions de sortie que le lecteur aurait refusées ou tronquées sont désormais refusées. Compilation, contrôle ciblé, audit et catalogues réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

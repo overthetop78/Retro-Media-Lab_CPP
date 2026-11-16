@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.GdiDescriptor": "Il numero di tracce GDI, la sintassi a sei campi, i valori numerici, le virgolette o l’ordine crescente degli LBA delle tracce non sono validi.",
+    "MediaEngine.GdiDescriptorIo": "Il descrittore GDI '{0}' non poteva essere letto.",
+    "MediaEngine.GdiProfile": "Il controllo della pista GDI o la dimensione del settore non è supportato.",
+    "MediaEngine.GdiPath": "Il file di traccia GDI '{0}' manca, assoluto o al di fuori della directory del descrittore.",
+    "MediaEngine.GdiTrack": "I dati della traccia GDI sono vuoti, disallineati o non coprono la traccia successiva LBA.",
+    "MediaEngine.GdiWrite": "Il documento ottico non può essere scritto come un valido set di tracce GDI."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.GdiDescriptor": "Le nombre de pistes GDI, la syntaxe à six champs, les valeurs numériques, les guillemets ou les LBA de pistes croissantes sont invalides.",
+    "MediaEngine.GdiDescriptorIo": "Le descripteur GDI « {0} » n'a pas pu être lu.",
+    "MediaEngine.GdiProfile": "La valeur de contrôle des pistes GDI ou la taille des secteurs n’est pas prise en charge.",
+    "MediaEngine.GdiPath": "Le fichier de piste GDI « {0} » est manquant, utilise un chemin absolu ou se trouve hors du dossier du descripteur.",
+    "MediaEngine.GdiTrack": "Les données de piste GDI sont vides, mal alignées ou ne couvrent pas le LBA de la piste suivante.",
+    "MediaEngine.GdiWrite": "Le document optique ne peut pas être écrit comme un jeu de pistes GDI valide."
+  }
+}

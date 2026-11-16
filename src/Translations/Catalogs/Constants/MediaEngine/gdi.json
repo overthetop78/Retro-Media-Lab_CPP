@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.GdiDescriptor": "The GDI track count, six-field syntax, numeric values, quotes or increasing track LBAs are invalid.",
+    "MediaEngine.GdiDescriptorIo": "The GDI descriptor '{0}' could not be read.",
+    "MediaEngine.GdiProfile": "The GDI track control or sector size is unsupported.",
+    "MediaEngine.GdiPath": "The GDI track file '{0}' is missing, absolute or outside the descriptor directory.",
+    "MediaEngine.GdiTrack": "The GDI track data is empty, misaligned or does not cover the next track LBA.",
+    "MediaEngine.GdiWrite": "The optical document cannot be written as a valid GDI track set."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.GdiDescriptor": "Số lượng rãnh GDI, cú pháp sáu trường, giá trị số, dấu ngoặc kép hoặc thứ tự LBA tăng dần của các rãnh không hợp lệ.",
+    "MediaEngine.GdiDescriptorIo": "Không thể đọc bộ mô tả GDI '{0}'.",
+    "MediaEngine.GdiProfile": "Không hỗ trợ giá trị điều khiển rãnh GDI hoặc kích thước sector.",
+    "MediaEngine.GdiPath": "Tập tin rãnh GDI '{0}' bị thiếu, có đường dẫn tuyệt đối hoặc nằm ngoài thư mục bộ mô tả.",
+    "MediaEngine.GdiTrack": "Dữ liệu rãnh GDI bị rỗng, không căn chỉnh hoặc không bao phủ LBA của rãnh tiếp theo.",
+    "MediaEngine.GdiWrite": "Không thể ghi tài liệu phương tiện quang học thành một tập hợp rãnh GDI hợp lệ."
+  }
+}

@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Optical/Gdi/Descriptor.cpp
+  src/Formats/Optical/Gdi/Reader.cpp
+  src/Formats/Optical/Gdi/Writer.cpp
   src/Formats/Common/Chd/Sources.cpp
   src/Formats/Optical/Chd/Metadata.cpp
   src/Formats/Optical/Chd/Layout.cpp

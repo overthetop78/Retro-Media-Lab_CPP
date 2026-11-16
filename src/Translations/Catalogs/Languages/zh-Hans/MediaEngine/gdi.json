@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.GdiDescriptor": "GDI 轨道数量、六字段语法、数值、引号或轨道 LBA 递增顺序无效。",
+    "MediaEngine.GdiDescriptorIo": "无法读取 GDI 描述符 '{0}'。",
+    "MediaEngine.GdiProfile": "不支持 GDI 轨道控制值或扇区大小。",
+    "MediaEngine.GdiPath": "GDI 轨道文件 '{0}' 缺失、使用绝对路径或位于描述符目录之外。",
+    "MediaEngine.GdiTrack": "GDI 轨道数据为空、未对齐或未覆盖下一轨道的 LBA。",
+    "MediaEngine.GdiWrite": "无法将光盘文档写为有效的 GDI 轨道集合。"
+  }
+}
