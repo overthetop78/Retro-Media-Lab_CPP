@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Conversion/FluxContainers.cpp
+  src/Images/Conversion/FluxParity.cpp
   src/Images/Conversion/Optical.cpp
   src/Images/Conversion/Files.cpp
   src/Images/Conversion/FileSources.cpp

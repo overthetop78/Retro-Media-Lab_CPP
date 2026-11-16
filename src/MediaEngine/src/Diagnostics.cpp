@@ -1010,6 +1010,7 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::ConversionOutputCollision:return DiagnosticKeys::ConversionOutputCollision;
     case DiagnosticCode::ConversionReading:return DiagnosticKeys::ConversionReading;
     case DiagnosticCode::ConversionComplete:return DiagnosticKeys::ConversionComplete;
+    case DiagnosticCode::FluxContainerParity:return DiagnosticKeys::FluxContainerParity;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

@@ -1008,4 +1008,5 @@ inline constexpr std::string_view ConversionOutputCollision="MediaEngine.Convers
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
 inline constexpr std::string_view ConversionReading="MediaEngine.ConversionReading";
 inline constexpr std::string_view ConversionComplete="MediaEngine.ConversionComplete";
+inline constexpr std::string_view FluxContainerParity="MediaEngine.FluxContainerParity";
 }
