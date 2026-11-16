@@ -1,18 +1,12 @@
 #pragma once
 #include <RetroMediaLab/MediaEngine/RuntimeDisk.h>
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
-#include "../Composition/Recognition.h"
-#include "../Composition/Writing.h"
+#include "../Composition/Runtime.h"
 #include "../Models/Blocks/BlockImage.h"
 #include "../Models/Sectors/Representation.h"
 #include <mutex>
 namespace RetroMediaLab::MediaEngine {
 namespace RuntimeDetails {
-struct Services {
-    MediaRecognitionComposition reading=MediaRecognitionComposition::createDefault();
-    MediaWritingComposition writing=MediaWritingComposition::createDefault(reading.driveService());
-};
-std::shared_ptr<Services> defaultServices();
 std::int32_t coordinate(std::int64_t);
 DrivePosition position(std::int64_t,MediaFileSystems::SectorAddress);
 }

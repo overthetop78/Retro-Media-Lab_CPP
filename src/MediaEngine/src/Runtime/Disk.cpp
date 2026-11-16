@@ -3,7 +3,6 @@
 #include <limits>
 namespace RetroMediaLab::MediaEngine {
 namespace RuntimeDetails {
-std::shared_ptr<Services> defaultServices(){static const auto value=std::make_shared<Services>();return value;}
 std::int32_t coordinate(std::int64_t value){if(value<std::numeric_limits<std::int32_t>::min()||value>std::numeric_limits<std::int32_t>::max())throw MediaError(DiagnosticCode::RuntimeDiskSector);return static_cast<std::int32_t>(value);}
 DrivePosition position(std::int64_t index,MediaFileSystems::SectorAddress address){if(address.cylinder<0||address.head<0)return {0,0,-1,index};return {coordinate(address.cylinder),coordinate(address.head),coordinate(address.number),-1};}
 }

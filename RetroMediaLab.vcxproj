@@ -1989,6 +1989,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\HardDiskGeometry.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h" />
@@ -2166,6 +2167,8 @@
     <ClInclude Include="src\MediaEngine\src\Composition\FluxCodecs.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\Recognition.cpp" />
     <ClInclude Include="src\MediaEngine\src\Composition\Recognition.h" />
+    <ClCompile Include="src\MediaEngine\src\Composition\Runtime.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Composition\Runtime.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\SectorPolicies.cpp" />
     <ClInclude Include="src\MediaEngine\src\Composition\SectorPolicies.h" />
     <ClCompile Include="src\MediaEngine\src\Composition\SequentialMedia.cpp" />
@@ -2937,8 +2940,11 @@
     <ClInclude Include="src\MediaEngine\src\Models\Sequential\Image.h" />
     <ClCompile Include="src\MediaEngine\src\Models\Sequential\TapeSignal.cpp" />
     <ClInclude Include="src\MediaEngine\src\Models\Sequential\TapeSignal.h" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\Catalog.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Preparation\CatalogConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Preparation\CueDocument.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\CueWaveFiles.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\Disks.cpp" />
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h" />
     <ClCompile Include="src\MediaEngine\src\Primitives\Crc32C.cpp" />
@@ -3383,6 +3389,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\qd-mo5-mfm.json" />
@@ -3581,6 +3588,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\qd-mo5-mfm.json" />
@@ -3779,6 +3787,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\qd-mo5-mfm.json" />
@@ -3977,6 +3986,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\qd-mo5-mfm.json" />
@@ -4175,6 +4185,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\qd-mo5-mfm.json" />
@@ -4373,6 +4384,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\qd-mo5-mfm.json" />
@@ -4571,6 +4583,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\qd-mo5-mfm.json" />
@@ -4769,6 +4782,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\qd-mo5-mfm.json" />
@@ -4967,6 +4981,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\qd-mo5-mfm.json" />
@@ -5165,6 +5180,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\qd-mo5-mfm.json" />
@@ -5363,6 +5379,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\qd-mo5-mfm.json" />
@@ -5561,6 +5578,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\qd-mo5-mfm.json" />
@@ -5759,6 +5777,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\qd-mo5-mfm.json" />
@@ -5957,6 +5976,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\qd-mo5-mfm.json" />
@@ -6155,6 +6175,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\qd-mo5-mfm.json" />
@@ -6353,6 +6374,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\qd-mo5-mfm.json" />
@@ -6551,6 +6573,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\qd-mo5-mfm.json" />
@@ -6749,6 +6772,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\qd-mo5-mfm.json" />
@@ -6947,6 +6971,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\qd-mo5-mfm.json" />
@@ -7145,6 +7170,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\qd-mo5-mfm.json" />
@@ -7343,6 +7369,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\qd-mo5-mfm.json" />
@@ -7541,6 +7568,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\qd-mo5-mfm.json" />
@@ -7739,6 +7767,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\qd-mo5-mfm.json" />
@@ -7937,6 +7966,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\qd-mo5-mfm.json" />
@@ -8135,6 +8165,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\qd-mo5-mfm.json" />
@@ -8333,6 +8364,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\qd-mo5-mfm.json" />
@@ -8531,6 +8563,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\qd-mo5-mfm.json" />
@@ -8729,6 +8762,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\qd-mo5-mfm.json" />
@@ -8927,6 +8961,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\qd-mo5-mfm.json" />
@@ -9125,6 +9160,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\northstar-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\optical-session.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\qd-mo5-mfm.json" />

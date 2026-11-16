@@ -1,6 +1,7 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view DiskPreparationRequest="MediaEngine.DiskPreparationRequest";
 inline constexpr std::string_view RuntimeTrackData="MediaEngine.RuntimeTrackData",RuntimeTrackWindow="MediaEngine.RuntimeTrackWindow",RuntimeTrackProjection="MediaEngine.RuntimeTrackProjection";
 inline constexpr std::string_view RuntimeDiskRequest="MediaEngine.RuntimeDiskRequest";
 inline constexpr std::string_view RuntimeDiskClosed="MediaEngine.RuntimeDiskClosed";
