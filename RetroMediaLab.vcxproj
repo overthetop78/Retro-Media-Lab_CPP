@@ -2291,6 +2291,12 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Timings.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Track.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Track.h" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Inspection.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Inspection.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Probe.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Ranking.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Service.cpp" />
     <ClCompile Include="src\MediaEngine\src\Exploration\SectorExploration.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\SectorExploration.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\AcornAtom\Constants.h" />

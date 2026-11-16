@@ -87,6 +87,7 @@ Composition::Composition(std::shared_ptr<const Scp::CaptureReader> capture,Media
     :services_([&]{if(!capture)throw MediaError(DiagnosticCode::ReaderRegistryNull);return std::make_shared<Details::Services>(std::move(capture),std::move(decoders));}()),candidates_(Details::create(services_)),reader_(candidates_,std::move(fileSystems)){}
 IsoReconstruction::Reader& Composition::isoReader()const{return services_->iso;}
 AppleScp::Reader& Composition::appleReader()const{return services_->apple;}
+Decoding::DecodeOperation Composition::decodeOperation()const{return services_->decoders.operation();}
 Image Composition::readAmiga(const std::filesystem::path& path,const Progress& progress,std::stop_token token)const{return AmigaReconstruction::read(services_->capture(path,token),services_->decoders.operation(),token,progress);}
 Image Composition::readCommodore(const std::filesystem::path& path,std::optional<std::string> format,std::stop_token token)const{return CommodoreDisks::readFlux(services_->capture(path,token),format?std::optional<std::string_view>(*format):std::nullopt,{},token);}
 Image Composition::readRx02(const std::filesystem::path& path,std::stop_token token)const{return Rx02Reconstruction::read(services_->capture(path,token),services_->decoders.operation(),{},token);}

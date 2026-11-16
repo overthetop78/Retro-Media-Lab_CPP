@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Exploration/Scp/Inspection.cpp
+  src/Exploration/Scp/Ranking.cpp
+  src/Exploration/Scp/Probe.cpp
+  src/Exploration/Scp/Service.cpp
   src/Images/Recognition/Interpretations.cpp
   src/Images/Conversion/Fat12.cpp
   src/Images/Conversion/Fat12Facade.cpp

@@ -604,6 +604,9 @@
     <Filter Include="src\MediaEngine\src\Exploration">
       <UniqueIdentifier>{D4453269-8849-57CB-A194-14EEE78DD85E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Exploration\Scp">
+      <UniqueIdentifier>{69165751-2E01-554E-93A6-DBAE3430E855}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats">
       <UniqueIdentifier>{0D3AF7FC-D926-5246-9E12-59EECCD3616B}</UniqueIdentifier>
     </Filter>
@@ -8898,6 +8901,24 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Track.h">
       <Filter>src\MediaEngine\src\Encoding</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Inspection.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Inspection.h">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Probe.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Ranking.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Service.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Exploration\SectorExploration.cpp">
       <Filter>src\MediaEngine\src\Exploration</Filter>
     </ClCompile>
