@@ -2000,6 +2000,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExploration.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExplorationProgress.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
@@ -2971,6 +2972,9 @@
     <ClInclude Include="src\MediaEngine\src\Images\WriterRegistry.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Writers.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Writers.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\WritingProgress.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\WritingProgress.h" />
+    <ClInclude Include="src\MediaEngine\src\Images\WritingProgressConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Images\WritingService.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\WritingService.h" />
     <ClInclude Include="src\MediaEngine\src\Models\Blocks\BlockImage.h" />

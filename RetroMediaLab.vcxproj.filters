@@ -8037,6 +8037,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExploration.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExplorationProgress.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -10948,6 +10951,15 @@
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Images\Writers.h">
+      <Filter>src\MediaEngine\src\Images</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\WritingProgress.cpp">
+      <Filter>src\MediaEngine\src\Images</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\WritingProgress.h">
+      <Filter>src\MediaEngine\src\Images</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Images\WritingProgressConstants.h">
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Images\WritingService.cpp">

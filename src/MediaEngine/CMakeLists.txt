@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Images/WritingProgress.cpp
     src/Visualization/Descriptor.cpp
     src/Visualization/Registry.cpp
     src/Visualization/Facade.cpp
