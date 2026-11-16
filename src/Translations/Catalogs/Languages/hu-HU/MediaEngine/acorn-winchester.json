@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Az Adaptec paraméter puffer túl rövid.",
+    "MediaEngine.AdaptecParameterValue": "Az Adaptec fizikai paraméterei kívül esnek a támogatott tartományon.",
+    "MediaEngine.AcornDscSize": "A DSC leíró túl rövid a geometriához.",
+    "MediaEngine.AcornDscGeometry": "A DSC geometria nem támogatott.",
+    "MediaEngine.AcornDatSource": "A forrás nem egy Acorn Winchester szektor képe.",
+    "MediaEngine.AcornDatCapacity": "A DAT-kép meghaladja a DSC-leíró által megadott geometriát.",
+    "MediaEngine.AcornDatAlignment": "A DAT-kép a DSC leíró által bejelentett blokkon belül ér véget.",
+    "MediaEngine.AcornDscMetadata": "Az eredeti DSC leíró érvénytelen base64 adatokat tartalmaz.",
+    "MediaEngine.AcornDatWrite": "Winchester kimenete teljes blokkokat és támogatott DSC geometriát igényel.",
+    "MediaEngine.AcornDatPartial": "A DAT-forrás nem tartalmazza a DSC-leíróban megadott összes szektort.",
+    "MediaEngine.AcornDscUnknown": "Nincs érvényes DSC geometria; fizikai felületek és pályák nem ismertek."
+  }
+}

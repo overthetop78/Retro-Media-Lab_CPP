@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "מאגר הפרמטרים של Adaptec קצר מדי.",
+    "MediaEngine.AdaptecParameterValue": "הפרמטרים הפיזיים של Adaptec נמצאים מחוץ לטווח הנתמך.",
+    "MediaEngine.AcornDscSize": "מתאר DSC קצר מכדי לאחסן את גאומטריית הדיסק.",
+    "MediaEngine.AcornDscGeometry": "גאומטריית DSC אינה נתמכת.",
+    "MediaEngine.AcornDatSource": "המקור אינו תמונה של מגזר Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "תמונת DAT עולה על הגיאומטריה שהכריזה על ידי תיאורי DSC שלה.",
+    "MediaEngine.AcornDatAlignment": "תמונת ה-DAT מסתיימת בתוך בלוק שהכריז על ידי דירקטור DSC שלה.",
+    "MediaEngine.AcornDscMetadata": "מתאר DSC המקורי מכיל נתוני base64 לא תקינים.",
+    "MediaEngine.AcornDatWrite": "פלט Winchester דורש בלוקים שלמים וגיאומטריה DSC נתמך.",
+    "MediaEngine.AcornDatPartial": "מקור DAT אינו מכיל את כל המגזרים שהכריזו על ידי ה-DSC.",
+    "MediaEngine.AcornDscUnknown": "גיאומטריה DSC אינה זמינה; משטחים פיזיים ומסילות אינם ידועים."
+  }
+}

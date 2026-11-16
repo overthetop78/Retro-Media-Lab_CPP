@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec 參數緩衝區太短。",
+    "MediaEngine.AdaptecParameterValue": "Adaptec 實體參數超出支援範圍。",
+    "MediaEngine.AcornDscSize": "DSC 描述元太短，無法儲存磁碟配置。",
+    "MediaEngine.AcornDscGeometry": "不支援此 DSC 磁碟配置。",
+    "MediaEngine.AcornDatSource": "來源不是 Acorn Winchester 磁區映像。",
+    "MediaEngine.AcornDatCapacity": "DAT 映像超出 DSC 描述元宣告的磁碟配置。",
+    "MediaEngine.AcornDatAlignment": "DAT 映像在 DSC 描述元宣告的區塊內結束。",
+    "MediaEngine.AcornDscMetadata": "原始 DSC 描述元包含無效的 base64 資料。",
+    "MediaEngine.AcornDatWrite": "Winchester 輸出需要完整區塊與支援的 DSC 磁碟配置。",
+    "MediaEngine.AcornDatPartial": "DAT 來源未包含 DSC 描述元宣告的所有磁區。",
+    "MediaEngine.AcornDscUnknown": "沒有有效的 DSC 磁碟配置；實體磁面和磁軌未知。"
+  }
+}

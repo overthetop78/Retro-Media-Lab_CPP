@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Memoria tampon pentru parametrii Adaptec este prea scurtă.",
+    "MediaEngine.AdaptecParameterValue": "Parametrii fizici Adaptec sunt în afara intervalului sprijinit.",
+    "MediaEngine.AcornDscSize": "Descriptorul DSC este prea scurt pentru a stoca geometria.",
+    "MediaEngine.AcornDscGeometry": "Geometria DSC este nesusţinută.",
+    "MediaEngine.AcornDatSource": "Sursa nu este o imagine din sectorul Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "Imaginea DAT depășește geometria declarată de descriptorul DSC.",
+    "MediaEngine.AcornDatAlignment": "Imaginea DAT se termină într-un bloc declarat de descriptorul DSC.",
+    "MediaEngine.AcornDscMetadata": "Descriptorul nativ DSC conține date nevalide base64.",
+    "MediaEngine.AcornDatWrite": "Output Winchester necesită blocuri complete și o geometrie DSC susținută.",
+    "MediaEngine.AcornDatPartial": "Sursa DAT nu conține toate sectoarele declarate de descriptorul DSC.",
+    "MediaEngine.AcornDscUnknown": "Nu este disponibilă nici o geometrie DSC valabilă; suprafețele și urmele fizice sunt necunoscute."
+  }
+}

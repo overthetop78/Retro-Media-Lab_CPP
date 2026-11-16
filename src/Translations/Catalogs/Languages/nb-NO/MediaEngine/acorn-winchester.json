@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec parameterbufferen er for kort.",
+    "MediaEngine.AdaptecParameterValue": "Adaptecs fysiske parametere er utenfor det støttede området.",
+    "MediaEngine.AcornDscSize": "DSC-deskriptoren er for kort til å lagre geometrien.",
+    "MediaEngine.AcornDscGeometry": "DSC-geometrien er ikke støttet.",
+    "MediaEngine.AcornDatSource": "Kilden er ikke et Acorn Winchester-sektorbilde.",
+    "MediaEngine.AcornDatCapacity": "DAT-bildet overstiger geometrien som er erklært av dens DSC-deskriptor.",
+    "MediaEngine.AcornDatAlignment": "DAT-bildet ender inne i en blokk erklært av dens DSC-deskriptor.",
+    "MediaEngine.AcornDscMetadata": "Den opprinnelige DSC-deskriptoren inneholder ugyldige base64 data.",
+    "MediaEngine.AcornDatWrite": "Winchester-utgang krever komplette blokker og en støttet DSC-geometri.",
+    "MediaEngine.AcornDatPartial": "DAT-kilden inneholder ikke alle sektorer som er angitt av DSC-deskriptoren.",
+    "MediaEngine.AcornDscUnknown": "Ingen gyldig DSC-geometri er tilgjengelig; fysiske overflater og spor er ukjente."
+  }
+}

@@ -1,6 +1,16 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AdaptecParameterSize="MediaEngine.AdaptecParameterSize";
+inline constexpr std::string_view AdaptecParameterValue="MediaEngine.AdaptecParameterValue";
+inline constexpr std::string_view AcornDscSize="MediaEngine.AcornDscSize";
+inline constexpr std::string_view AcornDscGeometry="MediaEngine.AcornDscGeometry";
+inline constexpr std::string_view AcornDatSource="MediaEngine.AcornDatSource";
+inline constexpr std::string_view AcornDatCapacity="MediaEngine.AcornDatCapacity";
+inline constexpr std::string_view AcornDatAlignment="MediaEngine.AcornDatAlignment";
+inline constexpr std::string_view AcornDscMetadata="MediaEngine.AcornDscMetadata";
+inline constexpr std::string_view AcornDatWrite="MediaEngine.AcornDatWrite";
+
 inline constexpr std::string_view VhdShortFooter="MediaEngine.VhdShortFooter";
 inline constexpr std::string_view VhdCookie="MediaEngine.VhdCookie";
 inline constexpr std::string_view VhdFooterChecksum="MediaEngine.VhdFooterChecksum";

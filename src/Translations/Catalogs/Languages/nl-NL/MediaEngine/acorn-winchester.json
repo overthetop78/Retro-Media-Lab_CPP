@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "De Adaptec parameter buffer is te kort.",
+    "MediaEngine.AdaptecParameterValue": "De fysieke parameters van Adaptec liggen buiten het ondersteunde bereik.",
+    "MediaEngine.AcornDscSize": "De DSC descriptor is te kort om zijn geometrie op te slaan.",
+    "MediaEngine.AcornDscGeometry": "De DSC geometrie wordt niet ondersteund.",
+    "MediaEngine.AcornDatSource": "De bron is geen beeld van de Acorn Winchester sector.",
+    "MediaEngine.AcornDatCapacity": "De DAT-afbeelding overtreft de geometrie die door zijn DSC-descriptor wordt aangegeven.",
+    "MediaEngine.AcornDatAlignment": "De DAT-afbeelding eindigt in een blok dat door zijn DSC-descriptor wordt aangegeven.",
+    "MediaEngine.AcornDscMetadata": "De native DSC descriptor bevat ongeldige base64 gegevens.",
+    "MediaEngine.AcornDatWrite": "Winchester uitvoer vereist volledige blokken en een ondersteunde DSC geometrie.",
+    "MediaEngine.AcornDatPartial": "De DAT-bron bevat niet alle sectoren die door de DSC-descriptor zijn aangegeven.",
+    "MediaEngine.AcornDscUnknown": "Er is geen geldige DSC geometrie beschikbaar; fysieke oppervlakken en sporen zijn onbekend."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec-parametripuskuri on liian lyhyt.",
+    "MediaEngine.AdaptecParameterValue": "Adaptecin fyysiset parametrit ovat tuetun alueen ulkopuolella.",
+    "MediaEngine.AcornDscSize": "DSC-kuvaus on liian lyhyt sen geometrian tallentamiseen.",
+    "MediaEngine.AcornDscGeometry": "DSC-geometria ei ole tuettu.",
+    "MediaEngine.AcornDatSource": "Lähde ei ole Acorn Winchester -sektorin kuva.",
+    "MediaEngine.AcornDatCapacity": "DAT-kuva ylittää DSC-kuvassa ilmoitetun geometrian.",
+    "MediaEngine.AcornDatAlignment": "DAT-kuva päättyy DSC-kuvaajansa ilmoittaman lohkon sisällä.",
+    "MediaEngine.AcornDscMetadata": "Natiivi DSC-kuvaus sisältää virheellisiä base64-tietoja.",
+    "MediaEngine.AcornDatWrite": "Winchester lähtö vaatii täydellinen lohkoja ja tuettu DSC geometria.",
+    "MediaEngine.AcornDatPartial": "DAT-lähde ei sisällä kaikkia DSC-kuvaajan ilmoittamia sektoreita.",
+    "MediaEngine.AcornDscUnknown": "DSC-geometriaa ei ole saatavilla; fyysiset pinnat ja jäljet ovat tuntemattomia."
+  }
+}

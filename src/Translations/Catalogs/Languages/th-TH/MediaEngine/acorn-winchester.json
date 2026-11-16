@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "บัฟเฟอร์พารามิเตอร์ Adaptec สั้นเกินไป",
+    "MediaEngine.AdaptecParameterValue": "พารามิเตอร์ทางกายภาพของ Adaptec อยู่นอกช่วงที่รองรับ",
+    "MediaEngine.AcornDscSize": "ตัวบอก DSC สั้นเกินกว่าจะเก็บโครงสร้างดิสก์",
+    "MediaEngine.AcornDscGeometry": "เรขาคณิต DSC ไม่สนับสนุน",
+    "MediaEngine.AcornDatSource": "แหล่งข้อมูลไม่ใช่อิมเมจเซกเตอร์ Acorn Winchester",
+    "MediaEngine.AcornDatCapacity": "ภาพ DAT เกินเรขาคณิตที่ประกาศโดยตัวหนังสือ DSC",
+    "MediaEngine.AcornDatAlignment": "ภาพ DAT สิ้นสุดลงภายในบล็อกประกาศโดยตัวเข้ารหัส DSC",
+    "MediaEngine.AcornDscMetadata": "ตัวเขียน DSC มีข้อมูลไม่ถูกต้อง base64",
+    "MediaEngine.AcornDatWrite": "Winchester การแสดงผลต้องการบล็อกที่สมบูรณ์และสนับสนุน DSC เรขาคณิต",
+    "MediaEngine.AcornDatPartial": "แหล่งข้อมูล DAT ไม่มีเซกเตอร์ครบตามที่ตัวบอก DSC ระบุ",
+    "MediaEngine.AcornDscUnknown": "ไม่มีโครงสร้างดิสก์ DSC ที่ถูกต้อง จึงไม่ทราบพื้นผิวและแทร็กทางกายภาพ"
+  }
+}

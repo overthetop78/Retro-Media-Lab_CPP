@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec parametre buffer çok kısa.",
+    "MediaEngine.AdaptecParameterValue": "Adaptec fiziksel parametreler desteklenen aralığın dışındadır.",
+    "MediaEngine.AcornDscSize": "DSC descriptor geometrisini depolamak için çok kısa.",
+    "MediaEngine.AcornDscGeometry": "DSC geometrisi desteklenmez.",
+    "MediaEngine.AcornDatSource": "Kaynak bir Acorn Winchester sektörü görüntüsü değildir.",
+    "MediaEngine.AcornDatCapacity": "DAT görüntüsü, DSC descriptor tarafından ilan edilen geometriyi aşıyor.",
+    "MediaEngine.AcornDatAlignment": "DAT görüntüsü, DSC descriptor tarafından ilan edilen bir blok içinde biter.",
+    "MediaEngine.AcornDscMetadata": "Yerli DSC tanımlayıcısı geçersiz base64 verileri içerir.",
+    "MediaEngine.AcornDatWrite": "Winchester çıkışı tam bloklar ve desteklenen bir DSC geometri gerektirir.",
+    "MediaEngine.AcornDatPartial": "DAT kaynağı, DSC descriptor tarafından ilan edilen tüm sektörler içermez.",
+    "MediaEngine.AcornDscUnknown": "Geçerli DSC geometrisi mevcut değildir; fiziksel yüzeyler ve parçalar bilinmemektedir."
+  }
+}

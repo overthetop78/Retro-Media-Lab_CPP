@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec parametr buffer je příliš krátký.",
+    "MediaEngine.AdaptecParameterValue": "Fyzické parametry Adaptec jsou mimo podporovaný rozsah.",
+    "MediaEngine.AcornDscSize": "Deskriptor DSC je příliš krátký na uložení geometrie.",
+    "MediaEngine.AcornDscGeometry": "Geometrie DSC není podporována.",
+    "MediaEngine.AcornDatSource": "Zdroj není obraz sektoru Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "Obrázek DAT přesahuje geometrii deklarovanou jeho deskriptorem DSC.",
+    "MediaEngine.AcornDatAlignment": "Obrázek DAT končí uvnitř bloku deklarovaného jeho deskriptorem DSC.",
+    "MediaEngine.AcornDscMetadata": "Nativní deskriptor DSC obsahuje neplatná data base64.",
+    "MediaEngine.AcornDatWrite": "Výstup Winchesteru vyžaduje kompletní bloky a podporovanou geometrii DSC.",
+    "MediaEngine.AcornDatPartial": "Zdroj DAT neobsahuje všechny sektory deklarované deskriptorem DSC.",
+    "MediaEngine.AcornDscUnknown": "Není k dispozici žádná platná geometrie DSC; fyzické povrchy a koleje nejsou známy."
+  }
+}

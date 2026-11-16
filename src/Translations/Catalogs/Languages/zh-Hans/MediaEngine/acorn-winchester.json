@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec参数缓冲器太短.",
+    "MediaEngine.AdaptecParameterValue": "Adaptec物理参数位于所支持的范围外.",
+    "MediaEngine.AcornDscSize": "DSC描述符太短,无法存储其几何.",
+    "MediaEngine.AcornDscGeometry": "DSC几何不支持.",
+    "MediaEngine.AcornDatSource": "源头不是Acorn Winchester扇区图像.",
+    "MediaEngine.AcornDatCapacity": "DAT图像超过其DSC描述符所宣称的几何.",
+    "MediaEngine.AcornDatAlignment": "DAT图像在由它的 DSC 描述器宣布的块内结束.",
+    "MediaEngine.AcornDscMetadata": "本地 DSC描述符包含无效的 base64数据.",
+    "MediaEngine.AcornDatWrite": "Winchester输出需要完整的块和被支持的DSC几何.",
+    "MediaEngine.AcornDatPartial": "DAT来源并不包含DSC描述符所声明的所有扇区.",
+    "MediaEngine.AcornDscUnknown": "没有有效的 DSC 几何; 物理表面和轨道未知 。"
+  }
+}

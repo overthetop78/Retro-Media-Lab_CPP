@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "مخزن معلمات Adaptec أقصر من المطلوب.",
+    "MediaEngine.AdaptecParameterValue": "معلمات Adaptec المادية خارج النطاق المدعوم.",
+    "MediaEngine.AcornDscSize": "واصف DSC أقصر من أن يخزن هندسة القرص.",
+    "MediaEngine.AcornDscGeometry": "هندسة القرص في DSC غير مدعومة.",
+    "MediaEngine.AcornDatSource": "المصدر ليس صورة قطاعات Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "تتجاوز صورة DAT هندسة القرص المعلنة في واصف DSC.",
+    "MediaEngine.AcornDatAlignment": "تنتهي صورة DAT داخل كتلة معلنة في واصف DSC.",
+    "MediaEngine.AcornDscMetadata": "يحتوي واصف DSC الأصلي على بيانات base64 غير صالحة.",
+    "MediaEngine.AcornDatWrite": "يتطلب إخراج Winchester كتلًا كاملة وهندسة قرص DSC مدعومة.",
+    "MediaEngine.AcornDatPartial": "لا يحتوي مصدر DAT على جميع القطاعات المعلنة في واصف DSC.",
+    "MediaEngine.AcornDscUnknown": "لا تتوفر هندسة قرص DSC صالحة؛ الأسطح والمسارات المادية غير معروفة."
+  }
+}

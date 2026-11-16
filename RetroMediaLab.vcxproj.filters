@@ -286,6 +286,12 @@
     <Filter Include="src\MediaEngine\src\Formats\HardDisk">
       <UniqueIdentifier>{04D11E7A-CDDE-5D4C-AEF6-8B4B39F29CBD}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\HardDisk\Acorn">
+      <UniqueIdentifier>{66AF26FA-F2EB-51C4-8734-CB71837CE872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\HardDisk\Adaptec">
+      <UniqueIdentifier>{212F41A5-6591-5259-853A-97D4C164B96C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\HardDisk\Raw">
       <UniqueIdentifier>{423AF4DC-69F1-5F6B-90F0-8A475B5E514A}</UniqueIdentifier>
     </Filter>
@@ -3264,6 +3270,33 @@
     <ClInclude Include="src\MediaEngine\src\Formats\FormatIds.h">
       <Filter>src\MediaEngine\src\Formats</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Container.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Descriptor.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Descriptor.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Acorn</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Adaptec</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Parameters.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Adaptec</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Parameters.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Adaptec</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\ContainerConstants.h">
       <Filter>src\MediaEngine\src\Formats\HardDisk</Filter>
     </ClInclude>
@@ -4929,6 +4962,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -5374,6 +5410,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\adf.json">
@@ -5823,6 +5862,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -6268,6 +6310,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\adf.json">
@@ -6717,6 +6762,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -7162,6 +7210,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\adf.json">
@@ -7611,6 +7662,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -8056,6 +8110,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\adf.json">
@@ -8505,6 +8562,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -8950,6 +9010,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\adf.json">
@@ -9399,6 +9462,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -9844,6 +9910,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\adf.json">
@@ -10293,6 +10362,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -10738,6 +10810,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\adf.json">
@@ -11187,6 +11262,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -11632,6 +11710,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\adf.json">
@@ -12081,6 +12162,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -12526,6 +12610,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\adf.json">
@@ -12975,6 +13062,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -13420,6 +13510,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\adf.json">
@@ -13869,6 +13962,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -14314,6 +14410,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\adf.json">
@@ -14763,6 +14862,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -15208,6 +15310,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\adf.json">
@@ -15657,6 +15762,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -16102,6 +16210,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\adf.json">
@@ -16551,6 +16662,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -16996,6 +17110,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\adf.json">
@@ -17445,6 +17562,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\86f.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\acorn-winchester.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\adf.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -17890,6 +18010,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaAnalysis</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\86f.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\acorn-winchester.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\adf.json">

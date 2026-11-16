@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Буфер параметрів Adaptec надто короткий.",
+    "MediaEngine.AdaptecParameterValue": "Фізичні параметри Adaptec поза підтримкою.",
+    "MediaEngine.AcornDscSize": "Дескриптор DSC надто короткий для збереження геометрії.",
+    "MediaEngine.AcornDscGeometry": "Геометрія DSC не підтримується.",
+    "MediaEngine.AcornDatSource": "Джерело не є зображенням сектора Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "Зображення DAT перевищує геометрію, заявлену дескриптором DSC.",
+    "MediaEngine.AcornDatAlignment": "Зображення DAT закінчується всередині блоку, оголошеного дескриптором DSC.",
+    "MediaEngine.AcornDscMetadata": "Оригінальний дескриптор DSC містить недійсні дані base64.",
+    "MediaEngine.AcornDatWrite": "Вихід Winchester вимагає повного блоку і підтримуючої геометрії DSC.",
+    "MediaEngine.AcornDatPartial": "Джерело DAT не містить всіх секторів, заявлених декритором DSC.",
+    "MediaEngine.AcornDscUnknown": "Не існує дійсної геометрії DSC; фізичні поверхні та доріжки невідомі."
+  }
+}

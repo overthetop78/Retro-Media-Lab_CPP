@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Buffer parameter Adaptec terlalu pendek.",
+    "MediaEngine.AdaptecParameterValue": "Parameter fisik Adaptec berada di luar jangkauan yang didukung.",
+    "MediaEngine.AcornDscSize": "Deskripsi DSC terlalu pendek untuk menyimpan geometri.",
+    "MediaEngine.AcornDscGeometry": "Geometri DSC tidak didukung.",
+    "MediaEngine.AcornDatSource": "Sumbernya bukan citra sektor Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "Gambar DAT melebihi geometri yang dideklarasikan oleh deskripsi DSC nya.",
+    "MediaEngine.AcornDatAlignment": "Gambar DAT berakhir di dalam blok yang dideklarasikan oleh deskriptor DSC.",
+    "MediaEngine.AcornDscMetadata": "Deskripsi DSC asli berisi data base64 yang tidak valid.",
+    "MediaEngine.AcornDatWrite": "Keluaran Winchester memerlukan blok lengkap dan geometri DSC yang didukung.",
+    "MediaEngine.AcornDatPartial": "Sumber DAT tidak memuat semua sektor yang dideklarasikan oleh deskriptor DSC.",
+    "MediaEngine.AcornDscUnknown": "Tidak ada geometri DSC yang valid yang tersedia; permukaan fisik dan trek tidak diketahui."
+  }
+}

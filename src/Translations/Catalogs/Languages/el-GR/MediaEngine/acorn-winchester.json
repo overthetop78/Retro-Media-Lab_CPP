@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Ο ρυθμιστής παραμέτρων Adaptec είναι πολύ σύντομος.",
+    "MediaEngine.AdaptecParameterValue": "Οι φυσικές παράμετροι Adaptec είναι έξω από το υποστηριζόμενο εύρος.",
+    "MediaEngine.AcornDscSize": "Ο περιγραφέας DSC είναι πολύ μικρός για να αποθηκεύσει τη γεωμετρία του.",
+    "MediaEngine.AcornDscGeometry": "Η γεωμετρία DSC δεν υποστηρίζεται.",
+    "MediaEngine.AcornDatSource": "Η πηγή δεν είναι μια εικόνα του τομέα Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "Η εικόνα DAT υπερβαίνει τη γεωμετρία που δηλώνει ο περιγραφέας της DSC.",
+    "MediaEngine.AcornDatAlignment": "Η εικόνα DAT τελειώνει μέσα σε ένα μπλοκ που δηλώνεται από τον περιγραφέα DSC της.",
+    "MediaEngine.AcornDscMetadata": "Ο φυσικός περιγραφέας DSC περιέχει μη έγκυρα δεδομένα base64.",
+    "MediaEngine.AcornDatWrite": "Winchester εξόδου απαιτεί πλήρη μπλοκ και μια υποστηριζόμενη DSC γεωμετρία.",
+    "MediaEngine.AcornDatPartial": "Η πηγή DAT δεν περιέχει όλους τους τομείς που δηλώνονται από τον περιγραφέα DSC.",
+    "MediaEngine.AcornDscUnknown": "Δεν υπάρχει έγκυρη γεωμετρία DSC· οι φυσικές επιφάνειες και τα κομμάτια είναι άγνωστα."
+  }
+}

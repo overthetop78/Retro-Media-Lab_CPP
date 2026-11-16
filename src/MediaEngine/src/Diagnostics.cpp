@@ -3,6 +3,16 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AdaptecParameterSize:return DiagnosticKeys::AdaptecParameterSize;
+    case DiagnosticCode::AdaptecParameterValue:return DiagnosticKeys::AdaptecParameterValue;
+    case DiagnosticCode::AcornDscSize:return DiagnosticKeys::AcornDscSize;
+    case DiagnosticCode::AcornDscGeometry:return DiagnosticKeys::AcornDscGeometry;
+    case DiagnosticCode::AcornDatSource:return DiagnosticKeys::AcornDatSource;
+    case DiagnosticCode::AcornDatCapacity:return DiagnosticKeys::AcornDatCapacity;
+    case DiagnosticCode::AcornDatAlignment:return DiagnosticKeys::AcornDatAlignment;
+    case DiagnosticCode::AcornDscMetadata:return DiagnosticKeys::AcornDscMetadata;
+    case DiagnosticCode::AcornDatWrite:return DiagnosticKeys::AcornDatWrite;
+
     case DiagnosticCode::VhdShortFooter:return DiagnosticKeys::VhdShortFooter;
     case DiagnosticCode::VhdCookie:return DiagnosticKeys::VhdCookie;
     case DiagnosticCode::VhdFooterChecksum:return DiagnosticKeys::VhdFooterChecksum;

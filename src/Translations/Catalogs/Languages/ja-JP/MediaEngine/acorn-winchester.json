@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec パラメーターのバッファは短すぎます。",
+    "MediaEngine.AdaptecParameterValue": "Adaptec の物理的パラメータは、サポートされている範囲外です。",
+    "MediaEngine.AcornDscSize": "DSCの記述子は幾何学を貯えるために余りに短いです。",
+    "MediaEngine.AcornDscGeometry": "DSCジオメトリはサポートされていません。",
+    "MediaEngine.AcornDatSource": "ソースはAcorn Winchesterのセクターイメージではありません。",
+    "MediaEngine.AcornDatCapacity": "DAT イメージは DSC の記述子によって宣言される幾何学を超過します。",
+    "MediaEngine.AcornDatAlignment": "DAT イメージは、DSC 記述子によって宣言されたブロック内で終了します。",
+    "MediaEngine.AcornDscMetadata": "ネイティブの DSC 記述子には、 無効な base64 データが含まれています。",
+    "MediaEngine.AcornDatWrite": "Winchester出力は、完全なブロックとサポートされているDSCジオメトリが必要です。",
+    "MediaEngine.AcornDatPartial": "DAT ソースは DSC 記述子によって宣言されるすべてのセクターを含んでいません。",
+    "MediaEngine.AcornDscUnknown": "有効な DSC ジオメトリがありません。物理的な面とトラックは不明です。"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "El búfer de parámetro Adaptec es demasiado corto.",
+    "MediaEngine.AdaptecParameterValue": "Los parámetros físicos de Adaptec están fuera del rango soportado.",
+    "MediaEngine.AcornDscSize": "El descriptor DSC es demasiado corto para almacenar su geometría.",
+    "MediaEngine.AcornDscGeometry": "La geometría DSC no es compatible.",
+    "MediaEngine.AcornDatSource": "La fuente no es una imagen del sector Acorn Winchester.",
+    "MediaEngine.AcornDatCapacity": "La imagen DAT supera la geometría declarada por su descriptor DSC.",
+    "MediaEngine.AcornDatAlignment": "La imagen DAT termina dentro de un bloque declarado por su descriptor DSC.",
+    "MediaEngine.AcornDscMetadata": "El descriptor DSC nativo contiene datos base64 inválidos.",
+    "MediaEngine.AcornDatWrite": "La salida Winchester requiere bloques completos y una geometría DSC compatible.",
+    "MediaEngine.AcornDatPartial": "La fuente DAT no contiene todos los sectores declarados por el descriptor DSC.",
+    "MediaEngine.AcornDscUnknown": "No existe geometría DSC válida; se desconocen superficies físicas y pistas."
+  }
+}

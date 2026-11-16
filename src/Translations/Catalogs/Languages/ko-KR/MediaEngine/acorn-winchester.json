@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Adaptec 매개 변수 버퍼가 너무 짧습니다.",
+    "MediaEngine.AdaptecParameterValue": "Adaptec 물리적 매개 변수는 지원되는 범위 밖에 있습니다.",
+    "MediaEngine.AcornDscSize": "DSC descriptor는 기하학을 저장하기 위해 너무 짧습니다.",
+    "MediaEngine.AcornDscGeometry": "DSC 기하학은 지원되지 않습니다.",
+    "MediaEngine.AcornDatSource": "소스가 Acorn Winchester 섹터 이미지가 아닙니다.",
+    "MediaEngine.AcornDatCapacity": "DAT 이미지는 DSC descriptor에 의해 선언 된 기하학을 초과합니다.",
+    "MediaEngine.AcornDatAlignment": "DAT 이미지는 DSC descriptor에 의해 선언된 블록 안에 끝납니다.",
+    "MediaEngine.AcornDscMetadata": "기본 DSC descriptor는 잘못된 base64 데이터를 포함합니다.",
+    "MediaEngine.AcornDatWrite": "Winchester 산출은 완전한 구획 및 지원된 DSC 기하학을 요구합니다.",
+    "MediaEngine.AcornDatPartial": "DAT 소스에 DSC 설명자에서 선언한 모든 섹터가 포함되어 있지 않습니다.",
+    "MediaEngine.AcornDscUnknown": "유효한 DSC 기하학은 없습니다; 물리적 표면과 궤도는 알 수 없습니다."
+  }
+}

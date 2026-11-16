@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Adaptec/Parameters.cpp
+  src/Formats/HardDisk/Acorn/Descriptor.cpp
+  src/Formats/HardDisk/Acorn/Reader.cpp
+  src/Formats/HardDisk/Acorn/Writer.cpp
   src/Formats/HardDisk/Variant.cpp
   src/Formats/HardDisk/Vhd/Header.cpp
   src/Formats/HardDisk/Vhd/Reader.cpp

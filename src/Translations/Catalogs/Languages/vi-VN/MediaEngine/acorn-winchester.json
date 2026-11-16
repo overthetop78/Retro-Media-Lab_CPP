@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecParameterSize": "Bộ đệm tham số Adaptec quá ngắn.",
+    "MediaEngine.AdaptecParameterValue": "Tham số vật lý Adaptec nằm ngoài phạm vi được hỗ trợ.",
+    "MediaEngine.AcornDscSize": "Bộ mô tả DSC quá ngắn để lưu cấu trúc hình học của đĩa.",
+    "MediaEngine.AcornDscGeometry": "Hình học DSC không được hỗ trợ.",
+    "MediaEngine.AcornDatSource": "Nguồn tin không phải là Acorn Winchester Hình ảnh khu vực.",
+    "MediaEngine.AcornDatCapacity": "Hình DAT vượt quá hình học được công bố bởi bộ phân tích DSC.",
+    "MediaEngine.AcornDatAlignment": "Hình ảnh DAT kết thúc bên trong một khối được tuyên bố bởi bộ phận phân tích DSC.",
+    "MediaEngine.AcornDscMetadata": "Bộ mô tả DSC gốc chứa dữ liệu base64 không hợp lệ.",
+    "MediaEngine.AcornDatWrite": "Kết quả của Winchester đòi hỏi các khối và hình học DSC được hỗ trợ.",
+    "MediaEngine.AcornDatPartial": "Nguồn DAT không chứa tất cả các cung được khai báo trong bộ mô tả DSC.",
+    "MediaEngine.AcornDscUnknown": "Không có cấu trúc hình học DSC hợp lệ; chưa biết các mặt và rãnh vật lý."
+  }
+}
