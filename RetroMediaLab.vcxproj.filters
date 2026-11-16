@@ -355,6 +355,9 @@
     <Filter Include="src\MediaEngine\src\Formats\Optical">
       <UniqueIdentifier>{9370132E-946E-5BB1-97B1-A041ACBA0817}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Optical\Alcohol">
+      <UniqueIdentifier>{987504CD-BAA7-50A5-8CBE-83CA315D6217}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Optical\BinCue">
       <UniqueIdentifier>{B1F6887C-2C96-50F3-AB7B-BA26EABE13C7}</UniqueIdentifier>
     </Filter>
@@ -3843,6 +3846,21 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Nib\Writer.cpp">
       <Filter>src\MediaEngine\src\Formats\Nib</Filter>
     </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Alcohol\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\Alcohol</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Alcohol\Descriptor.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\Alcohol</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Alcohol\Descriptor.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\Alcohol</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Alcohol\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\Alcohol</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Alcohol\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\Alcohol</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
     </ClInclude>
@@ -5340,6 +5358,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\aed6200p-mfm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\alcohol-mds.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -5889,6 +5910,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
@@ -6373,6 +6397,9 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-container-writer.json">
@@ -6861,6 +6888,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
@@ -7345,6 +7375,9 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-container-writer.json">
@@ -7833,6 +7866,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
@@ -8317,6 +8353,9 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-container-writer.json">
@@ -8805,6 +8844,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
@@ -9289,6 +9331,9 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-container-writer.json">
@@ -9777,6 +9822,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
@@ -10261,6 +10309,9 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-container-writer.json">
@@ -10749,6 +10800,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
@@ -11233,6 +11287,9 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-container-writer.json">
@@ -11721,6 +11778,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
@@ -12205,6 +12265,9 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-container-writer.json">
@@ -12693,6 +12756,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
@@ -13177,6 +13243,9 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-container-writer.json">
@@ -13665,6 +13734,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
@@ -14149,6 +14221,9 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-container-writer.json">
@@ -14637,6 +14712,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
@@ -15121,6 +15199,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-container-writer.json">
@@ -15609,6 +15690,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
@@ -16093,6 +16177,9 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-container-writer.json">
@@ -16581,6 +16668,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
@@ -17065,6 +17155,9 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-container-writer.json">
@@ -17553,6 +17646,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
@@ -18037,6 +18133,9 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-container-writer.json">
@@ -18525,6 +18624,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
@@ -19011,6 +19113,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-optical.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\clonecd.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-container-writer.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -19495,6 +19600,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-container-writer.json">

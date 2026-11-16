@@ -52,6 +52,8 @@ La tâche 154 termine le bloc BIN/CUE : modèles CUE possédés, parseur/sérial
 
 La tâche 155 porte le lecteur CloneCD 2/3 : descripteur CCD possédé, TOC/sessions/pistes, entiers signés/hexadécimaux, IMG brut et SUB optionnel, index/pregaps et propriétés. Compilation Debug, contrôle ciblé, audit et catalogues réussis ; aucun writer absent du C# n’est ajouté.
 
+La tâche 156 porte Alcohol MDS/MDF : structures binaires séparées du reader, sessions et footers possédés, noms Latin-1/UTF-16LE, sources MDF partagées et sous-canaux entrelacés. Le profil CD autonome du C# est conservé, avec refus des structures DVD non décodées. Compilation Debug, contrôle ciblé, audit et catalogues réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

@@ -1,0 +1,32 @@
+#include "Reader.h"
+#include "../../../Sources/RandomAccessSources.h"
+#include "../../../Models/Optical/Internal.h"
+#include "../../../Images/ReadRejection.h"
+#include "../../../Primitives/Identifiers.h"
+#include <RetroMediaLab/MediaEngine/Diagnostics.h>
+#include <algorithm>
+#include <sstream>
+#include <iomanip>
+namespace RetroMediaLab::MediaEngine::AlcoholMds {
+namespace {
+using namespace Constants;
+OpticalTrackMode resolveMode(const TrackBlock& track,int payload){if(!(track.adrControl&DataControl)&&payload==RawBytes)return OpticalTrackMode::Audio;switch(payload){case Data2048:return OpticalTrackMode::Mode1Data2048;case Data2336:return OpticalTrackMode::Mode2Data2336;case RawBytes:return track.mode==Mode2?OpticalTrackMode::Mode2Raw2352:OpticalTrackMode::Mode1Raw2352;default:throw MediaError(DiagnosticCode::MdsProfile);}}
+std::pair<int,int> window(OpticalTrackMode mode){switch(mode){case OpticalTrackMode::Audio:return {0,RawBytes};case OpticalTrackMode::Mode1Data2048:return {0,Data2048};case OpticalTrackMode::Mode2Data2336:return {0,Data2336};case OpticalTrackMode::Mode1Raw2352:return {RawUserOffset,Data2048};case OpticalTrackMode::Mode2Raw2352:return {RawUserOffset,Data2336};default:throw MediaError(DiagnosticCode::MdsProfile);}}
+}
+const ReaderCapabilities& Reader::capabilities()const{using namespace Constants;static const ReaderCapabilities caps{{std::string(FormatId)},{std::string(Extension)},{std::vector<std::uint8_t>(Signature.begin(),Signature.end())},{std::string(DataExtension)},{MediaKind::Optical},{RepresentationKind::OpticalTracks}};return caps;}
+std::future<bool> Reader::canReadAsync(RecognitionContext context,std::stop_token token)const{return std::async(std::launch::deferred,[context,token]{if(context.requestedFormatId()&&!Reader{}.supportsFormatId(*context.requestedFormatId()))return false;try{const auto header=readHeader(context,token);return header.major<=Constants::MaximumMajorVersion&&!(header.mediumType&Constants::DvdMediumFlag);}catch(...){if(isImageReadRejection(std::current_exception()))return false;throw;}});}
+std::future<std::shared_ptr<const MediaDocument>> Reader::readAsync(RecognitionContext context,std::stop_token token)const{return std::async(std::launch::deferred,[context,token]{using namespace Constants;const auto descriptor=readDescriptor(context,token);std::vector<std::pair<std::string,std::shared_ptr<const MediaFileSystems::RandomAccessData>>> sources;
+    for(const auto& session:descriptor.sessions)for(const auto& track:session.tracks()){checkCancellation(token);if(std::none_of(sources.begin(),sources.end(),[&](const auto& source){return Primitives::ordinalIdentifierEqualsIgnoreCase(source.first,track.dataPath);})){sources.emplace_back(track.dataPath,fileSource(std::filesystem::path(std::u8string(track.dataPath.begin(),track.dataPath.end()))));}}
+    std::vector<std::shared_ptr<const OpticalTrack>> tracks;std::int64_t logical=0;
+    for(const auto& session:descriptor.sessions){std::vector<TrackBlock> ordered(session.tracks().begin(),session.tracks().end());std::stable_sort(ordered.begin(),ordered.end(),[](const auto& a,const auto& b){return a.startSector<b.startSector;});
+        for(std::size_t i=0;i<ordered.size();++i){checkCancellation(token);const auto& track=ordered[i];const auto found=std::find_if(sources.begin(),sources.end(),[&](const auto& source){return Primitives::ordinalIdentifierEqualsIgnoreCase(source.first,track.dataPath);});const auto source=found->second;
+            if(source->length()>MaximumSigned||track.startOffset<0||std::uint64_t(track.startOffset)>source->length())throw MediaError(DiagnosticCode::MdsTrack);const auto available=(std::int64_t(source->length())-track.startOffset)/track.sectorSize;if(available<=0)throw MediaError(DiagnosticCode::MdsTrack);
+            auto count=available;const auto next=std::find_if(ordered.begin()+i+1,ordered.end(),[&](const auto& candidate){return candidate.startOffset>track.startOffset&&Primitives::ordinalIdentifierEqualsIgnoreCase(candidate.dataPath,track.dataPath);});if(next!=ordered.end())count=(next->startOffset-track.startOffset)/track.sectorSize;const auto remaining=session.endSector()-track.startSector;if(remaining>0)count=std::min(count,remaining);if(count<=0||OpticalInternal::multiply(count,track.sectorSize)>std::int64_t(source->length())-track.startOffset)throw MediaError(DiagnosticCode::MdsTrack);
+            const auto sub=track.subchannelMode!=0;const auto payload=track.sectorSize-(sub?SubBytes:0);const auto mode=resolveMode(track,payload);const auto [offset,length]=window(mode);OpticalTrackOptions value;value.sessionNumber=session.number();value.trackNumber=track.trackNumber;value.mode=mode;value.firstSector=track.startSector;value.sectorCount=count;value.storedSectorSize=track.sectorSize;value.userDataOffset=offset;value.userDataLength=length;value.dataSource=source;value.sourceOffset=track.startOffset;value.indexes.emplace_back(1,0);if(sub){value.subchannelSource=source;value.subchannelSourceOffset=OpticalInternal::add(track.startOffset,payload);value.subchannelBytesPerSector=SubBytes;value.subchannelStride=track.sectorSize;}logical=OpticalInternal::add(logical,OpticalInternal::multiply(count,length));tracks.push_back(std::make_shared<OpticalTrack>(std::move(value)));
+        }
+    }
+    auto options=context.source()->options();options.associatedPaths.clear();for(const auto& source:sources)options.associatedPaths.push_back(source.first);OpticalImageOptions image;image.logicalLength=logical;image.tracks=std::move(tracks);image.associatedFiles=std::vector<std::string>{context.source()->primaryPath()};image.associatedFiles->insert(image.associatedFiles->end(),options.associatedPaths.begin(),options.associatedPaths.end());std::ostringstream medium;medium<<HexPrefix<<std::uppercase<<std::hex<<std::setfill(Zero)<<std::setw(HexWidth)<<descriptor.header.mediumType;
+    std::map<std::string,std::string> metadata{{std::string(VersionKey),std::to_string(descriptor.header.major)+VersionSeparator+std::to_string(descriptor.header.minor)},{std::string(MediumKey),medium.str()},{std::string(SessionsKey),std::to_string(descriptor.sessions.size())},{std::string(TracksKey),std::to_string(image.tracks->size())}};
+    return std::make_shared<const MediaDocument>(std::make_shared<MediaSource>(std::move(options)),std::string(FormatId),MediaKind::Optical,std::make_shared<OpticalImage>(std::move(image)),std::vector<MediaFileSystems::VolumeDescriptor>{},std::vector<MediaFileSystems::MessageRecipe>{},std::move(metadata));
+});}
+}
