@@ -21,6 +21,10 @@ template<class T> void writeLittle(MutableBytes data,std::size_t offset,T value)
     using U=std::make_unsigned_t<T>;
     for(std::size_t i=0;i<sizeof(T);++i)data[offset+i]=std::uint8_t(U(value)>>(i*BitsPerByte));
 }
+inline void writeLittle24(MutableBytes data,std::size_t offset,std::uint32_t value) {
+    if(offset>data.size()||UInt24Bytes>data.size()-offset)throw MediaError(DiagnosticCode::ReadOutOfBounds);
+    for(std::size_t i=0;i<UInt24Bytes;++i)data[offset+i]=std::uint8_t(value>>(i*BitsPerByte));
+}
 inline std::uint32_t little24(Bytes data,std::size_t offset) {
     if(offset>data.size()||UInt24Bytes>data.size()-offset)throw MediaError(DiagnosticCode::ReadOutOfBounds);
     std::uint32_t value=0;

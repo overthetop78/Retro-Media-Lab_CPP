@@ -1,9 +1,10 @@
 #pragma once
+#include <RetroMediaLab/MediaEngine/TrackEncodingAttributeKeys.h>
 #include <array>
 #include <cstdint>
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::IsoMfm::Constants {
-inline constexpr std::string_view Id="iso.mfm",DisplayName="ISO MFM (Atari ST / IBM PC)",PhysicalAttribute="mfmPhysicalLayout",CompleteAttribute="requireCompletePhysicalTrack",RecordedCylinderField="RecordedCylinder",RecordedHeadField="RecordedHead";
+inline constexpr std::string_view Id="iso.mfm",DisplayName="ISO MFM (Atari ST / IBM PC)",PhysicalAttribute=TrackEncodingAttributeKeys::MfmPhysicalLayout,CompleteAttribute=TrackEncodingAttributeKeys::RequireCompletePhysicalTrack,RecordedCylinderField="RecordedCylinder",RecordedHeadField="RecordedHead";
 inline constexpr std::int32_t PhysicalEnabled=1,InitialGapBytes=80,SyncZeroBytes=12,InterFieldGapBytes=22,InterSectorGapBytes=24,SyncByteCount=3,EncodedByteBits=16,CrcBytes=2,HeaderGapBits=160,DataGapBits=256,MaximumAddress=255,MaximumSizeCode=7;
 inline constexpr std::uint8_t GapFill=0x4e,SyncFill=0,SyncByte=0xa1,IdMark=0xfe,DataMark=0xfb,DeletedMark=0xf8;
 inline constexpr std::uint32_t SyncBits=48,SyncAndMarkBits=64,HeaderFields=4,HeaderBytesAfterMark=6,HeaderBits=160,CircularTailBits=20000,ConfidenceWeight=2;

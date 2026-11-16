@@ -1,8 +1,9 @@
 #pragma once
+#include <RetroMediaLab/MediaEngine/TrackEncodingAttributeKeys.h>
 #include <cstdint>
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::IsoFm::Constants {
-inline constexpr std::string_view Id="iso.fm",DisplayName="ISO FM (simple densité)",PhysicalAttribute="fmPhysicalLayout",CompleteAttribute="requireCompletePhysicalTrack",RecordedCylinderField="RecordedCylinder",RecordedHeadField="RecordedHead";
+inline constexpr std::string_view Id="iso.fm",DisplayName="ISO FM (simple densité)",PhysicalAttribute=TrackEncodingAttributeKeys::FmPhysicalLayout,CompleteAttribute=TrackEncodingAttributeKeys::RequireCompletePhysicalTrack,RecordedCylinderField="RecordedCylinder",RecordedHeadField="RecordedHead";
 inline constexpr std::int32_t PhysicalEnabled=1,InitialGapBytes=16,SyncBytes=6,InterFieldGapBytes=11,InterSectorGapBytes=11,EncodedByteBits=16,CrcBytes=2,HeaderGapBits=160,DataGapBits=256,MaximumAddress=255,MaximumSizeCode=7;
 inline constexpr std::uint8_t GapFill=0xff,SyncFill=0,IdMark=0xfe,DataMark=0xfb,DeletedMark=0xf8;
 inline constexpr std::int32_t MaximumPeriod=2147483647,CellsPerDataBit=2,HeaderFields=4,HeaderBytesAfterMark=6,HeaderBits=112,ConfidenceWeight=2,MaximumSectorBytes=16384;
