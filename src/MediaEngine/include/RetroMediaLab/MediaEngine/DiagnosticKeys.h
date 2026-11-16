@@ -1,6 +1,9 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AppleScpSos="MediaEngine.AppleScpSos";
+inline constexpr std::string_view AppleScpRejected="MediaEngine.AppleScpRejected";
+
 inline constexpr std::string_view SectorBuilderLength="MediaEngine.SectorBuilderLength";
 
 inline constexpr std::string_view DefinedScpCodec="MediaEngine.DefinedScpCodec";

@@ -2964,6 +2964,14 @@
     <ClInclude Include="src\MediaEngine\src\Primitives\Identifiers.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\AmigaReader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\AmigaReader.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Apple\AppleII.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Apple\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Apple\Decoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Apple\Decoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Apple\Macintosh.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Apple\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Apple\Reader.h" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Apple\Reconstructors.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\DefinedReader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\DefinedReader.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Automatic.cpp" />
@@ -3332,6 +3340,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-writing.json" />
@@ -3536,6 +3545,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-writing.json" />
@@ -3740,6 +3750,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-writing.json" />
@@ -3944,6 +3955,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-writing.json" />
@@ -4148,6 +4160,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-writing.json" />
@@ -4352,6 +4365,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-writing.json" />
@@ -4556,6 +4570,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-writing.json" />
@@ -4760,6 +4775,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-writing.json" />
@@ -4964,6 +4980,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-writing.json" />
@@ -5168,6 +5185,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-writing.json" />
@@ -5372,6 +5390,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-writing.json" />
@@ -5576,6 +5595,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-writing.json" />
@@ -5780,6 +5800,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-writing.json" />
@@ -5984,6 +6005,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-writing.json" />
@@ -6188,6 +6210,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-writing.json" />
@@ -6392,6 +6415,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-writing.json" />
@@ -6596,6 +6620,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-writing.json" />
@@ -6800,6 +6825,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-writing.json" />
@@ -7004,6 +7030,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-writing.json" />
@@ -7208,6 +7235,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-writing.json" />
@@ -7412,6 +7440,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-writing.json" />
@@ -7616,6 +7645,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-writing.json" />
@@ -7820,6 +7850,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-writing.json" />
@@ -8024,6 +8055,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-writing.json" />
@@ -8228,6 +8260,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-writing.json" />
@@ -8432,6 +8465,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-writing.json" />
@@ -8636,6 +8670,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-writing.json" />
@@ -8840,6 +8875,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-writing.json" />
@@ -9044,6 +9080,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-writing.json" />
@@ -9248,6 +9285,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-track-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-writer-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-writing.json" />

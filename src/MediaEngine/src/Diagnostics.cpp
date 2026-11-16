@@ -980,11 +980,13 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::ScpNoUsableSectors:return DiagnosticKeys::ScpNoUsableSectors;
     case DiagnosticCode::DefinedScpCodec:return DiagnosticKeys::DefinedScpCodec;
     case DiagnosticCode::SectorBuilderLength:return DiagnosticKeys::SectorBuilderLength;
+    case DiagnosticCode::AppleScpSos:return DiagnosticKeys::AppleScpSos;
+    case DiagnosticCode::AppleScpRejected:return DiagnosticKeys::AppleScpRejected;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;
 }
-MediaError::MediaError(DiagnosticCode code,std::vector<std::string> args):diagnostic_{code,std::move(args)}{}
+MediaError::MediaError(DiagnosticCode code,std::vector<std::string> args,std::vector<DiagnosticCause> causes):diagnostic_{code,std::move(args)},causes_(std::move(causes)){}
 const char* MediaError::what() const noexcept{return diagnosticKey(diagnostic_.code).data();}
 void checkCancellation(std::stop_token token){if(token.stop_requested())throw MediaError(DiagnosticCode::Cancelled);}
 }

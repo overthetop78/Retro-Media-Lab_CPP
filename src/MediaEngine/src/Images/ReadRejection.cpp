@@ -7,6 +7,16 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::AppleScpSos:
+    case DiagnosticCode::AppleScpRejected:
+    case DiagnosticCode::ScpNoDecodedSectors:
+    case DiagnosticCode::ScpNoUsableSectors:
+    case DiagnosticCode::IsoNoCandidates:
+    case DiagnosticCode::IsoNoAddressedCandidates:
+    case DiagnosticCode::IsoEmptyCandidates:
+    case DiagnosticCode::IsoRequestedGeometry:
+    case DiagnosticCode::IsoNotIbmDos:
+    case DiagnosticCode::DefinedScpCodec:
     case DiagnosticCode::AtariCasData:
     case DiagnosticCode::SimhData:
     case DiagnosticCode::VocData:

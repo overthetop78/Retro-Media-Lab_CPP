@@ -529,6 +529,10 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Models/Sectors/LinearSectorWriter.cpp
   src/Models/Sectors/SectorImages.cpp
   src/Models/Sectors/SizeCodes.cpp
+  src/Reconstruction/Apple/Decoder.cpp
+  src/Reconstruction/Apple/AppleII.cpp
+  src/Reconstruction/Apple/Macintosh.cpp
+  src/Reconstruction/Apple/Reader.cpp
   src/Reconstruction/DefinedReader.cpp
   src/Reconstruction/Rx02Reader.cpp
   src/Reconstruction/AmigaReader.cpp
