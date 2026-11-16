@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "يتطلب تحويل التمثيل مستندًا وتنسيقًا مستهدفًا ومفاتيح رسائل غير فارغة.",
+    "MediaEngine.RepresentationConverterNull": "لا يمكن أن يكون محوّل تمثيل الوسائط فارغًا.",
+    "MediaEngine.RepresentationConverterDuplicate": "معرّف محوّل تمثيل الوسائط '{0}' مسجّل أكثر من مرة.",
+    "MediaEngine.RepresentationFluxSectors": "لا يمكن إعادة بناء التدفق بتنسيق القطاعات '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "لا يمكن إعادة بناء تنسيق القطاعات '{0}' كتدفق للتنسيق '{1}'.",
+    "MediaEngine.RepresentationHfe": "لا يمكن تجهيز التدفق للتنسيق المستهدف HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "لا يحتفظ تمثيل القطاعات بتوقيت التدفق المادي أو معلومات الحماية.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "يُعاد بناء التدفق الناتج من القطاعات ولا يتضمن الالتقاط المادي الأصلي.",
+    "MediaEngine.RepresentationHfeLoss": "يخزّن HFE دورة واحدة لكل مسار؛ ويُكمَّم توقيت التدفق إلى خلايا بت موحّدة.",
+    "MediaEngine.RepresentationConvertingTracks": "تحويل الأسطوانات {0} والرؤوس {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "المسار {0}، الرأس {1}."
+  }
+}

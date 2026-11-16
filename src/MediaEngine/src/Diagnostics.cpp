@@ -982,6 +982,17 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::SectorBuilderLength:return DiagnosticKeys::SectorBuilderLength;
     case DiagnosticCode::AppleScpSos:return DiagnosticKeys::AppleScpSos;
     case DiagnosticCode::AppleScpRejected:return DiagnosticKeys::AppleScpRejected;
+    case DiagnosticCode::RepresentationContract:return DiagnosticKeys::RepresentationContract;
+    case DiagnosticCode::RepresentationConverterNull:return DiagnosticKeys::RepresentationConverterNull;
+    case DiagnosticCode::RepresentationConverterDuplicate:return DiagnosticKeys::RepresentationConverterDuplicate;
+    case DiagnosticCode::RepresentationFluxSectors:return DiagnosticKeys::RepresentationFluxSectors;
+    case DiagnosticCode::RepresentationSectorsFlux:return DiagnosticKeys::RepresentationSectorsFlux;
+    case DiagnosticCode::RepresentationHfe:return DiagnosticKeys::RepresentationHfe;
+    case DiagnosticCode::RepresentationFluxLoss:return DiagnosticKeys::RepresentationFluxLoss;
+    case DiagnosticCode::RepresentationSyntheticFluxLoss:return DiagnosticKeys::RepresentationSyntheticFluxLoss;
+    case DiagnosticCode::RepresentationHfeLoss:return DiagnosticKeys::RepresentationHfeLoss;
+    case DiagnosticCode::RepresentationConvertingTracks:return DiagnosticKeys::RepresentationConvertingTracks;
+    case DiagnosticCode::RepresentationConvertingTrack:return DiagnosticKeys::RepresentationConvertingTrack;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

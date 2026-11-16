@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "表現変換には、ドキュメント、ターゲット形式、非空メッセージキーが必要です。",
+    "MediaEngine.RepresentationConverterNull": "メディア表現コンバーターを null にすることはできません。",
+    "MediaEngine.RepresentationConverterDuplicate": "媒体表現のコンバーターの識別子 '{0}' は複数回登録されます。",
+    "MediaEngine.RepresentationFluxSectors": "磁束をセクター形式 '{0}' として再構築できません。",
+    "MediaEngine.RepresentationSectorsFlux": "'{0}' は、'{1}' のフラックスとして再構築できません。",
+    "MediaEngine.RepresentationHfe": "HFEターゲット '{0}' にはフラックスを用意できません。",
+    "MediaEngine.RepresentationFluxLoss": "物理的なフラックスのタイミングおよび保護情報はセクターの表現で保存されません。",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "生成されたフラックスは、セクターから再構築され、元の物理的なキャプチャが含まれていません。",
+    "MediaEngine.RepresentationHfeLoss": "HFE はトラックごとに1回転分を保存します。磁束のタイミングは均一なビットセルに量子化されます。",
+    "MediaEngine.RepresentationConvertingTracks": "変換シリンダー {0}, ヘッド {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "トラック {0}、ヘッド {1}。"
+  }
+}

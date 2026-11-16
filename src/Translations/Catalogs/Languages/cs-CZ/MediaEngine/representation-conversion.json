@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Konverze reprezentace vyžaduje dokument, cílový formát a neprázdné klávesy zprávy.",
+    "MediaEngine.RepresentationConverterNull": "Převodník reprezentace médií nemůže být nulový.",
+    "MediaEngine.RepresentationConverterDuplicate": "Identifikátor převodníku pro reprezentaci médií \"{0}\" je registrován více než jednou.",
+    "MediaEngine.RepresentationFluxSectors": "Flux nelze rekonstruovat jako sektorový formát \"{0}\".",
+    "MediaEngine.RepresentationSectorsFlux": "Formát sektoru '{0}' nelze rekonstruovat jako tok pro '{1}'.",
+    "MediaEngine.RepresentationHfe": "Tok nelze připravit na HFE cíl '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Sektorová reprezentace nezachovává časování fyzického magnetického toku ani informace o ochraně.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Vygenerovaný tok je rekonstruován z sektorů a neobsahuje původní fyzické zachycení.",
+    "MediaEngine.RepresentationHfeLoss": "HFE ukládá jednu otáčku na stopu; časování magnetického toku je kvantováno na rovnoměrné bitové buňky.",
+    "MediaEngine.RepresentationConvertingTracks": "Převodové válce {0}, hlavy {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Stopa {0}, hlava {1}."
+  }
+}

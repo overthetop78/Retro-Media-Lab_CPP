@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Μια μετατροπή αναπαράστασης απαιτεί ένα έγγραφο, μια μορφή στόχου και τα μη άδεια πλήκτρα μηνυμάτων.",
+    "MediaEngine.RepresentationConverterNull": "Ένας μετατροπέας αναπαράστασης μέσων δεν μπορεί να είναι μηδενικός.",
+    "MediaEngine.RepresentationConverterDuplicate": "Ο μετατροπέας αντιπροσώπευσης μέσων '{0}' είναι καταχωρημένος περισσότερες από μία φορές.",
+    "MediaEngine.RepresentationFluxSectors": "Η μαγνητική ροή δεν μπορεί να ανακατασκευαστεί στη μορφή τομέων '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Η μορφή τομέα '{0}' δεν μπορεί να ανακατασκευαστεί ως ροή για το '{1}'.",
+    "MediaEngine.RepresentationHfe": "Η ροή δεν μπορεί να προετοιμαστεί για τον στόχο HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Ο χρόνος φυσικής ροής και οι πληροφορίες προστασίας δεν διατηρούνται στην αναπαράσταση του τομέα.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Η παραγόμενη ροή ανακατασκευάζεται από τομείς και δεν περιέχει την αρχική φυσική δέσμευση.",
+    "MediaEngine.RepresentationHfeLoss": "Το HFE αποθηκεύει μία περιστροφή ανά ίχνος· ο χρονισμός της μαγνητικής ροής κβαντίζεται σε ομοιόμορφα κελιά bit.",
+    "MediaEngine.RepresentationConvertingTracks": "Μετατροπή κυλίνδρων {0}, κεφαλές {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Ίχνος {0}, κεφαλή {1}."
+  }
+}

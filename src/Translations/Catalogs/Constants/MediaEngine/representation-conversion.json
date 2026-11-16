@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "A representation conversion requires a document, a target format and non-empty message keys.",
+    "MediaEngine.RepresentationConverterNull": "A media representation converter cannot be null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Media representation converter identifier '{0}' is registered more than once.",
+    "MediaEngine.RepresentationFluxSectors": "Flux cannot be reconstructed as sector format '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Sector format '{0}' cannot be reconstructed as flux for '{1}'.",
+    "MediaEngine.RepresentationHfe": "The flux cannot be prepared for HFE target '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Physical flux timing and protection information is not preserved in the sector representation.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "The generated flux is reconstructed from sectors and does not contain the original physical capture.",
+    "MediaEngine.RepresentationHfeLoss": "HFE stores one revolution per track; flux timing is quantized to uniform bit cells.",
+    "MediaEngine.RepresentationConvertingTracks": "Converting cylinders {0}, heads {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Track {0}, head {1}."
+  }
+}

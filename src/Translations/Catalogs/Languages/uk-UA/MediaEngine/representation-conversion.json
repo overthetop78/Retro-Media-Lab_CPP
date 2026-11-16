@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Перетворення подання потребує документа, цільового формату та непорожніх ключів повідомлень.",
+    "MediaEngine.RepresentationConverterNull": "Конвертер медіа-повідомлення не може бути null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Ідентифікатор перетворювача подання носія '{0}' зареєстровано більше одного разу.",
+    "MediaEngine.RepresentationFluxSectors": "Флюкс не може бути реконструйований як формат сектора '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Формат сектора '{0}' не може бути реконструйований як потік для '{1}'.",
+    "MediaEngine.RepresentationHfe": "Флюс не може бути підготовлений для цілей HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Секторне подання не зберігає часові параметри фізичного магнітного потоку та інформацію про захист.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Згенерований флюс реконструйований з секторів і не містить початкового фізичного захоплення.",
+    "MediaEngine.RepresentationHfeLoss": "HFE зберігає один оберт на доріжку; часові параметри магнітного потоку квантуються до рівномірних бітових комірок.",
+    "MediaEngine.RepresentationConvertingTracks": "Перетворення циліндрів {0}, глави {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Доріжка {0}, головка {1}."
+  }
+}

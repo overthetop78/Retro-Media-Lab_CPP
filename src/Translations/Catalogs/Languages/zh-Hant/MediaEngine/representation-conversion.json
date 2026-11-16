@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "表示轉換需要文件、目標格式和非空的訊息鍵。",
+    "MediaEngine.RepresentationConverterNull": "媒體表示轉換器不能為空。",
+    "MediaEngine.RepresentationConverterDuplicate": "媒體表示轉換器識別碼 '{0}' 已重複註冊。",
+    "MediaEngine.RepresentationFluxSectors": "無法將磁通重建為磁區格式 '{0}'。",
+    "MediaEngine.RepresentationSectorsFlux": "無法將磁區格式 '{0}' 重建為目標 '{1}' 的磁通。",
+    "MediaEngine.RepresentationHfe": "無法為 HFE 目標 '{0}' 準備磁通。",
+    "MediaEngine.RepresentationFluxLoss": "磁區表示不保留實體磁通時序和保護資訊。",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "產生的磁通由磁區重建，不包含原始實體擷取資料。",
+    "MediaEngine.RepresentationHfeLoss": "HFE 每條磁軌儲存一圈；磁通時序被量化為均勻的位元單元。",
+    "MediaEngine.RepresentationConvertingTracks": "正在轉換磁柱 {0}、磁頭 {1}。",
+    "MediaEngine.RepresentationConvertingTrack": "磁軌 {0}，磁頭 {1}。"
+  }
+}

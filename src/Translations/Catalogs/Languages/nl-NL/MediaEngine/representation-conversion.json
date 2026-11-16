@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Een representatieconversie vereist een document, een doelformaat en niet-lege berichtsleutels.",
+    "MediaEngine.RepresentationConverterNull": "Een mediavertegenwoordiger kan niet nul zijn.",
+    "MediaEngine.RepresentationConverterDuplicate": "De identificatie van de mediarepresentatieconverter '{0}' is meerdere keren geregistreerd.",
+    "MediaEngine.RepresentationFluxSectors": "Flux kan niet worden gereconstrueerd als sectorformaat '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Sectorformaat \"{0}' kan niet worden gereconstrueerd als flux voor \"{1}'.",
+    "MediaEngine.RepresentationHfe": "De flux kan niet worden voorbereid op HFE-doel '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Fysieke flux timing en bescherming informatie wordt niet bewaard in de sector vertegenwoordiging.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "De gegenereerde flux wordt gereconstrueerd uit sectoren en bevat niet de oorspronkelijke fysieke vangst.",
+    "MediaEngine.RepresentationHfeLoss": "HFE slaat één omwenteling per spoor op; flux timing wordt gequantiseerd tot uniforme bit cellen.",
+    "MediaEngine.RepresentationConvertingTracks": "Omzetten van cilinders {0}, hoofden {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Spoor {0}, kop {1}."
+  }
+}

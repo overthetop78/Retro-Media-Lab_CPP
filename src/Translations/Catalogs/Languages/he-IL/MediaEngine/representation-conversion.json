@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "המרה ייצוגית דורשת מסמך, פורמט מטרה ומפתחות מסרים לא ריקים.",
+    "MediaEngine.RepresentationConverterNull": "ממיר ייצוג מדיה לא יכול להיות אפס.",
+    "MediaEngine.RepresentationConverterDuplicate": "ייצוג מדיה ממיר מזהה \"{0}\" נרשם יותר מפעם אחת.",
+    "MediaEngine.RepresentationFluxSectors": "לא ניתן לשחזר את ה-Flux כפורמט \"{0}\".",
+    "MediaEngine.RepresentationSectorsFlux": "פורמט \"{0}\" לא ניתן לשחזר כ-\"{1}\".",
+    "MediaEngine.RepresentationHfe": "השטף לא יכול להיות מוכן עבור HFE היעד \"{0}\".",
+    "MediaEngine.RepresentationFluxLoss": "ייצוג הסקטורים אינו שומר את תזמון השטף המגנטי הפיזי או את מידע ההגנה.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "השטף שנוצר משוחזר מסקטורים ואינו מכיל את הלכידה הפיזית המקורית.",
+    "MediaEngine.RepresentationHfeLoss": "HFE שומר סיבוב אחד לכל מסילה; תזמון השטף מכומת לתאי bit אחידים.",
+    "MediaEngine.RepresentationConvertingTracks": "המרת גלילים {0}, ראשי {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "מסילה {0}, ראש {1}."
+  }
+}

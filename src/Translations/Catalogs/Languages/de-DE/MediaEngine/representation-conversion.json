@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Eine Repräsentationskonvertierung erfordert ein Dokument, ein Zielformat und nicht leere Nachrichtenschlüssel.",
+    "MediaEngine.RepresentationConverterNull": "Ein Mediendarstellungskonverter kann nicht null sein.",
+    "MediaEngine.RepresentationConverterDuplicate": "Die Kennung des Medienrepräsentationskonverters '{0}' ist mehrfach registriert.",
+    "MediaEngine.RepresentationFluxSectors": "Flux kann nicht als Sektorformat '{0}' rekonstruiert werden.",
+    "MediaEngine.RepresentationSectorsFlux": "Sektorformat '{0}' kann nicht als Fluss für '{1}' rekonstruiert werden.",
+    "MediaEngine.RepresentationHfe": "Der Fluss kann nicht für das HFE-Ziel '{0}' vorbereitet werden.",
+    "MediaEngine.RepresentationFluxLoss": "Physikalische Flusszeit und Schutzinformationen werden in der Sektordarstellung nicht gespeichert.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Der erzeugte Fluss wird aus Sektoren rekonstruiert und enthält nicht die ursprüngliche physikalische Erfassung.",
+    "MediaEngine.RepresentationHfeLoss": "HFE speichert eine Umdrehung pro Spur; Flux Timing wird zu einheitlichen Bitzellen quantisiert.",
+    "MediaEngine.RepresentationConvertingTracks": "Konvertierende Zylinder {0}, Köpfe {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Spur {0}, Kopf {1}."
+  }
+}

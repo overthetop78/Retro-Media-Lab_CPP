@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "O conversie a reprezentării necesită un document, un format țintă și chei de mesaj fără gol.",
+    "MediaEngine.RepresentationConverterNull": "Un convertor de reprezentare media nu poate fi nul.",
+    "MediaEngine.RepresentationConverterDuplicate": "Identificatorul convertorului de reprezentare media \"{0} \" este înregistrat de mai multe ori.",
+    "MediaEngine.RepresentationFluxSectors": "Fluxul nu poate fi reconstruit ca format de sector \"{0} .\"",
+    "MediaEngine.RepresentationSectorsFlux": "Formatul sectorial \"{0} \" nu poate fi reconstruit ca flux pentru \" {1} .\"",
+    "MediaEngine.RepresentationHfe": "Fluxul nu poate fi pregătit pentru obiectivul HFE \"{0} .\"",
+    "MediaEngine.RepresentationFluxLoss": "Momentul fluxului fizic și informațiile privind protecția nu sunt păstrate în reprezentarea sectorului.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Fluxul generat este reconstruit din sectoare și nu conține captarea fizică inițială.",
+    "MediaEngine.RepresentationHfeLoss": "HFE stochează o rotație pe pistă; temporizarea fluxului este cuantizată în celule de biți uniforme.",
+    "MediaEngine.RepresentationConvertingTracks": "Conversia cilindrilor {0}, capete {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Pista {0}, capul {1}."
+  }
+}

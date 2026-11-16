@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Для преобразования представления требуется документ, целевой формат и непустые ключи сообщений.",
+    "MediaEngine.RepresentationConverterNull": "Преобразователь представления СМИ не может быть нулевым.",
+    "MediaEngine.RepresentationConverterDuplicate": "Идентификатор преобразователя представления мультимедиа '{0}' регистрируется более одного раза.",
+    "MediaEngine.RepresentationFluxSectors": "Flux нельзя реконструировать как секторный формат {0}.",
+    "MediaEngine.RepresentationSectorsFlux": "Формат сектора '{0}' не может быть реконструирован как поток для '{1}'.",
+    "MediaEngine.RepresentationHfe": "Поток не может быть подготовлен к цели HFE {0}.",
+    "MediaEngine.RepresentationFluxLoss": "Информация о синхронизации и защите физических потоков в секторе не сохраняется.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Сгенерированный поток реконструируется из секторов и не содержит исходного физического захвата.",
+    "MediaEngine.RepresentationHfeLoss": "HFE сохраняет один оборот на дорожку; временные интервалы магнитного потока квантуются до равномерных битовых ячеек.",
+    "MediaEngine.RepresentationConvertingTracks": "Преобразующие цилиндры {0}, головки {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Дорожка {0}, головка {1}."
+  }
+}

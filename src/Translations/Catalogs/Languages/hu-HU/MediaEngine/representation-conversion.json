@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "A képviselet konverzióhoz dokumentumra, célformátumra és nem üres üzenetkulcsokra van szükség.",
+    "MediaEngine.RepresentationConverterNull": "A média képviseleti konverter nem lehet nulla.",
+    "MediaEngine.RepresentationConverterDuplicate": "A '{0}' médiaképviseleti átalakító azonosítóját többször is regisztrálták.",
+    "MediaEngine.RepresentationFluxSectors": "A fluxot nem lehet \"{0}\" ágazati formátumban rekonstruálni.",
+    "MediaEngine.RepresentationSectorsFlux": "Az \"{0}\" szektorformátum nem alakítható át fluxusként az \"{1}\" -re.",
+    "MediaEngine.RepresentationHfe": "A fluxust nem lehet előkészíteni a HFE \"{0}\" célra.",
+    "MediaEngine.RepresentationFluxLoss": "A szektoros ábrázolás nem őrzi meg a fizikai mágneses fluxus időzítését és a védelmi információkat.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "A generált fluxust ágazatokból rekonstruálják, és nem tartalmazza az eredeti fizikai rögzítést.",
+    "MediaEngine.RepresentationHfeLoss": "A HFE sávonként egy fordulatot tárol; a fluxus időzítése egyenletes bitcellákra van kvantálva.",
+    "MediaEngine.RepresentationConvertingTracks": "Konvertáló henger {0}, fejek {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Pálya {0}, fej {1}."
+  }
+}

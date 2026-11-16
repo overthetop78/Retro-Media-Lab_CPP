@@ -969,3 +969,17 @@ inline constexpr std::string_view MigrationTarget="MediaEngine.MigrationTarget";
 inline constexpr std::string_view MigrationAppleTarget="MediaEngine.MigrationAppleTarget";
 inline constexpr std::string_view MigrationCommodoreTarget="MediaEngine.MigrationCommodoreTarget";
 }
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view RepresentationContract="MediaEngine.RepresentationContract";
+inline constexpr std::string_view RepresentationConverterNull="MediaEngine.RepresentationConverterNull";
+inline constexpr std::string_view RepresentationConverterDuplicate="MediaEngine.RepresentationConverterDuplicate";
+inline constexpr std::string_view RepresentationFluxSectors="MediaEngine.RepresentationFluxSectors";
+inline constexpr std::string_view RepresentationSectorsFlux="MediaEngine.RepresentationSectorsFlux";
+inline constexpr std::string_view RepresentationHfe="MediaEngine.RepresentationHfe";
+inline constexpr std::string_view RepresentationFluxLoss="MediaEngine.RepresentationFluxLoss";
+inline constexpr std::string_view RepresentationSyntheticFluxLoss="MediaEngine.RepresentationSyntheticFluxLoss";
+inline constexpr std::string_view RepresentationHfeLoss="MediaEngine.RepresentationHfeLoss";
+inline constexpr std::string_view RepresentationConvertingTracks="MediaEngine.RepresentationConvertingTracks";
+inline constexpr std::string_view RepresentationConvertingTrack="MediaEngine.RepresentationConvertingTrack";
+}

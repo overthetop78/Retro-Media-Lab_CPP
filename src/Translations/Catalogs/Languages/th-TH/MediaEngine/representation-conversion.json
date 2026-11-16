@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "การแปลงตัวแทนต้องการเอกสาร รูปแบบเป้าหมาย และกุญแจที่ไม่ว่างเปล่า",
+    "MediaEngine.RepresentationConverterNull": "ตัวแปลงสื่อไม่สามารถว่างได้",
+    "MediaEngine.RepresentationConverterDuplicate": "ตัวแปลงตัวแทนสื่อ{0}'จดทะเบียนมากกว่าหนึ่งครั้ง'",
+    "MediaEngine.RepresentationFluxSectors": "ไม่สามารถสร้างฟลักซ์ใหม่เป็นรูปแบบเซกเตอร์ '{0}' ได้",
+    "MediaEngine.RepresentationSectorsFlux": "ฟอร์แมตส่วน '{0}' ไม่สามารถเขียนใหม่เป็นฟลักซ์สําหรับ '{1}' ได้",
+    "MediaEngine.RepresentationHfe": "ฟลักซ์ไม่สามารถเตรียมสําหรับเป้าหมาย HFE '{0}' ได้",
+    "MediaEngine.RepresentationFluxLoss": "ไม่ มี การ เก็บ รักษา เวลา และ ข้อมูล การ ป้องกัน ไว้ ใน รูป แบบ ส่วน.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "ฟลูซ์ที่สร้างขึ้นใหม่มาจากส่วนต่างๆ และไม่มีตัวจับทางกายภาพ",
+    "MediaEngine.RepresentationHfeLoss": "HFE เก็บข้อมูลหนึ่งรอบต่อแทร็ก และแปลงจังหวะเวลาฟลักซ์เป็นเซลล์บิตที่มีความยาวเท่ากัน",
+    "MediaEngine.RepresentationConvertingTracks": "แปลงกระบอก {0}, หัว {1}",
+    "MediaEngine.RepresentationConvertingTrack": "แทร็ก {0}, หัวอ่าน {1}."
+  }
+}

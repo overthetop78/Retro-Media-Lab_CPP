@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Edustus muuntaminen edellyttää asiakirjan, tavoitemuoto ja ei-tyhjä viesti avaimet.",
+    "MediaEngine.RepresentationConverterNull": "Median esitysmuunnin ei voi olla mitätön.",
+    "MediaEngine.RepresentationConverterDuplicate": "Median esitysmuuntimen tunniste \"{0}\" rekisteröidään useammin kuin kerran.",
+    "MediaEngine.RepresentationFluxSectors": "Fluxia ei voi rekonstruoida sektorin muotoon \"{0}.\"",
+    "MediaEngine.RepresentationSectorsFlux": "Sektorimuotoa \"{0}\" ei voida rekonstruoida vuona \"{1}.\"",
+    "MediaEngine.RepresentationHfe": "Vuota ei voida valmistaa HFE-kohteelle \"{0} .\"",
+    "MediaEngine.RepresentationFluxLoss": "Sektoriesitys ei säilytä fyysisen magneettivuon ajoitusta eikä suojaustietoja.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Syntynyt virta on rekonstruoitu sektoreilta eikä sisällä alkuperäistä fyysistä talteenottoa.",
+    "MediaEngine.RepresentationHfeLoss": "HFE tallentaa yhden kierroksen raitaa kohti; magneettivuon ajoitus kvantisoidaan tasamittaisiin bittisoluihin.",
+    "MediaEngine.RepresentationConvertingTracks": "Muunnetaan sylinterit {0}, päät {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Raita {0}, lukupää {1}."
+  }
+}

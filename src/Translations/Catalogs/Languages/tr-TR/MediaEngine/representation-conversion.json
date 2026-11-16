@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Gösterim dönüşümü bir belge, hedef biçim ve boş olmayan ileti anahtarları gerektirir.",
+    "MediaEngine.RepresentationConverterNull": "Medya gösterimi dönüştürücüsü null olamaz.",
+    "MediaEngine.RepresentationConverterDuplicate": "Medya gösterimi dönüştürücüsü kimliği '{0}' birden fazla kez kayıtlı.",
+    "MediaEngine.RepresentationFluxSectors": "Akı, '{0}' sektör biçiminde yeniden oluşturulamaz.",
+    "MediaEngine.RepresentationSectorsFlux": "'{0}' sektör biçimi, '{1}' için akı olarak yeniden oluşturulamaz.",
+    "MediaEngine.RepresentationHfe": "Akı, HFE hedefi '{0}' için hazırlanamaz.",
+    "MediaEngine.RepresentationFluxLoss": "Sektör gösterimi fiziksel akının zamanlamasını ve koruma bilgilerini korumaz.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Oluşturulan akı sektörlerden yeniden yapılandırılır ve özgün fiziksel kaydı içermez.",
+    "MediaEngine.RepresentationHfeLoss": "HFE her iz için bir dönüş saklar; akı zamanlaması eşit bit hücrelerine nicemlenir.",
+    "MediaEngine.RepresentationConvertingTracks": "Silindirler {0}, kafalar {1} dönüştürülüyor.",
+    "MediaEngine.RepresentationConvertingTrack": "İz {0}, kafa {1}."
+  }
+}

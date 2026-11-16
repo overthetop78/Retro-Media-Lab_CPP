@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "En representasjonskonvertering krever et dokument, et målformat og ikke-tome meldingsnøkler.",
+    "MediaEngine.RepresentationConverterNull": "En medierepresentasjonsomformer kan ikke være null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Media representasjon konverter identifikator «{0}» er registrert mer enn én gang.",
+    "MediaEngine.RepresentationFluxSectors": "Flux kan ikke rekonstrueres som sektorformat «{0}».",
+    "MediaEngine.RepresentationSectorsFlux": "Sektorformat «{0}» kan ikke rekonstrueres som flux for '{1}'.",
+    "MediaEngine.RepresentationHfe": "Fluksen kan ikke fremstilles for HFE-målet «{0}».",
+    "MediaEngine.RepresentationFluxLoss": "Fysisk fluks timing og beskyttelsesinformasjon er ikke bevart i sektorrepresentasjonen.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Den genererte flux rekonstrueres fra sektorer og inneholder ikke den opprinnelige fysiske fangsten.",
+    "MediaEngine.RepresentationHfeLoss": "HFE lagrer én omdreining per spor; flukstiming kvantiseres til ensartede bitceller.",
+    "MediaEngine.RepresentationConvertingTracks": "Konvertere sylindere {0}, hodet {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Spor {0}, hodet {1}."
+  }
+}

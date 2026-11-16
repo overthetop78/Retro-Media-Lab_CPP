@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "표현 변환에는 문서, 대상 형식 및 비어 있지 않은 메시지 키가 필요합니다.",
+    "MediaEngine.RepresentationConverterNull": "미디어 표현 변환기는 null일 수 없습니다.",
+    "MediaEngine.RepresentationConverterDuplicate": "미디어 표현 변환기 식별자 '{0}'은 한 번 이상 등록됩니다.",
+    "MediaEngine.RepresentationFluxSectors": "플럭스는 '{0}' 섹터 형식으로 재구성할 수 없습니다.",
+    "MediaEngine.RepresentationSectorsFlux": "분야 형식 '{0}'은 '{1}'의 플럭스로 재구성할 수 없습니다.",
+    "MediaEngine.RepresentationHfe": "플럭스는 HFE 대상 '{0}'을 준비할 수 없습니다.",
+    "MediaEngine.RepresentationFluxLoss": "섹터 표현에는 물리적 자기 플럭스 타이밍과 보호 정보가 보존되지 않습니다.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "생성된 플럭스는 섹터에서 재구성되며 원래 물리적 캡처를 포함하지 않습니다.",
+    "MediaEngine.RepresentationHfeLoss": "HFE는 트랙당 한 회전을 저장하며 플럭스 타이밍은 균일한 비트 셀로 양자화됩니다.",
+    "MediaEngine.RepresentationConvertingTracks": "실린더를 변환 {0}, 머리 {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "트랙 {0}, 헤드 {1}."
+  }
+}

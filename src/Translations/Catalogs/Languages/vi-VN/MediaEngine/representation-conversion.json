@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Một chuyển đổi đại diện đòi hỏi tài liệu, định dạng mục tiêu và phím thông điệp không rỗng.",
+    "MediaEngine.RepresentationConverterNull": "Bộ chuyển đổi biểu diễn phương tiện không được là null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Bộ nhận diện phương tiện chuyển đổi '{0}' được đăng ký hơn một lần.",
+    "MediaEngine.RepresentationFluxSectors": "Dòng chảy không thể được tái tạo thành định dạng phân khu '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Định dạng khu vực '{0}' không thể được xây dựng lại như là flux cho '{1}.",
+    "MediaEngine.RepresentationHfe": "Không thể chuẩn bị thông lượng cho đích HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Biểu diễn theo cung không lưu giữ thời gian của thông lượng từ vật lý hoặc thông tin bảo vệ.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Thông lượng được tạo được tái dựng từ các cung và không chứa dữ liệu thu nhận vật lý ban đầu.",
+    "MediaEngine.RepresentationHfeLoss": "HFE lưu một vòng quay trên mỗi rãnh; thời gian thông lượng từ được lượng tử hóa thành các ô bit đồng đều.",
+    "MediaEngine.RepresentationConvertingTracks": "Chuyển đổi hình trụ {0}, đầu {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Rãnh {0}, đầu đọc {1}."
+  }
+}

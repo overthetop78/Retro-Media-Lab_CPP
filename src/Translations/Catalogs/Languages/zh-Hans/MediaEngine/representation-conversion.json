@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "表示转换需要文档、目标格式和非空的消息键。",
+    "MediaEngine.RepresentationConverterNull": "媒体表示转换器不能为空。",
+    "MediaEngine.RepresentationConverterDuplicate": "媒体表示转换器标识符 '{0}' 已重复注册。",
+    "MediaEngine.RepresentationFluxSectors": "无法将磁通重建为扇区格式 '{0}'。",
+    "MediaEngine.RepresentationSectorsFlux": "无法将扇区格式 '{0}' 重建为目标 '{1}' 的磁通。",
+    "MediaEngine.RepresentationHfe": "无法为 HFE 目标 '{0}' 准备磁通。",
+    "MediaEngine.RepresentationFluxLoss": "扇区表示不保留物理磁通时序和保护信息。",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "生成的磁通由扇区重建，不包含原始物理采集数据。",
+    "MediaEngine.RepresentationHfeLoss": "HFE 每条磁道保存一圈；磁通时序被量化为均匀的位单元。",
+    "MediaEngine.RepresentationConvertingTracks": "正在转换柱面 {0}、磁头 {1}。",
+    "MediaEngine.RepresentationConvertingTrack": "磁道 {0}，磁头 {1}。"
+  }
+}

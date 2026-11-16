@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Konwersja reprezentacji wymaga dokumentu, formatu docelowego i niepustych kluczy wiadomości.",
+    "MediaEngine.RepresentationConverterNull": "Konwerter reprezentacji mediów nie może być zerowy.",
+    "MediaEngine.RepresentationConverterDuplicate": "Identyfikator konwertera reprezentacji mediów '{0}' jest zarejestrowany więcej niż raz.",
+    "MediaEngine.RepresentationFluxSectors": "Flux nie może być zrekonstruowany jako format sektorowy '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Format sektorowy '{0}' nie może być zrekonstruowany jako strumień dla '{1}'.",
+    "MediaEngine.RepresentationHfe": "Strumień nie może być przygotowany na cel HFE \"{0}\".",
+    "MediaEngine.RepresentationFluxLoss": "W reprezentacji sektora nie zachowano fizycznego harmonogramu zmian i informacji o ochronie.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Wygenerowany strumień jest rekonstruowany z sektorów i nie zawiera oryginalnego wychwytywania fizycznego.",
+    "MediaEngine.RepresentationHfeLoss": "HFE przechowuje jeden obrót na ścieżkę; czas strumienia magnetycznego jest kwantowany do równomiernych komórek bitowych.",
+    "MediaEngine.RepresentationConvertingTracks": "Konwersja cylindrów {0}, głowice {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Ścieżka {0}, głowica {1}."
+  }
+}

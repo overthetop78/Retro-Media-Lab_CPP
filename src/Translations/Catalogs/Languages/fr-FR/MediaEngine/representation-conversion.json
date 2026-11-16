@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Une conversion de représentation nécessite un document, un format cible et des clés de message non vides.",
+    "MediaEngine.RepresentationConverterNull": "Un convertisseur de représentation multimédia ne peut être nul.",
+    "MediaEngine.RepresentationConverterDuplicate": "L'identificateur du convertisseur de représentation multimédia « {0} » est enregistré plusieurs fois.",
+    "MediaEngine.RepresentationFluxSectors": "Le flux ne peut pas être reconstruit au format sectoriel « {0} ».",
+    "MediaEngine.RepresentationSectorsFlux": "Le format secteur « {0} » ne peut pas être reconstruit en flux pour « {1} ».",
+    "MediaEngine.RepresentationHfe": "Le flux ne peut pas être préparé pour la cible HFE « {0} ».",
+    "MediaEngine.RepresentationFluxLoss": "La représentation sectorielle ne conserve ni les temporisations du flux physique ni les informations de protection.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Le flux généré est reconstruit à partir de secteurs et ne contient pas la capture physique originale.",
+    "MediaEngine.RepresentationHfeLoss": "HFE conserve un tour par piste ; les temporisations du flux sont quantifiées en cellules binaires uniformes.",
+    "MediaEngine.RepresentationConvertingTracks": "Conversion des cylindres {0}, têtes {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Piste {0}, tête {1}."
+  }
+}

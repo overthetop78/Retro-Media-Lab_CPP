@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Una conversión de representación requiere un documento, un formato objetivo y claves de mensaje no vacías.",
+    "MediaEngine.RepresentationConverterNull": "Un convertidor de representación multimedia no puede ser nulo.",
+    "MediaEngine.RepresentationConverterDuplicate": "El identificador del convertidor de representación multimedia '{0}' está registrado más de una vez.",
+    "MediaEngine.RepresentationFluxSectors": "Flux no puede ser reconstruido como formato sector '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "El formato del sector '{0}' no puede ser reconstruido como flujo para '{1}'.",
+    "MediaEngine.RepresentationHfe": "No se puede preparar el flujo para el destino HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "No se conserva información sobre el tiempo del flujo físico y la protección en la representación del sector.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "El flujo generado se reconstruye de sectores y no contiene la captura física original.",
+    "MediaEngine.RepresentationHfeLoss": "HFE almacena una revolución por pista; el tiempo de flujo se cuantiza a células bit uniformes.",
+    "MediaEngine.RepresentationConvertingTracks": "Convertir cilindros {0}, cabezas {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Pista {0}, cabezal {1}."
+  }
+}

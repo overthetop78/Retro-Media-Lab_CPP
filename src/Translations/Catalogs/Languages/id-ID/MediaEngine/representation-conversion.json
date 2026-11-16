@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "Sebuah konversi representasi membutuhkan sebuah dokumen, sebuah format target dan kunci pesan tidak kosong.",
+    "MediaEngine.RepresentationConverterNull": "Konverter representasi media tidak boleh null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Pengenal konversi media '{0}' terdaftar lebih dari sekali.",
+    "MediaEngine.RepresentationFluxSectors": "Flux tidak dapat direkonstruksi sebagai format sektor '{0}'.",
+    "MediaEngine.RepresentationSectorsFlux": "Format sektor '{0}' tidak dapat direkonstruksi sebagai flux untuk '{1}'.",
+    "MediaEngine.RepresentationHfe": "Flux tidak dapat disiapkan untuk target HFE '{0}'.",
+    "MediaEngine.RepresentationFluxLoss": "Waktu fluks fisik dan informasi perlindungan tidak diawetkan dalam representasi sektor.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Flux yang dihasilkan direkonstruksi dari sektor dan tidak berisi penangkapan fisik asli.",
+    "MediaEngine.RepresentationHfeLoss": "HFE menyimpan satu revolusi per trek; waktu flux dihitung untuk sel bit seragam.",
+    "MediaEngine.RepresentationConvertingTracks": "Mengonversi silinder {0}, kepala {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Trek {0}, kepala {1}."
+  }
+}

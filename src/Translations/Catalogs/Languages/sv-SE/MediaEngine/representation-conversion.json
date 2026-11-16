@@ -1,0 +1,15 @@
+{
+  "strings": {
+    "MediaEngine.RepresentationContract": "En representationsomvandling kräver ett dokument, ett målformat och icke-tomma meddelandenycklar.",
+    "MediaEngine.RepresentationConverterNull": "En mediarepresentation konverterare kan inte vara null.",
+    "MediaEngine.RepresentationConverterDuplicate": "Medierepresentationskonverteringsidentifieraren \"{0}\" registreras mer än en gång.",
+    "MediaEngine.RepresentationFluxSectors": "Flux kan inte rekonstrueras som sektorformat {0}.",
+    "MediaEngine.RepresentationSectorsFlux": "Sektorformat \"{0}\" kan inte rekonstrueras som flöde för \"{1}\".",
+    "MediaEngine.RepresentationHfe": "Fluxen kan inte förberedas för HFE-målet \"{0}\".",
+    "MediaEngine.RepresentationFluxLoss": "Fysisk flödestid och skyddsinformation bevaras inte i sektorns representation.",
+    "MediaEngine.RepresentationSyntheticFluxLoss": "Den genererade flödet rekonstrueras från sektorer och innehåller inte den ursprungliga fysiska fångsten.",
+    "MediaEngine.RepresentationHfeLoss": "HFE lagrar ett varv per spår; fluxtider kvantiseras till enhetliga bitceller.",
+    "MediaEngine.RepresentationConvertingTracks": "Konvertera cylindrar {0}, huvuden {1}.",
+    "MediaEngine.RepresentationConvertingTrack": "Spår {0}, huvud {1}."
+  }
+}

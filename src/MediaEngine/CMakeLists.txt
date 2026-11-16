@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Conversion/Representation.cpp
+  src/Images/Conversion/FluxSectors.cpp
+  src/Images/Conversion/HfeCells.cpp
+  src/Composition/Conversion.cpp
   src/Reconstruction/Scp/Candidates.cpp
   src/Reconstruction/Scp/Reader.cpp
   src/Reconstruction/Scp/Composition.cpp
