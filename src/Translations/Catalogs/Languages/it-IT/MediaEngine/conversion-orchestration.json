@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Una conversione media richiede un documento sorgente, un percorso di uscita e un formato di destinazione.",
+    "MediaEngine.ConversionOutputExtension": "Il percorso di uscita dei media richiede un'estensione del file.",
+    "MediaEngine.ConversionWriterMissing": "Nessun modulo di scrittura di immagini multimediali è registrato per la destinazione '{0}' e l'estensione '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Nessun convertitore di rappresentazione può preparare la sorgente per la destinazione '{0}' e l'estensione '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Il modello del tag deve contenere una variabile supportata.",
+    "MediaEngine.ConversionIncompatibleFormat": "Il formato '{0}' è incompatibile con l'estensione di origine '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "L'estensione '{0}' non è valida per il formato '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Più uscite selezionate si risolvono allo stesso percorso '{0}'.",
+    "MediaEngine.ConversionReading": "Lettura {0}.",
+    "MediaEngine.ConversionComplete": "Conversione a {0} completato."
+  }
+}

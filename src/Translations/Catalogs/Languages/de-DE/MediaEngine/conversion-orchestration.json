@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Eine Medienkonvertierung erfordert ein Quelldokument, einen Ausgabepfad und ein Zielformat.",
+    "MediaEngine.ConversionOutputExtension": "Der Medienausgabepfad erfordert eine Dateierweiterung.",
+    "MediaEngine.ConversionWriterMissing": "Kein Media Image Writer ist für Ziel '{0}' und Erweiterung '{1}' registriert.",
+    "MediaEngine.ConversionRepresentationMissing": "Kein Repräsentationswandler kann die Quelle für Ziel '{0}' und Erweiterung '{1}' vorbereiten.",
+    "MediaEngine.ConversionTagPattern": "Das Tag-Muster muss eine unterstützte Variable enthalten.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format '{0}' ist inkompatibel mit der Source-Erweiterung '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Die Erweiterung '{0}' ist nicht gültig für das Format '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Mehrere ausgewählte Ausgänge lösen sich auf den gleichen Pfad '{0}' auf.",
+    "MediaEngine.ConversionReading": "Lesen {0}.",
+    "MediaEngine.ConversionComplete": "Umwandlung in {0} abgeschlossen."
+  }
+}

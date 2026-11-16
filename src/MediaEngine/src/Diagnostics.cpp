@@ -1000,6 +1000,16 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::AcornCpcLoss:return DiagnosticKeys::AcornCpcLoss;
     case DiagnosticCode::AcornTd0Loss:return DiagnosticKeys::AcornTd0Loss;
     case DiagnosticCode::AcornTrailingLoss:return DiagnosticKeys::AcornTrailingLoss;
+    case DiagnosticCode::ConversionRequest:return DiagnosticKeys::ConversionRequest;
+    case DiagnosticCode::ConversionOutputExtension:return DiagnosticKeys::ConversionOutputExtension;
+    case DiagnosticCode::ConversionWriterMissing:return DiagnosticKeys::ConversionWriterMissing;
+    case DiagnosticCode::ConversionRepresentationMissing:return DiagnosticKeys::ConversionRepresentationMissing;
+    case DiagnosticCode::ConversionTagPattern:return DiagnosticKeys::ConversionTagPattern;
+    case DiagnosticCode::ConversionIncompatibleFormat:return DiagnosticKeys::ConversionIncompatibleFormat;
+    case DiagnosticCode::ConversionIncompatibleExtension:return DiagnosticKeys::ConversionIncompatibleExtension;
+    case DiagnosticCode::ConversionOutputCollision:return DiagnosticKeys::ConversionOutputCollision;
+    case DiagnosticCode::ConversionReading:return DiagnosticKeys::ConversionReading;
+    case DiagnosticCode::ConversionComplete:return DiagnosticKeys::ConversionComplete;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

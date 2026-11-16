@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "A media conversion requires a source document, output path and target format.",
+    "MediaEngine.ConversionOutputExtension": "The media output path requires a file extension.",
+    "MediaEngine.ConversionWriterMissing": "No media image writer is registered for target '{0}' and extension '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "No representation converter can prepare the source for target '{0}' and extension '{1}'.",
+    "MediaEngine.ConversionTagPattern": "The tag pattern must contain a supported variable.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format '{0}' is incompatible with source extension '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Extension '{0}' is not valid for format '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Multiple selected outputs resolve to the same path '{0}'.",
+    "MediaEngine.ConversionReading": "Reading {0}.",
+    "MediaEngine.ConversionComplete": "Conversion to {0} completed."
+  }
+}

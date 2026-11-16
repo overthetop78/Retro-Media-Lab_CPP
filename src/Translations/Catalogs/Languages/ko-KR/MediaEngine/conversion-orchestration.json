@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "미디어 변환은 소스 문서, 출력 경로 및 대상 형식을 요구합니다.",
+    "MediaEngine.ConversionOutputExtension": "미디어 출력 경로는 파일 확장을 요구합니다.",
+    "MediaEngine.ConversionWriterMissing": "대상 '{0}' 및 확장자 '{1}'에 등록된 미디어 이미지 기록기가 없습니다.",
+    "MediaEngine.ConversionRepresentationMissing": "대상 '{0}' 및 확장자 '{1}'에 맞게 소스를 준비할 수 있는 표현 변환기가 없습니다.",
+    "MediaEngine.ConversionTagPattern": "태그 패턴은 지원 된 변수를 포함해야합니다.",
+    "MediaEngine.ConversionIncompatibleFormat": "형식 '{0}'은 소스 확장자 '{1}'과 호환되지 않습니다.",
+    "MediaEngine.ConversionIncompatibleExtension": "확장 '{0}'은 '{1}' 형식으로 유효하지 않습니다.",
+    "MediaEngine.ConversionOutputCollision": "다중 선택된 출력은 동일한 경로 '{0}'로 해결합니다.",
+    "MediaEngine.ConversionReading": "읽기 {0}.",
+    "MediaEngine.ConversionComplete": "{0}에 변환 완료."
+  }
+}

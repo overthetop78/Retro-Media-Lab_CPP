@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "O conversie media necesită un document sursă, calea de ieșire și formatul țintă.",
+    "MediaEngine.ConversionOutputExtension": "Calea de ieșire media necesită o extensie de fișier.",
+    "MediaEngine.ConversionWriterMissing": "Nu este înregistrat niciun modul de scriere a imaginilor media pentru ținta '{0}' și extensia '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Niciun convertor de reprezentare nu poate pregăti sursa pentru ținta \"{0} \" și extinderea \" {1} .\"",
+    "MediaEngine.ConversionTagPattern": "Modelul etichetei trebuie să conțină o variabilă susținută.",
+    "MediaEngine.ConversionIncompatibleFormat": "Formatul \"{0} \" este incompatibil cu extensia sursei \"{1} .\"",
+    "MediaEngine.ConversionIncompatibleExtension": "Prelungirea \"{0} \" nu este valabilă pentru formatul \" {1} .\"",
+    "MediaEngine.ConversionOutputCollision": "Rezultate multiple selectate se rezolvă pe aceeaşi cale \"{0} .\"",
+    "MediaEngine.ConversionReading": "Citire {0}.",
+    "MediaEngine.ConversionComplete": "Conversia în {0} finalizată."
+  }
+}

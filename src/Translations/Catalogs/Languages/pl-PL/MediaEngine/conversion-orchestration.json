@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Konwersja mediów wymaga dokumentu źródłowego, ścieżki wyjścia i formatu docelowego.",
+    "MediaEngine.ConversionOutputExtension": "Ścieżka wyjścia mediów wymaga rozszerzenia pliku.",
+    "MediaEngine.ConversionWriterMissing": "Nie zarejestrowano modułu zapisu obrazów nośników dla celu '{0}' i rozszerzenia '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Żaden konwerter reprezentacji nie może przygotować źródła dla celu '{0}' i rozszerzenia '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Wzór znacznika musi zawierać obsługiwaną zmienną.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format '{0}' jest niezgodny z rozszerzeniem źródła '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Rozszerzenie '{0}' nie jest ważne dla formatu '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Wiele wybranych wyjść przekierowuje się do tej samej ścieżki '{0}'.",
+    "MediaEngine.ConversionReading": "Czytanie {0}.",
+    "MediaEngine.ConversionComplete": "Konwersja na {0} zakończona."
+  }
+}

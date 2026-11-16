@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Een mediaconversie vereist een brondocument, uitvoerpad en doelformaat.",
+    "MediaEngine.ConversionOutputExtension": "De media output pad vereist een bestandsextensie.",
+    "MediaEngine.ConversionWriterMissing": "Er is geen mediaafbeeldingschrijver geregistreerd voor doel '{0}' en extensie '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Geen enkele representatieconverter kan de broncode voor doel \"{0}' en uitbreiding \"{1}' voorbereiden.",
+    "MediaEngine.ConversionTagPattern": "Het tagpatroon moet een ondersteunde variabele bevatten.",
+    "MediaEngine.ConversionIncompatibleFormat": "Formaat '{0}' is niet compatibel met bronextensie '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Extensie \"{0}' is niet geldig voor formaat \"{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Meerdere geselecteerde outputs gaan naar hetzelfde pad \"{0}'.",
+    "MediaEngine.ConversionReading": "{0} wordt gelezen.",
+    "MediaEngine.ConversionComplete": "Conversie naar {0} voltooid."
+  }
+}

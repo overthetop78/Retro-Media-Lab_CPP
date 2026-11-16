@@ -993,3 +993,19 @@ inline constexpr std::string_view AcornCpcLoss="MediaEngine.AcornCpcLoss";
 inline constexpr std::string_view AcornTd0Loss="MediaEngine.AcornTd0Loss";
 inline constexpr std::string_view AcornTrailingLoss="MediaEngine.AcornTrailingLoss";
 }
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ConversionRequest="MediaEngine.ConversionRequest";
+inline constexpr std::string_view ConversionOutputExtension="MediaEngine.ConversionOutputExtension";
+inline constexpr std::string_view ConversionWriterMissing="MediaEngine.ConversionWriterMissing";
+inline constexpr std::string_view ConversionRepresentationMissing="MediaEngine.ConversionRepresentationMissing";
+inline constexpr std::string_view ConversionTagPattern="MediaEngine.ConversionTagPattern";
+inline constexpr std::string_view ConversionIncompatibleFormat="MediaEngine.ConversionIncompatibleFormat";
+inline constexpr std::string_view ConversionIncompatibleExtension="MediaEngine.ConversionIncompatibleExtension";
+inline constexpr std::string_view ConversionOutputCollision="MediaEngine.ConversionOutputCollision";
+}
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ConversionReading="MediaEngine.ConversionReading";
+inline constexpr std::string_view ConversionComplete="MediaEngine.ConversionComplete";
+}

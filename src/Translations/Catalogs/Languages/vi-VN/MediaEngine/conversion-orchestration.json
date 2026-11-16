@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Việc chuyển đổi phương tiện cần thiết tài liệu nguồn, đường dẫn xuất và định dạng mục tiêu.",
+    "MediaEngine.ConversionOutputExtension": "Đường dẫn xuất phương tiện cần thiết phần mở rộng tập tin.",
+    "MediaEngine.ConversionWriterMissing": "Không có mô-đun ghi ảnh phương tiện nào được đăng ký cho đích '{0}' và phần mở rộng '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Không có bộ chuyển đổi biểu diễn nào có thể chuẩn bị nguồn cho đích '{0}' và phần mở rộng '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Mô hình thẻ phải chứa một biến được hỗ trợ.",
+    "MediaEngine.ConversionIncompatibleFormat": "Định dạng '{0}' không tương thích với phần mở rộng nguồn '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Phần mở rộng '{0}' không hợp lệ cho định dạng '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Nhiều kết xuất đã chọn được giải quyết theo cùng một đường dẫn \"{0}\".",
+    "MediaEngine.ConversionReading": "Đọc {0}.",
+    "MediaEngine.ConversionComplete": "Đã hoàn tất chuyển đổi sang {0}."
+  }
+}

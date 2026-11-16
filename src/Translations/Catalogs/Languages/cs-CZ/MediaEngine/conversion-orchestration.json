@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Převod médií vyžaduje zdrojový dokument, výstupní cestu a cílový formát.",
+    "MediaEngine.ConversionOutputExtension": "Mediální výstupní cesta vyžaduje rozšíření souboru.",
+    "MediaEngine.ConversionWriterMissing": "Pro cíl '{0}' a příponu '{1}' není zaregistrován žádný zapisovač obrazů médií.",
+    "MediaEngine.ConversionRepresentationMissing": "Žádný převodník reprezentace nemůže připravit zdroj pro cíl '{0}' a rozšíření '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Vzor značky musí obsahovat podporovanou proměnnou.",
+    "MediaEngine.ConversionIncompatibleFormat": "Formát \"{0}\" je neslučitelný se zdrojovým rozšířením \"{1}\".",
+    "MediaEngine.ConversionIncompatibleExtension": "Rozšíření '{0}' neplatí pro formát '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Vícenásobné vybrané výstupy řeší stejnou cestu \"{0}\".",
+    "MediaEngine.ConversionReading": "Čtení {0}.",
+    "MediaEngine.ConversionComplete": "Převod na {0} dokončen."
+  }
+}

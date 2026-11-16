@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "En mediekonvertering krever et kildedokument, utgangssti og målformat.",
+    "MediaEngine.ConversionOutputExtension": "Utgangsstien til mediet krever en filtype.",
+    "MediaEngine.ConversionWriterMissing": "Ingen skrivemodul for medieavbilder er registrert for målet '{0}' og filtypen '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Ingen representasjonskonverter kan klargjøre kilden for målet '{0}' og filtypen '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Merkemønsteret må inneholde en støttet variabel.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format «{0}» er ikke kompatibel med kildeutvidelsen «{1}».",
+    "MediaEngine.ConversionIncompatibleExtension": "Forlengelse «{0}» er ikke gyldig for format '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Flere valgte utganger løses til den samme banen «{0}».",
+    "MediaEngine.ConversionReading": "Les {0}.",
+    "MediaEngine.ConversionComplete": "Konvertering til {0} fullført."
+  }
+}

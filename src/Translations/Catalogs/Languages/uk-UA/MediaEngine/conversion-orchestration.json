@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Перетворення медіа вимагає вихідних документів, вихідних шляхів та цільового формату.",
+    "MediaEngine.ConversionOutputExtension": "Шлях виходу медіа вимагає розширення файлів.",
+    "MediaEngine.ConversionWriterMissing": "Для цілі '{0}' та розширення '{1}' не зареєстровано модуля запису образів носіїв.",
+    "MediaEngine.ConversionRepresentationMissing": "Жоден перетворювач подання не може підготувати джерело для цілі '{0}' та розширення '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Шаблон назви має містити підтримувану змінну.",
+    "MediaEngine.ConversionIncompatibleFormat": "Формат '{0}' не сумісний з розширенням джерела '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Розширення '{0}' не діє для формату '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Кілька вибраних виводів, які вирішуються на той же шлях '{0}'.",
+    "MediaEngine.ConversionReading": "Читання {0}.",
+    "MediaEngine.ConversionComplete": "Перетворення в {0} завершено."
+  }
+}

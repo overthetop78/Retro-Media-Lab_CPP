@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "媒體轉換需要來源文件、輸出路徑和目標格式。",
+    "MediaEngine.ConversionOutputExtension": "媒體輸出路徑必須包含副檔名。",
+    "MediaEngine.ConversionWriterMissing": "未註冊適用於目標 '{0}' 和副檔名 '{1}' 的媒體映像寫入器。",
+    "MediaEngine.ConversionRepresentationMissing": "沒有表示轉換器能為目標 '{0}' 和副檔名 '{1}' 準備來源資料。",
+    "MediaEngine.ConversionTagPattern": "名稱樣板必須包含支援的變數。",
+    "MediaEngine.ConversionIncompatibleFormat": "格式 '{0}' 與來源副檔名 '{1}' 不相容。",
+    "MediaEngine.ConversionIncompatibleExtension": "副檔名 '{0}' 不適用於格式 '{1}'。",
+    "MediaEngine.ConversionOutputCollision": "多個選取的輸出對應至相同路徑 '{0}'。",
+    "MediaEngine.ConversionReading": "正在讀取 {0}。",
+    "MediaEngine.ConversionComplete": "轉換為 {0} 已完成。"
+  }
+}

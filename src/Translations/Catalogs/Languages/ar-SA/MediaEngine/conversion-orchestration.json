@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "يتطلب تحويل الوسائط مستندًا مصدرًا ومسار إخراج وتنسيقًا مستهدفًا.",
+    "MediaEngine.ConversionOutputExtension": "يجب أن يتضمن مسار إخراج الوسائط امتداد ملف.",
+    "MediaEngine.ConversionWriterMissing": "لا توجد وحدة لكتابة صور الوسائط مسجّلة للتنسيق '{0}' والامتداد '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "لا يستطيع أي محوّل تمثيل تجهيز المصدر للتنسيق '{0}' والامتداد '{1}'.",
+    "MediaEngine.ConversionTagPattern": "يجب أن يحتوي نمط البطاقة على متغير مدعم",
+    "MediaEngine.ConversionIncompatibleFormat": "التنسيق '{0}' غير متوافق مع امتداد المصدر '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "الامتداد '{0}' غير صالح للتنسيق '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "تشير عدة مخرجات محدّدة إلى المسار نفسه '{0}'.",
+    "MediaEngine.ConversionReading": "قراءة {0}.",
+    "MediaEngine.ConversionComplete": "اكتمل التحويل إلى {0}."
+  }
+}

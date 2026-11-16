@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Median muuntaminen vaatii lähdeasiakirjan, tulostuspolun ja kohdemuodon.",
+    "MediaEngine.ConversionOutputExtension": "Mediaulostulopolku edellyttää tiedostotunnistetta.",
+    "MediaEngine.ConversionWriterMissing": "Kohdetta \"{0}\" ja laajennusta \"{1}\" varten ei ole rekisteröity mediakuvakirjoittaja.",
+    "MediaEngine.ConversionRepresentationMissing": "Mikään esitysmuunnin ei voi valmistaa lähde kohdetta \"{0}\" ja laajentamista \"{1}.\"",
+    "MediaEngine.ConversionTagPattern": "Tag-kuviossa on oltava tuettu muuttuja.",
+    "MediaEngine.ConversionIncompatibleFormat": "Muoto \"{0}\" on ristiriidassa lähdelaajennuksen \"{1}\" kanssa.",
+    "MediaEngine.ConversionIncompatibleExtension": "Laajennus \"{0}\" ei ole voimassa muodossa \"{1}.\"",
+    "MediaEngine.ConversionOutputCollision": "Useita valittuja lähtöjä päättyy samalle polulle \"{0} .\"",
+    "MediaEngine.ConversionReading": "Luen {0}.",
+    "MediaEngine.ConversionComplete": "Muunnos {0} valmis."
+  }
+}

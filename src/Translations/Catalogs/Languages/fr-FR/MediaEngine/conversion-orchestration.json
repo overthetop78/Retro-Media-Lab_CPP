@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Une conversion multimédia nécessite un document source, un chemin de sortie et un format cible.",
+    "MediaEngine.ConversionOutputExtension": "Le chemin de sortie multimédia nécessite une extension de fichier.",
+    "MediaEngine.ConversionWriterMissing": "Aucun module d'écriture d'image média n'est enregistré pour la cible « {0} » et l'extension « {1} ».",
+    "MediaEngine.ConversionRepresentationMissing": "Aucun convertisseur de représentation ne peut préparer la source pour la cible « {0} » et l'extension « {1} ».",
+    "MediaEngine.ConversionTagPattern": "Le modèle de nom doit contenir une variable prise en charge.",
+    "MediaEngine.ConversionIncompatibleFormat": "Le format « {0} » est incompatible avec l'extension source « {1} ».",
+    "MediaEngine.ConversionIncompatibleExtension": "L'extension « {0} » n'est pas valide pour le format « {1} ».",
+    "MediaEngine.ConversionOutputCollision": "Plusieurs sorties sélectionnées correspondent au même chemin « {0} ».",
+    "MediaEngine.ConversionReading": "Lecture {0}.",
+    "MediaEngine.ConversionComplete": "Conversion en {0} terminée."
+  }
+}

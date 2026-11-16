@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Una conversión de los medios requiere un documento fuente, una ruta de salida y un formato objetivo.",
+    "MediaEngine.ConversionOutputExtension": "La ruta de salida de los medios requiere una extensión de archivo.",
+    "MediaEngine.ConversionWriterMissing": "Ningún escritor de imágenes de medios está registrado para el objetivo '{0}' y la extensión '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Ningún convertidor de representación puede preparar la fuente para el objetivo '{0}' y la extensión '{1}'.",
+    "MediaEngine.ConversionTagPattern": "El patrón de etiqueta debe contener una variable soportada.",
+    "MediaEngine.ConversionIncompatibleFormat": "Formato '{0}' es incompatible con la extensión fuente '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "La extensión '{0}' no es válida para el formato '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Múltiples salidas seleccionadas se resuelven al mismo camino '{0}'.",
+    "MediaEngine.ConversionReading": "Leyendo {0}.",
+    "MediaEngine.ConversionComplete": "Conversión a {0} completado."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "การแปลงสื่อต้องการเอกสารต้นฉบับ, เส้นทางผลลัพธ์ และรูปแบบเป้าหมาย",
+    "MediaEngine.ConversionOutputExtension": "เส้นทางไปยังสื่อต้องการส่วนขยายของแฟ้ม",
+    "MediaEngine.ConversionWriterMissing": "ยังไม่มีการลงทะเบียนผู้เขียนภาพจากสื่อ สําหรับเป้าหมาย '{0}' และ ' {1}'",
+    "MediaEngine.ConversionRepresentationMissing": "ไม่มีตัวแปลงภาพใดที่จะสามารถเตรียมแหล่งสําหรับเป้าหมาย '{0}' และ ' {1}' ได้",
+    "MediaEngine.ConversionTagPattern": "รูปแบบของป้ายกํากับจะต้องมีตัวแปรที่รองรับ",
+    "MediaEngine.ConversionIncompatibleFormat": "รูปแบบ '{0}' ไม่เข้ากันได้กับส่วนขยายต้นทาง '{1}'",
+    "MediaEngine.ConversionIncompatibleExtension": "ส่วนขยาย '{0}' ใช้ไม่ได้กับรูปแบบ '{1}'",
+    "MediaEngine.ConversionOutputCollision": "แสดงผลหลายรายการที่ถูกเลือกมาแก้ไขไปยังพาธเดียวกัน '{0}'",
+    "MediaEngine.ConversionReading": "กําลังอ่าน {0}",
+    "MediaEngine.ConversionComplete": "การแปลงไปยัง {0} เสร็จสมบูรณ์แล้ว"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Μια μετατροπή μέσων απαιτεί ένα έγγραφο πηγής, διαδρομή εξόδου και τη μορφή στόχου.",
+    "MediaEngine.ConversionOutputExtension": "Η διαδρομή εξόδου πολυμέσων απαιτεί επέκταση αρχείου.",
+    "MediaEngine.ConversionWriterMissing": "Δεν έχει καταχωρηθεί μονάδα εγγραφής εικόνων μέσων για τον στόχο '{0}' και την επέκταση '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Κανένας μετατροπέας αναπαράστασης δεν μπορεί να προετοιμάσει την πηγή για το στόχο '{0}' και την επέκταση '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Το μοτίβο ετικέτας πρέπει να περιέχει μια υποστηριζόμενη μεταβλητή.",
+    "MediaEngine.ConversionIncompatibleFormat": "Η μορφή '{0}' δεν είναι συμβατή με την επέκταση πηγής '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Η επέκταση '{0}' δεν ισχύει για τη μορφή '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Πολλαπλές επιλεγμένες έξοδοι επιλύονται στην ίδια διαδρομή '{0}'.",
+    "MediaEngine.ConversionReading": "Διαβάζω {0}.",
+    "MediaEngine.ConversionComplete": "Η μετατροπή σε {0} ολοκληρώθηκε."
+  }
+}

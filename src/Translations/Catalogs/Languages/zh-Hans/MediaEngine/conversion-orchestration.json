@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "媒体转换需要源文档,输出路径和目标格式.",
+    "MediaEngine.ConversionOutputExtension": "媒体输出路径需要文件扩展名.",
+    "MediaEngine.ConversionWriterMissing": "未注册适用于目标 '{0}' 和扩展名 '{1}' 的媒体映像写入器。",
+    "MediaEngine.ConversionRepresentationMissing": "没有表示转换器能为目标 '{0}' 和扩展名 '{1}' 准备源数据。",
+    "MediaEngine.ConversionTagPattern": "标记模式必须包含一个支持的变量 。",
+    "MediaEngine.ConversionIncompatibleFormat": "格式\"{0}\"与源扩展\"{1}\"不相容.",
+    "MediaEngine.ConversionIncompatibleExtension": "扩展名\"{0}\"对格式\"{1}\"无效.",
+    "MediaEngine.ConversionOutputCollision": "多个选中的输出解析到相同的路径 “{0} ” 。",
+    "MediaEngine.ConversionReading": "正在读取 {0}。",
+    "MediaEngine.ConversionComplete": "转换为{0} 已完成 。"
+  }
+}

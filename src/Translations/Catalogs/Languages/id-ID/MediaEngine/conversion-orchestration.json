@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Konversi media memerlukan dokumen sumber, path keluaran, dan format target.",
+    "MediaEngine.ConversionOutputExtension": "Path keluaran media memerlukan suatu ekstensi berkas.",
+    "MediaEngine.ConversionWriterMissing": "Tak ada penulis gambar media yang terdaftar bagi target '{0}' dan ekstensi '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Tak ada pengubah representasi yang dapat menyiapkan sumber untuk target '{0}' dan ekstensi '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Pola tag harus berisi variabel yang didukung.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format '{0}' tidak kompatibel dengan ekstensi sumber '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Ekstensi '{0}' tak valid untuk format '{1}'.",
+    "MediaEngine.ConversionOutputCollision": "Beberapa keluaran yang dipilih mengarah ke path yang sama '{0}'.",
+    "MediaEngine.ConversionReading": "Membaca {0}.",
+    "MediaEngine.ConversionComplete": "Konversi ke {0} selesai."
+  }
+}

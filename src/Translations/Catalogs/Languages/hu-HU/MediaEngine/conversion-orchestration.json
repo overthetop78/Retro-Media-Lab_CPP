@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "A médiaátalakítás forrásdokumentumot, kimeneti útvonalat és célformátumot igényel.",
+    "MediaEngine.ConversionOutputExtension": "A médiakimenethez fájlkiterjesztés szükséges.",
+    "MediaEngine.ConversionWriterMissing": "A \"{0}\" és a \"{1}\" célhoz nem regisztrált médiaképíró.",
+    "MediaEngine.ConversionRepresentationMissing": "A \"{0}\" és a \"{1}\" cél forrását egyetlen reprezentáló átalakító sem készítheti elő.",
+    "MediaEngine.ConversionTagPattern": "A címke mintájának egy támogatott változót kell tartalmaznia.",
+    "MediaEngine.ConversionIncompatibleFormat": "A \"{0}\" formátum összeegyeztethetetlen a \"{1}\" forráskiterjesztéssel.",
+    "MediaEngine.ConversionIncompatibleExtension": "A \"{0}\" kiterjesztés nem érvényes a \"{1}\" formátumra.",
+    "MediaEngine.ConversionOutputCollision": "Többszörös kiválasztott kimenetek ugyanazon az útvonalon \"{0}\" oldódnak fel.",
+    "MediaEngine.ConversionReading": "{0} olvasás.",
+    "MediaEngine.ConversionComplete": "Átalakítás {0} -ra befejezve."
+  }
+}

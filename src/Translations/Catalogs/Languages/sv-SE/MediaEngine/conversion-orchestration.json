@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "En mediekonvertering kräver ett källdokument, utgångsväg och målformat.",
+    "MediaEngine.ConversionOutputExtension": "Medieutgångsvägen kräver en filändelse.",
+    "MediaEngine.ConversionWriterMissing": "Ingen skrivmodul för medieavbilder är registrerad för målet '{0}' och filändelsen '{1}'.",
+    "MediaEngine.ConversionRepresentationMissing": "Ingen representationskonverterare kan förbereda källan för målet \"{0}\" och förlängning \"{1}\".",
+    "MediaEngine.ConversionTagPattern": "Tagmönstret måste innehålla en stödd variabel.",
+    "MediaEngine.ConversionIncompatibleFormat": "Format \"{0}\" är oförenligt med källförlängning \"{1}\".",
+    "MediaEngine.ConversionIncompatibleExtension": "Förlängning \"{0}\" gäller inte för format \"{1}\".",
+    "MediaEngine.ConversionOutputCollision": "Flera utvalda utgångar löser samma väg \"{0}\".",
+    "MediaEngine.ConversionReading": "Läsa {0}.",
+    "MediaEngine.ConversionComplete": "Konvertering till {0} slutförd."
+  }
+}

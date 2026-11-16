@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Bir medya dönüşümü kaynak belgesi, çıkış yolu ve hedef formatı gerektirir.",
+    "MediaEngine.ConversionOutputExtension": "Medya çıktı yolu bir dosya uzatma gerektirir.",
+    "MediaEngine.ConversionWriterMissing": "'{0}' hedefi ve '{1}' uzantısı için kayıtlı medya görüntüsü yazıcısı yok.",
+    "MediaEngine.ConversionRepresentationMissing": "Hiçbir gösterim dönüştürücüsü kaynağı '{0}' hedefi ve '{1}' uzantısı için hazırlayamıyor.",
+    "MediaEngine.ConversionTagPattern": "etiket modeli desteklenen bir değişken içermelidir.",
+    "MediaEngine.ConversionIncompatibleFormat": "'{0}' biçimi, '{1}' kaynak uzantısıyla uyumlu değil.",
+    "MediaEngine.ConversionIncompatibleExtension": "'{0}' uzantısı '{1}' biçimi için geçerli değil.",
+    "MediaEngine.ConversionOutputCollision": "Seçilen birden fazla çıktı aynı '{0}' yoluna karşılık geliyor.",
+    "MediaEngine.ConversionReading": "Okuma {0}.",
+    "MediaEngine.ConversionComplete": "{0} için dönüşüm tamamlandı."
+  }
+}

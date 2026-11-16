@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "Конверсия медиа требует исходного документа, пути вывода и целевого формата.",
+    "MediaEngine.ConversionOutputExtension": "Путь вывода мультимедиа требует расширения файла.",
+    "MediaEngine.ConversionWriterMissing": "Для цели '{0}' и расширения '{1}' не зарегистрирован модуль записи образов носителей.",
+    "MediaEngine.ConversionRepresentationMissing": "Ни один преобразователь представлений не может подготовить источник для целевого '{0}' и расширения '{1}'.",
+    "MediaEngine.ConversionTagPattern": "Шаблон тега должен содержать поддерживаемую переменную.",
+    "MediaEngine.ConversionIncompatibleFormat": "Формат '{0}' несовместим с расширением источника '{1}'.",
+    "MediaEngine.ConversionIncompatibleExtension": "Расширение \"{0}\" не является действительным для формата \"{1}\".",
+    "MediaEngine.ConversionOutputCollision": "Несколько выбранных выходов разрешают один и тот же путь '{0}'.",
+    "MediaEngine.ConversionReading": "Читать {0}",
+    "MediaEngine.ConversionComplete": "Преобразование в {0} завершено."
+  }
+}

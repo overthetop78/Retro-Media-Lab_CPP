@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.ConversionRequest": "メディア変換には、ソース文書、出力パス、ターゲット形式が必要です。",
+    "MediaEngine.ConversionOutputExtension": "メディア出力パスはファイル拡張子が必要です。",
+    "MediaEngine.ConversionWriterMissing": "ターゲット '{0}' と拡張子 '{1}' でメディアイメージライターが登録されていません。",
+    "MediaEngine.ConversionRepresentationMissing": "表現コンバーターは、ターゲット '{0}' と拡張子 '{1}' のソースを準備できません。",
+    "MediaEngine.ConversionTagPattern": "タグパターンには、サポートされている変数が含まれている必要があります。",
+    "MediaEngine.ConversionIncompatibleFormat": "フォーマット '{0}' は、ソース拡張子 '{1}' と互換性がありません。",
+    "MediaEngine.ConversionIncompatibleExtension": "拡張子 '{0}' は '{1}' の形式には有効ではありません。",
+    "MediaEngine.ConversionOutputCollision": "複数の選択した出力は同じパス '{0}' に解決します。",
+    "MediaEngine.ConversionReading": "{0} を読み込みます。",
+    "MediaEngine.ConversionComplete": "{0} への変換が完了しました。"
+  }
+}
