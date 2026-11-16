@@ -1996,6 +1996,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\FluxTrackData.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\GwFormatCapabilities.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\HardDiskGeometry.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\I86fReconstruction.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatDetection.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatWorkspace.h" />
@@ -2662,6 +2663,9 @@
     <ClInclude Include="src\MediaEngine\src\Formats\I86f\I86f.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\ProtectedImage.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\Reader.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\I86f\SectorFacade.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\I86f\SectorReader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\I86f\SectorReader.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\ImageDisk\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\ImageDisk\Adapter.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\ImageDisk\Builder.cpp" />

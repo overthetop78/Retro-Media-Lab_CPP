@@ -11,4 +11,6 @@ inline constexpr std::uint32_t MaximumOffset=2147483647,MaximumFluxTicks=4294967
 inline constexpr std::uint16_t NoFlags=0,TwoSided=0x0008,SpeedShiftMask=0x0060,ExtraBitCellCount=0x0080,ReverseByteOrder=0x0800,SpeedupOrExplicitBitCount=0x1000;
 inline constexpr std::uint16_t EncodingMask=0x0018,MfmEncoding=0x0008;
 inline constexpr std::string_view FormatId="raw.86f",Extension=".86f",FlagsKey="86f.flags";
+inline constexpr std::string_view SectorFormatPrefix="86f.";
+inline constexpr char GeometrySeparator='.';
 }

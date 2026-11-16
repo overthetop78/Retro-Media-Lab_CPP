@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Formats/I86f/SectorReader.cpp
+    src/Formats/I86f/SectorFacade.cpp
     src/Audio/Playback.cpp
     src/PhysicalMedia/Contracts.cpp
     src/PhysicalMedia/Tape.cpp

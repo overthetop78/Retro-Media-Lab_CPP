@@ -8034,6 +8034,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\HardDiskGeometry.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\I86fReconstruction.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -10032,6 +10035,15 @@
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\Reader.cpp">
       <Filter>src\MediaEngine\src\Formats\I86f</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\I86f\SectorFacade.cpp">
+      <Filter>src\MediaEngine\src\Formats\I86f</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\I86f\SectorReader.cpp">
+      <Filter>src\MediaEngine\src\Formats\I86f</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\I86f\SectorReader.h">
+      <Filter>src\MediaEngine\src\Formats\I86f</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Formats\ImageDisk\Adapter.cpp">
       <Filter>src\MediaEngine\src\Formats\ImageDisk</Filter>
     </ClCompile>
