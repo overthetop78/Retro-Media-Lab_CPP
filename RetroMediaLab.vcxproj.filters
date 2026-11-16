@@ -8034,6 +8034,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatDetection.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatWorkspace.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -9286,6 +9289,9 @@
       <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Runtime.cpp">
+      <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Workspace.cpp">
       <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\Commodore900\CoherentImages.h">

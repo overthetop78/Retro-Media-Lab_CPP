@@ -1998,6 +1998,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\HardDiskGeometry.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatDetection.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormatWorkspace.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaConversion.h" />
@@ -2416,6 +2417,7 @@
     <None Include="src\MediaEngine\src\Formats\Catalog\Data\formats.json" />
     <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Greaseweazle.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Runtime.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Workspace.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Commodore900\CoherentImages.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Commodore900\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Commodore900\FluxReader.cpp" />

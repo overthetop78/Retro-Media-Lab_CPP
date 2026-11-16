@@ -13,6 +13,7 @@ class ImageFormatDetector final {
 public:
  RETROMEDIALAB_MEDIAENGINE_API ImageFormatDetector();
  RETROMEDIALAB_MEDIAENGINE_API explicit ImageFormatDetector(std::vector<DiskFormat>);
+ std::span<const DiskFormat> formats()const noexcept{return formats_;}
  RETROMEDIALAB_MEDIAENGINE_API DetectedImageFormat detect(const std::filesystem::path&,std::optional<std::int64_t> knownLength={},std::stop_token={})const;
 private:std::vector<DiskFormat> formats_;
 };

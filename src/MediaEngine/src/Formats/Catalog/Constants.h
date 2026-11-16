@@ -11,6 +11,8 @@ inline constexpr std::string_view FormatPattern=R"((?<![\w.])[a-z][a-z0-9_-]*(?:
 inline constexpr std::string_view TagPattern="[^A-Z0-9]+",WordSeparatorPattern="[-]+",DetailSeparator=" · ",NameSeparator=" — ",WordSeparator=" ",ImgExtension=".img";
 inline constexpr char Hyphen='-',Underscore='_';
 inline constexpr std::array<std::string_view,4> BuiltInDefinitions{"atarist.810","amstrad.cpc","amstrad.pcw","ucsd.ibm.mfm"};
+inline constexpr std::array<std::string_view,3> WorkspaceExtensions{".img",".scp",".hfe"};
+inline constexpr std::array<std::string_view,4> FallbackExtensions{".scp",".img",".ima",".hfe"};
 inline constexpr std::pair<std::string_view,std::string_view> FriendlyTokens[]{
     {"ibm","IBM PC"},{"pc98","PC-98"},{"msx","MSX"},{"dec","DEC"},{"hp","HP"},{"rm","RM"},{"tsc","TSC"},{"zx","ZX Spectrum"},{"coco","TRS-80 CoCo"},{"apple2","Apple II"},{"atarist","Atari ST"},
     {"rx01","RX01"},{"rx02","RX02"},{"fm","FM"},{"mfm","MFM"},{"gcr","GCR"},{"adfs","ADFS"},{"dos","DOS"},{"hd","HD"},{"dd","DD"}

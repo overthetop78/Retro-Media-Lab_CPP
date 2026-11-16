@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Formats/Catalog/Workspace.cpp
     src/Formats/Detection/Detector.cpp
     src/Formats/Detection/Headers.cpp
     src/Formats/Detection/Adf.cpp
