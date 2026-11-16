@@ -7980,6 +7980,12 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExploration.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExplorationTypes.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadata.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8931,6 +8937,24 @@
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h">
       <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Facade.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Projection.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Projection.h">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\ProjectionConstants.h">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionFormats.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionTracks.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Constants.h">
       <Filter>src\MediaEngine\src\Exploration\Metadata</Filter>
     </ClInclude>

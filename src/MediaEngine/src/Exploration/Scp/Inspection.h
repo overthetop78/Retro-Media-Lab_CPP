@@ -4,13 +4,14 @@
 #include "../../Decoding/Decoder.h"
 #include "../../Images/Recognition/Interpretations.h"
 #include <RetroMediaLab/MediaFileSystems/SectorRegistry.h>
+#include <RetroMediaLab/MediaEngine/DiskExplorationTypes.h>
 namespace RetroMediaLab::MediaEngine::ScpInspection {
 using Image=ScpReconstruction::Image;
 using Match=MediaFileSystems::SectorFileSystemCandidate;
 using MatchOwner=std::shared_ptr<const Match>;
-enum class ProgressKind {FormatProbeStarted,FormatProbeCompleted,CandidateStarted,RevolutionDecoded,TrackDecoded,CandidateCompleted};
-struct ProgressEvent {ProgressKind kind;std::string detail;std::size_t completed,total;std::optional<bool> recognized;std::optional<std::int32_t> cylinder,head;};
-using Progress=std::function<void(const ProgressEvent&)>;
+using ProgressKind=DiskExplorationStage;
+using ProgressEvent=DiskExplorationProgress;
+using Progress=DiskExplorationProgressCallback;
 struct Inspection {std::string candidateId;Image image;std::vector<MatchOwner> matches;std::exception_ptr failure;};
 struct Ranking {Image bestDecoded,bestRecognized;MatchOwner bestFileSystem;std::vector<MatchOwner> detected;std::vector<Image> decodedImages;std::vector<Inspection> rejected;};
 struct Result {Scp::SharedImage capture;Ranking ranking;std::vector<MatchOwner> detected;std::vector<Image> credibleImages;};

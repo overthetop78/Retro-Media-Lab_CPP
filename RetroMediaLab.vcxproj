@@ -1982,6 +1982,8 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExploration.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExplorationTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadata.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadataIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveMechanics.h" />
@@ -2299,6 +2301,12 @@
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Explorer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Facade.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Projection.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Projection.h" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\ProjectionConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionFormats.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionTracks.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Content.cpp" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Identification.cpp" />

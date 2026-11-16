@@ -10,7 +10,8 @@ namespace RetroMediaLab::MediaEngine {
 class MediaDocument;
 enum class FileSystemEntryKind {Directory,File,Link,Unknown};
 struct FileTimestamp {std::int32_t year=0,month=0,day=0,hour=0,minute=0,second=0,nanosecond=0,offsetMinutes=0;bool operator==(const FileTimestamp&)const=default;};
-struct DiagnosticInfo {MessageInfo message;std::vector<std::string> context;std::vector<DiagnosticInfo> causes;};
+enum class DiagnosticLevel {Information,Warning,Error};
+struct DiagnosticInfo {MessageInfo message;std::vector<std::string> context;std::vector<DiagnosticInfo> causes;DiagnosticLevel level=DiagnosticLevel::Warning;std::map<std::string,std::string> parameters;std::optional<std::int32_t> cylinder,head,revolution,sector;};
 struct FileEntryAnalysis {std::string categoryId,iconId,typeResourceKey,extension,executionKindId,contentFormatId,textEncodingId,previewKindId,typeTranslationDomain;};
 struct FileSystemEntryInfo {
     std::string name;FileSystemEntryKind kind=FileSystemEntryKind::Unknown;std::uint64_t size=0;

@@ -8,7 +8,7 @@ DiagnosticInfo diagnostic(const M::Diagnostic& value){DiagnosticInfo result{mess
 namespace {
 std::optional<FileTimestamp> timestamp(const std::optional<M::Timestamp>& value){if(!value)return {};return FileTimestamp{value->year,value->month,value->day,value->hour,value->minute,value->second,value->nanosecond,value->offsetMinutes};}
 FileEntryAnalysis analysis(const M::EntryAnalysis& value){return {value.categoryId,value.iconId,value.typeResourceKey,value.extension,value.executionKindId,value.contentFormatId,value.textEncodingId,value.previewKindId,value.typeTranslationDomain};}
-FileSystemEntryInfo entry(const M::FileSystemEntry& value,const std::shared_ptr<const void>& owner,const M::AnalyzedFileSystemEntry* analyzed){
+FileSystemEntryInfo entry(const M::FileSystemEntry& value,const std::shared_ptr<const void>& owner,const M::AnalyzedFileSystemEntry* analyzed,bool inferDiskValidity=false){
     FileSystemEntryInfo result;
     switch(value.kind){case M::EntryKind::Directory:result.kind=FileSystemEntryKind::Directory;break;case M::EntryKind::File:result.kind=FileSystemEntryKind::File;break;case M::EntryKind::Link:result.kind=FileSystemEntryKind::Link;break;default:break;}
     result.name=value.name;
@@ -21,6 +21,7 @@ FileSystemEntryInfo entry(const M::FileSystemEntry& value,const std::shared_ptr<
     result.occupiedSize=value.occupiedSize;
     result.attributes=value.attributes;
     result.dataValid=value.dataValid;
+    if(inferDiskValidity&&!result.dataValid&&value.kind!=M::EntryKind::Directory)result.dataValid=value.content.has_value();
     result.syntheticName=value.syntheticName;
     result.linkTarget=value.linkTarget;
     result.commentResourceKey=value.commentResourceKey;
@@ -31,8 +32,8 @@ FileSystemEntryInfo entry(const M::FileSystemEntry& value,const std::shared_ptr<
     result.modified=timestamp(value.modified);result.created=timestamp(value.created);result.accessed=timestamp(value.accessed);
     if(value.content)result.content=std::shared_ptr<const std::vector<std::uint8_t>>(owner,&*value.content);
     for(const auto& error:value.diagnostics)result.diagnostics.push_back(diagnostic(error));
-    if(analyzed){result.analysis=analysis(analyzed->analysis);for(const auto& child:analyzed->children)if(child.entry)result.children.push_back(entry(*child.entry,child.entry,&child));}
-    else {if(value.analysis)result.analysis=analysis(*value.analysis);for(const auto& child:value.children)result.children.push_back(entry(child,owner,nullptr));}
+    if(analyzed){result.analysis=analysis(analyzed->analysis);for(const auto& child:analyzed->children)if(child.entry)result.children.push_back(entry(*child.entry,child.entry,&child,inferDiskValidity));}
+    else {if(value.analysis)result.analysis=analysis(*value.analysis);for(const auto& child:value.children)result.children.push_back(entry(child,owner,nullptr,inferDiskValidity));}
     return result;
 }
 M::MessageRecipe sourceMessage(const MessageInfo& value){return {value.resourceKey,value.arguments,value.translationDomain};}
@@ -69,7 +70,8 @@ M::FileSystemVolume toFileSystemsVolume(const FileSystemVolumeInfo& value){
     for(const auto& entry:value.entries)result.entries.push_back(sourceEntry(entry));
     return result;
 }
-std::shared_ptr<const FileSystemVolumeInfo> volume(std::shared_ptr<const M::FileSystemVolume> value,std::optional<std::span<const M::AnalyzedFileSystemEntry>> analyzed){
+namespace {
+std::shared_ptr<const FileSystemVolumeInfo> mapVolume(std::shared_ptr<const M::FileSystemVolume> value,std::optional<std::span<const M::AnalyzedFileSystemEntry>> analyzed,bool inferDiskValidity){
     if(!value)throw M::MediaError(M::DiagnosticCode::DocumentNull);
     auto result=std::make_shared<FileSystemVolumeInfo>();
     result->name=value->name;
@@ -93,8 +95,11 @@ std::shared_ptr<const FileSystemVolumeInfo> volume(std::shared_ptr<const M::File
     for(const auto& m:value->sourceMessages)result->sourceMessages.push_back(message(m));
     result->created=timestamp(value->created);result->modified=timestamp(value->modified);
     for(const auto& warning:value->warnings)result->warnings.push_back(diagnostic(warning));
-    if(!analyzed)for(const auto& item:value->entries)result->entries.push_back(entry(item,value,nullptr));
-    else for(const auto& item:*analyzed)if(item.entry)result->entries.push_back(entry(*item.entry,item.entry,&item));
+    if(!analyzed)for(const auto& item:value->entries)result->entries.push_back(entry(item,value,nullptr,inferDiskValidity));
+    else for(const auto& item:*analyzed)if(item.entry)result->entries.push_back(entry(*item.entry,item.entry,&item,inferDiskValidity));
     return result;
 }
+}
+std::shared_ptr<const FileSystemVolumeInfo> volume(std::shared_ptr<const M::FileSystemVolume> value,std::optional<std::span<const M::AnalyzedFileSystemEntry>> analyzed){return mapVolume(std::move(value),analyzed,false);}
+std::shared_ptr<const FileSystemVolumeInfo> volumeForDisk(std::shared_ptr<const M::FileSystemVolume> value){return mapVolume(std::move(value),{},true);}
 }

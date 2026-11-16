@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Exploration/Disk/Projection.cpp
+  src/Exploration/Disk/ProjectionTracks.cpp
+  src/Exploration/Disk/ProjectionFormats.cpp
+  src/Exploration/Disk/Facade.cpp
   src/Formats/Scp/CaptureInfo.cpp
   src/Exploration/Metadata/Identification.cpp
   src/Exploration/Metadata/Content.cpp
