@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view WiiUImage="MediaEngine.WiiUImage";
+inline constexpr std::string_view WuxHeader="MediaEngine.WuxHeader";
+inline constexpr std::string_view WuxIndex="MediaEngine.WuxIndex";
+inline constexpr std::string_view WuxRange="MediaEngine.WuxRange";
+inline constexpr std::string_view WiiUWrite="MediaEngine.WiiUWrite";
+inline constexpr std::string_view XdvdfsImage="MediaEngine.XdvdfsImage";
+inline constexpr std::string_view XdvdfsWrite="MediaEngine.XdvdfsWrite";
 inline constexpr std::string_view MdsHeader="MediaEngine.MdsHeader";
 inline constexpr std::string_view MdsDescriptor="MediaEngine.MdsDescriptor";
 inline constexpr std::string_view MdsProfile="MediaEngine.MdsProfile";

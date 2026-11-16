@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.WiiUImage": "La source sélectionnée n’est pas une image WUD valide alignée sur les secteurs optiques.",
+    "MediaEngine.WuxHeader": "L’en-tête WUX, la longueur logique, la taille des blocs ou le tableau de données stockées est invalide.",
+    "MediaEngine.WuxIndex": "La table d’index WUX ne correspond pas à son en-tête ou référence un bloc manquant.",
+    "MediaEngine.WuxRange": "La plage demandée dépasse les données logiques WUX.",
+    "MediaEngine.WiiUWrite": "Le document optique ne peut pas être écrit comme une image WUD ou WUX complète.",
+    "MediaEngine.XdvdfsImage": "L’image Xbox XDVDFS, les signatures du volume ou la plage du répertoire racine sont invalides.",
+    "MediaEngine.XdvdfsWrite": "Le document optique ne peut pas être écrit comme une image Xbox XDVDFS."
+  }
+}

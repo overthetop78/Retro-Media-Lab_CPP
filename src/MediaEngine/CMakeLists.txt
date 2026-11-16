@@ -1,6 +1,11 @@
 add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Optical/BinCue/Sheet.cpp
   src/Formats/Optical/BinCue/SheetWriter.cpp
+  src/Formats/Optical/WiiU/Container.cpp
+  src/Formats/Optical/WiiU/Reader.cpp
+  src/Formats/Optical/WiiU/Writer.cpp
+  src/Formats/Optical/Xdvdfs/Reader.cpp
+  src/Formats/Optical/Xdvdfs/Writer.cpp
   src/Formats/Optical/Alcohol/Descriptor.cpp
   src/Formats/Optical/Alcohol/Reader.cpp
   src/Formats/Optical/CloneCd/Descriptor.cpp

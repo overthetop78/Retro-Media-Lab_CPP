@@ -3,6 +3,13 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::WiiUImage:return DiagnosticKeys::WiiUImage;
+    case DiagnosticCode::WuxHeader:return DiagnosticKeys::WuxHeader;
+    case DiagnosticCode::WuxIndex:return DiagnosticKeys::WuxIndex;
+    case DiagnosticCode::WuxRange:return DiagnosticKeys::WuxRange;
+    case DiagnosticCode::WiiUWrite:return DiagnosticKeys::WiiUWrite;
+    case DiagnosticCode::XdvdfsImage:return DiagnosticKeys::XdvdfsImage;
+    case DiagnosticCode::XdvdfsWrite:return DiagnosticKeys::XdvdfsWrite;
     case DiagnosticCode::MdsHeader:return DiagnosticKeys::MdsHeader;
     case DiagnosticCode::MdsDescriptor:return DiagnosticKeys::MdsDescriptor;
     case DiagnosticCode::MdsProfile:return DiagnosticKeys::MdsProfile;

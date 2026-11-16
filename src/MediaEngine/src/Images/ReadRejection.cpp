@@ -7,6 +7,11 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::WiiUImage:
+    case DiagnosticCode::WuxHeader:
+    case DiagnosticCode::WuxIndex:
+    case DiagnosticCode::WuxRange:
+    case DiagnosticCode::XdvdfsImage:
     case DiagnosticCode::MdsHeader:
     case DiagnosticCode::MdsDescriptor:
     case DiagnosticCode::MdsProfile:

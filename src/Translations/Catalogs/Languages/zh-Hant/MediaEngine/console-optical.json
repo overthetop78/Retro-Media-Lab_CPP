@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.WiiUImage": "所選來源不是依光碟磁區對齊的有效 WUD 映像。",
+    "MediaEngine.WuxHeader": "WUX 檔頭、邏輯長度、區塊大小或儲存陣列無效。",
+    "MediaEngine.WuxIndex": "WUX 索引表與檔頭不符，或參照了遺失的區塊。",
+    "MediaEngine.WuxRange": "要求的範圍超出 WUX 邏輯資料。",
+    "MediaEngine.WiiUWrite": "無法將光碟文件寫成完整的 WUD 或 WUX 映像。",
+    "MediaEngine.XdvdfsImage": "Xbox XDVDFS 映像、磁碟區識別碼或根目錄範圍無效。",
+    "MediaEngine.XdvdfsWrite": "無法將光碟文件寫成 Xbox XDVDFS 映像。"
+  }
+}

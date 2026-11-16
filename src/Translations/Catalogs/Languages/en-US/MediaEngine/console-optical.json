@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.WiiUImage": "The selected source is not a valid optical-sector-aligned WUD image.",
+    "MediaEngine.WuxHeader": "The WUX header, logical length, chunk size or stored array is invalid.",
+    "MediaEngine.WuxIndex": "The WUX index table does not match its header or references a missing chunk.",
+    "MediaEngine.WuxRange": "The requested range exceeds the WUX logical data.",
+    "MediaEngine.WiiUWrite": "The optical document cannot be written as a complete WUD or WUX image.",
+    "MediaEngine.XdvdfsImage": "The Xbox XDVDFS image, volume signatures or root directory range is invalid.",
+    "MediaEngine.XdvdfsWrite": "The optical document cannot be written as an Xbox XDVDFS image."
+  }
+}

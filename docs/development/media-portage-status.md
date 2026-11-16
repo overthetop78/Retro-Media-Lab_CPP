@@ -54,6 +54,8 @@ La tâche 155 porte le lecteur CloneCD 2/3 : descripteur CCD possédé, TOC/sess
 
 La tâche 156 porte Alcohol MDS/MDF : structures binaires séparées du reader, sessions et footers possédés, noms Latin-1/UTF-16LE, sources MDF partagées et sous-canaux entrelacés. Le profil CD autonome du C# est conservé, avec refus des structures DVD non décodées. Compilation Debug, contrôle ciblé, audit et catalogues réussis.
 
+La tâche 157 porte Wii U WUD/WUX et Xbox XDVDFS : source indexée WUX possédée, blocs dédupliqués SHA256 et writer atomique sans deuxième temporaire ; descripteur XDVDFS, piste et volume correctement relié à l’identifiant MFS existant. Readers/writers, contrôle ciblé, compilation Debug, audit et catalogues réussis. L’exploration Xbox reste dans MFS ; la composition globale reste distincte.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

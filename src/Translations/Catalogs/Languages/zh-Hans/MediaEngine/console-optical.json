@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.WiiUImage": "所选源不是按光盘扇区对齐的有效 WUD 镜像。",
+    "MediaEngine.WuxHeader": "WUX 文件头、逻辑长度、块大小或存储数组无效。",
+    "MediaEngine.WuxIndex": "WUX 索引表与文件头不匹配，或引用了缺失的块。",
+    "MediaEngine.WuxRange": "请求范围超过了 WUX 逻辑数据 。",
+    "MediaEngine.WiiUWrite": "光学文档不能被写成完整的WUD或WUX图像.",
+    "MediaEngine.XdvdfsImage": "Xbox XDVDFS 镜像、卷标识或根目录范围无效。",
+    "MediaEngine.XdvdfsWrite": "光学文档不能被写入 Xbox XDVDFS 图像."
+  }
+}
