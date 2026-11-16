@@ -32,6 +32,8 @@ La tâche 143 porte la lecture/écriture et création Acorn Winchester DAT/DSC, 
 
 La tâche 145 termine le conteneur physique MFM EMU : en-têtes conservés, fenêtres de transitions, pistes immuables et génération formatée à la demande, représentation physique et vue logique Adaptec, lecteur/writer et création vierge ou ADFS. Compilation Debug, contrôle natif ciblé, audit et compilation des catalogues réussis. La composition globale des services reste distincte de ce bloc.
 
+La tâche 146 porte QCOW2 autonome en versions 2 et 3, avec tables L1/L2, validation des compteurs de références, plages stockées/zéro/non allouées et écriture sparse atomique conservant la version source. Les profils parents, snapshots, chiffrement et compression restent refusés comme dans le C#. Compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

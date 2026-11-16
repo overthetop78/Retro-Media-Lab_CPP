@@ -3,6 +3,30 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::QcowHeader:return DiagnosticKeys::QcowHeader;
+    case DiagnosticCode::QcowSignature:return DiagnosticKeys::QcowSignature;
+    case DiagnosticCode::QcowVersion:return DiagnosticKeys::QcowVersion;
+    case DiagnosticCode::QcowParent:return DiagnosticKeys::QcowParent;
+    case DiagnosticCode::QcowClusterBits:return DiagnosticKeys::QcowClusterBits;
+    case DiagnosticCode::QcowSize:return DiagnosticKeys::QcowSize;
+    case DiagnosticCode::QcowEncryption:return DiagnosticKeys::QcowEncryption;
+    case DiagnosticCode::QcowSnapshots:return DiagnosticKeys::QcowSnapshots;
+    case DiagnosticCode::QcowTables:return DiagnosticKeys::QcowTables;
+    case DiagnosticCode::QcowTableRange:return DiagnosticKeys::QcowTableRange;
+    case DiagnosticCode::QcowFeature:return DiagnosticKeys::QcowFeature;
+    case DiagnosticCode::QcowAutoclear:return DiagnosticKeys::QcowAutoclear;
+    case DiagnosticCode::QcowHeaderLength:return DiagnosticKeys::QcowHeaderLength;
+    case DiagnosticCode::QcowRefcountOrder:return DiagnosticKeys::QcowRefcountOrder;
+    case DiagnosticCode::QcowL1Coverage:return DiagnosticKeys::QcowL1Coverage;
+    case DiagnosticCode::QcowCompressed:return DiagnosticKeys::QcowCompressed;
+    case DiagnosticCode::QcowClusterOffset:return DiagnosticKeys::QcowClusterOffset;
+    case DiagnosticCode::QcowClusterRange:return DiagnosticKeys::QcowClusterRange;
+    case DiagnosticCode::QcowRefCoverage:return DiagnosticKeys::QcowRefCoverage;
+    case DiagnosticCode::QcowRefMissing:return DiagnosticKeys::QcowRefMissing;
+    case DiagnosticCode::QcowRefZero:return DiagnosticKeys::QcowRefZero;
+    case DiagnosticCode::QcowWrite:return DiagnosticKeys::QcowWrite;
+    case DiagnosticCode::QcowLayout:return DiagnosticKeys::QcowLayout;
+
     case DiagnosticCode::MfmHeader:return DiagnosticKeys::MfmHeader;
     case DiagnosticCode::MfmTrackRange:return DiagnosticKeys::MfmTrackRange;
     case DiagnosticCode::MfmSignal:return DiagnosticKeys::MfmSignal;

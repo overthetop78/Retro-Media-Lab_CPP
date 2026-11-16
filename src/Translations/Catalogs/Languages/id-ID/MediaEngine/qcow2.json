@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Berkas ini terlalu pendek untuk memuat header QCOW2.",
+    "MediaEngine.QcowSignature": "Tanda tangan QCOW2 hilang.",
+    "MediaEngine.QcowVersion": "QCOW2 versi {0} tidak didukung.",
+    "MediaEngine.QcowParent": "Berkas dasar QCOW2 memerlukan resolver berkas induk yang tidak terdaftar.",
+    "MediaEngine.QcowClusterBits": "Ukuran cluster QCOW2 tidak valid.",
+    "MediaEngine.QcowSize": "Ukuran diska virtual QCOW2 tidak valid.",
+    "MediaEngine.QcowEncryption": "Gambar QCOW2 yang dienkripsi tidak didukung.",
+    "MediaEngine.QcowSnapshots": "QCOW2 snapshot tidak didukung.",
+    "MediaEngine.QcowTables": "Geometri tabel QCOW2 tidak valid.",
+    "MediaEngine.QcowTableRange": "Tabel QCOW2 melebihi berkas atau ukuran penyangga yang didukung.",
+    "MediaEngine.QcowFeature": "QCOW2 fitur bit tidak kompatibel {0} tidak didukung.",
+    "MediaEngine.QcowAutoclear": "bit fitur autoclear QCOW2 tidak didukung.",
+    "MediaEngine.QcowHeaderLength": "Panjang header QCOW2 tidak valid.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount order {0} tidak didukung.",
+    "MediaEngine.QcowL1Coverage": "Tabel QCOW2 L1 tidak meliputi disk virtual.",
+    "MediaEngine.QcowCompressed": "Masukan QCOW2 {0} terkompresi tidak didukung.",
+    "MediaEngine.QcowClusterOffset": "Ofset cluster QCOW2 {0} tidak valid.",
+    "MediaEngine.QcowClusterRange": "Cluster QCOW2 {0} berada di luar berkas.",
+    "MediaEngine.QcowRefCoverage": "Tabel refcount QCOW2 tidak mencakup cluster referensi.",
+    "MediaEngine.QcowRefMissing": "Sebuah cluster QCOW2 direferensikan tidak memiliki blok refcount.",
+    "MediaEngine.QcowRefZero": "Sebuah cluster QCOW2 direferensikan memiliki refcount nol.",
+    "MediaEngine.QcowWrite": "Dokumen media tidak dapat ditulis sebagai citra QCOW2 yang didukung.",
+    "MediaEngine.QcowLayout": "Geometri keluaran QCOW2, tabel atau gugus offset melebihi batas yang didukung."
+  }
+}

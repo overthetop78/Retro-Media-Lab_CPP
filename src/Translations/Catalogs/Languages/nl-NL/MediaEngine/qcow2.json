@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Het bestand is te kort om de QCOW2-koptekst te bevatten.",
+    "MediaEngine.QcowSignature": "De QCOW2 handtekening ontbreekt.",
+    "MediaEngine.QcowVersion": "QCOW2-versie {0} wordt niet ondersteund.",
+    "MediaEngine.QcowParent": "QCOW2 backing bestanden vereisen een ouder resolver die niet is geregistreerd.",
+    "MediaEngine.QcowClusterBits": "De QCOW2-clustergrootte is ongeldig.",
+    "MediaEngine.QcowSize": "De QCOW2 virtuele schijfgrootte is ongeldig.",
+    "MediaEngine.QcowEncryption": "Versleutelde QCOW2-afbeeldingen worden niet ondersteund.",
+    "MediaEngine.QcowSnapshots": "QCOW2 snapshots worden niet ondersteund.",
+    "MediaEngine.QcowTables": "De QCOW2-tabelgeometrie is ongeldig.",
+    "MediaEngine.QcowTableRange": "Een QCOW2-tabel overtreft het bestand of de ondersteunde buffergrootte.",
+    "MediaEngine.QcowFeature": "QCOW2 incompatibele feature bits {0} worden niet ondersteund.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear feature bits worden niet ondersteund.",
+    "MediaEngine.QcowHeaderLength": "De QCOW2 header lengte is ongeldig.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount orde {0} wordt niet ondersteund.",
+    "MediaEngine.QcowL1Coverage": "De QCOW2 L1 tabel heeft geen betrekking op de virtuele schijf.",
+    "MediaEngine.QcowCompressed": "Gecomprimeerde QCOW2 {0} items worden niet ondersteund.",
+    "MediaEngine.QcowClusterOffset": "De QCOW2 {0} cluster offset is ongeldig.",
+    "MediaEngine.QcowClusterRange": "Het QCOW2 {0} cluster staat buiten het bestand.",
+    "MediaEngine.QcowRefCoverage": "De QCOW2-refcounttabel heeft geen betrekking op een referentiecluster.",
+    "MediaEngine.QcowRefMissing": "Een referentie QCOW2-cluster heeft geen refcount-blok.",
+    "MediaEngine.QcowRefZero": "Een referentie QCOW2 cluster heeft een nul refcount.",
+    "MediaEngine.QcowWrite": "Het mediadocument kan niet worden geschreven als een ondersteunde QCOW2-afbeelding.",
+    "MediaEngine.QcowLayout": "De QCOW2-uitvoergeometrie, tabellen of clusterverschuivingen overschrijden de ondersteunde grenzen."
+  }
+}

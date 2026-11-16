@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "檔案過短，無法包含 QCOW2 標頭。",
+    "MediaEngine.QcowSignature": "缺少 QCOW2 簽章。",
+    "MediaEngine.QcowVersion": "不支援 QCOW2 版本 {0}。",
+    "MediaEngine.QcowParent": "QCOW2 基礎檔案需要尚未註冊的父檔案解析器。",
+    "MediaEngine.QcowClusterBits": "QCOW2 叢集大小無效。",
+    "MediaEngine.QcowSize": "QCOW2 虛擬磁碟大小無效。",
+    "MediaEngine.QcowEncryption": "不支援加密的 QCOW2 映像。",
+    "MediaEngine.QcowSnapshots": "不支援 QCOW2 快照。",
+    "MediaEngine.QcowTables": "QCOW2 表格的幾何配置無效。",
+    "MediaEngine.QcowTableRange": "QCOW2 表格超出檔案或支援的緩衝區大小。",
+    "MediaEngine.QcowFeature": "不支援 QCOW2 不相容功能位元 {0}。",
+    "MediaEngine.QcowAutoclear": "不支援 QCOW2 自動清除功能位元。",
+    "MediaEngine.QcowHeaderLength": "QCOW2 標頭長度無效。",
+    "MediaEngine.QcowRefcountOrder": "不支援 QCOW2 引用計數階數 {0}。",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1 表未涵蓋虛擬磁碟。",
+    "MediaEngine.QcowCompressed": "不支援壓縮的 QCOW2 {0} 項目。",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} 叢集偏移無效。",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} 叢集位於檔案以外。",
+    "MediaEngine.QcowRefCoverage": "QCOW2 引用計數表未涵蓋被引用的叢集。",
+    "MediaEngine.QcowRefMissing": "被引用的 QCOW2 叢集沒有引用計數區塊。",
+    "MediaEngine.QcowRefZero": "被引用的 QCOW2 叢集的引用計數為零。",
+    "MediaEngine.QcowWrite": "無法將媒體文件寫入為支援的 QCOW2 映像。",
+    "MediaEngine.QcowLayout": "QCOW2 輸出幾何配置、表格或叢集偏移超出支援的限制。"
+  }
+}

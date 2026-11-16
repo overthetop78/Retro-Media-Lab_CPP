@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Il file è troppo breve per contenere l'intestazione QCOW2.",
+    "MediaEngine.QcowSignature": "Manca la firma QCOW2.",
+    "MediaEngine.QcowVersion": "La versione QCOW2 {0} non è supportata.",
+    "MediaEngine.QcowParent": "I file di backup QCOW2 richiedono un risolutore genitore che non è registrato.",
+    "MediaEngine.QcowClusterBits": "La dimensione del cluster QCOW2 non è valida.",
+    "MediaEngine.QcowSize": "La dimensione del disco virtuale QCOW2 non è valida.",
+    "MediaEngine.QcowEncryption": "Le immagini crittografate QCOW2 non sono supportate.",
+    "MediaEngine.QcowSnapshots": "Le snapshot QCOW2 non sono supportate.",
+    "MediaEngine.QcowTables": "La geometria della tabella QCOW2 non è valida.",
+    "MediaEngine.QcowTableRange": "Una tabella QCOW2 supera il file o la dimensione del buffer supportata.",
+    "MediaEngine.QcowFeature": "I bit di funzionalità non compatibili QCOW2 {0} non sono supportati.",
+    "MediaEngine.QcowAutoclear": "I bit di funzionalità autoclear QCOW2 non sono supportati.",
+    "MediaEngine.QcowHeaderLength": "La lunghezza dell'intestazione QCOW2 non è valida.",
+    "MediaEngine.QcowRefcountOrder": "L’ordine dei contatori di riferimenti QCOW2 {0} non è supportato.",
+    "MediaEngine.QcowL1Coverage": "La tabella QCOW2 L1 non copre il disco virtuale.",
+    "MediaEngine.QcowCompressed": "Le voci Compresse QCOW2 {0} non sono supportate.",
+    "MediaEngine.QcowClusterOffset": "L'offset cluster QCOW2 {0} non è valido.",
+    "MediaEngine.QcowClusterRange": "Il cluster QCOW2 {0} è fuori dal file.",
+    "MediaEngine.QcowRefCoverage": "La tabella dei contatori di riferimenti QCOW2 non copre un cluster referenziato.",
+    "MediaEngine.QcowRefMissing": "Un cluster QCOW2 referenziato non ha un blocco di contatori di riferimenti.",
+    "MediaEngine.QcowRefZero": "Un cluster QCOW2 referenziato ha un contatore di riferimenti nullo.",
+    "MediaEngine.QcowWrite": "Il documento multimediale non può essere scritto come un'immagine QCOW2 supportata.",
+    "MediaEngine.QcowLayout": "La geometria di uscita QCOW2, le tabelle o gli offset dei cluster superano i limiti supportati."
+  }
+}

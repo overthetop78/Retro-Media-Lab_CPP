@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Tập tin này quá ngắn để chứa đầu trang QCOW2.",
+    "MediaEngine.QcowSignature": "Chữ ký của QCOW2 bị mất.",
+    "MediaEngine.QcowVersion": "QCOW2 phiên bản {0} không được hỗ trợ.",
+    "MediaEngine.QcowParent": "Tệp cơ sở QCOW2 yêu cầu bộ phân giải tệp cha chưa được đăng ký.",
+    "MediaEngine.QcowClusterBits": "Kích cỡ cụm QCOW2 không hợp lệ.",
+    "MediaEngine.QcowSize": "Kích cỡ thiết bị đĩa ảo QCOW2 không hợp lệ.",
+    "MediaEngine.QcowEncryption": "Không hỗ trợ ảnh được mã hóa của QCOW2.",
+    "MediaEngine.QcowSnapshots": "Ảnh chụp trạng thái QCOW2 không được hỗ trợ.",
+    "MediaEngine.QcowTables": "Hình học bảng QCOW2 không hợp lệ.",
+    "MediaEngine.QcowTableRange": "Một bảng QCOW2 vượt quá tập tin hoặc kích cỡ bộ đệm được hỗ trợ.",
+    "MediaEngine.QcowFeature": "QCOW2 Hàm không tương thích {0} không được hỗ trợ.",
+    "MediaEngine.QcowAutoclear": "QCOW2 Không hỗ trợ các phần đặc trưng tự động.",
+    "MediaEngine.QcowHeaderLength": "Chiều dài đầu trang QCOW2 không hợp lệ.",
+    "MediaEngine.QcowRefcountOrder": "Bậc bộ đếm tham chiếu QCOW2 {0} không được hỗ trợ.",
+    "MediaEngine.QcowL1Coverage": "Bảng QCOW2 L1 không bao phủ đĩa ảo.",
+    "MediaEngine.QcowCompressed": "Đã nén QCOW2 {0} Mục nhập không được hỗ trợ.",
+    "MediaEngine.QcowClusterOffset": "Độ lệch cụm QCOW2 {0} không hợp lệ.",
+    "MediaEngine.QcowClusterRange": "Cụm QCOW2 {0} nằm ngoài tệp.",
+    "MediaEngine.QcowRefCoverage": "Bảng bộ đếm tham chiếu QCOW2 không bao phủ một cụm được tham chiếu.",
+    "MediaEngine.QcowRefMissing": "Một cụm QCOW2 được tham chiếu không có khối bộ đếm tham chiếu.",
+    "MediaEngine.QcowRefZero": "Một cụm QCOW2 được tham chiếu có bộ đếm tham chiếu bằng không.",
+    "MediaEngine.QcowWrite": "Tài liệu phương tiện không thể được viết như một ảnh được hỗ trợ của QCOW2.",
+    "MediaEngine.QcowLayout": "Hình học đầu ra QCOW2, bảng hoặc cụm bù đắp vượt quá giới hạn được hỗ trợ."
+  }
+}

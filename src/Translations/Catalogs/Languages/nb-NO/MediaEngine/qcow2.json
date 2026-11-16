@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Filen er for kort til å inneholde QCOW2-hodet.",
+    "MediaEngine.QcowSignature": "QCOW2-signaturen mangler.",
+    "MediaEngine.QcowVersion": "QCOW2 versjon {0} er ikke støttet.",
+    "MediaEngine.QcowParent": "QCOW2-støttefiler krever en forelderoppløser som ikke er registrert.",
+    "MediaEngine.QcowClusterBits": "QCOW2-hopstørrelsen er ugyldig.",
+    "MediaEngine.QcowSize": "QCOW2 virtuell diskstørrelse er ugyldig.",
+    "MediaEngine.QcowEncryption": "Krypterte QCOW2-bilder støttes ikke.",
+    "MediaEngine.QcowSnapshots": "QCOW2-øyeblikksbilder støttes ikke.",
+    "MediaEngine.QcowTables": "QCOW2-tabellgeometrien er ugyldig.",
+    "MediaEngine.QcowTableRange": "En QCOW2-tabell overstiger filen eller den støttede bufferstørrelsen.",
+    "MediaEngine.QcowFeature": "QCOW2 inkompatible funksjonsbits {0} er ikke støttet.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear-funksjonsbiter er ikke støttet.",
+    "MediaEngine.QcowHeaderLength": "QCOW2-hodelengden er ugyldig.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2-referansetellerorden {0} støttes ikke.",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1-tabellen dekker ikke den virtuelle disken.",
+    "MediaEngine.QcowCompressed": "komprimerte QCOW2 {0}-oppføringer er ikke støttet.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0}-hopeforskyvningen er ugyldig.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0}-hopen ligger utenfor filen.",
+    "MediaEngine.QcowRefCoverage": "QCOW2-referansetellertabellen dekker ikke en referert klynge.",
+    "MediaEngine.QcowRefMissing": "En referanse QCOW2-hop har ingen refcount-blokk.",
+    "MediaEngine.QcowRefZero": "En referanse QCOW2-hop har null refcount.",
+    "MediaEngine.QcowWrite": "Mediedokumentet kan ikke skrives som et støttet QCOW2-bilde.",
+    "MediaEngine.QcowLayout": "QCOW2-utgangsgeometrien, tabellene eller klyngeforskyvningene overskrider de støttede grensene."
+  }
+}

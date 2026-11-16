@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Filen är för kort för att innehålla QCOW2-rubriken.",
+    "MediaEngine.QcowSignature": "QCOW2-signaturen saknas.",
+    "MediaEngine.QcowVersion": "QCOW2 version {0} stöds inte.",
+    "MediaEngine.QcowParent": "QCOW2-backfiler kräver en förälderslösare som inte är registrerad.",
+    "MediaEngine.QcowClusterBits": "QCOW2-klusterstorleken är ogiltig.",
+    "MediaEngine.QcowSize": "QCOW2 virtuell disk storlek är ogiltig.",
+    "MediaEngine.QcowEncryption": "Krypterade QCOW2-bilder stöds inte.",
+    "MediaEngine.QcowSnapshots": "QCOW2-snapshots stöds inte.",
+    "MediaEngine.QcowTables": "QCOW2 tabellgeometri är ogiltig.",
+    "MediaEngine.QcowTableRange": "En QCOW2-tabell överstiger filen eller den stödda buffertstorleken.",
+    "MediaEngine.QcowFeature": "QCOW2 inkompatibla funktionsbitar {0} stöds inte.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear funktion bitar är inte stöds.",
+    "MediaEngine.QcowHeaderLength": "QCOW2-huvudlängden är ogiltig.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount order {0} stöds inte.",
+    "MediaEngine.QcowL1Coverage": "Tabellen QCOW2 L1 täcker inte den virtuella disken.",
+    "MediaEngine.QcowCompressed": "Komprimerad QCOW2 {0} poster stöds inte.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} cluster offset är ogiltigt.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} kluster är utanför filen.",
+    "MediaEngine.QcowRefCoverage": "QCOW2-tabellen med referensräknare täcker inte ett refererat kluster.",
+    "MediaEngine.QcowRefMissing": "Ett refererat QCOW2-kluster saknar ett block med referensräknare.",
+    "MediaEngine.QcowRefZero": "En refererad QCOW2 kluster har en noll refcount.",
+    "MediaEngine.QcowWrite": "Mediedokumentet kan inte skrivas som en stödd QCOW2-bild.",
+    "MediaEngine.QcowLayout": "QCOW2-utdatageometrin, tabellerna eller klusterförskjutningarna överskrider de stödda gränserna."
+  }
+}

@@ -7,6 +7,28 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::QcowHeader:
+    case DiagnosticCode::QcowSignature:
+    case DiagnosticCode::QcowVersion:
+    case DiagnosticCode::QcowParent:
+    case DiagnosticCode::QcowClusterBits:
+    case DiagnosticCode::QcowSize:
+    case DiagnosticCode::QcowEncryption:
+    case DiagnosticCode::QcowSnapshots:
+    case DiagnosticCode::QcowTables:
+    case DiagnosticCode::QcowTableRange:
+    case DiagnosticCode::QcowFeature:
+    case DiagnosticCode::QcowAutoclear:
+    case DiagnosticCode::QcowHeaderLength:
+    case DiagnosticCode::QcowRefcountOrder:
+    case DiagnosticCode::QcowL1Coverage:
+    case DiagnosticCode::QcowCompressed:
+    case DiagnosticCode::QcowClusterOffset:
+    case DiagnosticCode::QcowClusterRange:
+    case DiagnosticCode::QcowRefCoverage:
+    case DiagnosticCode::QcowRefMissing:
+    case DiagnosticCode::QcowRefZero:
+
     case DiagnosticCode::MfmHeader:
     case DiagnosticCode::MfmLength:
     case DiagnosticCode::MfmEnd:

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "הקובץ קצר מכדי להכיל כותרת QCOW2.",
+    "MediaEngine.QcowSignature": "חתימה QCOW2 חסרה.",
+    "MediaEngine.QcowVersion": "QCOW2 גרסה {0} היא ללא תמיכה.",
+    "MediaEngine.QcowParent": "קובצי הבסיס של QCOW2 דורשים פותר קובץ אב שאינו רשום.",
+    "MediaEngine.QcowClusterBits": "גודל האשכול של QCOW2 אינו תקין.",
+    "MediaEngine.QcowSize": "גודל הדיסק הווירטואלי QCOW2 אינו חוקי.",
+    "MediaEngine.QcowEncryption": "תמונות QCOW2 מוצפנים אינן נתמכות.",
+    "MediaEngine.QcowSnapshots": "תמונות מצב של QCOW2 אינן נתמכות.",
+    "MediaEngine.QcowTables": "מבנה הטבלאות של QCOW2 אינו תקין.",
+    "MediaEngine.QcowTableRange": "טבלת QCOW2 חורגת מגבולות הקובץ או מגודל המאגר הנתמך.",
+    "MediaEngine.QcowFeature": "סיביות תכונות לא תואמות של QCOW2 בערך {0} אינן נתמכות.",
+    "MediaEngine.QcowAutoclear": "QCOW2 Autoclear bits הם לא נתמך.",
+    "MediaEngine.QcowHeaderLength": "אורך כותרת QCOW2 אינו תקין.",
+    "MediaEngine.QcowRefcountOrder": "סדר מוני ההפניות של QCOW2 בערך {0} אינו נתמך.",
+    "MediaEngine.QcowL1Coverage": "טבלת QCOW2 L1 אינה מכסה את הדיסק הווירטואלי.",
+    "MediaEngine.QcowCompressed": "רשומות QCOW2 {0} דחוסות אינן נתמכות.",
+    "MediaEngine.QcowClusterOffset": "היסט האשכול של QCOW2 {0} אינו תקין.",
+    "MediaEngine.QcowClusterRange": "אשכול QCOW2 {0} נמצא מחוץ לקובץ.",
+    "MediaEngine.QcowRefCoverage": "טבלת מוני ההפניות של QCOW2 אינה מכסה אשכול שיש אליו הפניה.",
+    "MediaEngine.QcowRefMissing": "לאשכול QCOW2 שיש אליו הפניה אין בלוק מוני הפניות.",
+    "MediaEngine.QcowRefZero": "מונה ההפניות של אשכול QCOW2 שיש אליו הפניה הוא אפס.",
+    "MediaEngine.QcowWrite": "לא ניתן לכתוב את מסמך המדיה כתמונת QCOW2 נתמכת.",
+    "MediaEngine.QcowLayout": "מבנה הפלט, הטבלאות או היסטי האשכולות של QCOW2 חורגים מהמגבלות הנתמכות."
+  }
+}

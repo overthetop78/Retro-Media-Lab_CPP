@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "이 파일은 QCOW2 헤더를 포함하고 너무 짧습니다.",
+    "MediaEngine.QcowSignature": "QCOW2 서명이 누락되었습니다.",
+    "MediaEngine.QcowVersion": "QCOW2 버전 {0}은 지원되지 않습니다.",
+    "MediaEngine.QcowParent": "QCOW2 백업 파일에는 등록되지 않은 부모 해결자가 필요합니다.",
+    "MediaEngine.QcowClusterBits": "QCOW2 클러스터 크기는 유효하지 않습니다.",
+    "MediaEngine.QcowSize": "QCOW2 가상 디스크 크기는 유효하지 않습니다.",
+    "MediaEngine.QcowEncryption": "암호화된 QCOW2 이미지는 지원되지 않습니다.",
+    "MediaEngine.QcowSnapshots": "QCOW2 스냅샷은 지원되지 않습니다.",
+    "MediaEngine.QcowTables": "QCOW2 테이블 기하학은 유효하지 않습니다.",
+    "MediaEngine.QcowTableRange": "QCOW2 테이블은 파일 또는 지원되는 완충기 크기를 초과합니다.",
+    "MediaEngine.QcowFeature": "QCOW2의 비호환 기능 비트 {0}은 지원되지 않습니다.",
+    "MediaEngine.QcowAutoclear": "QCOW2 Autoclear 기능 비트는 지원되지 않습니다.",
+    "MediaEngine.QcowHeaderLength": "QCOW2 헤더 길이는 유효하지 않습니다.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount 순서 {0}는 지원되지 않습니다.",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1 테이블은 가상 디스크를 커버하지 않습니다.",
+    "MediaEngine.QcowCompressed": "압축 QCOW2 {0} 항목은 지원되지 않습니다.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} 클러스터 오프셋은 유효하지 않습니다.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} 클러스터는 파일 밖에 있습니다.",
+    "MediaEngine.QcowRefCoverage": "QCOW2 refcount 테이블은 참조된 클러스터를 커버하지 않습니다.",
+    "MediaEngine.QcowRefMissing": "참고된 QCOW2 클러스터에는 refcount 블록이 없습니다.",
+    "MediaEngine.QcowRefZero": "참조된 QCOW2 클러스터에는 0개의 refcount가 있습니다.",
+    "MediaEngine.QcowWrite": "미디어 문서는 지원된 QCOW2 이미지로 작성할 수 없습니다.",
+    "MediaEngine.QcowLayout": "QCOW2 출력 구조, 테이블 또는 클러스터 오프셋이 지원 한도를 초과합니다."
+  }
+}

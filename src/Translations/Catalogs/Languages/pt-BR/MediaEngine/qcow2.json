@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "O arquivo é muito curto para conter o cabeçalho QCOW2.",
+    "MediaEngine.QcowSignature": "Falta a assinatura QCOW2.",
+    "MediaEngine.QcowVersion": "A versão do QCOW2 {0} não é suportada.",
+    "MediaEngine.QcowParent": "Arquivos de backup QCOW2 requerem um solucionador pai que não está registrado.",
+    "MediaEngine.QcowClusterBits": "O tamanho do cluster QCOW2 é inválido.",
+    "MediaEngine.QcowSize": "O tamanho do disco virtual QCOW2 é inválido.",
+    "MediaEngine.QcowEncryption": "As imagens QCOW2 criptografadas não são suportadas.",
+    "MediaEngine.QcowSnapshots": "Os instantâneos QCOW2 não são suportados.",
+    "MediaEngine.QcowTables": "A geometria da tabela QCOW2 é inválida.",
+    "MediaEngine.QcowTableRange": "Uma tabela QCOW2 excede o arquivo ou o tamanho do buffer suportado.",
+    "MediaEngine.QcowFeature": "Os bits incompatíveis do QCOW2 {0} não são suportados.",
+    "MediaEngine.QcowAutoclear": "Os bits de recurso autoclear QCOW2 não são suportados.",
+    "MediaEngine.QcowHeaderLength": "O comprimento do cabeçalho QCOW2 é inválido.",
+    "MediaEngine.QcowRefcountOrder": "A ordem dos contadores de referências QCOW2 {0} não é suportada.",
+    "MediaEngine.QcowL1Coverage": "A tabela QCOW2 L1 não cobre o disco virtual.",
+    "MediaEngine.QcowCompressed": "As entradas QCOW2 {0} comprimidas não são suportadas.",
+    "MediaEngine.QcowClusterOffset": "O deslocamento do cluster QCOW2 {0} é inválido.",
+    "MediaEngine.QcowClusterRange": "O cluster QCOW2 {0} está fora do arquivo.",
+    "MediaEngine.QcowRefCoverage": "A tabela de referência QCOW2 não abrange um cluster referenciado.",
+    "MediaEngine.QcowRefMissing": "Um cluster QCOW2 referenciado não tem bloco de contadores de referências.",
+    "MediaEngine.QcowRefZero": "Um cluster QCOW2 referenciado tem um contador de referências igual a zero.",
+    "MediaEngine.QcowWrite": "O documento multimédia não pode ser escrito como uma imagem QCOW2 suportada.",
+    "MediaEngine.QcowLayout": "A geometria de saída QCOW2, tabelas ou deslocamentos de cluster excedem os limites suportados."
+  }
+}

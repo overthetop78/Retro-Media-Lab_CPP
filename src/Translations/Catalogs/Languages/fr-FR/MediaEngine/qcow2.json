@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Le fichier est trop court pour contenir l'en-tête QCOW2.",
+    "MediaEngine.QcowSignature": "La signature QCOW2 est manquante.",
+    "MediaEngine.QcowVersion": "La version QCOW2 {0} n'est pas prise en charge.",
+    "MediaEngine.QcowParent": "Les fichiers de base QCOW2 nécessitent un résolveur de fichier parent qui n’est pas enregistré.",
+    "MediaEngine.QcowClusterBits": "La taille des clusters QCOW2 est invalide.",
+    "MediaEngine.QcowSize": "La taille du disque virtuel QCOW2 est invalide.",
+    "MediaEngine.QcowEncryption": "Les images QCOW2 chiffrées ne sont pas prises en charge.",
+    "MediaEngine.QcowSnapshots": "Les instantanés QCOW2 ne sont pas pris en charge.",
+    "MediaEngine.QcowTables": "La géométrie de la table QCOW2 est invalide.",
+    "MediaEngine.QcowTableRange": "Une table QCOW2 dépasse le fichier ou la taille de tampon prise en charge.",
+    "MediaEngine.QcowFeature": "Les bits de fonction incompatibles QCOW2 {0} ne sont pas pris en charge.",
+    "MediaEngine.QcowAutoclear": "Les bits de fonction autoclear QCOW2 ne sont pas pris en charge.",
+    "MediaEngine.QcowHeaderLength": "La longueur d'en-tête QCOW2 est invalide.",
+    "MediaEngine.QcowRefcountOrder": "L’ordre des compteurs de références QCOW2 {0} n’est pas pris en charge.",
+    "MediaEngine.QcowL1Coverage": "Le tableau QCOW2 L1 ne couvre pas le disque virtuel.",
+    "MediaEngine.QcowCompressed": "Les entrées QCOW2 {0} compressées ne sont pas prises en charge.",
+    "MediaEngine.QcowClusterOffset": "Le décalage du cluster QCOW2 {0} est invalide.",
+    "MediaEngine.QcowClusterRange": "Le cluster QCOW2 {0} est à l'extérieur du fichier.",
+    "MediaEngine.QcowRefCoverage": "La table des compteurs de références QCOW2 ne couvre pas un cluster référencé.",
+    "MediaEngine.QcowRefMissing": "Un cluster QCOW2 référencé n’a pas de bloc de compteurs de références.",
+    "MediaEngine.QcowRefZero": "Un cluster QCOW2 référencé a un compteur de références nul.",
+    "MediaEngine.QcowWrite": "Le document média ne peut pas être écrit comme une image QCOW2 prise en charge.",
+    "MediaEngine.QcowLayout": "La géométrie de sortie QCOW2, les tableaux ou les décalages de clusters dépassent les limites supportées."
+  }
+}

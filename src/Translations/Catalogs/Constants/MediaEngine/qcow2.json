@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "The file is too short to contain the QCOW2 header.",
+    "MediaEngine.QcowSignature": "The QCOW2 signature is missing.",
+    "MediaEngine.QcowVersion": "QCOW2 version {0} is unsupported.",
+    "MediaEngine.QcowParent": "QCOW2 backing files require a parent resolver that is not registered.",
+    "MediaEngine.QcowClusterBits": "The QCOW2 cluster size is invalid.",
+    "MediaEngine.QcowSize": "The QCOW2 virtual disk size is invalid.",
+    "MediaEngine.QcowEncryption": "Encrypted QCOW2 images are not supported.",
+    "MediaEngine.QcowSnapshots": "QCOW2 snapshots are not supported.",
+    "MediaEngine.QcowTables": "The QCOW2 table geometry is invalid.",
+    "MediaEngine.QcowTableRange": "A QCOW2 table exceeds the file or the supported buffer size.",
+    "MediaEngine.QcowFeature": "QCOW2 incompatible feature bits {0} are unsupported.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear feature bits are unsupported.",
+    "MediaEngine.QcowHeaderLength": "The QCOW2 header length is invalid.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount order {0} is unsupported.",
+    "MediaEngine.QcowL1Coverage": "The QCOW2 L1 table does not cover the virtual disk.",
+    "MediaEngine.QcowCompressed": "Compressed QCOW2 {0} entries are unsupported.",
+    "MediaEngine.QcowClusterOffset": "The QCOW2 {0} cluster offset is invalid.",
+    "MediaEngine.QcowClusterRange": "The QCOW2 {0} cluster is outside the file.",
+    "MediaEngine.QcowRefCoverage": "The QCOW2 refcount table does not cover a referenced cluster.",
+    "MediaEngine.QcowRefMissing": "A referenced QCOW2 cluster has no refcount block.",
+    "MediaEngine.QcowRefZero": "A referenced QCOW2 cluster has a zero refcount.",
+    "MediaEngine.QcowWrite": "The media document cannot be written as a supported QCOW2 image.",
+    "MediaEngine.QcowLayout": "The QCOW2 output geometry, tables or cluster offsets exceed the supported limits."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Tiedosto on liian lyhyt QCOW2-otsikkoon.",
+    "MediaEngine.QcowSignature": "QCOW2- allekirjoitus puuttuu.",
+    "MediaEngine.QcowVersion": "QCOW2-versiota {0} ei tueta.",
+    "MediaEngine.QcowParent": "QCOW2-tukitiedostot vaativat vanhemman ratkaisijan, jota ei ole rekisteröity.",
+    "MediaEngine.QcowClusterBits": "QCOW2-klusterin koko on virheellinen.",
+    "MediaEngine.QcowSize": "QCOW2 virtuaalilevyn koko on virheellinen.",
+    "MediaEngine.QcowEncryption": "Salattuja QCOW2-kuvia ei tueta.",
+    "MediaEngine.QcowSnapshots": "QCOW2-tilannevedoksia ei tueta.",
+    "MediaEngine.QcowTables": "QCOW2-taulukon geometria on virheellinen.",
+    "MediaEngine.QcowTableRange": "QCOW2-taulukko ylittää tiedoston tai tuetun puskurikoon.",
+    "MediaEngine.QcowFeature": "QCOW2 yhteensopimattomat ominaisuusbitit {0} eivät ole tuettuja.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear -ominaisuuden bitit eivät ole tuettuja.",
+    "MediaEngine.QcowHeaderLength": "QCOW2-otsakkeen pituus on virheellinen.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2-viitelaskureiden kertalukua {0} ei tueta.",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1 -taulukko ei kata virtuaalilevyä.",
+    "MediaEngine.QcowCompressed": "Pakatut QCOW2 {0} -merkinnät eivät ole tuettuja.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} -klusterin offset on virheellinen.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} -klusteri on tiedoston ulkopuolella.",
+    "MediaEngine.QcowRefCoverage": "QCOW2-viitelaskuritaulukko ei kata viitattua klusteria.",
+    "MediaEngine.QcowRefMissing": "Viitatulta QCOW2-klusterilta puuttuu viitelaskurilohko.",
+    "MediaEngine.QcowRefZero": "Viitatun QCOW2-klusterin viitelaskuri on nolla.",
+    "MediaEngine.QcowWrite": "Mediadokumenttia ei voi kirjoittaa tuetuna QCOW2-kuvana.",
+    "MediaEngine.QcowLayout": "QCOW2-lähtögeometria, taulukot tai klusterien offsetit ylittävät tuetut rajat."
+  }
+}

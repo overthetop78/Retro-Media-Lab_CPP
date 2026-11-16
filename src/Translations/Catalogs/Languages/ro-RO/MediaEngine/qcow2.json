@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Fișierul este prea scurt pentru a conține antetul QCOW2.",
+    "MediaEngine.QcowSignature": "Semnătura QCOW2 lipseşte.",
+    "MediaEngine.QcowVersion": "Versiunea QCOW2 {0} este nesusţinută.",
+    "MediaEngine.QcowParent": "Fișierele de suport QCOW2 necesită un dispozitiv de soluționare părinte care nu este înregistrat.",
+    "MediaEngine.QcowClusterBits": "Dimensiunea grupului QCOW2 este invalidă.",
+    "MediaEngine.QcowSize": "Dimensiunea discului virtual QCOW2 este invalidă.",
+    "MediaEngine.QcowEncryption": "Imaginile QCOW2 criptate nu sunt acceptate.",
+    "MediaEngine.QcowSnapshots": "Instantaneele QCOW2 nu sunt acceptate.",
+    "MediaEngine.QcowTables": "Geometria tabelului QCOW2 este invalidă.",
+    "MediaEngine.QcowTableRange": "Un tabel QCOW2 depășește fișierul sau dimensiunea tamponului suport.",
+    "MediaEngine.QcowFeature": "QCOW2 biți caracteristici incompatibile {0} sunt nesuportate.",
+    "MediaEngine.QcowAutoclear": "QCOW2 Autoclear caracteristici biți sunt nesuportate.",
+    "MediaEngine.QcowHeaderLength": "Lungimea antetului QCOW2 este invalidă.",
+    "MediaEngine.QcowRefcountOrder": "Ordinul contoarelor de referințe QCOW2 {0} nu este acceptat.",
+    "MediaEngine.QcowL1Coverage": "Tabelul QCOW2 L1 nu acoperă discul virtual.",
+    "MediaEngine.QcowCompressed": "Intrările QCOW2 {0} comprimate nu sunt acceptate.",
+    "MediaEngine.QcowClusterOffset": "Offset-ul QCOW2 {0} este invalid.",
+    "MediaEngine.QcowClusterRange": "Grupul QCOW2 {0} este în afara fișierului.",
+    "MediaEngine.QcowRefCoverage": "Tabelul contoarelor de referințe QCOW2 nu acoperă un cluster referit.",
+    "MediaEngine.QcowRefMissing": "Un cluster QCOW2 referit nu are un bloc de contoare de referințe.",
+    "MediaEngine.QcowRefZero": "Un cluster QCOW2 referit are contorul de referințe zero.",
+    "MediaEngine.QcowWrite": "Documentul media nu poate fi scris ca o imagine QCOW2 susținută.",
+    "MediaEngine.QcowLayout": "Geometria de ieșire QCOW2, tabelele sau compensele de grup depășesc limitele acceptate."
+  }
+}

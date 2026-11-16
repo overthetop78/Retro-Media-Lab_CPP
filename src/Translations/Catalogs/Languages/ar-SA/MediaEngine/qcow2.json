@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "الملف أقصر من أن يحتوي على ترويسة QCOW2.",
+    "MediaEngine.QcowSignature": "توقيع QCOW2 مفقود.",
+    "MediaEngine.QcowVersion": "إصدار QCOW2 رقم {0} غير مدعوم.",
+    "MediaEngine.QcowParent": "تتطلب ملفات الأساس QCOW2 محلل ملفات أصل غير مسجل.",
+    "MediaEngine.QcowClusterBits": "حجم عنقود QCOW2 غير صالح.",
+    "MediaEngine.QcowSize": "حجم قرص QCOW2 الافتراضي غير صالح.",
+    "MediaEngine.QcowEncryption": "صور QCOW2 المشفرة غير مدعومة.",
+    "MediaEngine.QcowSnapshots": "لقطات QCOW2 غير مدعومة.",
+    "MediaEngine.QcowTables": "هندسة جداول QCOW2 غير صالحة.",
+    "MediaEngine.QcowTableRange": "يتجاوز جدول QCOW2 حدود الملف أو حجم المخزن المؤقت المدعوم.",
+    "MediaEngine.QcowFeature": "بتات الميزات غير المتوافقة QCOW2 بقيمة {0} غير مدعومة.",
+    "MediaEngine.QcowAutoclear": "بتات ميزات المسح التلقائي في QCOW2 غير مدعومة.",
+    "MediaEngine.QcowHeaderLength": "طول ترويسة QCOW2 غير صالح.",
+    "MediaEngine.QcowRefcountOrder": "رتبة عداد المراجع QCOW2 بقيمة {0} غير مدعومة.",
+    "MediaEngine.QcowL1Coverage": "جدول QCOW2 L1 لا يغطي القرص الافتراضي.",
+    "MediaEngine.QcowCompressed": "إدخالات QCOW2 {0} المضغوطة غير مدعومة.",
+    "MediaEngine.QcowClusterOffset": "إزاحة عنقود QCOW2 {0} غير صالحة.",
+    "MediaEngine.QcowClusterRange": "عنقود QCOW2 {0} خارج الملف.",
+    "MediaEngine.QcowRefCoverage": "جدول عدادات المراجع QCOW2 لا يغطي عنقوداً مشاراً إليه.",
+    "MediaEngine.QcowRefMissing": "عنقود QCOW2 المشار إليه لا يملك كتلة عدادات مراجع.",
+    "MediaEngine.QcowRefZero": "عداد مراجع عنقود QCOW2 المشار إليه يساوي صفراً.",
+    "MediaEngine.QcowWrite": "لا يمكن كتابة مستند الوسائط كصورة QCOW2 مدعومة.",
+    "MediaEngine.QcowLayout": "تتجاوز هندسة إخراج QCOW2 أو جداوله أو إزاحات عناقيده الحدود المدعومة."
+  }
+}

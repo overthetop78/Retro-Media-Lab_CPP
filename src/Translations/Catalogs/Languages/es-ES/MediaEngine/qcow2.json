@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "El archivo es demasiado corto para contener el encabezado QCOW2.",
+    "MediaEngine.QcowSignature": "Falta la firma QCOW2.",
+    "MediaEngine.QcowVersion": "QCOW2 versión {0} no es compatible.",
+    "MediaEngine.QcowParent": "Los archivos base QCOW2 requieren un resolvedor de archivo padre que no está registrado.",
+    "MediaEngine.QcowClusterBits": "El tamaño del grupo QCOW2 es inválido.",
+    "MediaEngine.QcowSize": "El tamaño del disco virtual QCOW2 es inválido.",
+    "MediaEngine.QcowEncryption": "No se admiten imágenes QCOW2 cifradas.",
+    "MediaEngine.QcowSnapshots": "Las instantáneas QCOW2 no son compatibles.",
+    "MediaEngine.QcowTables": "La geometría de tabla QCOW2 es inválida.",
+    "MediaEngine.QcowTableRange": "Una tabla QCOW2 supera el archivo o el tamaño de buffer soportado.",
+    "MediaEngine.QcowFeature": "Los bits de característica incompatibles QCOW2 {0} no son compatibles.",
+    "MediaEngine.QcowAutoclear": "Los bits de característica autolimpiadora QCOW2 no son compatibles.",
+    "MediaEngine.QcowHeaderLength": "La longitud del encabezado QCOW2 es inválida.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 orden de recuento {0} no es compatible.",
+    "MediaEngine.QcowL1Coverage": "La tabla QCOW2 L1 no cubre el disco virtual.",
+    "MediaEngine.QcowCompressed": "Las entradas comprimidas QCOW2 {0} no son compatibles.",
+    "MediaEngine.QcowClusterOffset": "El desplazamiento del grupo QCOW2 {0} es inválido.",
+    "MediaEngine.QcowClusterRange": "El grupo QCOW2 {0} está fuera del archivo.",
+    "MediaEngine.QcowRefCoverage": "La tabla de recuento QCOW2 no cubre un grupo de referencia.",
+    "MediaEngine.QcowRefMissing": "Un clúster QCOW2 referenciado no tiene bloque de recuento.",
+    "MediaEngine.QcowRefZero": "Un grupo de referencia QCOW2 tiene un recuento cero.",
+    "MediaEngine.QcowWrite": "El documento multimedia no puede ser escrito como una imagen QCOW2.",
+    "MediaEngine.QcowLayout": "La geometría de salida QCOW2, las tablas o los desplazamientos de clúster superan los límites admitidos."
+  }
+}

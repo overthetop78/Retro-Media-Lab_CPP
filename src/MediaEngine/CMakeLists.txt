@@ -1,4 +1,9 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Qcow2/Header.cpp
+  src/Formats/HardDisk/Qcow2/Refcounts.cpp
+  src/Formats/HardDisk/Qcow2/Reader.cpp
+  src/Formats/HardDisk/Qcow2/Layout.cpp
+  src/Formats/HardDisk/Qcow2/Writer.cpp
   src/Formats/HardDisk/MfmEmu/Header.cpp
   src/Formats/HardDisk/MfmEmu/Signal.cpp
   src/Formats/HardDisk/MfmEmu/Container.cpp

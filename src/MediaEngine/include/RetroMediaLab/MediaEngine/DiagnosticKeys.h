@@ -1,6 +1,30 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view QcowHeader="MediaEngine.QcowHeader";
+inline constexpr std::string_view QcowSignature="MediaEngine.QcowSignature";
+inline constexpr std::string_view QcowVersion="MediaEngine.QcowVersion";
+inline constexpr std::string_view QcowParent="MediaEngine.QcowParent";
+inline constexpr std::string_view QcowClusterBits="MediaEngine.QcowClusterBits";
+inline constexpr std::string_view QcowSize="MediaEngine.QcowSize";
+inline constexpr std::string_view QcowEncryption="MediaEngine.QcowEncryption";
+inline constexpr std::string_view QcowSnapshots="MediaEngine.QcowSnapshots";
+inline constexpr std::string_view QcowTables="MediaEngine.QcowTables";
+inline constexpr std::string_view QcowTableRange="MediaEngine.QcowTableRange";
+inline constexpr std::string_view QcowFeature="MediaEngine.QcowFeature";
+inline constexpr std::string_view QcowAutoclear="MediaEngine.QcowAutoclear";
+inline constexpr std::string_view QcowHeaderLength="MediaEngine.QcowHeaderLength";
+inline constexpr std::string_view QcowRefcountOrder="MediaEngine.QcowRefcountOrder";
+inline constexpr std::string_view QcowL1Coverage="MediaEngine.QcowL1Coverage";
+inline constexpr std::string_view QcowCompressed="MediaEngine.QcowCompressed";
+inline constexpr std::string_view QcowClusterOffset="MediaEngine.QcowClusterOffset";
+inline constexpr std::string_view QcowClusterRange="MediaEngine.QcowClusterRange";
+inline constexpr std::string_view QcowRefCoverage="MediaEngine.QcowRefCoverage";
+inline constexpr std::string_view QcowRefMissing="MediaEngine.QcowRefMissing";
+inline constexpr std::string_view QcowRefZero="MediaEngine.QcowRefZero";
+inline constexpr std::string_view QcowWrite="MediaEngine.QcowWrite";
+inline constexpr std::string_view QcowLayout="MediaEngine.QcowLayout";
+
 inline constexpr std::string_view MfmHeader="MediaEngine.MfmEmuHeader";
 inline constexpr std::string_view MfmTrackRange="MediaEngine.MfmTrackRange";
 inline constexpr std::string_view MfmSignal="MediaEngine.MfmSignal";

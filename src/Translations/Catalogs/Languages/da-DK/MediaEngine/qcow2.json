@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Filen er for kort til at indeholde QCOW2 header.",
+    "MediaEngine.QcowSignature": "QCOW2 signaturen mangler.",
+    "MediaEngine.QcowVersion": "QCOW2 version {0} er ikke understøttet.",
+    "MediaEngine.QcowParent": "QCOW2 backing filer kræver en forælder resolver, der ikke er registreret.",
+    "MediaEngine.QcowClusterBits": "QCOW2-klyngestørrelsen er ugyldig.",
+    "MediaEngine.QcowSize": "QCOW2 virtuel diskstørrelse er ugyldig.",
+    "MediaEngine.QcowEncryption": "Krypterede QCOW2- billeder understøttes ikke.",
+    "MediaEngine.QcowSnapshots": "QCOW2 snapshots understøttes ikke.",
+    "MediaEngine.QcowTables": "QCOW2 tabelgeometri er ugyldig.",
+    "MediaEngine.QcowTableRange": "En QCOW2-tabel overstiger filen eller den understøttede bufferstørrelse.",
+    "MediaEngine.QcowFeature": "QCOW2 inkompatible feature bits {0} er ikke understøttet.",
+    "MediaEngine.QcowAutoclear": "QCOW2-funktionsbits til automatisk rydning understøttes ikke.",
+    "MediaEngine.QcowHeaderLength": "QCOW2 header længden er ugyldig.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2-referencetællerorden {0} understøttes ikke.",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1 bordet dækker ikke den virtuelle disk.",
+    "MediaEngine.QcowCompressed": "Komprimerede QCOW2 {0} indgange er ikke understøttet.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} klyngeoffset er ugyldig.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} klyngen er uden for filen.",
+    "MediaEngine.QcowRefCoverage": "QCOW2-referencetabellen dækker ikke en refereret klynge.",
+    "MediaEngine.QcowRefMissing": "En refereret QCOW2-klynge har ingen blok med referencetællere.",
+    "MediaEngine.QcowRefZero": "En refereret QCOW2-klynge har nul referencer.",
+    "MediaEngine.QcowWrite": "Mediedokumentet kan ikke skrives som et understøttet QCOW2-billede.",
+    "MediaEngine.QcowLayout": "QCOW2-outputgeometrien, tabellerne eller klyngeforskydningerne overskrider de understøttede grænser."
+  }
+}

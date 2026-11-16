@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "ファイルが QCOW2 ヘッダーを含むのに短すぎる。",
+    "MediaEngine.QcowSignature": "QCOW2 の署名は欠落しています。",
+    "MediaEngine.QcowVersion": "QCOW2 バージョン {0} はサポートされていません。",
+    "MediaEngine.QcowParent": "QCOW2 バックアップファイルには、登録されていない親リゾルバーが必要です。",
+    "MediaEngine.QcowClusterBits": "QCOW2クラスターサイズが無効です。",
+    "MediaEngine.QcowSize": "QCOW2 仮想ディスクサイズが無効です。",
+    "MediaEngine.QcowEncryption": "暗号化されたQCOW2イメージはサポートされていません。",
+    "MediaEngine.QcowSnapshots": "QCOW2 スナップショットはサポートされていません。",
+    "MediaEngine.QcowTables": "QCOW2テーブルジオメトリは無効です。",
+    "MediaEngine.QcowTableRange": "QCOW2テーブルは、ファイルやサポートされているバッファサイズを超過します。",
+    "MediaEngine.QcowFeature": "QCOW2 互換性のない機能ビット {0} はサポートされていません。",
+    "MediaEngine.QcowAutoclear": "QCOW2 自動クリア機能ビットはサポートされていません。",
+    "MediaEngine.QcowHeaderLength": "QCOW2 ヘッダーの長さは無効です。",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 の refcount 順序 {0} はサポートされていません。",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1テーブルは仮想ディスクをカバーしていません。",
+    "MediaEngine.QcowCompressed": "圧縮QCOW2 {0}エントリはサポートされていません。",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} クラスターオフセットは無効です。",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} クラスターはファイル外にあります。",
+    "MediaEngine.QcowRefCoverage": "QCOW2 の refcount テーブルは参照されたクラスターをカバーしません。",
+    "MediaEngine.QcowRefMissing": "参照されたQCOW2クラスターに参照カウンターブロックがありません。",
+    "MediaEngine.QcowRefZero": "参照されるQCOW2のクラスターはゼロ refcount を持っています。",
+    "MediaEngine.QcowWrite": "サポートされている QCOW2 のイメージとして、メディア ドキュメントは記述できません。",
+    "MediaEngine.QcowLayout": "QCOW2出力ジオメトリ、テーブル、またはクラスターオフセットは、サポートされている制限を超える。"
+  }
+}

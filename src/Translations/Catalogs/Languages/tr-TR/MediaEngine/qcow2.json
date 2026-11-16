@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Dosya QCOW2 başlığı içeren çok kısadır.",
+    "MediaEngine.QcowSignature": "QCOW2 imzası eksik.",
+    "MediaEngine.QcowVersion": "QCOW2 versiyonu {0} desteklenmez.",
+    "MediaEngine.QcowParent": "QCOW2 geri yükleme dosyaları kayıtlı olmayan bir ebeveyn çözümü gerektirir.",
+    "MediaEngine.QcowClusterBits": "QCOW2 küme büyüklüğü geçersizdir.",
+    "MediaEngine.QcowSize": "QCOW2 sanal disk boyutu geçersizdir.",
+    "MediaEngine.QcowEncryption": "Şifrelenen QCOW2 görüntüleri desteklenmez.",
+    "MediaEngine.QcowSnapshots": "QCOW2 anlıkları desteklenmez.",
+    "MediaEngine.QcowTables": "QCOW2 tablo geometrisi geçersizdir.",
+    "MediaEngine.QcowTableRange": "Bir QCOW2 tablosu dosya sınırlarını veya desteklenen arabellek boyutunu aşıyor.",
+    "MediaEngine.QcowFeature": "QCOW2 uyumsuz özellik bitleri {0} desteklenmiyor.",
+    "MediaEngine.QcowAutoclear": "QCOW2 otomatik özellik parçaları desteklenmez.",
+    "MediaEngine.QcowHeaderLength": "QCOW2 başlık uzunluğu geçersizdir.",
+    "MediaEngine.QcowRefcountOrder": "QCOW2 refcount düzeni {0} desteklenmez.",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1 tablosu sanal diski kapsamıyor.",
+    "MediaEngine.QcowCompressed": "Sıkıştırılmış QCOW2 {0} girdileri desteklenmiyor.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} küme ofseti geçersizdir.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} kümesi dosyanın dışındadır.",
+    "MediaEngine.QcowRefCoverage": "QCOW2 başvuru sayacı tablosu, başvurulan bir kümeyi kapsamıyor.",
+    "MediaEngine.QcowRefMissing": "Referanslı QCOW2 kümesinin refcount bloğu yoktur.",
+    "MediaEngine.QcowRefZero": "Referanslı QCOW2 kümesinin sıfır bir ref hesabı vardır.",
+    "MediaEngine.QcowWrite": "Medya belgesi desteklenen QCOW2 görüntüsü olarak yazılamaz.",
+    "MediaEngine.QcowLayout": "QCOW2 çıktı geometrisi, tabloları veya küme ofsetleri desteklenen sınırları aşıyor."
+  }
+}

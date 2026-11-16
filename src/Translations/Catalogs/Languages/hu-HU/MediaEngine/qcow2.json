@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "A fájl túl rövid ahhoz, hogy tartalmazza a QCOW2 fejlécet.",
+    "MediaEngine.QcowSignature": "A QCOW2 aláírás hiányzik.",
+    "MediaEngine.QcowVersion": "QCOW2 verzió {0} nem támogatott.",
+    "MediaEngine.QcowParent": "QCOW2 háttérfájlok megkövetelik a szülő resolver, hogy nem regisztrált.",
+    "MediaEngine.QcowClusterBits": "A QCOW2 klaszter mérete érvénytelen.",
+    "MediaEngine.QcowSize": "A QCOW2 virtuális lemez mérete érvénytelen.",
+    "MediaEngine.QcowEncryption": "A titkosított QCOW2 képek nem támogathatók.",
+    "MediaEngine.QcowSnapshots": "A QCOW2 pillanatképek nem támogathatók.",
+    "MediaEngine.QcowTables": "A QCOW2 tábla geometriája érvénytelen.",
+    "MediaEngine.QcowTableRange": "A QCOW2 táblázat meghaladja a fájlt vagy a támogatott pufferméretet.",
+    "MediaEngine.QcowFeature": "A QCOW2 nem kompatibilis funkcióbitjei ({0}) nem támogatottak.",
+    "MediaEngine.QcowAutoclear": "A QCOW2 automatikus funkcióbitjei nem támogathatók.",
+    "MediaEngine.QcowHeaderLength": "A QCOW2 fejléc hossza érvénytelen.",
+    "MediaEngine.QcowRefcountOrder": "A QCOW2 hivatkozásszámlálók {0} rendje nem támogatott.",
+    "MediaEngine.QcowL1Coverage": "A QCOW2 L1 tábla nem tartalmazza a virtuális lemezt.",
+    "MediaEngine.QcowCompressed": "A tömörített QCOW2 {0} bejegyzések nem támogathatók.",
+    "MediaEngine.QcowClusterOffset": "A QCOW2 {0} klaszter offset érvénytelen.",
+    "MediaEngine.QcowClusterRange": "A QCOW2 {0} klaszter kívül esik a fájlon.",
+    "MediaEngine.QcowRefCoverage": "A QCOW2 hivatkozásszámláló-tábla nem fedi le a hivatkozott klasztert.",
+    "MediaEngine.QcowRefMissing": "A hivatkozott QCOW2 klaszterhez nincs hivatkozásszámláló-blokk.",
+    "MediaEngine.QcowRefZero": "A hivatkozott QCOW2 klaszter hivatkozásszámlálója nulla.",
+    "MediaEngine.QcowWrite": "A médiadokumentum nem írható támogatott QCOW2 képként.",
+    "MediaEngine.QcowLayout": "A QCOW2 kimeneti geometria, táblák vagy klaszter kiegyenlítések meghaladják a támogatott határértékeket."
+  }
+}

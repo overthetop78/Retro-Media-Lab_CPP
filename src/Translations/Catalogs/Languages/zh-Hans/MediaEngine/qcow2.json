@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "文件太短,无法包含QCOW2头.",
+    "MediaEngine.QcowSignature": "QCOW2 签名缺失 。",
+    "MediaEngine.QcowVersion": "QCOW2 版本{0}是不支持的.",
+    "MediaEngine.QcowParent": "QCOW2 支持文件需要未注册的父解析器 。",
+    "MediaEngine.QcowClusterBits": "QCOW2 簇大小无效。",
+    "MediaEngine.QcowSize": "QCOW2 虚拟磁盘大小无效 。",
+    "MediaEngine.QcowEncryption": "不支持加密的 QCOW2 图像 。",
+    "MediaEngine.QcowSnapshots": "QCOW2快照不支持.",
+    "MediaEngine.QcowTables": "QCOW2表几何无效.",
+    "MediaEngine.QcowTableRange": "QCOW2 表格超过文件或支持的缓冲大小.",
+    "MediaEngine.QcowFeature": "QCOW2 不相容的特性比特{0} 不支持 。",
+    "MediaEngine.QcowAutoclear": "QCOW2 自动清晰特性比特不支持.",
+    "MediaEngine.QcowHeaderLength": "QCOW2 头长无效.",
+    "MediaEngine.QcowRefcountOrder": "不支持 QCOW2 引用计数阶数 {0}。",
+    "MediaEngine.QcowL1Coverage": "QCOW2 L1表不覆盖虚拟磁盘.",
+    "MediaEngine.QcowCompressed": "压缩的 QCOW2 {0} 条目不支持 。",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} 分组偏移无效 。",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} 集群位于文件外.",
+    "MediaEngine.QcowRefCoverage": "QCOW2 引用计数表未覆盖被引用的簇。",
+    "MediaEngine.QcowRefMissing": "被引用的 QCOW2 簇没有引用计数块。",
+    "MediaEngine.QcowRefZero": "被引用的 QCOW2 簇的引用计数为零。",
+    "MediaEngine.QcowWrite": "媒体文档不能被写入支持的QCOW2图像.",
+    "MediaEngine.QcowLayout": "QCOW2 输出几何配置、表或簇偏移超过支持的限制。"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Soubor je příliš krátký na to, aby obsahoval hlavičku QCOW2.",
+    "MediaEngine.QcowSignature": "Podpis QCOW2 chybí.",
+    "MediaEngine.QcowVersion": "QCOW2 verze {0} není podporována.",
+    "MediaEngine.QcowParent": "Záložní soubory QCOW2 vyžadují rodičovský resolver, který není registrován.",
+    "MediaEngine.QcowClusterBits": "Velikost clusteru QCOW2 je neplatná.",
+    "MediaEngine.QcowSize": "Velikost virtuálního disku QCOW2 je neplatná.",
+    "MediaEngine.QcowEncryption": "Šifrované obrázky QCOW2 nejsou podporovány.",
+    "MediaEngine.QcowSnapshots": "QCOW2 snímky nejsou podporovány.",
+    "MediaEngine.QcowTables": "Geometrie tabulky QCOW2 je neplatná.",
+    "MediaEngine.QcowTableRange": "Tabulka QCOW2 překračuje velikost souboru nebo podporovaného bufferu.",
+    "MediaEngine.QcowFeature": "QCOW2 nekompatibilní funkce bity {0} nejsou podporovány.",
+    "MediaEngine.QcowAutoclear": "Bity funkce automatického mazání QCOW2 nejsou podporovány.",
+    "MediaEngine.QcowHeaderLength": "Délka hlavičky QCOW2 je neplatná.",
+    "MediaEngine.QcowRefcountOrder": "Řád počítadel odkazů QCOW2 {0} není podporován.",
+    "MediaEngine.QcowL1Coverage": "Tabulka QCOW2 L1 nepokrývá virtuální disk.",
+    "MediaEngine.QcowCompressed": "Komprimované položky QCOW2 {0} nejsou podporovány.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} cluster ofset je neplatný.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} cluster je mimo soubor.",
+    "MediaEngine.QcowRefCoverage": "Tabulka počítadel odkazů QCOW2 nepokrývá odkazovaný cluster.",
+    "MediaEngine.QcowRefMissing": "Odkazovaný cluster QCOW2 nemá blok počítadel odkazů.",
+    "MediaEngine.QcowRefZero": "Odkazovaný cluster QCOW2 má nulový počet odkazů.",
+    "MediaEngine.QcowWrite": "Mediální dokument nelze zapsat jako podporovaný obrázek QCOW2.",
+    "MediaEngine.QcowLayout": "Výstupní geometrie QCOW2, tabulky nebo shluky překračují podporované limity."
+  }
+}

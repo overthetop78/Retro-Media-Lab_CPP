@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Το αρχείο είναι πολύ μικρό για να περιέχει την κεφαλίδα QCOW2.",
+    "MediaEngine.QcowSignature": "Λείπει η υπογραφή του QCOW2.",
+    "MediaEngine.QcowVersion": "Η έκδοση QCOW2 {0} δεν υποστηρίζεται.",
+    "MediaEngine.QcowParent": "Τα αρχεία υποστήριξης QCOW2 απαιτούν γονική λύση που δεν είναι καταχωρημένη.",
+    "MediaEngine.QcowClusterBits": "Το μέγεθος συστάδων QCOW2 είναι άκυρο.",
+    "MediaEngine.QcowSize": "Το μέγεθος του εικονικού δίσκου QCOW2 είναι άκυρο.",
+    "MediaEngine.QcowEncryption": "Οι κρυπτογραφημένες εικόνες QCOW2 δεν υποστηρίζονται.",
+    "MediaEngine.QcowSnapshots": "Τα στιγμιότυπα QCOW2 δεν υποστηρίζονται.",
+    "MediaEngine.QcowTables": "Η γεωμετρία του πίνακα QCOW2 δεν είναι έγκυρη.",
+    "MediaEngine.QcowTableRange": "Ένας πίνακας QCOW2 υπερβαίνει το αρχείο ή το υποστηριζόμενο μέγεθος ενδιάμεσης μνήμης.",
+    "MediaEngine.QcowFeature": "Τα ασυμβίβαστα με QCOW2 χαρακτηριστικά bits {0} δεν υποστηρίζονται.",
+    "MediaEngine.QcowAutoclear": "QCOW2 autoclear bits χαρακτηριστικό δεν υποστηρίζονται.",
+    "MediaEngine.QcowHeaderLength": "Το μήκος κεφαλίδας QCOW2 δεν είναι έγκυρο.",
+    "MediaEngine.QcowRefcountOrder": "Η τάξη των μετρητών αναφορών QCOW2 {0} δεν υποστηρίζεται.",
+    "MediaEngine.QcowL1Coverage": "Ο πίνακας QCOW2 L1 δεν καλύπτει τον εικονικό δίσκο.",
+    "MediaEngine.QcowCompressed": "Οι Συμπιεσμένες καταχωρήσεις QCOW2 {0} δεν υποστηρίζονται.",
+    "MediaEngine.QcowClusterOffset": "Η μετατόπιση συστάδας QCOW2 {0} είναι άκυρη.",
+    "MediaEngine.QcowClusterRange": "Η συστάδα QCOW2 {0} είναι έξω από το αρχείο.",
+    "MediaEngine.QcowRefCoverage": "Ο πίνακας μετρητών αναφορών QCOW2 δεν καλύπτει μια αναφερόμενη συστάδα.",
+    "MediaEngine.QcowRefMissing": "Μια αναφερόμενη συστάδα QCOW2 δεν έχει μπλοκ μετρητών αναφορών.",
+    "MediaEngine.QcowRefZero": "Μια αναφερόμενη συστάδα QCOW2 έχει μηδενικό μετρητή αναφορών.",
+    "MediaEngine.QcowWrite": "Το έγγραφο πολυμέσων δεν μπορεί να γραφτεί ως υποστηριζόμενη εικόνα QCOW2.",
+    "MediaEngine.QcowLayout": "Η γεωμετρία εξόδου QCOW2, οι πίνακες ή οι αντισταθμίσεις συστάδων υπερβαίνουν τα υποστηριζόμενα όρια."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Файл занадто короткий, щоб містити заголовок QCOW2.",
+    "MediaEngine.QcowSignature": "Відсутній підпис QCOW2.",
+    "MediaEngine.QcowVersion": "Версія QCOW2 {0} не підтримується.",
+    "MediaEngine.QcowParent": "Базові файли QCOW2 потребують засобу пошуку батьківського файлу, який не зареєстровано.",
+    "MediaEngine.QcowClusterBits": "Розмір кластера QCOW2 недійсний.",
+    "MediaEngine.QcowSize": "Розмір віртуального диска QCOW2 недійсний.",
+    "MediaEngine.QcowEncryption": "Зашифровані зображення QCOW2 не підтримуються.",
+    "MediaEngine.QcowSnapshots": "Знімки стану QCOW2 не підтримуються.",
+    "MediaEngine.QcowTables": "Геометрія таблиці QCOW2 недійсна.",
+    "MediaEngine.QcowTableRange": "Таблиця QCOW2 перевищує файл або підтримуваний розмір буфера.",
+    "MediaEngine.QcowFeature": "Несумісні біти можливостей QCOW2 {0} не підтримуються.",
+    "MediaEngine.QcowAutoclear": "Біти можливостей автоматичного скидання QCOW2 не підтримуються.",
+    "MediaEngine.QcowHeaderLength": "Довжина заголовка QCOW2 недійсна.",
+    "MediaEngine.QcowRefcountOrder": "Порядок лічильників посилань QCOW2 {0} не підтримується.",
+    "MediaEngine.QcowL1Coverage": "Таблиця QCOW2 L1 не охоплює віртуальний диск.",
+    "MediaEngine.QcowCompressed": "Стиснуті записи QCOW2 {0} не підтримуються.",
+    "MediaEngine.QcowClusterOffset": "QCOW2 {0} кластерний зсув недійсний.",
+    "MediaEngine.QcowClusterRange": "QCOW2 {0} кластер за межами файлу.",
+    "MediaEngine.QcowRefCoverage": "Таблиця лічильників посилань QCOW2 не охоплює кластер, на який є посилання.",
+    "MediaEngine.QcowRefMissing": "Кластер QCOW2, на який є посилання, не має блоку лічильників посилань.",
+    "MediaEngine.QcowRefZero": "Кластер QCOW2, на який є посилання, має нульовий лічильник посилань.",
+    "MediaEngine.QcowWrite": "Файловий документ не може бути записаний як підтримуваний зображення QCOW2.",
+    "MediaEngine.QcowLayout": "Геометрія виходу QCOW2, таблиці або кластерні офсети перевищують підтримувані межі."
+  }
+}

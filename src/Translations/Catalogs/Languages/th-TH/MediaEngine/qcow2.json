@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "แฟ้มนี้สั้นเกินกว่าจะบรรจุส่วนหัว QCOW2 ได้",
+    "MediaEngine.QcowSignature": "ไม่พบลายเซ็น QCOW2",
+    "MediaEngine.QcowVersion": "ไม่สนับสนุนรุ่นของ QCOW2 {0}",
+    "MediaEngine.QcowParent": "ไฟล์ฐาน QCOW2 ต้องใช้ตัวค้นหาไฟล์แม่ที่ยังไม่ได้ลงทะเบียน",
+    "MediaEngine.QcowClusterBits": "ขนาดกลุ่ม QCOW2 ไม่ถูกต้อง",
+    "MediaEngine.QcowSize": "ขนาดของดิสก์เสมือน QCOW2 ไม่ถูกต้อง",
+    "MediaEngine.QcowEncryption": "ยังไม่รองรับการเข้ารหัสภาพ QCOW2",
+    "MediaEngine.QcowSnapshots": "ยังไม่รองรับการจับภาพ QCOW2",
+    "MediaEngine.QcowTables": "เรขาคณิตตาราง QCOW2 ไม่ถูกต้อง",
+    "MediaEngine.QcowTableRange": "ตาราง QCOW2 เกินขนาดแฟ้มหรือขนาดบัฟเฟอร์ที่รองรับ",
+    "MediaEngine.QcowFeature": "QCOW2 บิตคุณสมบัติที่ไม่เข้ากัน {0} ไม่รองรับ",
+    "MediaEngine.QcowAutoclear": "ไม่รองรับบิตคุณสมบัติการล้างอัตโนมัติของ QCOW2",
+    "MediaEngine.QcowHeaderLength": "ความยาวส่วนหัว QCOW2 ไม่ถูกต้อง",
+    "MediaEngine.QcowRefcountOrder": "ไม่สนับสนุนลําดับจํานวนนับของ QCOW2 {0}",
+    "MediaEngine.QcowL1Coverage": "ตาราง QCOW2 L1 ไม่ได้ครอบคลุมแผ่นดิสก์เสมือน",
+    "MediaEngine.QcowCompressed": "ไม่รองรับรายการ QCOW2 {0} ที่บีบอัด",
+    "MediaEngine.QcowClusterOffset": "ออฟเซ็ตคลัสเตอร์ QCOW2 {0} ไม่ถูกต้อง",
+    "MediaEngine.QcowClusterRange": "คลัสเตอร์ QCOW2 {0} อยู่นอกไฟล์",
+    "MediaEngine.QcowRefCoverage": "ตารางตัวนับการอ้างอิง QCOW2 ไม่ครอบคลุมคลัสเตอร์ที่ถูกอ้างอิง",
+    "MediaEngine.QcowRefMissing": "คลัสเตอร์ QCOW2 ที่ถูกอ้างอิงไม่มีบล็อกตัวนับการอ้างอิง",
+    "MediaEngine.QcowRefZero": "คลัสเตอร์ QCOW2 ที่ถูกอ้างอิงมีตัวนับการอ้างอิงเป็นศูนย์",
+    "MediaEngine.QcowWrite": "ไม่สามารถเขียนเอกสารสื่อเป็นอิมเมจ QCOW2 ที่รองรับได้",
+    "MediaEngine.QcowLayout": "โครงสร้างเอาต์พุต QCOW2 ตาราง หรือออฟเซ็ตคลัสเตอร์เกินขีดจำกัดที่รองรับ"
+  }
+}

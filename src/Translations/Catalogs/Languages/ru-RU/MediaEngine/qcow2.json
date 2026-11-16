@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Файл слишком короткий, чтобы содержать заголовок QCOW2.",
+    "MediaEngine.QcowSignature": "Подпись QCOW2 отсутствует.",
+    "MediaEngine.QcowVersion": "QCOW2 версия {0} не поддерживается.",
+    "MediaEngine.QcowParent": "Файлы резервного копирования QCOW2 требуют родительского разрешения, которое не зарегистрировано.",
+    "MediaEngine.QcowClusterBits": "Размер кластера QCOW2 недействителен.",
+    "MediaEngine.QcowSize": "Размер виртуального диска QCOW2 недействителен.",
+    "MediaEngine.QcowEncryption": "Зашифрованные изображения QCOW2 не поддерживаются.",
+    "MediaEngine.QcowSnapshots": "Снимки QCOW2 не поддерживаются.",
+    "MediaEngine.QcowTables": "Геометрия таблицы QCOW2 недействительна.",
+    "MediaEngine.QcowTableRange": "Таблица QCOW2 превышает размер файла или поддерживаемого буфера.",
+    "MediaEngine.QcowFeature": "Несовместимые биты функций QCOW2 {0} не поддерживаются.",
+    "MediaEngine.QcowAutoclear": "Биты функций автоматического сброса QCOW2 не поддерживаются.",
+    "MediaEngine.QcowHeaderLength": "Длина заголовка QCOW2 недействительна.",
+    "MediaEngine.QcowRefcountOrder": "Порядок счётчиков ссылок QCOW2 {0} не поддерживается.",
+    "MediaEngine.QcowL1Coverage": "Таблица QCOW2 L1 не покрывает виртуальный диск.",
+    "MediaEngine.QcowCompressed": "Сжатые записи QCOW2 {0} не поддерживаются.",
+    "MediaEngine.QcowClusterOffset": "Смещение кластера QCOW2 {0} является недействительным.",
+    "MediaEngine.QcowClusterRange": "Кластер QCOW2 {0} находится вне файла.",
+    "MediaEngine.QcowRefCoverage": "Таблица счётчиков ссылок QCOW2 не охватывает кластер, на который есть ссылка.",
+    "MediaEngine.QcowRefMissing": "Кластер QCOW2, на который есть ссылка, не имеет блока счётчиков ссылок.",
+    "MediaEngine.QcowRefZero": "Кластер QCOW2, на который есть ссылка, имеет нулевой счётчик ссылок.",
+    "MediaEngine.QcowWrite": "Документ не может быть написан как поддерживаемое изображение QCOW2.",
+    "MediaEngine.QcowLayout": "Выходная геометрия QCOW2, таблицы или смещения кластеров превышают поддерживаемые пределы."
+  }
+}

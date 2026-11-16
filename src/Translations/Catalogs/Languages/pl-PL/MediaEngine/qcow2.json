@@ -1,0 +1,27 @@
+{
+  "strings": {
+    "MediaEngine.QcowHeader": "Plik jest zbyt krótki, aby zawierać nagłówek QCOW2.",
+    "MediaEngine.QcowSignature": "Brak podpisu QCOW2.",
+    "MediaEngine.QcowVersion": "Wersja QCOW2 {0} nie jest obsługiwana.",
+    "MediaEngine.QcowParent": "Pliki Backup QCOW2 wymagają rozwiązania rodzicielskiego, który nie jest zarejestrowany.",
+    "MediaEngine.QcowClusterBits": "Rozmiar klastra QCOW2 jest nieprawidłowy.",
+    "MediaEngine.QcowSize": "Rozmiar dysku wirtualnego QCOW2 jest nieprawidłowy.",
+    "MediaEngine.QcowEncryption": "Zaszyfrowane obrazy QCOW2 nie są obsługiwane.",
+    "MediaEngine.QcowSnapshots": "Migawki QCOW2 nie są obsługiwane.",
+    "MediaEngine.QcowTables": "Geometria tabeli QCOW2 jest nieprawidłowa.",
+    "MediaEngine.QcowTableRange": "Tabela QCOW2 przewyższa plik lub obsługiwany rozmiar bufora.",
+    "MediaEngine.QcowFeature": "Niekompatybilne bity funkcji QCOW2 {0} nie są obsługiwane.",
+    "MediaEngine.QcowAutoclear": "Bity funkcji automatycznego czyszczenia QCOW2 nie są obsługiwane.",
+    "MediaEngine.QcowHeaderLength": "Długość nagłówka QCOW2 jest nieprawidłowa.",
+    "MediaEngine.QcowRefcountOrder": "Rząd liczników odwołań QCOW2 {0} nie jest obsługiwany.",
+    "MediaEngine.QcowL1Coverage": "Tabela QCOW2 L1 nie obejmuje dysku wirtualnego.",
+    "MediaEngine.QcowCompressed": "Skompresowane wpisy QCOW2 {0} nie są obsługiwane.",
+    "MediaEngine.QcowClusterOffset": "Przesunięcie klastra QCOW2 {0} jest nieprawidłowe.",
+    "MediaEngine.QcowClusterRange": "Klaster QCOW2 {0} jest poza plikiem.",
+    "MediaEngine.QcowRefCoverage": "Tabela liczników odwołań QCOW2 nie obejmuje wskazywanego klastra.",
+    "MediaEngine.QcowRefMissing": "Wskazywany klaster QCOW2 nie ma bloku liczników odwołań.",
+    "MediaEngine.QcowRefZero": "Wskazywany klaster QCOW2 ma zerowy licznik odwołań.",
+    "MediaEngine.QcowWrite": "Dokument medialny nie może być napisany jako obsługiwany obraz QCOW2.",
+    "MediaEngine.QcowLayout": "Geometria wyjściowa, tabele lub offsety klastrów QCOW2 przekraczają obsługiwane wartości graniczne."
+  }
+}
