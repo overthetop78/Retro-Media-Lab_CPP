@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.RuntimeDiskRequest": "A decoded floppy or hard disk image with a supported sector or block representation is required.",
+    "MediaEngine.RuntimeDiskClosed": "The runtime disk is closed.",
+    "MediaEngine.RuntimeDiskReadOnly": "The disk image is write protected.",
+    "MediaEngine.RuntimeDiskSector": "The sector index, address, data size or deleted-data mark is invalid or unsupported.",
+    "MediaEngine.RuntimeDiskUnavailable": "Sector '{0}' is unavailable in the source image."
+  }
+}

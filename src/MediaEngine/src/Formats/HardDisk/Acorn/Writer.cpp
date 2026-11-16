@@ -8,8 +8,7 @@ namespace RetroMediaLab::MediaEngine::AcornWinchester {
 namespace {
 std::vector<std::uint8_t> restore(const MediaDocument& document){
     using namespace Constants;const auto found=document.metadata().find(std::string(DescriptorKey));if(found==document.metadata().end())return {};
-    QByteArray encoded;for(char byte:found->second)if(Base64Whitespace.find(byte)==std::string_view::npos)encoded.append(byte);if(encoded.size()%Base64Quantum)throw MediaError(DiagnosticCode::AcornDscMetadata);const auto result=QByteArray::fromBase64Encoding(encoded,QByteArray::AbortOnBase64DecodingErrors);if(!result)throw MediaError(DiagnosticCode::AcornDscMetadata);
-    const auto* begin=reinterpret_cast<const std::uint8_t*>(result.decoded.constData());return {begin,begin+result.decoded.size()};
+    return decodeDescriptor(found->second);
 }
 std::future<std::vector<std::filesystem::path>> writeFiles(std::shared_ptr<const MediaDocument> document,std::filesystem::path output,std::string target,std::stop_token token,bool replace,bool preallocate){
     return std::async(std::launch::deferred,[document=std::move(document),output=std::move(output),target=std::move(target),token,replace,preallocate]{using namespace Constants;

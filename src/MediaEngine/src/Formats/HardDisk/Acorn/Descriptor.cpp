@@ -4,7 +4,14 @@
 #include "../Adaptec/Parameters.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <QtEndian>
+#include <QByteArray>
 namespace RetroMediaLab::MediaEngine::AcornWinchester {
+std::vector<std::uint8_t> decodeDescriptor(std::string_view text){
+    using namespace Constants;QByteArray encoded;for(char byte:text)if(Base64Whitespace.find(byte)==std::string_view::npos)encoded.append(byte);
+    if(encoded.size()%Base64Quantum)throw MediaError(DiagnosticCode::AcornDscMetadata);
+    const auto result=QByteArray::fromBase64Encoding(encoded,QByteArray::AbortOnBase64DecodingErrors);if(!result)throw MediaError(DiagnosticCode::AcornDscMetadata);
+    const auto* begin=reinterpret_cast<const std::uint8_t*>(result.decoded.constData());return {begin,begin+result.decoded.size()};
+}
 namespace {
 std::int32_t sectors(std::int32_t size,bool sequential){using namespace Constants;switch(size){case SectorSize:return sequential?SmallSequentialSectors:SectorsPerTrack;case MediumSectorSize:return sequential?MediumSequentialSectors:MediumInterleavedSectors;case LargeSectorSize:return LargeSectors;default:return 0;}}
 }

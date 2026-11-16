@@ -1,6 +1,12 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view RuntimeDiskRequest="MediaEngine.RuntimeDiskRequest";
+inline constexpr std::string_view RuntimeDiskClosed="MediaEngine.RuntimeDiskClosed";
+inline constexpr std::string_view RuntimeDiskReadOnly="MediaEngine.RuntimeDiskReadOnly";
+inline constexpr std::string_view RuntimeDiskSector="MediaEngine.RuntimeDiskSector";
+inline constexpr std::string_view RuntimeDiskUnavailable="MediaEngine.RuntimeDiskUnavailable";
+
 inline constexpr std::string_view ImageWriteRequest="MediaEngine.ImageWriteRequest";
 inline constexpr std::string_view ImageWriteUnavailable="MediaEngine.ImageWriteUnavailable";
 inline constexpr std::string_view ImageWriteOutputs="MediaEngine.ImageWriteOutputs";

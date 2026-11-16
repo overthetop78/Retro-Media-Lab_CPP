@@ -1,5 +1,6 @@
 #pragma once
 #include <RetroMediaLab/MediaEngine/Export.h>
+#include <RetroMediaLab/MediaEngine/HardDiskGeometry.h>
 #include <RetroMediaLab/MediaEngine/DriveMechanics.h>
 #include <RetroMediaLab/MediaEngine/RepresentationInfo.h>
 #include <RetroMediaLab/MediaFileSystems/Representations.h>
@@ -9,14 +10,7 @@
 namespace RetroMediaLab::MediaEngine {
 namespace Blocks {struct State;}
 enum class DataRangeKind {Stored,Zero,Unallocated,Unavailable};
-class HardDiskGeometry final {
-public:
-    RETROMEDIALAB_MEDIAENGINE_API HardDiskGeometry(std::int64_t cylinders,std::int32_t heads,std::int32_t sectorsPerTrack,std::int32_t sectorSize);
-    std::int64_t cylinders()const noexcept{return cylinders_;}std::int32_t heads()const noexcept{return heads_;}std::int32_t sectorsPerTrack()const noexcept{return sectors_;}std::int32_t sectorSize()const noexcept{return size_;}
-    std::int64_t logicalSectorCount()const noexcept{return count_;}std::int64_t capacity()const noexcept{return capacity_;}
-private:
-    std::int64_t cylinders_,count_,capacity_;std::int32_t heads_,sectors_,size_;
-};
+
 class DataRange final {
 public:
     RETROMEDIALAB_MEDIAENGINE_API DataRange(std::int64_t address,std::int64_t length,DataRangeKind,std::shared_ptr<const MediaFileSystems::RandomAccessData> source={},std::int64_t sourceOffset=0);
