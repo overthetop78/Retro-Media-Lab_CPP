@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view OpticalSessionImage="MediaEngine.OpticalSessionImage";
+inline constexpr std::string_view OpticalSessionRange="MediaEngine.OpticalSessionRange";
+inline constexpr std::string_view OpticalSessionClosed="MediaEngine.OpticalSessionClosed";
+inline constexpr std::string_view OpticalSessionCache="MediaEngine.OpticalSessionCache";
 inline constexpr std::string_view WiiUImage="MediaEngine.WiiUImage";
 inline constexpr std::string_view WuxHeader="MediaEngine.WuxHeader";
 inline constexpr std::string_view WuxIndex="MediaEngine.WuxIndex";

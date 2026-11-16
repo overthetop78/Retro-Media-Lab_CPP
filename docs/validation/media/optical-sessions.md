@@ -1,0 +1,11 @@
+# Validation du cœur des sessions optiques
+
+Le 16 novembre 2026 : compilation Debug MSVC x64 réussie, sans avertissement observé (`build/optical-session-build.log`). Les 30 DLL de catalogues compilent (`build/optical-session-catalogs.log`). Quatre erreurs sont générées par Argos dans les 29 langues puis relues/corrigées, notamment sens de session fermée, traduction de média/piste, tampons et chinois traditionnel. Audit : PASS 1177 fichiers C++ (`build/optical-session-audit.log`).
+
+Le contrôle natif temporaire réussit : `PASS optical sidecar conventions/sequencing/pregap/padding and session summaries/loops/streaming/cache/cancellation/close/source lifetime` (`build/optical-session-smoke.log`).
+
+Les fixtures WAVE vérifient numérotation à partir de 02 et séquence 03, séparateur espace-tiret-espace avec numéros non complétés 1/2, ordre des pistes, 150 secteurs de pregap stocké détecté, 150 de pregap déclaré, postgap initial, contenu du secteur audio et absence d’ajout à une image multipiste ou à extension non concernée. Un fichier WAVE invalide est propagé sans modifier le document original. Un petit Ogg existant de LogiCapture est fourni en argument et copié uniquement dans le répertoire temporaire : le dernier secteur partiel conserve 240 octets PCM et complète le reste de zéros.
+
+Les sessions vérifient résumé et boucles, priorité de NOLOOP sur le repli du document, lecture de pregap stocké, refus de pregap non stocké, caches de secteurs et sous-canaux. Une source instrumentée annule le précache pendant le décodage : une lecture ultérieure appelle encore cette source (aucun cache partiel publié), puis le précache réussi élimine les accès streaming pour les lectures contrôlées. Les bornes de piste/secteur, fermeture répétée et future exécutée après fermeture sont contrôlées. Un weak_ptr confirme la libération de la dernière référence aux sources détenues après close ; un document nul est refusé.
+
+Les projets, binaires, WAVE, Ogg et autres fixtures temporaires sont supprimés après consignation. Aucun média n’est intégré au dépôt ni aucun test au workflow GitHub. L’ouverture par chemin via la composition globale et la conversion optique restent à réaliser ; elles ne sont pas couvertes ou déclarées validées par ce contrôle du cœur de session.

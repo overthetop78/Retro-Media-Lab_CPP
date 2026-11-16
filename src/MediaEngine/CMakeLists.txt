@@ -1,6 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Optical/BinCue/Sheet.cpp
   src/Formats/Optical/BinCue/SheetWriter.cpp
+  src/Images/Optical/CompanionAudio.cpp
+  src/Images/Optical/DiscSession.cpp
   src/Formats/Optical/WiiU/Container.cpp
   src/Formats/Optical/WiiU/Reader.cpp
   src/Formats/Optical/WiiU/Writer.cpp

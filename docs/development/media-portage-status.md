@@ -56,6 +56,8 @@ La tâche 156 porte Alcohol MDS/MDF : structures binaires séparées du reader, 
 
 La tâche 157 porte Wii U WUD/WUX et Xbox XDVDFS : source indexée WUX possédée, blocs dédupliqués SHA256 et writer atomique sans deuxième temporaire ; descripteur XDVDFS, piste et volume correctement relié à l’identifiant MFS existant. Readers/writers, contrôle ciblé, compilation Debug, audit et catalogues réussis. L’exploration Xbox reste dans MFS ; la composition globale reste distincte.
 
+La tâche 158 est partielle : audio associé explicite, résumé public indépendant de MFS, cœur des sessions, boucles, secteurs/pregaps/sous-canaux, précache transactionnel et fermeture RAII portés. Compilation Debug, contrôle ciblé, audit et catalogues réussis. L’ouverture par chemin et la conversion optique attendent les services/compositions globaux ; aucun registre parallèle ne les remplace.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.
