@@ -60,6 +60,8 @@ La tâche 158 est partielle : audio associé explicite, résumé public indépen
 
 La tâche 159 porte le modèle séquentiel, les profils PCM entiers, extraction et encodage 8/16/24/32 bits, pulsations/silence et lecteur/writer RAW explicite atomique. Compilation Debug, contrôle ciblé, audit et catalogues réussis. MediaTapeSignal et le raccordement au service global restent distincts.
 
+La tâche 160 porte le RIFF/WAVE séquentiel : profil PCM natif jusqu’à 32 canaux, chunks multiples/inconnus, sources partagées, métadonnées et writer atomique sans rééchantillonnage. Les remplissages impairs et trames incomplètes de sortie sont sécurisés. Compilation, contrôle ciblé, catalogues et audit réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

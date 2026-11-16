@@ -78,7 +78,7 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Constants/TimeUnitConstants.cs,11,06d0
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/TzxConstants.cs,52,96e09ebd2109617f8fb0b4f80ebca035361c98a521844d9f9379be84bfd045cb,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/UcsdDiskImageFormatIds.cs,10,513a4c5a468e05bafc9590d138a3d7d921109e3e0c060c3d0f7be401559826e3,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/UefConstants.cs,84,32cc2ac39871da9a2728a67c7c63ce27541a3c6afe6bdd37000ba1a51cf3b2f0,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Constants/WavConstants.cs,19,23704e0bf2c759204b18b4933fa09613af6e5e907e6ad659c5542803e6adfca2,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Constants/WavConstants.cs,19,23704e0bf2c759204b18b4933fa09613af6e5e907e6ad659c5542803e6adfca2,porte; RIFF WAVE PCM sequentiel sans perte; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Wav/Constants.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Explorer/DiskContentMetadata.cs,11,cdcfb1e69c20cc7253b1b364e3e1d9d226cfe9e010b545eca9b76e0d8c85314e,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Explorer/DiskImageContractData.cs,301,2a5284c6d382a2d6c40830ec88a6b38624c09aa75a6a07e2e0b81add48945565,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Explorer/DiskImageMetadata.cs,22,d2b169896b3796f1c360d41b7ab08e4b417e23f0b974144429b9837daee1c1d1,non porte,,
@@ -694,9 +694,9 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Uef/UefReader.cs,1
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Uef/UefWriter.cs,124,436478cee3916efdc907ae2ca6e860e4832e9802421c11ac4240f8237367be3a,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Voc/VocReader.cs,163,a25cb6b117740695f2a88b2e823e3fc3b7a0893b5c138205de9af8c0717bdbd1,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Voc/VocWriter.cs,107,c2770517fc7321895581dbe997be38230d3410bd7f2f25d69b2bd2c7d506550d,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeFormat.cs,21,1c4a3f7e6382c55f3787188e2b8a0012a8f192b4fefcffb852992639392120ab,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeReader.cs,147,56615e4d9f045626513f9090f23f3451f21531195bbefb764e976330ff9135fa,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeWriter.cs,117,748860b1e30c425df4c7df545f26038e7489236353ece4ec02dae9c0421f9ca1,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeFormat.cs,21,1c4a3f7e6382c55f3787188e2b8a0012a8f192b4fefcffb852992639392120ab,porte; RIFF WAVE PCM sequentiel sans perte; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Wav/Constants.h;src/MediaEngine/src/Formats/Tape/Wav/Reader.cpp;src/MediaEngine/src/Formats/Tape/Wav/Writer.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeReader.cs,147,56615e4d9f045626513f9090f23f3451f21531195bbefb764e976330ff9135fa,porte; RIFF WAVE PCM sequentiel sans perte; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Wav/Reader.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Wav/WavTapeWriter.cs,117,748860b1e30c425df4c7df545f26038e7489236353ece4ec02dae9c0421f9ca1,porte; RIFF WAVE PCM sequentiel sans perte; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Wav/Writer.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Models/Blocks/BlockMediaImageRepresentation.cs,103,4024cf48fc9949a5fa90b9fd597c002851275539a519bd592a9c4ab971afac01,porte; compilation Debug et controle cible blocs/RAII; validation globale en cours,,src/MediaEngine/src/Models/Blocks/Ranges.cpp;src/MediaEngine/src/Models/Blocks/BlockImage.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Models/Flux/EncodedTrackImageFactory.cs,15,3f3b5893a46409dfedf246b5bc6748d853c8e39b60c03b61a6ecda49da6efc8c,porte; bloc 30; comparaison C# Debug/Release,,src/MediaEngine/src/Encoding/ProtectedImage.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Models/Flux/FluxBitReader.cs,123,ed5961337fbd1ebbcf3f414a62bf32b37b274ecaabf063e3dac35ab8b045a960,porte; plages bornees; sequences et diagnostic de nombre invalide,,src/MediaEngine/src/Models/Flux/BitReader.h; src/MediaEngine/src/Models/Flux/BitReader.cpp

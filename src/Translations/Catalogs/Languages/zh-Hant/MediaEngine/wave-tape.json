@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "僅支援整數 PCM WAVE，聲道數為 1 至 32，取樣率為 1 至 768000 Hz，每個樣本為 8、16、24 或 32 位元。",
+    "MediaEngine.WaveTapeWrite": "循序文件無法在不遺失資料的情況下寫成整數 PCM WAVE，或超過 RIFF 的 32 位元長度限制。",
+    "MediaEngine.WaveTapeTrailing": "RIFF 容器之後的位元組未經解讀。"
+  }
+}

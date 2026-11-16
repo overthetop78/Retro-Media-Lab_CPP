@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "Endast integer PCM WAVE med 1 till 32 kanaler, en provfrekvens från 1 till 768000 Hz och 8, 16, 24 eller 32 bitar per prov stöds.",
+    "MediaEngine.WaveTapeWrite": "Det sekventiella dokumentet kan inte skrivas som heltal PCM WAVE utan dataförlust, eller det överstiger RIFF 32-bitars längdgränsen.",
+    "MediaEngine.WaveTapeTrailing": "Bytes efter RIFF-behållaren tolkades inte."
+  }
+}

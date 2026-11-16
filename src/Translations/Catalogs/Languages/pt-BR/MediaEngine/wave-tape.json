@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "Apenas inteiro PCM WAVE com 1 a 32 canais, uma taxa de amostra de 1 a 768000 Hz e 8, 16, 24 ou 32 bits por amostra é suportada.",
+    "MediaEngine.WaveTapeWrite": "O documento sequencial não pode ser escrito como inteiro PCM WAVE sem perda de dados, ou excede o limite de 32 bits de comprimento RIFF.",
+    "MediaEngine.WaveTapeTrailing": "Bytes após o recipiente RIFF não foram interpretados."
+  }
+}

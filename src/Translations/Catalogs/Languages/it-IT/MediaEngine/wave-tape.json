@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "È supportato solo PCM WAVE integer con canali 1 a 32, una frequenza di campionamento da 1 a 768000 Hz e 8, 16, 24 o 32 bit per campione.",
+    "MediaEngine.WaveTapeWrite": "Il documento sequenziale non può essere scritto come integer PCM WAVE senza perdita di dati, o supera il limite di lunghezza di 32 bit RIFF.",
+    "MediaEngine.WaveTapeTrailing": "I byte che seguono il contenitore RIFF non sono stati interpretati."
+  }
+}

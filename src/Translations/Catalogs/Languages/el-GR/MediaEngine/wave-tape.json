@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "Υποστηρίζεται μόνο ακέραιος PCM WAVE με 1 έως 32 κανάλια, ποσοστό δείγματος από 1 έως 768000 Hz και 8, 16, 24 ή 32 bits ανά δείγμα.",
+    "MediaEngine.WaveTapeWrite": "Το διαδοχικό έγγραφο δεν μπορεί να γραφτεί ως ακέραιο PCM WAVE χωρίς απώλεια δεδομένων, ή υπερβαίνει το όριο μήκους RIFF 32-bit.",
+    "MediaEngine.WaveTapeTrailing": "Τα bytes που ακολουθούν το δοχείο RIFF δεν ερμηνεύτηκαν."
+  }
+}

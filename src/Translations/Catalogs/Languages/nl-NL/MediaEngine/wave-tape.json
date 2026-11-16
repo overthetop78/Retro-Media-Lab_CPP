@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "Alleen integer PCM WAVE met 1 tot 32 kanalen, een sample rate van 1 tot 768000 Hz en 8, 16, 24 of 32 bits per sample wordt ondersteund.",
+    "MediaEngine.WaveTapeWrite": "Het sequentiële document kan niet worden geschreven als integer PCM WAVE zonder verlies van gegevens, of het overschrijdt de RIFF 32-bit lengte limiet.",
+    "MediaEngine.WaveTapeTrailing": "Bytes na de RIFF container werden niet geïnterpreteerd."
+  }
+}

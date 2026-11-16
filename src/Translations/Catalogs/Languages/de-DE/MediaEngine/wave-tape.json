@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "Nur ganzzahlige PCM WAVE mit 1 bis 32 Kanälen, einer Abtastrate von 1 bis 768000 Hz und 8, 16, 24 oder 32 Bit pro Abtastwert wird unterstützt.",
+    "MediaEngine.WaveTapeWrite": "Das sequentielle Dokument kann nicht als Integer PCM WAVE ohne Datenverlust geschrieben werden, oder es überschreitet die RIFF 32-Bit Längengrenze.",
+    "MediaEngine.WaveTapeTrailing": "Bytes, die dem RIFF-Container folgen, wurden nicht interpretiert."
+  }
+}

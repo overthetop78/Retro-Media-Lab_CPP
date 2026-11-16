@@ -1,0 +1,7 @@
+{
+  "strings": {
+    "MediaEngine.WaveTapeProfile": "لا يُدعم إلا PCM WAVE بأعداد صحيحة، من 1 إلى 32 قناة، ومعدل أخذ عينات من 1 إلى 768000 Hz، وعمق 8 أو 16 أو 24 أو 32 بت لكل عينة.",
+    "MediaEngine.WaveTapeWrite": "لا يمكن كتابة المستند التسلسلي بصيغة PCM WAVE بأعداد صحيحة دون فقد بيانات، أو أنه يتجاوز حد طول RIFF ذي 32 بت.",
+    "MediaEngine.WaveTapeTrailing": "لم تُفسَّر البايتات التي تلي حاوية RIFF."
+  }
+}
