@@ -4,6 +4,11 @@
 namespace RetroMediaLab::MediaFileSystems {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch (code) {
+    case DiagnosticCode::MigrationTargetId:return DiagnosticKeys::MigrationTargetId;
+    case DiagnosticCode::MigrationTargetMismatch:return DiagnosticKeys::MigrationTargetMismatch;
+    case DiagnosticCode::MigrationLimits:return DiagnosticKeys::MigrationLimits;
+    case DiagnosticCode::MigrationBlocked:return DiagnosticKeys::MigrationBlocked;
+
     case DiagnosticCode::SequentialBlockPosition:return DiagnosticKeys::SequentialBlockPosition;
     case DiagnosticCode::SequentialFileInvalid:return DiagnosticKeys::SequentialFileInvalid;
     case DiagnosticCode::SequentialAnonymous:return DiagnosticKeys::SequentialAnonymous;
@@ -473,6 +478,10 @@ case DiagnosticCode::AmigaFileSize:return DiagnosticKeys::AmigaFileSize;
 }
 ErrorKind diagnosticErrorKind(DiagnosticCode code) noexcept {
     switch(code) {
+    case DiagnosticCode::MigrationTargetId:return ErrorKind::InvalidArgument;
+    case DiagnosticCode::MigrationTargetMismatch:return ErrorKind::InvalidArgument;
+    case DiagnosticCode::MigrationLimits:return ErrorKind::ArgumentOutOfRange;
+    case DiagnosticCode::MigrationBlocked:return ErrorKind::Other;
     case DiagnosticCode::SequentialBlockPosition:return ErrorKind::ArgumentOutOfRange;
     case DiagnosticCode::SequentialFileInvalid:return ErrorKind::InvalidData;
     case DiagnosticCode::SequentialAnonymous:return ErrorKind::InvalidData;

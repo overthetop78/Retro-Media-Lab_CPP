@@ -1432,6 +1432,8 @@
     <ClInclude Include="src\MediaFileSystems\src\FileSystems\Xbox\Xdvdfs\Constants.h" />
     <ClCompile Include="src\MediaFileSystems\src\FileSystems\Xbox\Xdvdfs\Reader.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Formats\Commodore\Geometry.cpp" />
+    <ClInclude Include="src\MediaFileSystems\src\Migration\Constants.h" />
+    <ClCompile Include="src\MediaFileSystems\src\Migration\Planning.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Partitioning\Gpt.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Partitioning\Helpers.h" />
     <ClCompile Include="src\MediaFileSystems\src\Partitioning\Mbr.cpp" />
@@ -1635,6 +1637,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\optical-models.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\prodos-timestamp.json" />

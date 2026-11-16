@@ -712,6 +712,9 @@
     <Filter Include="src\MediaFileSystems\src\Formats\Commodore">
       <UniqueIdentifier>{3CD4FD90-B139-518C-A253-B014F695C783}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaFileSystems\src\Migration">
+      <UniqueIdentifier>{E1A389D5-250D-574D-960B-A83139037EB0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaFileSystems\src\Partitioning">
       <UniqueIdentifier>{20176D7A-5ADB-5D2E-829D-9EDD713BCAD2}</UniqueIdentifier>
     </Filter>
@@ -5967,6 +5970,12 @@
     <ClCompile Include="src\MediaFileSystems\src\Formats\Commodore\Geometry.cpp">
       <Filter>src\MediaFileSystems\src\Formats\Commodore</Filter>
     </ClCompile>
+    <ClInclude Include="src\MediaFileSystems\src\Migration\Constants.h">
+      <Filter>src\MediaFileSystems\src\Migration</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaFileSystems\src\Migration\Planning.cpp">
+      <Filter>src\MediaFileSystems\src\Migration</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Partitioning\Gpt.cpp">
       <Filter>src\MediaFileSystems\src\Partitioning</Filter>
     </ClCompile>
@@ -6574,6 +6583,9 @@
       <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\optical-filesystems.json">

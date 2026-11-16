@@ -478,3 +478,10 @@ inline constexpr std::string_view StRawLength="MediaFileSystems.StRawLength";
 inline constexpr std::string_view StRawGeometry="MediaFileSystems.StRawGeometry";
 inline constexpr std::string_view StRawCapacity="MediaFileSystems.StRawCapacity";
 }
+
+namespace RetroMediaLab::MediaFileSystems::DiagnosticKeys {
+inline constexpr std::string_view MigrationTargetId="MediaFileSystems.MigrationTargetId";
+inline constexpr std::string_view MigrationTargetMismatch="MediaFileSystems.MigrationTargetMismatch";
+inline constexpr std::string_view MigrationLimits="MediaFileSystems.MigrationLimits";
+inline constexpr std::string_view MigrationBlocked="MediaFileSystems.MigrationBlocked";
+}
