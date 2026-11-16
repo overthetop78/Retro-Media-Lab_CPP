@@ -71,7 +71,7 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Constants/OpticalSectorConstants.cs,17
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/PartitionTableIds.cs,8,c4a7476baa372cb4b83651b7bdb724dac464e7935885915ef91588713217b90a,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/RareDiskImageFormatIds.cs,20,a1ffea2bf4afd5445ea52365924018d78ccf2f9e3861419248c75110261e65b8,porte; identifiants quatorze formats rares; bloc 61,,src/MediaEngine/src/Formats/FormatIds.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/RecordedMechanicalSoundConstants.cs,33,01c88014c5628e093bf5fe158365ae6f8fce50d13ecafef1cf266723a25331ed,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Constants/SimhTapeConstants.cs,21,ea4cf81dcbd42b7ba93d35bfa41b1a0d8eca9607705ff517e3d37d22aa266f57,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Constants/SimhTapeConstants.cs,21,ea4cf81dcbd42b7ba93d35bfa41b1a0d8eca9607705ff517e3d37d22aa266f57,porte; objets records et marqueurs SIMH; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Simh/Constants.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/SpectrumTapConstants.cs,25,ab7af74fc9d705d091b2e6e9b8369a10561f7a9e7ea692b310ee80eab6b536b2,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/TapeImageFormatIds.cs,19,6cf1ec8cc21109c8f94fb40ca31203322c5a3cebda94451e1fc411efee09174b,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/TimeUnitConstants.cs,11,06d05704fd2ae757ab7e7200aa2263b093f9572345f1245968337aa1467abd27,non porte,,
@@ -680,9 +680,9 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/MsxCas/MsxCasWrite
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Raw/RawTapeReader.cs,32,3a0f2d0b7a34aebfb3bc96e08dd49dad3a5b531a64e53633f96e17a15e6a9eed,porte; modele sequentiel PCM entier et RAW; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Raw/Reader.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Raw/RawTapeWriter.cs,28,d8749f7833becbe248e34924a2c0cbae1b8c6f5f905bd9d4d2f5979b904abb77,porte; modele sequentiel PCM entier et RAW; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Raw/Writer.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/SequentialMediaComposition.cs,52,acc2134c4e3f912399e1517b75d037bbd034b1830404d0acbf4e643800eb1b2e,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeFormat.cs,12,b9a3c9abc68d0d486c4904443c1f1df44565f09f32b11370199a7658c394c15c,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeReader.cs,141,702a50dbe9d686787dc0d42d5ade943388a575c9deca8255817385bd665af415,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeWriter.cs,107,4335f3d7934dcb13e5340356f0e0680aabaa6dc25e4c27000418232eada19a9e,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeFormat.cs,12,b9a3c9abc68d0d486c4904443c1f1df44565f09f32b11370199a7658c394c15c,porte; objets records et marqueurs SIMH; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Simh/Constants.h;src/MediaEngine/src/Formats/Tape/Simh/Reader.cpp;src/MediaEngine/src/Formats/Tape/Simh/Writer.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeReader.cs,141,702a50dbe9d686787dc0d42d5ade943388a575c9deca8255817385bd665af415,porte; objets records et marqueurs SIMH; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Simh/Parser.cpp;src/MediaEngine/src/Formats/Tape/Simh/Reader.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Simh/SimhTapeWriter.cs,107,4335f3d7934dcb13e5340356f0e0680aabaa6dc25e4c27000418232eada19a9e,porte; objets records et marqueurs SIMH; controle cible reussi,,src/MediaEngine/src/Formats/Tape/Simh/Writer.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/SpectrumTap/SpectrumTapFormat.cs,13,69fac889ec77a71e0892754396cbc0758ada520b21b25e5dd6ae48c1a4672024,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/SpectrumTap/SpectrumTapReader.cs,123,5c6a4a8ab019527860003674475bb870f70c8829b4d64bc584502cce94849dc8,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/SpectrumTap/SpectrumTapWriter.cs,66,0fa00d50eef0d658d33e5c2e86b9f7c5e01597d3b1be6bfb9283f3f7ed9c1645,non porte,,

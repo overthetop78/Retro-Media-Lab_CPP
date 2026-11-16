@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.SimhData": "SIMH 磁带对象字、记录长度、填充或对应的尾随字无效或不完整。",
+    "MediaEngine.SimhWrite": "顺序文档无法表示为有序 SIMH 磁带对象而不隐藏介质结束标记之后的记录。",
+    "MediaEngine.SimhTrailing": "SIMH 逻辑介质结束标记之后有 {0} 个物理字节。",
+    "MediaEngine.SimhRecordError": "SIMH 记录 {0} 被标记为包含错误。"
+  }
+}

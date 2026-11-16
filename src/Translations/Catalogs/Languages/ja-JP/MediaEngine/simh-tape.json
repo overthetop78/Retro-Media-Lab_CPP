@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.SimhData": "SIMHテープのオブジェクトワード、レコード長、パディング、または対応する終端ワードが無効か不完全です。",
+    "MediaEngine.SimhWrite": "順次ドキュメントは、媒体終端マーカーより後のレコードを隠さずに、順序付きSIMHテープオブジェクトとして表現できません。",
+    "MediaEngine.SimhTrailing": "SIMHの論理媒体終端マーカーより後に物理バイトが{0}バイトあります。",
+    "MediaEngine.SimhRecordError": "SIMHレコード{0}はエラーを含むとマークされています。"
+  }
+}

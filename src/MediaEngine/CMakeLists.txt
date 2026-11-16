@@ -5,7 +5,10 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Tape/Common/PcmProfile.cpp
   src/Formats/Tape/Common/PcmSamples.cpp
   src/Formats/Tape/Common/PcmDocument.cpp
-  src/Formats/Tape/Voc/Reader.cpp
+  src/Formats/Tape/Simh/Parser.cpp
+    src/Formats/Tape/Simh/Reader.cpp
+    src/Formats/Tape/Simh/Writer.cpp
+    src/Formats/Tape/Voc/Reader.cpp
     src/Formats/Tape/Voc/Writer.cpp
     src/Formats/Tape/Wav/Reader.cpp
     src/Formats/Tape/Wav/Writer.cpp

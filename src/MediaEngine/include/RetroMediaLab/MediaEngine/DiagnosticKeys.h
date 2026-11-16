@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SimhData="MediaEngine.SimhData";
+inline constexpr std::string_view SimhWrite="MediaEngine.SimhWrite";
+inline constexpr std::string_view SimhTrailing="MediaEngine.SimhTrailing";
+inline constexpr std::string_view SimhRecordError="MediaEngine.SimhRecordError";
 inline constexpr std::string_view VocData="MediaEngine.VocData";
 inline constexpr std::string_view VocProfile="MediaEngine.VocProfile";
 inline constexpr std::string_view VocWrite="MediaEngine.VocWrite";
