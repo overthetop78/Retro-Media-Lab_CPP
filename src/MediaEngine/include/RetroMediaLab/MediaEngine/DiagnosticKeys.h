@@ -1017,4 +1017,8 @@ inline constexpr std::string_view Fat12MissingSectors="MediaEngine.Fat12MissingS
 inline constexpr std::string_view VisualizationValue="MediaEngine.VisualizationValue";
 inline constexpr std::string_view VisualizationReference="MediaEngine.VisualizationReference";
 inline constexpr std::string_view VisualizationProvider="MediaEngine.VisualizationProvider";
+inline constexpr std::string_view PhysicalContract="MediaEngine.PhysicalContract";
+inline constexpr std::string_view PhysicalMetadata="MediaEngine.PhysicalMetadata";
+inline constexpr std::string_view PhysicalFluxResolution="MediaEngine.PhysicalFluxResolution";
+inline constexpr std::string_view PhysicalRevolution="MediaEngine.PhysicalRevolution";
 }

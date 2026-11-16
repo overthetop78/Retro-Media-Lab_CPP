@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/PhysicalMedia/Contracts.cpp
+    src/PhysicalMedia/Tape.cpp
+    src/PhysicalMedia/Floppy.cpp
+    src/PhysicalMedia/FloppyPlanning.cpp
     src/Services/Utilities.cpp
     src/Services/FileTraversal.cpp
     src/Formats/Catalog/Workspace.cpp

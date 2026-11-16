@@ -1019,6 +1019,10 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::VisualizationValue:return DiagnosticKeys::VisualizationValue;
     case DiagnosticCode::VisualizationReference:return DiagnosticKeys::VisualizationReference;
     case DiagnosticCode::VisualizationProvider:return DiagnosticKeys::VisualizationProvider;
+    case DiagnosticCode::PhysicalContract:return DiagnosticKeys::PhysicalContract;
+    case DiagnosticCode::PhysicalMetadata:return DiagnosticKeys::PhysicalMetadata;
+    case DiagnosticCode::PhysicalFluxResolution:return DiagnosticKeys::PhysicalFluxResolution;
+    case DiagnosticCode::PhysicalRevolution:return DiagnosticKeys::PhysicalRevolution;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;
