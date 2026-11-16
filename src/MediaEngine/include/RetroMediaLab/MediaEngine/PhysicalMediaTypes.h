@@ -14,6 +14,7 @@
 #include <string_view>
 #include <vector>
 namespace RetroMediaLab::MediaEngine {
+struct PhysicalReadingState;
 using PhysicalMetadata=std::map<std::string,std::string>;
 class PhysicalDataUnit final {
 public:
@@ -37,12 +38,14 @@ private:
 };
 class PhysicalAcquisitionProgress final {
 public:
- RETROMEDIALAB_MEDIAENGINE_API PhysicalAcquisitionProgress(int completed,int total,int attempt,std::optional<PhysicalDataUnit> unit={},PhysicalMetadata={});
+ RETROMEDIALAB_MEDIAENGINE_API PhysicalAcquisitionProgress(int completed,int total,int attempt,std::optional<PhysicalDataUnit> unit={},PhysicalMetadata={},std::shared_ptr<const PhysicalReadingState> readingState={});
  int completedUnits()const noexcept{return completed_;}int totalUnits()const noexcept{return total_;}int attempt()const noexcept{return attempt_;}
  const std::optional<PhysicalDataUnit>& acquiredUnit()const noexcept{return unit_;}
  const PhysicalMetadata& metadata()const noexcept{return metadata_;}
+ const std::shared_ptr<const PhysicalReadingState>& readingState()const noexcept{return readingState_;}
 private:
  int completed_,total_,attempt_;std::optional<PhysicalDataUnit> unit_;PhysicalMetadata metadata_;
+ std::shared_ptr<const PhysicalReadingState> readingState_;
 };
 class PhysicalWritePlan final {
 public:
