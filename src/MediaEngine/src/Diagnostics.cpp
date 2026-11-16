@@ -1011,6 +1011,11 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::ConversionReading:return DiagnosticKeys::ConversionReading;
     case DiagnosticCode::ConversionComplete:return DiagnosticKeys::ConversionComplete;
     case DiagnosticCode::FluxContainerParity:return DiagnosticKeys::FluxContainerParity;
+    case DiagnosticCode::Fat12HybridSource:return DiagnosticKeys::Fat12HybridSource;
+    case DiagnosticCode::Fat12UnsupportedTarget:return DiagnosticKeys::Fat12UnsupportedTarget;
+    case DiagnosticCode::Fat12IncompatibleGeometry:return DiagnosticKeys::Fat12IncompatibleGeometry;
+    case DiagnosticCode::Fat12InvalidBpb:return DiagnosticKeys::Fat12InvalidBpb;
+    case DiagnosticCode::Fat12MissingSectors:return DiagnosticKeys::Fat12MissingSectors;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

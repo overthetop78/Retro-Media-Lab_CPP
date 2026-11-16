@@ -1,0 +1,11 @@
+# Réinterprétation FAT12 et politiques d'interprétation
+
+Sources C# de référence : `Images/Conversion/Fat12/` et `Images/Reading/Recognition/` dans le dépôt en lecture seule.
+
+La réinterprétation sectorielle résout les géométries Atari ST, IBM PC et MSX existantes. Elle refuse une source hybride, une destination inconnue, tout secteur absent ou de taille incorrecte, toute différence de géométrie/capacité et tout BPB ou layout FAT12 incohérent. Elle réutilise les validateurs MFS et les writers natifs ; elle ne migre pas les fichiers et ne réécrit pas les structures FAT. Le renommage de format conserve l'image source. Les cinq diagnostics sont traduits dans les 29 langues avec Argos et relecture/corrections.
+
+`Fat12Conversion.h` expose la surcharge asynchrone sur document sectoriel. Le paramètre hybride reste explicite, comme dans la surcharge sectorielle C#. **La surcharge par chemin n'est pas encore portée** : elle dépend de l'exploration automatique SCP et de l'agrégation de ses interprétations. Elle reste décochée dans la tâche 216 et partielle dans l'inventaire.
+
+`SectorInterpretations` regroupe les registres internes de normalisation et de candidats supplémentaires, avec listes de politiques injectables possédées par valeur. Les normalisations sont essayées dans l'ordre Macintosh, MSX, Atari et s'arrêtent au premier succès. La normalisation Atari reprend la géométrie du BPB et les seuls blocs sous sa limite, avec leurs métadonnées d'origine. Les candidats supplémentaires suivent l'ordre IBM, MSX, formats compatibles et ne s'appliquent qu'aux familles historiquement autorisées en C#. Les vues ne modifient pas leurs secteurs source. Ces politiques sont prêtes pour le raccordement aux explorateurs ; ce document ne prétend pas que leur intégration globale est terminée.
+
+Validation : compilation Debug de MediaEngine réussie ; construction des 30 catalogues réussie ; audit des constantes réussi sur 1 507 fichiers C++ et 29 langues. Un seul programme temporaire a vérifié les trois destinations depuis un FAT12 synthétique de 720 Kio, l'identité des octets écrits, les cinq refus, l'annulation sans sortie, l'ordre des candidats compatibles, la normalisation MSX et la réduction Atari depuis le BPB. Résultat réussi. Programme, médias et journal temporaire supprimés. Aucun codec déjà validé n'a été retesté.

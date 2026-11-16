@@ -1009,4 +1009,9 @@ namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
 inline constexpr std::string_view ConversionReading="MediaEngine.ConversionReading";
 inline constexpr std::string_view ConversionComplete="MediaEngine.ConversionComplete";
 inline constexpr std::string_view FluxContainerParity="MediaEngine.FluxContainerParity";
+inline constexpr std::string_view Fat12HybridSource="MediaEngine.Fat12HybridSource";
+inline constexpr std::string_view Fat12UnsupportedTarget="MediaEngine.Fat12UnsupportedTarget";
+inline constexpr std::string_view Fat12IncompatibleGeometry="MediaEngine.Fat12IncompatibleGeometry";
+inline constexpr std::string_view Fat12InvalidBpb="MediaEngine.Fat12InvalidBpb";
+inline constexpr std::string_view Fat12MissingSectors="MediaEngine.Fat12MissingSectors";
 }

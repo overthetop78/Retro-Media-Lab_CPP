@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "ไม่สามารถตีความอิมเมจดิสก์แบบไฮบริดใหม่เป็นรูปแบบเป้าหมาย FAT12 เดียวได้อย่างปลอดภัย",
+    "MediaEngine.Fat12UnsupportedTarget": "รูปแบบเป้าหมาย '{0}' ไม่ใช่รูปแบบ FAT12 ของ Atari ST, IBM PC หรือ MSX ที่รองรับ",
+    "MediaEngine.Fat12IncompatibleGeometry": "โครงสร้างทางกายภาพ FAT12 ของ '{0}' ไม่ตรงกับ '{1}' อย่างสมบูรณ์",
+    "MediaEngine.Fat12InvalidBpb": "อิมเมจ '{0}' ไม่มี BPB และโครงสร้าง FAT12 ที่ครบถ้วนและสอดคล้องกัน",
+    "MediaEngine.Fat12MissingSectors": "อิมเมจ '{0}' มีเซกเตอร์ที่ขาดหายไป จึงไม่สามารถตีความใหม่ได้อย่างปลอดภัย"
+  }
+}

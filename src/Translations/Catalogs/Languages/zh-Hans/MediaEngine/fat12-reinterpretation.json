@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "混合磁盘映像无法安全地重新解释为单一的 FAT12 目标格式。",
+    "MediaEngine.Fat12UnsupportedTarget": "目标格式“{0}”不是受支持的 Atari ST、IBM PC 或 MSX FAT12 格式。",
+    "MediaEngine.Fat12IncompatibleGeometry": "“{0}”的 FAT12 几何结构与“{1}”不完全兼容。",
+    "MediaEngine.Fat12InvalidBpb": "映像“{0}”不包含完整且一致的 FAT12 BPB 和布局。",
+    "MediaEngine.Fat12MissingSectors": "映像“{0}”缺少扇区，无法安全地重新解释。"
+  }
+}

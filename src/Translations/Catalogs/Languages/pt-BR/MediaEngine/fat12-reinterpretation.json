@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "Uma imagem de disco híbrido não pode ser reinterpretada com segurança como um único alvo FAT12.",
+    "MediaEngine.Fat12UnsupportedTarget": "O formato alvo '{0}' não é um formato compatível Atari ST, IBM PC ou MSX FAT12.",
+    "MediaEngine.Fat12IncompatibleGeometry": "A geometria FAT12 de '{0}' não é exatamente compatível com '{1}'.",
+    "MediaEngine.Fat12InvalidBpb": "A imagem '{0}' não contém um BPB e uma estrutura FAT12 completos e consistentes.",
+    "MediaEngine.Fat12MissingSectors": "A imagem '{0}' está faltando setores e não pode ser reinterpretada com segurança."
+  }
+}

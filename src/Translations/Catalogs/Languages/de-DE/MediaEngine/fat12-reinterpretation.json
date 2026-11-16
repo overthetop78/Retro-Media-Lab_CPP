@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "Ein Hybrid-Disk-Image kann nicht sicher als einzelnes FAT12-Ziel neu interpretiert werden.",
+    "MediaEngine.Fat12UnsupportedTarget": "Das Zielformat '{0}' ist kein unterstütztes Atari ST, IBM PC oder MSX FAT12 Format.",
+    "MediaEngine.Fat12IncompatibleGeometry": "Die FAT12-Geometrie von '{0}' ist nicht genau kompatibel mit '{1}'.",
+    "MediaEngine.Fat12InvalidBpb": "Das Bild '{0}' enthält kein vollständiges, konsistentes FAT12 BPB und Layout.",
+    "MediaEngine.Fat12MissingSectors": "Im Abbild '{0}' fehlen Sektoren; es kann nicht sicher neu interpretiert werden."
+  }
+}

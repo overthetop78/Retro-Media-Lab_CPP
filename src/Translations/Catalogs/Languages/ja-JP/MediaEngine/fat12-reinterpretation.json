@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "ハイブリッドディスクイメージを単一の FAT12 形式として安全に再解釈することはできません。",
+    "MediaEngine.Fat12UnsupportedTarget": "対象形式 '{0}' は、対応する Atari ST、IBM PC、MSX の FAT12 形式ではありません。",
+    "MediaEngine.Fat12IncompatibleGeometry": "'{0}' の FAT12 ジオメトリは '{1}' と完全には一致しません。",
+    "MediaEngine.Fat12InvalidBpb": "イメージ '{0}' に完全で整合性のある FAT12 BPB とレイアウトがありません。",
+    "MediaEngine.Fat12MissingSectors": "イメージ '{0}' には欠落したセクターがあり、安全に再解釈できません。"
+  }
+}

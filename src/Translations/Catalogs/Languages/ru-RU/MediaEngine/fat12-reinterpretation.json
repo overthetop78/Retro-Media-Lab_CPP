@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "Гибридный образ диска нельзя безопасно переинтерпретировать как единственный целевой формат FAT12.",
+    "MediaEngine.Fat12UnsupportedTarget": "Целевой формат '{0}' не является поддерживаемым форматом FAT12 для Atari ST, IBM PC или MSX.",
+    "MediaEngine.Fat12IncompatibleGeometry": "Геометрия FAT12 образа '{0}' не полностью совместима с '{1}'.",
+    "MediaEngine.Fat12InvalidBpb": "Образ '{0}' не содержит полного и согласованного BPB и структуры FAT12.",
+    "MediaEngine.Fat12MissingSectors": "В образе '{0}' отсутствуют секторы, поэтому его нельзя безопасно переинтерпретировать."
+  }
+}

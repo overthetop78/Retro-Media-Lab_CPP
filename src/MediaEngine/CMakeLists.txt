@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Recognition/Interpretations.cpp
+  src/Images/Conversion/Fat12.cpp
+  src/Images/Conversion/Fat12Facade.cpp
   src/Images/Conversion/FluxContainers.cpp
   src/Images/Conversion/FluxParity.cpp
   src/Images/Conversion/Optical.cpp

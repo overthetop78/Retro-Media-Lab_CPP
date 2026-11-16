@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.Fat12HybridSource": "Hybridní obraz disku nelze bezpečně reinterpretovat jako jediný cíl FAT12.",
+    "MediaEngine.Fat12UnsupportedTarget": "Cílový formát \"{0}\" není podporovaný formát Atari ST, IBM PC nebo MSX FAT12.",
+    "MediaEngine.Fat12IncompatibleGeometry": "Geometrie FAT12 \"{0}\" není přesně kompatibilní s \"{1}\".",
+    "MediaEngine.Fat12InvalidBpb": "Obrázek '{0}' neobsahuje kompletní, konzistentní FAT12 BPB a rozložení.",
+    "MediaEngine.Fat12MissingSectors": "V obrazu '{0}' chybí sektory, proto jej nelze bezpečně reinterpretovat."
+  }
+}
