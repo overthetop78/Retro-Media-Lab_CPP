@@ -8091,6 +8091,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PcmPlaybackSession.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMedia.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8175,6 +8178,12 @@
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Service.cpp">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Audio\Playback.cpp">
+      <Filter>src\MediaEngine\src\Audio</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Audio\PlaybackConstants.h">
+      <Filter>src\MediaEngine\src\Audio</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h">
       <Filter>src\MediaEngine\src\Codecs\Aed6200p</Filter>
     </ClInclude>

@@ -2015,6 +2015,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PcmPlaybackSession.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMedia.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMediaIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMediaTypes.h" />
@@ -2043,6 +2044,8 @@
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Service.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Playback.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Audio\PlaybackConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Decoder.cpp" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Encoder.cpp" />
