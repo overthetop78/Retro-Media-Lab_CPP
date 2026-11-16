@@ -4,6 +4,10 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Models/Sequential/Image.cpp
   src/Formats/Tape/Common/PcmProfile.cpp
   src/Formats/Tape/Common/PcmSamples.cpp
+  src/Formats/Tape/Common/PcmSignal.cpp
+  src/Formats/Tape/Common/UefSignal.cpp
+  src/Formats/Tape/Common/UefDocument.cpp
+  src/Models/Sequential/TapeSignal.cpp
   src/Formats/Tape/Common/PcmDocument.cpp
   src/Formats/Tape/Simh/Parser.cpp
     src/Formats/Tape/Simh/Reader.cpp

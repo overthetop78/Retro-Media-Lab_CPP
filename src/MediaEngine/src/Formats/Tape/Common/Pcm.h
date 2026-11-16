@@ -1,5 +1,6 @@
 #pragma once
 #include "PcmConstants.h"
+#include "../../../Models/Sequential/TapeSignal.h"
 #include "../../../Models/Sequential/Image.h"
 #include "../../../Images/MediaDocument.h"
 namespace RetroMediaLab::MediaEngine::TapePcm {
@@ -17,5 +18,6 @@ RETROMEDIALAB_MEDIAENGINE_API void appendSilence(std::vector<std::int16_t>&,int 
 RETROMEDIALAB_MEDIAENGINE_API std::shared_ptr<const MediaDocument> rawDocument(std::shared_ptr<const MediaSource>,std::span<const std::uint8_t>,Profile,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API NativeChannels readChannels(const MediaDocument&,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API std::vector<std::uint8_t> encodeDocument(const MediaDocument&,Profile,std::stop_token={});
+RETROMEDIALAB_MEDIAENGINE_API std::shared_ptr<const MediaDocument> signalDocument(std::shared_ptr<const MediaSource>,std::string format,const MediaTapeSignal&,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API std::shared_ptr<const MediaDocument> signalDocument(std::shared_ptr<const MediaSource>,std::string format,std::span<const std::int16_t>,int sampleRate,std::stop_token={});
 }

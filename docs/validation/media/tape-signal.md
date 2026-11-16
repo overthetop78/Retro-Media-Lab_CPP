@@ -1,0 +1,15 @@
+# Signal de bande commun
+
+Références C# : `Contracts/MediaTapeSignal.cs`, `Functions/TapePcmFunctions.cs` et parties `UefAsync`, `UefDocument`, `WaveAsync` de `Functions/TapeSignalFunctions.cs`, dans le dépôt `F:/GW GUI` inchangé. SHA vérifiés dans l’inventaire.
+
+Les signaux PCM mono 16 bits et leurs blocs sont possédés et immuables ; leurs copies partagent les octets possédés sans dépendre d’un tampon mutable de l’appelant. Les repères/blocs facultatifs distinguent absence et collection vide, et l’intégrité garde ses trois états. Les cadences non positives et positions négatives sont refusées. L’adaptation vers le document PCM réutilise le chemin existant ; l’extraction du signal prend exactement le canal zéro comme le C#, sans rééchantillonnage et avec réduction des précisions natives.
+
+La synthèse UEF/Atom produit 48000 Hz, avec cumul des fractions d’échantillon et arrondi au pair. Elle reprend les trames implicites/explicites/définies, parité, stop négatif, Atom, porteuses avec octet factice, gaps, cycles de sécurité partiels/rapides et phase. Les débits série acceptés restent 300 et 1200. La limite de 128 millions d’échantillons est appliquée avant insertion. Les métadonnées/tailles non valides et les chunks signal inconnus sont refusés. Les repères suivent l’ordre de première apparition, y compris si une position est réutilisée.
+
+Le chemin PCM → UEF reprend la conservation des passages par zéro, silences, cycles entiers et demi-cycles du C#. L’amplitude analogique ne fait pas partie de cette représentation ; le retour normalise les niveaux à ±16000. Le contexte fréquence/débit/phase est également joint aux chunks produits, permettant leur synthèse directe en mémoire ; le C# ne produisait que l’identifiant de chunk et imposait une écriture/relecture pour rétablir ce contexte. Le flux binaire écrit reste inchangé par ces métadonnées annexes. Le cas d’un chunk explicite d’un seul octet suit le C# sans itérer un compte négatif ; le C++ évite son passage involontaire à un entier non signé.
+
+Compilation Debug réussie sans avertissement. Contrôle ciblé PASS : propriété et copies immuables, premier canal natif 8 bits stéréo, conversion PCM 16 bits, longueur des trames et parité/stop, phase, cycles partiels, porteuses/gaps, repères réutilisés, métadonnées/limites invalides, signal arbitraire avec retour exact des polarités et durées à 48000 Hz, écriture/relecture gzip, signal vide, reconstruction réelle Atom TAP et annulation. Aucun média utilisateur ; banc temporaire et artefacts supprimés.
+
+Les cinq diagnostics sont générés avec Argos dans les 29 langues, relus/corrigés et compilés dans les 30 DLL de catalogues. Audit PASS : 1267 fichiers C++, 56 clés d’erreur App et 29 langues.
+
+Les fonctions globales de lecture/écriture du signal, l’association aux décodeurs, le convertisseur de représentations et la composition automatique restent à porter. Le fichier C# TapeSignalFunctions est donc encore marqué partiel. La validation du signal ne prouve pas encore le raccordement depuis App.

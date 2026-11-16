@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.UefSignalData": "The UEF signal payload or its context metadata is invalid.",
+    "MediaEngine.UefSignalUnsupported": "UEF signal chunk 0x{0} is not supported.",
+    "MediaEngine.UefSignalBaud": "UEF signal baud rate {0} is not supported.",
+    "MediaEngine.UefSignalPulse": "A UEF pulse duration is invalid.",
+    "MediaEngine.UefSignalLimit": "The UEF signal exceeds the supported sample limit."
+  }
+}
