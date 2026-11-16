@@ -10,4 +10,7 @@ inline constexpr double PcmMinimum=-32768;
 inline constexpr std::string_view FlacSignature="fLaC",FloatCodec="pcm_f32le",FloatFormat="f32le",PipeOutput="pipe:1",Filter="-af",StereoToMono="pan=mono|c0=0.5*c0+0.5*c1",FailOnError="-xerror";
 inline constexpr int FlacHeaderBytes=42,MetadataHeader=4,StreamInfoBytes=34,StreamRateOffset=18,StreamRateShift=44,StreamChannelsShift=41,FloatBytes=4,ByteBits=8,ChannelMask=7,MonoChannels=1,StereoChannels=2;
 inline constexpr unsigned MetadataTypeMask=127,MetadataLengthMask=0x00ffffff;
+inline constexpr std::string_view None="None",Play="Play",Record="Record",FastForward="FastForward",Rewind="Rewind",Stop="Stop",Pause="Pause",Eject="Eject",Read="Read",Write="Write",Seek="Seek",Insert="Insert";
+inline constexpr double DriveDefaultVolume=10;
+inline constexpr std::size_t MaximumSeekVoices=32;
 }

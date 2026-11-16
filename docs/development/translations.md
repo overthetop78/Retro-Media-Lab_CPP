@@ -47,3 +47,10 @@ Les erreurs sont dans App/errors.json selon le même mécanisme Constants/Langua
 La protection lexicale traite les invariants en une seule passe, du plus long au plus court, pour éviter les chevauchements. Les paramètres sont protégés même accolés à du texte (par exemple C{0} ou {0}KiB), ainsi que les nombres présents dans la phrase source. Le repli par fragments intervient si Argos altère les tokens. Cette protection ne remplace pas la relecture du sens ; régénérer seulement les catalogues concernés évite d’écraser inutilement les corrections existantes.
 
 Les noms de formats et de systèmes CP/M, UCSD p-System, HFE, MSA, Atari ST et RT-11 sont protégés dans `scripts/translations/ignores/common.txt`. Le relevé de novembre 2026 a corrigé des catalogues où Argos avait modifié ces noms ; leur ajout au fichier commun protège les prochaines générations sans écraser les corrections manuelles existantes.
+
+
+## Ressources Stanza installées et exécution locale
+
+Argos utilise Stanza pour segmenter les textes en phrases. Le script configure maintenant stanza.Pipeline avec download_method=None : il utilise les ressources déjà installées sans rafraîchir resources.json dans leurs dossiers. Aucun modèle ni installation Argos n’a été remplacé. Le diagnostic du bloc mécanique a identifié une tentative de création de répertoire temporaire dans ce dossier de ressources pendant leur mise à jour implicite ; désactiver cette mise à jour a rétabli la génération des 29 langues.
+
+Pour une exécution restreinte ne permettant pas d’écrire dans les dossiers de configuration utilisateur, définir XDG_CONFIG_HOME et XDG_CACHE_HOME vers build/argos-config et build/argos-cache pour le processus de traduction. ARGOS_INTRA_THREADS=2 et OMP_NUM_THREADS=2 peuvent borner le parallélisme CPU ; ils ne remplacent pas la correction de l’accès aux ressources. L’installation et les modèles existants restent utilisés.

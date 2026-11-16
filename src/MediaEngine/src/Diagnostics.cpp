@@ -3,6 +3,7 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::MechanicalRequest:return DiagnosticKeys::MechanicalRequest;
     case DiagnosticCode::MigrationTarget:return DiagnosticKeys::MigrationTarget;
     case DiagnosticCode::MigrationAppleTarget:return DiagnosticKeys::MigrationAppleTarget;
     case DiagnosticCode::MigrationCommodoreTarget:return DiagnosticKeys::MigrationCommodoreTarget;

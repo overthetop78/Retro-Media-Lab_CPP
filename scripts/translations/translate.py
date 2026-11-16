@@ -95,6 +95,13 @@ def main():
     ignore_file = Path(__file__).parent / "ignores" / "common.txt"
     ignored = [line.strip() for line in ignore_file.read_text(encoding="utf-8").splitlines()
                if line.strip() and not line.lstrip().startswith("#")]
+    # Argos models and their Stanza resources are already installed. Do not try
+    # to refresh resources.json inside the package directory during translation.
+    import argostranslate.translate
+    import stanza
+    from functools import partial
+    stanza.Pipeline = partial(stanza.Pipeline, download_method=None)
+
     unavailable = []
     for language in dict.fromkeys(args.languages):
         if language == "en-US":

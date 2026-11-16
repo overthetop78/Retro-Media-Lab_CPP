@@ -14,6 +14,7 @@ inline constexpr std::string_view FfmpegMissing="MediaEngine.FfmpegMissing";
 inline constexpr std::string_view FfmpegStart="MediaEngine.FfmpegStart";
 inline constexpr std::string_view FfmpegFailed="MediaEngine.FfmpegFailed";
 
+inline constexpr std::string_view MechanicalRequest="MediaEngine.MechanicalRequest";
 inline constexpr std::string_view AudioPcmData="MediaEngine.AudioPcmData";
 inline constexpr std::string_view AudioPcmRuntime="MediaEngine.AudioPcmRuntime";
 inline constexpr std::string_view AudioPcmDecode="MediaEngine.AudioPcmDecode";
