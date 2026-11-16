@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "최소 1개의 출력 파일이 필요합니다.",
+    "MediaEngine.AtomicSetDuplicate": "출력 파일 경로는 고유해야합니다.",
+    "MediaEngine.AtomicSetExists": "출력 파일이 이미 존재합니다: {0}.",
+    "MediaEngine.AtomicSetProducer": "출력 경로 또는 생산자는 유효하지 않습니다 : {0}.",
+    "MediaEngine.AtomicPreallocate": "출력 {0}에 대한 저장을 예약 할 수 없습니다.",
+    "MediaEngine.AtomicRestore": "이전 출력을 복원 할 수 없습니다. 복구 백업은 보존되었습니다.",
+    "MediaEngine.AtomicCleanup": "각 임시 출력 또는 완료된 백업을 제거할 수 없습니다."
+  }
+}

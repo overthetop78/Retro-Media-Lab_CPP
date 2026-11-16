@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Požaduje se alespoň jeden výstupní soubor.",
+    "MediaEngine.AtomicSetDuplicate": "Výstupní cesty souborů musí být jedinečné.",
+    "MediaEngine.AtomicSetExists": "Výstupní soubor již existuje: {0}.",
+    "MediaEngine.AtomicSetProducer": "Výstupní cesta nebo výrobce je neplatná: {0}.",
+    "MediaEngine.AtomicPreallocate": "Nelze rezervovat úložiště pro výstup {0}.",
+    "MediaEngine.AtomicRestore": "Nelze obnovit každý předchozí výstup. Zálohování bylo zachováno.",
+    "MediaEngine.AtomicCleanup": "Nelze odstranit každý dočasný výstup nebo kompletní zálohu."
+  }
+}

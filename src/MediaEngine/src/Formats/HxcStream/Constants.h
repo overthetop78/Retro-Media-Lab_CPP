@@ -26,4 +26,7 @@ inline constexpr int PrefixGroup=1,CylinderGroup=2,HeadGroup=3;
 inline constexpr std::string_view LineSeparators="\r\n";
 inline constexpr std::int32_t LowSampleRate=25000000,HighSampleRate=50000000;
 inline constexpr std::size_t MinimumIndexEdges=2;
+inline constexpr std::string_view WriterId="hxcstream",OutputStemPattern="\\d{2}\\.[01]$",Base64Whitespace=" \t\r\n";
+inline constexpr int CylinderDigits=2,Base64Quantum=4;
+inline constexpr char ZeroDigit='0';
 }

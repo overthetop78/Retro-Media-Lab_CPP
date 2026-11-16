@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Cel puțin un fișier de ieșire este necesar.",
+    "MediaEngine.AtomicSetDuplicate": "Căile de ieșire ale fișierelor trebuie să fie unice.",
+    "MediaEngine.AtomicSetExists": "Un fișier de ieșire există deja: {0}.",
+    "MediaEngine.AtomicSetProducer": "Calea de ieșire sau producătorul nu este validă: {0}.",
+    "MediaEngine.AtomicPreallocate": "Nu pot rezerva depozitare pentru ieşire {0}.",
+    "MediaEngine.AtomicRestore": "Nu se pot restaura toate fișierele de ieșire anterioare. Copiile de siguranță pentru recuperare au fost păstrate.",
+    "MediaEngine.AtomicCleanup": "Nu se poate elimina fiecare ieșire temporară sau backup completat."
+  }
+}

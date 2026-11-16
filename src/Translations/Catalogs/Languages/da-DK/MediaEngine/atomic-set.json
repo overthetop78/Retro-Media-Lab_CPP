@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Der kræves mindst én uddatafil.",
+    "MediaEngine.AtomicSetDuplicate": "Output-fil stier skal være unikke.",
+    "MediaEngine.AtomicSetExists": "En uddatafil findes allerede: {0}.",
+    "MediaEngine.AtomicSetProducer": "Outputstien eller producenten er ugyldig: {0}.",
+    "MediaEngine.AtomicPreallocate": "Kan ikke reservere lagerplads til output {0}.",
+    "MediaEngine.AtomicRestore": "Kan ikke gendanne alle tidligere outputfiler. Sikkerhedskopierne til gendannelse er bevaret.",
+    "MediaEngine.AtomicCleanup": "Kan ikke fjerne alle midlertidige output eller fuldført backup."
+  }
+}

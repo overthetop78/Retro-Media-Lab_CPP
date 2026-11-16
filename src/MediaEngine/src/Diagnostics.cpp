@@ -3,6 +3,16 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AtomicSetEmpty:return DiagnosticKeys::AtomicSetEmpty;
+    case DiagnosticCode::AtomicSetDuplicate:return DiagnosticKeys::AtomicSetDuplicate;
+    case DiagnosticCode::AtomicSetExists:return DiagnosticKeys::AtomicSetExists;
+    case DiagnosticCode::AtomicSetProducer:return DiagnosticKeys::AtomicSetProducer;
+    case DiagnosticCode::AtomicPreallocate:return DiagnosticKeys::AtomicPreallocate;
+    case DiagnosticCode::AtomicRestore:return DiagnosticKeys::AtomicRestore;
+    case DiagnosticCode::AtomicCleanup:return DiagnosticKeys::AtomicCleanup;
+    case DiagnosticCode::HxcOutputName:return DiagnosticKeys::HxcOutputName;
+    case DiagnosticCode::HxcNativeMetadata:return DiagnosticKeys::HxcNativeMetadata;
+
     case DiagnosticCode::HxcFileName:return DiagnosticKeys::HxcFileName;
     case DiagnosticCode::HxcNoFiles:return DiagnosticKeys::HxcNoFiles;
     case DiagnosticCode::HxcChunk:return DiagnosticKeys::HxcChunk;

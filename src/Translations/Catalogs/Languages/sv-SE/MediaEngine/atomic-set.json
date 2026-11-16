@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Minst en utdatafil krävs.",
+    "MediaEngine.AtomicSetDuplicate": "Output-filvägar måste vara unika.",
+    "MediaEngine.AtomicSetExists": "En utdatafil finns redan: {0}.",
+    "MediaEngine.AtomicSetProducer": "Utgångsvägen eller producenten är ogiltig: {0}.",
+    "MediaEngine.AtomicPreallocate": "Kan inte reservera lagring för output {0}.",
+    "MediaEngine.AtomicRestore": "Kan inte återställa varje tidigare utgång. Återställning säkerhetskopior har bevarats.",
+    "MediaEngine.AtomicCleanup": "Kan inte ta bort varje tillfällig utgång eller slutförd backup."
+  }
+}

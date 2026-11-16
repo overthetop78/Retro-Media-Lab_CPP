@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "少なくとも1つの出力ファイルが必要です。",
+    "MediaEngine.AtomicSetDuplicate": "出力ファイルパスはユニークでなければなりません。",
+    "MediaEngine.AtomicSetExists": "既に存在する出力ファイル: {0}.",
+    "MediaEngine.AtomicSetProducer": "出力パスまたはプロデューサーは無効です:{0}.",
+    "MediaEngine.AtomicPreallocate": "出力 {0} のストレージを予約できません。",
+    "MediaEngine.AtomicRestore": "以前の出力をすべて復元できません。 回復バックアップは保存されています。",
+    "MediaEngine.AtomicCleanup": "すべての一時出力ファイルまたは完了済みバックアップを削除できません。"
+  }
+}

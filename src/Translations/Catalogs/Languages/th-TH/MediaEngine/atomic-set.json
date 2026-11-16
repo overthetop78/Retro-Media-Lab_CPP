@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "ต้องการแฟ้มส่งออกอย่างน้อยหนึ่งแฟ้ม",
+    "MediaEngine.AtomicSetDuplicate": "พาธของแฟ้มส่งออกจะต้องไม่ซ้ํากัน",
+    "MediaEngine.AtomicSetExists": "มีแฟ้มส่งออกอยู่แล้ว: {0}",
+    "MediaEngine.AtomicSetProducer": "พาธของผลลัพธ์หรือผู้ผลิตไม่ถูกต้อง: {0}",
+    "MediaEngine.AtomicPreallocate": "ไม่สามารถจัดเก็บข้อมูลเพื่อส่งออก {0} ได้",
+    "MediaEngine.AtomicRestore": "ไม่สามารถเรียกคืนค่าการแสดงผลก่อนหน้าทั้งหมดได้ การสํารองข้อมูลการกู้คืนได้รับการรักษา",
+    "MediaEngine.AtomicCleanup": "ไม่สามารถลบการแสดงผลชั่วคราวหรือแฟ้มสํารองข้อมูลที่เสร็จสมบูรณ์ได้"
+  }
+}

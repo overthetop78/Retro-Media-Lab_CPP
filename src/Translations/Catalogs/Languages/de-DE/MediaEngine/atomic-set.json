@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Mindestens eine Ausgabedatei ist erforderlich.",
+    "MediaEngine.AtomicSetDuplicate": "Ausgabedateipfade müssen eindeutig sein.",
+    "MediaEngine.AtomicSetExists": "Eine Ausgabedatei existiert bereits: {0}.",
+    "MediaEngine.AtomicSetProducer": "Der Ausgabepfad oder Produzent ist ungültig: {0}.",
+    "MediaEngine.AtomicPreallocate": "Kann keinen Speicher für die Ausgabe {0} reservieren.",
+    "MediaEngine.AtomicRestore": "Kann nicht jeden vorherigen Output wiederherstellen. Recovery Backups wurden beibehalten.",
+    "MediaEngine.AtomicCleanup": "Kann nicht jede temporäre Ausgabe oder abgeschlossenes Backup entfernen."
+  }
+}

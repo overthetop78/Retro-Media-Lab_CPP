@@ -36,6 +36,9 @@ public:
 };
 }
 std::shared_ptr<const ImageWriter> sectorWriterAdapter(std::string id,std::vector<std::string> formats,std::vector<std::string> extensions,TypedWriterPredicate<M::SectorImage> canWrite,TypedWriterOutput<M::SectorImage> write,bool multiple,WriterTargetPredicate target){return std::make_shared<Adapter<M::SectorImage,SectorRepresentation>>(std::move(id),RepresentationKind::Sectors,std::move(formats),std::move(extensions),std::move(canWrite),std::move(write),multiple,std::move(target));}
+std::shared_ptr<const ImageWriter> fluxWriterAdapter(std::string id,std::vector<std::string> formats,std::vector<std::string> extensions,TypedWriterPredicate<Flux::ProtectedTrackImage> canWrite,TypedWriterOutput<Flux::ProtectedTrackImage> write,bool multiple){
+    return std::make_shared<Adapter<Flux::ProtectedTrackImage,FluxRepresentation>>(std::move(id),RepresentationKind::Flux,std::move(formats),std::move(extensions),std::move(canWrite),std::move(write),multiple,WriterTargetPredicate{});
+}
 std::shared_ptr<const ImageWriter> fluxWriterAdapter(std::string id,std::vector<std::string> formats,std::vector<std::string> extensions,FluxWriterPredicate canWrite,FluxWriterOutput write,bool multiple){
     if(!canWrite||!write)throw M::MediaError(M::DiagnosticCode::WriterAdapterCallbacks);
     return std::make_shared<Adapter<Flux::ProtectedTrackImage,FluxRepresentation>>(std::move(id),RepresentationKind::Flux,std::move(formats),std::move(extensions),[predicate=std::move(canWrite)](const auto& image,const auto&,auto format,auto extension){return predicate(image,format,extension);},[writer=std::move(write)](const auto& image,const MediaDocument& document,const auto& output,auto target,auto token){return writer(image,document.metadata(),output,target,token);},multiple,WriterTargetPredicate{});

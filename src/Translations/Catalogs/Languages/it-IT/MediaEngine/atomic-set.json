@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Almeno un file di output è richiesto.",
+    "MediaEngine.AtomicSetDuplicate": "I percorsi di file di uscita devono essere unici.",
+    "MediaEngine.AtomicSetExists": "Esiste già un file di output: {0}.",
+    "MediaEngine.AtomicSetProducer": "Il percorso di uscita o il produttore non è valido: {0}.",
+    "MediaEngine.AtomicPreallocate": "Non è possibile riservare lo storage per l'output {0}.",
+    "MediaEngine.AtomicRestore": "Non è possibile ripristinare ogni uscita precedente. I backup di recupero sono stati conservati.",
+    "MediaEngine.AtomicCleanup": "Non è possibile rimuovere ogni uscita temporanea o backup completato."
+  }
+}

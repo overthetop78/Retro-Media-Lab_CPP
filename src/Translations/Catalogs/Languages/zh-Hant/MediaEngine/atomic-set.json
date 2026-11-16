@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "至少需要一個輸出檔案。",
+    "MediaEngine.AtomicSetDuplicate": "輸出檔案路徑必須唯一。",
+    "MediaEngine.AtomicSetExists": "輸出檔案已存在：{0}。",
+    "MediaEngine.AtomicSetProducer": "輸出路徑或產生函式無效：{0}。",
+    "MediaEngine.AtomicPreallocate": "無法為輸出檔案 {0} 預留儲存空間。",
+    "MediaEngine.AtomicRestore": "無法還原所有先前的輸出檔案。已保留復原備份。",
+    "MediaEngine.AtomicCleanup": "無法刪除所有暫存輸出檔案或已完成的備份。"
+  }
+}

@@ -1,6 +1,16 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AtomicSetEmpty="MediaEngine.AtomicSetEmpty";
+inline constexpr std::string_view AtomicSetDuplicate="MediaEngine.AtomicSetDuplicate";
+inline constexpr std::string_view AtomicSetExists="MediaEngine.AtomicSetExists";
+inline constexpr std::string_view AtomicSetProducer="MediaEngine.AtomicSetProducer";
+inline constexpr std::string_view AtomicPreallocate="MediaEngine.AtomicPreallocate";
+inline constexpr std::string_view AtomicRestore="MediaEngine.AtomicRestore";
+inline constexpr std::string_view AtomicCleanup="MediaEngine.AtomicCleanup";
+inline constexpr std::string_view HxcOutputName="MediaEngine.HxcOutputName";
+inline constexpr std::string_view HxcNativeMetadata="MediaEngine.HxcNativeMetadata";
+
 inline constexpr std::string_view HxcFileName="MediaEngine.HxcFileName";
 inline constexpr std::string_view HxcNoFiles="MediaEngine.HxcNoFiles";
 inline constexpr std::string_view HxcChunk="MediaEngine.HxcChunk";

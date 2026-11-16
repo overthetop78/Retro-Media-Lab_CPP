@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Pelo menos um arquivo de saída é necessário.",
+    "MediaEngine.AtomicSetDuplicate": "Os caminhos dos arquivos de saída devem ser únicos.",
+    "MediaEngine.AtomicSetExists": "Já existe um arquivo de saída: {0}.",
+    "MediaEngine.AtomicSetProducer": "O caminho de saída ou produtor é inválido: {0}.",
+    "MediaEngine.AtomicPreallocate": "Não foi possível reservar espaço para o arquivo de saída {0}.",
+    "MediaEngine.AtomicRestore": "Não foi possível restaurar cada saída anterior. Os backups de recuperação foram preservados.",
+    "MediaEngine.AtomicCleanup": "Não é possível remover todas as saídas temporárias ou cópias de segurança completadas."
+  }
+}

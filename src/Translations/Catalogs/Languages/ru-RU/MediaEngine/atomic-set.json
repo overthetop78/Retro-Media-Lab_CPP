@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Требуется как минимум один выходной файл.",
+    "MediaEngine.AtomicSetDuplicate": "Пути выхода файлов должны быть уникальными.",
+    "MediaEngine.AtomicSetExists": "Уже существует выходной файл: {0}.",
+    "MediaEngine.AtomicSetProducer": "Выходной путь или производитель недействителен: {0}.",
+    "MediaEngine.AtomicPreallocate": "Не может резервировать хранилище для вывода {0}.",
+    "MediaEngine.AtomicRestore": "Невозможно восстановить все предыдущие результаты. Резервные копии были сохранены.",
+    "MediaEngine.AtomicCleanup": "Невозможно удалить каждый временный вывод или завершенное резервное копирование."
+  }
+}

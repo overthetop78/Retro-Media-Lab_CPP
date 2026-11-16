@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Setidaknya satu berkas keluaran diperlukan.",
+    "MediaEngine.AtomicSetDuplicate": "Path berkas keluaran harus unik.",
+    "MediaEngine.AtomicSetExists": "Sudah ada berkas keluaran: {0}.",
+    "MediaEngine.AtomicSetProducer": "Path keluaran atau produser tak valid: {0}.",
+    "MediaEngine.AtomicPreallocate": "Tidak dapat mencadangkan ruang penyimpanan untuk berkas keluaran {0}.",
+    "MediaEngine.AtomicRestore": "Tidak dapat memulihkan semua berkas keluaran sebelumnya. Cadangan pemulihan telah dipertahankan.",
+    "MediaEngine.AtomicCleanup": "Tidak dapat menghapus semua berkas keluaran sementara atau cadangan yang telah selesai."
+  }
+}

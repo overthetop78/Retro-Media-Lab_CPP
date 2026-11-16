@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Det kreves minst én utgangsfil.",
+    "MediaEngine.AtomicSetDuplicate": "Utgangsfilstier må være unike.",
+    "MediaEngine.AtomicSetExists": "En utfil eksisterer allerede: {0}.",
+    "MediaEngine.AtomicSetProducer": "Utgangsstien eller produsenten er ugyldig: {0}.",
+    "MediaEngine.AtomicPreallocate": "Kan ikke reservere lagring for utdata {0}.",
+    "MediaEngine.AtomicRestore": "Kan ikke gjenopprette alle tidligere utdata. Recovery backups er bevart.",
+    "MediaEngine.AtomicCleanup": "Kan ikke fjerne alle midlertidige utdata eller fullført sikkerhetskopiering."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Принаймні потрібен один вихідний файл.",
+    "MediaEngine.AtomicSetDuplicate": "Виводити шляхи файлів повинні бути унікальними.",
+    "MediaEngine.AtomicSetExists": "Вихідний файл вже існує: {0}.",
+    "MediaEngine.AtomicSetProducer": "Вихідний шлях або виробник недійсний: {0}.",
+    "MediaEngine.AtomicPreallocate": "Не вдалося зарезервувати місце для вихідного файла {0}.",
+    "MediaEngine.AtomicRestore": "Не вдалося відновити всі попередні вихідні файли. Резервні копії збережено.",
+    "MediaEngine.AtomicCleanup": "Не вдалося видалити всі тимчасові вихідні файли або завершені резервні копії."
+  }
+}

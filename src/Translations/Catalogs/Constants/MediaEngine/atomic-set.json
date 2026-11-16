@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "At least one output file is required.",
+    "MediaEngine.AtomicSetDuplicate": "Output file paths must be unique.",
+    "MediaEngine.AtomicSetExists": "An output file already exists: {0}.",
+    "MediaEngine.AtomicSetProducer": "The output path or producer is invalid: {0}.",
+    "MediaEngine.AtomicPreallocate": "Cannot reserve storage for output {0}.",
+    "MediaEngine.AtomicRestore": "Cannot restore every previous output. Recovery backups have been preserved.",
+    "MediaEngine.AtomicCleanup": "Cannot remove every temporary output or completed backup."
+  }
+}

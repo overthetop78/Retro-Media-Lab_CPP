@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Tarvitaan vähintään yksi tulostetiedosto.",
+    "MediaEngine.AtomicSetDuplicate": "Tulostiedostopolkujen on oltava yksilöllisiä.",
+    "MediaEngine.AtomicSetExists": "Tulostiedosto on jo olemassa: {0}.",
+    "MediaEngine.AtomicSetProducer": "Tuotospolku tai tuottaja on virheellinen: {0}.",
+    "MediaEngine.AtomicPreallocate": "Ei voi varata tallennusta lähdölle {0}.",
+    "MediaEngine.AtomicRestore": "Kaikkia aiempia tulostiedostoja ei voitu palauttaa. Palautuksen varmuuskopiot on säilytetty.",
+    "MediaEngine.AtomicCleanup": "Ei voida poistaa jokaista väliaikaista tulostetta tai valmis varmuuskopiota."
+  }
+}

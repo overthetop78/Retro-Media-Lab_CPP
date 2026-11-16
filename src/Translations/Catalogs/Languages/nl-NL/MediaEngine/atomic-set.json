@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Ten minste één uitvoerbestand is vereist.",
+    "MediaEngine.AtomicSetDuplicate": "Uitvoerbestandspaden moeten uniek zijn.",
+    "MediaEngine.AtomicSetExists": "Er bestaat al een uitvoerbestand: {0}.",
+    "MediaEngine.AtomicSetProducer": "Het uitvoerpad of de producent is ongeldig: {0}.",
+    "MediaEngine.AtomicPreallocate": "Kan geen opslagruimte reserveren voor uitvoer {0}.",
+    "MediaEngine.AtomicRestore": "Kan niet elke vorige uitvoer herstellen. Herstel back-ups zijn bewaard gebleven.",
+    "MediaEngine.AtomicCleanup": "Kan niet elke tijdelijke uitvoer of voltooide back-up verwijderen."
+  }
+}

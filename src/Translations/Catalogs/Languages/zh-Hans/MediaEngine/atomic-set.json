@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "需要至少一个输出文件 。",
+    "MediaEngine.AtomicSetDuplicate": "输出文件路径必须是独一无二的 。",
+    "MediaEngine.AtomicSetExists": "输出文件已经存在 :{0}.",
+    "MediaEngine.AtomicSetProducer": "输出路径或生产者无效 :{0}.",
+    "MediaEngine.AtomicPreallocate": "无法为输出{0} 保留存储 。",
+    "MediaEngine.AtomicRestore": "无法恢复所有先前的输出文件。已保留恢复备份。",
+    "MediaEngine.AtomicCleanup": "无法删除每个临时输出或已完成的备份 。"
+  }
+}

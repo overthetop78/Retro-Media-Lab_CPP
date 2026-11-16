@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Απαιτείται τουλάχιστον ένα αρχείο εξόδου.",
+    "MediaEngine.AtomicSetDuplicate": "Οι διαδρομές αρχείων εξόδου πρέπει να είναι μοναδικές.",
+    "MediaEngine.AtomicSetExists": "Ένα αρχείο εξόδου υπάρχει ήδη: {0}.",
+    "MediaEngine.AtomicSetProducer": "Η διαδρομή εξόδου ή ο παραγωγός δεν είναι έγκυρη: {0}.",
+    "MediaEngine.AtomicPreallocate": "Αδυναμία δέσμευσης χώρου αποθήκευσης για το αρχείο εξόδου {0}.",
+    "MediaEngine.AtomicRestore": "Αδυναμία επαναφοράς κάθε προηγούμενης εξόδου. Τα εφεδρικά έχουν διατηρηθεί.",
+    "MediaEngine.AtomicCleanup": "Αδυναμία αφαίρεσης όλων των προσωρινών αρχείων εξόδου ή των ολοκληρωμένων αντιγράφων ασφαλείας."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Wymagany jest co najmniej jeden plik wyjściowy.",
+    "MediaEngine.AtomicSetDuplicate": "Ścieżki plików wyjściowych muszą być unikalne.",
+    "MediaEngine.AtomicSetExists": "Plik wyjściowy już istnieje: {0}.",
+    "MediaEngine.AtomicSetProducer": "Ścieżka wyjściowa lub producent jest nieprawidłowa: {0}.",
+    "MediaEngine.AtomicPreallocate": "Nie można zarezerwować pamięci dla wyjścia {0}.",
+    "MediaEngine.AtomicRestore": "Nie można przywrócić każdego poprzedniego wyjścia. Utrzymano kopie zapasowe.",
+    "MediaEngine.AtomicCleanup": "Nie można usunąć wszystkich plików tymczasowych lub ukończonych kopii zapasowych."
+  }
+}

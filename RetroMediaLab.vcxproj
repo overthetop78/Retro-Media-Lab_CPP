@@ -623,6 +623,7 @@
     <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Reading.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Revolutions.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\HxcStream\Stream.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\I86f\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\I86f\I86f.h" />
@@ -837,6 +838,8 @@
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Registry.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Registry.h" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageWriter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicImageWriter.h" />
     <ClInclude Include="src\MediaEngine\src\Sources\DriveAccess.h" />
@@ -845,6 +848,9 @@
     <ClInclude Include="src\MediaEngine\src\Sources\DriveRandomAccessData.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\FileIdentity.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\FileIdentity.h" />
+    <ClCompile Include="src\MediaEngine\src\Sources\Platform\PreallocationUnavailable.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Sources\Platform\Windows\Preallocation.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Sources\Preallocation.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\RandomAccessSources.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\RandomAccessSources.h" />
     <ClInclude Include="src\MediaEngine\src\Sources\SourceConstants.h" />
@@ -1135,6 +1141,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\centurion-mfm.json" />
@@ -1169,6 +1176,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-fm-decoding.json" />
@@ -1279,6 +1287,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\centurion-mfm.json" />
@@ -1312,6 +1321,8 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-fm-decoding.json" />
@@ -1422,6 +1433,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\centurion-mfm.json" />
@@ -1455,6 +1467,8 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-fm-decoding.json" />
@@ -1565,6 +1579,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\centurion-mfm.json" />
@@ -1598,6 +1613,8 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-fm-decoding.json" />
@@ -1708,6 +1725,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\centurion-mfm.json" />
@@ -1741,6 +1759,8 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-fm-decoding.json" />
@@ -1851,6 +1871,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\centurion-mfm.json" />
@@ -1884,6 +1905,8 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-fm-decoding.json" />
@@ -1994,6 +2017,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\centurion-mfm.json" />
@@ -2027,6 +2051,8 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-fm-decoding.json" />
@@ -2137,6 +2163,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\centurion-mfm.json" />
@@ -2170,6 +2197,8 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-fm-decoding.json" />
@@ -2280,6 +2309,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\centurion-mfm.json" />
@@ -2313,6 +2343,8 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-fm-decoding.json" />
@@ -2423,6 +2455,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\centurion-mfm.json" />
@@ -2456,6 +2489,8 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-fm-decoding.json" />
@@ -2566,6 +2601,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\centurion-mfm.json" />
@@ -2599,6 +2635,8 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-fm-decoding.json" />
@@ -2709,6 +2747,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\centurion-mfm.json" />
@@ -2742,6 +2781,8 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-fm-decoding.json" />
@@ -2852,6 +2893,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\centurion-mfm.json" />
@@ -2885,6 +2927,8 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-fm-decoding.json" />
@@ -2995,6 +3039,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\centurion-mfm.json" />
@@ -3028,6 +3073,8 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-fm-decoding.json" />
@@ -3138,6 +3185,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\centurion-mfm.json" />
@@ -3171,6 +3219,8 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-fm-decoding.json" />
@@ -3281,6 +3331,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\centurion-mfm.json" />
@@ -3314,6 +3365,8 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-fm-decoding.json" />
@@ -3424,6 +3477,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\centurion-mfm.json" />
@@ -3457,6 +3511,8 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-fm-decoding.json" />
@@ -3567,6 +3623,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\centurion-mfm.json" />
@@ -3600,6 +3657,8 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-fm-decoding.json" />
@@ -3710,6 +3769,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\centurion-mfm.json" />
@@ -3743,6 +3803,8 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-fm-decoding.json" />
@@ -3853,6 +3915,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\centurion-mfm.json" />
@@ -3886,6 +3949,8 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-fm-decoding.json" />
@@ -3996,6 +4061,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\centurion-mfm.json" />
@@ -4029,6 +4095,8 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-fm-decoding.json" />
@@ -4139,6 +4207,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\centurion-mfm.json" />
@@ -4172,6 +4241,8 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-fm-decoding.json" />
@@ -4282,6 +4353,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\centurion-mfm.json" />
@@ -4315,6 +4387,8 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-fm-decoding.json" />
@@ -4425,6 +4499,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\centurion-mfm.json" />
@@ -4458,6 +4533,8 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-fm-decoding.json" />
@@ -4568,6 +4645,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\centurion-mfm.json" />
@@ -4601,6 +4679,8 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-fm-decoding.json" />
@@ -4711,6 +4791,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\centurion-mfm.json" />
@@ -4744,6 +4825,8 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-fm-decoding.json" />
@@ -4854,6 +4937,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\centurion-mfm.json" />
@@ -4887,6 +4971,8 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-fm-decoding.json" />
@@ -4997,6 +5083,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\centurion-mfm.json" />
@@ -5030,6 +5117,8 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-fm-decoding.json" />
@@ -5140,6 +5229,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\centurion-mfm.json" />
@@ -5173,6 +5263,8 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-fm-decoding.json" />
@@ -5283,6 +5375,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\centurion-mfm.json" />
@@ -5316,6 +5409,8 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hp-mmfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-reading.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-fm-decoding.json" />

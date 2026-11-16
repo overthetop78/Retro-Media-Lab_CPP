@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "En az bir çıktı dosyası gereklidir.",
+    "MediaEngine.AtomicSetDuplicate": "Çıkış dosya yolları benzersiz olmalıdır.",
+    "MediaEngine.AtomicSetExists": "Bir çıkış dosyası zaten var: {0}.",
+    "MediaEngine.AtomicSetProducer": "Çıktı yolu veya yapımcı geçersizdir: {0}.",
+    "MediaEngine.AtomicPreallocate": "{0} çıktısı için depolama alanı ayrılamıyor.",
+    "MediaEngine.AtomicRestore": "Her önceki çıktıyı geri getiremez. Kurtarma yedekleri korunmuştur.",
+    "MediaEngine.AtomicCleanup": "Tüm geçici çıktı dosyaları veya tamamlanmış yedekler kaldırılamıyor."
+  }
+}

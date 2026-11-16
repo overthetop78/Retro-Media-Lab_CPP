@@ -373,6 +373,12 @@
     <Filter Include="src\MediaEngine\src\Sources">
       <UniqueIdentifier>{99F0B3F4-C67A-501F-86A0-4943CC677F74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Sources\Platform">
+      <UniqueIdentifier>{63F06236-E8B1-53A1-AEB4-0BB5A7A3129C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Sources\Platform\Windows">
+      <UniqueIdentifier>{89D93858-E6BB-5842-A08A-4F75F7577ED6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Visualization">
       <UniqueIdentifier>{DF01D17E-5F53-57B0-A75F-8D006B0DD37B}</UniqueIdentifier>
     </Filter>
@@ -3333,6 +3339,9 @@
     <ClInclude Include="src\MediaEngine\src\Formats\HxcStream\Stream.h">
       <Filter>src\MediaEngine\src\Formats\HxcStream</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\HxcStream</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\Adapter.cpp">
       <Filter>src\MediaEngine\src\Formats\I86f</Filter>
     </ClCompile>
@@ -3975,6 +3984,12 @@
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h">
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.cpp">
+      <Filter>src\MediaEngine\src\Sources</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.h">
+      <Filter>src\MediaEngine\src\Sources</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageWriter.cpp">
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClCompile>
@@ -3997,6 +4012,15 @@
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Sources\FileIdentity.h">
+      <Filter>src\MediaEngine\src\Sources</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Sources\Platform\PreallocationUnavailable.cpp">
+      <Filter>src\MediaEngine\src\Sources\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Sources\Platform\Windows\Preallocation.cpp">
+      <Filter>src\MediaEngine\src\Sources\Platform\Windows</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Sources\Preallocation.h">
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Sources\RandomAccessSources.cpp">
@@ -4869,6 +4893,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -4969,6 +4996,9 @@
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\image-disk.json">
@@ -5301,6 +5331,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
@@ -5398,6 +5431,12 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\image-disk.json">
@@ -5730,6 +5769,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -5827,6 +5869,12 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\image-disk.json">
@@ -6159,6 +6207,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
@@ -6256,6 +6307,12 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\image-disk.json">
@@ -6588,6 +6645,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -6685,6 +6745,12 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\image-disk.json">
@@ -7017,6 +7083,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
@@ -7114,6 +7183,12 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\image-disk.json">
@@ -7446,6 +7521,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -7543,6 +7621,12 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\image-disk.json">
@@ -7875,6 +7959,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
@@ -7972,6 +8059,12 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\image-disk.json">
@@ -8304,6 +8397,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -8401,6 +8497,12 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\image-disk.json">
@@ -8733,6 +8835,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
@@ -8830,6 +8935,12 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\image-disk.json">
@@ -9162,6 +9273,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -9259,6 +9373,12 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\image-disk.json">
@@ -9591,6 +9711,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
@@ -9688,6 +9811,12 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\image-disk.json">
@@ -10020,6 +10149,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -10117,6 +10249,12 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\image-disk.json">
@@ -10449,6 +10587,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
@@ -10546,6 +10687,12 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\image-disk.json">
@@ -10878,6 +11025,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -10975,6 +11125,12 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\image-disk.json">
@@ -11307,6 +11463,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
@@ -11404,6 +11563,12 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\image-disk.json">
@@ -11736,6 +11901,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -11833,6 +12001,12 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\image-disk.json">
@@ -12165,6 +12339,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
@@ -12262,6 +12439,12 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\image-disk.json">
@@ -12594,6 +12777,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -12691,6 +12877,12 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\image-disk.json">
@@ -13023,6 +13215,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
@@ -13120,6 +13315,12 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\image-disk.json">
@@ -13452,6 +13653,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -13549,6 +13753,12 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\image-disk.json">
@@ -13881,6 +14091,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
@@ -13978,6 +14191,12 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\image-disk.json">
@@ -14310,6 +14529,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -14407,6 +14629,12 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\image-disk.json">
@@ -14739,6 +14967,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
@@ -14836,6 +15067,12 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\image-disk.json">
@@ -15168,6 +15405,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -15265,6 +15505,12 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\image-disk.json">
@@ -15597,6 +15843,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
@@ -15694,6 +15943,12 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\image-disk.json">
@@ -16026,6 +16281,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -16123,6 +16381,12 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\image-disk.json">
@@ -16455,6 +16719,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
@@ -16552,6 +16819,12 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\image-disk.json">
@@ -16884,6 +17157,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -16981,6 +17257,12 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\image-disk.json">
@@ -17313,6 +17595,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atomic-set.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atr-atx.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
@@ -17410,6 +17695,12 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-encoding.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-reading.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hxc-writing.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\image-disk.json">

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Legalább egy kimeneti fájl szükséges.",
+    "MediaEngine.AtomicSetDuplicate": "A kimeneti fájlok elérési útjainak egyedinek kell lenniük.",
+    "MediaEngine.AtomicSetExists": "Már létezik kimeneti fájl: {0}.",
+    "MediaEngine.AtomicSetProducer": "A kimeneti út vagy a gyártó érvénytelen: {0}.",
+    "MediaEngine.AtomicPreallocate": "A tárolást nem lehet a kimenetre fenntartani {0}.",
+    "MediaEngine.AtomicRestore": "Nem sikerült visszaállítani minden előző kimenetet. Megőriztük a mentéseket.",
+    "MediaEngine.AtomicCleanup": "Nem sikerült eltávolítani minden ideiglenes kimenetet vagy befejezett mentést."
+  }
+}

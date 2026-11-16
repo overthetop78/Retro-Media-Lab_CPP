@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "Au moins un fichier de sortie est requis.",
+    "MediaEngine.AtomicSetDuplicate": "Les chemins de fichiers de sortie doivent être uniques.",
+    "MediaEngine.AtomicSetExists": "Un fichier de sortie existe déjà : {0}.",
+    "MediaEngine.AtomicSetProducer": "Le chemin de sortie ou sa fonction de production est invalide : {0}.",
+    "MediaEngine.AtomicPreallocate": "Impossible de réserver le stockage pour la sortie {0}.",
+    "MediaEngine.AtomicRestore": "Impossible de restaurer toutes les sorties précédentes. Les sauvegardes de récupération ont été conservées.",
+    "MediaEngine.AtomicCleanup": "Impossible de supprimer tous les fichiers temporaires ou toutes les sauvegardes terminées."
+  }
+}

@@ -5,6 +5,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/HxcStream/Metadata.cpp
   src/Formats/HxcStream/Files.cpp
   src/Formats/HxcStream/Adapter.cpp
+  src/Formats/HxcStream/Writer.cpp
 
   src/Formats/HxcStream/Encoding.cpp
   src/Formats/HxcStream/Blocks.cpp
@@ -341,6 +342,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   # Visualization
   src/Visualization/SectorFluxVisualizer.cpp
   # Sources
+  src/Sources/AtomicImageSetWriter.cpp
   src/Sources/AtomicImageWriter.cpp
   src/Sources/RandomAccessSources.cpp
   src/Sources/FileIdentity.cpp)
@@ -394,3 +396,9 @@ qt_add_resources(RetroMediaLab.MediaEngine DiskDefinitionsData
 qt_add_resources(RetroMediaLab.MediaEngine ImageFormatCatalogueData
   PREFIX "/MediaEngine/FormatCatalog" BASE src/Formats/Catalog/Data
   FILES src/Formats/Catalog/Data/formats.json)
+
+if(WIN32)
+  target_sources(RetroMediaLab.MediaEngine PRIVATE src/Sources/Platform/Windows/Preallocation.cpp)
+else()
+  target_sources(RetroMediaLab.MediaEngine PRIVATE src/Sources/Platform/PreallocationUnavailable.cpp)
+endif()

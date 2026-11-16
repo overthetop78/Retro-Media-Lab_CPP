@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSetEmpty": "ويلزم تقديم ملف واحد على الأقل عن النواتج.",
+    "MediaEngine.AtomicSetDuplicate": "يجب أن تكون مسارات ملفات النواتج فريدة من نوعها",
+    "MediaEngine.AtomicSetExists": "ملف الإخراج موجود بالفعل: {0}.",
+    "MediaEngine.AtomicSetProducer": "مسار الإخراج أو دالة إنتاجه غير صالح: {0}.",
+    "MediaEngine.AtomicPreallocate": "تعذر حجز مساحة تخزين لملف الإخراج {0}.",
+    "MediaEngine.AtomicRestore": "لا يمكن استعادة كل ناتج سابق. تم الحفاظ على النسخ الاحتياطية",
+    "MediaEngine.AtomicCleanup": "تعذر حذف جميع ملفات الإخراج المؤقتة أو النسخ الاحتياطية المكتملة."
+  }
+}
