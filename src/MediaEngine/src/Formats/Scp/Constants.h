@@ -27,4 +27,5 @@ inline constexpr std::uint32_t ByteMaximum=255,MinimumTick=1,DecimalBase=10;
 inline constexpr std::uint8_t RetainedFlags=ByteMaximum^(FooterFlag|ExtendedFlag);
 inline constexpr char FirstDigit='0',LastDigit='9';
 inline constexpr std::string_view WriterId="scp",FormatId="raw.scp",Extension=".scp";
+inline constexpr std::string_view VersionTextKey="scp.version",HeadsKey="scp.heads",ResolutionNanosecondsKey="scp.resolutionNanoseconds",ChecksumValidKey="scp.checksumValid",TrueText="True",FalseText="False",ImageArgument="image",LoaderArgument="loader";
 }

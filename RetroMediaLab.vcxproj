@@ -654,10 +654,14 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Rx02\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\Adapter.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Scp\CaptureReader.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\DiskTypeConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\DiskTypes.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\DiskTypes.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Scp\FileCache.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Scp\FileCache.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Scp\Metadata.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\Models.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\OutputImage.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\ProtectedImage.cpp" />
@@ -805,6 +809,8 @@
     <ClInclude Include="src\MediaEngine\src\Sources\DriveOperation.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\DriveRandomAccessData.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\DriveRandomAccessData.h" />
+    <ClCompile Include="src\MediaEngine\src\Sources\FileIdentity.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Sources\FileIdentity.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\RandomAccessSources.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\RandomAccessSources.h" />
     <ClInclude Include="src\MediaEngine\src\Sources\SourceConstants.h" />
@@ -1118,6 +1124,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hdd-raw.json" />
@@ -1148,6 +1155,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-image-encoding.json" />
@@ -1254,6 +1262,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\hdd-raw.json" />
@@ -1284,6 +1293,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-image-encoding.json" />
@@ -1390,6 +1400,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\hdd-raw.json" />
@@ -1420,6 +1431,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-image-encoding.json" />
@@ -1526,6 +1538,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\hdd-raw.json" />
@@ -1556,6 +1569,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-image-encoding.json" />
@@ -1662,6 +1676,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\hdd-raw.json" />
@@ -1692,6 +1707,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-image-encoding.json" />
@@ -1798,6 +1814,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\hdd-raw.json" />
@@ -1828,6 +1845,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-image-encoding.json" />
@@ -1934,6 +1952,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\hdd-raw.json" />
@@ -1964,6 +1983,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-image-encoding.json" />
@@ -2070,6 +2090,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\hdd-raw.json" />
@@ -2100,6 +2121,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-image-encoding.json" />
@@ -2206,6 +2228,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\hdd-raw.json" />
@@ -2236,6 +2259,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-image-encoding.json" />
@@ -2342,6 +2366,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\hdd-raw.json" />
@@ -2372,6 +2397,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-image-encoding.json" />
@@ -2478,6 +2504,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\hdd-raw.json" />
@@ -2508,6 +2535,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-image-encoding.json" />
@@ -2614,6 +2642,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\hdd-raw.json" />
@@ -2644,6 +2673,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-image-encoding.json" />
@@ -2750,6 +2780,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\hdd-raw.json" />
@@ -2780,6 +2811,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-image-encoding.json" />
@@ -2886,6 +2918,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\hdd-raw.json" />
@@ -2916,6 +2949,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-image-encoding.json" />
@@ -3022,6 +3056,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\hdd-raw.json" />
@@ -3052,6 +3087,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-image-encoding.json" />
@@ -3158,6 +3194,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\hdd-raw.json" />
@@ -3188,6 +3225,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-image-encoding.json" />
@@ -3294,6 +3332,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\hdd-raw.json" />
@@ -3324,6 +3363,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-image-encoding.json" />
@@ -3430,6 +3470,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\hdd-raw.json" />
@@ -3460,6 +3501,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-image-encoding.json" />
@@ -3566,6 +3608,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\hdd-raw.json" />
@@ -3596,6 +3639,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-image-encoding.json" />
@@ -3702,6 +3746,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\hdd-raw.json" />
@@ -3732,6 +3777,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-image-encoding.json" />
@@ -3838,6 +3884,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\hdd-raw.json" />
@@ -3868,6 +3915,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-image-encoding.json" />
@@ -3974,6 +4022,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\hdd-raw.json" />
@@ -4004,6 +4053,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-image-encoding.json" />
@@ -4110,6 +4160,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\hdd-raw.json" />
@@ -4140,6 +4191,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-image-encoding.json" />
@@ -4246,6 +4298,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\hdd-raw.json" />
@@ -4276,6 +4329,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-image-encoding.json" />
@@ -4382,6 +4436,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\hdd-raw.json" />
@@ -4412,6 +4467,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-image-encoding.json" />
@@ -4518,6 +4574,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\hdd-raw.json" />
@@ -4548,6 +4605,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-image-encoding.json" />
@@ -4654,6 +4712,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\hdd-raw.json" />
@@ -4684,6 +4743,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-image-encoding.json" />
@@ -4790,6 +4850,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\hdd-raw.json" />
@@ -4820,6 +4881,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-image-encoding.json" />
@@ -4926,6 +4988,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\hdd-raw.json" />
@@ -4956,6 +5019,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-image-encoding.json" />
@@ -5062,6 +5126,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\flux-core.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\flux-encoder-registry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\flux-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\flux-revolution-ownership.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\format-catalog-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\formats.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\hdd-raw.json" />
@@ -5092,6 +5157,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\rwts18-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\rx02-track.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-image-encoding.json" />

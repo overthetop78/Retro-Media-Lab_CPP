@@ -8,10 +8,11 @@ struct TrackFeature {TrackFeatureKind kind;std::int64_t bitOffset=0,bitLength=0;
 class TrackFluxRevolution {
 public:
     RETROMEDIALAB_MEDIAENGINE_API TrackFluxRevolution(std::int32_t resolutionNanoseconds,Revolution);
+    RETROMEDIALAB_MEDIAENGINE_API TrackFluxRevolution(std::int32_t resolutionNanoseconds,SharedRevolution);
     std::int32_t resolutionNanoseconds() const noexcept{return resolution_;}
-    const Revolution& flux() const noexcept{return flux_;}
+    const Revolution& flux() const noexcept{return *flux_;}
 private:
-    std::int32_t resolution_;Revolution flux_;
+    std::int32_t resolution_;SharedRevolution flux_;
 };
 class ProtectedTrack {
 public:

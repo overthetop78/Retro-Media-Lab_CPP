@@ -28,6 +28,7 @@ struct Track {
     std::vector<Revolution> revolutions;
 };
 struct Image {Header header;std::vector<Track> tracks;bool checksumValid=false;std::uint64_t fileSize=0;};
+using SharedImage=std::shared_ptr<const Image>;
 struct DecodeWindow {Flux::Revolution flux;std::int32_t revolution=0;bool continuous=false;};
 RETROMEDIALAB_MEDIAENGINE_API void visitDecodeWindows(const Flux::ProtectedTrack&,const std::function<void(const DecodeWindow&)>&,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API std::vector<DecodeWindow> decodeWindows(const Flux::ProtectedTrack&,std::stop_token={});

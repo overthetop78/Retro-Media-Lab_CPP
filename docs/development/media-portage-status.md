@@ -12,7 +12,7 @@ Le portage de MediaEngine, MediaFileSystems et MediaAnalysis est en cours. Les c
 
 ## Dernier travail terminé
 
-Les tâches 124, 125 et 126 portent respectivement les writers Epson/ImageDisk, la conversion des pistes protégées vers SCP et les modèles/ressources/lecteur des définitions de disquettes. Les contrôles ciblés ont réussi ; leurs programmes temporaires sont supprimés. La tâche 127 exclut les caches Python générés du suivi Git. La tâche 130 ajoute le catalogue principal et les factories brutes par défaut. La tâche 131 porte les catalogues dynamiques et l'adaptation aux formats logiciels annoncés par Greaseweazle. Les tâches 128 et 129 ajoutent la lecture/écriture brute générique et les adapters SCP/HFE au registre commun, avec contrôles ciblés réussis et programmes temporaires supprimés.
+Les tâches 124, 125 et 126 portent respectivement les writers Epson/ImageDisk, la conversion des pistes protégées vers SCP et les modèles/ressources/lecteur des définitions de disquettes. Les contrôles ciblés ont réussi ; leurs programmes temporaires sont supprimés. La tâche 127 exclut les caches Python générés du suivi Git. La tâche 130 ajoute le catalogue principal et les factories brutes par défaut. La tâche 131 porte les catalogues dynamiques et l'adaptation aux formats logiciels annoncés par Greaseweazle. La tâche 132 termine le lecteur SCP commun, son contrat injectable et son cache partagé avec nettoyage des travailleurs ; les révolutions du document partagent les buffers immuables de la capture. Les tâches 128 et 129 ajoutent la lecture/écriture brute générique et les adapters SCP/HFE au registre commun, avec contrôles ciblés réussis et programmes temporaires supprimés.
 
 ## Travail restant
 

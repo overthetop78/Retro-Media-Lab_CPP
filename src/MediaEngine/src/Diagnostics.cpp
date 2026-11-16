@@ -3,6 +3,9 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::ScpArgument:return DiagnosticKeys::ScpArgument;
+    case DiagnosticCode::ProtectedNullRevolution:return DiagnosticKeys::ProtectedNullRevolution;
+
     case DiagnosticCode::FormatCatalogData:return DiagnosticKeys::FormatCatalogData;
 
     case DiagnosticCode::DefinedRawFormat:return DiagnosticKeys::DefinedRawFormat;

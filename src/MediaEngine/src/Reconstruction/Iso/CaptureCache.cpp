@@ -2,38 +2,15 @@
 #include "Constants.h"
 #include "../../Formats/Scp/ProtectedImage.h"
 #include "../../Sources/RandomAccessSources.h"
+#include "../../Sources/FileIdentity.h"
 #include <RetroMediaLab/MediaFileSystems/Diagnostics.h>
 #include <future>
 #include <mutex>
 #include <unordered_map>
 namespace RetroMediaLab::MediaEngine::IsoReconstruction {
 namespace {
-struct Fingerprint {
-    std::filesystem::path path;
-    bool exists=false;
-    std::uintmax_t length=0;
-    std::filesystem::file_time_type modified{};
-    bool operator==(const Fingerprint&) const = default;
-};
-std::string utf8(const std::filesystem::path& path){
-    const auto value=path.u8string();
-    return {value.begin(),value.end()};
-}
-Fingerprint fingerprint(const std::filesystem::path& path){
-    if(path.empty()||path.native().find(std::filesystem::path::value_type{})!=std::filesystem::path::string_type::npos)
-        throw MediaFileSystems::MediaError(MediaFileSystems::DiagnosticCode::OpenFailed,{utf8(path)});
-    std::error_code error;
-    auto fullPath=std::filesystem::absolute(path,error).lexically_normal();
-    if(error)throw MediaFileSystems::MediaError(MediaFileSystems::DiagnosticCode::OpenFailed,{utf8(path)});
-    Fingerprint result{std::move(fullPath)};
-    if(!std::filesystem::is_regular_file(result.path,error)||error)return result;
-    const auto length=std::filesystem::file_size(result.path,error);
-    if(error)return result;
-    const auto modified=std::filesystem::last_write_time(result.path,error);
-    if(error)return result;
-    result.exists=true;result.length=length;result.modified=modified;
-    return result;
-}
+using Fingerprint=FileIdentity;
+Fingerprint fingerprint(const std::filesystem::path& path){return fileIdentity(path);}
 std::string decoderKey(std::span<const std::string> ids){
     std::string key;
     for(std::size_t index=0;index<ids.size();++index){

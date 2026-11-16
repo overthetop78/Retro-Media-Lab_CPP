@@ -5,8 +5,10 @@
 #include <algorithm>
 #include <cmath>
 namespace RetroMediaLab::MediaEngine::Flux {
-TrackFluxRevolution::TrackFluxRevolution(std::int32_t resolution,Revolution flux):resolution_(resolution),flux_(std::move(flux)){
+TrackFluxRevolution::TrackFluxRevolution(std::int32_t resolution,Revolution flux):TrackFluxRevolution(resolution,std::make_shared<const Revolution>(std::move(flux))){}
+TrackFluxRevolution::TrackFluxRevolution(std::int32_t resolution,SharedRevolution flux):resolution_(resolution),flux_(std::move(flux)){
     if(resolution<=0)throw MediaError(DiagnosticCode::ProtectedResolution,{std::to_string(resolution)});
+    if(!flux_)throw MediaError(DiagnosticCode::ProtectedNullRevolution);
 }
 namespace {
 void range(std::int64_t offset,std::int64_t length,std::uint64_t count,std::string_view field){

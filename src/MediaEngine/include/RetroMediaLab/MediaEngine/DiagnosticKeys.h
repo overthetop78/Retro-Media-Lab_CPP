@@ -1,6 +1,8 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ScpArgument="MediaEngine.ScpArgument";
+inline constexpr std::string_view ProtectedNullRevolution="MediaEngine.ProtectedNullRevolution";
 inline constexpr std::string_view FormatCatalogData="MediaEngine.FormatCatalogData";
 inline constexpr std::string_view DefinedRawFormat="MediaEngine.DefinedRawFormat";
 inline constexpr std::string_view DefinedRawLength="MediaEngine.DefinedRawLength";

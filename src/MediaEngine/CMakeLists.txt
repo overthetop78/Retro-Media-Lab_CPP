@@ -280,6 +280,8 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Scp/Models.cpp
   src/Formats/Scp/ProtectedImage.cpp
   src/Formats/Scp/Adapter.cpp
+  src/Formats/Scp/FileCache.cpp
+  src/Formats/Scp/Metadata.cpp
   src/Formats/Scp/OutputImage.cpp
   src/Formats/Scp/Reader.cpp
   src/Formats/Scp/Synthetic.cpp
@@ -317,7 +319,8 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Visualization/SectorFluxVisualizer.cpp
   # Sources
   src/Sources/AtomicImageWriter.cpp
-  src/Sources/RandomAccessSources.cpp)
+  src/Sources/RandomAccessSources.cpp
+  src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems)
