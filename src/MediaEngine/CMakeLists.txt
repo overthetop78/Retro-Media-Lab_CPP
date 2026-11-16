@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Audio/Mechanical/RecordedSounds.cpp
   src/Images/ReadingService.cpp
   src/Images/Creation/Blank.cpp
   src/Images/Creation/Catalog.cpp
@@ -576,3 +577,5 @@ if(WIN32)
 else()
   target_sources(RetroMediaLab.MediaEngine PRIVATE src/Sources/Platform/PreallocationUnavailable.cpp)
 endif()
+
+install(DIRECTORY Assets/MechanicalAudio DESTINATION Assets)
