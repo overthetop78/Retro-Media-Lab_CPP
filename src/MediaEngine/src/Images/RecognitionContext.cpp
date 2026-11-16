@@ -1,8 +1,8 @@
 #include "Readers.h"
 #include "../Primitives/Identifiers.h"
+#include "../Primitives/Path.h"
 #include "../Sources/RandomAccessSources.h"
 #include "../Sources/DriveAccess.h"
-#include <QFileInfo>
 #include <QString>
 #include <algorithm>
 #include <filesystem>
@@ -30,7 +30,7 @@ struct RecognitionContext::Impl {
         access->path=source->primaryPath();access->data=std::move(data);
         if(source->knownLength())length=*source->knownLength();else{const auto count=access->get()->length();if(count>std::uint64_t(std::numeric_limits<std::int64_t>::max()))throw M::MediaError(M::DiagnosticCode::ContextLengthOverflow);length=std::int64_t(count);}
         if(length<0)throw M::MediaError(M::DiagnosticCode::ContextKnownLength);
-        const auto suffix=QFileInfo(QString::fromUtf8(source->primaryPath())).suffix().toLower();if(!suffix.isEmpty())extension=std::string(1,ImageConstants::ExtensionSeparator)+suffix.toUtf8().toStdString();
+        extension=Primitives::utf8Identifier(Primitives::pathExtensionUtf8(source->primaryPath())).toLower().toStdString();
     }
     std::shared_ptr<const MediaSource> snapshot()const{std::lock_guard lock(sourceMutex);return source;}
     std::shared_future<std::vector<std::uint8_t>> page(std::int64_t index,std::stop_token token){

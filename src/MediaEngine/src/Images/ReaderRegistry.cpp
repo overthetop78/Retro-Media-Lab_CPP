@@ -4,8 +4,8 @@
 #include "../Sources/DriveAccess.h"
 #include "../Sources/DriveOperation.h"
 #include "../Primitives/Identifiers.h"
+#include "../Primitives/Path.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
-#include <QFileInfo>
 #include <algorithm>
 #include <limits>
 namespace RetroMediaLab::MediaEngine {
@@ -18,7 +18,7 @@ bool matchesSignature(const ReaderCapabilities& caps,const RecognitionContext& c
     const auto header=context.readHeaderAsync(std::int32_t(maximum),token).get();
     return std::any_of(caps.signatures.begin(),caps.signatures.end(),[&](const auto& signature){return signature.size()<=header.size()&&std::equal(signature.begin(),signature.end(),header.begin());});
 }
-std::string extension(std::string_view path){const auto suffix=QFileInfo(Primitives::utf8Identifier(path)).suffix();return suffix.isEmpty()?std::string{}:std::string(1,ImageConstants::ExtensionSeparator)+suffix.toUtf8().toStdString();}
+std::string extension(std::string_view path){return Primitives::pathExtensionUtf8(path); }
 }
 ReaderRegistry::ReaderRegistry(std::vector<std::shared_ptr<const ImageReader>> readers):readers_(std::move(readers)){
     if(std::any_of(readers_.begin(),readers_.end(),[](const auto& reader){return !reader;}))throw MediaError(DiagnosticCode::ReaderRegistryNull);
