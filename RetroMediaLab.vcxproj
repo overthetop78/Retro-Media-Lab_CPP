@@ -231,6 +231,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeFormatIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h" />
     <ClInclude Include="src\MediaEngine\src\Audio\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Conversion.cpp" />
@@ -969,6 +970,7 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\CommodoreTap\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\CommodoreTap\Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\CommodoreTap\Writer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\BlockIndex.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PcmConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp" />
@@ -978,7 +980,11 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Signal.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\SignalBlocks.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\SignalBlocks.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\SignalConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\SignalIO.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\SignalIoConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\UefDocument.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\UefSignal.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Compression.cpp" />
@@ -1574,6 +1580,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\teledisk-reader.json" />
@@ -1763,6 +1770,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\teledisk-reader.json" />
@@ -1952,6 +1960,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\teledisk-reader.json" />
@@ -2141,6 +2150,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\teledisk-reader.json" />
@@ -2330,6 +2340,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\teledisk-reader.json" />
@@ -2519,6 +2530,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\teledisk-reader.json" />
@@ -2708,6 +2720,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\teledisk-reader.json" />
@@ -2897,6 +2910,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\teledisk-reader.json" />
@@ -3086,6 +3100,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\teledisk-reader.json" />
@@ -3275,6 +3290,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\teledisk-reader.json" />
@@ -3464,6 +3480,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\teledisk-reader.json" />
@@ -3653,6 +3670,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\teledisk-reader.json" />
@@ -3842,6 +3860,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\teledisk-reader.json" />
@@ -4031,6 +4050,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\teledisk-reader.json" />
@@ -4220,6 +4240,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\teledisk-reader.json" />
@@ -4409,6 +4430,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\teledisk-reader.json" />
@@ -4598,6 +4620,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\teledisk-reader.json" />
@@ -4787,6 +4810,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\teledisk-reader.json" />
@@ -4976,6 +5000,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\teledisk-reader.json" />
@@ -5165,6 +5190,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\teledisk-reader.json" />
@@ -5354,6 +5380,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\teledisk-reader.json" />
@@ -5543,6 +5570,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\teledisk-reader.json" />
@@ -5732,6 +5760,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\teledisk-reader.json" />
@@ -5921,6 +5950,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\teledisk-reader.json" />
@@ -6110,6 +6140,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\teledisk-reader.json" />
@@ -6299,6 +6330,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\teledisk-reader.json" />
@@ -6488,6 +6520,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\teledisk-reader.json" />
@@ -6677,6 +6710,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\teledisk-reader.json" />
@@ -6866,6 +6900,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\teledisk-reader.json" />
@@ -7055,6 +7090,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-writing.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\tape-signal-access.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\tape-signal.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\teledisk-advanced.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\teledisk-reader.json" />

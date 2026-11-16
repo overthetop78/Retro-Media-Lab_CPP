@@ -28,6 +28,7 @@ public:
     int sampleRate()const noexcept{return rate_;}
     const std::optional<std::vector<int>>& blockPositions()const noexcept{return positions_;}
     const std::optional<std::vector<MediaTapeBlock>>& blocks()const noexcept{return blocks_;}
+    RETROMEDIALAB_MEDIAENGINE_API MediaTapeSignal withBlocks(std::vector<MediaTapeBlock>,std::optional<std::vector<int>> positions)const;
 private:
     std::shared_ptr<const std::vector<std::int16_t>> samples_;
     int rate_;

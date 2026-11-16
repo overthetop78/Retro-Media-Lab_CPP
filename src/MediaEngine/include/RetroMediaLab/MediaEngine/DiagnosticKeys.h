@@ -1,6 +1,8 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view TapeSignalFormat="MediaEngine.TapeSignalFormat";
+
 inline constexpr std::string_view FfmpegRequest="MediaEngine.FfmpegRequest";
 inline constexpr std::string_view FfmpegInput="MediaEngine.FfmpegInput";
 inline constexpr std::string_view FfmpegOutput="MediaEngine.FfmpegOutput";

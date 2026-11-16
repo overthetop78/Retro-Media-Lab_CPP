@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Tape/Common/SignalIO.cpp
+  src/Formats/Tape/Common/SignalBlocks.cpp
+  src/Formats/Tape/Common/BlockIndex.cpp
   src/Audio/Conversion.cpp
   src/Formats/Common/Audio/DecodedPcm.cpp
   src/Formats/Tape/Audio/Reader.cpp

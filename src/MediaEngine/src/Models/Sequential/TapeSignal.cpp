@@ -2,6 +2,10 @@
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine {
+MediaTapeSignal MediaTapeSignal::withBlocks(std::vector<MediaTapeBlock> blocks,std::optional<std::vector<int>> positions)const{
+    if(positions&&std::any_of(positions->begin(),positions->end(),[](int value){return value<0;}))throw MediaError(DiagnosticCode::TapePcmData);
+    auto result=*this;result.blocks_=std::move(blocks);result.positions_=std::move(positions);return result;
+}
 MediaTapeBlock::MediaTapeBlock(int position,std::vector<std::uint8_t> data,std::optional<bool> integrity,std::map<std::string,std::string> metadata)
     :position_(position),data_(std::make_shared<const std::vector<std::uint8_t>>(std::move(data))),integrity_(integrity),metadata_(std::move(metadata)){
     if(position_<0)throw MediaError(DiagnosticCode::TapePcmData);
