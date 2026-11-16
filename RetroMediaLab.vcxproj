@@ -1999,6 +1999,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExploration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
@@ -2307,6 +2308,10 @@
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\ProjectionConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionFormats.cpp" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Disk\ProjectionTracks.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Media\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Media\Facade.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Media\Service.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Media\Service.h" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Content.cpp" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Identification.cpp" />

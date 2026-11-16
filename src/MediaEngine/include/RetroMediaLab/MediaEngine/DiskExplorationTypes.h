@@ -1,6 +1,7 @@
 #pragma once
 #include "ExplorationInfo.h"
 #include "DiskMetadata.h"
+#include "ScpHeader.h"
 #include <functional>
 #include <span>
 namespace RetroMediaLab::MediaEngine {
@@ -25,6 +26,8 @@ struct DiskRevolutionInfo {
  std::shared_ptr<const std::vector<std::uint32_t>> fluxIntervals;
 };
 struct DiskTrackInfo {std::optional<std::int32_t> sourceNumber;std::int32_t cylinder=0,head=0;std::vector<DiskRevolutionInfo> revolutions;std::vector<DiskSourceSectorInfo> sourceSectors;};
+struct DiskCaptureSnapshot {Scp::Header header;std::vector<DiskTrackInfo> tracks;bool checksumValid=false;std::uint64_t fileSize=0;};
+using DiskCaptureLoadedCallback=std::function<void(std::shared_ptr<const DiskCaptureSnapshot>)>;
 struct DiskContainerInfo {
  std::optional<std::string> signature,diskType;
  std::optional<std::int32_t> resolutionNanoseconds,revolutionCount,firstTrack,lastTrack;

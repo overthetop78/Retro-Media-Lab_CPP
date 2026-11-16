@@ -25,15 +25,8 @@ DiskExploration unknown(const std::filesystem::path& path,std::shared_ptr<const 
  auto image=sparseSectorImage({std::string(UnknownFormat),UnknownBlockSize,UnknownDimension,UnknownDimension,UnknownDimension},{},{false,std::uint64_t(info.size()),UnknownBlockCount});
  return make(path,std::move(document),image,{},{image},std::move(capture),token);
 }
-bool unsupported(const std::exception_ptr& failure){
- try{std::rethrow_exception(failure);}
- catch(const RecognitionError& error){return error.diagnostic().code==DiagnosticCode::ReaderNoneAccepted;}
- catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
- catch(const MediaError& error){return error.diagnostic().code==DiagnosticCode::UnsupportedRawFormat;}
- catch(...){return false;}
-}
 bool rejectedFlux(const std::exception_ptr& failure){
- if(isImageReadRejection(failure)||unsupported(failure))return true;
+ if(isImageReadRejection(failure)||isUnsupportedImageRead(failure))return true;
  try{std::rethrow_exception(failure);}catch(const MediaError& error){return error.diagnostic().code==DiagnosticCode::ReaderAllRejected&&std::all_of(error.causes().begin(),error.causes().end(),[](const auto& cause){return isImageReadRejection(cause.exception);});}catch(...){return false;}
 }
 }
@@ -50,11 +43,11 @@ std::shared_ptr<const MediaDocument> DiskImageExplorer::readDocument(const std::
  checkCancellation(token);SourceOptions options;options.primaryPath=utf8(path);
  if(!same(utf8(path.extension()),Scp::Constants::Extension))options.requestedFormatId=format;
  try{return reading_.readAsync(std::make_shared<MediaSource>(options),token).get();}
- catch(...){if(!format||!unsupported(std::current_exception()))throw;options.requestedFormatId.reset();return reading_.readAsync(std::make_shared<MediaSource>(std::move(options)),token).get();}
+ catch(...){if(!format||!isUnsupportedImageRead(std::current_exception()))throw;options.requestedFormatId.reset();return reading_.readAsync(std::make_shared<MediaSource>(std::move(options)),token).get();}
 }
 DiskExploration DiskImageExplorer::explore(const std::filesystem::path& path,std::optional<std::string> format,const ScpInspection::Progress& progress,std::stop_token token)const{
  checkCancellation(token);if(!QFileInfo(QString::fromStdU16String(path.u16string())).isFile())throw MediaError(DiagnosticCode::AtomicOpen,{utf8(path)});
- std::shared_ptr<const MediaDocument> document;try{document=readDocument(path,format,token);}catch(...){if(!unsupported(std::current_exception()))throw;return unknown(path,{},{},token);}
+ std::shared_ptr<const MediaDocument> document;try{document=readDocument(path,format,token);}catch(...){if(!isUnsupportedImageRead(std::current_exception()))throw;return unknown(path,{},{},token);}
  return explore(std::move(document),std::move(format),progress,token);
 }
 DiskExploration DiskImageExplorer::exploreSectors(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document,SectorImageOwner image,std::optional<std::string> format,Scp::SharedImage capture,std::stop_token token)const{

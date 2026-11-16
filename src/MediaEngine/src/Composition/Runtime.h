@@ -11,6 +11,7 @@
 #include "../Encoding/SectorImageEncoder.h"
 #include "../Reconstruction/Scp/Composition.h"
 #include "../Formats/Scp/Adapter.h"
+#include "../Exploration/Media/Service.h"
 namespace RetroMediaLab::MediaEngine::RuntimeDetails {
 struct Services {
     MediaRecognitionComposition reading=MediaRecognitionComposition::createDefault();
@@ -23,6 +24,8 @@ struct Services {
     SectorFileConversion::Service sectorFiles{sectors,writing};
     ScpInspection::Service scpInspection{reading.scpReader(),sectors.candidates(),sectors.decodeOperation(),ScpInspection::Inspector(fileSystems,interpretations)};
     DiskImageExplorer disks{reading.readingService(),fileSystems,scpInspection,sectors.reader(),interpretations};
+    MediaExplorer media=MediaExplorer::createDefault();
+    MediaExplorationService exploration{reading.readingService(),disks,media};
     Encoding::SectorImageEncoder sectorEncoder;
     OpticalImageConversionService optical{reading.readingService(),writing.registry(),writing.writingService()};
     SequentialMediaConversionService sequential{reading.readingService(),SequentialMediaComposition::createDefault(),writing.registry(),writing.writingService()};

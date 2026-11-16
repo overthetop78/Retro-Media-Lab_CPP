@@ -36,3 +36,9 @@ std::vector<DiskTrackInfo> tracks(const DiskExploration& disk,const Cache& cache
  }return result;
 }
 }
+namespace RetroMediaLab::MediaEngine {
+std::shared_ptr<const DiskCaptureSnapshot> DiskProjectionAccess::capture(Scp::SharedImage capture){
+ if(!capture)throw MediaError(DiagnosticCode::ReaderNullDocument);
+ DiskExploration disk;disk.capture=std::move(capture);auto result=std::make_shared<DiskCaptureSnapshot>();result->header=disk.capture->header;result->tracks=DiskProjection::tracks(disk,{});result->checksumValid=disk.capture->checksumValid;result->fileSize=disk.capture->fileSize;return result;
+}
+}

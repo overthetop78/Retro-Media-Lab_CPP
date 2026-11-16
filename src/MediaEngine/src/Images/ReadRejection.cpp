@@ -1,7 +1,16 @@
 #include "ReadRejection.h"
+#include "RecognitionResult.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <RetroMediaLab/MediaFileSystems/Diagnostics.h>
 namespace RetroMediaLab::MediaEngine {
+bool isUnsupportedImageRead(const std::exception_ptr& failure){
+    if(!failure)return false;
+    try{std::rethrow_exception(failure);}
+    catch(const RecognitionError& error){return error.diagnostic().code==DiagnosticCode::ReaderNoneAccepted;}
+    catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
+    catch(const MediaError& error){return error.diagnostic().code==DiagnosticCode::UnsupportedRawFormat;}
+    catch(...){return false;}
+}
 bool isImageReadRejection(const std::exception_ptr& failure){
     if(!failure)return false;
     try{std::rethrow_exception(failure);}

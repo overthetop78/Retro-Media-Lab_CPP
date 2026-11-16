@@ -21,5 +21,6 @@ namespace RetroMediaLab::MediaEngine {
 class DiskProjectionAccess final {
 public:
  RETROMEDIALAB_MEDIAENGINE_API static std::shared_ptr<const ExploredDisk> create(DiskExploration,std::stop_token={});
+ RETROMEDIALAB_MEDIAENGINE_API static std::shared_ptr<const DiskCaptureSnapshot> capture(Scp::SharedImage);
 };
 }
