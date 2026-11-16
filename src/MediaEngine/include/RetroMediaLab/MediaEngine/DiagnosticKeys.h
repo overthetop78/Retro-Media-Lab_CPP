@@ -1,6 +1,17 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view CommodoreTapHeader="MediaEngine.CommodoreTapHeader";
+inline constexpr std::string_view CommodoreTapVersion="MediaEngine.CommodoreTapVersion";
+inline constexpr std::string_view CommodoreTapClock="MediaEngine.CommodoreTapClock";
+inline constexpr std::string_view CommodoreTapData="MediaEngine.CommodoreTapData";
+inline constexpr std::string_view CommodoreTapWrite="MediaEngine.CommodoreTapWrite";
+inline constexpr std::string_view CommodoreTapeIncompatible="MediaEngine.CommodoreTapeIncompatible";
+inline constexpr std::string_view CommodoreTapePcm="MediaEngine.CommodoreTapePcm";
+inline constexpr std::string_view CommodoreTapeNoFrames="MediaEngine.CommodoreTapeNoFrames";
+inline constexpr std::string_view CommodoreTapeEncode="MediaEngine.CommodoreTapeEncode";
+inline constexpr std::string_view CommodoreTapeLimit="MediaEngine.CommodoreTapeLimit";
+
 inline constexpr std::string_view SpectrumTapeIncompatible="MediaEngine.SpectrumTapeIncompatible";
 inline constexpr std::string_view SpectrumTapePcm="MediaEngine.SpectrumTapePcm";
 inline constexpr std::string_view SpectrumTapeNoBlocks="MediaEngine.SpectrumTapeNoBlocks";

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "The Commodore TAP header, signature, or declared data length is invalid.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP version {0} is unsupported.",
+    "MediaEngine.CommodoreTapClock": "The Commodore TAP platform and video standard combination is unsupported.",
+    "MediaEngine.CommodoreTapData": "A Commodore TAP pulse is truncated or has zero duration.",
+    "MediaEngine.CommodoreTapWrite": "The pulses cannot be represented by the selected Commodore TAP profile.",
+    "MediaEngine.CommodoreTapeIncompatible": "The document is incompatible with the Commodore tape decoder.",
+    "MediaEngine.CommodoreTapePcm": "The PCM audio profile is incomplete or incompatible.",
+    "MediaEngine.CommodoreTapeNoFrames": "No standard Commodore ROM byte frame was recognized.",
+    "MediaEngine.CommodoreTapeEncode": "Commodore tape encoding requires validated blocks without retained undecoded segments.",
+    "MediaEngine.CommodoreTapeLimit": "The Commodore tape data exceeds the supported pulse, sample, or duration limit."
+  }
+}

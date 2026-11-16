@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Заголовок Commodore TAP, підпис або заявлена довжина даних недійсна.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP версія {0} не підтримується.",
+    "MediaEngine.CommodoreTapClock": "Платформа Commodore TAP і відео стандартне поєднання не підтримується.",
+    "MediaEngine.CommodoreTapData": "імпульс Commodore TAP обрізається або має нульову тривалість.",
+    "MediaEngine.CommodoreTapWrite": "Пульси не можуть бути представлені вибраним профілю Commodore TAP.",
+    "MediaEngine.CommodoreTapeIncompatible": "Документ несумісний із декодером стрічок Commodore.",
+    "MediaEngine.CommodoreTapePcm": "Аудіо-профіль PCM неповний або несумісний.",
+    "MediaEngine.CommodoreTapeNoFrames": "Не розпізнано стандартного байтового кадру Commodore ROM.",
+    "MediaEngine.CommodoreTapeEncode": "Кодування стрічки Commodore потребує перевірених блоків без збережених недекодованих сегментів.",
+    "MediaEngine.CommodoreTapeLimit": "Дані стрічки Commodore перевершують підтримуваний імпульс, зразок або обмеження тривалості."
+  }
+}

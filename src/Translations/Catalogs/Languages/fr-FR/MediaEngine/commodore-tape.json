@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "L’en-tête Commodore TAP, sa signature ou la longueur de données déclarée est invalide.",
+    "MediaEngine.CommodoreTapVersion": "La version {0} de Commodore TAP n’est pas prise en charge.",
+    "MediaEngine.CommodoreTapClock": "La combinaison plateforme/standard vidéo Commodore TAP n’est pas prise en charge.",
+    "MediaEngine.CommodoreTapData": "Une impulsion Commodore TAP est tronquée ou a une durée zéro.",
+    "MediaEngine.CommodoreTapWrite": "Les impulsions ne peuvent pas être représentées par le profil Commodore TAP sélectionné.",
+    "MediaEngine.CommodoreTapeIncompatible": "Le document est incompatible avec le décodeur de bande Commodore.",
+    "MediaEngine.CommodoreTapePcm": "Le profil audio PCM est incomplet ou incompatible.",
+    "MediaEngine.CommodoreTapeNoFrames": "Aucune trame d’octet ROM Commodore standard n’a été reconnue.",
+    "MediaEngine.CommodoreTapeEncode": "L'encodage de bande Commodore nécessite des blocs validés sans segments non décodés conservés.",
+    "MediaEngine.CommodoreTapeLimit": "Les données de bande Commodore dépassent la limite prise en charge de nombre d’impulsions, d’échantillons ou de durée."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Commodore TAP 标题,签名,或声明的数据长度无效.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP版本{0} 不支持 。",
+    "MediaEngine.CommodoreTapClock": "Commodore TAP平台和视频标准组合不支持.",
+    "MediaEngine.CommodoreTapData": "Commodore TAP脉冲被截断或持续时间为零.",
+    "MediaEngine.CommodoreTapWrite": "脉冲不能被所选的Commodore TAP profile 所代表.",
+    "MediaEngine.CommodoreTapeIncompatible": "该文档与Commodore磁带解码器不相容.",
+    "MediaEngine.CommodoreTapePcm": "PCM音频配置不完整或不兼容.",
+    "MediaEngine.CommodoreTapeNoFrames": "未识别出标准Commodore ROM字节框架 。",
+    "MediaEngine.CommodoreTapeEncode": "Commodore磁带编码需要验证块而无需保留未解码段.",
+    "MediaEngine.CommodoreTapeLimit": "Commodore磁带数据超过支持的脉冲,样本,或持续时间限制."
+  }
+}

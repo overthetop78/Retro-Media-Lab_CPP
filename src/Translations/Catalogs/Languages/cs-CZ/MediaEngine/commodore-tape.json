@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Záhlaví, podpis nebo deklarovaná délka dat Commodore TAP je neplatná.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP verze {0} není podporována.",
+    "MediaEngine.CommodoreTapClock": "Kombinace platformy Commodore TAP a standardu videa není podporována.",
+    "MediaEngine.CommodoreTapData": "Pulz Commodore TAP je zkrácen nebo nemá žádnou délku.",
+    "MediaEngine.CommodoreTapWrite": "Puls nemůže být reprezentován zvoleným profilem Commodore TAP.",
+    "MediaEngine.CommodoreTapeIncompatible": "Dokument je neslučitelný s dekodérem Commodore pásky.",
+    "MediaEngine.CommodoreTapePcm": "Zvukový profil PCM je neúplný nebo nekompatibilní.",
+    "MediaEngine.CommodoreTapeNoFrames": "Žádný standardní Commodore ROM byte rám nebyl uznán.",
+    "MediaEngine.CommodoreTapeEncode": "kódování pásky Commodore vyžaduje ověřené bloky bez zachovaných nedekódovaných segmentů.",
+    "MediaEngine.CommodoreTapeLimit": "Data z Commodore pásky přesahují podporovaný puls, vzorek nebo délku trvání."
+  }
+}

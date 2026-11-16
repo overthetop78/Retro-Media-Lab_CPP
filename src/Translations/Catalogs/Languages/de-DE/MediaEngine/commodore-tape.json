@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Der Commodore TAP-Header, die Signatur oder die deklarierte Datenlänge ist ungültig.",
+    "MediaEngine.CommodoreTapVersion": "Die Commodore TAP Version {0} wird nicht unterstützt.",
+    "MediaEngine.CommodoreTapClock": "Die Commodore TAP Plattform und Video-Standard-Kombination wird nicht unterstützt.",
+    "MediaEngine.CommodoreTapData": "Ein Commodore TAP-Puls ist verkürzt oder hat eine Dauer von Null.",
+    "MediaEngine.CommodoreTapWrite": "Die Impulse können nicht durch das ausgewählte Commodore TAP-Profil dargestellt werden.",
+    "MediaEngine.CommodoreTapeIncompatible": "Das Dokument ist mit dem Commodore Banddecoder nicht kompatibel.",
+    "MediaEngine.CommodoreTapePcm": "Das PCM-Audioprofil ist unvollständig oder inkompatibel.",
+    "MediaEngine.CommodoreTapeNoFrames": "Es wurde kein Standard Commodore ROM Byte Frame erkannt.",
+    "MediaEngine.CommodoreTapeEncode": "Die Codierung von Commodore-Band erfordert validierte Blöcke ohne beibehaltene undecodierte Segmente.",
+    "MediaEngine.CommodoreTapeLimit": "Die Commodore-Banddaten überschreiten die unterstützte Puls-, Sample- oder Dauergrenze."
+  }
+}

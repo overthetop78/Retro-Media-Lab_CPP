@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "O cabeçalho, assinatura ou comprimento dos dados declarados do Commodore TAP é inválido.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP versão {0} não é suportado.",
+    "MediaEngine.CommodoreTapClock": "A combinação Commodore TAP plataforma e padrão de vídeo não é suportado.",
+    "MediaEngine.CommodoreTapData": "Um pulso Commodore TAP é truncado ou tem duração zero.",
+    "MediaEngine.CommodoreTapWrite": "Os pulsos não podem ser representados pelo perfil Commodore TAP selecionado.",
+    "MediaEngine.CommodoreTapeIncompatible": "O documento é incompatível com o decodificador de fita Commodore.",
+    "MediaEngine.CommodoreTapePcm": "O perfil de áudio PCM é incompleto ou incompatível.",
+    "MediaEngine.CommodoreTapeNoFrames": "Nenhum quadro de byte padrão do Commodore ROM foi reconhecido.",
+    "MediaEngine.CommodoreTapeEncode": "A codificação de fita Commodore requer blocos validados sem segmentos não decodificados retidos.",
+    "MediaEngine.CommodoreTapeLimit": "Os dados da fita Commodore excedem o pulso, amostra ou limite de duração suportados."
+  }
+}

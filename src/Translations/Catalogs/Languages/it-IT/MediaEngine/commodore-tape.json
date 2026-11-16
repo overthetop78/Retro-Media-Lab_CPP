@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "L'intestazione Commodore TAP, la firma o la lunghezza dichiarata dei dati non è valida.",
+    "MediaEngine.CommodoreTapVersion": "La versione Commodore TAP {0} non è supportata.",
+    "MediaEngine.CommodoreTapClock": "La piattaforma Commodore TAP e la combinazione standard video non sono supportati.",
+    "MediaEngine.CommodoreTapData": "Un impulso Commodore TAP è troncato o ha durata zero.",
+    "MediaEngine.CommodoreTapWrite": "Gli impulsi non possono essere rappresentati dal profilo selezionato Commodore TAP.",
+    "MediaEngine.CommodoreTapeIncompatible": "Il documento è incompatibile con il decoder a nastro Commodore.",
+    "MediaEngine.CommodoreTapePcm": "Il profilo audio PCM è incompleto o incompatibile.",
+    "MediaEngine.CommodoreTapeNoFrames": "Non è stato riconosciuto alcun frame di byte ROM Commodore standard.",
+    "MediaEngine.CommodoreTapeEncode": "La codifica del nastro Commodore richiede blocchi convalidati senza segmenti conservati non decodificati.",
+    "MediaEngine.CommodoreTapeLimit": "I dati del nastro Commodore superano il limite supportato di impulsi, campioni o durata."
+  }
+}

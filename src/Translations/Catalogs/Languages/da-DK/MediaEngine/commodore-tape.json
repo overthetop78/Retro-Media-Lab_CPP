@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Commodore TAP header, signatur eller erklæret datalængde er ugyldig.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP version {0} er ikke understøttet.",
+    "MediaEngine.CommodoreTapClock": "Commodore TAP platform og video standard kombination er ikke understøttet.",
+    "MediaEngine.CommodoreTapData": "En Commodore TAP puls er afkortet eller har nul varighed.",
+    "MediaEngine.CommodoreTapWrite": "Pulserne kan ikke repræsenteres af den valgte Commodore TAP profil.",
+    "MediaEngine.CommodoreTapeIncompatible": "Dokumentet er uforeneligt med Commodore bånd dekoder.",
+    "MediaEngine.CommodoreTapePcm": "PCM lydprofil er ufuldstændig eller inkompatibel.",
+    "MediaEngine.CommodoreTapeNoFrames": "Ingen standard Commodore ROM byte ramme blev anerkendt.",
+    "MediaEngine.CommodoreTapeEncode": "Commodore tape kodning kræver validerede blokke uden bevarede udekodede segmenter.",
+    "MediaEngine.CommodoreTapeLimit": "Commodore bånddata overstiger den understøttede puls, prøve eller varighed grænse."
+  }
+}

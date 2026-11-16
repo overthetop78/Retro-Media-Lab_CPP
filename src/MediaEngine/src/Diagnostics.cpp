@@ -3,6 +3,16 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::CommodoreTapHeader:return DiagnosticKeys::CommodoreTapHeader;
+    case DiagnosticCode::CommodoreTapVersion:return DiagnosticKeys::CommodoreTapVersion;
+    case DiagnosticCode::CommodoreTapClock:return DiagnosticKeys::CommodoreTapClock;
+    case DiagnosticCode::CommodoreTapData:return DiagnosticKeys::CommodoreTapData;
+    case DiagnosticCode::CommodoreTapWrite:return DiagnosticKeys::CommodoreTapWrite;
+    case DiagnosticCode::CommodoreTapeIncompatible:return DiagnosticKeys::CommodoreTapeIncompatible;
+    case DiagnosticCode::CommodoreTapePcm:return DiagnosticKeys::CommodoreTapePcm;
+    case DiagnosticCode::CommodoreTapeNoFrames:return DiagnosticKeys::CommodoreTapeNoFrames;
+    case DiagnosticCode::CommodoreTapeEncode:return DiagnosticKeys::CommodoreTapeEncode;
+    case DiagnosticCode::CommodoreTapeLimit:return DiagnosticKeys::CommodoreTapeLimit;
     case DiagnosticCode::SpectrumTapeIncompatible:return DiagnosticKeys::SpectrumTapeIncompatible;
     case DiagnosticCode::SpectrumTapePcm:return DiagnosticKeys::SpectrumTapePcm;
     case DiagnosticCode::SpectrumTapeNoBlocks:return DiagnosticKeys::SpectrumTapeNoBlocks;

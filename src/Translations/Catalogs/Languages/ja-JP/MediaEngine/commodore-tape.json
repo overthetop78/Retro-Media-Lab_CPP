@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Commodore TAPヘッダー、署名、または宣言されたデータ長は無効です。",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP バージョン {0} はサポートされていません。",
+    "MediaEngine.CommodoreTapClock": "Commodore TAPプラットフォームとビデオ標準の組み合わせはサポートされていません。",
+    "MediaEngine.CommodoreTapData": "Commodore TAPパルスが途中で切れているか、長さがゼロです。",
+    "MediaEngine.CommodoreTapWrite": "パルスは、選択したCommodore TAPプロファイルでは表現できません。",
+    "MediaEngine.CommodoreTapeIncompatible": "文書はCommodoreテープデコーダーと互換性がありません。",
+    "MediaEngine.CommodoreTapePcm": "PCMオーディオプロファイルは不完全または非互換性です。",
+    "MediaEngine.CommodoreTapeNoFrames": "標準的なCommodore ROM バイト フレームが認められなかった。",
+    "MediaEngine.CommodoreTapeEncode": "Commodoreテープのエンコードには、検証済みのブロックが必要です。保持された未デコードのセグメントは使用できません。",
+    "MediaEngine.CommodoreTapeLimit": "Commodore テープデータは、サポートされたパルス、サンプル、または期間制限を超える。"
+  }
+}

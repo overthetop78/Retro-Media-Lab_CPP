@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "A Commodore TAP fejléc, aláírás vagy megadott adathossz érvénytelen.",
+    "MediaEngine.CommodoreTapVersion": "Commodore TAP version {0} nem támogatott.",
+    "MediaEngine.CommodoreTapClock": "A Commodore TAP platform és a video standard kombináció nem támogatott.",
+    "MediaEngine.CommodoreTapData": "A Commodore TAP impulzus csonkított vagy nulla időtartamú.",
+    "MediaEngine.CommodoreTapWrite": "Az impulzusokat nem képviselheti a kiválasztott Commodore TAP profil.",
+    "MediaEngine.CommodoreTapeIncompatible": "A dokumentum összeegyeztethetetlen a Commodore szalag dekóderrel.",
+    "MediaEngine.CommodoreTapePcm": "A PCM audio profil hiányos vagy összeegyeztethetetlen.",
+    "MediaEngine.CommodoreTapeNoFrames": "A Commodore ROM byte frame nem ismert.",
+    "MediaEngine.CommodoreTapeEncode": "A Commodore szalag kódolásához validált blokkok kellenek, dekódolatlan szegmensek nélkül.",
+    "MediaEngine.CommodoreTapeLimit": "A Commodore szalag adatai meghaladják a támogatott impulzus, minta vagy időtartam határértéket."
+  }
+}

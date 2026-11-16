@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.CommodoreTapHeader": "Antet Commodore TAP, semnătură, sau lungimea declarată a datelor este invalidă.",
+    "MediaEngine.CommodoreTapVersion": "Versiunea Commodore TAP {0} nu este susținută.",
+    "MediaEngine.CommodoreTapClock": "Platforma Commodore TAP şi combinaţia video standard sunt nesusţinute.",
+    "MediaEngine.CommodoreTapData": "Un puls Commodore TAP este trunchiat sau are durata zero.",
+    "MediaEngine.CommodoreTapWrite": "Pulsul nu poate fi reprezentat de profilul ales de Commodore TAP.",
+    "MediaEngine.CommodoreTapeIncompatible": "Documentul este incompatibil cu decodorul de bandă Commodore.",
+    "MediaEngine.CommodoreTapePcm": "Profilul audio PCM este incomplet sau incompatibil.",
+    "MediaEngine.CommodoreTapeNoFrames": "Nu a fost recunoscut nici un cadru standard Commodore ROM byte.",
+    "MediaEngine.CommodoreTapeEncode": "Codificarea benzilor Commodore necesită blocuri validate fără segmente păstrate nedecodificate.",
+    "MediaEngine.CommodoreTapeLimit": "Datele de bandă Commodore depășesc pulsul, eșantionul sau limita de durată."
+  }
+}
