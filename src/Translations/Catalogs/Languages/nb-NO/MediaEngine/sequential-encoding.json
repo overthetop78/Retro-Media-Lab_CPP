@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "De sekvensielle målformatene og maskinidentifikatorene må ikke være tomme.",
+    "MediaEngine.SequentialEncoderNull": "En sekvensiell mediekoder kan ikke være null.",
+    "MediaEngine.SequentialEncoderMissing": "Ingen sekvenskoder aksepterer formatet «{0}» for maskinen '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Flere sekvensielle kodere godtar format «{0}» for maskinen '{1}'.",
+    "MediaEngine.AtariEncodeData": "Atari CAS-koding krever validerte blokker ikke større enn 65535 bytes.",
+    "MediaEngine.AtariMarkDuration": "Et Atari CAS-merkevarighet må passe 16-bits hjelpefelt."
+  }
+}

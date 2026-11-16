@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "รูปแบบเป้าหมายแบบลำดับและตัวระบุเครื่องต้องไม่ว่าง",
+    "MediaEngine.SequentialEncoderNull": "ตัวเข้ารหัสสื่อแบบลำดับต้องไม่เป็น null",
+    "MediaEngine.SequentialEncoderMissing": "ไม่มีตัวเข้ารหัสแบบลำดับที่ยอมรับรูปแบบ «{0}» สำหรับเครื่อง «{1}»",
+    "MediaEngine.SequentialEncoderAmbiguous": "ตัวเข้ารหัสแบบลำดับหลายตัวยอมรับรูปแบบ «{0}» สำหรับเครื่อง «{1}»",
+    "MediaEngine.AtariEncodeData": "การเข้ารหัส Atari CAS ต้องใช้บล็อกที่ผ่านการตรวจสอบและมีขนาดไม่เกิน 65535 ไบต์",
+    "MediaEngine.AtariMarkDuration": "ระยะเวลาสัญญาณ Atari CAS ต้องอยู่ในขอบเขตของฟิลด์เสริม 16 บิต"
+  }
+}

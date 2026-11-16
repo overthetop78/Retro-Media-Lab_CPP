@@ -287,6 +287,11 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Decoding/Sequential/Fsk/Encode.cpp
   src/Decoding/Sequential/Atari/Records.cpp
   src/Decoding/Sequential/Atari/Decoder.cpp
+  src/Encoding/Sequential/Request.cpp
+  src/Encoding/Sequential/Registry.cpp
+  src/Encoding/Sequential/Compatibility.cpp
+  src/Encoding/Sequential/Atari/Records.cpp
+  src/Encoding/Sequential/Atari/Encoder.cpp
   src/Decoding/Sequential/Models.cpp
   src/Decoding/Sequential/Registry.cpp
   src/Images/SequentialContentAdapter.cpp

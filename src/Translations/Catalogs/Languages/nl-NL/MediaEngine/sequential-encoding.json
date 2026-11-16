@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Het sequentiële doelformaat en de machineidentificatie mogen niet leeg zijn.",
+    "MediaEngine.SequentialEncoderNull": "Een sequentiële mediacoder kan niet nul zijn.",
+    "MediaEngine.SequentialEncoderMissing": "Geen sequentiële encoder accepteert formaat '{0}' voor machine '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Meerdere sequentiële encoders accepteren formaat '{0}' voor machine '{1}'.",
+    "MediaEngine.AtariEncodeData": "Atari CAS codering vereist gevalideerde blokken niet groter dan 65535 bytes.",
+    "MediaEngine.AtariMarkDuration": "Een Atari CAS-markeringsduur moet in het 16-bits hulpveld passen."
+  }
+}

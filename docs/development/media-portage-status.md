@@ -74,6 +74,8 @@ La tâche 165 porte le conteneur Atari CAS, les fonctions FSK communes et le dé
 
 Les blocs décodés séquentiels partagent désormais leurs octets possédés et immuables lors des copies de requêtes. Cela évite de recopier les données pendant la sélection des encodeurs. Compilation et contrôle ciblé réussis.
 
+La tâche 166 porte les contrats et le registre d’encodage séquentiel, puis l’encodeur Atari CAS avec reconstruction explicite des records logiques et conservation validée des chunks. Compilation, contrôle ciblé, catalogues et audit réussis. Les services globaux de conversion restent à porter.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

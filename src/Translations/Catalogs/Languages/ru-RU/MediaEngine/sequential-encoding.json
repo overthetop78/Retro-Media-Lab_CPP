@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Последовательный целевой формат и идентификаторы машин не должны быть пустыми.",
+    "MediaEngine.SequentialEncoderNull": "Последовательный медиакодер не может быть нулевым.",
+    "MediaEngine.SequentialEncoderMissing": "Ни один последовательный кодер не принимает формат '{0}' для машины '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Несколько последовательных кодеров принимают формат '{0}' для машины '{1}'.",
+    "MediaEngine.AtariEncodeData": "Кодирование Atari CAS требует валидированных блоков размером не более 65535 байт.",
+    "MediaEngine.AtariMarkDuration": "Продолжительность метки Atari CAS должна соответствовать 16-битному вспомогательному полю."
+  }
+}

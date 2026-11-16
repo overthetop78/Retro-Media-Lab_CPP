@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "מזהי פורמט היעד הרציף והמכונה אינם יכולים להיות ריקים.",
+    "MediaEngine.SequentialEncoderNull": "מקודד מדיה רציפה אינו יכול להיות הפניה ריקה.",
+    "MediaEngine.SequentialEncoderMissing": "אף מקודד רציף אינו מקבל את הפורמט ״{0}״ עבור המכונה ״{1}״.",
+    "MediaEngine.SequentialEncoderAmbiguous": "מספר מקודדים רציפים מקבלים את הפורמט ״{0}״ עבור המכונה ״{1}״.",
+    "MediaEngine.AtariEncodeData": "קידוד Atari CAS דורש בלוקים מאומתים שגודלם אינו עולה על 65535 בתים.",
+    "MediaEngine.AtariMarkDuration": "משך אות Atari CAS חייב להתאים לשדה העזר של 16 סיביות."
+  }
+}

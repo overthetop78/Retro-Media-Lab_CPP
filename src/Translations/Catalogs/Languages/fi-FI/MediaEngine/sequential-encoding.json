@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Sekvensiivinen kohdemuoto ja koneen tunnisteet eivät saa olla tyhjiä.",
+    "MediaEngine.SequentialEncoderNull": "Sekvenssimediakoodaaja ei voi olla nolla.",
+    "MediaEngine.SequentialEncoderMissing": "Yksikään peräkkäinen koodaaja ei hyväksy muotoa \"{0}\" koneelle \"{1}.\"",
+    "MediaEngine.SequentialEncoderAmbiguous": "Useita peräkkäisiä enkoodaajia hyväksyy muoto \"{0}\" koneelle \"{1}.\"",
+    "MediaEngine.AtariEncodeData": "Atari CAS-koodaus edellyttää validoituja lohkoja enintään 65535 tavua.",
+    "MediaEngine.AtariMarkDuration": "Atarin CAS-merkin keston on sovittava 16-bittiseen apukenttään."
+  }
+}

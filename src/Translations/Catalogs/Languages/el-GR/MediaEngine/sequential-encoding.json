@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Η διαδοχική μορφή στόχου και τα αναγνωριστικά μηχανών δεν πρέπει να είναι κενά.",
+    "MediaEngine.SequentialEncoderNull": "Ένας διαδοχικός κωδικοποιητής μέσων δεν μπορεί να είναι κενός.",
+    "MediaEngine.SequentialEncoderMissing": "Κανένας διαδοχικός κωδικοποιητής δεν δέχεται μορφή '{0}' για μηχανή '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Πολλαπλοί διαδοχικοί κωδικοποιητές αποδέχονται τη μορφή '{0}' για τη μηχανή '{1}'.",
+    "MediaEngine.AtariEncodeData": "Η κωδικοποίηση Atari CAS απαιτεί επικυρωμένα τεμάχια που δεν υπερβαίνουν τα 65535 bytes.",
+    "MediaEngine.AtariMarkDuration": "Η διάρκεια ενός σήματος Atari CAS πρέπει να ταιριάζει στο βοηθητικό πεδίο 16-bit."
+  }
+}

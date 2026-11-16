@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Format target sekuensial dan pengidentifikasi mesin tidak boleh kosong.",
+    "MediaEngine.SequentialEncoderNull": "Enkoder media sekuensial tidak boleh null.",
+    "MediaEngine.SequentialEncoderMissing": "Tak ada penyandi urutan yang menerima format '{0}' bagi mesin '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Beberapa enkoder sekuensial menerima format «{0}» untuk mesin «{1}».",
+    "MediaEngine.AtariEncodeData": "Atari CAS pengkodean membutuhkan blok validasi tidak lebih besar dari 65535 bytes.",
+    "MediaEngine.AtariMarkDuration": "Tanda durasi Atari CAS harus sesuai dengan bidang tambahan 16- bit."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Sekwencyjny format docelowy i identyfikatory maszyn nie mogą być puste.",
+    "MediaEngine.SequentialEncoderNull": "Sekwencyjny enkoder mediów nie może być zerowy.",
+    "MediaEngine.SequentialEncoderMissing": "Żaden enkoder sekwencyjny nie akceptuje formatu '{0}' dla maszyny '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Wielokrotne sekwencyjne enkodery akceptują format '{0}' dla maszyny '{1}'.",
+    "MediaEngine.AtariEncodeData": "Kodowanie Atari CAS wymaga zwalidowanych bloków nie większych niż 65535 bajtów.",
+    "MediaEngine.AtariMarkDuration": "Czas trwania znaku Atari CAS musi mieścić się w 16-bitowym polu pomocniczym."
+  }
+}

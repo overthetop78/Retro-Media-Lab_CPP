@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Sıralı hedef biçimi ve makine tanımlayıcıları boş olmamalıdır.",
+    "MediaEngine.SequentialEncoderNull": "Sıralı ortam kodlayıcısı null olamaz.",
+    "MediaEngine.SequentialEncoderMissing": "Hiçbir sıralı kodlayıcı «{1}» makinesi için «{0}» biçimini kabul etmiyor.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Birden fazla sıralı kodlayıcı «{1}» makinesi için «{0}» biçimini kabul ediyor.",
+    "MediaEngine.AtariEncodeData": "Atari CAS kodlaması, boyutu 65535 baytı aşmayan doğrulanmış bloklar gerektirir.",
+    "MediaEngine.AtariMarkDuration": "Atari CAS işaret süresi 16 bit yardımcı alanına sığmalıdır."
+  }
+}

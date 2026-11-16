@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "순차 대상 형식과 기계 식별자는 비어 있으면 안 됩니다.",
+    "MediaEngine.SequentialEncoderNull": "순차적인 매체 인코더는 null일 수 없습니다.",
+    "MediaEngine.SequentialEncoderMissing": "기계 «{1}»에 대해 형식 «{0}»을 허용하는 순차 인코더가 없습니다.",
+    "MediaEngine.SequentialEncoderAmbiguous": "여러 순차 인코더가 기계 «{1}»에 대해 형식 «{0}»을 허용합니다.",
+    "MediaEngine.AtariEncodeData": "Atari CAS 인코딩에는 크기가 65535바이트 이하인 검증된 블록이 필요합니다.",
+    "MediaEngine.AtariMarkDuration": "Atari CAS 마크 기간은 16 비트 보조 필드에 적합해야합니다."
+  }
+}

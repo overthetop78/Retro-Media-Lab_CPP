@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "A szekvenciális célformátum és a gép azonosítója nem lehet üres.",
+    "MediaEngine.SequentialEncoderNull": "Egy szekvenciális média kódoló nem lehet nulla.",
+    "MediaEngine.SequentialEncoderMissing": "Egy szekvenciális kódoló sem fogadja el az '{0}' formátumot a gép '{1}' esetében.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Több szekvenciális kódoló elfogadja a \"{0}\" formátumot a gép \"{1}\".",
+    "MediaEngine.AtariEncodeData": "Az Atari CAS kódolás 65535 bájtnál nem nagyobb hitelesített blokkokat igényel.",
+    "MediaEngine.AtariMarkDuration": "Az Atari CAS jelölés időtartamának illeszkednie kell a 16 bites segédmezőhöz."
+  }
+}

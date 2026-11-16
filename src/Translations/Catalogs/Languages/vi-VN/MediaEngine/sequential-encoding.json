@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Định dạng mục tiêu và bộ nhận diện máy không phải rỗng.",
+    "MediaEngine.SequentialEncoderNull": "Bộ mã hóa phương tiện tuần tự không được là tham chiếu rỗng.",
+    "MediaEngine.SequentialEncoderMissing": "Không có bộ mã hóa liên tục chấp nhận định dạng « {0} » cho máy « {1} ».",
+    "MediaEngine.SequentialEncoderAmbiguous": "Nhiều bộ mã hóa liên tục chấp nhận định dạng « {0} » cho máy « {1} ».",
+    "MediaEngine.AtariEncodeData": "Mã hóa Atari CAS yêu cầu các khối đã được xác thực, có kích thước không quá 65535 byte.",
+    "MediaEngine.AtariMarkDuration": "Thời lượng tín hiệu Atari CAS phải nằm trong giới hạn của trường phụ 16 bit."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "循序目標格式和機器識別碼不能為空。",
+    "MediaEngine.SequentialEncoderNull": "循序媒體編碼器不能為 null。",
+    "MediaEngine.SequentialEncoderMissing": "沒有循序編碼器接受機器「{1}」使用格式「{0}」。",
+    "MediaEngine.SequentialEncoderAmbiguous": "多個循序編碼器接受機器「{1}」使用格式「{0}」。",
+    "MediaEngine.AtariEncodeData": "Atari CAS 編碼需要不超過 65535 位元組的已驗證區塊。",
+    "MediaEngine.AtariMarkDuration": "Atari CAS 標記持續時間必須能以 16 位元輔助欄位表示。"
+  }
+}

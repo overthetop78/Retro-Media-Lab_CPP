@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Sekvenční cílový formát a identifikátory stroje nesmí být prázdné.",
+    "MediaEngine.SequentialEncoderNull": "Sekvenční mediální kodér nemůže být nulový.",
+    "MediaEngine.SequentialEncoderMissing": "Žádný sekvenční kodér nepřijímá formát '{0}' pro stroj '{1}'.",
+    "MediaEngine.SequentialEncoderAmbiguous": "Vícesekvenční enkodéry akceptují formát '{0}' pro stroj '{1}'.",
+    "MediaEngine.AtariEncodeData": "kódování Atari CAS vyžaduje ověřené bloky nepřesahující 65535 bajtů.",
+    "MediaEngine.AtariMarkDuration": "Doba trvání značky Atari CAS musí odpovídat 16bitovému pomocnému poli."
+  }
+}

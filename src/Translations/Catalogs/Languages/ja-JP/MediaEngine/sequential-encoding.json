@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "シーケンシャル対象形式とマシン識別子を空にしてはいけません。",
+    "MediaEngine.SequentialEncoderNull": "シーケンシャル・メディア・エンコーダはnullできません。",
+    "MediaEngine.SequentialEncoderMissing": "マシン「{1}」に対して形式「{0}」を受け入れるシーケンシャルエンコーダーはありません。",
+    "MediaEngine.SequentialEncoderAmbiguous": "複数のシーケンシャルエンコーダは、マシン '{1}' のフォーマット '{0}' を受け入れます。",
+    "MediaEngine.AtariEncodeData": "Atari CASのエンコードには、65535バイト以下の検証済みブロックが必要です。",
+    "MediaEngine.AtariMarkDuration": "Atari CASの印の長さは16ビット補助分野に合わなければなりません。"
+  }
+}

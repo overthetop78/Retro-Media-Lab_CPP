@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "顺序目标格式和机器标识符不能为空。",
+    "MediaEngine.SequentialEncoderNull": "顺序媒体编码器不能为 null。",
+    "MediaEngine.SequentialEncoderMissing": "没有顺序编码器接受机器“{1}”使用格式“{0}”。",
+    "MediaEngine.SequentialEncoderAmbiguous": "多个顺序编码器接受机器“{1}”使用格式“{0}”。",
+    "MediaEngine.AtariEncodeData": "Atari CAS 编码需要不超过 65535 字节的已验证块。",
+    "MediaEngine.AtariMarkDuration": "Atari CAS 标记持续时间必须能用 16 位辅助字段表示。"
+  }
+}

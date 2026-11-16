@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "يجب ألا تكون معرّفات تنسيق الهدف التسلسلي والجهاز فارغة.",
+    "MediaEngine.SequentialEncoderNull": "لا يمكن أن يكون مشفّر الوسيط التسلسلي مرجعًا فارغًا.",
+    "MediaEngine.SequentialEncoderMissing": "لا يقبل أي مشفّر تسلسلي التنسيق «{0}» للجهاز «{1}».",
+    "MediaEngine.SequentialEncoderAmbiguous": "تقبل عدة مشفّرات تسلسلية التنسيق «{0}» للجهاز «{1}».",
+    "MediaEngine.AtariEncodeData": "يتطلب ترميز Atari CAS كتلًا متحققًا من سلامتها لا تتجاوز 65535 بايت.",
+    "MediaEngine.AtariMarkDuration": "يجب أن تتسع مدة إشارة Atari CAS للحقل المساعد ذي 16 بت."
+  }
+}

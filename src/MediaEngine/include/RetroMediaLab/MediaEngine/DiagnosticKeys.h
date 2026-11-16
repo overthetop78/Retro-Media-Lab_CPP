@@ -1,6 +1,12 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SequentialEncodeRequest="MediaEngine.SequentialEncodeRequest";
+inline constexpr std::string_view SequentialEncoderNull="MediaEngine.SequentialEncoderNull";
+inline constexpr std::string_view SequentialEncoderMissing="MediaEngine.SequentialEncoderMissing";
+inline constexpr std::string_view SequentialEncoderAmbiguous="MediaEngine.SequentialEncoderAmbiguous";
+inline constexpr std::string_view AtariEncodeData="MediaEngine.AtariEncodeData";
+inline constexpr std::string_view AtariMarkDuration="MediaEngine.AtariMarkDuration";
 inline constexpr std::string_view AtariCasData="MediaEngine.AtariCasData";
 inline constexpr std::string_view AtariCasWrite="MediaEngine.AtariCasWrite";
 inline constexpr std::string_view AtariCasBaudPayload="MediaEngine.AtariCasBaudPayload";

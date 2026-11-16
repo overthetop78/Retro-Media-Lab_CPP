@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.SequentialEncodeRequest": "Formatul țintă secvențial și identificatorii mașinii nu trebuie să fie goale.",
+    "MediaEngine.SequentialEncoderNull": "Un codor secvenţial nu poate fi nul.",
+    "MediaEngine.SequentialEncoderMissing": "Niciun codor secvenţial nu acceptă formatul \"{0} \" pentru maşina \" {1} .\"",
+    "MediaEngine.SequentialEncoderAmbiguous": "Multiple codoare secvenţiale acceptă formatul \"{0} \" pentru maşina \" {1} .\"",
+    "MediaEngine.AtariEncodeData": "Codificarea Atari CAS necesită blocuri validate de maximum 65535 octeți.",
+    "MediaEngine.AtariMarkDuration": "Durata mărcii Atari CAS trebuie să corespundă câmpului auxiliar de 16 biți."
+  }
+}
