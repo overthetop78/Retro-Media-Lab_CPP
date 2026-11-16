@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.JfdCreate": "These sectors cannot be represented by native JFD descriptors.",
+    "MediaEngine.JfdNativeMetadata": "Invalid base64 data in the native JFD metadata.",
+    "MediaEngine.JfdCompressionWrite": "The JFD gzip data could not be written.",
+    "MediaEngine.JfdRawTracksRetained": "JFD contains native DiscOp 3 track records retained in the native structure.",
+    "MediaEngine.JfdPositionsRetained": "JFD contains explicit rotational sector positions retained in the native structure."
+  }
+}

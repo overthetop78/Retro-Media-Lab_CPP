@@ -16,4 +16,4 @@ Chaque membre concaténé est lu avec la même limite globale de 64 Mio ; le ré
 
 ## État
 
-Ce bloc porte `Unpack`, `Decode`, `ReadTables`, `Rewrite` et les utilitaires binaires. `CanCreate`, `Create`, le lecteur du registre et le writer restent à porter. Il ne rend pas JFD disponible dans la composition générale de l'application.
+Ce bloc porte `Unpack`, `Decode`, `ReadTables`, `Rewrite` et les utilitaires binaires. `CanCreate`, `Create`, le lecteur du registre et le writer sont terminés dans le bloc 134, décrit dans `jfd-adapters.md`. La composition générale de tous les formats reste à terminer.

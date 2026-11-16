@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.JfdCreate": "这些扇区无法用原生 JFD 描述符表示。",
+    "MediaEngine.JfdNativeMetadata": "原生 JFD 元数据中的 base64 数据无效。",
+    "MediaEngine.JfdCompressionWrite": "无法写入 JFD 的 gzip 数据。",
+    "MediaEngine.JfdRawTracksRetained": "JFD 包含保留在原生结构中的原生 DiscOp 3 磁道记录。",
+    "MediaEngine.JfdPositionsRetained": "JFD 包含保留在原生结构中的显式扇区角度位置。"
+  }
+}

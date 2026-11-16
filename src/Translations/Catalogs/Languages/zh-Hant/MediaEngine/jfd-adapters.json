@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.JfdCreate": "這些磁區無法以原生 JFD 描述元表示。",
+    "MediaEngine.JfdNativeMetadata": "原生 JFD 中繼資料中的 base64 資料無效。",
+    "MediaEngine.JfdCompressionWrite": "無法寫入 JFD 的 gzip 資料。",
+    "MediaEngine.JfdRawTracksRetained": "JFD 包含保留在原生結構中的原生 DiscOp 3 磁軌記錄。",
+    "MediaEngine.JfdPositionsRetained": "JFD 包含保留在原生結構中的明確磁區角度位置。"
+  }
+}

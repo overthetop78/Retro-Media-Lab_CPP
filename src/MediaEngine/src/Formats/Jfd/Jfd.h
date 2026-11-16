@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Models/Sectors/SectorImages.h"
+#include "../../Sources/AtomicImageWriter.h"
 #include <span>
 #include <stop_token>
 namespace RetroMediaLab::MediaEngine::Jfd {
@@ -18,4 +19,7 @@ struct Image {
 RETROMEDIALAB_MEDIAENGINE_API std::vector<std::uint8_t> unpack(std::span<const std::uint8_t>,std::stop_token = {});
 RETROMEDIALAB_MEDIAENGINE_API Image decode(std::span<const std::uint8_t>,std::stop_token = {});
 RETROMEDIALAB_MEDIAENGINE_API std::vector<std::uint8_t> rewrite(const Image&,const MediaFileSystems::SectorImage&,std::stop_token = {});
+RETROMEDIALAB_MEDIAENGINE_API bool canCreate(const MediaFileSystems::SectorImage&,std::stop_token = {});
+RETROMEDIALAB_MEDIAENGINE_API std::vector<std::uint8_t> create(const MediaFileSystems::SectorImage&,std::stop_token = {});
+RETROMEDIALAB_MEDIAENGINE_API void writeGzip(std::span<const std::uint8_t>,const ImageOutput&,std::stop_token = {});
 }

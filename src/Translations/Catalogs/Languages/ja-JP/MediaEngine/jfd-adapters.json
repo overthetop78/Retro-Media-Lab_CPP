@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.JfdCreate": "これらのセクターはネイティブJFD記述子では表現できません。",
+    "MediaEngine.JfdNativeMetadata": "ネイティブJFDメタデータのbase64データが無効です。",
+    "MediaEngine.JfdCompressionWrite": "JFDのgzipデータを書き込めませんでした。",
+    "MediaEngine.JfdRawTracksRetained": "JFDにはネイティブ構造内に保持されたDiscOp 3のネイティブトラックレコードが含まれています。",
+    "MediaEngine.JfdPositionsRetained": "JFDにはネイティブ構造内に保持されたセクターの明示的な角度位置が含まれています。"
+  }
+}

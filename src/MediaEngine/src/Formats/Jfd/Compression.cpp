@@ -13,6 +13,13 @@ struct Inflater {
     Inflater(const Inflater&)=delete;
     Inflater& operator=(const Inflater&)=delete;
 };
+struct Deflater {
+    z_stream stream{};
+    Deflater(){if(deflateInit2(&stream,Z_DEFAULT_COMPRESSION,Z_DEFLATED,Constants::GzipWindowBits,Constants::DeflateMemoryLevel,Z_DEFAULT_STRATEGY)!=Z_OK)throw MediaError(DiagnosticCode::JfdCompressionWrite);}
+    ~Deflater(){deflateEnd(&stream);}
+    Deflater(const Deflater&)=delete;
+    Deflater& operator=(const Deflater&)=delete;
+};
 }
 std::vector<std::uint8_t> unpack(std::span<const std::uint8_t> bytes,std::stop_token token) {
     using namespace Constants;checkCancellation(token);
@@ -30,5 +37,17 @@ std::vector<std::uint8_t> unpack(std::span<const std::uint8_t> bytes,std::stop_t
             if(inflateReset2(&stream,GzipWindowBits)!=Z_OK)throw MediaError(DiagnosticCode::JfdCompression);
         }else if(status!=Z_OK)throw MediaError(DiagnosticCode::JfdCompression);
     }return result;
+}
+void writeGzip(std::span<const std::uint8_t> bytes,const ImageOutput& output,std::stop_token token) {
+    using namespace Constants;checkCancellation(token);Deflater owner;auto& stream=owner.stream;
+    std::array<std::uint8_t,CompressionChunk> chunk{};std::size_t offset{};
+    for(;;){checkCancellation(token);
+        if(stream.avail_in==0){const auto count=std::min(CompressionChunk,bytes.size()-offset);stream.next_in=count?const_cast<Bytef*>(bytes.data()+offset):nullptr;stream.avail_in=static_cast<uInt>(count);offset+=count;}
+        stream.next_out=chunk.data();stream.avail_out=static_cast<uInt>(chunk.size());
+        const auto status=deflate(&stream,offset==bytes.size()?Z_FINISH:Z_NO_FLUSH);
+        if(status!=Z_OK&&status!=Z_STREAM_END)throw MediaError(DiagnosticCode::JfdCompressionWrite);
+        const auto count=chunk.size()-stream.avail_out;if(count!=0)output({chunk.data(),count});
+        if(status==Z_STREAM_END)break;
+    }
 }
 }

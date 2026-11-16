@@ -14,4 +14,11 @@ inline constexpr std::array<std::uint32_t,4> Densities{1,2,4,8};
 inline constexpr std::int32_t MissingOrder=-1;
 inline constexpr int DeflateWindowBits=15,GzipWrapperFlag=16,GzipWindowBits=DeflateWindowBits+GzipWrapperFlag;
 inline constexpr std::string_view FormatId="acorn.jfd",NativeKey="jfd.native",GzipKey="jfd.gzip";
+inline constexpr std::uint32_t MaximumCylinders=256,MaximumSectorNumber=255,CreationSizeCode=3,MinimumCreationTracks=160,CreationTrackOffset=320,CreationHeaderSize=204,CreationVersion=0x00010001,DensityTicks=160;
+inline constexpr std::size_t HeaderSizeOffset=4,VersionOffset=12;
+inline constexpr std::uint32_t DefaultPosition=0xff000000;
+inline constexpr int DeflateMemoryLevel=8;
+inline constexpr std::size_t Base64Quantum=4;
+inline constexpr std::string_view Base64Whitespace=" \t\r\n",Extension=".jfd",WriterId="jfd",TrueText="True",FalseText="False",TranslationDomain="MediaEngine";
+inline constexpr std::string_view RawTracksMessage="MediaEngine.JfdRawTracksRetained",PositionsMessage="MediaEngine.JfdPositionsRetained";
 }

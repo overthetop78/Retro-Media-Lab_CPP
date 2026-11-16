@@ -7,6 +7,20 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::JfdLength:
+    case DiagnosticCode::JfdExpansion:
+    case DiagnosticCode::JfdCompression:
+    case DiagnosticCode::JfdHeader:
+    case DiagnosticCode::JfdDeclaredLength:
+    case DiagnosticCode::JfdTables:
+    case DiagnosticCode::JfdTrackCount:
+    case DiagnosticCode::JfdDeltaTables:
+    case DiagnosticCode::JfdTrackOffset:
+    case DiagnosticCode::JfdSectorEncoding:
+    case DiagnosticCode::JfdRecordCount:
+    case DiagnosticCode::JfdTruncated:
+    case DiagnosticCode::JfdOffset:
+
     case DiagnosticCode::DefinedRawLength:
     case DiagnosticCode::DefinedRawSector:
     case DiagnosticCode::Td0ImageTruncated:

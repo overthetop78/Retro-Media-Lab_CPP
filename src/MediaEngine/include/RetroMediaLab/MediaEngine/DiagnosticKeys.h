@@ -1,6 +1,9 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view JfdCreate="MediaEngine.JfdCreate";
+inline constexpr std::string_view JfdNativeMetadata="MediaEngine.JfdNativeMetadata";
+inline constexpr std::string_view JfdCompressionWrite="MediaEngine.JfdCompressionWrite";
 inline constexpr std::string_view JfdLength="MediaEngine.JfdLength";
 inline constexpr std::string_view JfdExpansion="MediaEngine.JfdExpansion";
 inline constexpr std::string_view JfdCompression="MediaEngine.JfdCompression";

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.JfdCreate": "Эти секторы нельзя представить нативными дескрипторами JFD.",
+    "MediaEngine.JfdNativeMetadata": "Недопустимые данные base64 в нативных метаданных JFD.",
+    "MediaEngine.JfdCompressionWrite": "Не удалось записать данные gzip JFD.",
+    "MediaEngine.JfdRawTracksRetained": "JFD содержит нативные записи дорожек DiscOp 3, сохранённые в нативной структуре.",
+    "MediaEngine.JfdPositionsRetained": "JFD содержит явные угловые позиции секторов, сохранённые в нативной структуре."
+  }
+}
