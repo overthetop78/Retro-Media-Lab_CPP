@@ -3,6 +3,10 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::ChdOpticalMetadata:return DiagnosticKeys::ChdOpticalMetadata;
+    case DiagnosticCode::ChdOpticalLayout:return DiagnosticKeys::ChdOpticalLayout;
+    case DiagnosticCode::ChdOpticalTrackType:return DiagnosticKeys::ChdOpticalTrackType;
+    case DiagnosticCode::ChdOpticalSubchannel:return DiagnosticKeys::ChdOpticalSubchannel;
     case DiagnosticCode::ChdHardDiskProfile:return DiagnosticKeys::ChdHardDiskProfile;
     case DiagnosticCode::ChdHardDiskGeometry:return DiagnosticKeys::ChdHardDiskGeometry;
     case DiagnosticCode::ChdHardDiskHunk:return DiagnosticKeys::ChdHardDiskHunk;

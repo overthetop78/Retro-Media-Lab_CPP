@@ -538,6 +538,8 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Huffman.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Huffman.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Map.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Sources.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Sources.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Cp2.h" />
@@ -763,6 +765,11 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Nib\Nib.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Nib\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Nib\Writer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Layout.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Metadata.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Iso\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Iso\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Iso\Reader.h" />
@@ -1256,6 +1263,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-gcr.json" />
@@ -1414,6 +1422,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-gcr.json" />
@@ -1572,6 +1581,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-gcr.json" />
@@ -1730,6 +1740,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-gcr.json" />
@@ -1888,6 +1899,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-gcr.json" />
@@ -2046,6 +2058,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-gcr.json" />
@@ -2204,6 +2217,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-gcr.json" />
@@ -2362,6 +2376,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-gcr.json" />
@@ -2520,6 +2535,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-gcr.json" />
@@ -2678,6 +2694,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-gcr.json" />
@@ -2836,6 +2853,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-gcr.json" />
@@ -2994,6 +3012,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-gcr.json" />
@@ -3152,6 +3171,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-gcr.json" />
@@ -3310,6 +3330,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-gcr.json" />
@@ -3468,6 +3489,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-gcr.json" />
@@ -3626,6 +3648,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-gcr.json" />
@@ -3784,6 +3807,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-gcr.json" />
@@ -3942,6 +3966,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-gcr.json" />
@@ -4100,6 +4125,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-gcr.json" />
@@ -4258,6 +4284,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-gcr.json" />
@@ -4416,6 +4443,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-gcr.json" />
@@ -4574,6 +4602,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-gcr.json" />
@@ -4732,6 +4761,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-gcr.json" />
@@ -4890,6 +4920,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-gcr.json" />
@@ -5048,6 +5079,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-gcr.json" />
@@ -5206,6 +5238,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-gcr.json" />
@@ -5364,6 +5397,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-gcr.json" />
@@ -5522,6 +5556,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-gcr.json" />
@@ -5680,6 +5715,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-gcr.json" />
@@ -5838,6 +5874,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-harddisk.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-optical.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-gcr.json" />

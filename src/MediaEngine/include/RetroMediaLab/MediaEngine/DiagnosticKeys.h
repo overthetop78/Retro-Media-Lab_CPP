@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ChdOpticalMetadata="MediaEngine.ChdOpticalMetadata";
+inline constexpr std::string_view ChdOpticalLayout="MediaEngine.ChdOpticalLayout";
+inline constexpr std::string_view ChdOpticalTrackType="MediaEngine.ChdOpticalTrackType";
+inline constexpr std::string_view ChdOpticalSubchannel="MediaEngine.ChdOpticalSubchannel";
 inline constexpr std::string_view ChdHardDiskProfile="MediaEngine.ChdHardDiskProfile";
 inline constexpr std::string_view ChdHardDiskGeometry="MediaEngine.ChdHardDiskGeometry";
 inline constexpr std::string_view ChdHardDiskHunk="MediaEngine.ChdHardDiskHunk";

@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Common/Chd/Sources.cpp
+  src/Formats/Optical/Chd/Metadata.cpp
+  src/Formats/Optical/Chd/Layout.cpp
+  src/Formats/Optical/Chd/Reader.cpp
   src/Formats/HardDisk/Chd/Layout.cpp
   src/Formats/HardDisk/Chd/Reader.cpp
   src/Formats/HardDisk/Chd/Writer.cpp

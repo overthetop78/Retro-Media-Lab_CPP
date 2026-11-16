@@ -7,6 +7,11 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::ChdOpticalMetadata:
+    case DiagnosticCode::ChdOpticalLayout:
+    case DiagnosticCode::ChdOpticalTrackType:
+    case DiagnosticCode::ChdOpticalSubchannel:
+
     case DiagnosticCode::ChdHardDiskProfile:
     case DiagnosticCode::ChdHardDiskGeometry:
     case DiagnosticCode::ChdHardDiskHunk:

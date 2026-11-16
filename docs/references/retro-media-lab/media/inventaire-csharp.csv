@@ -8,7 +8,7 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Constants/AppleDiskImageFormatIds.cs,6
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/AtariCasConstants.cs,41,24799ed0c260ec8ce43ceccb8c5d7eb4ef4f0c46314631ebed66b5dc5eab0d41,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/AtariDiskImageFormatIds.cs,85,441bf1c1b38861f619d32901d0fb0d6a36a8e4dee585b590a8c167d748f6e49c,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/AtomTapeConstants.cs,30,0234aab1ef34d374b5efb386c75ba40e5cb83f7345d0ac95be623753d0b04753,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Constants/ChdConstants.cs,32,81d8c45e0d528245b4e463c575b3d02245b69f67463411e251c223f35e804c06,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Constants/ChdConstants.cs,32,81d8c45e0d528245b4e463c575b3d02245b69f67463411e251c223f35e804c06,porte,,src/MediaEngine/src/Formats/Common/Chd/ContainerConstants.h;src/MediaEngine/src/Formats/HardDisk/Chd/Constants.h;src/MediaEngine/src/Formats/Optical/Chd/Constants.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/CloneCdConstants.cs,36,e8de837f4af195697e1f0428a8a6320cf80a43fcfa72854553ed20291c68a593,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/CommodoreDiskImageFormatIds.cs,20,a07a699c69800801ef85bfbe0b4025978ae553a3f0645cc966bdff76756f63f7,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/CommodoreTapConstants.cs,79,051d7c552540cae7503a3016b2ef92974524e09075f7ec11030a54683dfe9187,non porte,,
@@ -67,7 +67,7 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Constants/MediaVolumeOrigins.cs,11,78e
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/MsxCasConstants.cs,35,341f33c4c5ddc76d62887c7d32ddb6f69050a04f99ca5bdc0581e25802033331,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/MsxDiskImageFormatIds.cs,18,059a2437623119523d0e7b4f71a330cb8e871a52f066643517dd30c0dd2402e4,identifiants IBM/MSX partages; generation par capacite utilisee en geometrie,,src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/FormatIds.h; src/MediaEngine/src/Formats/Raw/Geometry.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/OpticalImageFormatIds.cs,14,3f62523243ac65c4f68b1aaaac3956277503fc5dde73251a39ee275954a30ca0,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Constants/OpticalSectorConstants.cs,17,9200bedafbc62defcce9f7ee035ec6cbb6c3238fbec38d67c9cf516a8153286d,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Constants/OpticalSectorConstants.cs,17,9200bedafbc62defcce9f7ee035ec6cbb6c3238fbec38d67c9cf516a8153286d,porte,,src/MediaEngine/src/Formats/Optical/Chd/Constants.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/PartitionTableIds.cs,8,c4a7476baa372cb4b83651b7bdb724dac464e7935885915ef91588713217b90a,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/RareDiskImageFormatIds.cs,20,a1ffea2bf4afd5445ea52365924018d78ccf2f9e3861419248c75110261e65b8,porte; identifiants quatorze formats rares; bloc 61,,src/MediaEngine/src/Formats/FormatIds.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Constants/RecordedMechanicalSoundConstants.cs,33,01c88014c5628e093bf5fe158365ae6f8fce50d13ecafef1cf266723a25331ed,non porte,,
@@ -118,7 +118,7 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Migration/MigrationResult.cs
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Migration/MigrationValidationReport.cs,14,55ee4a3a37f5a56d55d8fb1badd160d9cd72dc39ced0780719f9c25eeea0c17c,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/AlcoholMdsSessionBlock.cs,31,ada9f2ee9af8a294a40217f7a7447b660a02847c817fdc0a39eed21e0f31f6be,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/AlcoholMdsTrackBlock.cs,4,bcdb040436481e562bf36a170495db03af17cadb5a0cc2ccc38bf63ec6203182,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/ChdOpticalTrackMetadata.cs,37,0c0748633b4b0bf295bb27de216a21adcde54fcef0a7c53958137ee173322098,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/ChdOpticalTrackMetadata.cs,37,0c0748633b4b0bf295bb27de216a21adcde54fcef0a7c53958137ee173322098,porte,,src/MediaEngine/src/Formats/Optical/Chd/Reader.h;src/MediaEngine/src/Formats/Optical/Chd/Metadata.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/CloneCdDescriptor.cs,34,f28c26c4e91587ce3bd2e4f7419c5f9a0e561f81e3ce23d027a0b8d126a183d6,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/CloneCdTocEntry.cs,19,30d7f72f8597285f052dea276b0577c50c39ea87c305416ba945d35c47ab12f7,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Contracts/Optical/CueFileDescriptor.cs,23,b8f318c8c16dfb7233a52050cb1653035fee096f0fce5730a11bae1f7525dfb1,non porte,,
@@ -638,8 +638,8 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/BinCue/BinCueWr
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/BinCue/CueSheetReader.cs,257,e25aebbcead018d800ca24a82b3006d50890fff017c4c50c81bd584e9066a342,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/BinCue/CueSheetWriter.cs,96,e93cddca74b197064957f9b62da2a09d5dff660a06340245c2e5e6a3516f2501,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/BinCue/WavePcmConstants.cs,19,a35c4e05278eafa19c14214ffec47781c4c4401b9b841a0b69267ef604c8fe86,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/Chd/ChdOpticalFormat.cs,28,a74031af64daeceac40a2e545d0f9fe512f78eccd172c0cf579d9d3b56a4ceb9,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/Chd/ChdOpticalReader.cs,323,627fd368a4271b49c601eab347e36c71d71b744e4c6b5093cb37b4c06c7a261a,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/Chd/ChdOpticalFormat.cs,28,a74031af64daeceac40a2e545d0f9fe512f78eccd172c0cf579d9d3b56a4ceb9,porte,,src/MediaEngine/src/Formats/Optical/Chd/Constants.h
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/Chd/ChdOpticalReader.cs,323,627fd368a4271b49c601eab347e36c71d71b744e4c6b5093cb37b4c06c7a261a,porte,,src/MediaEngine/src/Formats/Optical/Chd/Reader.h;src/MediaEngine/src/Formats/Optical/Chd/Metadata.cpp;src/MediaEngine/src/Formats/Optical/Chd/Layout.cpp;src/MediaEngine/src/Formats/Optical/Chd/Reader.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/CloneCd/CloneCdDescriptorReader.cs,148,20b7cd88a597c8cd1cbaf146dd7f23bd0e04d4e0b9f2d5bed8f20bd99e0b21fc,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/CloneCd/CloneCdFormat.cs,24,286d1dfe01a0887d1790dc4e706575104f3640723ff26c85e9fe4ab8c7c47e12,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Optical/CloneCd/CloneCdReader.cs,138,a6ff54157abc1fd11e880ae8255f04575bd6c7ca44c34a983548a9a2cdc40db1,non porte,,
@@ -936,8 +936,8 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Reconstruction/Sectors/
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Reconstruction/Sectors/SectorImageBuilderExceptions.cs,10,5a347a04e24a8faefd1a62868dc8ca853b13a93c28caa99469051121e5c02581,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Reconstruction/Sectors/UniformSectorImageLayout.cs,23,f0110711b0bb52bbe2880711560931c0be5326cbd4312712a1dc023bb8e6bd4c,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/SequentialContentDecoderAdapter.cs,64,19337ccee9c7e6d4d3d48671f18253167c9dba300e00236b086f413862ece625,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/ChdRandomAccessData.cs,70,4e7b1db52991c44a43db5fa90d844a29d7a3fd10a68cd7b0e873dd2269461d83,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/ChdUncompressedRandomAccessData.cs,64,fd8a1dc0740834745eec5ef23206f7f667166c8a4843532a80ab0c4b29064653,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/ChdRandomAccessData.cs,70,4e7b1db52991c44a43db5fa90d844a29d7a3fd10a68cd7b0e873dd2269461d83,porte,,src/MediaEngine/src/Formats/Common/Chd/Sources.h;src/MediaEngine/src/Formats/Common/Chd/Sources.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/ChdUncompressedRandomAccessData.cs,64,fd8a1dc0740834745eec5ef23206f7f667166c8a4843532a80ab0c4b29064653,porte,,src/MediaEngine/src/Formats/Common/Chd/Sources.h;src/MediaEngine/src/Formats/Common/Chd/Sources.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/FileRandomAccessData.cs,38,9686204b865e375abe383d2363b7544e48d29a0ca886014cdbfb6ca062b89020,porte; sources/partitions validees le 2026-11-15,,src/MediaEngine/src/Sources/RandomAccessSources.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/MediaDriveRandomAccessData.cs,37,1aa6c86f2fa3e525bb11d5689eaa42e86aea71ceb74544bd654bc572db130d48,porte; compilation Debug et controle cible blocs/RAII; validation globale en cours,,src/MediaEngine/src/Sources/DriveRandomAccessData.cpp;src/MediaEngine/src/Sources/DriveAccess.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Reading/Sources/MediaDriveSectorData.cs,43,f34e24b09831c5f46d9fc4f1476684cd1afe243b274358c394291214db367d1a,"porte; adaptation C++ par acces sectoriel groupe, sans copie des blocs; instrumentation des octets deja materialises par requete de bloc",,src/MediaEngine/src/Models/Sectors/Representation.cpp

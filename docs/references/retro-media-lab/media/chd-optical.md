@@ -1,0 +1,13 @@
+# Lecteur CHD optique et sources logiques
+
+Référence en lecture seule : ChdOpticalReader, ChdOpticalFormat, ChdOpticalTrackMetadata, ChdRandomAccessData et ChdUncompressedRandomAccessData, ainsi que les constantes CHD et secteurs optiques. Les sept empreintes sont vérifiées dans l’inventaire.
+
+Le découpage sépare les sources communes CHD, la lecture du layout, l’analyse des métadonnées et la construction des pistes. Les dimensions des modes, les tags et les identifiants sont nommés dans Constants. Les métadonnées CHTR/CHT2 sont découpées par clés exactes, avec champs obligatoires, limites numériques, types de piste et sous-canaux reconnus. Les octets non ASCII sont remplacés comme par Encoding.ASCII en C#. Les tags DVD classent le profil DVD ; les enregistrements inconnus restent ignorés mais leur chaîne et leurs bornes sont vérifiées.
+
+Le profil v5 non compressé lit directement sa carte et n’impose pas les limites du décodeur commun. Les autres versions et codecs passent par Container. Les versions historiques reçoivent l’unité CD 2448 ou DVD 2048 d’après leurs métadonnées. Les en-têtes et chaînes restent contrôlés avant de construire les pistes. Comme en C#, la reconnaissance examine le layout ; les doublons de pistes, les contradictions CD/DVD et la couverture complète sont vérifiés lors de la construction du document.
+
+Les sources possèdent les données sous-jacentes. La source v5 brute valide la couverture de carte et les hunks physiques complets, puis lit les portions nécessaires sans buffer de hunk. La source décodée possède un Container et un seul hunk en cache ; un mutex sérialise les lectures. Le cache est invalidé avant le décodage : une exception ne peut laisser un ancien index associé à un buffer partiellement écrasé. Chaque lecture propage son propre jeton d’annulation aux sources et codecs. RAII couvre aussi l’échec d’initialisation et la construction avortée d’un document.
+
+Les 15 alias de types de piste C# sont repris : Audio, Mode1 et Mode2, bruts ou par formes. Les fenêtres utilisateur des secteurs bruts commencent à 16, avec longueurs 2048 ou 2336. Les pistes sont triées par numéro, leur stockage est aligné sur quatre frames et leur position physique conserve les pregaps. Les index 0/1, postgaps et pregaps stockés sont décrits dans OpticalTrack. Les sous-canaux RW/RW_RAW utilisent une longueur de 96 octets et un stride de 2448. Leur offset reprend DataSize du C#, sans réinterprétation du stockage.
+
+Le DVD expose une piste de secteurs 2048. Les propriétés version, compression, hunkSize, unitSize, trackCount et mediaProfile sont conservées. Aucun writer CHD optique n’existe dans le profil C# ; aucun n’est inventé ici. La composition globale des services reste à terminer.
