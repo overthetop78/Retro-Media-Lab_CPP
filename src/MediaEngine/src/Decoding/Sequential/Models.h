@@ -5,6 +5,7 @@ namespace RetroMediaLab::MediaEngine {
 class SequentialDecodedBlock final {
 public:
     RETROMEDIALAB_MEDIAENGINE_API SequentialDecodedBlock(std::int64_t position,std::vector<std::uint8_t> data,std::vector<std::int64_t> sourcePositions,std::optional<bool> integrity,std::map<std::string,std::string> metadata={});
+    RETROMEDIALAB_MEDIAENGINE_API SequentialDecodedBlock withSourcePositions(std::vector<std::int64_t>)const;
     std::int64_t position()const noexcept{return position_;}
     std::span<const std::uint8_t> data()const noexcept{return data_?std::span<const std::uint8_t>(*data_):std::span<const std::uint8_t>{};}
     std::span<const std::int64_t> sourcePositions()const noexcept{return positions_;}

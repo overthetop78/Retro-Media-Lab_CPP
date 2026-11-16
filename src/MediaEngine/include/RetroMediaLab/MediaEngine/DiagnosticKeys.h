@@ -1,6 +1,11 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AtomTapeIncompatible="MediaEngine.AtomTapeIncompatible";
+inline constexpr std::string_view AtomTapeFraming="MediaEngine.AtomTapeFraming";
+inline constexpr std::string_view AtomTapePcmRequired="MediaEngine.AtomTapePcmRequired";
+inline constexpr std::string_view AtomTapePcmLimit="MediaEngine.AtomTapePcmLimit";
+
 inline constexpr std::string_view UefSignalData="MediaEngine.UefSignalData";
 inline constexpr std::string_view UefSignalUnsupported="MediaEngine.UefSignalUnsupported";
 inline constexpr std::string_view UefSignalBaud="MediaEngine.UefSignalBaud";

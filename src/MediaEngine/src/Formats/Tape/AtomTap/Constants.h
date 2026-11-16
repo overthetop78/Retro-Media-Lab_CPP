@@ -32,4 +32,6 @@ inline constexpr int AlternateStopBits=2,HexWidth=4,HexRadix=16;
 inline constexpr std::uint8_t MaximumAscii=127;
 inline constexpr char AsciiReplacement='?';
 inline constexpr char FirstPrintable=' ',LastPrintable='~',DigitZero='0';
+inline constexpr std::string_view MachineId="acorn-atom",WaveFormat="tape.wav",UefFormat="tape.uef",CswFormat="tape.csw",RawFormat="tape.raw",VocFormat="tape.voc",EncodedTap="encoded.tap",EncodedWave="encoded.wav",ImplicitChunk="0100",ImplicitAtomChunk="0105",PhaseChunk="0115",FrequencyChunk="0113";
+inline constexpr std::size_t MaximumPcmSamples=128*1024*1024;
 }
