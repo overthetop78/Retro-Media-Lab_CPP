@@ -2,6 +2,7 @@
 #include "Export.h"
 #include "HardDiskGeometry.h"
 #include "DriveMechanics.h"
+#include "FluxTrackData.h"
 #include <filesystem>
 #include <future>
 #include <map>
@@ -43,6 +44,8 @@ public:
     RETROMEDIALAB_MEDIAENGINE_API std::vector<std::int64_t> trackSectors(std::int32_t cylinder,std::int32_t head)const;
     RETROMEDIALAB_MEDIAENGINE_API std::future<MediaDiskSector> readSectorAsync(std::int64_t,std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API void writeSector(std::int64_t,std::span<const std::uint8_t>,std::optional<bool> deletedDataMark={});
+    RETROMEDIALAB_MEDIAENGINE_API FluxTrackData readTrack(std::int32_t cylinder,std::int32_t head,std::string_view encodingId,std::uint32_t bitCellNanoseconds,std::uint32_t indexTimeNanoseconds,const std::optional<std::map<std::string,std::int32_t>>& attributes={})const;
+    RETROMEDIALAB_MEDIAENGINE_API void writeTrackWindow(std::int32_t cylinder,std::int32_t head,std::string_view encodingId,std::uint32_t bitCellNanoseconds,std::uint32_t indexTimeNanoseconds,std::uint32_t startNanoseconds,std::uint32_t durationNanoseconds,std::span<const std::uint32_t> transitionOffsetsNanoseconds,const std::optional<std::map<std::string,std::int32_t>>& attributes={},bool includeEndingInstant=false);
     RETROMEDIALAB_MEDIAENGINE_API void formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector>,std::optional<std::int32_t> dataRate={},std::optional<bool> mfm={});
     RETROMEDIALAB_MEDIAENGINE_API std::future<void> flushAsync(std::stop_token={});
     RETROMEDIALAB_MEDIAENGINE_API void close();

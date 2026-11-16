@@ -24,6 +24,22 @@ struct RuntimeDisk::State {
     std::map<std::int64_t,std::vector<std::uint8_t>> changes;
     std::map<std::int64_t,bool> dataMarks;
     std::map<std::int64_t,std::shared_ptr<const MediaFileSystems::SectorBlock>> originals;
+    using TrackAddress=std::pair<std::int32_t,std::int32_t>;
+    struct ProjectionError {std::uint32_t cell;bool mfm;std::exception_ptr error;};
+    std::map<TrackAddress,FluxTrackData> writtenTracks;
+    std::map<TrackAddress,std::vector<MediaFileSystems::SectorBlock>> trackTemplates;
+    std::map<TrackAddress,ProjectionError> trackProjectionErrors;
+    std::map<TrackAddress,std::exception_ptr> winchesterProjectionErrors;
+    void formatTrack(std::int32_t,std::int32_t,std::span<const MediaDiskSector>,std::optional<std::int32_t>,std::optional<bool>);
+    FluxTrackData readTrack(std::int32_t,std::int32_t,std::string_view,std::uint32_t,std::uint32_t,const std::optional<std::map<std::string,std::int32_t>>&);
+    void writeTrackWindow(std::int32_t,std::int32_t,std::string_view,std::uint32_t,std::uint32_t,std::uint32_t,std::uint32_t,std::span<const std::uint32_t>,const std::optional<std::map<std::string,std::int32_t>>&,bool);
+    void retryTrackProjection();
+    FluxTrackData readWinchesterTrack(std::int32_t,std::int32_t,std::uint32_t);
+    void writeWinchesterWindow(std::int32_t,std::int32_t,std::uint32_t,std::uint32_t,std::uint32_t,std::span<const std::uint32_t>,bool);
+    void projectWinchesterTrack(std::int32_t,std::int32_t);
+    MediaDiskSector readWrittenWinchesterSector(std::int64_t,std::int32_t,std::int32_t);
+    void writeWinchesterParameters(std::span<std::uint8_t>);
+    void clearTracks(){writtenTracks.clear();trackTemplates.clear();trackProjectionErrors.clear();winchesterProjectionErrors.clear();}
     State(std::shared_ptr<RuntimeDetails::Services>,std::shared_ptr<const MediaDocument>,bool writable,bool owns);
     ~State()noexcept;
     const MediaFileSystems::SectorImage* sectors()const;

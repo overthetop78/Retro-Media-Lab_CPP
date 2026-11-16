@@ -39,7 +39,7 @@ std::shared_ptr<const MediaDocument> RuntimeDisk::State::updated()const{
         std::vector<M::VolumeDescriptor>(document->volumes().begin(),document->volumes().end()),std::vector<M::MessageRecipe>(document->messages().begin(),document->messages().end()),document->metadata(),std::vector<std::string>(document->diagnostics().begin(),document->diagnostics().end()));
 }
 void RuntimeDisk::State::flush(std::stop_token token){
-    alive();if(!dirty())return;checkCancellation(token);auto value=updated();auto source=value->mediaSource()->options();source.drive.reset();
+    alive();if(!dirty())return;checkCancellation(token);retryTrackProjection();auto value=updated();auto source=value->mediaSource()->options();source.drive.reset();
     value=std::make_shared<MediaDocument>(std::make_shared<MediaSource>(std::move(source)),value->formatId(),value->mediaKind(),value->representationOwner(),
         std::vector<M::VolumeDescriptor>(value->volumes().begin(),value->volumes().end()),std::vector<M::MessageRecipe>(value->messages().begin(),value->messages().end()),value->metadata(),std::vector<std::string>(value->diagnostics().begin(),value->diagnostics().end()));
     const auto path=QString::fromUtf8(document->mediaSource()->primaryPath()).toStdU16String();
@@ -52,7 +52,7 @@ void RuntimeDisk::State::close(){
     if(closed)return;std::exception_ptr failure;
     try{flush({});}catch(...){failure=std::current_exception();}
     try{if(ownsMechanics)document->mediaSource()->options().drive->reset();}catch(...){if(!failure)failure=std::current_exception();}
-    changes.clear();dataMarks.clear();originals.clear();documentChanged=false;closed=true;
+    changes.clear();dataMarks.clear();originals.clear();clearTracks();documentChanged=false;closed=true;
     if(failure)std::rethrow_exception(failure);
 }
 }

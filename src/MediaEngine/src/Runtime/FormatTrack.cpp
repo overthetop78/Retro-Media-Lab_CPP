@@ -20,8 +20,8 @@ ImageDisk::Mode mode(std::optional<std::int32_t> rate,std::optional<bool> mfm,co
     default:invalid();}
 }
 }
-void RuntimeDisk::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector> fields,std::optional<std::int32_t> dataRate,std::optional<bool> mfm){
-    std::lock_guard lock(state_->mutex);state_->writable();const auto pending=state_->updated();
+void RuntimeDisk::State::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector> fields,std::optional<std::int32_t> dataRate,std::optional<bool> mfm){
+    writable();const auto pending=this->updated();
     const auto* representation=dynamic_cast<const SectorRepresentation*>(&pending->representation());if(!representation)invalid();
     auto previous=representation->imageOwner();RuntimeDetails::validateTrack(*previous,cylinder,head,fields);
     auto metadata=pending->metadata();std::shared_ptr<const M::SectorImage> updated;
@@ -37,10 +37,17 @@ void RuntimeDisk::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<
         }
         if(found==original->tracks.end())original->tracks.push_back(std::move(track));else *found=std::move(track);
         updated=ImageDisk::buildImage(original->tracks);original->sectorImage=updated;for(auto& [key,value]:ImageDisk::metadata(*original))metadata[key]=std::move(value);
-    }else updated=RuntimeDetails::replaceTrack(*previous,cylinder,head,fields,pending->formatId()!=CpcDsk::Constants::FormatId);
+    }else {
+        const auto found=trackTemplates.find({cylinder,head});std::optional<std::span<const M::SectorBlock>> original;
+        if(found!=trackTemplates.end())original=std::span<const M::SectorBlock>(found->second);
+        updated=RuntimeDetails::replaceTrack(*previous,cylinder,head,fields,pending->formatId()!=CpcDsk::Constants::FormatId,original);
+    }
     const auto formatId=updated->geometry().formatId;
-    auto document=std::make_shared<MediaDocument>(pending->mediaSource(),formatId,pending->mediaKind(),std::make_shared<SectorRepresentation>(std::move(updated)),std::vector<M::VolumeDescriptor>{},
+    auto replacement=std::make_shared<MediaDocument>(pending->mediaSource(),formatId,pending->mediaKind(),std::make_shared<SectorRepresentation>(std::move(updated)),std::vector<M::VolumeDescriptor>{},
         std::vector<M::MessageRecipe>(pending->messages().begin(),pending->messages().end()),std::move(metadata),std::vector<std::string>(pending->diagnostics().begin(),pending->diagnostics().end()));
-    state_->document=std::move(document);state_->changes.clear();state_->dataMarks.clear();state_->originals.clear();state_->documentChanged=true;
+    document=std::move(replacement);changes.clear();dataMarks.clear();originals.clear();documentChanged=true;
+    writtenTracks.erase({cylinder,head});trackProjectionErrors.erase({cylinder,head});trackTemplates.erase({cylinder,head});
 }
+void RuntimeDisk::formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector> fields,std::optional<std::int32_t> rate,std::optional<bool> mfm){std::lock_guard lock(state_->mutex);state_->formatTrack(cylinder,head,fields,rate,mfm);}
+
 }

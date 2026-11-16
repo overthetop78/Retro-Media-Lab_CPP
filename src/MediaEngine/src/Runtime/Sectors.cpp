@@ -2,6 +2,7 @@
 #include "../Sources/DriveAccess.h"
 #include "../Formats/CpcDsk/Constants.h"
 #include "../Formats/ImageDisk/Constants.h"
+#include "../Formats/HardDisk/Acorn/Constants.h"
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine {
 namespace M=MediaFileSystems;
@@ -31,6 +32,7 @@ std::vector<std::int64_t> RuntimeDisk::trackSectors(std::int32_t cylinder,std::i
 MediaDiskSector RuntimeDisk::State::read(std::int64_t index,std::stop_token token){
     validate(index);checkCancellation(token);const auto physical=sectors()?sectors()->blockAddress(static_cast<std::uint64_t>(index)).value_or(address(index)):address(index);
     DriveAccessScope access(document->mediaSource()->options().drive.get(),RuntimeDetails::position(index,physical),false);
+    if(document->formatId()==AcornWinchester::Constants::FormatId&&writtenTracks.contains({RuntimeDetails::coordinate(physical.cylinder),RuntimeDetails::coordinate(physical.head)})){auto result=readWrittenWinchesterSector(index,RuntimeDetails::coordinate(physical.cylinder),RuntimeDetails::coordinate(physical.head));access.finish();return result;}
     const auto block=original(index,token);const auto recorded=block?block->recordedAddress.value_or(physical):physical;
     MediaDiskSector result;result.index=index;result.cylinder=RuntimeDetails::coordinate(recorded.cylinder);result.head=RuntimeDetails::coordinate(recorded.head);result.number=RuntimeDetails::coordinate(recorded.number);
     if(block){result.integrityValid=block->integrityValid;result.diagnosticCode=block->diagnosticCode;result.recordedErrorCheckCode=block->recordedErrorCheckCode;result.recordedDataPrefix=block->recordedDataPrefix;result.headerIntegrityValid=block->headerIntegrityValid;result.dataIntegrityValid=block->dataIntegrityValid;result.deletedDataMark=block->deletedDataMark;result.recordedSizeCode=block->recordedSizeCode;}
@@ -45,8 +47,8 @@ void RuntimeDisk::State::write(std::int64_t index,std::span<const std::uint8_t> 
     validate(index);writable();
     if(mark==true&&(!sectors()||(document->formatId()!=CpcDsk::Constants::FormatId&&!document->metadata().contains(std::string(ImageDisk::Constants::MetadataKey)))))throw MediaError(DiagnosticCode::RuntimeDiskSector);
     const auto block=original(index);const auto expected=block?block->data.size():static_cast<std::size_t>(size());if(bytes.size()!=expected)throw MediaError(DiagnosticCode::RuntimeDiskSector);
-    const auto physical=block?block->address:address(index);DriveAccessScope access(document->mediaSource()->options().drive.get(),RuntimeDetails::position(index,physical),true);
+    const auto physical=block?block->address:address(index);if(winchesterProjectionErrors.contains({RuntimeDetails::coordinate(physical.cylinder),RuntimeDetails::coordinate(physical.head)}))throw MediaError(DiagnosticCode::RuntimeTrackProjection);DriveAccessScope access(document->mediaSource()->options().drive.get(),RuntimeDetails::position(index,physical),true);
     auto copy=std::vector<std::uint8_t>(bytes.begin(),bytes.end());
-    if(block)originals[index]=block;changes[index]=std::move(copy);if(mark)dataMarks[index]=*mark;access.finish();
+    if(block)originals[index]=block;changes[index]=std::move(copy);if(mark)dataMarks[index]=*mark;writtenTracks.erase({RuntimeDetails::coordinate(physical.cylinder),RuntimeDetails::coordinate(physical.head)});access.finish();
 }
 }

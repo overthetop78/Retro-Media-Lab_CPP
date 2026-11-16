@@ -34,6 +34,6 @@ void RuntimeDisk::State::prepareBlockFormat(const HardDiskGeometry& geometry){
     auto representation=std::make_shared<BlockImage>(geometry.capacity(),geometry.sectorSize(),std::move(ranges),geometry);
     document=std::make_shared<MediaDocument>(document->mediaSource(),document->formatId(),document->mediaKind(),std::move(representation),std::vector<MediaFileSystems::VolumeDescriptor>{},
         std::vector<MediaFileSystems::MessageRecipe>(document->messages().begin(),document->messages().end()),document->metadata(),std::vector<std::string>(document->diagnostics().begin(),document->diagnostics().end()));
-    changes.clear();dataMarks.clear();originals.clear();documentChanged=true;
+    changes.clear();dataMarks.clear();originals.clear();clearTracks();documentChanged=true;
 }
 }

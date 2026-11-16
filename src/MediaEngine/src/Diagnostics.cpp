@@ -3,7 +3,10 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
-    case DiagnosticCode::RuntimeDiskRequest:return DiagnosticKeys::RuntimeDiskRequest;
+    case DiagnosticCode::RuntimeTrackData:return DiagnosticKeys::RuntimeTrackData;
+case DiagnosticCode::RuntimeTrackWindow:return DiagnosticKeys::RuntimeTrackWindow;
+case DiagnosticCode::RuntimeTrackProjection:return DiagnosticKeys::RuntimeTrackProjection;
+case DiagnosticCode::RuntimeDiskRequest:return DiagnosticKeys::RuntimeDiskRequest;
     case DiagnosticCode::RuntimeDiskClosed:return DiagnosticKeys::RuntimeDiskClosed;
     case DiagnosticCode::RuntimeDiskReadOnly:return DiagnosticKeys::RuntimeDiskReadOnly;
     case DiagnosticCode::RuntimeDiskSector:return DiagnosticKeys::RuntimeDiskSector;
