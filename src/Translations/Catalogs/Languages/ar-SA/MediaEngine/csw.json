@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "ترويسة CSW أو معدل أخذ العينات أو امتداد الترويسة غير صالح أو مبتور.",
+    "MediaEngine.CswCompression": "ضغط CSW غير مدعوم، أو أن تدفق zlib غير صالح أو مبتور.",
+    "MediaEngine.CswPulse": "نبضة CSW مبتورة أو فارغة أو تتجاوز الحد المدعوم لعدد العينات.",
+    "MediaEngine.CswCount": "عدد نبضات CSW لا يطابق العدد الموجود في الترويسة.",
+    "MediaEngine.CswWrite": "تتطلب كتابة CSW مستند شريط PCM ووجهة CSW.",
+    "MediaEngine.CswDeflate": "تعذر ضغط تدفق نبضات CSW."
+  }
+}

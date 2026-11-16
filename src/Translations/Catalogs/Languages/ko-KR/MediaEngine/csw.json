@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "CSW 헤더, 샘플링 주파수 또는 헤더 확장이 잘못되었거나 잘렸습니다.",
+    "MediaEngine.CswCompression": "CSW 압축을 지원하지 않거나 zlib 스트림이 잘못되었거나 잘렸습니다.",
+    "MediaEngine.CswPulse": "CSW 펄스가 잘렸거나 비어 있거나 지원되는 샘플 수 제한을 초과합니다.",
+    "MediaEngine.CswCount": "CSW 펄스 수가 헤더의 값과 일치하지 않습니다.",
+    "MediaEngine.CswWrite": "CSW를 쓰려면 PCM 테이프 문서와 CSW 대상이 필요합니다.",
+    "MediaEngine.CswDeflate": "CSW 펄스 스트림을 압축하지 못했습니다."
+  }
+}

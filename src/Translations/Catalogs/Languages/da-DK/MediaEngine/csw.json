@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "CSW header, prøve hastighed eller udvidelse er ugyldig eller trunkeret.",
+    "MediaEngine.CswCompression": "CSW komprimering er ikke understøttet eller dens zlib stream er ugyldig eller trunkeret.",
+    "MediaEngine.CswPulse": "En CSW-puls er afkortet, tom eller overstiger den understøttede prøvegrænse.",
+    "MediaEngine.CswCount": "CSW pulsmåleren matcher ikke dens header.",
+    "MediaEngine.CswWrite": "CSW skrivning kræver et PCM-bånddokument og en CSW destination.",
+    "MediaEngine.CswDeflate": "CSW pulsstrømmen kunne ikke komprimeres."
+  }
+}

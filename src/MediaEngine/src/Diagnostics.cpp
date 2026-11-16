@@ -3,6 +3,13 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::CswHeader:return DiagnosticKeys::CswHeader;
+    case DiagnosticCode::CswCompression:return DiagnosticKeys::CswCompression;
+    case DiagnosticCode::CswPulse:return DiagnosticKeys::CswPulse;
+    case DiagnosticCode::CswCount:return DiagnosticKeys::CswCount;
+    case DiagnosticCode::CswWrite:return DiagnosticKeys::CswWrite;
+    case DiagnosticCode::CswDeflate:return DiagnosticKeys::CswDeflate;
+
     case DiagnosticCode::SequentialEncodeRequest:return DiagnosticKeys::SequentialEncodeRequest;
     case DiagnosticCode::SequentialEncoderNull:return DiagnosticKeys::SequentialEncoderNull;
     case DiagnosticCode::SequentialEncoderMissing:return DiagnosticKeys::SequentialEncoderMissing;

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "כותרת CSW, קצב הדגימה או הרחבת הכותרת אינם תקינים או קטועים.",
+    "MediaEngine.CswCompression": "דחיסת CSW אינה נתמכת, או שזרם zlib אינו תקין או קטוע.",
+    "MediaEngine.CswPulse": "פולס CSW קטוע, ריק או חורג ממגבלת מספר הדגימות הנתמכת.",
+    "MediaEngine.CswCount": "מספר הפולסים של CSW אינו תואם לכותרת.",
+    "MediaEngine.CswWrite": "כתיבת CSW דורשת מסמך סרט PCM ויעד CSW.",
+    "MediaEngine.CswDeflate": "לא ניתן לדחוס את זרם הפולסים של CSW."
+  }
+}

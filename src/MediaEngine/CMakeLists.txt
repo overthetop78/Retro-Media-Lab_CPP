@@ -279,6 +279,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Codecs/QdMo5/Encoder.cpp
   src/Codecs/QdMo5/Fields.cpp
   # Common
+  src/Formats/Tape/Csw/Reader.cpp
+  src/Formats/Tape/Csw/Writer.cpp
+  src/Formats/Tape/Csw/Compression.cpp
   src/Formats/Tape/AtariCas/Reader.cpp
   src/Formats/Tape/AtariCas/Writer.cpp
   src/Decoding/Sequential/Compatibility.cpp

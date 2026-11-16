@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "L’en-tête CSW, la fréquence d’échantillonnage ou l’extension d’en-tête est invalide ou tronqué.",
+    "MediaEngine.CswCompression": "La compression CSW n’est pas prise en charge ou son flux zlib est invalide ou tronqué.",
+    "MediaEngine.CswPulse": "Une impulsion CSW est tronquée, vide ou dépasse le nombre maximal d’échantillons pris en charge.",
+    "MediaEngine.CswCount": "Le nombre d’impulsions CSW ne correspond pas à l’en-tête.",
+    "MediaEngine.CswWrite": "L’écriture CSW nécessite un document de bande PCM et une destination CSW.",
+    "MediaEngine.CswDeflate": "Impossible de compresser le flux d’impulsions CSW."
+  }
+}

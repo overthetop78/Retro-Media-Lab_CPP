@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "Záhlaví CSW, rychlost odběru vzorků nebo rozšíření je neplatné nebo zkrácené.",
+    "MediaEngine.CswCompression": "Komprese CSW je nepodporovaná nebo její zlib proud je neplatný nebo zkrácený.",
+    "MediaEngine.CswPulse": "Pulz CSW je zkrácený, prázdný nebo překračuje podporovaný limit vzorku.",
+    "MediaEngine.CswCount": "Počet impulzů CSW neodpovídá záhlaví.",
+    "MediaEngine.CswWrite": "Psaní CSW vyžaduje dokument o PCM pásce a cíl CSW.",
+    "MediaEngine.CswDeflate": "Proud impulzů CSW se nepodařilo zkomprimovat."
+  }
+}

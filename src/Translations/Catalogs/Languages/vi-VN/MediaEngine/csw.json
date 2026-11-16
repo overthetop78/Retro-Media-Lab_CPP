@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "Tiêu đề CSW, tần số lấy mẫu hoặc phần mở rộng tiêu đề không hợp lệ hoặc bị cắt cụt.",
+    "MediaEngine.CswCompression": "Không hỗ trợ kiểu nén CSW này, hoặc luồng zlib không hợp lệ hoặc bị cắt cụt.",
+    "MediaEngine.CswPulse": "Xung CSW bị cắt cụt, rỗng hoặc vượt quá giới hạn số mẫu được hỗ trợ.",
+    "MediaEngine.CswCount": "Số xung CSW không khớp với tiêu đề.",
+    "MediaEngine.CswWrite": "Ghi CSW yêu cầu tài liệu băng PCM và đích CSW.",
+    "MediaEngine.CswDeflate": "Không thể nén luồng xung CSW."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "ส่วนหัวแบบ CSW, อัตราหรือนามสกุลตัวอย่างจะไม่ถูกต้องหรือถูกตัด",
+    "MediaEngine.CswCompression": "ไม่รองรับการบีบอัด CSW หรือสตรีม zlib ไม่ถูกต้องหรือถูกตัดทอน",
+    "MediaEngine.CswPulse": "พัลส์ CSW ถูกตัดทอน ว่างเปล่า หรือเกินจำนวนตัวอย่างสูงสุดที่รองรับ",
+    "MediaEngine.CswCount": "จำนวนพัลส์ CSW ไม่ตรงกับส่วนหัว",
+    "MediaEngine.CswWrite": "การเขียน CSW ต้องการเอกสารเทป PCM และปลายทาง CSW",
+    "MediaEngine.CswDeflate": "ไม่สามารถบีบอัดสตรีมพัลส์ CSW ได้"
+  }
+}

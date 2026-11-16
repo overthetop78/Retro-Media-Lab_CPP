@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view CswHeader="MediaEngine.CswHeader";
+inline constexpr std::string_view CswCompression="MediaEngine.CswCompression";
+inline constexpr std::string_view CswPulse="MediaEngine.CswPulse";
+inline constexpr std::string_view CswCount="MediaEngine.CswCount";
+inline constexpr std::string_view CswWrite="MediaEngine.CswWrite";
+inline constexpr std::string_view CswDeflate="MediaEngine.CswDeflate";
+
 inline constexpr std::string_view SequentialEncodeRequest="MediaEngine.SequentialEncodeRequest";
 inline constexpr std::string_view SequentialEncoderNull="MediaEngine.SequentialEncoderNull";
 inline constexpr std::string_view SequentialEncoderMissing="MediaEngine.SequentialEncoderMissing";

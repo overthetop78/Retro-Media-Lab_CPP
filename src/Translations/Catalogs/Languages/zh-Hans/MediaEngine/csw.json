@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "CSW 标头、采样率或扩展标头无效或被截断。",
+    "MediaEngine.CswCompression": "不支持此 CSW 压缩方式，或 zlib 流无效或被截断。",
+    "MediaEngine.CswPulse": "CSW 脉冲被截断、为空或超过支持的采样数上限。",
+    "MediaEngine.CswCount": "CSW 脉冲数与标头不符。",
+    "MediaEngine.CswWrite": "写入 CSW 需要 PCM 磁带文档和 CSW 目标。",
+    "MediaEngine.CswDeflate": "无法压缩 CSW 脉冲流。"
+  }
+}

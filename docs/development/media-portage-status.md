@@ -76,6 +76,8 @@ Les blocs décodés séquentiels partagent désormais leurs octets possédés et
 
 La tâche 166 porte les contrats et le registre d’encodage séquentiel, puis l’encodeur Atari CAS avec reconstruction explicite des records logiques et conservation validée des chunks. Compilation, contrôle ciblé, catalogues et audit réussis. Les services globaux de conversion restent à porter.
 
+La tâche 167 porte CSW 1/2 RLE et Z-RLE, avec décompression bornée par blocs et écriture atomique CSW 2 depuis le premier canal PCM natif. Compilation, contrôle ciblé, traductions relues, catalogues et audit réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

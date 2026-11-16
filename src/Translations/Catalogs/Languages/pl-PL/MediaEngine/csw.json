@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "Nagłówek CSW, częstotliwość próbkowania lub rozszerzenie jest nieprawidłowe lub skrócone.",
+    "MediaEngine.CswCompression": "Kompresja CSW nie jest obsługiwana lub jej strumień zlib jest nieprawidłowy lub obcięty.",
+    "MediaEngine.CswPulse": "Impuls CSW jest ucięty, pusty lub przekracza obsługiwaną liczbę próbek.",
+    "MediaEngine.CswCount": "Ilość pulsu CSW nie pasuje do nagłówka.",
+    "MediaEngine.CswWrite": "Pisanie CSW wymaga dokumentu z taśmy PCM i celu CSW.",
+    "MediaEngine.CswDeflate": "Strumień impulsu CSW nie mógł być skompresowany."
+  }
+}

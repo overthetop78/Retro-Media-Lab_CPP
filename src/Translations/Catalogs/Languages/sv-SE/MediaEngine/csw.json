@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "CSW-rubriken, provfrekvensen eller förlängningen är ogiltig eller trunkerad.",
+    "MediaEngine.CswCompression": "CSW-komprimeringen är ostödd eller dess zlib-ström är ogiltig eller trunkerad.",
+    "MediaEngine.CswPulse": "En CSW-puls är trunkerad, tom eller överstiger den stödda provgränsen.",
+    "MediaEngine.CswCount": "CSW-pulsräkningen matchar inte rubriken.",
+    "MediaEngine.CswWrite": "CSW-skrivning kräver ett PCM-band dokument och en CSW destination.",
+    "MediaEngine.CswDeflate": "CSW-pulsströmmen kunde inte komprimeras."
+  }
+}

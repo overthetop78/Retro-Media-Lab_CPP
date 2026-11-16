@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "L'intestazione CSW, il tasso di campione o l'estensione è non valida o troncata.",
+    "MediaEngine.CswCompression": "La compressione CSW non è supportata o il suo flusso zlib non è valido o troncato.",
+    "MediaEngine.CswPulse": "Un impulso CSW è troncato, vuoto o supera il limite di campione supportato.",
+    "MediaEngine.CswCount": "Il numero di impulsi CSW non corrisponde all'intestazione.",
+    "MediaEngine.CswWrite": "La scrittura CSW richiede un documento del nastro PCM e una destinazione CSW.",
+    "MediaEngine.CswDeflate": "Il flusso di impulso CSW non poteva essere compresso."
+  }
+}

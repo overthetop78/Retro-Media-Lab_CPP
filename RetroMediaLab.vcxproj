@@ -904,6 +904,12 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmProfile.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSamples.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Compression.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Compression.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Reader.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Writer.cpp" />
@@ -1383,6 +1389,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\console-optical.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cpc-dsk.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\csw.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\defined-raw.json" />

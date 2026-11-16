@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "El encabezado de CSW, la tasa de muestra o la extensión es inválida o truncada.",
+    "MediaEngine.CswCompression": "La compresión CSW no es compatible o su flujo zlib es inválido o truncado.",
+    "MediaEngine.CswPulse": "Un pulso CSW es truncado, vacío o excede el límite de muestra soportado.",
+    "MediaEngine.CswCount": "La cuenta de pulso CSW no coincide con su cabecera.",
+    "MediaEngine.CswWrite": "La escritura CSW requiere un documento de cinta PCM y un destino CSW.",
+    "MediaEngine.CswDeflate": "El flujo de pulso CSW no puede ser comprimido."
+  }
+}

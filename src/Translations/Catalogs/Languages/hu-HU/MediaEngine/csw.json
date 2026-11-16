@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "A CSW fejléc, mintaarány vagy kiterjesztés érvénytelen vagy csonka.",
+    "MediaEngine.CswCompression": "A CSW tömörítés nem támogatott, vagy a zlib stream érvénytelen vagy csonka.",
+    "MediaEngine.CswPulse": "A CSW impulzus csonkított, üres vagy meghaladja a támogatott mintahatárértéket.",
+    "MediaEngine.CswCount": "A CSW impulzusszáma nem egyezik a fejlécével.",
+    "MediaEngine.CswWrite": "A CSW írásához PCM-szalagra és CSW-re van szükség.",
+    "MediaEngine.CswDeflate": "A CSW impulzusáramát nem lehetett tömöríteni."
+  }
+}

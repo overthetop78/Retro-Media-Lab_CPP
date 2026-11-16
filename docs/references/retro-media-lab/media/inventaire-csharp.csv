@@ -672,8 +672,8 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Audio/AudioTapeRea
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/CommodoreTap/CommodoreTapFormat.cs,22,5e08ecdd041c9d2dea7c4fc00fecda728b1a684493b4cc44445d2ffd1843f8f8,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/CommodoreTap/CommodoreTapReader.cs,137,7eb84578e788d44f722d510bceba0c1f007db9a8ae7524ec20bce53351b8881e,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/CommodoreTap/CommodoreTapWriter.cs,106,5ab7e2f410800d2d79dc7e4cce17abfdbeaf06cf12e30f2c75637c7feed39fa7,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Csw/CswReader.cs,60,564097a0f755add1e6077ef42d38c8b63a118a6e9fb3a83b87b0dd1ec291ceab,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Csw/CswWriter.cs,61,3651d5175f1628d1f2204112c0aaef374109a689c4c165eaae03fdc6fcd5fd01,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Csw/CswReader.cs,60,564097a0f755add1e6077ef42d38c8b63a118a6e9fb3a83b87b0dd1ec291ceab,porte; CSW 1/2 RLE et Z-RLE; voir validation csw,,src/MediaEngine/src/Formats/Tape/Csw/Reader.cpp; src/MediaEngine/src/Formats/Tape/Csw/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/Csw/CswWriter.cs,61,3651d5175f1628d1f2204112c0aaef374109a689c4c165eaae03fdc6fcd5fd01,porte; CSW 1/2 RLE et Z-RLE; voir validation csw,,src/MediaEngine/src/Formats/Tape/Csw/Writer.cpp; src/MediaEngine/src/Formats/Tape/Csw/Compression.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/MsxCas/MsxCasFormat.cs,14,44460e33016036995d6ef5e60ec1553b21b7bf36f237976b54f21dd87fa6c844,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/MsxCas/MsxCasReader.cs,146,30b8e1e1c3e6e56ca2e8b82ee16f0747e4c1227c89fb9f1d1a28ce967de122e2,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Tape/MsxCas/MsxCasWriter.cs,79,270b7e49ec6411ce97a7c91eb3064e2296d3e7c520d0985a06fe40aeacbac423,non porte,,

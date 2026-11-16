@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "Der CSW-Header, die Abtastrate oder die Erweiterung ist ungültig oder verkürzt.",
+    "MediaEngine.CswCompression": "Die CSW-Komprimierung wird nicht unterstützt oder ihr zlib-Strom ist ungültig oder verkürzt.",
+    "MediaEngine.CswPulse": "Ein CSW-Impuls wird abgeschnitten, leer oder überschreitet die unterstützte Abtastgrenze.",
+    "MediaEngine.CswCount": "Die CSW-Pulszahl stimmt nicht mit ihrem Header überein.",
+    "MediaEngine.CswWrite": "CSW-Schreiben erfordert ein PCM-Banddokument und ein CSW-Ziel.",
+    "MediaEngine.CswDeflate": "Der CSW-Pulsstrom konnte nicht komprimiert werden."
+  }
+}

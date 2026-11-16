@@ -415,6 +415,9 @@
     <Filter Include="src\MediaEngine\src\Formats\Tape\Common">
       <UniqueIdentifier>{2A4BB787-8074-5DF0-9348-83AD3F55FDC8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape\Csw">
+      <UniqueIdentifier>{838C4B5D-DC30-51FC-AB60-DE857E421991}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Tape\Raw">
       <UniqueIdentifier>{4F9B19C0-DC5D-5C23-8BA3-411EACC9D859}</UniqueIdentifier>
     </Filter>
@@ -4305,6 +4308,24 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSamples.cpp">
       <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Compression.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Compression.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Csw\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Csw\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Csw</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.cpp">
       <Filter>src\MediaEngine\src\Formats\Tape\Raw</Filter>
     </ClCompile>
@@ -5740,6 +5761,9 @@
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cpc-dsk.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\csw.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cue-wave.json">

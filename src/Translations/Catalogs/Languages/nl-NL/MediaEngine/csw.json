@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "De CSW header, sample rate of extensie is ongeldig of ingekort.",
+    "MediaEngine.CswCompression": "De CSW-compressie wordt niet ondersteund of de zlib-stream is ongeldig of ingekort.",
+    "MediaEngine.CswPulse": "Een CSW puls wordt afgekapt, leeg of overschrijdt de ondersteunde sample limiet.",
+    "MediaEngine.CswCount": "De CSW pulse count komt niet overeen met de header.",
+    "MediaEngine.CswWrite": "CSW schrijven vereist een PCM tape document en een CSW bestemming.",
+    "MediaEngine.CswDeflate": "De CSW pulsstroom kon niet gecomprimeerd worden."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "The CSW header, sample rate or extension is invalid or truncated.",
+    "MediaEngine.CswCompression": "The CSW compression is unsupported or its zlib stream is invalid or truncated.",
+    "MediaEngine.CswPulse": "A CSW pulse is truncated, empty or exceeds the supported sample limit.",
+    "MediaEngine.CswCount": "The CSW pulse count does not match its header.",
+    "MediaEngine.CswWrite": "CSW writing requires a PCM tape document and a CSW destination.",
+    "MediaEngine.CswDeflate": "The CSW pulse stream could not be compressed."
+  }
+}

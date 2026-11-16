@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.CswHeader": "CSW ヘッダー、サンプリング周波数、または拡張ヘッダーが無効か、途中で切れています。",
+    "MediaEngine.CswCompression": "CSW 圧縮が未対応か、zlib ストリームが無効か、途中で切れています。",
+    "MediaEngine.CswPulse": "CSW パルスが途中で切れているか、空か、対応するサンプル数の上限を超えています。",
+    "MediaEngine.CswCount": "CSW パルス数がヘッダーの値と一致しません。",
+    "MediaEngine.CswWrite": "CSW の書き込みには PCM テープ文書と CSW の出力先が必要です。",
+    "MediaEngine.CswDeflate": "CSW パルスストリームを圧縮できませんでした。"
+  }
+}
