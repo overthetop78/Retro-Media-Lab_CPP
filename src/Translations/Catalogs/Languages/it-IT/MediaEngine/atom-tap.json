@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "L’intestazione o i dati Atom TAP non sono validi o sono troncati.",
+    "MediaEngine.AtomTapLimit": "I dati Atom TAP superano la lunghezza supportata.",
+    "MediaEngine.AtomTapWrite": "La scrittura Atom TAP non può scartare blocchi non decodificati o danneggiati.",
+    "MediaEngine.AtomTapFiles": "Atom TAP richiede file validi completi con nomi stampabili e indirizzi di carico e esecuzione a 16 bit.",
+    "MediaEngine.AtomTapTruncated": "Un blocco nastro Atom è troncato.",
+    "MediaEngine.AtomTapIncomplete": "Un file Atom è incompleto.",
+    "MediaEngine.AtomTapIntegrity": "Un checksum del nastro Atom o una sequenza di blocchi non è valido.",
+    "MediaEngine.AtomTapSerialResidual": "I byte non riconosciuti rimangono nel flusso seriale Atom."
+  }
+}

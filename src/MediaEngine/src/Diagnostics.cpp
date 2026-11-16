@@ -3,6 +3,15 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AtomTapData:return DiagnosticKeys::AtomTapData;
+    case DiagnosticCode::AtomTapLimit:return DiagnosticKeys::AtomTapLimit;
+    case DiagnosticCode::AtomTapWrite:return DiagnosticKeys::AtomTapWrite;
+    case DiagnosticCode::AtomTapFiles:return DiagnosticKeys::AtomTapFiles;
+    case DiagnosticCode::AtomTapTruncated:return DiagnosticKeys::AtomTapTruncated;
+    case DiagnosticCode::AtomTapIncomplete:return DiagnosticKeys::AtomTapIncomplete;
+    case DiagnosticCode::AtomTapIntegrity:return DiagnosticKeys::AtomTapIntegrity;
+    case DiagnosticCode::AtomTapSerialResidual:return DiagnosticKeys::AtomTapSerialResidual;
+
     case DiagnosticCode::UefHeader:return DiagnosticKeys::UefHeader;
     case DiagnosticCode::UefChunk:return DiagnosticKeys::UefChunk;
     case DiagnosticCode::UefSize:return DiagnosticKeys::UefSize;

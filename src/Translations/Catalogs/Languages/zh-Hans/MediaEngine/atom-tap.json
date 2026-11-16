@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "Atom TAP 标头或数据无效或被截断。",
+    "MediaEngine.AtomTapLimit": "Atom TAP 数据超出支持的长度。",
+    "MediaEngine.AtomTapWrite": "写入 Atom TAP 时不能丢弃未解码或已损坏的块。",
+    "MediaEngine.AtomTapFiles": "Atom TAP 需要完整有效的文件，且文件须有可打印名称和 16 位加载及执行地址。",
+    "MediaEngine.AtomTapTruncated": "Atom 磁带块被截断。",
+    "MediaEngine.AtomTapIncomplete": "Atom 磁带文件不完整。",
+    "MediaEngine.AtomTapIntegrity": "Atom 磁带校验和或块顺序无效。",
+    "MediaEngine.AtomTapSerialResidual": "Atom 串行流中仍有未识别的字节。"
+  }
+}

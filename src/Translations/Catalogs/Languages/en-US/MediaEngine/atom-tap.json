@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "The Atom TAP header or payload is invalid or truncated.",
+    "MediaEngine.AtomTapLimit": "The Atom TAP data exceeds the supported length.",
+    "MediaEngine.AtomTapWrite": "Atom TAP writing cannot discard undecoded or damaged blocks.",
+    "MediaEngine.AtomTapFiles": "Atom TAP requires complete valid files with printable names and 16-bit load and execution addresses.",
+    "MediaEngine.AtomTapTruncated": "An Atom tape block is truncated.",
+    "MediaEngine.AtomTapIncomplete": "An Atom tape file is incomplete.",
+    "MediaEngine.AtomTapIntegrity": "An Atom tape checksum or block sequence is invalid.",
+    "MediaEngine.AtomTapSerialResidual": "Unrecognized bytes remain in the Atom serial stream."
+  }
+}

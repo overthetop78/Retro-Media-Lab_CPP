@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "L’en-tête ou les données Atom TAP sont invalides ou tronqués.",
+    "MediaEngine.AtomTapLimit": "Les données Atom TAP dépassent la longueur prise en charge.",
+    "MediaEngine.AtomTapWrite": "L’écriture Atom TAP ne peut pas écarter les blocs non décodés ou endommagés.",
+    "MediaEngine.AtomTapFiles": "Atom TAP nécessite des fichiers complets et valides, avec un nom imprimable et des adresses de chargement et d’exécution sur 16 bits.",
+    "MediaEngine.AtomTapTruncated": "Un bloc de bande Atom est tronqué.",
+    "MediaEngine.AtomTapIncomplete": "Un fichier de bande Atom est incomplet.",
+    "MediaEngine.AtomTapIntegrity": "Un checksum de bande Atom ou une séquence de blocs est invalide.",
+    "MediaEngine.AtomTapSerialResidual": "Des octets non reconnus restent dans le flux série Atom."
+  }
+}

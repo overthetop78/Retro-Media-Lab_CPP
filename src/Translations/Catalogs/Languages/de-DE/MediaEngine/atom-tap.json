@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "Der Atom TAP-Header oder die Nutzlast ist ungültig oder verkürzt.",
+    "MediaEngine.AtomTapLimit": "Die Atom TAP-Daten überschreiten die unterstützte Länge.",
+    "MediaEngine.AtomTapWrite": "Beim Schreiben von Atom TAP dürfen nicht dekodierte oder beschädigte Blöcke nicht verworfen werden.",
+    "MediaEngine.AtomTapFiles": "Atom TAP erfordert vollständige gültige Dateien mit druckbaren Namen und 16-Bit-Lade- und Ausführungsadressen.",
+    "MediaEngine.AtomTapTruncated": "Ein Atom-Bandblock ist abgeschnitten.",
+    "MediaEngine.AtomTapIncomplete": "Eine Atom-Banddatei ist unvollständig.",
+    "MediaEngine.AtomTapIntegrity": "Eine Atom-Bandprüfsumme oder Blockfolge ist ungültig.",
+    "MediaEngine.AtomTapSerialResidual": "Nicht erkannte Bytes verbleiben im seriellen Atom-Stream."
+  }
+}

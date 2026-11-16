@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "Atom TAP header eller nyttelast er ugyldig eller afkortet.",
+    "MediaEngine.AtomTapLimit": "Atom TAP data overstiger den understøttede længde.",
+    "MediaEngine.AtomTapWrite": "Atom TAP skrivning kan ikke kassere uafkodede eller beskadigede blokke.",
+    "MediaEngine.AtomTapFiles": "Atom TAP kræver komplette gyldige filer med udskrivbare navne og 16-bit indlæsnings- og eksekveringsadresser.",
+    "MediaEngine.AtomTapTruncated": "En Atom båndblok er afkortet.",
+    "MediaEngine.AtomTapIncomplete": "En båndfil til Atom er ufuldstændig.",
+    "MediaEngine.AtomTapIntegrity": "Et Atom bånd checksum eller blok sekvens er ugyldig.",
+    "MediaEngine.AtomTapSerialResidual": "Ugenkendte bytes forbliver i Atom seriestrømmen."
+  }
+}

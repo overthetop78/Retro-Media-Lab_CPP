@@ -279,6 +279,12 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Codecs/QdMo5/Encoder.cpp
   src/Codecs/QdMo5/Fields.cpp
   # Common
+  src/Formats/Tape/AtomTap/Reader.cpp
+  src/Formats/Tape/AtomTap/Reconstruction.cpp
+  src/Formats/Tape/AtomTap/Decode.cpp
+  src/Formats/Tape/AtomTap/Serial.cpp
+  src/Formats/Tape/AtomTap/Encode.cpp
+  src/Formats/Tape/AtomTap/Writer.cpp
   src/Formats/Tape/Uef/Reader.cpp
   src/Formats/Tape/Uef/Writer.cpp
   src/Formats/Tape/Uef/Compression.cpp

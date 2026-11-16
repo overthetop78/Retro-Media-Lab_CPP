@@ -80,6 +80,8 @@ La tâche 167 porte CSW 1/2 RLE et Z-RLE, avec décompression bornée par blocs 
 
 La tâche 168 porte le conteneur UEF direct/gzip, la conservation ordonnée des chunks et leur contexte, puis le writer atomique sans perte des payloads. Compilation, contrôle ciblé, traductions relues, catalogues et audit réussis. La synthèse UEF et le protocole Acorn restent à porter.
 
+La tâche 169 porte le conteneur et le codec Atom TAP : fichiers successifs, reconstruction série, contrôle des checksums/séquences et writer atomique refusant les pertes. Compilation et contrôle ciblé réussis, traductions relues et catalogues compilés. Les adaptateurs du protocole Atom et la synthèse PCM restent à porter.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

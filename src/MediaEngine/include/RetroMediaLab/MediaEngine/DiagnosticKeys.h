@@ -1,6 +1,15 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AtomTapData="MediaEngine.AtomTapData";
+inline constexpr std::string_view AtomTapLimit="MediaEngine.AtomTapLimit";
+inline constexpr std::string_view AtomTapWrite="MediaEngine.AtomTapWrite";
+inline constexpr std::string_view AtomTapFiles="MediaEngine.AtomTapFiles";
+inline constexpr std::string_view AtomTapTruncated="MediaEngine.AtomTapTruncated";
+inline constexpr std::string_view AtomTapIncomplete="MediaEngine.AtomTapIncomplete";
+inline constexpr std::string_view AtomTapIntegrity="MediaEngine.AtomTapIntegrity";
+inline constexpr std::string_view AtomTapSerialResidual="MediaEngine.AtomTapSerialResidual";
+
 inline constexpr std::string_view UefHeader="MediaEngine.UefHeader";
 inline constexpr std::string_view UefChunk="MediaEngine.UefChunk";
 inline constexpr std::string_view UefSize="MediaEngine.UefSize";

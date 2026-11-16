@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "El encabezado o la carga útil Atom TAP es inválido o truncado.",
+    "MediaEngine.AtomTapLimit": "Los datos Atom TAP exceden la longitud soportada.",
+    "MediaEngine.AtomTapWrite": "La escritura de Atom TAP no puede descartar bloques no decodificados o dañados.",
+    "MediaEngine.AtomTapFiles": "Atom TAP requiere archivos válidos completos con nombres imprimibles y direcciones de carga y ejecución de 16 bits.",
+    "MediaEngine.AtomTapTruncated": "Un bloque de cinta Atom está truncado.",
+    "MediaEngine.AtomTapIncomplete": "Un archivo de cinta Atom es incompleto.",
+    "MediaEngine.AtomTapIntegrity": "Una suma de comprobación de cinta Atom o una secuencia de bloques no es válida.",
+    "MediaEngine.AtomTapSerialResidual": "Los bytes no reconocidos permanecen en la secuencia de serie Atom."
+  }
+}

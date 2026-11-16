@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.AtomTapData": "Atom TAP ヘッダーまたはデータが無効か、途中で切れています。",
+    "MediaEngine.AtomTapLimit": "Atom TAP データが対応する長さの上限を超えています。",
+    "MediaEngine.AtomTapWrite": "Atom TAP の書き込みでは未デコードのブロックや破損したブロックを破棄できません。",
+    "MediaEngine.AtomTapFiles": "Atom TAP には、印字可能な名前と 16 ビットのロード・実行アドレスを持つ完全で有効なファイルが必要です。",
+    "MediaEngine.AtomTapTruncated": "Atom テープブロックが途中で切れています。",
+    "MediaEngine.AtomTapIncomplete": "Atom テープファイルが不完全です。",
+    "MediaEngine.AtomTapIntegrity": "Atom テープのチェックサムまたはブロック順序が無効です。",
+    "MediaEngine.AtomTapSerialResidual": "Atom シリアルストリームに未認識のバイトが残っています。"
+  }
+}

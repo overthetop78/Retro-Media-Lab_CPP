@@ -899,6 +899,15 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Writer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtomTap\Codec.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtomTap\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Decode.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Encode.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtomTap\Reader.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Reconstruction.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Serial.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtomTap\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PcmConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp" />
@@ -1376,6 +1385,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\arburg.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atari-tape.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\bbc-dfs.json" />
@@ -1644,6 +1654,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhdx.json" />
@@ -1819,6 +1830,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhdx.json" />
@@ -1994,6 +2006,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhdx.json" />
@@ -2169,6 +2182,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhdx.json" />
@@ -2344,6 +2358,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhdx.json" />
@@ -2519,6 +2534,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhdx.json" />
@@ -2694,6 +2710,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhdx.json" />
@@ -2869,6 +2886,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhdx.json" />
@@ -3044,6 +3062,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhdx.json" />
@@ -3219,6 +3238,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhdx.json" />
@@ -3394,6 +3414,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhdx.json" />
@@ -3569,6 +3590,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhdx.json" />
@@ -3744,6 +3766,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhdx.json" />
@@ -3919,6 +3942,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhdx.json" />
@@ -4094,6 +4118,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhdx.json" />
@@ -4269,6 +4294,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhdx.json" />
@@ -4444,6 +4470,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhdx.json" />
@@ -4619,6 +4646,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhdx.json" />
@@ -4794,6 +4822,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhdx.json" />
@@ -4969,6 +4998,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhdx.json" />
@@ -5144,6 +5174,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhdx.json" />
@@ -5319,6 +5350,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhdx.json" />
@@ -5494,6 +5526,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhdx.json" />
@@ -5669,6 +5702,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhdx.json" />
@@ -5844,6 +5878,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhdx.json" />
@@ -6019,6 +6054,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhdx.json" />
@@ -6194,6 +6230,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhdx.json" />
@@ -6369,6 +6406,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhdx.json" />
@@ -6544,6 +6582,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\teledisk-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\twoimg.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\tycom-fm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\uef.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vdi.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhdx.json" />
