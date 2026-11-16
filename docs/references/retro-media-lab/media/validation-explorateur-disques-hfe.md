@@ -1,0 +1,13 @@
+# Explorateur technique de disques et conversion HFE
+
+Références C# : `Images/Reading/DiskImageExplorer.cs`, la sélection de `ExploredDiskImage`, la partie technique de `DiskImageDocumentFactory` et `Images/Conversion/HfeConversionService.cs`.
+
+`Exploration/Disk/Explorer` possède les services communs de lecture, reconstruction et inspection. Il prend un chemin ou un document déjà chargé, applique l'indication sectorielle après la reconnaissance du conteneur et réessaie sans indication lorsque celle-ci n'est pas prise en charge. Il différencie une source non reconnue d'un candidat corrompu et laisse remonter les erreurs d'infrastructure. Les sources non sectorielles et flux non décodables produisent le résultat technique inconnu du C#, conservant chemin, capacité et éventuelle capture. Le callback de capture reçoit une valeur possédée avant l'analyse.
+
+Le résultat conserve image principale, correspondances de systèmes de fichiers, images décodées, format sélectionné et capture. La sélection ne détruit pas les autres interprétations. Les identifiants détectés et le caractère hybride sont dérivés des mêmes ensembles que dans le C#. Le chargement SCP en mémoire passe par le cache partagé. Le service est désormais commun aux conversions ; la façade FAT12 ne contient plus sa propre exploration.
+
+La conversion sectorielle HFE reprend l'éligibilité `raw.hfe` / `.hfe`, puis utilise l'explorateur, le `SectorImageEncoder` partagé et le writer HFE uniforme. Elle refuse l'extension SCP avant exploration, conformément au parcours C# ; les conversions directes SCP/HFE du bloc 215 restent distinctes. Aucun nouveau diagnostic brut n'est introduit : les refus utilisent les diagnostics traduits existants.
+
+Validation : compilation Debug de MediaEngine réussie ; audit des constantes réussi sur 1 517 fichiers C++. Un seul programme temporaire a contrôlé indication non prise en charge et repli, document chargé sans relecture, sélection explicite et non destructive, source inconnue, détection hybride par lecteurs distincts, décodage/rejet de flux, callback de capture, propagation d'une erreur d'infrastructure et annulation. Sur un petit FAT12 synthétique, il a vérifié l'identité de la conversion `.ima` vers `.st`, la production d'un HFE à 80 cylindres/deux faces/160 pistes, et le refus SCP sans sortie. Réussite ; programme, médias et journal temporaire supprimés.
+
+La projection des métadonnées et des documents techniques vers les contrats du GUI reste séparée et partielle dans l'inventaire. Cette étape porte les décisions d'exploration et la conversion ; elle ne déclare pas cette projection terminée.

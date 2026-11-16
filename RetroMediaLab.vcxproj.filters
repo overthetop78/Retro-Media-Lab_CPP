@@ -604,6 +604,9 @@
     <Filter Include="src\MediaEngine\src\Exploration">
       <UniqueIdentifier>{D4453269-8849-57CB-A194-14EEE78DD85E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Exploration\Disk">
+      <UniqueIdentifier>{B1A53E3F-45FF-56E9-B248-42181DCB0C20}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Exploration\Scp">
       <UniqueIdentifier>{69165751-2E01-554E-93A6-DBAE3430E855}</UniqueIdentifier>
     </Filter>
@@ -8901,6 +8904,15 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Track.h">
       <Filter>src\MediaEngine\src\Encoding</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Constants.h">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Explorer.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h">
+      <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h">
       <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
     </ClInclude>
@@ -10693,6 +10705,9 @@
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeCells.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeFile.cpp">
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Optical.cpp">

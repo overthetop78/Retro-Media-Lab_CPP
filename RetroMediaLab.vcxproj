@@ -2291,6 +2291,9 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Timings.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Track.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Track.h" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Explorer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Inspection.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Inspection.h" />
@@ -2889,6 +2892,7 @@
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\FluxSectors.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\FluxSectors.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeCells.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeFile.cpp" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Optical.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Optical.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Planner.cpp" />

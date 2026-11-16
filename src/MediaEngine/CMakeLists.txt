@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Exploration/Disk/Explorer.cpp
+  src/Images/Conversion/HfeFile.cpp
   src/Exploration/Scp/Inspection.cpp
   src/Exploration/Scp/Ranking.cpp
   src/Exploration/Scp/Probe.cpp
