@@ -3,6 +3,32 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::VhdxShort:return DiagnosticKeys::VhdxShort;
+    case DiagnosticCode::VhdxSignature:return DiagnosticKeys::VhdxSignature;
+    case DiagnosticCode::VhdxHeaders:return DiagnosticKeys::VhdxHeaders;
+    case DiagnosticCode::VhdxActiveLog:return DiagnosticKeys::VhdxActiveLog;
+    case DiagnosticCode::VhdxRegions:return DiagnosticKeys::VhdxRegions;
+    case DiagnosticCode::VhdxRequiredRegion:return DiagnosticKeys::VhdxRequiredRegion;
+    case DiagnosticCode::VhdxMissingRegions:return DiagnosticKeys::VhdxMissingRegions;
+    case DiagnosticCode::VhdxParent:return DiagnosticKeys::VhdxParent;
+    case DiagnosticCode::VhdxMetadataRange:return DiagnosticKeys::VhdxMetadataRange;
+    case DiagnosticCode::VhdxMetadataSignature:return DiagnosticKeys::VhdxMetadataSignature;
+    case DiagnosticCode::VhdxMetadataCount:return DiagnosticKeys::VhdxMetadataCount;
+    case DiagnosticCode::VhdxRequiredMetadata:return DiagnosticKeys::VhdxRequiredMetadata;
+    case DiagnosticCode::VhdxMissingMetadata:return DiagnosticKeys::VhdxMissingMetadata;
+    case DiagnosticCode::VhdxBlockSize:return DiagnosticKeys::VhdxBlockSize;
+    case DiagnosticCode::VhdxSectorSize:return DiagnosticKeys::VhdxSectorSize;
+    case DiagnosticCode::VhdxVirtualSize:return DiagnosticKeys::VhdxVirtualSize;
+    case DiagnosticCode::VhdxChunkRatio:return DiagnosticKeys::VhdxChunkRatio;
+    case DiagnosticCode::VhdxBatSize:return DiagnosticKeys::VhdxBatSize;
+    case DiagnosticCode::VhdxBatRange:return DiagnosticKeys::VhdxBatRange;
+    case DiagnosticCode::VhdxPartial:return DiagnosticKeys::VhdxPartial;
+    case DiagnosticCode::VhdxBatState:return DiagnosticKeys::VhdxBatState;
+    case DiagnosticCode::VhdxChanged:return DiagnosticKeys::VhdxChanged;
+    case DiagnosticCode::VhdxWriteBat:return DiagnosticKeys::VhdxWriteBat;
+    case DiagnosticCode::VhdxWriteOffset:return DiagnosticKeys::VhdxWriteOffset;
+    case DiagnosticCode::VhdxWrite:return DiagnosticKeys::VhdxWrite;
+
     case DiagnosticCode::VmdkSource:return DiagnosticKeys::VmdkSource;
     case DiagnosticCode::VmdkDescriptorSize:return DiagnosticKeys::VmdkDescriptorSize;
     case DiagnosticCode::VmdkSignature:return DiagnosticKeys::VmdkSignature;

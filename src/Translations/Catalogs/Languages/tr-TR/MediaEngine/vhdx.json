@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Dosya zorunlu VHDX yapıları içeren çok kısadır.",
+    "MediaEngine.VhdxSignature": "VHDX dosya imzası eksik.",
+    "MediaEngine.VhdxHeaders": "Her iki VHDX başlığı da geçersizdir.",
+    "MediaEngine.VhdxActiveLog": "Aktif bir logla VHDX görüntüsü, okuyabilmeden önce yeniden oynatılmalıdır.",
+    "MediaEngine.VhdxRegions": "Her iki VHDX bölge tablosu da geçersizdir.",
+    "MediaEngine.VhdxRequiredRegion": "Gerekli VHDX bölgesi {0} desteklenmez.",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT veya metadata bölgesi eksik.",
+    "MediaEngine.VhdxParent": "Fark VHDX görüntüleri, kayıtlı olmayan bir üst dosya çözümleyicisi gerektirir.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} bölgesini veya desteklenen tampon boyutunu aşıyor.",
+    "MediaEngine.VhdxMetadataSignature": "VHDX meta veri tablosu imzası eksik.",
+    "MediaEngine.VhdxMetadataCount": "VHDX metadata giriş sayısı geçersizdir.",
+    "MediaEngine.VhdxRequiredMetadata": "Gerekli VHDX metadata {0} desteklenmez.",
+    "MediaEngine.VhdxMissingMetadata": "Zorunlu VHDX meta verileri eksik.",
+    "MediaEngine.VhdxBlockSize": "VHDX veri bloğu boyutu geçersizdir.",
+    "MediaEngine.VhdxSectorSize": "VHDX sektörü büyüklüğü desteklenmez.",
+    "MediaEngine.VhdxVirtualSize": "VHDX sanal disk boyutu geçersizdir.",
+    "MediaEngine.VhdxChunkRatio": "VHDX chunk oranı geçersizdir.",
+    "MediaEngine.VhdxBatSize": "VHDX BAT bölgesi çok kısa veya desteklenen tampon boyutunu aşıyor.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT girdisi {0} dosyanın dışını gösteriyor.",
+    "MediaEngine.VhdxPartial": "Kısmen mevcut VHDX veri blokları sektör bit eşleminin yorumlanmasını gerektirir.",
+    "MediaEngine.VhdxBatState": "VHDX BAT girişi {0} geçersiz durumda {1}.",
+    "MediaEngine.VhdxChanged": "VHDX uzunluğu tanımadan sonra değişti.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT, desteklenen bellek içi tablo boyutunu aşıyor.",
+    "MediaEngine.VhdxWriteOffset": "VHDX çıktı verisi ofsetleri desteklenen aralığı aşıyor.",
+    "MediaEngine.VhdxWrite": "Medya belgesi tam bir VHDX görüntüsü olarak yazılamaz."
+  }
+}

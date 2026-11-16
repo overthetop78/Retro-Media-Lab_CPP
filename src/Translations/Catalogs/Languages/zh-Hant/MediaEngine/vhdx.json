@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "檔案過短，無法包含必要的 VHDX 結構。",
+    "MediaEngine.VhdxSignature": "缺少 VHDX 檔案簽章。",
+    "MediaEngine.VhdxHeaders": "兩個 VHDX 標頭均無效。",
+    "MediaEngine.VhdxActiveLog": "讀取 VHDX 映像前必須重新套用其作用中的日誌。",
+    "MediaEngine.VhdxRegions": "兩個 VHDX 區域表均無效。",
+    "MediaEngine.VhdxRequiredRegion": "不支援必要的 VHDX 區域 {0}。",
+    "MediaEngine.VhdxMissingRegions": "缺少 VHDX BAT 或中繼資料區域。",
+    "MediaEngine.VhdxParent": "差分 VHDX 映像需要尚未註冊的父檔案解析器。",
+    "MediaEngine.VhdxMetadataRange": "VHDX 中繼資料 {0} 超出其區域或支援的緩衝區大小。",
+    "MediaEngine.VhdxMetadataSignature": "缺少 VHDX 中繼資料表簽章。",
+    "MediaEngine.VhdxMetadataCount": "VHDX 中繼資料項目數無效。",
+    "MediaEngine.VhdxRequiredMetadata": "不支援必要的 VHDX 中繼資料 {0}。",
+    "MediaEngine.VhdxMissingMetadata": "缺少必要的 VHDX 中繼資料。",
+    "MediaEngine.VhdxBlockSize": "VHDX 資料區塊大小無效。",
+    "MediaEngine.VhdxSectorSize": "不支援 VHDX 磁區大小。",
+    "MediaEngine.VhdxVirtualSize": "VHDX 虛擬磁碟大小無效。",
+    "MediaEngine.VhdxChunkRatio": "VHDX 區塊群組比率無效。",
+    "MediaEngine.VhdxBatSize": "VHDX BAT 區域過短或超出支援的緩衝區大小。",
+    "MediaEngine.VhdxBatRange": "VHDX BAT 項目 {0} 指向檔案以外。",
+    "MediaEngine.VhdxPartial": "部分存在的 VHDX 資料區塊需要解析磁區點陣圖。",
+    "MediaEngine.VhdxBatState": "VHDX BAT 項目 {0} 使用無效狀態 {1}。",
+    "MediaEngine.VhdxChanged": "辨識後 VHDX 長度已變更。",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT 超出支援的記憶體內表格大小。",
+    "MediaEngine.VhdxWriteOffset": "VHDX 輸出資料偏移超出支援的範圍。",
+    "MediaEngine.VhdxWrite": "無法將媒體文件寫入為完整的 VHDX 映像。"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Die Datei ist zu kurz, um obligatorische VHDX-Strukturen zu enthalten.",
+    "MediaEngine.VhdxSignature": "Die VHDX-Dateisignatur fehlt.",
+    "MediaEngine.VhdxHeaders": "Beide VHDX-Header sind ungültig.",
+    "MediaEngine.VhdxActiveLog": "Ein VHDX-Bild mit einem aktiven Protokoll muss wiedergegeben werden, bevor es gelesen werden kann.",
+    "MediaEngine.VhdxRegions": "Beide VHDX-Regionaltabellen sind ungültig.",
+    "MediaEngine.VhdxRequiredRegion": "Erforderliche VHDX Region {0} wird nicht unterstützt.",
+    "MediaEngine.VhdxMissingRegions": "Die VHDX BAT- oder Metadatenregion fehlt.",
+    "MediaEngine.VhdxParent": "Differenzielle VHDX-Abbilder benötigen einen nicht registrierten Resolver für übergeordnete Dateien.",
+    "MediaEngine.VhdxMetadataRange": "VHDX Metadaten {0} überschreiten ihre Region oder die unterstützte Puffergröße.",
+    "MediaEngine.VhdxMetadataSignature": "Die Signatur der VHDX-Metadatentabelle fehlt.",
+    "MediaEngine.VhdxMetadataCount": "Die VHDX Metadateneintragszahl ist ungültig.",
+    "MediaEngine.VhdxRequiredMetadata": "Erforderliche VHDX-Metadaten {0} werden nicht unterstützt.",
+    "MediaEngine.VhdxMissingMetadata": "Obligatorische VHDX-Metadaten fehlen.",
+    "MediaEngine.VhdxBlockSize": "Die VHDX-Nutzlastblockgröße ist ungültig.",
+    "MediaEngine.VhdxSectorSize": "Die Sektorgröße von VHDX wird nicht unterstützt.",
+    "MediaEngine.VhdxVirtualSize": "Die Größe der virtuellen VHDX-Festplatte ist ungültig.",
+    "MediaEngine.VhdxChunkRatio": "Das VHDX-Chunk-Verhältnis ist ungültig.",
+    "MediaEngine.VhdxBatSize": "Die VHDX BAT-Region ist zu kurz oder übersteigt die unterstützte Puffergröße.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT-Eintrag {0} verweist auf einen Bereich außerhalb der Datei.",
+    "MediaEngine.VhdxPartial": "Teilweise vorhandene VHDX-Datenblöcke erfordern die Auswertung der Sektorbitmap.",
+    "MediaEngine.VhdxBatState": "VHDX BAT Eintrag {0} verwendet den ungültigen Zustand {1}.",
+    "MediaEngine.VhdxChanged": "Die VHDX-Länge änderte sich nach der Erkennung.",
+    "MediaEngine.VhdxWriteBat": "Der VHDX BAT übersteigt die unterstützte In-Memory-Tabelle.",
+    "MediaEngine.VhdxWriteOffset": "Die VHDX-Ausgangs-Nutzlast-Offsets überschreiten den unterstützten Bereich.",
+    "MediaEngine.VhdxWrite": "Das Mediendokument kann nicht als vollständiges VHDX-Bild geschrieben werden."
+  }
+}

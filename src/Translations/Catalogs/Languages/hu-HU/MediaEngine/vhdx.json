@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "A fájl túl rövid ahhoz, hogy kötelező VHDX struktúrákat tartalmazzon.",
+    "MediaEngine.VhdxSignature": "A VHDX fájl aláírása hiányzik.",
+    "MediaEngine.VhdxHeaders": "Mindkét VHDX fejléc érvénytelen.",
+    "MediaEngine.VhdxActiveLog": "Egy aktív naplójú VHDX képet kell lejátszani, mielőtt el lehetne olvasni.",
+    "MediaEngine.VhdxRegions": "Mindkét VHDX regionális tábla érvénytelen.",
+    "MediaEngine.VhdxRequiredRegion": "A szükséges VHDX régió {0} nem támogatott.",
+    "MediaEngine.VhdxMissingRegions": "A VHDX BAT vagy metaadatok régiója hiányzik.",
+    "MediaEngine.VhdxParent": "A különbségi VHDX lemezképek nem regisztrált szülőfájl-feloldót igényelnek.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metaadatok {0} meghaladják a régiót vagy a támogatott pufferméretet.",
+    "MediaEngine.VhdxMetadataSignature": "A VHDX metaadat tábla aláírása hiányzik.",
+    "MediaEngine.VhdxMetadataCount": "A VHDX metaadatbeviteli száma érvénytelen.",
+    "MediaEngine.VhdxRequiredMetadata": "Szükséges VHDX metaadatok {0} nem támogatott.",
+    "MediaEngine.VhdxMissingMetadata": "A kötelező VHDX metaadatok hiányoznak.",
+    "MediaEngine.VhdxBlockSize": "A VHDX hasznos teher blokk mérete érvénytelen.",
+    "MediaEngine.VhdxSectorSize": "A VHDX szektor mérete nem támogatott.",
+    "MediaEngine.VhdxVirtualSize": "A VHDX virtuális lemez mérete érvénytelen.",
+    "MediaEngine.VhdxChunkRatio": "A VHDX darabszám érvénytelen.",
+    "MediaEngine.VhdxBatSize": "A VHDX BAT régió túl rövid vagy meghaladja a támogatott pufferméretet.",
+    "MediaEngine.VhdxBatRange": "A VHDX BAT {0} bejegyzése a fájlon kívülre mutat.",
+    "MediaEngine.VhdxPartial": "A részben jelen lévő VHDX adatblokkokhoz a szektorok bittérképének feldolgozása szükséges.",
+    "MediaEngine.VhdxBatState": "VHDX BAT bejegyzés {0} érvénytelen {1} értéket használ.",
+    "MediaEngine.VhdxChanged": "A VHDX hossza az elismerés után megváltozott.",
+    "MediaEngine.VhdxWriteBat": "A VHDX BAT meghaladja a támogatott inmemória asztal méretét.",
+    "MediaEngine.VhdxWriteOffset": "A VHDX kimeneti adatainak eltolásai meghaladják a támogatott tartományt.",
+    "MediaEngine.VhdxWrite": "A médiadokumentum nem írható teljes VHDX képként."
+  }
+}

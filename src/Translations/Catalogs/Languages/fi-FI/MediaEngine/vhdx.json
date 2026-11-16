@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Tiedosto on liian lyhyt sisältääkseen pakollisia VHDX-rakenteita.",
+    "MediaEngine.VhdxSignature": "VHDX-tiedoston allekirjoitus puuttuu.",
+    "MediaEngine.VhdxHeaders": "Molemmat VHDX- otsikot ovat virheellisiä.",
+    "MediaEngine.VhdxActiveLog": "VHDX-kuva, jossa on aktiivinen loki, on toistettava ennen kuin se voidaan lukea.",
+    "MediaEngine.VhdxRegions": "Molemmat VHDX aluetaulukot ovat virheellisiä.",
+    "MediaEngine.VhdxRequiredRegion": "Vaadittu VHDX alue {0} ei ole tuettu.",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT tai metatietoalue puuttuu.",
+    "MediaEngine.VhdxParent": "VHDX-erotuskuvat tarvitsevat rekisteröimättömän kantatiedoston selvittäjän.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} ylittää alueensa tai tuetun puskurikoon.",
+    "MediaEngine.VhdxMetadataSignature": "VHDX-metatietotaulukon allekirjoitus puuttuu.",
+    "MediaEngine.VhdxMetadataCount": "VHDX-metatietomäärä on virheellinen.",
+    "MediaEngine.VhdxRequiredMetadata": "Vaadittu VHDX metadata {0} ei ole tuettu.",
+    "MediaEngine.VhdxMissingMetadata": "Pakollinen VHDX-metatieto puuttuu.",
+    "MediaEngine.VhdxBlockSize": "VHDX:n hyötykuorman koko on virheellinen.",
+    "MediaEngine.VhdxSectorSize": "VHDX-sektorin kokoa ei tueta.",
+    "MediaEngine.VhdxVirtualSize": "VHDX:n virtuaalilevykoko on virheellinen.",
+    "MediaEngine.VhdxChunkRatio": "VHDX-lohkoryhmien suhde on virheellinen.",
+    "MediaEngine.VhdxBatSize": "VHDX:n BAT-alue on liian lyhyt tai ylittää tuetun puskurikoon.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT -merkintä {0} osoittaa tiedoston ulkopuolelle.",
+    "MediaEngine.VhdxPartial": "Osittain olemassa olevat VHDX-datalohkot vaativat sektoribittikartan tulkinnan.",
+    "MediaEngine.VhdxBatState": "VHDX BAT -merkintä {0} käyttää virheellistä tilaa {1}.",
+    "MediaEngine.VhdxChanged": "VHDX:n pituus muuttui tunnistamisen jälkeen.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT ylittää tuetun muistissa olevan taulukon koon.",
+    "MediaEngine.VhdxWriteOffset": "VHDX-lähtökuorman poikkeamat ylittävät tuetun alueen.",
+    "MediaEngine.VhdxWrite": "Mediadokumenttia ei voi kirjoittaa täydellisenä VHDX-kuvana."
+  }
+}

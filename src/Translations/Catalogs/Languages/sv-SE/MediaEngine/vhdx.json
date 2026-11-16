@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Filen är för kort för att innehålla obligatoriska VHDX-strukturer.",
+    "MediaEngine.VhdxSignature": "VHDX filsignatur saknas.",
+    "MediaEngine.VhdxHeaders": "Både VHDX-huvudena är ogiltiga.",
+    "MediaEngine.VhdxActiveLog": "En VHDX-bild med en aktiv logg måste återspelas innan den kan läsas.",
+    "MediaEngine.VhdxRegions": "Både VHDX region tabeller är ogiltiga.",
+    "MediaEngine.VhdxRequiredRegion": "VHDX region {0} stöds inte.",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT eller metadataregion saknas.",
+    "MediaEngine.VhdxParent": "Differentiella VHDX-avbilder kräver en resolver för överordnade filer som inte är registrerad.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} överstiger dess region eller den stödda buffertstorleken.",
+    "MediaEngine.VhdxMetadataSignature": "VHDX metadata tabell signatur saknas.",
+    "MediaEngine.VhdxMetadataCount": "VHDX metadataantalet är ogiltigt.",
+    "MediaEngine.VhdxRequiredMetadata": "VHDX metadata {0} stöds inte.",
+    "MediaEngine.VhdxMissingMetadata": "Obligatorisk VHDX metadata saknas.",
+    "MediaEngine.VhdxBlockSize": "VHDX payload block storlek är ogiltig.",
+    "MediaEngine.VhdxSectorSize": "VHDX-sektorns storlek stöds inte.",
+    "MediaEngine.VhdxVirtualSize": "VHDX virtuell disk storlek är ogiltig.",
+    "MediaEngine.VhdxChunkRatio": "VHDX chunk förhållandet är ogiltigt.",
+    "MediaEngine.VhdxBatSize": "VHDX BAT regionen är för kort eller överstiger den stödda buffertstorleken.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT-post {0} pekar utanför filen.",
+    "MediaEngine.VhdxPartial": "Delvis befintliga VHDX-datablock kräver tolkning av sektorns bitmapp.",
+    "MediaEngine.VhdxBatState": "VHDX BAT-post {0} använder ogiltigt tillstånd {1}.",
+    "MediaEngine.VhdxChanged": "VHDX-längden ändrades efter erkännande.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT överstiger den stödda tabellstorleken i minnet.",
+    "MediaEngine.VhdxWriteOffset": "VHDX output payload offsets överstiger det stödda intervallet.",
+    "MediaEngine.VhdxWrite": "Mediedokumentet kan inte skrivas som en komplett VHDX-bild."
+  }
+}

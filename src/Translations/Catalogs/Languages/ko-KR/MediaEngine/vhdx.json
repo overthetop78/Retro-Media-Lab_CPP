@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "파일은 필수 VHDX 구조를 포함하기가 너무 짧습니다.",
+    "MediaEngine.VhdxSignature": "VHDX 파일 서명이 누락되었습니다.",
+    "MediaEngine.VhdxHeaders": "두 VHDX 헤더가 모두 유효하지 않습니다.",
+    "MediaEngine.VhdxActiveLog": "활성 로그의 VHDX 이미지는 읽기 전에 재생해야합니다.",
+    "MediaEngine.VhdxRegions": "둘 다 VHDX 지역 테이블은 유효하지 않습니다.",
+    "MediaEngine.VhdxRequiredRegion": "필수 VHDX 지역 {0}는 지원되지 않습니다.",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT 또는 메타데이터 영역이 누락되었습니다.",
+    "MediaEngine.VhdxParent": "차등 VHDX 이미지에는 등록되지 않은 부모 파일 확인기가 필요합니다.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0}는 해당 지역 또는 지원되는 버퍼 크기를 초과합니다.",
+    "MediaEngine.VhdxMetadataSignature": "VHDX 메타데이터 테이블 서명이 누락되었습니다.",
+    "MediaEngine.VhdxMetadataCount": "VHDX 메타데이터 항목은 유효하지 않습니다.",
+    "MediaEngine.VhdxRequiredMetadata": "필수 VHDX 메타데이터 {0}는 지원되지 않습니다.",
+    "MediaEngine.VhdxMissingMetadata": "필수 VHDX 메타데이터가 누락되었습니다.",
+    "MediaEngine.VhdxBlockSize": "VHDX 페이로드 블록 크기는 유효하지 않습니다.",
+    "MediaEngine.VhdxSectorSize": "VHDX 섹터 크기는 지원되지 않습니다.",
+    "MediaEngine.VhdxVirtualSize": "VHDX 가상 디스크 크기는 유효하지 않습니다.",
+    "MediaEngine.VhdxChunkRatio": "VHDX 청크 비율이 유효하지 않습니다.",
+    "MediaEngine.VhdxBatSize": "VHDX BAT 지역은 너무 짧거나 지원되는 완충기 크기를 초과합니다.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT 항목 {0}이 파일 밖을 가리킵니다.",
+    "MediaEngine.VhdxPartial": "부분적으로 존재하는 VHDX 데이터 블록은 섹터 비트맵 해석이 필요합니다.",
+    "MediaEngine.VhdxBatState": "VHDX BAT 항목 {0}는 잘못된 상태 {1}를 사용합니다.",
+    "MediaEngine.VhdxChanged": "VHDX 길이는 인식 후 변경됩니다.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT는 지원되는 in-memory 테이블 크기를 초과합니다.",
+    "MediaEngine.VhdxWriteOffset": "VHDX 출력 페이로드 오프셋은 지원 범위를 초과합니다.",
+    "MediaEngine.VhdxWrite": "미디어 문서는 완전한 VHDX 이미지로 작성할 수 없습니다."
+  }
+}

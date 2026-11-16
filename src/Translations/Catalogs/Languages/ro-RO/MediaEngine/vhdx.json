@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Fișierul este prea scurt pentru a conține structuri VHDX obligatorii.",
+    "MediaEngine.VhdxSignature": "Semnătura fișierului VHDX lipsește.",
+    "MediaEngine.VhdxHeaders": "Ambele antete VHDX sunt invalide.",
+    "MediaEngine.VhdxActiveLog": "O imagine VHDX cu un jurnal activ trebuie redată înainte de a putea fi citită.",
+    "MediaEngine.VhdxRegions": "Ambele tabele din regiunea VHDX sunt invalide.",
+    "MediaEngine.VhdxRequiredRegion": "Regiunea VHDX necesară {0} nu este susţinută.",
+    "MediaEngine.VhdxMissingRegions": "Regiunea VHDX BAT sau metadate lipsește.",
+    "MediaEngine.VhdxParent": "Imaginile diferențiale VHDX necesită un resolver de fișier părinte care nu este înregistrat.",
+    "MediaEngine.VhdxMetadataRange": "Metadatele VHDX {0} depăşesc regiunea sau dimensiunea tamponului susţinut.",
+    "MediaEngine.VhdxMetadataSignature": "Semnătura tabelului de metadate VHDX lipsește.",
+    "MediaEngine.VhdxMetadataCount": "Numărul de intrări în metadate VHDX este invalid.",
+    "MediaEngine.VhdxRequiredMetadata": "Metadatele VHDX necesare {0} nu sunt acceptate.",
+    "MediaEngine.VhdxMissingMetadata": "Metadatele VHDX obligatorii lipsesc.",
+    "MediaEngine.VhdxBlockSize": "Dimensiunea blocului de încărcare utilă VHDX este invalidă.",
+    "MediaEngine.VhdxSectorSize": "Dimensiunea sectorului VHDX nu este susținută.",
+    "MediaEngine.VhdxVirtualSize": "Dimensiunea discului virtual VHDX este invalidă.",
+    "MediaEngine.VhdxChunkRatio": "Raportul VHDX este invalid.",
+    "MediaEngine.VhdxBatSize": "Regiunea VHDX BAT este prea scurtă sau depășește dimensiunea tamponului sprijinit.",
+    "MediaEngine.VhdxBatRange": "Intrarea VHDX BAT {0} indică în afara fișierului.",
+    "MediaEngine.VhdxPartial": "Blocurile de date VHDX parțial prezente necesită interpretarea hărții de biți a sectoarelor.",
+    "MediaEngine.VhdxBatState": "Intrarea în VHDX BAT {0} utilizează stare nevalidă {1}.",
+    "MediaEngine.VhdxChanged": "Lungimea VHDX s-a schimbat după recunoaștere.",
+    "MediaEngine.VhdxWriteBat": "BAT pentru VHDX depășește dimensiunea în memorie a tabelului.",
+    "MediaEngine.VhdxWriteOffset": "Offset-urile pentru sarcina utilă de ieșire VHDX depășesc intervalul susținut.",
+    "MediaEngine.VhdxWrite": "Documentul media nu poate fi scris ca o imagine VHDX completă."
+  }
+}

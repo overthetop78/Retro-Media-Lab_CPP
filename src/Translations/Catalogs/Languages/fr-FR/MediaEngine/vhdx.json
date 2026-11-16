@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Le fichier est trop court pour contenir des structures VHDX obligatoires.",
+    "MediaEngine.VhdxSignature": "La signature du fichier VHDX est manquante.",
+    "MediaEngine.VhdxHeaders": "Les deux en-têtes VHDX sont invalides.",
+    "MediaEngine.VhdxActiveLog": "Le journal actif de l’image VHDX doit être rejoué avant sa lecture.",
+    "MediaEngine.VhdxRegions": "Les deux tables de régions VHDX sont invalides.",
+    "MediaEngine.VhdxRequiredRegion": "La région VHDX requise {0} n'est pas prise en charge.",
+    "MediaEngine.VhdxMissingRegions": "La BAT ou la région de métadonnées VHDX est manquante.",
+    "MediaEngine.VhdxParent": "Les images VHDX différentielles nécessitent un résolveur de fichier parent qui n’est pas enregistré.",
+    "MediaEngine.VhdxMetadataRange": "Les métadonnées VHDX {0} dépassent leur région ou la taille de tampon prise en charge.",
+    "MediaEngine.VhdxMetadataSignature": "La signature de la table de métadonnées VHDX est manquante.",
+    "MediaEngine.VhdxMetadataCount": "Le nombre d’entrées de métadonnées VHDX est invalide.",
+    "MediaEngine.VhdxRequiredMetadata": "Les métadonnées VHDX obligatoires {0} ne sont pas prises en charge.",
+    "MediaEngine.VhdxMissingMetadata": "Les métadonnées VHDX obligatoires sont manquantes.",
+    "MediaEngine.VhdxBlockSize": "La taille du bloc de charge utile VHDX est invalide.",
+    "MediaEngine.VhdxSectorSize": "La taille de secteur VHDX n’est pas prise en charge.",
+    "MediaEngine.VhdxVirtualSize": "La taille du disque virtuel VHDX est invalide.",
+    "MediaEngine.VhdxChunkRatio": "Le rapport de regroupement des blocs VHDX est invalide.",
+    "MediaEngine.VhdxBatSize": "La région VHDX BAT est trop courte ou dépasse la taille du tampon pris en charge.",
+    "MediaEngine.VhdxBatRange": "L’entrée VHDX BAT {0} pointe en dehors du fichier.",
+    "MediaEngine.VhdxPartial": "Les blocs de données VHDX partiellement présents nécessitent l’interprétation de la bitmap des secteurs.",
+    "MediaEngine.VhdxBatState": "L’entrée VHDX BAT {0} utilise l’état invalide {1}.",
+    "MediaEngine.VhdxChanged": "La longueur VHDX a changé après la reconnaissance.",
+    "MediaEngine.VhdxWriteBat": "La BAT VHDX dépasse la taille de la table en mémoire supportée.",
+    "MediaEngine.VhdxWriteOffset": "Les décalages des données de sortie VHDX dépassent la plage prise en charge.",
+    "MediaEngine.VhdxWrite": "Le document multimédia ne peut pas être écrit comme une image VHDX complète."
+  }
+}

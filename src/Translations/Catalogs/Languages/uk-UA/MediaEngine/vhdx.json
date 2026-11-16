@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Файл занадто короткий, щоб містити обов'язкові структури VHDX.",
+    "MediaEngine.VhdxSignature": "Відсутній підпис файлу VHDX.",
+    "MediaEngine.VhdxHeaders": "Обидва заголовки VHDX недійсні.",
+    "MediaEngine.VhdxActiveLog": "Перед читанням образу VHDX потрібно повторно застосувати його активний журнал.",
+    "MediaEngine.VhdxRegions": "Таблиці VHDX недійсні.",
+    "MediaEngine.VhdxRequiredRegion": "Необхідна VHDX область {0} не підтримується.",
+    "MediaEngine.VhdxMissingRegions": "Відсутній VHDX BAT або метаданих.",
+    "MediaEngine.VhdxParent": "Різницеві образи VHDX потребують незареєстрованого засобу пошуку батьківського файлу.",
+    "MediaEngine.VhdxMetadataRange": "VHDX метаданих {0} перевищує його регіон або підтримуваний розмір буфера.",
+    "MediaEngine.VhdxMetadataSignature": "Відсутній підпис метаданих VHDX.",
+    "MediaEngine.VhdxMetadataCount": "Кількість записів метаданих VHDX недійсна.",
+    "MediaEngine.VhdxRequiredMetadata": "Необхідна метадані VHDX {0} не підтримується.",
+    "MediaEngine.VhdxMissingMetadata": "Відсутня метадані VHDX.",
+    "MediaEngine.VhdxBlockSize": "Розмір блоку VHDX недійсний.",
+    "MediaEngine.VhdxSectorSize": "Розмір сектору VHDX не підтримується.",
+    "MediaEngine.VhdxVirtualSize": "Віртуальний диск VHDX недійсний.",
+    "MediaEngine.VhdxChunkRatio": "Співвідношення VHDX недійсним.",
+    "MediaEngine.VhdxBatSize": "Область VHDX BAT занадто короткий або перевищує підтримуваний розмір буфера.",
+    "MediaEngine.VhdxBatRange": "Запис VHDX BAT {0} вказує за межі файлу.",
+    "MediaEngine.VhdxPartial": "Частково присутні блоки даних VHDX потребують обробки бітової карти секторів.",
+    "MediaEngine.VhdxBatState": "VHDX BAT запис {0} використовує недійсний стан {1}.",
+    "MediaEngine.VhdxChanged": "Довжина VHDX змінюється після розпізнавання.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT перевищить підтримуваний розмір таблиці.",
+    "MediaEngine.VhdxWriteOffset": "Зсуви вихідних даних VHDX перевищують підтримуваний діапазон.",
+    "MediaEngine.VhdxWrite": "Документ медіа не можна записати як повний образ VHDX."
+  }
+}

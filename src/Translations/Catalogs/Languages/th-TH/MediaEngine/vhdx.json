@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "แฟ้มมีความยาวน้อยเกินกว่าจะบรรจุโครงสร้าง VHDX บังคับใช้",
+    "MediaEngine.VhdxSignature": "ไม่พบลายเซ็นของแฟ้ม VHDX",
+    "MediaEngine.VhdxHeaders": "ส่วนหัวแบบ VHDX ทั้งคู่ไม่ถูกต้อง",
+    "MediaEngine.VhdxActiveLog": "ต้องนำบันทึกที่ยังทำงานอยู่ของอิมเมจ VHDX กลับมาใช้ก่อนอ่าน",
+    "MediaEngine.VhdxRegions": "ตารางพื้นที่ VHDX ทั้งคู่ไม่ถูกต้อง",
+    "MediaEngine.VhdxRequiredRegion": "ยังไม่รองรับส่วนพื้นที่ {0} ที่ต้องการจาก VHDX",
+    "MediaEngine.VhdxMissingRegions": "BAT หรือเขตข้อมูล VHDX ขาดหายไป",
+    "MediaEngine.VhdxParent": "อิมเมจส่วนต่าง VHDX ต้องใช้ตัวค้นหาไฟล์แม่ที่ยังไม่ได้ลงทะเบียน",
+    "MediaEngine.VhdxMetadataRange": "ข้อมูลกํากับภาพแบบ VHDX {0} เกินขอบเขตพื้นที่หรือขนาดบัฟเฟอร์ที่รองรับ",
+    "MediaEngine.VhdxMetadataSignature": "ไม่พบลายเซ็นของตารางข้อมูลกํากับภาพของ VHDX",
+    "MediaEngine.VhdxMetadataCount": "จํานวนรายการข้อมูลกํากับภาพของ VHDX ไม่ถูกต้อง",
+    "MediaEngine.VhdxRequiredMetadata": "ไม่รองรับข้อมูลกํากับภาพแบบ VHDX ที่ต้องการ {0}",
+    "MediaEngine.VhdxMissingMetadata": "ไม่มีข้อมูลเมตา VHDX ที่จำเป็น",
+    "MediaEngine.VhdxBlockSize": "ขนาดบล็อกข้อมูล VHDX ไม่ถูกต้อง",
+    "MediaEngine.VhdxSectorSize": "ไม่สนับสนุนขนาดภาค VHDX",
+    "MediaEngine.VhdxVirtualSize": "ขนาดเสมือนของดิสก์ VHDX ไม่ถูกต้อง",
+    "MediaEngine.VhdxChunkRatio": "สัดส่วนของ VHDX ไม่ถูกต้อง",
+    "MediaEngine.VhdxBatSize": "พื้นที่ VHDX BAT สั้นเกินไป หรือเกินขนาดบัฟเฟอร์ที่รองรับ",
+    "MediaEngine.VhdxBatRange": "รายการ VHDX BAT {0} ชี้ออกนอกไฟล์",
+    "MediaEngine.VhdxPartial": "บล็อกข้อมูล VHDX ที่มีอยู่บางส่วนต้องใช้การตีความบิตแมปของเซกเตอร์",
+    "MediaEngine.VhdxBatState": "VHDX BAT รายการ {0} ใช้สถานะไม่ถูกต้อง {1}.",
+    "MediaEngine.VhdxChanged": "ความยาวของ VHDX มีการเปลี่ยนแปลงหลังจากยอมรับแล้ว",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT เกินขนาดตารางในหน่วยความจำที่รองรับ",
+    "MediaEngine.VhdxWriteOffset": "ออฟเซ็ตข้อมูลเอาต์พุต VHDX เกินช่วงที่รองรับ",
+    "MediaEngine.VhdxWrite": "ไม่สามารถเขียนเอกสารสื่อเป็นอิมเมจ VHDX ที่สมบูรณ์ได้"
+  }
+}

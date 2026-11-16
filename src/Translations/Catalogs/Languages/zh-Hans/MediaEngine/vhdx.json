@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "文件太短,无法包含强制的VHDX结构.",
+    "MediaEngine.VhdxSignature": "VHDX 文件签名缺失 。",
+    "MediaEngine.VhdxHeaders": "VHDX 两个头都无效.",
+    "MediaEngine.VhdxActiveLog": "带有活性日志的VHDX图像在被读取之前必须重放.",
+    "MediaEngine.VhdxRegions": "VHDX 区域表都无效 。",
+    "MediaEngine.VhdxRequiredRegion": "所需的 VHDX 区域{0} 不支持 。",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT或元数据区域缺失.",
+    "MediaEngine.VhdxParent": "差分 VHDX 映像需要尚未注册的父文件解析器。",
+    "MediaEngine.VhdxMetadataRange": "VHDX 元数据{0} 超过其区域或支持的缓冲大小 。",
+    "MediaEngine.VhdxMetadataSignature": "VHDX 元数据表签名缺失 。",
+    "MediaEngine.VhdxMetadataCount": "VHDX 元数据条目计数无效.",
+    "MediaEngine.VhdxRequiredMetadata": "所需的 VHDX 元数据{0} 不支持 。",
+    "MediaEngine.VhdxMissingMetadata": "强制 VHDX 元数据缺失 。",
+    "MediaEngine.VhdxBlockSize": "VHDX有效载荷块大小无效.",
+    "MediaEngine.VhdxSectorSize": "VHDX 扇区大小不支持.",
+    "MediaEngine.VhdxVirtualSize": "VHDX虚拟磁盘大小无效.",
+    "MediaEngine.VhdxChunkRatio": "VHDX 块比例无效 。",
+    "MediaEngine.VhdxBatSize": "VHDX BAT区域太短或超过所支持的缓冲大小.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT 条目 {0} 指向文件之外。",
+    "MediaEngine.VhdxPartial": "部分存在的VHDX有效载荷块需要扇区位图解.",
+    "MediaEngine.VhdxBatState": "VHDX BAT条目{0}使用无效状态{1}.",
+    "MediaEngine.VhdxChanged": "VHDX长度在识别后变化.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT 超过了支持的内表大小.",
+    "MediaEngine.VhdxWriteOffset": "VHDX 输出数据偏移超过支持的范围。",
+    "MediaEngine.VhdxWrite": "媒体文档不能被写成完整的VHDX图像."
+  }
+}

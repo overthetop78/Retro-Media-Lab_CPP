@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Filen er for kort til at indeholde obligatoriske VHDX strukturer.",
+    "MediaEngine.VhdxSignature": "VHDX filsignaturen mangler.",
+    "MediaEngine.VhdxHeaders": "Begge VHDX headers er ugyldige.",
+    "MediaEngine.VhdxActiveLog": "Et VHDX-billede med en aktiv log skal afspilles igen, før det kan læses.",
+    "MediaEngine.VhdxRegions": "Begge VHDX regionale tabeller er ugyldige.",
+    "MediaEngine.VhdxRequiredRegion": "Krævet VHDX region {0} er ikke understøttet.",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT eller metadata regionen mangler.",
+    "MediaEngine.VhdxParent": "Differensbilleder i VHDX-format kræver en ikke-registreret resolver til overordnede filer.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} overstiger sin region eller den understøttede bufferstørrelse.",
+    "MediaEngine.VhdxMetadataSignature": "VHDX metadatatabelsignaturen mangler.",
+    "MediaEngine.VhdxMetadataCount": "VHDX metadataindtastningen er ugyldig.",
+    "MediaEngine.VhdxRequiredMetadata": "Krævede VHDX metadata {0} er ikke understøttet.",
+    "MediaEngine.VhdxMissingMetadata": "Obligatoriske VHDX metadata mangler.",
+    "MediaEngine.VhdxBlockSize": "Den VHDX nyttelast blok størrelse er ugyldig.",
+    "MediaEngine.VhdxSectorSize": "Sektorstørrelsen på VHDX er ikke understøttet.",
+    "MediaEngine.VhdxVirtualSize": "Den virtuelle VHDX disk størrelse er ugyldig.",
+    "MediaEngine.VhdxChunkRatio": "VHDX chunk ratio er ugyldig.",
+    "MediaEngine.VhdxBatSize": "VHDX BAT-regionen er for kort eller overstiger den støttede bufferstørrelse.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT-post {0} peger uden for filen.",
+    "MediaEngine.VhdxPartial": "Delvist tilstedeværende VHDX-datablokke kræver fortolkning af sektorbitmappet.",
+    "MediaEngine.VhdxBatState": "VHDX BAT indgang {0} bruger ugyldig tilstand {1}.",
+    "MediaEngine.VhdxChanged": "VHDX længden ændret efter anerkendelse.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT overstiger den understøttede in-memory tabel størrelse.",
+    "MediaEngine.VhdxWriteOffset": "Den VHDX output nyttelast Offset overstiger det understøttede område.",
+    "MediaEngine.VhdxWrite": "Mediedokumentet kan ikke skrives som et komplet VHDX-billede."
+  }
+}

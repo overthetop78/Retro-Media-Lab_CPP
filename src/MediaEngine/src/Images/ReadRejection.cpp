@@ -7,6 +7,29 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VhdxShort:
+    case DiagnosticCode::VhdxSignature:
+    case DiagnosticCode::VhdxHeaders:
+    case DiagnosticCode::VhdxActiveLog:
+    case DiagnosticCode::VhdxRegions:
+    case DiagnosticCode::VhdxRequiredRegion:
+    case DiagnosticCode::VhdxMissingRegions:
+    case DiagnosticCode::VhdxParent:
+    case DiagnosticCode::VhdxMetadataRange:
+    case DiagnosticCode::VhdxMetadataSignature:
+    case DiagnosticCode::VhdxMetadataCount:
+    case DiagnosticCode::VhdxRequiredMetadata:
+    case DiagnosticCode::VhdxMissingMetadata:
+    case DiagnosticCode::VhdxBlockSize:
+    case DiagnosticCode::VhdxSectorSize:
+    case DiagnosticCode::VhdxVirtualSize:
+    case DiagnosticCode::VhdxChunkRatio:
+    case DiagnosticCode::VhdxBatSize:
+    case DiagnosticCode::VhdxBatRange:
+    case DiagnosticCode::VhdxPartial:
+    case DiagnosticCode::VhdxBatState:
+    case DiagnosticCode::VhdxChanged:
+
     case DiagnosticCode::VmdkSource:
     case DiagnosticCode::VmdkDescriptorSize:
     case DiagnosticCode::VmdkSignature:

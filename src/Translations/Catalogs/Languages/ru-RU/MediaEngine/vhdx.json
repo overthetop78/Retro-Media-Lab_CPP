@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Файл слишком короткий, чтобы содержать обязательные структуры VHDX.",
+    "MediaEngine.VhdxSignature": "Подпись файла VHDX отсутствует.",
+    "MediaEngine.VhdxHeaders": "Оба заголовка VHDX недействительны.",
+    "MediaEngine.VhdxActiveLog": "Изображение VHDX с активным журналом должно быть воспроизведено, прежде чем его можно будет прочитать.",
+    "MediaEngine.VhdxRegions": "Обе таблицы VHDX недействительны.",
+    "MediaEngine.VhdxRequiredRegion": "Требуемая область VHDX {0} не поддерживается.",
+    "MediaEngine.VhdxMissingRegions": "Область VHDX BAT или метаданных отсутствует.",
+    "MediaEngine.VhdxParent": "Разностным образам VHDX требуется незарегистрированный механизм поиска родительского файла.",
+    "MediaEngine.VhdxMetadataRange": "Метаданные VHDX {0} превышают его область или поддерживаемый размер буфера.",
+    "MediaEngine.VhdxMetadataSignature": "Подпись таблицы метаданных VHDX отсутствует.",
+    "MediaEngine.VhdxMetadataCount": "Счет ввода метаданных VHDX недействителен.",
+    "MediaEngine.VhdxRequiredMetadata": "Не поддерживаются требуемые метаданные VHDX {0}.",
+    "MediaEngine.VhdxMissingMetadata": "Обязательные метаданные VHDX отсутствуют.",
+    "MediaEngine.VhdxBlockSize": "Размер блока полезной нагрузки VHDX недействителен.",
+    "MediaEngine.VhdxSectorSize": "Размер сектора VHDX не поддерживается.",
+    "MediaEngine.VhdxVirtualSize": "Размер виртуального диска VHDX недействителен.",
+    "MediaEngine.VhdxChunkRatio": "Соотношение VHDX является недействительным.",
+    "MediaEngine.VhdxBatSize": "Область VHDX BAT слишком коротка или превышает поддерживаемый размер буфера.",
+    "MediaEngine.VhdxBatRange": "Запись VHDX BAT {0} указывает за пределы файла.",
+    "MediaEngine.VhdxPartial": "Частично присутствующие блоки данных VHDX требуют обработки битовой карты секторов.",
+    "MediaEngine.VhdxBatState": "VHDX BAT entry {0} использует недействительное состояние {1}.",
+    "MediaEngine.VhdxChanged": "Длина VHDX изменилась после распознавания.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT превышает поддерживаемый размер таблицы в памяти.",
+    "MediaEngine.VhdxWriteOffset": "Смещение полезной нагрузки VHDX превышает поддерживаемый диапазон.",
+    "MediaEngine.VhdxWrite": "Медиа-документ не может быть написан как полное изображение VHDX."
+  }
+}

@@ -36,6 +36,8 @@ La tâche 146 porte QCOW2 autonome en versions 2 et 3, avec tables L1/L2, valida
 
 La tâche 147 porte VMDK monolithicFlat et monolithicSparse autonomes : analyse des descripteurs, source FLAT avec décalage, grain directory/tables, plages stockées/zéro/non allouées, choix de variante et publication atomique. Compilation et contrôle ciblé réussis.
 
+La tâche 148 porte VHDX autonome Fixed/Dynamic, la primitive partagée CRC32C, les structures redondantes, GUID natifs, métadonnées, secteurs 512/4096 et états BAT. Les journaux actifs et parents nécessitant des résolveurs absents, ainsi que les blocs partiellement présents, restent refusés comme en C#. Compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

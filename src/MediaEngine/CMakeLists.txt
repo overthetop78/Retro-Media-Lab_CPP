@@ -1,4 +1,10 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Primitives/Crc32C.cpp
+  src/Formats/HardDisk/Vhdx/Structures.cpp
+  src/Formats/HardDisk/Vhdx/Metadata.cpp
+  src/Formats/HardDisk/Vhdx/Reader.cpp
+  src/Formats/HardDisk/Vhdx/StructuresWriter.cpp
+  src/Formats/HardDisk/Vhdx/Writer.cpp
   src/Formats/HardDisk/Vmdk/Descriptor.cpp
   src/Formats/HardDisk/Vmdk/Sparse.cpp
   src/Formats/HardDisk/Vmdk/Reader.cpp

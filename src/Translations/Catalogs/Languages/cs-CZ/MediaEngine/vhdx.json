@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Soubor je příliš krátký na to, aby obsahoval povinné struktury VHDX.",
+    "MediaEngine.VhdxSignature": "Chybí signatura VHDX souboru.",
+    "MediaEngine.VhdxHeaders": "Oba hlavičky VHDX jsou neplatné.",
+    "MediaEngine.VhdxActiveLog": "Obrázek VHDX s aktivním logem musí být přepřehráván dříve, než je možné jej přečíst.",
+    "MediaEngine.VhdxRegions": "Obě tabulky VHDX regionu jsou neplatné.",
+    "MediaEngine.VhdxRequiredRegion": "Požadovaná oblast VHDX {0} není podporována.",
+    "MediaEngine.VhdxMissingRegions": "Oblast VHDX BAT nebo metadat chybí.",
+    "MediaEngine.VhdxParent": "Rozdílové obrazy VHDX vyžadují neregistrovaný překladač rodičovského souboru.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} překračují svůj region nebo podporovanou velikost bufferu.",
+    "MediaEngine.VhdxMetadataSignature": "Chybí signatura tabulky metadat VHDX.",
+    "MediaEngine.VhdxMetadataCount": "VHDX počet vstupů metadat je neplatný.",
+    "MediaEngine.VhdxRequiredMetadata": "Požadované metadata VHDX {0} nejsou podporovány.",
+    "MediaEngine.VhdxMissingMetadata": "Povinná VHDX metadata chybí.",
+    "MediaEngine.VhdxBlockSize": "Velikost bloku užitečného zatížení VHDX je neplatná.",
+    "MediaEngine.VhdxSectorSize": "Velikost sektoru VHDX není podporována.",
+    "MediaEngine.VhdxVirtualSize": "Velikost virtuálního disku VHDX je neplatná.",
+    "MediaEngine.VhdxChunkRatio": "Poměr tvaru VHDX je neplatný.",
+    "MediaEngine.VhdxBatSize": "Oblast VHDX BAT je příliš krátká nebo přesahuje podporovanou velikost bufferu.",
+    "MediaEngine.VhdxBatRange": "Položka VHDX BAT {0} ukazuje mimo soubor.",
+    "MediaEngine.VhdxPartial": "Částečně přítomné datové bloky VHDX vyžadují zpracování bitmapy sektorů.",
+    "MediaEngine.VhdxBatState": "VHDX BAT entry {0} používá neplatný stav {1}.",
+    "MediaEngine.VhdxChanged": "Délka VHDX se po rozpoznání změnila.",
+    "MediaEngine.VhdxWriteBat": "BAT VHDX překračuje podporovanou velikost in- memory tabulky.",
+    "MediaEngine.VhdxWriteOffset": "Posuny výstupních dat VHDX překračují podporovaný rozsah.",
+    "MediaEngine.VhdxWrite": "Mediální dokument nelze zapsat jako kompletní VHDX obrázek."
+  }
+}

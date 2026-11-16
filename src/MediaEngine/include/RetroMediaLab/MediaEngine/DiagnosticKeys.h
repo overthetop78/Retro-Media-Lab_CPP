@@ -1,6 +1,32 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view VhdxShort="MediaEngine.VhdxShort";
+inline constexpr std::string_view VhdxSignature="MediaEngine.VhdxSignature";
+inline constexpr std::string_view VhdxHeaders="MediaEngine.VhdxHeaders";
+inline constexpr std::string_view VhdxActiveLog="MediaEngine.VhdxActiveLog";
+inline constexpr std::string_view VhdxRegions="MediaEngine.VhdxRegions";
+inline constexpr std::string_view VhdxRequiredRegion="MediaEngine.VhdxRequiredRegion";
+inline constexpr std::string_view VhdxMissingRegions="MediaEngine.VhdxMissingRegions";
+inline constexpr std::string_view VhdxParent="MediaEngine.VhdxParent";
+inline constexpr std::string_view VhdxMetadataRange="MediaEngine.VhdxMetadataRange";
+inline constexpr std::string_view VhdxMetadataSignature="MediaEngine.VhdxMetadataSignature";
+inline constexpr std::string_view VhdxMetadataCount="MediaEngine.VhdxMetadataCount";
+inline constexpr std::string_view VhdxRequiredMetadata="MediaEngine.VhdxRequiredMetadata";
+inline constexpr std::string_view VhdxMissingMetadata="MediaEngine.VhdxMissingMetadata";
+inline constexpr std::string_view VhdxBlockSize="MediaEngine.VhdxBlockSize";
+inline constexpr std::string_view VhdxSectorSize="MediaEngine.VhdxSectorSize";
+inline constexpr std::string_view VhdxVirtualSize="MediaEngine.VhdxVirtualSize";
+inline constexpr std::string_view VhdxChunkRatio="MediaEngine.VhdxChunkRatio";
+inline constexpr std::string_view VhdxBatSize="MediaEngine.VhdxBatSize";
+inline constexpr std::string_view VhdxBatRange="MediaEngine.VhdxBatRange";
+inline constexpr std::string_view VhdxPartial="MediaEngine.VhdxPartial";
+inline constexpr std::string_view VhdxBatState="MediaEngine.VhdxBatState";
+inline constexpr std::string_view VhdxChanged="MediaEngine.VhdxChanged";
+inline constexpr std::string_view VhdxWriteBat="MediaEngine.VhdxWriteBat";
+inline constexpr std::string_view VhdxWriteOffset="MediaEngine.VhdxWriteOffset";
+inline constexpr std::string_view VhdxWrite="MediaEngine.VhdxWrite";
+
 inline constexpr std::string_view VmdkSource="MediaEngine.VmdkSource";
 inline constexpr std::string_view VmdkDescriptorSize="MediaEngine.VmdkDescriptorSize";
 inline constexpr std::string_view VmdkSignature="MediaEngine.VmdkSignature";

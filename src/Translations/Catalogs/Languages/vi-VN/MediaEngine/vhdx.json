@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Tập tin quá ngắn để chứa cấu trúc VHDX bắt buộc.",
+    "MediaEngine.VhdxSignature": "Thiếu chữ ký tệp VHDX.",
+    "MediaEngine.VhdxHeaders": "Cả hai tiêu đề VHDX đều không hợp lệ.",
+    "MediaEngine.VhdxActiveLog": "Một hình ảnh VHDX với một bản ghi hoạt động phải được tua lại trước khi có thể đọc được.",
+    "MediaEngine.VhdxRegions": "Cả hai bảng khu vực VHDX đều không hợp lệ.",
+    "MediaEngine.VhdxRequiredRegion": "Không hỗ trợ cần thiết VHDX vùng {0}.",
+    "MediaEngine.VhdxMissingRegions": "Vùng VHDX BAT hay siêu dữ liệu bị thiếu.",
+    "MediaEngine.VhdxParent": "Ảnh đĩa vi sai VHDX yêu cầu bộ phân giải tệp cha chưa được đăng ký.",
+    "MediaEngine.VhdxMetadataRange": "VHDX siêu dữ liệu {0} vượt quá vùng hoặc kích cỡ bộ đệm được hỗ trợ.",
+    "MediaEngine.VhdxMetadataSignature": "Thiếu chữ ký bảng siêu dữ liệu VHDX.",
+    "MediaEngine.VhdxMetadataCount": "Số mục nhập siêu dữ liệu VHDX không hợp lệ.",
+    "MediaEngine.VhdxRequiredMetadata": "Cần thiết VHDX Siêu dữ liệu {0} không được hỗ trợ.",
+    "MediaEngine.VhdxMissingMetadata": "Thiếu siêu dữ liệu VHDX bắt buộc.",
+    "MediaEngine.VhdxBlockSize": "Kích cỡ khối tải VHDX không hợp lệ.",
+    "MediaEngine.VhdxSectorSize": "Kích thước khu vực VHDX không được hỗ trợ.",
+    "MediaEngine.VhdxVirtualSize": "Kích thước ảo VHDX không hợp lệ.",
+    "MediaEngine.VhdxChunkRatio": "Tỷ lệ mẫu VHDX không hợp lệ.",
+    "MediaEngine.VhdxBatSize": "Vùng VHDX BAT quá ngắn hoặc vượt quá kích cỡ bộ đệm được hỗ trợ.",
+    "MediaEngine.VhdxBatRange": "Mục nhập VHDX BAT {0} trỏ ra ngoài tệp.",
+    "MediaEngine.VhdxPartial": "Các khối dữ liệu VHDX hiện diện một phần yêu cầu diễn giải bitmap sector.",
+    "MediaEngine.VhdxBatState": "VHDX BAT mục nhập {0} sử dụng trạng thái không hợp lệ {1}.",
+    "MediaEngine.VhdxChanged": "Chiều dài VHDX thay đổi sau khi nhận diện.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT vượt quá kích cỡ bảng nhớ được hỗ trợ.",
+    "MediaEngine.VhdxWriteOffset": "Độ lệch dữ liệu đầu ra VHDX vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.VhdxWrite": "Tài liệu phương tiện không thể được viết như một hình ảnh VHDX đầy đủ."
+  }
+}

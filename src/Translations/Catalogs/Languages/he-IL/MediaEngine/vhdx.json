@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "הקובץ קצר מכדי להכיל מבנים VHDX חובה.",
+    "MediaEngine.VhdxSignature": "חתימת קובץ VHDX חסרה.",
+    "MediaEngine.VhdxHeaders": "שתי כותרות VHDX אינן תקינות.",
+    "MediaEngine.VhdxActiveLog": "יש להחיל מחדש את היומן הפעיל של תמונת VHDX לפני קריאתה.",
+    "MediaEngine.VhdxRegions": "שני שולחנות אזור VHDX אינם חוקיים.",
+    "MediaEngine.VhdxRequiredRegion": "VHDX אזור {0} אינו נתמך.",
+    "MediaEngine.VhdxMissingRegions": "אזור VHDX BAT או metadata חסר.",
+    "MediaEngine.VhdxParent": "תמונות הפרשים של VHDX דורשות פותר קובץ אב שאינו רשום.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} עולה על האזור שלה או בגודל buffer נתמך.",
+    "MediaEngine.VhdxMetadataSignature": "חתימת טבלת המטא־נתונים של VHDX חסרה.",
+    "MediaEngine.VhdxMetadataCount": "מספר רשומות המטא־נתונים של VHDX אינו תקין.",
+    "MediaEngine.VhdxRequiredMetadata": "צורך ב- VHDX metadata {0} אינו נתמך.",
+    "MediaEngine.VhdxMissingMetadata": "מטא־נתונים נדרשים של VHDX חסרים.",
+    "MediaEngine.VhdxBlockSize": "גודל בלוק ה-VHDX אינו חוקי.",
+    "MediaEngine.VhdxSectorSize": "גודל הסקטור של VHDX אינו נתמך.",
+    "MediaEngine.VhdxVirtualSize": "גודל הדיסק הווירטואלי VHDX הוא לא חוקי.",
+    "MediaEngine.VhdxChunkRatio": "יחס VHDX הוא לא חוקי.",
+    "MediaEngine.VhdxBatSize": "אזור VHDX BAT הוא קצר מדי או עולה על גודל הbuffer הנתמך.",
+    "MediaEngine.VhdxBatRange": "רשומת VHDX BAT מספר {0} מצביעה מחוץ לקובץ.",
+    "MediaEngine.VhdxPartial": "בלוקי נתונים של VHDX שקיימים חלקית דורשים פענוח מפת הסיביות של הסקטורים.",
+    "MediaEngine.VhdxBatState": "כניסה של VHDX BAT {0} משתמשת במצב לא חוקי {1}",
+    "MediaEngine.VhdxChanged": "אורך VHDX השתנה לאחר ההכרה.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT עולה על גודל השולחן הנתמך.",
+    "MediaEngine.VhdxWriteOffset": "היסטי נתוני הפלט של VHDX חורגים מהטווח הנתמך.",
+    "MediaEngine.VhdxWrite": "לא ניתן לכתוב את המסמך כתמונה VHDX מלאה."
+  }
+}

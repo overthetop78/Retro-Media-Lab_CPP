@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Het bestand is te kort om verplichte VHDX structuren te bevatten.",
+    "MediaEngine.VhdxSignature": "De VHDX-bestandshandtekening ontbreekt.",
+    "MediaEngine.VhdxHeaders": "Beide VHDX-headers zijn ongeldig.",
+    "MediaEngine.VhdxActiveLog": "Een VHDX-afbeelding met een actieve log moet opnieuw worden afgespeeld voordat deze kan worden gelezen.",
+    "MediaEngine.VhdxRegions": "Beide VHDX-regiotabellen zijn ongeldig.",
+    "MediaEngine.VhdxRequiredRegion": "Vereiste VHDX-regio {0} wordt niet ondersteund.",
+    "MediaEngine.VhdxMissingRegions": "De VHDX BAT of metadataregio ontbreekt.",
+    "MediaEngine.VhdxParent": "Differentiële VHDX-afbeeldingen vereisen een niet-geregistreerde resolver voor bovenliggende bestanden.",
+    "MediaEngine.VhdxMetadataRange": "VHDX-metadata {0} overschrijdt de regio of de ondersteunde buffergrootte.",
+    "MediaEngine.VhdxMetadataSignature": "De VHDX metadata tabel handtekening ontbreekt.",
+    "MediaEngine.VhdxMetadataCount": "Het aantal VHDX-metadata is ongeldig.",
+    "MediaEngine.VhdxRequiredMetadata": "Vereiste VHDX-metadata {0} wordt niet ondersteund.",
+    "MediaEngine.VhdxMissingMetadata": "Verplichte VHDX-metadata ontbreekt.",
+    "MediaEngine.VhdxBlockSize": "De VHDX payload blokgrootte is ongeldig.",
+    "MediaEngine.VhdxSectorSize": "De VHDX sectorgrootte is niet ondersteund.",
+    "MediaEngine.VhdxVirtualSize": "De VHDX virtuele schijfgrootte is ongeldig.",
+    "MediaEngine.VhdxChunkRatio": "De VHDX chunk ratio is ongeldig.",
+    "MediaEngine.VhdxBatSize": "De VHDX BAT regio is te kort of overtreft de ondersteunde buffergrootte.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT ingang {0} wijst buiten het bestand.",
+    "MediaEngine.VhdxPartial": "Gedeeltelijk aanwezige VHDX-datablokken vereisen interpretatie van de sectorbitmap.",
+    "MediaEngine.VhdxBatState": "VHDX BAT ingang {0} gebruikt ongeldige status {1}.",
+    "MediaEngine.VhdxChanged": "De VHDX lengte veranderde na herkenning.",
+    "MediaEngine.VhdxWriteBat": "De VHDX BAT overtreft de ondersteunde in-geheugen tabelgrootte.",
+    "MediaEngine.VhdxWriteOffset": "De VHDX output payload offsets overschrijden het ondersteunde bereik.",
+    "MediaEngine.VhdxWrite": "Het mediadocument kan niet worden geschreven als een volledige VHDX-afbeelding."
+  }
+}

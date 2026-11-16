@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "الملف أقصر من أن يحتوي على هياكل VHDX الإلزامية.",
+    "MediaEngine.VhdxSignature": "توقيع ملف VHDX مفقود.",
+    "MediaEngine.VhdxHeaders": "كلتا ترويستي VHDX غير صالحتين.",
+    "MediaEngine.VhdxActiveLog": "يجب إعادة تطبيق سجل صورة VHDX النشط قبل قراءتها.",
+    "MediaEngine.VhdxRegions": "وكلا الجدولين في منطقة VHDX غير صحيح.",
+    "MediaEngine.VhdxRequiredRegion": "المطلوبة VHDX المنطقة {0} غير مدعوم.",
+    "MediaEngine.VhdxMissingRegions": "منطقة VHDX BAT أو منطقة البيانات الوصفية مفقودة.",
+    "MediaEngine.VhdxParent": "تتطلب صور VHDX التفاضلية محلل ملفات أصل غير مسجل.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} يتجاوز منطقته أو الحجم العازل المدعوم.",
+    "MediaEngine.VhdxMetadataSignature": "توقيع جدول البيانات الوصفية VHDX مفقود.",
+    "MediaEngine.VhdxMetadataCount": "عدد إدخالات البيانات الوصفية VHDX غير صالح.",
+    "MediaEngine.VhdxRequiredMetadata": "البيانات الوصفية المطلوبة VHDX {0} غير مدعومة.",
+    "MediaEngine.VhdxMissingMetadata": "البيانات الوصفية الإلزامية VHDX مفقودة.",
+    "MediaEngine.VhdxBlockSize": "حجم كتلة بيانات VHDX غير صالح.",
+    "MediaEngine.VhdxSectorSize": "حجم قطاع VHDX غير مدعوم.",
+    "MediaEngine.VhdxVirtualSize": "حجم قرص VHDX الافتراضي غير صالح.",
+    "MediaEngine.VhdxChunkRatio": "نسبة مجموعات كتل VHDX غير صالحة.",
+    "MediaEngine.VhdxBatSize": "منطقة VHDX BAT أقصر من المطلوب أو تتجاوز حجم المخزن المؤقت المدعوم.",
+    "MediaEngine.VhdxBatRange": "يشير إدخال VHDX BAT رقم {0} إلى خارج الملف.",
+    "MediaEngine.VhdxPartial": "تتطلب كتل بيانات VHDX الموجودة جزئياً معالجة خريطة بتات القطاعات.",
+    "MediaEngine.VhdxBatState": "يستخدم إدخال VHDX BAT رقم {0} الحالة غير الصالحة {1}.",
+    "MediaEngine.VhdxChanged": "تغير طول VHDX بعد التعرف عليه.",
+    "MediaEngine.VhdxWriteBat": "يتجاوز VHDX BAT حجم الجدول المدعوم في الذاكرة.",
+    "MediaEngine.VhdxWriteOffset": "تتجاوز إزاحات بيانات إخراج VHDX النطاق المدعوم.",
+    "MediaEngine.VhdxWrite": "لا يمكن كتابة مستند الوسائط كصورة VHDX كاملة."
+  }
+}

@@ -307,6 +307,9 @@
     <Filter Include="src\MediaEngine\src\Formats\HardDisk\Vhd">
       <UniqueIdentifier>{4170B283-920E-560B-A2D6-F5F8B5D31A11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\HardDisk\Vhdx">
+      <UniqueIdentifier>{D19A0ABF-F986-5127-9E91-4984A6612320}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\HardDisk\Vmdk">
       <UniqueIdentifier>{0D23BA5D-F809-5057-8849-0C711A14B16E}</UniqueIdentifier>
     </Filter>
@@ -3468,6 +3471,33 @@
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vhd\Writing.h">
       <Filter>src\MediaEngine\src\Formats\HardDisk\Vhd</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Container.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Metadata.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Structures.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Structures.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\StructuresWriter.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vhdx\Writing.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\Vhdx</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Vmdk\Constants.h">
       <Filter>src\MediaEngine\src\Formats\HardDisk\Vmdk</Filter>
     </ClInclude>
@@ -4153,6 +4183,15 @@
       <Filter>src\MediaEngine\src\Primitives</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h">
+      <Filter>src\MediaEngine\src\Primitives</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Primitives\Crc32C.cpp">
+      <Filter>src\MediaEngine\src\Primitives</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Primitives\Crc32C.h">
+      <Filter>src\MediaEngine\src\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Primitives\Crc32CConstants.h">
       <Filter>src\MediaEngine\src\Primitives</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Primitives\IdentifierConstants.h">
@@ -5388,6 +5427,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -5848,6 +5890,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\victor9000-gcr.json">
@@ -6312,6 +6357,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -6772,6 +6820,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\victor9000-gcr.json">
@@ -7236,6 +7287,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -7696,6 +7750,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\victor9000-gcr.json">
@@ -8160,6 +8217,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -8620,6 +8680,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\victor9000-gcr.json">
@@ -9084,6 +9147,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -9544,6 +9610,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\victor9000-gcr.json">
@@ -10008,6 +10077,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -10468,6 +10540,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\victor9000-gcr.json">
@@ -10932,6 +11007,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -11392,6 +11470,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\victor9000-gcr.json">
@@ -11856,6 +11937,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -12316,6 +12400,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\victor9000-gcr.json">
@@ -12780,6 +12867,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -13240,6 +13330,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\victor9000-gcr.json">
@@ -13704,6 +13797,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -14164,6 +14260,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\victor9000-gcr.json">
@@ -14628,6 +14727,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -15088,6 +15190,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\victor9000-gcr.json">
@@ -15552,6 +15657,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -16012,6 +16120,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\victor9000-gcr.json">
@@ -16476,6 +16587,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -16936,6 +17050,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\victor9000-gcr.json">
@@ -17400,6 +17517,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -17860,6 +17980,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\victor9000-gcr.json">
@@ -18324,6 +18447,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhd.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhdx.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\victor9000-gcr.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -18784,6 +18910,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhd.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhdx.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\victor9000-gcr.json">

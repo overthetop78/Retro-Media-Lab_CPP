@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "ファイルが強制的なVHDX構造を含むのに短すぎる。",
+    "MediaEngine.VhdxSignature": "VHDX ファイルのシグネチャが欠落しています。",
+    "MediaEngine.VhdxHeaders": "両方のVHDXヘッダーが無効です。",
+    "MediaEngine.VhdxActiveLog": "アクティブなログを持つVHDXイメージは、読み取れる前に再生する必要があります。",
+    "MediaEngine.VhdxRegions": "両方のVHDX領域テーブルが無効です。",
+    "MediaEngine.VhdxRequiredRegion": "必須 VHDX 領域 {0} はサポートされていません。",
+    "MediaEngine.VhdxMissingRegions": "VHDX BAT またはメタデータ領域が欠落しています。",
+    "MediaEngine.VhdxParent": "差分VHDXイメージには、未登録の親ファイルリゾルバーが必要です。",
+    "MediaEngine.VhdxMetadataRange": "VHDXメタデータ {0} は、その領域またはサポートされているバッファサイズを超えた。",
+    "MediaEngine.VhdxMetadataSignature": "VHDXメタデータテーブルの署名が欠落しています。",
+    "MediaEngine.VhdxMetadataCount": "VHDXメタデータエントリーカウントは無効です。",
+    "MediaEngine.VhdxRequiredMetadata": "VHDXメタデータ {0} はサポートされていません。",
+    "MediaEngine.VhdxMissingMetadata": "必須のVHDXメタデータが見つかりません。",
+    "MediaEngine.VhdxBlockSize": "VHDXペイロードブロックサイズが無効です。",
+    "MediaEngine.VhdxSectorSize": "VHDXのセクターサイズはサポートされていません。",
+    "MediaEngine.VhdxVirtualSize": "VHDX仮想ディスクサイズが無効です。",
+    "MediaEngine.VhdxChunkRatio": "VHDXチャンク比は無効です。",
+    "MediaEngine.VhdxBatSize": "VHDX BAT 領域は短すぎるか、サポートされているバッファサイズを超える。",
+    "MediaEngine.VhdxBatRange": "VHDX BAT エントリー {0} はファイル外でポイントします。",
+    "MediaEngine.VhdxPartial": "部分的に存在するVHDXデータブロックには、セクタービットマップの解釈が必要です。",
+    "MediaEngine.VhdxBatState": "VHDX BATエントリー {0} は無効な状態 {1} を使用します。",
+    "MediaEngine.VhdxChanged": "認識後にVHDXの長さが変更されました。",
+    "MediaEngine.VhdxWriteBat": "VHDX BATは、サポートされているメモリ内テーブルサイズを超える。",
+    "MediaEngine.VhdxWriteOffset": "VHDX出力ペイロードオフセットは、サポートされている範囲を超えて出力します。",
+    "MediaEngine.VhdxWrite": "完全なVHDXイメージとして媒体文書を記述できません。"
+  }
+}

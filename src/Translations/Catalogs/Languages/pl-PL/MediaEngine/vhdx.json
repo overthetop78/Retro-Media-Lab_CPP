@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Plik jest zbyt krótki, aby zawierać obowiązkowe struktury VHDX.",
+    "MediaEngine.VhdxSignature": "Brak podpisu VHDX.",
+    "MediaEngine.VhdxHeaders": "Oba nagłówki VHDX są nieprawidłowe.",
+    "MediaEngine.VhdxActiveLog": "Obraz VHDX z aktywnym dziennikiem musi być ponownie odtwarzany przed odczytem.",
+    "MediaEngine.VhdxRegions": "Oba tabele regionu VHDX są nieprawidłowe.",
+    "MediaEngine.VhdxRequiredRegion": "Wymagany region VHDX {0} nie jest obsługiwany.",
+    "MediaEngine.VhdxMissingRegions": "Brak BAT lub regionu metadanych VHDX.",
+    "MediaEngine.VhdxParent": "Różnicowe obrazy VHDX wymagają niezarejestrowanego mechanizmu rozwiązywania pliku nadrzędnego.",
+    "MediaEngine.VhdxMetadataRange": "Metadane VHDX {0} przekraczają jego region lub obsługiwany rozmiar bufora.",
+    "MediaEngine.VhdxMetadataSignature": "Brak podpisu tabeli metadanych VHDX.",
+    "MediaEngine.VhdxMetadataCount": "Liczba wpisów metadanych VHDX jest nieprawidłowa.",
+    "MediaEngine.VhdxRequiredMetadata": "Wymagane metadane VHDX {0} nie są obsługiwane.",
+    "MediaEngine.VhdxMissingMetadata": "Brak obowiązkowych metadanych VHDX.",
+    "MediaEngine.VhdxBlockSize": "Rozmiar bloku ładunku VHDX jest nieprawidłowy.",
+    "MediaEngine.VhdxSectorSize": "Rozmiar sektora VHDX nie jest obsługiwany.",
+    "MediaEngine.VhdxVirtualSize": "Wirtualny rozmiar dysku VHDX jest nieprawidłowy.",
+    "MediaEngine.VhdxChunkRatio": "Współczynnik części VHDX jest nieprawidłowy.",
+    "MediaEngine.VhdxBatSize": "Region VHDX BAT jest zbyt krótki lub przekracza obsługiwany rozmiar bufora.",
+    "MediaEngine.VhdxBatRange": "Wpis VHDX BAT {0} wskazuje poza plikiem.",
+    "MediaEngine.VhdxPartial": "Częściowo obecne bloki danych VHDX wymagają interpretacji bitmapy sektorów.",
+    "MediaEngine.VhdxBatState": "Wpis VHDX BAT {0} wykorzystuje stan nieprawidłowy {1}.",
+    "MediaEngine.VhdxChanged": "Długość VHDX zmieniła się po rozpoznaniu.",
+    "MediaEngine.VhdxWriteBat": "BAT VHDX przekraczają obsługiwany rozmiar tabeli w pamięci.",
+    "MediaEngine.VhdxWriteOffset": "Offsety obciążenia wyjściowego VHDX przekraczają obsługiwany zakres.",
+    "MediaEngine.VhdxWrite": "Dokument medialny nie może być zapisany jako kompletny obraz VHDX."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Το αρχείο είναι πολύ μικρό για να περιέχει υποχρεωτικές δομές VHDX.",
+    "MediaEngine.VhdxSignature": "Λείπει η υπογραφή του αρχείου VHDX.",
+    "MediaEngine.VhdxHeaders": "Και οι δύο κεφαλίδες VHDX είναι άκυρες.",
+    "MediaEngine.VhdxActiveLog": "Μια εικόνα VHDX με ενεργή καταγραφή πρέπει να αναπαραχθεί πριν να μπορεί να διαβαστεί.",
+    "MediaEngine.VhdxRegions": "Και οι δύο πίνακες περιοχής VHDX είναι άκυροι.",
+    "MediaEngine.VhdxRequiredRegion": "Δεν υποστηρίζεται η απαιτούμενη περιοχή VHDX {0}.",
+    "MediaEngine.VhdxMissingRegions": "Λείπει η περιοχή BAT ή μεταδεδομένων VHDX.",
+    "MediaEngine.VhdxParent": "Οι διαφορικές εικόνες VHDX απαιτούν μη καταχωρημένο μηχανισμό επίλυσης γονικού αρχείου.",
+    "MediaEngine.VhdxMetadataRange": "Τα μεταδεδομένα VHDX {0} υπερβαίνουν την περιοχή τους ή το υποστηριζόμενο μέγεθος προσωρινής μνήμης.",
+    "MediaEngine.VhdxMetadataSignature": "Λείπει η υπογραφή του πίνακα μεταδεδομένων VHDX.",
+    "MediaEngine.VhdxMetadataCount": "Ο αριθμός καταχώρησης μεταδεδομένων VHDX δεν είναι έγκυρος.",
+    "MediaEngine.VhdxRequiredMetadata": "Τα απαραίτητα μεταδεδομένα VHDX {0} δεν υποστηρίζονται.",
+    "MediaEngine.VhdxMissingMetadata": "Λείπουν υποχρεωτικά μεταδεδομένα VHDX.",
+    "MediaEngine.VhdxBlockSize": "Το μέγεθος του ωφέλιμου φορτίου VHDX είναι άκυρο.",
+    "MediaEngine.VhdxSectorSize": "Το μέγεθος του τομέα VHDX δεν υποστηρίζεται.",
+    "MediaEngine.VhdxVirtualSize": "Το μέγεθος του εικονικού δίσκου VHDX είναι άκυρο.",
+    "MediaEngine.VhdxChunkRatio": "Η αναλογία κομματιών VHDX είναι άκυρη.",
+    "MediaEngine.VhdxBatSize": "Η περιοχή VHDX BAT είναι πολύ μικρή ή υπερβαίνει το υποστηριζόμενο μέγεθος προσωρινής μνήμης.",
+    "MediaEngine.VhdxBatRange": "Η καταχώρηση VHDX BAT {0} δείχνει έξω από το αρχείο.",
+    "MediaEngine.VhdxPartial": "Μερικώς παρόντα τμήματα ωφέλιμου φορτίου VHDX απαιτούν ανάλυση bitmap τομέα.",
+    "MediaEngine.VhdxBatState": "VHDX BAT καταχώρηση {0} χρησιμοποιεί μη έγκυρη κατάσταση {1}.",
+    "MediaEngine.VhdxChanged": "Το μήκος VHDX άλλαξε μετά την αναγνώριση.",
+    "MediaEngine.VhdxWriteBat": "Το VHDX BAT υπερβαίνει το υποστηριζόμενο μέγεθος πίνακα κατά τη μνήμη.",
+    "MediaEngine.VhdxWriteOffset": "Οι μετατοπίσεις δεδομένων εξόδου VHDX υπερβαίνουν το υποστηριζόμενο εύρος.",
+    "MediaEngine.VhdxWrite": "Το έγγραφο πολυμέσων δεν μπορεί να γραφτεί ως πλήρης εικόνα VHDX."
+  }
+}

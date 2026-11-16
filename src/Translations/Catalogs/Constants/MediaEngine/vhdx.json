@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "The file is too short to contain mandatory VHDX structures.",
+    "MediaEngine.VhdxSignature": "The VHDX file signature is missing.",
+    "MediaEngine.VhdxHeaders": "Both VHDX headers are invalid.",
+    "MediaEngine.VhdxActiveLog": "A VHDX image with an active log must be replayed before it can be read.",
+    "MediaEngine.VhdxRegions": "Both VHDX region tables are invalid.",
+    "MediaEngine.VhdxRequiredRegion": "Required VHDX region {0} is not supported.",
+    "MediaEngine.VhdxMissingRegions": "The VHDX BAT or metadata region is missing.",
+    "MediaEngine.VhdxParent": "Differencing VHDX images require a parent resolver that is not registered.",
+    "MediaEngine.VhdxMetadataRange": "VHDX metadata {0} exceeds its region or the supported buffer size.",
+    "MediaEngine.VhdxMetadataSignature": "The VHDX metadata table signature is missing.",
+    "MediaEngine.VhdxMetadataCount": "The VHDX metadata entry count is invalid.",
+    "MediaEngine.VhdxRequiredMetadata": "Required VHDX metadata {0} is not supported.",
+    "MediaEngine.VhdxMissingMetadata": "Mandatory VHDX metadata is missing.",
+    "MediaEngine.VhdxBlockSize": "The VHDX payload block size is invalid.",
+    "MediaEngine.VhdxSectorSize": "The VHDX sector size is unsupported.",
+    "MediaEngine.VhdxVirtualSize": "The VHDX virtual disk size is invalid.",
+    "MediaEngine.VhdxChunkRatio": "The VHDX chunk ratio is invalid.",
+    "MediaEngine.VhdxBatSize": "The VHDX BAT region is too short or exceeds the supported buffer size.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT entry {0} points outside the file.",
+    "MediaEngine.VhdxPartial": "Partially present VHDX payload blocks require sector bitmap resolution.",
+    "MediaEngine.VhdxBatState": "VHDX BAT entry {0} uses invalid state {1}.",
+    "MediaEngine.VhdxChanged": "The VHDX length changed after recognition.",
+    "MediaEngine.VhdxWriteBat": "The VHDX BAT exceeds the supported in-memory table size.",
+    "MediaEngine.VhdxWriteOffset": "The VHDX output payload offsets exceed the supported range.",
+    "MediaEngine.VhdxWrite": "The media document cannot be written as a complete VHDX image."
+  }
+}

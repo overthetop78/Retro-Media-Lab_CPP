@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VhdxShort": "Berkas ini terlalu pendek untuk memuat struktur VHDX wajib.",
+    "MediaEngine.VhdxSignature": "Tanda tangan berkas VHDX hilang.",
+    "MediaEngine.VhdxHeaders": "Kedua header VHDX tidak valid.",
+    "MediaEngine.VhdxActiveLog": "Gambar VHDX dengan log aktif harus diputar ulang sebelum dapat dibaca.",
+    "MediaEngine.VhdxRegions": "Kedua tabel daerah VHDX tidak valid.",
+    "MediaEngine.VhdxRequiredRegion": "Daerah VHDX yang diperlukan {0} tidak didukung.",
+    "MediaEngine.VhdxMissingRegions": "Daerah VHDX BAT atau metadata hilang.",
+    "MediaEngine.VhdxParent": "Citra diferensial VHDX memerlukan resolver berkas induk yang tidak terdaftar.",
+    "MediaEngine.VhdxMetadataRange": "Metadata VHDX {0} melebihi wilayahnya atau ukuran penyangga yang didukung.",
+    "MediaEngine.VhdxMetadataSignature": "Tanda tangan tabel metadata VHDX hilang.",
+    "MediaEngine.VhdxMetadataCount": "Jumlah masukan metadata VHDX tidak valid.",
+    "MediaEngine.VhdxRequiredMetadata": "Metadata VHDX yang diperlukan {0} tidak didukung.",
+    "MediaEngine.VhdxMissingMetadata": "Metadata VHDX wajib hilang.",
+    "MediaEngine.VhdxBlockSize": "Ukuran muatan VHDX blok tidak valid.",
+    "MediaEngine.VhdxSectorSize": "Ukuran sektor VHDX tidak didukung.",
+    "MediaEngine.VhdxVirtualSize": "Ukuran disk virtual VHDX tidak valid.",
+    "MediaEngine.VhdxChunkRatio": "Rasio potongan VHDX tidak valid.",
+    "MediaEngine.VhdxBatSize": "Daerah VHDX BAT terlalu pendek atau melebihi ukuran penyangga yang didukung.",
+    "MediaEngine.VhdxBatRange": "VHDX BAT entry {0} menunjuk di luar berkas.",
+    "MediaEngine.VhdxPartial": "Blok data VHDX yang hanya sebagian tersedia memerlukan pemrosesan bitmap sektor.",
+    "MediaEngine.VhdxBatState": "Entri VHDX BAT {0} memakai keadaan tidak valid {1}.",
+    "MediaEngine.VhdxChanged": "Panjang VHDX berubah setelah pengakuan.",
+    "MediaEngine.VhdxWriteBat": "VHDX BAT melebihi ukuran tabel memori yang didukung.",
+    "MediaEngine.VhdxWriteOffset": "Ofset data keluaran VHDX melebihi jangkauan yang didukung.",
+    "MediaEngine.VhdxWrite": "Dokumen media tidak dapat ditulis sebagai gambar VHDX yang lengkap."
+  }
+}
