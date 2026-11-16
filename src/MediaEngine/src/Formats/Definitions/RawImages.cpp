@@ -42,18 +42,15 @@ std::shared_ptr<const M::SectorImage> read(const Plan& plan,M::Bytes bytes,std::
     if(bytes.size()!=plan.length)throw MediaError(DiagnosticCode::DefinedRawLength,{plan.definition.id,std::to_string(bytes.size()),std::to_string(plan.length)});
     if(plan.sectors.empty())throw MediaError(DiagnosticCode::DefinitionValue,{std::string(Constants::Sectors),plan.definition.id});
     std::vector<M::SectorBlock> blocks;blocks.reserve(plan.sectors.size());
-    std::uint32_t maximumSize=0,maximumCount=0;std::size_t offset=0;
-    std::map<std::pair<std::int32_t,std::int32_t>,std::uint32_t> counts;
+    std::size_t offset=0;
     for(const auto& sector:plan.sectors){
         checkCancellation(token);
         if(offset>bytes.size()||std::size_t(sector.size)>bytes.size()-offset)invalidSector(plan,sector);
         M::SectorBlock block;block.logicalBlock=sector.logicalBlock;block.address={sector.cylinder,sector.head,sector.number};
         block.data.assign(bytes.begin()+std::ptrdiff_t(offset),bytes.begin()+std::ptrdiff_t(offset+sector.size));block.integrityValid=std::nullopt;
         blocks.push_back(std::move(block));offset+=std::size_t(sector.imageSize);
-        maximumSize=std::max(maximumSize,std::uint32_t(sector.size));maximumCount=std::max(maximumCount,++counts[{sector.cylinder,sector.head}]);
     }
-    M::SectorImageOptions options;options.allowVariableBlockSize=true;options.capacity=plan.length;options.logicalBlockCount=plan.sectors.size();
-    return sparseSectorImage({plan.definition.id,maximumSize,std::uint32_t(plan.definition.cylinders),std::uint32_t(plan.definition.heads),maximumCount},std::move(blocks),options);
+    return createImage(plan.definition,plan.sectors,std::move(blocks),token);
 }
 void write(const M::SectorImage& image,const Plan& plan,const std::filesystem::path& path,std::stop_token token){
     checkCancellation(token);
@@ -84,6 +81,18 @@ public:
         return std::async(std::launch::deferred,[plans=plans_,context,token]{checkCancellation(token);const auto id=context.requestedFormatId();const auto& plan=require(*plans,id.value_or(std::string{}));const auto bytes=context.readBytesAsync(token).get();return floppySectorDocument(context.source(),read(plan,bytes,token));});
     }
 };
+}
+std::shared_ptr<const MediaFileSystems::SectorImage> createImage(const DiskDefinition& definition,std::span<const Sector> layout,std::vector<MediaFileSystems::SectorBlock> blocks,std::stop_token token){
+    checkCancellation(token);if(layout.empty())throw MediaError(DiagnosticCode::DefinitionValue,{std::string(Constants::Sectors),definition.id});
+    std::uint32_t maximumSize=0,maximumCount=0;std::uint64_t capacity=0;
+    std::map<std::pair<std::int32_t,std::int32_t>,std::uint32_t> counts;
+    for(const auto& sector:layout){
+        checkCancellation(token);
+        if(sector.size<=0||sector.imageSize<=0||std::uint64_t(sector.imageSize)>std::uint64_t(std::numeric_limits<std::int64_t>::max())-capacity)throw MediaError(DiagnosticCode::DefinitionValue,{std::string(Constants::CapacityField),definition.id});
+        maximumSize=std::max(maximumSize,std::uint32_t(sector.size));maximumCount=std::max(maximumCount,++counts[{sector.cylinder,sector.head}]);capacity+=std::uint64_t(sector.imageSize);
+    }
+    MediaFileSystems::SectorImageOptions options;options.allowVariableBlockSize=true;options.capacity=capacity;options.logicalBlockCount=layout.size();
+    return sparseSectorImage({definition.id,maximumSize,std::uint32_t(definition.cylinders),std::uint32_t(definition.heads),maximumCount},std::move(blocks),options);
 }
 std::shared_ptr<const ImageReader> rawReader(Catalogue catalogue){return std::make_shared<Reader>(prepare(std::move(catalogue)));}
 std::shared_ptr<const ImageReader> rawReader(){return rawReader(rawDefinitions());}

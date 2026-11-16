@@ -978,6 +978,7 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::IsoNotIbmDos:return DiagnosticKeys::IsoNotIbmDos;
     case DiagnosticCode::ScpNoDecodedSectors:return DiagnosticKeys::ScpNoDecodedSectors;
     case DiagnosticCode::ScpNoUsableSectors:return DiagnosticKeys::ScpNoUsableSectors;
+    case DiagnosticCode::DefinedScpCodec:return DiagnosticKeys::DefinedScpCodec;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

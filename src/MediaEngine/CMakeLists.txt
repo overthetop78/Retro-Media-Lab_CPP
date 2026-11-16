@@ -528,6 +528,8 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Models/Sectors/LinearSectorWriter.cpp
   src/Models/Sectors/SectorImages.cpp
   src/Models/Sectors/SizeCodes.cpp
+  src/Reconstruction/DefinedReader.cpp
+  src/Reconstruction/Rx02Reader.cpp
   src/Reconstruction/AmigaReader.cpp
   src/Reconstruction/Iso/Policy.cpp
   src/Reconstruction/Iso/ExplicitFamilies.cpp

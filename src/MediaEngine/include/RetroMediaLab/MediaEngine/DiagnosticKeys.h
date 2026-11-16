@@ -1,6 +1,8 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view DefinedScpCodec="MediaEngine.DefinedScpCodec";
+
 inline constexpr std::string_view ScpNoDecodedSectors="MediaEngine.ScpNoDecodedSectors";
 inline constexpr std::string_view ScpNoUsableSectors="MediaEngine.ScpNoUsableSectors";
 

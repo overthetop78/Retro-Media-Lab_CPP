@@ -2962,6 +2962,8 @@
     <ClInclude Include="src\MediaEngine\src\Primitives\Identifiers.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\AmigaReader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\AmigaReader.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\DefinedReader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\DefinedReader.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Automatic.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Automatic.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Builder.cpp" />
@@ -2984,6 +2986,8 @@
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeFamilies.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Score.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Rx02Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Rx02Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Apple.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Commodore.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Constants.h" />
@@ -3363,6 +3367,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\emu-fm.json" />
@@ -3565,6 +3570,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\emu-fm.json" />
@@ -3767,6 +3773,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\emu-fm.json" />
@@ -3969,6 +3976,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\emu-fm.json" />
@@ -4171,6 +4179,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\emu-fm.json" />
@@ -4373,6 +4382,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\emu-fm.json" />
@@ -4575,6 +4585,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\emu-fm.json" />
@@ -4777,6 +4788,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\emu-fm.json" />
@@ -4979,6 +4991,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\emu-fm.json" />
@@ -5181,6 +5194,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\emu-fm.json" />
@@ -5383,6 +5397,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\emu-fm.json" />
@@ -5585,6 +5600,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\emu-fm.json" />
@@ -5787,6 +5803,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\emu-fm.json" />
@@ -5989,6 +6006,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\emu-fm.json" />
@@ -6191,6 +6209,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\emu-fm.json" />
@@ -6393,6 +6412,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\emu-fm.json" />
@@ -6595,6 +6615,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\emu-fm.json" />
@@ -6797,6 +6818,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\emu-fm.json" />
@@ -6999,6 +7021,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\emu-fm.json" />
@@ -7201,6 +7224,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\emu-fm.json" />
@@ -7403,6 +7427,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\emu-fm.json" />
@@ -7605,6 +7630,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\emu-fm.json" />
@@ -7807,6 +7833,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\emu-fm.json" />
@@ -8009,6 +8036,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\emu-fm.json" />
@@ -8211,6 +8239,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\emu-fm.json" />
@@ -8413,6 +8442,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\emu-fm.json" />
@@ -8615,6 +8645,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\emu-fm.json" />
@@ -8817,6 +8848,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\emu-fm.json" />
@@ -9019,6 +9051,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\emu-fm.json" />
@@ -9221,6 +9254,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\cue-wave.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\defined-raw.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\defined-scp.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\disk-definitions.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\diskcopy.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\emu-fm.json" />
