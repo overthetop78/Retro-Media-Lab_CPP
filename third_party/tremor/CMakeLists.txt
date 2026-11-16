@@ -1,0 +1,21 @@
+# Xiph Tremor main branch, fixed-point decoding without low-accuracy mode.
+add_library(RetroMediaLab.Tremor STATIC
+  mdct.c block.c window.c synthesis.c info.c floor1.c floor0.c
+  vorbisfile.c res012.c mapping0.c registry.c codebook.c sharedbook.c)
+target_include_directories(RetroMediaLab.Tremor PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+target_link_libraries(RetroMediaLab.Tremor PUBLIC RetroMediaLab.Ogg)
+if(MSVC)
+  target_compile_options(RetroMediaLab.Tremor PRIVATE /FIstdlib.h)
+  target_compile_definitions(RetroMediaLab.Tremor PRIVATE inline=__inline _CRT_SECURE_NO_WARNINGS)
+else()
+  include(TestBigEndian)
+  test_big_endian(TREMOR_BIG_ENDIAN)
+  if(TREMOR_BIG_ENDIAN)
+    target_compile_definitions(RetroMediaLab.Tremor PRIVATE BYTE_ORDER=4321)
+  else()
+    target_compile_definitions(RetroMediaLab.Tremor PRIVATE BYTE_ORDER=1234)
+  endif()
+  target_compile_definitions(RetroMediaLab.Tremor PRIVATE LITTLE_ENDIAN=1234 BIG_ENDIAN=4321 HAVE_ALLOCA_H)
+  target_compile_options(RetroMediaLab.Tremor PRIVATE -fwrapv)
+  target_link_libraries(RetroMediaLab.Tremor PRIVATE m)
+endif()

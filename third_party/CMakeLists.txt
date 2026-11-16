@@ -73,3 +73,8 @@ install(FILES bzip2/LICENSE DESTINATION licenses/bzip2)
 install(FILES xz/COPYING xz/COPYING.0BSD DESTINATION licenses/liblzma)
 install(FILES zstd/LICENSE DESTINATION licenses/zstd)
 install(FILES lz4/lib/LICENSE DESTINATION licenses/lz4)
+
+add_subdirectory(ogg EXCLUDE_FROM_ALL)
+add_subdirectory(tremor EXCLUDE_FROM_ALL)
+install(FILES ogg/COPYING DESTINATION licenses/libogg)
+install(FILES tremor/COPYING DESTINATION licenses/tremor)
