@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "De afbeelding bevat geen volledige MSX CAS-afscheider.",
+    "MediaEngine.MsxCasPrefix": "Bytes vóór de eerste MSX CAS-scheider zijn zonder interpretatie bewaard.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS-scheiding bij offset {0} heeft geen volgende gegevens.",
+    "MediaEngine.MsxCasWrite": "Het document kan niet als MSX CAS worden geschreven zonder bytegroepen te verliezen.",
+    "MediaEngine.MsxTapeEncode": "MSX-tapecodering vereist gevalideerde bytegroepen zonder bewaarde niet-gedecodeerde segmenten.",
+    "MediaEngine.MsxTapeSignalLimit": "Het gereconstrueerde MSX tape signaal overschrijdt de ondersteunde sample limiet."
+  }
+}

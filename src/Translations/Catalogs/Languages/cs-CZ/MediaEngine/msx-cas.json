@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Obrázek neobsahuje kompletní MSX CAS separátor.",
+    "MediaEngine.MsxCasPrefix": "Bytes před prvním separátorem MSX CAS byl zachován bez interpretace.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS separátor na ofsetu {0} nemá žádné následující údaje.",
+    "MediaEngine.MsxCasWrite": "Dokument nelze zapsat jako MSX CAS bez ztráty skupin bajtů.",
+    "MediaEngine.MsxTapeEncode": "kódování MSX pásky vyžaduje validované byte skupiny, aniž by zůstaly nedekódované segmenty.",
+    "MediaEngine.MsxTapeSignalLimit": "Rekonstruovaný signál pásky MSX překračuje podporovaný počet vzorků."
+  }
+}

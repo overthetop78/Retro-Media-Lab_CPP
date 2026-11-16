@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Изображение не содержит полного разделителя MSX CAS.",
+    "MediaEngine.MsxCasPrefix": "Байты перед первым сепаратором MSX CAS сохранялись без интерпретации.",
+    "MediaEngine.MsxCasEmptySeparator": "Сепаратор MSX CAS при смещении {0} не имеет следующих данных.",
+    "MediaEngine.MsxCasWrite": "Документ не может быть написан как MSX CAS без потери байтовых групп.",
+    "MediaEngine.MsxTapeEncode": "Для кодирования ленты MSX требуются валидированные байт-группы без сохраненных недекодированных сегментов.",
+    "MediaEngine.MsxTapeSignalLimit": "Восстановленный сигнал ленты MSX превышает поддерживаемое число отсчётов."
+  }
+}

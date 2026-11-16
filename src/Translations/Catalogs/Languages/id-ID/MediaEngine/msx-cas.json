@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Gambar tidak berisi pemisah MSX CAS lengkap.",
+    "MediaEngine.MsxCasPrefix": "Bita sebelum pemisah MSX CAS pertama ditahan tanpa interpretasi.",
+    "MediaEngine.MsxCasEmptySeparator": "pemisah MSX CAS pada ofset {0} tidak memiliki data berikut.",
+    "MediaEngine.MsxCasWrite": "Dokumen tidak dapat ditulis sebagai MSX CAS tanpa kehilangan grup byte.",
+    "MediaEngine.MsxTapeEncode": "Encoding tape MSX membutuhkan grup byte yang sah tanpa mempertahankan segmen tidak terkode.",
+    "MediaEngine.MsxTapeSignalLimit": "Sinyal rekaman MSX yang direkonstruksi melebihi batas yang didukung."
+  }
+}

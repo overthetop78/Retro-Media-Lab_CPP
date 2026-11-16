@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "映像中沒有完整的 MSX CAS 分隔符號。",
+    "MediaEngine.MsxCasPrefix": "首個 MSX CAS 分隔符號之前的位元組已保留，未進行解譯。",
+    "MediaEngine.MsxCasEmptySeparator": "偏移 {0} 處的 MSX CAS 分隔符號後沒有資料。",
+    "MediaEngine.MsxCasWrite": "無法在不遺失位元組群組的情況下將文件寫為 MSX CAS。",
+    "MediaEngine.MsxTapeEncode": "MSX 磁帶編碼需要經過驗證的位元組群組，且不能含有保留的未解碼片段。",
+    "MediaEngine.MsxTapeSignalLimit": "重建的 MSX 磁帶訊號超過支援的取樣數上限。"
+  }
+}

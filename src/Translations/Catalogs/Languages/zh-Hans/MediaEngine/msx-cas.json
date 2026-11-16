@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "镜像中没有完整的 MSX CAS 分隔符。",
+    "MediaEngine.MsxCasPrefix": "首个 MSX CAS 分隔符之前的字节已保留，未进行解释。",
+    "MediaEngine.MsxCasEmptySeparator": "偏移 {0} 处的 MSX CAS 分隔符后没有数据。",
+    "MediaEngine.MsxCasWrite": "无法在不丢失字节组的情况下将文档写为 MSX CAS。",
+    "MediaEngine.MsxTapeEncode": "MSX 磁带编码需要经过验证的字节组，且不能含有保留的未解码片段。",
+    "MediaEngine.MsxTapeSignalLimit": "重建的 MSX 磁带信号超过支持的采样数上限。"
+  }
+}

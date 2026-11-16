@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view MsxCasSeparator="MediaEngine.MsxCasSeparator";
+inline constexpr std::string_view MsxCasPrefix="MediaEngine.MsxCasPrefix";
+inline constexpr std::string_view MsxCasEmptySeparator="MediaEngine.MsxCasEmptySeparator";
+inline constexpr std::string_view MsxCasWrite="MediaEngine.MsxCasWrite";
+inline constexpr std::string_view MsxTapeEncode="MediaEngine.MsxTapeEncode";
+inline constexpr std::string_view MsxTapeSignalLimit="MediaEngine.MsxTapeSignalLimit";
+
 inline constexpr std::string_view AcornTapeIncompatible="MediaEngine.AcornTapeIncompatible";
 inline constexpr std::string_view AcornTapeEncode="MediaEngine.AcornTapeEncode";
 inline constexpr std::string_view AcornTapeNoUefBlocks="MediaEngine.AcornTapeNoUefBlocks";

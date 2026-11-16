@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Bildet inneholder ingen komplett MSX CAS separator.",
+    "MediaEngine.MsxCasPrefix": "Byte før den første MSX CAS-separator ble beholdt uten tolkning.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS separator ved offset {0} har ingen følgende data.",
+    "MediaEngine.MsxCasWrite": "Dokumentet kan ikke skrives som MSX CAS uten å miste bytegrupper.",
+    "MediaEngine.MsxTapeEncode": "MSX-båndkoding krever validerte bytegrupper uten beholdte ukodede segmenter.",
+    "MediaEngine.MsxTapeSignalLimit": "Det rekonstruerte MSX-båndsignal overstiger den støttede prøvegrense."
+  }
+}

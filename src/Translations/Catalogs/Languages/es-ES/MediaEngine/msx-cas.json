@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "La imagen no contiene ningún separador MSX CAS completo.",
+    "MediaEngine.MsxCasPrefix": "Los bytes antes del primer separador MSX CAS se conservaron sin interpretación.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS separador en offset {0} no tiene datos siguientes.",
+    "MediaEngine.MsxCasWrite": "El documento no puede ser escrito como MSX CAS sin perder grupos de byte.",
+    "MediaEngine.MsxTapeEncode": "La codificación de cinta MSX requiere grupos de byte validados sin segmentos no decodificados retenidos.",
+    "MediaEngine.MsxTapeSignalLimit": "La señal reconstruida de cinta MSX supera el límite de muestra soportado."
+  }
+}

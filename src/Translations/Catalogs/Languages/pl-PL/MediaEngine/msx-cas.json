@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Obraz nie zawiera kompletnego separatora MSX CAS.",
+    "MediaEngine.MsxCasPrefix": "Byty przed pierwszym separatorem MSX CAS zostały zachowane bez interpretacji.",
+    "MediaEngine.MsxCasEmptySeparator": "Separator MSX CAS przy przesunięciu {0} nie posiada następujących danych.",
+    "MediaEngine.MsxCasWrite": "Dokument nie może być napisany jako MSX CAS bez utraty grup bajtów.",
+    "MediaEngine.MsxTapeEncode": "Kodowanie taśmy MSX wymaga zwalidowanych grup bajtowych bez zachowanych niezdekodowanych segmentów.",
+    "MediaEngine.MsxTapeSignalLimit": "Zrekonstruowany sygnał taśmy MSX przekracza obsługiwaną liczbę próbek."
+  }
+}

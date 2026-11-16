@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "L'immagine non contiene separatore completo MSX CAS.",
+    "MediaEngine.MsxCasPrefix": "I byte prima del primo separatore MSX CAS sono stati conservati senza interpretazione.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS separatore a offset {0} non ha i seguenti dati.",
+    "MediaEngine.MsxCasWrite": "Il documento non può essere scritto come MSX CAS senza perdere gruppi byte.",
+    "MediaEngine.MsxTapeEncode": "La codifica del nastro MSX richiede gruppi di byte convalidati senza segmenti non codificati.",
+    "MediaEngine.MsxTapeSignalLimit": "Il segnale del nastro MSX ricostruito supera il limite del campione supportato."
+  }
+}

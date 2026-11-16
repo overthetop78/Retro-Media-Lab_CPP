@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "Das Bild enthält keinen vollständigen MSX CAS-Separator.",
+    "MediaEngine.MsxCasPrefix": "Bytes vor dem ersten MSX CAS-Separator wurden ohne Interpretation beibehalten.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS-Separator am Offset {0} hat keine folgenden Daten.",
+    "MediaEngine.MsxCasWrite": "Das Dokument kann nicht als MSX CAS geschrieben werden, ohne Bytegruppen zu verlieren.",
+    "MediaEngine.MsxTapeEncode": "Die MSX-Bandcodierung erfordert validierte Bytegruppen ohne beibehaltene undecodierte Segmente.",
+    "MediaEngine.MsxTapeSignalLimit": "Das rekonstruierte MSX-Bandsignal überschreitet die unterstützte Abtastgrenze."
+  }
+}

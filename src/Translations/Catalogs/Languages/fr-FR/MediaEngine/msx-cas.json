@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "L'image ne contient pas de séparateur MSX CAS complet.",
+    "MediaEngine.MsxCasPrefix": "Les octets avant le premier séparateur MSX CAS ont été conservés sans interprétation.",
+    "MediaEngine.MsxCasEmptySeparator": "Le séparateur MSX CAS à l’offset {0} n’est suivi d’aucune donnée.",
+    "MediaEngine.MsxCasWrite": "Le document ne peut pas être écrit en tant que MSX CAS sans perdre des groupes d'octets.",
+    "MediaEngine.MsxTapeEncode": "L'encodage des bandes MSX nécessite des groupes d'octets validés sans segments non décodés conservés.",
+    "MediaEngine.MsxTapeSignalLimit": "Le signal de bande MSX reconstruit dépasse le nombre maximal d’échantillons pris en charge."
+  }
+}

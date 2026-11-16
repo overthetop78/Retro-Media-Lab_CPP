@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "イメージに完全な MSX CAS 区切りがありません。",
+    "MediaEngine.MsxCasPrefix": "最初の MSX CAS 区切りより前のバイトは解釈せずに保持されました。",
+    "MediaEngine.MsxCasEmptySeparator": "オフセット {0} の MSX CAS 区切りの後にデータがありません。",
+    "MediaEngine.MsxCasWrite": "バイトグループを失わずに文書を MSX CAS として書き込めません。",
+    "MediaEngine.MsxTapeEncode": "MSX テープのエンコードには検証済みのバイトグループが必要で、保持された未デコードのセグメントがあってはなりません。",
+    "MediaEngine.MsxTapeSignalLimit": "再構成された MSX テープ信号が対応するサンプル数の上限を超えています。"
+  }
+}

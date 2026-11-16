@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "이미지에 완전한 MSX CAS 구분자가 없습니다.",
+    "MediaEngine.MsxCasPrefix": "첫 번째 MSX CAS 구분자 앞의 바이트를 해석하지 않고 보존했습니다.",
+    "MediaEngine.MsxCasEmptySeparator": "오프셋 {0}의 MSX CAS 구분자 뒤에 데이터가 없습니다.",
+    "MediaEngine.MsxCasWrite": "바이트 그룹을 잃지 않고 문서를 MSX CAS로 쓸 수 없습니다.",
+    "MediaEngine.MsxTapeEncode": "MSX 테이프 인코딩에는 검증된 바이트 그룹이 필요하며 보존된 미디코딩 세그먼트가 없어야 합니다.",
+    "MediaEngine.MsxTapeSignalLimit": "재구성된 MSX 테이프 신호가 지원되는 샘플 수 제한을 초과합니다."
+  }
+}

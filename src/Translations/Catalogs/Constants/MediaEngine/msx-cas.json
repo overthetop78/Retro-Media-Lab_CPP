@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.MsxCasSeparator": "The image contains no complete MSX CAS separator.",
+    "MediaEngine.MsxCasPrefix": "Bytes before the first MSX CAS separator were retained without interpretation.",
+    "MediaEngine.MsxCasEmptySeparator": "MSX CAS separator at offset {0} has no following data.",
+    "MediaEngine.MsxCasWrite": "The document cannot be written as MSX CAS without losing byte groups.",
+    "MediaEngine.MsxTapeEncode": "MSX tape encoding requires validated byte groups without retained undecoded segments.",
+    "MediaEngine.MsxTapeSignalLimit": "The reconstructed MSX tape signal exceeds the supported sample limit."
+  }
+}

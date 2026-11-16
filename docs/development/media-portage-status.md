@@ -88,6 +88,8 @@ La tâche 171 porte les adaptateurs de décodage/encodage séquentiels Atom. Le 
 
 La tâche 172 porte les blocs et adaptateurs Acorn KCS, CRC partagés, UEF et PCM continu aux débits 1200/300. Le contrôle via les registres couvre notamment les frontières de segments et les débits mélangés. Compilation, traductions relues, catalogues et audit réussis.
 
+La tâche 173 porte le conteneur MSX CAS (scan borné, groupes et préfixes conservés, writer atomique) et son encodeur CAS/PCM FSK 8N2. Compilation, contrôle ciblé, traductions relues, catalogues et audit réussis. Le décodeur MSX et son chemin TSX restent à porter.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.
