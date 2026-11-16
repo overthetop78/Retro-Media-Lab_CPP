@@ -1,8 +1,8 @@
 #include "CatalogConstants.h"
+#include "AdfsDocument.h"
 #include <RetroMediaLab/MediaFileSystems/SectorReader.h>
 #include <RetroMediaLab/MediaFileSystems/AmigaDos.h>
 #include <RetroMediaLab/MediaFileSystems/AmigaFlatArchive.h>
-#include <RetroMediaLab/MediaFileSystems/Adfs.h>
 #include <RetroMediaLab/MediaFileSystems/BbcDfs.h>
 #include <RetroMediaLab/MediaFileSystems/Coherent.h>
 #include <RetroMediaLab/MediaFileSystems/Rt11.h>
@@ -37,7 +37,7 @@ std::vector<std::shared_ptr<const SectorReader>> createDefaultSectorReaders(){
     return {
         std::make_shared<Reader>(Reader0,Formats0,Probe(AmigaDos::canRead),Read(AmigaDos::read)),
         std::make_shared<Reader>(Reader1,Formats1,Probe(AmigaFlatArchive::canRead),Read(AmigaFlatArchive::read)),
-        std::make_shared<Reader>(Reader2,Formats2,Probe(Adfs::canRead),Read(Adfs::read)),
+        Composition::createAdfsDocumentReader(),
         std::make_shared<Reader>(Reader3,Formats3,Probe(BbcDfs::canRead),Read(BbcDfs::read)),
         std::make_shared<Reader>(Reader4,Formats4,Probe([](const SectorImage& image,std::stop_token token){checkCancellation(token);return Coherent::canRead(image);}),Read(Coherent::read)),
         std::make_shared<Reader>(Reader5,Formats5,Probe(Rt11::canRead),Read(Rt11::read)),

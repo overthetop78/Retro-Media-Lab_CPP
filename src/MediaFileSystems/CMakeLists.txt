@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
+  src/Exploration/Composition/AdfsDocument.cpp
   src/Definitions/DisplayNames.cpp
   src/Exploration/FileTreeCursor.cpp
   src/Exploration/Composition/Interpretation.cpp

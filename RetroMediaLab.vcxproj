@@ -2021,6 +2021,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMedia.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMediaIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalMediaTypes.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\PhysicalReadingState.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpCaptureInfo.h" />
@@ -3239,6 +3240,8 @@
     <ClCompile Include="src\MediaFileSystems\src\Definitions\DisplayNames.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Diagnostics.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\AnalysisConstants.h" />
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\AdfsDocument.cpp" />
+    <ClInclude Include="src\MediaFileSystems\src\Exploration\Composition\AdfsDocument.h" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Catalog.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\Composition\CatalogConstants.h" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\Composition\Constants.h" />
