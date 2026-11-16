@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.VocData": "The Creative Voice header, data offset, block length or PCM samples are invalid or incomplete.",
+    "MediaEngine.VocProfile": "Only legacy unsigned 8-bit PCM VOC blocks with a constant nonzero time constant are supported.",
+    "MediaEngine.VocWrite": "The sequential PCM document cannot be converted to legacy VOC, or its sample count exceeds the supported limit.",
+    "MediaEngine.VocTerminator": "The VOC terminator is missing."
+  }
+}

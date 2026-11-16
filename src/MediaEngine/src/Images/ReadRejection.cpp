@@ -7,6 +7,8 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VocData:
+    case DiagnosticCode::VocProfile:
     case DiagnosticCode::WaveTapeProfile:
     case DiagnosticCode::SequentialModel:
     case DiagnosticCode::TapePcmProfile:

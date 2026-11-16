@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.VocData": "Creative Voice 文件头、数据偏移、块长度或 PCM 样本无效或不完整。",
+    "MediaEngine.VocProfile": "仅支持使用固定非零时间常数的旧式无符号 8 位 PCM VOC 块。",
+    "MediaEngine.VocWrite": "顺序 PCM 文档无法转换为旧式 VOC，或样本数超过支持的上限。",
+    "MediaEngine.VocTerminator": "缺少 VOC 结束标记。"
+  }
+}

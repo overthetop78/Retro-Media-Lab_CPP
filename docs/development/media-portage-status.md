@@ -62,6 +62,8 @@ La tâche 159 porte le modèle séquentiel, les profils PCM entiers, extraction 
 
 La tâche 160 porte le RIFF/WAVE séquentiel : profil PCM natif jusqu’à 32 canaux, chunks multiples/inconnus, sources partagées, métadonnées et writer atomique sans rééchantillonnage. Les remplissages impairs et trames incomplètes de sortie sont sécurisés. Compilation, contrôle ciblé, catalogues et audit réussis.
 
+La tâche 161 porte le reader/writer Creative Voice legacy Caprice32 : blocs son/continuation/silence/marqueur/texte, PCM commun, conversion mono et sortie atomique avec continuations 24 bits. Compilation, contrôle ciblé, catalogues et audit réussis. Les autres profils de bandes et la composition globale restent à réaliser.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.
