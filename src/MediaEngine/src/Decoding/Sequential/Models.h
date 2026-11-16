@@ -6,12 +6,12 @@ class SequentialDecodedBlock final {
 public:
     RETROMEDIALAB_MEDIAENGINE_API SequentialDecodedBlock(std::int64_t position,std::vector<std::uint8_t> data,std::vector<std::int64_t> sourcePositions,std::optional<bool> integrity,std::map<std::string,std::string> metadata={});
     std::int64_t position()const noexcept{return position_;}
-    std::span<const std::uint8_t> data()const noexcept{return data_;}
+    std::span<const std::uint8_t> data()const noexcept{return data_?std::span<const std::uint8_t>(*data_):std::span<const std::uint8_t>{};}
     std::span<const std::int64_t> sourcePositions()const noexcept{return positions_;}
     std::optional<bool> integrityValid()const noexcept{return integrity_;}
     const std::map<std::string,std::string>& metadata()const noexcept{return metadata_;}
 private:
-    std::int64_t position_;std::vector<std::uint8_t> data_;std::vector<std::int64_t> positions_;std::optional<bool> integrity_;std::map<std::string,std::string> metadata_;
+    std::int64_t position_;std::shared_ptr<const std::vector<std::uint8_t>> data_;std::vector<std::int64_t> positions_;std::optional<bool> integrity_;std::map<std::string,std::string> metadata_;
 };
 class SequentialDecodeResult final {
 public:

@@ -72,6 +72,8 @@ La tâche 164 porte les contrats/résultats de décodage séquentiel, le registr
 
 La tâche 165 porte le conteneur Atari CAS, les fonctions FSK communes et le décodeur Atari CAS/PCM : chunks conservés, temps, records/checksums et récupération UART/horloge. Contrôle ciblé réussi avec polarité inversée, étirement de 5 % et passage au vrai adaptateur MFS sans inventer de noms ; un compteur valide nul du portage est corrigé. Compilation, catalogues et audit réussis. L’encodeur Atari et la composition automatique restent à terminer.
 
+Les blocs décodés séquentiels partagent désormais leurs octets possédés et immuables lors des copies de requêtes. Cela évite de recopier les données pendant la sélection des encodeurs. Compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.
