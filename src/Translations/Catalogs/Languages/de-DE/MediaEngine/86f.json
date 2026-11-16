@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Die Datei enthält keine 86F-Signatur; ihre ermittelte Länge beträgt {0} Bytes.",
+    "MediaEngine.I86fTable": "Die 86F-Spurtabelle ist unvollständig: {0} Bytes erforderlich, {1} verfügbar.",
+    "MediaEngine.I86fOffset": "86F-Spur {0} verweist auf Offset {1}, außerhalb des Abbilds mit {2} Bytes.",
+    "MediaEngine.I86fRange": "86F-Spur {0} hat einen ungültigen Bereich: Offset {1}, nächster Offset {2}, Kopf {3} Bytes, Dateilänge {4} Bytes.",
+    "MediaEngine.I86fBitCount": "86F-Spur {0} hat eine ungültige Bitzellenanzahl von {1}.",
+    "MediaEngine.I86fTruncated": "86F-Spur {0} ist zwischen den Offsets {1} und {2} abgeschnitten: {3} Datenbytes erforderlich, {4} verfügbar.",
+    "MediaEngine.I86fNoTracks": "Das 86F-Abbild enthält keine Spurdaten."
+  }
+}

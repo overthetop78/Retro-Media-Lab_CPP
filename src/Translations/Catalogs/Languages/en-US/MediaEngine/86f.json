@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "The file does not contain an 86F signature; its observed length is {0} bytes.",
+    "MediaEngine.I86fTable": "The 86F track table is incomplete: {0} bytes are required, {1} are available.",
+    "MediaEngine.I86fOffset": "86F track {0} points to offset {1}, outside the {2}-byte image.",
+    "MediaEngine.I86fRange": "86F track {0} has an invalid range: offset {1}, next offset {2}, header {3} bytes, file length {4} bytes.",
+    "MediaEngine.I86fBitCount": "86F track {0} has an invalid bit-cell count of {1}.",
+    "MediaEngine.I86fTruncated": "86F track {0} is truncated between offsets {1} and {2}: {3} data bytes are required, {4} are available.",
+    "MediaEngine.I86fNoTracks": "The 86F image does not contain any track data."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Filen innehåller inte en 86F-signatur; dess observerade längd är {0} byte.",
+    "MediaEngine.I86fTable": "86F-spårtabellen är ofullständig: {0} byte krävs, {1} är tillgängliga.",
+    "MediaEngine.I86fOffset": "86F-spår {0} pekar på förskjutning {1}, utanför avbildningen på {2} byte.",
+    "MediaEngine.I86fRange": "86F-spår {0} har ett ogiltigt intervall: förskjutning {1}, nästa förskjutning {2}, huvud {3} byte, fillängd {4} byte.",
+    "MediaEngine.I86fBitCount": "86F-spår {0} har ett ogiltigt antal bitceller: {1}.",
+    "MediaEngine.I86fTruncated": "86F-spår {0} är avkortat mellan förskjutningarna {1} och {2}: {3} databyte krävs, {4} är tillgängliga.",
+    "MediaEngine.I86fNoTracks": "86F-avbildningen innehåller inga spårdata."
+  }
+}

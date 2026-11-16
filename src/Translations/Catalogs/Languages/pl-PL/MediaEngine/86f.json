@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Plik nie zawiera podpisu 86F; jego stwierdzona długość to {0} bajtów.",
+    "MediaEngine.I86fTable": "Tabela ścieżek 86F jest niekompletna: wymagane {0} bajtów, dostępne {1}.",
+    "MediaEngine.I86fOffset": "Ścieżka 86F {0} wskazuje przesunięcie {1}, poza obrazem o długości {2} bajtów.",
+    "MediaEngine.I86fRange": "Ścieżka 86F {0} ma nieprawidłowy zakres: przesunięcie {1}, następne przesunięcie {2}, nagłówek {3} bajtów, długość pliku {4} bajtów.",
+    "MediaEngine.I86fBitCount": "Ścieżka 86F {0} ma nieprawidłową liczbę komórek bitowych: {1}.",
+    "MediaEngine.I86fTruncated": "Ścieżka 86F {0} jest ucięta między przesunięciami {1} i {2}: wymagane {3} bajtów danych, dostępne {4}.",
+    "MediaEngine.I86fNoTracks": "Obraz 86F nie zawiera danych ścieżek."
+  }
+}

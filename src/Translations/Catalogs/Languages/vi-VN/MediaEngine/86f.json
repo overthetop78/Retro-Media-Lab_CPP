@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Tập tin không chứa chữ ký 86F; độ dài quan sát được là {0} byte.",
+    "MediaEngine.I86fTable": "Bảng rãnh 86F không đầy đủ: cần {0} byte, có {1} byte.",
+    "MediaEngine.I86fOffset": "Rãnh 86F {0} trỏ đến độ lệch {1}, nằm ngoài ảnh đĩa dài {2} byte.",
+    "MediaEngine.I86fRange": "Rãnh 86F {0} có phạm vi không hợp lệ: độ lệch {1}, độ lệch tiếp theo {2}, phần đầu {3} byte, độ dài tập tin {4} byte.",
+    "MediaEngine.I86fBitCount": "Rãnh 86F {0} có số ô bit không hợp lệ: {1}.",
+    "MediaEngine.I86fTruncated": "Rãnh 86F {0} bị cắt ngắn giữa độ lệch {1} và {2}: cần {3} byte dữ liệu, có {4} byte.",
+    "MediaEngine.I86fNoTracks": "Ảnh đĩa 86F không chứa dữ liệu rãnh."
+  }
+}

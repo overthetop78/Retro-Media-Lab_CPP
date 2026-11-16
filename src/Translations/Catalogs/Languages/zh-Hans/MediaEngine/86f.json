@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "文件不包含 86F 签名；实际长度为 {0} 字节。",
+    "MediaEngine.I86fTable": "86F 磁道表不完整：需要 {0} 字节，可用 {1} 字节。",
+    "MediaEngine.I86fOffset": "86F 磁道 {0} 指向偏移量 {1}，超出 {2} 字节映像的范围。",
+    "MediaEngine.I86fRange": "86F 磁道 {0} 的范围无效：偏移量 {1}，下一个偏移量 {2}，文件头 {3} 字节，文件长度 {4} 字节。",
+    "MediaEngine.I86fBitCount": "86F 磁道 {0} 的位单元数量 {1} 无效。",
+    "MediaEngine.I86fTruncated": "86F 磁道 {0} 在偏移量 {1} 和 {2} 之间被截断：需要 {3} 字节数据，可用 {4} 字节。",
+    "MediaEngine.I86fNoTracks": "86F 映像不包含磁道数据。"
+  }
+}

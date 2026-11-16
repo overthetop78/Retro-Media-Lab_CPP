@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view I86fSignature="MediaEngine.I86fSignature";
+inline constexpr std::string_view I86fTable="MediaEngine.I86fTable";
+inline constexpr std::string_view I86fOffset="MediaEngine.I86fOffset";
+inline constexpr std::string_view I86fRange="MediaEngine.I86fRange";
+inline constexpr std::string_view I86fBitCount="MediaEngine.I86fBitCount";
+inline constexpr std::string_view I86fTruncated="MediaEngine.I86fTruncated";
+inline constexpr std::string_view I86fNoTracks="MediaEngine.I86fNoTracks";
 inline constexpr std::string_view Cp2Signature="MediaEngine.Cp2Signature";
 inline constexpr std::string_view Cp2Description="MediaEngine.Cp2Description";
 inline constexpr std::string_view Cp2DescriptionTruncated="MediaEngine.Cp2DescriptionTruncated";

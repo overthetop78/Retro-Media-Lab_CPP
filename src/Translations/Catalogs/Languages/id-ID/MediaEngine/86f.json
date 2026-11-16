@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Berkas tidak memuat tanda tangan 86F; panjang yang teramati adalah {0} byte.",
+    "MediaEngine.I86fTable": "Tabel trek 86F tidak lengkap: diperlukan {0} byte, tersedia {1}.",
+    "MediaEngine.I86fOffset": "Trek 86F {0} menunjuk ke ofset {1}, di luar citra disk berukuran {2} byte.",
+    "MediaEngine.I86fRange": "Trek 86F {0} memiliki rentang tidak valid: ofset {1}, ofset berikutnya {2}, header {3} byte, panjang berkas {4} byte.",
+    "MediaEngine.I86fBitCount": "Trek 86F {0} memiliki jumlah sel bit tidak valid: {1}.",
+    "MediaEngine.I86fTruncated": "Trek 86F {0} terpotong antara ofset {1} dan {2}: diperlukan {3} byte data, tersedia {4}.",
+    "MediaEngine.I86fNoTracks": "Citra disk 86F tidak berisi data trek."
+  }
+}

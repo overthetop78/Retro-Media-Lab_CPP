@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Le fichier ne contient pas de signature 86F ; sa longueur observée est de {0} octets.",
+    "MediaEngine.I86fTable": "La table des pistes 86F est incomplète : {0} octets requis, {1} disponibles.",
+    "MediaEngine.I86fOffset": "La piste 86F {0} pointe à la position {1}, hors de l’image de {2} octets.",
+    "MediaEngine.I86fRange": "La piste 86F {0} a une plage invalide : position {1}, position suivante {2}, en-tête de {3} octets, fichier de {4} octets.",
+    "MediaEngine.I86fBitCount": "La piste 86F {0} contient un nombre invalide de cellules binaires : {1}.",
+    "MediaEngine.I86fTruncated": "La piste 86F {0} est tronquée entre les positions {1} et {2} : {3} octets de données requis, {4} disponibles.",
+    "MediaEngine.I86fNoTracks": "L’image 86F ne contient aucune donnée de piste."
+  }
+}

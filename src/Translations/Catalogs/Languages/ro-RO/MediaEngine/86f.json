@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Fișierul nu conține o semnătură 86F; lungimea observată este {0} octeți.",
+    "MediaEngine.I86fTable": "Tabelul pistelor 86F este incomplet: sunt necesari {0} octeți, sunt disponibili {1}.",
+    "MediaEngine.I86fOffset": "Pista 86F {0} indică deplasarea {1}, în afara imaginii de {2} octeți.",
+    "MediaEngine.I86fRange": "Pista 86F {0} are un interval nevalid: deplasare {1}, următoarea deplasare {2}, antet {3} octeți, lungimea fișierului {4} octeți.",
+    "MediaEngine.I86fBitCount": "Pista 86F {0} are un număr nevalid de celule de biți: {1}.",
+    "MediaEngine.I86fTruncated": "Pista 86F {0} este trunchiată între deplasările {1} și {2}: sunt necesari {3} octeți de date, sunt disponibili {4}.",
+    "MediaEngine.I86fNoTracks": "Imaginea 86F nu conține date de piste."
+  }
+}

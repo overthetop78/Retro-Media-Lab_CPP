@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Dosya 86F imzası içermiyor; gözlenen uzunluğu {0} bayt.",
+    "MediaEngine.I86fTable": "86F iz tablosu eksik: {0} bayt gerekli, {1} bayt kullanılabilir.",
+    "MediaEngine.I86fOffset": "86F izi {0}, {2} baytlık disk görüntüsünün dışındaki {1} ofsetini gösteriyor.",
+    "MediaEngine.I86fRange": "86F izi {0} geçersiz bir aralığa sahip: ofset {1}, sonraki ofset {2}, başlık {3} bayt, dosya uzunluğu {4} bayt.",
+    "MediaEngine.I86fBitCount": "86F izi {0} geçersiz sayıda bit hücresi içeriyor: {1}.",
+    "MediaEngine.I86fTruncated": "86F izi {0}, {1} ve {2} ofsetleri arasında kesilmiş: {3} veri baytı gerekli, {4} bayt kullanılabilir.",
+    "MediaEngine.I86fNoTracks": "86F disk görüntüsü iz verisi içermiyor."
+  }
+}

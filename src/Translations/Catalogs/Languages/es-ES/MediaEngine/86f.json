@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "El archivo no contiene una firma 86F; su longitud observada es de {0} bytes.",
+    "MediaEngine.I86fTable": "La tabla de pistas 86F está incompleta: se requieren {0} bytes, hay {1} disponibles.",
+    "MediaEngine.I86fOffset": "La pista 86F {0} apunta al desplazamiento {1}, fuera de la imagen de {2} bytes.",
+    "MediaEngine.I86fRange": "La pista 86F {0} tiene un intervalo no válido: desplazamiento {1}, siguiente desplazamiento {2}, cabecera de {3} bytes, archivo de {4} bytes.",
+    "MediaEngine.I86fBitCount": "La pista 86F {0} tiene un número de celdas binarias no válido: {1}.",
+    "MediaEngine.I86fTruncated": "La pista 86F {0} está truncada entre los desplazamientos {1} y {2}: se requieren {3} bytes de datos, hay {4} disponibles.",
+    "MediaEngine.I86fNoTracks": "La imagen 86F no contiene datos de pistas."
+  }
+}

@@ -3,6 +3,14 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::I86fSignature:return DiagnosticKeys::I86fSignature;
+    case DiagnosticCode::I86fTable:return DiagnosticKeys::I86fTable;
+    case DiagnosticCode::I86fOffset:return DiagnosticKeys::I86fOffset;
+    case DiagnosticCode::I86fRange:return DiagnosticKeys::I86fRange;
+    case DiagnosticCode::I86fBitCount:return DiagnosticKeys::I86fBitCount;
+    case DiagnosticCode::I86fTruncated:return DiagnosticKeys::I86fTruncated;
+    case DiagnosticCode::I86fNoTracks:return DiagnosticKeys::I86fNoTracks;
+
     case DiagnosticCode::Cp2Signature:return DiagnosticKeys::Cp2Signature;
     case DiagnosticCode::Cp2Description:return DiagnosticKeys::Cp2Description;
     case DiagnosticCode::Cp2DescriptionTruncated:return DiagnosticKeys::Cp2DescriptionTruncated;

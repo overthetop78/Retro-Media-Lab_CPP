@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Soubor neobsahuje podpis 86F; jeho zjištěná délka je {0} bajtů.",
+    "MediaEngine.I86fTable": "Tabulka stop 86F je neúplná: vyžadováno {0} bajtů, k dispozici {1}.",
+    "MediaEngine.I86fOffset": "Stopa 86F {0} odkazuje na posun {1} mimo obraz o délce {2} bajtů.",
+    "MediaEngine.I86fRange": "Stopa 86F {0} má neplatný rozsah: posun {1}, další posun {2}, hlavička {3} bajtů, délka souboru {4} bajtů.",
+    "MediaEngine.I86fBitCount": "Stopa 86F {0} má neplatný počet bitových buněk {1}.",
+    "MediaEngine.I86fTruncated": "Stopa 86F {0} je zkrácena mezi posuny {1} a {2}: vyžadováno {3} bajtů dat, k dispozici {4}.",
+    "MediaEngine.I86fNoTracks": "Obraz 86F neobsahuje žádná data stop."
+  }
+}

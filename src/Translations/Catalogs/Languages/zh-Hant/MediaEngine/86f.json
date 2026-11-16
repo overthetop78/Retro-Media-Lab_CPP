@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "檔案不包含 86F 簽章；實際長度為 {0} 位元組。",
+    "MediaEngine.I86fTable": "86F 磁軌表格不完整：需要 {0} 位元組，可用 {1} 位元組。",
+    "MediaEngine.I86fOffset": "86F 磁軌 {0} 指向位移量 {1}，超出 {2} 位元組映像的範圍。",
+    "MediaEngine.I86fRange": "86F 磁軌 {0} 的範圍無效：位移量 {1}，下一個位移量 {2}，檔案標頭 {3} 位元組，檔案長度 {4} 位元組。",
+    "MediaEngine.I86fBitCount": "86F 磁軌 {0} 的位元單元數量 {1} 無效。",
+    "MediaEngine.I86fTruncated": "86F 磁軌 {0} 在位移量 {1} 和 {2} 之間遭到截斷：需要 {3} 位元組資料，可用 {4} 位元組。",
+    "MediaEngine.I86fNoTracks": "86F 映像不包含磁軌資料。"
+  }
+}

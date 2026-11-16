@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Tiedostossa ei ole 86F-allekirjoitusta; sen havaittu pituus on {0} tavua.",
+    "MediaEngine.I86fTable": "86F-raitojen taulukko on puutteellinen: tarvitaan {0} tavua, käytettävissä {1}.",
+    "MediaEngine.I86fOffset": "86F-raita {0} osoittaa siirtymään {1}, joka on {2} tavun levykuvan ulkopuolella.",
+    "MediaEngine.I86fRange": "86F-raidan {0} alue on virheellinen: siirtymä {1}, seuraava siirtymä {2}, otsake {3} tavua, tiedoston pituus {4} tavua.",
+    "MediaEngine.I86fBitCount": "86F-raidan {0} bittisolumäärä {1} on virheellinen.",
+    "MediaEngine.I86fTruncated": "86F-raita {0} on katkennut siirtymien {1} ja {2} välillä: tarvitaan {3} datatavua, käytettävissä {4}.",
+    "MediaEngine.I86fNoTracks": "86F-levykuva ei sisällä raitatietoja."
+  }
+}

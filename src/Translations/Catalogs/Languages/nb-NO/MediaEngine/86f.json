@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Filen inneholder ikke en 86F-signatur; den observerte lengden er {0} byte.",
+    "MediaEngine.I86fTable": "86F-sportabellen er ufullstendig: {0} byte kreves, {1} er tilgjengelige.",
+    "MediaEngine.I86fOffset": "86F-spor {0} peker på forskyvning {1}, utenfor avbildningen på {2} byte.",
+    "MediaEngine.I86fRange": "86F-spor {0} har et ugyldig område: forskyvning {1}, neste forskyvning {2}, hode {3} byte, fillengde {4} byte.",
+    "MediaEngine.I86fBitCount": "86F-spor {0} har et ugyldig antall bitceller: {1}.",
+    "MediaEngine.I86fTruncated": "86F-spor {0} er avkortet mellom forskyvningene {1} og {2}: {3} databyte kreves, {4} er tilgjengelige.",
+    "MediaEngine.I86fNoTracks": "86F-avbildningen inneholder ingen spordata."
+  }
+}

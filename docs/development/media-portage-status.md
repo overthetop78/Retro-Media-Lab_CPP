@@ -18,6 +18,8 @@ La tâche 133 porte la structure native JFD : tables principales/delta, secteurs
 
 La tâche 135 termine le lecteur CP2 : groupes et descripteurs, reconstruction IBM et registre commun, avec contrôle ciblé réussi.
 
+La tâche 136 termine le lecteur 86F, ses modèles, sa conversion en pistes protégées et son adaptateur du registre ; compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

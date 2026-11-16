@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.I86fSignature": "Il file non contiene una firma 86F; la lunghezza osservata è di {0} byte.",
+    "MediaEngine.I86fTable": "La tabella delle tracce 86F è incompleta: occorrono {0} byte, ne sono disponibili {1}.",
+    "MediaEngine.I86fOffset": "La traccia 86F {0} punta all’offset {1}, fuori dall’immagine di {2} byte.",
+    "MediaEngine.I86fRange": "La traccia 86F {0} ha un intervallo non valido: offset {1}, offset successivo {2}, intestazione di {3} byte, file di {4} byte.",
+    "MediaEngine.I86fBitCount": "La traccia 86F {0} ha un numero di celle binarie non valido: {1}.",
+    "MediaEngine.I86fTruncated": "La traccia 86F {0} è troncata tra gli offset {1} e {2}: occorrono {3} byte di dati, ne sono disponibili {4}.",
+    "MediaEngine.I86fNoTracks": "L’immagine 86F non contiene dati delle tracce."
+  }
+}

@@ -7,6 +7,14 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::I86fSignature:
+    case DiagnosticCode::I86fTable:
+    case DiagnosticCode::I86fOffset:
+    case DiagnosticCode::I86fRange:
+    case DiagnosticCode::I86fBitCount:
+    case DiagnosticCode::I86fTruncated:
+    case DiagnosticCode::I86fNoTracks:
+
     case DiagnosticCode::Cp2Signature:
     case DiagnosticCode::Cp2Description:
     case DiagnosticCode::Cp2DescriptionTruncated:
