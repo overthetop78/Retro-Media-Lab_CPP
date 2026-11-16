@@ -1,16 +1,16 @@
 {
   "strings": {
     "MediaFileSystems.ContextSourceNull": "미디어 소스는 null이 될 수 없습니다.",
-    "MediaFileSystems.ContextSourcePath": "주요 미디어 소스 경로는 빈 또는 whitespace가 될 수 없습니다.",
-    "MediaFileSystems.ContextPageSize": "인식 페이지 크기는 긍정적이어야합니다.",
-    "MediaFileSystems.ContextKnownLength": "알려진 소스 길이는 부정적인 수 없습니다.",
-    "MediaFileSystems.ContextLengthOverflow": "미디어 소스 길이는 지원되는 서명 범위를 초과합니다.",
-    "MediaFileSystems.ContextReadOffset": "인식 읽기 오프셋은 부정적인 수 없습니다.",
-    "MediaFileSystems.ContextReadCount": "인식 읽음 수는 부정적인 수 없습니다.",
+    "MediaFileSystems.ContextSourcePath": "기본 미디어 소스 경로는 비어 있거나 공백 문자만 포함할 수 없습니다.",
+    "MediaFileSystems.ContextPageSize": "인식 페이지 크기는 양수여야 합니다.",
+    "MediaFileSystems.ContextKnownLength": "알려진 소스 길이는 음수일 수 없습니다.",
+    "MediaFileSystems.ContextLengthOverflow": "미디어 소스 길이가 지원되는 부호 있는 정수 범위를 초과합니다.",
+    "MediaFileSystems.ContextReadOffset": "인식 읽기 오프셋은 음수일 수 없습니다.",
+    "MediaFileSystems.ContextReadCount": "인식을 위해 읽을 바이트 수는 음수일 수 없습니다.",
     "MediaFileSystems.ContextReadRange": "요청된 범위는 소스 길이를 초과합니다.",
-    "MediaFileSystems.ContextFullRead": "완전한 근원은 1개의 기억 완충기로 적재될 수 없습니다. 대신 경계 읽기를 사용합니다.",
-    "MediaFileSystems.ContextPageEnded": "byte {0}에서 끝나는 미디어 소스는 캐시 된 페이지를 읽는 동안.",
+    "MediaFileSystems.ContextFullRead": "전체 소스를 하나의 메모리 버퍼에 로드할 수 없습니다. 대신 범위가 제한된 읽기를 사용하세요.",
+    "MediaFileSystems.ContextPageEnded": "캐시된 페이지를 읽는 동안 미디어 소스가 바이트 {0}에서 끝났습니다.",
     "MediaFileSystems.DocumentFormatId": "인식된 형식 식별자는 필요합니다.",
-    "MediaFileSystems.DocumentRepresentation": "대중 표현 정보와 미디어 표현이 필요합니다."
+    "MediaFileSystems.DocumentRepresentation": "공개 표현 정보를 제공하는 미디어 표현이 필요합니다."
   }
 }

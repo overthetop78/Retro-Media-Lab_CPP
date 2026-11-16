@@ -26,8 +26,8 @@ Validation : compilation commune après le bloc ; un contrôle ciblé des plages
 - [x] Finition des catalogues et du projet
   - [x] Modifier `RetroMediaLab.vcxproj` et `RetroMediaLab.vcxproj.filters` avec le script existant : référencer les nouvelles sources, contrats et catalogues.
   - [x] Modifier les DLL de catalogues générées dans `build/debug/bin/` : compiler le nouveau catalogue par les trente cibles `RetroMediaLab.Catalog.*` après stabilisation des JSON.
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/block-representation.json` : relire les langues autres que le français et corriger leurs contresens.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/block-representation.json` : relire les langues autres que le français et corriger leurs contresens.
 
 - [x] État incrémental de l'édition de liens
   - Diagnostic : aucun `MediaEngine.ilk` ni DLL résiduelle n'est présent ; l'hypothèse d'un état incrémental ancien n'est pas confirmée, aucune suppression n'est exécutée.
@@ -35,3 +35,5 @@ Validation : compilation commune après le bloc ; un contrôle ciblé des plages
 
 - [x] Nettoyage après acquisition réelle de l'accès
   - [x] Modifier `src/MediaEngine/src/Sources/DriveAccess.h`, `DriveRandomAccessData.cpp` et `src/MediaEngine/src/Models/Blocks/Reader.cpp` : calculer la position avant acquisition, commencer l'accès dans le garde RAII et nettoyer un BeginRead/BeginWrite partiellement échoué ; ne pas terminer un accès si le callback de position a échoué avant son début.
+
+Relecture achevée le 17 novembre 2026 : voir docs/validation/media/relecture-blocs-documents.md.

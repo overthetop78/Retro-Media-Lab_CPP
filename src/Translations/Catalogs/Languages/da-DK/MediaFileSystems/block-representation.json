@@ -1,8 +1,8 @@
 {
   "strings": {
     "MediaFileSystems.BlockRangeAddress": "En mediedata-adresse kan ikke være negativ.",
-    "MediaFileSystems.BlockRangeLength": "En mediedata længde skal være positiv.",
-    "MediaFileSystems.BlockSourceOffset": "Et mediedata kan ikke være negativt.",
+    "MediaFileSystems.BlockRangeLength": "Længden af et mediedataområde skal være positiv.",
+    "MediaFileSystems.BlockSourceOffset": "Kildeforskydningen for et mediedataområde må ikke være negativ.",
     "MediaFileSystems.BlockSourceNull": "En lagret medierække kræver en datakilde.",
     "MediaFileSystems.BlockSourceRange": "Det kortlagte område overstiger dets datakilde.",
     "MediaFileSystems.BlockNonStoredSource": "Kun lagrede områder kan henvise til en datakilde.",
@@ -17,8 +17,8 @@
     "MediaFileSystems.BlockReadRange": "Det ønskede logiske område overstiger mediekapaciteten.",
     "MediaFileSystems.BlockRangeMissing": "Ingen mediedata dækker logisk adresse {0}.",
     "MediaFileSystems.BlockUnavailable": "Logisk adresse {0} er ikke tilgængelig i kildebilledet.",
-    "MediaFileSystems.BlockRangeKind": "Ikke understøttet mediedata art {0}.",
-    "MediaFileSystems.BlockOverflow": "Beregningen af medieblokken overstiger det understøttede underskrevne interval.",
+    "MediaFileSystems.BlockRangeKind": "Ikke-understøttet type mediedataområde: {0}.",
+    "MediaFileSystems.BlockOverflow": "Medieblokberegningen overstiger det understøttede interval for heltal med fortegn.",
     "MediaFileSystems.BlockGeometryValue": "Den harddisk geometri parameter {0} skal være positiv.",
     "MediaFileSystems.BlockDriveCount": "Den mekaniske adgang skal omfatte et positivt antal byte.",
     "MediaFileSystems.BlockNullImage": "Der kræves et blokbillede."

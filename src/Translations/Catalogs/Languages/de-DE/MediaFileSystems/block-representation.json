@@ -2,7 +2,7 @@
   "strings": {
     "MediaFileSystems.BlockRangeAddress": "Eine Mediendatenbereichsadresse kann nicht negativ sein.",
     "MediaFileSystems.BlockRangeLength": "Eine Mediendatenbereichslänge muss positiv sein.",
-    "MediaFileSystems.BlockSourceOffset": "Ein Media Data Range Source Offset kann nicht negativ sein.",
+    "MediaFileSystems.BlockSourceOffset": "Der Quelloffset eines Mediendatenbereichs kann nicht negativ sein.",
     "MediaFileSystems.BlockSourceNull": "Ein gespeicherter Medienbereich erfordert eine Datenquelle.",
     "MediaFileSystems.BlockSourceRange": "Der abgebildete Bereich überschreitet seine Datenquelle.",
     "MediaFileSystems.BlockNonStoredSource": "Nur gespeicherte Bereiche können auf eine Datenquelle verweisen.",
@@ -17,7 +17,7 @@
     "MediaFileSystems.BlockReadRange": "Der angeforderte logische Bereich übersteigt die Medienkapazität.",
     "MediaFileSystems.BlockRangeMissing": "Kein Mediendatenbereich deckt die logische Adresse {0} ab.",
     "MediaFileSystems.BlockUnavailable": "Logische Adresse {0} ist im Quellbild nicht verfügbar.",
-    "MediaFileSystems.BlockRangeKind": "Ununterstützter Mediendatenbereich Art {0}.",
+    "MediaFileSystems.BlockRangeKind": "Nicht unterstützte Art eines Mediendatenbereichs: {0}.",
     "MediaFileSystems.BlockOverflow": "Die Medienblockberechnung übersteigt den unterstützten signierten Bereich.",
     "MediaFileSystems.BlockGeometryValue": "Der Festplattengeometrieparameter {0} muss positiv sein.",
     "MediaFileSystems.BlockDriveCount": "Der mechanische Zugriff muss eine positive Anzahl von Bytes abdecken.",

@@ -4,13 +4,13 @@
     "MediaFileSystems.ContextSourcePath": "O caminho principal da fonte da mídia não pode estar vazio ou em branco.",
     "MediaFileSystems.ContextPageSize": "O tamanho da página de reconhecimento deve ser positivo.",
     "MediaFileSystems.ContextKnownLength": "O comprimento conhecido da fonte não pode ser negativo.",
-    "MediaFileSystems.ContextLengthOverflow": "O comprimento da fonte da mídia excede o intervalo assinado suportado.",
-    "MediaFileSystems.ContextReadOffset": "A leitura de reconhecimento não pode ser negativa.",
+    "MediaFileSystems.ContextLengthOverflow": "O comprimento da fonte do suporte excede o intervalo suportado de inteiros com sinal.",
+    "MediaFileSystems.ContextReadOffset": "O deslocamento de leitura para reconhecimento não pode ser negativo.",
     "MediaFileSystems.ContextReadCount": "A contagem de leitura de reconhecimento não pode ser negativa.",
     "MediaFileSystems.ContextReadRange": "O intervalo solicitado excede o comprimento da fonte.",
     "MediaFileSystems.ContextFullRead": "A fonte completa não pode ser carregada em um buffer de memória. Use leituras limitadas.",
     "MediaFileSystems.ContextPageEnded": "A fonte de mídia terminou em byte {0} ao ler uma página em cache.",
     "MediaFileSystems.DocumentFormatId": "É necessário um identificador de formato reconhecido.",
-    "MediaFileSystems.DocumentRepresentation": "É necessária uma representação mediática com informações de representação pública."
+    "MediaFileSystems.DocumentRepresentation": "É necessária uma representação do suporte com informações públicas de representação."
   }
 }

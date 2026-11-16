@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaFileSystems.ContextSourceNull": "ولا يمكن أن يكون المصدر الإعلامي باطلا.",
-    "MediaFileSystems.ContextSourcePath": "ولا يمكن أن يكون الطريق الرئيسي لمصدر وسائط الإعلام فارغاً أو أبيض.",
-    "MediaFileSystems.ContextPageSize": "ويجب أن يكون حجم صفحة الاعتراف إيجابيا.",
-    "MediaFileSystems.ContextKnownLength": "The known source length cannot be negative.",
-    "MediaFileSystems.ContextLengthOverflow": "The media source length exceeds the supported signed range.",
-    "MediaFileSystems.ContextReadOffset": "ولا يمكن أن يكون الاعتراف الوارد في هذا التقرير سلبيا.",
-    "MediaFileSystems.ContextReadCount": "لا يمكن أن يكون الاعتراف به سلبياً.",
-    "MediaFileSystems.ContextReadRange": "ويتجاوز النطاق المطلوب طول المصدر.",
-    "MediaFileSystems.ContextFullRead": "المصدر الكامل لا يمكن تحميله في حاجز ذاكرة واحد مُستخدمة في القراءة بدلاً من ذلك",
-    "MediaFileSystems.ContextPageEnded": "The media source ended at byte {0} while reading a cached page.",
-    "MediaFileSystems.DocumentFormatId": "ولا بد من تحديد الشكل المعترف به.",
-    "MediaFileSystems.DocumentRepresentation": "ولا بد من وجود تمثيل لوسائط الإعلام يتضمن معلومات عن التمثيل العام."
+    "MediaFileSystems.ContextSourceNull": "لا يمكن أن يكون مصدر الوسيط null.",
+    "MediaFileSystems.ContextSourcePath": "لا يمكن أن يكون مسار مصدر الوسيط الرئيسي فارغاً أو مكوناً من مسافات فقط.",
+    "MediaFileSystems.ContextPageSize": "يجب أن يكون حجم صفحة التعرف موجباً.",
+    "MediaFileSystems.ContextKnownLength": "لا يمكن أن يكون طول المصدر المعروف سالباً.",
+    "MediaFileSystems.ContextLengthOverflow": "يتجاوز طول مصدر الوسيط النطاق المدعوم للأعداد الصحيحة ذات الإشارة.",
+    "MediaFileSystems.ContextReadOffset": "لا يمكن أن تكون إزاحة قراءة التعرف سالبة.",
+    "MediaFileSystems.ContextReadCount": "لا يمكن أن يكون عدد البايتات المقروءة للتعرف سالباً.",
+    "MediaFileSystems.ContextReadRange": "يتجاوز النطاق المطلوب طول المصدر.",
+    "MediaFileSystems.ContextFullRead": "لا يمكن تحميل المصدر الكامل في مخزن ذاكرة واحد. استخدم قراءات محدودة النطاق بدلاً من ذلك.",
+    "MediaFileSystems.ContextPageEnded": "انتهى مصدر الوسيط عند البايت {0} أثناء قراءة صفحة مخزنة مؤقتاً.",
+    "MediaFileSystems.DocumentFormatId": "يلزم معرّف تنسيق معروف.",
+    "MediaFileSystems.DocumentRepresentation": "يلزم تمثيل للوسيط يوفر معلومات التمثيل العامة."
   }
 }

@@ -17,8 +17,8 @@
     "MediaFileSystems.BlockReadRange": "La gamma logica richiesta supera la capacità mediatica.",
     "MediaFileSystems.BlockRangeMissing": "Nessun intervallo di dati media copre l'indirizzo logico {0}.",
     "MediaFileSystems.BlockUnavailable": "L'indirizzo logico {0} non è disponibile nell'immagine di origine.",
-    "MediaFileSystems.BlockRangeKind": "intervallo di dati media non supportato {0}.",
-    "MediaFileSystems.BlockOverflow": "Il calcolo del blocco media supera l'intervallo firmato supportato.",
+    "MediaFileSystems.BlockRangeKind": "Tipo di intervallo di dati del supporto non supportato: {0}.",
+    "MediaFileSystems.BlockOverflow": "Il calcolo del blocco del supporto supera l’intervallo supportato degli interi con segno.",
     "MediaFileSystems.BlockGeometryValue": "Il parametro geometria del disco rigido {0} deve essere positivo.",
     "MediaFileSystems.BlockDriveCount": "L'accesso meccanico deve coprire un numero positivo di byte.",
     "MediaFileSystems.BlockNullImage": "È richiesta un'immagine di blocco."

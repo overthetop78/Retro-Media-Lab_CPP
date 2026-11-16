@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaFileSystems.ContextSourceNull": "Nguồn truyền thông không thể vô hiệu hóa được.",
-    "MediaFileSystems.ContextSourcePath": "Đường dẫn nguồn chính không thể rỗng hoặc trắng.",
-    "MediaFileSystems.ContextPageSize": "Kích thước nhận diện trang phải là dương.",
-    "MediaFileSystems.ContextKnownLength": "Độ dài nguồn đã biết không thể là âm.",
-    "MediaFileSystems.ContextLengthOverflow": "Độ dài của nguồn truyền thông vượt quá phạm vi được ký.",
-    "MediaFileSystems.ContextReadOffset": "Khoảng cách nhận biết đọc không thể là tiêu cực.",
-    "MediaFileSystems.ContextReadCount": "Số người được công nhận không thể là tiêu cực.",
+    "MediaFileSystems.ContextSourceNull": "Nguồn dữ liệu phương tiện không được là null.",
+    "MediaFileSystems.ContextSourcePath": "Đường dẫn nguồn phương tiện chính không được rỗng hoặc chỉ chứa ký tự khoảng trắng.",
+    "MediaFileSystems.ContextPageSize": "Kích thước trang nhận dạng phải là số dương.",
+    "MediaFileSystems.ContextKnownLength": "Chiều dài nguồn đã biết không được âm.",
+    "MediaFileSystems.ContextLengthOverflow": "Chiều dài nguồn phương tiện vượt quá phạm vi số nguyên có dấu được hỗ trợ.",
+    "MediaFileSystems.ContextReadOffset": "Độ lệch đọc để nhận dạng không được âm.",
+    "MediaFileSystems.ContextReadCount": "Số byte cần đọc để nhận dạng không được âm.",
     "MediaFileSystems.ContextReadRange": "Phạm vi yêu cầu vượt quá chiều dài nguồn.",
-    "MediaFileSystems.ContextFullRead": "Không thể tải toàn bộ nguồn vào cùng một bộ nhớ. Sử dụng ràng buộc đọc.",
-    "MediaFileSystems.ContextPageEnded": "Nguồn truyền thông đã kết thúc tại byte{0} trong khi đọc một trang đã lưu tạm.",
-    "MediaFileSystems.DocumentFormatId": "Cần thiết xác nhận định dạng thức.",
-    "MediaFileSystems.DocumentRepresentation": "Một phương tiện truyền thông đại diện cho thông tin đại diện công cộng là cần thiết."
+    "MediaFileSystems.ContextFullRead": "Không thể tải toàn bộ nguồn vào một bộ đệm bộ nhớ. Hãy đọc các phạm vi có giới hạn.",
+    "MediaFileSystems.ContextPageEnded": "Nguồn phương tiện kết thúc tại byte {0} khi đọc một trang đã lưu trong bộ nhớ đệm.",
+    "MediaFileSystems.DocumentFormatId": "Cần có mã định danh định dạng đã nhận dạng.",
+    "MediaFileSystems.DocumentRepresentation": "Cần có biểu diễn phương tiện cung cấp thông tin biểu diễn công khai."
   }
 }

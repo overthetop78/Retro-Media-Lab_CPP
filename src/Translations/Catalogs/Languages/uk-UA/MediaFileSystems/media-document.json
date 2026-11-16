@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaFileSystems.ContextSourceNull": "Джерело не може бути нульцем.",
-    "MediaFileSystems.ContextSourcePath": "Не може бути порожній або білий простір.",
-    "MediaFileSystems.ContextPageSize": "Розмір сторінки визнання повинен бути позитивним.",
-    "MediaFileSystems.ContextKnownLength": "Відоме джерело не може бути негативним.",
-    "MediaFileSystems.ContextLengthOverflow": "Довжина джерела медіа перевищує підтримуваний діапазон.",
-    "MediaFileSystems.ContextReadOffset": "Не може бути негативним.",
-    "MediaFileSystems.ContextReadCount": "Не може бути негативним.",
-    "MediaFileSystems.ContextReadRange": "Вимаганий діапазон перевищує довжину джерела.",
-    "MediaFileSystems.ContextFullRead": "Повне джерело не може бути завантажене в один буфер пам'яті. Використовуйте обмежені дані замість.",
-    "MediaFileSystems.ContextPageEnded": "Під час читання кеш-сторінки медіа-редакція завершилася за допомогою пункту {0}.",
-    "MediaFileSystems.DocumentFormatId": "Визнаний ідентифікатор формата необхідно.",
-    "MediaFileSystems.DocumentRepresentation": "Необхідна інформація про публічне представлення."
+    "MediaFileSystems.ContextSourceNull": "Джерело даних носія не може бути null.",
+    "MediaFileSystems.ContextSourcePath": "Шлях основного джерела даних носія не може бути порожнім або містити лише пробільні символи.",
+    "MediaFileSystems.ContextPageSize": "Розмір сторінки розпізнавання має бути додатним.",
+    "MediaFileSystems.ContextKnownLength": "Відома довжина джерела не може бути від’ємною.",
+    "MediaFileSystems.ContextLengthOverflow": "Довжина джерела даних носія перевищує підтримуваний діапазон цілих чисел зі знаком.",
+    "MediaFileSystems.ContextReadOffset": "Зсув читання для розпізнавання не може бути від’ємним.",
+    "MediaFileSystems.ContextReadCount": "Кількість байтів для читання під час розпізнавання не може бути від’ємною.",
+    "MediaFileSystems.ContextReadRange": "Запитаний діапазон перевищує довжину джерела.",
+    "MediaFileSystems.ContextFullRead": "Усе джерело неможливо завантажити в один буфер пам’яті. Використовуйте читання обмежених діапазонів.",
+    "MediaFileSystems.ContextPageEnded": "Джерело даних носія закінчилося на байті {0} під час читання кешованої сторінки.",
+    "MediaFileSystems.DocumentFormatId": "Потрібен ідентифікатор розпізнаного формату.",
+    "MediaFileSystems.DocumentRepresentation": "Потрібне представлення носія із загальнодоступною інформацією про представлення."
   }
 }

@@ -1,26 +1,26 @@
 {
   "strings": {
-    "MediaFileSystems.BlockRangeAddress": "Не може бути негативним.",
-    "MediaFileSystems.BlockRangeLength": "Довжина діапазону даних ЗМІ повинна бути позитивним.",
-    "MediaFileSystems.BlockSourceOffset": "Не може бути негативним.",
+    "MediaFileSystems.BlockRangeAddress": "Адреса діапазону даних носія не може бути від’ємною.",
+    "MediaFileSystems.BlockRangeLength": "Довжина діапазону даних носія має бути додатною.",
+    "MediaFileSystems.BlockSourceOffset": "Зсув джерела діапазону даних носія не може бути від’ємним.",
     "MediaFileSystems.BlockSourceNull": "Збережений медіа діапазон вимагає джерела даних.",
-    "MediaFileSystems.BlockSourceRange": "Перевищений діапазон даних.",
+    "MediaFileSystems.BlockSourceRange": "Відображений діапазон перевищує межі джерела даних.",
     "MediaFileSystems.BlockNonStoredSource": "Тільки збережені діапазони можуть вказувати джерело даних.",
-    "MediaFileSystems.BlockNonStoredOffset": "Не зберігайте вихід з джерела.",
-    "MediaFileSystems.BlockLogicalLength": "Не може бути негативним.",
+    "MediaFileSystems.BlockNonStoredOffset": "Незбережений діапазон не може мати зсуву в джерелі.",
+    "MediaFileSystems.BlockLogicalLength": "Логічна довжина носія не може бути від’ємною.",
     "MediaFileSystems.BlockLogicalBlockSize": "Розмір логічного блоку повинен бути позитивним.",
     "MediaFileSystems.BlockCompleteBlocks": "Логічна довжина повинна містити повні логічні блоки.",
     "MediaFileSystems.BlockGeometryOutside": "Задекларована геометрія перевищила логічну медіаємність.",
     "MediaFileSystems.BlockRangeOutside": "Діапазон блоків перевищує довжину логічних носіїв.",
-    "MediaFileSystems.BlockRangeOverlap": "Блокові діапазони не повинні перекриття.",
+    "MediaFileSystems.BlockRangeOverlap": "Діапазони блоків не повинні перекриватися.",
     "MediaFileSystems.BlockReadAddress": "Логічна адреса не може бути негативною.",
     "MediaFileSystems.BlockReadRange": "Вимаганий логічний діапазон перевищує медіаємність.",
-    "MediaFileSystems.BlockRangeMissing": "Немає медіа діапазону даних охоплює логічну адресу {0}.",
+    "MediaFileSystems.BlockRangeMissing": "Жоден діапазон даних носія не охоплює логічну адресу {0}.",
     "MediaFileSystems.BlockUnavailable": "Логічна адреса {0} є недоступним у вихідному зображенні.",
-    "MediaFileSystems.BlockRangeKind": "Unsupported медіа діапазону даних {0}.",
-    "MediaFileSystems.BlockOverflow": "Розрахунок медіаблоку перевищує підписаний діапазон.",
+    "MediaFileSystems.BlockRangeKind": "Непідтримуваний тип діапазону даних носія: {0}.",
+    "MediaFileSystems.BlockOverflow": "Обчислення блока носія перевищує підтримуваний діапазон цілих чисел зі знаком.",
     "MediaFileSystems.BlockGeometryValue": "Параметри геометрії жорсткого диска {0} повинні бути позитивними.",
     "MediaFileSystems.BlockDriveCount": "Механічний доступ повинен покрити позитивну кількість байтів.",
-    "MediaFileSystems.BlockNullImage": "Для цього необхідно блокувати зображення."
+    "MediaFileSystems.BlockNullImage": "Потрібен блоковий образ."
   }
 }

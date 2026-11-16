@@ -2,11 +2,11 @@
   "strings": {
     "MediaFileSystems.BlockRangeAddress": "媒体数据范围地址不能是负数 。",
     "MediaFileSystems.BlockRangeLength": "媒体数据范围长度必须是正数 。",
-    "MediaFileSystems.BlockSourceOffset": "媒体数据区域源抵消不能是负数。",
+    "MediaFileSystems.BlockSourceOffset": "介质数据范围的源偏移不能为负数。",
     "MediaFileSystems.BlockSourceNull": "一个被存储的介质范围需要一个数据源.",
     "MediaFileSystems.BlockSourceRange": "映射范围超过其数据源 。",
     "MediaFileSystems.BlockNonStoredSource": "只有被存储的区域可以引用一个数据源.",
-    "MediaFileSystems.BlockNonStoredOffset": "非储存范围不能有源抵消。",
+    "MediaFileSystems.BlockNonStoredOffset": "非存储范围不能具有源偏移。",
     "MediaFileSystems.BlockLogicalLength": "逻辑媒体长度不能是负数 。",
     "MediaFileSystems.BlockLogicalBlockSize": "逻辑块大小必须是正数 。",
     "MediaFileSystems.BlockCompleteBlocks": "逻辑长度必须包含完整的逻辑块.",
@@ -18,7 +18,7 @@
     "MediaFileSystems.BlockRangeMissing": "没有媒体数据范围覆盖逻辑地址{0}.",
     "MediaFileSystems.BlockUnavailable": "逻辑地址{0}在源图像中没有可用 。",
     "MediaFileSystems.BlockRangeKind": "不支持的媒体数据范围类型{0}.",
-    "MediaFileSystems.BlockOverflow": "媒体块计算超过支持的签名范围.",
+    "MediaFileSystems.BlockOverflow": "介质块计算超出了支持的有符号整数范围。",
     "MediaFileSystems.BlockGeometryValue": "硬盘几何参数{0}必须是正数 。",
     "MediaFileSystems.BlockDriveCount": "机械接入必须覆盖正数字节.",
     "MediaFileSystems.BlockNullImage": "需要一个块图像 。"

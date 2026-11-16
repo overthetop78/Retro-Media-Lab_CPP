@@ -1,16 +1,16 @@
 {
   "strings": {
     "MediaFileSystems.ContextSourceNull": "Zdroj médií nemůže být nulový.",
-    "MediaFileSystems.ContextSourcePath": "Primární media zdrojová cesta nemůže být prázdná nebo Whitespace.",
+    "MediaFileSystems.ContextSourcePath": "Cesta k primárnímu zdroji média nesmí být prázdná ani obsahovat pouze bílé znaky.",
     "MediaFileSystems.ContextPageSize": "Rozpoznávací velikost stránky musí být pozitivní.",
     "MediaFileSystems.ContextKnownLength": "Známá délka zdroje nemůže být záporná.",
-    "MediaFileSystems.ContextLengthOverflow": "Délka zdroje média přesahuje podporovaný podepsaný rozsah.",
-    "MediaFileSystems.ContextReadOffset": "Rozpoznání odečtu nemůže být záporné.",
-    "MediaFileSystems.ContextReadCount": "Rozpoznávání čtení nemůže být negativní.",
+    "MediaFileSystems.ContextLengthOverflow": "Délka zdroje média překračuje podporovaný rozsah celých čísel se znaménkem.",
+    "MediaFileSystems.ContextReadOffset": "Posun čtení při rozpoznávání nesmí být záporný.",
+    "MediaFileSystems.ContextReadCount": "Počet bajtů ke čtení při rozpoznávání nesmí být záporný.",
     "MediaFileSystems.ContextReadRange": "Požadovaný rozsah překračuje délku zdroje.",
-    "MediaFileSystems.ContextFullRead": "Kompletní zdroj nelze načíst do jednoho paměti. Použít ohraničené čtení místo.",
-    "MediaFileSystems.ContextPageEnded": "Zdroj médií skončil na byte {0} při čtení cached stránky.",
+    "MediaFileSystems.ContextFullRead": "Celý zdroj nelze načíst do jednoho paměťového bufferu. Použijte čtení omezených rozsahů.",
+    "MediaFileSystems.ContextPageEnded": "Zdroj média skončil na bajtu {0} při čtení stránky z mezipaměti.",
     "MediaFileSystems.DocumentFormatId": "Požaduje se identifikátor uznaného formátu.",
-    "MediaFileSystems.DocumentRepresentation": "Vyžaduje se zastoupení médií s informacemi o veřejném zastoupení."
+    "MediaFileSystems.DocumentRepresentation": "Je vyžadována reprezentace média s veřejnými informacemi o reprezentaci."
   }
 }

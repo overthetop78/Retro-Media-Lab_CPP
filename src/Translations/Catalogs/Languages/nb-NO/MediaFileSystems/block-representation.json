@@ -1,8 +1,8 @@
 {
   "strings": {
     "MediaFileSystems.BlockRangeAddress": "En medieadresse kan ikke være negativ.",
-    "MediaFileSystems.BlockRangeLength": "En rekkevidde må være positiv.",
-    "MediaFileSystems.BlockSourceOffset": "En kilde fra mediedataområde kan ikke være negativ.",
+    "MediaFileSystems.BlockRangeLength": "Lengden på et mediedataområde må være positiv.",
+    "MediaFileSystems.BlockSourceOffset": "Kildeforskyvningen til et mediedataområde kan ikke være negativ.",
     "MediaFileSystems.BlockSourceNull": "Et lagret medieområde krever en datakilde.",
     "MediaFileSystems.BlockSourceRange": "Det kartlagte området overstiger sin datakilde.",
     "MediaFileSystems.BlockNonStoredSource": "Bare lagrede områder kan referere til en datakilde.",

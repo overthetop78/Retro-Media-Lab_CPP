@@ -1,16 +1,16 @@
 {
   "strings": {
     "MediaFileSystems.ContextSourceNull": "מקור התקשורת לא יכול להיות אפס.",
-    "MediaFileSystems.ContextSourcePath": "נתיב מקור המדיה העיקרי אינו יכול להיות ריק או לבן.",
+    "MediaFileSystems.ContextSourcePath": "נתיב המקור הראשי של המדיה אינו יכול להיות ריק או להכיל רק תווי רווח.",
     "MediaFileSystems.ContextPageSize": "גודל דף ההכרה חייב להיות חיובי.",
     "MediaFileSystems.ContextKnownLength": "אורך המקור הידוע אינו שלילי.",
-    "MediaFileSystems.ContextLengthOverflow": "אורך מקור התקשורת עולה על טווח החתום הנתמך.",
-    "MediaFileSystems.ContextReadOffset": "ההכרה שקריאה לא יכולה להיות שלילית.",
-    "MediaFileSystems.ContextReadCount": "ספירת הקריאה לא יכולה להיות שלילית.",
+    "MediaFileSystems.ContextLengthOverflow": "אורך מקור המדיה חורג מהטווח הנתמך של מספרים שלמים עם סימן.",
+    "MediaFileSystems.ContextReadOffset": "היסט הקריאה לזיהוי אינו יכול להיות שלילי.",
+    "MediaFileSystems.ContextReadCount": "מספר הבתים לקריאה לזיהוי אינו יכול להיות שלילי.",
     "MediaFileSystems.ContextReadRange": "הטווח המבוקש עולה על אורך המקור.",
-    "MediaFileSystems.ContextFullRead": "המקור המלא אינו יכול להיטען לתוך חיץ זיכרון אחד. במקום זאת, השתמשו בקריאות קשורות.",
-    "MediaFileSystems.ContextPageEnded": "מקור התקשורת הסתיים ב- Byte {0} בעת קריאת דף חנון.",
+    "MediaFileSystems.ContextFullRead": "לא ניתן לטעון את המקור כולו למאגר זיכרון אחד. יש להשתמש בקריאות של טווחים מוגבלים.",
+    "MediaFileSystems.ContextPageEnded": "מקור המדיה הסתיים בבית {0} בעת קריאת דף מהמטמון.",
     "MediaFileSystems.DocumentFormatId": "מזהה פורמט מוכר נדרש.",
-    "MediaFileSystems.DocumentRepresentation": "נדרשת ייצוג תקשורת עם מידע ייצוג ציבורי."
+    "MediaFileSystems.DocumentRepresentation": "נדרש ייצוג מדיה המספק מידע ציבורי על הייצוג."
   }
 }

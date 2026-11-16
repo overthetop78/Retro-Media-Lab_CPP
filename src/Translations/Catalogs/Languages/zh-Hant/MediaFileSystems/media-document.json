@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaFileSystems.ContextSourceNull": "媒体来源不能无效.",
-    "MediaFileSystems.ContextSourcePath": "主媒体源路径不能为空或为空 。",
-    "MediaFileSystems.ContextPageSize": "识别页大小必须是正数 。",
-    "MediaFileSystems.ContextKnownLength": "已知源长度不能为负.",
-    "MediaFileSystems.ContextLengthOverflow": "媒体源长度超过支持的签名范围 。",
-    "MediaFileSystems.ContextReadOffset": "读取的识别值不能为负数。",
-    "MediaFileSystems.ContextReadCount": "识别读数不能为负数 。",
-    "MediaFileSystems.ContextReadRange": "请求的范围超过源长度 。",
-    "MediaFileSystems.ContextFullRead": "完整的源不能被装入一个内存缓冲. 取而代之,使用有界限的读取。",
-    "MediaFileSystems.ContextPageEnded": "媒体来源在读取缓存页面时以字节{0}结束 。",
-    "MediaFileSystems.DocumentFormatId": "需要一个公认的格式标识符。",
-    "MediaFileSystems.DocumentRepresentation": "需要媒体代表提供公共代表信息。"
+    "MediaFileSystems.ContextSourceNull": "媒體資料來源不能為 null。",
+    "MediaFileSystems.ContextSourcePath": "主要媒體資料來源路徑不能為空，也不能僅包含空白字元。",
+    "MediaFileSystems.ContextPageSize": "辨識頁面大小必須為正數。",
+    "MediaFileSystems.ContextKnownLength": "已知的來源長度不能為負數。",
+    "MediaFileSystems.ContextLengthOverflow": "媒體資料來源長度超出了支援的帶正負號整數範圍。",
+    "MediaFileSystems.ContextReadOffset": "辨識讀取位移不能為負數。",
+    "MediaFileSystems.ContextReadCount": "用於辨識的讀取位元組數不能為負數。",
+    "MediaFileSystems.ContextReadRange": "要求的範圍超出了來源長度。",
+    "MediaFileSystems.ContextFullRead": "無法將完整來源載入單一記憶體緩衝區。請改用限定範圍的讀取。",
+    "MediaFileSystems.ContextPageEnded": "讀取快取頁面時，媒體資料來源在位元組 {0} 處結束。",
+    "MediaFileSystems.DocumentFormatId": "需要已辨識的格式識別碼。",
+    "MediaFileSystems.DocumentRepresentation": "需要提供公開表示資訊的媒體表示。"
   }
 }

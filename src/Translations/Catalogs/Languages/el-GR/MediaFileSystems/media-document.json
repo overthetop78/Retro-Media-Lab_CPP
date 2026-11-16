@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaFileSystems.ContextSourceNull": "Η πηγή των μέσων ενημέρωσης δεν μπορεί να είναι μηδενική.",
+    "MediaFileSystems.ContextSourceNull": "Η πηγή του μέσου δεν μπορεί να είναι null.",
     "MediaFileSystems.ContextSourcePath": "Η κύρια διαδρομή πηγής μέσων δεν μπορεί να είναι κενή ή κενός χώρος.",
     "MediaFileSystems.ContextPageSize": "Το μέγεθος της σελίδας αναγνώρισης πρέπει να είναι θετικό.",
     "MediaFileSystems.ContextKnownLength": "Το γνωστό μήκος πηγής δεν μπορεί να είναι αρνητικό.",
-    "MediaFileSystems.ContextLengthOverflow": "Το μήκος της πηγής μέσων υπερβαίνει το υποστηριζόμενο υπογεγραμμένο εύρος.",
-    "MediaFileSystems.ContextReadOffset": "Η αναγνώρισή της δεν μπορεί να είναι αρνητική.",
-    "MediaFileSystems.ContextReadCount": "Η αναγνώρισή του δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.ContextLengthOverflow": "Το μήκος της πηγής του μέσου υπερβαίνει το υποστηριζόμενο εύρος ακεραίων με πρόσημο.",
+    "MediaFileSystems.ContextReadOffset": "Η μετατόπιση ανάγνωσης για την αναγνώριση δεν μπορεί να είναι αρνητική.",
+    "MediaFileSystems.ContextReadCount": "Ο αριθμός byte προς ανάγνωση για την αναγνώριση δεν μπορεί να είναι αρνητικός.",
     "MediaFileSystems.ContextReadRange": "Το ζητούμενο εύρος υπερβαίνει το μήκος της πηγής.",
-    "MediaFileSystems.ContextFullRead": "Η πλήρης πηγή δεν μπορεί να φορτωθεί σε μία ενδιάμεση μνήμη. Χρησιμοποιήστε οριοθετημένες διαβάσεις αντ 'αυτού.",
-    "MediaFileSystems.ContextPageEnded": "Η πηγή των μέσων τελείωσε στο byte {0} ενώ διάβαζε μια κρυφή σελίδα.",
+    "MediaFileSystems.ContextFullRead": "Ολόκληρη η πηγή δεν μπορεί να φορτωθεί σε μία προσωρινή μνήμη. Χρησιμοποιήστε αναγνώσεις περιορισμένου εύρους.",
+    "MediaFileSystems.ContextPageEnded": "Η πηγή του μέσου τελείωσε στο byte {0} κατά την ανάγνωση μιας σελίδας από την κρυφή μνήμη.",
     "MediaFileSystems.DocumentFormatId": "Απαιτείται αναγνωρισμένο αναγνωριστικό μορφής.",
-    "MediaFileSystems.DocumentRepresentation": "Απαιτείται εκπροσώπηση των μέσων ενημέρωσης με πληροφορίες δημόσιας εκπροσώπησης."
+    "MediaFileSystems.DocumentRepresentation": "Απαιτείται αναπαράσταση του μέσου με δημόσιες πληροφορίες αναπαράστασης."
   }
 }

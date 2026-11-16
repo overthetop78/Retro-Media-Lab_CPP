@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.BlockRangeAddress": "Een mediadatabereikadres kan niet negatief zijn.",
-    "MediaFileSystems.BlockRangeLength": "Een mediadatabereik moet positief zijn.",
+    "MediaFileSystems.BlockRangeLength": "De lengte van een mediadatabereik moet positief zijn.",
     "MediaFileSystems.BlockSourceOffset": "Een media data range bron offset kan niet negatief zijn.",
     "MediaFileSystems.BlockSourceNull": "Een opgeslagen mediabereik vereist een gegevensbron.",
     "MediaFileSystems.BlockSourceRange": "Het in kaart gebrachte bereik overschrijdt de gegevensbron.",
     "MediaFileSystems.BlockNonStoredSource": "Alleen opgeslagen bereik kan verwijzen naar een gegevensbron.",
-    "MediaFileSystems.BlockNonStoredOffset": "Een niet-opgeslagen bereik kan geen broncompensatie hebben.",
+    "MediaFileSystems.BlockNonStoredOffset": "Een niet-opgeslagen bereik kan geen bronoffset hebben.",
     "MediaFileSystems.BlockLogicalLength": "De logische medialengte kan niet negatief zijn.",
     "MediaFileSystems.BlockLogicalBlockSize": "De logische blokgrootte moet positief zijn.",
     "MediaFileSystems.BlockCompleteBlocks": "De logische lengte moet volledige logische blokken bevatten.",
@@ -18,7 +18,7 @@
     "MediaFileSystems.BlockRangeMissing": "Geen mediadatabereik omvat logisch adres {0}.",
     "MediaFileSystems.BlockUnavailable": "Logisch adres {0} is niet beschikbaar in de bronafbeelding.",
     "MediaFileSystems.BlockRangeKind": "Niet-ondersteunde mediadatabereiksoort {0}.",
-    "MediaFileSystems.BlockOverflow": "De berekening van het mediablok overschrijdt het ondersteunde ondertekende bereik.",
+    "MediaFileSystems.BlockOverflow": "De berekening van het mediablok overschrijdt het ondersteunde bereik van gehele getallen met teken.",
     "MediaFileSystems.BlockGeometryValue": "De parameter voor de geometrie van de harde schijf {0} moet positief zijn.",
     "MediaFileSystems.BlockDriveCount": "De mechanische toegang moet een positief aantal bytes bestrijken.",
     "MediaFileSystems.BlockNullImage": "Een blokafbeelding is vereist."

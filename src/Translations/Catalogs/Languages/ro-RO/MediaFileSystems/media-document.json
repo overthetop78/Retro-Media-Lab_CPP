@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.ContextSourceNull": "Sursa media nu poate fi nulă.",
-    "MediaFileSystems.ContextSourcePath": "Calea principală a sursei media nu poate fi goală sau spaţiul alb.",
+    "MediaFileSystems.ContextSourcePath": "Calea sursei media principale nu poate fi goală sau formată numai din spații.",
     "MediaFileSystems.ContextPageSize": "Dimensiunea paginii de recunoaștere trebuie să fie pozitivă.",
     "MediaFileSystems.ContextKnownLength": "Lungimea cunoscută a sursei nu poate fi negativă.",
-    "MediaFileSystems.ContextLengthOverflow": "Lungimea sursei mass-media depășește intervalul semnat susținut.",
+    "MediaFileSystems.ContextLengthOverflow": "Lungimea sursei media depășește intervalul acceptat al numerelor întregi cu semn.",
     "MediaFileSystems.ContextReadOffset": "Offset-ul de recunoaștere citit nu poate fi negativ.",
-    "MediaFileSystems.ContextReadCount": "Numărul de recunoaştere nu poate fi negativ.",
+    "MediaFileSystems.ContextReadCount": "Numărul de octeți de citit pentru recunoaștere nu poate fi negativ.",
     "MediaFileSystems.ContextReadRange": "Intervalul solicitat depășește lungimea sursei.",
     "MediaFileSystems.ContextFullRead": "Sursa completă nu poate fi încărcată într-un tampon de memorie. Foloseşte citirile delimitate.",
     "MediaFileSystems.ContextPageEnded": "Sursa media s-a încheiat la byte {0} în timp ce citea o pagină cache.",
