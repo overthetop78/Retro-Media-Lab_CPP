@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD je větší než podporovaná velikost.",
+    "MediaEngine.JfdExpansion": "JFD dekomprese přesahuje podporovanou velikost.",
+    "MediaEngine.JfdCompression": "Data JFD gzip nemohla být dekompresována.",
+    "MediaEngine.JfdHeader": "Neplatný podpis nebo hlavička JFD.",
+    "MediaEngine.JfdDeclaredLength": "JFD nekomprimovaná velikost neodpovídá hlavičce.",
+    "MediaEngine.JfdTables": "Neplatné posuny tabulek JFD.",
+    "MediaEngine.JfdTrackCount": "Neplatný počet stop JFD.",
+    "MediaEngine.JfdDeltaTables": "Neplatné posuny tabulek změn JFD.",
+    "MediaEngine.JfdTrackOffset": "Stopa JFD odkazuje mimo tabulku sektorů.",
+    "MediaEngine.JfdSectorEncoding": "Neplatná velikost nebo hustota sektoru JFD.",
+    "MediaEngine.JfdRecordCount": "Příliš mnoho JFD záznamů na jedné trati.",
+    "MediaEngine.JfdTruncated": "Zkrácená struktura JFD.",
+    "MediaEngine.JfdOffset": "JFD posun přesahuje délku obrázku.",
+    "MediaEngine.JfdEditGeometry": "Úpravy sektorů JFD musí zachovat původní geometrii.",
+    "MediaEngine.JfdDuplicateEdit": "Duplicitní adresa sektoru a pořadí ve stopě JFD.",
+    "MediaEngine.JfdDescriptorConflict": "Konfliktní úpravy sdílených deskriptorů JFD.",
+    "MediaEngine.JfdDataConflict": "Konfliktní úpravy sdílených dat sektorů JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD obsahuje sektory chybějící ze svých původních tabulek.",
+    "MediaEngine.JfdOverlapConflict": "Konfliktní úpravy překrývajících se dat JFD."
+  }
+}

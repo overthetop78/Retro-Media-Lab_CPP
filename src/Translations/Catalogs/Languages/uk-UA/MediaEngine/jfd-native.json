@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD перевищує підтримуваний розмір.",
+    "MediaEngine.JfdExpansion": "Розпаковані дані JFD перевищують підтримуваний розмір.",
+    "MediaEngine.JfdCompression": "Не вдалося розпакувати дані gzip у JFD.",
+    "MediaEngine.JfdHeader": "Недійсний підпис або заголовок JFD.",
+    "MediaEngine.JfdDeclaredLength": "Нестиснений розмір JFD не відповідає заголовку.",
+    "MediaEngine.JfdTables": "Недійсні зміщення таблиць JFD.",
+    "MediaEngine.JfdTrackCount": "Недійсна кількість доріжок JFD.",
+    "MediaEngine.JfdDeltaTables": "Недійсні зміщення таблиць змін JFD.",
+    "MediaEngine.JfdTrackOffset": "Доріжка JFD вказує за межі таблиці секторів.",
+    "MediaEngine.JfdSectorEncoding": "Недійсний розмір або щільність сектора JFD.",
+    "MediaEngine.JfdRecordCount": "Забагато записів JFD на одній доріжці.",
+    "MediaEngine.JfdTruncated": "Обрізана структура JFD.",
+    "MediaEngine.JfdOffset": "Зміщення JFD перевищує довжину образу диска.",
+    "MediaEngine.JfdEditGeometry": "Зміни секторів JFD мають зберігати початкову геометрію.",
+    "MediaEngine.JfdDuplicateEdit": "Повторюються адреса сектора та порядок на доріжці JFD.",
+    "MediaEngine.JfdDescriptorConflict": "Суперечливі зміни спільних дескрипторів JFD.",
+    "MediaEngine.JfdDataConflict": "Суперечливі зміни спільних даних секторів JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD містить сектори, відсутні в його початкових таблицях.",
+    "MediaEngine.JfdOverlapConflict": "Суперечливі зміни даних JFD, що перекриваються."
+  }
+}

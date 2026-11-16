@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD depășește dimensiunea suportată.",
+    "MediaEngine.JfdExpansion": "Decompresia JFD depășește dimensiunea suportată.",
+    "MediaEngine.JfdCompression": "Datele Gzip JFD nu au putut fi decomprimate.",
+    "MediaEngine.JfdHeader": "Semnătura sau antetul JFD nevalidă.",
+    "MediaEngine.JfdDeclaredLength": "Dimensiunea necomprimată JFD nu corespunde antetului.",
+    "MediaEngine.JfdTables": "Deplasări nevalide ale tabelelor JFD.",
+    "MediaEngine.JfdTrackCount": "Număr nevalid de piste JFD.",
+    "MediaEngine.JfdDeltaTables": "Deplasări nevalide ale tabelelor delta JFD.",
+    "MediaEngine.JfdTrackOffset": "O pistă JFD indică în afara tabelului de sectoare.",
+    "MediaEngine.JfdSectorEncoding": "Dimensiunea sau densitatea nevalidă a sectorului JFD.",
+    "MediaEngine.JfdRecordCount": "Prea multe înregistrări JFD pe o singură pistă.",
+    "MediaEngine.JfdTruncated": "Structură JFD trunchiată.",
+    "MediaEngine.JfdOffset": "Offset JFD depășește lungimea imaginii.",
+    "MediaEngine.JfdEditGeometry": "Editarea sectorului JFD trebuie să păstreze geometria nativă.",
+    "MediaEngine.JfdDuplicateEdit": "Adresă de sector și ordine în pista JFD duplicate.",
+    "MediaEngine.JfdDescriptorConflict": "Editări contradictorii ale descriptorilor comuni JFD.",
+    "MediaEngine.JfdDataConflict": "Editări contradictorii ale datelor comune din sectorul JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD conține sectoare absente din tabelele sale native.",
+    "MediaEngine.JfdOverlapConflict": "Editări contradictorii ale datelor JFD care se suprapun."
+  }
+}

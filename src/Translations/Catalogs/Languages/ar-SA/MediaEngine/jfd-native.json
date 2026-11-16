@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "يتجاوز JFD الحجم المدعوم.",
+    "MediaEngine.JfdExpansion": "يتجاوز فك ضغط JFD الحجم المدعوم.",
+    "MediaEngine.JfdCompression": "تعذر فك ضغط بيانات gzip في JFD.",
+    "MediaEngine.JfdHeader": "توقيع JFD أو رأسه غير صالح.",
+    "MediaEngine.JfdDeclaredLength": "حجم JFD بعد فك الضغط لا يطابق الرأس.",
+    "MediaEngine.JfdTables": "إزاحات جداول JFD غير صالحة.",
+    "MediaEngine.JfdTrackCount": "عدد مسارات JFD غير صالح.",
+    "MediaEngine.JfdDeltaTables": "إزاحات جداول التغييرات في JFD غير صالحة.",
+    "MediaEngine.JfdTrackOffset": "يشير مسار JFD إلى خارج جدول القطاعات.",
+    "MediaEngine.JfdSectorEncoding": "حجم قطاع JFD أو كثافته غير صالح.",
+    "MediaEngine.JfdRecordCount": "عدد سجلات JFD في مسار واحد أكبر من المسموح.",
+    "MediaEngine.JfdTruncated": "بنية JFD مبتورة.",
+    "MediaEngine.JfdOffset": "تتجاوز إزاحة JFD طول صورة القرص.",
+    "MediaEngine.JfdEditGeometry": "يجب أن تحافظ تعديلات قطاعات JFD على البنية الهندسية الأصلية.",
+    "MediaEngine.JfdDuplicateEdit": "عنوان قطاع JFD وترتيبه في المسار مكرران.",
+    "MediaEngine.JfdDescriptorConflict": "تعديلات متعارضة لواصفات JFD المشتركة.",
+    "MediaEngine.JfdDataConflict": "تعديلات متعارضة لبيانات قطاعات JFD المشتركة.",
+    "MediaEngine.JfdExtraSectors": "يحتوي JFD على قطاعات غير موجودة في جداوله الأصلية.",
+    "MediaEngine.JfdOverlapConflict": "تعديلات متعارضة لبيانات JFD المتداخلة."
+  }
+}

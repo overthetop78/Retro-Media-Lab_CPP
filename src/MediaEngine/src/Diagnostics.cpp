@@ -3,6 +3,26 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::JfdLength:return DiagnosticKeys::JfdLength;
+    case DiagnosticCode::JfdExpansion:return DiagnosticKeys::JfdExpansion;
+    case DiagnosticCode::JfdCompression:return DiagnosticKeys::JfdCompression;
+    case DiagnosticCode::JfdHeader:return DiagnosticKeys::JfdHeader;
+    case DiagnosticCode::JfdDeclaredLength:return DiagnosticKeys::JfdDeclaredLength;
+    case DiagnosticCode::JfdTables:return DiagnosticKeys::JfdTables;
+    case DiagnosticCode::JfdTrackCount:return DiagnosticKeys::JfdTrackCount;
+    case DiagnosticCode::JfdDeltaTables:return DiagnosticKeys::JfdDeltaTables;
+    case DiagnosticCode::JfdTrackOffset:return DiagnosticKeys::JfdTrackOffset;
+    case DiagnosticCode::JfdSectorEncoding:return DiagnosticKeys::JfdSectorEncoding;
+    case DiagnosticCode::JfdRecordCount:return DiagnosticKeys::JfdRecordCount;
+    case DiagnosticCode::JfdTruncated:return DiagnosticKeys::JfdTruncated;
+    case DiagnosticCode::JfdOffset:return DiagnosticKeys::JfdOffset;
+    case DiagnosticCode::JfdEditGeometry:return DiagnosticKeys::JfdEditGeometry;
+    case DiagnosticCode::JfdDuplicateEdit:return DiagnosticKeys::JfdDuplicateEdit;
+    case DiagnosticCode::JfdDescriptorConflict:return DiagnosticKeys::JfdDescriptorConflict;
+    case DiagnosticCode::JfdDataConflict:return DiagnosticKeys::JfdDataConflict;
+    case DiagnosticCode::JfdExtraSectors:return DiagnosticKeys::JfdExtraSectors;
+    case DiagnosticCode::JfdOverlapConflict:return DiagnosticKeys::JfdOverlapConflict;
+
     case DiagnosticCode::ScpArgument:return DiagnosticKeys::ScpArgument;
     case DiagnosticCode::ProtectedNullRevolution:return DiagnosticKeys::ProtectedNullRevolution;
 

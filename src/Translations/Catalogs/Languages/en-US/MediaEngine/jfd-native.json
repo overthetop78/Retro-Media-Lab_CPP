@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD exceeds the supported size.",
+    "MediaEngine.JfdExpansion": "JFD decompression exceeds the supported size.",
+    "MediaEngine.JfdCompression": "The JFD gzip data could not be decompressed.",
+    "MediaEngine.JfdHeader": "Invalid JFD signature or header.",
+    "MediaEngine.JfdDeclaredLength": "JFD uncompressed size does not match the header.",
+    "MediaEngine.JfdTables": "Invalid JFD table offsets.",
+    "MediaEngine.JfdTrackCount": "Invalid JFD track count.",
+    "MediaEngine.JfdDeltaTables": "Invalid JFD delta table offsets.",
+    "MediaEngine.JfdTrackOffset": "JFD track points outside the sector table.",
+    "MediaEngine.JfdSectorEncoding": "Invalid JFD sector size or density.",
+    "MediaEngine.JfdRecordCount": "Too many JFD records on one track.",
+    "MediaEngine.JfdTruncated": "Truncated JFD structure.",
+    "MediaEngine.JfdOffset": "JFD offset exceeds the image length.",
+    "MediaEngine.JfdEditGeometry": "JFD sector edits must retain native geometry.",
+    "MediaEngine.JfdDuplicateEdit": "Duplicate JFD sector edit address and track order.",
+    "MediaEngine.JfdDescriptorConflict": "Conflicting edits of shared JFD descriptors.",
+    "MediaEngine.JfdDataConflict": "Conflicting edits of shared JFD sector data.",
+    "MediaEngine.JfdExtraSectors": "JFD contains sectors absent from its native tables.",
+    "MediaEngine.JfdOverlapConflict": "Conflicting edits of overlapping JFD data."
+  }
+}

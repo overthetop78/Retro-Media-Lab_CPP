@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "A JFD meghaladja a támogatott méretet.",
+    "MediaEngine.JfdExpansion": "JFD dekompresszió meghaladja a támogatott méretet.",
+    "MediaEngine.JfdCompression": "A JFD gzip adatait nem lehetett dekompresszálni.",
+    "MediaEngine.JfdHeader": "Érvénytelen JFD aláírás vagy fejléc.",
+    "MediaEngine.JfdDeclaredLength": "JFD tömörítetlen mérete nem egyezik a fejléc.",
+    "MediaEngine.JfdTables": "Érvénytelen JFD-táblaeltolások.",
+    "MediaEngine.JfdTrackCount": "Érvénytelen JFD pályaszám.",
+    "MediaEngine.JfdDeltaTables": "Érvénytelen JFD-változástábla-eltolások.",
+    "MediaEngine.JfdTrackOffset": "Egy JFD-sáv a szektortáblán kívülre mutat.",
+    "MediaEngine.JfdSectorEncoding": "Érvénytelen JFD szektor mérete vagy sűrűsége.",
+    "MediaEngine.JfdRecordCount": "Túl sok JFD-rekord egy sávon.",
+    "MediaEngine.JfdTruncated": "Csonka JFD-struktúra.",
+    "MediaEngine.JfdOffset": "A JFD offset meghaladja a kép hosszát.",
+    "MediaEngine.JfdEditGeometry": "A JFD-szektorok módosításainak meg kell őrizniük az eredeti geometriát.",
+    "MediaEngine.JfdDuplicateEdit": "Ismétlődő JFD-szektorcím és sávon belüli sorrend.",
+    "MediaEngine.JfdDescriptorConflict": "A megosztott JFD-leírók módosításai ütköznek.",
+    "MediaEngine.JfdDataConflict": "A megosztott JFD-szektoradatok módosításai ütköznek.",
+    "MediaEngine.JfdExtraSectors": "A JFD az eredeti tábláiból hiányzó szektorokat tartalmaz.",
+    "MediaEngine.JfdOverlapConflict": "Az átfedő JFD-adatok módosításai ütköznek."
+  }
+}

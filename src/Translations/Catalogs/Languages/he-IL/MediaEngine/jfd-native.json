@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD חורג מהגודל הנתמך.",
+    "MediaEngine.JfdExpansion": "פענוח הדחיסה של JFD חורג מהגודל הנתמך.",
+    "MediaEngine.JfdCompression": "לא ניתן לפענח את נתוני gzip של JFD.",
+    "MediaEngine.JfdHeader": "חתימה או כותרת JFD לא תקינה.",
+    "MediaEngine.JfdDeclaredLength": "הגודל הלא דחוס של JFD אינו תואם לכותרת.",
+    "MediaEngine.JfdTables": "היסטים לא תקינים בטבלאות JFD.",
+    "MediaEngine.JfdTrackCount": "מספר רצועות JFD לא תקין.",
+    "MediaEngine.JfdDeltaTables": "היסטים לא תקינים בטבלאות השינויים של JFD.",
+    "MediaEngine.JfdTrackOffset": "רצועת JFD מצביעה מחוץ לטבלת המגזרים.",
+    "MediaEngine.JfdSectorEncoding": "גודל מגזר JFD או צפיפותו אינם תקינים.",
+    "MediaEngine.JfdRecordCount": "יותר מדי רשומות JFD ברצועה אחת.",
+    "MediaEngine.JfdTruncated": "מבנה JFD קטוע.",
+    "MediaEngine.JfdOffset": "ההיסט ב-JFD חורג מאורך דמות הדיסק.",
+    "MediaEngine.JfdEditGeometry": "עריכת מגזרי JFD חייבת לשמור על הגאומטריה המקורית.",
+    "MediaEngine.JfdDuplicateEdit": "כתובת מגזר וסדר ברצועת JFD מופיעים פעמיים.",
+    "MediaEngine.JfdDescriptorConflict": "עריכות סותרות של מתארי JFD משותפים.",
+    "MediaEngine.JfdDataConflict": "עריכות סותרות של נתוני מגזרי JFD משותפים.",
+    "MediaEngine.JfdExtraSectors": "JFD מכיל מגזרים שאינם מופיעים בטבלאות המקוריות שלו.",
+    "MediaEngine.JfdOverlapConflict": "עריכות סותרות של נתוני JFD חופפים."
+  }
+}

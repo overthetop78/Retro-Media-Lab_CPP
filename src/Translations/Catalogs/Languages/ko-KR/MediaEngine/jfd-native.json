@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD가 지원 크기를 초과합니다.",
+    "MediaEngine.JfdExpansion": "JFD 압축 해제 결과가 지원 크기를 초과합니다.",
+    "MediaEngine.JfdCompression": "JFD gzip 데이터의 압축을 해제할 수 없습니다.",
+    "MediaEngine.JfdHeader": "JFD 서명 또는 헤더가 올바르지 않습니다.",
+    "MediaEngine.JfdDeclaredLength": "JFD의 압축되지 않은 크기가 헤더와 일치하지 않습니다.",
+    "MediaEngine.JfdTables": "JFD 테이블 오프셋이 올바르지 않습니다.",
+    "MediaEngine.JfdTrackCount": "JFD 트랙 수가 올바르지 않습니다.",
+    "MediaEngine.JfdDeltaTables": "JFD 변경 테이블 오프셋이 올바르지 않습니다.",
+    "MediaEngine.JfdTrackOffset": "JFD 트랙이 섹터 테이블 범위 밖을 가리킵니다.",
+    "MediaEngine.JfdSectorEncoding": "JFD 섹터 크기 또는 밀도가 올바르지 않습니다.",
+    "MediaEngine.JfdRecordCount": "한 트랙에 JFD 레코드가 너무 많습니다.",
+    "MediaEngine.JfdTruncated": "JFD 구조가 잘렸습니다.",
+    "MediaEngine.JfdOffset": "JFD 오프셋이 디스크 이미지 길이를 초과합니다.",
+    "MediaEngine.JfdEditGeometry": "JFD 섹터를 편집할 때 원래 지오메트리를 유지해야 합니다.",
+    "MediaEngine.JfdDuplicateEdit": "JFD 섹터 주소와 트랙 내 순서가 중복됩니다.",
+    "MediaEngine.JfdDescriptorConflict": "공유 JFD 설명자의 편집 내용이 충돌합니다.",
+    "MediaEngine.JfdDataConflict": "공유 JFD 섹터 데이터의 편집 내용이 충돌합니다.",
+    "MediaEngine.JfdExtraSectors": "JFD에 원래 테이블에 없는 섹터가 포함되어 있습니다.",
+    "MediaEngine.JfdOverlapConflict": "겹치는 JFD 데이터의 편집 내용이 충돌합니다."
+  }
+}

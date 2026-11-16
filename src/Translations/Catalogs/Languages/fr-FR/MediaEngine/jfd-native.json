@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD dépasse la taille supportée.",
+    "MediaEngine.JfdExpansion": "La décompression JFD dépasse la taille supportée.",
+    "MediaEngine.JfdCompression": "Les données JFD gzip ne peuvent pas être décompressées.",
+    "MediaEngine.JfdHeader": "Signature ou en-tête JFD non valide.",
+    "MediaEngine.JfdDeclaredLength": "La taille non compressée de JFD ne correspond pas à l'en-tête.",
+    "MediaEngine.JfdTables": "Décalages des tables JFD non valides.",
+    "MediaEngine.JfdTrackCount": "Nombre de pistes JFD non valide.",
+    "MediaEngine.JfdDeltaTables": "Décalages des tables delta JFD non valides.",
+    "MediaEngine.JfdTrackOffset": "Une piste JFD pointe hors de la table des secteurs.",
+    "MediaEngine.JfdSectorEncoding": "Taille ou densité du secteur JFD non valable.",
+    "MediaEngine.JfdRecordCount": "Trop d’enregistrements JFD sur une piste.",
+    "MediaEngine.JfdTruncated": "Structure tronquée JFD.",
+    "MediaEngine.JfdOffset": "Le décalage JFD dépasse la longueur de l'image.",
+    "MediaEngine.JfdEditGeometry": "Les modifications du secteur JFD doivent conserver la géométrie native.",
+    "MediaEngine.JfdDuplicateEdit": "Adresse de secteur et ordre dans la piste JFD dupliqués.",
+    "MediaEngine.JfdDescriptorConflict": "Modifications contradictoires de descripteurs JFD partagés.",
+    "MediaEngine.JfdDataConflict": "Modifications contradictoires de données de secteurs JFD partagées.",
+    "MediaEngine.JfdExtraSectors": "JFD contient des secteurs absents de ses tables natives.",
+    "MediaEngine.JfdOverlapConflict": "Modifications contradictoires de données JFD qui se chevauchent."
+  }
+}

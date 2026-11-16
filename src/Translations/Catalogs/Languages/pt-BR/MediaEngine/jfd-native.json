@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD excede o tamanho suportado.",
+    "MediaEngine.JfdExpansion": "A descompressão JFD excede o tamanho suportado.",
+    "MediaEngine.JfdCompression": "Os dados do JFD gzip não puderam ser descomprimidos.",
+    "MediaEngine.JfdHeader": "Assinatura ou cabeçalho JFD inválidos.",
+    "MediaEngine.JfdDeclaredLength": "O tamanho não comprimido do JFD não corresponde ao cabeçalho.",
+    "MediaEngine.JfdTables": "Deslocamentos da tabela JFD inválidos.",
+    "MediaEngine.JfdTrackCount": "Contagem de faixas JFD inválida.",
+    "MediaEngine.JfdDeltaTables": "Deslocamentos da tabela delta JFD inválidos.",
+    "MediaEngine.JfdTrackOffset": "Uma trilha JFD aponta para fora da tabela de setores.",
+    "MediaEngine.JfdSectorEncoding": "Tamanho ou densidade do setor JFD inválido.",
+    "MediaEngine.JfdRecordCount": "Muitos registros JFD em uma trilha.",
+    "MediaEngine.JfdTruncated": "Estrutura JFD truncada.",
+    "MediaEngine.JfdOffset": "O deslocamento JFD excede o comprimento da imagem.",
+    "MediaEngine.JfdEditGeometry": "As edições do setor JFD devem manter a geometria nativa.",
+    "MediaEngine.JfdDuplicateEdit": "Endereço de setor e ordem na trilha JFD duplicados.",
+    "MediaEngine.JfdDescriptorConflict": "Edições conflitantes de descritores compartilhados JFD.",
+    "MediaEngine.JfdDataConflict": "Edições conflitantes de dados compartilhados do setor JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD contém setores ausentes de suas tabelas nativas.",
+    "MediaEngine.JfdOverlapConflict": "Edições conflitantes de dados JFD sobrepostos."
+  }
+}

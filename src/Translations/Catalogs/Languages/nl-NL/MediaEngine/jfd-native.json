@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD overschrijdt de ondersteunde grootte.",
+    "MediaEngine.JfdExpansion": "JFD decompressie overtreft de ondersteunde grootte.",
+    "MediaEngine.JfdCompression": "De JFD gzip-gegevens konden niet gedecomprimeerd worden.",
+    "MediaEngine.JfdHeader": "Ongeldige JFD handtekening of header.",
+    "MediaEngine.JfdDeclaredLength": "JFD ongecomprimeerde grootte komt niet overeen met de header.",
+    "MediaEngine.JfdTables": "Ongeldige JFD tabel offsets.",
+    "MediaEngine.JfdTrackCount": "Ongeldig aantal JFD-sporen.",
+    "MediaEngine.JfdDeltaTables": "Ongeldige JFD delta tabel offsets.",
+    "MediaEngine.JfdTrackOffset": "Een JFD-spoor verwijst buiten de sectortabel.",
+    "MediaEngine.JfdSectorEncoding": "Ongeldige JFD sectorgrootte of -dichtheid.",
+    "MediaEngine.JfdRecordCount": "Te veel JFD-records op één spoor.",
+    "MediaEngine.JfdTruncated": "Afgekorte JFD structuur.",
+    "MediaEngine.JfdOffset": "JFD offset overschrijdt de afbeeldingslengte.",
+    "MediaEngine.JfdEditGeometry": "De JFD sectorbewerkingen moeten de eigen geometrie behouden.",
+    "MediaEngine.JfdDuplicateEdit": "Dubbel JFD-sectoradres en volgorde binnen het spoor.",
+    "MediaEngine.JfdDescriptorConflict": "Conflicterende bewerkingen van gedeelde JFD-descriptoren.",
+    "MediaEngine.JfdDataConflict": "Conflicterende bewerkingen van gedeelde JFD-sectorgegevens.",
+    "MediaEngine.JfdExtraSectors": "JFD bevat sectoren die niet voorkomen in zijn eigen tabellen.",
+    "MediaEngine.JfdOverlapConflict": "Conflicterende bewerkingen van overlappende JFD-gegevens."
+  }
+}

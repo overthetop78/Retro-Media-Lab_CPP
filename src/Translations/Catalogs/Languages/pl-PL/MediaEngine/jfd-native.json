@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD przekracza obsługiwany rozmiar.",
+    "MediaEngine.JfdExpansion": "Dekompresja JFD przekracza obsługiwany rozmiar.",
+    "MediaEngine.JfdCompression": "Dane Gzip JFD nie mogły zostać zdekompresowane.",
+    "MediaEngine.JfdHeader": "Nieprawidłowy podpis lub nagłówek JFD.",
+    "MediaEngine.JfdDeclaredLength": "Nieskompresowany rozmiar JFD nie pasuje do nagłówka.",
+    "MediaEngine.JfdTables": "Nieprawidłowe offsety tabeli JFD.",
+    "MediaEngine.JfdTrackCount": "Nieprawidłowa liczba ścieżek JFD.",
+    "MediaEngine.JfdDeltaTables": "Nieprawidłowe offsety tabeli delta JFD.",
+    "MediaEngine.JfdTrackOffset": "Ścieżka JFD wskazuje poza tabelę sektorów.",
+    "MediaEngine.JfdSectorEncoding": "Nieprawidłowy rozmiar lub gęstość sektora JFD.",
+    "MediaEngine.JfdRecordCount": "Zbyt wiele rekordów JFD na jednej ścieżce.",
+    "MediaEngine.JfdTruncated": "Uszkodzona struktura JFD.",
+    "MediaEngine.JfdOffset": "Offset JFD przekracza długość obrazu.",
+    "MediaEngine.JfdEditGeometry": "Zmiany sektorów JFD muszą zachować oryginalną geometrię.",
+    "MediaEngine.JfdDuplicateEdit": "Powtórzony adres sektora i kolejność na ścieżce JFD.",
+    "MediaEngine.JfdDescriptorConflict": "Sprzeczne zmiany współdzielonych deskryptorów JFD.",
+    "MediaEngine.JfdDataConflict": "Sprzeczne zmiany współdzielonych danych sektorów JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD zawiera sektory nieobecne w rodzimych tabelach.",
+    "MediaEngine.JfdOverlapConflict": "Sprzeczne zmiany nakładających się danych JFD."
+  }
+}

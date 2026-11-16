@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD desteklenen boyutunu aşıyor.",
+    "MediaEngine.JfdExpansion": "JFD açma işlemi desteklenen boyutu aşıyor.",
+    "MediaEngine.JfdCompression": "JFD gzip verileri açılamadı.",
+    "MediaEngine.JfdHeader": "Geçersiz JFD imzası veya başlığı.",
+    "MediaEngine.JfdDeclaredLength": "JFD sıkıştırılmamış boyutu başlıkla eşleşmiyor.",
+    "MediaEngine.JfdTables": "Geçersiz JFD tablo ofsetleri.",
+    "MediaEngine.JfdTrackCount": "Geçersiz JFD iz sayısı.",
+    "MediaEngine.JfdDeltaTables": "Geçersiz JFD değişiklik tablosu ofsetleri.",
+    "MediaEngine.JfdTrackOffset": "JFD izi sektör tablosunun dışını gösteriyor.",
+    "MediaEngine.JfdSectorEncoding": "Geçersiz JFD sektör boyutu veya yoğunluğu.",
+    "MediaEngine.JfdRecordCount": "Bir yolda çok fazla JFD kaydı.",
+    "MediaEngine.JfdTruncated": "Kesilmiş JFD yapısı.",
+    "MediaEngine.JfdOffset": "JFD ofseti disk görüntüsü uzunluğunu aşıyor.",
+    "MediaEngine.JfdEditGeometry": "JFD sektörü düzenlemeleri yerel geometriyi tutmalıdır.",
+    "MediaEngine.JfdDuplicateEdit": "Yinelenen JFD sektör adresi ve iz içi sıra.",
+    "MediaEngine.JfdDescriptorConflict": "Paylaşılan JFD tanımlayıcılarının düzenlemeleri çakışıyor.",
+    "MediaEngine.JfdDataConflict": "Paylaşılan JFD sektör verilerinin düzenlemeleri çakışıyor.",
+    "MediaEngine.JfdExtraSectors": "JFD, yerel masalarından yoksun olan sektörler içeriyor.",
+    "MediaEngine.JfdOverlapConflict": "Örtüşen JFD verilerinin düzenlemeleri çakışıyor."
+  }
+}

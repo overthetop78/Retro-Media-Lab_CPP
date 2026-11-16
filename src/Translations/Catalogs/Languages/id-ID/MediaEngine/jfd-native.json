@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD melebihi ukuran yang didukung.",
+    "MediaEngine.JfdExpansion": "Dekompresi JFD melebihi ukuran yang didukung.",
+    "MediaEngine.JfdCompression": "Data gzip JFD tidak dapat didekompresi.",
+    "MediaEngine.JfdHeader": "Tanda tangan atau header JFD tidak valid.",
+    "MediaEngine.JfdDeclaredLength": "JFD ukuran tidak dikompresi tidak cocok dengan header.",
+    "MediaEngine.JfdTables": "Ofset tabel JFD tidak valid.",
+    "MediaEngine.JfdTrackCount": "Jumlah trek JFD tidak valid.",
+    "MediaEngine.JfdDeltaTables": "Ofset tabel delta JFD tidak valid.",
+    "MediaEngine.JfdTrackOffset": "Trek JFD menunjuk ke luar tabel sektor.",
+    "MediaEngine.JfdSectorEncoding": "Ukuran atau kepadatan sektor JFD tidak valid.",
+    "MediaEngine.JfdRecordCount": "Terlalu banyak catatan JFD di satu jalur.",
+    "MediaEngine.JfdTruncated": "Terpancung JFD struktur.",
+    "MediaEngine.JfdOffset": "Ofset JFD melebihi panjang gambar.",
+    "MediaEngine.JfdEditGeometry": "Perubahan sektor JFD harus mempertahankan geometri asli.",
+    "MediaEngine.JfdDuplicateEdit": "Duplikasi alamat pengubah sektor JFD dan urutan trek.",
+    "MediaEngine.JfdDescriptorConflict": "Konflik menyunting deskripsi bersama JFD.",
+    "MediaEngine.JfdDataConflict": "Konflik menyunting data sektor JFD bersama.",
+    "MediaEngine.JfdExtraSectors": "JFD berisi sektor absen dari tabel asalnya.",
+    "MediaEngine.JfdOverlapConflict": "Perubahan data JFD yang tumpang tindih saling bertentangan."
+  }
+}

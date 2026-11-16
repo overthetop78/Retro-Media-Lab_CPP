@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD 超出支援的大小。",
+    "MediaEngine.JfdExpansion": "JFD 解壓縮結果超出支援的大小。",
+    "MediaEngine.JfdCompression": "無法解壓縮 JFD 的 gzip 資料。",
+    "MediaEngine.JfdHeader": "JFD 簽章或檔案標頭無效。",
+    "MediaEngine.JfdDeclaredLength": "JFD 未壓縮大小與檔案標頭不符。",
+    "MediaEngine.JfdTables": "JFD 表格位移量無效。",
+    "MediaEngine.JfdTrackCount": "JFD 磁軌數無效。",
+    "MediaEngine.JfdDeltaTables": "JFD 增量表格位移量無效。",
+    "MediaEngine.JfdTrackOffset": "JFD 磁軌指向磁區表格之外。",
+    "MediaEngine.JfdSectorEncoding": "JFD 磁區大小或密度無效。",
+    "MediaEngine.JfdRecordCount": "一條磁軌上的 JFD 記錄過多。",
+    "MediaEngine.JfdTruncated": "JFD 結構遭到截斷。",
+    "MediaEngine.JfdOffset": "JFD 位移量超出磁碟映像長度。",
+    "MediaEngine.JfdEditGeometry": "編輯 JFD 磁區必須保留原始幾何結構。",
+    "MediaEngine.JfdDuplicateEdit": "JFD 磁區位址和磁軌內順序重複。",
+    "MediaEngine.JfdDescriptorConflict": "對共用 JFD 描述元的修改互相衝突。",
+    "MediaEngine.JfdDataConflict": "對共用 JFD 磁區資料的修改互相衝突。",
+    "MediaEngine.JfdExtraSectors": "JFD 包含原始表格中不存在的磁區。",
+    "MediaEngine.JfdOverlapConflict": "對重疊 JFD 資料的修改互相衝突。"
+  }
+}

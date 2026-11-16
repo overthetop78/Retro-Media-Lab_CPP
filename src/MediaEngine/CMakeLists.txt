@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Jfd/Decode.cpp
+  src/Formats/Jfd/Rewrite.cpp
+  src/Formats/Jfd/Compression.cpp
   src/Formats/Catalog/Catalogue.cpp
   src/Formats/Catalog/Runtime.cpp
   src/Formats/Catalog/Greaseweazle.cpp
@@ -323,7 +326,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems)
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic)
 set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
 install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 

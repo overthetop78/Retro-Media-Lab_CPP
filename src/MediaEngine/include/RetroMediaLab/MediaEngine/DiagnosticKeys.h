@@ -1,6 +1,25 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view JfdLength="MediaEngine.JfdLength";
+inline constexpr std::string_view JfdExpansion="MediaEngine.JfdExpansion";
+inline constexpr std::string_view JfdCompression="MediaEngine.JfdCompression";
+inline constexpr std::string_view JfdHeader="MediaEngine.JfdHeader";
+inline constexpr std::string_view JfdDeclaredLength="MediaEngine.JfdDeclaredLength";
+inline constexpr std::string_view JfdTables="MediaEngine.JfdTables";
+inline constexpr std::string_view JfdTrackCount="MediaEngine.JfdTrackCount";
+inline constexpr std::string_view JfdDeltaTables="MediaEngine.JfdDeltaTables";
+inline constexpr std::string_view JfdTrackOffset="MediaEngine.JfdTrackOffset";
+inline constexpr std::string_view JfdSectorEncoding="MediaEngine.JfdSectorEncoding";
+inline constexpr std::string_view JfdRecordCount="MediaEngine.JfdRecordCount";
+inline constexpr std::string_view JfdTruncated="MediaEngine.JfdTruncated";
+inline constexpr std::string_view JfdOffset="MediaEngine.JfdOffset";
+inline constexpr std::string_view JfdEditGeometry="MediaEngine.JfdEditGeometry";
+inline constexpr std::string_view JfdDuplicateEdit="MediaEngine.JfdDuplicateEdit";
+inline constexpr std::string_view JfdDescriptorConflict="MediaEngine.JfdDescriptorConflict";
+inline constexpr std::string_view JfdDataConflict="MediaEngine.JfdDataConflict";
+inline constexpr std::string_view JfdExtraSectors="MediaEngine.JfdExtraSectors";
+inline constexpr std::string_view JfdOverlapConflict="MediaEngine.JfdOverlapConflict";
 inline constexpr std::string_view ScpArgument="MediaEngine.ScpArgument";
 inline constexpr std::string_view ProtectedNullRevolution="MediaEngine.ProtectedNullRevolution";
 inline constexpr std::string_view FormatCatalogData="MediaEngine.FormatCatalogData";

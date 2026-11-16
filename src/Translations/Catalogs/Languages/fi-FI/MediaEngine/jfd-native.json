@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD ylittää tuetun koon.",
+    "MediaEngine.JfdExpansion": "JFD-tietojen purkaminen ylittää tuetun koon.",
+    "MediaEngine.JfdCompression": "JFD- gzip-tietoja ei voitu purkaa.",
+    "MediaEngine.JfdHeader": "Virheellinen JFD- allekirjoitus tai otsikko.",
+    "MediaEngine.JfdDeclaredLength": "JFD pakkaamaton koko ei vastaa otsikkoa.",
+    "MediaEngine.JfdTables": "Virheelliset JFD-taulukoiden siirtymät.",
+    "MediaEngine.JfdTrackCount": "Virheellinen JFD-raitaluku.",
+    "MediaEngine.JfdDeltaTables": "Virheelliset JFD-muutostaulukoiden siirtymät.",
+    "MediaEngine.JfdTrackOffset": "JFD-raita osoittaa sektoritaulukon ulkopuolelle.",
+    "MediaEngine.JfdSectorEncoding": "Virheellinen JFD-sektorin koko tai tiheys.",
+    "MediaEngine.JfdRecordCount": "Liian monta JFD-tietuetta yhdellä raidalla.",
+    "MediaEngine.JfdTruncated": "Katkennut JFD-rakenne.",
+    "MediaEngine.JfdOffset": "JFD-siirtymä ylittää levykuvan pituuden.",
+    "MediaEngine.JfdEditGeometry": "JFD-sektorin muokkauksissa on säilytettävä natiivi geometria.",
+    "MediaEngine.JfdDuplicateEdit": "JFD-sektorin osoite ja järjestys raidalla esiintyvät kahdesti.",
+    "MediaEngine.JfdDescriptorConflict": "Jaettujen JFD-kuvausten muokkaukset ovat ristiriidassa.",
+    "MediaEngine.JfdDataConflict": "Jaettujen JFD-sektoritietojen muokkaukset ovat ristiriidassa.",
+    "MediaEngine.JfdExtraSectors": "JFD sisältää sektoreita, jotka puuttuvat sen alkuperäisistä taulukoista.",
+    "MediaEngine.JfdOverlapConflict": "Päällekkäisten JFD-tietojen muokkaukset ovat ristiriidassa."
+  }
+}

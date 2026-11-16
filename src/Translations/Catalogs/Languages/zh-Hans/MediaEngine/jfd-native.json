@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD 超出支持的大小。",
+    "MediaEngine.JfdExpansion": "JFD 解压结果超出支持的大小。",
+    "MediaEngine.JfdCompression": "无法解压 JFD 的 gzip 数据。",
+    "MediaEngine.JfdHeader": "JFD 签名或文件头无效。",
+    "MediaEngine.JfdDeclaredLength": "JFD 未压缩大小与文件头不匹配。",
+    "MediaEngine.JfdTables": "JFD 表偏移量无效。",
+    "MediaEngine.JfdTrackCount": "JFD 磁道数无效。",
+    "MediaEngine.JfdDeltaTables": "JFD 增量表偏移量无效。",
+    "MediaEngine.JfdTrackOffset": "JFD 磁道指向扇区表之外。",
+    "MediaEngine.JfdSectorEncoding": "JFD 扇区大小或密度无效。",
+    "MediaEngine.JfdRecordCount": "一条磁道上的 JFD 记录过多。",
+    "MediaEngine.JfdTruncated": "JFD 结构被截断。",
+    "MediaEngine.JfdOffset": "JFD 偏移量超出磁盘映像长度。",
+    "MediaEngine.JfdEditGeometry": "编辑 JFD 扇区必须保留原始几何结构。",
+    "MediaEngine.JfdDuplicateEdit": "JFD 扇区地址和磁道内顺序重复。",
+    "MediaEngine.JfdDescriptorConflict": "对共享 JFD 描述符的修改相互冲突。",
+    "MediaEngine.JfdDataConflict": "对共享 JFD 扇区数据的修改相互冲突。",
+    "MediaEngine.JfdExtraSectors": "JFD 包含原始表中不存在的扇区。",
+    "MediaEngine.JfdOverlapConflict": "对重叠 JFD 数据的修改相互冲突。"
+  }
+}

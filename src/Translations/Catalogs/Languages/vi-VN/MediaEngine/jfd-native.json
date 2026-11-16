@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD vượt quá kích thước được hỗ trợ.",
+    "MediaEngine.JfdExpansion": "Dữ liệu JFD sau giải nén vượt quá kích thước được hỗ trợ.",
+    "MediaEngine.JfdCompression": "Không thể giải nén dữ liệu gzip của JFD.",
+    "MediaEngine.JfdHeader": "Chữ ký hoặc phần đầu JFD không hợp lệ.",
+    "MediaEngine.JfdDeclaredLength": "Kích thước chưa nén của JFD không khớp với phần đầu.",
+    "MediaEngine.JfdTables": "Độ lệch các bảng JFD không hợp lệ.",
+    "MediaEngine.JfdTrackCount": "Số rãnh JFD không hợp lệ.",
+    "MediaEngine.JfdDeltaTables": "Độ lệch các bảng thay đổi JFD không hợp lệ.",
+    "MediaEngine.JfdTrackOffset": "Rãnh JFD trỏ ra ngoài bảng các cung từ.",
+    "MediaEngine.JfdSectorEncoding": "Kích thước hoặc mật độ cung từ JFD không hợp lệ.",
+    "MediaEngine.JfdRecordCount": "Quá nhiều bản ghi JFD trên một rãnh.",
+    "MediaEngine.JfdTruncated": "Cấu trúc JFD bị cắt ngắn.",
+    "MediaEngine.JfdOffset": "Độ lệch JFD vượt quá độ dài ảnh đĩa.",
+    "MediaEngine.JfdEditGeometry": "Chỉnh sửa cung từ JFD phải giữ nguyên hình học gốc.",
+    "MediaEngine.JfdDuplicateEdit": "Địa chỉ cung từ và thứ tự trong rãnh JFD bị trùng.",
+    "MediaEngine.JfdDescriptorConflict": "Các chỉnh sửa bộ mô tả JFD dùng chung xung đột.",
+    "MediaEngine.JfdDataConflict": "Các chỉnh sửa dữ liệu cung từ JFD dùng chung xung đột.",
+    "MediaEngine.JfdExtraSectors": "JFD chứa cung từ không có trong các bảng gốc.",
+    "MediaEngine.JfdOverlapConflict": "Các chỉnh sửa dữ liệu JFD chồng lấp xung đột."
+  }
+}

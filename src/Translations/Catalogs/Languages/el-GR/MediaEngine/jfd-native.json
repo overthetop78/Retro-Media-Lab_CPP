@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD υπερβαίνει το υποστηριζόμενο μέγεθος.",
+    "MediaEngine.JfdExpansion": "Η αποσυμπίεση JFD υπερβαίνει το υποστηριζόμενο μέγεθος.",
+    "MediaEngine.JfdCompression": "Τα δεδομένα της JFD gzip δεν ήταν δυνατόν να αποσυμπιέζονται.",
+    "MediaEngine.JfdHeader": "Μη έγκυρη υπογραφή ή κεφαλίδα JFD.",
+    "MediaEngine.JfdDeclaredLength": "JFD μη συμπιεσμένο μέγεθος δεν ταιριάζει με την επικεφαλίδα.",
+    "MediaEngine.JfdTables": "Μη έγκυρες αντισταθμίσεις πίνακα JFD.",
+    "MediaEngine.JfdTrackCount": "Μη έγκυρος αριθμός κομματιών JFD.",
+    "MediaEngine.JfdDeltaTables": "Μη έγκυρες μετατοπίσεις πινάκων αλλαγών JFD.",
+    "MediaEngine.JfdTrackOffset": "Μια τροχιά JFD δείχνει εκτός του πίνακα τομέων.",
+    "MediaEngine.JfdSectorEncoding": "Μη έγκυρο μέγεθος ή πυκνότητα τομέα JFD.",
+    "MediaEngine.JfdRecordCount": "Πάρα πολλές εγγραφές JFD σε μία τροχιά.",
+    "MediaEngine.JfdTruncated": "Περικομμένη δομή JFD.",
+    "MediaEngine.JfdOffset": "Η μετατόπιση JFD υπερβαίνει το μήκος της εικόνας.",
+    "MediaEngine.JfdEditGeometry": "Οι επεξεργασίες του τομέα JFD πρέπει να διατηρούν την εγγενή γεωμετρία.",
+    "MediaEngine.JfdDuplicateEdit": "Διπλή διεύθυνση τομέα και σειρά στην τροχιά JFD.",
+    "MediaEngine.JfdDescriptorConflict": "Συγκρουόμενες επεξεργασίες των κοινών περιγραφέων JFD.",
+    "MediaEngine.JfdDataConflict": "Συγκρουόμενες επεξεργασίες κοινών δεδομένων τομέα JFD.",
+    "MediaEngine.JfdExtraSectors": "Το JFD περιέχει τομείς που απουσιάζουν από τους εγγενείς πίνακες του.",
+    "MediaEngine.JfdOverlapConflict": "Συγκρουόμενες επεξεργασίες των επικαλυπτόμενων δεδομένων JFD."
+  }
+}

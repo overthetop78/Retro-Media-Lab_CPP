@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD överstiger den stödda storleken.",
+    "MediaEngine.JfdExpansion": "JFD-dekompression överstiger den stödda storleken.",
+    "MediaEngine.JfdCompression": "JFD-gzipdata kan inte dekomprimeras.",
+    "MediaEngine.JfdHeader": "Ogiltig JFD signatur eller rubrik.",
+    "MediaEngine.JfdDeclaredLength": "JFD okomprimerad storlek matchar inte rubriken.",
+    "MediaEngine.JfdTables": "Ogiltiga förskjutningar i JFD-tabeller.",
+    "MediaEngine.JfdTrackCount": "Ogiltigt antal JFD-spår.",
+    "MediaEngine.JfdDeltaTables": "Ogiltiga förskjutningar i JFD-deltatabeller.",
+    "MediaEngine.JfdTrackOffset": "Ett JFD-spår pekar utanför sektortabellen.",
+    "MediaEngine.JfdSectorEncoding": "Ogiltig JFD-sektorstorlek eller densitet.",
+    "MediaEngine.JfdRecordCount": "För många JFD-poster på ett spår.",
+    "MediaEngine.JfdTruncated": "Avkortad JFD-struktur.",
+    "MediaEngine.JfdOffset": "JFD-förskjutningen överstiger avbildningens längd.",
+    "MediaEngine.JfdEditGeometry": "Ändringar av JFD-sektorer måste bevara den ursprungliga geometrin.",
+    "MediaEngine.JfdDuplicateEdit": "Duplicerad sektoradress och ordning i JFD-spåret.",
+    "MediaEngine.JfdDescriptorConflict": "Konfliktredigeringar av delade JFD-beskrivningar.",
+    "MediaEngine.JfdDataConflict": "Konfliktredigeringar av delade data från JFD-sektorn.",
+    "MediaEngine.JfdExtraSectors": "JFD innehåller sektorer som saknas i de ursprungliga tabellerna.",
+    "MediaEngine.JfdOverlapConflict": "Konfliktredigeringar av överlappande JFD-data."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD übersteigt die unterstützte Größe.",
+    "MediaEngine.JfdExpansion": "Die JFD-Dekompression übersteigt die unterstützte Größe.",
+    "MediaEngine.JfdCompression": "Die JFD gzip Daten konnten nicht dekomprimiert werden.",
+    "MediaEngine.JfdHeader": "Ungültige JFD-Signatur oder Header.",
+    "MediaEngine.JfdDeclaredLength": "JFD unkomprimierte Größe passt nicht zum Header.",
+    "MediaEngine.JfdTables": "Ungültige JFD-Tabellenversätze.",
+    "MediaEngine.JfdTrackCount": "Ungültige Anzahl von JFD-Spuren.",
+    "MediaEngine.JfdDeltaTables": "Ungültige Versätze der JFD-Deltatabellen.",
+    "MediaEngine.JfdTrackOffset": "Eine JFD-Spur verweist außerhalb der Sektortabelle.",
+    "MediaEngine.JfdSectorEncoding": "Ungültige JFD-Sektorgröße oder -dichte.",
+    "MediaEngine.JfdRecordCount": "Zu viele JFD-Aufzeichnungen auf einer Spur.",
+    "MediaEngine.JfdTruncated": "Abgeschnittene JFD-Struktur.",
+    "MediaEngine.JfdOffset": "Der JFD-Offset überschreitet die Bildlänge.",
+    "MediaEngine.JfdEditGeometry": "JFD-Sektorbearbeitungen müssen native Geometrie beibehalten.",
+    "MediaEngine.JfdDuplicateEdit": "Doppelte JFD-Sektoradresse und Reihenfolge innerhalb der Spur.",
+    "MediaEngine.JfdDescriptorConflict": "Konflikthafte Bearbeitungen von freigegebenen JFD-Deskriptoren.",
+    "MediaEngine.JfdDataConflict": "Konflikthafte Bearbeitungen gemeinsamer JFD-Sektordaten.",
+    "MediaEngine.JfdExtraSectors": "JFD enthält Sektoren, die in seinen nativen Tabellen fehlen.",
+    "MediaEngine.JfdOverlapConflict": "Konflikthafte Bearbeitungen von überlappenden JFD-Daten."
+  }
+}

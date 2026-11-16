@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD เกินขนาดที่รองรับ",
+    "MediaEngine.JfdExpansion": "ข้อมูล JFD หลังคลายการบีบอัดเกินขนาดที่รองรับ",
+    "MediaEngine.JfdCompression": "ข้อมูล gzip ของ JFD ไม่สามารถคลายข้อมูลได้",
+    "MediaEngine.JfdHeader": "ลายเซ็นหรือส่วนหัว JFD ไม่ถูกต้อง",
+    "MediaEngine.JfdDeclaredLength": "ขนาดไม่บีบข้อมูลของ JFD ไม่ตรงกับส่วนหัว",
+    "MediaEngine.JfdTables": "ออฟเซ็ตตาราง JFD ไม่ถูกต้อง",
+    "MediaEngine.JfdTrackCount": "จำนวนแทร็ก JFD ไม่ถูกต้อง",
+    "MediaEngine.JfdDeltaTables": "ออฟเซ็ตตารางการเปลี่ยนแปลง JFD ไม่ถูกต้อง",
+    "MediaEngine.JfdTrackOffset": "แทร็ก JFD ชี้ออกนอกตารางเซกเตอร์",
+    "MediaEngine.JfdSectorEncoding": "ขนาดหรือความหนาแน่นเซกเตอร์ JFD ไม่ถูกต้อง",
+    "MediaEngine.JfdRecordCount": "มีระเบียน JFD ในแทร็กเดียวมากเกินไป",
+    "MediaEngine.JfdTruncated": "โครงสร้าง JFD ถูกตัดทอน",
+    "MediaEngine.JfdOffset": "ออฟเซ็ต JFD เกินความยาวอิมเมจดิสก์",
+    "MediaEngine.JfdEditGeometry": "การแก้ไขเซกเตอร์ JFD ต้องคงรูปแบบเรขาคณิตเดิม",
+    "MediaEngine.JfdDuplicateEdit": "ที่อยู่เซกเตอร์และลำดับในแทร็ก JFD ซ้ำกัน",
+    "MediaEngine.JfdDescriptorConflict": "การแก้ไขตัวบอกลักษณะ JFD ที่ใช้ร่วมกันขัดแย้งกัน",
+    "MediaEngine.JfdDataConflict": "การแก้ไขข้อมูลเซกเตอร์ JFD ที่ใช้ร่วมกันขัดแย้งกัน",
+    "MediaEngine.JfdExtraSectors": "JFD มีเซกเตอร์ที่ไม่มีอยู่ในตารางเดิม",
+    "MediaEngine.JfdOverlapConflict": "การแก้ไขข้อมูล JFD ที่ซ้อนทับกันขัดแย้งกัน"
+  }
+}

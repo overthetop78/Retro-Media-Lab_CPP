@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFDが対応サイズを超えています。",
+    "MediaEngine.JfdExpansion": "JFDの展開結果が対応サイズを超えています。",
+    "MediaEngine.JfdCompression": "JFDのgzipデータを展開できませんでした。",
+    "MediaEngine.JfdHeader": "JFDのシグネチャまたはヘッダーが無効です。",
+    "MediaEngine.JfdDeclaredLength": "JFDの非圧縮サイズがヘッダーと一致しません。",
+    "MediaEngine.JfdTables": "JFDテーブルのオフセットが無効です。",
+    "MediaEngine.JfdTrackCount": "JFDのトラック数が無効です。",
+    "MediaEngine.JfdDeltaTables": "JFD差分テーブルのオフセットが無効です。",
+    "MediaEngine.JfdTrackOffset": "JFDトラックがセクターテーブルの範囲外を指しています。",
+    "MediaEngine.JfdSectorEncoding": "JFDセクターのサイズまたは密度が無効です。",
+    "MediaEngine.JfdRecordCount": "1トラック内のJFDレコードが多すぎます。",
+    "MediaEngine.JfdTruncated": "JFD構造が途中で切れています。",
+    "MediaEngine.JfdOffset": "JFDのオフセットがディスクイメージの長さを超えています。",
+    "MediaEngine.JfdEditGeometry": "JFDセクターの編集では元のジオメトリを維持する必要があります。",
+    "MediaEngine.JfdDuplicateEdit": "JFDセクターのアドレスとトラック内順序が重複しています。",
+    "MediaEngine.JfdDescriptorConflict": "共有JFD記述子の編集内容が競合しています。",
+    "MediaEngine.JfdDataConflict": "共有JFDセクターデータの編集内容が競合しています。",
+    "MediaEngine.JfdExtraSectors": "JFDに元のテーブルに存在しないセクターが含まれています。",
+    "MediaEngine.JfdOverlapConflict": "重なり合うJFDデータの編集内容が競合しています。"
+  }
+}

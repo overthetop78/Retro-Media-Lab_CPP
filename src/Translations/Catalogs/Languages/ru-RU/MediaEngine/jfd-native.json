@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.JfdLength": "JFD превышает поддерживаемый размер.",
+    "MediaEngine.JfdExpansion": "Декомпрессия JFD превышает поддерживаемый размер.",
+    "MediaEngine.JfdCompression": "Данные JFD gzip не могут быть декомпрессированы.",
+    "MediaEngine.JfdHeader": "Недействительная подпись или заголовок JFD.",
+    "MediaEngine.JfdDeclaredLength": "JFD несжатый размер не соответствует заголовку.",
+    "MediaEngine.JfdTables": "Недействительные смещения таблицы JFD.",
+    "MediaEngine.JfdTrackCount": "Недопустимое число дорожек JFD.",
+    "MediaEngine.JfdDeltaTables": "Смещение недействительной дельты JFD.",
+    "MediaEngine.JfdTrackOffset": "Дорожка JFD указывает за пределы таблицы секторов.",
+    "MediaEngine.JfdSectorEncoding": "Недействительный размер или плотность сектора JFD.",
+    "MediaEngine.JfdRecordCount": "Слишком много записей JFD на одном треке.",
+    "MediaEngine.JfdTruncated": "Усеченная структура JFD.",
+    "MediaEngine.JfdOffset": "Смещение JFD превышает длину изображения.",
+    "MediaEngine.JfdEditGeometry": "Изменения секторов JFD должны сохранять исходную геометрию.",
+    "MediaEngine.JfdDuplicateEdit": "Повторяющиеся адрес сектора и порядок на дорожке JFD.",
+    "MediaEngine.JfdDescriptorConflict": "Противоречивые правки общих дескрипторов JFD.",
+    "MediaEngine.JfdDataConflict": "Противоречивые правки общих данных сектора JFD.",
+    "MediaEngine.JfdExtraSectors": "JFD содержит сектора, отсутствующие в его родных таблицах.",
+    "MediaEngine.JfdOverlapConflict": "Противоречивые правки перекрывающихся данных JFD."
+  }
+}
