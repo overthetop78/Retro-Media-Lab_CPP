@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "The RIFF AMS! ไม่พบส่วนหัวของตลับหมึก",
-    "MediaEngine.CprLength": "เดอะ CPR RIFF ความยาวไม่ถูกต้อง!",
+    "MediaEngine.CprHeader": "ไม่มีส่วนหัวตลับเกม RIFF AMS!",
+    "MediaEngine.CprLength": "ความยาว CPR RIFF ไม่ถูกต้อง",
     "MediaEngine.CprChunkRange": "CPR ย่อย '{0}' มีส่วนเกินของกล่อง RIFF",
-    "MediaEngine.CprDuplicate": "CPR Bank '{0}' ถูกทําซ้ํา",
-    "MediaEngine.CprLargeBank": "CPR Bank '{0}' บรรจุข้อมูลที่เกิน 16 กิโลไบต์; ไม่มีการโยง",
-    "MediaEngine.CprUnknownChunk": "RIFF กรุ๊ป '{0}' ไม่ใช่ธนาคารตลับหมึก CPR",
+    "MediaEngine.CprDuplicate": "แบงก์หน่วยความจำ CPR '{0}' ซ้ำกัน",
+    "MediaEngine.CprLargeBank": "แบงก์หน่วยความจำ CPR '{0}' มีไบต์เกินหน้าขนาด 16 KiB ซึ่งไม่ได้ถูกแมป",
+    "MediaEngine.CprUnknownChunk": "ชังก์ RIFF '{0}' ไม่ใช่แบงก์หน่วยความจำตลับเกม CPR",
     "MediaEngine.CprChunkHeader": "กล่อง CPR RIFF สิ้นสุดลงภายในหัวชิ้น",
-    "MediaEngine.CprNoBanks": "ภาพ CPR ไม่มี cb00 ผ่านธนาคาร cb31",
-    "MediaEngine.CprWrite": "เอกสารบล็อกไม่สามารถเขียนเป็นตลับหมึก CPR ได้สมบูรณ์",
+    "MediaEngine.CprNoBanks": "อิมเมจ CPR ไม่มีแบงก์หน่วยความจำตลับเกมตั้งแต่ cb00 ถึง cb31",
+    "MediaEngine.CprWrite": "ไม่สามารถเขียนเอกสารบล็อกเป็นตลับเกม CPR ที่สมบูรณ์ได้",
     "MediaEngine.RomCorpus": "ความยาวของ CPC ROM อยู่นอกโปรไฟล์ชุดตัวอย่างที่ได้รับการยืนยัน",
     "MediaEngine.RomNoData": "CPC ROM ไม่มีข้อมูลแบงก์",
     "MediaEngine.RomBankLimit": "CPC ROM มีแบงก์ตลับเกิน 32 แบงก์",
@@ -19,8 +19,8 @@
     "MediaEngine.FdsNoSide": "เดอะ Famicom Disk System ภาพไม่มีด้าน",
     "MediaEngine.FdsCount": "เดอะ Famicom Disk System จํานวนด้านไม่ตรงกับส่วนหัว",
     "MediaEngine.FdsUndeclared": "ส่วนหัวแบบ FDS ไม่ได้ประกาศจํานวนด้าน; จํานวนที่นํามาจากข้อมูลที่เก็บไว้",
-    "MediaEngine.FdsWrite": "เอกสารบล็อคยังไม่มีส่วนสมบูรณ์ Famicom Disk System ด้าน",
+    "MediaEngine.FdsWrite": "เอกสารบล็อกไม่มีด้าน Famicom Disk System ที่สมบูรณ์",
     "MediaEngine.FdsHeader": "ไม่มีหัวข้อมูลแหล่ง FDS",
-    "MediaEngine.AmstradCartridgeVolume": "Amstrad ตลับหมึก"
+    "MediaEngine.AmstradCartridgeVolume": "ตลับเกม Amstrad"
   }
 }

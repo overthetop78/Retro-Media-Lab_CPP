@@ -1,13 +1,13 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "RIFF-AMS! Patronhodet mangler.",
+    "MediaEngine.CprHeader": "RIFF AMS!-cartridgehodet mangler.",
     "MediaEngine.CprLength": "CPR RIFF lengden er ugyldig.",
     "MediaEngine.CprChunkRange": "CPR-biten «{0}» overstiger RIFF-beholderen.",
     "MediaEngine.CprDuplicate": "CPR-banken «{0}» er duplisert.",
     "MediaEngine.CprLargeBank": "CPR bank «{0}» inneholder byte utover sin 16 KiB siden; de ble ikke kartlagt.",
     "MediaEngine.CprUnknownChunk": "RIFF bit «{0}» er ikke en CPR patron bank.",
     "MediaEngine.CprChunkHeader": "CPR RIFF beholderen ender inne i en bit header.",
-    "MediaEngine.CprNoBanks": "CPR-bildet inneholder ingen cb00 gjennom cb31-patronbanken.",
+    "MediaEngine.CprNoBanks": "CPR-bildet inneholder ingen cartridgebank fra cb00 til cb31.",
     "MediaEngine.CprWrite": "Blokkdokumentet kan ikke skrives som en komplett CPR-patron.",
     "MediaEngine.RomCorpus": "CPC ROM-lengden er utenfor de demonstrerte corpus-profilene.",
     "MediaEngine.RomNoData": "CPC ROM inneholder ingen bankdata.",

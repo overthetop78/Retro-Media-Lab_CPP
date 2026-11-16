@@ -1,26 +1,26 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "Το RIFF AMS! Λείπει η κεφαλίδα του φυσιγγίου.",
+    "MediaEngine.CprHeader": "Λείπει η κεφαλίδα κασέτας RIFF AMS!.",
     "MediaEngine.CprLength": "Το μήκος CPR RIFF είναι άκυρο.",
     "MediaEngine.CprChunkRange": "Το κομμάτι CPR ' {0}' υπερβαίνει το δοχείο RIFF.",
-    "MediaEngine.CprDuplicate": "Η τράπεζα CPR ' {0}' αναπαράγεται.",
+    "MediaEngine.CprDuplicate": "Η τράπεζα μνήμης CPR '{0}' υπάρχει δύο φορές.",
     "MediaEngine.CprLargeBank": "Η τράπεζα CPR '{0}' περιέχει bytes πέρα από τη σελίδα της 16 KiB· δεν χαρτογραφήθηκαν.",
     "MediaEngine.CprUnknownChunk": "Το κομμάτι RIFF '{0}' δεν είναι μια τράπεζα φυσιγγίων CPR.",
     "MediaEngine.CprChunkHeader": "Το δοχείο CPR RIFF καταλήγει μέσα σε μια κεφαλίδα κομματιών.",
-    "MediaEngine.CprNoBanks": "Η εικόνα CPR δεν περιέχει cb00 μέσω της τράπεζας φυσιγγίων cb31.",
-    "MediaEngine.CprWrite": "Το έγγραφο αποκλεισμού δεν μπορεί να γραφτεί ως πλήρες φυσίγγιο CPR.",
+    "MediaEngine.CprNoBanks": "Η εικόνα CPR δεν περιέχει καμία τράπεζα μνήμης κασέτας από cb00 έως cb31.",
+    "MediaEngine.CprWrite": "Το έγγραφο μπλοκ δεν μπορεί να γραφτεί ως πλήρης κασέτα CPR.",
     "MediaEngine.RomCorpus": "Το μήκος ROM της CPC βρίσκεται εκτός των δοκιμασμένων προφίλ του corpus.",
-    "MediaEngine.RomNoData": "Το CPC ROM δεν περιέχει τραπεζικά στοιχεία.",
+    "MediaEngine.RomNoData": "Η CPC ROM δεν περιέχει δεδομένα τραπεζών μνήμης.",
     "MediaEngine.RomBankLimit": "Η CPC ROM υπερβαίνει τις 32 τράπεζες φυσιγγίων.",
     "MediaEngine.RomIncomplete": "Η τελευταία τράπεζα CPC ROM είναι ελλιπής και εκτίθεται χωρίς να επινοηθεί padding.",
     "MediaEngine.RomWrite": "Το έγγραφο του μπλοκ δεν περιέχει συνεχόμενες τράπεζες CPC ROM.",
     "MediaEngine.FdsSource": "Η επιλεγμένη πηγή δεν είναι μια εικόνα Famicom Disk System.",
     "MediaEngine.FdsSides": "Η εικόνα Famicom Disk System δεν περιέχει πλήρεις πλευρές.",
     "MediaEngine.FdsNoSide": "Η εικόνα Famicom Disk System δεν περιέχει καμία πλευρά.",
-    "MediaEngine.FdsCount": "Το Famicom Disk System δεν ταιριάζει με την κεφαλίδα του.",
+    "MediaEngine.FdsCount": "Ο αριθμός πλευρών Famicom Disk System δεν ταιριάζει με την κεφαλίδα.",
     "MediaEngine.FdsUndeclared": "Η κεφαλίδα FDS δεν δηλώνει πλευρική καταμέτρηση· η καταμέτρηση λήφθηκε από τα αποθηκευμένα δεδομένα.",
     "MediaEngine.FdsWrite": "Το έγγραφο μπλοκ δεν περιέχει πλήρεις πλευρές Famicom Disk System.",
     "MediaEngine.FdsHeader": "Λείπει η επικεφαλίδα πηγής FDS.",
-    "MediaEngine.AmstradCartridgeVolume": "Φυσίγγιο Amstrad"
+    "MediaEngine.AmstradCartridgeVolume": "Κασέτα Amstrad"
   }
 }

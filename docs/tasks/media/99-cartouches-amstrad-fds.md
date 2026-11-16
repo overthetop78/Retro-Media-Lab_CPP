@@ -22,7 +22,9 @@ Compilation commune en fin de bloc et contrôle ciblé du chemin conteneur → d
   - [x] Supprimer `build/verification-cartridge-documents/` : retirer le banc, ses exécutables et les images temporaires après consignation du résultat.
 
 
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaEngine/amstrad-fds.json` et `MediaFileSystems/media-document.json` : relire les langues autres que le français et corriger les contresens éventuels ; les clés, paramètres et invariants sont déjà contrôlés automatiquement.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaEngine/amstrad-fds.json` et `MediaFileSystems/media-document.json` : relire les langues autres que le français et corriger les contresens éventuels ; les clés, paramètres et invariants sont déjà contrôlés automatiquement.
 
 Le catalogue MediaFileSystems/media-document.json est relu dans les 29 langues au 17 novembre 2026 ; seule la relecture MediaEngine/amstrad-fds.json reste ouverte dans ce groupe. Voir docs/validation/media/relecture-blocs-documents.md.
+
+La relecture amstrad-fds.json est également achevée au 17 novembre 2026 ; voir docs/validation/media/relecture-amstrad-fds.md.

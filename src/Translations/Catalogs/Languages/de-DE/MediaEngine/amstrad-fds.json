@@ -1,17 +1,17 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "Die RIFF AMS! Patronenkopf fehlt.",
+    "MediaEngine.CprHeader": "Der RIFF AMS!-Cartridge-Header fehlt.",
     "MediaEngine.CprLength": "Die CPR RIFF Länge ist ungültig.",
     "MediaEngine.CprChunkRange": "CPR chunk '{0}' überschreitet den RIFF-Container.",
     "MediaEngine.CprDuplicate": "CPR Bank '{0}' wird dupliziert.",
     "MediaEngine.CprLargeBank": "CPR Bank '{0}' enthält Bytes jenseits seiner 16 KiB Seite; sie wurden nicht abgebildet.",
-    "MediaEngine.CprUnknownChunk": "RIFF Chunk '{0}' ist keine CPR-Patronenbank.",
+    "MediaEngine.CprUnknownChunk": "RIFF-Chunk '{0}' ist keine CPR-Cartridge-Bank.",
     "MediaEngine.CprChunkHeader": "Der CPR RIFF Container endet in einem Chunk Header.",
-    "MediaEngine.CprNoBanks": "Das CPR-Bild enthält keine cb00 bis cb31 Patronenbank.",
-    "MediaEngine.CprWrite": "Das Blockdokument kann nicht als vollständige CPR-Patrone geschrieben werden.",
+    "MediaEngine.CprNoBanks": "Das CPR-Image enthält keine Cartridge-Bank von cb00 bis cb31.",
+    "MediaEngine.CprWrite": "Das Blockdokument kann nicht als vollständige CPR-Cartridge geschrieben werden.",
     "MediaEngine.RomCorpus": "Die CPC-ROM-Länge liegt außerhalb der demonstrierten Korpusprofile.",
     "MediaEngine.RomNoData": "Die CPC ROM enthält keine Bankdaten.",
-    "MediaEngine.RomBankLimit": "Die CPC ROM überschreitet 32 Patronenbanken.",
+    "MediaEngine.RomBankLimit": "Die CPC ROM überschreitet 32 Cartridge-Bänke.",
     "MediaEngine.RomIncomplete": "Die letzte CPC-ROM-Bank ist unvollständig und wird ohne erfundene Polsterung freigelegt.",
     "MediaEngine.RomWrite": "Das Blockdokument enthält keine zusammenhängenden CPC-ROM-Banken.",
     "MediaEngine.FdsSource": "Die ausgewählte Quelle ist kein Famicom Disk System Image.",
@@ -21,6 +21,6 @@
     "MediaEngine.FdsUndeclared": "Der FDS-Header deklariert keine Seitenzählung; die Zählung wurde aus den gespeicherten Daten entnommen.",
     "MediaEngine.FdsWrite": "Das Blockdokument enthält keine vollständigen Seiten des Famicom Disk Systems.",
     "MediaEngine.FdsHeader": "Der FDS-Header fehlt.",
-    "MediaEngine.AmstradCartridgeVolume": "Amstrad-Patrone"
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad-Cartridge"
   }
 }

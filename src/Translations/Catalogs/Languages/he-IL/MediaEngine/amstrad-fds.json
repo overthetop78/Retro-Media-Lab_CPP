@@ -1,26 +1,26 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "RIFF AMS! ראש המחסנית חסר.",
+    "MediaEngine.CprHeader": "כותרת המחסנית RIFF AMS! חסרה.",
     "MediaEngine.CprLength": "אורך CPR RIFF הוא לא חוקי.",
     "MediaEngine.CprChunkRange": "CPR נתח {0} עולה על מיכל RIFF.",
     "MediaEngine.CprDuplicate": "CPR בנק {0} משוכפל.",
-    "MediaEngine.CprLargeBank": "CPR בנק \"{0}\" מכיל עליות מעבר לעמוד 16 KiB; הם לא הופנו.",
+    "MediaEngine.CprLargeBank": "בנק הזיכרון CPR \"{0}\" מכיל בתים מעבר לדף שלו בגודל 16 KiB; הם לא מופו.",
     "MediaEngine.CprUnknownChunk": "RIFF נתח {0} אינו בנק CPR.",
     "MediaEngine.CprChunkHeader": "מיכל CPR RIFF מסתיים בתוך ראש נתח.",
-    "MediaEngine.CprNoBanks": "תמונת CPR אינה מכילה cb00 באמצעות בנק מחסנית cb31.",
+    "MediaEngine.CprNoBanks": "תמונת CPR אינה מכילה בנק זיכרון של מחסנית בטווח cb00 עד cb31.",
     "MediaEngine.CprWrite": "מסמך בלוק לא ניתן לכתוב כמחסנית CPR מלאה.",
     "MediaEngine.RomCorpus": "אורך CPC ROM הוא מחוץ לפרופילים המוכחים.",
-    "MediaEngine.RomNoData": "CPC ROM אינו מכיל נתונים בנקאיים.",
+    "MediaEngine.RomNoData": "CPC ROM אינו מכיל נתוני בנקי זיכרון.",
     "MediaEngine.RomBankLimit": "CPC ROM עולה על 32 בנקים.",
-    "MediaEngine.RomIncomplete": "הבנק האחרון של CPC ROM אינו שלם והוא נחשף ללא הומצא.",
-    "MediaEngine.RomWrite": "מסמך הבלוק אינו מכיל בנקים CPC ROM .",
+    "MediaEngine.RomIncomplete": "בנק הזיכרון האחרון של CPC ROM אינו שלם והוא נחשף ללא הוספת נתוני מילוי מומצאים.",
+    "MediaEngine.RomWrite": "מסמך הבלוקים אינו מכיל בנקי זיכרון רציפים של CPC ROM.",
     "MediaEngine.FdsSource": "המקור שנבחר אינו תמונת Famicom Disk System.",
     "MediaEngine.FdsSides": "תמונת Famicom Disk System אינה כוללת צדדים שלמים.",
     "MediaEngine.FdsNoSide": "תמונת Famicom Disk System אינה מכילה צד.",
     "MediaEngine.FdsCount": "ספירת צד Famicom Disk System אינה תואמת את ראשה.",
     "MediaEngine.FdsUndeclared": "ראש ה-FDS אינו מכריז על ספירת צד; הספירה נלקחה מהנתונים המאוחסנים.",
     "MediaEngine.FdsWrite": "מסמך הבלוק אינו מכיל צדי Famicom Disk System שלמים.",
-    "MediaEngine.FdsHeader": "מקור: FDS Header נעדר.",
+    "MediaEngine.FdsHeader": "כותרת FDS של המקור חסרה.",
     "MediaEngine.AmstradCartridgeVolume": "מחסנית Amstrad"
   }
 }

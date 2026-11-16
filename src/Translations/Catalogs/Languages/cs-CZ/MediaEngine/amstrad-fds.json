@@ -1,26 +1,26 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "RIFF AMS! Záhlaví náplně chybí.",
+    "MediaEngine.CprHeader": "Chybí záhlaví cartridge RIFF AMS!.",
     "MediaEngine.CprLength": "Délka CPR RIFF je neplatná.",
     "MediaEngine.CprChunkRange": "CPR kus '{0}' přesahuje kontejner RIFF.",
     "MediaEngine.CprDuplicate": "CPR banka \"{0}\" je duplikována.",
     "MediaEngine.CprLargeBank": "CPR banka \"{0}\" obsahuje bajty nad 16 KiB stránku; nebyly zmapovány.",
-    "MediaEngine.CprUnknownChunk": "Nábojnice RIFF '{0}' není banka CPR cartridge.",
+    "MediaEngine.CprUnknownChunk": "Blok RIFF '{0}' není paměťovou bankou cartridge CPR.",
     "MediaEngine.CprChunkHeader": "Kontejner CPR RIFF končí uvnitř hlavičky.",
-    "MediaEngine.CprNoBanks": "Obrázek CPR neobsahuje žádný cb00 přes cb31 zásobník.",
-    "MediaEngine.CprWrite": "Blokový dokument nemůže být napsán jako úplná CPR zásobní vložka.",
+    "MediaEngine.CprNoBanks": "Obraz CPR neobsahuje žádnou paměťovou banku cartridge cb00 až cb31.",
+    "MediaEngine.CprWrite": "Blokový dokument nelze zapsat jako úplnou cartridge CPR.",
     "MediaEngine.RomCorpus": "Délka CPC ROM je mimo prokázané profily corpus.",
-    "MediaEngine.RomNoData": "CPC ROM neobsahuje žádné bankovní údaje.",
-    "MediaEngine.RomBankLimit": "CPC ROM přesahuje 32 zásobníků.",
+    "MediaEngine.RomNoData": "CPC ROM neobsahuje data paměťových bank.",
+    "MediaEngine.RomBankLimit": "CPC ROM překračuje počet 32 paměťových bank cartridge.",
     "MediaEngine.RomIncomplete": "Poslední CPC ROM banka je neúplná a je vystavena bez vymyšlených vycpávek.",
     "MediaEngine.RomWrite": "Tento blokový dokument neobsahuje sousední banky CPC ROM.",
     "MediaEngine.FdsSource": "Zvolený zdroj není Famicom Disk System obraz.",
     "MediaEngine.FdsSides": "Obrázek Famicom Disk System neobsahuje kompletní strany.",
     "MediaEngine.FdsNoSide": "Obrázek Famicom Disk System neobsahuje žádnou stranu.",
-    "MediaEngine.FdsCount": "Boční počet Famicom Disk System neodpovídá jeho hlavičce.",
+    "MediaEngine.FdsCount": "Počet stran Famicom Disk System neodpovídá jeho záhlaví.",
     "MediaEngine.FdsUndeclared": "Záhlaví FDS neuvádí boční počet; počet byl odebrán ze uložených dat.",
     "MediaEngine.FdsWrite": "Blokový dokument neobsahuje kompletní strany Famicom Disk System.",
     "MediaEngine.FdsHeader": "Zdroj FDS hlavička chybí.",
-    "MediaEngine.AmstradCartridgeVolume": "Amstradní zásobní vložka"
+    "MediaEngine.AmstradCartridgeVolume": "Cartridge Amstrad"
   }
 }

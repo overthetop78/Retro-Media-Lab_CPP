@@ -17,7 +17,9 @@ Les liaisons mécanique secteur/optique et les façades de service restantes ne 
 - [x] Primitives numériques réellement partagées
   - [x] Créer `src/MediaFileSystems/include/RetroMediaLab/MediaFileSystems/MetadataNumbers.h` et `MetadataNumberConstants.h`, modifier `src/MediaFileSystems/src/Primitives/Metadata.h` et `scripts/quality/audit_literals.py`, puis supprimer `src/MediaFileSystems/src/Primitives/NumericMetadataConstants.h` : exposer l'équivalent public C# des lectures byte/ushort/int et Integer/None, réutilisable par Engine sans dépendance aux en-têtes privés MFS.
 
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaEngine/amstrad-fds.json` et `MediaFileSystems/media-document.json` : relire les langues autres que le français et corriger les contresens éventuels ; les clés, paramètres et invariants sont déjà contrôlés automatiquement.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaEngine/amstrad-fds.json` et `MediaFileSystems/media-document.json` : relire les langues autres que le français et corriger les contresens éventuels ; les clés, paramètres et invariants sont déjà contrôlés automatiquement.
 
 Le catalogue MediaFileSystems/media-document.json est relu dans les 29 langues au 17 novembre 2026 ; seule la relecture MediaEngine/amstrad-fds.json reste ouverte dans ce groupe. Voir docs/validation/media/relecture-blocs-documents.md.
+
+La relecture amstrad-fds.json est également achevée au 17 novembre 2026 ; voir docs/validation/media/relecture-amstrad-fds.md.

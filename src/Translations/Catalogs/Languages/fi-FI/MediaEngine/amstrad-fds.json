@@ -1,26 +1,26 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "RIFF AMS! Patruunan otsake puuttuu.",
+    "MediaEngine.CprHeader": "RIFF AMS! -pelikasetin otsikko puuttuu.",
     "MediaEngine.CprLength": "CPR RIFF pituus on virheellinen.",
     "MediaEngine.CprChunkRange": "CPR chunk '{0}' ylittää RIFF-säiliön.",
     "MediaEngine.CprDuplicate": "CPR pankki '{0}' on kaksoiskappale.",
     "MediaEngine.CprLargeBank": "CPR-pankki \"{0}\" sisältää tavuja 16 KiB-sivun ulkopuolelle; niitä ei ole kartoitettu.",
     "MediaEngine.CprUnknownChunk": "RIFF chunk '{0}' ei ole CPR-kasettipankki.",
     "MediaEngine.CprChunkHeader": "CPR RIFF-säiliö päätyy palan otsikon sisään.",
-    "MediaEngine.CprNoBanks": "CPR-kuva ei sisällä cb00:aa cb31-kasettipankissa.",
-    "MediaEngine.CprWrite": "Blokkiasiakirjaa ei voida kirjoittaa täydellisenä CPR-patruunanana.",
+    "MediaEngine.CprNoBanks": "CPR-kuva ei sisällä yhtään pelikasetin muistipankkia cb00–cb31.",
+    "MediaEngine.CprWrite": "Lohkoasiakirjaa ei voi kirjoittaa täydellisenä CPR-pelikasettina.",
     "MediaEngine.RomCorpus": "CPC ROM-levyn pituus on osoitettujen profiilien ulkopuolella.",
-    "MediaEngine.RomNoData": "CPC ROM ei sisällä pankkitietoja.",
-    "MediaEngine.RomBankLimit": "CPC:n ROM-rekisterissä on yli 32 säiliöpankkia.",
-    "MediaEngine.RomIncomplete": "Viimeinen CPC ROM pankki on epätäydellinen ja altistuu ilman keksiä pehmusteet.",
+    "MediaEngine.RomNoData": "CPC ROM ei sisällä muistipankkien tietoja.",
+    "MediaEngine.RomBankLimit": "CPC ROM ylittää 32 pelikasetin muistipankkia.",
+    "MediaEngine.RomIncomplete": "Viimeinen CPC ROM -muistipankki on vajaa, ja se tarjotaan lisäämättä keksittyä täytettä.",
     "MediaEngine.RomWrite": "Ryhmäasiakirja ei sisällä vierekkäisiä CPC ROM -pankkeja.",
     "MediaEngine.FdsSource": "Valittu lähde ei ole Famicom Disk System-kuva.",
     "MediaEngine.FdsSides": "Famicom Disk System -kuva ei sisällä kokonaisia puolia.",
     "MediaEngine.FdsNoSide": "Famicom Disk System -kuva ei sisällä sivua.",
     "MediaEngine.FdsCount": "Famicom Disk System sivuluku ei vastaa sen otsikkoa.",
     "MediaEngine.FdsUndeclared": "FDS-otsikko ei ilmoita sivulukua; luku otettiin tallennetuista tiedoista.",
-    "MediaEngine.FdsWrite": "Block-asiakirja ei sisällä Famicom Disk System-sivuja.",
+    "MediaEngine.FdsWrite": "Lohkoasiakirja ei sisällä kokonaisia Famicom Disk System -levypuolia.",
     "MediaEngine.FdsHeader": "Lähde FDS:n otsake puuttuu.",
-    "MediaEngine.AmstradCartridgeVolume": "Amstrad-sylinteriampulli"
+    "MediaEngine.AmstradCartridgeVolume": "Amstrad-pelikasetti"
   }
 }

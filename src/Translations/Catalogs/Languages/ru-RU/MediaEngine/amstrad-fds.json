@@ -1,13 +1,13 @@
 {
   "strings": {
-    "MediaEngine.CprHeader": "RIFF AMS! Заголовок картриджа отсутствует.",
+    "MediaEngine.CprHeader": "Заголовок картриджа RIFF AMS! отсутствует.",
     "MediaEngine.CprLength": "Длина CPR RIFF недействительна.",
     "MediaEngine.CprChunkRange": "CPR-куска '{0}' превышает контейнер RIFF.",
     "MediaEngine.CprDuplicate": "Банк CPR «{0}» дублируется.",
-    "MediaEngine.CprLargeBank": "CPR-банк «{0}» содержит байты за пределами своей 16-киб страницы; они не были отображены.",
+    "MediaEngine.CprLargeBank": "Банк CPR «{0}» содержит байты за пределами страницы размером 16 KiB; они не были отображены.",
     "MediaEngine.CprUnknownChunk": "RIFF chunk '{0}' не является картриджем CPR.",
     "MediaEngine.CprChunkHeader": "Контейнер CPR RIFF заканчивается внутри заголовка.",
-    "MediaEngine.CprNoBanks": "Изображение CPR не содержит картриджей cb00-Cb31.",
+    "MediaEngine.CprNoBanks": "Образ CPR не содержит ни одного банка памяти картриджа от cb00 до cb31.",
     "MediaEngine.CprWrite": "Блок-документ не может быть записан как полный CPR-картридж.",
     "MediaEngine.RomCorpus": "Длина CPC ROM выходит за пределы подтверждённых профилей набора образцов.",
     "MediaEngine.RomNoData": "CPC ROM не содержит данных банков.",
