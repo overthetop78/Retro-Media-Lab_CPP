@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Neplatná hlavička MFM EMU.",
+    "MediaEngine.MfmTrackRange": "Adresa stopy nebo rozsah bajtů MFM EMU je neplatný.",
+    "MediaEngine.MfmSignal": "Buňky MFM EMU, vzorkovací frekvence nebo doba otáčky jsou neplatné.",
+    "MediaEngine.MfmSignalRate": "Zaznamenaný počet buněk překračuje nanosekundové rozlišení signálu.",
+    "MediaEngine.MfmWindow": "Okno pro zápis MFM EMU nebo jeho přechodové odstupy jsou neplatné.",
+    "MediaEngine.MfmUncapturedWrite": "Zapisovací okno obsahuje přechod mimo uložené traťové buňky.",
+    "MediaEngine.MfmLength": "Délka EMU neodpovídá deklarovaným stopám a koncové značce.",
+    "MediaEngine.MfmEnd": "Neplatná značka konce MFM EMU.",
+    "MediaEngine.MfmTrack": "Adresa stopy EMU neodpovídá její fyzické poloze.",
+    "MediaEngine.MfmOutput": "MFM EMU výstup vyžaduje fyzickou reprezentaci MFM EMU.",
+    "MediaEngine.MfmReadRange": "Požadovaný rozsah bajtů je mimo kontejner MFM EMU.",
+    "MediaEngine.MfmCreation": "Geometrie nebo počáteční data jsou neplatná pro tvorbu MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Vytvoření MFM EMU podporuje pouze ADFS s 256-byte sektory.",
+    "MediaEngine.MfmLogicalView": "Dokument nemá toto zastoupení MFM EMU."
+  }
+}

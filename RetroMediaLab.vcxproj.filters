@@ -292,6 +292,9 @@
     <Filter Include="src\MediaEngine\src\Formats\HardDisk\Adaptec">
       <UniqueIdentifier>{212F41A5-6591-5259-853A-97D4C164B96C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu">
+      <UniqueIdentifier>{D1A06F1A-4E40-52A5-9881-AC6A9CB4F6B1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\HardDisk\Raw">
       <UniqueIdentifier>{423AF4DC-69F1-5F6B-90F0-8A475B5E514A}</UniqueIdentifier>
     </Filter>
@@ -3330,6 +3333,48 @@
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\ContainerConstants.h">
       <Filter>src\MediaEngine\src\Formats\HardDisk</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Adapter.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Container.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Container.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Creation.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\GeneratedData.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Header.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Header.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Representation.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Representation.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Signal.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Signal.h">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\MfmEmu\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\HardDisk\MfmEmu</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Raw\Constants.h">
       <Filter>src\MediaEngine\src\Formats\HardDisk\Raw</Filter>
     </ClInclude>
@@ -5187,6 +5232,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -5638,6 +5686,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micraln-fm.json">
@@ -6093,6 +6144,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -6544,6 +6598,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micraln-fm.json">
@@ -6999,6 +7056,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -7450,6 +7510,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micraln-fm.json">
@@ -7905,6 +7968,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -8356,6 +8422,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micraln-fm.json">
@@ -8811,6 +8880,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -9262,6 +9334,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micraln-fm.json">
@@ -9717,6 +9792,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -10168,6 +10246,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micraln-fm.json">
@@ -10623,6 +10704,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -11074,6 +11158,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micraln-fm.json">
@@ -11529,6 +11616,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -11980,6 +12070,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micraln-fm.json">
@@ -12435,6 +12528,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -12886,6 +12982,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micraln-fm.json">
@@ -13341,6 +13440,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -13792,6 +13894,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micraln-fm.json">
@@ -14247,6 +14352,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -14698,6 +14806,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micraln-fm.json">
@@ -15153,6 +15264,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -15604,6 +15718,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micraln-fm.json">
@@ -16059,6 +16176,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -16510,6 +16630,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micraln-fm.json">
@@ -16965,6 +17088,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -17416,6 +17542,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micraln-fm.json">
@@ -17871,6 +18000,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\membrain-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\mfm-emu.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micraln-fm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -18322,6 +18454,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\membrain-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\mfm-emu.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micraln-fm.json">

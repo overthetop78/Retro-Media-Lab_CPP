@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Μη έγκυρη κεφαλίδα MFM EMU.",
+    "MediaEngine.MfmTrackRange": "Η διεύθυνση κομματιού MFM EMU ή το εύρος byte είναι άκυρο.",
+    "MediaEngine.MfmSignal": "Τα κύτταρα MFM EMU, ρυθμός δειγματοληψίας ή περίοδος περιστροφής είναι άκυρα.",
+    "MediaEngine.MfmSignalRate": "Ο καταγεγραμμένος ρυθμός κυττάρων υπερβαίνει την ανάλυση του νανοδευτερολέπτου.",
+    "MediaEngine.MfmWindow": "Το παράθυρο εγγραφής MFM EMU ή οι αντισταθμίσεις μετάβασης είναι άκυρες.",
+    "MediaEngine.MfmUncapturedWrite": "Το παράθυρο εγγραφής περιέχει μια μετάβαση έξω από τα αποθηκευμένα κύτταρα τροχιάς.",
+    "MediaEngine.MfmLength": "Το μήκος EMU δεν ταιριάζει με τα δηλωμένα κομμάτια και τον τελικό δείκτη.",
+    "MediaEngine.MfmEnd": "Μη έγκυρος τελικός δείκτης MFM EMU.",
+    "MediaEngine.MfmTrack": "Η διεύθυνση του κομματιού EMU δεν ταιριάζει με τη φυσική του θέση.",
+    "MediaEngine.MfmOutput": "Η έξοδος MFM EMU απαιτεί μια φυσική αναπαράσταση MFM EMU.",
+    "MediaEngine.MfmReadRange": "Το ζητούμενο εύρος byte είναι έξω από το δοχείο MFM EMU.",
+    "MediaEngine.MfmCreation": "Η γεωμετρία ή τα αρχικά δεδομένα είναι άκυρα για τη δημιουργία MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU δημιουργία υποστηρίζει μόνο ADFS με 256-byte τομείς.",
+    "MediaEngine.MfmLogicalView": "Το έγγραφο δεν κατέχει αυτή την αναπαράσταση MFM EMU."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "ترويسة MFM EMU غير صالحة.",
+    "MediaEngine.MfmTrackRange": "عنوان مسار MFM EMU أو نطاق البايتات غير صالح.",
+    "MediaEngine.MfmSignal": "خلايا MFM EMU أو معدل أخذ العينات أو مدة الدورة غير صالحة.",
+    "MediaEngine.MfmSignalRate": "يتجاوز معدل الخلايا المسجل دقة الإشارة بالنانوثانية.",
+    "MediaEngine.MfmWindow": "نافذة كتابة MFM EMU أو إزاحات الانتقالات فيها غير صالحة.",
+    "MediaEngine.MfmUncapturedWrite": "نافذة الكتابة تحتوي على تحول خارج خلايا المسار المخزنة",
+    "MediaEngine.MfmLength": "لا يتطابق طول EMU مع المسارات المعلنة وعلامة النهاية.",
+    "MediaEngine.MfmEnd": "علامة نهاية MFM EMU غير صالحة.",
+    "MediaEngine.MfmTrack": "لا يتطابق عنوان مسار EMU مع موضعه الفعلي.",
+    "MediaEngine.MfmOutput": "يتطلب إخراج MFM EMU تمثيلاً فعلياً من نوع MFM EMU.",
+    "MediaEngine.MfmReadRange": "نطاق البايتات المطلوب خارج حاوية MFM EMU.",
+    "MediaEngine.MfmCreation": "هندسة القرص أو البيانات الأولية غير صالحة لإنشاء MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "لا يدعم إنشاء MFM EMU سوى ADFS بقطاعات حجمها 256 بايت.",
+    "MediaEngine.MfmLogicalView": "المستند لا يملك تمثيل MFM EMU هذا."
+  }
+}

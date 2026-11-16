@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Virheellinen MFM EMU otsikko.",
+    "MediaEngine.MfmTrackRange": "MFM EMU -raidan osoite tai tavualue on virheellinen.",
+    "MediaEngine.MfmSignal": "MFM EMU-solut, näytteenottonopeus tai kierrosaika ovat pätemättömiä.",
+    "MediaEngine.MfmSignalRate": "Tallennetun solun nopeus ylittää nano sekunnin signaalin resoluution.",
+    "MediaEngine.MfmWindow": "MFM EMU:n kirjoitusikkuna tai sen siirtymämukautukset ovat virheellisiä.",
+    "MediaEngine.MfmUncapturedWrite": "Kirjoitusikkuna sisältää siirtymän tallennettujen raidan solujen ulkopuolella.",
+    "MediaEngine.MfmLength": "EMUn pituus ei vastaa sen ilmoitettuja kappaleita eikä päätemerkkiä.",
+    "MediaEngine.MfmEnd": "Virheellinen MFM EMU päätemerkki.",
+    "MediaEngine.MfmTrack": "EMU-raidan osoite ei vastaa sen fyysistä sijaintia.",
+    "MediaEngine.MfmOutput": "MFM EMU tuotos edellyttää fyysistä MFM EMU edustus.",
+    "MediaEngine.MfmReadRange": "Vaadittu tavualue on MFM EMU -kontin ulkopuolella.",
+    "MediaEngine.MfmCreation": "MFM EMU:n luomisen geometria tai alustavat tiedot eivät kelpaa.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU -luonti tukee vain ADFS:ää, jonka sektorikoko on 256 tavua.",
+    "MediaEngine.MfmLogicalView": "Asiakirjassa ei ole tätä MFM EMU -edustusta."
+  }
+}

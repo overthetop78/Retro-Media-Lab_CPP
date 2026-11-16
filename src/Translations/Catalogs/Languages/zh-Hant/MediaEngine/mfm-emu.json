@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "MFM EMU 檔案標頭無效。",
+    "MediaEngine.MfmTrackRange": "MFM EMU 磁軌位址或位元組範圍無效。",
+    "MediaEngine.MfmSignal": "MFM EMU 位元單元、取樣率或旋轉週期無效。",
+    "MediaEngine.MfmSignalRate": "記錄的位元單元速率超過訊號的奈秒解析度。",
+    "MediaEngine.MfmWindow": "MFM EMU 寫入視窗或其跳變偏移無效。",
+    "MediaEngine.MfmUncapturedWrite": "寫入視窗包含儲存的磁軌單元以外的跳變。",
+    "MediaEngine.MfmLength": "EMU 長度與宣告的磁軌和結束標記不符。",
+    "MediaEngine.MfmEnd": "MFM EMU 結束標記無效。",
+    "MediaEngine.MfmTrack": "EMU 磁軌位址與其實體位置不符。",
+    "MediaEngine.MfmOutput": "MFM EMU 輸出需要實體 MFM EMU 表示。",
+    "MediaEngine.MfmReadRange": "要求的位元組範圍位於 MFM EMU 容器以外。",
+    "MediaEngine.MfmCreation": "建立 MFM EMU 的磁碟幾何配置或初始資料無效。",
+    "MediaEngine.MfmCreationFileSystem": "建立 MFM EMU 僅支援使用 256 位元組磁區的 ADFS。",
+    "MediaEngine.MfmLogicalView": "文件不擁有此 MFM EMU 表示。"
+  }
+}

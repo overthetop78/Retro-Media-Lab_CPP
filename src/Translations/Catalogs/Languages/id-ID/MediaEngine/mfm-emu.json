@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Header MFM EMU tidak valid.",
+    "MediaEngine.MfmTrackRange": "Alamat trek MFM EMU atau jangkauan byte tidak valid.",
+    "MediaEngine.MfmSignal": "Sel MFM EMU, tingkat sampel atau periode revolusi tidak valid.",
+    "MediaEngine.MfmSignalRate": "Tingkat sel rekaman melebihi resolusi sinyal nanodetik.",
+    "MediaEngine.MfmWindow": "Jendela tulis MFM EMU atau offset transisinya tidak valid.",
+    "MediaEngine.MfmUncapturedWrite": "Jendela menulis berisi transisi di luar sel trek yang tersimpan.",
+    "MediaEngine.MfmLength": "Panjang EMU tidak cocok trek yang dideklarasikan dan penanda akhir.",
+    "MediaEngine.MfmEnd": "penanda akhir MFM EMU tidak valid.",
+    "MediaEngine.MfmTrack": "Alamat trek EMU tidak cocok posisi fisiknya.",
+    "MediaEngine.MfmOutput": "MFM EMU keluaran membutuhkan fisik MFM EMU representasi.",
+    "MediaEngine.MfmReadRange": "Jangkauan byte yang diminta di luar kontainer MFM EMU.",
+    "MediaEngine.MfmCreation": "Data geometri atau awal tidak valid untuk pembuatan MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Pembuatan MFM EMU hanya mendukung ADFS dengan sektor 256-byte.",
+    "MediaEngine.MfmLogicalView": "Dokumen tidak memiliki representasi MFM EMU ini."
+  }
+}

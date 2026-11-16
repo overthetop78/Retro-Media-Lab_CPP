@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "잘못된 MFM EMU 헤더.",
+    "MediaEngine.MfmTrackRange": "MFM EMU 트랙 주소 또는 바이트 범위는 유효하지 않습니다.",
+    "MediaEngine.MfmSignal": "MFM EMU 셀, 샘플링 속도 또는 회전 주기가 유효하지 않습니다.",
+    "MediaEngine.MfmSignalRate": "기록된 셀 속도가 신호의 나노초 해상도를 초과합니다.",
+    "MediaEngine.MfmWindow": "MFM EMU 쓰기 창 또는 전환 오프셋은 유효하지 않습니다.",
+    "MediaEngine.MfmUncapturedWrite": "쓰기 창은 저장된 트랙 셀 밖에 전환을 포함합니다.",
+    "MediaEngine.MfmLength": "EMU 길이는 선언 된 트랙과 엔드 마커와 일치하지 않습니다.",
+    "MediaEngine.MfmEnd": "잘못된 MFM EMU 엔드 마커.",
+    "MediaEngine.MfmTrack": "EMU 트랙 주소는 물리적 위치에 일치하지 않습니다.",
+    "MediaEngine.MfmOutput": "MFM EMU 출력은 물리적 MFM EMU 표현이 필요합니다.",
+    "MediaEngine.MfmReadRange": "요청된 바이트 범위는 MFM EMU 컨테이너 밖에 있습니다.",
+    "MediaEngine.MfmCreation": "기하학 또는 초기 데이터는 MFM EMU 생성에 유효하지 않습니다.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU 생성은 256-byte 섹터와 ADFS만 지원합니다.",
+    "MediaEngine.MfmLogicalView": "문서는이 MFM EMU 표현을 소유하지 않습니다."
+  }
+}

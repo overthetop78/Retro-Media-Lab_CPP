@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Ongeldige MFM EMU-header.",
+    "MediaEngine.MfmTrackRange": "Het MFM EMU-spooradres of bytebereik is ongeldig.",
+    "MediaEngine.MfmSignal": "De MFM EMU cellen, sample rate of revolutie periode zijn ongeldig.",
+    "MediaEngine.MfmSignalRate": "De geregistreerde celsnelheid overtreft de nanoseconde signaalresolutie.",
+    "MediaEngine.MfmWindow": "De MFM EMU schrijfvenster of de overgang offsets zijn ongeldig.",
+    "MediaEngine.MfmUncapturedWrite": "Het schrijfvenster bevat een overgang buiten de opgeslagen trackcellen.",
+    "MediaEngine.MfmLength": "De EMU-lengte komt niet overeen met de aangegeven sporen en eindmarkering.",
+    "MediaEngine.MfmEnd": "Ongeldige MFM EMU-eindmarkering.",
+    "MediaEngine.MfmTrack": "Het spooradres van de EMU komt niet overeen met zijn fysieke positie.",
+    "MediaEngine.MfmOutput": "MFM EMU-output vereist een fysieke MFM EMU-vertegenwoordiging.",
+    "MediaEngine.MfmReadRange": "Het gevraagde bytebereik ligt buiten de MFM EMU container.",
+    "MediaEngine.MfmCreation": "De meetkunde of initiële gegevens zijn ongeldig voor MFM EMU-creatie.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU creatie ondersteunt alleen ADFS met 256-byte sectoren.",
+    "MediaEngine.MfmLogicalView": "Deze MFM EMU-vertegenwoordiging is niet van het document."
+  }
+}

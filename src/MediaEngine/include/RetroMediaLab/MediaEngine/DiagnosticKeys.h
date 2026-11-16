@@ -1,6 +1,21 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view MfmHeader="MediaEngine.MfmEmuHeader";
+inline constexpr std::string_view MfmTrackRange="MediaEngine.MfmTrackRange";
+inline constexpr std::string_view MfmSignal="MediaEngine.MfmSignal";
+inline constexpr std::string_view MfmSignalRate="MediaEngine.MfmSignalRate";
+inline constexpr std::string_view MfmWindow="MediaEngine.MfmWindow";
+inline constexpr std::string_view MfmUncapturedWrite="MediaEngine.MfmUncapturedWrite";
+inline constexpr std::string_view MfmLength="MediaEngine.MfmLength";
+inline constexpr std::string_view MfmEnd="MediaEngine.MfmEnd";
+inline constexpr std::string_view MfmTrack="MediaEngine.MfmTrack";
+inline constexpr std::string_view MfmOutput="MediaEngine.MfmOutput";
+inline constexpr std::string_view MfmReadRange="MediaEngine.MfmReadRange";
+inline constexpr std::string_view MfmCreation="MediaEngine.MfmCreation";
+inline constexpr std::string_view MfmCreationFileSystem="MediaEngine.MfmCreationFileSystem";
+inline constexpr std::string_view MfmLogicalView="MediaEngine.MfmLogicalView";
+
 inline constexpr std::string_view AdaptecField="MediaEngine.AdaptecField";
 inline constexpr std::string_view AdaptecSectors="MediaEngine.AdaptecSectors";
 inline constexpr std::string_view AdaptecSectorSize="MediaEngine.AdaptecSectorSize";

@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "En-tête MFM EMU non valide.",
+    "MediaEngine.MfmTrackRange": "L’adresse de piste ou la plage d’octets MFM EMU est invalide.",
+    "MediaEngine.MfmSignal": "Les cellules MFM EMU, la fréquence d’échantillonnage ou la période de rotation sont invalides.",
+    "MediaEngine.MfmSignalRate": "La fréquence des cellules enregistrées dépasse la résolution temporelle du signal en nanosecondes.",
+    "MediaEngine.MfmWindow": "La fenêtre d'écriture MFM EMU ou ses décalages de transition sont invalides.",
+    "MediaEngine.MfmUncapturedWrite": "La fenêtre d'écriture contient une transition à l'extérieur des cellules de piste stockées.",
+    "MediaEngine.MfmLength": "La longueur EMU ne correspond pas à ses pistes déclarées et au marqueur de fin.",
+    "MediaEngine.MfmEnd": "Marqueur de fin MFM EMU invalide.",
+    "MediaEngine.MfmTrack": "L'adresse de la piste EMU ne correspond pas à sa position physique.",
+    "MediaEngine.MfmOutput": "La sortie MFM EMU nécessite une représentation physique MFM EMU.",
+    "MediaEngine.MfmReadRange": "La plage d'octets demandée est en dehors du conteneur MFM EMU.",
+    "MediaEngine.MfmCreation": "La géométrie ou les données initiales sont invalides pour la création de MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "La création MFM EMU accepte uniquement ADFS avec des secteurs de 256 octets.",
+    "MediaEngine.MfmLogicalView": "Le document ne possède pas cette représentation MFM EMU."
+  }
+}

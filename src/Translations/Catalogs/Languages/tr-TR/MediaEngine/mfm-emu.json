@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Geçersiz MFM EMU başlığı.",
+    "MediaEngine.MfmTrackRange": "MFM EMU iz adresi veya bayt aralığı geçersizdir.",
+    "MediaEngine.MfmSignal": "MFM EMU hücreleri, örnekleme hızı veya dönüş süresi geçersizdir.",
+    "MediaEngine.MfmSignalRate": "Kayıtlı hücre oranı nanosaniye sinyal çözünürlüğünü aşıyor.",
+    "MediaEngine.MfmWindow": "MFM EMU yazma penceresi veya geçiş uzaklıkları geçersizdir.",
+    "MediaEngine.MfmUncapturedWrite": "Yazma penceresi, depolanan iz hücrelerinin dışında bir geçiş içerir.",
+    "MediaEngine.MfmLength": "EMU uzunluğu, ilan edilen parçaları ve son işaretleyicilerini eşleştirmez.",
+    "MediaEngine.MfmEnd": "Geçersiz MFM EMU bitiş işaretçisi.",
+    "MediaEngine.MfmTrack": "EMU pist adresi fiziksel konumunu eşleştirmez.",
+    "MediaEngine.MfmOutput": "MFM EMU çıkışı fiziksel bir MFM EMU gösterimi gerektirir.",
+    "MediaEngine.MfmReadRange": "Talep edilen aralığı MFM EMU konteyneri dışındadır.",
+    "MediaEngine.MfmCreation": "Geometri veya ilk veriler MFM EMU yaratımı için geçersizdir.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU yaratımı 256-bayt sektörleriyle sadece ADFS'yi destekler.",
+    "MediaEngine.MfmLogicalView": "Belge bu MFM EMU gösterimine sahip değildir."
+  }
+}

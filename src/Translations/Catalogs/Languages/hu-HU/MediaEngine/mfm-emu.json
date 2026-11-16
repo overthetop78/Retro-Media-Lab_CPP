@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Érvénytelen MFM EMU fejléc.",
+    "MediaEngine.MfmTrackRange": "A MFM EMU sáv címe vagy bájttartománya érvénytelen.",
+    "MediaEngine.MfmSignal": "A MFM EMU cellák, a mintavételi frekvencia vagy a forgási periódus érvénytelen.",
+    "MediaEngine.MfmSignalRate": "A rögzített cellafrekvencia meghaladja a jel nanoszekundumos felbontását.",
+    "MediaEngine.MfmWindow": "A MFM EMU írási ablak vagy az átmeneti kompenzációk érvénytelenek.",
+    "MediaEngine.MfmUncapturedWrite": "Az írási ablak egy átmenetet tartalmaz a tárolt pályasejteken kívül.",
+    "MediaEngine.MfmLength": "A EMU hossza nem egyezik a megadott vágányokkal és a végjelölővel.",
+    "MediaEngine.MfmEnd": "Érvénytelen MFM EMU végjel.",
+    "MediaEngine.MfmTrack": "A EMU pálya címe nem egyezik a fizikai helyzetével.",
+    "MediaEngine.MfmOutput": "A MFM EMU kimenet fizikai MFM EMU képviseletet igényel.",
+    "MediaEngine.MfmReadRange": "A kért bájt tartomány kívül esik a MFM EMU tartályon.",
+    "MediaEngine.MfmCreation": "A MFM EMU létrehozása esetén a geometria vagy a kezdeti adatok érvénytelenek.",
+    "MediaEngine.MfmCreationFileSystem": "A MFM EMU létrehozása csak a ADFS-t támogatja a 256- byte szektorokkal.",
+    "MediaEngine.MfmLogicalView": "A dokumentum nem rendelkezik ezzel a MFM EMU képviselettel."
+  }
+}

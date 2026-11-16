@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Đầu đề MFM EMU không hợp lệ.",
+    "MediaEngine.MfmTrackRange": "Địa chỉ rãnh hoặc phạm vi byte MFM EMU không hợp lệ.",
+    "MediaEngine.MfmSignal": "Các ô MFM EMU, tần số lấy mẫu hoặc chu kỳ quay không hợp lệ.",
+    "MediaEngine.MfmSignalRate": "Tốc độ tế bào được ghi nhận vượt quá độ phân giải tín hiệu nano giây.",
+    "MediaEngine.MfmWindow": "Cửa sổ ghi MFM EMU hoặc độ lệch của các chuyển tiếp không hợp lệ.",
+    "MediaEngine.MfmUncapturedWrite": "Cửa sổ ghi chứa sự chuyển tiếp bên ngoài các tế bào theo dõi được lưu trữ.",
+    "MediaEngine.MfmLength": "Chiều dài EMU không khớp với dấu vết và dấu chấm hết.",
+    "MediaEngine.MfmEnd": "Kết thúc MFM EMU không hợp lệ.",
+    "MediaEngine.MfmTrack": "Địa chỉ đường ray EMU không khớp với vị trí của nó.",
+    "MediaEngine.MfmOutput": "Đầu ra MFM EMU yêu cầu một biểu diễn vật lý MFM EMU.",
+    "MediaEngine.MfmReadRange": "Phạm vi yêu cầu của byte nằm ngoài container MFM EMU.",
+    "MediaEngine.MfmCreation": "Các dữ liệu hình học hoặc ban đầu không hợp lệ cho sáng tạo MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU Tạo chỉ hỗ trợ ADFS có 256- Khu vực byte.",
+    "MediaEngine.MfmLogicalView": "Tài liệu không sở hữu đại diện MFM EMU này."
+  }
+}

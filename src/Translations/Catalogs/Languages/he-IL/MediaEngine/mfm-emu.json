@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "כותרת MFM EMU אינה תקינה.",
+    "MediaEngine.MfmTrackRange": "כתובת המסילה או טווח הבתים של MFM EMU אינם תקינים.",
+    "MediaEngine.MfmSignal": "תאי MFM EMU, קצב הדגימה או משך הסיבוב אינם תקינים.",
+    "MediaEngine.MfmSignalRate": "קצב התאים שנרשם חורג מרזולוציית האות בננו־שניות.",
+    "MediaEngine.MfmWindow": "חלון הכתיבה של MFM EMU או היסטי המעברים בו אינם תקינים.",
+    "MediaEngine.MfmUncapturedWrite": "חלון הכתיבה מכיל מעבר מחוץ לתאי המסלול המאוחסנים.",
+    "MediaEngine.MfmLength": "אורך EMU אינו תואם את המסלולים המוצהרים שלו ואת חותמת הקצה.",
+    "MediaEngine.MfmEnd": "סמן הסיום של MFM EMU אינו תקין.",
+    "MediaEngine.MfmTrack": "כתובת המסלול של EMU אינה תואמת את המיקום הפיזי שלה.",
+    "MediaEngine.MfmOutput": "פלט MFM EMU דורש ייצוג פיזי מסוג MFM EMU.",
+    "MediaEngine.MfmReadRange": "הטווח המבוקש הוא מחוץ למיכל MFM EMU.",
+    "MediaEngine.MfmCreation": "הגיאומטריה או הנתונים הראשוניים אינם חוקיים ליצירת MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "יצירת MFM EMU תומכת רק ADFS עם 256-byte מגזרים.",
+    "MediaEngine.MfmLogicalView": "המסמך אינו מחזיק בייצוג MFM EMU."
+  }
+}

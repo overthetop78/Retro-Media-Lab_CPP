@@ -22,13 +22,15 @@ La tÃ¢che 136 termine le lecteur 86F, ses modÃ¨les, sa conversion en pistes prot
 
 La tÃ¢che 137 porte le codage exact HxC Stream, les blocs LZ4/CRC et les empreintes/clÃ©s de captures natives. La tÃ¢che 138 termine le lecteur multipiste et son adaptateur du registre avec captures natives, empreintes et protection globale ; compilation et contrÃ´le ciblÃ© rÃ©ussis. Le writer et la publication du jeu multipiste restent Ã  porter.
 
-La tâche 140 termine le lecteur KryoFlux multipiste : opcodes, index hors bande, horloge, métadonnées et reconnaissance des captures NN.S.raw. Compilation et contrôle ciblé réussis ; aucun writer KryoFlux n’existe dans la référence C#.
+La tÃ¢che 140 termine le lecteur KryoFlux multipiste : opcodes, index hors bande, horloge, mÃ©tadonnÃ©es et reconnaissance des captures NN.S.raw. Compilation et contrÃ´le ciblÃ© rÃ©ussis ; aucun writer KryoFlux nâ€™existe dans la rÃ©fÃ©rence C#.
 
-La tâche 141 porte la lecture/écriture VDI 1.1 fixe et dynamique, avec table des blocs, UUID et géométrie. La sortie atomique commune accepte désormais le positionnement pour compléter les en-têtes sans seconde lecture des données. Les rejets de lecture VDI/KryoFlux sont raccordés au registre ; compilation et contrôle ciblé réussis.
+La tÃ¢che 141 porte la lecture/Ã©criture VDI 1.1 fixe et dynamique, avec table des blocs, UUID et gÃ©omÃ©trie. La sortie atomique commune accepte dÃ©sormais le positionnement pour complÃ©ter les en-tÃªtes sans seconde lecture des donnÃ©es. Les rejets de lecture VDI/KryoFlux sont raccordÃ©s au registre ; compilation et contrÃ´le ciblÃ© rÃ©ussis.
 
-La tâche 142 porte la lecture/écriture VHD fixe et dynamique, avec footer, checksums, BAT et bitmaps. Le choix de variante est partagé avec VDI ; compilation et contrôle ciblé réussis.
+La tÃ¢che 142 porte la lecture/Ã©criture VHD fixe et dynamique, avec footer, checksums, BAT et bitmaps. Le choix de variante est partagÃ© avec VDI ; compilation et contrÃ´le ciblÃ© rÃ©ussis.
 
-La tâche 143 porte la lecture/écriture et création Acorn Winchester DAT/DSC, leur géométrie et les paramètres Adaptec initiaux nécessaires au descripteur. Les captures partielles conservent des plages indisponibles et des messages traduisibles ; compilation et contrôle ciblé réussis. La tâche 144 complète le codec physique Adaptec, sa géométrie, les fenêtres DATA et le lecteur logique avec cache de piste et adaptation aux sources de blocs. Compilation et contrôle ciblé réussis ; le conteneur MfmEmu reste à raccorder.
+La tÃ¢che 143 porte la lecture/Ã©criture et crÃ©ation Acorn Winchester DAT/DSC, leur gÃ©omÃ©trie et les paramÃ¨tres Adaptec initiaux nÃ©cessaires au descripteur. Les captures partielles conservent des plages indisponibles et des messages traduisibles ; compilation et contrÃ´le ciblÃ© rÃ©ussis. La tÃ¢che 144 complÃ¨te le codec physique Adaptec, sa gÃ©omÃ©trie, les fenÃªtres DATA et le lecteur logique avec cache de piste et adaptation aux sources de blocs. Compilation et contrÃ´le ciblÃ© rÃ©ussis ; le conteneur MfmEmu reste Ã  raccorder.
+
+La tÃ¢che 145 termine le conteneur physique MFM EMU : en-tÃªtes conservÃ©s, fenÃªtres de transitions, pistes immuables et gÃ©nÃ©ration formatÃ©e Ã  la demande, reprÃ©sentation physique et vue logique Adaptec, lecteur/writer et crÃ©ation vierge ou ADFS. Compilation Debug, contrÃ´le natif ciblÃ©, audit et compilation des catalogues rÃ©ussis. La composition globale des services reste distincte de ce bloc.
 
 ## Travail restant
 

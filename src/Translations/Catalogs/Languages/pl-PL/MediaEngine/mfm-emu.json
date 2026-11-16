@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Niepoprawny nagłówek MFM EMU.",
+    "MediaEngine.MfmTrackRange": "Adres ścieżki MFM EMU lub zakres bajtów jest nieprawidłowy.",
+    "MediaEngine.MfmSignal": "Komórki MFM EMU, częstotliwość próbkowania lub okres obrotowy są nieważne.",
+    "MediaEngine.MfmSignalRate": "Zarejestrowana szybkość komórek przekracza rozdzielczość sygnału nanosekundowego.",
+    "MediaEngine.MfmWindow": "Okno zapisu MFM EMU lub jego przesunięcia przejściowe są nieprawidłowe.",
+    "MediaEngine.MfmUncapturedWrite": "Okno zapisu zawiera przejście poza zapisane komórki torowe.",
+    "MediaEngine.MfmLength": "Długość EMU nie odpowiada deklarowanym torom i znacznikowi końcowemu.",
+    "MediaEngine.MfmEnd": "Nieprawidłowy znacznik końcowy MFM EMU.",
+    "MediaEngine.MfmTrack": "Adres ścieżki EMU nie pasuje do jego położenia fizycznego.",
+    "MediaEngine.MfmOutput": "Wyjście MFM EMU wymaga fizycznej reprezentacji MFM EMU.",
+    "MediaEngine.MfmReadRange": "Wymagany zakres bajtów znajduje się poza kontenerem MFM EMU.",
+    "MediaEngine.MfmCreation": "Geometria lub dane początkowe są nieprawidłowe dla tworzenia MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Tworzenie MFM EMU obsługuje tylko ADFS z sektorami 256- byte.",
+    "MediaEngine.MfmLogicalView": "Dokument nie posiada tej reprezentacji MFM EMU."
+  }
+}

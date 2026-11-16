@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Antet MFM EMU nevalidă.",
+    "MediaEngine.MfmTrackRange": "Adresa liniei MFM EMU sau gama octeților este invalidă.",
+    "MediaEngine.MfmSignal": "Celulele MFM EMU, rata de eșantionare sau perioada de revoluție sunt invalide.",
+    "MediaEngine.MfmSignalRate": "Rata de celule înregistrate depășește rezoluția semnalului nanosecundă.",
+    "MediaEngine.MfmWindow": "Fereastra de scriere MFM EMU sau offset-urile de tranziție sunt invalide.",
+    "MediaEngine.MfmUncapturedWrite": "Fereastra de scris conține o tranziție în afara celulelor de cale stocate.",
+    "MediaEngine.MfmLength": "Lungimea EMU nu se potrivește cu urmele declarate și marcatorul final.",
+    "MediaEngine.MfmEnd": "Marker final MFM EMU nevalabil.",
+    "MediaEngine.MfmTrack": "Adresa liniei EMU nu corespunde poziției sale fizice.",
+    "MediaEngine.MfmOutput": "Ieșirea MFM EMU necesită o reprezentare fizică MFM EMU.",
+    "MediaEngine.MfmReadRange": "Gama de octeți solicitată este în afara containerului MFM EMU.",
+    "MediaEngine.MfmCreation": "Datele de geometrie sau inițiale nu sunt valabile pentru crearea MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Creaţia MFM EMU suportă doar ADFS cu sectoarele 256-byte.",
+    "MediaEngine.MfmLogicalView": "Documentul nu deţine această reprezentare MFM EMU."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "MFM EMU 文件头无效。",
+    "MediaEngine.MfmTrackRange": "MFM EMU 音轨地址或字节范围无效.",
+    "MediaEngine.MfmSignal": "MFM EMU 位单元、采样率或旋转周期无效。",
+    "MediaEngine.MfmSignalRate": "记录的位单元速率超过信号的纳秒分辨率。",
+    "MediaEngine.MfmWindow": "MFM EMU 写入窗口或其跳变偏移无效。",
+    "MediaEngine.MfmUncapturedWrite": "写入窗口包含存储的音轨单元格外的过渡.",
+    "MediaEngine.MfmLength": "EMU长度与其已声明的音轨和端标不相匹配.",
+    "MediaEngine.MfmEnd": "无效的 MFM EMU 端标记 。",
+    "MediaEngine.MfmTrack": "EMU轨道地址与其物理位置不符.",
+    "MediaEngine.MfmOutput": "MFM EMU输出需要物理MFM EMU的表示.",
+    "MediaEngine.MfmReadRange": "请求的字节范围在MFM EMU容器外.",
+    "MediaEngine.MfmCreation": "几何或初始数据对于MFM EMU的创建无效.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU的创建只支持有256字节扇区的ADFS.",
+    "MediaEngine.MfmLogicalView": "文档不拥有此 MFM EMU 表示。"
+  }
+}

@@ -3,6 +3,21 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::MfmHeader:return DiagnosticKeys::MfmHeader;
+    case DiagnosticCode::MfmTrackRange:return DiagnosticKeys::MfmTrackRange;
+    case DiagnosticCode::MfmSignal:return DiagnosticKeys::MfmSignal;
+    case DiagnosticCode::MfmSignalRate:return DiagnosticKeys::MfmSignalRate;
+    case DiagnosticCode::MfmWindow:return DiagnosticKeys::MfmWindow;
+    case DiagnosticCode::MfmUncapturedWrite:return DiagnosticKeys::MfmUncapturedWrite;
+    case DiagnosticCode::MfmLength:return DiagnosticKeys::MfmLength;
+    case DiagnosticCode::MfmEnd:return DiagnosticKeys::MfmEnd;
+    case DiagnosticCode::MfmTrack:return DiagnosticKeys::MfmTrack;
+    case DiagnosticCode::MfmOutput:return DiagnosticKeys::MfmOutput;
+    case DiagnosticCode::MfmReadRange:return DiagnosticKeys::MfmReadRange;
+    case DiagnosticCode::MfmCreation:return DiagnosticKeys::MfmCreation;
+    case DiagnosticCode::MfmCreationFileSystem:return DiagnosticKeys::MfmCreationFileSystem;
+    case DiagnosticCode::MfmLogicalView:return DiagnosticKeys::MfmLogicalView;
+
     case DiagnosticCode::AdaptecField:return DiagnosticKeys::AdaptecField;
     case DiagnosticCode::AdaptecSectors:return DiagnosticKeys::AdaptecSectors;
     case DiagnosticCode::AdaptecSectorSize:return DiagnosticKeys::AdaptecSectorSize;

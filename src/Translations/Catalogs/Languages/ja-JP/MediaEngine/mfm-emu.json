@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "MFM EMUヘッダーが無効です。",
+    "MediaEngine.MfmTrackRange": "MFM EMUトラックアドレスまたはバイト範囲が無効です。",
+    "MediaEngine.MfmSignal": "MFM EMUのセル、サンプリングレート、または回転周期が無効です。",
+    "MediaEngine.MfmSignalRate": "記録されたセルレートが信号のナノ秒分解能を超えています。",
+    "MediaEngine.MfmWindow": "MFM EMUの書き込みウィンドウまたはその遷移オフセットは無効です。",
+    "MediaEngine.MfmUncapturedWrite": "書き込みウィンドウには、保存されたトラックセルの外側の遷移が含まれています。",
+    "MediaEngine.MfmLength": "EMUの長さは、宣言されたトラックとエンドマーカーと一致しません。",
+    "MediaEngine.MfmEnd": "無効なMFM EMUの端のマーカー。",
+    "MediaEngine.MfmTrack": "EMUトラックアドレスは、その物理的な位置に一致しません。",
+    "MediaEngine.MfmOutput": "MFM EMU出力は、物理MFM EMU表現が必要です。",
+    "MediaEngine.MfmReadRange": "リクエストされたバイト範囲は、MFM EMUコンテナの外にあります。",
+    "MediaEngine.MfmCreation": "MFM EMUの生成にジオメトリや初期データは無効です。",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU の作成は、256 バイトのセクターを持つ ADFS のみをサポートしています。",
+    "MediaEngine.MfmLogicalView": "ドキュメントは、このMFM EMU表現を所有していません。"
+  }
+}

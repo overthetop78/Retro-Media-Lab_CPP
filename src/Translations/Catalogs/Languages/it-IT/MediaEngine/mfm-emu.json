@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Intestazione MFM EMU non valida.",
+    "MediaEngine.MfmTrackRange": "L'indirizzo di traccia MFM EMU o la gamma byte non sono validi.",
+    "MediaEngine.MfmSignal": "Le celle MFM EMU, il tasso di campione o il periodo di rivoluzione sono invalide.",
+    "MediaEngine.MfmSignalRate": "Il tasso di cella registrato supera la risoluzione del segnale nanosecondo.",
+    "MediaEngine.MfmWindow": "La finestra di scrittura MFM EMU o i suoi offset di transizione non sono validi.",
+    "MediaEngine.MfmUncapturedWrite": "La finestra di scrittura contiene una transizione al di fuori delle celle di traccia memorizzate.",
+    "MediaEngine.MfmLength": "La lunghezza EMU non corrisponde alle tracce dichiarate e al marcatore finale.",
+    "MediaEngine.MfmEnd": "Indicatore finale MFM EMU non valido.",
+    "MediaEngine.MfmTrack": "L'indirizzo della pista EMU non corrisponde alla sua posizione fisica.",
+    "MediaEngine.MfmOutput": "L'uscita MFM EMU richiede una rappresentazione MFM EMU fisica.",
+    "MediaEngine.MfmReadRange": "La gamma di byte richiesta è al di fuori del contenitore MFM EMU.",
+    "MediaEngine.MfmCreation": "La geometria o i dati iniziali non sono validi per la creazione di MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "La creazione di MFM EMU supporta solo ADFS con settori a 256 byte.",
+    "MediaEngine.MfmLogicalView": "Il documento non possiede questa rappresentazione MFM EMU."
+  }
+}

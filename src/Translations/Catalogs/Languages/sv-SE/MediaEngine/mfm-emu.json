@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Ogiltig MFM EMU-rubrik.",
+    "MediaEngine.MfmTrackRange": "MFM EMU spåradress eller byte intervall är ogiltig.",
+    "MediaEngine.MfmSignal": "MFM EMU-celler, provfrekvens eller revolutionsperiod är ogiltiga.",
+    "MediaEngine.MfmSignalRate": "Den inspelade cellhastigheten överstiger nanosekundssignalupplösningen.",
+    "MediaEngine.MfmWindow": "MFM EMU skrivfönster eller dess övergångskompensationer är ogiltiga.",
+    "MediaEngine.MfmUncapturedWrite": "Skrivfönstret innehåller en övergång utanför de lagrade spårcellerna.",
+    "MediaEngine.MfmLength": "EMU-längden matchar inte sina deklarerade spår och slutmarkör.",
+    "MediaEngine.MfmEnd": "Ogiltig MFM EMU slutmarkör.",
+    "MediaEngine.MfmTrack": "EMU spåradressen matchar inte sin fysiska position.",
+    "MediaEngine.MfmOutput": "MFM EMU-utgång kräver en fysisk MFM EMU-representation.",
+    "MediaEngine.MfmReadRange": "Det begärda bytesintervallet ligger utanför MFM EMU-behållaren.",
+    "MediaEngine.MfmCreation": "Geometrin eller initialdata är ogiltig för MFM EMU-skapande.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU-skapandet stöder endast ADFS med 256-bytessektorer.",
+    "MediaEngine.MfmLogicalView": "Dokumentet äger inte MFM EMU-representationen."
+  }
+}

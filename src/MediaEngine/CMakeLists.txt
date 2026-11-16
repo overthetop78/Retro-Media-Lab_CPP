@@ -1,4 +1,12 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/MfmEmu/Header.cpp
+  src/Formats/HardDisk/MfmEmu/Signal.cpp
+  src/Formats/HardDisk/MfmEmu/Container.cpp
+  src/Formats/HardDisk/MfmEmu/GeneratedData.cpp
+  src/Formats/HardDisk/MfmEmu/Representation.cpp
+  src/Formats/HardDisk/MfmEmu/Reader.cpp
+  src/Formats/HardDisk/MfmEmu/Writer.cpp
+  src/Formats/HardDisk/MfmEmu/Creation.cpp
   src/Formats/HardDisk/Adaptec/ErrorCheck.cpp
   src/Formats/HardDisk/Adaptec/Encoding.cpp
   src/Formats/HardDisk/Adaptec/Decoding.cpp

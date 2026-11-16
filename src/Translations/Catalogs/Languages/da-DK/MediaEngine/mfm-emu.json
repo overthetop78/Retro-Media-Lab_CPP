@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Ugyldig MFM EMU header.",
+    "MediaEngine.MfmTrackRange": "MFM EMU sporadresse eller byte område er ugyldig.",
+    "MediaEngine.MfmSignal": "MFM EMU-cellerne, samplingsfrekvensen eller omdrejningstiden er ugyldige.",
+    "MediaEngine.MfmSignalRate": "Den registrerede cellehastighed overstiger nanosekund-signalopløsningen.",
+    "MediaEngine.MfmWindow": "MFM EMU-skrivevinduet eller dets overgangsforskydninger er ugyldige.",
+    "MediaEngine.MfmUncapturedWrite": "Skrivningsvinduet indeholder en overgang uden for de lagrede sporceller.",
+    "MediaEngine.MfmLength": "EMU længden matcher ikke sine erklærede spor og endemarkør.",
+    "MediaEngine.MfmEnd": "Ugyldig MFM EMU endemarkør.",
+    "MediaEngine.MfmTrack": "EMU-sporadressen matcher ikke dens fysiske position.",
+    "MediaEngine.MfmOutput": "MFM EMU output kræver en fysisk MFM EMU repræsentation.",
+    "MediaEngine.MfmReadRange": "Det ønskede byte område er uden for MFM EMU beholder.",
+    "MediaEngine.MfmCreation": "Geometrien eller de oprindelige data er ugyldige for MFM EMU oprettelse.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU skabelse understøtter kun ADFS med 256- byte sektorer.",
+    "MediaEngine.MfmLogicalView": "Dokumentet ejer ikke denne MFM EMU repræsentation."
+  }
+}

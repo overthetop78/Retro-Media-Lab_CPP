@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Недійсний заголовок MFM EMU.",
+    "MediaEngine.MfmTrackRange": "Адреса доріжки MFM EMU або діапазон байтів недійсні.",
+    "MediaEngine.MfmSignal": "Комірки MFM EMU, частота дискретизації або період обертання недійсні.",
+    "MediaEngine.MfmSignalRate": "Записана частота комірок перевищує наносекундну роздільну здатність сигналу.",
+    "MediaEngine.MfmWindow": "Письмовий вікно MFM EMU або його перехідні офсети недійсні.",
+    "MediaEngine.MfmUncapturedWrite": "Письмове вікно містить перехід за межами збережених клітин доріжки.",
+    "MediaEngine.MfmLength": "Довжина EMU не відповідає заявленим трекам і кінцевим маркером.",
+    "MediaEngine.MfmEnd": "Недійсний кінцевий маркер MFM EMU.",
+    "MediaEngine.MfmTrack": "Адреса треку EMU не відповідає фізичній позиції.",
+    "MediaEngine.MfmOutput": "MFM EMU вимагає фізичного подання MFM EMU.",
+    "MediaEngine.MfmReadRange": "Запитаний діапазон байтів перебуває поза контейнером MFM EMU.",
+    "MediaEngine.MfmCreation": "Геометрія або початкові дані недійсні для створення MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Створення MFM EMU підтримує лише ADFS із секторами по 256 байтів.",
+    "MediaEngine.MfmLogicalView": "Документ не володіє цим поданням MFM EMU."
+  }
+}

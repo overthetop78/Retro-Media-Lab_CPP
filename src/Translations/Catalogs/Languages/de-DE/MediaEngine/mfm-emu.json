@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Ungültiger MFM EMU-Header.",
+    "MediaEngine.MfmTrackRange": "Der MFM EMU-Track-Adress- oder Bytebereich ist ungültig.",
+    "MediaEngine.MfmSignal": "Die MFM EMU-Zellen, die Abtastrate oder die Umdrehungsperiode sind ungültig.",
+    "MediaEngine.MfmSignalRate": "Die aufgezeichnete Zellrate übersteigt die Auflösung des Nanosekundensignals.",
+    "MediaEngine.MfmWindow": "Das Schreibfenster MFM EMU oder seine Übergangsoffsets sind ungültig.",
+    "MediaEngine.MfmUncapturedWrite": "Das Schreibfenster enthält einen Übergang außerhalb der gespeicherten Trackzellen.",
+    "MediaEngine.MfmLength": "Die EMU-Länge stimmt nicht mit den deklarierten Spuren und dem Endmarker überein.",
+    "MediaEngine.MfmEnd": "Ungültiger MFM EMU-Endmarker.",
+    "MediaEngine.MfmTrack": "Die EMU-Track-Adresse stimmt nicht mit ihrer physischen Position überein.",
+    "MediaEngine.MfmOutput": "MFM EMU-Ausgabe erfordert eine physische MFM EMU-Darstellung.",
+    "MediaEngine.MfmReadRange": "Der angeforderte Bytebereich befindet sich außerhalb des MFM EMU-Containers.",
+    "MediaEngine.MfmCreation": "Die Geometrie oder die Anfangsdaten sind für die MFM EMU-Erstellung ungültig.",
+    "MediaEngine.MfmCreationFileSystem": "Die MFM EMU-Erstellung unterstützt nur ADFS mit 256-Byte-Sektoren.",
+    "MediaEngine.MfmLogicalView": "Das Dokument besitzt diese MFM EMU-Darstellung nicht."
+  }
+}

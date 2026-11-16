@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Недействительный заголовок MFM EMU.",
+    "MediaEngine.MfmTrackRange": "Адрес трассы MFM EMU или диапазон байтов недействителен.",
+    "MediaEngine.MfmSignal": "Ячейки MFM EMU, частота дискретизации или период вращения недопустимы.",
+    "MediaEngine.MfmSignalRate": "Зарегистрированная скорость клеток превышает разрешение наносекундного сигнала.",
+    "MediaEngine.MfmWindow": "Окно записи MFM EMU или его переходные смещения недействительны.",
+    "MediaEngine.MfmUncapturedWrite": "Окно записи содержит переход за пределы сохраненных трековых ячеек.",
+    "MediaEngine.MfmLength": "Длина EMU не совпадает с заявленными дорожками и конечным маркером.",
+    "MediaEngine.MfmEnd": "Недействительный маркер MFM EMU.",
+    "MediaEngine.MfmTrack": "Адрес трека EMU не соответствует его физическому положению.",
+    "MediaEngine.MfmOutput": "Выход MFM EMU требует физического представления MFM EMU.",
+    "MediaEngine.MfmReadRange": "Запрашиваемый диапазон байтов находится за пределами контейнера MFM EMU.",
+    "MediaEngine.MfmCreation": "Геометрия или исходные данные являются недействительными для создания MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "Создание MFM EMU поддерживает только ADFS с 256-байтовыми секторами.",
+    "MediaEngine.MfmLogicalView": "Документ не владеет этим представлением MFM EMU."
+  }
+}

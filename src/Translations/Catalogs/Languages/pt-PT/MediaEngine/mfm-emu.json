@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Cabeçalho MFM EMU inválido.",
+    "MediaEngine.MfmTrackRange": "O endereço de faixa MFM EMU ou intervalo de byte é inválido.",
+    "MediaEngine.MfmSignal": "As células MFM EMU, taxa de amostragem ou período de revolução são inválidas.",
+    "MediaEngine.MfmSignalRate": "A taxa de células gravada excede a resolução do sinal nanosegundo.",
+    "MediaEngine.MfmWindow": "A janela de gravação MFM EMU ou seus deslocamentos de transição são inválidos.",
+    "MediaEngine.MfmUncapturedWrite": "A janela de gravação contém uma transição fora das células de faixa armazenadas.",
+    "MediaEngine.MfmLength": "O comprimento EMU não corresponde às faixas declaradas e ao marcador final.",
+    "MediaEngine.MfmEnd": "Marcador final MFM EMU inválido.",
+    "MediaEngine.MfmTrack": "O endereço da faixa EMU não corresponde à sua posição física.",
+    "MediaEngine.MfmOutput": "A saída do MFM EMU requer uma representação física do MFM EMU.",
+    "MediaEngine.MfmReadRange": "O intervalo de byte solicitado está fora do recipiente MFM EMU.",
+    "MediaEngine.MfmCreation": "A geometria ou os dados iniciais são inválidos para a criação do MFM EMU.",
+    "MediaEngine.MfmCreationFileSystem": "A criação de MFM EMU suporta apenas ADFS com setores 256-byte.",
+    "MediaEngine.MfmLogicalView": "O documento não possui esta representação MFM EMU."
+  }
+}

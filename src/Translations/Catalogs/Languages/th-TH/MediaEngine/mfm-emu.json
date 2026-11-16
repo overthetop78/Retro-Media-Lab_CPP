@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "ส่วนหัว MFM EMU ไม่ถูกต้อง",
+    "MediaEngine.MfmTrackRange": "ที่อยู่แทร็คของ MFM EMU หรือช่วงไบต์ไม่ถูกต้อง",
+    "MediaEngine.MfmSignal": "เซลล์ MFM EMU อัตราการสุ่มตัวอย่าง หรือคาบการหมุนไม่ถูกต้อง",
+    "MediaEngine.MfmSignalRate": "อัตราเซลล์ที่บันทึกเกินความละเอียดของสัญญาณระดับนาโนวินาที",
+    "MediaEngine.MfmWindow": "หน้าต่างการเขียน MFM EMU หรือออฟเซ็ตการเปลี่ยนสถานะไม่ถูกต้อง",
+    "MediaEngine.MfmUncapturedWrite": "หน้าต่างการเขียนมีการเปลี่ยนสถานะอยู่นอกเซลล์แทร็กที่จัดเก็บ",
+    "MediaEngine.MfmLength": "ความยาว EMU ไม่ตรงกับร่องเสียงและเครื่องหมายสิ้นสุดที่ประกาศ",
+    "MediaEngine.MfmEnd": "เครื่องหมายสิ้นสุด MFM EMU ไม่ถูกต้อง",
+    "MediaEngine.MfmTrack": "ที่อยู่ติดตาม EMU ไม่ตรงกับตําแหน่งของมัน",
+    "MediaEngine.MfmOutput": "เอาต์พุต MFM EMU ต้องใช้รูปแบบแทนทางกายภาพ MFM EMU",
+    "MediaEngine.MfmReadRange": "ระยะที่ร้องขอมาอยู่นอก MFM EMU ตู้คอนเทนเนอร์",
+    "MediaEngine.MfmCreation": "เรขาคณิตหรือข้อมูลเริ่มต้น ใช้งานไม่ได้ในการสร้าง MFM EMU",
+    "MediaEngine.MfmCreationFileSystem": "การสร้าง MFM EMU รองรับเฉพาะ ADFS ที่มีเซกเตอร์ขนาด 256 ไบต์",
+    "MediaEngine.MfmLogicalView": "เอกสารไม่มีตัวแทน MFM EMU นี้"
+  }
+}

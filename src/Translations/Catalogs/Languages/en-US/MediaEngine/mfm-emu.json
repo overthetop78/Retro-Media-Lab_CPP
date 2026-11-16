@@ -1,0 +1,18 @@
+{
+  "strings": {
+    "MediaEngine.MfmEmuHeader": "Invalid MFM EMU header.",
+    "MediaEngine.MfmTrackRange": "The MFM EMU track address or byte range is invalid.",
+    "MediaEngine.MfmSignal": "The MFM EMU cells, sample rate or revolution period are invalid.",
+    "MediaEngine.MfmSignalRate": "The recorded cell rate exceeds the nanosecond signal resolution.",
+    "MediaEngine.MfmWindow": "The MFM EMU write window or its transition offsets are invalid.",
+    "MediaEngine.MfmUncapturedWrite": "The write window contains a transition outside the stored track cells.",
+    "MediaEngine.MfmLength": "The EMU length does not match its declared tracks and end marker.",
+    "MediaEngine.MfmEnd": "Invalid MFM EMU end marker.",
+    "MediaEngine.MfmTrack": "The EMU track address does not match its physical position.",
+    "MediaEngine.MfmOutput": "MFM EMU output requires a physical MFM EMU representation.",
+    "MediaEngine.MfmReadRange": "The requested byte range is outside the MFM EMU container.",
+    "MediaEngine.MfmCreation": "The geometry or initial data is invalid for MFM EMU creation.",
+    "MediaEngine.MfmCreationFileSystem": "MFM EMU creation supports only ADFS with 256-byte sectors.",
+    "MediaEngine.MfmLogicalView": "The document does not own this MFM EMU representation."
+  }
+}
