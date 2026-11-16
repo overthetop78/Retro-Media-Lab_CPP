@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "문서에 보존된 TZX 블록이 없습니다.",
+    "MediaEngine.TzxSignalId": "원본 세그먼트 {0}에 유효한 TZX 블록 식별자가 없습니다.",
+    "MediaEngine.TzxSignalUnsupported": "TZX 블록 {0} 위치에 {1} 신호 확장없이 유지됩니다.",
+    "MediaEngine.TzxSignalPayload": "TZX 신호 페이로드는 사용할 수 없습니다, 너무 크거나 잘못된 타이밍이 있습니다.",
+    "MediaEngine.TzxSignalBits": "TZX 블록의 마지막 바이트에서 사용하는 비트 수는 1에서 8 사이여야 합니다.",
+    "MediaEngine.TzxSignalLimit": "확장된 TZX 타임라인은 지원된 길이 또는 기간을 초과합니다.",
+    "MediaEngine.TzxSignalEncode": "TZX 인코딩은 유효 블록 또는 유지 TZX 블록, 펄스 또는 일시 정지를 요구합니다."
+  }
+}

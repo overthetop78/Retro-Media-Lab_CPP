@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Tài liệu này không chứa khối TZX được duy trì.",
+    "MediaEngine.TzxSignalId": "Phần nguồn {0} không có khả năng nhận diện khối TZX hợp lệ.",
+    "MediaEngine.TzxSignalUnsupported": "TZX block {0} tại vị trí {1} được duy trì mà không cần mở rộng tín hiệu.",
+    "MediaEngine.TzxSignalPayload": "Dữ liệu tín hiệu TZX không khả dụng, quá lớn hoặc có thời gian không hợp lệ.",
+    "MediaEngine.TzxSignalBits": "Số bit được dùng trong byte cuối cùng của khối TZX phải từ 1 đến 8.",
+    "MediaEngine.TzxSignalLimit": "Thời gian TZX mở rộng vượt quá độ dài hoặc thời gian được hỗ trợ.",
+    "MediaEngine.TzxSignalEncode": "Mã hóa TZX yêu cầu các khối đã được xác thực, các khối TZX được giữ lại, xung hoặc khoảng dừng."
+  }
+}

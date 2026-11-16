@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Dokumentet indeholder ikke bevarede TZX-blokke.",
+    "MediaEngine.TzxSignalId": "Kildesegment {0} har ingen gyldig TZX-blokidentifikator.",
+    "MediaEngine.TzxSignalUnsupported": "TZX blok {0} i position {1} bevares uden signaludvidelse.",
+    "MediaEngine.TzxSignalPayload": "TZX signal nyttelasten er ikke tilgængelig, for stor, eller har ugyldig timing.",
+    "MediaEngine.TzxSignalBits": "Antallet af anvendte bit i TZX-blokkens sidste byte skal være mellem 1 og 8.",
+    "MediaEngine.TzxSignalLimit": "Den udvidede TZX tidslinje overstiger den understøttede længde eller varighed.",
+    "MediaEngine.TzxSignalEncode": "TZX kodning kræver validerede blokke eller bevarede TZX blokke, impulser eller pauser."
+  }
+}

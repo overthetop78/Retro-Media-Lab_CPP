@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Belge, saklanan TZX blokları içermiyor.",
+    "MediaEngine.TzxSignalId": "Kaynak segmenti {0} geçerli TZX blok tanımlayıcısı yoktur.",
+    "MediaEngine.TzxSignalUnsupported": "TZX blok {0} pozisyonda {1} sinyal genişlemesi olmadan muhafaza edilir.",
+    "MediaEngine.TzxSignalPayload": "TZX sinyal verileri kullanılamıyor, çok büyük veya zamanlaması geçersiz.",
+    "MediaEngine.TzxSignalBits": "TZX bloğunun son baytında kullanılan bit sayısı 1 ile 8 arasında olmalıdır.",
+    "MediaEngine.TzxSignalLimit": "Genişlenen TZX süresi desteklenen uzunluğu veya süresi aşıyor.",
+    "MediaEngine.TzxSignalEncode": "TZX kodlaması doğrulanmış bloklar, saklanan TZX blokları, darbeler veya duraklamalar gerektirir."
+  }
+}

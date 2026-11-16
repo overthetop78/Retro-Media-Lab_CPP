@@ -1,6 +1,14 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view TzxSignalDocument="MediaEngine.TzxSignalDocument";
+inline constexpr std::string_view TzxSignalId="MediaEngine.TzxSignalId";
+inline constexpr std::string_view TzxSignalUnsupported="MediaEngine.TzxSignalUnsupported";
+inline constexpr std::string_view TzxSignalPayload="MediaEngine.TzxSignalPayload";
+inline constexpr std::string_view TzxSignalBits="MediaEngine.TzxSignalBits";
+inline constexpr std::string_view TzxSignalLimit="MediaEngine.TzxSignalLimit";
+inline constexpr std::string_view TzxSignalEncode="MediaEngine.TzxSignalEncode";
+
 inline constexpr std::string_view SpectrumTapStructure="MediaEngine.SpectrumTapStructure";
 inline constexpr std::string_view SpectrumTapChecksum="MediaEngine.SpectrumTapChecksum";
 inline constexpr std::string_view SpectrumTapWrite="MediaEngine.SpectrumTapWrite";

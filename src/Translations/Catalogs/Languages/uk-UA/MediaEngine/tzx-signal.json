@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Документ не містить збережених блоків TZX.",
+    "MediaEngine.TzxSignalId": "Джерело {0} не має дійсного ідентифікатора блоку TZX.",
+    "MediaEngine.TzxSignalUnsupported": "TZX блок {0} на позиції {1} зберігається без розширення сигналу.",
+    "MediaEngine.TzxSignalPayload": "Дані сигналу TZX недоступні, завеликі або мають недійсні часові параметри.",
+    "MediaEngine.TzxSignalBits": "Кількість використаних бітів в останньому байті блоку TZX має бути від 1 до 8.",
+    "MediaEngine.TzxSignalLimit": "Розгорнута часова шкала TZX перевищує підтримувану довжину або тривалість.",
+    "MediaEngine.TzxSignalEncode": "Кодування TZX вимагає перевірених блоків або збережених блоків TZX, імпульсів або паузи."
+  }
+}

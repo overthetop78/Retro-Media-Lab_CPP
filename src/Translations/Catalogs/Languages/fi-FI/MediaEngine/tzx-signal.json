@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Asiakirja ei sisällä säilytettäviä TZX-lohkoja.",
+    "MediaEngine.TzxSignalId": "Lähdesegmentillä {0} ei ole voimassa olevaa TZX-lohkotunnistetta.",
+    "MediaEngine.TzxSignalUnsupported": "TZX- lohko {0} asennossa {1} säilytetään ilman signaalin laajentamista.",
+    "MediaEngine.TzxSignalPayload": "TZX-signaalin hyötykuorma ei ole käytettävissä, liian suuri, tai sillä on virheellinen ajoitus.",
+    "MediaEngine.TzxSignalBits": "TZX-lohkon viimeisen tavun käytettyjen bittien määrän on oltava 1–8.",
+    "MediaEngine.TzxSignalLimit": "Laajennettu TZX aikajana ylittää tuetun pituuden tai keston.",
+    "MediaEngine.TzxSignalEncode": "TZX-koodaus vaatii validoituja lohkoja tai säilytettyjä TZX-lohkoja, pulssia tai taukoja."
+  }
+}

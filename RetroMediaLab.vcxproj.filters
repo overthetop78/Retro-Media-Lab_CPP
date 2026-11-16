@@ -226,6 +226,9 @@
     <Filter Include="src\MediaEngine\src\Decoding\Sequential\Fsk">
       <UniqueIdentifier>{9269458F-B625-5D9C-BD79-878EC275AFD3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Tzx">
+      <UniqueIdentifier>{54B213A2-349A-52F0-A85C-DBB4C374358A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Encoding">
       <UniqueIdentifier>{1EE4B6EF-2BE3-5E16-BC43-17E1742D603B}</UniqueIdentifier>
     </Filter>
@@ -240,6 +243,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Encoding\Sequential\Msx">
       <UniqueIdentifier>{006F1B97-8973-5C35-B452-6FA31C675FFF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Encoding\Sequential\Tzx">
+      <UniqueIdentifier>{B75BB4BB-4A3E-5018-AB9E-CA6EE67E37A6}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Exploration">
       <UniqueIdentifier>{D4453269-8849-57CB-A194-14EEE78DD85E}</UniqueIdentifier>
@@ -2880,6 +2886,18 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Registry.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Tzx\Expansion.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Tzx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Tzx\Expansion.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Tzx</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Tzx\SignalDecoder.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Tzx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Tzx\SignalDecoder.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Tzx</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Diagnostics.cpp">
       <Filter>src\MediaEngine\src</Filter>
     </ClCompile>
@@ -2981,6 +2999,12 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Request.h">
       <Filter>src\MediaEngine\src\Encoding\Sequential</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Tzx\SignalEncoder.cpp">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Tzx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Tzx\SignalEncoder.h">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Tzx</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Encoding\TimingConstants.h">
       <Filter>src\MediaEngine\src\Encoding</Filter>
@@ -4498,6 +4522,12 @@
       <Filter>src\MediaEngine\src\Formats\Tape\Tzx</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Tzx\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Tzx</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Tzx\Metadata.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Tzx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Tzx\Metadata.h">
       <Filter>src\MediaEngine\src\Formats\Tape\Tzx</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Tzx\Reader.cpp">
@@ -6180,6 +6210,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6724,6 +6757,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\uef.json">
@@ -7272,6 +7308,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -7816,6 +7855,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\uef.json">
@@ -8364,6 +8406,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -8908,6 +8953,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\uef.json">
@@ -9456,6 +9504,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -10000,6 +10051,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\uef.json">
@@ -10548,6 +10602,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -11092,6 +11149,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\uef.json">
@@ -11640,6 +11700,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -12184,6 +12247,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\uef.json">
@@ -12732,6 +12798,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -13276,6 +13345,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\uef.json">
@@ -13824,6 +13896,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -14368,6 +14443,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\uef.json">
@@ -14916,6 +14994,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -15460,6 +15541,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\uef.json">
@@ -16008,6 +16092,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -16552,6 +16639,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\uef.json">
@@ -17100,6 +17190,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -17644,6 +17737,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\uef.json">
@@ -18192,6 +18288,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -18736,6 +18835,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\uef.json">
@@ -19284,6 +19386,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -19828,6 +19933,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\uef.json">
@@ -20376,6 +20484,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -20920,6 +21031,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\uef.json">
@@ -21468,6 +21582,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\tycom-fm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\tzx-signal.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\uef.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -22012,6 +22129,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\tycom-fm.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\tzx-signal.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\uef.json">

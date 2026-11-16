@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "המסמך אינו מכיל בלוקים TZX נשמרים.",
+    "MediaEngine.TzxSignalId": "פלח המקור {0} אין מזהה בלוק TZX תקף.",
+    "MediaEngine.TzxSignalUnsupported": "TZX בלוק {0} במיקום {1} נשמר ללא התרחבות אות.",
+    "MediaEngine.TzxSignalPayload": "מטען אות TZX אינו זמין, גדול מדי, או יש תזמון לא חוקי.",
+    "MediaEngine.TzxSignalBits": "מספר הסיביות בשימוש בבייט האחרון של בלוק TZX חייב להיות בין 1 ל-8.",
+    "MediaEngine.TzxSignalLimit": "ציר הזמן TZX מורחב עולה על אורך נתמך או משך.",
+    "MediaEngine.TzxSignalEncode": "TZX דורש בלוקים מאומתים או שמור בלוקים TZX, הדופקים, או הפסקות."
+  }
+}

@@ -50,4 +50,9 @@ inline constexpr std::string_view FormatId="tape.tzx",WriterId="tape-tzx",TzxExt
 inline constexpr int SignatureSize=8,MarkerOffset=7,MajorOffset=8,MinorOffset=9,ByteWidth=1,WordWidth=2,TripleWidth=3,DwordWidth=4,TurboHeaderSize=18,TurboLengthOffset=15,PureHeaderSize=10,PureLengthOffset=7,DirectHeaderSize=8,DirectLengthOffset=5,CustomHeaderSize=20,CustomLengthOffset=16,GlueLength=9,DecimalRadix=10,HexRadix=16,ByteBits=8,HexWidth=2,MaximumByte=255;
 inline constexpr char DigitZero='0';
 inline constexpr std::array<std::uint8_t,25> SupportedBlockIds{StandardSpeedData,TurboSpeedData,PureTone,PulseSequence,PureData,DirectRecording,CswRecording,GeneralizedData,Pause,GroupStart,GroupEnd,Jump,LoopStart,LoopEnd,CallSequence,Return,Select,StopIf48K,SetSignalLevel,TextDescription,Message,ArchiveInfo,HardwareType,CustomInfo,Glue};
+inline constexpr std::string_view SourcePositionKey="sourceSegmentPosition",RoleKey="role",PulseStatesKey="pulseTStates",PulseCountKey="pulseCount";
+inline constexpr std::string_view PilotRole="pilot",SyncRole="sync",ToneRole="tone",SequenceRole="sequence",DataRole="encoded-bits",DirectRole="direct-recording",StopRole="stop",PauseRole="pause",SpectrumMachine="spectrum",MsxMachine="msx";
+inline constexpr int StandardHeaderSize=4,StandardLengthOffset=2,HeaderFlagBoundary=128,BitMask=7,PulsePair=2,MillisecondsPerSecond=1000,MaximumWord=65535;
+inline constexpr int TurboSyncFirstOffset=2,TurboSyncSecondOffset=4,TurboZeroOffset=6,TurboOneOffset=8,TurboPilotCountOffset=10,TurboUsedBitsOffset=12,TurboPauseOffset=13;
+inline constexpr int PureOneOffset=2,PureUsedBitsOffset=4,PurePauseOffset=5,DirectPauseOffset=2,DirectUsedBitsOffset=4;
 }

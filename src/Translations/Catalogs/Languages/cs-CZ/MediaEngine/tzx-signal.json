@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Dokument neobsahuje zachované bloky TZX.",
+    "MediaEngine.TzxSignalId": "Zdrojový segment {0} nemá platný identifikátor bloku TZX.",
+    "MediaEngine.TzxSignalUnsupported": "Blok TZX {0} na pozici {1} je zachován bez rozvinutí signálu.",
+    "MediaEngine.TzxSignalPayload": "Užitečné zatížení signálu TZX je nedostupné, příliš velké, nebo má neplatné načasování.",
+    "MediaEngine.TzxSignalBits": "Počet použitých bitů v posledním bajtu bloku TZX musí být od 1 do 8.",
+    "MediaEngine.TzxSignalLimit": "Rozšířená časová osa TZX přesahuje podporovanou délku nebo délku trvání.",
+    "MediaEngine.TzxSignalEncode": "Kódování TZX vyžaduje ověřené bloky nebo zachované bloky TZX, pulsy nebo pauzy."
+  }
+}

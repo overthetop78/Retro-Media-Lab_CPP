@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "O documento não contém blocos TZX retidos.",
+    "MediaEngine.TzxSignalId": "Segmento fonte {0} não tem identificador de bloco TZX válido.",
+    "MediaEngine.TzxSignalUnsupported": "O bloco TZX {0} na posição {1} é retido sem expansão de sinal.",
+    "MediaEngine.TzxSignalPayload": "A carga útil do sinal TZX está indisponível, muito grande, ou tem um timing inválido.",
+    "MediaEngine.TzxSignalBits": "O número de bits usados no último byte do bloco TZX deve estar entre 1 e 8.",
+    "MediaEngine.TzxSignalLimit": "A linha do tempo TZX expandida excede o comprimento ou duração suportados.",
+    "MediaEngine.TzxSignalEncode": "A codificação TZX requer blocos validados ou blocos de TZX retidos, pulsos ou pausas."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "文書は保持されたTZXブロックを含んでいません。",
+    "MediaEngine.TzxSignalId": "ソースセグメント {0} には有効な TZX ブロック識別子はありません。",
+    "MediaEngine.TzxSignalUnsupported": "TZX ブロック {0} の位置 {1} は信号拡張なしで保持されます。",
+    "MediaEngine.TzxSignalPayload": "TZX信号のペイロードが利用できなくなったり、大きすぎたり、無効なタイミングがあります。",
+    "MediaEngine.TzxSignalBits": "TZXブロックの最後のバイトで使用するビット数は1から8でなければなりません。",
+    "MediaEngine.TzxSignalLimit": "拡張された TZX のタイムラインはサポートされた長さか持続期間を超過します。",
+    "MediaEngine.TzxSignalEncode": "TZXエンコーディングは、検証済みのブロックまたは保持されたTZXブロック、パルス、または一時停止を必要とします。"
+  }
+}

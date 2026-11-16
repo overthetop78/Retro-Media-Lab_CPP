@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Documentul nu conține blocuri TZX reținute.",
+    "MediaEngine.TzxSignalId": "Segmentul sursă {0} nu are identificator valabil al blocului TZX.",
+    "MediaEngine.TzxSignalUnsupported": "Blocul TZX {0} în poziţie {1} este păstrat fără expansiunea semnalului.",
+    "MediaEngine.TzxSignalPayload": "Încărcătura utilă a semnalului TZX este indisponibilă, prea mare sau are sincronizare invalidă.",
+    "MediaEngine.TzxSignalBits": "Numărul de biți utilizați în ultimul octet al blocului TZX trebuie să fie între 1 și 8.",
+    "MediaEngine.TzxSignalLimit": "Cronologia extinsă TZX depășește lungimea sau durata suportată.",
+    "MediaEngine.TzxSignalEncode": "Codarea TZX necesită blocuri validate sau blocuri TZX păstrate, impulsuri, sau pauze."
+  }
+}

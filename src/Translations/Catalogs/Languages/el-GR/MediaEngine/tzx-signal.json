@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Το έγγραφο δεν περιέχει διατηρημένα μπλοκ TZX.",
+    "MediaEngine.TzxSignalId": "Το τμήμα πηγής {0} δεν έχει έγκυρο αναγνωριστικό τμήματος TZX.",
+    "MediaEngine.TzxSignalUnsupported": "Το μπλοκ TZX {0} στη θέση {1} διατηρείται χωρίς επέκταση σήματος.",
+    "MediaEngine.TzxSignalPayload": "Το ωφέλιμο φορτίο του σήματος TZX δεν είναι διαθέσιμο, πολύ μεγάλο, ή έχει μη έγκυρο χρόνο.",
+    "MediaEngine.TzxSignalBits": "Ο αριθμός των χρησιμοποιούμενων bit στο τελευταίο byte του μπλοκ TZX πρέπει να είναι από 1 έως 8.",
+    "MediaEngine.TzxSignalLimit": "Το διευρυμένο χρονοδιάγραμμα TZX υπερβαίνει το υποστηριζόμενο μήκος ή διάρκεια.",
+    "MediaEngine.TzxSignalEncode": "Η κωδικοποίηση TZX απαιτεί επικυρωμένα μπλοκ ή διατηρημένα μπλοκ TZX, παλμούς ή παύσεις."
+  }
+}

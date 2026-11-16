@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "لا يحتوي المستند على كتل TZX محفوظة.",
+    "MediaEngine.TzxSignalId": "لا يحتوي مقطع المصدر {0} على معرّف كتلة TZX صالح.",
+    "MediaEngine.TzxSignalUnsupported": "تم الاحتفاظ بكتلة TZX {0} عند الموضع {1} دون توسيع الإشارة.",
+    "MediaEngine.TzxSignalPayload": "بيانات إشارة TZX غير متاحة أو كبيرة جدًا أو ذات توقيت غير صالح.",
+    "MediaEngine.TzxSignalBits": "يجب أن يكون عدد البتات المستخدمة في البايت الأخير من كتلة TZX بين 1 و8.",
+    "MediaEngine.TzxSignalLimit": "يتجاوز الخط الزمني الموسع لإشارة TZX الطول أو المدة المدعومة.",
+    "MediaEngine.TzxSignalEncode": "يتطلب ترميز TZX كتلًا تم التحقق منها أو كتل TZX محفوظة أو نبضات أو فترات توقف."
+  }
+}

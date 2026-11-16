@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "เอกสารไม่มีบล็อก TZX ที่คงไว้",
+    "MediaEngine.TzxSignalId": "แหล่งที่มา {0} ไม่มีตัวระบุบล็อก TZX ที่ถูกต้อง",
+    "MediaEngine.TzxSignalUnsupported": "TZX บล็อก {0} ที่ตําแหน่ง {1} ถูกคงไว้โดยไม่มีสัญญาณขยาย",
+    "MediaEngine.TzxSignalPayload": "การโหลดสัญญาณ TZX ไม่มีอยู่, ใหญ่เกินไป, หรือไม่ถูกต้อง",
+    "MediaEngine.TzxSignalBits": "จำนวนบิตที่ใช้ในไบต์สุดท้ายของบล็อก TZX ต้องอยู่ระหว่าง 1 ถึง 8",
+    "MediaEngine.TzxSignalLimit": "ช่วงเวลาการขยาย TZX เกินระยะเวลาที่รองรับ",
+    "MediaEngine.TzxSignalEncode": "การเข้ารหัส TZX ต้องการการตรวจสอบบล็อกหรือคงบล็อก TZX, ชีพจร, หรือหยุดชั่วคราว"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Het document bevat geen bewaarde TZX-blokken.",
+    "MediaEngine.TzxSignalId": "Bronsegment {0} heeft geen geldige TZX-blokidentificatie.",
+    "MediaEngine.TzxSignalUnsupported": "TZX blok {0} op positie {1} wordt bewaard zonder signaaluitbreiding.",
+    "MediaEngine.TzxSignalPayload": "De TZX signaal payload is niet beschikbaar, te groot, of heeft een ongeldige timing.",
+    "MediaEngine.TzxSignalBits": "Het aantal gebruikte bits in de laatste byte van het TZX-blok moet tussen 1 en 8 liggen.",
+    "MediaEngine.TzxSignalLimit": "De uitgebreide TZX-tijdlijn overschrijdt de ondersteunde lengte of duur.",
+    "MediaEngine.TzxSignalEncode": "TZX codering vereist gevalideerde blokken of bewaarde TZX blokken, pulsen, of pauzes."
+  }
+}

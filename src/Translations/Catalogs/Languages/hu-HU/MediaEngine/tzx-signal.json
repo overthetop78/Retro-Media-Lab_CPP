@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "A dokumentum nem tartalmaz megtartott TZX blokkokat.",
+    "MediaEngine.TzxSignalId": "A forrás szegmens {0} nincs érvényes TZX blokk azonosító.",
+    "MediaEngine.TzxSignalUnsupported": "A(z) {1} pozícióban lévő {0} TZX blokk megmarad a jel kibontása nélkül.",
+    "MediaEngine.TzxSignalPayload": "A TZX jel hasznos teher nem elérhető, túl nagy, vagy érvénytelen az időzítése.",
+    "MediaEngine.TzxSignalBits": "A TZX blokk utolsó bájtjában használt bitek száma 1 és 8 között lehet.",
+    "MediaEngine.TzxSignalLimit": "A kibővített TZX idővonal meghaladja a támogatott hosszt vagy időtartamot.",
+    "MediaEngine.TzxSignalEncode": "A TZX kódoláshoz validált blokkokra van szükség, vagy meg kell tartani a TZX blokkokat, impulzusokat vagy szüneteket."
+  }
+}

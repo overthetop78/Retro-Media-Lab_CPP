@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "Dokumen tidak berisi blok TZX yang tersimpan.",
+    "MediaEngine.TzxSignalId": "segmen sumber {0} tidak memiliki identifikasi blok TZX yang valid.",
+    "MediaEngine.TzxSignalUnsupported": "Blok TZX {0} pada posisi {1} ditahan tanpa ekspansi sinyal.",
+    "MediaEngine.TzxSignalPayload": "muatan sinyal TZX tidak tersedia, terlalu besar, atau memiliki waktu yang tidak valid.",
+    "MediaEngine.TzxSignalBits": "Jumlah bit yang digunakan dalam byte terakhir blok TZX harus antara 1 dan 8.",
+    "MediaEngine.TzxSignalLimit": "Garis waktu TZX yang diperluas melebihi panjang atau durasi yang didukung.",
+    "MediaEngine.TzxSignalEncode": "Pengkodean TZX memerlukan blok yang sah atau blok TZX yang dipertahankan, pulsa, atau jeda."
+  }
+}

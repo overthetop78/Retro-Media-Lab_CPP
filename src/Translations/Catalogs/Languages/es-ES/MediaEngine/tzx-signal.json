@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "El documento no contiene bloques TZX retenidos.",
+    "MediaEngine.TzxSignalId": "El segmento fuente {0} no tiene identificador de bloque TZX válido.",
+    "MediaEngine.TzxSignalUnsupported": "El bloque TZX {0} en la posición {1} se mantiene sin expansión de señal.",
+    "MediaEngine.TzxSignalPayload": "La carga útil de señal TZX es indisponible, demasiado grande, o tiene tiempo inválido.",
+    "MediaEngine.TzxSignalBits": "El número de bits utilizados en el último byte del bloque TZX debe estar entre 1 y 8.",
+    "MediaEngine.TzxSignalLimit": "El cronograma ampliado TZX excede la longitud o duración soportada.",
+    "MediaEngine.TzxSignalEncode": "La codificación TZX requiere bloques validados o bloques TZX retenidos, pulsos o pausas."
+  }
+}

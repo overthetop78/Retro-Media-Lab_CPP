@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "文件没有保留 TZX 块。",
+    "MediaEngine.TzxSignalId": "源部件{0}没有有效的 TZX 块标识符 。",
+    "MediaEngine.TzxSignalUnsupported": "TZX 块{0} 位于位置{1} 被保留而不进行信号扩展 。",
+    "MediaEngine.TzxSignalPayload": "TZX信号有效载荷不可用,太大了,或者时间无效.",
+    "MediaEngine.TzxSignalBits": "TZX 块的最后一个字节中使用的位数必须介于 1 和 8 之间。",
+    "MediaEngine.TzxSignalLimit": "扩展的TZX时间跨出支持的长度或持续时间.",
+    "MediaEngine.TzxSignalEncode": "TZX编码需要验证出块或保留出TZX块,脉冲,或暂停."
+  }
+}

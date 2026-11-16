@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "文件不包含保留的 TZX 區塊。",
+    "MediaEngine.TzxSignalId": "來源片段 {0} 沒有有效的 TZX 區塊識別碼。",
+    "MediaEngine.TzxSignalUnsupported": "位置 {1} 的 TZX 區塊 {0} 已保留，但不展開為訊號。",
+    "MediaEngine.TzxSignalPayload": "TZX 訊號資料無法使用、過大或時間參數無效。",
+    "MediaEngine.TzxSignalBits": "TZX 區塊的最後一個位元組中使用的位元數必須介於 1 和 8 之間。",
+    "MediaEngine.TzxSignalLimit": "展開的 TZX 時間軸超出支援的長度或持續時間。",
+    "MediaEngine.TzxSignalEncode": "TZX 編碼需要已驗證的區塊、保留的 TZX 區塊、脈衝或暫停。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.TzxSignalDocument": "The document does not contain retained TZX blocks.",
+    "MediaEngine.TzxSignalId": "Source segment {0} has no valid TZX block identifier.",
+    "MediaEngine.TzxSignalUnsupported": "TZX block {0} at position {1} is retained without signal expansion.",
+    "MediaEngine.TzxSignalPayload": "The TZX signal payload is unavailable, too large, or has invalid timing.",
+    "MediaEngine.TzxSignalBits": "The last-byte bit count in the TZX block must be between 1 and 8.",
+    "MediaEngine.TzxSignalLimit": "The expanded TZX timeline exceeds the supported length or duration.",
+    "MediaEngine.TzxSignalEncode": "TZX encoding requires validated blocks or retained TZX blocks, pulses, or pauses."
+  }
+}
