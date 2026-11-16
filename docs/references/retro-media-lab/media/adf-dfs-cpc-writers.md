@@ -10,4 +10,4 @@ Le writer CPCEMU expose Amstrad CPC, PCW et le format natif CPCEMU DSK, avec DSK
 
 EDSK sélectionne directement Extended. Pour DSK, le conteneur devient Extended si une piste manque, si la taille d’un secteur diffère de sa taille nominale ou si les tailles non rembourrées des pistes diffèrent. Le fichier conserve son extension demandée DSK : la signature du conteneur détermine son type réel. Les autres limites du writer natif restent appliquées ; ce passage n’introduit ni secteurs fictifs ni suppression de données.
 
-Chaque adapter retourne un chemin unique et délègue l’écriture atomique au backend existant. Les services complets de conversion et leur sélection initiale des lecteurs restent en cours, ainsi que la composition globale de l’ensemble des writers.
+Chaque adapter retourne un chemin unique et délègue l’écriture atomique au backend existant. La composition globale des writers et les services de conversion ont depuis été ajoutés dans `src/MediaEngine/src/Composition/` et `src/MediaEngine/src/Images/Conversion/`.

@@ -10,4 +10,4 @@ Les adaptateurs résident auprès de chaque backend existant. Ils ne dupliquent 
 
 Comme en C#, les sondes ne filtrent pas arbitrairement l’extension. Le format demandé est contrôlé avant lecture. Les erreurs d’E/S, d’annulation et de conteneur restent celles des composants existants ; aucun texte d’exception supplémentaire n’est introduit. Les futures possèdent une copie du contexte et ne capturent pas le pointeur du reader.
 
-Ce raccordement n’est pas encore la composition globale de tous les lecteurs de MediaEngine. Les wrappers communs WOZ/NIB et d’autres formats restent à porter.
+Actualisation du suivi : ces lecteurs sont désormais raccordés à la composition native de reconnaissance (`src/MediaEngine/src/Composition/Recognition.cpp`). Les phrases de statut de ce document décrivaient l’étape initiale, pas une absence actuelle de portage.

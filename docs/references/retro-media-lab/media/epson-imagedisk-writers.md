@@ -6,4 +6,4 @@ Le writer brut suit le catalogue Epson variable en cylindre/face/numéro, indép
 
 L'adapter Epson expose les six profils natifs et IMG/IMD. IMG utilise le backend brut ; IMD restaure les métadonnées détaillées, ou construit un conteneur Epson seulement si ces métadonnées sont absentes. Une structure présente mais invalide reste une erreur. L'adapter ImageDisk accepte uniquement IMD avec les métadonnées de structure, comme le C#.
 
-Le raccordement aux services globaux de lecture/conversion et à leur composition reste à porter. Ces adapters ne constituent pas une composition complète par défaut.
+Le raccordement aux compositions globales de lecture/écriture et aux services de conversion est désormais présent dans `src/MediaEngine/src/Composition/` et `src/MediaEngine/src/Images/Conversion/`.
