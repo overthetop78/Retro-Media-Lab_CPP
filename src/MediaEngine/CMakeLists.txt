@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Images/Optical/SessionOpening.cpp
     src/Images/Conversion/AtrPayload.cpp
     src/Formats/I86f/SectorReader.cpp
     src/Formats/I86f/SectorFacade.cpp

@@ -111,4 +111,5 @@ inline constexpr std::string_view AmstradRom = "amstrad.rom";
 inline constexpr std::string_view NintendoFamicomDisk="nintendo.fds";
 inline constexpr std::string_view OpticalIso="optical-iso";
 inline constexpr std::string_view MicrosoftXboxXdvdfs="microsoft.xbox.xdvdfs";
+inline constexpr std::string_view NintendoWiiU="nintendo.wiiu",OpticalGdi="optical-gdi";
 }

@@ -10971,6 +10971,9 @@
     <ClCompile Include="src\MediaEngine\src\Images\Optical\DiscSession.cpp">
       <Filter>src\MediaEngine\src\Images\Optical</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Images\Optical\SessionOpening.cpp">
+      <Filter>src\MediaEngine\src\Images\Optical</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Images\ReaderRegistry.cpp">
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClCompile>
@@ -11635,6 +11638,9 @@
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FamicomDisk.h">
+      <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FamicomDiskMetadataConstants.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Fat.h">

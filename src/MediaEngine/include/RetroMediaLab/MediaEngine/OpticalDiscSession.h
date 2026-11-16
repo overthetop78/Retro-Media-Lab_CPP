@@ -2,6 +2,7 @@
 #include "Export.h"
 #include "OpticalTrackMode.h"
 #include <cstdint>
+#include <filesystem>
 #include <memory>
 #include <future>
 #include <optional>
@@ -21,6 +22,7 @@ struct OpticalDiscTrack {
 // A session owns its reference to the document. Engine composition supplies it.
 class OpticalDiscSession final {
 public:
+    RETROMEDIALAB_MEDIAENGINE_API static std::future<std::unique_ptr<OpticalDiscSession>> openAsync(std::filesystem::path,std::stop_token={},bool includeCompanionAudio=false);
     RETROMEDIALAB_MEDIAENGINE_API explicit OpticalDiscSession(std::shared_ptr<const MediaDocument>);
     RETROMEDIALAB_MEDIAENGINE_API ~OpticalDiscSession()noexcept;
     OpticalDiscSession(const OpticalDiscSession&)=delete;OpticalDiscSession& operator=(const OpticalDiscSession&)=delete;
@@ -32,6 +34,8 @@ public:
     RETROMEDIALAB_MEDIAENGINE_API std::future<std::optional<std::vector<std::uint8_t>>> readSubchannelAsync(int trackIndex,std::int64_t relativeSector,std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API std::future<void> precacheAsync(std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API void close();
-private:struct State;std::shared_ptr<State> state_;
+private:
+    OpticalDiscSession(std::shared_ptr<const MediaDocument>,bool resetOnFailure);
+    struct State;std::shared_ptr<State> state_;
 };
 }

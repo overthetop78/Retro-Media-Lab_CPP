@@ -2974,6 +2974,7 @@
     <ClInclude Include="src\MediaEngine\src\Images\Optical\CompanionAudio.h" />
     <ClInclude Include="src\MediaEngine\src\Images\Optical\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Optical\DiscSession.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Images\Optical\SessionOpening.cpp" />
     <ClCompile Include="src\MediaEngine\src\Images\ReaderRegistry.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\ReaderRegistry.h" />
     <ClInclude Include="src\MediaEngine\src\Images\Readers.h" />
@@ -3196,6 +3197,7 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Diagnostics.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Export.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FamicomDisk.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FamicomDiskMetadataConstants.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Fat.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Fat12.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FatBootSectorLayout.h" />
