@@ -2998,6 +2998,13 @@
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Score.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Rx02Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Rx02Reader.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Candidates.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Candidates.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Composition.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Composition.h" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Apple.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Commodore.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Constants.h" />

@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Reconstruction/Scp/Candidates.cpp
+  src/Reconstruction/Scp/Reader.cpp
+  src/Reconstruction/Scp/Composition.cpp
   src/Runtime/FluxTrackData.cpp
   src/Runtime/Tracks.cpp
   src/Runtime/WinchesterTracks.cpp

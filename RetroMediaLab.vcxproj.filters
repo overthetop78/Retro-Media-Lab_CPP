@@ -886,6 +886,9 @@
     <Filter Include="src\MediaEngine\src\Reconstruction\Iso">
       <UniqueIdentifier>{B9BF24D7-CC47-5765-B67D-7A4472AAD68F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Reconstruction\Scp">
+      <UniqueIdentifier>{27D5B83C-706A-5EB3-87BC-0FBE89130D0A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Reconstruction\Sector">
       <UniqueIdentifier>{15F54148-1F77-5CD6-9E05-09F7C9C503F0}</UniqueIdentifier>
     </Filter>
@@ -11012,6 +11015,27 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Rx02Reader.h">
       <Filter>src\MediaEngine\src\Reconstruction</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Candidates.cpp">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Candidates.h">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Composition.cpp">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Composition.h">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Constants.h">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Scp\Reader.cpp">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Scp\Reader.h">
+      <Filter>src\MediaEngine\src\Reconstruction\Scp</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Apple.cpp">
       <Filter>src\MediaEngine\src\Reconstruction\Sector</Filter>
