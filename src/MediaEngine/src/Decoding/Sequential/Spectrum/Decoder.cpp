@@ -21,18 +21,6 @@ SequentialDecodedBlock create(std::int64_t position,std::vector<std::uint8_t> by
     const auto flag=Tzx::blockIdText(bytes.front());const auto header=bytes.size()==HeaderBlockLength&&bytes.front()==HeaderFlag;
     return {position,std::move(bytes),{source},checksum==0,{{std::string(SourceFormatKey),std::move(format)},{std::string(FlagKey),flag},{std::string(HeaderKey),std::string(header?TrueValue:FalseValue)}}};
 }
-bool tzxData(const SequentialSegmentFields& value,std::span<const std::uint8_t> payload,int& offset,int& length){
-    using namespace Tzx::Constants;std::uint8_t id{};if(!Tzx::tryBlockId(value,id))return false;
-    const auto word=[&](int at){return qFromLittleEndian<std::uint16_t>(payload.data()+at);};
-    const auto triple=[&](int at){return int(payload[at])|(int(payload[at+1])<<Tzx::Constants::ByteBits)|(int(payload[at+WordWidth])<<(WordWidth*Tzx::Constants::ByteBits));};
-    switch(id){
-    case StandardSpeedData:offset=StandardHeaderSize;if(payload.size()<offset)return false;length=word(StandardLengthOffset);break;
-    case TurboSpeedData:offset=TurboHeaderSize;if(payload.size()<offset)return false;length=triple(TurboLengthOffset);break;
-    case PureData:offset=PureHeaderSize;if(payload.size()<offset)return false;length=triple(PureLengthOffset);break;
-    default:return false;
-    }
-    return length>=MinimumBlockLength&&static_cast<std::size_t>(length)<=payload.size()-offset;
-}
 SequentialDecodeResult decode(const MediaDocument& document,const SequentialImage& image,std::stop_token token){
     const bool pcm=!sameIdentifier(document.formatId(),FormatId)&&!sameIdentifier(document.formatId(),Tzx::Constants::FormatId);
     int channels{},rate{},bits{},align{};if(pcm&&!TapePcm::tryProfile(document.metadata(),channels,rate,bits,align))return {std::string(DecoderId),0,{},segments(image),{},{{std::string(DiagnosticKeys::SpectrumTapePcm),{},{}}}};
@@ -49,7 +37,7 @@ SequentialDecodeResult decode(const MediaDocument& document,const SequentialImag
         std::optional<std::vector<std::uint8_t>> data;
         if(sameIdentifier(document.formatId(),FormatId)&&value.metadata.contains(std::string(BlockMetadataKey)))data=readStoredRange(range,token);
         else if(sameIdentifier(document.formatId(),Tzx::Constants::FormatId)){
-            const auto payload=readStoredRange(range,token);int offset{},length{};if(payload&&tzxData(value,*payload,offset,length))data=std::vector<std::uint8_t>(payload->begin()+offset,payload->begin()+offset+length);
+            const auto payload=readStoredRange(range,token);int offset{},length{};if(payload&&Tzx::tryDataRange(value,*payload,offset,length)&&length>=MinimumBlockLength)data=std::vector<std::uint8_t>(payload->begin()+offset,payload->begin()+offset+length);
         }
         if(!data||data->size()<MinimumBlockLength)continue;
         blocks.push_back(create(blocks.size(),std::move(*data),value.position,document.formatId()));consumed.insert(value.position);

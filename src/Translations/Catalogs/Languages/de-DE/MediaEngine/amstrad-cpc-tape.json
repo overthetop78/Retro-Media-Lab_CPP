@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Das Dokument ist mit dem Amstrad CPC Banddecoder nicht kompatibel.",
+    "MediaEngine.CpcTapeShortHeader": "Ein CPC-Bandheader enthält weniger als 64 Bytes.",
+    "MediaEngine.CpcTapeOrphanData": "Ein CPC-Banddatensatz hat keinen vorhergehenden Header.",
+    "MediaEngine.CpcTapeShortBlock": "CPC-Bandblock {0} enthält {1} von {2} deklarierten Bytes.",
+    "MediaEngine.CpcTapeOrphanHeader": "Ein CPC-Bandkopf hat keinen folgenden Datensatz.",
+    "MediaEngine.CpcTapeNoBlocks": "Es wurde kein vollständiger CPC-Banddateiblock gefunden.",
+    "MediaEngine.CpcTapeEncode": "Die CPC-Bandkodierung erfordert 1 bis 255 Dateiblöcke, die jeweils 1 bis 2048 Bytes enthalten, ohne zurückgehaltene Segmente.",
+    "MediaEngine.CpcTapeLimit": "Das rekonstruierte CPC-Bandsignal überschreitet die unterstützte Abtastgrenze."
+  }
+}

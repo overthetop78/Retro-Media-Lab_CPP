@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "El documento es incompatible con el decodificador de cinta Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Un encabezado de cinta CPC contiene menos de 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "Un registro de datos de la cinta CPC no tiene encabezado anterior.",
+    "MediaEngine.CpcTapeShortBlock": "El bloque de cinta CPC {0} contiene {1} de los {2} bytes declarados.",
+    "MediaEngine.CpcTapeOrphanHeader": "Un encabezado de cinta CPC no tiene registro de datos.",
+    "MediaEngine.CpcTapeNoBlocks": "No se encontró ningún bloque completo de archivos de cinta CPC.",
+    "MediaEngine.CpcTapeEncode": "La codificación de cinta CPC requiere 1 a 255 bloques de archivos, cada uno conteniendo 1 a 2048 bytes, sin segmentos retenidos.",
+    "MediaEngine.CpcTapeLimit": "La señal reconstruida de cinta CPC supera el límite de muestra soportado."
+  }
+}

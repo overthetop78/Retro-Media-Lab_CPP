@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokument je neslučitelný s dekodérem Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Záhlaví CPC pásky obsahuje méně než 64 bajtů.",
+    "MediaEngine.CpcTapeOrphanData": "Záznamy o záznamu CPC nemají předchozí záhlaví.",
+    "MediaEngine.CpcTapeShortBlock": "Blok pásky CPC {0} obsahuje {1} z {2} deklarovaných bajtů.",
+    "MediaEngine.CpcTapeOrphanHeader": "Záhlaví CPC pásky nemá žádný následující záznam.",
+    "MediaEngine.CpcTapeNoBlocks": "Nebyl nalezen žádný kompletní blok záznamů CPC.",
+    "MediaEngine.CpcTapeEncode": "CPC kódování pásky vyžaduje 1 až 255 souborů bloků, každý obsahuje 1 až 2048 bajtů, bez zachovaných segmentů.",
+    "MediaEngine.CpcTapeLimit": "Rekonstruovaný signál CPC pásky překračuje podporovaný limit vzorku."
+  }
+}

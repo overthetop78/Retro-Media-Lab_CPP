@@ -307,6 +307,11 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Encoding/Sequential/Registry.cpp
   src/Encoding/Sequential/Compatibility.cpp
   src/Encoding/Sequential/Atari/Records.cpp
+  src/Formats/Tape/Amstrad/Records.cpp
+  src/Formats/Tape/Common/PulseIntervals.cpp
+  src/Decoding/Sequential/Amstrad/Decoder.cpp
+  src/Decoding/Sequential/Amstrad/Pulses.cpp
+  src/Encoding/Sequential/Amstrad/Encoder.cpp
   src/Formats/Tape/CommodoreTap/Profile.cpp
   src/Formats/Tape/CommodoreTap/Reader.cpp
   src/Formats/Tape/CommodoreTap/Writer.cpp

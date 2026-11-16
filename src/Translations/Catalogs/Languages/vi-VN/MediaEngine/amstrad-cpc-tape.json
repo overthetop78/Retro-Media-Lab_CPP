@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Tài liệu này không tương thích với bộ giải mã băng Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Một đầu băng ghi âm CPC chứa chưa tới 64 byte.",
+    "MediaEngine.CpcTapeOrphanData": "Dữ liệu ghi âm CPC không có tiêu đề trước.",
+    "MediaEngine.CpcTapeShortBlock": "Khối băng CPC {0} chứa {1} trong số {2} byte đã khai báo.",
+    "MediaEngine.CpcTapeOrphanHeader": "Một đầu băng CPC không có dữ liệu theo sau.",
+    "MediaEngine.CpcTapeNoBlocks": "Chưa tìm thấy khối băng CPC đầy đủ.",
+    "MediaEngine.CpcTapeEncode": "Mã hóa băng CPC cần từ 1 đến 255 khối tập tin, mỗi khối chứa từ 1 đến 2048 byte, không có đoạn được giữ lại.",
+    "MediaEngine.CpcTapeLimit": "Tín hiệu băng CPC được tái tạo vượt quá giới hạn mẫu được hỗ trợ."
+  }
+}

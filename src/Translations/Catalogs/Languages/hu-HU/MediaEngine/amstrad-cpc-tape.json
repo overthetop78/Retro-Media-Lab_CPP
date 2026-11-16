@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "A dokumentum összeegyeztethetetlen az Amstrad CPC dekóderrel.",
+    "MediaEngine.CpcTapeShortHeader": "A CPC-szalag fejléce kevesebb mint 64 bájtot tartalmaz.",
+    "MediaEngine.CpcTapeOrphanData": "A CPC-adatrekordnak nincs korábbi fejléce.",
+    "MediaEngine.CpcTapeShortBlock": "A(z) {0} CPC szalagblokk {1} bájtot tartalmaz a megadott {2} bájtból.",
+    "MediaEngine.CpcTapeOrphanHeader": "A CPC-szalag fejlécét nem követi adatrekord.",
+    "MediaEngine.CpcTapeNoBlocks": "Nem találtak teljes CPC fájlblokkot.",
+    "MediaEngine.CpcTapeEncode": "A CPC-kazetta kódolása 1-255 fájlblokkot igényel, mindegyik 1-2048 bájtot tartalmaz, a megtartott szegmensek nélkül.",
+    "MediaEngine.CpcTapeLimit": "A rekonstruált CPC-szalagjel meghaladja a támogatott mintahatárértéket."
+  }
+}

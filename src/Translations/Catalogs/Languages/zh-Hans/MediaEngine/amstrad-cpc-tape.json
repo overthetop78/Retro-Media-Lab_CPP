@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "该文档与Amstrad CPC磁带解码器不相容.",
+    "MediaEngine.CpcTapeShortHeader": "一个CPC磁带头包含不到64字节.",
+    "MediaEngine.CpcTapeOrphanData": "CPC磁带数据记录没有前面的标题。",
+    "MediaEngine.CpcTapeShortBlock": "CPC 磁带块 {0} 包含声明的 {2} 字节中的 {1} 字节。",
+    "MediaEngine.CpcTapeOrphanHeader": "CPC磁带头没有跟随数据记录.",
+    "MediaEngine.CpcTapeNoBlocks": "未找到完整的CPC磁带文件块 。",
+    "MediaEngine.CpcTapeEncode": "CPC磁带编码需要1至255个文件块,每个文件块包含1至2048字节,没有保留段.",
+    "MediaEngine.CpcTapeLimit": "被重建的CPC磁带信号超过了支持的样本限制."
+  }
+}

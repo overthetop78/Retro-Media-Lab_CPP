@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "המסמך אינו תואם למפענח הקלטות של Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "כותרת קלטת CPC מכילה פחות מ-64 בייטים.",
+    "MediaEngine.CpcTapeOrphanData": "לרישום נתונים של CPC אין כותרת קודמת.",
+    "MediaEngine.CpcTapeShortBlock": "בלוק קלטת CPC {0} מכיל {1} מתוך {2} הבייטים שהוצהרו.",
+    "MediaEngine.CpcTapeOrphanHeader": "אין רשומת נתונים אחרי כותרת קלטת CPC.",
+    "MediaEngine.CpcTapeNoBlocks": "לא נמצא בלוק קובץ שלם של קלטת CPC.",
+    "MediaEngine.CpcTapeEncode": "קידוד קלטת CPC דורש 1 עד 255 בלוקי קובץ, שכל אחד מהם מכיל 1 עד 2048 בייטים, ללא מקטעים שמורים.",
+    "MediaEngine.CpcTapeLimit": "אות קלטת CPC המשוחזר עולה על הגבלת הדגימה הנתמכת."
+  }
+}

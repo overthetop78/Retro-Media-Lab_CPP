@@ -1,5 +1,6 @@
 #include "Decoder.h"
 #include "../Compatibility.h"
+#include "../../../Formats/Tape/Common/PulseIntervals.h"
 #include "../../../Formats/Tape/CommodoreTap/Protocol.h"
 #include "../../../Formats/Tape/CommodoreTap/Profile.h"
 #include "../../../Formats/Tape/CommodoreTap/Constants.h"
@@ -17,11 +18,11 @@ using namespace CommodoreTap::Constants;
 using Segments=std::vector<SequentialSegment>;
 const Segments& segments(const SequentialImage& image){static const Segments empty;return image.segments()?*image.segments():empty;}
 void wavePulses(std::span<const std::int32_t> samples,int rate,std::int64_t source,std::vector<CommodoreTape::Pulse>& pulses,std::stop_token token){
-    if(samples.empty())return;bool sign=samples.front()>=0;std::size_t previous=0;
-    for(std::size_t index=1;index<samples.size();++index){checkCancellation(token);const bool next=samples[index]>=0;if(next==sign)continue;const auto cycles=TapePcm::roundEven((index-previous)*double(DefaultC64PalClockRate)/rate);if(cycles>std::numeric_limits<int>::max())throw MediaError(DiagnosticCode::CommodoreTapeLimit);if(cycles>0)pulses.push_back({static_cast<int>(cycles),source});previous=index;sign=next;}
-    const auto finalCycles=TapePcm::roundEven((samples.size()-previous)*double(DefaultC64PalClockRate)/rate);
-    if(finalCycles>std::numeric_limits<int>::max())throw MediaError(DiagnosticCode::CommodoreTapeLimit);
-    if(finalCycles>0)pulses.push_back({static_cast<int>(finalCycles),source});
+    TapePcm::pulseIntervals(samples,rate,[&](auto interval){
+        if(interval.silence){pulses.push_back({0,source});return;}
+        const auto cycles=TapePcm::roundEven(interval.samples*double(DefaultC64PalClockRate)/rate);
+        if(cycles>std::numeric_limits<int>::max())throw MediaError(DiagnosticCode::CommodoreTapeLimit);if(cycles>0)pulses.push_back({static_cast<int>(cycles),source});
+    },token);
 }
 SequentialDecodeResult decode(const MediaDocument& document,const SequentialImage& image,std::stop_token token){
     const bool pcm=!sameIdentifier(document.formatId(),FormatId);int channels{},rate{},bits{},align{};

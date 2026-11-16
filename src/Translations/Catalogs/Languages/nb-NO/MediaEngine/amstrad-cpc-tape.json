@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokumentet er inkompatibel med Amstrad CPC tape dekoder.",
+    "MediaEngine.CpcTapeShortHeader": "En CPC tape-hode inneholder færre enn 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "En CPC tape datarekord har ingen tidligere overskrift.",
+    "MediaEngine.CpcTapeShortBlock": "CPC-båndblokk {0} inneholder {1} av {2} deklarerte byte.",
+    "MediaEngine.CpcTapeOrphanHeader": "En CPC tape header har ingen følgende datapost.",
+    "MediaEngine.CpcTapeNoBlocks": "Ingen komplett CPC- bandfilblokk ble funnet.",
+    "MediaEngine.CpcTapeEncode": "CPC-båndkoding krever 1 til 255 filblokker som hver inneholder 1 til 2048 bytes, uten beholdte segmenter.",
+    "MediaEngine.CpcTapeLimit": "Det rekonstruerte CPC båndsignal overstiger den støttede prøvegrense."
+  }
+}

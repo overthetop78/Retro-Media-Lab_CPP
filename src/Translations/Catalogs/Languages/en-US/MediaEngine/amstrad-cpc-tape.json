@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "The document is incompatible with the Amstrad CPC tape decoder.",
+    "MediaEngine.CpcTapeShortHeader": "A CPC tape header contains fewer than 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "A CPC tape data record has no preceding header.",
+    "MediaEngine.CpcTapeShortBlock": "CPC tape block {0} contains {1} of {2} declared bytes.",
+    "MediaEngine.CpcTapeOrphanHeader": "A CPC tape header has no following data record.",
+    "MediaEngine.CpcTapeNoBlocks": "No complete CPC tape file block was found.",
+    "MediaEngine.CpcTapeEncode": "CPC tape encoding requires 1 to 255 file blocks, each containing 1 to 2048 bytes, without retained segments.",
+    "MediaEngine.CpcTapeLimit": "The reconstructed CPC tape signal exceeds the supported sample limit."
+  }
+}

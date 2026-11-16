@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Документ несумісний із декодером стрічок Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Стрічка CPC містить менше 64 байтів.",
+    "MediaEngine.CpcTapeOrphanData": "Запис даних стрічки CPC не має попереднього заголовка.",
+    "MediaEngine.CpcTapeShortBlock": "Блок стрічки CPC {0} містить {1} із {2} заявлених байтів.",
+    "MediaEngine.CpcTapeOrphanHeader": "За заголовком стрічки CPC немає запису даних.",
+    "MediaEngine.CpcTapeNoBlocks": "Не знайдено повного блоку файлів CPC.",
+    "MediaEngine.CpcTapeEncode": "Кодування стрічки CPC вимагає 1 до 255 блоків файлів, кожен з яких містить 1 до 2048 байтів, без збережених сегментів.",
+    "MediaEngine.CpcTapeLimit": "Реконструйований сигнал CPC перевищить підтримуваний ліміт зразка."
+  }
+}

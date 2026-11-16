@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "文件與 Amstrad CPC 磁帶解碼器不相容。",
+    "MediaEngine.CpcTapeShortHeader": "CPC 磁帶標頭少於 64 位元組。",
+    "MediaEngine.CpcTapeOrphanData": "CPC 磁帶資料記錄之前沒有標頭。",
+    "MediaEngine.CpcTapeShortBlock": "CPC 磁帶區塊 {0} 包含宣告的 {2} 位元組中的 {1} 位元組。",
+    "MediaEngine.CpcTapeOrphanHeader": "CPC 磁帶標頭之後沒有資料記錄。",
+    "MediaEngine.CpcTapeNoBlocks": "找不到完整的 CPC 磁帶檔案區塊。",
+    "MediaEngine.CpcTapeEncode": "CPC 磁帶編碼需要 1 至 255 個檔案區塊，每個區塊包含 1 至 2048 位元組，且不得包含保留的片段。",
+    "MediaEngine.CpcTapeLimit": "重建的 CPC 磁帶訊號超過支援的取樣數量限制。"
+  }
+}

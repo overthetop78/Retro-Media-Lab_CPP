@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Belge, Amstrad CPC kaset çözücüsüyle uyumlu değildir.",
+    "MediaEngine.CpcTapeShortHeader": "CPC kaset başlığı 64 bayttan az veri içeriyor.",
+    "MediaEngine.CpcTapeOrphanData": "CPC kaset veri kaydının bir önceki başlığı yoktur.",
+    "MediaEngine.CpcTapeShortBlock": "CPC kaset bloğu {0}, bildirilen {2} baytın {1} baytını içeriyor.",
+    "MediaEngine.CpcTapeOrphanHeader": "CPC kaset başlığını izleyen bir veri kaydı yok.",
+    "MediaEngine.CpcTapeNoBlocks": "Tam bir CPC kaset dosya bloğu bulunamadı.",
+    "MediaEngine.CpcTapeEncode": "CPC kaset kodlaması, korunmuş bölümler olmadan her biri 1 ile 2048 bayt içeren 1 ile 255 dosya bloğu gerektirir.",
+    "MediaEngine.CpcTapeLimit": "Yeniden inşa edilen CPC kaset sinyali, desteklenen örnek sınırı aşıyor."
+  }
+}

@@ -403,6 +403,10 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Acorn\AcornDecoder.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Acorn\AtomDecoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Acorn\AtomDecoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Decoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Decoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Pulses.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Pulses.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Records.cpp" />
@@ -452,6 +456,8 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Acorn\AcornOutput.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Acorn\AtomEncoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Acorn\AtomEncoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Amstrad\Encoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Amstrad\Encoder.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Atari\Encoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Atari\Encoder.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Atari\Records.cpp" />
@@ -928,6 +934,9 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Acorn\Blocks.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Acorn\Blocks.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Acorn\Constants.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Amstrad\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Amstrad\Records.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Amstrad\Records.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.h" />
@@ -955,6 +964,8 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmProfile.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSamples.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSignal.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Signal.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\SignalConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\UefDocument.cpp" />
@@ -1438,6 +1449,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apple-geometry.json" />
@@ -1623,6 +1635,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apple-geometry.json" />
@@ -1808,6 +1821,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apple-geometry.json" />
@@ -1993,6 +2007,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apple-geometry.json" />
@@ -2178,6 +2193,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apple-geometry.json" />
@@ -2363,6 +2379,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apple-geometry.json" />
@@ -2548,6 +2565,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apple-geometry.json" />
@@ -2733,6 +2751,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apple-geometry.json" />
@@ -2918,6 +2937,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apple-geometry.json" />
@@ -3103,6 +3123,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apple-geometry.json" />
@@ -3288,6 +3309,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apple-geometry.json" />
@@ -3473,6 +3495,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apple-geometry.json" />
@@ -3658,6 +3681,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apple-geometry.json" />
@@ -3843,6 +3867,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apple-geometry.json" />
@@ -4028,6 +4053,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apple-geometry.json" />
@@ -4213,6 +4239,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apple-geometry.json" />
@@ -4398,6 +4425,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apple-geometry.json" />
@@ -4583,6 +4611,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apple-geometry.json" />
@@ -4768,6 +4797,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apple-geometry.json" />
@@ -4953,6 +4983,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apple-geometry.json" />
@@ -5138,6 +5169,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apple-geometry.json" />
@@ -5323,6 +5355,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apple-geometry.json" />
@@ -5508,6 +5541,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apple-geometry.json" />
@@ -5693,6 +5727,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apple-geometry.json" />
@@ -5878,6 +5913,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apple-geometry.json" />
@@ -6063,6 +6099,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apple-geometry.json" />
@@ -6248,6 +6285,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apple-geometry.json" />
@@ -6433,6 +6471,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apple-geometry.json" />
@@ -6618,6 +6657,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apple-geometry.json" />
@@ -6803,6 +6843,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\alcohol-mds.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amiga-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amstrad-cpc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amstrad-fds.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apple-geometry.json" />

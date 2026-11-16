@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "문서가 Amstrad CPC 테이프 디코더와 호환되지 않습니다.",
+    "MediaEngine.CpcTapeShortHeader": "CPC 테이프 헤더에 64바이트 미만의 데이터가 있습니다.",
+    "MediaEngine.CpcTapeOrphanData": "CPC 테이프 자료 기록에는 전신 헤더가 없습니다.",
+    "MediaEngine.CpcTapeShortBlock": "CPC 테이프 블록 {0}에는 선언된 {2}바이트 중 {1}바이트가 있습니다.",
+    "MediaEngine.CpcTapeOrphanHeader": "CPC 테이프 우두머리에는 뒤에 오는 자료 기록이 없습니다.",
+    "MediaEngine.CpcTapeNoBlocks": "CPC 테이프 파일 블록이 없습니다.",
+    "MediaEngine.CpcTapeEncode": "CPC 테이프 기호화는 1개에서 255의 파일 구획을, 1개에서 2048 바이트를 포함하는 각, 유지한 세그먼트 없이 요구합니다.",
+    "MediaEngine.CpcTapeLimit": "재구성된 CPC 테이프 신호는 지원된 표본 한계를 초과합니다."
+  }
+}

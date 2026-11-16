@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "文書はAmstrad CPCテープデコーダーと互換性がありません。",
+    "MediaEngine.CpcTapeShortHeader": "CPCテープヘッダーは64バイト未満です。",
+    "MediaEngine.CpcTapeOrphanData": "CPCテープのデータ記録は、前述のヘッダーがありません。",
+    "MediaEngine.CpcTapeShortBlock": "CPCテープブロック{0}には、宣言された{2}バイトのうち{1}バイトが含まれています。",
+    "MediaEngine.CpcTapeOrphanHeader": "CPCテープヘッダーの後にデータレコードがありません。",
+    "MediaEngine.CpcTapeNoBlocks": "完全なCPCテープ ファイルブロックが見つかりませんでした。",
+    "MediaEngine.CpcTapeEncode": "CPC テープエンコーディングは 1 つから 255 のファイル ブロック、保持された区分なしで 1 つから 2048 バイトを含むそれぞれを要求します。",
+    "MediaEngine.CpcTapeLimit": "再構成されたCPCテープ信号は支えられたサンプル限界を超過します。"
+  }
+}

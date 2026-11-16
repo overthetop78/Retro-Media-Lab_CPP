@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Le document est incompatible avec le décodeur de bande Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Un en-tête de bande CPC contient moins de 64 octets.",
+    "MediaEngine.CpcTapeOrphanData": "Un enregistrement de données sur bande CPC n'a pas d'en-tête précédent.",
+    "MediaEngine.CpcTapeShortBlock": "Le bloc de bande CPC {0} contient {1} octets sur les {2} déclarés.",
+    "MediaEngine.CpcTapeOrphanHeader": "Un en-tête de bande CPC n'a pas d'enregistrement de données suivant.",
+    "MediaEngine.CpcTapeNoBlocks": "Aucun bloc de fichiers CPC complet n'a été trouvé.",
+    "MediaEngine.CpcTapeEncode": "L'encodage des bandes CPC nécessite de 1 à 255 blocs de fichiers, chacun contenant de 1 à 2048 octets, sans segments conservés.",
+    "MediaEngine.CpcTapeLimit": "Le signal de bande CPC reconstruit dépasse le nombre maximal d’échantillons pris en charge."
+  }
+}

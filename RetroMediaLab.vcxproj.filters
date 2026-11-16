@@ -220,6 +220,9 @@
     <Filter Include="src\MediaEngine\src\Decoding\Sequential\Acorn">
       <UniqueIdentifier>{2A602ACD-BE52-53B7-825C-52B95B0607DD}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Amstrad">
+      <UniqueIdentifier>{953144F8-C544-5E55-B1F4-36BBAB0986AA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Decoding\Sequential\Atari">
       <UniqueIdentifier>{EE95837A-655A-54B6-81DA-90FDEAAB8407}</UniqueIdentifier>
     </Filter>
@@ -246,6 +249,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Encoding\Sequential\Acorn">
       <UniqueIdentifier>{434B6B7F-CB0A-5705-B6E9-F7A36DF9093B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Encoding\Sequential\Amstrad">
+      <UniqueIdentifier>{A57DFD20-894F-5970-96F7-CB852833CC5C}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Encoding\Sequential\Atari">
       <UniqueIdentifier>{680006CB-16AA-5C9D-8E34-DCEF7A5F25FF}</UniqueIdentifier>
@@ -441,6 +447,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Tape\Acorn">
       <UniqueIdentifier>{7F7A7A33-DB36-5321-8521-6950EB8A03B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape\Amstrad">
+      <UniqueIdentifier>{F8F75016-6449-562B-A55F-A93E5CDCB466}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Tape\AtariCas">
       <UniqueIdentifier>{3E5FACBF-B30B-5FCE-98E9-CC081140B8FE}</UniqueIdentifier>
@@ -2856,6 +2865,18 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Acorn\AtomDecoder.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential\Acorn</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Decoder.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Amstrad</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Decoder.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Amstrad</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Pulses.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Amstrad</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Amstrad\Pulses.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Amstrad</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.cpp">
       <Filter>src\MediaEngine\src\Decoding\Sequential\Atari</Filter>
     </ClCompile>
@@ -3002,6 +3023,12 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Acorn\AtomEncoder.h">
       <Filter>src\MediaEngine\src\Encoding\Sequential\Acorn</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Amstrad\Encoder.cpp">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Amstrad</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Amstrad\Encoder.h">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Amstrad</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Atari\Encoder.cpp">
       <Filter>src\MediaEngine\src\Encoding\Sequential\Atari</Filter>
@@ -4431,6 +4458,15 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Acorn\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Tape\Acorn</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Amstrad\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Amstrad</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Amstrad\Records.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Amstrad</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Amstrad\Records.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Amstrad</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Tape\AtariCas</Filter>
     </ClInclude>
@@ -4512,6 +4548,12 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSignal.cpp">
       <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PulseIntervals.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Signal.h">
       <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
     </ClInclude>
@@ -5961,6 +6003,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6514,6 +6559,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amstrad-fds.json">
@@ -7071,6 +7119,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -7624,6 +7675,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amstrad-fds.json">
@@ -8181,6 +8235,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -8734,6 +8791,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amstrad-fds.json">
@@ -9291,6 +9351,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -9844,6 +9907,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amstrad-fds.json">
@@ -10401,6 +10467,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -10954,6 +11023,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amstrad-fds.json">
@@ -11511,6 +11583,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -12064,6 +12139,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amstrad-fds.json">
@@ -12621,6 +12699,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -13174,6 +13255,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amstrad-fds.json">
@@ -13731,6 +13815,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -14284,6 +14371,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amstrad-fds.json">
@@ -14841,6 +14931,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -15394,6 +15487,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amstrad-fds.json">
@@ -15951,6 +16047,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -16504,6 +16603,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amstrad-fds.json">
@@ -17061,6 +17163,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -17614,6 +17719,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amstrad-fds.json">
@@ -18171,6 +18279,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -18724,6 +18835,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amstrad-fds.json">
@@ -19281,6 +19395,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -19834,6 +19951,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amstrad-fds.json">
@@ -20391,6 +20511,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -20944,6 +21067,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amstrad-fds.json">
@@ -21501,6 +21627,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amiga-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amstrad-cpc-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amstrad-fds.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -22054,6 +22183,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amiga-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amstrad-cpc-tape.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amstrad-fds.json">

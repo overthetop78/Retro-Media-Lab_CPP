@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Documentul este incompatibil cu decodorul de bandă Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Un antet de bandă CPC conține mai puțin de 64 de octeți.",
+    "MediaEngine.CpcTapeOrphanData": "O înregistrare a datelor de bandă CPC nu are antet precedent.",
+    "MediaEngine.CpcTapeShortBlock": "Blocul de bandă CPC {0} conține {1} din cei {2} octeți declarați.",
+    "MediaEngine.CpcTapeOrphanHeader": "Un antet de bandă CPC nu este urmat de o înregistrare de date.",
+    "MediaEngine.CpcTapeNoBlocks": "Nu a fost găsit niciun bloc complet de fișiere CPC.",
+    "MediaEngine.CpcTapeEncode": "Codificarea benzii CPC necesită 1 până la 255 blocuri de fișiere, fiecare conținând 1-2048 octeți, fără segmente reținute.",
+    "MediaEngine.CpcTapeLimit": "Semnalul de bandă CPC reconstruită depășește limita de eșantionare susținută."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Asiakirja ei ole yhteensopiva Amstrad CPC -nauhadekooderin kanssa.",
+    "MediaEngine.CpcTapeShortHeader": "CPC-nauhaotsake sisältää alle 64 tavua.",
+    "MediaEngine.CpcTapeOrphanData": "CPC-nauhoitetiedostossa ei ole aikaisempaa otsikkoa.",
+    "MediaEngine.CpcTapeShortBlock": "CPC-nauhalohko {0} sisältää {1} tavua ilmoitetuista {2} tavusta.",
+    "MediaEngine.CpcTapeOrphanHeader": "CPC-nauhan otsaketta ei seuraa datatietue.",
+    "MediaEngine.CpcTapeNoBlocks": "Täydellistä CPC-nauhatiedoston lohkoa ei löytynyt.",
+    "MediaEngine.CpcTapeEncode": "CPC teippien koodaus edellyttää 1-255 tiedostolohkoa, joista jokainen sisältää 1-2048 tavua, ilman säilytettäviä segmenttejä.",
+    "MediaEngine.CpcTapeLimit": "Rekonstruoitu CPC-nauhasignaali ylittää tuetun näyterajan."
+  }
+}

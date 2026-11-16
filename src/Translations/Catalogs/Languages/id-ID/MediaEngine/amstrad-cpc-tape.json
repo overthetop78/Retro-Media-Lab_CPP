@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokumen tidak kompatibel dengan pengambil sandi kaset Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Suatu header tape CPC berisi lebih sedikit dari 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "Rekaman data CPC tidak memiliki header sebelumnya.",
+    "MediaEngine.CpcTapeShortBlock": "Blok kaset CPC {0} berisi {1} dari {2} byte yang dinyatakan.",
+    "MediaEngine.CpcTapeOrphanHeader": "Tajuk tape CPC tidak memiliki catatan data berikut.",
+    "MediaEngine.CpcTapeNoBlocks": "Tidak ada blok berkas lengkap CPC tape ditemukan.",
+    "MediaEngine.CpcTapeEncode": "Pengkodean tape CPC memerlukan 1 sampai 255 file blocks, masing-masing berisi 1 sampai 2048 bytes, tanpa menyimpan segmen.",
+    "MediaEngine.CpcTapeLimit": "Sinyal tape CPC direkonstruksi melebihi batas yang didukung."
+  }
+}

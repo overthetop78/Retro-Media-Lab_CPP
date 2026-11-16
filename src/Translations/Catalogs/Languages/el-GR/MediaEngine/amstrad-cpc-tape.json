@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Το έγγραφο είναι ασυμβίβαστο με τον αποκωδικοποιητή της ταινίας Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Μια κεφαλίδα ταινίας CPC περιέχει λιγότερα από 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "Μια καταγραφή δεδομένων CPC δεν έχει προηγούμενη επικεφαλίδα.",
+    "MediaEngine.CpcTapeShortBlock": "Το μπλοκ ταινίας CPC {0} περιέχει {1} από τα {2} δηλωμένα byte.",
+    "MediaEngine.CpcTapeOrphanHeader": "Μια κεφαλίδα ταινίας CPC δεν έχει κανένα αρχείο δεδομένων.",
+    "MediaEngine.CpcTapeNoBlocks": "Δεν βρέθηκε πλήρης αποκλεισμός αρχείων CPC.",
+    "MediaEngine.CpcTapeEncode": "Η κωδικοποίηση κασέτας CPC απαιτεί 1 έως 255 μπλοκ αρχείων, καθένα από τα οποία περιέχει 1 έως 2048 ψηφιολέξεις, χωρίς να διατηρούνται τμήματα.",
+    "MediaEngine.CpcTapeLimit": "Το ανακατασκευασμένο σήμα ταινίας CPC υπερβαίνει το υποστηριζόμενο όριο δείγματος."
+  }
+}

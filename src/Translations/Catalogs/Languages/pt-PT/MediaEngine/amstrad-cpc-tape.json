@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "O documento é incompatível com o decodificador de fita Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Um cabeçalho de fita CPC contém menos de 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "Um registro de dados de fita CPC não tem cabeçalho anterior.",
+    "MediaEngine.CpcTapeShortBlock": "O bloco de fita CPC {0} contém {1} dos {2} bytes declarados.",
+    "MediaEngine.CpcTapeOrphanHeader": "Um cabeçalho de fita CPC não tem nenhum registro de dados a seguir.",
+    "MediaEngine.CpcTapeNoBlocks": "Nenhum bloco de fita CPC completo foi encontrado.",
+    "MediaEngine.CpcTapeEncode": "A codificação de fita CPC requer 1 a 255 blocos de arquivos, cada um contendo 1 a 2048 bytes, sem segmentos retidos.",
+    "MediaEngine.CpcTapeLimit": "O sinal de fita CPC reconstruído excede o limite de amostra suportado."
+  }
+}

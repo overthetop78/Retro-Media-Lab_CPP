@@ -27,6 +27,6 @@ inline constexpr std::string_view FormatId="tape.spectrum-tap",WriterId="tape-sp
 inline constexpr int MinimumBlockLength=2,MaximumBlockLength=65535,HexRadix=16,HexWidth=2;
 inline constexpr char DigitZero='0';
 inline constexpr std::string_view MachineId="spectrum",WaveFormat="tape.wav",CswFormat="tape.csw",RawFormat="tape.raw",SourceFormatKey="sourceFormat",WaveSource="wav",ChannelKey="channel",InterleavedKey="interleaved",ChannelZero="0",EncodedWave="encoded.wav";
-inline constexpr int ByteBits=8,LastBit=7,SilenceDivisor=1000,MostSignificantBit=128,PulsePair=2;
+inline constexpr int ByteBits=8,LastBit=7,MostSignificantBit=128,PulsePair=2;
 inline constexpr std::size_t MaximumPcmSamples=128*1024*1024;
 }

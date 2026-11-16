@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokument jest niezgodny z dekoderem taśmy Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Nagłówek taśmy CPC zawiera mniej niż 64 bajty.",
+    "MediaEngine.CpcTapeOrphanData": "Rejestr danych taśm CPC nie ma poprzedniego nagłówka.",
+    "MediaEngine.CpcTapeShortBlock": "Blok taśmy CPC {0} zawiera {1} z {2} zadeklarowanych bajtów.",
+    "MediaEngine.CpcTapeOrphanHeader": "Po nagłówku taśmy CPC nie ma rekordu danych.",
+    "MediaEngine.CpcTapeNoBlocks": "Nie znaleziono kompletnego bloku taśmy CPC.",
+    "MediaEngine.CpcTapeEncode": "Kodowanie taśm CPC wymaga od 1 do 255 bloków plików, z których każdy zawiera od 1 do 2048 bajtów, bez zatrzymanych segmentów.",
+    "MediaEngine.CpcTapeLimit": "Odtworzony sygnał taśmy CPC przekracza obsługiwany limit liczby próbek."
+  }
+}

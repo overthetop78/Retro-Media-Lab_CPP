@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokumentet är oförenligt med Amstrad CPC-tejpavkodaren.",
+    "MediaEngine.CpcTapeShortHeader": "En CPC-bandsrubrik innehåller färre än 64 byte.",
+    "MediaEngine.CpcTapeOrphanData": "En CPC-tejpdatapost har ingen föregående header.",
+    "MediaEngine.CpcTapeShortBlock": "CPC-bandblock {0} innehåller {1} av {2} deklarerade byte.",
+    "MediaEngine.CpcTapeOrphanHeader": "En CPC-bandsrubrik har ingen följande datapost.",
+    "MediaEngine.CpcTapeNoBlocks": "Inget komplett CPC-bandfilblock hittades.",
+    "MediaEngine.CpcTapeEncode": "CPC-bandkodning kräver 1 till 255 filblock, var och en innehåller 1 till 2048 byte, utan behållna segment.",
+    "MediaEngine.CpcTapeLimit": "Den rekonstruerade CPC-bandsignalen överstiger den stödda provgränsen."
+  }
+}

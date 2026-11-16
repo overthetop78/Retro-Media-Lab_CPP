@@ -1,4 +1,5 @@
 #include "Pulses.h"
+#include "../../../Formats/Tape/Common/PulseIntervals.h"
 #include "../../../Formats/Tape/SpectrumTap/Constants.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <cmath>
@@ -11,21 +12,7 @@ bool close(double actual,double expected){return std::abs(actual-expected)<=expe
 }
 std::vector<std::vector<std::uint8_t>> detect(std::span<const std::int32_t> samples,int rate,std::stop_token token){
     checkCancellation(token);if(rate<=0)throw MediaError(DiagnosticCode::SpectrumTapePcm);
-    std::vector<double> pulses;bool previousSign=!samples.empty()&&samples.front()>=0;std::size_t previousCrossing=0;
-    for(std::size_t index=0;index<samples.size();++index){
-        checkCancellation(token);
-        if(samples[index]==0&&(index==0||samples[index-1]!=0)){
-            auto end=index;while(end<samples.size()&&samples[end]==0){checkCancellation(token);++end;}
-            const auto silenceSamples=std::max<std::int64_t>(1,(std::int64_t(rate)+SilenceDivisor-1)/SilenceDivisor);
-            if(end-index>=static_cast<std::uint64_t>(silenceSamples)){
-                if(index>previousCrossing)pulses.push_back((index-previousCrossing)*double(Tzx::Constants::TStatesPerSecond)/rate);
-                pulses.push_back(std::numeric_limits<double>::infinity());previousCrossing=end;
-                if(end==samples.size())break;previousSign=samples[end]>=0;index=end;continue;
-            }
-        }
-        const bool sign=samples[index]>=0;if(sign==previousSign)continue;
-        pulses.push_back((index-previousCrossing)*double(Tzx::Constants::TStatesPerSecond)/rate);previousCrossing=index;previousSign=sign;
-    }
+    std::vector<double> pulses;TapePcm::pulseIntervals(samples,rate,[&](auto interval){pulses.push_back(interval.silence?std::numeric_limits<double>::infinity():interval.samples*double(Tzx::Constants::TStatesPerSecond)/rate);},token);
     std::vector<std::vector<std::uint8_t>> blocks;
     for(std::size_t index=0;index<pulses.size();){
         checkCancellation(token);const auto start=index;

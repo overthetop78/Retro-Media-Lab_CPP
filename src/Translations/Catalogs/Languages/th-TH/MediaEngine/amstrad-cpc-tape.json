@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "เอกสารไม่เข้ากันกับตัวถอดรหัสเทป Amstrad CPC",
+    "MediaEngine.CpcTapeShortHeader": "ส่วนหัวของเทป CPC มีข้อมูลน้อยกว่า 64 ไบต์",
+    "MediaEngine.CpcTapeOrphanData": "บันทึกข้อมูลของเทป CPC ไม่มีหัวเรื่องก่อนหน้า",
+    "MediaEngine.CpcTapeShortBlock": "บล็อกเทป CPC {0} มี {1} ไบต์จากจำนวน {2} ไบต์ที่ระบุ",
+    "MediaEngine.CpcTapeOrphanHeader": "ไม่มีระเบียนข้อมูลตามหลังส่วนหัวของเทป CPC",
+    "MediaEngine.CpcTapeNoBlocks": "ไม่พบแฟ้มบันทึกเทป CPC ที่สมบูรณ์",
+    "MediaEngine.CpcTapeEncode": "การเข้ารหัสเทป CPC ต้องมีบล็อกไฟล์ 1 ถึง 255 บล็อก แต่ละบล็อกมีข้อมูล 1 ถึง 2048 ไบต์ และไม่มีส่วนที่เก็บไว้",
+    "MediaEngine.CpcTapeLimit": "สัญญาณเทป CPC ที่ประกอบขึ้นใหม่ เกินกว่าค่าจํากัดของตัวอย่างที่รองรับ"
+  }
+}

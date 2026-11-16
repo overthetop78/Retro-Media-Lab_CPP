@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Dokumentet er uforeneligt med Amstrad CPC-bånddekoder.",
+    "MediaEngine.CpcTapeShortHeader": "En CPC-båndoverskrift indeholder mindre end 64 bytes.",
+    "MediaEngine.CpcTapeOrphanData": "En CPC-bånddatapost har ingen forudgående overskrift.",
+    "MediaEngine.CpcTapeShortBlock": "CPC-båndblok {0} indeholder {1} af {2} deklarerede bytes.",
+    "MediaEngine.CpcTapeOrphanHeader": "En CPC-båndoverskrift har ingen følgende dataposter.",
+    "MediaEngine.CpcTapeNoBlocks": "Der blev ikke fundet nogen komplet CPC-båndfil blok.",
+    "MediaEngine.CpcTapeEncode": "CPC-båndkodning kræver 1-255 filblokke, der hver indeholder 1-2048 bytes, uden bevarede segmenter.",
+    "MediaEngine.CpcTapeLimit": "Det rekonstruerede CPC-båndsignal overstiger den understøttede stikprøvegrænse."
+  }
+}

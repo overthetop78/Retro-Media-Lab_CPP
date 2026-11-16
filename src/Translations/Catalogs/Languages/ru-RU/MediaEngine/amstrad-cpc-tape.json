@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Документ несовместим с кассетным декодером Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Заголовок ленты CPC содержит менее 64 байт.",
+    "MediaEngine.CpcTapeOrphanData": "Запись кассетных данных CPC не имеет предшествующего заголовка.",
+    "MediaEngine.CpcTapeShortBlock": "Блок ленты CPC {0} содержит {1} из {2} заявленных байтов.",
+    "MediaEngine.CpcTapeOrphanHeader": "Заголовок ленты CPC не имеет следующей записи данных.",
+    "MediaEngine.CpcTapeNoBlocks": "Полный блок кассетных файлов CPC не найден.",
+    "MediaEngine.CpcTapeEncode": "Для кодирования ленты CPC требуется от 1 до 255 файловых блоков, каждый из которых содержит от 1 до 2048 байт, без сохраненных сегментов.",
+    "MediaEngine.CpcTapeLimit": "Реконструированный сигнал ленты CPC превышает поддерживаемый предел выборки."
+  }
+}

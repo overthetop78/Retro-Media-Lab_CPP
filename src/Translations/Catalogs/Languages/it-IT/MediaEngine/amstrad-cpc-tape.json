@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "Il documento è incompatibile con il decoder del nastro Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "Un intestazione del nastro CPC contiene meno di 64 byte.",
+    "MediaEngine.CpcTapeOrphanData": "Un record di dati del nastro CPC non ha precedenti intestazione.",
+    "MediaEngine.CpcTapeShortBlock": "Il blocco del nastro CPC {0} contiene {1} dei {2} byte dichiarati.",
+    "MediaEngine.CpcTapeOrphanHeader": "Un’intestazione del nastro CPC non è seguita da un record di dati.",
+    "MediaEngine.CpcTapeNoBlocks": "Non è stato trovato alcun blocco completo del nastro CPC.",
+    "MediaEngine.CpcTapeEncode": "La codifica del nastro CPC richiede da 1 a 255 blocchi di file, ciascuno contenente da 1 a 2048 byte, senza segmenti conservati.",
+    "MediaEngine.CpcTapeLimit": "Il segnale del nastro CPC ricostruito supera il limite del campione supportato."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "MediaEngine.CpcTapeIncompatible": "المستند غير متوافق مع مفكك ترميز أشرطة Amstrad CPC.",
+    "MediaEngine.CpcTapeShortHeader": "تحتوي ترويسة شريط CPC على أقل من 64 بايت.",
+    "MediaEngine.CpcTapeOrphanData": "لا يسبق سجل بيانات شريط CPC أي ترويسة.",
+    "MediaEngine.CpcTapeShortBlock": "تحتوي كتلة شريط CPC {0} على {1} بايت من أصل {2} بايت معلنة.",
+    "MediaEngine.CpcTapeOrphanHeader": "لا يتبع ترويسة شريط CPC أي سجل بيانات.",
+    "MediaEngine.CpcTapeNoBlocks": "لم يتم العثور على كتلة ملف مكتملة لشريط CPC.",
+    "MediaEngine.CpcTapeEncode": "يتطلب ترميز شريط CPC من 1 إلى 255 كتلة ملف، تحتوي كل منها على 1 إلى 2048 بايت، دون مقاطع محفوظة.",
+    "MediaEngine.CpcTapeLimit": "تتجاوز إشارة شريط CPC المعاد بناؤها الحد المدعوم لعدد العينات."
+  }
+}
