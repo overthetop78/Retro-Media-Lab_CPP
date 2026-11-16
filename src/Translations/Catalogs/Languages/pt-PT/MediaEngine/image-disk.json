@@ -1,7 +1,7 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "A imagem não contém um cabeçalho do ImageDisk: terminador de comentários em {0}, tamanho do arquivo {1} bytes.",
-    "MediaEngine.ImdTruncated": "A seção ImageDisk {0} no offset {1} é truncada: {2} bytes são necessários, {3} estão disponíveis.",
+    "MediaEngine.ImdSignature": "A imagem não contém um cabeçalho ImageDisk: terminador de comentário em {0}, comprimento do ficheiro {1} bytes.",
+    "MediaEngine.ImdTruncated": "A secção ImageDisk {0} no deslocamento {1} está truncada: são necessários {2} bytes, estão disponíveis {3}.",
     "MediaEngine.ImdTrackHeader": "O cabeçalho da faixa ImageDisk é inválido: modo {0}, contagem do setor {1}.",
     "MediaEngine.ImdSizeCode": "O código de tamanho do setor do ImageDisk {0} é inválido.",
     "MediaEngine.ImdRecordType": "O tipo de registro do setor do ImageDisk {0} é inválido.",
@@ -20,6 +20,6 @@
     "MediaEngine.ImdEpsonSize": "Sector Epson {0}:{1}:{2} tem um tamanho inválido.",
     "MediaEngine.ImdEpsonDuplicate": "O sector Epson {0}:{1}:{2} é duplicado.",
     "MediaEngine.EpsonFormat": "O formato selecionado '{0}' não é um formato Epson QX-10 suportado.",
-    "MediaEngine.EpsonGeometryDuplicate": "Duplicar a geometria de Epson QX-10: {0}."
+    "MediaEngine.EpsonGeometryDuplicate": "Geometria Epson QX-10 duplicada: {0}."
   }
 }

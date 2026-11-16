@@ -1,25 +1,25 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "De afbeelding bevat geen ImageDisk header: comment terminator op {0}, bestandslengte {1} bytes.",
+    "MediaEngine.ImdSignature": "De image bevat geen ImageDisk-header: einde van het commentaar bij {0}, bestandslengte {1} bytes.",
     "MediaEngine.ImdTruncated": "De sectie ImageDisk {0} op offset {1} is afgekapt: {2} bytes zijn vereist, {3} zijn beschikbaar.",
-    "MediaEngine.ImdTrackHeader": "De ImageDisk track header is ongeldig: modus {0}, sectornummer {1}.",
+    "MediaEngine.ImdTrackHeader": "De ImageDisk-spoorheader is ongeldig: modus {0}, aantal sectoren {1}.",
     "MediaEngine.ImdSizeCode": "De ImageDisk sector-grootte code {0} is ongeldig.",
     "MediaEngine.ImdRecordType": "Het sectorrecordtype {0} van ImageDisk is ongeldig.",
     "MediaEngine.ImdNoSectors": "De ImageDisk afbeelding bevat geen sectoren.",
-    "MediaEngine.ImdNoTracks": "De ImageDisk afbeelding bevat geen nummers.",
-    "MediaEngine.ImdWriteTrack": "De ImageDisk track header is niet representatief.",
+    "MediaEngine.ImdNoTracks": "De ImageDisk-image bevat geen sporen.",
+    "MediaEngine.ImdWriteTrack": "De ImageDisk-spoorheader kan niet worden weergegeven.",
     "MediaEngine.ImdWriteSector": "Een ImageDisk-sectorrecord is ongeldig.",
     "MediaEngine.ImdCompressed": "Een gecomprimeerde ImageDisk sector bevat geen herhaalde byte.",
     "MediaEngine.ImdMetadataMode": "De ImageDisk metadata bevat een ongeldige trackmodus.",
     "MediaEngine.ImdMetadataRecord": "De ImageDisk metadata bevat een ongeldig sectorrecordtype.",
     "MediaEngine.ImdMetadataSize": "De ImageDisk metadata bevat een ongeldige sectorgrootte.",
-    "MediaEngine.ImdMetadataBlock": "De metadata van ImageDisk komen niet overeen met logisch blok \"{0}'.",
+    "MediaEngine.ImdMetadataBlock": "De ImageDisk-metadata komen niet overeen met logisch blok \"{0}\".",
     "MediaEngine.ImdMetadataCount": "De ImageDisk metadata blok aantal komt niet overeen met de sector afbeelding.",
     "MediaEngine.ImdMetadata": "De ImageDisk metadata is ongeldig.",
     "MediaEngine.ImdEpsonGeometry": "De Epson-geometrie van de afbeelding komt niet overeen met de format identifier.",
     "MediaEngine.ImdEpsonSize": "Epson sector {0}:{1}:{2} heeft een ongeldige grootte.",
     "MediaEngine.ImdEpsonDuplicate": "Epson sector {0}:{1}:{2} wordt gedupliceerd.",
-    "MediaEngine.EpsonFormat": "Het geselecteerde formaat \"{0}' is geen ondersteund Epson QX-10-formaat.",
+    "MediaEngine.EpsonFormat": "Het geselecteerde formaat \"{0}\" is geen ondersteund Epson QX-10-formaat.",
     "MediaEngine.EpsonGeometryDuplicate": "Dubbele Epson QX-10 geometrie: {0}."
   }
 }

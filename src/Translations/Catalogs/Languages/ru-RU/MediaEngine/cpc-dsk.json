@@ -6,7 +6,7 @@
     "MediaEngine.CpcDskExtendedTable": "Расширенная дорожная таблица Amstrad DSK недействительна на дорожке {0}.",
     "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK трек {0} усечен.",
     "MediaEngine.CpcDskTrackHeader": "Amstrad DSK трек {0} имеет неверный заголовок.",
-    "MediaEngine.CpcDskSectorTable": "Amstrad DSK трек {0} имеет недействительный сектор таблицы.",
+    "MediaEngine.CpcDskSectorTable": "Дорожка Amstrad DSK {0} имеет недопустимую таблицу секторов.",
     "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK сектор {0}:{1}:{2} усечен.",
     "MediaEngine.CpcDskNoSectors": "Изображение Amstrad DSK не содержит секторов.",
     "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} занимает {1} байты и превышает лимит контейнера 65280 байт.",
@@ -16,7 +16,7 @@
     "MediaEngine.CpcDskTooManySectors": "Контейнер Amstrad DSK писать нельзя: трек {0} содержит слишком много секторных дескрипторов.",
     "MediaEngine.CpcDskUniformTracks": "Контейнер Amstrad DSK не может быть записан: стандартный DSK требует одного равномерного размера дорожки.",
     "MediaEngine.CpcDskBuilderGeometry": "Контейнер Amstrad DSK не может быть записан: геометрия превышает пределы CPCEMU.",
-    "MediaEngine.CpcDskNativeMetadata": "Контейнер Amstrad DSK не может быть записан: в метаданных родного сектора отсутствует ST1/ST2.",
+    "MediaEngine.CpcDskNativeMetadata": "Контейнер Amstrad DSK нельзя записать: в исходных метаданных сектора отсутствуют ST1/ST2.",
     "MediaEngine.CpcDskSizeCode": "Контейнер Amstrad DSK не может быть записан: размер сектора {0} не может быть представлен кодом размера CPCEMU.",
     "MediaEngine.CpcDskOverflow": "Размер данных CPCEMU DSK превышает поддерживаемый диапазон.",
     "MediaEngine.CpcDskRecordedAddress": "Записанный адрес CPCEMU {0}:{1}:{2} не может быть представлен однобайтовыми полями."

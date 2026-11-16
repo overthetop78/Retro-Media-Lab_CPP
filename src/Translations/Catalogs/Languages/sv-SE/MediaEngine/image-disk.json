@@ -1,13 +1,13 @@
 {
   "strings": {
     "MediaEngine.ImdSignature": "Bilden innehåller inte en ImageDisk-rubrik: kommentarterminator på {0}, fillängd {1} byte.",
-    "MediaEngine.ImdTruncated": "ImageDisk {0} avsnittet vid kompensation {1} är truncated: {2} byte krävs, {3} finns tillgängliga.",
-    "MediaEngine.ImdTrackHeader": "ImageDisk spårrubriken är ogiltig: läge {0}, sektor räkna {1}.",
+    "MediaEngine.ImdTruncated": "ImageDisk-avsnittet {0} vid förskjutning {1} är avkortat: {2} byte krävs, {3} är tillgängliga.",
+    "MediaEngine.ImdTrackHeader": "ImageDisk-spårhuvudet är ogiltigt: läge {0}, antal sektorer {1}.",
     "MediaEngine.ImdSizeCode": "ImageDisk-sektorns storlekskod {0} är ogiltig.",
     "MediaEngine.ImdRecordType": "ImageDisk-sektorns inspelningstyp {0} är ogiltig.",
     "MediaEngine.ImdNoSectors": "Bilden ImageDisk innehåller inga sektorer.",
     "MediaEngine.ImdNoTracks": "Bilden ImageDisk innehåller inga spår.",
-    "MediaEngine.ImdWriteTrack": "ImageDisk spårrubriken är inte representativ.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk-spårhuvudet kan inte representeras.",
     "MediaEngine.ImdWriteSector": "En ImageDisk sektor rekord är ogiltig.",
     "MediaEngine.ImdCompressed": "En komprimerad ImageDisk-sektor innehåller inte en upprepad byte.",
     "MediaEngine.ImdMetadataMode": "ImageDisk metadata innehåller ett ogiltigt spårläge.",
@@ -19,7 +19,7 @@
     "MediaEngine.ImdEpsonGeometry": "Epsons bildgeometri stämmer inte överens med dess formatidentifierare.",
     "MediaEngine.ImdEpsonSize": "Epson-sektorn {0}:{1}:{2} har en ogiltig storlek.",
     "MediaEngine.ImdEpsonDuplicate": "Epson-sektorn {0}:{1}:{2} är duplicerad.",
-    "MediaEngine.EpsonFormat": "Det valda formatet \"{0}\" är inte ett format Epson QX-10.",
-    "MediaEngine.EpsonGeometryDuplicate": "Duplicera Epson QX-10 geometri: {0}."
+    "MediaEngine.EpsonFormat": "Det valda formatet \"{0}\" är inte ett Epson QX-10-format som stöds.",
+    "MediaEngine.EpsonGeometryDuplicate": "Duplicerad Epson QX-10-geometri: {0}."
   }
 }

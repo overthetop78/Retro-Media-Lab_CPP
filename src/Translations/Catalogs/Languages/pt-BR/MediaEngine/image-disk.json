@@ -11,7 +11,7 @@
     "MediaEngine.ImdWriteSector": "Um registro do setor ImageDisk é inválido.",
     "MediaEngine.ImdCompressed": "Um setor comprimido do ImageDisk não contém um byte repetido.",
     "MediaEngine.ImdMetadataMode": "Os metadados do ImageDisk contêm um modo de faixa inválido.",
-    "MediaEngine.ImdMetadataRecord": "Os metadados do ImageDisk contêm um tipo de registo de sector inválido.",
+    "MediaEngine.ImdMetadataRecord": "Os metadados do ImageDisk contêm um tipo de registro de setor inválido.",
     "MediaEngine.ImdMetadataSize": "Os metadados do ImageDisk contêm um tamanho de setor inválido.",
     "MediaEngine.ImdMetadataBlock": "Os metadados ImageDisk não correspondem ao bloco lógico '{0}'.",
     "MediaEngine.ImdMetadataCount": "A contagem de blocos de metadados do ImageDisk não corresponde à imagem do setor.",
@@ -20,6 +20,6 @@
     "MediaEngine.ImdEpsonSize": "Sector Epson {0}:{1}:{2} tem um tamanho inválido.",
     "MediaEngine.ImdEpsonDuplicate": "O sector Epson {0}:{1}:{2} é duplicado.",
     "MediaEngine.EpsonFormat": "O formato selecionado '{0}' não é um formato Epson QX-10 suportado.",
-    "MediaEngine.EpsonGeometryDuplicate": "Duplicar a geometria de Epson QX-10: {0}."
+    "MediaEngine.EpsonGeometryDuplicate": "Geometria Epson QX-10 duplicada: {0}."
   }
 }

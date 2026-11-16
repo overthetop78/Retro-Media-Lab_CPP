@@ -1,25 +1,25 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "Kuva ei sisällä ImageDisk- otsikkoa: kommentti terminator at {0}, tiedoston pituus {1} tavuja.",
+    "MediaEngine.ImdSignature": "Kuva ei sisällä ImageDisk-otsikkoa: kommentin lopetusmerkki kohdassa {0}, tiedoston pituus {1} tavua.",
     "MediaEngine.ImdTruncated": "ImageDisk {0} -osio offset {1} on tynkätty: {2} tavua vaaditaan, {3} on saatavilla.",
     "MediaEngine.ImdTrackHeader": "ImageDisk-raidan otsikko on virheellinen: tila {0}, sektoriluku {1}.",
     "MediaEngine.ImdSizeCode": "ImageDisk-sektorin kokokoodi {0} on virheellinen.",
     "MediaEngine.ImdRecordType": "ImageDisk-sektorin tietuetyyppi {0} on virheellinen.",
     "MediaEngine.ImdNoSectors": "ImageDisk-kuva ei sisällä sektoreita.",
-    "MediaEngine.ImdNoTracks": "ImageDisk-kuva ei sisällä kappaleita.",
-    "MediaEngine.ImdWriteTrack": "ImageDisk-raidan otsikko ei ole edustava.",
+    "MediaEngine.ImdNoTracks": "ImageDisk-kuva ei sisällä raitoja.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk-raidan otsikkoa ei voi esittää.",
     "MediaEngine.ImdWriteSector": "ImageDisk-sektorin tietue on virheellinen.",
-    "MediaEngine.ImdCompressed": "Paineistettu ImageDisk-sektori ei sisällä toista tavua.",
-    "MediaEngine.ImdMetadataMode": "ImageDisk-metatiedot sisältävät virheellisen kappaletilan.",
+    "MediaEngine.ImdCompressed": "Pakattu ImageDisk-sektori ei sisällä yhtä toistettua tavua.",
+    "MediaEngine.ImdMetadataMode": "ImageDisk-metatiedot sisältävät virheellisen raitatilan.",
     "MediaEngine.ImdMetadataRecord": "ImageDisk-metatiedot sisältävät virheellisen sektorin tietuetyypin.",
     "MediaEngine.ImdMetadataSize": "ImageDisk-metatiedot sisältävät virheellisen sektorin koon.",
-    "MediaEngine.ImdMetadataBlock": "ImageDisk metadata ei vastaa loogista lohkoa \"{0}.\"",
-    "MediaEngine.ImdMetadataCount": "ImageDisk metadatablock count ei vastaa sektorin kuvaa.",
+    "MediaEngine.ImdMetadataBlock": "ImageDisk-metatiedot eivät vastaa loogista lohkoa \"{0}\".",
+    "MediaEngine.ImdMetadataCount": "ImageDisk-metatietojen lohkomäärä ei vastaa sektorikuvaa.",
     "MediaEngine.ImdMetadata": "ImageDisk metadata on virheellinen.",
-    "MediaEngine.ImdEpsonGeometry": "Epson-kuvageometria ei vastaa sen muotoa.",
+    "MediaEngine.ImdEpsonGeometry": "Epson-kuvan geometria ei vastaa sen muototunnistetta.",
     "MediaEngine.ImdEpsonSize": "Epson-sektorilla {0}:{1}:{2} on virheellinen koko.",
     "MediaEngine.ImdEpsonDuplicate": "Epson-sektori {0}:{1}:{2} on kopioitu.",
     "MediaEngine.EpsonFormat": "Valittu muoto \"{0}\" ei ole tuettu Epson QX-10 -muoto.",
-    "MediaEngine.EpsonGeometryDuplicate": "Kopioi Epson QX-10 -geometria: {0}."
+    "MediaEngine.EpsonGeometryDuplicate": "Päällekkäinen Epson QX-10 -geometria: {0}."
   }
 }

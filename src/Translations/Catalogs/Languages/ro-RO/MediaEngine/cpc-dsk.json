@@ -3,7 +3,7 @@
     "MediaEngine.CpcDskHeader": "Antet Amstrad DSK este trunchiat.",
     "MediaEngine.CpcDskSignature": "Fișierul nu este o imagine CPCEMU DSK.",
     "MediaEngine.CpcDskGeometry": "Geometria Amstrad DSK este invalidă.",
-    "MediaEngine.CpcDskExtendedTable": "Masa extinsă de cale Amstrad DSK este invalidă la linia {0}.",
+    "MediaEngine.CpcDskExtendedTable": "Tabelul extins de piste Amstrad DSK este invalid la pista {0}.",
     "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK track {0} este trunchiat.",
     "MediaEngine.CpcDskTrackHeader": "Amstrad DSK track {0} are un antet invalid.",
     "MediaEngine.CpcDskSectorTable": "Amstrad DSK track {0} are un tabel de sector invalid.",
@@ -13,12 +13,12 @@
     "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} utilizează o reprezentare absentă, variabilă sau nenominal sector care necesită EDSK.",
     "MediaEngine.CpcDskTrackCollection": "Containerul Amstrad DSK nu poate fi scris: geometria declarată și colectarea liniilor nu sunt de acord.",
     "MediaEngine.CpcDskTrackIndex": "Containerul Amstrad DSK nu poate fi scris: indexul liniilor {0} apare în poziţia {1}.",
-    "MediaEngine.CpcDskTooManySectors": "Containerul Amstrad DSK nu poate fi scris: piesa {0} conţine prea multe descriptoare sectoriale.",
+    "MediaEngine.CpcDskTooManySectors": "Containerul Amstrad DSK nu poate fi scris: pista {0} conține prea mulți descriptori de sectoare.",
     "MediaEngine.CpcDskUniformTracks": "Containerul Amstrad DSK nu poate fi scris: standardul DSK necesită o dimensiune uniformă a liniei.",
     "MediaEngine.CpcDskBuilderGeometry": "Containerul Amstrad DSK nu poate fi scris: geometria depășește limitele CPCEMU.",
-    "MediaEngine.CpcDskNativeMetadata": "Containerul Amstrad DSK nu poate fi scris: metadatele din sectorul nativ lipsesc ST1/ST2.",
+    "MediaEngine.CpcDskNativeMetadata": "Containerul Amstrad DSK nu poate fi scris: metadatele originale ale sectorului nu conțin ST1/ST2.",
     "MediaEngine.CpcDskSizeCode": "Containerul Amstrad DSK nu poate fi scris: dimensiunea sectorului {0} nu poate fi reprezentată printr-un cod de mărime CPCEMU.",
     "MediaEngine.CpcDskOverflow": "Dimensiunea datelor CPCEMU DSK depășește intervalul susținut.",
-    "MediaEngine.CpcDskRecordedAddress": "Adresa înregistrată a CPCEMU {0}: {1}: {2} nu poate fi reprezentată de câmpuri cu un oct."
+    "MediaEngine.CpcDskRecordedAddress": "Adresa CPCEMU înregistrată {0}:{1}:{2} nu poate fi reprezentată prin câmpuri de un octet."
   }
 }

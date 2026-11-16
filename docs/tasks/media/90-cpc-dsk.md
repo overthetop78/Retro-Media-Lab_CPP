@@ -3,10 +3,10 @@
 - [x] Modèles et primitive commune
   - [x] Créer `src/MediaEngine/src/Formats/CpcDsk/CpcDsk.h`, `Constants.h`, `Internal.h` : porter les contrats de conteneur/pistes/secteurs et le schéma CPCEMU source, en réutilisant SectorImage MFS et les identifiants centraux.
   - [x] Créer `src/MediaEngine/src/Models/Sectors/UniformLayout.h` et `UniformLayout.cpp` : porter le helper commun C# UniformSectorImageLayout.TryCreate, conserver les emplacements manquants et réutiliser sparseSectorImage sans nouvelle représentation parallèle.
-- [ ] Lecture, construction et écriture
+- [x] Lecture, construction et écriture
   - [x] Créer `src/MediaEngine/src/Formats/CpcDsk/Reader.cpp`, `Builder.cpp`, `Writer.cpp` : porter reconnaissance, Standard/Extended DSK, tables/descripteurs, données stockées/réplicas/statuts, construction depuis SectorImage avec géométries Acorn/BBC existantes et écriture atomique commune.
   - [x] Modifier les fichiers partagés Engine de compilation/diagnostics/audit et créer les catalogues `Constants/MediaEngine/cpc-dsk.json`, `Languages/*/MediaEngine/cpc-dsk.json` : intégrer les sources et diagnostics traduits spécialisés pour éviter les raisons fixes anglaises opaques (agent parent).
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/*/MediaEngine/cpc-dsk.json` : relire/corriger Argos et contrôler paramètres/invariants selon partage coordonné avec le parent.
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/*/MediaEngine/cpc-dsk.json` : relire/corriger Argos et contrôler paramètres/invariants selon partage coordonné avec le parent.
 ## Batterie abandonnée sur instruction utilisateur
   - Action abandonnée : créer `build/verification-cpc-dsk/Reference.csproj`, `Reference.cs`, `main.cpp`, `CMakeLists.txt`, `cases.json` : comparer les sources C# originales sur conteneurs Standard/Extended, pistes absentes, tailles variables/réplicas, CHRN et statuts, reconstruction uniforme/dense, builders et writer octet pour octet, plus annulation/écriture atomique bornée ; sans rejouer les blocs précédents.
   - [x] Supprimer `build/verification-cpc-dsk/` et ses artefacts après validation et intégration de l’inventaire par le parent.
@@ -20,3 +20,5 @@
 > Les batteries natives prévues dans ce document sont abandonnées sur consigne utilisateur. Ne pas les relancer. Le banc temporaire a été retiré après conservation du statut réel dans `docs/validation/media/bancs-prepares-retires.md`.
 
 Actions natives clôturées d’après les sources courantes et les rapports existants ; les relectures encore ouvertes ne sont pas confondues avec du code manquant. Les batteries abandonnées ne sont pas présentées comme réussies. Voir `reconciliation-suivi-initial.md`.
+
+Relecture des catalogues image-disk.json et cpc-dsk.json dans les 29 langues achevée le 17 novembre 2026. Voir docs/validation/media/relecture-imagedisk-cpc-dsk.md. Les batteries abandonnées restent explicitement non exécutées.

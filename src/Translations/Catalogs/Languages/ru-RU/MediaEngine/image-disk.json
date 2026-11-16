@@ -2,11 +2,11 @@
   "strings": {
     "MediaEngine.ImdSignature": "Изображение не содержит заголовок ImageDisk: терминатор комментариев на {0}, длина файла {1} байт.",
     "MediaEngine.ImdTruncated": "Раздел ImageDisk {0} при смещении {1} усечен: {2} байты необходимы, {3} доступны.",
-    "MediaEngine.ImdTrackHeader": "Заголовок трека ImageDisk недействителен: режим {0}, граф сектора {1}.",
+    "MediaEngine.ImdTrackHeader": "Заголовок дорожки ImageDisk недопустим: режим {0}, количество секторов {1}.",
     "MediaEngine.ImdSizeCode": "Код размера сектора ImageDisk {0} является недействительным.",
-    "MediaEngine.ImdRecordType": "Секторная запись ImageDisk {0} является недействительной.",
+    "MediaEngine.ImdRecordType": "Тип записи сектора ImageDisk {0} недопустим.",
     "MediaEngine.ImdNoSectors": "Изображение ImageDisk не содержит секторов.",
-    "MediaEngine.ImdNoTracks": "Изображение ImageDisk не содержит следов.",
+    "MediaEngine.ImdNoTracks": "Образ ImageDisk не содержит дорожек.",
     "MediaEngine.ImdWriteTrack": "Заголовок трека ImageDisk не может быть представлен.",
     "MediaEngine.ImdWriteSector": "Запись сектора ImageDisk недействительна.",
     "MediaEngine.ImdCompressed": "Сжатый сектор ImageDisk не содержит один повторяющийся байт.",
@@ -17,8 +17,8 @@
     "MediaEngine.ImdMetadataCount": "Количество блоков метаданных ImageDisk не соответствует сектору изображения.",
     "MediaEngine.ImdMetadata": "Метаданные ImageDisk неверны.",
     "MediaEngine.ImdEpsonGeometry": "Геометрия изображения Epson не соответствует идентификатору формата.",
-    "MediaEngine.ImdEpsonSize": "Сектор Эпсона {0}:{1}:{2} имеет недействительный размер.",
-    "MediaEngine.ImdEpsonDuplicate": "Сектор Эпсона {0}:{1}:{2} дублируется.",
+    "MediaEngine.ImdEpsonSize": "Сектор Epson {0}:{1}:{2} имеет недопустимый размер.",
+    "MediaEngine.ImdEpsonDuplicate": "Сектор Epson {0}:{1}:{2} дублируется.",
     "MediaEngine.EpsonFormat": "Выбранный формат «{0}» не является поддерживаемым форматом Epson QX-10.",
     "MediaEngine.EpsonGeometryDuplicate": "Дублированная геометрия Epson QX-10: {0}."
   }

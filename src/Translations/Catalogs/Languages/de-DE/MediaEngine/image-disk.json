@@ -1,8 +1,8 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "Das Bild enthält keinen ImageDisk-Header: comment terminator at {0}, file length {1} bytes.",
+    "MediaEngine.ImdSignature": "Das Image enthält keinen ImageDisk-Header: Kommentarende bei {0}, Dateilänge {1} Bytes.",
     "MediaEngine.ImdTruncated": "Der ImageDisk {0}-Abschnitt im Offset {1} ist gekürzt: {2} Bytes sind erforderlich, {3} sind verfügbar.",
-    "MediaEngine.ImdTrackHeader": "Der ImageDisk Track Header ist ungültig: mode {0}, sector count {1}.",
+    "MediaEngine.ImdTrackHeader": "Der ImageDisk-Spurheader ist ungültig: Modus {0}, Sektoranzahl {1}.",
     "MediaEngine.ImdSizeCode": "Der ImageDisk Sektorgrößencode {0} ist ungültig.",
     "MediaEngine.ImdRecordType": "Der Sektordatensatztyp ImageDisk {0} ist ungültig.",
     "MediaEngine.ImdNoSectors": "Das ImageDisk-Bild enthält keine Sektoren.",

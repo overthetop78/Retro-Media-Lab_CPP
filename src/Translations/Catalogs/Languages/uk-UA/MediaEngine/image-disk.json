@@ -1,10 +1,10 @@
 {
   "strings": {
     "MediaEngine.ImdSignature": "Зображення не містить заголовка ImageDisk: термінатор коментаря {0}, довжина файлу {1} байтів.",
-    "MediaEngine.ImdTruncated": "Розділ ImageDisk {0} в офсеті {1} truncated: {2} байти необхідні, {3} доступні.",
-    "MediaEngine.ImdTrackHeader": "Заголовок ImageDisk недійсний: режим {0}, галузева кількість {1}.",
-    "MediaEngine.ImdSizeCode": "Код сектора ImageDisk {0} недійсний.",
-    "MediaEngine.ImdRecordType": "ImageDisk-рекорд тип {0} недійсний.",
+    "MediaEngine.ImdTruncated": "Розділ ImageDisk {0} за зсувом {1} обрізаний: потрібно {2} байтів, доступно {3}.",
+    "MediaEngine.ImdTrackHeader": "Заголовок доріжки ImageDisk некоректний: режим {0}, кількість секторів {1}.",
+    "MediaEngine.ImdSizeCode": "Код розміру сектора ImageDisk {0} некоректний.",
+    "MediaEngine.ImdRecordType": "Тип запису сектора ImageDisk {0} некоректний.",
     "MediaEngine.ImdNoSectors": "Зображення ImageDisk не містить секторів.",
     "MediaEngine.ImdNoTracks": "Зображення ImageDisk не містить треків.",
     "MediaEngine.ImdWriteTrack": "Заголовок треку ImageDisk не представляється.",
@@ -14,7 +14,7 @@
     "MediaEngine.ImdMetadataRecord": "метадані ImageDisk містить недійсний тип запису сектора.",
     "MediaEngine.ImdMetadataSize": "метадані ImageDisk містить недійсний розмір сектора.",
     "MediaEngine.ImdMetadataBlock": "метадані ImageDisk не відповідає логічному блоку '{0}'.",
-    "MediaEngine.ImdMetadataCount": "Кількість метаданих ImageDisk не відповідає зображенню галузі.",
+    "MediaEngine.ImdMetadataCount": "Кількість блоків метаданих ImageDisk не відповідає секторному образу.",
     "MediaEngine.ImdMetadata": "метадані ImageDisk недійсні.",
     "MediaEngine.ImdEpsonGeometry": "Геометрія зображення Epson не відповідає ідентифікатору його формату.",
     "MediaEngine.ImdEpsonSize": "Epson сектор {0}:{1}:{2} має недійсний розмір.",

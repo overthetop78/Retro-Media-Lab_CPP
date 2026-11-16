@@ -1,13 +1,13 @@
 {
   "strings": {
-    "MediaEngine.CpcDskHeader": "Amstrad DSK header är truncated.",
+    "MediaEngine.CpcDskHeader": "Amstrad DSK-huvudet är avkortat.",
     "MediaEngine.CpcDskSignature": "Filen är inte en CPCEMU DSK-bild.",
     "MediaEngine.CpcDskGeometry": "Amstrad DSK geometri är ogiltig.",
-    "MediaEngine.CpcDskExtendedTable": "Det utökade spårbordet Amstrad DSK är ogiltigt på rätt spår {0}.",
-    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK spår {0} är truncated.",
+    "MediaEngine.CpcDskExtendedTable": "Den utökade spårtabellen för Amstrad DSK är ogiltig vid spår {0}.",
+    "MediaEngine.CpcDskTrackTruncated": "Amstrad DSK-spår {0} är avkortat.",
     "MediaEngine.CpcDskTrackHeader": "Amstrad DSK spår {0} har en ogiltig rubrik.",
     "MediaEngine.CpcDskSectorTable": "Amstrad DSK spår {0} har en ogiltig sektor tabell.",
-    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sektor {0}:{1}:{2} är truncated.",
+    "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK-sektor {0}:{1}:{2} är avkortad.",
     "MediaEngine.CpcDskNoSectors": "Amstrad DSK-bilden innehåller inga sektorer.",
     "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK spår {0} upptar {1} byte och överstiger 65280-byte behållare gränsen.",
     "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK spår {0} använder en frånvarande, variabel storlek eller icke-nominell sektor representation som kräver EDSK.",
@@ -16,8 +16,8 @@
     "MediaEngine.CpcDskTooManySectors": "Behållaren Amstrad DSK kan inte skrivas: spår {0} innehåller för många sektorsbeskrivningar.",
     "MediaEngine.CpcDskUniformTracks": "Amstrad DSK behållare kan inte skrivas: standard DSK kräver en enhetlig spårstorlek.",
     "MediaEngine.CpcDskBuilderGeometry": "Den Amstrad DSK behållaren kan inte skrivas: geometrin överstiger CPCEMU gränser.",
-    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-container kan inte skrivas: inhemska metadata saknar ST1/ST2.",
-    "MediaEngine.CpcDskSizeCode": "Amstrad DSK-container kan inte skrivas: sektorstorlek {0} är inte representerad av en CPCEMU-storlekskod.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-containern kan inte skrivas: de ursprungliga sektormetadatauppgifterna saknar ST1/ST2.",
+    "MediaEngine.CpcDskSizeCode": "Amstrad DSK-containern kan inte skrivas: sektorstorleken {0} kan inte representeras med en CPCEMU-storlekskod.",
     "MediaEngine.CpcDskOverflow": "CPCEMU DSK datastorlek överstiger det stödda intervallet.",
     "MediaEngine.CpcDskRecordedAddress": "Inspelad CPCEMU-adress {0}:{1}:{2} kan inte representeras av ett-byte-fält."
   }

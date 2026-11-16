@@ -1,6 +1,6 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "La imagen no contiene un encabezado ImageDisk: terminator de comentarios a {0}, longitud de archivo {1} bytes.",
+    "MediaEngine.ImdSignature": "La imagen no contiene un encabezado ImageDisk: terminador de comentario en {0}, longitud del archivo {1} bytes.",
     "MediaEngine.ImdTruncated": "La sección ImageDisk {0} en offset {1} está truncada: {2} se requieren bytes, {3} están disponibles.",
     "MediaEngine.ImdTrackHeader": "El encabezado de la pista ImageDisk es inválido: modo {0}, conteo sector {1}.",
     "MediaEngine.ImdSizeCode": "El código de tamaño del sector ImageDisk {0} es inválido.",
@@ -14,7 +14,7 @@
     "MediaEngine.ImdMetadataRecord": "Los metadatos ImageDisk contienen un tipo de registro del sector inválido.",
     "MediaEngine.ImdMetadataSize": "Los metadatos ImageDisk contienen un tamaño del sector inválido.",
     "MediaEngine.ImdMetadataBlock": "Los metadatos de ImageDisk no coinciden con el bloque lógico '{0}'.",
-    "MediaEngine.ImdMetadataCount": "El recuento de metadatos ImageDisk no coincide con la imagen del sector.",
+    "MediaEngine.ImdMetadataCount": "El número de bloques de metadatos ImageDisk no coincide con la imagen sectorial.",
     "MediaEngine.ImdMetadata": "Los metadatos ImageDisk son inválidos.",
     "MediaEngine.ImdEpsonGeometry": "La geometría de imagen Epson no coincide con su identificador de formato.",
     "MediaEngine.ImdEpsonSize": "Epson sector {0}:{1}:{2} tiene un tamaño inválido.",

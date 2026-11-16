@@ -10,7 +10,7 @@
     "MediaEngine.CpcDskSectorTruncated": "Amstrad DSK sector {0}: {1}: {2} terpotong.",
     "MediaEngine.CpcDskNoSectors": "Gambar Amstrad DSK tidak berisi sektor.",
     "MediaEngine.CpcDskExtendedLarge": "Amstrad EDSK track {0} menempati {1} bytes dan melebihi batas kontainer 65280- byte.",
-    "MediaEngine.CpcDskStandardRepresentation": "Amstrad DSK track {0} menggunakan sebuah absent, variable-size atau bukan-nominal representasi sektor yang membutuhkan EDSK.",
+    "MediaEngine.CpcDskStandardRepresentation": "Trek Amstrad DSK {0} menggunakan representasi sektor yang tidak ada, berukuran variabel, atau tidak nominal sehingga memerlukan EDSK.",
     "MediaEngine.CpcDskTrackCollection": "Kontainer Amstrad DSK tidak dapat ditulis: geometri yang dideklarasikan dan koleksi trek tidak setuju.",
     "MediaEngine.CpcDskTrackIndex": "Kontainer Amstrad DSK tidak dapat ditulis: indeks trek {0} muncul pada posisi {1}.",
     "MediaEngine.CpcDskTooManySectors": "Kontainer Amstrad DSK tidak dapat ditulis: track {0} memuat terlalu banyak deskripsi sektor.",
@@ -19,6 +19,6 @@
     "MediaEngine.CpcDskNativeMetadata": "Kontainer Amstrad DSK tidak dapat ditulis: metadata sektor asli kurang ST1 / ST2.",
     "MediaEngine.CpcDskSizeCode": "Kontainer Amstrad DSK tidak dapat ditulis: ukuran sektor {0} tidak dapat direpresentasikan oleh sebuah kode ukuran CPCEMU.",
     "MediaEngine.CpcDskOverflow": "Ukuran data CPCEMU DSK melebihi jangkauan yang didukung.",
-    "MediaEngine.CpcDskRecordedAddress": "Recorded CPCEMU address {0}: {1}: {2} tidak dapat direpresentasikan oleh satu ruas -byte."
+    "MediaEngine.CpcDskRecordedAddress": "Alamat CPCEMU yang direkam {0}:{1}:{2} tidak dapat direpresentasikan oleh bidang berukuran satu byte."
   }
 }

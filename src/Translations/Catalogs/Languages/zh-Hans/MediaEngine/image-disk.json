@@ -1,16 +1,16 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "图像不包含 ImageDisk 头: 在 {0} , 文件长度 {1} 字节 上的评论结束 。",
-    "MediaEngine.ImdTruncated": "ImageDisk {0} 偏移{1} 的段落被切换: {2} 字节需要,{3} 是可用的 。",
-    "MediaEngine.ImdTrackHeader": "ImageDisk 音轨标题无效:模式{0},扇区计数{1}.",
+    "MediaEngine.ImdSignature": "镜像不包含 ImageDisk 文件头：注释终止符位于 {0}，文件长度为 {1} 字节。",
+    "MediaEngine.ImdTruncated": "ImageDisk 的 {0} 部分在偏移 {1} 处已截断：需要 {2} 字节，可用 {3} 字节。",
+    "MediaEngine.ImdTrackHeader": "ImageDisk 磁道头无效：模式 {0}，扇区数量 {1}。",
     "MediaEngine.ImdSizeCode": "ImageDisk 扇区大小代码 {0} 无效 。",
     "MediaEngine.ImdRecordType": "ImageDisk 扇区记录类型 {0} 无效 。",
-    "MediaEngine.ImdNoSectors": "ImageDisk 图像中没有扇形 。",
-    "MediaEngine.ImdNoTracks": "ImageDisk 图像没有音轨 。",
-    "MediaEngine.ImdWriteTrack": "ImageDisk 轨迹头无法代表 。",
-    "MediaEngine.ImdWriteSector": "ImageDisk区记录无效.",
-    "MediaEngine.ImdCompressed": "压缩的 ImageDisk 扇形不包含一个重复的字节 。",
-    "MediaEngine.ImdMetadataMode": "ImageDisk 元数据包含无效的音轨模式.",
+    "MediaEngine.ImdNoSectors": "ImageDisk 镜像不包含扇区。",
+    "MediaEngine.ImdNoTracks": "ImageDisk 镜像不包含磁道。",
+    "MediaEngine.ImdWriteTrack": "ImageDisk 磁道头无法表示。",
+    "MediaEngine.ImdWriteSector": "ImageDisk 扇区记录无效。",
+    "MediaEngine.ImdCompressed": "压缩的 ImageDisk 扇区不包含单个重复字节。",
+    "MediaEngine.ImdMetadataMode": "ImageDisk 元数据包含无效的磁道模式。",
     "MediaEngine.ImdMetadataRecord": "ImageDisk 元数据包含一个无效的扇区记录类型 。",
     "MediaEngine.ImdMetadataSize": "ImageDisk 元数据包含一个无效的扇区大小 。",
     "MediaEngine.ImdMetadataBlock": "ImageDisk 元数据不符合逻辑块“ {0} ” 。",
@@ -20,6 +20,6 @@
     "MediaEngine.ImdEpsonSize": "Epson 扇区 {0}:{1}:{2} 大小无效 。",
     "MediaEngine.ImdEpsonDuplicate": "Epson 扇区 {0} :{1}:{2} 重复 。",
     "MediaEngine.EpsonFormat": "所选格式\"{0}\"不是被支持的Epson QX-10格式.",
-    "MediaEngine.EpsonGeometryDuplicate": "复制Epson QX-10几何:{0}."
+    "MediaEngine.EpsonGeometryDuplicate": "重复的 Epson QX-10 几何参数：{0}。"
   }
 }

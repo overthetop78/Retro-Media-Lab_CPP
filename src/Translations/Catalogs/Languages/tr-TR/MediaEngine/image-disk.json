@@ -1,25 +1,25 @@
 {
   "strings": {
-    "MediaEngine.ImdSignature": "Görüntü bir ImageDisk başlığı içermiyor: {0}'deki yorum terimi, dosya uzunluğu {1} bytes.",
-    "MediaEngine.ImdTruncated": "ImageDisk {0} bölümü {1} kodlanmış: {2} bytes gereklidir, {3} mevcuttur.",
-    "MediaEngine.ImdTrackHeader": "ImageDisk ana başlığı geçersizdir: {0}, sektör {1} say.",
+    "MediaEngine.ImdSignature": "Görüntü bir ImageDisk başlığı içermiyor: yorum sonlandırıcısı {0} konumunda, dosya uzunluğu {1} bayt.",
+    "MediaEngine.ImdTruncated": "{1} ofsetindeki ImageDisk {0} bölümü kesilmiş: {2} bayt gerekli, {3} bayt mevcut.",
+    "MediaEngine.ImdTrackHeader": "ImageDisk iz başlığı geçersiz: mod {0}, sektör sayısı {1}.",
     "MediaEngine.ImdSizeCode": "ImageDisk sektörü büyüklüğü kodu {0} geçersizdir.",
     "MediaEngine.ImdRecordType": "ImageDisk sektörü-record tipi {0} geçersizdir.",
-    "MediaEngine.ImdNoSectors": "ImageDisk görüntüsü hiçbir sektör değildir.",
-    "MediaEngine.ImdNoTracks": "ImageDisk görüntüsü hiçbir parça içeriyor.",
-    "MediaEngine.ImdWriteTrack": "ImageDisk üst düzeyi temsil edilemez.",
+    "MediaEngine.ImdNoSectors": "ImageDisk görüntüsü hiç sektör içermiyor.",
+    "MediaEngine.ImdNoTracks": "ImageDisk görüntüsü hiç iz içermiyor.",
+    "MediaEngine.ImdWriteTrack": "ImageDisk iz başlığı temsil edilemiyor.",
     "MediaEngine.ImdWriteSector": "Bir ImageDisk sektörü kaydı geçersizdir.",
-    "MediaEngine.ImdCompressed": "sıkıştırılmış bir ImageDisk sektörü, tekrarlanan bir tane içermiyor.",
+    "MediaEngine.ImdCompressed": "Sıkıştırılmış ImageDisk sektörü tekrarlanan tek bir bayt içermiyor.",
     "MediaEngine.ImdMetadataMode": "ImageDisk metadata geçersiz bir iz modu içeriyor.",
     "MediaEngine.ImdMetadataRecord": "ImageDisk metadata geçersiz bir sektör rekoru içeriyor.",
     "MediaEngine.ImdMetadataSize": "ImageDisk metadata geçersiz bir sektör boyutu içeriyor.",
-    "MediaEngine.ImdMetadataBlock": "ImageDisk metadata mantıksal blokla eşleşmez \"{0}.",
+    "MediaEngine.ImdMetadataBlock": "ImageDisk meta verileri \"{0}\" mantıksal bloğuyla eşleşmiyor.",
     "MediaEngine.ImdMetadataCount": "ImageDisk metadata blok sayısı sektör imajıyla eşleşmez.",
     "MediaEngine.ImdMetadata": "ImageDisk metadata geçersizdir.",
     "MediaEngine.ImdEpsonGeometry": "Epson görüntü geometrisi, format tanımlayıcısını eşleştirmez.",
     "MediaEngine.ImdEpsonSize": "Epson sektörü {0}:{1}:{2} geçersiz bir boyuta sahiptir.",
     "MediaEngine.ImdEpsonDuplicate": "Epson sektörü {0}:{1}:{2} tekrarlanır.",
     "MediaEngine.EpsonFormat": "Seçilen format \"{0}\", desteklenen bir Epson QX-10 format değildir.",
-    "MediaEngine.EpsonGeometryDuplicate": "Epson QX-10 geometrisi: {0}."
+    "MediaEngine.EpsonGeometryDuplicate": "Yinelenen Epson QX-10 geometrisi: {0}."
   }
 }

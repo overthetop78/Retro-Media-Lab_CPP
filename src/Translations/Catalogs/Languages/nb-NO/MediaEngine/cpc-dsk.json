@@ -16,9 +16,9 @@
     "MediaEngine.CpcDskTooManySectors": "Amstrad DSK-beholderen kan ikke skrives: spor {0} inneholder for mange sektordeskriptorer.",
     "MediaEngine.CpcDskUniformTracks": "Amstrad DSK beholder kan ikke skrives: standard DSK krever én ensartet sporstørrelse.",
     "MediaEngine.CpcDskBuilderGeometry": "Amstrad DSK beholder kan ikke skrives: geometrien overstiger CPCEMU-grensene.",
-    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-beholderen kan ikke skrives: Metadata mangler ST1/ST2.",
+    "MediaEngine.CpcDskNativeMetadata": "Amstrad DSK-beholderen kan ikke skrives: De opprinnelige sektormetadataene mangler ST1/ST2.",
     "MediaEngine.CpcDskSizeCode": "Amstrad DSK-beholderen kan ikke skrives: sektorstørrelse {0} kan ikke representeres med en CPCEMU-størrelseskode.",
     "MediaEngine.CpcDskOverflow": "Datastørrelsen på CPCEMU DSK overstiger det støttede området.",
-    "MediaEngine.CpcDskRecordedAddress": "Opptakt CPCEMU-adresse {0}:{1}: {2} kan ikke representeres av ett byte-felt."
+    "MediaEngine.CpcDskRecordedAddress": "Den lagrede CPCEMU-adressen {0}:{1}:{2} kan ikke representeres med felt på én byte."
   }
 }
