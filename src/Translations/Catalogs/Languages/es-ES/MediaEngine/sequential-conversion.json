@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Un plan de conversión secuencial requiere un objetivo y claves de diagnóstico no vacías.",
+    "MediaEngine.SequentialConversionSource": "La fuente no es una imagen secuencial de cinta.",
+    "MediaEngine.SequentialConversionMachine": "Seleccione una máquina explícitamente para esta fuente secuencial.",
+    "MediaEngine.SequentialConversionEncoder": "Ningún encoder secuencial puede convertir '{0}' a '{1}' para '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Aceptar las pérdidas de información declaradas antes de escribir esta conversión.",
+    "MediaEngine.SequentialConversionWriter": "Ningún módulo de escritura admite el destino secuencial '{0}' con la extensión '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} segmento(s) fuente(s) no puede ser representado por el formato objetivo.",
+    "MediaEngine.SequentialConversionTiming": "La temporización de la señal de destino se reconstruye; no se conserva la temporización de la grabación original.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP almacena datos y direcciones de archivos sin preservar el tiempo de señal de origen.",
+    "MediaEngine.SequentialSignalConversion": "Esta conversión de señal de cinta no es compatible.",
+    "MediaEngine.SequentialConversionAmplitude": "La UEF conserva el tiempo de señal y la polaridad en lugar de la amplitud PCM original.",
+    "MediaEngine.SequentialConversionChunks": "El formato de señal de destino no conserva los bloques UEF originales ni la información ajena a la señal.",
+    "MediaEngine.SequentialConversionAtomSignal": "La señal se reconstruye a partir de datos de archivo Atom; TAP no contiene tiempo de pulso registrado."
+  }
+}

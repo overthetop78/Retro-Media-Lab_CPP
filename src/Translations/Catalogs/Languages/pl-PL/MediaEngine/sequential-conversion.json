@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Sekwencyjny plan konwersji wymaga celowego i niepustego klucza diagnostycznego.",
+    "MediaEngine.SequentialConversionSource": "Źródło nie jest sekwencyjnym obrazem taśmy.",
+    "MediaEngine.SequentialConversionMachine": "Wybierz maszynę wyraźnie dla tego sekwencyjnego źródła.",
+    "MediaEngine.SequentialConversionEncoder": "Żaden sekwencyjny enkoder nie może przekonwertować '{0}' na '{1}' dla '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Zaakceptuj zgłoszone straty w informacjach przed napisaniem tej konwersji.",
+    "MediaEngine.SequentialConversionWriter": "Żaden moduł zapisu nie obsługuje sekwencyjnego celu '{0}' z rozszerzeniem '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "Segmenty źródłowe {0} nie mogą być reprezentowane przez format docelowy.",
+    "MediaEngine.SequentialConversionTiming": "Czas sygnału docelowego jest raczej zrekonstruowany niż zachowany pierwotny czas nagrywania.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP przechowuje dane i adresy plików bez zachowania czasu sygnału źródłowego.",
+    "MediaEngine.SequentialSignalConversion": "Konwersja sygnału taśmy nie jest obsługiwana.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF zachowuje raczej czas sygnału i polaryzację niż pierwotną amplitudę PCM.",
+    "MediaEngine.SequentialConversionChunks": "Format sygnału docelowego nie zachowuje oryginalnych fragmentów UEF i informacji niesygnałowych.",
+    "MediaEngine.SequentialConversionAtomSignal": "Sygnał jest rekonstruowany z danych Atom; TAP nie zawiera zapisanego pulsu."
+  }
+}

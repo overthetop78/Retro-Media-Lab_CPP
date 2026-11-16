@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "A szekvenciális konverziós terv célpontot és nem üres diagnosztikai kulcsot igényel.",
+    "MediaEngine.SequentialConversionSource": "A forrás nem egy szekvenciális szalagkép.",
+    "MediaEngine.SequentialConversionMachine": "Válasszon ki egy gépet erre a szekvenciális forrásra.",
+    "MediaEngine.SequentialConversionEncoder": "Egy szekvenciális kódoló sem tudja a '{0}' -et '{1}' -re konvertálni a '{2}' -re.",
+    "MediaEngine.SequentialConversionLosses": "Az átalakítás megírása előtt el kell fogadni a bejelentett információveszteséget.",
+    "MediaEngine.SequentialConversionWriter": "Egyetlen írómodul sem támogatja a(z) '{0}' szekvenciális célt a(z) '{1}' kiterjesztéssel.",
+    "MediaEngine.SequentialConversionSegments": "{0} a forrásszegmens (ok) nem képviselhető a célformátumban.",
+    "MediaEngine.SequentialConversionTiming": "A céljel időzítését inkább rekonstruálják, mintsem megőrizzék az eredeti felvételt.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP tárolja fájlok adatait és címeit anélkül, hogy megőrzi a forrás jel időzítését.",
+    "MediaEngine.SequentialSignalConversion": "Ez a szalagjel átalakítás nem támogatott.",
+    "MediaEngine.SequentialConversionAmplitude": "Az UEF az eredeti PCM amplitúdó helyett a jelidőzítést és a polaritást tartja meg.",
+    "MediaEngine.SequentialConversionChunks": "A céljel formátuma nem tartja meg az eredeti UEF-darabokat és a nem-jel információkat.",
+    "MediaEngine.SequentialConversionAtomSignal": "A jelet Atom fájladatokból rekonstruálják; a TAP nem tartalmaz rögzített impulzus-időzítést."
+  }
+}

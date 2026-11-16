@@ -3,6 +3,20 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::SequentialConversionPlan:return DiagnosticKeys::SequentialConversionPlan;
+    case DiagnosticCode::SequentialConversionSource:return DiagnosticKeys::SequentialConversionSource;
+    case DiagnosticCode::SequentialConversionMachine:return DiagnosticKeys::SequentialConversionMachine;
+    case DiagnosticCode::SequentialConversionEncoder:return DiagnosticKeys::SequentialConversionEncoder;
+    case DiagnosticCode::SequentialConversionLosses:return DiagnosticKeys::SequentialConversionLosses;
+    case DiagnosticCode::SequentialConversionWriter:return DiagnosticKeys::SequentialConversionWriter;
+    case DiagnosticCode::SequentialConversionSegments:return DiagnosticKeys::SequentialConversionSegments;
+    case DiagnosticCode::SequentialConversionTiming:return DiagnosticKeys::SequentialConversionTiming;
+    case DiagnosticCode::SequentialConversionAtom:return DiagnosticKeys::SequentialConversionAtom;
+    case DiagnosticCode::SequentialSignalConversion:return DiagnosticKeys::SequentialSignalConversion;
+    case DiagnosticCode::SequentialConversionAmplitude:return DiagnosticKeys::SequentialConversionAmplitude;
+    case DiagnosticCode::SequentialConversionChunks:return DiagnosticKeys::SequentialConversionChunks;
+    case DiagnosticCode::SequentialConversionAtomSignal:return DiagnosticKeys::SequentialConversionAtomSignal;
+
     case DiagnosticCode::CpcTapeIncompatible:return DiagnosticKeys::CpcTapeIncompatible;
     case DiagnosticCode::CpcTapeShortHeader:return DiagnosticKeys::CpcTapeShortHeader;
     case DiagnosticCode::CpcTapeOrphanData:return DiagnosticKeys::CpcTapeOrphanData;

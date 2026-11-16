@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Ein sequentieller Umwandlungsplan erfordert ein Ziel und nicht leere Diagnoseschlüssel.",
+    "MediaEngine.SequentialConversionSource": "Die Quelle ist kein sequentielles Bandbild.",
+    "MediaEngine.SequentialConversionMachine": "Wählen Sie eine Maschine explizit für diese sequentielle Quelle.",
+    "MediaEngine.SequentialConversionEncoder": "Kein sequentieller Encoder kann '{0}' in '{1}' für '{2}' umwandeln.",
+    "MediaEngine.SequentialConversionLosses": "Akzeptieren Sie die deklarierten Informationsverluste, bevor Sie diese Umwandlung schreiben.",
+    "MediaEngine.SequentialConversionWriter": "Kein Schreibmodul unterstützt das sequentielle Ziel '{0}' mit der Dateiendung '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} Quellsegment(e) können im Zielformat nicht dargestellt werden.",
+    "MediaEngine.SequentialConversionTiming": "Die zeitliche Struktur des Zielsignals wird rekonstruiert; das ursprüngliche Aufzeichnungstiming bleibt nicht erhalten.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP speichert Dateidaten und Adressen, ohne das Quellsignal-Timing beizubehalten.",
+    "MediaEngine.SequentialSignalConversion": "Diese Bandsignalwandlung wird nicht unterstützt.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF behält Signal Timing und Polarität statt der ursprünglichen PCM-Amplitude.",
+    "MediaEngine.SequentialConversionChunks": "Das Zielsignalformat behält nicht die ursprünglichen UEF-Abschnitte und Nichtsignalinformationen.",
+    "MediaEngine.SequentialConversionAtomSignal": "Das Signal wird aus Atom-Dateidaten rekonstruiert; TAP enthält keine aufgezeichnete Pulszeit."
+  }
+}

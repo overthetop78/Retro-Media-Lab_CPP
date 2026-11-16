@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Un plan secvenţial de conversie necesită o ţintă şi chei de diagnosticare fără gol.",
+    "MediaEngine.SequentialConversionSource": "Sursa nu este o imagine secvenţială.",
+    "MediaEngine.SequentialConversionMachine": "Selectaţi în mod explicit o maşină pentru această sursă secvenţială.",
+    "MediaEngine.SequentialConversionEncoder": "Niciun codor secvenţial nu poate converti \"{0} \" la \" {1} \" pentru \" {2} .\"",
+    "MediaEngine.SequentialConversionLosses": "Acceptă pierderile de informații declarate înainte de a scrie această conversie.",
+    "MediaEngine.SequentialConversionWriter": "Niciun modul de scriere nu acceptă destinația secvențială '{0}' cu extensia '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} segmentul sursă (s) nu poate fi reprezentat de formatul țintă.",
+    "MediaEngine.SequentialConversionTiming": "Temporizarea semnalului țintă este reconstruită; temporizarea înregistrării originale nu este păstrată.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP stochează datele și adresele fișierelor fără a conserva calendarul semnalului sursă.",
+    "MediaEngine.SequentialSignalConversion": "Conversia semnalului de bandă nu este acceptată.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF păstrează sincronizarea semnalului și polaritatea mai degrabă decât amplitudinea PCM originală.",
+    "MediaEngine.SequentialConversionChunks": "Formatul semnalului țintă nu păstrează blocurile UEF originale și informațiile care nu fac parte din semnal.",
+    "MediaEngine.SequentialConversionAtomSignal": "Semnalul este reconstruit din datele de fișier Atom; TAP nu conține timp de impuls înregistrat."
+  }
+}

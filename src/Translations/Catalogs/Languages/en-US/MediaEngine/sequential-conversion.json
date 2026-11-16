@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "A sequential conversion plan requires a target and nonempty diagnostic keys.",
+    "MediaEngine.SequentialConversionSource": "The source is not a sequential tape image.",
+    "MediaEngine.SequentialConversionMachine": "Select a machine explicitly for this sequential source.",
+    "MediaEngine.SequentialConversionEncoder": "No sequential encoder can convert '{0}' to '{1}' for '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Accept the declared information losses before writing this conversion.",
+    "MediaEngine.SequentialConversionWriter": "No writer accepts sequential target '{0}' with extension '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} source segment(s) cannot be represented by the target format.",
+    "MediaEngine.SequentialConversionTiming": "The target signal timing is reconstructed rather than preserving the original recording timing.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP stores file data and addresses without preserving the source signal timing.",
+    "MediaEngine.SequentialSignalConversion": "This tape signal conversion is not supported.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF retains signal timing and polarity rather than the original PCM amplitude.",
+    "MediaEngine.SequentialConversionChunks": "The target signal format does not retain the original UEF chunks and non-signal information.",
+    "MediaEngine.SequentialConversionAtomSignal": "The signal is reconstructed from Atom file data; TAP contains no recorded pulse timing."
+  }
+}

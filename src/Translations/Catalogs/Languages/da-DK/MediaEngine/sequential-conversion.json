@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "En sekventiel konverteringsplan kræver et mål og ikke tomme diagnostiske nøgler.",
+    "MediaEngine.SequentialConversionSource": "Kilden er ikke et sekventielt båndbillede.",
+    "MediaEngine.SequentialConversionMachine": "Vælg en maskine eksplicit for denne sekventielle kilde.",
+    "MediaEngine.SequentialConversionEncoder": "Ingen sekventiel encoder kan konvertere '{0}' til '{1}' for '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Acceptér de angivne informationstab, før du skriver denne konvertering.",
+    "MediaEngine.SequentialConversionWriter": "Intet skrivemodul understøtter det sekventielle mål '{0}' med filtypenavnet '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} kildesegment (r) kan ikke repræsenteres af målformatet.",
+    "MediaEngine.SequentialConversionTiming": "Målsignalets timing er rekonstrueret i stedet for at bevare den oprindelige optagelsestid.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP gemmer fil data og adresser uden at bevare kilden signal timing.",
+    "MediaEngine.SequentialSignalConversion": "Denne båndsignalkonvertering understøttes ikke.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF bevarer signalets timing og polaritet i stedet for den oprindelige PCM amplitude.",
+    "MediaEngine.SequentialConversionChunks": "Målsignalformatet bevarer ikke de originale UEF-stykker og ikke-signaloplysninger.",
+    "MediaEngine.SequentialConversionAtomSignal": "Signalet er rekonstrueret fra Atom-fil data; TAP indeholder ingen registrerede puls timing."
+  }
+}

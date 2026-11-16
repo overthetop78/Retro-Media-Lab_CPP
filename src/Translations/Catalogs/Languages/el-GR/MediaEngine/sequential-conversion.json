@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Ένα διαδοχικό σχέδιο μετατροπής απαιτεί ένα στόχο και μη άδεια διαγνωστικά κλειδιά.",
+    "MediaEngine.SequentialConversionSource": "Η πηγή δεν είναι μια διαδοχική εικόνα ταινία.",
+    "MediaEngine.SequentialConversionMachine": "Επιλέξτε μια μηχανή ρητά για αυτή τη διαδοχική πηγή.",
+    "MediaEngine.SequentialConversionEncoder": "Κανένας διαδοχικός κωδικοποιητής δεν μπορεί να μετατρέψει το '{0}' σε '{1}' για '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Αποδέξου τις δηλωμένες απώλειες πληροφοριών πριν γράψεις αυτή τη μετατροπή.",
+    "MediaEngine.SequentialConversionWriter": "Κανένα υποσύστημα εγγραφής δεν υποστηρίζει τον διαδοχικό στόχο '{0}' με επέκταση '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "Το (τα) τμήμα(-τα) πηγής {0} δεν μπορεί να αναπαρασταθεί από τη μορφή-στόχο.",
+    "MediaEngine.SequentialConversionTiming": "Ο χρονισμός του σήματος-στόχου ανακατασκευάζεται και όχι διατηρείται ο αρχικός χρόνος καταγραφής.",
+    "MediaEngine.SequentialConversionAtom": "Το Atom TAP αποθηκεύει δεδομένα και διευθύνσεις αρχείων χωρίς να διατηρεί το χρονισμό του πηγαίου σήματος.",
+    "MediaEngine.SequentialSignalConversion": "Αυτή η μετατροπή σήματος ταινία δεν υποστηρίζεται.",
+    "MediaEngine.SequentialConversionAmplitude": "Το UEF διατηρεί το χρονισμό του σήματος και την πολικότητα και όχι το αρχικό εύρος PCM.",
+    "MediaEngine.SequentialConversionChunks": "Η μορφή του σήματος-στόχου δεν διατηρεί τα αρχικά κομμάτια UEF και τις πληροφορίες χωρίς σήμα.",
+    "MediaEngine.SequentialConversionAtomSignal": "Το σήμα ανακατασκευάζεται από τα δεδομένα του αρχείου Atom· το TAP δεν περιέχει καταγεγραμμένο χρονισμό παλμού."
+  }
+}

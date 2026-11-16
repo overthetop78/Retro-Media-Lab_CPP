@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Un piano di conversione sequenziale richiede un bersaglio e chiavi diagnostiche non vuote.",
+    "MediaEngine.SequentialConversionSource": "La fonte non è un'immagine di nastro sequenziale.",
+    "MediaEngine.SequentialConversionMachine": "Selezionare una macchina esplicitamente per questa sorgente sequenziale.",
+    "MediaEngine.SequentialConversionEncoder": "Nessun encoder sequenziale può convertire '{0}' in '{1}' per '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Accettare le perdite di informazioni dichiarate prima di scrivere questa conversione.",
+    "MediaEngine.SequentialConversionWriter": "Nessun modulo di scrittura supporta la destinazione sequenziale '{0}' con estensione '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} segmenti sorgente(i) non possono essere rappresentati dal formato di destinazione.",
+    "MediaEngine.SequentialConversionTiming": "La tempistica del segnale di destinazione viene ricostruita piuttosto che preservare la tempistica di registrazione originale.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP memorizza i dati e gli indirizzi dei file senza preservare la tempistica del segnale sorgente.",
+    "MediaEngine.SequentialSignalConversion": "Questa conversione del segnale del nastro non è supportata.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF mantiene tempistiche e polarità del segnale piuttosto che l'ampiezza PCM originale.",
+    "MediaEngine.SequentialConversionChunks": "Il formato del segnale di destinazione non conserva i blocchi UEF originali né le informazioni estranee al segnale.",
+    "MediaEngine.SequentialConversionAtomSignal": "Il segnale viene ricostruito dai dati dei file Atom; TAP non contiene tempi di impulso registrati."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "План послідовного перетворення вимагає цільових і неоптимічних діагностичних ключів.",
+    "MediaEngine.SequentialConversionSource": "Джерело не є послідовним скотчем.",
+    "MediaEngine.SequentialConversionMachine": "Виберіть машину явно для цього послідовного джерела.",
+    "MediaEngine.SequentialConversionEncoder": "Немає послідовного конвертера може конвертувати '{0}' в '{1}' для '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Прийняття заявлених втрат інформації перед написанням цього перетворення.",
+    "MediaEngine.SequentialConversionWriter": "Жоден модуль запису не підтримує послідовний формат '{0}' з розширенням '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} вихідний сегмент (s) не може бути представлений цільовим форматом.",
+    "MediaEngine.SequentialConversionTiming": "Часова структура цільового сигналу реконструюється; початкові часові характеристики запису не зберігаються.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP зберігає дані і адреси файлів без збереження часу вихідних сигналів.",
+    "MediaEngine.SequentialSignalConversion": "Ця стрічка не підтримується.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF зберігає час і поляризацію сигналу, а не оригінальну амплітуду PCM.",
+    "MediaEngine.SequentialConversionChunks": "Цільовий формат сигналу не зберігає початкові блоки UEF та інформацію поза сигналом.",
+    "MediaEngine.SequentialConversionAtomSignal": "Відновлюється сигнал від Atom-файлів; TAP не містить записаних порушень імпульсу."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "相继的转换计划需要目标和非空的诊断键.",
+    "MediaEngine.SequentialConversionSource": "源头不是相继相传的磁带图像.",
+    "MediaEngine.SequentialConversionMachine": "明确选择此相继源的机器 。",
+    "MediaEngine.SequentialConversionEncoder": "任何相继编码器都无法转换 '{0}改为:{1}'为'{2}' '.",
+    "MediaEngine.SequentialConversionLosses": "在撰写此转换之前接受已申报的信息损失。",
+    "MediaEngine.SequentialConversionWriter": "没有写入模块支持扩展名为 '{1}' 的顺序目标格式 '{0}'。",
+    "MediaEngine.SequentialConversionSegments": "{0} 源片段不能用目标格式表示 。",
+    "MediaEngine.SequentialConversionTiming": "目标信号计时是重建的,而不是保留原来的录制计时.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP存储文件数据和地址而不保留源信号时间.",
+    "MediaEngine.SequentialSignalConversion": "此磁带信号转换不支持 。",
+    "MediaEngine.SequentialConversionAmplitude": "UEF保留了信号时间和极性,而不是原来的PCM振幅.",
+    "MediaEngine.SequentialConversionChunks": "目标信号格式不保留原有的UEF块和非信号信息.",
+    "MediaEngine.SequentialConversionAtomSignal": "该信号由Atom文件数据重建而来;TAP包含没有记录的脉冲时间."
+  }
+}

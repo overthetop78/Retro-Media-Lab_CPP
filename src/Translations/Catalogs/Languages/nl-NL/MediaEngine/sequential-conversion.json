@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Een sequentiële conversieplan vereist een doel en niet-lege kenmerkende sleutels.",
+    "MediaEngine.SequentialConversionSource": "De bron is geen sequentiële tapeafbeelding.",
+    "MediaEngine.SequentialConversionMachine": "Selecteer een machine expliciet voor deze sequentiële bron.",
+    "MediaEngine.SequentialConversionEncoder": "Geen enkele sequentiële encoder kan '{0}' omzetten naar '{1}' voor '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Accepteer de opgegeven informatieverliezen vóór het schrijven van deze conversie.",
+    "MediaEngine.SequentialConversionWriter": "Geen schrijfmodule ondersteunt het sequentiële doel '{0}' met extensie '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} bronsegment(s) kan niet worden weergegeven door het doelformaat.",
+    "MediaEngine.SequentialConversionTiming": "De doelsignaal timing wordt gereconstrueerd in plaats van het behoud van de oorspronkelijke opname timing.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP slaat bestandsgegevens en adressen op zonder de timing van het bronsignaal te behouden.",
+    "MediaEngine.SequentialSignalConversion": "Deze tape signaal conversie wordt niet ondersteund.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF behoudt signaal timing en polariteit in plaats van de oorspronkelijke PCM amplitude.",
+    "MediaEngine.SequentialConversionChunks": "Het doelsignaalformaat bevat niet de originele UEF-blokken en niet-signaalinformatie.",
+    "MediaEngine.SequentialConversionAtomSignal": "Het signaal wordt gereconstrueerd uit Atom-bestandsgegevens; TAP bevat geen opgenomen puls timing."
+  }
+}

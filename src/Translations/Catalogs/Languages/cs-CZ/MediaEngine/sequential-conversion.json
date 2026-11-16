@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Plán postupné přeměny vyžaduje cílové a neprázdné diagnostické klíče.",
+    "MediaEngine.SequentialConversionSource": "Zdroj není sekvenční obraz pásky.",
+    "MediaEngine.SequentialConversionMachine": "Pro tento sekvenční zdroj vyberte explicitně stroj.",
+    "MediaEngine.SequentialConversionEncoder": "Žádný sekvenční kodér nemůže převést '{0}' na '{1}' pro '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Před zapsáním této konverze akceptujte deklarované informační ztráty.",
+    "MediaEngine.SequentialConversionWriter": "Žádný zapisovací modul nepodporuje sekvenční cíl '{0}' s příponou '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} zdrojový segment (segmenty) nemůže být reprezentován cílovým formátem.",
+    "MediaEngine.SequentialConversionTiming": "Načasování cílového signálu je spíše rekonstruováno než zachováno původní načasování záznamu.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP ukládá data a adresy souborů, aniž by uchoval načasování zdrojového signálu.",
+    "MediaEngine.SequentialSignalConversion": "Tato konverze signálu není podporována.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF si zachovává načasování a polaritu signálu spíše než původní amplitudu PCM.",
+    "MediaEngine.SequentialConversionChunks": "Formát cílového signálu neuchovává původní části UEF a informace o nesignálech.",
+    "MediaEngine.SequentialConversionAtomSignal": "Signál je rekonstruován z dat Atom souboru; TAP neobsahuje zaznamenané načasování pulsu."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Un plan de conversion séquentielle nécessite une cible et des clés de diagnostic non vides.",
+    "MediaEngine.SequentialConversionSource": "La source n'est pas une image de bande séquentielle.",
+    "MediaEngine.SequentialConversionMachine": "Sélectionnez une machine explicitement pour cette source séquentielle.",
+    "MediaEngine.SequentialConversionEncoder": "Aucun encodeur séquentiel ne peut convertir « {0} » en « {1} » pour « {2} ».",
+    "MediaEngine.SequentialConversionLosses": "Accepter les pertes d'information déclarées avant d'écrire cette conversion.",
+    "MediaEngine.SequentialConversionWriter": "Aucun module d’écriture ne prend en charge la cible « {0} » avec l’extension « {1} ».",
+    "MediaEngine.SequentialConversionSegments": "{0} segment(s) source ne peuvent pas être représentés dans le format cible.",
+    "MediaEngine.SequentialConversionTiming": "La chronologie du signal cible est reconstruite ; les durées de l’enregistrement original ne sont pas conservées.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP stocke les données et les adresses de fichiers sans préserver la synchronisation du signal source.",
+    "MediaEngine.SequentialSignalConversion": "Cette conversion de signal de bande n'est pas prise en charge.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF conserve les durées et la polarité du signal plutôt que l’amplitude PCM d’origine.",
+    "MediaEngine.SequentialConversionChunks": "Le format de signal cible ne conserve ni la structure des blocs UEF d’origine ni les informations autres que le signal.",
+    "MediaEngine.SequentialConversionAtomSignal": "Le signal est reconstruit à partir des fichiers Atom ; TAP ne contient aucune durée d’impulsion enregistrée."
+  }
+}

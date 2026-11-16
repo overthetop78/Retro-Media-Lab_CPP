@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "وتقتضي خطة التحويل التسلسلي تحديد أهداف ومفاتيح تشخيص غير فارغة.",
+    "MediaEngine.SequentialConversionSource": "المصدر ليس صورة شريطية متتابعة",
+    "MediaEngine.SequentialConversionMachine": "إختار آلة بشكل صريح لهذا المصدر المتسلسل",
+    "MediaEngine.SequentialConversionEncoder": "لا يوجد مشفر تسلسلي يستطيع تحويل ' {0} إلى ' {1} ' ل {2} '.",
+    "MediaEngine.SequentialConversionLosses": "تقبل الخسائر المعلنة في المعلومات قبل كتابة هذا التحويل.",
+    "MediaEngine.SequentialConversionWriter": "لا توجد وحدة كتابة تدعم التنسيق التسلسلي '{0}' بالامتداد '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} الجزء (المصدر) لا يمكن تمثيله في الشكل المستهدف.",
+    "MediaEngine.SequentialConversionTiming": "يعاد بناء توقيت الإشارة المستهدفة بدلاً من الحفاظ على توقيت التسجيل الأصلي.",
+    "MediaEngine.SequentialConversionAtom": "وتخزن شركة Atom TAP البيانات والعناوين دون الحفاظ على توقيت الإشارة المصدرية.",
+    "MediaEngine.SequentialSignalConversion": "هذا الشريط غير مدعوم",
+    "MediaEngine.SequentialConversionAmplitude": "UEF يحتفظ بتوقيت الإشارة والاستقطاب بدلا من الأصلي PCM السعة",
+    "MediaEngine.SequentialConversionChunks": "لا يحتفظ تنسيق الإشارة المستهدف ببنية كتل UEF الأصلية ولا بالمعلومات غير المتعلقة بالإشارة.",
+    "MediaEngine.SequentialConversionAtomSignal": "The signal is reconstructed from Atom file data; TAP contains no recorded pulse timing."
+  }
+}

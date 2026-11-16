@@ -1,6 +1,20 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SequentialConversionPlan="MediaEngine.SequentialConversionPlan";
+inline constexpr std::string_view SequentialConversionSource="MediaEngine.SequentialConversionSource";
+inline constexpr std::string_view SequentialConversionMachine="MediaEngine.SequentialConversionMachine";
+inline constexpr std::string_view SequentialConversionEncoder="MediaEngine.SequentialConversionEncoder";
+inline constexpr std::string_view SequentialConversionLosses="MediaEngine.SequentialConversionLosses";
+inline constexpr std::string_view SequentialConversionWriter="MediaEngine.SequentialConversionWriter";
+inline constexpr std::string_view SequentialConversionSegments="MediaEngine.SequentialConversionSegments";
+inline constexpr std::string_view SequentialConversionTiming="MediaEngine.SequentialConversionTiming";
+inline constexpr std::string_view SequentialConversionAtom="MediaEngine.SequentialConversionAtom";
+inline constexpr std::string_view SequentialSignalConversion="MediaEngine.SequentialSignalConversion";
+inline constexpr std::string_view SequentialConversionAmplitude="MediaEngine.SequentialConversionAmplitude";
+inline constexpr std::string_view SequentialConversionChunks="MediaEngine.SequentialConversionChunks";
+inline constexpr std::string_view SequentialConversionAtomSignal="MediaEngine.SequentialConversionAtomSignal";
+
 inline constexpr std::string_view CpcTapeIncompatible="MediaEngine.CpcTapeIncompatible";
 inline constexpr std::string_view CpcTapeShortHeader="MediaEngine.CpcTapeShortHeader";
 inline constexpr std::string_view CpcTapeOrphanData="MediaEngine.CpcTapeOrphanData";

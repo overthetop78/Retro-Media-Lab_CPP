@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Um plano de conversão sequencial requer um alvo e chaves de diagnóstico não vazias.",
+    "MediaEngine.SequentialConversionSource": "A fonte não é uma imagem de fita sequencial.",
+    "MediaEngine.SequentialConversionMachine": "Selecione uma máquina explicitamente para esta fonte sequencial.",
+    "MediaEngine.SequentialConversionEncoder": "Nenhum codificador sequencial pode converter '{0}' para '{1}' para '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Aceitar as perdas de informação declaradas antes de escrever esta conversão.",
+    "MediaEngine.SequentialConversionWriter": "Nenhum módulo de gravação suporta o destino sequencial '{0}' com a extensão '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} o( s) segmento( s) de origem não pode ser representado pelo formato- alvo.",
+    "MediaEngine.SequentialConversionTiming": "O timing do sinal alvo é reconstruído em vez de preservar o timing original de gravação.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP armazena dados e endereços de arquivos sem preservar o timing do sinal de origem.",
+    "MediaEngine.SequentialSignalConversion": "Esta conversão de sinal de fita não é suportada.",
+    "MediaEngine.SequentialConversionAmplitude": "A UEF mantém o tempo de sinal e a polaridade em vez da amplitude PCM original.",
+    "MediaEngine.SequentialConversionChunks": "O formato do sinal-alvo não retém os blocos UEF originais e as informações não-sinais.",
+    "MediaEngine.SequentialConversionAtomSignal": "O sinal é reconstruído a partir de dados de arquivos Atom; a TAP não contém nenhum tempo de pulso gravado."
+  }
+}

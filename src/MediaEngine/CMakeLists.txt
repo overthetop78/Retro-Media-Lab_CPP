@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Conversion/Sequential/Service.cpp
+  src/Images/Conversion/Sequential/Planning.cpp
+  src/Images/Conversion/Sequential/SignalConverter.cpp
   src/Composition/SequentialMedia.cpp
   src/Formats/Optical/BinCue/Sheet.cpp
   src/Formats/Optical/BinCue/SheetWriter.cpp

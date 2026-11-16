@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "แผนเปลี่ยนแปลงที่ต่อเนื่อง ต้องมีเป้าหมาย และกุญแจในการวินิจฉัย",
+    "MediaEngine.SequentialConversionSource": "แหล่งที่มาไม่ใช่รูปภาพแบบแยกประเภท",
+    "MediaEngine.SequentialConversionMachine": "เลือกเครื่องโดยตรงสําหรับแหล่ง Sequantial นี้",
+    "MediaEngine.SequentialConversionEncoder": "ไม่มีตัวเข้ารหัสที่สามารถแปลง '{0}' เป็น '{1}' สําหรับ '{2}' ได้",
+    "MediaEngine.SequentialConversionLosses": "จง ยอม รับ ความ สูญ เสีย ข้อมูล ที่ ได้ รับ การ ประกาศ ก่อน จะ เขียน การ เปลี่ยน แปลง นี้.",
+    "MediaEngine.SequentialConversionWriter": "ไม่มีโมดูลเขียนที่รองรับรูปแบบลำดับ '{0}' ซึ่งมีนามสกุล '{1}'",
+    "MediaEngine.SequentialConversionSegments": "{0} แหล่งที่มาไม่สามารถแทนได้ด้วยรูปแบบเป้าหมาย",
+    "MediaEngine.SequentialConversionTiming": "จังหวะเวลาของสัญญาณปลายทางถูกสร้างขึ้นใหม่ โดยไม่รักษาจังหวะเวลาของการบันทึกต้นฉบับ",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP. เก็บข้อมูลและที่อยู่ โดยไม่ต้องรักษาการจับเวลาของต้นทาง",
+    "MediaEngine.SequentialSignalConversion": "ยังไม่รองรับการแปลงสัญญาณเทปนี้",
+    "MediaEngine.SequentialConversionAmplitude": "UEF รักษาการจับเวลาสัญญาณและขั้วแทนการเดิม PCM แอมพลิจูด",
+    "MediaEngine.SequentialConversionChunks": "รูปแบบสัญญาณปลายทางไม่เก็บโครงสร้างบล็อก UEF ต้นฉบับหรือข้อมูลที่ไม่ใช่สัญญาณ",
+    "MediaEngine.SequentialConversionAtomSignal": "สัญญาณนี้ประกอบขึ้นจาก Atom ข้อมูลแฟ้ม ATAP ไม่มีจังหวะชีพจรบันทึก"
+  }
+}

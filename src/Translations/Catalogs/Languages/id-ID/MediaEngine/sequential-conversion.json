@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Rencana konversi sekuensial membutuhkan target dan kunci diagnostik kosong.",
+    "MediaEngine.SequentialConversionSource": "Sumbernya bukan gambar pita berurutan.",
+    "MediaEngine.SequentialConversionMachine": "Pilih sebuah mesin secara eksplisit untuk sumber sekuensial ini.",
+    "MediaEngine.SequentialConversionEncoder": "Tidak ada enkoder berurutan yang dapat mengubah '{0}' ke '{1}' untuk '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Menerima kerugian informasi yang dinyatakan sebelum menulis konversi ini.",
+    "MediaEngine.SequentialConversionWriter": "Tidak ada modul penulisan yang mendukung target sekuensial '{0}' dengan ekstensi '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} sumber segmen tidak dapat diwakili oleh format target.",
+    "MediaEngine.SequentialConversionTiming": "Waktu sinyal target direkonstruksi daripada mempertahankan waktu rekaman asli.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP menyimpan data dan alamat file tanpa mempertahankan waktu sinyal sumber.",
+    "MediaEngine.SequentialSignalConversion": "konversi sinyal tape ini tidak didukung.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF mempertahankan waktu sinyal dan polaritas daripada amplitudo PCM asli.",
+    "MediaEngine.SequentialConversionChunks": "Format sinyal tujuan tidak mempertahankan blok UEF asli maupun informasi di luar sinyal.",
+    "MediaEngine.SequentialConversionAtomSignal": "Sinyal ini direkonstruksi dari data berkas Atom; TAP berisi tidak ada waktu pulsa yang direkam."
+  }
+}

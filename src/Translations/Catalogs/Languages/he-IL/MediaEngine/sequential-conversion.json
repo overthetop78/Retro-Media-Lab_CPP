@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "תוכנית המרה זמנית דורשת מטרה ומפתחי אבחון חסרי מצפון.",
+    "MediaEngine.SequentialConversionSource": "המקור אינו תמונה של קלט.",
+    "MediaEngine.SequentialConversionMachine": "בחר מכונה במפורש למקור זה.",
+    "MediaEngine.SequentialConversionEncoder": "אף אחד לא יכול להמיר את \"{0}\" ל\"{1}\" עבור \"{2}\".",
+    "MediaEngine.SequentialConversionLosses": "קבל את אובדן המידע המוצה לפני כתיבת המרה זו.",
+    "MediaEngine.SequentialConversionWriter": "אין מודול כתיבה התומך ביעד הרציף '{0}' עם הסיומת '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} לא יכול להיות מיוצג על ידי פורמט המטרה.",
+    "MediaEngine.SequentialConversionTiming": "תזמון אות היעד משוחזר במקום לשמור על תזמון ההקלטות המקורי.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP שומרת נתונים וכתובות ללא שמירה על תזמון אות המקור.",
+    "MediaEngine.SequentialSignalConversion": "המרת אות זה לא נתמך.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF שומרת על תזמון אותות וקוטביות במקום ה-PCM המקורי.",
+    "MediaEngine.SequentialConversionChunks": "פורמט אות היעד אינו שומר את מקטעי UEF המקוריים ואת המידע שאינו חלק מהאות.",
+    "MediaEngine.SequentialConversionAtomSignal": "האות משוחזר מנתוני קובץ Atom; TAP אינו מכיל תזמון הדופק."
+  }
+}

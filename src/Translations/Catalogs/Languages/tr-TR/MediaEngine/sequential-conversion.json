@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Eşdeğer bir dönüşüm planı bir hedef ve boş teşhis anahtarları gerektirir.",
+    "MediaEngine.SequentialConversionSource": "Kaynak, eşdeğer bir kaset görüntüsü değildir.",
+    "MediaEngine.SequentialConversionMachine": "Bu eşdeğer kaynak için açıkça bir makine seçin.",
+    "MediaEngine.SequentialConversionEncoder": "No sequential encoder '{0}'i '{1}'e '{2}' dönüştürülebilir.",
+    "MediaEngine.SequentialConversionLosses": "Bu dönüşüm yazmadan önce ilan edilen bilgileri kabul edin.",
+    "MediaEngine.SequentialConversionWriter": "Hiçbir yazar öznel hedefi kabul etmez ‘{0} uzatma ile '{1}.",
+    "MediaEngine.SequentialConversionSegments": "{0} kaynak segmenti (s) hedef format tarafından temsil edilemez.",
+    "MediaEngine.SequentialConversionTiming": "Hedef sinyal zamanlaması orijinal kayıt zamanlamasını korumak yerine yeniden yapılandırılır.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP, kaynak sinyal zamanlamasını korumak olmadan dosya verilerini ve adreslerinizi saklar.",
+    "MediaEngine.SequentialSignalConversion": "Bu kaset sinyali dönüşümü desteklenmez.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF, orijinal PCM amplitüdünün yerine sinyal zamanlamasını ve polariteyi korur.",
+    "MediaEngine.SequentialConversionChunks": "Hedef sinyal formatı orijinal UEF chunks ve imzalanmamış bilgileri tutmaz.",
+    "MediaEngine.SequentialConversionAtomSignal": "sinyal Atom dosyası verilerinden yeniden inşa edilir; TAP kaydedilen nabız zamanlamasını içerir."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "순차적인 변환 계획은 표적과 비empty 진단 열쇠를 요구합니다.",
+    "MediaEngine.SequentialConversionSource": "소스는 순차적 테이프 이미지가 아닙니다.",
+    "MediaEngine.SequentialConversionMachine": "이 순차적 소스에 대해 명시적으로 기계를 선택하십시오.",
+    "MediaEngine.SequentialConversionEncoder": "순차적 인 인코더가 변환 할 수 없습니다 '{0}로그인{1}로그인{2}이름 *",
+    "MediaEngine.SequentialConversionLosses": "이 변환을 작성하기 전에 선언 된 정보 손실.",
+    "MediaEngine.SequentialConversionWriter": "확장자 '{1}'의 순차 대상 '{0}'을 지원하는 쓰기 모듈이 없습니다.",
+    "MediaEngine.SequentialConversionSegments": "{0} 소스 세그먼트 (s) 대상 형식으로 표시 할 수 없습니다.",
+    "MediaEngine.SequentialConversionTiming": "타겟 신호 타이밍은 원래의 녹음 타이밍을 보존하는 것보다 재구성됩니다.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP는 소스 신호 타이밍을 보존하지 않고 파일 데이터와 주소를 저장합니다.",
+    "MediaEngine.SequentialSignalConversion": "이 테이프 신호 변환은 지원되지 않습니다.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF는 본래 PCM 진폭 보다는 오히려 신호 타이밍과 극성을 유지합니다.",
+    "MediaEngine.SequentialConversionChunks": "대상 신호 형식은 원래 UEF 청크 구조와 신호 이외의 정보를 보존하지 않습니다.",
+    "MediaEngine.SequentialConversionAtomSignal": "신호는 Atom 파일 자료에서 재구성됩니다; TAP는 기록한 맥박 타이밍을 포함합니다."
+  }
+}

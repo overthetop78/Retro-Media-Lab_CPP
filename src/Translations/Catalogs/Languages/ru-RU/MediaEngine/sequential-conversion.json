@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "План последовательного преобразования требует целевых и непустых диагностических ключей.",
+    "MediaEngine.SequentialConversionSource": "Источник не является последовательным изображением ленты.",
+    "MediaEngine.SequentialConversionMachine": "Выберите машину явно для этого последовательного источника.",
+    "MediaEngine.SequentialConversionEncoder": "Ни один последовательный кодер не может преобразовать '{0}' в '{1}' для '{2}'.",
+    "MediaEngine.SequentialConversionLosses": "Принимайте заявленные потери информации перед написанием этой конвертации.",
+    "MediaEngine.SequentialConversionWriter": "Ни один модуль записи не поддерживает последовательный формат '{0}' с расширением '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} исходный сегмент(ы) не может быть представлен целевым форматом.",
+    "MediaEngine.SequentialConversionTiming": "Время целевого сигнала реконструируется, а не сохраняется первоначальное время записи.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP хранит данные и адреса файлов без сохранения времени исходного сигнала.",
+    "MediaEngine.SequentialSignalConversion": "Это преобразование ленточного сигнала не поддерживается.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF сохраняет время сигнала и полярность, а не исходную амплитуду PCM.",
+    "MediaEngine.SequentialConversionChunks": "Формат целевого сигнала не сохраняет исходные фрагменты UEF и несигнальную информацию.",
+    "MediaEngine.SequentialConversionAtomSignal": "Сигнал реконструируется из файловых данных Atom; TAP не содержит записанного времени импульса."
+  }
+}

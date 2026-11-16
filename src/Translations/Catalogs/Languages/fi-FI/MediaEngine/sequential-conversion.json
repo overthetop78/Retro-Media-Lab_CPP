@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Sekvensiivinen muuntosuunnitelma edellyttää maalin ja ei-tyhjän vianmäärityksen avaimia.",
+    "MediaEngine.SequentialConversionSource": "Lähde ei ole peräkkäinen nauhakuva.",
+    "MediaEngine.SequentialConversionMachine": "Valitse kone nimenomaisesti tämän peräkkäisen lähteen osalta.",
+    "MediaEngine.SequentialConversionEncoder": "Yksikään peräkkäinen koodaaja ei voi muuntaa \"{0}\" \"{1}\":ksi \"{2}.\"",
+    "MediaEngine.SequentialConversionLosses": "Hyväksy ilmoitetut tiedonmenetykset ennen muuntamista.",
+    "MediaEngine.SequentialConversionWriter": "Mikään kirjoitusmoduuli ei tue peräkkäistä kohdetta '{0}' tiedostopäätteellä '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} lähdesegmenttiä [s] ei voida esittää kohdemuodossa.",
+    "MediaEngine.SequentialConversionTiming": "Kohdesignaalin ajoitus rekonstruoidaan alkuperäisen tallennusajan säilyttämisen sijaan.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP tallentaa tiedostotiedot ja osoitteet säilyttämättä lähdesignaalin ajoitusta.",
+    "MediaEngine.SequentialSignalConversion": "Tämä nauhasignaalin muuntaminen ei ole tuettu.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF säilyttää signaalin ajoituksen ja polaarisuuden alkuperäisen PCM amplitudin sijaan.",
+    "MediaEngine.SequentialConversionChunks": "Kohdesignaalin muoto ei säilytä alkuperäisiä UEF-paloja eikä muita tietoja.",
+    "MediaEngine.SequentialConversionAtomSignal": "Signaali on rekonstruoitu Atom-tiedoston tiedoista; TAP ei sisällä tallennettua pulssin ajoitusta."
+  }
+}

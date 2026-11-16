@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "Một kế hoạch chuyển đổi liên tục đòi hỏi một mục tiêu và các phím chẩn đoán vô hại.",
+    "MediaEngine.SequentialConversionSource": "Nguồn không phải là ảnh băng nối.",
+    "MediaEngine.SequentialConversionMachine": "Chọn một máy rõ ràng cho nguồn liên tục này.",
+    "MediaEngine.SequentialConversionEncoder": "Không bộ mã hóa nào có thể chuyển '{0} thành '{1}' cho '{2}.",
+    "MediaEngine.SequentialConversionLosses": "Chấp nhận thông tin bị mất trước khi ghi sự chuyển đổi này.",
+    "MediaEngine.SequentialConversionWriter": "Không có mô-đun ghi nào hỗ trợ định dạng tuần tự '{0}' với phần mở rộng '{1}'.",
+    "MediaEngine.SequentialConversionSegments": "{0} Không thể hiển thị đoạn mã nguồn theo định dạng đích.",
+    "MediaEngine.SequentialConversionTiming": "Tín hiệu mục tiêu được tái tạo thay vì bảo tồn thời gian ghi âm gốc.",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP lưu trữ dữ liệu và địa chỉ mà không bảo tồn thời gian tín hiệu nguồn.",
+    "MediaEngine.SequentialSignalConversion": "Không hỗ trợ khả năng chuyển đổi tín hiệu băng này.",
+    "MediaEngine.SequentialConversionAmplitude": "UEF giữ tín hiệu thời gian và phân cực hơn là độ lớn PCM ban đầu.",
+    "MediaEngine.SequentialConversionChunks": "Định dạng tín hiệu đích không giữ lại các khối UEF gốc và thông tin ngoài tín hiệu.",
+    "MediaEngine.SequentialConversionAtomSignal": "Tín hiệu được tái tạo từ dữ liệu của Atom; TAP không có thời gian ghi âm."
+  }
+}

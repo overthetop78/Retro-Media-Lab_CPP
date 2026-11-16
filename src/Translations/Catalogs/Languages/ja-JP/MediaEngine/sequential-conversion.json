@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.SequentialConversionPlan": "シーケンシャルコンバージョンプランでは、ターゲットと非空の診断キーが必要です。",
+    "MediaEngine.SequentialConversionSource": "ソースはシーケンシャルテープイメージではありません。",
+    "MediaEngine.SequentialConversionMachine": "このシーケンシャルソースに明示的に機械を選択します。",
+    "MediaEngine.SequentialConversionEncoder": "'{0}' を '{1}' に '{2}' に変換できません。",
+    "MediaEngine.SequentialConversionLosses": "この変換を書く前に宣言された情報損失を受け入れます。",
+    "MediaEngine.SequentialConversionWriter": "拡張子 '{1}' のシーケンシャル出力形式 '{0}' に対応する書き込みモジュールがありません。",
+    "MediaEngine.SequentialConversionSegments": "{0} ソースのセグメントは、対象のフォーマットで表現できません。",
+    "MediaEngine.SequentialConversionTiming": "ターゲット信号のタイミングは、元の記録のタイミングを維持するのではなく再構築されます。",
+    "MediaEngine.SequentialConversionAtom": "Atom TAP は、ソース シグナルのタイミングを節約することなく、ファイルデータとアドレスを保存します。",
+    "MediaEngine.SequentialSignalConversion": "このテープ信号変換は対応しておりません。",
+    "MediaEngine.SequentialConversionAmplitude": "UEFは、元のPCMの振幅ではなく、信号のタイミングと極性を保持します。",
+    "MediaEngine.SequentialConversionChunks": "出力信号形式には、元の UEF チャンク構造と信号以外の情報は保持されません。",
+    "MediaEngine.SequentialConversionAtomSignal": "Atomファイルデータから信号を再構築します。TAPには記録されたパルスのタイミングはありません。"
+  }
+}
