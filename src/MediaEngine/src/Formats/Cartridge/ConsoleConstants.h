@@ -2,6 +2,8 @@
 #include "Constants.h"
 #include "../FormatIds.h"
 namespace RetroMediaLab::MediaEngine::Cartridge::ConsoleConstants {
+inline constexpr std::string_view WriterId="console-cartridge";
+inline constexpr std::size_t CopyBytes=262144;
 inline constexpr std::string_view FormatKey="formatId",StoredLengthKey="storedLength",ExtensionKey="sourceExtension",BankNamePrefix="bank",BankNameSuffix=".name";
 struct ExtensionFormat {std::string_view extension,format;};
 inline constexpr std::array<ExtensionFormat,40> Extensions{{

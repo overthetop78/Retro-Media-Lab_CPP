@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ImageWriteRequest="MediaEngine.ImageWriteRequest";
+inline constexpr std::string_view ImageWriteUnavailable="MediaEngine.ImageWriteUnavailable";
+inline constexpr std::string_view ImageWriteOutputs="MediaEngine.ImageWriteOutputs";
+
 inline constexpr std::string_view ConsoleCartridgeRead="MediaEngine.ConsoleCartridgeRead";
 inline constexpr std::string_view ConsoleCartridgeMismatch="MediaEngine.ConsoleCartridgeMismatch";
 inline constexpr std::string_view ConsoleCartridgeLimit="MediaEngine.ConsoleCartridgeLimit";

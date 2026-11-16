@@ -7,7 +7,7 @@
 namespace RetroMediaLab::MediaEngine {
 class MediaDriveService final {
 public:
-    using Notification=std::function<void(DriveMechanics&)>;
+    using Notification=std::function<void(std::shared_ptr<DriveMechanics>)>;
     RETROMEDIALAB_MEDIAENGINE_API MediaDriveService();
     RETROMEDIALAB_MEDIAENGINE_API void setAudioAvailable(Notification)const;
     RETROMEDIALAB_MEDIAENGINE_API std::shared_ptr<DriveMechanics> create(MediaKind)const;

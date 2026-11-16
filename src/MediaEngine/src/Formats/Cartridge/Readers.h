@@ -27,6 +27,13 @@ public:
     RETROMEDIALAB_MEDIAENGINE_API std::future<std::shared_ptr<const MediaDocument>> readAsync(RecognitionContext,std::stop_token={})const override;
 };
 enum class Kind {Cpr,Rom,Fds};
+class ConsoleWriter final:public ImageWriter {
+public:
+    RETROMEDIALAB_MEDIAENGINE_API const WriterCapabilities& capabilities()const override;
+    RETROMEDIALAB_MEDIAENGINE_API bool supportsTarget(std::string_view,std::string_view)const override;
+    RETROMEDIALAB_MEDIAENGINE_API bool canWrite(const MediaDocument&,std::string_view,std::string_view)const override;
+    RETROMEDIALAB_MEDIAENGINE_API std::future<std::vector<std::filesystem::path>> writeAsync(std::shared_ptr<const MediaDocument>,std::filesystem::path,std::string,std::stop_token={})const override;
+};
 class Writer final:public ImageWriter {
 public:
     explicit Writer(Kind kind):kind_(kind){}
