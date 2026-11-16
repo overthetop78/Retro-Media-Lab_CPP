@@ -8667,6 +8667,9 @@
     <ClInclude Include="src\MediaEngine\src\Drives\Mechanics.h">
       <Filter>src\MediaEngine\src\Drives</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Drives\Profiles.cpp">
+      <Filter>src\MediaEngine\src\Drives</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Drives\Service.cpp">
       <Filter>src\MediaEngine\src\Drives</Filter>
     </ClCompile>

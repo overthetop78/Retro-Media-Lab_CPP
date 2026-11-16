@@ -3,7 +3,7 @@
 namespace RetroMediaLab::MediaEngine {
 class DriveOperationScope final {
 public:
-    explicit DriveOperationScope(DriveMechanics* drive):drive_(drive){if(drive_)try{drive_->beginOperation();}catch(...){try{drive_->endOperation();}catch(...){}drive_=nullptr;throw;}}
+    explicit DriveOperationScope(DriveMechanics* drive):drive_(drive){if(drive_)drive_->beginOperation();}
     ~DriveOperationScope()noexcept{if(drive_)try{drive_->endOperation();}catch(...){}}
     void finish(){if(drive_){auto* drive=drive_;drive_=nullptr;drive->endOperation();}}
     DriveOperationScope(const DriveOperationScope&)=delete;

@@ -43,7 +43,24 @@ void RecordedDrive::seekCore(DrivePosition position){
 }
 void RecordedDrive::seek(DrivePosition position){validate(position);{std::lock_guard lock(mutex_);seekCore(position);}notify();}
 void RecordedDrive::advance(DrivePosition position){validate(position);std::lock_guard lock(mutex_);state_.position=position;}
-void RecordedDrive::beginAccess(DrivePosition position,bool writing){validate(position);{std::lock_guard lock(mutex_);if(activeAccesses_==std::numeric_limits<std::uint64_t>::max())throw MediaError(DiagnosticCode::MechanicalRequest);motorCore(true);seekCore(position);++activeAccesses_;state_.reading=!writing;state_.writing=writing;}notify();}
+void RecordedDrive::beginAccess(DrivePosition position,bool writing){
+    validate(position);
+    {
+        std::lock_guard lock(mutex_);
+        if(activeAccesses_==std::numeric_limits<std::uint64_t>::max())throw MediaError(DiagnosticCode::MechanicalRequest);
+        const auto previous=state_;const auto previousAudible=audibleMotor_;const auto previousOffset=motorOffset_;
+        try {motorCore(true);seekCore(position);}
+        catch(...){state_=previous;audibleMotor_=previousAudible;motorOffset_=previousOffset;throw;}
+        ++activeAccesses_;state_.reading=!writing;state_.writing=writing;
+    }
+    try {notify();}
+    catch(...){
+        // Only this begin acquired an additional access. Preserve other active users.
+        {std::lock_guard lock(mutex_);if(activeAccesses_==1&&!activeOperations_)stopAfterAccess_=true;}
+        try{endAccess();}catch(...){}
+        throw;
+    }
+}
 void RecordedDrive::beginRead(DrivePosition position){beginAccess(position,false);}
 void RecordedDrive::beginWrite(DrivePosition position){beginAccess(position,true);}
 void RecordedDrive::endAccess(){bool stopped=false;{std::lock_guard lock(mutex_);if(activeAccesses_)--activeAccesses_;if(!activeAccesses_){state_.reading=state_.writing=false;if(stopAfterAccess_){stopAfterAccess_=false;motorCore(false);stopped=true;}}}if(stopped)notify();}

@@ -14,6 +14,8 @@ public:
     virtual DriveState state()const=0;
     virtual bool hasPendingAudio()const=0;
     virtual bool isInUse()const=0;
+    // A begin method that throws must release its own acquisition before returning.
+    // Callers end only successfully begun operations/accesses, never a failed begin.
     virtual void beginOperation()=0;
     virtual void endOperation()=0;
     virtual void configure(std::optional<std::string> profile,double volumePercent,bool soundEnabled)=0;

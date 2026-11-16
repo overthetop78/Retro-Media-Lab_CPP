@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Drives/Profiles.cpp
   src/Drives/Mechanics.cpp
   src/Drives/Audio.cpp
   src/Drives/Service.cpp

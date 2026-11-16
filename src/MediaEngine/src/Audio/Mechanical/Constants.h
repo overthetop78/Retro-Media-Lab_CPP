@@ -13,4 +13,5 @@ inline constexpr unsigned MetadataTypeMask=127,MetadataLengthMask=0x00ffffff;
 inline constexpr std::string_view None="None",Play="Play",Record="Record",FastForward="FastForward",Rewind="Rewind",Stop="Stop",Pause="Pause",Eject="Eject",Read="Read",Write="Write",Seek="Seek",Insert="Insert";
 inline constexpr double DriveDefaultVolume=10;
 inline constexpr std::size_t MaximumSeekVoices=32;
+inline constexpr std::string_view Floppy525="Floppy525",Winchester="Winchester",HardDisk25="HardDisk25",OpticalSlot="OpticalSlot",Label25="2.5″";
 }
