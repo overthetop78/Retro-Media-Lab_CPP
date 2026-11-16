@@ -8,6 +8,7 @@ TOKEN = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|(?:L|u8)?"(?:\\.|[^"\\])*"|(?:L)?\x
 CONSTANT_HEADERS = {
     "src/MediaEngine/src/Formats/Common/Chd/CodecConstants.h",
     "src/MediaEngine/src/Formats/Common/Chd/ContainerConstants.h",
+    "src/MediaEngine/src/Formats/HardDisk/Chd/Constants.h",
     "src/MediaEngine/src/Formats/Common/Chd/EccTables.h",
     "src/MediaEngine/src/Primitives/Crc32CConstants.h",
     "src/MediaEngine/src/Formats/HardDisk/Vhdx/Constants.h",

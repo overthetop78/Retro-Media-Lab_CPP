@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "このプロファイルでは、親イメージを必要としない非圧縮 CHD V5 ハードディスクイメージのみをサポートします。",
+    "MediaEngine.ChdHardDiskGeometry": "CHD GDDD ジオメトリが無効か、イメージの論理的な寸法と一致しません。",
+    "MediaEngine.ChdHardDiskHunk": "CHD チャンク {0} はファイルの範囲外を参照しています。",
+    "MediaEngine.ChdHardDiskWrite": "明示的なジオメトリを持つ、親イメージを必要としない非圧縮 CHD ハードディスクイメージとしてメディア文書を書き込めません。",
+    "MediaEngine.ChdHardDiskWriteLayout": "CHD チャンクマップ、ファイルオフセット、またはメタデータが非圧縮 V5 プロファイルの制限を超えています。"
+  }
+}

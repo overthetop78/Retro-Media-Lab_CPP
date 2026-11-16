@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "Этот профиль поддерживает только автономные, несжатые изображения жесткого диска CHD V5.",
+    "MediaEngine.ChdHardDiskGeometry": "Геометрия CHD GDDD является недействительной или не соответствует логическим размерам изображения.",
+    "MediaEngine.ChdHardDiskHunk": "Блок CHD {0} указывает за пределы файла.",
+    "MediaEngine.ChdHardDiskWrite": "Медиа-документ не может быть записан как автономное несжатое изображение жесткого диска CHD с явной геометрией.",
+    "MediaEngine.ChdHardDiskWriteLayout": "Карта CHD hunk, смещения файлов или метаданные превышают несжатые пределы профиля V5."
+  }
+}

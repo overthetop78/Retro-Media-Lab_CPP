@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "Nur autonome, unkomprimierte CHD V5-Festplattenbilder werden von diesem Profil unterstützt.",
+    "MediaEngine.ChdHardDiskGeometry": "Die CHD GDDD-Geometrie ist ungültig oder entspricht nicht den logischen Bildabmessungen.",
+    "MediaEngine.ChdHardDiskHunk": "CHD-Hunk {0} verweist auf einen Bereich außerhalb der Datei.",
+    "MediaEngine.ChdHardDiskWrite": "Das Mediendokument kann nicht als autonomes unkomprimiertes CHD-Festplattenbild mit expliziter Geometrie geschrieben werden.",
+    "MediaEngine.ChdHardDiskWriteLayout": "Die CHD-Hunk-Map, Datei-Offsets oder Metadaten überschreiten die unkomprimierten V5-Profilgrenzen."
+  }
+}

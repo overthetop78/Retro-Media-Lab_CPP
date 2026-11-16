@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "Only autonomous, uncompressed CHD V5 hard disk images are supported by this profile.",
+    "MediaEngine.ChdHardDiskGeometry": "The CHD GDDD geometry is invalid or does not match the logical image dimensions.",
+    "MediaEngine.ChdHardDiskHunk": "CHD hunk {0} points outside the file.",
+    "MediaEngine.ChdHardDiskWrite": "The media document cannot be written as an autonomous uncompressed CHD hard disk image with explicit geometry.",
+    "MediaEngine.ChdHardDiskWriteLayout": "The CHD hunk map, file offsets or metadata exceed the uncompressed V5 profile limits."
+  }
+}

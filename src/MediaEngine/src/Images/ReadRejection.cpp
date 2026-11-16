@@ -7,6 +7,42 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::ChdHardDiskProfile:
+    case DiagnosticCode::ChdHardDiskGeometry:
+    case DiagnosticCode::ChdHardDiskHunk:
+    case DiagnosticCode::ChdRange:
+    case DiagnosticCode::ChdHeader:
+    case DiagnosticCode::ChdParent:
+    case DiagnosticCode::ChdDimensions:
+    case DiagnosticCode::ChdMap:
+    case DiagnosticCode::ChdMapCrc:
+    case DiagnosticCode::ChdMetadata:
+    case DiagnosticCode::ChdHunkReference:
+    case DiagnosticCode::ChdHunkBuffer:
+    case DiagnosticCode::ChdHunkCrc:
+    case DiagnosticCode::ChdCodec:
+    case DiagnosticCode::ChdFlacOrder:
+    case DiagnosticCode::ChdCdHeader:
+    case DiagnosticCode::ChdBitWidth:
+    case DiagnosticCode::ChdHuffmanParameters:
+    case DiagnosticCode::ChdHuffmanCode:
+    case DiagnosticCode::ChdHuffmanRun:
+    case DiagnosticCode::ChdHuffmanTree:
+    case DiagnosticCode::ChdHuffmanTruncated:
+    case DiagnosticCode::ChdDeflate:
+    case DiagnosticCode::ChdLzma:
+    case DiagnosticCode::ChdZstd:
+    case DiagnosticCode::ChdFlacBitWidth:
+    case DiagnosticCode::ChdFlacTruncated:
+    case DiagnosticCode::ChdFlacUnary:
+    case DiagnosticCode::ChdFlacSamples:
+    case DiagnosticCode::ChdFlacFrame:
+    case DiagnosticCode::ChdFlacHeaderCrc:
+    case DiagnosticCode::ChdFlacFrameCrc:
+    case DiagnosticCode::ChdFlacSubframe:
+    case DiagnosticCode::ChdFlacPredictor:
+    case DiagnosticCode::ChdFlacResidual:
+
     case DiagnosticCode::VhdxShort:
     case DiagnosticCode::VhdxSignature:
     case DiagnosticCode::VhdxHeaders:

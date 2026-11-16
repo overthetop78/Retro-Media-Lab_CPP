@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Chd/Layout.cpp
+  src/Formats/HardDisk/Chd/Reader.cpp
+  src/Formats/HardDisk/Chd/Writer.cpp
   src/Formats/Common/Chd/Container.cpp
   src/Formats/Common/Chd/Map.cpp
   src/Formats/Common/Chd/ContainerCodecs.cpp

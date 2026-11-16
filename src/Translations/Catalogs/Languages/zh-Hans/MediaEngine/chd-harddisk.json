@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "此配置仅支持独立的、未压缩的 CHD V5 硬盘镜像。",
+    "MediaEngine.ChdHardDiskGeometry": "CHD GDDD 几何参数无效或与镜像的逻辑尺寸不符。",
+    "MediaEngine.ChdHardDiskHunk": "CHD 数据块 {0} 指向文件范围之外。",
+    "MediaEngine.ChdHardDiskWrite": "无法将媒体文档写为具有明确几何参数的独立、未压缩 CHD 硬盘镜像。",
+    "MediaEngine.ChdHardDiskWriteLayout": "CHD 数据块映射、文件偏移或元数据超出未压缩 V5 配置的限制。"
+  }
+}

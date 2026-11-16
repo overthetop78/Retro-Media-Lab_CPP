@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "此設定僅支援獨立且未壓縮的 CHD V5 硬碟映像。",
+    "MediaEngine.ChdHardDiskGeometry": "CHD GDDD 幾何參數無效或與映像的邏輯尺寸不符。",
+    "MediaEngine.ChdHardDiskHunk": "CHD 資料區塊 {0} 指向檔案範圍之外。",
+    "MediaEngine.ChdHardDiskWrite": "無法將媒體文件寫為具有明確幾何參數的獨立、未壓縮 CHD 硬碟映像。",
+    "MediaEngine.ChdHardDiskWriteLayout": "CHD 資料區塊對映、檔案位移或中繼資料超出未壓縮 V5 設定的限制。"
+  }
+}

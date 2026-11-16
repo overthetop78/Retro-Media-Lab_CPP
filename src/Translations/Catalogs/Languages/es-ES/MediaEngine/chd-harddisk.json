@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaEngine.ChdHardDiskProfile": "Este perfil solo admite imágenes de disco duro CHD V5 autónomas y sin compresión.",
+    "MediaEngine.ChdHardDiskGeometry": "La geometría CHD GDDD es inválida o no coincide con las dimensiones de la imagen lógica.",
+    "MediaEngine.ChdHardDiskHunk": "El bloque CHD {0} apunta fuera del archivo.",
+    "MediaEngine.ChdHardDiskWrite": "El documento multimedia no puede ser escrito como una imagen autónoma de disco duro CHD sin compresión con geometría explícita.",
+    "MediaEngine.ChdHardDiskWriteLayout": "El mapa de hunk CHD, offsets de archivos o metadatos superan los límites de perfil V5 no comprimidos."
+  }
+}
