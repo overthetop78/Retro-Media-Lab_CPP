@@ -391,6 +391,15 @@
     <Filter Include="src\MediaEngine\src\Formats\St">
       <UniqueIdentifier>{CBE9EC81-D220-5C8D-B44B-C3EFA0A13916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape">
+      <UniqueIdentifier>{1076D62C-5015-51B0-B3A9-89FB0E482609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape\Common">
+      <UniqueIdentifier>{2A4BB787-8074-5DF0-9348-83AD3F55FDC8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape\Raw">
+      <UniqueIdentifier>{4F9B19C0-DC5D-5C23-8BA3-411EACC9D859}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\TeleDisk">
       <UniqueIdentifier>{FB5CA185-3C33-5DF9-90C0-34E8C45B17A2}</UniqueIdentifier>
     </Filter>
@@ -423,6 +432,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Models\Sectors">
       <UniqueIdentifier>{D547D6CC-2745-5BF3-A60C-88080D3D9271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Models\Sequential">
+      <UniqueIdentifier>{1A8AAEE1-2289-5DE3-9815-0D1D9B3FE7E0}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Primitives">
       <UniqueIdentifier>{BEE818AB-74EC-5973-A488-EC93B3503D53}</UniqueIdentifier>
@@ -2233,6 +2245,9 @@
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h">
@@ -4152,6 +4167,30 @@
     <ClInclude Include="src\MediaEngine\src\Formats\St\Writer.h">
       <Filter>src\MediaEngine\src\Formats\St</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PcmConstants.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmProfile.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSamples.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Raw</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\Raw</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\Raw</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Formats\TeleDisk\Adapter.cpp">
       <Filter>src\MediaEngine\src\Formats\TeleDisk</Filter>
     </ClCompile>
@@ -4442,6 +4481,12 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Models\Sectors\UniformLayout.h">
       <Filter>src\MediaEngine\src\Models\Sectors</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Models\Sequential\Image.cpp">
+      <Filter>src\MediaEngine\src\Models\Sequential</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Models\Sequential\Image.h">
+      <Filter>src\MediaEngine\src\Models\Sequential</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h">
       <Filter>src\MediaEngine\src\Primitives</Filter>
@@ -5691,6 +5736,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-policies.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-pcm.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-geometry.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6138,6 +6186,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
@@ -6184,6 +6235,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-geometry.json">
@@ -6633,6 +6687,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -6679,6 +6736,9 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-geometry.json">
@@ -7128,6 +7188,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
@@ -7174,6 +7237,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-geometry.json">
@@ -7623,6 +7689,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -7669,6 +7738,9 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-geometry.json">
@@ -8118,6 +8190,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
@@ -8164,6 +8239,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-geometry.json">
@@ -8664,6 +8742,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-policies.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-pcm.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-geometry.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -9111,6 +9192,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
@@ -9157,6 +9241,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-geometry.json">
@@ -9606,6 +9693,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -9652,6 +9742,9 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-geometry.json">
@@ -10101,6 +10194,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
@@ -10147,6 +10243,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-geometry.json">
@@ -10596,6 +10695,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -10642,6 +10744,9 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-geometry.json">
@@ -11091,6 +11196,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
@@ -11137,6 +11245,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-geometry.json">
@@ -11586,6 +11697,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -11632,6 +11746,9 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-geometry.json">
@@ -12081,6 +12198,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
@@ -12127,6 +12247,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-geometry.json">
@@ -12576,6 +12699,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -12622,6 +12748,9 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-geometry.json">
@@ -13071,6 +13200,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
@@ -13117,6 +13249,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-geometry.json">
@@ -13566,6 +13701,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -13612,6 +13750,9 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-geometry.json">
@@ -14061,6 +14202,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
@@ -14107,6 +14251,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-geometry.json">
@@ -14556,6 +14703,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -14602,6 +14752,9 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-geometry.json">
@@ -15051,6 +15204,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
@@ -15097,6 +15253,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-geometry.json">
@@ -15546,6 +15705,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -15592,6 +15754,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-geometry.json">
@@ -16041,6 +16206,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
@@ -16087,6 +16255,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-geometry.json">
@@ -16536,6 +16707,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -16582,6 +16756,9 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-geometry.json">
@@ -17031,6 +17208,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
@@ -17077,6 +17257,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-geometry.json">
@@ -17526,6 +17709,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -17572,6 +17758,9 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-geometry.json">
@@ -18021,6 +18210,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
@@ -18067,6 +18259,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-geometry.json">
@@ -18516,6 +18711,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -18562,6 +18760,9 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-geometry.json">
@@ -19011,6 +19212,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
@@ -19057,6 +19261,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-geometry.json">
@@ -19506,6 +19713,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -19552,6 +19762,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-geometry.json">
@@ -20001,6 +20214,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\northstar-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\optical-session.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\protected-tracks.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
@@ -20047,6 +20263,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-policies.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-pcm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-geometry.json">

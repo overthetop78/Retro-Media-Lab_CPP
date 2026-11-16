@@ -228,6 +228,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h" />
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Decoder.cpp" />
@@ -867,6 +868,14 @@
     <ClInclude Include="src\MediaEngine\src\Formats\St\Transform.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\St\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\St\Writer.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PcmConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmProfile.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmSamples.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\Raw\Reader.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\Raw\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\TeleDisk\Adapter.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\TeleDisk\Advanced.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\TeleDisk\Advanced.h" />
@@ -964,6 +973,8 @@
     <ClInclude Include="src\MediaEngine\src\Models\Sectors\SizeCodes.h" />
     <ClCompile Include="src\MediaEngine\src\Models\Sectors\UniformLayout.cpp" />
     <ClInclude Include="src\MediaEngine\src\Models\Sectors\UniformLayout.h" />
+    <ClCompile Include="src\MediaEngine\src\Models\Sequential\Image.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Models\Sequential\Image.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h" />
     <ClCompile Include="src\MediaEngine\src\Primitives\Crc32C.cpp" />
@@ -1380,6 +1391,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\teledisk-advanced.json" />
@@ -1529,6 +1541,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\qd-mo5-mfm.json" />
@@ -1545,6 +1558,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\teledisk-advanced.json" />
@@ -1694,6 +1708,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\qd-mo5-mfm.json" />
@@ -1710,6 +1725,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\teledisk-advanced.json" />
@@ -1859,6 +1875,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\qd-mo5-mfm.json" />
@@ -1875,6 +1892,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\teledisk-advanced.json" />
@@ -2024,6 +2042,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\qd-mo5-mfm.json" />
@@ -2040,6 +2059,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\teledisk-advanced.json" />
@@ -2189,6 +2209,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\qd-mo5-mfm.json" />
@@ -2205,6 +2226,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\teledisk-advanced.json" />
@@ -2371,6 +2393,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\teledisk-advanced.json" />
@@ -2520,6 +2543,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\qd-mo5-mfm.json" />
@@ -2536,6 +2560,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\teledisk-advanced.json" />
@@ -2685,6 +2710,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\qd-mo5-mfm.json" />
@@ -2701,6 +2727,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\teledisk-advanced.json" />
@@ -2850,6 +2877,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\qd-mo5-mfm.json" />
@@ -2866,6 +2894,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\teledisk-advanced.json" />
@@ -3015,6 +3044,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\qd-mo5-mfm.json" />
@@ -3031,6 +3061,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\teledisk-advanced.json" />
@@ -3180,6 +3211,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\qd-mo5-mfm.json" />
@@ -3196,6 +3228,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\teledisk-advanced.json" />
@@ -3345,6 +3378,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\qd-mo5-mfm.json" />
@@ -3361,6 +3395,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\teledisk-advanced.json" />
@@ -3510,6 +3545,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\qd-mo5-mfm.json" />
@@ -3526,6 +3562,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\teledisk-advanced.json" />
@@ -3675,6 +3712,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\qd-mo5-mfm.json" />
@@ -3691,6 +3729,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\teledisk-advanced.json" />
@@ -3840,6 +3879,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\qd-mo5-mfm.json" />
@@ -3856,6 +3896,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\teledisk-advanced.json" />
@@ -4005,6 +4046,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\qd-mo5-mfm.json" />
@@ -4021,6 +4063,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\teledisk-advanced.json" />
@@ -4170,6 +4213,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\qd-mo5-mfm.json" />
@@ -4186,6 +4230,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\teledisk-advanced.json" />
@@ -4335,6 +4380,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\qd-mo5-mfm.json" />
@@ -4351,6 +4397,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\teledisk-advanced.json" />
@@ -4500,6 +4547,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\qd-mo5-mfm.json" />
@@ -4516,6 +4564,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\teledisk-advanced.json" />
@@ -4665,6 +4714,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\qd-mo5-mfm.json" />
@@ -4681,6 +4731,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\teledisk-advanced.json" />
@@ -4830,6 +4881,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\qd-mo5-mfm.json" />
@@ -4846,6 +4898,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\teledisk-advanced.json" />
@@ -4995,6 +5048,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\qd-mo5-mfm.json" />
@@ -5011,6 +5065,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\teledisk-advanced.json" />
@@ -5160,6 +5215,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\qd-mo5-mfm.json" />
@@ -5176,6 +5232,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\teledisk-advanced.json" />
@@ -5325,6 +5382,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\qd-mo5-mfm.json" />
@@ -5341,6 +5399,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\teledisk-advanced.json" />
@@ -5490,6 +5549,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\qd-mo5-mfm.json" />
@@ -5506,6 +5566,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\teledisk-advanced.json" />
@@ -5655,6 +5716,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\qd-mo5-mfm.json" />
@@ -5671,6 +5733,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\teledisk-advanced.json" />
@@ -5820,6 +5883,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\qd-mo5-mfm.json" />
@@ -5836,6 +5900,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\teledisk-advanced.json" />
@@ -5985,6 +6050,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\qd-mo5-mfm.json" />
@@ -6001,6 +6067,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\teledisk-advanced.json" />
@@ -6150,6 +6217,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micropolis-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\northstar-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\optical-session.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\protected-tracks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\qcow2.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\qd-mo5-mfm.json" />
@@ -6166,6 +6234,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-writing.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\teledisk-advanced.json" />
