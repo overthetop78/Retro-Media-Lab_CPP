@@ -1,6 +1,20 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AdaptecField="MediaEngine.AdaptecField";
+inline constexpr std::string_view AdaptecSectors="MediaEngine.AdaptecSectors";
+inline constexpr std::string_view AdaptecSectorSize="MediaEngine.AdaptecSectorSize";
+inline constexpr std::string_view AdaptecUnsupportedSector="MediaEngine.AdaptecUnsupportedSector";
+inline constexpr std::string_view AdaptecPeriod="MediaEngine.AdaptecPeriod";
+inline constexpr std::string_view AdaptecTrackCapacity="MediaEngine.AdaptecTrackCapacity";
+inline constexpr std::string_view AdaptecWriteIdentity="MediaEngine.AdaptecWriteIdentity";
+inline constexpr std::string_view AdaptecNoRevolution="MediaEngine.AdaptecNoRevolution";
+inline constexpr std::string_view AdaptecTrackReader="MediaEngine.AdaptecTrackReader";
+inline constexpr std::string_view AdaptecSectorAddress="MediaEngine.AdaptecSectorAddress";
+inline constexpr std::string_view AdaptecSectorIdentity="MediaEngine.AdaptecSectorIdentity";
+inline constexpr std::string_view AdaptecReadRange="MediaEngine.AdaptecReadRange";
+inline constexpr std::string_view AdaptecSectorData="MediaEngine.AdaptecSectorData";
+
 inline constexpr std::string_view AdaptecParameterSize="MediaEngine.AdaptecParameterSize";
 inline constexpr std::string_view AdaptecParameterValue="MediaEngine.AdaptecParameterValue";
 inline constexpr std::string_view AcornDscSize="MediaEngine.AcornDscSize";

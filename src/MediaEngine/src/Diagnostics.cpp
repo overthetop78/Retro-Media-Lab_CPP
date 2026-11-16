@@ -3,6 +3,20 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AdaptecField:return DiagnosticKeys::AdaptecField;
+    case DiagnosticCode::AdaptecSectors:return DiagnosticKeys::AdaptecSectors;
+    case DiagnosticCode::AdaptecSectorSize:return DiagnosticKeys::AdaptecSectorSize;
+    case DiagnosticCode::AdaptecUnsupportedSector:return DiagnosticKeys::AdaptecUnsupportedSector;
+    case DiagnosticCode::AdaptecPeriod:return DiagnosticKeys::AdaptecPeriod;
+    case DiagnosticCode::AdaptecTrackCapacity:return DiagnosticKeys::AdaptecTrackCapacity;
+    case DiagnosticCode::AdaptecWriteIdentity:return DiagnosticKeys::AdaptecWriteIdentity;
+    case DiagnosticCode::AdaptecNoRevolution:return DiagnosticKeys::AdaptecNoRevolution;
+    case DiagnosticCode::AdaptecTrackReader:return DiagnosticKeys::AdaptecTrackReader;
+    case DiagnosticCode::AdaptecSectorAddress:return DiagnosticKeys::AdaptecSectorAddress;
+    case DiagnosticCode::AdaptecSectorIdentity:return DiagnosticKeys::AdaptecSectorIdentity;
+    case DiagnosticCode::AdaptecReadRange:return DiagnosticKeys::AdaptecReadRange;
+    case DiagnosticCode::AdaptecSectorData:return DiagnosticKeys::AdaptecSectorData;
+
     case DiagnosticCode::AdaptecParameterSize:return DiagnosticKeys::AdaptecParameterSize;
     case DiagnosticCode::AdaptecParameterValue:return DiagnosticKeys::AdaptecParameterValue;
     case DiagnosticCode::AcornDscSize:return DiagnosticKeys::AcornDscSize;

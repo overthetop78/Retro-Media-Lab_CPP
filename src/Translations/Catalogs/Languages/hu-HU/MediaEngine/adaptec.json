@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Az Adaptec fluxus vagy rekord érvénytelen.",
+    "MediaEngine.AdaptecSectors": "Az Adaptec szektor gyűjteménye érvénytelen számot, címet vagy hasznos terhet tartalmaz.",
+    "MediaEngine.AdaptecSectorSize": "Az Adaptec ágazat mérete nem támogatott.",
+    "MediaEngine.AdaptecUnsupportedSector": "Az Adaptec szektor nem támogatott rögzített attribútumokat tartalmaz.",
+    "MediaEngine.AdaptecPeriod": "Az Adaptec fordulat időtartama érvénytelen.",
+    "MediaEngine.AdaptecTrackCapacity": "Az Adaptec mezők meghaladják a megadott fordulat hosszát.",
+    "MediaEngine.AdaptecWriteIdentity": "Az Adaptec szektornak nincs egyedi írható identitása.",
+    "MediaEngine.AdaptecNoRevolution": "Az Adaptec sáv nem tartalmaz fordulatnyi mágnesesfluxus-adatot.",
+    "MediaEngine.AdaptecTrackReader": "Adaptec pályaolvasó szükséges.",
+    "MediaEngine.AdaptecSectorAddress": "Az Adaptec szektor címe {0} kívül esik a logikai lemezen.",
+    "MediaEngine.AdaptecSectorIdentity": "A Adaptec ágazat {0} hiányzik vagy lemásolódott.",
+    "MediaEngine.AdaptecReadRange": "Az Adaptec olvasási tartománya kívül esik a logikai lemezen.",
+    "MediaEngine.AdaptecSectorData": "Adaptec szektor {0} érvénytelen integritás vagy nem teljes hasznos teher."
+  }
+}

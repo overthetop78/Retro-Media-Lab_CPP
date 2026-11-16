@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptec通量或记录无效.",
+    "MediaEngine.AdaptecSectors": "Adaptec扇区集包含一个无效的计数,地址或有效载荷.",
+    "MediaEngine.AdaptecSectorSize": "Adaptec扇区大小不支持.",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec 扇区包含不支持的已记录属性.",
+    "MediaEngine.AdaptecPeriod": "Adaptec 旋转周期无效。",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec 字段超出给定的一圈长度。",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec 扇区没有允许写入的唯一标识。",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec 磁道不包含一圈磁通数据。",
+    "MediaEngine.AdaptecTrackReader": "需要 Adaptec 磁道读取器。",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec 扇区地址 {0} 位于逻辑磁盘之外。",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec 部门 {0} 已丢失或复制。",
+    "MediaEngine.AdaptecReadRange": "Adaptec读取范围在逻辑磁盘外.",
+    "MediaEngine.AdaptecSectorData": "Adaptec扇区{0}有无效的完整性或不完整的有效载荷."
+  }
+}

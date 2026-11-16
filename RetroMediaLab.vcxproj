@@ -601,9 +601,19 @@
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Descriptor.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Acorn\Writer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Codec.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Decoding.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Encoding.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\ErrorCheck.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Geometry.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Geometry.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Internal.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Parameters.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\Parameters.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\SectorReader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\SectorReader.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HardDisk\Adaptec\WriteWindow.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\ContainerConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Raw\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\HardDisk\Raw\Format.h" />
@@ -1160,6 +1170,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\amiga-mfm.json" />
@@ -1310,6 +1321,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amiga-mfm.json" />
@@ -1460,6 +1472,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amiga-mfm.json" />
@@ -1610,6 +1623,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amiga-mfm.json" />
@@ -1760,6 +1774,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amiga-mfm.json" />
@@ -1910,6 +1925,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amiga-mfm.json" />
@@ -2060,6 +2076,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amiga-mfm.json" />
@@ -2210,6 +2227,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amiga-mfm.json" />
@@ -2360,6 +2378,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amiga-mfm.json" />
@@ -2510,6 +2529,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amiga-mfm.json" />
@@ -2660,6 +2680,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amiga-mfm.json" />
@@ -2810,6 +2831,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amiga-mfm.json" />
@@ -2960,6 +2982,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amiga-mfm.json" />
@@ -3110,6 +3133,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amiga-mfm.json" />
@@ -3260,6 +3284,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amiga-mfm.json" />
@@ -3410,6 +3435,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amiga-mfm.json" />
@@ -3560,6 +3586,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amiga-mfm.json" />
@@ -3710,6 +3737,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amiga-mfm.json" />
@@ -3860,6 +3888,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amiga-mfm.json" />
@@ -4010,6 +4039,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amiga-mfm.json" />
@@ -4160,6 +4190,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amiga-mfm.json" />
@@ -4310,6 +4341,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amiga-mfm.json" />
@@ -4460,6 +4492,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amiga-mfm.json" />
@@ -4610,6 +4643,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amiga-mfm.json" />
@@ -4760,6 +4794,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amiga-mfm.json" />
@@ -4910,6 +4945,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amiga-mfm.json" />
@@ -5060,6 +5096,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amiga-mfm.json" />
@@ -5210,6 +5247,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amiga-mfm.json" />
@@ -5360,6 +5398,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amiga-mfm.json" />
@@ -5510,6 +5549,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\acorn-winchester.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\adaptec.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amiga-mfm.json" />

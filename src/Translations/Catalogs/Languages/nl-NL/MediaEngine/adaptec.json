@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "De Adaptec flux of record is ongeldig.",
+    "MediaEngine.AdaptecSectors": "De Adaptec sector collectie bevat een ongeldig aantal, adres of lading.",
+    "MediaEngine.AdaptecSectorSize": "De omvang van de sector Adaptec is niet ondersteund.",
+    "MediaEngine.AdaptecUnsupportedSector": "De Adaptec-sector bevat niet-ondersteunde geregistreerde attributen.",
+    "MediaEngine.AdaptecPeriod": "De omwentelingsduur van Adaptec is ongeldig.",
+    "MediaEngine.AdaptecTrackCapacity": "De Adaptec-velden overschrijden de opgegeven omwenteling.",
+    "MediaEngine.AdaptecWriteIdentity": "De Adaptec-sector heeft geen unieke schrijfbare identiteit.",
+    "MediaEngine.AdaptecNoRevolution": "De Adaptec-track bevat geen omwenteling aan magnetische fluxgegevens.",
+    "MediaEngine.AdaptecTrackReader": "Een Adaptec track reader is vereist.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec sector adres {0} is buiten de logische schijf.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec-sector {0} ontbreekt of wordt gedupliceerd.",
+    "MediaEngine.AdaptecReadRange": "Het Adaptec leesbereik ligt buiten de logische schijf.",
+    "MediaEngine.AdaptecSectorData": "Adaptec-sector {0} heeft een ongeldige integriteit of een onvolledige lading."
+  }
+}

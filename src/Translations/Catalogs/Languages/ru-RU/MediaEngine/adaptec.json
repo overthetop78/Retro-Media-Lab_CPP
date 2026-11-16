@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Поток или запись Adaptec недействительны.",
+    "MediaEngine.AdaptecSectors": "Сектор Adaptec содержит недействительный счет, адрес или полезную нагрузку.",
+    "MediaEngine.AdaptecSectorSize": "Размер сектора Adaptec не поддерживается.",
+    "MediaEngine.AdaptecUnsupportedSector": "Сектор Adaptec содержит неподдерживаемые записанные атрибуты.",
+    "MediaEngine.AdaptecPeriod": "Период оборота Adaptec недействителен.",
+    "MediaEngine.AdaptecTrackCapacity": "Поля Adaptec превышают длину заданного оборота.",
+    "MediaEngine.AdaptecWriteIdentity": "Сектор Adaptec не имеет уникального идентификатора, допускающего запись.",
+    "MediaEngine.AdaptecNoRevolution": "Дорожка Adaptec не содержит данных магнитного потока за один оборот.",
+    "MediaEngine.AdaptecTrackReader": "Требуется считыватель треков Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec секторальный адрес {0} находится вне логического диска.",
+    "MediaEngine.AdaptecSectorIdentity": "Сектор Adaptec {0} отсутствует или дублируется.",
+    "MediaEngine.AdaptecReadRange": "Диапазон чтения Adaptec находится вне логического диска.",
+    "MediaEngine.AdaptecSectorData": "Сектор Adaptec {0} имеет недействительную целостность или неполную полезную нагрузку."
+  }
+}

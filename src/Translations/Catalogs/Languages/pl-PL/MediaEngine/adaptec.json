@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Strumień lub zapis Adaptec jest nieprawidłowy.",
+    "MediaEngine.AdaptecSectors": "Kolekcja sektorów Adaptec zawiera nieprawidłową liczbę, adres lub ładunek.",
+    "MediaEngine.AdaptecSectorSize": "Wielkość sektora Adaptec nie jest wspierana.",
+    "MediaEngine.AdaptecUnsupportedSector": "Sektor Adaptec zawiera nieobsługiwane zarejestrowane atrybuty.",
+    "MediaEngine.AdaptecPeriod": "Czas obrotu Adaptec jest nieprawidłowy.",
+    "MediaEngine.AdaptecTrackCapacity": "Pola Adaptec przekraczają długość podanego obrotu.",
+    "MediaEngine.AdaptecWriteIdentity": "Sektor Adaptec nie ma jednoznacznej tożsamości umożliwiającej zapis.",
+    "MediaEngine.AdaptecNoRevolution": "Ścieżka Adaptec nie zawiera danych strumienia magnetycznego za jeden obrót.",
+    "MediaEngine.AdaptecTrackReader": "Wymagany jest czytnik ścieżek Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Adres sektora Adaptec {0} znajduje się poza dyskiem logicznym.",
+    "MediaEngine.AdaptecSectorIdentity": "Brak lub powielenie sektora Adaptec {0}.",
+    "MediaEngine.AdaptecReadRange": "Zakres odczytu Adaptec znajduje się poza logicznym dyskiem.",
+    "MediaEngine.AdaptecSectorData": "Sektor Adaptec {0} ma niepoprawną integralność lub niekompletny ładunek."
+  }
+}

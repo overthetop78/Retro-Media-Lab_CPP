@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Il flusso o il record di Adaptec non è valido.",
+    "MediaEngine.AdaptecSectors": "La raccolta di settori Adaptec contiene un numero, un indirizzo o dati non validi.",
+    "MediaEngine.AdaptecSectorSize": "La dimensione del settore Adaptec non è supportata.",
+    "MediaEngine.AdaptecUnsupportedSector": "Il settore Adaptec contiene attributi registrati non supportati.",
+    "MediaEngine.AdaptecPeriod": "Il periodo di rotazione Adaptec non è valido.",
+    "MediaEngine.AdaptecTrackCapacity": "I campi Adaptec superano la rotazione fornita.",
+    "MediaEngine.AdaptecWriteIdentity": "Il settore Adaptec non ha un’identità univoca che ne consenta la scrittura.",
+    "MediaEngine.AdaptecNoRevolution": "La traccia Adaptec non contiene alcuna rotazione di dati di flusso magnetico.",
+    "MediaEngine.AdaptecTrackReader": "È richiesto un lettore di traccia Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "L'indirizzo del settore Adaptec {0} è fuori dal disco logico.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec settore {0} manca o duplicato.",
+    "MediaEngine.AdaptecReadRange": "L'intervallo di lettura Adaptec è fuori dal disco logico.",
+    "MediaEngine.AdaptecSectorData": "Il settore Adaptec {0} ha un'integrità non valida o un carico utile incompleto."
+  }
+}

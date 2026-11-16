@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Флюс Adaptec або запис недійсний.",
+    "MediaEngine.AdaptecSectors": "Колекція секторів Adaptec містить недійсну кількість, адресу або завантаження.",
+    "MediaEngine.AdaptecSectorSize": "Розмір Adaptec не підтримується.",
+    "MediaEngine.AdaptecUnsupportedSector": "Сектор Adaptec містить непідтримані записані атрибути.",
+    "MediaEngine.AdaptecPeriod": "Період оберту Adaptec недійсний.",
+    "MediaEngine.AdaptecTrackCapacity": "Поля Adaptec перевищують довжину заданого оберту.",
+    "MediaEngine.AdaptecWriteIdentity": "Сектор Adaptec не має однозначного ідентифікатора, що дозволяє запис.",
+    "MediaEngine.AdaptecNoRevolution": "Доріжка Adaptec не містить даних магнітного потоку за один оберт.",
+    "MediaEngine.AdaptecTrackReader": "Потрібен читач доріжок Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec галузева адреса {0} поза логічним диском.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec сектор {0} відсутній або дублікований.",
+    "MediaEngine.AdaptecReadRange": "Adaptec читає діапазон поза логічним диском.",
+    "MediaEngine.AdaptecSectorData": "Adaptec сектор {0} має недійсну цілісність або неповне навантаження."
+  }
+}

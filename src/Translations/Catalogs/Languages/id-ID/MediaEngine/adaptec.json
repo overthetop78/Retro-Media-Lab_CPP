@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Fluks Adaptec atau rekaman tidak valid.",
+    "MediaEngine.AdaptecSectors": "Koleksi sektor Adaptec berisi jumlah, alamat, atau muatan yang tak valid.",
+    "MediaEngine.AdaptecSectorSize": "Ukuran sektor Adaptec tidak didukung.",
+    "MediaEngine.AdaptecUnsupportedSector": "Sektor Adaptec berisi atribut rekaman yang tidak didukung.",
+    "MediaEngine.AdaptecPeriod": "Periode putaran Adaptec tidak valid.",
+    "MediaEngine.AdaptecTrackCapacity": "Field Adaptec melebihi putaran yang disediakan.",
+    "MediaEngine.AdaptecWriteIdentity": "Sektor Adaptec tidak memiliki identitas unik yang bisa ditulisi.",
+    "MediaEngine.AdaptecNoRevolution": "Trek Adaptec tidak berisi satu putaran data fluks.",
+    "MediaEngine.AdaptecTrackReader": "Seorang pembaca trek Adaptec diperlukan.",
+    "MediaEngine.AdaptecSectorAddress": "Alamat sektor Adaptec {0} berada di luar disk logical.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec sektor {0} hilang atau digandakan.",
+    "MediaEngine.AdaptecReadRange": "Jangkauan baca Adaptec berada di luar disk logis.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sektor {0} memiliki integritas yang tidak valid atau muatan yang tidak lengkap."
+  }
+}

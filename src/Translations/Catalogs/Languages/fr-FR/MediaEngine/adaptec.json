@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Le flux ou l'enregistrement Adaptec est invalide.",
+    "MediaEngine.AdaptecSectors": "La collection de secteurs Adaptec contient un nombre, une adresse ou une charge utile invalide.",
+    "MediaEngine.AdaptecSectorSize": "La taille du secteur Adaptec n’est pas prise en charge.",
+    "MediaEngine.AdaptecUnsupportedSector": "Le secteur Adaptec contient des attributs enregistrés non pris en charge.",
+    "MediaEngine.AdaptecPeriod": "La période de révolution Adaptec est invalide.",
+    "MediaEngine.AdaptecTrackCapacity": "Les champs Adaptec dépassent la durée de la révolution fournie.",
+    "MediaEngine.AdaptecWriteIdentity": "Le secteur Adaptec ne possède pas d’identité unique permettant son écriture.",
+    "MediaEngine.AdaptecNoRevolution": "La piste Adaptec ne contient aucune révolution de flux.",
+    "MediaEngine.AdaptecTrackReader": "Un lecteur de piste Adaptec est nécessaire.",
+    "MediaEngine.AdaptecSectorAddress": "L'adresse secteur Adaptec {0} est hors du disque logique.",
+    "MediaEngine.AdaptecSectorIdentity": "Le secteur Adaptec {0} est manquant ou dupliqué.",
+    "MediaEngine.AdaptecReadRange": "La plage de lecture Adaptec est en dehors du disque logique.",
+    "MediaEngine.AdaptecSectorData": "Le secteur Adaptec {0} présente une intégrité invalide ou des données incomplètes."
+  }
+}

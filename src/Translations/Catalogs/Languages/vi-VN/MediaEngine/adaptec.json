@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Dữ liệu từ thông hoặc bản ghi Adaptec không hợp lệ.",
+    "MediaEngine.AdaptecSectors": "Tập hợp cung Adaptec chứa số lượng, địa chỉ hoặc dữ liệu không hợp lệ.",
+    "MediaEngine.AdaptecSectorSize": "Kích thước cung Adaptec không được hỗ trợ.",
+    "MediaEngine.AdaptecUnsupportedSector": "Khu vực Adaptec chứa các thuộc tính được ghi chép không được hỗ trợ.",
+    "MediaEngine.AdaptecPeriod": "Chu kỳ quay Adaptec không hợp lệ.",
+    "MediaEngine.AdaptecTrackCapacity": "Các trường Adaptec vượt quá độ dài một vòng quay được cung cấp.",
+    "MediaEngine.AdaptecWriteIdentity": "Cung Adaptec không có định danh duy nhất cho phép ghi.",
+    "MediaEngine.AdaptecNoRevolution": "Rãnh Adaptec không chứa một vòng dữ liệu từ thông.",
+    "MediaEngine.AdaptecTrackReader": "Cần bộ đọc rãnh Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Địa chỉ cung Adaptec {0} nằm ngoài đĩa logic.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec khu vực {0} đang mất tích hoặc nhân bản.",
+    "MediaEngine.AdaptecReadRange": "Phạm vi đọc Adaptec nằm ngoài ổ đĩa logic.",
+    "MediaEngine.AdaptecSectorData": "Cung Adaptec {0} có kiểm tra toàn vẹn không hợp lệ hoặc dữ liệu không đầy đủ."
+  }
+}

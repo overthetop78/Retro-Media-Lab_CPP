@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "The Adaptec flux or record is invalid.",
+    "MediaEngine.AdaptecSectors": "The Adaptec sector collection contains an invalid count, address or payload.",
+    "MediaEngine.AdaptecSectorSize": "The Adaptec sector size is unsupported.",
+    "MediaEngine.AdaptecUnsupportedSector": "The Adaptec sector contains unsupported recorded attributes.",
+    "MediaEngine.AdaptecPeriod": "The Adaptec revolution period is invalid.",
+    "MediaEngine.AdaptecTrackCapacity": "The Adaptec fields exceed the supplied revolution.",
+    "MediaEngine.AdaptecWriteIdentity": "The Adaptec sector does not have a unique writable identity.",
+    "MediaEngine.AdaptecNoRevolution": "The Adaptec track contains no flux revolution.",
+    "MediaEngine.AdaptecTrackReader": "An Adaptec track reader is required.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec sector address {0} is outside the logical disk.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec sector {0} is missing or duplicated.",
+    "MediaEngine.AdaptecReadRange": "The Adaptec read range is outside the logical disk.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sector {0} has invalid integrity or an incomplete payload."
+  }
+}

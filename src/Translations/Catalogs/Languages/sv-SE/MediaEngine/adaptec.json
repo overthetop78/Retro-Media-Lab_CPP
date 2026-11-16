@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptec-flödet eller rekordet är ogiltigt.",
+    "MediaEngine.AdaptecSectors": "Insamlingen Adaptec innehåller en ogiltig räkning, adress eller nyttolast.",
+    "MediaEngine.AdaptecSectorSize": "Adaptec-sektorns storlek stöds inte.",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec-sektorn innehåller osupporterade registrerade attribut.",
+    "MediaEngine.AdaptecPeriod": "Varvtiden för Adaptec är ogiltig.",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec-fälten överskrider det angivna varvet.",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec-sektorn har ingen unik skrivbar identitet.",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec-spåret innehåller inte ett varv av magnetflödesdata.",
+    "MediaEngine.AdaptecTrackReader": "En Adaptec spårläsare krävs.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptecs sektorsadress {0} ligger utanför den logiska disken.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec sektor {0} saknas eller dupliceras.",
+    "MediaEngine.AdaptecReadRange": "Adaptecs lässerie ligger utanför den logiska disken.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sektor {0} har ogiltig integritet eller en ofullständig nyttolast."
+  }
+}

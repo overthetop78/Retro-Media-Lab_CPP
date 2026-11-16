@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "El flujo o registro de Adaptec es inválido.",
+    "MediaEngine.AdaptecSectors": "La colección del sector Adaptec contiene un recuento, dirección o carga útil inválido.",
+    "MediaEngine.AdaptecSectorSize": "El tamaño del sector Adaptec no es compatible.",
+    "MediaEngine.AdaptecUnsupportedSector": "El sector Adaptec contiene atributos registrados sin soporte.",
+    "MediaEngine.AdaptecPeriod": "El período de rotación de Adaptec es inválido.",
+    "MediaEngine.AdaptecTrackCapacity": "Los campos Adaptec exceden la rotación proporcionada.",
+    "MediaEngine.AdaptecWriteIdentity": "El sector Adaptec no tiene una identidad única.",
+    "MediaEngine.AdaptecNoRevolution": "La pista Adaptec no contiene ninguna rotación de datos de flujo magnético.",
+    "MediaEngine.AdaptecTrackReader": "Se requiere un lector de pistas de Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "La dirección del sector Adaptec {0} está fuera del disco lógico.",
+    "MediaEngine.AdaptecSectorIdentity": "El sector Adaptec {0} está desaparecido o duplicado.",
+    "MediaEngine.AdaptecReadRange": "El rango de lectura de Adaptec está fuera del disco lógico.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sector {0} tiene integridad inválida o una carga útil incompleta."
+  }
+}

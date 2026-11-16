@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptec 플럭스 또는 레코드는 유효하지 않습니다.",
+    "MediaEngine.AdaptecSectors": "Adaptec 분야 컬렉션에는 잘못된 수, 주소 또는 페이로드가 포함되어 있습니다.",
+    "MediaEngine.AdaptecSectorSize": "Adaptec 분야 크기는 지원되지 않습니다.",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec 분야는 지원되지 않은 기록 된 속성을 포함합니다.",
+    "MediaEngine.AdaptecPeriod": "Adaptec 회전 주기가 잘못되었습니다.",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec 필드가 지정된 회전 길이를 초과합니다.",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec 섹터에 쓰기를 허용하는 고유한 식별 정보가 없습니다.",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec 트랙에 한 회전의 플럭스 데이터가 없습니다.",
+    "MediaEngine.AdaptecTrackReader": "Adaptec 트랙 리더가 필요합니다.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec sector address {0}는 논리 디스크 밖에 있습니다.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec sector {0}는 누락되거나 복제됩니다.",
+    "MediaEngine.AdaptecReadRange": "Adaptec 읽기 범위는 논리 디스크 밖에 있습니다.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sector {0}는 무효성 또는 불완전한 페이로드가 있습니다."
+  }
+}

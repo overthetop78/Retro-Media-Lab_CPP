@@ -28,7 +28,7 @@ La tâche 141 porte la lecture/écriture VDI 1.1 fixe et dynamique, avec table des
 
 La tâche 142 porte la lecture/écriture VHD fixe et dynamique, avec footer, checksums, BAT et bitmaps. Le choix de variante est partagé avec VDI ; compilation et contrôle ciblé réussis.
 
-La tâche 143 porte la lecture/écriture et création Acorn Winchester DAT/DSC, leur géométrie et les paramètres Adaptec initiaux nécessaires au descripteur. Les captures partielles conservent des plages indisponibles et des messages traduisibles ; compilation et contrôle ciblé réussis. Le décodage des pistes physiques Adaptec reste à porter.
+La tâche 143 porte la lecture/écriture et création Acorn Winchester DAT/DSC, leur géométrie et les paramètres Adaptec initiaux nécessaires au descripteur. Les captures partielles conservent des plages indisponibles et des messages traduisibles ; compilation et contrôle ciblé réussis. La tâche 144 complète le codec physique Adaptec, sa géométrie, les fenêtres DATA et le lecteur logique avec cache de piste et adaptation aux sources de blocs. Compilation et contrôle ciblé réussis ; le conteneur MfmEmu reste à raccorder.
 
 ## Travail restant
 

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptec 磁通或記錄無效。",
+    "MediaEngine.AdaptecSectors": "Adaptec 磁區集合包含無效的數量、位址或資料。",
+    "MediaEngine.AdaptecSectorSize": "不支援此 Adaptec 磁區大小。",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec 磁區包含不支援的記錄屬性。",
+    "MediaEngine.AdaptecPeriod": "Adaptec 旋轉週期無效。",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec 欄位超出指定的一圈長度。",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec 磁區沒有可供寫入的唯一識別資訊。",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec 磁軌不包含一圈磁通資料。",
+    "MediaEngine.AdaptecTrackReader": "需要 Adaptec 磁軌讀取器。",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec 磁區位址 {0} 位於邏輯磁碟之外。",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec 磁區 {0} 遺失或重複。",
+    "MediaEngine.AdaptecReadRange": "Adaptec 讀取範圍位於邏輯磁碟之外。",
+    "MediaEngine.AdaptecSectorData": "Adaptec 磁區 {0} 的完整性無效或資料不完整。"
+  }
+}

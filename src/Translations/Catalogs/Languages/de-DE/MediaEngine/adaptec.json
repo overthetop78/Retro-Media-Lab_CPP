@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Der Fluss oder Datensatz von Adaptec ist ungültig.",
+    "MediaEngine.AdaptecSectors": "Die Sektorsammlung Adaptec enthält eine ungültige Anzahl, Adresse oder Nutzlast.",
+    "MediaEngine.AdaptecSectorSize": "Die Sektorgröße von Adaptec wird nicht unterstützt.",
+    "MediaEngine.AdaptecUnsupportedSector": "Der Adaptec-Sektor enthält nicht unterstützte aufgezeichnete Attribute.",
+    "MediaEngine.AdaptecPeriod": "Die Umlaufzeit von Adaptec ist ungültig.",
+    "MediaEngine.AdaptecTrackCapacity": "Die Adaptec-Felder überschreiten den vorgegebenen Umlauf.",
+    "MediaEngine.AdaptecWriteIdentity": "Der Adaptec-Sektor hat keine eindeutig beschreibbare Identität.",
+    "MediaEngine.AdaptecNoRevolution": "Die Adaptec-Spur enthält keinen Umlauf von Magnetflussdaten.",
+    "MediaEngine.AdaptecTrackReader": "Ein Adaptec Track Reader ist erforderlich.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec Sektoradresse {0} befindet sich außerhalb der logischen Festplatte.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec Sektor {0} fehlt oder dupliziert.",
+    "MediaEngine.AdaptecReadRange": "Der Adaptec-Lesebereich befindet sich außerhalb der logischen Festplatte.",
+    "MediaEngine.AdaptecSectorData": "Der Adaptec-Sektor {0} hat eine ungültige Integrität oder eine unvollständige Nutzlast."
+  }
+}

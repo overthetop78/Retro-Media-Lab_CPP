@@ -1,4 +1,10 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Adaptec/ErrorCheck.cpp
+  src/Formats/HardDisk/Adaptec/Encoding.cpp
+  src/Formats/HardDisk/Adaptec/Decoding.cpp
+  src/Formats/HardDisk/Adaptec/WriteWindow.cpp
+  src/Formats/HardDisk/Adaptec/Geometry.cpp
+  src/Formats/HardDisk/Adaptec/SectorReader.cpp
   src/Formats/HardDisk/Adaptec/Parameters.cpp
   src/Formats/HardDisk/Acorn/Descriptor.cpp
   src/Formats/HardDisk/Acorn/Reader.cpp

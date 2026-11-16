@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Magnetický tok nebo záznam Adaptec je neplatný.",
+    "MediaEngine.AdaptecSectors": "Sektor Adaptec obsahuje neplatný počet, adresu nebo užitečné zatížení.",
+    "MediaEngine.AdaptecSectorSize": "Velikost sektoru Adaptec není podporována.",
+    "MediaEngine.AdaptecUnsupportedSector": "Sektor Adaptec obsahuje nepodporované zaznamenané atributy.",
+    "MediaEngine.AdaptecPeriod": "Doba otáčky Adaptec je neplatná.",
+    "MediaEngine.AdaptecTrackCapacity": "Pole Adaptec přesahují zadanou otáčku.",
+    "MediaEngine.AdaptecWriteIdentity": "Sektor Adaptec nemá jedinečnou identitu umožňující zápis.",
+    "MediaEngine.AdaptecNoRevolution": "Stopa Adaptec neobsahuje žádnou otáčku magnetického toku.",
+    "MediaEngine.AdaptecTrackReader": "Je vyžadován čteč stop Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec adresa sektoru {0} je mimo logický disk.",
+    "MediaEngine.AdaptecSectorIdentity": "Sektor Adaptec {0} chybí nebo je duplikován.",
+    "MediaEngine.AdaptecReadRange": "Rozsah čtení Adaptec je mimo logický disk.",
+    "MediaEngine.AdaptecSectorData": "Sektor Adaptec {0} má neplatnou integritu nebo neúplné užitečné zatížení."
+  }
+}

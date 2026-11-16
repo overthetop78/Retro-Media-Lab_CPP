@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptec flux eller post er ugyldig.",
+    "MediaEngine.AdaptecSectors": "Adaptec sektorinnsamling inneholder et ugyldig antall, adresse eller nyttelast.",
+    "MediaEngine.AdaptecSectorSize": "Sektorstørrelsen i Adaptec er ikke støttet.",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec-sektoren inneholder registrerte attributter som ikke støttes.",
+    "MediaEngine.AdaptecPeriod": "Omløpstiden for Adaptec er ugyldig.",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec-feltene overstiger det angitte omløpet.",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec-sektoren har ikke en entydig identitet som tillater skriving.",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec-sporet inneholder ikke et omløp med magnetiske fluksdata.",
+    "MediaEngine.AdaptecTrackReader": "Det kreves en Adaptec-sporleser.",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec sektoradresse {0} er utenfor den logiske disken.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec-sektoren {0} mangler eller dupliserer.",
+    "MediaEngine.AdaptecReadRange": "Adaptec leseområdet er utenfor den logiske disken.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sektor {0} har ugyldig integritet eller ufullstendig nyttelast."
+  }
+}

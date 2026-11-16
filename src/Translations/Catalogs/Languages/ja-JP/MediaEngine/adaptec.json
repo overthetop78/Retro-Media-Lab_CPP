@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Adaptecのフラックスやレコードは無効です。",
+    "MediaEngine.AdaptecSectors": "Adaptecのセクターコレクションには、無効なカウント、アドレス、ペイロードが含まれています。",
+    "MediaEngine.AdaptecSectorSize": "Adaptec セクターサイズはサポートされていません。",
+    "MediaEngine.AdaptecUnsupportedSector": "Adaptec セクターにサポートされていない記録属性があります。",
+    "MediaEngine.AdaptecPeriod": "Adaptec の回転周期が無効です。",
+    "MediaEngine.AdaptecTrackCapacity": "Adaptec フィールドが指定された1回転の長さを超えています。",
+    "MediaEngine.AdaptecWriteIdentity": "Adaptec セクターに書き込みを許可する一意の識別情報がありません。",
+    "MediaEngine.AdaptecNoRevolution": "Adaptec トラックには1回転分の磁束データがありません。",
+    "MediaEngine.AdaptecTrackReader": "Adaptecトラックリーダーが必要です。",
+    "MediaEngine.AdaptecSectorAddress": "Adaptec セクターアドレス {0} は、論理ディスクの外にあります。",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec セクター {0} が欠けているか、重複している。",
+    "MediaEngine.AdaptecReadRange": "Adaptec読み取り範囲は、論理ディスクの外にあります。",
+    "MediaEngine.AdaptecSectorData": "Adaptec セクター {0} の整合性が無効か、データが不完全です。"
+  }
+}

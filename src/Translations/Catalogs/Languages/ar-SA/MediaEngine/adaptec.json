@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "تدفق Adaptec أو السجل غير صالح.",
+    "MediaEngine.AdaptecSectors": "تحتوي مجموعة قطاعات Adaptec على عدد أو عنوان أو بيانات حمولة غير صالحة.",
+    "MediaEngine.AdaptecSectorSize": "حجم قطاع Adaptec غير مدعوم.",
+    "MediaEngine.AdaptecUnsupportedSector": "يحتوي قطاع Adaptec على خصائص مسجلة غير مدعومة.",
+    "MediaEngine.AdaptecPeriod": "مدة دورة Adaptec غير صالحة.",
+    "MediaEngine.AdaptecTrackCapacity": "تتجاوز حقول Adaptec مدة الدورة المتاحة.",
+    "MediaEngine.AdaptecWriteIdentity": "لا يملك قطاع Adaptec هوية فريدة تسمح بالكتابة.",
+    "MediaEngine.AdaptecNoRevolution": "لا يحتوي مسار Adaptec على دورة من بيانات التدفق المغناطيسي.",
+    "MediaEngine.AdaptecTrackReader": "يلزم قارئ مسارات Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "عنوان قطاع Adaptec رقم {0} خارج القرص المنطقي.",
+    "MediaEngine.AdaptecSectorIdentity": "قطاع Adaptec رقم {0} مفقود أو مكرر.",
+    "MediaEngine.AdaptecReadRange": "نطاق قراءة Adaptec خارج القرص المنطقي.",
+    "MediaEngine.AdaptecSectorData": "سلامة قطاع Adaptec رقم {0} غير صالحة أو بياناته غير مكتملة."
+  }
+}

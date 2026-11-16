@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "Fluxul sau înregistrarea Adaptec este invalidă.",
+    "MediaEngine.AdaptecSectors": "Colecţia sectorului Adaptec conţine un număr, o adresă sau o încărcătură utilă invalidă.",
+    "MediaEngine.AdaptecSectorSize": "Dimensiunea sectorului Adaptec este nesusţinută.",
+    "MediaEngine.AdaptecUnsupportedSector": "Sectorul Adaptec conţine atribute înregistrate nesusţinute.",
+    "MediaEngine.AdaptecPeriod": "Perioada de rotație Adaptec este invalidă.",
+    "MediaEngine.AdaptecTrackCapacity": "Câmpurile Adaptec depășesc rotația furnizată.",
+    "MediaEngine.AdaptecWriteIdentity": "Sectorul Adaptec nu are o identitate unică ce permite scrierea.",
+    "MediaEngine.AdaptecNoRevolution": "Pista Adaptec nu conține o rotație de date de flux magnetic.",
+    "MediaEngine.AdaptecTrackReader": "Este necesar un cititor de cale Adaptec.",
+    "MediaEngine.AdaptecSectorAddress": "Adresa Adaptec sector {0} este în afara discului logic.",
+    "MediaEngine.AdaptecSectorIdentity": "Adaptec sector {0} lipsește sau este duplicat.",
+    "MediaEngine.AdaptecReadRange": "Gama de citire Adaptec este în afara discului logic.",
+    "MediaEngine.AdaptecSectorData": "Adaptec sector {0} are integritate nevalidă sau o sarcină utilă incompletă."
+  }
+}

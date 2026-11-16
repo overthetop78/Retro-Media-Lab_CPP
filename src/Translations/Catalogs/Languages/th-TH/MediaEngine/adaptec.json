@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.AdaptecField": "ข้อมูลฟลักซ์หรือระเบียน Adaptec ไม่ถูกต้อง",
+    "MediaEngine.AdaptecSectors": "ชุดเซกเตอร์ Adaptec มีจำนวน ที่อยู่ หรือข้อมูลไม่ถูกต้อง",
+    "MediaEngine.AdaptecSectorSize": "ไม่รองรับขนาดเซกเตอร์ Adaptec",
+    "MediaEngine.AdaptecUnsupportedSector": "เซกเตอร์ Adaptec มีคุณลักษณะที่บันทึกไว้ซึ่งไม่รองรับ",
+    "MediaEngine.AdaptecPeriod": "ระยะเวลาหนึ่งรอบของ Adaptec ไม่ถูกต้อง",
+    "MediaEngine.AdaptecTrackCapacity": "ฟิลด์ Adaptec เกินความยาวหนึ่งรอบที่กำหนด",
+    "MediaEngine.AdaptecWriteIdentity": "เซกเตอร์ Adaptec ไม่มีข้อมูลระบุเฉพาะที่อนุญาตให้เขียนได้",
+    "MediaEngine.AdaptecNoRevolution": "แทร็ก Adaptec ไม่มีข้อมูลฟลักซ์หนึ่งรอบ",
+    "MediaEngine.AdaptecTrackReader": "ต้องมีตัวอ่านแทร็ก Adaptec",
+    "MediaEngine.AdaptecSectorAddress": "ที่อยู่เซกเตอร์ Adaptec {0} อยู่นอกดิสก์เชิงตรรกะ",
+    "MediaEngine.AdaptecSectorIdentity": "เซกเตอร์ Adaptec {0} หายไปหรือซ้ำกัน",
+    "MediaEngine.AdaptecReadRange": "ช่วงการอ่าน Adaptec อยู่นอกดิสก์เชิงตรรกะ",
+    "MediaEngine.AdaptecSectorData": "เซกเตอร์ Adaptec {0} มีผลตรวจสอบความถูกต้องไม่ผ่านหรือข้อมูลไม่ครบ"
+  }
+}
