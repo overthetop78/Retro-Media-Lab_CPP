@@ -25,4 +25,6 @@ struct MediaConversionDestination {std::string formatId,extension,writerId;bool 
 struct MediaConversionResult {std::vector<std::filesystem::path> producedFiles;std::vector<MessageInfo> diagnostics,losses;};
 RETROMEDIALAB_MEDIAENGINE_API std::vector<MediaConversionDestination> availableConversionDestinations(std::shared_ptr<const MediaDocument>);
 RETROMEDIALAB_MEDIAENGINE_API std::future<MediaConversionResult> convertMediaAsync(MediaConversionRequest,std::stop_token={});
+RETROMEDIALAB_MEDIAENGINE_API std::vector<MediaConversionDestination> availableOpticalConversionDestinations(std::shared_ptr<const MediaDocument>);
+RETROMEDIALAB_MEDIAENGINE_API std::future<std::vector<std::filesystem::path>> convertOpticalMediaAsync(std::filesystem::path source,std::filesystem::path output,std::string target,MediaConversionProgressCallback={},std::stop_token={});
 }

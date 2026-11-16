@@ -7,7 +7,9 @@
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine {
 SequentialMediaConversionService::SequentialMediaConversionService(ReaderRegistry readers,SequentialMediaComposition codecs,WriterRegistry writers)
-    :readers_(std::move(readers)),codecs_(std::move(codecs)),writers_(std::move(writers)){}
+    :SequentialMediaConversionService(MediaImageReadingService(std::move(readers)),std::move(codecs),writers,MediaImageWritingService(writers)){}
+SequentialMediaConversionService::SequentialMediaConversionService(MediaImageReadingService reading,SequentialMediaComposition codecs,WriterRegistry writers,MediaImageWritingService writing)
+    :reading_(std::move(reading)),codecs_(std::move(codecs)),writers_(std::move(writers)),writing_(std::move(writing)){}
 std::vector<SequentialConversionDestination> SequentialMediaConversionService::availableDestinations(std::shared_ptr<const MediaDocument> source,std::optional<std::string> machine,std::map<std::string,std::string> parameters,std::stop_token token)const {
     checkCancellation(token);if(!source)throw MediaError(DiagnosticCode::SequentialConversionPlan);
     if(source->mediaKind()!=MediaKind::Tape||!dynamic_cast<const SequentialImage*>(&source->representation()))return {};
@@ -31,12 +33,12 @@ SequentialConversionResult SequentialMediaConversionService::convert(const std::
     SourceOptions options;const auto utf8=sourcePath.u8string();options.primaryPath.assign(utf8.begin(),utf8.end());options.parameters.emplace();
     for(const auto& [key,value]:parameters)if(key.starts_with(SourcePrefix))options.parameters->emplace(key.substr(SourcePrefix.size()),value);
     if(Primitives::ordinalIdentifierEqualsIgnoreCase(sourcePath.extension().string(),RawExtension))options.requestedFormatId=RawFormat;
-    auto source=readers_.recognizeAsync(RecognitionContext(std::make_shared<MediaSource>(std::move(options))),token).get().document();
+    auto source=reading_.readAsync(std::make_shared<MediaSource>(std::move(options)),token).get();
     const auto planned=plan(std::move(source),std::move(target),std::move(machine),std::move(parameters),token);
     if(!acceptLosses&&!planned.losses().empty())throw MediaError(DiagnosticCode::SequentialConversionLosses);
     const auto extension=output.extension().u8string();const auto writer=writers_.resolve(*planned.targetDocument(),planned.targetDocument()->formatId(),std::string(extension.begin(),extension.end()));
     if(!writer)throw MediaError(DiagnosticCode::SequentialConversionWriter,{planned.targetDocument()->formatId(),std::string(extension.begin(),extension.end())});
-    auto files=writer->writeAsync(planned.targetDocument(),output,planned.targetDocument()->formatId(),token).get();
+    auto files=writing_.writeAsync(planned.targetDocument(),output,planned.targetDocument()->formatId(),token).get();
     return {std::move(files),{planned.diagnostics().begin(),planned.diagnostics().end()},{planned.losses().begin(),planned.losses().end()}};
 }
 }

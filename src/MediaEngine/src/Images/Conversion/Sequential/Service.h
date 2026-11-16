@@ -2,6 +2,8 @@
 #include "../../../Composition/SequentialMedia.h"
 #include "../../ReaderRegistry.h"
 #include "../../WriterRegistry.h"
+#include "../../ReadingService.h"
+#include "../../WritingService.h"
 
 namespace RetroMediaLab::MediaEngine {
 using ConversionMessages=std::vector<MediaFileSystems::MessageRecipe>;
@@ -29,14 +31,16 @@ struct SequentialConversionResult {
 class SequentialMediaConversionService final {
 public:
     RETROMEDIALAB_MEDIAENGINE_API SequentialMediaConversionService(ReaderRegistry,SequentialMediaComposition,WriterRegistry);
+    RETROMEDIALAB_MEDIAENGINE_API SequentialMediaConversionService(MediaImageReadingService,SequentialMediaComposition,WriterRegistry,MediaImageWritingService);
     RETROMEDIALAB_MEDIAENGINE_API std::vector<SequentialConversionDestination> availableDestinations(std::shared_ptr<const MediaDocument>,std::optional<std::string> machine={},std::map<std::string,std::string> parameters={},std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API SequentialMediaConversionPlan plan(std::shared_ptr<const MediaDocument>,std::string target,std::optional<std::string> machine={},std::map<std::string,std::string> parameters={},std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API SequentialConversionResult convert(const std::filesystem::path& source,const std::filesystem::path& output,std::string target,std::optional<std::string> machine={},std::map<std::string,std::string> parameters={},bool acceptLosses=false,std::stop_token={})const;
 private:
     std::optional<std::string> resolveMachine(std::shared_ptr<const MediaDocument>,std::optional<std::string>,std::stop_token)const;
     std::optional<SequentialEncodeRequest> selectRequest(const SequentialDecodeResult&,std::string target,std::string machine,const std::map<std::string,std::string>&,std::stop_token)const;
-    ReaderRegistry readers_;
+    MediaImageReadingService reading_;
     SequentialMediaComposition codecs_;
     WriterRegistry writers_;
+    MediaImageWritingService writing_;
 };
 }

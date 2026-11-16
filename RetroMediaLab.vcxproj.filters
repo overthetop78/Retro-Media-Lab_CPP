@@ -8028,6 +8028,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialConversion.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -10644,6 +10647,12 @@
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeCells.cpp">
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\Optical.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\Optical.h">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Planner.cpp">
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClCompile>

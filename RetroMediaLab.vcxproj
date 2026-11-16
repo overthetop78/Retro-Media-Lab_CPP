@@ -2002,6 +2002,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeFormatIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapePreparation.h" />
@@ -2874,6 +2875,8 @@
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\FluxSectors.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\FluxSectors.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeCells.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\Optical.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\Optical.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Planner.cpp" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Representation.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Representation.h" />
