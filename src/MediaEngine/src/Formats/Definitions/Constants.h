@@ -13,4 +13,6 @@ inline constexpr std::string_view TracksPrefix="tracks ",End="end",Cylinders="cy
 inline constexpr std::string_view Atari1440="atarist.1440",Mac1440="mac.1440",Ibm1440="ibm.1440",AppleSos="apple3.sos",AppleProDos140="apple2.prodos.140",AppleProDos800="apple2.prodos.800",Mac800="mac.800";
 inline constexpr std::size_t TrackWords=3,HeadPart=1,RangeLastPart=1,RepeatCountPart=1,ImportPrefixGroup=1,ImportFileGroup=2,DiskIdGroup=1;
 inline constexpr std::size_t SelectionWord=1,CodecWord=2;
+inline constexpr std::string_view RawWriterId="defined-img",RawExtension=".img",CapacityField="capacity";
+inline constexpr std::string_view BitcellCodec="bitcell";
 }

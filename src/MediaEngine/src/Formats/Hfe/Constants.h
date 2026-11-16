@@ -4,6 +4,7 @@
 #include <limits>
 namespace RetroMediaLab::MediaEngine::Hfe::Constants {
 inline constexpr std::string_view FormatId="raw.hfe",Extension=".hfe";
+inline constexpr std::string_view WriterId="hfe";
 inline constexpr std::string_view Signature="HXCPICFE",Signature3="HXCHFEV3",RevisionKey="hfe.revision",EncodingKey="hfe.encoding",BitRateKey="hfe.bitRate",ScpDiskTypeKey="scp.diskType";
 inline constexpr std::string_view WeakKey="MediaEngine.HfeWeakFeature",IndexKey="MediaEngine.HfeIndexFeature";
 inline constexpr std::string_view IsoMfmId="iso.mfm",AmigaMfmId="amiga.mfm",IsoFmId="iso.fm";

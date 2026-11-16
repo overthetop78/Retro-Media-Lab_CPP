@@ -37,6 +37,8 @@ using Catalogue=std::map<std::string,DiskDefinition,IdentifierLess>;
 using Identifiers=std::set<std::string,IdentifierLess>;
 RETROMEDIALAB_MEDIAENGINE_API const Catalogue& embedded();
 RETROMEDIALAB_MEDIAENGINE_API Catalogue rawDefinitions(std::span<const std::string> curatedIds);
+RETROMEDIALAB_MEDIAENGINE_API const Catalogue& rawDefinitions();
+RETROMEDIALAB_MEDIAENGINE_API std::vector<std::string> bitcellFormatIds();
 RETROMEDIALAB_MEDIAENGINE_API Identifiers readFileIds(const std::filesystem::path&);
 RETROMEDIALAB_MEDIAENGINE_API std::optional<std::pair<std::int32_t,std::int32_t>> dimensions(std::string_view);
 // Numeric parameters use the C# invariant decimal integer syntax and checked int32 range.

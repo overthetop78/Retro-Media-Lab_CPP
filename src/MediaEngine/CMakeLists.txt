@@ -1,6 +1,10 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Catalog/Catalogue.cpp
+  src/Formats/Catalog/Runtime.cpp
+  src/Formats/Catalog/Greaseweazle.cpp
   src/Formats/Definitions/Layout.cpp
   src/Formats/Definitions/Reader.cpp
+  src/Formats/Definitions/RawImages.cpp
   src/Sources/DriveRandomAccessData.cpp
   src/Sources/UnavailableRandomAccessData.cpp
   src/Models/Optical/Track.cpp
@@ -275,6 +279,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Scp/SectorConverter.cpp
   src/Formats/Scp/Models.cpp
   src/Formats/Scp/ProtectedImage.cpp
+  src/Formats/Scp/Adapter.cpp
   src/Formats/Scp/OutputImage.cpp
   src/Formats/Scp/Reader.cpp
   src/Formats/Scp/Synthetic.cpp
@@ -359,3 +364,7 @@ qt_add_resources(RetroMediaLab.MediaEngine DiskDefinitionsData
     src/Formats/Definitions/Data/diskdefs_xerox.cfg
     src/Formats/Definitions/Data/diskdefs_zx.cfg
 )
+
+qt_add_resources(RetroMediaLab.MediaEngine ImageFormatCatalogueData
+  PREFIX "/MediaEngine/FormatCatalog" BASE src/Formats/Catalog/Data
+  FILES src/Formats/Catalog/Data/formats.json)

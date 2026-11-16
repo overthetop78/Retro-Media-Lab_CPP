@@ -1,10 +1,18 @@
 #include "Adapter.h"
+#include "../Definitions/DiskDefinitions.h"
+#include "../../Images/WriterAdapters.h"
 #include "Constants.h"
 #include "../../Images/DocumentFactory.h"
 #include "../../Primitives/Identifiers.h"
 #include "Hfe.h"
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine::Hfe {
+std::shared_ptr<const ImageWriter> writerAdapter(){
+    auto formats=Definitions::bitcellFormatIds();formats.emplace_back(Constants::FormatId);
+    return fluxWriterAdapter(std::string(Constants::WriterId),std::move(formats),{std::string(Constants::Extension)},
+        [](const auto& image,auto,auto){return canRepresentExactly(image);},
+        [](const auto& image,const auto& metadata,const std::filesystem::path& path,auto,std::stop_token token){write(image,metadata,path,token);return std::vector<std::filesystem::path>{path};});
+}
 const ReaderCapabilities& Reader::capabilities()const {
     static const ReaderCapabilities result{{std::string(Constants::FormatId)},{std::string(Constants::Extension)},
         {{Constants::Signature.begin(),Constants::Signature.end()},{Constants::Signature3.begin(),Constants::Signature3.end()}},

@@ -1,6 +1,11 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view FormatCatalogData="MediaEngine.FormatCatalogData";
+inline constexpr std::string_view DefinedRawFormat="MediaEngine.DefinedRawFormat";
+inline constexpr std::string_view DefinedRawLength="MediaEngine.DefinedRawLength";
+inline constexpr std::string_view DefinedRawGeometry="MediaEngine.DefinedRawGeometry";
+inline constexpr std::string_view DefinedRawSector="MediaEngine.DefinedRawSector";
 inline constexpr std::string_view DefinitionFile="MediaEngine.DefinitionFile";
 inline constexpr std::string_view DefinitionCycle="MediaEngine.DefinitionCycle";
 inline constexpr std::string_view DefinitionSyntax="MediaEngine.DefinitionSyntax";

@@ -1,6 +1,8 @@
 #pragma once
 #include "../../Images/Readers.h"
+#include "../../Images/Writers.h"
 namespace RetroMediaLab::MediaEngine::Hfe {
+RETROMEDIALAB_MEDIAENGINE_API std::shared_ptr<const ImageWriter> writerAdapter();
 class Reader final:public ImageReader {
 public:
     RETROMEDIALAB_MEDIAENGINE_API const ReaderCapabilities& capabilities()const override;

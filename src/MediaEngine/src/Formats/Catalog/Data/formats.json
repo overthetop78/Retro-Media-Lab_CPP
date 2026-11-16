@@ -1,0 +1,2672 @@
+[
+  {
+    "id": "raw.hxcstream",
+    "family": "Raw",
+    "familyNameKey": "Family.Raw",
+    "displayNameKey": "Format.raw.hxcstream",
+    "extensions": [
+      {
+        "extension": ".hxcstream",
+        "displayNameKey": "Extension.Symbol.HXCStream",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".hxcstream",
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "HXCSTREAM",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "acorn.jfd",
+    "family": "Acorn",
+    "familyNameKey": "Family.Acorn",
+    "displayNameKey": "Format.acorn.jfd",
+    "extensions": [
+      {
+        "extension": ".jfd",
+        "displayNameKey": "Extension.Symbol.JFD",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".jfd"
+    ],
+    "tag": "JFD",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "raw.scp",
+    "family": "Raw",
+    "familyNameKey": "Family.Raw",
+    "displayNameKey": "Format.raw.scp",
+    "extensions": [
+      {
+        "extension": ".scp",
+        "displayNameKey": "Extension.scp",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "RAW-SCP",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "amiga.amigados",
+    "family": "Amiga",
+    "familyNameKey": "Family.Amiga",
+    "displayNameKey": "Format.amiga.amigados",
+    "extensions": [
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.adf.amiga",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "AMIGA-DD",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "amiga.amigados_hd",
+    "family": "Amiga",
+    "familyNameKey": "Family.Amiga",
+    "displayNameKey": "Format.amiga.amigados_hd",
+    "extensions": [
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.adf.amiga",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "AMIGA-HD",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "atarist.180",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.180",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".hfe"
+    ],
+    "tag": "ST-180",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.360",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.360",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-360",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.400",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.400",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-400",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.440",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.440",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-440",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.720",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.720",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      },
+      {
+        "extension": ".msa",
+        "displayNameKey": "Extension.msa",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-720",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.800",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.800",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-800",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.810",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.810",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-810",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.880",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.880",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".msa",
+      ".hfe"
+    ],
+    "tag": "ST-880",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "atarist.1440",
+    "family": "Atari ST",
+    "familyNameKey": "Family.Atari_ST",
+    "displayNameKey": "Format.atarist.1440",
+    "extensions": [
+      {
+        "extension": ".st",
+        "displayNameKey": "Extension.st",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".st",
+      ".hfe"
+    ],
+    "tag": "ST-1440",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "atari.90",
+    "family": "Atari 8-bit",
+    "familyNameKey": "Family.Atari_8_bit",
+    "displayNameKey": "Format.atari.90",
+    "extensions": [
+      {
+        "extension": ".atr",
+        "displayNameKey": "Extension.atr",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".atr",
+      ".hfe"
+    ],
+    "tag": "ATARI8-90",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "atari.130",
+    "family": "Atari 8-bit",
+    "familyNameKey": "Family.Atari_8_bit",
+    "displayNameKey": "Format.atari.130",
+    "extensions": [
+      {
+        "extension": ".atr",
+        "displayNameKey": "Extension.atr",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".atr",
+      ".hfe"
+    ],
+    "tag": "ATARI8-130",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "atari.140",
+    "family": "Atari 8-bit",
+    "familyNameKey": "Family.Atari_8_bit",
+    "displayNameKey": "Format.atari.140",
+    "extensions": [
+      {
+        "extension": ".atr",
+        "displayNameKey": "Extension.atr",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".atr"
+    ],
+    "tag": "ATARI8-140",
+    "formFactor": 3,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "atari.180",
+    "family": "Atari 8-bit",
+    "familyNameKey": "Family.Atari_8_bit",
+    "displayNameKey": "Format.atari.180",
+    "extensions": [
+      {
+        "extension": ".atr",
+        "displayNameKey": "Extension.atr",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".atr",
+      ".hfe"
+    ],
+    "tag": "ATARI8-180",
+    "formFactor": 3,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "atari.atx",
+    "family": "Atari 8-bit",
+    "familyNameKey": "Family.Atari_8_bit",
+    "displayNameKey": "Format.atari.atx",
+    "extensions": [
+      {
+        "extension": ".atx",
+        "displayNameKey": "Extension.atx",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".atx"
+    ],
+    "tag": "ATARI8-ATX",
+    "formFactor": 3,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "ibm.160",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.160",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-160",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ibm.180",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.180",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-180",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ibm.320",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.320",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-320",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ibm.360",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.360",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-360",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ibm.720",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.720",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-720",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "ibm.800",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.800",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-800",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "ibm.1200",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.1200",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-1200",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ibm.1440",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.1440",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-1440",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "ibm.1680",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.1680",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-1680",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "ibm.dmf",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.dmf",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-DMF",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "ibm.2880",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.2880",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ima",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "PC-2880",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 3
+  },
+  {
+    "id": "ibm.scan",
+    "family": "IBM PC",
+    "familyNameKey": "Family.IBM_PC",
+    "displayNameKey": "Format.ibm.scan",
+    "extensions": [
+      {
+        "extension": ".ima",
+        "displayNameKey": "Extension.ima",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "PC-SCAN",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "commodore.1541",
+    "family": "Commodore",
+    "familyNameKey": "Family.Commodore",
+    "displayNameKey": "Format.commodore.1541",
+    "extensions": [
+      {
+        "extension": ".d64",
+        "displayNameKey": "Extension.d64",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".d64",
+      ".hfe"
+    ],
+    "tag": "C64-1541",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "commodore.1571",
+    "family": "Commodore",
+    "familyNameKey": "Family.Commodore",
+    "displayNameKey": "Format.commodore.1571",
+    "extensions": [
+      {
+        "extension": ".d71",
+        "displayNameKey": "Extension.d71",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".d71",
+      ".hfe"
+    ],
+    "tag": "C128-1571",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "commodore.1581",
+    "family": "Commodore",
+    "familyNameKey": "Family.Commodore",
+    "displayNameKey": "Format.commodore.1581",
+    "extensions": [
+      {
+        "extension": ".d81",
+        "displayNameKey": "Extension.d81",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".d81",
+      ".hfe"
+    ],
+    "tag": "C128-1581",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "apple2.appledos.113",
+    "family": "Apple II",
+    "familyNameKey": "Family.Apple_II",
+    "displayNameKey": "Format.apple2.appledos.113",
+    "extensions": [
+      {
+        "extension": ".d13",
+        "displayNameKey": "Extension.d13",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".d13",
+      ".nib",
+      ".woz",
+      ".2mg",
+      ".hfe"
+    ],
+    "tag": "APPLE2-DOS32",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "apple2.appledos.140",
+    "family": "Apple II",
+    "familyNameKey": "Family.Apple_II",
+    "displayNameKey": "Format.apple2.appledos.140",
+    "extensions": [
+      {
+        "extension": ".do",
+        "displayNameKey": "Extension.do",
+        "isDefault": true
+      },
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.dsk.apple",
+        "isDefault": false
+      },
+      {
+        "extension": ".nib",
+        "displayNameKey": "Extension.nib",
+        "isDefault": false
+      },
+      {
+        "extension": ".woz",
+        "displayNameKey": "Extension.woz",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".do",
+      ".dsk",
+      ".nib",
+      ".woz",
+      ".2mg",
+      ".hfe"
+    ],
+    "tag": "APPLE2-DOS33",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "apple2.prodos.140",
+    "family": "Apple II",
+    "familyNameKey": "Family.Apple_II",
+    "displayNameKey": "Format.apple2.prodos.140",
+    "extensions": [
+      {
+        "extension": ".po",
+        "displayNameKey": "Extension.po",
+        "isDefault": true
+      },
+      {
+        "extension": ".2mg",
+        "displayNameKey": "Extension.2mg",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".po",
+      ".do",
+      ".dsk",
+      ".nib",
+      ".woz",
+      ".2mg",
+      ".hfe"
+    ],
+    "tag": "APPLE2-PRODOS",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "apple2.prodos.800",
+    "family": "Apple II",
+    "familyNameKey": "Family.Apple_II",
+    "displayNameKey": "Format.apple2.prodos.800",
+    "extensions": [
+      {
+        "extension": ".po",
+        "displayNameKey": "Extension.po",
+        "isDefault": true
+      },
+      {
+        "extension": ".2mg",
+        "displayNameKey": "Extension.2mg",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".po",
+      ".2mg",
+      ".image",
+      ".hfe"
+    ],
+    "tag": "APPLE2-PRODOS-800",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "apple3.sos",
+    "family": "Apple III",
+    "familyNameKey": "Family.Apple_III",
+    "displayNameKey": "Format.apple3.sos",
+    "extensions": [
+      {
+        "extension": ".po",
+        "displayNameKey": "Extension.po",
+        "isDefault": true
+      },
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.dsk.apple",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".po",
+      ".do",
+      ".dsk",
+      ".2mg",
+      ".hfe"
+    ],
+    "tag": "APPLE3-SOS",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "mac.400",
+    "family": "Apple Macintosh",
+    "familyNameKey": "Family.Apple_Macintosh",
+    "displayNameKey": "Format.mac.400",
+    "extensions": [
+      {
+        "extension": ".image",
+        "displayNameKey": "Extension.image.apple",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img.apple",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".image",
+      ".dc42",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MAC-400",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "mac.800",
+    "family": "Apple Macintosh",
+    "familyNameKey": "Family.Apple_Macintosh",
+    "displayNameKey": "Format.mac.800",
+    "extensions": [
+      {
+        "extension": ".image",
+        "displayNameKey": "Extension.image.apple",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img.apple",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".image",
+      ".dc42",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MAC-800",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "mac.1440",
+    "family": "Apple Macintosh",
+    "familyNameKey": "Family.Apple_Macintosh",
+    "displayNameKey": "Format.mac.1440",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.img.apple",
+        "isDefault": true
+      },
+      {
+        "extension": ".image",
+        "displayNameKey": "Extension.image.apple",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".image",
+      ".dc42",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MAC-1440",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "acorn.adfs.800",
+    "family": "Acorn",
+    "familyNameKey": "Family.Acorn",
+    "displayNameKey": "Format.acorn.adfs.800",
+    "extensions": [
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.adf.acorn",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "ACORN-800",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.adfs.1600",
+    "family": "Acorn",
+    "familyNameKey": "Family.Acorn",
+    "displayNameKey": "Format.acorn.adfs.1600",
+    "extensions": [
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.adf.acorn",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "ACORN-1600",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 2
+  },
+  {
+    "id": "acorn.dosplus.800",
+    "family": "Acorn / BBC Master 512",
+    "familyNameKey": "Family.Acorn_BBC_Master_512",
+    "displayNameKey": "Format.acorn.dosplus.800",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".800",
+        "displayNameKey": "Extension.Symbol.800",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".img",
+      ".800",
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "ACORN-DOS-800",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.adfs.160",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.adfs.160",
+    "extensions": [
+      {
+        "extension": ".ads",
+        "displayNameKey": "Extension.Symbol.ADS",
+        "isDefault": true
+      },
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.Symbol.ADF",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".ads",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "BBC-ADFS-S",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.adfs.320",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.adfs.320",
+    "extensions": [
+      {
+        "extension": ".adm",
+        "displayNameKey": "Extension.Symbol.ADM",
+        "isDefault": true
+      },
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.Symbol.ADF",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".adm",
+      ".adf",
+      ".hfe"
+    ],
+    "tag": "BBC-ADFS-M",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.adfs.640",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.adfs.640",
+    "extensions": [
+      {
+        "extension": ".adl",
+        "displayNameKey": "Extension.Symbol.ADL",
+        "isDefault": true
+      },
+      {
+        "extension": ".adf",
+        "displayNameKey": "Extension.Symbol.ADF",
+        "isDefault": false
+      },
+      {
+        "extension": ".640",
+        "displayNameKey": "Extension.Symbol.640",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".adl",
+      ".adf",
+      ".640",
+      ".hfe"
+    ],
+    "tag": "BBC-ADFS-L",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.dfs.atom",
+    "family": "Acorn Atom",
+    "familyNameKey": "Family.Acorn_Atom",
+    "displayNameKey": "Format.acorn.dfs.atom",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.Atom_DSK",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".dsk",
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "ACORN-ATOM-DOS",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "apricot.pcxi.315",
+    "family": "ACT Apricot",
+    "familyNameKey": "Family.ACT_Apricot",
+    "displayNameKey": "Format.apricot.pcxi.315",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.ApriDisk",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".dsk"
+    ],
+    "tag": "APRICOT-PCXI-315",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "acorn.dfs.ss",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.dfs.ss",
+    "extensions": [
+      {
+        "extension": ".ssd",
+        "displayNameKey": "Extension.Symbol.SSD",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ssd",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "BBC-DFS-SS",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "acorn.dfs.ss80",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.dfs.ss80",
+    "extensions": [
+      {
+        "extension": ".ssd",
+        "displayNameKey": "Extension.Symbol.SSD",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".ssd",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "BBC-DFS-SS80",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "acorn.dfs.ds",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.dfs.ds",
+    "extensions": [
+      {
+        "extension": ".dsd",
+        "displayNameKey": "Extension.Symbol.DSD",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsd",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "BBC-DFS-DS",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "acorn.dfs.ds80",
+    "family": "Acorn / BBC Micro",
+    "familyNameKey": "Family.Acorn_BBC_Micro",
+    "displayNameKey": "Format.acorn.dfs.ds80",
+    "extensions": [
+      {
+        "extension": ".dsd",
+        "displayNameKey": "Extension.Symbol.DSD",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsd",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "BBC-DFS-DS80",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "amstrad.cpc",
+    "family": "Amstrad",
+    "familyNameKey": "Family.Amstrad",
+    "displayNameKey": "Format.amstrad.cpc",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      },
+      {
+        "extension": ".edsk",
+        "displayNameKey": "Extension.Symbol.Extended_DSK",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".edsk",
+      ".hfe"
+    ],
+    "tag": "AMSTRAD-CPC",
+    "formFactor": 1,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "amstrad.pcw",
+    "family": "Amstrad",
+    "familyNameKey": "Family.Amstrad",
+    "displayNameKey": "Format.amstrad.pcw",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      },
+      {
+        "extension": ".edsk",
+        "displayNameKey": "Extension.Symbol.Extended_DSK",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".edsk",
+      ".hfe"
+    ],
+    "tag": "AMSTRAD-PCW",
+    "formFactor": 1,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "amstrad.cpr",
+    "family": "Amstrad",
+    "familyNameKey": "Family.Amstrad",
+    "displayNameKey": "Format.amstrad.cpr",
+    "extensions": [
+      {
+        "extension": ".cpr",
+        "displayNameKey": "Extension.Symbol.CPR",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".cpr",
+      ".rom",
+      ".bin"
+    ],
+    "tag": "AMSTRAD-CPR",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "amstrad.rom",
+    "family": "Amstrad",
+    "familyNameKey": "Family.Amstrad",
+    "displayNameKey": "Format.amstrad.rom",
+    "extensions": [
+      {
+        "extension": ".rom",
+        "displayNameKey": "Extension.Symbol.ROM",
+        "isDefault": true
+      },
+      {
+        "extension": ".bin",
+        "displayNameKey": "Extension.Symbol.BIN",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".cpr",
+      ".rom",
+      ".bin"
+    ],
+    "tag": "AMSTRAD-ROM",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.nes",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.nes",
+    "extensions": [
+      {
+        "extension": ".nes",
+        "displayNameKey": "Extension.Symbol.NES",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".nes"
+    ],
+    "tag": "NINTENDO-NES",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.fds",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.fds",
+    "extensions": [
+      {
+        "extension": ".fds",
+        "displayNameKey": "Extension.Symbol.FDS",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".fds"
+    ],
+    "tag": "NINTENDO-FDS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "optical-gdi",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.optical-gdi",
+    "extensions": [
+      {
+        "extension": ".gdi",
+        "displayNameKey": "Extension.Symbol.GDI",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".gdi"
+    ],
+    "tag": "SEGA-DREAMCAST-GDI",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "microsoft.xbox.xdvdfs",
+    "family": "Microsoft",
+    "familyNameKey": "Family.Microsoft",
+    "displayNameKey": "Format.microsoft.xbox.xdvdfs",
+    "extensions": [
+      {
+        "extension": ".iso",
+        "displayNameKey": "Extension.Symbol.ISO",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".iso"
+    ],
+    "tag": "MICROSOFT-XBOX-XDVDFS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.wiiu",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.wiiu",
+    "extensions": [
+      {
+        "extension": ".wud",
+        "displayNameKey": "Extension.Symbol.WUD",
+        "isDefault": true
+      },
+      {
+        "extension": ".wux",
+        "displayNameKey": "Extension.Symbol.WUX",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".wud",
+      ".wux"
+    ],
+    "tag": "NINTENDO-WIIU",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.snes",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.snes",
+    "extensions": [
+      {
+        "extension": ".sfc",
+        "displayNameKey": "Extension.Symbol.SFC",
+        "isDefault": true
+      },
+      {
+        "extension": ".smc",
+        "displayNameKey": "Extension.Symbol.SMC",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".sfc",
+      ".smc"
+    ],
+    "tag": "NINTENDO-SNES",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.n64",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.n64",
+    "extensions": [
+      {
+        "extension": ".n64",
+        "displayNameKey": "Extension.Symbol.N64",
+        "isDefault": true
+      },
+      {
+        "extension": ".z64",
+        "displayNameKey": "Extension.Symbol.Z64",
+        "isDefault": false
+      },
+      {
+        "extension": ".v64",
+        "displayNameKey": "Extension.Symbol.V64",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".n64",
+      ".z64",
+      ".v64"
+    ],
+    "tag": "NINTENDO-N64",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.gameboy",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.gameboy",
+    "extensions": [
+      {
+        "extension": ".gb",
+        "displayNameKey": "Extension.Symbol.GB",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".gb"
+    ],
+    "tag": "NINTENDO-GB",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.gameboy_color",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.gameboy_color",
+    "extensions": [
+      {
+        "extension": ".gbc",
+        "displayNameKey": "Extension.Symbol.GBC",
+        "isDefault": true
+      },
+      {
+        "extension": ".cgb",
+        "displayNameKey": "Extension.Symbol.CGB",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".gbc",
+      ".cgb"
+    ],
+    "tag": "NINTENDO-GBC",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.gameboy_advance",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.gameboy_advance",
+    "extensions": [
+      {
+        "extension": ".gba",
+        "displayNameKey": "Extension.Symbol.GBA",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".gba"
+    ],
+    "tag": "NINTENDO-GBA",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.nds",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.nds",
+    "extensions": [
+      {
+        "extension": ".nds",
+        "displayNameKey": "Extension.Symbol.NDS",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".nds"
+    ],
+    "tag": "NINTENDO-NDS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.game_watch",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.game_watch",
+    "extensions": [
+      {
+        "extension": ".mgw",
+        "displayNameKey": "Extension.Symbol.MGW",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".mgw"
+    ],
+    "tag": "NINTENDO-GAMEWATCH",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.3ds",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.3ds",
+    "extensions": [
+      {
+        "extension": ".3ds",
+        "displayNameKey": "Extension.Symbol.3DS",
+        "isDefault": true
+      },
+      {
+        "extension": ".cia",
+        "displayNameKey": "Extension.Symbol.CIA",
+        "isDefault": false
+      },
+      {
+        "extension": ".3dsx",
+        "displayNameKey": "Extension.Symbol.3DSX",
+        "isDefault": false
+      },
+      {
+        "extension": ".cci",
+        "displayNameKey": "Extension.Symbol.CCI",
+        "isDefault": false
+      },
+      {
+        "extension": ".cxi",
+        "displayNameKey": "Extension.Symbol.CXI",
+        "isDefault": false
+      },
+      {
+        "extension": ".axf",
+        "displayNameKey": "Extension.Symbol.AXF",
+        "isDefault": false
+      },
+      {
+        "extension": ".elf",
+        "displayNameKey": "Extension.Symbol.ELF",
+        "isDefault": false
+      },
+      {
+        "extension": ".app",
+        "displayNameKey": "Extension.Symbol.APP",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".3ds",
+      ".cia",
+      ".3dsx",
+      ".cci",
+      ".cxi",
+      ".axf",
+      ".elf",
+      ".app"
+    ],
+    "tag": "NINTENDO-3DS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nintendo.virtual_boy",
+    "family": "Nintendo",
+    "familyNameKey": "Family.Nintendo",
+    "displayNameKey": "Format.nintendo.virtual_boy",
+    "extensions": [
+      {
+        "extension": ".vb",
+        "displayNameKey": "Extension.Symbol.VB",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".vb"
+    ],
+    "tag": "NINTENDO-VB",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "sega.sg1000",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.sega.sg1000",
+    "extensions": [
+      {
+        "extension": ".sg",
+        "displayNameKey": "Extension.Symbol.SG",
+        "isDefault": true
+      },
+      {
+        "extension": ".mv",
+        "displayNameKey": "Extension.Symbol.MV",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".sg",
+      ".mv"
+    ],
+    "tag": "SEGA-SG1000",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "sega.master_system",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.sega.master_system",
+    "extensions": [
+      {
+        "extension": ".sms",
+        "displayNameKey": "Extension.Symbol.SMS",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".sms"
+    ],
+    "tag": "SEGA-SMS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "sega.mega_drive",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.sega.mega_drive",
+    "extensions": [
+      {
+        "extension": ".md",
+        "displayNameKey": "Extension.Symbol.MD",
+        "isDefault": true
+      },
+      {
+        "extension": ".mdx",
+        "displayNameKey": "Extension.Symbol.MDX",
+        "isDefault": false
+      },
+      {
+        "extension": ".sgd",
+        "displayNameKey": "Extension.Symbol.SGD",
+        "isDefault": false
+      },
+      {
+        "extension": ".smd",
+        "displayNameKey": "Extension.Symbol.SMD",
+        "isDefault": false
+      },
+      {
+        "extension": ".bms",
+        "displayNameKey": "Extension.Symbol.BMS",
+        "isDefault": false
+      },
+      {
+        "extension": ".68k",
+        "displayNameKey": "Extension.Symbol.68K",
+        "isDefault": false
+      },
+      {
+        "extension": ".gen",
+        "displayNameKey": "Extension.Symbol.GEN",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".md",
+      ".mdx",
+      ".sgd",
+      ".smd",
+      ".bms",
+      ".68k",
+      ".gen"
+    ],
+    "tag": "SEGA-MD",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "sega.game_gear",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.sega.game_gear",
+    "extensions": [
+      {
+        "extension": ".gg",
+        "displayNameKey": "Extension.Symbol.GG",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".gg"
+    ],
+    "tag": "SEGA-GG",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "sega.32x",
+    "family": "Sega",
+    "familyNameKey": "Family.Sega",
+    "displayNameKey": "Format.sega.32x",
+    "extensions": [
+      {
+        "extension": ".32x",
+        "displayNameKey": "Extension.Symbol.32X",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".32x"
+    ],
+    "tag": "SEGA-32X",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nec.pc_engine",
+    "family": "NEC",
+    "familyNameKey": "Family.NEC",
+    "displayNameKey": "Format.nec.pc_engine",
+    "extensions": [
+      {
+        "extension": ".pce",
+        "displayNameKey": "Extension.Symbol.PCE",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".pce"
+    ],
+    "tag": "NEC-PCE",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "nec.supergrafx",
+    "family": "NEC",
+    "familyNameKey": "Family.NEC",
+    "displayNameKey": "Format.nec.supergrafx",
+    "extensions": [
+      {
+        "extension": ".sgx",
+        "displayNameKey": "Extension.Symbol.SGX",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".sgx"
+    ],
+    "tag": "NEC-SGX",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "atari.2600",
+    "family": "Atari",
+    "familyNameKey": "Family.Atari",
+    "displayNameKey": "Format.atari.2600",
+    "extensions": [
+      {
+        "extension": ".a26",
+        "displayNameKey": "Extension.Symbol.A26",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".a26"
+    ],
+    "tag": "ATARI-2600",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "atari.5200",
+    "family": "Atari",
+    "familyNameKey": "Family.Atari",
+    "displayNameKey": "Format.atari.5200",
+    "extensions": [
+      {
+        "extension": ".a52",
+        "displayNameKey": "Extension.Symbol.A52",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".a52"
+    ],
+    "tag": "ATARI-5200",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "atari.7800",
+    "family": "Atari",
+    "familyNameKey": "Family.Atari",
+    "displayNameKey": "Format.atari.7800",
+    "extensions": [
+      {
+        "extension": ".a78",
+        "displayNameKey": "Extension.Symbol.A78",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".a78"
+    ],
+    "tag": "ATARI-7800",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "bandai.wonderswan",
+    "family": "Bandai",
+    "familyNameKey": "Family.Bandai",
+    "displayNameKey": "Format.bandai.wonderswan",
+    "extensions": [
+      {
+        "extension": ".ws",
+        "displayNameKey": "Extension.Symbol.WS",
+        "isDefault": true
+      },
+      {
+        "extension": ".wsc",
+        "displayNameKey": "Extension.Symbol.WSC",
+        "isDefault": false
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".ws",
+      ".wsc"
+    ],
+    "tag": "BANDAI-WS",
+    "formFactor": 0,
+    "supportsPhysicalRead": false,
+    "supportsPhysicalWrite": false,
+    "density": 0
+  },
+  {
+    "id": "epson.qx10.320",
+    "family": "Epson QX-10",
+    "familyNameKey": "Family.Epson_QX_10",
+    "displayNameKey": "Format.epson.qx10.320",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".imd",
+        "displayNameKey": "Extension.Symbol.IMD",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".hfe"
+    ],
+    "tag": "EPSON-QX10-320",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "epson.qx10.396",
+    "family": "Epson QX-10",
+    "familyNameKey": "Family.Epson_QX_10",
+    "displayNameKey": "Format.epson.qx10.396",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".imd",
+        "displayNameKey": "Extension.Symbol.IMD",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".hfe"
+    ],
+    "tag": "EPSON-QX10-396",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "epson.qx10.399",
+    "family": "Epson QX-10",
+    "familyNameKey": "Family.Epson_QX_10",
+    "displayNameKey": "Format.epson.qx10.399",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".imd",
+        "displayNameKey": "Extension.Symbol.IMD",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".hfe"
+    ],
+    "tag": "EPSON-QX10-399",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "epson.qx10.400",
+    "family": "Epson QX-10",
+    "familyNameKey": "Family.Epson_QX_10",
+    "displayNameKey": "Format.epson.qx10.400",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".imd",
+        "displayNameKey": "Extension.Symbol.IMD",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".hfe"
+    ],
+    "tag": "EPSON-QX10-400",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "epson.qx10.logo",
+    "family": "Epson QX-10",
+    "familyNameKey": "Family.Epson_QX_10",
+    "displayNameKey": "Format.epson.qx10.logo",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".imd",
+        "displayNameKey": "Extension.Symbol.IMD",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".hfe"
+    ],
+    "tag": "EPSON-QX10-LOGO",
+    "formFactor": 3,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "msx.1d",
+    "family": "MSX",
+    "familyNameKey": "Family.MSX",
+    "displayNameKey": "Format.msx.1d",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MSX-1D",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "msx.1dd",
+    "family": "MSX",
+    "familyNameKey": "Family.MSX",
+    "displayNameKey": "Format.msx.1dd",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MSX-1DD",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "msx.2d",
+    "family": "MSX",
+    "familyNameKey": "Family.MSX",
+    "displayNameKey": "Format.msx.2d",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MSX-2D",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "msx.2dd",
+    "family": "MSX",
+    "familyNameKey": "Family.MSX",
+    "displayNameKey": "Format.msx.2dd",
+    "extensions": [
+      {
+        "extension": ".dsk",
+        "displayNameKey": "Extension.Symbol.DSK",
+        "isDefault": true
+      }
+    ],
+    "isCommon": true,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".dsk",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "MSX-2DD",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "dec.rx02",
+    "family": "DEC",
+    "familyNameKey": "Family.DEC",
+    "displayNameKey": "Format.dec.rx02",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".imd",
+      ".td0",
+      ".hfe"
+    ],
+    "tag": "DEC-RX02",
+    "formFactor": 4,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "ucsd.ibm.mfm",
+    "family": "UCSD p-System",
+    "familyNameKey": "Family.UCSD_p_System",
+    "displayNameKey": "Format.ucsd.ibm.mfm",
+    "extensions": [
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": true
+      },
+      {
+        "extension": ".td0",
+        "displayNameKey": "Extension.Symbol.TD0",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".img",
+      ".td0",
+      ".hfe"
+    ],
+    "tag": "UCSD-IBM-MFM",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "commodore900.coherent",
+    "family": "Commodore 900",
+    "familyNameKey": "Family.Commodore_900",
+    "displayNameKey": "Format.commodore900.coherent",
+    "extensions": [
+      {
+        "extension": ".bin",
+        "displayNameKey": "Extension.Symbol.BIN",
+        "isDefault": true
+      },
+      {
+        "extension": ".img",
+        "displayNameKey": "Extension.Symbol.IMG",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".bin",
+      ".img",
+      ".hfe"
+    ],
+    "tag": "C900-COHERENT",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  },
+  {
+    "id": "applelisa.office",
+    "family": "Apple Lisa",
+    "familyNameKey": "Family.Apple_Lisa",
+    "displayNameKey": "Format.applelisa.office",
+    "extensions": [
+      {
+        "extension": ".image",
+        "displayNameKey": "Extension.Symbol.DiskCopy",
+        "isDefault": true
+      },
+      {
+        "extension": ".dc42",
+        "displayNameKey": "Extension.Symbol.DiskCopy_4_2",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".image",
+      ".dc42",
+      ".hfe"
+    ],
+    "tag": "LISA-OFFICE",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "applelisa.macworks",
+    "family": "Apple Lisa",
+    "familyNameKey": "Family.Apple_Lisa",
+    "displayNameKey": "Format.applelisa.macworks",
+    "extensions": [
+      {
+        "extension": ".image",
+        "displayNameKey": "Extension.Symbol.DiskCopy",
+        "isDefault": true
+      },
+      {
+        "extension": ".dc42",
+        "displayNameKey": "Extension.Symbol.DiskCopy_4_2",
+        "isDefault": false
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".image",
+      ".dc42",
+      ".hfe"
+    ],
+    "tag": "LISA-MACWORKS",
+    "formFactor": 2,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 1
+  },
+  {
+    "id": "raw.hfe",
+    "family": "Raw",
+    "familyNameKey": "Family.Raw",
+    "displayNameKey": "Format.raw.hfe",
+    "extensions": [
+      {
+        "extension": ".hfe",
+        "displayNameKey": "Extension.hfe",
+        "isDefault": true
+      }
+    ],
+    "isCommon": false,
+    "compatibleSourceExtensions": [
+      ".scp",
+      ".hfe"
+    ],
+    "tag": "RAW-HFE",
+    "formFactor": 0,
+    "supportsPhysicalRead": true,
+    "supportsPhysicalWrite": true,
+    "density": 0
+  }
+]

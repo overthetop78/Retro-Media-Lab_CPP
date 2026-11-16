@@ -1,7 +1,9 @@
 #include "DiskDefinitions.h"
 #include "Constants.h"
+#include "../Catalog/Catalogue.h"
 #include "../../Primitives/Identifiers.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
+#include <RetroMediaLab/MediaEngine/GwFormatCapabilities.h>
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
@@ -81,16 +83,19 @@ Catalogue rawDefinitions(std::span<const std::string> curatedIds){
     for(const auto& [id,definition]:embedded())if(!curated.contains(id)&&!definition.tracks.empty()&&std::all_of(definition.tracks.begin(),definition.tracks.end(),[](const auto& track){return std::find(Constants::RawCodecs.begin(),Constants::RawCodecs.end(),track.codec)!=Constants::RawCodecs.end();}))result.emplace(id,definition);
     return result;
 }
+std::vector<std::string> bitcellFormatIds(){
+    std::vector<std::string> result;
+    for(const auto& [id,definition]:embedded())if(std::all_of(definition.tracks.begin(),definition.tracks.end(),[](const auto& track){return track.codec==Constants::BitcellCodec;}))result.push_back(id);
+    return result;
+}
+const Catalogue& rawDefinitions(){static const Catalogue definitions=rawDefinitions(imageFormatIds());return definitions;}
 Identifiers readFileIds(const std::filesystem::path& path){
     const auto encoded=path.u8string();const auto input=QString::fromUtf8(reinterpret_cast<const char*>(encoded.data()),qsizetype(encoded.size()));
     if(input.trimmed().isEmpty())throw MediaError(DiagnosticCode::DefinitionFile,{utf8(input)});
     Loader loader;loader.read(QFileInfo(input).absoluteFilePath(),{},false,true);return std::move(loader.ids);
 }
 std::optional<std::pair<std::int32_t,std::int32_t>> dimensions(std::string_view format){
-    const auto same=[&](auto id){return Primitives::ordinalIdentifierEqualsIgnoreCase(format,id);};
-    if(same(Constants::Atari1440)||same(Constants::Mac1440))format=Constants::Ibm1440;
-    else if(same(Constants::AppleSos))format=Constants::AppleProDos140;
-    else if(same(Constants::AppleProDos800))format=Constants::Mac800;
+    const auto argument=gwFormatArgument(format);if(argument)format=*argument;
     const auto found=embedded().find(format);
     if(found==embedded().end())return {};
     return std::pair{found->second.cylinders,found->second.heads};

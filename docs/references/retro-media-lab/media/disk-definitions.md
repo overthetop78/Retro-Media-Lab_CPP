@@ -10,4 +10,6 @@ Le lecteur embarqué traite imports préfixés, commentaires, disques, pistes, p
 
 readFileIds conserve le comportement externe C# : énumération des noms et imports sans interpréter les corps des définitions. dimensions applique les alias atarist.1440/mac.1440 vers ibm.1440, apple3.sos vers apple2.prodos.140 et apple2.prodos.800 vers mac.800.
 
-rawDefinitions reçoit explicitement les identifiants réservés du catalogue principal et exclut ceux-ci, puis retient les sept codecs C# autorisés. La composition du catalogue principal reste à porter ; aucune liste réservée réduite n'est substituée silencieusement au catalogue complet.
+rawDefinitions reçoit explicitement les identifiants réservés du catalogue principal et exclut ceux-ci, puis retient les sept codecs C# autorisés. Le bloc 130 ajoute le catalogue principal complet et une surcharge par défaut qui en exclut les 98 identifiants ; aucune liste réservée réduite n'est utilisée.
+
+Voir image-format-catalogue.md pour le raccordement du catalogue principal.
