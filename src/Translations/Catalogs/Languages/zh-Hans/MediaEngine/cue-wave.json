@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "无效的 CUE 行 {0}: {1}",
+    "MediaEngine.CueStructure": "CUE 文件、轨道、索引、命令、值或元数据无效或重复。",
+    "MediaEngine.CueOutput": "CUE 输出模式、元数据、索引位置或文本编码不受支持或无效。",
+    "MediaEngine.CueIo": "无法读取 CUE 描述符 '{0}'。",
+    "MediaEngine.WaveData": "RIFF/WAVE 头部、数据块、填充或完整 PCM 数据无效或被截断。",
+    "MediaEngine.WaveProfile": "仅支持字节率和块对齐匹配的 44100 Hz 立体声 16 位 PCM WAVE。",
+    "MediaEngine.WaveRange": "请求范围超出 WAVE PCM 数据。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "บรรทัด CUE ไม่ถูกต้อง {0}: {1}",
+    "MediaEngine.CueStructure": "ไฟล์ CUE แทร็ก ดัชนี คำสั่ง ค่า หรือเมทาดาทาไม่ถูกต้องหรือซ้ำกัน",
+    "MediaEngine.CueOutput": "โหมดเอาต์พุต CUE เมทาดาทา ตำแหน่งดัชนี หรือการเข้ารหัสข้อความไม่รองรับหรือไม่ถูกต้อง",
+    "MediaEngine.CueIo": "ไม่สามารถอ่านตัวอธิบาย CUE '{0}' ได้",
+    "MediaEngine.WaveData": "ส่วนหัว RIFF/WAVE ชังก์ แพดดิ้ง หรือข้อมูล PCM ที่สมบูรณ์ไม่ถูกต้องหรือถูกตัดทอน",
+    "MediaEngine.WaveProfile": "รองรับเฉพาะ PCM WAVE สเตอริโอ 16 บิตที่ 44100 Hz พร้อมอัตราไบต์และการจัดแนวบล็อกที่ตรงกัน",
+    "MediaEngine.WaveRange": "ช่วงที่ร้องขอเกินข้อมูล WAVE PCM"
+  }
+}

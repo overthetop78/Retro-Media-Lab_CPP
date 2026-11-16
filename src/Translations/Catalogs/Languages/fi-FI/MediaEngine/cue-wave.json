@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Virheellinen CUE-rivi {0}: {1}",
+    "MediaEngine.CueStructure": "CUE-tiedostot, kappaleet, indeksit, komennot, arvot tai metatiedot ovat virheellisiä tai kaksoiskappaleita.",
+    "MediaEngine.CueOutput": "CUE-lähtötila, metadata, indeksin sijainti tai tekstikoodaus on tueton tai virheellinen.",
+    "MediaEngine.CueIo": "CUE-kuvausta '{0}' ei voitu lukea.",
+    "MediaEngine.WaveData": "RIFF/WAVE-otsake, lohkot, täyte tai täydelliset PCM-tiedot ovat virheellisiä tai katkenneita.",
+    "MediaEngine.WaveProfile": "Vain stereo 16-bittinen PCM WAVE 44100 Hz:n tavutaajuudella ja lohkolinjauksella tuetaan.",
+    "MediaEngine.WaveRange": "Pyydetty vaihteluväli ylittää WAVE PCM -tiedot."
+  }
+}

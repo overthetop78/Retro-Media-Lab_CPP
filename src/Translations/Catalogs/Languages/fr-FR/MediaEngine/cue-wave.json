@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Ligne CUE non valide {0}: {1}",
+    "MediaEngine.CueStructure": "Les fichiers, pistes, index, commandes, valeurs ou métadonnées CUE sont invalides ou dupliqués.",
+    "MediaEngine.CueOutput": "Le mode de sortie CUE, les métadonnées, la position d'index ou l'encodage de texte ne sont pas pris en charge ou invalides.",
+    "MediaEngine.CueIo": "Le descripteur CUE « {0} » n'a pas pu être lu.",
+    "MediaEngine.WaveData": "L’en-tête RIFF/WAVE, les blocs, le remplissage ou les données PCM complètes sont invalides ou tronqués.",
+    "MediaEngine.WaveProfile": "Seul le PCM WAVE stéréo 16 bits à 44100 Hz avec un débit en octets et un alignement de blocs conformes est pris en charge.",
+    "MediaEngine.WaveRange": "La plage demandée dépasse les données WAVE PCM."
+  }
+}

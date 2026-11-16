@@ -11,6 +11,8 @@ CONSTANT_HEADERS = {
     "src/MediaEngine/src/Formats/HardDisk/Chd/Constants.h",
     "src/MediaEngine/src/Formats/Optical/Chd/Constants.h",
     "src/MediaEngine/src/Formats/Optical/Gdi/Constants.h",
+    "src/MediaEngine/src/Formats/Optical/BinCue/Constants.h",
+    "src/MediaEngine/src/Formats/Optical/BinCue/WaveConstants.h",
     "src/MediaEngine/src/Formats/Common/Chd/EccTables.h",
     "src/MediaEngine/src/Primitives/Crc32CConstants.h",
     "src/MediaEngine/src/Formats/HardDisk/Vhdx/Constants.h",

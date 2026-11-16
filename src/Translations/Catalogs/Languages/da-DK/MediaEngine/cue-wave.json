@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Ugyldig CUE- linje {0}: {1}",
+    "MediaEngine.CueStructure": "CUE filer, spor, indekser, kommandoer, værdier eller metadata er ugyldige eller duplikerede.",
+    "MediaEngine.CueOutput": "CUE output mode, metadata, indeks position eller tekst kodning er ikke understøttet eller ugyldig.",
+    "MediaEngine.CueIo": "CUE-deskriptoren '{0}' kunne ikke læses.",
+    "MediaEngine.WaveData": "RIFF / WAVE header, stykker, polstring eller komplette PCM data er ugyldige eller trunkeret.",
+    "MediaEngine.WaveProfile": "Kun stereo 16- bit PCM WAVE ved 44100 Hz med matchende byte hastighed og blok justering understøttes.",
+    "MediaEngine.WaveRange": "Det ønskede område overstiger WAVE PCM-dataene."
+  }
+}

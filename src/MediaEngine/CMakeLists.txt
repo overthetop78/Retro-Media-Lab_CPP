@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Optical/BinCue/Sheet.cpp
+  src/Formats/Optical/BinCue/SheetWriter.cpp
+  src/Formats/Optical/BinCue/WaveSource.cpp
   src/Formats/Optical/Gdi/Descriptor.cpp
   src/Formats/Optical/Gdi/Reader.cpp
   src/Formats/Optical/Gdi/Writer.cpp

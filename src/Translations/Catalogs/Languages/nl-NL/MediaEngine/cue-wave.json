@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Ongeldige CUE-regel {0}: {1}",
+    "MediaEngine.CueStructure": "De CUE bestanden, tracks, indexen, commando's, waarden of metadata zijn ongeldig of gedupliceerd.",
+    "MediaEngine.CueOutput": "De CUE-uitvoermodus, metadata, indexpositie of tekstcodering is niet ondersteund of ongeldig.",
+    "MediaEngine.CueIo": "De CUE-descriptor '{0}' kon niet worden gelezen.",
+    "MediaEngine.WaveData": "De RIFF/WAVE header, brokken, padding of complete PCM data is ongeldig of ingekort.",
+    "MediaEngine.WaveProfile": "Alleen stereo 16-bit PCM WAVE bij 44100 Hz met matching byte rate en blok uitlijning wordt ondersteund.",
+    "MediaEngine.WaveRange": "Het gevraagde bereik overschrijdt de WAVE PCM-gegevens."
+  }
+}

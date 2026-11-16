@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Neplatná CUE linka {0}: {1}",
+    "MediaEngine.CueStructure": "Soubory, stopy, indexy, příkazy, hodnoty nebo metadata CUE jsou neplatné nebo duplikované.",
+    "MediaEngine.CueOutput": "Režim CUE výstupu, metadata, pozice indexu nebo kódování textu je nepodporovaný nebo neplatný.",
+    "MediaEngine.CueIo": "Deskriptor CUE '{0}' nelze přečíst.",
+    "MediaEngine.WaveData": "Záhlaví RIFF / WAVE, kusy, polstrování nebo kompletní data PCM je neplatné nebo zkrácené.",
+    "MediaEngine.WaveProfile": "Podporována je pouze stereo 16- bitová PCM WAVE při 44100 Hz s odpovídající rychlostí byte a nastavením bloku.",
+    "MediaEngine.WaveRange": "Požadovaný rozsah překračuje údaje o PCM WAVE."
+  }
+}

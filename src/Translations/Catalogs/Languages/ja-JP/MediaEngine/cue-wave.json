@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "無効なCUE行{0}:{1}",
+    "MediaEngine.CueStructure": "CUEファイル、トラック、インデックス、コマンド、値、メタデータが無効または重複しています。",
+    "MediaEngine.CueOutput": "CUE 出力モード、メタデータ、インデックス位置、テキストエンコーディングはサポートされていないか無効です。",
+    "MediaEngine.CueIo": "CUE 記述子 '{0}' を読み取れませんでした。",
+    "MediaEngine.WaveData": "RIFF/WAVE ヘッダー、チャンク、パディング、または完全な PCM データが無効か途中で切れています。",
+    "MediaEngine.WaveProfile": "バイトレートとブロック配置が一致する 44100 Hz のステレオ 16 ビット PCM WAVE のみをサポートします。",
+    "MediaEngine.WaveRange": "要求された範囲はWAVE PCMのデータを超えます。"
+  }
+}

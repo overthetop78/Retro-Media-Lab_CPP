@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view CueSyntax="MediaEngine.CueSyntax";
+inline constexpr std::string_view CueStructure="MediaEngine.CueStructure";
+inline constexpr std::string_view CueOutput="MediaEngine.CueOutput";
+inline constexpr std::string_view CueIo="MediaEngine.CueIo";
+inline constexpr std::string_view WaveData="MediaEngine.WaveData";
+inline constexpr std::string_view WaveProfile="MediaEngine.WaveProfile";
+inline constexpr std::string_view WaveRange="MediaEngine.WaveRange";
 inline constexpr std::string_view GdiDescriptor="MediaEngine.GdiDescriptor";
 inline constexpr std::string_view GdiDescriptorIo="MediaEngine.GdiDescriptorIo";
 inline constexpr std::string_view GdiProfile="MediaEngine.GdiProfile";

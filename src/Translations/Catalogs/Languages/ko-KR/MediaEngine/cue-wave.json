@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "유효하지 않은 CUE 줄 {0}: {1}",
+    "MediaEngine.CueStructure": "CUE 파일, 트랙, 인덱스, 명령, 값 또는 메타데이터가 유효하지 않거나 중복되었습니다.",
+    "MediaEngine.CueOutput": "CUE 출력 모드, 메타데이터, 인덱스 위치 또는 텍스트 인코딩이 지원되지 않거나 유효하지 않습니다.",
+    "MediaEngine.CueIo": "CUE 설명자 '{0}'을 읽을 수 없습니다.",
+    "MediaEngine.WaveData": "RIFF/WAVE 헤더, 청크, 패딩 또는 완전한 PCM 데이터가 유효하지 않거나 잘렸습니다.",
+    "MediaEngine.WaveProfile": "바이트 속도와 블록 정렬이 일치하는 44100 Hz 스테레오 16비트 PCM WAVE만 지원됩니다.",
+    "MediaEngine.WaveRange": "요청 범위가 WAVE PCM 데이터를 초과합니다."
+  }
+}

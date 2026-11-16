@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Riga CUE non valida {0}: {1}",
+    "MediaEngine.CueStructure": "I file, le tracce, gli indici, i comandi, i valori o i metadati CUE sono non validi o duplicati.",
+    "MediaEngine.CueOutput": "La modalità di uscita CUE, i metadati, la posizione dell'indice o la codifica del testo non è supportata o non valida.",
+    "MediaEngine.CueIo": "Il descrittore CUE '{0}' non poteva essere letto.",
+    "MediaEngine.WaveData": "L'intestazione RIFF/WAVE, i pezzi, l'imbottitura o i dati PCM completi sono invalidi o troncati.",
+    "MediaEngine.WaveProfile": "Solo stereo 16 bit PCM WAVE a 44100 Hz con corrispondente velocità byte e allineamento blocco è supportato.",
+    "MediaEngine.WaveRange": "L'intervallo richiesto supera i dati WAVE PCM."
+  }
+}

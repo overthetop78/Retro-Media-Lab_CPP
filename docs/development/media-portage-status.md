@@ -48,6 +48,8 @@ La tâche 152 porte le lecteur CHD optique : layouts bruts/décodés, sources bo
 
 La tâche 153 porte le bloc GDI complet : descripteur Unicode, pistes associées, sources partagées, métadonnées, lecture et écriture atomique multipiste. Les dispositions de sortie que le lecteur aurait refusées ou tronquées sont désormais refusées. Compilation, contrôle ciblé, audit et catalogues réussis.
 
+La tâche 154 est en cours : modèles CUE possédés, parseur/sérialiseur complet et source PCM WAVE portés et contrôlés. Les types BINARY/WAVE/OGG sont décrits ; le décodeur Vorbis, le lecteur/writer BIN/CUE et leur raccordement restent à terminer. Compilation, contrôle ciblé intermédiaire, audit et catalogues réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

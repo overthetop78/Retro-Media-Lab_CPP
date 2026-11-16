@@ -1,0 +1,13 @@
+# Descripteurs CUE et source WAVE
+
+Référence en lecture seule : CueSheetConstants, CueFileDescriptor, CueSheetDocument, CueTrackDeclaration, CueSheetReader, CueSheetWriter, WavePcmConstants et WavePcmRandomAccessData. Les huit empreintes sont vérifiées dans l’inventaire. Ce bloc prépare BIN/CUE ; le lecteur/writer multipiste et Vorbis restent à raccorder.
+
+Sheet, FileDeclaration et TrackDeclaration possèdent leurs données et exposent des collections constantes. Les fichiers et pistes ne sont pas vides, les numéros sont uniques dans la feuille, les index uniques et triés dans chaque piste. Les métadonnées utilisent le comparateur déjà partagé par les modèles optiques.
+
+Le parseur reprend FILE, TRACK, INDEX, PREGAP, POSTGAP, FLAGS, ISRC, CATALOG, TITLE, PERFORMER, SONGWRITER et REM. Les cinq modes CUE et les types BINARY/WAVE/OGG sont identifiés ; une extension .ogg force le type Vorbis comme en C#. Les positions MM:SS:FF imposent 60 secondes par minute et 75 frames par seconde, avec arithmétique contrôlée. Les guillemets doublés, métadonnées de feuille/piste et remarques LOOP/NOLOOP sont repris ; les remarques de boucle entre FILE et TRACK sont transférées à la première piste du fichier. Les lignes invalides conservent leur numéro et leur contenu dans les arguments de l’erreur traduisible.
+
+Le sérialiseur émet UTF-8 sans BOM, ordonne les index/métadonnées et reprend les temps, flags, ISRC et gaps. Les remarques LOOP/NOLOOP sont émises sans guillemets comme en C#. Les modes/métadonnées non pris en charge, index négatifs et textes UTF-8 invalides sont refusés. Les cinq modes sont couverts par un aller-retour de structure. La lecture de fichiers texte utilise la détection Unicode de QTextStream ; les valeurs d’identifiant gardent les BOM de contenu via le helper partagé.
+
+La source WAVE est une vue possédée sur les données sous-jacentes, sans conserver de handle ouvert. Elle valide RIFF/WAVE, chaque chunk et son padding, fmt PCM stéréo 16 bits/44100 Hz, débit 176400 octets/s et alignement 4 octets. Le dernier chunk data est exposé, comme en C# ; la taille RIFF déclarée reste ignorée. Les échantillons sont complets et les secteurs CD de 2352 octets sont obligatoires par défaut, avec option pour désactiver cette dernière contrainte. Les lectures sont bornées et annulables.
+
+Le C# contient également un décodeur Ogg/Vorbis interne et sa source PCM seekable : cette partie est encore non portée. Les références officielles consultées sont conservées dans docs/references/codecs/vorbis-native.md pour éviter une nouvelle recherche identique. Aucune bibliothèque Vorbis n’est encore embarquée à ce point.

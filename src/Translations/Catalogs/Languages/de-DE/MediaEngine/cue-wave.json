@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Ungültige CUE-Linie {0}: {1}",
+    "MediaEngine.CueStructure": "Die CUE-Dateien, Tracks, Indizes, Befehle, Werte oder Metadaten sind ungültig oder dupliziert.",
+    "MediaEngine.CueOutput": "Der CUE-Ausgabemodus, die Metadaten, die Indexposition oder die Textcodierung werden nicht unterstützt oder sind ungültig.",
+    "MediaEngine.CueIo": "Der CUE-Deskriptor '{0}' konnte nicht gelesen werden.",
+    "MediaEngine.WaveData": "Die RIFF/WAVE-Header, Chunks, Padding oder vollständige PCM-Daten sind ungültig oder verkürzt.",
+    "MediaEngine.WaveProfile": "Nur Stereo 16-Bit PCM WAVE bei 44100 Hz mit übereinstimmender Byterate und Blockausrichtung wird unterstützt.",
+    "MediaEngine.WaveRange": "Der angeforderte Bereich übersteigt die WAVE PCM Daten."
+  }
+}

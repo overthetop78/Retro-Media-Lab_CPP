@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "無效的 CUE 行 {0}: {1}",
+    "MediaEngine.CueStructure": "CUE 檔案、軌道、索引、命令、值或中繼資料無效或重複。",
+    "MediaEngine.CueOutput": "CUE 輸出模式、中繼資料、索引位置或文字編碼不受支援或無效。",
+    "MediaEngine.CueIo": "無法讀取 CUE 描述檔 '{0}'。",
+    "MediaEngine.WaveData": "RIFF/WAVE 標頭、資料區塊、填補或完整 PCM 資料無效或遭到截斷。",
+    "MediaEngine.WaveProfile": "僅支援位元組率和區塊對齊相符的 44100 Hz 立體聲 16 位元 PCM WAVE。",
+    "MediaEngine.WaveRange": "要求範圍超出 WAVE PCM 資料。"
+  }
+}

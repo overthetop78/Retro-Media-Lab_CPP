@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.CueSyntax": "Baris CUE tak valid {0}: {1}",
+    "MediaEngine.CueStructure": "Berkas CUE, trek, indeks, perintah, nilai, atau metadata tak valid atau duplikat.",
+    "MediaEngine.CueOutput": "Mode keluaran CUE, metadata, posisi indeks atau pengkodean teks tidak didukung atau tidak valid.",
+    "MediaEngine.CueIo": "Deskripsi CUE '{0}' tidak dapat dibaca.",
+    "MediaEngine.WaveData": "Header RIFF / WAVE, potongan, padding atau data PCM lengkap tidak valid atau dipotong.",
+    "MediaEngine.WaveProfile": "Hanya stereo 16-bit PCM WAVE di 44100 Hz dengan tingkat byte yang cocok dan alignmen blok didukung.",
+    "MediaEngine.WaveRange": "Jangkauan yang diminta melebihi data WAVE PCM."
+  }
+}
