@@ -3,6 +3,17 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::KryoFileName:return DiagnosticKeys::KryoFileName;
+    case DiagnosticCode::KryoNoFiles:return DiagnosticKeys::KryoNoFiles;
+    case DiagnosticCode::KryoTruncated:return DiagnosticKeys::KryoTruncated;
+    case DiagnosticCode::KryoIndexTruncated:return DiagnosticKeys::KryoIndexTruncated;
+    case DiagnosticCode::KryoClock:return DiagnosticKeys::KryoClock;
+    case DiagnosticCode::KryoNoRevolutions:return DiagnosticKeys::KryoNoRevolutions;
+    case DiagnosticCode::KryoPosition:return DiagnosticKeys::KryoPosition;
+    case DiagnosticCode::KryoDuration:return DiagnosticKeys::KryoDuration;
+    case DiagnosticCode::KryoInterval:return DiagnosticKeys::KryoInterval;
+    case DiagnosticCode::KryoTiming:return DiagnosticKeys::KryoTiming;
+
     case DiagnosticCode::AtomicSetEmpty:return DiagnosticKeys::AtomicSetEmpty;
     case DiagnosticCode::AtomicSetDuplicate:return DiagnosticKeys::AtomicSetDuplicate;
     case DiagnosticCode::AtomicSetExists:return DiagnosticKeys::AtomicSetExists;

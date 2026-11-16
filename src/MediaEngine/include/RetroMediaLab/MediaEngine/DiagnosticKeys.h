@@ -1,6 +1,17 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view KryoFileName="MediaEngine.KryoFileName";
+inline constexpr std::string_view KryoNoFiles="MediaEngine.KryoNoFiles";
+inline constexpr std::string_view KryoTruncated="MediaEngine.KryoTruncated";
+inline constexpr std::string_view KryoIndexTruncated="MediaEngine.KryoIndexTruncated";
+inline constexpr std::string_view KryoClock="MediaEngine.KryoClock";
+inline constexpr std::string_view KryoNoRevolutions="MediaEngine.KryoNoRevolutions";
+inline constexpr std::string_view KryoPosition="MediaEngine.KryoPosition";
+inline constexpr std::string_view KryoDuration="MediaEngine.KryoDuration";
+inline constexpr std::string_view KryoInterval="MediaEngine.KryoInterval";
+inline constexpr std::string_view KryoTiming="MediaEngine.KryoTiming";
+
 inline constexpr std::string_view AtomicSetEmpty="MediaEngine.AtomicSetEmpty";
 inline constexpr std::string_view AtomicSetDuplicate="MediaEngine.AtomicSetDuplicate";
 inline constexpr std::string_view AtomicSetExists="MediaEngine.AtomicSetExists";

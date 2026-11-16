@@ -651,6 +651,14 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Jfd\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Jfd\Rewrite.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Jfd\Writer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\KryoFlux\Adapter.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\KryoFlux\Adapter.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\KryoFlux\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\KryoFlux\Decoding.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\KryoFlux\Files.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\KryoFlux\Internal.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\KryoFlux\Metadata.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\KryoFlux\Stream.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Msa\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Msa\Msa.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Msa\Reader.cpp" />
@@ -1188,6 +1196,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micropolis-mfm.json" />
@@ -1334,6 +1343,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micropolis-mfm.json" />
@@ -1480,6 +1490,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micropolis-mfm.json" />
@@ -1626,6 +1637,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micropolis-mfm.json" />
@@ -1772,6 +1784,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micropolis-mfm.json" />
@@ -1918,6 +1931,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micropolis-mfm.json" />
@@ -2064,6 +2078,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micropolis-mfm.json" />
@@ -2210,6 +2225,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micropolis-mfm.json" />
@@ -2356,6 +2372,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micropolis-mfm.json" />
@@ -2502,6 +2519,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micropolis-mfm.json" />
@@ -2648,6 +2666,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micropolis-mfm.json" />
@@ -2794,6 +2813,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micropolis-mfm.json" />
@@ -2940,6 +2960,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micropolis-mfm.json" />
@@ -3086,6 +3107,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micropolis-mfm.json" />
@@ -3232,6 +3254,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micropolis-mfm.json" />
@@ -3378,6 +3401,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micropolis-mfm.json" />
@@ -3524,6 +3548,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micropolis-mfm.json" />
@@ -3670,6 +3695,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micropolis-mfm.json" />
@@ -3816,6 +3842,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micropolis-mfm.json" />
@@ -3962,6 +3989,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micropolis-mfm.json" />
@@ -4108,6 +4136,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micropolis-mfm.json" />
@@ -4254,6 +4283,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micropolis-mfm.json" />
@@ -4400,6 +4430,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micropolis-mfm.json" />
@@ -4546,6 +4577,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micropolis-mfm.json" />
@@ -4692,6 +4724,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micropolis-mfm.json" />
@@ -4838,6 +4871,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micropolis-mfm.json" />
@@ -4984,6 +5018,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micropolis-mfm.json" />
@@ -5130,6 +5165,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micropolis-mfm.json" />
@@ -5276,6 +5312,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micropolis-mfm.json" />
@@ -5422,6 +5459,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iwm-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\jfd-adapters.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\jfd-native.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\kryoflux.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\membrain-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micropolis-mfm.json" />

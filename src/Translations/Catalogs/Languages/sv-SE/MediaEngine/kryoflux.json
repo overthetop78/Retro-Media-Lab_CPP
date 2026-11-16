@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "Filnamnet KryoFlux måste sluta med NN.S.raw.",
+    "MediaEngine.KryoNoFiles": "Ingen KryoFlux spårfil hittades.",
+    "MediaEngine.KryoTruncated": "KryoFlux-strömmen är trunkerad.",
+    "MediaEngine.KryoIndexTruncated": "KryoFlux-indexposten är trunkerad.",
+    "MediaEngine.KryoClock": "KryoFlux-provklockan är ogiltig.",
+    "MediaEngine.KryoNoRevolutions": "KryoFlux-spåret innehåller inte ett komplett varv av magnetflödesdata.",
+    "MediaEngine.KryoPosition": "KryoFlux stream position är inkonsekvent.",
+    "MediaEngine.KryoDuration": "Varvtiden för KryoFlux överstiger det stödda intervallet.",
+    "MediaEngine.KryoInterval": "KryoFlux-strömmen innehåller ett icke-positivt fluxintervall.",
+    "MediaEngine.KryoTiming": "KryoFlux-intervallet överstiger det stödda tidsintervallet."
+  }
+}

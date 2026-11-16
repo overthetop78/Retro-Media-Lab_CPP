@@ -22,6 +22,8 @@ La tâche 136 termine le lecteur 86F, ses modèles, sa conversion en pistes prot
 
 La tâche 137 porte le codage exact HxC Stream, les blocs LZ4/CRC et les empreintes/clés de captures natives. La tâche 138 termine le lecteur multipiste et son adaptateur du registre avec captures natives, empreintes et protection globale ; compilation et contrôle ciblé réussis. Le writer et la publication du jeu multipiste restent à porter.
 
+La t�che 140 termine le lecteur KryoFlux multipiste : opcodes, index hors bande, horloge, m�tadonn�es et reconnaissance des captures NN.S.raw. Compilation et contr�le cibl� r�ussis ; aucun writer KryoFlux n�existe dans la r�f�rence C#.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

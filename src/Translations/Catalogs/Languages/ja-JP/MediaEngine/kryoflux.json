@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "KryoFlux ファイル名は NN.S.raw で終わる必要があります。",
+    "MediaEngine.KryoNoFiles": "KryoFluxトラックファイルが見つかりませんでした。",
+    "MediaEngine.KryoTruncated": "KryoFlux ストリームが途中で切れています。",
+    "MediaEngine.KryoIndexTruncated": "KryoFlux のインデックスレコードが途中で切れています。",
+    "MediaEngine.KryoClock": "KryoFluxサンプルクロックは無効です。",
+    "MediaEngine.KryoNoRevolutions": "KryoFlux トラックには完全な1回転分の磁束データがありません。",
+    "MediaEngine.KryoPosition": "KryoFlux ストリームの位置は矛盾しています。",
+    "MediaEngine.KryoDuration": "KryoFlux の回転時間はサポート範囲を超えた。",
+    "MediaEngine.KryoInterval": "KryoFlux ストリームにゼロ以下の磁束間隔が含まれています。",
+    "MediaEngine.KryoTiming": "KryoFlux 間隔はサポートされたタイミング範囲を超過します。"
+  }
+}

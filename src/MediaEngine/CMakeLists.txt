@@ -1,4 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/KryoFlux/Metadata.cpp
+  src/Formats/KryoFlux/Decoding.cpp
+  src/Formats/KryoFlux/Files.cpp
+  src/Formats/KryoFlux/Adapter.cpp
   src/Formats/HxcStream/Reading.cpp
   src/Formats/HxcStream/Pulses.cpp
   src/Formats/HxcStream/Revolutions.cpp

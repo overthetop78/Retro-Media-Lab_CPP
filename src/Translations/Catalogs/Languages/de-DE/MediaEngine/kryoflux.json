@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "Der Dateiname KryoFlux muss mit NN.S.raw enden.",
+    "MediaEngine.KryoNoFiles": "Es wurde keine KryoFlux Track-Datei gefunden.",
+    "MediaEngine.KryoTruncated": "Der KryoFlux-Stream wird gekürzt.",
+    "MediaEngine.KryoIndexTruncated": "Der KryoFlux-Index-Rekord ist gekürzt.",
+    "MediaEngine.KryoClock": "Die KryoFlux Sample Clock ist ungültig.",
+    "MediaEngine.KryoNoRevolutions": "Die KryoFlux-Strecke enthält keine vollständige Flussumdrehung.",
+    "MediaEngine.KryoPosition": "Die KryoFlux-Stream-Position ist inkonsistent.",
+    "MediaEngine.KryoDuration": "Die Revolutionsdauer von KryoFlux übersteigt den unterstützten Bereich.",
+    "MediaEngine.KryoInterval": "Der KryoFlux-Strom enthält ein nicht-positives Flussintervall.",
+    "MediaEngine.KryoTiming": "Das KryoFlux-Intervall überschreitet den unterstützten Timing-Bereich."
+  }
+}

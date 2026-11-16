@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "KryoFlux 檔名必須以 NN.S.raw 結尾。",
+    "MediaEngine.KryoNoFiles": "找不到 KryoFlux 磁軌檔案。",
+    "MediaEngine.KryoTruncated": "KryoFlux 資料流已截斷。",
+    "MediaEngine.KryoIndexTruncated": "KryoFlux 索引記錄已截斷。",
+    "MediaEngine.KryoClock": "KryoFlux 取樣時脈無效。",
+    "MediaEngine.KryoNoRevolutions": "KryoFlux 磁軌不包含完整一圈的磁通資料。",
+    "MediaEngine.KryoPosition": "KryoFlux 資料流位置不一致。",
+    "MediaEngine.KryoDuration": "KryoFlux 的旋轉週期超出支援範圍。",
+    "MediaEngine.KryoInterval": "KryoFlux 資料流包含零或負的磁通間隔。",
+    "MediaEngine.KryoTiming": "KryoFlux 間隔超出支援的時間範圍。"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "KryoFlux文件名以NN.S.raw为结尾.",
+    "MediaEngine.KryoNoFiles": "找不到 KryoFlux 跟踪文件 。",
+    "MediaEngine.KryoTruncated": "KryoFlux流被截取.",
+    "MediaEngine.KryoIndexTruncated": "KryoFlux指数记录被截取.",
+    "MediaEngine.KryoClock": "KryoFlux样本时钟无效.",
+    "MediaEngine.KryoNoRevolutions": "KryoFlux 磁道不包含完整一圈的磁通数据。",
+    "MediaEngine.KryoPosition": "KryoFlux流位置不一致.",
+    "MediaEngine.KryoDuration": "KryoFlux 的旋转周期超过支持的范围。",
+    "MediaEngine.KryoInterval": "KryoFlux流包含一个非正通量间隔.",
+    "MediaEngine.KryoTiming": "KryoFlux间隔超过了支持的时间范围."
+  }
+}

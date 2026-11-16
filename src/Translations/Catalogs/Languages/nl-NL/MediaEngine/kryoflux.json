@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "De KryoFlux bestandsnaam moet eindigen met NN.S.raw.",
+    "MediaEngine.KryoNoFiles": "Er is geen KryoFlux-trackbestand gevonden.",
+    "MediaEngine.KryoTruncated": "De KryoFlux stroom is afgekapt.",
+    "MediaEngine.KryoIndexTruncated": "De KryoFlux index record is ingekort.",
+    "MediaEngine.KryoClock": "De KryoFlux sample klok is ongeldig.",
+    "MediaEngine.KryoNoRevolutions": "De KryoFlux track bevat geen volledige fluxrevolutie.",
+    "MediaEngine.KryoPosition": "De KryoFlux stream positie is inconsistent.",
+    "MediaEngine.KryoDuration": "De KryoFlux-revolutie duurt langer dan het ondersteunde bereik.",
+    "MediaEngine.KryoInterval": "De KryoFlux stroom bevat een niet-positieve flux interval.",
+    "MediaEngine.KryoTiming": "Het KryoFlux interval overschrijdt het ondersteunde tijdsbereik."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "strings": {
+    "MediaEngine.KryoFileName": "Имя файла KryoFlux должно заканчиваться на NN.S.raw.",
+    "MediaEngine.KryoNoFiles": "Файл трека KryoFlux не найден.",
+    "MediaEngine.KryoTruncated": "Поток KryoFlux усечен.",
+    "MediaEngine.KryoIndexTruncated": "Рекорд индекса KryoFlux усечен.",
+    "MediaEngine.KryoClock": "Часы образца KryoFlux недействительны.",
+    "MediaEngine.KryoNoRevolutions": "Дорожка KryoFlux не содержит данных магнитного потока за полный оборот.",
+    "MediaEngine.KryoPosition": "Позиция потока KryoFlux непоследовательна.",
+    "MediaEngine.KryoDuration": "Длительность оборота KryoFlux превышает поддерживаемый диапазон.",
+    "MediaEngine.KryoInterval": "Поток KryoFlux содержит неположительный интервал потока.",
+    "MediaEngine.KryoTiming": "Интервал KryoFlux превышает поддерживаемый временной диапазон."
+  }
+}
