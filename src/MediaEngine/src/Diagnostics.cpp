@@ -3,6 +3,14 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AtariCasData:return DiagnosticKeys::AtariCasData;
+    case DiagnosticCode::AtariCasWrite:return DiagnosticKeys::AtariCasWrite;
+    case DiagnosticCode::AtariCasBaudPayload:return DiagnosticKeys::AtariCasBaudPayload;
+    case DiagnosticCode::AtariCasUnknown:return DiagnosticKeys::AtariCasUnknown;
+    case DiagnosticCode::FskInvalid:return DiagnosticKeys::FskInvalid;
+    case DiagnosticCode::AtariTapeIncompatible:return DiagnosticKeys::AtariTapeIncompatible;
+    case DiagnosticCode::AtariTapeNoData:return DiagnosticKeys::AtariTapeNoData;
+
     case DiagnosticCode::SequentialDecodeModel:return DiagnosticKeys::SequentialDecodeModel;
     case DiagnosticCode::SequentialDecoderNull:return DiagnosticKeys::SequentialDecoderNull;
     case DiagnosticCode::SequentialDecoderMissing:return DiagnosticKeys::SequentialDecoderMissing;

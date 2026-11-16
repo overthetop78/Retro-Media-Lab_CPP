@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Az Atari CAS fejléc, a chunkadatok, a FUJI jelölő vagy az impulzus időtartama érvénytelen vagy hiányos.",
+    "MediaEngine.AtariCasWrite": "A szekvenciális dokumentum nem írható Atari CAS formátumban a chunkadatok elvesztése nélkül.",
+    "MediaEngine.AtariCasBaudPayload": "Az Atari CAS átviteli sebesség chunkja váratlan adatokat tartalmaz, amelyeket megőriztünk.",
+    "MediaEngine.AtariCasUnknown": "Az Atari CAS chunk '{0}' -t értelmezés nélkül megtartották.",
+    "MediaEngine.FskInvalid": "Az FSK időzítése, keretparaméterei, eredményszámai vagy puffermérete érvénytelen.",
+    "MediaEngine.AtariTapeIncompatible": "A médiadokumentum nem kompatibilis az Atari kazetta dekóderével.",
+    "MediaEngine.AtariTapeNoData": "A teljes Atari szalag adatblokkot vagy FSK sorozatkeretet nem lehet dekódolni."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CAS 헤더, 청크 데이터, FUJI 마커 또는 펄스 길이가 잘못되었거나 불완전합니다.",
+    "MediaEngine.AtariCasWrite": "청크 데이터를 잃지 않고 순차 문서를 Atari CAS로 기록할 수 없습니다.",
+    "MediaEngine.AtariCasBaudPayload": "Atari CAS 전송 속도 청크에 예상하지 못한 데이터가 있어 보존했습니다.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk '{0}'은 해석없이 유지되었습니다.",
+    "MediaEngine.FskInvalid": "FSK 타이밍, 프레임 매개 변수, 결과 카운트 또는 버퍼 크기는 유효하지 않습니다.",
+    "MediaEngine.AtariTapeIncompatible": "미디어 문서는 Atari Tape decoder와 호환되지 않습니다.",
+    "MediaEngine.AtariTapeNoData": "완전한 Atari 테이프 데이터 블록 또는 FSK 직렬 프레임을 디코딩할 수 없었습니다."
+  }
+}

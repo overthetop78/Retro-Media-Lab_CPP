@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Заголовок Atari CAS, данные блока, маркер FUJI или длительность импульса недопустимы или неполны.",
+    "MediaEngine.AtariCasWrite": "Последовательный документ не может быть записан как Atari CAS без потери данных.",
+    "MediaEngine.AtariCasBaudPayload": "Блок скорости передачи Atari CAS содержит неожиданные данные, которые были сохранены.",
+    "MediaEngine.AtariCasUnknown": "Кусок Atari CAS \"{0}\" был сохранен без интерпретации.",
+    "MediaEngine.FskInvalid": "Сроки FSK, параметры кадра, количество результатов или размер буфера являются недействительными.",
+    "MediaEngine.AtariTapeIncompatible": "Медиа-документ не совместим с ленточным декодером Atari.",
+    "MediaEngine.AtariTapeNoData": "Полный блок данных ленты Atari или последовательный кадр FSK не могут быть декодированы."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CASのヘッダー、チャンクデータ、FUJIのマーカーか脈拍の持続期間は無効か不完全です。",
+    "MediaEngine.AtariCasWrite": "連続した文書は、チャンクデータを失うことなく、Atari CASとして記述することはできません。",
+    "MediaEngine.AtariCasBaudPayload": "Atari CAS baud チャンクは、保持された予期しないペイロードが含まれています。",
+    "MediaEngine.AtariCasUnknown": "Atari CASチャンク '{0}' は解釈なしで保持されました。",
+    "MediaEngine.FskInvalid": "FSKのタイミング、フレームの変数、結果の計算または緩衝サイズは無効です。",
+    "MediaEngine.AtariTapeIncompatible": "媒体文書はAtariテープデコーダーと互換性がありません。",
+    "MediaEngine.AtariTapeNoData": "完全なAtariテープデータブロックまたはFSKシリアルフレームをデコードできませんでした。"
+  }
+}

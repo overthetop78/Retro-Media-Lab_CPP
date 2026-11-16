@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "The Atari CAS header, chunk data, FUJI marker or pulse duration is invalid or incomplete.",
+    "MediaEngine.AtariCasWrite": "The sequential document cannot be written as Atari CAS without losing chunk data.",
+    "MediaEngine.AtariCasBaudPayload": "An Atari CAS baud chunk contains an unexpected payload that was retained.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk '{0}' was retained without interpretation.",
+    "MediaEngine.FskInvalid": "The FSK timing, frame parameters, result counts or buffer size are invalid.",
+    "MediaEngine.AtariTapeIncompatible": "The media document is not compatible with the Atari tape decoder.",
+    "MediaEngine.AtariTapeNoData": "No complete Atari tape data block or FSK serial frame could be decoded."
+  }
+}

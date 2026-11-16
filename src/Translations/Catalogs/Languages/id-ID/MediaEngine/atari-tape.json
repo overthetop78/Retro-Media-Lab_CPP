@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Header Atari CAS, potongan data, penanda FUJI atau durasi pulsa tidak valid atau tidak lengkap.",
+    "MediaEngine.AtariCasWrite": "Dokumen sekuensial tidak dapat ditulis sebagai Atari CAS tanpa kehilangan data potongan.",
+    "MediaEngine.AtariCasBaudPayload": "Chunk laju baud Atari CAS berisi data tak terduga yang tetap disimpan.",
+    "MediaEngine.AtariCasUnknown": "Potongan Atari CAS '{0}' ditahan tanpa interpretasi.",
+    "MediaEngine.FskInvalid": "FSK waktu, parameter frame, jumlah hasil atau ukuran penyangga tidak valid.",
+    "MediaEngine.AtariTapeIncompatible": "Dokumen media tidak kompatibel dengan decoder tape Atari.",
+    "MediaEngine.AtariTapeNoData": "Tidak ada data lengkap Atari tape block atau FSK frame serial bisa diterjemahkan."
+  }
+}

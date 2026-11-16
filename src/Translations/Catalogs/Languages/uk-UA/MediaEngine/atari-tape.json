@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Заголовок Atari CAS, дані блоку, маркер FUJI або тривалість імпульсу недійсні чи неповні.",
+    "MediaEngine.AtariCasWrite": "Послідовний документ не можна записати як Atari CAS без втрати даних блоків.",
+    "MediaEngine.AtariCasBaudPayload": "Блок швидкості передачі Atari CAS містить несподівані дані, які було збережено.",
+    "MediaEngine.AtariCasUnknown": "Блок Atari CAS «{0}» збережено без інтерпретації.",
+    "MediaEngine.FskInvalid": "Часові параметри FSK, параметри кадру, лічильники результатів або розмір буфера недійсні.",
+    "MediaEngine.AtariTapeIncompatible": "Документ носія несумісний із декодером стрічки Atari.",
+    "MediaEngine.AtariTapeNoData": "Не вдалося декодувати жоден повний блок даних стрічки Atari або послідовний кадр FSK."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CAS-hodet, chunkdata, FUJI-merket eller pulsvarigheten er ugyldig eller ufullstendig.",
+    "MediaEngine.AtariCasWrite": "Det sekvensielle dokumentet kan ikke skrives som Atari CAS uten å miste chunkdata.",
+    "MediaEngine.AtariCasBaudPayload": "En Atari CAS-baudchunk inneholder uventede data som ble beholdt.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS-biten «{0}» ble beholdt uten tolkning.",
+    "MediaEngine.FskInvalid": "FSK timing, rammeparametre, resultattall eller bufferstørrelse er ugyldig.",
+    "MediaEngine.AtariTapeIncompatible": "Mediedokumentet er ikke kompatibelt med Atari-bånddekoderen.",
+    "MediaEngine.AtariTapeNoData": "Ingen komplett Atari tape datablokk eller FSK serieramme kan dekodes."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CAS 文件头、块数据、FUJI 标记或脉冲持续时间无效或不完整。",
+    "MediaEngine.AtariCasWrite": "无法在不丢失块数据的情况下将顺序文档写成 Atari CAS。",
+    "MediaEngine.AtariCasBaudPayload": "Atari CAS 波特率块包含意外数据，已予以保留。",
+    "MediaEngine.AtariCasUnknown": "Atari CAS 块“{0}”未经解释而保留。",
+    "MediaEngine.FskInvalid": "FSK 时序、帧参数、结果计数或缓冲区大小无效。",
+    "MediaEngine.AtariTapeIncompatible": "媒体文档与 Atari 磁带解码器不兼容。",
+    "MediaEngine.AtariTapeNoData": "无法解码完整的 Atari 磁带数据块或 FSK 串行帧。"
+  }
+}

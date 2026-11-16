@@ -399,8 +399,18 @@
     <ClCompile Include="src\MediaEngine\src\Decoding\Scoring.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Scoring.h" />
     <ClInclude Include="src\MediaEngine\src\Decoding\ScoringConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Records.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Compatibility.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Compatibility.h" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Decoder.h" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Decode.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Encode.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Result.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Serial.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Models.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Models.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Registry.cpp" />
@@ -874,6 +884,10 @@
     <ClInclude Include="src\MediaEngine\src\Formats\St\Transform.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\St\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\St\Writer.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\PcmConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Tape\Common\PcmDocument.cpp" />
@@ -1338,6 +1352,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\bbc-dfs.json" />
@@ -1510,6 +1525,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\bbc-dfs.json" />
@@ -1682,6 +1698,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\bbc-dfs.json" />
@@ -1854,6 +1871,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\bbc-dfs.json" />
@@ -2026,6 +2044,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\bbc-dfs.json" />
@@ -2198,6 +2217,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\bbc-dfs.json" />
@@ -2370,6 +2390,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\bbc-dfs.json" />
@@ -2542,6 +2563,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\bbc-dfs.json" />
@@ -2714,6 +2736,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\bbc-dfs.json" />
@@ -2886,6 +2909,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\bbc-dfs.json" />
@@ -3058,6 +3082,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\bbc-dfs.json" />
@@ -3230,6 +3255,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\bbc-dfs.json" />
@@ -3402,6 +3428,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\bbc-dfs.json" />
@@ -3574,6 +3601,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\bbc-dfs.json" />
@@ -3746,6 +3774,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\bbc-dfs.json" />
@@ -3918,6 +3947,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\bbc-dfs.json" />
@@ -4090,6 +4120,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\bbc-dfs.json" />
@@ -4262,6 +4293,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\bbc-dfs.json" />
@@ -4434,6 +4466,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\bbc-dfs.json" />
@@ -4606,6 +4639,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\bbc-dfs.json" />
@@ -4778,6 +4812,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\bbc-dfs.json" />
@@ -4950,6 +4985,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\bbc-dfs.json" />
@@ -5122,6 +5158,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\bbc-dfs.json" />
@@ -5294,6 +5331,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\bbc-dfs.json" />
@@ -5466,6 +5504,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\bbc-dfs.json" />
@@ -5638,6 +5677,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\bbc-dfs.json" />
@@ -5810,6 +5850,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\bbc-dfs.json" />
@@ -5982,6 +6023,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\bbc-dfs.json" />
@@ -6154,6 +6196,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\bbc-dfs.json" />
@@ -6326,6 +6369,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\appleii-gcr-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\apridisk-rx02.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\arburg.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atari-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atr-atx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\bbc-dfs.json" />

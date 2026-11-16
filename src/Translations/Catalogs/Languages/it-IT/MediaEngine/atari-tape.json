@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "L'intestazione Atari CAS, i dati a pezzi, il marcatore FUJI o la durata del polso non sono validi o incompleti.",
+    "MediaEngine.AtariCasWrite": "Il documento sequenziale non può essere scritto come Atari CAS senza perdere i dati dei pezzi.",
+    "MediaEngine.AtariCasBaudPayload": "Un chunk di velocità Atari CAS contiene dati inattesi che sono stati conservati.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk '{0}' è stato mantenuto senza interpretazione.",
+    "MediaEngine.FskInvalid": "I tempi FSK, i parametri di trama, i conteggi dei risultati o la dimensione del buffer non sono validi.",
+    "MediaEngine.AtariTapeIncompatible": "Il documento multimediale non è compatibile con il decoder Atari.",
+    "MediaEngine.AtariTapeNoData": "Nessun blocco di dati Atari completo o cornice seriale FSK potrebbe essere decodificato."
+  }
+}

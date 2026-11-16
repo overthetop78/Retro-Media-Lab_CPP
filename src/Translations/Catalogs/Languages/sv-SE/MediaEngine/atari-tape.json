@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CAS-huvudet, chunkdata, FUJI-markören eller pulslängden är ogiltig eller ofullständig.",
+    "MediaEngine.AtariCasWrite": "Det sekventiella dokumentet kan inte skrivas som Atari CAS utan att förlora chunkdata.",
+    "MediaEngine.AtariCasBaudPayload": "En Atari CAS baud chunk innehåller en oväntad nyttolast som behölls.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk \"{0}\" behölls utan tolkning.",
+    "MediaEngine.FskInvalid": "FSK-timing, ramparametrar, resultaträkningar eller buffertstorlek är ogiltiga.",
+    "MediaEngine.AtariTapeIncompatible": "Mediedokumentet är inte kompatibelt med Atari-bandet.",
+    "MediaEngine.AtariTapeNoData": "Inga kompletta Atari-tejpdatablock eller FSK-serieramar kan avkodas."
+  }
+}

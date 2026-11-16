@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AtariCasData="MediaEngine.AtariCasData";
+inline constexpr std::string_view AtariCasWrite="MediaEngine.AtariCasWrite";
+inline constexpr std::string_view AtariCasBaudPayload="MediaEngine.AtariCasBaudPayload";
+inline constexpr std::string_view AtariCasUnknown="MediaEngine.AtariCasUnknown";
+inline constexpr std::string_view FskInvalid="MediaEngine.FskInvalid";
+inline constexpr std::string_view AtariTapeIncompatible="MediaEngine.AtariTapeIncompatible";
+inline constexpr std::string_view AtariTapeNoData="MediaEngine.AtariTapeNoData";
 inline constexpr std::string_view SequentialDecodeModel="MediaEngine.SequentialDecodeModel";
 inline constexpr std::string_view SequentialDecoderNull="MediaEngine.SequentialDecoderNull";
 inline constexpr std::string_view SequentialDecoderMissing="MediaEngine.SequentialDecoderMissing";

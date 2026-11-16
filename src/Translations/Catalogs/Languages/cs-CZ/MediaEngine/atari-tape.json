@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Záhlaví Atari CAS, data chunku, značka FUJI nebo trvání pulsu jsou neplatné nebo neúplné.",
+    "MediaEngine.AtariCasWrite": "Sekvenční dokument nemůže být napsán jako Atari CAS bez ztráty údajů o kusech.",
+    "MediaEngine.AtariCasBaudPayload": "Chunk přenosové rychlosti Atari CAS obsahuje neočekávaná data, která byla zachována.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk '{0}' byl zachován bez interpretace.",
+    "MediaEngine.FskInvalid": "Načasování FSK, parametry rámce, počet výsledků nebo velikost bufferu jsou neplatné.",
+    "MediaEngine.AtariTapeIncompatible": "Mediální dokument není kompatibilní s dekodérem Atari.",
+    "MediaEngine.AtariTapeNoData": "Nelze dekódovat žádný kompletní datový blok Atari nebo sériový rám FSK."
+  }
+}

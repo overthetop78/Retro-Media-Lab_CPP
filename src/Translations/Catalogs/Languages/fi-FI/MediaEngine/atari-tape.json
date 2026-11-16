@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AtariCasData": "Atari CAS-otsikko, palatiedot, FUJI-merkki tai pulssin kesto on virheellinen tai puutteellinen.",
+    "MediaEngine.AtariCasWrite": "Sekvenssiasiakirjaa ei voida kirjoittaa Atari CAS -muodossa menettämättä osia tiedoista.",
+    "MediaEngine.AtariCasBaudPayload": "Atari CAS -siirtonopeuslohko sisältää odottamatonta dataa, joka säilytettiin.",
+    "MediaEngine.AtariCasUnknown": "Atari CAS chunk '{0}' säilytettiin ilman tulkintaa.",
+    "MediaEngine.FskInvalid": "FSK:n ajoitus, kehysparametrit, tulosmäärät tai puskurin koko ovat virheellisiä.",
+    "MediaEngine.AtariTapeIncompatible": "Media-asiakirja ei ole yhteensopiva Atarin nauhan dekooderin kanssa.",
+    "MediaEngine.AtariTapeNoData": "Täydellistä Atari-nauhan datalohkoa tai FSK-sarjan kehystä ei voitu purkaa."
+  }
+}

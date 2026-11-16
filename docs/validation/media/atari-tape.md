@@ -1,0 +1,11 @@
+# Validation Atari CAS et FSK
+
+16 novembre 2026 : compilation Debug MSVC x64 réussie après correction d’une accolade de construction de résultat (build/atari-tape-build.log). Le contrôle temporaire passe (build/atari-tape-smoke.log) : réécriture CAS octet exacte avec FUJI/nom, baud avec payload inattendu, records complets/partiels/fin et chunk inconnu ; temps de porteuse et de données ; compteurs/métadonnées et checksum faux conservé ; padding étendu consommé et record non standard retenu.
+
+Une fixture CAS FSK produit les octets 55,55 et leur checksum valide, puis se réécrit à l’identique. Les trames UART de niveaux booléens et leurs positions sont vérifiées ; stops invalides et paramètres/résultat invalides sont rejetés. Le signal PCM généré de 18400 échantillons contient cinq octets attendus et leur checksum ; décodage normal, polarité inversée et étirement temporel de 5 % restituent les mêmes octets. Le décodeur Atari PCM donne un bloc valide avec cinq trames valides sur cinq testées, confiance 1. L’intégration MFS utilise le vrai décodeur et conserve l’absence de nom des blocs, avec les avertissements attendus.
+
+Le contrôle a détecté une erreur du portage : le résultat PCM contenait les bons octets mais validFrames valait zéro. Le nombre de positions est maintenant mémorisé avant le déplacement des résultats, et validFrames/confiance sont vérifiés. Cette correction ne modifie pas l’algorithme C# de classification. Headers/chunks tronqués, marqueur incorrect, données/pulsations nulles et annulation avec destination préservée sont également couverts.
+
+Sept messages générés avec Argos dans les 29 langues puis relus/corrigés : chunks/données conservées, négation, FSK, français technique, arabe et chinois traditionnel notamment. Les 30 DLL de catalogues compilent (build/atari-tape-catalogs.log). Audit PASS sur 1228 fichiers C++, 29 langues (build/atari-tape-audit.log).
+
+Le projet, médias générés et binaires temporaires sont supprimés après consignation. Aucun média utilisateur intégré et aucun test ajouté au workflow GitHub. Le contrôle utilise des fixtures synthétiques ciblées et ne constitue pas une validation de toutes les bandes Atari réelles ni de l’application complète.

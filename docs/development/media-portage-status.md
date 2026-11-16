@@ -70,6 +70,8 @@ La tâche 163 porte le contenu séquentiel dans MFS : blocs possédés, regroupe
 
 La tâche 164 porte les contrats/résultats de décodage séquentiel, le registre et l’adaptateur moteur vers MFS. Le classement stable, les diagnostics et la durée de vie des opérations sont contrôlés ; le passage par MediaExplorer et les vues analysées est vérifié avec des décodeurs fournis au registre. Compilation, catalogues et audit réussis. Les protocoles réels et la composition automatique restent à porter.
 
+La tâche 165 porte le conteneur Atari CAS, les fonctions FSK communes et le décodeur Atari CAS/PCM : chunks conservés, temps, records/checksums et récupération UART/horloge. Contrôle ciblé réussi avec polarité inversée, étirement de 5 % et passage au vrai adaptateur MFS sans inventer de noms ; un compteur valide nul du portage est corrigé. Compilation, catalogues et audit réussis. L’encodeur Atari et la composition automatique restent à terminer.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

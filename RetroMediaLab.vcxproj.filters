@@ -217,6 +217,12 @@
     <Filter Include="src\MediaEngine\src\Decoding\Sequential">
       <UniqueIdentifier>{1FF79766-3AA1-54F4-91AA-9247D1970656}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Atari">
+      <UniqueIdentifier>{EE95837A-655A-54B6-81DA-90FDEAAB8407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Fsk">
+      <UniqueIdentifier>{9269458F-B625-5D9C-BD79-878EC275AFD3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Encoding">
       <UniqueIdentifier>{1EE4B6EF-2BE3-5E16-BC43-17E1742D603B}</UniqueIdentifier>
     </Filter>
@@ -396,6 +402,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Tape">
       <UniqueIdentifier>{1076D62C-5015-51B0-B3A9-89FB0E482609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Tape\AtariCas">
+      <UniqueIdentifier>{3E5FACBF-B30B-5FCE-98E9-CC081140B8FE}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Tape\Common">
       <UniqueIdentifier>{2A4BB787-8074-5DF0-9348-83AD3F55FDC8}</UniqueIdentifier>
@@ -2775,11 +2784,41 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\ScoringConstants.h">
       <Filter>src\MediaEngine\src\Decoding</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Atari</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Atari\Decoder.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Atari</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Atari\Records.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Atari</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Compatibility.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Compatibility.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Constants.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Decoder.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Constants.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Fsk</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Decode.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Fsk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Encode.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Fsk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Result.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Fsk</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Serial.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Fsk</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Models.cpp">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
@@ -4200,6 +4239,18 @@
     <ClInclude Include="src\MediaEngine\src\Formats\St\Writer.h">
       <Filter>src\MediaEngine\src\Formats\St</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\AtariCas</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\AtariCas</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Tape\AtariCas\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Tape\AtariCas</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Tape\AtariCas\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\Tape\AtariCas</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\Tape\Common\Pcm.h">
       <Filter>src\MediaEngine\src\Formats\Tape\Common</Filter>
     </ClInclude>
@@ -5592,6 +5643,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6106,6 +6160,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atomic-set.json">
@@ -6624,6 +6681,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -7138,6 +7198,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atomic-set.json">
@@ -7656,6 +7719,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -8170,6 +8236,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atomic-set.json">
@@ -8688,6 +8757,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -9202,6 +9274,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atomic-set.json">
@@ -9720,6 +9795,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -10234,6 +10312,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atomic-set.json">
@@ -10752,6 +10833,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -11266,6 +11350,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atomic-set.json">
@@ -11784,6 +11871,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -12298,6 +12388,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atomic-set.json">
@@ -12816,6 +12909,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -13330,6 +13426,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atomic-set.json">
@@ -13848,6 +13947,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -14362,6 +14464,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atomic-set.json">
@@ -14880,6 +14985,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -15394,6 +15502,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atomic-set.json">
@@ -15912,6 +16023,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -16426,6 +16540,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atomic-set.json">
@@ -16944,6 +17061,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -17458,6 +17578,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atomic-set.json">
@@ -17976,6 +18099,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -18490,6 +18616,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atomic-set.json">
@@ -19008,6 +19137,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -19522,6 +19654,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atomic-set.json">
@@ -20040,6 +20175,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\arburg.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atari-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atomic-set.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -20554,6 +20692,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\arburg.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atari-tape.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atomic-set.json">
