@@ -78,11 +78,12 @@ try {
     $staging = Join-Path $projectRoot "build/qt-staging/$preset"
     Assert-BuildPath $staging
     New-Item -ItemType Directory -Path $staging -Force | Out-Null
-    & (Join-Path $QtRoot 'bin/windeployqt.exe') --no-translations --no-compiler-runtime --dir $staging (Join-Path $destination 'lib/App.dll') (Join-Path $destination 'lib/Infrastructure.dll')
+    & (Join-Path $QtRoot 'bin/windeployqt.exe') --no-translations --no-compiler-runtime --dir $staging (Join-Path $destination 'lib/App.dll') (Join-Path $destination 'lib/Infrastructure.dll') (Join-Path $destination 'lib/MediaEngine.dll')
     if ($LASTEXITCODE -ne 0) { throw 'Qt deployment failed.' }
     function Move-Dependency([IO.FileInfo]$File) {
         $category = switch -Regex ($File.Name) {
             '^Qt6.*\.dll$' { 'Qt6'; break }
+            '^(avcodec|avformat|avutil|avdevice|avfilter|swresample|swscale|postproc)-[0-9]+\.dll$' { 'FFmpeg'; break }
             '^(d3d.*|dxcompiler|dxil)\.dll$' { 'DirectX'; break }
             '^(opengl32sw|libEGL|libGLESv2)\.dll$' { 'OpenGL'; break }
             '^(RetroMediaLab.*|App|Translations)\.dll$' { ''; break }
@@ -115,7 +116,7 @@ try {
         Remove-Item -LiteralPath $Folder.FullName -Recurse -Force
     }
     foreach ($folder in Get-ChildItem -LiteralPath $staging -Directory) { Move-PluginFolder $folder }
-    foreach ($name in @('generic','iconengines','imageformats','networkinformation','platforms','styles','tls')) {
+    foreach ($name in @('generic','iconengines','imageformats','multimedia','networkinformation','platforms','styles','tls')) {
         $legacy = Join-Path $destination $name
         if (Test-Path -LiteralPath $legacy -PathType Container) { Move-PluginFolder (Get-Item -LiteralPath $legacy) }
     }

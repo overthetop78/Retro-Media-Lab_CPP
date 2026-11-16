@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AudioPcmData="MediaEngine.AudioPcmData";
+inline constexpr std::string_view AudioPcmRuntime="MediaEngine.AudioPcmRuntime";
+inline constexpr std::string_view AudioPcmDecode="MediaEngine.AudioPcmDecode";
+
 inline constexpr std::string_view SequentialConversionPlan="MediaEngine.SequentialConversionPlan";
 inline constexpr std::string_view SequentialConversionSource="MediaEngine.SequentialConversionSource";
 inline constexpr std::string_view SequentialConversionMachine="MediaEngine.SequentialConversionMachine";

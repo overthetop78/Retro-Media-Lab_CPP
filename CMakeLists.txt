@@ -9,7 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
-find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets Network)
+find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets Network Multimedia)
 find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
 file(GLOB_RECURSE error_catalogs CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs/*/App/errors.json"
   "${PROJECT_SOURCE_DIR}/src/Translations/Catalogs/Languages/*/App/errors.json")

@@ -57,7 +57,7 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int) {
         if (!SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_USER_DIRS | LOAD_LIBRARY_SEARCH_SYSTEM32))
             throw WindowsError{GetLastError(), root.wstring()};
         std::vector<SearchDirectory> directories;
-        for (const auto* name : {::RetroMediaLab::LauncherConstants::WideLib, ::RetroMediaLab::LauncherConstants::WideLibQt6, ::RetroMediaLab::LauncherConstants::WideLibDirectX, ::RetroMediaLab::LauncherConstants::WideLibOpenGL}) {
+        for (const auto* name : {::RetroMediaLab::LauncherConstants::WideLib, ::RetroMediaLab::LauncherConstants::WideLibQt6, ::RetroMediaLab::LauncherConstants::WideLibDirectX, ::RetroMediaLab::LauncherConstants::WideLibOpenGL, ::RetroMediaLab::LauncherConstants::WideLibFFmpeg}) {
             const auto path = root / name;
             if (std::filesystem::is_directory(path)) directories.emplace_back(path);
         }

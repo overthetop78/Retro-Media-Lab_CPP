@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Common/Audio/DecodedPcm.cpp
+  src/Formats/Tape/Audio/Reader.cpp
   src/Images/Conversion/Sequential/Service.cpp
   src/Images/Conversion/Sequential/Planning.cpp
   src/Images/Conversion/Sequential/SignalConverter.cpp
@@ -509,7 +511,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.Tremor RetroMediaLab.MediaFileSystems zlibstatic lz4_static liblzma libzstd_static)
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core Qt6::Multimedia RetroMediaLab.Tremor RetroMediaLab.MediaFileSystems zlibstatic lz4_static liblzma libzstd_static)
 target_include_directories(RetroMediaLab.MediaEngine PRIVATE ${PROJECT_SOURCE_DIR}/third_party/xz/src/liblzma/api)
 set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
 install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
