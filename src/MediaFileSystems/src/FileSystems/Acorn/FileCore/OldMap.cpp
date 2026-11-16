@@ -1,5 +1,6 @@
 #include <RetroMediaLab/MediaFileSystems/FileCore.h>
 #include "Constants.h"
+#include "../../../Primitives/Binary.h"
 #include <algorithm>
 #include <array>
 namespace RetroMediaLab::MediaFileSystems::FileCore {
@@ -10,7 +11,7 @@ class OldMap final:public AddressResolver {
 public:
     OldMap(Bytes data,std::uint64_t capacity,OldMapOptions options):capacity_(capacity),options_(options){
         if(data.size()>=SecondNameOffset+HalfNameLength){std::array<std::uint8_t,NameLength> name{};for(int i=0;i<HalfNameLength;++i){name[i*PairCount]=data[FirstNameOffset+i];name[i*PairCount+1]=data[SecondNameOffset+i];}name_=decodeAdfsName(name);}
-        if(data.size()>=FreeEntriesOffset+FreeEntryCount*UInt24Size){std::uint64_t sectors=0;for(int i=0;i<FreeEntryCount;++i){const auto offset=FreeEntriesOffset+i*UInt24Size;std::uint32_t value=0;for(int byte=0;byte<UInt24Size;++byte)value|=std::uint32_t(data[offset+byte])<<(byte*BitsPerByte);sectors+=value;}free_=std::min(capacity,sectors*FileCoreUnitSize);}
+        if(data.size()>=FreeEntriesOffset+FreeEntryCount*UInt24Size){std::uint64_t sectors=0;for(int i=0;i<FreeEntryCount;++i){const auto offset=FreeEntriesOffset+i*UInt24Size;sectors+=Binary::little24(data,offset);}free_=std::min(capacity,sectors*FileCoreUnitSize);}
     }
     std::int32_t rootAddress() const noexcept override{return options_.rootAddress;}
     const std::string& volumeName() const noexcept override{return name_;}

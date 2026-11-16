@@ -13,7 +13,7 @@ bool validChecksum(Bytes bytes) {
 }
 std::optional<std::uint64_t> oldMapDeclaredCapacity(Bytes bytes) {
     if(bytes.size()<PairCount*FileCoreUnitSize||!validChecksum(bytes.first(FileCoreUnitSize))||!validChecksum(bytes.subspan(FileCoreUnitSize,FileCoreUnitSize)))return {};
-    std::uint64_t units=0;for(int i=0;i<UInt24Size;++i)units|=std::uint64_t(bytes[TotalUnitsOffset+i])<<(i*BitsPerByte);
+    const auto units=std::uint64_t(Binary::little24(bytes,TotalUnitsOffset));
     return units*FileCoreUnitSize;
 }
 std::int32_t DiscRecord::zoneSizeBits() const {

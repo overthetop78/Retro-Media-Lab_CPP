@@ -12,14 +12,22 @@ namespace RetroMediaLab::MediaFileSystems::Binary {
 using namespace BinaryConstants;
 template<class T> T little(Bytes data, std::size_t offset) {
     if (offset > data.size() || sizeof(T) > data.size() - offset) throw MediaError(DiagnosticCode::ReadOutOfBounds);
-    T value = 0;
-    for (std::size_t i = 0; i < sizeof(T); ++i) value |= T(T(data[offset + i]) << (i * BitsPerByte));
-    return value;
+    using U=std::make_unsigned_t<T>;U value=0;
+    for(std::size_t i=0;i<sizeof(T);++i)value=U(value|U(U(data[offset+i])<<(i*BitsPerByte)));
+    return std::bit_cast<T>(value);
 }
 template<class T> void writeLittle(MutableBytes data,std::size_t offset,T value) {
     if(offset>data.size() || sizeof(T)>data.size()-offset)throw MediaError(DiagnosticCode::ReadOutOfBounds);
-    for(std::size_t i=0;i<sizeof(T);++i)data[offset+i]=std::uint8_t(value>>(i*BitsPerByte));
+    using U=std::make_unsigned_t<T>;
+    for(std::size_t i=0;i<sizeof(T);++i)data[offset+i]=std::uint8_t(U(value)>>(i*BitsPerByte));
 }
+inline std::uint32_t little24(Bytes data,std::size_t offset) {
+    if(offset>data.size()||UInt24Bytes>data.size()-offset)throw MediaError(DiagnosticCode::ReadOutOfBounds);
+    std::uint32_t value=0;
+    for(std::size_t i=0;i<UInt24Bytes;++i)value|=std::uint32_t(data[offset+i])<<(i*BitsPerByte);
+    return value;
+}
+
 template<class T> T big(Bytes data,std::size_t offset) {
     if(offset>data.size()||sizeof(T)>data.size()-offset)throw MediaError(DiagnosticCode::ReadOutOfBounds);
     using U=std::make_unsigned_t<T>;U value=0;

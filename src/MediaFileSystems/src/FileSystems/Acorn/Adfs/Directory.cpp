@@ -38,7 +38,7 @@ Directory directory(Context& context,std::int32_t address,std::set<std::int32_t>
         FileSystemEntry entry;entry.name=FileCore::decodeAdfsName(bytes.subspan(offset,NameLength));if(entry.name.empty())continue;
         const auto load=Binary::little<std::uint32_t>(bytes,offset+LoadOffset),execute=Binary::little<std::uint32_t>(bytes,offset+ExecuteOffset);
         const auto length=Binary::little<std::uint32_t>(bytes,offset+LengthOffset);
-        std::int32_t indirect=0;for(int byte=0;byte<UInt24Size;++byte)indirect|=std::int32_t(bytes[offset+AddressOffset+byte])<<(byte*BitsPerByte);
+        const auto indirect=static_cast<std::int32_t>(Binary::little24(bytes,offset+AddressOffset));
         auto attributes=std::uint32_t(bytes[offset+AttributesOffset]);
         if(bbc){attributes=0;for(int bit=0;bit<SignatureSize;++bit)attributes|=((bytes[offset+bit]>>BbcAttributeShift)&1)<<bit;}
         entry.kind=(attributes&DirectoryAttribute)?EntryKind::Directory:EntryKind::File;
