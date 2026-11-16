@@ -279,6 +279,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Codecs/QdMo5/Encoder.cpp
   src/Codecs/QdMo5/Fields.cpp
   # Common
+  src/Decoding/Sequential/Models.cpp
+  src/Decoding/Sequential/Registry.cpp
+  src/Images/SequentialContentAdapter.cpp
   src/Diagnostics.cpp
   # Composition
   src/Composition/FluxCodecs.cpp

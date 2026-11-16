@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "シーケンシャルデコーダー識別子、信頼度、またはブロック位置が無効です。",
+    "MediaEngine.SequentialDecoderNull": "シーケンシャルメディアデコーダーはnullできません。",
+    "MediaEngine.SequentialDecoderMissing": "要求されたマシンに対して形式「{0}」を受け入れるシーケンシャルデコーダーはありません。",
+    "MediaEngine.SequentialDecoderAmbiguous": "複数のシーケンシャルデコーダはフォーマット '{0}' を受け入れます。明示的なマシンが必要です。",
+    "MediaEngine.SequentialContentVolume": "要求されたボリュームはデコード済みのシーケンシャルメディアコンテンツではありません。",
+    "MediaEngine.SequentialDecoderSelected": "{1}個の互換シーケンシャルデコーダーから「{0}」が選択されました。",
+    "MediaEngine.SequentialUndecoded": "位置{1}の未デコードの{0}セグメント。"
+  }
+}

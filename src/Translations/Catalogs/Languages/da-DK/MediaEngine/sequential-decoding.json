@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Den sekventielle dekoder-identifikator, konfidens- eller blokpositioner er ugyldige.",
+    "MediaEngine.SequentialDecoderNull": "En sekventiel mediedekoder kan ikke være null.",
+    "MediaEngine.SequentialDecoderMissing": "Ingen sekventiel dekoder accepterer formatet '{0}' for den ønskede maskine.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Flere sekventielle dekodere accepterer format '{0}'; en eksplicit maskine er påkrævet.",
+    "MediaEngine.SequentialContentVolume": "Den ønskede diskenhed indeholder ikke afkodet sekventielt medieindhold.",
+    "MediaEngine.SequentialDecoderSelected": "Dekoder »{0}« blev valgt blandt {1} kompatible sekventielle dekodere.",
+    "MediaEngine.SequentialUndecoded": "Uafkodet {0} segment på position {1}."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Identyfikator dekodera sekwencyjnego, poziom ufności lub pozycje bloków są nieprawidłowe.",
+    "MediaEngine.SequentialDecoderNull": "Sekwencyjny dekoder nie może być zerowy.",
+    "MediaEngine.SequentialDecoderMissing": "Żaden dekoder sekwencyjny nie akceptuje formatu '{0}' dla żądanej maszyny.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Wiele dekoderów sekwencyjnych akceptuje format «{0}»; należy jawnie określić maszynę.",
+    "MediaEngine.SequentialContentVolume": "Żądany wolumin nie zawiera zdekodowanej zawartości nośnika sekwencyjnego.",
+    "MediaEngine.SequentialDecoderSelected": "Wybrano dekoder «{0}» spośród {1} zgodnych dekoderów sekwencyjnych.",
+    "MediaEngine.SequentialUndecoded": "Niezdekodowany segment {0} na pozycji {1}."
+  }
+}

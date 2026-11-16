@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "ตัวระบุของตัวถอดรหัสแบบลำดับ ระดับความเชื่อมั่น หรือตำแหน่งบล็อกไม่ถูกต้อง",
+    "MediaEngine.SequentialDecoderNull": "ตัวถอดรหัสสื่อแบบลำดับต้องไม่เป็น null",
+    "MediaEngine.SequentialDecoderMissing": "ไม่มีตัวถอดรหัสแบบลำดับที่ยอมรับรูปแบบ «{0}» สำหรับเครื่องที่ร้องขอ",
+    "MediaEngine.SequentialDecoderAmbiguous": "ตัวถอดรหัสแบบลำดับหลายตัวยอมรับรูปแบบ «{0}» ต้องระบุเครื่องอย่างชัดเจน",
+    "MediaEngine.SequentialContentVolume": "โวลุมที่ร้องขอไม่ใช่เนื้อหาสื่อแบบลำดับที่ถอดรหัสแล้ว",
+    "MediaEngine.SequentialDecoderSelected": "เลือกตัวถอดรหัส «{0}» จากตัวถอดรหัสแบบลำดับที่เข้ากันได้ {1} ตัว",
+    "MediaEngine.SequentialUndecoded": "ส่วน {0} ที่ยังไม่ถอดรหัส ณ ตำแหน่ง {1}"
+  }
+}

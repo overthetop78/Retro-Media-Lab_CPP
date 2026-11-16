@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Идентификатор последовательного декодера, оценка достоверности или позиции блоков недопустимы.",
+    "MediaEngine.SequentialDecoderNull": "Последовательный медиа-декодер не может быть нулевым.",
+    "MediaEngine.SequentialDecoderMissing": "Ни один последовательный декодер не принимает формат {0} для запрашиваемой машины.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Несколько последовательных декодеров принимают формат '{0}'; требуется явная машина.",
+    "MediaEngine.SequentialContentVolume": "Запрошенный том не содержит декодированных данных последовательного носителя.",
+    "MediaEngine.SequentialDecoderSelected": "Выбранный декодер '{0}' из {1} совместимых последовательных декодеров.",
+    "MediaEngine.SequentialUndecoded": "Нерасшифрованный сегмент {0} в позиции {1}."
+  }
+}

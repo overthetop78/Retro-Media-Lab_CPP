@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "循序解碼器識別碼、信賴度或區塊位置無效。",
+    "MediaEngine.SequentialDecoderNull": "循序媒體解碼器不能為 null。",
+    "MediaEngine.SequentialDecoderMissing": "沒有循序解碼器接受要求的機器使用格式「{0}」。",
+    "MediaEngine.SequentialDecoderAmbiguous": "多個循序解碼器接受格式「{0}」；必須明確指定機器。",
+    "MediaEngine.SequentialContentVolume": "要求的磁碟區不是已解碼的循序媒體內容。",
+    "MediaEngine.SequentialDecoderSelected": "從 {1} 個相容的循序解碼器中選擇了解碼器「{0}」。",
+    "MediaEngine.SequentialUndecoded": "位置 {1} 處未解碼的 {0} 區段。"
+  }
+}

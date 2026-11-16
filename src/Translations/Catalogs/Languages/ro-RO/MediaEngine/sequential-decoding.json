@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Identificatorul secvențial al decodorului, poziția de încredere sau poziția pe bloc nu este valid.",
+    "MediaEngine.SequentialDecoderNull": "Un decodor secvenţial nu poate fi nul.",
+    "MediaEngine.SequentialDecoderMissing": "Niciun decodor secvenţial nu acceptă formatul \"{0} \" pentru aparatul solicitat.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Multiple decodoare secvenţiale acceptă formatul '{0}'; este necesară o maşină explicită.",
+    "MediaEngine.SequentialContentVolume": "Volumul solicitat nu conține date secvențiale decodate.",
+    "MediaEngine.SequentialDecoderSelected": "Decodorul selectat \"{0} \" de la {1} decodoare secvenţiale compatibile.",
+    "MediaEngine.SequentialUndecoded": "Segmentul nedecodat {0} în poziţie {1}."
+  }
+}

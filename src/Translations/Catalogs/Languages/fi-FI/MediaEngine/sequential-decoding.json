@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Sekvensiivinen dekooderitunniste, luotettavuus tai lohkon sijainti ovat pätemättömiä.",
+    "MediaEngine.SequentialDecoderNull": "Sekvenssimedian dekooderi ei voi olla mitätön.",
+    "MediaEngine.SequentialDecoderMissing": "Yksikään jaksottainen dekooderi ei hyväksy muotoa \"{0}\" pyydetylle koneelle.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Useat peräkkäiset dekooderit hyväksyvät muodon \"{0}\"; tarvitaan nimenomainen kone.",
+    "MediaEngine.SequentialContentVolume": "Pyydetty taltio ei sisällä purettua sekvenssimedian sisältöä.",
+    "MediaEngine.SequentialDecoderSelected": "Dekooderi ”{0}” valittiin {1} yhteensopivan sekvenssidekooderin joukosta.",
+    "MediaEngine.SequentialUndecoded": "Dekoodaamaton {0}-segmentti asemassa {1}."
+  }
+}

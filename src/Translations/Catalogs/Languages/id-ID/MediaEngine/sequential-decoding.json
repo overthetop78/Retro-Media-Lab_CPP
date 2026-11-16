@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Pengenal dekoder sekuensial, tingkat keyakinan atau posisi blok tidak valid.",
+    "MediaEngine.SequentialDecoderNull": "Dekoder media sekuensial tidak boleh null.",
+    "MediaEngine.SequentialDecoderMissing": "Tidak ada dekoder sekuensial yang menerima format «{0}» untuk mesin yang diminta.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Beberapa dekoder sekuensial menerima format «{0}»; mesin harus ditentukan secara eksplisit.",
+    "MediaEngine.SequentialContentVolume": "Volume yang diminta bukan konten media sekuensial yang telah didekode.",
+    "MediaEngine.SequentialDecoderSelected": "Dekoder «{0}» dipilih dari {1} dekoder sekuensial yang kompatibel.",
+    "MediaEngine.SequentialUndecoded": "Segmen {0} yang belum didekode pada posisi {1}."
+  }
+}

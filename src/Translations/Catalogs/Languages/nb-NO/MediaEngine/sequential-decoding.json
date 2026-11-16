@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Den sekvensielle dekoder identifikatoren, tillits- eller blokkposisjonene er ugyldig.",
+    "MediaEngine.SequentialDecoderNull": "En sekvensiell mediedekoder kan ikke være null.",
+    "MediaEngine.SequentialDecoderMissing": "Ingen sekvensiell dekoder aksepterer format «{0}» for den valgte maskinen.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Flere sekvensielle dekodere aksepterer format «{0}»; en eksplisitt maskin er nødvendig.",
+    "MediaEngine.SequentialContentVolume": "Det forespurte volumet er ikke dekodet sekvensivt medieinnhold.",
+    "MediaEngine.SequentialDecoderSelected": "Utvalgte dekoder «{0}» fra {1} kompatible sekvensielle dekodere.",
+    "MediaEngine.SequentialUndecoded": "Ikke dekodet {0}-segment i posisjon {1}."
+  }
+}

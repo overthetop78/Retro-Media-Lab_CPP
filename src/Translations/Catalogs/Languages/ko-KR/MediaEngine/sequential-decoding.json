@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "순차적 디코더 식별자, 신뢰 또는 블록 위치는 유효하지 않습니다.",
+    "MediaEngine.SequentialDecoderNull": "순차적인 미디어 디코더는 null일 수 없습니다.",
+    "MediaEngine.SequentialDecoderMissing": "요청한 기계에 대해 형식 «{0}»을 허용하는 순차 디코더가 없습니다.",
+    "MediaEngine.SequentialDecoderAmbiguous": "여러 순차 디코더가 형식 «{0}»을 허용합니다. 기계를 명시적으로 지정해야 합니다.",
+    "MediaEngine.SequentialContentVolume": "요청된 볼륨은 디코딩된 순차 미디어 콘텐츠가 아닙니다.",
+    "MediaEngine.SequentialDecoderSelected": "호환되는 순차 디코더 {1}개 중 «{0}» 디코더가 선택되었습니다.",
+    "MediaEngine.SequentialUndecoded": "위치 {1}의 디코딩되지 않은 {0} 세그먼트."
+  }
+}

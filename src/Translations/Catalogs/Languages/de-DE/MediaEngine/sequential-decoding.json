@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Die sequenzielle Decoder-Kennung, der Konfidenzwert oder die Blockpositionen sind ungültig.",
+    "MediaEngine.SequentialDecoderNull": "Ein sequentieller Mediendecoder kann nicht null sein.",
+    "MediaEngine.SequentialDecoderMissing": "Kein sequentieller Decoder akzeptiert das Format '{0}' für die angeforderte Maschine.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Mehrere sequentielle Decoder akzeptieren das Format '{0}'; eine explizite Maschine ist erforderlich.",
+    "MediaEngine.SequentialContentVolume": "Das angeforderte Volume ist kein dekodierter sequentieller Medieninhalt.",
+    "MediaEngine.SequentialDecoderSelected": "Ausgewählter Decoder '{0}' aus {1} kompatiblen sequentiellen Decodern.",
+    "MediaEngine.SequentialUndecoded": "Undecodiertes {0} Segment an Position {1}."
+  }
+}

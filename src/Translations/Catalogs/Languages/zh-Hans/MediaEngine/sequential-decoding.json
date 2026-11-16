@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "顺序解码器标识符、置信度或块位置无效。",
+    "MediaEngine.SequentialDecoderNull": "顺序媒体解码器不能为 null。",
+    "MediaEngine.SequentialDecoderMissing": "没有顺序解码器接受请求的机器使用格式“{0}”。",
+    "MediaEngine.SequentialDecoderAmbiguous": "多个顺序解码器接受格式“{0}”；必须明确指定机器。",
+    "MediaEngine.SequentialContentVolume": "请求的卷不是已解码的顺序媒体内容。",
+    "MediaEngine.SequentialDecoderSelected": "从 {1} 个兼容的顺序解码器中选择了解码器“{0}”。",
+    "MediaEngine.SequentialUndecoded": "位置 {1} 处未解码的 {0} 片段。"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Den sekventiella avkodningsidentifieraren, förtroende eller blockpositioner är ogiltiga.",
+    "MediaEngine.SequentialDecoderNull": "En sekventiell mediadekoder kan inte vara null.",
+    "MediaEngine.SequentialDecoderMissing": "Ingen sekventiell avkodare accepterar formatet \"{0}\" för den begärda maskinen.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Flera sekventiella avkodare accepterar format \"{0}\", en explicit maskin krävs.",
+    "MediaEngine.SequentialContentVolume": "Den begärda volymen innehåller inte avkodat sekventiellt medieinnehåll.",
+    "MediaEngine.SequentialDecoderSelected": "Vald dekoder \"{0}\" från {1} kompatibla sekventiella dekoder.",
+    "MediaEngine.SequentialUndecoded": "Oavkodat {0}-segment på position {1}."
+  }
+}

@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SequentialDecodeModel="MediaEngine.SequentialDecodeModel";
+inline constexpr std::string_view SequentialDecoderNull="MediaEngine.SequentialDecoderNull";
+inline constexpr std::string_view SequentialDecoderMissing="MediaEngine.SequentialDecoderMissing";
+inline constexpr std::string_view SequentialDecoderAmbiguous="MediaEngine.SequentialDecoderAmbiguous";
+inline constexpr std::string_view SequentialContentVolume="MediaEngine.SequentialContentVolume";
+inline constexpr std::string_view SequentialDecoderSelected="MediaEngine.SequentialDecoderSelected";
+inline constexpr std::string_view SequentialUndecoded="MediaEngine.SequentialUndecoded";
 inline constexpr std::string_view SimhData="MediaEngine.SimhData";
 inline constexpr std::string_view SimhWrite="MediaEngine.SimhWrite";
 inline constexpr std::string_view SimhTrailing="MediaEngine.SimhTrailing";

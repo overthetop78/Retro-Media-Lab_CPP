@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Identifikátor sekvenčního dekodéru, míra jistoty nebo pozice bloků jsou neplatné.",
+    "MediaEngine.SequentialDecoderNull": "Sekvenční mediální dekodér nemůže být nulový.",
+    "MediaEngine.SequentialDecoderMissing": "Žádný sekvenční dekodér nepřijímá formát '{0}' pro požadovaný stroj.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Vícesekvenční dekodéry akceptují formát '{0}'; vyžaduje se explicitní stroj.",
+    "MediaEngine.SequentialContentVolume": "Požadovaný svazek neobsahuje dekódovaný obsah sekvenčního média.",
+    "MediaEngine.SequentialDecoderSelected": "Vybraný dekodér '{0}' ze {1} kompatibilní sekvenční dekodéry.",
+    "MediaEngine.SequentialUndecoded": "Nedekódovaný segment {0} na pozici {1}."
+  }
+}

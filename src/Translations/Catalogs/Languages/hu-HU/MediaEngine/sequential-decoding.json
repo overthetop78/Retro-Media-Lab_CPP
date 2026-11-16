@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "A szekvenciális dekóder azonosító, konfidencia vagy blokk pozíciók érvénytelenek.",
+    "MediaEngine.SequentialDecoderNull": "A szekvenciális média dekóder nem lehet nulla.",
+    "MediaEngine.SequentialDecoderMissing": "Egy szekvenciális dekóder sem fogad el \"{0}\" formátumot a kért géphez.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Több szekvenciális dekóder fogadja el a \"{0}\" formátumot; explicit gép szükséges.",
+    "MediaEngine.SequentialContentVolume": "A kért kötet nem tartalmaz dekódolt szekvenciális médiatartalmat.",
+    "MediaEngine.SequentialDecoderSelected": "Kiválasztott dekóder \"{0}\" a {1} kompatibilis szekvenciális dekóderek.",
+    "MediaEngine.SequentialUndecoded": "Dekódolatlan {0} szegmens a(z) {1} pozíción."
+  }
+}

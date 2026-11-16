@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "Ідентифікатор послідовного декодера, оцінка достовірності або позиції блоків недійсні.",
+    "MediaEngine.SequentialDecoderNull": "Послідовний декодер носія не може бути порожнім посиланням.",
+    "MediaEngine.SequentialDecoderMissing": "Немає послідовного декодера приймає формат '{0}' для запитуваної машини.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Кілька послідовних декодорів приймає формат '{0}'; явний апарат необхідний.",
+    "MediaEngine.SequentialContentVolume": "Запитаний том не містить декодованого вмісту послідовного носія.",
+    "MediaEngine.SequentialDecoderSelected": "Вибраний декодер '{0}' з {1} сумісні послідовні декодери.",
+    "MediaEngine.SequentialUndecoded": "Недекодований сегмент {0} у позиції {1}."
+  }
+}

@@ -399,6 +399,12 @@
     <ClCompile Include="src\MediaEngine\src\Decoding\Scoring.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Scoring.h" />
     <ClInclude Include="src\MediaEngine\src\Decoding\ScoringConstants.h" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Constants.h" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Decoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Models.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Models.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Registry.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Registry.h" />
     <ClCompile Include="src\MediaEngine\src\Diagnostics.cpp" />
     <ClCompile Include="src\MediaEngine\src\Encoding\BitPacker.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\BitPacker.h" />
@@ -939,6 +945,8 @@
     <ClInclude Include="src\MediaEngine\src\Images\RecognitionContext.h" />
     <ClCompile Include="src\MediaEngine\src\Images\RecognitionResult.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\RecognitionResult.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\SequentialContentAdapter.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\SequentialContentAdapter.h" />
     <ClCompile Include="src\MediaEngine\src\Images\WriterAdapters.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\WriterAdapters.h" />
     <ClCompile Include="src\MediaEngine\src\Images\WriterRegistry.cpp" />
@@ -1409,6 +1417,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-geometry.json" />
@@ -1580,6 +1589,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-geometry.json" />
@@ -1751,6 +1761,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-geometry.json" />
@@ -1922,6 +1933,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-geometry.json" />
@@ -2093,6 +2105,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-geometry.json" />
@@ -2264,6 +2277,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-geometry.json" />
@@ -2435,6 +2449,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-geometry.json" />
@@ -2606,6 +2621,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-geometry.json" />
@@ -2777,6 +2793,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-geometry.json" />
@@ -2948,6 +2965,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-geometry.json" />
@@ -3119,6 +3137,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-geometry.json" />
@@ -3290,6 +3309,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-geometry.json" />
@@ -3461,6 +3481,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-geometry.json" />
@@ -3632,6 +3653,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-geometry.json" />
@@ -3803,6 +3825,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-geometry.json" />
@@ -3974,6 +3997,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-geometry.json" />
@@ -4145,6 +4169,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-geometry.json" />
@@ -4316,6 +4341,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-geometry.json" />
@@ -4487,6 +4513,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-geometry.json" />
@@ -4658,6 +4685,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-geometry.json" />
@@ -4829,6 +4857,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-geometry.json" />
@@ -5000,6 +5029,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-geometry.json" />
@@ -5171,6 +5201,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-geometry.json" />
@@ -5342,6 +5373,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-geometry.json" />
@@ -5513,6 +5545,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-geometry.json" />
@@ -5684,6 +5717,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-geometry.json" />
@@ -5855,6 +5889,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-geometry.json" />
@@ -6026,6 +6061,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-geometry.json" />
@@ -6197,6 +6233,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-geometry.json" />
@@ -6368,6 +6405,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-policies.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\simh-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-geometry.json" />

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "De opeenvolgende decoder identificatie, betrouwbaarheid of blokposities zijn ongeldig.",
+    "MediaEngine.SequentialDecoderNull": "Een sequentiële media decoder kan niet nul zijn.",
+    "MediaEngine.SequentialDecoderMissing": "Geen enkele sequentiële decoder accepteert formaat '{0}' voor de gevraagde machine.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Meerdere sequentiële decoders accepteren formaat '{0}'; een expliciete machine is vereist.",
+    "MediaEngine.SequentialContentVolume": "Het gevraagde volume is niet gedecodeerd sequentiële media-inhoud.",
+    "MediaEngine.SequentialDecoderSelected": "Geselecteerde decoder '{0}' uit {1} compatibele sequentiële decoders.",
+    "MediaEngine.SequentialUndecoded": "Niet-gedecodeerd {0}-segment op positie {1}."
+  }
+}

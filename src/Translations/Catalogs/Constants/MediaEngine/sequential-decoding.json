@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.SequentialDecodeModel": "The sequential decoder identifier, confidence or block positions are invalid.",
+    "MediaEngine.SequentialDecoderNull": "A sequential media decoder cannot be null.",
+    "MediaEngine.SequentialDecoderMissing": "No sequential decoder accepts format '{0}' for the requested machine.",
+    "MediaEngine.SequentialDecoderAmbiguous": "Multiple sequential decoders accept format '{0}'; an explicit machine is required.",
+    "MediaEngine.SequentialContentVolume": "The requested volume is not decoded sequential media content.",
+    "MediaEngine.SequentialDecoderSelected": "Selected decoder '{0}' from {1} compatible sequential decoders.",
+    "MediaEngine.SequentialUndecoded": "Undecoded {0} segment at position {1}."
+  }
+}
