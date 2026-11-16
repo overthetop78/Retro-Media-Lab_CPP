@@ -8,12 +8,11 @@ namespace RetroMediaLab::MediaEngine {
 namespace C=MechanicalAudio::Constants;
 namespace {
 void validate(DrivePosition position){if(position.cylinder<0||position.head<0)throw MediaError(DiagnosticCode::MechanicalRequest);}
-std::shared_ptr<MechanicalAudio::RecordedRenderer> sharedBank(){static const std::shared_ptr<MechanicalAudio::RecordedRenderer> bank=MechanicalAudio::createRecordedBank();return bank;}
 }
 RecordedDrive::RecordedDrive(std::string device,std::shared_ptr<MechanicalAudio::RecordedRenderer> bank,Notification notification,std::optional<std::string> profile,double volume,bool enabled)
     :device_(std::move(device)),bank_(std::move(bank)),notification_(std::move(notification)){
     if(!MechanicalAudio::baseRecordedProfile(device_))throw MediaError(DiagnosticCode::MechanicalRequest);
-    if(!bank_)bank_=sharedBank();
+    if(!bank_)bank_=MechanicalAudio::sharedRecordedBank();
     // Construction publishes no callback before the object is fully initialized.
     if(!std::isfinite(volume)||volume<0||volume>C::MaximumVolumePercent)throw MediaError(DiagnosticCode::MechanicalRequest);
     profile_=std::move(profile);volume_=volume;enabled_=enabled;

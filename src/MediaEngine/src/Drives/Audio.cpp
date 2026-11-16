@@ -1,4 +1,5 @@
 #include "Mechanics.h"
+#include <RetroMediaLab/MediaEngine/MechanicalSound.h>
 #include "../Formats/Tape/Common/Pcm.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <algorithm>
@@ -50,9 +51,6 @@ std::vector<std::int16_t> RecordedDrive::renderAudio(std::int32_t rate,std::int3
         }
         destination+=remaining;
     }
-    double peak=0;for(const auto value:mixed)peak=std::max(peak,std::abs(value));
-    const auto gain=peak>C::PcmScale?C::PcmScale/peak:1;
-    std::vector<std::int16_t> result(mixed.size());for(std::size_t i=0;i<result.size();++i)result[i]=static_cast<std::int16_t>(std::clamp(TapePcm::roundEven(mixed[i]*gain),C::PcmMinimum,C::PcmScale));
-    return result;
+    return protectMechanicalAudioMix(mixed);
 }
 }

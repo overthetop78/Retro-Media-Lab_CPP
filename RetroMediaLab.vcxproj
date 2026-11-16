@@ -1988,6 +1988,8 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\GwFormatCapabilities.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\HardDiskGeometry.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
@@ -1998,11 +2000,14 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeFormatIds.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapePreparation.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeSignal.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h" />
     <ClInclude Include="src\MediaEngine\src\Audio\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Conversion.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\CatalogData.h" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Mix.cpp" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.cpp" />
@@ -2011,6 +2016,7 @@
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedSounds.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Service.cpp" />
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Decoder.cpp" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Encoder.cpp" />
@@ -2945,6 +2951,7 @@
     <ClCompile Include="src\MediaEngine\src\Preparation\CueDocument.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\CueWaveFiles.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\Disks.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\Tape.cpp" />
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h" />
     <ClCompile Include="src\MediaEngine\src\Primitives\Crc32C.cpp" />

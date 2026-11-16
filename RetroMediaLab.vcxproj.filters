@@ -7980,6 +7980,12 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8010,6 +8016,12 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeFormatIds.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapePreparation.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeSignal.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8025,6 +8037,9 @@
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\Constants.h">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Mix.cpp">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.cpp">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClCompile>
@@ -8049,6 +8064,9 @@
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.h">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\Service.cpp">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h">
       <Filter>src\MediaEngine\src\Codecs\Aed6200p</Filter>
     </ClInclude>
@@ -10849,6 +10867,9 @@
       <Filter>src\MediaEngine\src\Preparation</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Preparation\Disks.cpp">
+      <Filter>src\MediaEngine\src\Preparation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Preparation\Tape.cpp">
       <Filter>src\MediaEngine\src\Preparation</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h">

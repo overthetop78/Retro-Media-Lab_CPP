@@ -15,6 +15,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Images/WritingService.cpp
   src/Formats/Cartridge/ConsoleWriter.cpp
   src/Composition/Runtime.cpp
+  src/Preparation/Tape.cpp
+  src/Audio/Mechanical/Service.cpp
+  src/Audio/Mechanical/Mix.cpp
   src/Preparation/Disks.cpp
   src/Preparation/Catalog.cpp
   src/Preparation/CueDocument.cpp
