@@ -24,5 +24,7 @@ Validation : une compilation commune en fin de bloc ; contrôles ciblés sur le 
 - [x] Solution et bibliothèques de langues
   - [x] Modifier `RetroMediaLab.vcxproj` et `RetroMediaLab.vcxproj.filters` avec `scripts/local-building/update-solution.py` : faire apparaître les nouvelles sources et catalogues dans la solution Visual C++ existante.
   - [x] Modifier les DLL générées `build/debug/bin/` des cibles `RetroMediaLab.Catalog.*` : compiler ensemble les trente catalogues après stabilisation des JSON, sans nouvelle génération Argos des catalogues déjà relus.
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/optical-filesystems.json` : poursuivre la relecture des langues autres que le français et corriger les contresens détectés.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/optical-filesystems.json` : poursuivre la relecture des langues autres que le français et corriger les contresens détectés.
+
+Relecture optique achevée le 17 novembre 2026 : 66 messages dans 29 langues ; voir docs/validation/media/relecture-systemes-optiques.md.

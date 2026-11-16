@@ -1,0 +1,7 @@
+# Relecture des diagnostics optiques
+
+17 novembre 2026. Lecture des 66 messages de MediaFileSystems/optical-filesystems.json dans les 29 langues : 1 914 valeurs, anglais compris. 617 corrections dans 27 fichiers. Les traductions Argos existantes sont conservées lorsque leur sens convient ; les changements sont des corrections de relecture. Les catalogues anglais et français restent inchangés.
+
+ISO/Joliet/XDVDFS : secteurs, pistes, volumes, champs hors tampon, descripteurs, références récursives, longueur impaire en octets, représentations little-endian/big-endian incohérentes, limites de tables et alignement sur les secteurs. UDF : tags et sommes de contrôle, CRC, d-string/Unicode, descripteurs, ICB, partitions directes, cartes non prises en charge, allocations, limites signées, données incorporées, NSR, pointeur d’ancrage et absence de piste. Les formulations inversant présence/absence ou perdant une condition numérique ont été corrigées. zh-Hant est remis en caractères traditionnels.
+
+Vérifications : mêmes clés et paramètres que Constants dans tous les catalogues ; conservation d’ISO 9660, Xbox, XDVDFS, Joliet, UDF, ICB, NSR, CRC, Unicode et des valeurs techniques 2048/16/32. Aucun échec. L’anglais correspond exactement à Constants. Audit des littéraux réussi : 1 607 fichiers C++ et 29 langues. Les 27 DLL modifiées ont été compilées ensemble en Release puis installées dans lib/Languages ; journaux build/media-optical-catalogs-release.log et build/media-optical-catalogs-install.log. Aucun reader, codec, writer ou algorithme natif modifié ou retesté.
