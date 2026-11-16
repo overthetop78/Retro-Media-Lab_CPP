@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
+  src/Exploration/FileTreeCursor.cpp
   src/Exploration/Composition/Interpretation.cpp
   src/Migration/Planning.cpp
   src/Migration/Capabilities.cpp

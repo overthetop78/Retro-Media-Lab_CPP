@@ -913,6 +913,9 @@
     <Filter Include="src\MediaEngine\src\Runtime">
       <UniqueIdentifier>{7D35C3D1-A8DB-5CE3-AECD-22EF6AEE5830}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Services">
+      <UniqueIdentifier>{50C00E2E-A2DC-5122-A2B2-9B4C4C5B9F07}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Sources">
       <UniqueIdentifier>{99F0B3F4-C67A-501F-86A0-4943CC677F74}</UniqueIdentifier>
     </Filter>
@@ -8055,6 +8058,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileTraversal.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaIconIds.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8062,6 +8068,9 @@
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaUtilities.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaVisualization.h">
@@ -11400,6 +11409,12 @@
     <ClCompile Include="src\MediaEngine\src\Runtime\WinchesterTracks.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Services\FileTraversal.cpp">
+      <Filter>src\MediaEngine\src\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Services\Utilities.cpp">
+      <Filter>src\MediaEngine\src\Services</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h">
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClInclude>
@@ -11586,6 +11601,9 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemModels.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileTreeCursor.h">
+      <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FormatIds.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
@@ -11701,6 +11719,9 @@
       <Filter>src\MediaFileSystems\src\Exploration\Composition</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Exploration\EntryAnalysis.cpp">
+      <Filter>src\MediaFileSystems\src\Exploration</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\FileTreeCursor.cpp">
       <Filter>src\MediaFileSystems\src\Exploration</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Exploration\MediaExplorer.cpp">

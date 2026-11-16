@@ -2005,9 +2005,11 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExploration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExplorationProgress.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileTraversal.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaIconIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaUtilities.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaVisualization.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h" />
@@ -3120,6 +3122,8 @@
     <ClInclude Include="src\MediaEngine\src\Runtime\SectorTracks.h" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Tracks.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\WinchesterTracks.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Services\FileTraversal.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Services\Utilities.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.h" />
@@ -3182,6 +3186,7 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileCoreLayout.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemIds.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemModels.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileTreeCursor.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FormatIds.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\GameCubeFst.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Interpretation.h" />
@@ -3221,6 +3226,7 @@
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Interpretation.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Registry.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\EntryAnalysis.cpp" />
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\FileTreeCursor.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\MediaExplorer.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Sequential\Block.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\Sequential\Constants.h" />

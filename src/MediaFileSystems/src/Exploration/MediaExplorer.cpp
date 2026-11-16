@@ -1,4 +1,5 @@
 #include <RetroMediaLab/MediaFileSystems/MediaExplorer.h>
+#include <RetroMediaLab/MediaFileSystems/FileTreeCursor.h>
 #include "Composition/Internal.h"
 #include <RetroMediaLab/MediaFileSystems/SectorRegistry.h>
 #include <RetroMediaLab/MediaFileSystems/CartridgeReaders.h>
@@ -27,7 +28,7 @@ ExploredFileSystemVolume exploreVolume(const ImageDocument& document,const Volum
     return result;
 }
 std::optional<std::string> firstFile(const std::vector<FileSystemEntry>& entries) {
-    for(const auto& entry:entries){if(entry.kind==EntryKind::File)return entry.name;if(auto name=firstFile(entry.children))return name;}
+    for(const auto& entry:entries){FileTreeCursor cursor(&entry,[](const void* value){return static_cast<const FileSystemEntry*>(value)->kind==EntryKind::File;},[](const void* value){const auto& children=static_cast<const FileSystemEntry*>(value)->children;return FileChildrenView{children.data(),children.size(),[](const void* data,std::size_t index)->const void*{return static_cast<const FileSystemEntry*>(data)+index;}};});if(const auto first=cursor.next())return static_cast<const FileSystemEntry*>(first)->name;}
     return {};
 }
 }
