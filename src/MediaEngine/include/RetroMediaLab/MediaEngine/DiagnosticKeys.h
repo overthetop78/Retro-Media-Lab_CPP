@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SequentialModel="MediaEngine.SequentialModel";
+inline constexpr std::string_view TapePcmProfile="MediaEngine.TapePcmProfile";
+inline constexpr std::string_view TapePcmData="MediaEngine.TapePcmData";
+inline constexpr std::string_view RawTapeWrite="MediaEngine.RawTapeWrite";
 inline constexpr std::string_view OpticalSessionImage="MediaEngine.OpticalSessionImage";
 inline constexpr std::string_view OpticalSessionRange="MediaEngine.OpticalSessionRange";
 inline constexpr std::string_view OpticalSessionClosed="MediaEngine.OpticalSessionClosed";

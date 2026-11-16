@@ -3,6 +3,10 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::SequentialModel:return DiagnosticKeys::SequentialModel;
+    case DiagnosticCode::TapePcmProfile:return DiagnosticKeys::TapePcmProfile;
+    case DiagnosticCode::TapePcmData:return DiagnosticKeys::TapePcmData;
+    case DiagnosticCode::RawTapeWrite:return DiagnosticKeys::RawTapeWrite;
     case DiagnosticCode::OpticalSessionImage:return DiagnosticKeys::OpticalSessionImage;
     case DiagnosticCode::OpticalSessionRange:return DiagnosticKeys::OpticalSessionRange;
     case DiagnosticCode::OpticalSessionClosed:return DiagnosticKeys::OpticalSessionClosed;
