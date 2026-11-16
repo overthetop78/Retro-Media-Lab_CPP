@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "Το πλάτος bit CHD είναι άκυρο.",
+    "MediaEngine.ChdHuffmanParameters": "Ο αριθμός συμβόλων CHD Huffman ή το μέγιστο πλάτος bit είναι άκυρο.",
+    "MediaEngine.ChdHuffmanCode": "Ο κωδικός CHD Huffman είναι άκυρος.",
+    "MediaEngine.ChdHuffmanRun": "Η λειτουργία CHD Huffman υπερβαίνει τον πίνακα συμβόλων.",
+    "MediaEngine.ChdHuffmanTree": "Το CHD Huffman μήκος, δέντρο ή πίνακα αναζήτησης είναι άκυρα.",
+    "MediaEngine.ChdHuffmanTruncated": "Το δέντρο Huffman ή τα δεδομένα της CHD κατακλύζεται.",
+    "MediaEngine.ChdDeflate": "Η ροή CHD DEFLATE, κατανάλωση εισόδου ή μέγεθος εξόδου είναι άκυρη.",
+    "MediaEngine.ChdLzma": "Το ρεύμα CHD LZMA, η κατανάλωση εισόδου ή το μέγεθος εξόδου δεν είναι έγκυρο.",
+    "MediaEngine.ChdZstd": "Το πλαίσιο CHD Zstandard, λεξικό, checksum ή μέγεθος εξόδου είναι άκυρο.",
+    "MediaEngine.ChdFlacBitWidth": "Το πλάτος bit CHD FLAC είναι άκυρο.",
+    "MediaEngine.ChdFlacTruncated": "Το ρεύμα CHD FLAC έχει κατακλυστεί.",
+    "MediaEngine.ChdFlacUnary": "Ο ενιαίος κωδικός CHD FLAC είναι άκυρος.",
+    "MediaEngine.ChdFlacSamples": "Το δείγμα εξόδου CHD FLAC είναι άκυρο.",
+    "MediaEngine.ChdFlacFrame": "Ο συγχρονισμός πλαισίου CHD FLAC, οι παράμετροι ή η αρίθμηση είναι άκυρες.",
+    "MediaEngine.ChdFlacHeaderCrc": "Η κεφαλίδα CHD FLAC CRC δεν ταιριάζει.",
+    "MediaEngine.ChdFlacFrameCrc": "Το πλαίσιο CHD FLAC CRC δεν ταιριάζει.",
+    "MediaEngine.ChdFlacSubframe": "Ο τύπος υποπλαίσιο CHD FLAC, padding ή σπαταλημένα κομμάτια είναι άκυρα.",
+    "MediaEngine.ChdFlacPredictor": "Η εντολή πρόβλεψης ή ακρίβειας CHD FLAC είναι άκυρη.",
+    "MediaEngine.ChdFlacResidual": "Η εναπομένουσα κωδικοποίηση ή κατάτμηση CHD FLAC είναι άκυρη."
+  }
+}

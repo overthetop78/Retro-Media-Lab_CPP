@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "CHD bit bredd är ogiltig.",
+    "MediaEngine.ChdHuffmanParameters": "CHD Huffman symbolräkning eller maximal bit bredd är ogiltig.",
+    "MediaEngine.ChdHuffmanCode": "CHD Huffman koden är ogiltig.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman kör överstiger symbolbordet.",
+    "MediaEngine.ChdHuffmanTree": "CHD Huffman längder, träd eller uppslagstabell är ogiltiga.",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman träd eller data är truncated.",
+    "MediaEngine.ChdDeflate": "CHD DEFLATE-strömmen, ingångsförbrukningen eller utgångsstorleken är ogiltig.",
+    "MediaEngine.ChdLzma": "CHD LZMA-strömmen, ingångsförbrukningen eller utgångsstorleken är ogiltig.",
+    "MediaEngine.ChdZstd": "CHD Zstandard ram, ordbok, checksumma eller utgångsstorlek är ogiltig.",
+    "MediaEngine.ChdFlacBitWidth": "CHD FLAC bitbredd är ogiltig.",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC-strömmen är truncated.",
+    "MediaEngine.ChdFlacUnary": "CHD FLAC unary code är ogiltig.",
+    "MediaEngine.ChdFlacSamples": "CHD FLAC-utgångsprovräkningen är ogiltig.",
+    "MediaEngine.ChdFlacFrame": "CHD FLAC-ramsynkronisering, parametrar eller nummer är ogiltiga.",
+    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC-rubriken CRC matchar inte.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC-ramen CRC matchar inte.",
+    "MediaEngine.ChdFlacSubframe": "CHD FLAC subframe typ, padding eller bortkastad bitar är ogiltiga.",
+    "MediaEngine.ChdFlacPredictor": "CHD FLAC förutsägelseorder eller precision är ogiltig.",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC restkodning eller partition är ogiltig."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "CHD 비트 폭은 유효하지 않습니다.",
+    "MediaEngine.ChdHuffmanParameters": "CHD Huffman 기호 수 또는 최대 비트 폭은 유효하지 않습니다.",
+    "MediaEngine.ChdHuffmanCode": "CHD Huffman 코드는 유효하지 않습니다.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman은 심볼 테이블을 초과합니다.",
+    "MediaEngine.ChdHuffmanTree": "CHD Huffman 길이, 나무 또는 룩업 테이블은 유효하지 않습니다.",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman 나무 또는 자료는 truncated.",
+    "MediaEngine.ChdDeflate": "CHD DEFLATE 스트림, 입력 소비 또는 출력 크기는 유효하지 않습니다.",
+    "MediaEngine.ChdLzma": "CHD LZMA 스트림, 입력 소비 또는 출력 크기는 유효하지 않습니다.",
+    "MediaEngine.ChdZstd": "CHD Zstandard 프레임, 사전, 체크섬 또는 출력 크기는 유효하지 않습니다.",
+    "MediaEngine.ChdFlacBitWidth": "CHD FLAC 비트 폭은 유효하지 않습니다.",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC 스트림은 truncated.",
+    "MediaEngine.ChdFlacUnary": "CHD FLAC unary 코드는 유효하지 않습니다.",
+    "MediaEngine.ChdFlacSamples": "CHD FLAC 산출 표본 조사는 무효합니다.",
+    "MediaEngine.ChdFlacFrame": "CHD FLAC 프레임 동기화, 매개 변수 또는 번호는 유효하지 않습니다.",
+    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC 헤더 CRC는 일치하지 않습니다.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC 프레임 CRC는 일치하지 않습니다.",
+    "MediaEngine.ChdFlacSubframe": "CHD FLAC 하위 프레임 유형, 패딩 또는 낭비 된 비트는 유효하지 않습니다.",
+    "MediaEngine.ChdFlacPredictor": "CHD FLAC 예측기 주문 또는 정밀도는 유효하지 않습니다.",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC 잔여 기호화 또는 파티션은 유효하지 않습니다."
+  }
+}

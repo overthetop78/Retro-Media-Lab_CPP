@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "CHD 位宽无效 。",
+    "MediaEngine.ChdHuffmanParameters": "CHD Huffman符号计数或最大位宽无效.",
+    "MediaEngine.ChdHuffmanCode": "CHD Huffman代码无效.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman跑跑超过符号表.",
+    "MediaEngine.ChdHuffmanTree": "CHD Huffman 长度,树或查询表无效 。",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman树或数据被截取.",
+    "MediaEngine.ChdDeflate": "这个 CHD DEFLATE 流、输入消耗或输出大小无效。",
+    "MediaEngine.ChdLzma": "这个 CHD LZMA 流、输入消耗或输出大小无效。",
+    "MediaEngine.ChdZstd": "CHD Zstandard框架,词典,校验和或输出大小无效.",
+    "MediaEngine.ChdFlacBitWidth": "CHD FLAC 位宽无效 。",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC流被截取.",
+    "MediaEngine.ChdFlacUnary": "CHD FLAC unary 代码无效.",
+    "MediaEngine.ChdFlacSamples": "CHD FLAC 输出样本计数无效.",
+    "MediaEngine.ChdFlacFrame": "CHD FLAC框架同步,参数或编号无效.",
+    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC 标题 CRC 不匹配.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC框架CRC不匹配.",
+    "MediaEngine.ChdFlacSubframe": "CHD FLAC 子帧类型, 垫入或被浪费的位点无效.",
+    "MediaEngine.ChdFlacPredictor": "CHD FLAC 预测器顺序或精度无效.",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC 剩余编码或分区无效."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "Szerokość bitu CHD jest nieprawidłowa.",
+    "MediaEngine.ChdHuffmanParameters": "Liczba symboli CHD Huffman lub maksymalna szerokość bitu jest nieprawidłowa.",
+    "MediaEngine.ChdHuffmanCode": "Kod CHD Huffman jest nieważny.",
+    "MediaEngine.ChdHuffmanRun": "Bieg CHD Huffman przewyższa tablicę symboli.",
+    "MediaEngine.ChdHuffmanTree": "Długość CHD Huffman, drzewo lub lookup tabeli są nieważne.",
+    "MediaEngine.ChdHuffmanTruncated": "Drzewo lub dane CHD Huffman są obcinane.",
+    "MediaEngine.ChdDeflate": "Strumień CHD DEFLATE, zużycie wejściowe lub wielkość wyjściowa są nieprawidłowe.",
+    "MediaEngine.ChdLzma": "Strumień CHD LZMA, zużycie wejściowe lub wielkość wyjściowa są nieprawidłowe.",
+    "MediaEngine.ChdZstd": "Zstandardowa rama, słownik, suma kontrolna lub rozmiar wyjściowy CHD jest nieprawidłowa.",
+    "MediaEngine.ChdFlacBitWidth": "Szerokość bitu CHD FLAC jest nieprawidłowa.",
+    "MediaEngine.ChdFlacTruncated": "Strumień CHD FLAC jest przecięty.",
+    "MediaEngine.ChdFlacUnary": "Kod Unary CHD FLAC jest nieprawidłowy.",
+    "MediaEngine.ChdFlacSamples": "Ilość próbek wyjściowych CHD FLAC jest nieprawidłowa.",
+    "MediaEngine.ChdFlacFrame": "Synchronizacja ramy CHD FLAC, parametry lub numeracja są nieprawidłowe.",
+    "MediaEngine.ChdFlacHeaderCrc": "Nagłówek CHD FLAC CRC nie pasuje.",
+    "MediaEngine.ChdFlacFrameCrc": "Rama CHD FLAC CRC nie pasuje.",
+    "MediaEngine.ChdFlacSubframe": "Typ podramy CHD FLAC, wyściełanie lub zmarnowane bity są nieprawidłowe.",
+    "MediaEngine.ChdFlacPredictor": "Kolejność lub precyzja przewidywania CHD FLAC jest nieprawidłowa.",
+    "MediaEngine.ChdFlacResidual": "Pozostałość kodowania lub partycji CHD FLAC jest nieprawidłowa."
+  }
+}

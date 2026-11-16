@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "Lebar bit CHD tidak valid.",
+    "MediaEngine.ChdHuffmanParameters": "Cacah simbol CHD Huffman atau lebar maksimal bit tidak valid.",
+    "MediaEngine.ChdHuffmanCode": "Kode CHD Huffman tidak valid.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman lari melebihi tabel simbol.",
+    "MediaEngine.ChdHuffmanTree": "Panjang CHD Huffman, pohon atau tabel pencarian tidak valid.",
+    "MediaEngine.ChdHuffmanTruncated": "Pohon CHD Huffman atau data dipotong.",
+    "MediaEngine.ChdDeflate": "Stream DEFLATE CHD, konsumsi masukan atau ukuran keluaran tidak valid.",
+    "MediaEngine.ChdLzma": "Stream CHD LZMA, konsumsi masukan atau ukuran keluaran tidak valid.",
+    "MediaEngine.ChdZstd": "Bingkai CHD Zstandard, kamus, checksum atau ukuran keluaran tidak valid.",
+    "MediaEngine.ChdFlacBitWidth": "Lebar bit CHD FLAC tidak valid.",
+    "MediaEngine.ChdFlacTruncated": "Aliran CHD FLAC terputus.",
+    "MediaEngine.ChdFlacUnary": "Kode unary CHD FLAC tidak valid.",
+    "MediaEngine.ChdFlacSamples": "Jumlah cuplikan keluaran CHD FLAC tidak valid.",
+    "MediaEngine.ChdFlacFrame": "The CHD FLAC frame sync, parameter atau angka tidak valid.",
+    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC header CRC tidak cocok.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC frame CRC tidak cocok.",
+    "MediaEngine.ChdFlacSubframe": "Tipe subframe CHD FLAC, padding atau bit terbuang tidak valid.",
+    "MediaEngine.ChdFlacPredictor": "Perintah presektor CHD FLAC atau presisi tidak valid.",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC residual coding atau partisi tidak valid."
+  }
+}

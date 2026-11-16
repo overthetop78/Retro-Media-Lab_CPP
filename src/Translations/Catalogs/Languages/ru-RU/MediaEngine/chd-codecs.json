@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "Ширина бита CHD недействительна.",
+    "MediaEngine.ChdHuffmanParameters": "Количество символов CHD Huffman или максимальная ширина бита недействительны.",
+    "MediaEngine.ChdHuffmanCode": "Код CHD Huffman недействителен.",
+    "MediaEngine.ChdHuffmanRun": "Бег CHD Huffman превышает таблицу символов.",
+    "MediaEngine.ChdHuffmanTree": "Длина CHD Huffman, дерево или таблица поиска недействительны.",
+    "MediaEngine.ChdHuffmanTruncated": "Дерево или данные CHD Huffman усечены.",
+    "MediaEngine.ChdDeflate": "Поток CHD DEFLATE, входное потребление или размер выхода недействительны.",
+    "MediaEngine.ChdLzma": "Поток CHD LZMA, входное потребление или размер выхода недействительны.",
+    "MediaEngine.ChdZstd": "Рамка CHD Zstandard, словарь, контрольная сумма или размер вывода недействительны.",
+    "MediaEngine.ChdFlacBitWidth": "Ширина бита CHD FLAC недействительна.",
+    "MediaEngine.ChdFlacTruncated": "Поток CHD FLAC усечен.",
+    "MediaEngine.ChdFlacUnary": "Унарный код CHD FLAC недействителен.",
+    "MediaEngine.ChdFlacSamples": "Количество выходных образцов CHD FLAC является недействительным.",
+    "MediaEngine.ChdFlacFrame": "Синхронизация кадров CHD FLAC, параметры или нумерация недействительны.",
+    "MediaEngine.ChdFlacHeaderCrc": "Заголовок CHD FLAC CRC не совпадает.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC кадр CRC не совпадает.",
+    "MediaEngine.ChdFlacSubframe": "Подкадровый тип CHD FLAC, прокладка или потерянные биты недействительны.",
+    "MediaEngine.ChdFlacPredictor": "Порядок или точность предиктора CHD FLAC недействительны.",
+    "MediaEngine.ChdFlacResidual": "Остаточная кодировка или раздел CHD FLAC недействительны."
+  }
+}

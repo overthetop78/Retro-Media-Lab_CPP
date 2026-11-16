@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "Максимальна ширина CHD недійсна.",
+    "MediaEngine.ChdHuffmanParameters": "Символи CHD Huffman недійсні.",
+    "MediaEngine.ChdHuffmanCode": "CHD Huffman код недійсний.",
+    "MediaEngine.ChdHuffmanRun": "Запуск CHD Huffman перевищує таблицю символів.",
+    "MediaEngine.ChdHuffmanTree": "Довжина CHD Huffman, дерево або стіл для перегляду недійсний.",
+    "MediaEngine.ChdHuffmanTruncated": "Черепаха CHD Huffman або дані обрізаються.",
+    "MediaEngine.ChdDeflate": "CHD DEFLATE потік, споживання вводу або розмір виходу недійсний.",
+    "MediaEngine.ChdLzma": "CHD LZMA потік, споживання вводу або розмір виходу недійсний.",
+    "MediaEngine.ChdZstd": "Рахункова рама CHD Zstandard, словник, контрольний розрахунок або розмір виходу недійсний.",
+    "MediaEngine.ChdFlacBitWidth": "Ширина CHD FLAC недійсна.",
+    "MediaEngine.ChdFlacTruncated": "Потоки CHD FLAC обрізаються.",
+    "MediaEngine.ChdFlacUnary": "Безпосередній код CHD FLAC недійсний.",
+    "MediaEngine.ChdFlacSamples": "Кількість зразків CHD FLAC недійсний.",
+    "MediaEngine.ChdFlacFrame": "Синхрон каркаса CHD FLAC, параметри або число недійсні.",
+    "MediaEngine.ChdFlacHeaderCrc": "Наголовок CHD FLAC CRC не відповідає.",
+    "MediaEngine.ChdFlacFrameCrc": "Рамка CHD FLAC CRC не відповідає.",
+    "MediaEngine.ChdFlacSubframe": "Тип підрамки CHD FLAC, недійсними або зварені біти.",
+    "MediaEngine.ChdFlacPredictor": "Прокуратура CHD FLAC недійсний.",
+    "MediaEngine.ChdFlacResidual": "Відповідна кодування CHD FLAC або перегородка недійсна."
+  }
+}

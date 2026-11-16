@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "เดอะ CHD ความกว้างบิตไม่ถูกต้อง",
+    "MediaEngine.ChdHuffmanParameters": "จํานวนสัญลักษณ์ของ CHD Huffman หรือความกว้างสูงสุดบิตไม่ถูกต้อง",
+    "MediaEngine.ChdHuffmanCode": "เดอะ CHD Huffman รหัสไม่ถูกต้อง",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman วิ่งมากกว่าตารางสัญลักษณ์",
+    "MediaEngine.ChdHuffmanTree": "เดอะ CHD Huffman ความยาว, ตารางมองต้นไม้หรือตารางมองขึ้นไม่ถูกต้อง",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman ต้นไม้หรือข้อมูลถูกบีบให้ทํางาน",
+    "MediaEngine.ChdDeflate": "เดอะ CHD DEFLATE กระแสข้อมูล, การบริโภคหรือขนาดผลลัพธ์ไม่ถูกต้อง",
+    "MediaEngine.ChdLzma": "เดอะ CHD LZMA กระแสข้อมูล, การบริโภคหรือขนาดผลลัพธ์ไม่ถูกต้อง",
+    "MediaEngine.ChdZstd": "เดอะ CHD Zstandard กรอบ, พจนานุกรม, Checkum หรือขนาดผลลัพธ์ไม่ถูกต้อง",
+    "MediaEngine.ChdFlacBitWidth": "เดอะ CHD FLAC ความกว้างบิตไม่ถูกต้อง",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC stream ถูกปรับให้ทํางาน",
+    "MediaEngine.ChdFlacUnary": "รหัสย่อของ CHD FLAC ไม่ถูกต้อง",
+    "MediaEngine.ChdFlacSamples": "หมายเลขตัวอย่าง CHD FLAC ไม่ถูกต้อง",
+    "MediaEngine.ChdFlacFrame": "เดอะ CHD FLAC ปรับเทียบเฟรมภาพ, พารามิเตอร์หรือจํานวนตัวเลขไม่ถูกต้อง",
+    "MediaEngine.ChdFlacHeaderCrc": "เดอะ CHD FLAC หัวกระดาษ CRC ไม่ตรงกัน",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC เฟรม CRC ไม่ตรงกัน",
+    "MediaEngine.ChdFlacSubframe": "ชนิดของเฟรมย่อย CHDFLAC การพับหรือเสียบิตเป็นโมฆะ",
+    "MediaEngine.ChdFlacPredictor": "ลําดับ CHD FLAC หรือความแม่นยําเป็นโมฆะ",
+    "MediaEngine.ChdFlacResidual": "รหัสหรือพาร์ทิชันของ CHD FLAC ไม่ถูกต้อง"
+  }
+}

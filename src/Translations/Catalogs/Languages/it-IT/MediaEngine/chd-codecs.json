@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "La larghezza del bit CHD non è valida.",
+    "MediaEngine.ChdHuffmanParameters": "Il conteggio del simbolo CHD Huffman o la larghezza massima del bit non è valida.",
+    "MediaEngine.ChdHuffmanCode": "Il codice CHD Huffman non è valido.",
+    "MediaEngine.ChdHuffmanRun": "La corsa CHD Huffman supera la tabella dei simboli.",
+    "MediaEngine.ChdHuffmanTree": "Le lunghezze, l'albero o il tavolo di ricerca di CHD Huffman non sono valide.",
+    "MediaEngine.ChdHuffmanTruncated": "L'albero o i dati di CHD Huffman sono troncati.",
+    "MediaEngine.ChdDeflate": "Il flusso CHD DEFLATE, il consumo di ingresso o la dimensione di uscita è invalido.",
+    "MediaEngine.ChdLzma": "Il flusso di CHD LZMA, il consumo di ingresso o la dimensione di uscita non è valido.",
+    "MediaEngine.ChdZstd": "Il telaio CHD Zstandard, dizionario, checksum o dimensione dell'output non è valido.",
+    "MediaEngine.ChdFlacBitWidth": "La larghezza del bit CHD FLAC non è valida.",
+    "MediaEngine.ChdFlacTruncated": "Il flusso CHD FLAC è troncato.",
+    "MediaEngine.ChdFlacUnary": "Il codice unry CHD FLAC non è valido.",
+    "MediaEngine.ChdFlacSamples": "Il conteggio del campione di uscita CHD FLAC non è valido.",
+    "MediaEngine.ChdFlacFrame": "La sincronizzazione del telaio CHD FLAC, i parametri o la numerazione non sono validi.",
+    "MediaEngine.ChdFlacHeaderCrc": "L'intestazione CHD FLAC CRC non corrisponde.",
+    "MediaEngine.ChdFlacFrameCrc": "Il telaio CHD FLAC CRC non corrisponde.",
+    "MediaEngine.ChdFlacSubframe": "Il tipo di sottotelaio CHD FLAC, l'imbottitura o i bit sprecati non sono validi.",
+    "MediaEngine.ChdFlacPredictor": "L'ordine o la precisione del predittore CHD FLAC non sono valide.",
+    "MediaEngine.ChdFlacResidual": "La codifica o la partizione residua CHD FLAC non è valida."
+  }
+}

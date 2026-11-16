@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "רוחב ה- CHD הוא לא חוקי.",
+    "MediaEngine.ChdHuffmanParameters": "ספירת סמל CHD Huffman או רוחב סיביות מקסימלי הוא לא חוקי.",
+    "MediaEngine.ChdHuffmanCode": "הקוד CHD Huffman הוא בלתי חוקי.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman רץ מעל שולחן הסמל.",
+    "MediaEngine.ChdHuffmanTree": "אורך ה-CHD Huffman, עץ או שולחן תצפית הם חסרי ערך.",
+    "MediaEngine.ChdHuffmanTruncated": "עץ ה-CHD Huffman או נתונים ננקטים.",
+    "MediaEngine.ChdDeflate": "זרם CHD DEFLATE, צריכת קלט או גודל הפלט הוא לא חוקי.",
+    "MediaEngine.ChdLzma": "זרם CHD LZMA, צריכת קלט או גודל הפלט הוא לא חוקי.",
+    "MediaEngine.ChdZstd": "מסגרת CHD Zstandard, המילון, המחאות או גודל הפלט הוא לא חוקי.",
+    "MediaEngine.ChdFlacBitWidth": "רוחב ה- CHDFLAC אינו חוקי.",
+    "MediaEngine.ChdFlacTruncated": "זרם ה-CHDFLAC נפרץ.",
+    "MediaEngine.ChdFlacUnary": "קוד CHD FLAC אינו חוקי.",
+    "MediaEngine.ChdFlacSamples": "ספירת הפלט CHD FLAC היא לא חוקית.",
+    "MediaEngine.ChdFlacFrame": "מסגרת CHD FLAC מסנכרן, פרמטרים או מספר אינם חוקיים.",
+    "MediaEngine.ChdFlacHeaderCrc": "מנהל ה-CHDFLAC CRC אינו מתאים.",
+    "MediaEngine.ChdFlacFrameCrc": "CHD FLAC מסגרת CRC אינה מתאימה.",
+    "MediaEngine.ChdFlacSubframe": "סוג CHD FLAC subframe, padding או פיסות מבוזבזות הם חסרי ערך.",
+    "MediaEngine.ChdFlacPredictor": "סדר החיזוי של CHD FLAC או הדיוק אינו חוקי.",
+    "MediaEngine.ChdFlacResidual": "קידוד CHD FLAC או החלוקה אינם חוקיים."
+  }
+}

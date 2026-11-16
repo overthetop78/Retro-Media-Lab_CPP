@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "De CHD bit breedte is ongeldig.",
+    "MediaEngine.ChdHuffmanParameters": "De CHD Huffman-symbooltelling of maximale bitbreedte is ongeldig.",
+    "MediaEngine.ChdHuffmanCode": "De CHD Huffman code is ongeldig.",
+    "MediaEngine.ChdHuffmanRun": "De CHD Huffman-run overtreft de symbooltabel.",
+    "MediaEngine.ChdHuffmanTree": "De CHD Huffman lengtes, boom of opzoektabel zijn ongeldig.",
+    "MediaEngine.ChdHuffmanTruncated": "De CHD Huffman boom of gegevens worden ingekort.",
+    "MediaEngine.ChdDeflate": "De CHD DEFLATE stroom, input verbruik of output grootte is ongeldig.",
+    "MediaEngine.ChdLzma": "De CHD LZMA stream, input verbruik of output grootte is ongeldig.",
+    "MediaEngine.ChdZstd": "Het CHD Zstandard frame, woordenboek, checksum of uitvoergrootte is ongeldig.",
+    "MediaEngine.ChdFlacBitWidth": "De CHD FLAC bit breedte is ongeldig.",
+    "MediaEngine.ChdFlacTruncated": "De CHD FLAC stroom is afgekapt.",
+    "MediaEngine.ChdFlacUnary": "De CHD FLAC unary code is ongeldig.",
+    "MediaEngine.ChdFlacSamples": "Het aantal CHD FLAC-uitvoermonsters is ongeldig.",
+    "MediaEngine.ChdFlacFrame": "De CHD FLAC-framesynchronisatie, parameters of nummering zijn ongeldig.",
+    "MediaEngine.ChdFlacHeaderCrc": "De CHD FLAC header CRC komt niet overeen.",
+    "MediaEngine.ChdFlacFrameCrc": "Het CHD FLAC frame CRC komt niet overeen.",
+    "MediaEngine.ChdFlacSubframe": "De CHD FLAC subframe type, padding of verspilde bits zijn ongeldig.",
+    "MediaEngine.ChdFlacPredictor": "De CHD FLAC voorspeller orde of precisie is ongeldig.",
+    "MediaEngine.ChdFlacResidual": "De CHD FLAC restcodering of partitie is ongeldig."
+  }
+}

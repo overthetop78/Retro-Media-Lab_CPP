@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "A largura de bits CHD é inválida.",
+    "MediaEngine.ChdHuffmanParameters": "A contagem de símbolos CHD Huffman ou largura máxima de bits é inválida.",
+    "MediaEngine.ChdHuffmanCode": "O código CHD Huffman é inválido.",
+    "MediaEngine.ChdHuffmanRun": "A execução CHD Huffman excede a tabela de símbolos.",
+    "MediaEngine.ChdHuffmanTree": "Os comprimentos CHD Huffman, árvore ou tabela de pesquisa são inválidos.",
+    "MediaEngine.ChdHuffmanTruncated": "A árvore ou os dados do CHD Huffman são truncados.",
+    "MediaEngine.ChdDeflate": "O fluxo CHD DEFLATE, consumo de entrada ou tamanho de saída é inválido.",
+    "MediaEngine.ChdLzma": "O fluxo CHD LZMA, consumo de entrada ou tamanho de saída é inválido.",
+    "MediaEngine.ChdZstd": "O quadro CHD Zstandard, dicionário, soma de verificação ou tamanho de saída é inválido.",
+    "MediaEngine.ChdFlacBitWidth": "A largura de bits CHD FLAC é inválida.",
+    "MediaEngine.ChdFlacTruncated": "O fluxo CHD FLAC é truncado.",
+    "MediaEngine.ChdFlacUnary": "O código unário CHD FLAC é inválido.",
+    "MediaEngine.ChdFlacSamples": "A contagem da amostra de saída CHD FLAC é inválida.",
+    "MediaEngine.ChdFlacFrame": "A sincronização, parâmetros ou numeração do quadro do CHD FLAC são inválidos.",
+    "MediaEngine.ChdFlacHeaderCrc": "O CRC do cabeçalho CHD FLAC não corresponde.",
+    "MediaEngine.ChdFlacFrameCrc": "O quadro CRC do CHD FLAC não corresponde.",
+    "MediaEngine.ChdFlacSubframe": "O tipo de subframe CHD FLAC, enchimento ou bits desperdiçados são inválidos.",
+    "MediaEngine.ChdFlacPredictor": "A ordem ou precisão preditora de CHD FLAC é inválida.",
+    "MediaEngine.ChdFlacResidual": "A codificação ou partição residual CHD FLAC é inválida."
+  }
+}
