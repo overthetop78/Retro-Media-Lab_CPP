@@ -1,23 +1,23 @@
 {
   "strings": {
     "MediaEngine.ChdBitWidth": "CHD bit genişlik geçersizdir.",
-    "MediaEngine.ChdHuffmanParameters": "CHD Huffman sembolü veya maksimum biraz genişlik geçersizdir.",
+    "MediaEngine.ChdHuffmanParameters": "CHD Huffman sembol sayısı veya azami bit genişliği geçersizdir.",
     "MediaEngine.ChdHuffmanCode": "CHD Huffman kodu geçersizdir.",
-    "MediaEngine.ChdHuffmanRun": "CHD Huffman sembolü masayı aşıyor.",
-    "MediaEngine.ChdHuffmanTree": "CHD Huffman uzunlukları, ağaç veya göz masası geçersizdir.",
-    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman ağacı ya da veriler alıcıdır.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman tekrar dizisi sembol tablosunu aşıyor.",
+    "MediaEngine.ChdHuffmanTree": "CHD Huffman kod uzunlukları, ağacı veya arama tablosu geçersizdir.",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman ağacı veya verileri kesilmiştir.",
     "MediaEngine.ChdDeflate": "CHD DEFLATE akışı, giriş tüketimi veya çıkış boyutu geçersizdir.",
     "MediaEngine.ChdLzma": "CHD LZMA akışı, giriş tüketimi veya çıkış boyutu geçersizdir.",
-    "MediaEngine.ChdZstd": "CHD Zstandard çerçevesi, sözlük, çek veya çıkış boyutu geçersizdir.",
-    "MediaEngine.ChdFlacBitWidth": "CHD FLAC biraz genişlik geçersizdir.",
-    "MediaEngine.ChdFlacTruncated": "CHD FLAC akışı kodlanmış.",
+    "MediaEngine.ChdZstd": "CHD Zstandard çerçevesi, sözlük, sağlama toplamı veya çıktı boyutu geçersizdir.",
+    "MediaEngine.ChdFlacBitWidth": "CHD FLAC bit genişliği geçersizdir.",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC akışı kesilmiştir.",
     "MediaEngine.ChdFlacUnary": "CHD FLAC unary kodu geçersizdir.",
     "MediaEngine.ChdFlacSamples": "CHD FLAC çıktı örneği sayısı geçersizdir.",
     "MediaEngine.ChdFlacFrame": "CHD FLAC çerçeve senkronizasyonu, parametreler veya numaralama geçersizdir.",
-    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC Title CRC eşleşmez.",
+    "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC başlık CRC değeri eşleşmiyor.",
     "MediaEngine.ChdFlacFrameCrc": "CHD FLAC çerçevesi CRC eşleşmez.",
-    "MediaEngine.ChdFlacSubframe": "CHD FLAC alt boyut türü, . veya boşanmış bitler geçersizdir.",
-    "MediaEngine.ChdFlacPredictor": "CHD FLAC öngörülebilir veya hassastır.",
-    "MediaEngine.ChdFlacResidual": "CHD FLAC canlı kodlama veya bölüm geçersizdir."
+    "MediaEngine.ChdFlacSubframe": "CHD FLAC alt çerçeve türü, dolgu veya kullanılmayan bitler geçersizdir.",
+    "MediaEngine.ChdFlacPredictor": "CHD FLAC öngörücü derecesi veya hassasiyeti geçersizdir.",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC artık kodlaması veya bölümlendirmesi geçersizdir."
   }
 }

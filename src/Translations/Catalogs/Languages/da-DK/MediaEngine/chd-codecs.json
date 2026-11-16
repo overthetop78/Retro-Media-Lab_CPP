@@ -1,9 +1,9 @@
 {
   "strings": {
     "MediaEngine.ChdBitWidth": "CHD bit bredden er ugyldig.",
-    "MediaEngine.ChdHuffmanParameters": "CHD Huffman symbolet tæller eller maksimal bit bredde er ugyldig.",
+    "MediaEngine.ChdHuffmanParameters": "Antallet af CHD Huffman-symboler eller den maksimale bitbredde er ugyldig.",
     "MediaEngine.ChdHuffmanCode": "CHD Huffman koden er ugyldig.",
-    "MediaEngine.ChdHuffmanRun": "CHD Huffman-løbet overstiger symbolbordet.",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman-gentagelsen overskrider symboltabellen.",
     "MediaEngine.ChdHuffmanTree": "CHD Huffman længder, træ eller opslag bord er ugyldige.",
     "MediaEngine.ChdHuffmanTruncated": "CHD Huffman træet eller data er afkortet.",
     "MediaEngine.ChdDeflate": "CHD DEFLATE strømmen, input forbrug eller output størrelse er ugyldig.",
@@ -12,7 +12,7 @@
     "MediaEngine.ChdFlacBitWidth": "CHD FLAC bitbredden er ugyldig.",
     "MediaEngine.ChdFlacTruncated": "CHD FLAC-strømmen er afkortet.",
     "MediaEngine.ChdFlacUnary": "CHD FLAC unary kode er ugyldig.",
-    "MediaEngine.ChdFlacSamples": "CHD FLAC-udgangstællingen er ugyldig.",
+    "MediaEngine.ChdFlacSamples": "Antallet af CHD FLAC-outputprøver er ugyldigt.",
     "MediaEngine.ChdFlacFrame": "CHD FLAC frame sync, parametre eller nummerering er ugyldige.",
     "MediaEngine.ChdFlacHeaderCrc": "CHD FLAC header CRC matcher ikke.",
     "MediaEngine.ChdFlacFrameCrc": "CHD FLAC-rammen CRC matcher ikke.",

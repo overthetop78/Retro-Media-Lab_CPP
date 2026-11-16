@@ -1,23 +1,23 @@
 {
   "strings": {
     "MediaEngine.ChdBitWidth": "Chiều rộng bit CHD không hợp lệ.",
-    "MediaEngine.ChdHuffmanParameters": "Số hiệu biểu tượng CHD Huffman hoặc chiều rộng tối đa là không hợp lệ.",
+    "MediaEngine.ChdHuffmanParameters": "Số lượng ký hiệu CHD Huffman hoặc độ rộng bit tối đa không hợp lệ.",
     "MediaEngine.ChdHuffmanCode": "Mã CHD Huffman không dùng được.",
-    "MediaEngine.ChdHuffmanRun": "CHD Huffman chạy vượt qua bảng biểu tượng.",
+    "MediaEngine.ChdHuffmanRun": "Chuỗi lặp CHD Huffman vượt quá bảng ký hiệu.",
     "MediaEngine.ChdHuffmanTree": "Chiều dài của CHD Huffman, cây hoặc bảng tìm kiếm không hợp lệ.",
     "MediaEngine.ChdHuffmanTruncated": "Cây hay dữ liệu CHD Huffman bị cắt đứt.",
-    "MediaEngine.ChdDeflate": "Hạt CHD DEFLATE luồng, dữ liệu nhập hoặc kích cỡ xuất không hợp lệ.",
-    "MediaEngine.ChdLzma": "Dòng CHD LZMA, tiêu thụ hoặc đầu ra không hợp lệ.",
-    "MediaEngine.ChdZstd": "Hạt CHD Zstandard khung, từ điển, tổng kiểm tra hoặc kích cỡ xuất không hợp lệ.",
-    "MediaEngine.ChdFlacBitWidth": "Độ rộng CHD FLAC không hợp lệ.",
+    "MediaEngine.ChdDeflate": "Luồng CHD DEFLATE, lượng dữ liệu đầu vào đã dùng hoặc kích thước đầu ra không hợp lệ.",
+    "MediaEngine.ChdLzma": "Luồng CHD LZMA, lượng dữ liệu đầu vào đã dùng hoặc kích thước đầu ra không hợp lệ.",
+    "MediaEngine.ChdZstd": "Khung CHD Zstandard, từ điển, tổng kiểm tra hoặc kích thước đầu ra không hợp lệ.",
+    "MediaEngine.ChdFlacBitWidth": "Độ rộng bit CHD FLAC không hợp lệ.",
     "MediaEngine.ChdFlacTruncated": "Dòng CHD FLAC bị đứt.",
-    "MediaEngine.ChdFlacUnary": "Mã số CHD FLAC không hợp lệ.",
-    "MediaEngine.ChdFlacSamples": "Kiểm tra kết xuất CHD FLAC không hợp lệ.",
+    "MediaEngine.ChdFlacUnary": "Mã đơn phân CHD FLAC không hợp lệ.",
+    "MediaEngine.ChdFlacSamples": "Số lượng mẫu đầu ra CHD FLAC không hợp lệ.",
     "MediaEngine.ChdFlacFrame": "Đồng bộ hoá khung CHD FLAC, tham số hay số không hợp lệ.",
-    "MediaEngine.ChdFlacHeaderCrc": "Hạt CHD FLAC đầu trang CRC không khớp.",
-    "MediaEngine.ChdFlacFrameCrc": "Hạt CHD FLAC khung CRC không khớp.",
-    "MediaEngine.ChdFlacSubframe": "Kiểu khung phụ CHD FLAC không hợp lệ.",
-    "MediaEngine.ChdFlacPredictor": "Bộ tiên đoán hay độ chính xác CHD FLAC không hợp lệ.",
-    "MediaEngine.ChdFlacResidual": "Mã hoặc phân vùng CHD FLAC không hợp lệ."
+    "MediaEngine.ChdFlacHeaderCrc": "CRC của phần đầu CHD FLAC không khớp.",
+    "MediaEngine.ChdFlacFrameCrc": "CRC của khung CHD FLAC không khớp.",
+    "MediaEngine.ChdFlacSubframe": "Kiểu khung con CHD FLAC, phần đệm hoặc các bit không sử dụng không hợp lệ.",
+    "MediaEngine.ChdFlacPredictor": "Bậc hoặc độ chính xác của bộ dự đoán CHD FLAC không hợp lệ.",
+    "MediaEngine.ChdFlacResidual": "Mã hóa phần dư hoặc phân vùng CHD FLAC không hợp lệ."
   }
 }

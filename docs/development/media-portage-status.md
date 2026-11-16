@@ -38,6 +38,8 @@ La tâche 147 porte VMDK monolithicFlat et monolithicSparse autonomes : analyse 
 
 La tâche 148 porte VHDX autonome Fixed/Dynamic, la primitive partagée CRC32C, les structures redondantes, GUID natifs, métadonnées, secteurs 512/4096 et états BAT. Les journaux actifs et parents nécessitant des résolveurs absents, ainsi que les blocs partiellement présents, restent refusés comme en C#. Compilation et contrôle ciblé réussis.
 
+La tâche 149 termine les codecs communs CHD : MSB/Huffman, DEFLATE brut, LZMA, Zstandard et FLAC sans STREAMINFO, avec réutilisation des bibliothèques natives embarquées. Compilation, contrôle ciblé, audit et catalogues réussis ; conteneur et intégration CHD restent à faire.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

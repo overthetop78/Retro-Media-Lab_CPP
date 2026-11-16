@@ -268,20 +268,20 @@ MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Audio/Vorbis/Vor
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Audio/Vorbis/VorbisTransform.cs,37,7d46c133ebcf4ae844727cdce174669a13bc06333888996ef1b0bdac05395433,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Audio/Vorbis/VorbisTransform.Operations.cs,693,aef26c21c5a51fca362b714ed54f48463f27781bc499f6665fe8b68398055612,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Audio/Vorbis/VorbisTransform.Tables.cs,363,c554452eb74efbfcca74d2d23a8eda5fc17bdad59078d39f1b07a045422f526a,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdBitstream.cs,42,dcfdad8c2dd05675760c063af55d67635a0509350a8f9de116c1733b27b690e0,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdBitstream.cs,42,dcfdad8c2dd05675760c063af55d67635a0509350a8f9de116c1733b27b690e0,porte,,src/MediaEngine/src/Formats/Common/Chd/Bitstream.h
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdContainer.Codecs.cs,128,7d9cd04080249d9a8be6ce62ab2adc2cf0b185be80d07f6c852af44d2288aa6e,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdContainer.cs,227,28d3620fc0c587024d560b8601f9e3360d07ecbc1c4c3187d37987a3bc276282,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdContainer.EccTables.cs,325,d70fc87100f4d298606e329cd19b42161413e0034afa335569f703161ae32be8,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdContainer.Map.cs,68,a4e800f049fae2bc58e287bedc5c541442603a1b8e046cb51feef3d1512ce0e4,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdDeflate.cs,159,ad1df29fbfa06dcedd102445a02976902d91b5246c94d7ba991419e5721c376f,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdFlac.cs,200,2793f9b222930403d517b4f4200466e6acce2ee685492335382df3dc26af5c4b,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdHuffman.cs,112,093037248bb2fccddffcaf6aa857ceed009d40a9ff69d0331326c2434ee8f22f,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdLzma.cs,190,612d09cebd30b1da9edf5c71fc74c46c3b615e0c4cb907ea8a843d752b48b3fc,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Checksum.cs,50,d5f0ccc37148d2827b59cfdfebe6910cd1338bf8aaf38341d291e75cb0089f72,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.cs,166,865ad752428850ccfaaa06b01ad95e09b7e8fbabced5fc3bc019b4f63d27a673,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Entropy.cs,169,eabbf69665426abe06a81e1e832248f16ded331a0fabc25b0284c4859861709b,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Literals.cs,111,89d3bc7e01642819574f5f0281b79dfa19a581c7d673dd8cec1fd4d5f08a6bc7,non porte,,
-MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Tables.cs,70,551921464caadf3a9ca35f39716af038212d521969c062f21fe15af3c81eb58e,non porte,,
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdDeflate.cs,159,ad1df29fbfa06dcedd102445a02976902d91b5246c94d7ba991419e5721c376f,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdFlac.cs,200,2793f9b222930403d517b4f4200466e6acce2ee685492335382df3dc26af5c4b,porte,,src/MediaEngine/src/Formats/Common/Chd/Flac.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdHuffman.cs,112,093037248bb2fccddffcaf6aa857ceed009d40a9ff69d0331326c2434ee8f22f,porte,,src/MediaEngine/src/Formats/Common/Chd/Huffman.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdLzma.cs,190,612d09cebd30b1da9edf5c71fc74c46c3b615e0c4cb907ea8a843d752b48b3fc,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Checksum.cs,50,d5f0ccc37148d2827b59cfdfebe6910cd1338bf8aaf38341d291e75cb0089f72,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.cs,166,865ad752428850ccfaaa06b01ad95e09b7e8fbabced5fc3bc019b4f63d27a673,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Entropy.cs,169,eabbf69665426abe06a81e1e832248f16ded331a0fabc25b0284c4859861709b,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Literals.cs,111,89d3bc7e01642819574f5f0281b79dfa19a581c7d673dd8cec1fd4d5f08a6bc7,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
+MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Common/Chd/ChdZstd.Tables.cs,70,551921464caadf3a9ca35f39716af038212d521969c062f21fe15af3c81eb58e,remplace par bibliotheque native embarquee,,src/MediaEngine/src/Formats/Common/Chd/Compression.cpp
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Detection/AdfImageFormatDetectionRule.cs,83,a30b4fe7a068a545fe369f4aee9cc3b5900082f8ffa64a8e67cadcdc40ba6095,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Detection/AppleImageFormatDetectionRule.cs,17,1a0a5fa8b1e8e673e6537cc98befe44e01bc4af3d683927ffe917fc81233b6f6,non porte,,
 MediaEngine,src/RetroMediaLab.MediaEngine/Images/Formats/Detection/AtariImageFormatDetectionRule.cs,72,060dd743ca210fa1cedb6aeb3d799439f7a8cd63b79d64e55596c1f6a9c5d833,non porte,,

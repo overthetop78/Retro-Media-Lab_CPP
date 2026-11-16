@@ -3,21 +3,21 @@
     "MediaEngine.ChdBitWidth": "CHDビット幅は無効です。",
     "MediaEngine.ChdHuffmanParameters": "CHD Huffmanのシンボルカウントまたは最大ビット幅が無効です。",
     "MediaEngine.ChdHuffmanCode": "CHD Huffmanコードは無効です。",
-    "MediaEngine.ChdHuffmanRun": "CHD Huffmanはシンボルテーブルを上回ります。",
+    "MediaEngine.ChdHuffmanRun": "CHD Huffman の繰り返しがシンボルテーブルの範囲を超えています。",
     "MediaEngine.ChdHuffmanTree": "CHD Huffmanの長さ、ツリーまたはルックアップテーブルは無効です。",
-    "MediaEngine.ChdHuffmanTruncated": "CHD Huffmanツリーまたはデータは切り捨てられます。",
+    "MediaEngine.ChdHuffmanTruncated": "CHD Huffman のツリーまたはデータが途中で切れています。",
     "MediaEngine.ChdDeflate": "CHD DEFLATEストリーム、入力消費量、出力サイズが無効です。",
     "MediaEngine.ChdLzma": "CHD LZMA ストリーム、入力消費量、出力サイズが無効です。",
     "MediaEngine.ChdZstd": "CHD Zstandardフレーム、辞書、チェックサムまたは出力サイズが無効です。",
     "MediaEngine.ChdFlacBitWidth": "CHD FLACビット幅は無効です。",
-    "MediaEngine.ChdFlacTruncated": "CHD FLAC ストリームはトランセンシングされます。",
-    "MediaEngine.ChdFlacUnary": "CHD FLACのコードが無効です。",
+    "MediaEngine.ChdFlacTruncated": "CHD FLAC ストリームが途中で切れています。",
+    "MediaEngine.ChdFlacUnary": "CHD FLAC の単進符号が無効です。",
     "MediaEngine.ChdFlacSamples": "CHD FLAC出力サンプルカウントは無効です。",
     "MediaEngine.ChdFlacFrame": "CHD FLACフレームの同期、パラメータまたは番号付けは無効です。",
     "MediaEngine.ChdFlacHeaderCrc": "CHD FLACヘッダーCRCは一致しません。",
     "MediaEngine.ChdFlacFrameCrc": "CHD FLACフレームCRCは一致しません。",
     "MediaEngine.ChdFlacSubframe": "CHD FLACサブフレームタイプ、パディング、または無駄なビットは無効です。",
-    "MediaEngine.ChdFlacPredictor": "CHD FLACの予測値または精度が無効です。",
-    "MediaEngine.ChdFlacResidual": "CHD FLAC の残りのコーディングか仕切りは無効です。"
+    "MediaEngine.ChdFlacPredictor": "CHD FLAC の予測器の次数または精度が無効です。",
+    "MediaEngine.ChdFlacResidual": "CHD FLAC の残差符号化またはパーティションが無効です。"
   }
 }

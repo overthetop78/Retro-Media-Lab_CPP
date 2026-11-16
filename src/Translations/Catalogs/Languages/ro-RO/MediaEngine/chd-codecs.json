@@ -1,23 +1,23 @@
 {
   "strings": {
     "MediaEngine.ChdBitWidth": "Lățimea bitului CHD este invalidă.",
-    "MediaEngine.ChdHuffmanParameters": "Simbolul CHD Huffman numără sau lățimea maximă a bitului este invalidă.",
+    "MediaEngine.ChdHuffmanParameters": "Numărul de simboluri CHD Huffman sau lățimea maximă în biți este invalidă.",
     "MediaEngine.ChdHuffmanCode": "Codul CHD Huffman este invalid.",
     "MediaEngine.ChdHuffmanRun": "Rularea CHD Huffman depășește tabelul simbol.",
     "MediaEngine.ChdHuffmanTree": "Lungimile CHD Huffman, copac sau tabel de cautare sunt invalide.",
     "MediaEngine.ChdHuffmanTruncated": "Arborele sau datele CHD Huffman sunt trunchiate.",
     "MediaEngine.ChdDeflate": "Fluxul CHD DEFLATE, consumul de intrare sau dimensiunea de ieșire este invalidă.",
     "MediaEngine.ChdLzma": "Fluxul CHD LZMA, consumul de intrare sau dimensiunea de ieșire este invalidă.",
-    "MediaEngine.ChdZstd": "Cadrul CHD Zstandard, dicționar, control sau dimensiunea de ieșire este invalidă.",
+    "MediaEngine.ChdZstd": "Cadrul CHD Zstandard, dicționarul, suma de control sau dimensiunea ieșirii este invalidă.",
     "MediaEngine.ChdFlacBitWidth": "Lăţimea de biţi CHD FLAC este invalidă.",
     "MediaEngine.ChdFlacTruncated": "Fluxul CHD FLAC este trunchiat.",
     "MediaEngine.ChdFlacUnary": "Codul UNAR CHD FLAC este invalid.",
     "MediaEngine.ChdFlacSamples": "Numărul de eșantioane de ieșire CHD FLAC este invalid.",
     "MediaEngine.ChdFlacFrame": "Sincronizarea cadrului CHD FLAC, parametrii sau numerotarea sunt invalide.",
-    "MediaEngine.ChdFlacHeaderCrc": "ă CHD FLAC antet CRC Nu se potriveşte.",
+    "MediaEngine.ChdFlacHeaderCrc": "CRC al antetului CHD FLAC nu corespunde.",
     "MediaEngine.ChdFlacFrameCrc": "Cadrul CHD FLAC CRC nu se potrivește.",
-    "MediaEngine.ChdFlacSubframe": "Tipul de subframe CHD FLAC, de umplutură sau de deșeuri sunt invalide.",
+    "MediaEngine.ChdFlacSubframe": "Tipul subcadrului CHD FLAC, umplerea sau biții neutilizați sunt invalizi.",
     "MediaEngine.ChdFlacPredictor": "Ordinea sau precizia predictorului CHD FLAC este invalidă.",
-    "MediaEngine.ChdFlacResidual": "Codificarea reziduală CHD FLAC este invalidă."
+    "MediaEngine.ChdFlacResidual": "Codificarea reziduurilor sau partiționarea CHD FLAC este invalidă."
   }
 }
