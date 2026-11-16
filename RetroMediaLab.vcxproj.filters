@@ -127,6 +127,9 @@
     <Filter Include="src\MediaEngine\Assets">
       <UniqueIdentifier>{5490A3A9-9538-5463-B201-CD68A8852EB5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\Assets\DiskDefinitions">
+      <UniqueIdentifier>{FFBC9EEC-A17A-55EB-A0AA-D729231350D4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\Assets\MechanicalAudio">
       <UniqueIdentifier>{17F5AFC8-39B9-5B0A-A162-8934DD280F84}</UniqueIdentifier>
     </Filter>
@@ -2700,6 +2703,9 @@
     <ClCompile Include="src\MediaAnalysis\src\Recognition.cpp">
       <Filter>src\MediaAnalysis\src</Filter>
     </ClCompile>
+    <None Include="src\MediaEngine\Assets\DiskDefinitions\built-in.cfg">
+      <Filter>src\MediaEngine\Assets\DiskDefinitions</Filter>
+    </None>
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Floppy\Alps Electric\DF354H148F\Disk-eject.flac">
       <Filter>src\MediaEngine\Assets\MechanicalAudio\Floppy\Alps Electric\DF354H148F</Filter>
     </None>
@@ -7983,6 +7989,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\AudioConversion.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\BuiltInDiskDefinitions.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ConversionConstants.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -9515,6 +9524,12 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\CpcDsk\WriterAdapter.h">
       <Filter>src\MediaEngine\src\Formats\CpcDsk</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Definitions\BuiltInArguments.cpp">
+      <Filter>src\MediaEngine\src\Formats\Definitions</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Definitions\BuiltInConstants.h">
+      <Filter>src\MediaEngine\src\Formats\Definitions</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Definitions\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Definitions</Filter>

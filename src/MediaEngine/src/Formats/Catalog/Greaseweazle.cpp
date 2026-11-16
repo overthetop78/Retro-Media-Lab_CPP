@@ -6,6 +6,7 @@
 #include "../Hfe/Constants.h"
 #include "../../Primitives/Identifiers.h"
 #include <RetroMediaLab/MediaEngine/GwFormatCapabilities.h>
+#include <RetroMediaLab/MediaEngine/BuiltInDiskDefinitions.h>
 #include <QRegularExpression>
 #include <QStringList>
 #include <algorithm>
@@ -60,7 +61,6 @@ DiskFormat discovered(const std::string& id,const Ids& supported){
     // Discovered names and suffix labels are technical invariants, not localized UI captions.
     return result;
 }
-bool builtInDefinition(std::string_view id){return std::any_of(C::BuiltInDefinitions.begin(),C::BuiltInDefinitions.end(),[&](auto known){return Primitives::ordinalIdentifierEqualsIgnoreCase(id,known);});}
 }
 GwFormatCapabilities parseGwReadHelp(std::string_view output){
     const auto text=qtext(output);if(text.trimmed().isEmpty())return {};
@@ -80,7 +80,7 @@ std::vector<DiskFormat> capabilityAwareImageFormats(std::span<const DiskFormat> 
     for(auto& format:result){
         known.insert(format.id);if(!format.supportsPhysicalRead&&!format.supportsPhysicalWrite)continue;
         const auto argument=gwFormatArgument(format.id);
-        const bool supported=format.id==Scp::Constants::FormatId||format.id==Hfe::Constants::FormatId||builtInDefinition(format.id)||(argument&&ids.contains(*argument));
+        const bool supported=format.id==Scp::Constants::FormatId||format.id==Hfe::Constants::FormatId||supportsBuiltInDiskDefinition(format.id)||(argument&&ids.contains(*argument));
         format.supportsPhysicalRead&=supported;format.supportsPhysicalWrite&=supported;
     }
     for(const auto& id:ids)if(!known.contains(id)){auto format=discovered(id,extensions);if(!format.extensions.empty())result.push_back(std::move(format));}

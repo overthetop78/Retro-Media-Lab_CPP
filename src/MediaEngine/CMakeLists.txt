@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Formats/Definitions/BuiltInArguments.cpp
     src/Images/Optical/SessionOpening.cpp
     src/Images/Conversion/AtrPayload.cpp
     src/Formats/I86f/SectorReader.cpp
@@ -684,3 +685,6 @@ else()
 endif()
 
 install(DIRECTORY Assets/MechanicalAudio DESTINATION Assets)
+
+configure_file(Assets/DiskDefinitions/built-in.cfg "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Assets/DiskDefinitions/built-in.cfg" COPYONLY)
+install(FILES Assets/DiskDefinitions/built-in.cfg DESTINATION Assets/DiskDefinitions)

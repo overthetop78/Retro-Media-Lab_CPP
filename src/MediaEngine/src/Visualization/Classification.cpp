@@ -1,6 +1,6 @@
 #include <RetroMediaLab/MediaEngine/DiskClassification.h>
 #include "ClassificationConstants.h"
-#include "../Formats/Catalog/Constants.h"
+#include <RetroMediaLab/MediaEngine/BuiltInDiskDefinitions.h>
 #include "../Formats/Definitions/Constants.h"
 #include "../Formats/Scp/Constants.h"
 #include "../Primitives/Identifiers.h"
@@ -24,6 +24,6 @@ bool canConvertToScpForVisualization(const std::filesystem::path& path,const Dis
  if(!capabilities.isKnown())return false;const auto suffix=Primitives::pathExtension(path);const auto& supported=capabilities.imageExtensions;
  if(same(suffix,C::Dsk)||same(suffix,C::Edsk))return contains(supported,suffix)&&contains(supported,Scp::Constants::Extension);
  if(!format)return false;if(same(suffix,C::Atr))return (format->id==Formats::Atari90||format->id==Formats::Atari130)&&contains(capabilities.formatIds,format->id)&&contains(supported,Definitions::Constants::RawExtension)&&contains(supported,Scp::Constants::Extension);
- const auto argument=gwFormatArgument(format->id);return !same(suffix,Scp::Constants::Extension)&&argument&&(contains(capabilities.formatIds,*argument)||contains(CatalogConstants::BuiltInDefinitions,format->id))&&contains(supported,suffix)&&contains(supported,Scp::Constants::Extension);
+ const auto argument=gwFormatArgument(format->id);return !same(suffix,Scp::Constants::Extension)&&argument&&(contains(capabilities.formatIds,*argument)||supportsBuiltInDiskDefinition(format->id))&&contains(supported,suffix)&&contains(supported,Scp::Constants::Extension);
 }
 }

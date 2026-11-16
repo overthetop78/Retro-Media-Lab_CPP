@@ -217,6 +217,7 @@
     <ClInclude Include="src\MediaAnalysis\src\Constants\RecognitionConstants.h" />
     <ClInclude Include="src\MediaAnalysis\src\Constants\Signatures.h" />
     <ClCompile Include="src\MediaAnalysis\src\Recognition.cpp" />
+    <None Include="src\MediaEngine\Assets\DiskDefinitions\built-in.cfg" />
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Floppy\Alps Electric\DF354H148F\Disk-eject.flac" />
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Floppy\Alps Electric\DF354H148F\Disk-insert.flac" />
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Floppy\Alps Electric\DF354H148F\Motor-running.flac" />
@@ -1978,6 +1979,7 @@
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Tape\Unidentified\Tape-player\Tape-insert.flac" />
     <None Include="src\MediaEngine\CMakeLists.txt" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\AudioConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\BuiltInDiskDefinitions.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ConversionConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ConversionPlanning.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h" />
@@ -2489,6 +2491,8 @@
     <ClCompile Include="src\MediaEngine\src\Formats\CpcDsk\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CpcDsk\WriterAdapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\CpcDsk\WriterAdapter.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Definitions\BuiltInArguments.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Definitions\BuiltInConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Definitions\Constants.h" />
     <None Include="src\MediaEngine\src\Formats\Definitions\Data\diskdefs.cfg" />
     <None Include="src\MediaEngine\src\Formats\Definitions\Data\diskdefs_acorn.cfg" />
