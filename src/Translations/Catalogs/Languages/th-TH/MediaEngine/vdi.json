@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "ไม่สามารถเปลี่ยนตำแหน่งในแฟ้มส่งออกชั่วคราวของ {0} ได้",
+    "MediaEngine.VdiShortHeader": "แฟ้มนี้สั้นเกินที่จะบรรจุส่วนหัวแบบ VDI",
+    "MediaEngine.VdiSignature": "ไม่พบลายเซ็น VDI",
+    "MediaEngine.VdiVersion": "ไม่สนับสนุนรุ่นของ VDI {0}",
+    "MediaEngine.VdiType": "ไม่รองรับชนิดอิมเมจ VDI {0}",
+    "MediaEngine.VdiOffsets": "ส่วนหัวแบบ VDI หรือปรับค่าข้อมูลไม่ถูกต้อง",
+    "MediaEngine.VdiSectorSize": "ไม่รองรับขนาดเซกเตอร์เชิงตรรกะ VDI {0}",
+    "MediaEngine.VdiDiskSize": "ขนาดดิสก์ VDI ไม่ถูกต้อง",
+    "MediaEngine.VdiGeometry": "เรขาคณิตของ VDI ไม่ถูกต้อง",
+    "MediaEngine.VdiMap": "VDI บล็อกแผนที่มากกว่าไฟล์",
+    "MediaEngine.VdiParent": "อิมเมจ VDI แบบส่วนต่างต้องใช้กลไกค้นหาอิมเมจต้นทางที่ยังไม่ได้ลงทะเบียน",
+    "MediaEngine.VdiMapEntry": "VDI บล็อครายการแผนที่ {0} ไม่ถูกต้องหรือซ้ํา",
+    "MediaEngine.VdiMapOutside": "รายการ {0} ในตารางบล็อก VDI ชี้ออกนอกแฟ้ม",
+    "MediaEngine.VdiWrite": "ไม่สามารถเขียนเอกสารสื่อในรูปแบบอิมเมจของ VDI ได้สมบูรณ์",
+    "MediaEngine.VdiTableSize": "ตารางบล็อก VDI ใหญ่เกินไป"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "{0} の一時出力ファイル内で位置を変更できません。",
+    "MediaEngine.VdiShortHeader": "ファイルが VDI ヘッダを含むのに短すぎる。",
+    "MediaEngine.VdiSignature": "VDI 署名が欠落しています。",
+    "MediaEngine.VdiVersion": "VDI版 {0} はサポートされていません。",
+    "MediaEngine.VdiType": "VDIイメージタイプ {0} はサポートされていません。",
+    "MediaEngine.VdiOffsets": "VDIヘッダーまたはデータオフセットは無効です。",
+    "MediaEngine.VdiSectorSize": "VDI 論理セクターサイズ {0} はサポートされていません。",
+    "MediaEngine.VdiDiskSize": "VDIディスクサイズが無効です。",
+    "MediaEngine.VdiGeometry": "VDIブロックジオメトリは無効です。",
+    "MediaEngine.VdiMap": "VDIブロックマップは、ファイルを超える。",
+    "MediaEngine.VdiParent": "差分 VDI イメージには、未登録の親イメージ解決機構が必要です。",
+    "MediaEngine.VdiMapEntry": "VDIブロックマップエントリ {0} が無効または重複しています。",
+    "MediaEngine.VdiMapOutside": "VDIブロックマップエントリ {0} はファイル外でポイントします。",
+    "MediaEngine.VdiWrite": "媒体文書は完全なVDIイメージとして記述できません。",
+    "MediaEngine.VdiTableSize": "VDIブロックテーブルが大きすぎます。"
+  }
+}

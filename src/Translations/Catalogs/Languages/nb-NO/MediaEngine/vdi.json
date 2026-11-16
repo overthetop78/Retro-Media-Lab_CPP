@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Kan ikke endre posisjon i den midlertidige utfilen for {0}.",
+    "MediaEngine.VdiShortHeader": "Filen er for kort til å inneholde en VDI-topptekst.",
+    "MediaEngine.VdiSignature": "VDI-signaturen mangler.",
+    "MediaEngine.VdiVersion": "VDI versjon {0} er ikke støttet.",
+    "MediaEngine.VdiType": "VDI-bildetypen {0} er ikke støttet.",
+    "MediaEngine.VdiOffsets": "VDI-hodet eller dataforskyvningene er ugyldige.",
+    "MediaEngine.VdiSectorSize": "VDI logisk sektorstørrelse {0} er ikke støttet.",
+    "MediaEngine.VdiDiskSize": "VDI diskstørrelse er ugyldig.",
+    "MediaEngine.VdiGeometry": "VDI-blokkgeometrien er ugyldig.",
+    "MediaEngine.VdiMap": "VDI-blokkkartet overstiger filen.",
+    "MediaEngine.VdiParent": "Differensielle VDI-diskbilder krever en uregistrert mekanisme for å finne det overordnede bildet.",
+    "MediaEngine.VdiMapEntry": "VDI-blokkkartoppføring {0} er ugyldig eller duplisert.",
+    "MediaEngine.VdiMapOutside": "Oppføring {0} i VDI-blokkkartet peker utenfor filen.",
+    "MediaEngine.VdiWrite": "Mediedokumentet kan ikke skrives som et komplett VDI-bilde.",
+    "MediaEngine.VdiTableSize": "VDI-blokktabellen er for stor."
+  }
+}

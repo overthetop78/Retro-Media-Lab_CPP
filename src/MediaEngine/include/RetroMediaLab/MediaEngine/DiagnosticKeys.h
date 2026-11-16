@@ -1,6 +1,22 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AtomicSeek="MediaEngine.AtomicSeek";
+inline constexpr std::string_view VdiShortHeader="MediaEngine.VdiShortHeader";
+inline constexpr std::string_view VdiSignature="MediaEngine.VdiSignature";
+inline constexpr std::string_view VdiVersion="MediaEngine.VdiVersion";
+inline constexpr std::string_view VdiType="MediaEngine.VdiType";
+inline constexpr std::string_view VdiOffsets="MediaEngine.VdiOffsets";
+inline constexpr std::string_view VdiSectorSize="MediaEngine.VdiSectorSize";
+inline constexpr std::string_view VdiDiskSize="MediaEngine.VdiDiskSize";
+inline constexpr std::string_view VdiGeometry="MediaEngine.VdiGeometry";
+inline constexpr std::string_view VdiMap="MediaEngine.VdiMap";
+inline constexpr std::string_view VdiParent="MediaEngine.VdiParent";
+inline constexpr std::string_view VdiMapEntry="MediaEngine.VdiMapEntry";
+inline constexpr std::string_view VdiMapOutside="MediaEngine.VdiMapOutside";
+inline constexpr std::string_view VdiWrite="MediaEngine.VdiWrite";
+inline constexpr std::string_view VdiTableSize="MediaEngine.VdiTableSize";
+
 inline constexpr std::string_view KryoFileName="MediaEngine.KryoFileName";
 inline constexpr std::string_view KryoNoFiles="MediaEngine.KryoNoFiles";
 inline constexpr std::string_view KryoTruncated="MediaEngine.KryoTruncated";

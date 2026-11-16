@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Αδυναμία αλλαγής θέσης στο προσωρινό αρχείο εξόδου για {0}.",
+    "MediaEngine.VdiShortHeader": "Το αρχείο είναι πολύ μικρό για να περιέχει μια επικεφαλίδα VDI.",
+    "MediaEngine.VdiSignature": "Η υπογραφή VDI λείπει.",
+    "MediaEngine.VdiVersion": "Η έκδοση VDI {0} δεν υποστηρίζεται.",
+    "MediaEngine.VdiType": "Ο τύπος εικόνας VDI {0} δεν υποστηρίζεται.",
+    "MediaEngine.VdiOffsets": "Η κεφαλίδα VDI ή οι αντισταθμίσεις δεδομένων είναι άκυρες.",
+    "MediaEngine.VdiSectorSize": "VDI λογικό μέγεθος τομέα {0} δεν υποστηρίζεται.",
+    "MediaEngine.VdiDiskSize": "Το μέγεθος του δίσκου VDI είναι άκυρο.",
+    "MediaEngine.VdiGeometry": "Η γεωμετρία φραγμών VDI είναι άκυρη.",
+    "MediaEngine.VdiMap": "Ο χάρτης φραγμών VDI υπερβαίνει το αρχείο.",
+    "MediaEngine.VdiParent": "Οι διαφορικές εικόνες VDI απαιτούν μη καταχωρημένο μηχανισμό εύρεσης της γονικής εικόνας.",
+    "MediaEngine.VdiMapEntry": "Η καταχώρηση του χάρτη φραγμών VDI {0} είναι άκυρη ή αναπαράγεται.",
+    "MediaEngine.VdiMapOutside": "Η καταχώρηση χάρτη φραγμών VDI {0} δείχνει έξω από το αρχείο.",
+    "MediaEngine.VdiWrite": "Το έγγραφο πολυμέσων δεν μπορεί να γραφτεί ως πλήρης εικόνα VDI.",
+    "MediaEngine.VdiTableSize": "Ο πίνακας μπλοκ VDI είναι πολύ μεγάλος."
+  }
+}

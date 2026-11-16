@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "{0}의 임시 출력 파일 내에서 위치를 변경할 수 없습니다.",
+    "MediaEngine.VdiShortHeader": "이 파일은 VDI 헤더를 포함하고 너무 짧습니다.",
+    "MediaEngine.VdiSignature": "VDI 서명이 누락되었습니다.",
+    "MediaEngine.VdiVersion": "VDI 버전 {0}는 지원되지 않습니다.",
+    "MediaEngine.VdiType": "VDI 이미지 유형 {0}는 지원되지 않습니다.",
+    "MediaEngine.VdiOffsets": "VDI 헤더 또는 데이터 오프셋은 유효하지 않습니다.",
+    "MediaEngine.VdiSectorSize": "VDI 논리 섹터 크기 {0}는 지원되지 않습니다.",
+    "MediaEngine.VdiDiskSize": "VDI 디스크 크기는 유효하지 않습니다.",
+    "MediaEngine.VdiGeometry": "VDI 블록 기하학은 유효하지 않습니다.",
+    "MediaEngine.VdiMap": "VDI 블록 맵은 파일을 초과합니다.",
+    "MediaEngine.VdiParent": "차등 VDI 이미지에 필요한 부모 이미지 확인 기능이 등록되지 않았습니다.",
+    "MediaEngine.VdiMapEntry": "VDI 블록 맵 항목 {0}이 잘못되었거나 중복되었습니다.",
+    "MediaEngine.VdiMapOutside": "VDI 블록 맵 항목 {0}이 파일 밖을 가리킵니다.",
+    "MediaEngine.VdiWrite": "미디어 문서는 완전한 VDI 이미지로 작성할 수 없습니다.",
+    "MediaEngine.VdiTableSize": "VDI 구획 테이블은 너무 크습니다."
+  }
+}

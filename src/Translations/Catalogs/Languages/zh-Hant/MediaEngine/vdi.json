@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "無法變更 {0} 暫存輸出檔案中的位置。",
+    "MediaEngine.VdiShortHeader": "檔案太短，無法包含 VDI 標頭。",
+    "MediaEngine.VdiSignature": "缺少 VDI 簽章。",
+    "MediaEngine.VdiVersion": "不支援 VDI 版本 {0}。",
+    "MediaEngine.VdiType": "不支援 VDI 映像類型 {0}。",
+    "MediaEngine.VdiOffsets": "VDI 標頭或資料偏移無效。",
+    "MediaEngine.VdiSectorSize": "不支援 VDI 邏輯磁區大小 {0}。",
+    "MediaEngine.VdiDiskSize": "VDI 磁碟大小無效。",
+    "MediaEngine.VdiGeometry": "VDI 區塊配置無效。",
+    "MediaEngine.VdiMap": "VDI 區塊對應表超出檔案範圍。",
+    "MediaEngine.VdiParent": "差分 VDI 映像需要尚未註冊的父映像解析器。",
+    "MediaEngine.VdiMapEntry": "VDI 區塊對應表項目 {0} 無效或重複。",
+    "MediaEngine.VdiMapOutside": "VDI 區塊對應表項目 {0} 指向檔案之外。",
+    "MediaEngine.VdiWrite": "無法將媒體文件寫入為完整的 VDI 映像。",
+    "MediaEngine.VdiTableSize": "VDI 區塊表太大。"
+  }
+}

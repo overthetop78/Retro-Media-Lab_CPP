@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Kan ikke ændre position i den midlertidige outputfil for {0}.",
+    "MediaEngine.VdiShortHeader": "Filen er for kort til at indeholde en VDI header.",
+    "MediaEngine.VdiSignature": "VDI-signaturen mangler.",
+    "MediaEngine.VdiVersion": "VDI version {0} er ikke understøttet.",
+    "MediaEngine.VdiType": "VDI billedtype {0} er ikke understøttet.",
+    "MediaEngine.VdiOffsets": "VDI-headeren eller dataudskæringerne er ugyldige.",
+    "MediaEngine.VdiSectorSize": "VDI logisk sektor størrelse {0} er ikke understøttet.",
+    "MediaEngine.VdiDiskSize": "VDI diskstørrelsen er ugyldig.",
+    "MediaEngine.VdiGeometry": "VDI blokgeometri er ugyldig.",
+    "MediaEngine.VdiMap": "VDI blokkort overstiger filen.",
+    "MediaEngine.VdiParent": "Differentielle VDI-diskbilleder kræver en mekanisme til at finde det overordnede billede, som ikke er registreret.",
+    "MediaEngine.VdiMapEntry": "VDI blokkort indgang {0} er ugyldig eller duplikeret.",
+    "MediaEngine.VdiMapOutside": "Post {0} i VDI-blokkortet peger uden for filen.",
+    "MediaEngine.VdiWrite": "Mediedokumentet kan ikke skrives som et komplet VDI-billede.",
+    "MediaEngine.VdiTableSize": "VDI-bloktabellen er for stor."
+  }
+}

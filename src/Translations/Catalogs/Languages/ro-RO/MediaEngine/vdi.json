@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Nu se poate schimba poziția în fișierul de ieșire temporar pentru {0}.",
+    "MediaEngine.VdiShortHeader": "Fișierul este prea scurt pentru a conține un antet VDI.",
+    "MediaEngine.VdiSignature": "Semnătura VDI lipseşte.",
+    "MediaEngine.VdiVersion": "Versiunea VDI {0} nu este susținută.",
+    "MediaEngine.VdiType": "Tipul de imagine VDI {0} este nesusţinut.",
+    "MediaEngine.VdiOffsets": "Antetul VDI sau deplasamentele datelor nu sunt valide.",
+    "MediaEngine.VdiSectorSize": "Dimensiunea sectorului logic VDI {0} este nesusţinută.",
+    "MediaEngine.VdiDiskSize": "Dimensiunea discului VDI este invalidă.",
+    "MediaEngine.VdiGeometry": "Geometria blocului VDI este invalidă.",
+    "MediaEngine.VdiMap": "Harta blocului VDI depășește fișierul.",
+    "MediaEngine.VdiParent": "Imaginile VDI diferențiale necesită un mecanism neînregistrat de identificare a imaginii părinte.",
+    "MediaEngine.VdiMapEntry": "Intrarea pe harta blocului VDI {0} este invalidă sau duplicată.",
+    "MediaEngine.VdiMapOutside": "Intrarea {0} din harta blocurilor VDI indică în afara fișierului.",
+    "MediaEngine.VdiWrite": "Documentul media nu poate fi scris ca o imagine VDI completă.",
+    "MediaEngine.VdiTableSize": "Tabelul blocurilor VDI este prea mare."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Не удалось изменить позицию во временном выходном файле для {0}.",
+    "MediaEngine.VdiShortHeader": "Файл слишком короткий, чтобы содержать заголовок VDI.",
+    "MediaEngine.VdiSignature": "Подпись VDI отсутствует.",
+    "MediaEngine.VdiVersion": "Версия VDI {0} не поддерживается.",
+    "MediaEngine.VdiType": "Тип изображения VDI {0} не поддерживается.",
+    "MediaEngine.VdiOffsets": "Заголовок VDI или смещение данных являются недействительными.",
+    "MediaEngine.VdiSectorSize": "Размер логического сектора VDI {0} не поддерживается.",
+    "MediaEngine.VdiDiskSize": "Размер диска VDI является недействительным.",
+    "MediaEngine.VdiGeometry": "Геометрия блока VDI недействительна.",
+    "MediaEngine.VdiMap": "Карта блоков VDI превышает размер файла.",
+    "MediaEngine.VdiParent": "Разностные образы VDI требуют незарегистрированного механизма поиска родительского образа.",
+    "MediaEngine.VdiMapEntry": "Ввод карты блока VDI {0} недействителен или дублирован.",
+    "MediaEngine.VdiMapOutside": "Запись {0} таблицы блоков VDI указывает за пределы файла.",
+    "MediaEngine.VdiWrite": "Медиа-документ не может быть написан как полное VDI-изображение.",
+    "MediaEngine.VdiTableSize": "Таблица блоков VDI слишком велика."
+  }
+}

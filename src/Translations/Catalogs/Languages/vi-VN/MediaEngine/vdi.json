@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Không thể thay đổi vị trí trong tập tin xuất tạm thời của {0}.",
+    "MediaEngine.VdiShortHeader": "Tập tin này quá ngắn để chứa tiêu đề VDI.",
+    "MediaEngine.VdiSignature": "Chữ ký của VDI bị mất.",
+    "MediaEngine.VdiVersion": "VDI phiên bản {0} không được hỗ trợ.",
+    "MediaEngine.VdiType": "Kiểu ảnh VDI {0} không được hỗ trợ.",
+    "MediaEngine.VdiOffsets": "Khoảng cách đầu trang hay dữ liệu VDI là không hợp lệ.",
+    "MediaEngine.VdiSectorSize": "Kích thước khu vực hợp lý VDI {0} không được hỗ trợ.",
+    "MediaEngine.VdiDiskSize": "Kích cỡ đĩa VDI không hợp lệ.",
+    "MediaEngine.VdiGeometry": "Hình học khối VDI không hợp lệ.",
+    "MediaEngine.VdiMap": "Bản đồ khối VDI vượt quá tập tin.",
+    "MediaEngine.VdiParent": "Ảnh VDI sai phân cần bộ phân giải ảnh gốc chưa được đăng ký.",
+    "MediaEngine.VdiMapEntry": "Mục nhập bản đồ chặn VDI {0} bị lặp lại hoặc không hợp lệ.",
+    "MediaEngine.VdiMapOutside": "Mục nhập bản đồ chặn VDI {0} Chỉ ra ngoài hồ sơ.",
+    "MediaEngine.VdiWrite": "Tài liệu phương tiện không thể được viết như một hình ảnh VDI đầy đủ.",
+    "MediaEngine.VdiTableSize": "Bảng khối VDI quá lớn."
+  }
+}

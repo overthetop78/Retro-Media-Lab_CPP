@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Nie można zmienić pozycji w tymczasowym pliku wyjściowym dla {0}.",
+    "MediaEngine.VdiShortHeader": "Plik jest zbyt krótki, aby zawierać nagłówek VDI.",
+    "MediaEngine.VdiSignature": "Brak podpisu VDI.",
+    "MediaEngine.VdiVersion": "Wersja VDI {0} nie jest obsługiwana.",
+    "MediaEngine.VdiType": "Typ obrazu VDI {0} nie jest obsługiwany.",
+    "MediaEngine.VdiOffsets": "Nagłówek lub offsety danych VDI są nieprawidłowe.",
+    "MediaEngine.VdiSectorSize": "Wielkość sektora logicznego VDI {0} nie jest wspierana.",
+    "MediaEngine.VdiDiskSize": "Rozmiar dysku VDI jest nieprawidłowy.",
+    "MediaEngine.VdiGeometry": "Geometria bloku VDI jest nieprawidłowa.",
+    "MediaEngine.VdiMap": "Mapa bloku VDI przewyższa plik.",
+    "MediaEngine.VdiParent": "Obrazy różnicowe VDI wymagają niezarejestrowanego mechanizmu wyszukiwania obrazu nadrzędnego.",
+    "MediaEngine.VdiMapEntry": "Wpis mapy bloku VDI {0} jest nieprawidłowy lub powielony.",
+    "MediaEngine.VdiMapOutside": "Wpis mapy bloku VDI {0} wskazuje poza plikiem.",
+    "MediaEngine.VdiWrite": "Dokument medialny nie może być zapisany jako kompletny obraz VDI.",
+    "MediaEngine.VdiTableSize": "Tabela bloków VDI jest zbyt duża."
+  }
+}

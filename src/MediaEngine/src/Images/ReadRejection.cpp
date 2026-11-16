@@ -7,6 +7,29 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VdiShortHeader:
+    case DiagnosticCode::VdiSignature:
+    case DiagnosticCode::VdiVersion:
+    case DiagnosticCode::VdiType:
+    case DiagnosticCode::VdiOffsets:
+    case DiagnosticCode::VdiSectorSize:
+    case DiagnosticCode::VdiDiskSize:
+    case DiagnosticCode::VdiGeometry:
+    case DiagnosticCode::VdiMap:
+    case DiagnosticCode::VdiParent:
+    case DiagnosticCode::VdiMapEntry:
+    case DiagnosticCode::VdiMapOutside:
+    case DiagnosticCode::KryoFileName:
+    case DiagnosticCode::KryoNoFiles:
+    case DiagnosticCode::KryoTruncated:
+    case DiagnosticCode::KryoIndexTruncated:
+    case DiagnosticCode::KryoClock:
+    case DiagnosticCode::KryoNoRevolutions:
+    case DiagnosticCode::KryoPosition:
+    case DiagnosticCode::KryoDuration:
+    case DiagnosticCode::KryoInterval:
+    case DiagnosticCode::KryoTiming:
+
     case DiagnosticCode::HxcFileName:
     case DiagnosticCode::HxcNoFiles:
     case DiagnosticCode::HxcChunk:

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Impossibile cambiare posizione nel file di output temporaneo per {0}.",
+    "MediaEngine.VdiShortHeader": "Il file è troppo breve per contenere un intestazione VDI.",
+    "MediaEngine.VdiSignature": "Manca la firma VDI.",
+    "MediaEngine.VdiVersion": "La versione VDI {0} non è supportata.",
+    "MediaEngine.VdiType": "VDI tipo di immagine {0} non è supportato.",
+    "MediaEngine.VdiOffsets": "L'intestazione o gli offset dei dati VDI non sono validi.",
+    "MediaEngine.VdiSectorSize": "La dimensione del settore logico VDI {0} non è supportata.",
+    "MediaEngine.VdiDiskSize": "La dimensione del disco VDI non è valida.",
+    "MediaEngine.VdiGeometry": "La geometria del blocco VDI non è valida.",
+    "MediaEngine.VdiMap": "La mappa del blocco VDI supera il file.",
+    "MediaEngine.VdiParent": "Le immagini VDI differenziali richiedono un risolutore dell’immagine padre non registrato.",
+    "MediaEngine.VdiMapEntry": "L'entrata della mappa del blocco VDI {0} è invalida o duplicata.",
+    "MediaEngine.VdiMapOutside": "La voce {0} della tabella dei blocchi VDI punta fuori dal file.",
+    "MediaEngine.VdiWrite": "Il documento multimediale non può essere scritto come un'immagine VDI completa.",
+    "MediaEngine.VdiTableSize": "La tabella dei blocchi VDI è troppo grande."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "تعذر تغيير الموضع داخل ملف الإخراج المؤقت لـ {0}.",
+    "MediaEngine.VdiShortHeader": "الملف أقصر من أن يحتوي على ترويسة VDI.",
+    "MediaEngine.VdiSignature": "توقيع VDI مفقود.",
+    "MediaEngine.VdiVersion": "إصدار VDI رقم {0} غير مدعوم.",
+    "MediaEngine.VdiType": "نوع صورة VDI رقم {0} غير مدعوم.",
+    "MediaEngine.VdiOffsets": "ترويسة VDI أو إزاحات البيانات غير صالحة.",
+    "MediaEngine.VdiSectorSize": "حجم القطاع المنطقي في VDI وهو {0} غير مدعوم.",
+    "MediaEngine.VdiDiskSize": "حجم قرص VDI غير صحيح.",
+    "MediaEngine.VdiGeometry": "هندسة كتل VDI غير صالحة.",
+    "MediaEngine.VdiMap": "يتجاوز جدول كتل VDI حدود الملف.",
+    "MediaEngine.VdiParent": "تتطلب صور VDI التفاضلية آلية لتحديد الصورة الأصلية، وهي غير مسجلة.",
+    "MediaEngine.VdiMapEntry": "إدخال جدول كتل VDI رقم {0} غير صالح أو مكرر.",
+    "MediaEngine.VdiMapOutside": "يشير إدخال جدول كتل VDI رقم {0} إلى موضع خارج الملف.",
+    "MediaEngine.VdiWrite": "لا يمكن كتابة مستند الوسائط كصورة VDI كاملة.",
+    "MediaEngine.VdiTableSize": "جدول كتل VDI كبير جدًا."
+  }
+}

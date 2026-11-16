@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "无法改变 {0} 临时输出文件中的位置。",
+    "MediaEngine.VdiShortHeader": "文件太短,无法包含 VDI 标题 。",
+    "MediaEngine.VdiSignature": "缺少 VDI 签名 。",
+    "MediaEngine.VdiVersion": "VDI 版本{0} 不支持 。",
+    "MediaEngine.VdiType": "VDI 图像类型{0} 不支持 。",
+    "MediaEngine.VdiOffsets": "VDI 标题或数据偏移无效 。",
+    "MediaEngine.VdiSectorSize": "VDI 逻辑扇区大小 {0} 不支持 。",
+    "MediaEngine.VdiDiskSize": "VDI 磁盘大小无效 。",
+    "MediaEngine.VdiGeometry": "VDI 块几何无效 。",
+    "MediaEngine.VdiMap": "VDI 块映射超过文件.",
+    "MediaEngine.VdiParent": "差分 VDI 映像需要尚未注册的父映像解析器。",
+    "MediaEngine.VdiMapEntry": "VDI 块映射条目{0}无效或重复 。",
+    "MediaEngine.VdiMapOutside": "VDI 块映射条目 {0} 指向文件之外。",
+    "MediaEngine.VdiWrite": "媒体文档不能被写成完整的VDI图像.",
+    "MediaEngine.VdiTableSize": "VDI块表太大了."
+  }
+}

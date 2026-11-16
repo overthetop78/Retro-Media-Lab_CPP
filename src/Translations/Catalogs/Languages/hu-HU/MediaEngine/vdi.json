@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Nem módosítható a pozíció a(z) {0} ideiglenes kimeneti fájljában.",
+    "MediaEngine.VdiShortHeader": "A fájl túl rövid ahhoz, hogy tartalmazza a VDI fejlécet.",
+    "MediaEngine.VdiSignature": "A VDI aláírás hiányzik.",
+    "MediaEngine.VdiVersion": "A VDI {0} verzió nem támogatott.",
+    "MediaEngine.VdiType": "A(z) {0} VDI képtípus nem támogatott.",
+    "MediaEngine.VdiOffsets": "A VDI fejléc vagy adatkiegyenlítés érvénytelen.",
+    "MediaEngine.VdiSectorSize": "A VDI logikai szektor mérete {0} nem támogatott.",
+    "MediaEngine.VdiDiskSize": "A VDI lemez mérete érvénytelen.",
+    "MediaEngine.VdiGeometry": "A VDI blokk geometriája érvénytelen.",
+    "MediaEngine.VdiMap": "A VDI blokktérkép meghaladja a fájlt.",
+    "MediaEngine.VdiParent": "A VDI képek differenciálása nem regisztrált szülő-felbontót igényel.",
+    "MediaEngine.VdiMapEntry": "VDI blokk térkép bejegyzés {0} érvénytelen vagy duplikált.",
+    "MediaEngine.VdiMapOutside": "A VDI blokktérkép {0} bejegyzése a fájlon kívülre mutat.",
+    "MediaEngine.VdiWrite": "A médiadokumentum nem írható teljes VDI képként.",
+    "MediaEngine.VdiTableSize": "A VDI blokktáblázat túl nagy."
+  }
+}

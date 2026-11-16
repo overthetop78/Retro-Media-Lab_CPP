@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Nelze změnit pozici v dočasném výstupním souboru pro {0}.",
+    "MediaEngine.VdiShortHeader": "Soubor je příliš krátký na to, aby obsahoval hlavičku VDI.",
+    "MediaEngine.VdiSignature": "Signatura VDI chybí.",
+    "MediaEngine.VdiVersion": "VDI verze {0} není podporována.",
+    "MediaEngine.VdiType": "Typ VDI obrazu {0} není podporován.",
+    "MediaEngine.VdiOffsets": "Záhlaví VDI nebo odstupy dat jsou neplatné.",
+    "MediaEngine.VdiSectorSize": "Logický sektor VDI {0} není podporován.",
+    "MediaEngine.VdiDiskSize": "Velikost VDI disku je neplatná.",
+    "MediaEngine.VdiGeometry": "Geometrie bloku VDI je neplatná.",
+    "MediaEngine.VdiMap": "Mapa bloku VDI přesahuje soubor.",
+    "MediaEngine.VdiParent": "Rozdílové obrazy VDI vyžadují nezaregistrovaný mechanismus pro vyhledání nadřazeného obrazu.",
+    "MediaEngine.VdiMapEntry": "VDI bloková položka mapy {0} je neplatná nebo duplikovaná.",
+    "MediaEngine.VdiMapOutside": "Položka {0} mapy bloků VDI odkazuje mimo soubor.",
+    "MediaEngine.VdiWrite": "Mediální dokument nelze zapsat jako kompletní VDI obrázek.",
+    "MediaEngine.VdiTableSize": "Tabulka bloků VDI je příliš velká."
+  }
+}

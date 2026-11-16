@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Kan inte ändra position i den tillfälliga utfilen för {0}.",
+    "MediaEngine.VdiShortHeader": "Filen är för kort för att innehålla en VDI-rubrik.",
+    "MediaEngine.VdiSignature": "VDI signaturen saknas.",
+    "MediaEngine.VdiVersion": "VDI version {0} stöds inte.",
+    "MediaEngine.VdiType": "VDI bild typ {0} stöds inte.",
+    "MediaEngine.VdiOffsets": "VDI-huvudet eller dataförskjutningarna är ogiltiga.",
+    "MediaEngine.VdiSectorSize": "VDI logisk sektorstorlek {0} stöds inte.",
+    "MediaEngine.VdiDiskSize": "VDI disk storlek är ogiltig.",
+    "MediaEngine.VdiGeometry": "VDI block geometri är ogiltig.",
+    "MediaEngine.VdiMap": "VDI-blockkartan överstiger filen.",
+    "MediaEngine.VdiParent": "Differentiella VDI-avbilder kräver en oregistrerad mekanism för att hitta den överordnade avbilden.",
+    "MediaEngine.VdiMapEntry": "VDI block kartpost {0} är ogiltig eller duplicerad.",
+    "MediaEngine.VdiMapOutside": "Post {0} i VDI-blockkartan pekar utanför filen.",
+    "MediaEngine.VdiWrite": "Mediedokumentet kan inte skrivas som en komplett VDI-bild.",
+    "MediaEngine.VdiTableSize": "VDI-blocktabellen är för stor."
+  }
+}

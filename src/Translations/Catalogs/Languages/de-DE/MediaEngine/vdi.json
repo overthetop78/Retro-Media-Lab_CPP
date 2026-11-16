@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Die Position in der temporären Ausgabedatei für {0} kann nicht geändert werden.",
+    "MediaEngine.VdiShortHeader": "Die Datei ist zu kurz, um einen VDI-Header zu enthalten.",
+    "MediaEngine.VdiSignature": "Die VDI-Signatur fehlt.",
+    "MediaEngine.VdiVersion": "VDI Version {0} wird nicht unterstützt.",
+    "MediaEngine.VdiType": "VDI-Abbildtyp {0} wird nicht unterstützt.",
+    "MediaEngine.VdiOffsets": "Der VDI-Header oder Daten-Offsets sind ungültig.",
+    "MediaEngine.VdiSectorSize": "VDI logische Sektorgröße {0} wird nicht unterstützt.",
+    "MediaEngine.VdiDiskSize": "Die VDI Festplattengröße ist ungültig.",
+    "MediaEngine.VdiGeometry": "Die VDI-Blockgeometrie ist ungültig.",
+    "MediaEngine.VdiMap": "Die VDI Block Map übersteigt die Datei.",
+    "MediaEngine.VdiParent": "Differenzierende VDI-Abbilder benötigen einen nicht registrierten Resolver für das übergeordnete Abbild.",
+    "MediaEngine.VdiMapEntry": "VDI Block Map Eintrag {0} ist ungültig oder dupliziert.",
+    "MediaEngine.VdiMapOutside": "VDI-Blocktabelleneintrag {0} verweist außerhalb der Datei.",
+    "MediaEngine.VdiWrite": "Das Mediendokument kann nicht als vollständiges VDI-Bild geschrieben werden.",
+    "MediaEngine.VdiTableSize": "Die VDI-Blocktabelle ist zu groß."
+  }
+}

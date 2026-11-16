@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Cannot seek within the temporary output for {0}.",
+    "MediaEngine.VdiShortHeader": "The file is too short to contain a VDI header.",
+    "MediaEngine.VdiSignature": "The VDI signature is missing.",
+    "MediaEngine.VdiVersion": "VDI version {0} is unsupported.",
+    "MediaEngine.VdiType": "VDI image type {0} is unsupported.",
+    "MediaEngine.VdiOffsets": "The VDI header or data offsets are invalid.",
+    "MediaEngine.VdiSectorSize": "VDI logical sector size {0} is unsupported.",
+    "MediaEngine.VdiDiskSize": "The VDI disk size is invalid.",
+    "MediaEngine.VdiGeometry": "The VDI block geometry is invalid.",
+    "MediaEngine.VdiMap": "The VDI block map exceeds the file.",
+    "MediaEngine.VdiParent": "Differencing VDI images require a parent resolver that is not registered.",
+    "MediaEngine.VdiMapEntry": "VDI block map entry {0} is invalid or duplicated.",
+    "MediaEngine.VdiMapOutside": "VDI block map entry {0} points outside the file.",
+    "MediaEngine.VdiWrite": "The media document cannot be written as a complete VDI image.",
+    "MediaEngine.VdiTableSize": "The VDI block table is too large."
+  }
+}

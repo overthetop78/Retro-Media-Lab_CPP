@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Tilapäisen tulostiedoston {0} sijaintia ei voi muuttaa.",
+    "MediaEngine.VdiShortHeader": "Tiedosto on liian lyhyt VDI- otsikkoon.",
+    "MediaEngine.VdiSignature": "VDI-jälki puuttuu.",
+    "MediaEngine.VdiVersion": "VDI-versiota {0} ei tueta.",
+    "MediaEngine.VdiType": "VDI-kuvatyyppi {0} ei ole tuettu.",
+    "MediaEngine.VdiOffsets": "VDI-otsikko tai dataoffsetit ovat virheellisiä.",
+    "MediaEngine.VdiSectorSize": "VDI looginen sektorin koko {0} ei tue.",
+    "MediaEngine.VdiDiskSize": "VDI-levyn koko on virheellinen.",
+    "MediaEngine.VdiGeometry": "VDI-lohkogeometria on virheellinen.",
+    "MediaEngine.VdiMap": "VDI-lohkon kartta ylittää tiedoston.",
+    "MediaEngine.VdiParent": "VDI-erotuskuvat edellyttävät rekisteröimätöntä pääkuvan hakumekanismia.",
+    "MediaEngine.VdiMapEntry": "VDI-lohkon karttamerkintä {0} on virheellinen tai kopioitu.",
+    "MediaEngine.VdiMapOutside": "VDI-lohkokartan merkintä {0} osoittaa tiedoston ulkopuolelle.",
+    "MediaEngine.VdiWrite": "Mediadokumenttia ei voi kirjoittaa täydellisenä VDI-kuvana.",
+    "MediaEngine.VdiTableSize": "VDI-lohkotaulukko on liian suuri."
+  }
+}

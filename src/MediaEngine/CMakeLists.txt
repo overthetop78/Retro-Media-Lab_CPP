@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Vdi/Header.cpp
+  src/Formats/HardDisk/Vdi/Reader.cpp
+  src/Formats/HardDisk/Vdi/Writer.cpp
   src/Formats/KryoFlux/Metadata.cpp
   src/Formats/KryoFlux/Decoding.cpp
   src/Formats/KryoFlux/Files.cpp

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Не вдалося змінити позицію в тимчасовому вихідному файлі для {0}.",
+    "MediaEngine.VdiShortHeader": "Файл занадто короткий, щоб містити заголовок VDI.",
+    "MediaEngine.VdiSignature": "Відсутній підпис VDI.",
+    "MediaEngine.VdiVersion": "Версія VDI {0} не підтримується.",
+    "MediaEngine.VdiType": "VDI тип зображення {0} не підтримується.",
+    "MediaEngine.VdiOffsets": "Заголовок VDI або зміщення даних недійсні.",
+    "MediaEngine.VdiSectorSize": "VDI логічний сектор розмір {0} не підтримується.",
+    "MediaEngine.VdiDiskSize": "Розмір дисків VDI недійсний.",
+    "MediaEngine.VdiGeometry": "Геометрія блоку VDI недійсна.",
+    "MediaEngine.VdiMap": "Карта VDI блок перевищує файл.",
+    "MediaEngine.VdiParent": "Різницеві образи VDI потребують незареєстрованого механізму пошуку батьківського образу.",
+    "MediaEngine.VdiMapEntry": "VDI блок запис карти {0} недійсний або дублікований.",
+    "MediaEngine.VdiMapOutside": "Запис {0} таблиці блоків VDI вказує за межі файлу.",
+    "MediaEngine.VdiWrite": "Документ носія неможливо записати як повний образ VDI.",
+    "MediaEngine.VdiTableSize": "Таблиця VDI блок занадто великий."
+  }
+}

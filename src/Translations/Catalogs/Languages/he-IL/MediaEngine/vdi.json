@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "לא ניתן לשנות את המיקום בקובץ הפלט הזמני של {0}.",
+    "MediaEngine.VdiShortHeader": "הקובץ קצר מכדי להכיל כותרת VDI.",
+    "MediaEngine.VdiSignature": "חתימה VDI חסרה.",
+    "MediaEngine.VdiVersion": "VDI גירסה {0} היא ללא תמיכה.",
+    "MediaEngine.VdiType": "סוג תמונה VDI {0} אינו נתמך.",
+    "MediaEngine.VdiOffsets": "כותרת VDI או היסטי הנתונים אינם תקינים.",
+    "MediaEngine.VdiSectorSize": "גודל המגזר הלוגי של VDI {0} אינו נתמך.",
+    "MediaEngine.VdiDiskSize": "גודל הדיסק VDI הוא לא חוקי.",
+    "MediaEngine.VdiGeometry": "גאומטריית הבלוקים של VDI אינה תקינה.",
+    "MediaEngine.VdiMap": "מפת בלוק VDI עולה על הקובץ.",
+    "MediaEngine.VdiParent": "תמונות VDI הפרשיות דורשות מנגנון לאיתור תמונת האב שאינו רשום.",
+    "MediaEngine.VdiMapEntry": "רשומת מפת הבלוקים של VDI מספר {0} אינה תקינה או כפולה.",
+    "MediaEngine.VdiMapOutside": "רשומת מפת הבלוקים של VDI מספר {0} מצביעה מחוץ לקובץ.",
+    "MediaEngine.VdiWrite": "לא ניתן לכתוב את המסמך כתמונה VDI מלאה.",
+    "MediaEngine.VdiTableSize": "טבלת הבלוקים של VDI גדולה מדי."
+  }
+}

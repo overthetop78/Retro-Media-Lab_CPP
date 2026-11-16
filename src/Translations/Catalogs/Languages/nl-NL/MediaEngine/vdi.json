@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Kan de positie in het tijdelijke uitvoerbestand voor {0} niet wijzigen.",
+    "MediaEngine.VdiShortHeader": "Het bestand is te kort om een VDI header te bevatten.",
+    "MediaEngine.VdiSignature": "De VDI handtekening ontbreekt.",
+    "MediaEngine.VdiVersion": "VDI versie {0} wordt niet ondersteund.",
+    "MediaEngine.VdiType": "VDI-afbeeldingtype {0} wordt niet ondersteund.",
+    "MediaEngine.VdiOffsets": "De VDI header of data offsets zijn ongeldig.",
+    "MediaEngine.VdiSectorSize": "VDI logische sectorgrootte {0} wordt niet ondersteund.",
+    "MediaEngine.VdiDiskSize": "De VDI-schijfgrootte is ongeldig.",
+    "MediaEngine.VdiGeometry": "De VDI blokgeometrie is ongeldig.",
+    "MediaEngine.VdiMap": "De VDI-blokkaart overtreft het bestand.",
+    "MediaEngine.VdiParent": "Differentiële VDI-schijfkopieën vereisen een niet-geregistreerde resolver voor de bovenliggende schijfkopie.",
+    "MediaEngine.VdiMapEntry": "VDI-blokkaartinvoer {0} is ongeldig of gedupliceerd.",
+    "MediaEngine.VdiMapOutside": "VDI-blokkaartinvoer {0} wijst buiten het bestand.",
+    "MediaEngine.VdiWrite": "Het mediadocument kan niet als een volledige VDI-afbeelding worden geschreven.",
+    "MediaEngine.VdiTableSize": "De VDI-bloktabel is te groot."
+  }
+}

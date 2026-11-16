@@ -3,6 +3,22 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AtomicSeek:return DiagnosticKeys::AtomicSeek;
+    case DiagnosticCode::VdiShortHeader:return DiagnosticKeys::VdiShortHeader;
+    case DiagnosticCode::VdiSignature:return DiagnosticKeys::VdiSignature;
+    case DiagnosticCode::VdiVersion:return DiagnosticKeys::VdiVersion;
+    case DiagnosticCode::VdiType:return DiagnosticKeys::VdiType;
+    case DiagnosticCode::VdiOffsets:return DiagnosticKeys::VdiOffsets;
+    case DiagnosticCode::VdiSectorSize:return DiagnosticKeys::VdiSectorSize;
+    case DiagnosticCode::VdiDiskSize:return DiagnosticKeys::VdiDiskSize;
+    case DiagnosticCode::VdiGeometry:return DiagnosticKeys::VdiGeometry;
+    case DiagnosticCode::VdiMap:return DiagnosticKeys::VdiMap;
+    case DiagnosticCode::VdiParent:return DiagnosticKeys::VdiParent;
+    case DiagnosticCode::VdiMapEntry:return DiagnosticKeys::VdiMapEntry;
+    case DiagnosticCode::VdiMapOutside:return DiagnosticKeys::VdiMapOutside;
+    case DiagnosticCode::VdiWrite:return DiagnosticKeys::VdiWrite;
+    case DiagnosticCode::VdiTableSize:return DiagnosticKeys::VdiTableSize;
+
     case DiagnosticCode::KryoFileName:return DiagnosticKeys::KryoFileName;
     case DiagnosticCode::KryoNoFiles:return DiagnosticKeys::KryoNoFiles;
     case DiagnosticCode::KryoTruncated:return DiagnosticKeys::KryoTruncated;

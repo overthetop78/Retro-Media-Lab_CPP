@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Impossible de se positionner dans le fichier de sortie temporaire pour {0}.",
+    "MediaEngine.VdiShortHeader": "Le fichier est trop court pour contenir un en-tête VDI.",
+    "MediaEngine.VdiSignature": "La signature VDI est manquante.",
+    "MediaEngine.VdiVersion": "La version VDI {0} n'est pas prise en charge.",
+    "MediaEngine.VdiType": "Le type d'image VDI {0} n'est pas pris en charge.",
+    "MediaEngine.VdiOffsets": "L'en-tête VDI ou les décalages de données sont invalides.",
+    "MediaEngine.VdiSectorSize": "La taille de secteur logique VDI {0} n’est pas prise en charge.",
+    "MediaEngine.VdiDiskSize": "La taille du disque VDI est invalide.",
+    "MediaEngine.VdiGeometry": "La géométrie du bloc VDI est invalide.",
+    "MediaEngine.VdiMap": "La table de blocs VDI dépasse les limites du fichier.",
+    "MediaEngine.VdiParent": "Les images VDI différentielles nécessitent un résolveur d’image parente qui n’est pas enregistré.",
+    "MediaEngine.VdiMapEntry": "L’entrée {0} de la table de blocs VDI est invalide ou dupliquée.",
+    "MediaEngine.VdiMapOutside": "L’entrée {0} de la table de blocs VDI pointe hors du fichier.",
+    "MediaEngine.VdiWrite": "Le document média ne peut pas être écrit comme une image VDI complète.",
+    "MediaEngine.VdiTableSize": "La table de blocs VDI est trop grande."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strings": {
+    "MediaEngine.AtomicSeek": "Tidak dapat mengubah posisi dalam berkas keluaran sementara untuk {0}.",
+    "MediaEngine.VdiShortHeader": "Berkas ini terlalu pendek untuk memuat header VDI.",
+    "MediaEngine.VdiSignature": "Tanda tangan VDI hilang.",
+    "MediaEngine.VdiVersion": "VDI versi {0} tidak didukung.",
+    "MediaEngine.VdiType": "Tipe gambar VDI {0} tidak didukung.",
+    "MediaEngine.VdiOffsets": "Header VDI atau offset data tidak valid.",
+    "MediaEngine.VdiSectorSize": "Ukuran sektor logikal VDI {0} tidak didukung.",
+    "MediaEngine.VdiDiskSize": "Ukuran disk VDI tidak valid.",
+    "MediaEngine.VdiGeometry": "Geometri blok VDI tidak valid.",
+    "MediaEngine.VdiMap": "Peta blok VDI melebihi berkas.",
+    "MediaEngine.VdiParent": "Citra VDI diferensial memerlukan mekanisme pencarian citra induk yang belum didaftarkan.",
+    "MediaEngine.VdiMapEntry": "Entri peta blok VDI {0} tak valid atau duplikasi.",
+    "MediaEngine.VdiMapOutside": "entri peta blok VDI {0} menunjuk di luar berkas.",
+    "MediaEngine.VdiWrite": "Dokumen media tidak dapat ditulis sebagai gambar VDI lengkap.",
+    "MediaEngine.VdiTableSize": "Tabel blok VDI terlalu besar."
+  }
+}
