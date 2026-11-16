@@ -1997,10 +1997,14 @@
     <ClCompile Include="src\MediaEngine\src\Audio\Conversion.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\CatalogData.h" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.h" />
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedSounds.cpp" />
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedSounds.h" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.h" />
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Decoder.cpp" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Encoder.cpp" />

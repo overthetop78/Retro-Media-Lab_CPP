@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Audio/Mechanical/RecordingDecoder.cpp
+  src/Audio/Mechanical/RecordedBank.cpp
   src/Audio/Mechanical/RecordedRenderer.cpp
   src/Audio/Mechanical/RecordedSounds.cpp
   src/Images/ReadingService.cpp

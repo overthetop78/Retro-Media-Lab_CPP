@@ -7998,6 +7998,12 @@
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\Constants.h">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.cpp">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedBank.h">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.cpp">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClCompile>
@@ -8008,6 +8014,12 @@
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedSounds.h">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.cpp">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordingDecoder.h">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h">
