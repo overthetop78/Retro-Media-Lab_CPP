@@ -1,6 +1,14 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ScpNoDecodedSectors="MediaEngine.ScpNoDecodedSectors";
+inline constexpr std::string_view ScpNoUsableSectors="MediaEngine.ScpNoUsableSectors";
+
+inline constexpr std::string_view IsoRequestedFormat="MediaEngine.IsoRequestedFormat";
+inline constexpr std::string_view IsoRequestedGeometry="MediaEngine.IsoRequestedGeometry";
+inline constexpr std::string_view IsoNoCandidates="MediaEngine.IsoNoCandidates";
+inline constexpr std::string_view IsoNotIbmDos="MediaEngine.IsoNotIbmDos";
+
 inline constexpr std::string_view ScpPreparationFormat="MediaEngine.ScpPreparationFormat",ScpPreparationTarget="MediaEngine.ScpPreparationTarget";
 inline constexpr std::string_view DiskPreparationRequest="MediaEngine.DiskPreparationRequest";
 inline constexpr std::string_view RuntimeTrackData="MediaEngine.RuntimeTrackData",RuntimeTrackWindow="MediaEngine.RuntimeTrackWindow",RuntimeTrackProjection="MediaEngine.RuntimeTrackProjection";

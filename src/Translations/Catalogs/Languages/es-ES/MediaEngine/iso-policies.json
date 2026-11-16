@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.IsoRequestedFormat": "El formato '{1}' no es compatible con la familia de reconstrucción '{0}'.",
+    "MediaEngine.IsoRequestedGeometry": "Los sectores decodificados no coinciden con la geometría solicitada '{0}'.",
+    "MediaEngine.IsoNoCandidates": "La reconstrucción ISO FM/MFM para '{0}' produjo {1} candidatos direccionados y {2} candidatos físicos.",
+    "MediaEngine.IsoNotIbmDos": "El sector de arranque ISO MFM contiene un BPB FAT pero no identidad DOS/IBM."
+  }
+}

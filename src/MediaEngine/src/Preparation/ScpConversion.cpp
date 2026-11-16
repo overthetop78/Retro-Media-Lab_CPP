@@ -1,12 +1,10 @@
 #include <RetroMediaLab/MediaEngine/MediaPreparation.h>
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
-#include "../Reconstruction/Iso/CandidateDecoder.h"
+#include "../Reconstruction/Iso/Reader.h"
 #include "../Reconstruction/Iso/Automatic.h"
 #include "../Reconstruction/Iso/RuntimeConstants.h"
 #include "../Reconstruction/AmigaReader.h"
 #include "../Decoding/Registry.h"
-#include "../Codecs/Iso/FmConstants.h"
-#include "../Codecs/Iso/MfmConstants.h"
 #include "../Formats/Atr/Atr.h"
 #include "../Formats/St/Writer.h"
 #include "../Formats/Adf/AdfImages.h"
@@ -14,10 +12,9 @@
 #include "../Formats/FormatIds.h"
 #include "../Sources/RandomAccessSources.h"
 #include "../Primitives/Identifiers.h"
-#include <array>
 namespace RetroMediaLab::MediaEngine {
 namespace {
-struct ScpPreparationReaders {Decoding::Registry decoders;IsoReconstruction::CandidateDecoder candidates{decoders.operation()};};
+struct ScpPreparationReaders {Decoding::Registry decoders;IsoReconstruction::Reader iso{decoders.operation()};};
 ScpPreparationReaders& readers(){static ScpPreparationReaders result;return result;}
 }
 std::future<void> convertScpAsync(std::filesystem::path source,std::filesystem::path output,std::string extension,std::stop_token token){
@@ -33,8 +30,7 @@ std::future<void> convertScpAsync(std::filesystem::path source,std::filesystem::
             if(same(source.extension().string(),Scp::Constants::Extension))image=AmigaReconstruction::read(Scp::read(*fileSource(source),token),services.decoders.operation(),token);
             else image=Adf::read(fileSource(source),{},token);
         }else{
-            const std::array ids{std::string(IsoFm::Constants::Id),std::string(IsoMfm::Constants::Id)};
-            image=IsoReconstruction::buildAutomatic(*services.candidates.decode(source,ids,{},token),token);
+            image=services.iso.readAtari(source,{}, {},token);
         }
         const auto& format=image->geometry().formatId;
         const bool matches=atr?Primitives::asciiIdentifierStartsWithIgnoreCase(format,Formats::AtariPrefix):st?Primitives::asciiIdentifierStartsWithIgnoreCase(format,Formats::AtariStPrefix):same(format,Formats::AmigaDos)||same(format,Formats::AmigaDosHighDensity);

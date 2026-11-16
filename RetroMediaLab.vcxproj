@@ -2973,9 +2973,14 @@
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Collector.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Collector.h" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\ExplicitFamilies.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Measurement.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Models.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Normalizer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Policy.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Policy.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Reader.h" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeFamilies.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Score.cpp" />
@@ -3387,6 +3392,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iwm-gcr-track.json" />
@@ -3420,6 +3426,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-policies.json" />
@@ -3587,6 +3594,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\iwm-gcr-track.json" />
@@ -3620,6 +3628,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-policies.json" />
@@ -3787,6 +3796,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\iwm-gcr-track.json" />
@@ -3820,6 +3830,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-policies.json" />
@@ -3987,6 +3998,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\iwm-gcr-track.json" />
@@ -4020,6 +4032,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-policies.json" />
@@ -4187,6 +4200,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\iwm-gcr-track.json" />
@@ -4220,6 +4234,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-policies.json" />
@@ -4387,6 +4402,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\iwm-gcr-track.json" />
@@ -4420,6 +4436,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-policies.json" />
@@ -4587,6 +4604,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\iwm-gcr-track.json" />
@@ -4620,6 +4638,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-policies.json" />
@@ -4787,6 +4806,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\iwm-gcr-track.json" />
@@ -4820,6 +4840,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-policies.json" />
@@ -4987,6 +5008,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\iwm-gcr-track.json" />
@@ -5020,6 +5042,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-policies.json" />
@@ -5187,6 +5210,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\iwm-gcr-track.json" />
@@ -5220,6 +5244,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-policies.json" />
@@ -5387,6 +5412,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\iwm-gcr-track.json" />
@@ -5420,6 +5446,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-policies.json" />
@@ -5587,6 +5614,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\iwm-gcr-track.json" />
@@ -5620,6 +5648,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-policies.json" />
@@ -5787,6 +5816,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\iwm-gcr-track.json" />
@@ -5820,6 +5850,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-policies.json" />
@@ -5987,6 +6018,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\iwm-gcr-track.json" />
@@ -6020,6 +6052,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-policies.json" />
@@ -6187,6 +6220,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\iwm-gcr-track.json" />
@@ -6220,6 +6254,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-policies.json" />
@@ -6387,6 +6422,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\iwm-gcr-track.json" />
@@ -6420,6 +6456,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-policies.json" />
@@ -6587,6 +6624,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\iwm-gcr-track.json" />
@@ -6620,6 +6658,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-policies.json" />
@@ -6787,6 +6826,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\iwm-gcr-track.json" />
@@ -6820,6 +6860,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-policies.json" />
@@ -6987,6 +7028,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\iwm-gcr-track.json" />
@@ -7020,6 +7062,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-policies.json" />
@@ -7187,6 +7230,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\iwm-gcr-track.json" />
@@ -7220,6 +7264,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-policies.json" />
@@ -7387,6 +7432,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\iwm-gcr-track.json" />
@@ -7420,6 +7466,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-policies.json" />
@@ -7587,6 +7634,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\iwm-gcr-track.json" />
@@ -7620,6 +7668,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-policies.json" />
@@ -7787,6 +7836,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\iwm-gcr-track.json" />
@@ -7820,6 +7870,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-policies.json" />
@@ -7987,6 +8038,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\iwm-gcr-track.json" />
@@ -8020,6 +8072,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-policies.json" />
@@ -8187,6 +8240,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\iwm-gcr-track.json" />
@@ -8220,6 +8274,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-policies.json" />
@@ -8387,6 +8442,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\iwm-gcr-track.json" />
@@ -8420,6 +8476,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-policies.json" />
@@ -8587,6 +8644,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\iwm-gcr-track.json" />
@@ -8620,6 +8678,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-policies.json" />
@@ -8787,6 +8846,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\iwm-gcr-track.json" />
@@ -8820,6 +8880,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-policies.json" />
@@ -8987,6 +9048,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\iwm-gcr-track.json" />
@@ -9020,6 +9082,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-policies.json" />
@@ -9187,6 +9250,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-fm-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-mfm-decoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-mfm-encoding.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-policies.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iso-sector-builder.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iwm-gcr-primitives.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\iwm-gcr-track.json" />
@@ -9220,6 +9284,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-cache.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-reader.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-reconstruction.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-image-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-policies.json" />

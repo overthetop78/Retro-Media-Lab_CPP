@@ -529,6 +529,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Models/Sectors/SectorImages.cpp
   src/Models/Sectors/SizeCodes.cpp
   src/Reconstruction/AmigaReader.cpp
+  src/Reconstruction/Iso/Policy.cpp
+  src/Reconstruction/Iso/ExplicitFamilies.cpp
+  src/Reconstruction/Iso/Reader.cpp
   src/Reconstruction/Iso/Automatic.cpp
   src/Reconstruction/Iso/RuntimeFamilies.cpp
   # Reconstruction/Iso

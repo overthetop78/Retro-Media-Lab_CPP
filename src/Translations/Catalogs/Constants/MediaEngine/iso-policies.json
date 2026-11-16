@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.IsoRequestedFormat": "Format '{1}' is not supported by reconstruction family '{0}'.",
+    "MediaEngine.IsoRequestedGeometry": "Decoded sectors do not match the requested geometry '{0}'.",
+    "MediaEngine.IsoNoCandidates": "ISO FM/MFM reconstruction for '{0}' produced {1} addressed candidates and {2} physical candidates.",
+    "MediaEngine.IsoNotIbmDos": "The ISO MFM boot sector contains a FAT BPB but no DOS/IBM identity."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.IsoRequestedFormat": "重建系列“{0}”不支持格式“{1}”。",
+    "MediaEngine.IsoRequestedGeometry": "解码扇区与请求的几何布局“{0}”不符。",
+    "MediaEngine.IsoNoCandidates": "针对“{0}”的 ISO FM/MFM 重建生成了 {1} 个按地址分组的候选扇区和 {2} 个按物理位置分组的候选扇区。",
+    "MediaEngine.IsoNotIbmDos": "ISO MFM 引导扇区包含 FAT BPB，但没有 DOS/IBM 标识。"
+  }
+}

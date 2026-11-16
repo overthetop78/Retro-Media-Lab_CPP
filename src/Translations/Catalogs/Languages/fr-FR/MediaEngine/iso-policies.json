@@ -1,0 +1,8 @@
+{
+  "strings": {
+    "MediaEngine.IsoRequestedFormat": "Le format « {1} » n'est pas pris en charge par la famille de reconstruction « {0} ».",
+    "MediaEngine.IsoRequestedGeometry": "Les secteurs décodés ne correspondent pas à la géométrie demandée « {0} ».",
+    "MediaEngine.IsoNoCandidates": "La reconstruction ISO FM/MFM pour « {0} » a produit {1} candidats adressés et {2} candidats physiques.",
+    "MediaEngine.IsoNotIbmDos": "Le secteur d’amorçage ISO MFM contient un BPB FAT, mais aucune identité DOS/IBM."
+  }
+}

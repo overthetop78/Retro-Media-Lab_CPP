@@ -972,6 +972,12 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::FdsWrite:return DiagnosticKeys::FdsWrite;
     case DiagnosticCode::FdsHeader:return DiagnosticKeys::FdsHeader;
 
+    case DiagnosticCode::IsoRequestedFormat:return DiagnosticKeys::IsoRequestedFormat;
+    case DiagnosticCode::IsoRequestedGeometry:return DiagnosticKeys::IsoRequestedGeometry;
+    case DiagnosticCode::IsoNoCandidates:return DiagnosticKeys::IsoNoCandidates;
+    case DiagnosticCode::IsoNotIbmDos:return DiagnosticKeys::IsoNotIbmDos;
+    case DiagnosticCode::ScpNoDecodedSectors:return DiagnosticKeys::ScpNoDecodedSectors;
+    case DiagnosticCode::ScpNoUsableSectors:return DiagnosticKeys::ScpNoUsableSectors;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

@@ -55,7 +55,8 @@ std::shared_ptr<const M::SectorImage> acornImage(const Candidates& candidates,st
     }
     return {};
 }
-bool ibmDos(const Candidates& candidates,std::stop_token token){
+}
+bool identifiesIbmDos(const Candidates& candidates,std::stop_token token){
     const auto boot=bestData(candidates,{0,0,1},token),fat=bestData(candidates,{0,0,RuntimeConstants::FatFirstSector},token);
     const auto descriptor=fat.empty()?std::uint8_t{}:fat.front();
     const bool legacy=!M::Fat::detectBpbGeometry(boot)&&Raw::ibmFromDescriptor(descriptor).has_value();
@@ -69,13 +70,12 @@ bool ibmDos(const Candidates& candidates,std::stop_token token){
     const bool dos=std::any_of(RuntimeConstants::DosOems.begin(),RuntimeConstants::DosOems.end(),[&](auto prefix){return Primitives::asciiIdentifierStartsWithIgnoreCase(oem,prefix);});
     return (legacy||dos)&&Raw::ibmFromBoot(boot,descriptor).has_value();
 }
-}
 std::shared_ptr<const M::SectorImage> buildAutomatic(const CandidateSet& set,std::stop_token token){
     if(const auto format=epsonFormat(set.physical,token))return buildEpson(*format,set.physical,token);
     const auto measured=measure(set.addressed,token);
     if(auto image=acornImage(set.physical,token))return image;
     if(measured.zeroBased&&measured.sectorSize==BbcDfs::Constants::SectorSize&&measured.sectorsPerTrack==BbcDfs::Constants::SectorsPerTrack)return buildBbc(set,token);
-    if(measured.sectorSize==Raw::Constants::SectorSize&&!measured.zeroBased&&ibmDos(set.addressed,token))return buildIbmAutomatic(set,token);
+    if(measured.sectorSize==Raw::Constants::SectorSize&&!measured.zeroBased&&identifiesIbmDos(set.addressed,token))return buildIbmAutomatic(set,token);
     namespace A=Atari8Bit::Constants;
     const bool atari=(measured.sectorSize==A::SingleSize||measured.sectorSize==A::DoubleSize)&&measured.heads==A::Heads&&(measured.sectorsPerTrack==A::StandardSectors||measured.sectorsPerTrack==A::EnhancedSectors);
     return atari?buildAtari8Bit(set,{},token):buildSt(set,{},token);

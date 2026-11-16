@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::AmigaMfm::Constants {
-inline constexpr std::string_view Id="amiga.mfm",DisplayName="Amiga MFM",SectorCountField="Sectors",SectorNumberField="sectorNumber";
+inline constexpr std::string_view StructureName="Amiga",Id="amiga.mfm",DisplayName="Amiga MFM",SectorCountField="Sectors",SectorNumberField="sectorNumber";
 inline constexpr std::string_view StructureKey="MediaEngine.AmigaMfmStructure",ValidKey="MediaEngine.IntegrityValid",InvalidKey="MediaEngine.IntegrityInvalid",UnavailableKey="MediaEngine.IntegrityUnavailable";
 inline constexpr std::uint16_t SyncWord=0x4489;
 inline constexpr std::array<std::uint8_t,4> SyncBytes{0x44,0x89,0x44,0x89};
