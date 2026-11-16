@@ -2003,6 +2003,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaVisualization.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h" />
@@ -3122,6 +3123,14 @@
     <ClInclude Include="src\MediaEngine\src\Sources\SourceConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\UnavailableRandomAccessData.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\UnavailableRandomAccessData.h" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\BlockProvider.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Visualization\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\Descriptor.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\Facade.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\LinearProviders.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\PhysicalProviders.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Visualization\Providers.h" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\Registry.cpp" />
     <ClCompile Include="src\MediaEngine\src\Visualization\SectorFluxVisualizer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Visualization\SectorFluxVisualizer.h" />
     <None Include="src\MediaFileSystems\CMakeLists.txt" />
@@ -3554,6 +3563,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vorbis.json" />
@@ -3764,6 +3774,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vorbis.json" />
@@ -3974,6 +3985,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vorbis.json" />
@@ -4184,6 +4196,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vorbis.json" />
@@ -4394,6 +4407,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vorbis.json" />
@@ -4604,6 +4618,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vorbis.json" />
@@ -4814,6 +4829,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vorbis.json" />
@@ -5024,6 +5040,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vorbis.json" />
@@ -5234,6 +5251,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vorbis.json" />
@@ -5444,6 +5462,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vorbis.json" />
@@ -5654,6 +5673,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vorbis.json" />
@@ -5864,6 +5884,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vorbis.json" />
@@ -6074,6 +6095,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vorbis.json" />
@@ -6284,6 +6306,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vorbis.json" />
@@ -6494,6 +6517,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vorbis.json" />
@@ -6704,6 +6728,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vorbis.json" />
@@ -6914,6 +6939,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vorbis.json" />
@@ -7124,6 +7150,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vorbis.json" />
@@ -7334,6 +7361,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vorbis.json" />
@@ -7544,6 +7572,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vorbis.json" />
@@ -7754,6 +7783,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vorbis.json" />
@@ -7964,6 +7994,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vorbis.json" />
@@ -8174,6 +8205,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vorbis.json" />
@@ -8384,6 +8416,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vorbis.json" />
@@ -8594,6 +8627,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vorbis.json" />
@@ -8804,6 +8838,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vorbis.json" />
@@ -9014,6 +9049,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vorbis.json" />
@@ -9224,6 +9260,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vorbis.json" />
@@ -9434,6 +9471,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vorbis.json" />
@@ -9644,6 +9682,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\victor9000-gcr.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\visualization.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vmdk.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\voc-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vorbis.json" />

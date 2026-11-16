@@ -1,4 +1,10 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Visualization/Descriptor.cpp
+    src/Visualization/Registry.cpp
+    src/Visualization/Facade.cpp
+    src/Visualization/PhysicalProviders.cpp
+    src/Visualization/BlockProvider.cpp
+    src/Visualization/LinearProviders.cpp
     src/Exploration/Media/Service.cpp
     src/Exploration/Media/Facade.cpp
   src/Exploration/Disk/Projection.cpp

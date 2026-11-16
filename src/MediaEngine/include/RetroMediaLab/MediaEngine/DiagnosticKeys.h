@@ -1014,4 +1014,7 @@ inline constexpr std::string_view Fat12UnsupportedTarget="MediaEngine.Fat12Unsup
 inline constexpr std::string_view Fat12IncompatibleGeometry="MediaEngine.Fat12IncompatibleGeometry";
 inline constexpr std::string_view Fat12InvalidBpb="MediaEngine.Fat12InvalidBpb";
 inline constexpr std::string_view Fat12MissingSectors="MediaEngine.Fat12MissingSectors";
+inline constexpr std::string_view VisualizationValue="MediaEngine.VisualizationValue";
+inline constexpr std::string_view VisualizationReference="MediaEngine.VisualizationReference";
+inline constexpr std::string_view VisualizationProvider="MediaEngine.VisualizationProvider";
 }

@@ -1016,6 +1016,9 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::Fat12IncompatibleGeometry:return DiagnosticKeys::Fat12IncompatibleGeometry;
     case DiagnosticCode::Fat12InvalidBpb:return DiagnosticKeys::Fat12InvalidBpb;
     case DiagnosticCode::Fat12MissingSectors:return DiagnosticKeys::Fat12MissingSectors;
+    case DiagnosticCode::VisualizationValue:return DiagnosticKeys::VisualizationValue;
+    case DiagnosticCode::VisualizationReference:return DiagnosticKeys::VisualizationReference;
+    case DiagnosticCode::VisualizationProvider:return DiagnosticKeys::VisualizationProvider;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;
