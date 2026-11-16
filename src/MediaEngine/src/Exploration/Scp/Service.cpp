@@ -16,10 +16,10 @@ Result Service::explore(const std::filesystem::path& path,const Progress& progre
  const auto candidates=candidates_.automatic(families);std::vector<Inspection> inspections;inspections.reserve(candidates.size());
  for(std::size_t index=0;index<candidates.size();++index){
   checkCancellation(token);const auto& candidate=candidates[index];
-  if(progress)progress({ProgressKind::CandidateStarted,candidate.id,index,candidates.size(),{},{},{}});
+  if(progress)progress({ProgressKind::CandidateStarted,std::string(candidate.displayName()),index,candidates.size(),{},{},{}});
   ScpReconstruction::Progress units;if(progress)units=[&](const auto& value){progress({value.kind==IsoReconstruction::CollectionProgressKind::TrackDecoded?ProgressKind::TrackDecoded:ProgressKind::RevolutionDecoded,candidate.id,std::size_t(value.completed),std::size_t(value.total),{},value.cylinder,value.head});};
   inspections.push_back(inspector_.inspect(candidate,path,units,token));
-  if(progress)progress({ProgressKind::CandidateCompleted,candidate.id,index+1,candidates.size(),bool(inspections.back().image),{},{}});
+  if(progress)progress({ProgressKind::CandidateCompleted,std::string(candidate.displayName()),index+1,candidates.size(),bool(inspections.back().image),{},{}});
  }
  for(auto& inspection:inspections){
   checkCancellation(token);auto normalized=normalizeCompatibleGeometry(inspection.image,*result.capture,token);if(!normalized||normalized==inspection.image)continue;

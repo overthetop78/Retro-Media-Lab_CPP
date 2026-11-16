@@ -15,6 +15,7 @@ struct Candidate {
     Family family;
     PathRead readPath;
     FluxRead readFlux;
+    RETROMEDIALAB_MEDIAENGINE_API std::string_view displayName()const;
 };
 struct Selection {std::function<bool(std::string_view)> matches;Candidate candidate;};
 // Owns registrations and callback captures; returned references live as long as the registry.
