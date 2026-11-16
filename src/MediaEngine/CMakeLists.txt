@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Common/Chd/Huffman.cpp
+  src/Formats/Common/Chd/Compression.cpp
+  src/Formats/Common/Chd/Flac.cpp
   src/Primitives/Crc32C.cpp
   src/Formats/HardDisk/Vhdx/Structures.cpp
   src/Formats/HardDisk/Vhdx/Metadata.cpp
@@ -394,7 +397,8 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic lz4_static)
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic lz4_static liblzma libzstd_static)
+target_include_directories(RetroMediaLab.MediaEngine PRIVATE ${PROJECT_SOURCE_DIR}/third_party/xz/src/liblzma/api)
 set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
 install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 

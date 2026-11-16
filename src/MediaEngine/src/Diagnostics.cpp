@@ -3,6 +3,26 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::ChdBitWidth:return DiagnosticKeys::ChdBitWidth;
+    case DiagnosticCode::ChdHuffmanParameters:return DiagnosticKeys::ChdHuffmanParameters;
+    case DiagnosticCode::ChdHuffmanCode:return DiagnosticKeys::ChdHuffmanCode;
+    case DiagnosticCode::ChdHuffmanRun:return DiagnosticKeys::ChdHuffmanRun;
+    case DiagnosticCode::ChdHuffmanTree:return DiagnosticKeys::ChdHuffmanTree;
+    case DiagnosticCode::ChdHuffmanTruncated:return DiagnosticKeys::ChdHuffmanTruncated;
+    case DiagnosticCode::ChdDeflate:return DiagnosticKeys::ChdDeflate;
+    case DiagnosticCode::ChdLzma:return DiagnosticKeys::ChdLzma;
+    case DiagnosticCode::ChdZstd:return DiagnosticKeys::ChdZstd;
+    case DiagnosticCode::ChdFlacBitWidth:return DiagnosticKeys::ChdFlacBitWidth;
+    case DiagnosticCode::ChdFlacTruncated:return DiagnosticKeys::ChdFlacTruncated;
+    case DiagnosticCode::ChdFlacUnary:return DiagnosticKeys::ChdFlacUnary;
+    case DiagnosticCode::ChdFlacSamples:return DiagnosticKeys::ChdFlacSamples;
+    case DiagnosticCode::ChdFlacFrame:return DiagnosticKeys::ChdFlacFrame;
+    case DiagnosticCode::ChdFlacHeaderCrc:return DiagnosticKeys::ChdFlacHeaderCrc;
+    case DiagnosticCode::ChdFlacFrameCrc:return DiagnosticKeys::ChdFlacFrameCrc;
+    case DiagnosticCode::ChdFlacSubframe:return DiagnosticKeys::ChdFlacSubframe;
+    case DiagnosticCode::ChdFlacPredictor:return DiagnosticKeys::ChdFlacPredictor;
+    case DiagnosticCode::ChdFlacResidual:return DiagnosticKeys::ChdFlacResidual;
+
     case DiagnosticCode::VhdxShort:return DiagnosticKeys::VhdxShort;
     case DiagnosticCode::VhdxSignature:return DiagnosticKeys::VhdxSignature;
     case DiagnosticCode::VhdxHeaders:return DiagnosticKeys::VhdxHeaders;

@@ -1,6 +1,26 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ChdBitWidth="MediaEngine.ChdBitWidth";
+inline constexpr std::string_view ChdHuffmanParameters="MediaEngine.ChdHuffmanParameters";
+inline constexpr std::string_view ChdHuffmanCode="MediaEngine.ChdHuffmanCode";
+inline constexpr std::string_view ChdHuffmanRun="MediaEngine.ChdHuffmanRun";
+inline constexpr std::string_view ChdHuffmanTree="MediaEngine.ChdHuffmanTree";
+inline constexpr std::string_view ChdHuffmanTruncated="MediaEngine.ChdHuffmanTruncated";
+inline constexpr std::string_view ChdDeflate="MediaEngine.ChdDeflate";
+inline constexpr std::string_view ChdLzma="MediaEngine.ChdLzma";
+inline constexpr std::string_view ChdZstd="MediaEngine.ChdZstd";
+inline constexpr std::string_view ChdFlacBitWidth="MediaEngine.ChdFlacBitWidth";
+inline constexpr std::string_view ChdFlacTruncated="MediaEngine.ChdFlacTruncated";
+inline constexpr std::string_view ChdFlacUnary="MediaEngine.ChdFlacUnary";
+inline constexpr std::string_view ChdFlacSamples="MediaEngine.ChdFlacSamples";
+inline constexpr std::string_view ChdFlacFrame="MediaEngine.ChdFlacFrame";
+inline constexpr std::string_view ChdFlacHeaderCrc="MediaEngine.ChdFlacHeaderCrc";
+inline constexpr std::string_view ChdFlacFrameCrc="MediaEngine.ChdFlacFrameCrc";
+inline constexpr std::string_view ChdFlacSubframe="MediaEngine.ChdFlacSubframe";
+inline constexpr std::string_view ChdFlacPredictor="MediaEngine.ChdFlacPredictor";
+inline constexpr std::string_view ChdFlacResidual="MediaEngine.ChdFlacResidual";
+
 inline constexpr std::string_view VhdxShort="MediaEngine.VhdxShort";
 inline constexpr std::string_view VhdxSignature="MediaEngine.VhdxSignature";
 inline constexpr std::string_view VhdxHeaders="MediaEngine.VhdxHeaders";

@@ -1,0 +1,23 @@
+{
+  "strings": {
+    "MediaEngine.ChdBitWidth": "The CHD bit width is invalid.",
+    "MediaEngine.ChdHuffmanParameters": "The CHD Huffman symbol count or maximum bit width is invalid.",
+    "MediaEngine.ChdHuffmanCode": "The CHD Huffman code is invalid.",
+    "MediaEngine.ChdHuffmanRun": "The CHD Huffman run exceeds the symbol table.",
+    "MediaEngine.ChdHuffmanTree": "The CHD Huffman lengths, tree or lookup table are invalid.",
+    "MediaEngine.ChdHuffmanTruncated": "The CHD Huffman tree or data is truncated.",
+    "MediaEngine.ChdDeflate": "The CHD DEFLATE stream, input consumption or output size is invalid.",
+    "MediaEngine.ChdLzma": "The CHD LZMA stream, input consumption or output size is invalid.",
+    "MediaEngine.ChdZstd": "The CHD Zstandard frame, dictionary, checksum or output size is invalid.",
+    "MediaEngine.ChdFlacBitWidth": "The CHD FLAC bit width is invalid.",
+    "MediaEngine.ChdFlacTruncated": "The CHD FLAC stream is truncated.",
+    "MediaEngine.ChdFlacUnary": "The CHD FLAC unary code is invalid.",
+    "MediaEngine.ChdFlacSamples": "The CHD FLAC output sample count is invalid.",
+    "MediaEngine.ChdFlacFrame": "The CHD FLAC frame sync, parameters or numbering are invalid.",
+    "MediaEngine.ChdFlacHeaderCrc": "The CHD FLAC header CRC does not match.",
+    "MediaEngine.ChdFlacFrameCrc": "The CHD FLAC frame CRC does not match.",
+    "MediaEngine.ChdFlacSubframe": "The CHD FLAC subframe type, padding or wasted bits are invalid.",
+    "MediaEngine.ChdFlacPredictor": "The CHD FLAC predictor order or precision is invalid.",
+    "MediaEngine.ChdFlacResidual": "The CHD FLAC residual coding or partition is invalid."
+  }
+}
