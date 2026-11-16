@@ -58,7 +58,7 @@
 #include <set>
 namespace RetroMediaLab::MediaEngine {
 MediaRecognitionComposition::MediaRecognitionComposition(std::shared_ptr<const Scp::Reader> scp,std::vector<std::shared_ptr<const ImageReader>> readers)
-:scp_(std::move(scp)),registry_(std::move(readers)){
+:scp_(std::move(scp)),registry_(std::move(readers)),reading_(registry_){
     std::set<std::string> unique;
     for(const auto& reader:registry_.readers())for(const auto& extension:reader->capabilities().extensions)unique.insert(QString::fromStdString(extension).toCaseFolded().toStdString());
     extensions_.assign(unique.begin(),unique.end());

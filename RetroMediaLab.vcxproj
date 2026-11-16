@@ -1091,6 +1091,8 @@
     <ClInclude Include="src\MediaEngine\src\Images\ReaderRegistry.h" />
     <ClInclude Include="src\MediaEngine\src\Images\Readers.h" />
     <ClInclude Include="src\MediaEngine\src\Images\ReaderValidation.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\ReadingService.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\ReadingService.h" />
     <ClCompile Include="src\MediaEngine\src\Images\ReadRejection.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\ReadRejection.h" />
     <ClCompile Include="src\MediaEngine\src\Images\RecognitionContext.cpp" />
@@ -1766,6 +1768,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\northstar-mfm.json" />
@@ -1959,6 +1962,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\northstar-mfm.json" />
@@ -2152,6 +2156,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\northstar-mfm.json" />
@@ -2345,6 +2350,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\northstar-mfm.json" />
@@ -2538,6 +2544,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\northstar-mfm.json" />
@@ -2731,6 +2738,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\northstar-mfm.json" />
@@ -2924,6 +2932,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\northstar-mfm.json" />
@@ -3117,6 +3126,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\northstar-mfm.json" />
@@ -3310,6 +3320,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\northstar-mfm.json" />
@@ -3503,6 +3514,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\northstar-mfm.json" />
@@ -3696,6 +3708,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\northstar-mfm.json" />
@@ -3889,6 +3902,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\northstar-mfm.json" />
@@ -4082,6 +4096,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\northstar-mfm.json" />
@@ -4275,6 +4290,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\northstar-mfm.json" />
@@ -4468,6 +4484,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\northstar-mfm.json" />
@@ -4661,6 +4678,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\northstar-mfm.json" />
@@ -4854,6 +4872,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\northstar-mfm.json" />
@@ -5047,6 +5066,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\northstar-mfm.json" />
@@ -5240,6 +5260,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\northstar-mfm.json" />
@@ -5433,6 +5454,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\northstar-mfm.json" />
@@ -5626,6 +5648,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\northstar-mfm.json" />
@@ -5819,6 +5842,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\northstar-mfm.json" />
@@ -6012,6 +6036,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\northstar-mfm.json" />
@@ -6205,6 +6230,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\northstar-mfm.json" />
@@ -6398,6 +6424,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\northstar-mfm.json" />
@@ -6591,6 +6618,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\northstar-mfm.json" />
@@ -6784,6 +6812,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\northstar-mfm.json" />
@@ -6977,6 +7006,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\northstar-mfm.json" />
@@ -7170,6 +7200,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\northstar-mfm.json" />

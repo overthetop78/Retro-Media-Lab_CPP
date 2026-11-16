@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/ReadingService.cpp
   src/Images/Creation/Blank.cpp
   src/Images/Creation/Catalog.cpp
   src/Images/Creation/Migration.cpp

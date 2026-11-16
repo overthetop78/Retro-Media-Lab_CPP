@@ -4953,6 +4953,12 @@
     <ClInclude Include="src\MediaEngine\src\Images\ReaderValidation.h">
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\ReadingService.cpp">
+      <Filter>src\MediaEngine\src\Images</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\ReadingService.h">
+      <Filter>src\MediaEngine\src\Images</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Images\ReadRejection.cpp">
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClCompile>
@@ -6978,6 +6984,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
@@ -7555,6 +7564,9 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\msa.json">
@@ -8136,6 +8148,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
@@ -8713,6 +8728,9 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\msa.json">
@@ -9294,6 +9312,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
@@ -9871,6 +9892,9 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\msa.json">
@@ -10452,6 +10476,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
@@ -11029,6 +11056,9 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\msa.json">
@@ -11610,6 +11640,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
@@ -12187,6 +12220,9 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\msa.json">
@@ -12768,6 +12804,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
@@ -13345,6 +13384,9 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\msa.json">
@@ -13926,6 +13968,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
@@ -14503,6 +14548,9 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\msa.json">
@@ -15084,6 +15132,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
@@ -15661,6 +15712,9 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\msa.json">
@@ -16242,6 +16296,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
@@ -16819,6 +16876,9 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\msa.json">
@@ -17400,6 +17460,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
@@ -17977,6 +18040,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\msa.json">
@@ -18558,6 +18624,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
@@ -19135,6 +19204,9 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\msa.json">
@@ -19716,6 +19788,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
@@ -20293,6 +20368,9 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\msa.json">
@@ -20874,6 +20952,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
@@ -21451,6 +21532,9 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\msa.json">
@@ -22032,6 +22116,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
@@ -22611,6 +22698,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -23188,6 +23278,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\micropolis-mfm.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\migration.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\msa.json">
