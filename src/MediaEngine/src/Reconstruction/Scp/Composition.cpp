@@ -12,7 +12,7 @@
 #include "../../Primitives/Identifiers.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 namespace RetroMediaLab::MediaEngine::ScpReconstruction {
-namespace {
+namespace Details {
 using Primitives::asciiIdentifierEqualsIgnoreCase;
 using Primitives::asciiIdentifierStartsWithIgnoreCase;
 struct Services {
@@ -25,9 +25,7 @@ struct Services {
         :decoders(std::move(registry)),capture([source=std::move(source)](const std::filesystem::path& path,std::stop_token token){return *source->readFileAsync(path,token).get();}),
          iso(decoders.operation(),capture),apple(decoders,capture),defined(decoders,capture){}
 };
-Candidates create(std::shared_ptr<const Scp::CaptureReader> capture,Decoding::Registry decoders){
-    if(!capture)throw MediaError(DiagnosticCode::ReaderRegistryNull);
-    const auto services=std::make_shared<Services>(std::move(capture),std::move(decoders));
+Candidates create(const std::shared_ptr<Services>& services){
     const auto isoCandidate=[&](std::string_view id,std::optional<std::string> fixed,bool automatic=false){
         return Candidate{std::string(id),Family::Iso,
             [services,fixed,automatic](const auto& path,const auto& format,const auto& progress,auto token){return services->iso.read(path,automatic?std::nullopt:fixed?fixed:format,progress,token);},
@@ -86,5 +84,11 @@ Candidates create(std::shared_ptr<const Scp::CaptureReader> capture,Decoding::Re
 }
 }
 Composition::Composition(std::shared_ptr<const Scp::CaptureReader> capture,MediaFileSystems::SectorRegistry fileSystems,Decoding::Registry decoders)
-    :candidates_(create(std::move(capture),std::move(decoders))),reader_(candidates_,std::move(fileSystems)){}
+    :services_([&]{if(!capture)throw MediaError(DiagnosticCode::ReaderRegistryNull);return std::make_shared<Details::Services>(std::move(capture),std::move(decoders));}()),candidates_(Details::create(services_)),reader_(candidates_,std::move(fileSystems)){}
+IsoReconstruction::Reader& Composition::isoReader()const{return services_->iso;}
+AppleScp::Reader& Composition::appleReader()const{return services_->apple;}
+Image Composition::readAmiga(const std::filesystem::path& path,const Progress& progress,std::stop_token token)const{return AmigaReconstruction::read(services_->capture(path,token),services_->decoders.operation(),token,progress);}
+Image Composition::readCommodore(const std::filesystem::path& path,std::optional<std::string> format,std::stop_token token)const{return CommodoreDisks::readFlux(services_->capture(path,token),format?std::optional<std::string_view>(*format):std::nullopt,{},token);}
+Image Composition::readRx02(const std::filesystem::path& path,std::stop_token token)const{return Rx02Reconstruction::read(services_->capture(path,token),services_->decoders.operation(),{},token);}
+
 }

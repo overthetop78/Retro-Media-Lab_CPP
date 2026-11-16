@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Conversion/Files.cpp
+  src/Images/Conversion/FileSources.cpp
+  src/Images/Conversion/FileAppleSources.cpp
   src/Images/Conversion/Planner.cpp
   src/Images/Conversion/Service.cpp
   src/Images/Conversion/Facade.cpp

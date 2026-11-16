@@ -1993,6 +1993,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSound.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MechanicalSoundConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
@@ -2865,6 +2866,11 @@
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\AcornRaw.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Facade.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\FileAppleSources.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\FileConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\Files.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\Files.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\FileSources.cpp" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\FluxSectors.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\FluxSectors.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\HfeCells.cpp" />

@@ -1,4 +1,5 @@
 #include "Service.h"
+#include "../../Formats/Scp/Constants.h"
 #include "../../Sources/DriveOperation.h"
 #include "../../Primitives/Identifiers.h"
 #include "Sequential/Constants.h"
@@ -17,6 +18,7 @@ MediaConversionRequest::MediaConversionRequest(std::shared_ptr<const MediaDocume
  :source(std::move(document)),output(std::move(path)),targetFormatId(std::move(target)),options(std::move(parameters)),progress(std::move(callback)){
  if(!source||Primitives::isBlankIdentifier(utf8(output))||Primitives::isBlankIdentifier(targetFormatId))throw MediaError(DiagnosticCode::ConversionRequest);
 }
+std::future<std::shared_ptr<const MediaFileSystems::SectorImage>> MediaConversionService::readSectorSource(const std::filesystem::path& path,const SectorRead& scp,const SectorRead& image){return Primitives::asciiIdentifierEqualsIgnoreCase(utf8(path.extension()),Scp::Constants::Extension)?scp():image();}
 MediaConversionService::MediaConversionService(RepresentationConverterRegistry converters,WriterRegistry writers,MediaImageWritingService writing):converters_(std::move(converters)),writers_(std::move(writers)),writing_(std::move(writing)){}
 std::vector<MediaConversionDestination> MediaConversionService::availableDestinations(const MediaDocument& document)const{
  std::vector<MediaConversionDestination> result;

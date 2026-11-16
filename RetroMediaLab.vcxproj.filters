@@ -8001,6 +8001,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaConversion.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -10615,6 +10618,21 @@
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Facade.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\FileAppleSources.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\FileConstants.h">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\Files.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\Files.h">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\FileSources.cpp">
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\FluxSectors.cpp">
