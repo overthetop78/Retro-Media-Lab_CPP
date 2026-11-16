@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "不支援的遷移檔案系統：{0}。",
+    "MediaFileSystems.MigrationCapacityLimit": "目標映像超出支援的遷移限制。",
+    "MediaFileSystems.MigrationBlank": "目標映像必須包含所有已初始化為零的磁區。",
+    "MediaFileSystems.MigrationGeometry": "寫入資料後的映像與空白目標映像不相符。",
+    "MediaFileSystems.MigrationAddress": "寫入資料後的映像變更了目標磁區位址。"
+  }
+}

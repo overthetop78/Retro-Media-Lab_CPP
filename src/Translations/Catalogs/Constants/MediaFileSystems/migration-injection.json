@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Unsupported migration file system: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "The target image exceeds the supported migration limits.",
+    "MediaFileSystems.MigrationBlank": "The target image must contain all sectors initialized to zero.",
+    "MediaFileSystems.MigrationGeometry": "The filled image does not match the blank target image.",
+    "MediaFileSystems.MigrationAddress": "The filled image changed a target sector address."
+  }
+}

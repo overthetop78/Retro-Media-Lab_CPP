@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Неподдерживаемая файловая система миграции: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "Изображение цели превышает поддерживаемые пределы миграции.",
+    "MediaFileSystems.MigrationBlank": "Изображение цели должно содержать все сектора, инициализированные до нуля.",
+    "MediaFileSystems.MigrationGeometry": "Заполненное изображение не соответствует пустому целевому изображению.",
+    "MediaFileSystems.MigrationAddress": "Заполненное изображение изменило адрес целевого сектора."
+  }
+}

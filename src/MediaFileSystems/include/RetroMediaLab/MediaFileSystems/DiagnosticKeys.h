@@ -485,3 +485,11 @@ inline constexpr std::string_view MigrationTargetMismatch="MediaFileSystems.Migr
 inline constexpr std::string_view MigrationLimits="MediaFileSystems.MigrationLimits";
 inline constexpr std::string_view MigrationBlocked="MediaFileSystems.MigrationBlocked";
 }
+
+namespace RetroMediaLab::MediaFileSystems::DiagnosticKeys {
+inline constexpr std::string_view MigrationUnsupported="MediaFileSystems.MigrationUnsupported";
+inline constexpr std::string_view MigrationCapacityLimit="MediaFileSystems.MigrationCapacityLimit";
+inline constexpr std::string_view MigrationBlank="MediaFileSystems.MigrationBlank";
+inline constexpr std::string_view MigrationGeometry="MediaFileSystems.MigrationGeometry";
+inline constexpr std::string_view MigrationAddress="MediaFileSystems.MigrationAddress";
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Nicht unterstütztes Migrationsdateisystem: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "Das Zielbild überschreitet die unterstützten Migrationsgrenzen.",
+    "MediaFileSystems.MigrationBlank": "Das Zielbild muss alle auf Null initialisierten Sektoren enthalten.",
+    "MediaFileSystems.MigrationGeometry": "Das gefüllte Bild passt nicht zum leeren Zielbild.",
+    "MediaFileSystems.MigrationAddress": "Das gefüllte Bild änderte eine Zielsektoradresse."
+  }
+}

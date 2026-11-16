@@ -1,6 +1,9 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
   src/Exploration/Composition/Interpretation.cpp
   src/Migration/Planning.cpp
+  src/Migration/Capabilities.cpp
+  src/Migration/Service.cpp
+  src/FileSystems/Apple/Sos/Writer.cpp
   # Common
   src/Diagnostics.cpp
   src/Sources.cpp

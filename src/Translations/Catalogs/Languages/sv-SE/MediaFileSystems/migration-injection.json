@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Filsystem för migrering stöds inte: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "Målbilden överstiger de stödda migrationsgränserna.",
+    "MediaFileSystems.MigrationBlank": "Målet måste innehålla alla sektorer som initierats till noll.",
+    "MediaFileSystems.MigrationGeometry": "Den fyllda bilden matchar inte den tomma målbilden.",
+    "MediaFileSystems.MigrationAddress": "Den fyllda bilden ändrade en målsektoradress."
+  }
+}

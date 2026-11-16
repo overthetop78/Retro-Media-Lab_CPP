@@ -7,4 +7,6 @@ inline constexpr std::string_view DirectoryKind = "Directory", LinkKind = "Link"
 inline constexpr std::string_view TimestampPattern = "%1-%2-%3T%4:%5:%6.%7%8%9:%10";
 inline constexpr int YearWidth = 4, FieldWidth = 2, FractionWidth = 7, NanosecondsPerTick = 100, MinutesPerHour = 60;
 inline constexpr char PositiveOffset = '+', NegativeOffset = '-', Padding = '0';
+inline constexpr std::string_view AmigaForbidden = "/:", FatForbidden = "\"*+,/:;<=>?[\\]|", AppleDosForbidden = ",", MsxPrefix = "msx.";
+inline constexpr std::size_t FatNameSeparatorLength = 1;
 }

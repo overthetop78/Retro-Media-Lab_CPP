@@ -4,6 +4,12 @@
 namespace RetroMediaLab::MediaFileSystems {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch (code) {
+    case DiagnosticCode::MigrationUnsupported:return DiagnosticKeys::MigrationUnsupported;
+    case DiagnosticCode::MigrationCapacityLimit:return DiagnosticKeys::MigrationCapacityLimit;
+    case DiagnosticCode::MigrationBlank:return DiagnosticKeys::MigrationBlank;
+    case DiagnosticCode::MigrationGeometry:return DiagnosticKeys::MigrationGeometry;
+    case DiagnosticCode::MigrationAddress:return DiagnosticKeys::MigrationAddress;
+
     case DiagnosticCode::MigrationTargetId:return DiagnosticKeys::MigrationTargetId;
     case DiagnosticCode::MigrationTargetMismatch:return DiagnosticKeys::MigrationTargetMismatch;
     case DiagnosticCode::MigrationLimits:return DiagnosticKeys::MigrationLimits;
@@ -478,6 +484,12 @@ case DiagnosticCode::AmigaFileSize:return DiagnosticKeys::AmigaFileSize;
 }
 ErrorKind diagnosticErrorKind(DiagnosticCode code) noexcept {
     switch(code) {
+    case DiagnosticCode::MigrationUnsupported:return ErrorKind::InvalidArgument;
+    case DiagnosticCode::MigrationCapacityLimit:return ErrorKind::ArgumentOutOfRange;
+    case DiagnosticCode::MigrationBlank:return ErrorKind::InvalidArgument;
+    case DiagnosticCode::MigrationGeometry:return ErrorKind::Other;
+    case DiagnosticCode::MigrationAddress:return ErrorKind::Other;
+
     case DiagnosticCode::MigrationTargetId:return ErrorKind::InvalidArgument;
     case DiagnosticCode::MigrationTargetMismatch:return ErrorKind::InvalidArgument;
     case DiagnosticCode::MigrationLimits:return ErrorKind::ArgumentOutOfRange;

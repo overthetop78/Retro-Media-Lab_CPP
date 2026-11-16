@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "サポートされていないマイグレーションファイルシステム:{0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "対象画像は、サポートされているマイグレーション制限を超える。",
+    "MediaFileSystems.MigrationBlank": "移行先イメージには、ゼロで初期化されたすべてのセクターが含まれている必要があります。",
+    "MediaFileSystems.MigrationGeometry": "書き込み後のイメージが空の移行先イメージと一致しません。",
+    "MediaFileSystems.MigrationAddress": "書き込み後のイメージで移行先セクターのアドレスが変更されました。"
+  }
+}

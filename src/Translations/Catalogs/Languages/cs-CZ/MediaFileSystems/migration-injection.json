@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Nepodporovaný cílový systém souborů migrace: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "Cílový obraz překračuje podporované migrační limity.",
+    "MediaFileSystems.MigrationBlank": "Cílový obraz musí obsahovat všechny sektory inicializované na nulu.",
+    "MediaFileSystems.MigrationGeometry": "Naplněný obraz neodpovídá prázdnému cílovému obrazu.",
+    "MediaFileSystems.MigrationAddress": "Naplněný obraz změnil adresu cílového sektoru."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "Sistema de arquivos de migração não suportado: {0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "A imagem alvo excede os limites de migração suportados.",
+    "MediaFileSystems.MigrationBlank": "A imagem alvo deve conter todos os setores inicializados a zero.",
+    "MediaFileSystems.MigrationGeometry": "A imagem preenchida não corresponde à imagem alvo em branco.",
+    "MediaFileSystems.MigrationAddress": "A imagem preenchida mudou um endereço do setor alvo."
+  }
+}

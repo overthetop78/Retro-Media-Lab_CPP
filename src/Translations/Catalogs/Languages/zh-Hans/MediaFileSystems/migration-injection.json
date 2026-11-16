@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.MigrationUnsupported": "不支持的迁移文件系统 :{0}.",
+    "MediaFileSystems.MigrationCapacityLimit": "目标图像超过了支持的迁移限制.",
+    "MediaFileSystems.MigrationBlank": "目标图像必须包含已初始化为零的所有扇区.",
+    "MediaFileSystems.MigrationGeometry": "已填充的图像不匹配空白的目标图像 。",
+    "MediaFileSystems.MigrationAddress": "填充的图像改变了目标扇区地址 。"
+  }
+}

@@ -1,5 +1,6 @@
 #pragma once
 #include "FileSystemModels.h"
+#include "SectorImage.h"
 #include <functional>
 #include <limits>
 namespace RetroMediaLab::MediaFileSystems {
@@ -54,5 +55,15 @@ class MigrationMetadataReducer final {
 public:
     // Apply only after validation and explicit acceptance of metadata losses.
     RETROMEDIALAB_MEDIAFILESYSTEMS_API static MigrationPlan reduce(const MigrationPlan&, const MigrationTargetCapabilities&);
+};
+struct MigrationInjectionResult {
+    SectorWritePlan image;
+    MigrationValidationReport report;
+};
+class FileSystemMigrationService final {
+public:
+    RETROMEDIALAB_MEDIAFILESYSTEMS_API static MigrationPlan createPlan(const FileSystemVolume&, std::string targetFileSystemId);
+    RETROMEDIALAB_MEDIAFILESYSTEMS_API static MigrationValidationReport validate(const MigrationPlan&, const SectorImage&, bool acceptMetadataLoss = false);
+    RETROMEDIALAB_MEDIAFILESYSTEMS_API static MigrationInjectionResult inject(const MigrationPlan&, const SectorImage&, bool acceptMetadataLoss = false, std::stop_token = {});
 };
 }
