@@ -48,7 +48,7 @@ La tâche 152 porte le lecteur CHD optique : layouts bruts/décodés, sources bo
 
 La tâche 153 porte le bloc GDI complet : descripteur Unicode, pistes associées, sources partagées, métadonnées, lecture et écriture atomique multipiste. Les dispositions de sortie que le lecteur aurait refusées ou tronquées sont désormais refusées. Compilation, contrôle ciblé, audit et catalogues réussis.
 
-La tâche 154 est en cours : modèles CUE possédés, parseur/sérialiseur complet et source PCM WAVE portés et contrôlés. Les types BINARY/WAVE/OGG sont décrits ; le décodeur Vorbis, le lecteur/writer BIN/CUE et leur raccordement restent à terminer. Compilation, contrôle ciblé intermédiaire, audit et catalogues réussis.
+La tâche 154 termine le bloc BIN/CUE : modèles CUE possédés, parseur/sérialiseur, sources PCM WAVE/Vorbis, reconnaissance, pistes/index/pregaps et publication atomique multipiste. Tremor entier et libogg officiels sont intégrés statiquement ; les PCM stéréo, mono et chaînés sont identiques au C# sur les échantillons contrôlés. Une erreur de callback libère le décodeur et une lecture suivante le rouvre. Compilation Debug, contrôle ciblé, audit et catalogues réussis. Le raccordement à la composition globale reste distinct.
 
 ## Travail restant
 

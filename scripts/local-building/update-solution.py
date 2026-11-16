@@ -57,7 +57,7 @@ def main():
     child(settings, "OutDir", "$(ProjectDir)build\\ide\\$(Configuration)\\")
     child(settings, "IntDir", "$(OutDir)")
     child(settings, "NMakePreprocessorDefinitions", "UNICODE;_UNICODE;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;RETROMEDIALAB_APP_BUILD;RETROMEDIALAB_INFRASTRUCTURE_BUILD;RETROMEDIALAB_TRANSLATIONS_BUILD;RETROMEDIALAB_MEDIAANALYSIS_BUILD;RETROMEDIALAB_MEDIAFILESYSTEMS_BUILD;RETROMEDIALAB_MEDIAENGINE_BUILD;$(NMakePreprocessorDefinitions)")
-    includes = ["src\\MediaEngine\\include", "src\\MediaFileSystems\\include", "src\\MediaAnalysis\\include", "src\\App", "src\\Infrastructure", "src\\Infrastructure\\include", "src\\Common", "third_party\\libarchive\\libarchive", "build\\$(Configuration)\\third_party\\libarchive", "src\\Translations\\include", "src\\Platform\\include", "build\\$(Configuration)\\generated"]
+    includes = ["third_party\\tremor", "third_party\\ogg\\include", "src\\MediaEngine\\include", "src\\MediaFileSystems\\include", "src\\MediaAnalysis\\include", "src\\App", "src\\Infrastructure", "src\\Infrastructure\\include", "src\\Common", "third_party\\libarchive\\libarchive", "build\\$(Configuration)\\third_party\\libarchive", "src\\Translations\\include", "src\\Platform\\include", "build\\$(Configuration)\\generated"]
     includes = ["$(ProjectDir)" + item for item in includes]
     includes += ["$(QtRoot)\\include", "$(QtRoot)\\include\\QtCore", "$(QtRoot)\\include\\QtGui", "$(QtRoot)\\include\\QtWidgets", "$(QtRoot)\\include\\QtNetwork", "$(QtRoot)\\mkspecs\\win32-msvc", "$(NMakeIncludeSearchPath)"]
     child(settings, "NMakeIncludeSearchPath", ";".join(includes))

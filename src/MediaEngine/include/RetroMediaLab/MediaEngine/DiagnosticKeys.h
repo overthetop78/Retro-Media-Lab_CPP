@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view VorbisData="MediaEngine.VorbisData";
+inline constexpr std::string_view VorbisProfile="MediaEngine.VorbisProfile";
+inline constexpr std::string_view VorbisRange="MediaEngine.VorbisRange";
+inline constexpr std::string_view VorbisOperation="MediaEngine.VorbisOperation";
 inline constexpr std::string_view CueSyntax="MediaEngine.CueSyntax";
 inline constexpr std::string_view CueStructure="MediaEngine.CueStructure";
 inline constexpr std::string_view CueOutput="MediaEngine.CueOutput";

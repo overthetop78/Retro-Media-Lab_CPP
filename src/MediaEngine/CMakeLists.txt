@@ -1,6 +1,9 @@
 add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Optical/BinCue/Sheet.cpp
   src/Formats/Optical/BinCue/SheetWriter.cpp
+  src/Formats/Common/Audio/Vorbis/PcmSource.cpp
+  src/Formats/Optical/BinCue/Reader.cpp
+  src/Formats/Optical/BinCue/Writer.cpp
   src/Formats/Optical/BinCue/WaveSource.cpp
   src/Formats/Optical/Gdi/Descriptor.cpp
   src/Formats/Optical/Gdi/Reader.cpp
@@ -413,7 +416,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic lz4_static liblzma libzstd_static)
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.Tremor RetroMediaLab.MediaFileSystems zlibstatic lz4_static liblzma libzstd_static)
 target_include_directories(RetroMediaLab.MediaEngine PRIVATE ${PROJECT_SOURCE_DIR}/third_party/xz/src/liblzma/api)
 set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
 install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)

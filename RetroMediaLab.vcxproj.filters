@@ -268,6 +268,12 @@
     <Filter Include="src\MediaEngine\src\Formats\Common">
       <UniqueIdentifier>{6EADCCAA-20B3-5E28-8B76-FCF1EBE78759}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Common\Audio">
+      <UniqueIdentifier>{DB0D2397-C115-5A60-8EBE-009981D05588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis">
+      <UniqueIdentifier>{E85B294E-AF14-5217-911B-E306D24C9DEC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Common\Chd">
       <UniqueIdentifier>{30CF5470-0922-5AFA-884C-F2D7ADE1F9C7}</UniqueIdentifier>
     </Filter>
@@ -1251,6 +1257,21 @@
     </Filter>
     <Filter Include="third_party\lz4\ossfuzz">
       <UniqueIdentifier>{BE5BA55F-431E-5084-ADD5-1A3C4E480DD7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ogg">
+      <UniqueIdentifier>{25FC76F9-836A-5874-A177-0877EA259AFB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ogg\include">
+      <UniqueIdentifier>{7F70B03F-3694-5FCF-B149-C7711AC5A03F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ogg\include\ogg">
+      <UniqueIdentifier>{3D313D23-18AA-5628-9927-8745DAB0E71C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ogg\src">
+      <UniqueIdentifier>{FC554230-347F-5287-92E6-CCD94C537DBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\tremor">
+      <UniqueIdentifier>{ABB1756F-EF54-5950-A0BC-C80A12D2D563}</UniqueIdentifier>
     </Filter>
     <Filter Include="third_party\xz">
       <UniqueIdentifier>{0C56C874-0B35-58C6-9490-64672DE6E9D4}</UniqueIdentifier>
@@ -3087,6 +3108,15 @@
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Writer.cpp">
       <Filter>src\MediaEngine\src\Formats\CommodoreDisks</Filter>
     </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Common\Audio\Vorbis</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\PcmSource.cpp">
+      <Filter>src\MediaEngine\src\Formats\Common\Audio\Vorbis</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\PcmSource.h">
+      <Filter>src\MediaEngine\src\Formats\Common\Audio\Vorbis</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Bitstream.h">
       <Filter>src\MediaEngine\src\Formats\Common\Chd</Filter>
     </ClInclude>
@@ -3813,6 +3843,12 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Sheet.cpp">
       <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
     </ClCompile>
@@ -3831,6 +3867,9 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\WaveSource.h">
       <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Writer.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\BinCue</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Optical\Chd</Filter>
     </ClInclude>
@@ -5586,6 +5625,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6067,6 +6109,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\woz.json">
@@ -6552,6 +6597,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -7033,6 +7081,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\woz.json">
@@ -7518,6 +7569,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -7999,6 +8053,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\woz.json">
@@ -8484,6 +8541,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -8965,6 +9025,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\woz.json">
@@ -9450,6 +9513,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -9931,6 +9997,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\woz.json">
@@ -10416,6 +10485,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -10897,6 +10969,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\woz.json">
@@ -11382,6 +11457,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -11863,6 +11941,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\woz.json">
@@ -12348,6 +12429,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -12829,6 +12913,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\woz.json">
@@ -13314,6 +13401,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -13795,6 +13885,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\woz.json">
@@ -14280,6 +14373,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -14761,6 +14857,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\woz.json">
@@ -15246,6 +15345,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -15727,6 +15829,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\woz.json">
@@ -16212,6 +16317,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -16693,6 +16801,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\woz.json">
@@ -17178,6 +17289,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -17659,6 +17773,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\woz.json">
@@ -18144,6 +18261,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -18625,6 +18745,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\woz.json">
@@ -19110,6 +19233,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vmdk.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vorbis.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\woz.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -19591,6 +19717,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vmdk.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vorbis.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\woz.json">
@@ -21348,6 +21477,123 @@
     <None Include="third_party\lz4\SECURITY.md">
       <Filter>third_party\lz4</Filter>
     </None>
+    <None Include="third_party\ogg\CMakeLists.txt">
+      <Filter>third_party\ogg</Filter>
+    </None>
+    <None Include="third_party\ogg\COPYING">
+      <Filter>third_party\ogg</Filter>
+    </None>
+    <ClInclude Include="third_party\ogg\include\ogg\config_types.h">
+      <Filter>third_party\ogg\include\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\ogg\include\ogg\ogg.h">
+      <Filter>third_party\ogg\include\ogg</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\ogg\include\ogg\os_types.h">
+      <Filter>third_party\ogg\include\ogg</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\ogg\src\bitwise.c">
+      <Filter>third_party\ogg\src</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\ogg\src\crctable.h">
+      <Filter>third_party\ogg\src</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\ogg\src\framing.c">
+      <Filter>third_party\ogg\src</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\asm_arm.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\backends.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\tremor\block.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\block.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <None Include="third_party\tremor\CMakeLists.txt">
+      <Filter>third_party\tremor</Filter>
+    </None>
+    <ClCompile Include="third_party\tremor\codebook.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\codebook.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\codec_internal.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\config_types.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <None Include="third_party\tremor\COPYING">
+      <Filter>third_party\tremor</Filter>
+    </None>
+    <ClCompile Include="third_party\tremor\floor0.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\floor1.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\info.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\ivorbiscodec.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\ivorbisfile.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\lsp_lookup.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\tremor\mapping0.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\mdct.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\mdct.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\mdct_lookup.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\misc.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\os.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\tremor\registry.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\registry.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClCompile Include="third_party\tremor\res012.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\sharedbook.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\synthesis.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\vorbisfile.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\tremor\window.c">
+      <Filter>third_party\tremor</Filter>
+    </ClCompile>
+    <ClInclude Include="third_party\tremor\window.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\tremor\window_lookup.h">
+      <Filter>third_party\tremor</Filter>
+    </ClInclude>
     <None Include="third_party\xz\.codespellrc">
       <Filter>third_party\xz</Filter>
     </None>

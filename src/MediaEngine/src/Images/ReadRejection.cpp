@@ -7,6 +7,10 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VorbisData:
+    case DiagnosticCode::VorbisProfile:
+    case DiagnosticCode::VorbisRange:
+    case DiagnosticCode::VorbisOperation:
     case DiagnosticCode::CueSyntax:
     case DiagnosticCode::CueStructure:
     case DiagnosticCode::CueIo:

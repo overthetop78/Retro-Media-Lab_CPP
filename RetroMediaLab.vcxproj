@@ -36,7 +36,7 @@
     <OutDir>$(ProjectDir)build\ide\$(Configuration)\</OutDir>
     <IntDir>$(OutDir)</IntDir>
     <NMakePreprocessorDefinitions>UNICODE;_UNICODE;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_NETWORK_LIB;RETROMEDIALAB_APP_BUILD;RETROMEDIALAB_INFRASTRUCTURE_BUILD;RETROMEDIALAB_TRANSLATIONS_BUILD;RETROMEDIALAB_MEDIAANALYSIS_BUILD;RETROMEDIALAB_MEDIAFILESYSTEMS_BUILD;RETROMEDIALAB_MEDIAENGINE_BUILD;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(ProjectDir)src\MediaEngine\include;$(ProjectDir)src\MediaFileSystems\include;$(ProjectDir)src\MediaAnalysis\include;$(ProjectDir)src\App;$(ProjectDir)src\Infrastructure;$(ProjectDir)src\Infrastructure\include;$(ProjectDir)src\Common;$(ProjectDir)third_party\libarchive\libarchive;$(ProjectDir)build\$(Configuration)\third_party\libarchive;$(ProjectDir)src\Translations\include;$(ProjectDir)src\Platform\include;$(ProjectDir)build\$(Configuration)\generated;$(QtRoot)\include;$(QtRoot)\include\QtCore;$(QtRoot)\include\QtGui;$(QtRoot)\include\QtWidgets;$(QtRoot)\include\QtNetwork;$(QtRoot)\mkspecs\win32-msvc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(ProjectDir)third_party\tremor;$(ProjectDir)third_party\ogg\include;$(ProjectDir)src\MediaEngine\include;$(ProjectDir)src\MediaFileSystems\include;$(ProjectDir)src\MediaAnalysis\include;$(ProjectDir)src\App;$(ProjectDir)src\Infrastructure;$(ProjectDir)src\Infrastructure\include;$(ProjectDir)src\Common;$(ProjectDir)third_party\libarchive\libarchive;$(ProjectDir)build\$(Configuration)\third_party\libarchive;$(ProjectDir)src\Translations\include;$(ProjectDir)src\Platform\include;$(ProjectDir)build\$(Configuration)\generated;$(QtRoot)\include;$(QtRoot)\include\QtCore;$(QtRoot)\include\QtGui;$(QtRoot)\include\QtWidgets;$(QtRoot)\include\QtNetwork;$(QtRoot)\mkspecs\win32-msvc;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeAdditionalOptions>/std:c++20 /utf-8 $(NMakeAdditionalOptions)</NMakeAdditionalOptions>
   </PropertyGroup>
   <ItemGroup>
@@ -524,6 +524,9 @@
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Router.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Writer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\PcmSource.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Audio\Vorbis\PcmSource.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Bitstream.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\CodecConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Compression.cpp" />
@@ -766,12 +769,15 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Nib\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Nib\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Reader.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Sheet.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\Sheet.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\SheetWriter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\WaveConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\WaveSource.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\BinCue\WaveSource.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\BinCue\Writer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Layout.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Metadata.cpp" />
@@ -1357,6 +1363,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\adfs.json" />
@@ -1518,6 +1525,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\adfs.json" />
@@ -1679,6 +1687,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\adfs.json" />
@@ -1840,6 +1849,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\adfs.json" />
@@ -2001,6 +2011,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\adfs.json" />
@@ -2162,6 +2173,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\adfs.json" />
@@ -2323,6 +2335,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\adfs.json" />
@@ -2484,6 +2497,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\adfs.json" />
@@ -2645,6 +2659,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\adfs.json" />
@@ -2806,6 +2821,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\adfs.json" />
@@ -2967,6 +2983,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\adfs.json" />
@@ -3128,6 +3145,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\adfs.json" />
@@ -3289,6 +3307,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\adfs.json" />
@@ -3450,6 +3469,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\adfs.json" />
@@ -3611,6 +3631,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\adfs.json" />
@@ -3772,6 +3793,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\adfs.json" />
@@ -3933,6 +3955,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\adfs.json" />
@@ -4094,6 +4117,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\adfs.json" />
@@ -4255,6 +4279,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\adfs.json" />
@@ -4416,6 +4441,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\adfs.json" />
@@ -4577,6 +4603,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\adfs.json" />
@@ -4738,6 +4765,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\adfs.json" />
@@ -4899,6 +4927,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\adfs.json" />
@@ -5060,6 +5089,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\adfs.json" />
@@ -5221,6 +5251,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\adfs.json" />
@@ -5382,6 +5413,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\adfs.json" />
@@ -5543,6 +5575,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\adfs.json" />
@@ -5704,6 +5737,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\adfs.json" />
@@ -5865,6 +5899,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\adfs.json" />
@@ -6026,6 +6061,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vhdx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\victor9000-gcr.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vmdk.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\vorbis.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\woz.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\xfd-atom.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\adfs.json" />
@@ -6611,6 +6647,45 @@
     <None Include="third_party\lz4\ossfuzz\travisoss.sh" />
     <None Include="third_party\lz4\README.md" />
     <None Include="third_party\lz4\SECURITY.md" />
+    <None Include="third_party\ogg\CMakeLists.txt" />
+    <None Include="third_party\ogg\COPYING" />
+    <ClInclude Include="third_party\ogg\include\ogg\config_types.h" />
+    <ClInclude Include="third_party\ogg\include\ogg\ogg.h" />
+    <ClInclude Include="third_party\ogg\include\ogg\os_types.h" />
+    <ClCompile Include="third_party\ogg\src\bitwise.c" />
+    <ClInclude Include="third_party\ogg\src\crctable.h" />
+    <ClCompile Include="third_party\ogg\src\framing.c" />
+    <ClInclude Include="third_party\tremor\asm_arm.h" />
+    <ClInclude Include="third_party\tremor\backends.h" />
+    <ClCompile Include="third_party\tremor\block.c" />
+    <ClInclude Include="third_party\tremor\block.h" />
+    <None Include="third_party\tremor\CMakeLists.txt" />
+    <ClCompile Include="third_party\tremor\codebook.c" />
+    <ClInclude Include="third_party\tremor\codebook.h" />
+    <ClInclude Include="third_party\tremor\codec_internal.h" />
+    <ClInclude Include="third_party\tremor\config_types.h" />
+    <None Include="third_party\tremor\COPYING" />
+    <ClCompile Include="third_party\tremor\floor0.c" />
+    <ClCompile Include="third_party\tremor\floor1.c" />
+    <ClCompile Include="third_party\tremor\info.c" />
+    <ClInclude Include="third_party\tremor\ivorbiscodec.h" />
+    <ClInclude Include="third_party\tremor\ivorbisfile.h" />
+    <ClInclude Include="third_party\tremor\lsp_lookup.h" />
+    <ClCompile Include="third_party\tremor\mapping0.c" />
+    <ClCompile Include="third_party\tremor\mdct.c" />
+    <ClInclude Include="third_party\tremor\mdct.h" />
+    <ClInclude Include="third_party\tremor\mdct_lookup.h" />
+    <ClInclude Include="third_party\tremor\misc.h" />
+    <ClInclude Include="third_party\tremor\os.h" />
+    <ClCompile Include="third_party\tremor\registry.c" />
+    <ClInclude Include="third_party\tremor\registry.h" />
+    <ClCompile Include="third_party\tremor\res012.c" />
+    <ClCompile Include="third_party\tremor\sharedbook.c" />
+    <ClCompile Include="third_party\tremor\synthesis.c" />
+    <ClCompile Include="third_party\tremor\vorbisfile.c" />
+    <ClCompile Include="third_party\tremor\window.c" />
+    <ClInclude Include="third_party\tremor\window.h" />
+    <ClInclude Include="third_party\tremor\window_lookup.h" />
     <None Include="third_party\xz\.codespellrc" />
     <None Include="third_party\xz\.gitattributes" />
     <None Include="third_party\xz\.gitignore" />
