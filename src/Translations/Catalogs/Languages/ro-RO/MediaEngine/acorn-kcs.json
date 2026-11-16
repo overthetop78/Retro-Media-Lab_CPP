@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Documentul media nu este compatibil cu decodorul Acorn.",
+    "MediaEngine.AcornTapeEncode": "Codificarea benzilor Acorn necesită blocuri CFS validate cu metadate complete de bandă.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Nu a fost găsit nici un bloc de bandă Acorn în fluxurile de octet UEF.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Nu a fost găsit nici un bloc de bandă Acorn în fluxul serial PCM decodat.",
+    "MediaEngine.AcornTapePcmProfile": "Profilul PCM este incomplet sau incompatibil cu decodarea benzilor Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Semnalul de bandă Acorn reconstituit depășește limita de eșantionare susținută."
+  }
+}

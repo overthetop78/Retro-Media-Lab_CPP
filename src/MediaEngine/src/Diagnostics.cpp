@@ -3,6 +3,13 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::AcornTapeIncompatible:return DiagnosticKeys::AcornTapeIncompatible;
+    case DiagnosticCode::AcornTapeEncode:return DiagnosticKeys::AcornTapeEncode;
+    case DiagnosticCode::AcornTapeNoUefBlocks:return DiagnosticKeys::AcornTapeNoUefBlocks;
+    case DiagnosticCode::AcornTapeNoPcmBlocks:return DiagnosticKeys::AcornTapeNoPcmBlocks;
+    case DiagnosticCode::AcornTapePcmProfile:return DiagnosticKeys::AcornTapePcmProfile;
+    case DiagnosticCode::AcornTapeSignalLimit:return DiagnosticKeys::AcornTapeSignalLimit;
+
     case DiagnosticCode::AtomTapeIncompatible:return DiagnosticKeys::AtomTapeIncompatible;
     case DiagnosticCode::AtomTapeFraming:return DiagnosticKeys::AtomTapeFraming;
     case DiagnosticCode::AtomTapePcmRequired:return DiagnosticKeys::AtomTapePcmRequired;

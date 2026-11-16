@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Il documento multimediale non è compatibile con il decoder Acorn.",
+    "MediaEngine.AcornTapeEncode": "La codifica a nastro Acorn richiede blocchi CFS convalidati con metadati a nastro completi.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Nessun blocco nastro Acorn è stato trovato nei flussi byte UEF.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Nessun blocco nastro Acorn è stato trovato nel flusso seriale decoded PCM.",
+    "MediaEngine.AcornTapePcmProfile": "Il profilo PCM è incompleto o incompatibile con la decodifica nastro Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Il segnale Acorn ricostruito supera il limite di campione supportato."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "メディア文書は Acorn テープデコーダーと互換性がありません。",
+    "MediaEngine.AcornTapeEncode": "Acorn テープのエンコードには、検証済みの CFS ブロックと完全なテープメタデータが必要です。",
+    "MediaEngine.AcornTapeNoUefBlocks": "UEF バイトストリームに Acorn テープブロックが見つかりませんでした。",
+    "MediaEngine.AcornTapeNoPcmBlocks": "デコードされた PCM シリアルストリームに Acorn テープブロックが見つかりませんでした。",
+    "MediaEngine.AcornTapePcmProfile": "PCM プロファイルが不完全か、Acorn テープのデコードと互換性がありません。",
+    "MediaEngine.AcornTapeSignalLimit": "再構成された Acorn テープ信号が対応するサンプル数の上限を超えています。"
+  }
+}

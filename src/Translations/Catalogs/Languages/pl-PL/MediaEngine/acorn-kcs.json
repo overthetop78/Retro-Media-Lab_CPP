@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Dokument medialny nie jest kompatybilny z dekoderem taśmy Acorn.",
+    "MediaEngine.AcornTapeEncode": "Kodowanie taśmy Acorn wymaga zwalidowanych bloków CFS z kompletnymi metadanymi taśmowymi.",
+    "MediaEngine.AcornTapeNoUefBlocks": "W strumieniach bajtów UEF nie znaleziono bloku taśmy Acorn.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "W odkodowanym strumieniu seryjnym PCM nie znaleziono bloku taśmy Acorn.",
+    "MediaEngine.AcornTapePcmProfile": "Profil PCM jest niekompletny lub niezgodny z dekodowaniem taśmy Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Zrekonstruowany sygnał taśmy Acorn przekracza obsługiwaną liczbę próbek."
+  }
+}

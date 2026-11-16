@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "The media document is not compatible with the Acorn tape decoder.",
+    "MediaEngine.AcornTapeEncode": "Acorn tape encoding requires validated CFS blocks with complete tape metadata.",
+    "MediaEngine.AcornTapeNoUefBlocks": "No Acorn tape block was found in the UEF byte streams.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "No Acorn tape block was found in the decoded PCM serial stream.",
+    "MediaEngine.AcornTapePcmProfile": "The PCM profile is incomplete or incompatible with Acorn tape decoding.",
+    "MediaEngine.AcornTapeSignalLimit": "The reconstructed Acorn tape signal exceeds the supported sample limit."
+  }
+}

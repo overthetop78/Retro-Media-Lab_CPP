@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "미디어 문서는 Acorn 테이프 디코더와 호환되지 않습니다.",
+    "MediaEngine.AcornTapeEncode": "Acorn 테이프 인코딩에는 검증된 CFS 블록과 완전한 테이프 메타데이터가 필요합니다.",
+    "MediaEngine.AcornTapeNoUefBlocks": "UEF 바이트 스트림에서 Acorn 테이프 블록을 찾지 못했습니다.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "디코딩된 PCM 직렬 스트림에서 Acorn 테이프 블록을 찾지 못했습니다.",
+    "MediaEngine.AcornTapePcmProfile": "PCM 프로필이 불완전하거나 Acorn 테이프 디코딩과 호환되지 않습니다.",
+    "MediaEngine.AcornTapeSignalLimit": "재구성된 Acorn 테이프 신호가 지원되는 샘플 수 제한을 초과합니다."
+  }
+}

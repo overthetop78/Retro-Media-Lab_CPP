@@ -86,6 +86,8 @@ La tâche 170 porte le signal de bande possédé, l’extraction du premier cana
 
 La tâche 171 porte les adaptateurs de décodage/encodage séquentiels Atom. Le contrôle via les registres couvre TAP, UEF série, UEF cycles, PCM FSK et conservation des erreurs. Le partage des blocs et la validation sans recopie du TAP sont intégrés. Compilation, traductions, catalogues et audit réussis ; la composition automatique reste à porter.
 
+La tâche 172 porte les blocs et adaptateurs Acorn KCS, CRC partagés, UEF et PCM continu aux débits 1200/300. Le contrôle via les registres couvre notamment les frontières de segments et les débits mélangés. Compilation, traductions relues, catalogues et audit réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

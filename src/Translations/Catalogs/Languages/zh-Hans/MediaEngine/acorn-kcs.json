@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "媒体文档与 Acorn 磁带解码器不兼容。",
+    "MediaEngine.AcornTapeEncode": "Acorn 磁带编码需要经过验证的 CFS 块和完整的磁带元数据。",
+    "MediaEngine.AcornTapeNoUefBlocks": "在 UEF 字节流中未找到 Acorn 磁带块。",
+    "MediaEngine.AcornTapeNoPcmBlocks": "在解码后的 PCM 串行流中未找到 Acorn 磁带块。",
+    "MediaEngine.AcornTapePcmProfile": "PCM 配置不完整或与 Acorn 磁带解码不兼容。",
+    "MediaEngine.AcornTapeSignalLimit": "重建的 Acorn 磁带信号超过支持的采样数上限。"
+  }
+}

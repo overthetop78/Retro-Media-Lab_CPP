@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "A médiadokumentum nem kompatibilis az Acorn szalag dekóderrel.",
+    "MediaEngine.AcornTapeEncode": "A Acorn szalag kódolásához validált CFS blokkokra van szükség, teljes szalag metaadatokkal.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Az UEF byte patakokban nem találtak Acorn kazettás blokkot.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Nem találtak Acorn kazettás blokkot a dekódolt PCM sorozatban.",
+    "MediaEngine.AcornTapePcmProfile": "A PCM profil hiányos vagy összeegyeztethetetlen az Acorn szalag dekódolásával.",
+    "MediaEngine.AcornTapeSignalLimit": "A rekonstruált Acorn szalag jel meghaladja a támogatott mintahatárértéket."
+  }
+}

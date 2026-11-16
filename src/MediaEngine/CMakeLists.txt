@@ -307,6 +307,10 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Encoding/Sequential/Registry.cpp
   src/Encoding/Sequential/Compatibility.cpp
   src/Encoding/Sequential/Atari/Records.cpp
+  src/Formats/Tape/Acorn/Blocks.cpp
+  src/Encoding/Sequential/Acorn/AcornEncoder.cpp
+  src/Encoding/Sequential/Acorn/AcornOutput.cpp
+  src/Decoding/Sequential/Acorn/AcornDecoder.cpp
   src/Encoding/Sequential/Acorn/AtomEncoder.cpp
   src/Decoding/Sequential/Acorn/AtomDecoder.cpp
   src/Encoding/Sequential/Atari/Encoder.cpp

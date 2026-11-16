@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Медиа-документ не совместим с декодером ленты Acorn.",
+    "MediaEngine.AcornTapeEncode": "Кодирование ленты Acorn требует валидированных блоков CFS с полными метаданными ленты.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Ни один блок ленты Acorn не был найден в потоках байтов UEF.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "В декодированном последовательном потоке PCM не было обнаружено блока ленты Acorn.",
+    "MediaEngine.AcornTapePcmProfile": "Профиль PCM неполный или несовместимый с декодированием ленты Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Восстановленный сигнал ленты Acorn превышает поддерживаемое число отсчётов."
+  }
+}

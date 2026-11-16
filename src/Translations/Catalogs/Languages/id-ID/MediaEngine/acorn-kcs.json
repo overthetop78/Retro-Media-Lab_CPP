@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Dokumen media tidak kompatibel dengan decoder rekaman Acorn.",
+    "MediaEngine.AcornTapeEncode": "Encoding tape Acorn membutuhkan blok CFS yang sah dengan metadata lengkap.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Tidak ada blok pita Acorn ditemukan di aliran UEF byte.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Tidak ditemukan blok pita Acorn dalam aliran serial PCM yang didekode.",
+    "MediaEngine.AcornTapePcmProfile": "Profil PCM tidak lengkap atau tidak kompatibel dengan decoding tape Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Sinyal pita Acorn yang direkonstruksi melebihi batas jumlah sampel yang didukung."
+  }
+}

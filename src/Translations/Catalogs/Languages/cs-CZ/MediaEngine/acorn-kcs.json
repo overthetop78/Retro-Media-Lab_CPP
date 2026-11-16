@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Mediální dokument není kompatibilní s dekodérem pásky Acorn.",
+    "MediaEngine.AcornTapeEncode": "kódování pásky Acorn vyžaduje ověřené CFS bloky s kompletními metadaty pásky.",
+    "MediaEngine.AcornTapeNoUefBlocks": "V proudech UEF byte nebyl nalezen žádný blok pásky Acorn.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "V dekódovaném PCM sériovém proudu nebyl nalezen žádný blok Acorn.",
+    "MediaEngine.AcornTapePcmProfile": "Profil PCM je neúplný nebo nekompatibilní s dekódováním pásky Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "Rekonstruovaný signál pásky Acorn překračuje podporovaný limit vzorku."
+  }
+}

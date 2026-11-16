@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "El documento multimedia no es compatible con el decodificador de cinta Acorn.",
+    "MediaEngine.AcornTapeEncode": "Acorn tape encoding requiere bloques CFS validados con metadatos de cinta completa.",
+    "MediaEngine.AcornTapeNoUefBlocks": "No se encontró ningún bloque de cinta Acorn en las corrientes de byte de la UEF.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "No se encontró ningún bloque de cinta Acorn en el flujo serie PCM decodificado.",
+    "MediaEngine.AcornTapePcmProfile": "El perfil PCM es incompleto o incompatible con la decodificación de cintas Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "La señal de cinta de Acorn reconstruida supera el límite de muestra soportado."
+  }
+}

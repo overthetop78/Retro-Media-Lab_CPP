@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Mediedokumentet är inte kompatibelt med Acorn-bandavkodaren.",
+    "MediaEngine.AcornTapeEncode": "Acorn tejp kodning kräver validerade CFS block med komplett tejp metadata.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Inget Acorn-bandblock hittades i UEF bytesströmmar.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Inget Acorn-bandblock hittades i den avkodade PCM-serieströmmen.",
+    "MediaEngine.AcornTapePcmProfile": "PCM-profilen är ofullständig eller oförenlig med Acorn-bandavkodning.",
+    "MediaEngine.AcornTapeSignalLimit": "Den rekonstruerade Acorn-bandsignalen överstiger den stödda provgränsen."
+  }
+}

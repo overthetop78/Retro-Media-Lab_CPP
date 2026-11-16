@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Das Mediendokument ist nicht mit dem Acorn Banddecoder kompatibel.",
+    "MediaEngine.AcornTapeEncode": "Die Acorn-Bandkodierung erfordert validierte CFS-Blöcke mit vollständigen Bandmetadaten.",
+    "MediaEngine.AcornTapeNoUefBlocks": "In den UEF-Byteströmen wurde kein Acorn-Bandblock gefunden.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Im decodierten PCM-Serienstrom wurde kein Acorn-Bandblock gefunden.",
+    "MediaEngine.AcornTapePcmProfile": "Das PCM-Profil ist unvollständig oder inkompatibel mit der Acorn-Banddecodierung.",
+    "MediaEngine.AcornTapeSignalLimit": "Das rekonstruierte Acorn-Bandsignal überschreitet die unterstützte Abtastgrenze."
+  }
+}

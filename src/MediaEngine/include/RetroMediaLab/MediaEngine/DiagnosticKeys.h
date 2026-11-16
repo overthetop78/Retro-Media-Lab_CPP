@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AcornTapeIncompatible="MediaEngine.AcornTapeIncompatible";
+inline constexpr std::string_view AcornTapeEncode="MediaEngine.AcornTapeEncode";
+inline constexpr std::string_view AcornTapeNoUefBlocks="MediaEngine.AcornTapeNoUefBlocks";
+inline constexpr std::string_view AcornTapeNoPcmBlocks="MediaEngine.AcornTapeNoPcmBlocks";
+inline constexpr std::string_view AcornTapePcmProfile="MediaEngine.AcornTapePcmProfile";
+inline constexpr std::string_view AcornTapeSignalLimit="MediaEngine.AcornTapeSignalLimit";
+
 inline constexpr std::string_view AtomTapeIncompatible="MediaEngine.AtomTapeIncompatible";
 inline constexpr std::string_view AtomTapeFraming="MediaEngine.AtomTapeFraming";
 inline constexpr std::string_view AtomTapePcmRequired="MediaEngine.AtomTapePcmRequired";

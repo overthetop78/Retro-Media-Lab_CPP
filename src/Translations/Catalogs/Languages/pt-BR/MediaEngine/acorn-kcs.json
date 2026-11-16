@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "O documento de mídia não é compatível com o decodificador de fita Acorn.",
+    "MediaEngine.AcornTapeEncode": "A codificação de fita Acorn requer blocos CFS validados com metadados completos de fita.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Nenhum bloco de fita Acorn foi encontrado nos fluxos de byte UEF.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Nenhum bloco de fita Acorn foi encontrado no fluxo serial PCM decodificado.",
+    "MediaEngine.AcornTapePcmProfile": "O perfil PCM é incompleto ou incompatível com a decodificação de fita Acorn.",
+    "MediaEngine.AcornTapeSignalLimit": "O sinal de fita Acorn reconstruído excede o limite de amostra suportado."
+  }
+}

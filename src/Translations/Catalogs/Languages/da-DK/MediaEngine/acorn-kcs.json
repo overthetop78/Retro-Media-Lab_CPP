@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.AcornTapeIncompatible": "Mediedokumentet er ikke kompatibelt med Acorn bånddekoder.",
+    "MediaEngine.AcornTapeEncode": "Acorn tape kodning kræver validerede CFS blokke med komplet tape metadata.",
+    "MediaEngine.AcornTapeNoUefBlocks": "Der blev ikke fundet nogen Acorn-båndblok i UEF-bytestrømmene.",
+    "MediaEngine.AcornTapeNoPcmBlocks": "Ingen Acorn Bånd blok blev fundet i den dekodede PCM serie stream.",
+    "MediaEngine.AcornTapePcmProfile": "PCM profilen er ufuldstændig eller uforenelig med Acorn tape dekodning.",
+    "MediaEngine.AcornTapeSignalLimit": "Det rekonstruerede Acorn-båndsignal overstiger den understøttede prøvegrænse."
+  }
+}
