@@ -18,6 +18,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Preparation/Tape.cpp
   src/Audio/Mechanical/Service.cpp
   src/Audio/Mechanical/Mix.cpp
+  src/Preparation/ScpConversion.cpp
   src/Preparation/Disks.cpp
   src/Preparation/Catalog.cpp
   src/Preparation/CueDocument.cpp
@@ -527,6 +528,9 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Models/Sectors/LinearSectorWriter.cpp
   src/Models/Sectors/SectorImages.cpp
   src/Models/Sectors/SizeCodes.cpp
+  src/Reconstruction/AmigaReader.cpp
+  src/Reconstruction/Iso/Automatic.cpp
+  src/Reconstruction/Iso/RuntimeFamilies.cpp
   # Reconstruction/Iso
   src/Reconstruction/Iso/Builder.cpp
   src/Reconstruction/Iso/Candidates.cpp

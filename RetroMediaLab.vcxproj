@@ -2951,6 +2951,7 @@
     <ClCompile Include="src\MediaEngine\src\Preparation\CueDocument.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\CueWaveFiles.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\Disks.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\ScpConversion.cpp" />
     <ClCompile Include="src\MediaEngine\src\Preparation\Tape.cpp" />
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h" />
@@ -2959,6 +2960,10 @@
     <ClInclude Include="src\MediaEngine\src\Primitives\Crc32CConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\IdentifierConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Identifiers.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\AmigaReader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\AmigaReader.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Automatic.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Automatic.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Builder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Builder.h" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\CandidateDecoder.h" />
@@ -2971,6 +2976,8 @@
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Measurement.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\Models.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Normalizer.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\RuntimeFamilies.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Iso\Score.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Apple.cpp" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Sector\Commodore.cpp" />
@@ -3411,6 +3418,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sector-image-encoding.json" />
@@ -3610,6 +3618,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sector-image-encoding.json" />
@@ -3809,6 +3818,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sector-image-encoding.json" />
@@ -4008,6 +4018,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sector-image-encoding.json" />
@@ -4207,6 +4218,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sector-image-encoding.json" />
@@ -4406,6 +4418,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sector-image-encoding.json" />
@@ -4605,6 +4618,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sector-image-encoding.json" />
@@ -4804,6 +4818,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sector-image-encoding.json" />
@@ -5003,6 +5018,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sector-image-encoding.json" />
@@ -5202,6 +5218,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sector-image-encoding.json" />
@@ -5401,6 +5418,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sector-image-encoding.json" />
@@ -5600,6 +5618,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sector-image-encoding.json" />
@@ -5799,6 +5818,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sector-image-encoding.json" />
@@ -5998,6 +6018,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sector-image-encoding.json" />
@@ -6197,6 +6218,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sector-image-encoding.json" />
@@ -6396,6 +6418,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sector-image-encoding.json" />
@@ -6595,6 +6618,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sector-image-encoding.json" />
@@ -6794,6 +6818,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sector-image-encoding.json" />
@@ -6993,6 +7018,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sector-image-encoding.json" />
@@ -7192,6 +7218,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sector-image-encoding.json" />
@@ -7391,6 +7418,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sector-image-encoding.json" />
@@ -7590,6 +7618,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sector-image-encoding.json" />
@@ -7789,6 +7818,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sector-image-encoding.json" />
@@ -7988,6 +8018,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sector-image-encoding.json" />
@@ -8187,6 +8218,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sector-image-encoding.json" />
@@ -8386,6 +8418,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sector-image-encoding.json" />
@@ -8585,6 +8618,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sector-image-encoding.json" />
@@ -8784,6 +8818,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sector-image-encoding.json" />
@@ -8983,6 +9018,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sector-image-encoding.json" />
@@ -9182,6 +9218,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\rx02-m2fm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\rx02-track.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-cache.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-preparation.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-reader.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\scp-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sector-image-encoding.json" />
