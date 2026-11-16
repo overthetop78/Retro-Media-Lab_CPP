@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Документ несумісний із декодером стрічок Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Аудіо-профіль PCM неповний або несумісний.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Не знайдено повного блоку даних Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "У вибраному аудіоканалі не виявлено стандартного блоку імпульсів Spectrum.",
+    "MediaEngine.SpectrumTapeEncode": "Кодування Spectrum вимагає дійсних XOR-перевірок і швидкості зразка для PCM аудіо.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Стрічковий сигнал Spectrum перевищує підтримуваний ліміт зразка.",
+    "MediaEngine.MsxTapeIncompatible": "Документ не має сумісного контексту стрічки MSX.",
+    "MediaEngine.MsxTapeNoCas": "Не знайдено структурно визначеної групи MSX CAS.",
+    "MediaEngine.MsxTapeNoTsx": "З образу TSX не вдалося розгорнути жодного блоку даних MSX.",
+    "MediaEngine.MsxTapePcm": "Аудіо-профіль PCM неповний або несумісний.",
+    "MediaEngine.MsxTapeNoFsk": "У вибраному аудіоканалі не знайдено повного послідовного кадру MSX FSK.",
+    "MediaEngine.MsxTapeDecodeLimit": "Декодовані дані стрічки MSX перевищують підтримувану межу байтів."
+  }
+}

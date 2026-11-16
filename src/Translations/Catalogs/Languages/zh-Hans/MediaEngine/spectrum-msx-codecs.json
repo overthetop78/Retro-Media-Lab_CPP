@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "文档与Spectrum磁带解码器不相容.",
+    "MediaEngine.SpectrumTapePcm": "PCM音频配置不完整或不兼容.",
+    "MediaEngine.SpectrumTapeNoBlocks": "未找到完整的 Spectrum 数据块 。",
+    "MediaEngine.SpectrumTapeNoPulses": "在选定的音频通道中未检测到标准 Spectrum 脉冲块 。",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum 编码需要有效的 XOR 校验和以及 PCM 音频采样率。",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrum 磁带信号超过支持的采样数量限制。",
+    "MediaEngine.MsxTapeIncompatible": "该文档没有相容的MSX磁带上下文.",
+    "MediaEngine.MsxTapeNoCas": "未找到结构识别的MSX CAS字节组.",
+    "MediaEngine.MsxTapeNoTsx": "无法从 TSX 图像扩展 MSX 数据块 。",
+    "MediaEngine.MsxTapePcm": "PCM音频配置不完整或不兼容.",
+    "MediaEngine.MsxTapeNoFsk": "在所选音频频道中没有发现完整的MSX FSK序列框.",
+    "MediaEngine.MsxTapeDecodeLimit": "解码的MSX磁带数据超过了所支持的字节限制."
+  }
+}

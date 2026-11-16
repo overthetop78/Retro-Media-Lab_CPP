@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Dokumentet är oförenligt med Spectrum-tejpen dekoder.",
+    "MediaEngine.SpectrumTapePcm": "PCM-ljudprofilen är ofullständig eller oförenlig.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Inget komplett Spectrum datablock hittades.",
+    "MediaEngine.SpectrumTapeNoPulses": "Inget standard Spectrum pulsblock upptäcktes i den valda ljudkanalen.",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum-kodning kräver giltiga XOR-kontrollsummor och en provfrekvens för PCM-ljud.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrum-tejpen överstiger den stödda provgränsen.",
+    "MediaEngine.MsxTapeIncompatible": "Dokumentet har inget kompatibelt MSX-bandkontext.",
+    "MediaEngine.MsxTapeNoCas": "Ingen strukturellt identifierad MSX CAS byte grupp hittades.",
+    "MediaEngine.MsxTapeNoTsx": "Inget MSX-datablock kan utökas från TSX-bilden.",
+    "MediaEngine.MsxTapePcm": "PCM-ljudprofilen är ofullständig eller oförenlig.",
+    "MediaEngine.MsxTapeNoFsk": "Ingen komplett MSX FSK seriella ram hittades i den valda ljudkanalen.",
+    "MediaEngine.MsxTapeDecodeLimit": "De avkodade MSX-tejpdata överstiger den stödda bytegränsen."
+  }
+}

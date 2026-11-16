@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "A dokumentum összeegyeztethetetlen a Spectrum szalag dekóderrel.",
+    "MediaEngine.SpectrumTapePcm": "A PCM audio profil hiányos vagy összeegyeztethetetlen.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Nem találtak teljes Spectrum adatblokkot.",
+    "MediaEngine.SpectrumTapeNoPulses": "A kiválasztott hangcsatornában nem észleltek szabványos Spectrum impulzusblokkot.",
+    "MediaEngine.SpectrumTapeEncode": "A Spectrum kódoláshoz érvényes XOR ellenőrző összegekre és a PCM audio mintaarányára van szükség.",
+    "MediaEngine.SpectrumTapeSignalLimit": "A Spectrum szalagjel meghaladja a támogatott mintahatárértéket.",
+    "MediaEngine.MsxTapeIncompatible": "A dokumentum nem kompatibilis MSX szalaggal.",
+    "MediaEngine.MsxTapeNoCas": "Nem találtak szerkezetileg azonosított MSX CAS byte csoportot.",
+    "MediaEngine.MsxTapeNoTsx": "Az MSX adatblokkot nem lehetett kiterjeszteni a TSX képről.",
+    "MediaEngine.MsxTapePcm": "A PCM audio profil hiányos vagy összeegyeztethetetlen.",
+    "MediaEngine.MsxTapeNoFsk": "A kiválasztott hangcsatornában nem található teljes MSX FSK sorozatkeret.",
+    "MediaEngine.MsxTapeDecodeLimit": "A dekódolt MSX szalagadatok meghaladják a támogatott bájt határértéket."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "문서가 Spectrum 테이프 디코더와 호환되지 않습니다.",
+    "MediaEngine.SpectrumTapePcm": "PCM 오디오 프로필이 불완전하거나 호환되지 않습니다.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Spectrum 데이터 블록이 없습니다.",
+    "MediaEngine.SpectrumTapeNoPulses": "Spectrum 펄스 블록이 선택된 오디오 채널에서 감지되지 않았습니다.",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum 인코딩은 유효한 XOR 체크섬과 PCM 오디오의 샘플 속도를 요구합니다.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrum Tape 신호는 지원되는 샘플 제한을 초과합니다.",
+    "MediaEngine.MsxTapeIncompatible": "문서에는 호환 MSX 테이프 컨텍스트가 없습니다.",
+    "MediaEngine.MsxTapeNoCas": "구조적으로 식별 된 MSX CAS 바이트 그룹이 발견되지 않았습니다.",
+    "MediaEngine.MsxTapeNoTsx": "MSX 데이터 블록이 TSX 이미지에서 확장 될 수 없습니다.",
+    "MediaEngine.MsxTapePcm": "PCM 오디오 프로필이 불완전하거나 호환되지 않습니다.",
+    "MediaEngine.MsxTapeNoFsk": "완전한 MSX FSK 직렬 프레임은 선택한 오디오 채널에서 찾을 수 없습니다.",
+    "MediaEngine.MsxTapeDecodeLimit": "디코딩된 MSX 테이프 데이터는 지원된 바이트 제한을 초과합니다."
+  }
+}

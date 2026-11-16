@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Asiakirja ei ole yhteensopiva Spectrum-nauhadekooderin kanssa.",
+    "MediaEngine.SpectrumTapePcm": "PCM-ääniprofiili on epätäydellinen tai yhteensopimaton.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Yhtään täydellistä Spectrum-datalohkoa ei löytynyt.",
+    "MediaEngine.SpectrumTapeNoPulses": "Valitusta äänikanavasta ei havaittu tavallista Spectrum-pulssilohkoa.",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum-koodaus vaatii voimassa olevat XOR-tarkistussummat ja näytteenottonopeuden PCM-äänelle.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrum-nauhasignaali ylittää tuetun näyterajan.",
+    "MediaEngine.MsxTapeIncompatible": "Asiakirjassa ei ole yhteensopivaa MSX-nauhayhteyttä.",
+    "MediaEngine.MsxTapeNoCas": "Rakenteellisesti tunnistettua MSX CAS tavu -ryhmää ei havaittu.",
+    "MediaEngine.MsxTapeNoTsx": "TSX-kuvasta ei voitu laajentaa yhtään MSX-datalohkoa.",
+    "MediaEngine.MsxTapePcm": "PCM-ääniprofiili on epätäydellinen tai yhteensopimaton.",
+    "MediaEngine.MsxTapeNoFsk": "Valitusta äänikanavasta ei löytynyt täydellistä MSX FSK -sarjakehystä.",
+    "MediaEngine.MsxTapeDecodeLimit": "Dekoodattu MSX-nauhadata ylittää tuetun tavurajan."
+  }
+}

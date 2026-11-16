@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "המסמך אינו תואם למפענח הקלטות של Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "פרופיל השמע PCM אינו שלם או אינו תואם.",
+    "MediaEngine.SpectrumTapeNoBlocks": "לא נמצא בלוק נתונים מלא של Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "לא זוהה בלוק פולסים תקני של Spectrum בערוץ השמע שנבחר.",
+    "MediaEngine.SpectrumTapeEncode": "קידוד Spectrum דורש סכומי ביקורת XOR תקינים וקצב דגימה לשמע PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "אות הקלטת Spectrum עולה על הגבלת הדגימה הנתמכת.",
+    "MediaEngine.MsxTapeIncompatible": "למסמך אין קונטקסט טייפ MSX תואם.",
+    "MediaEngine.MsxTapeNoCas": "לא נמצאה קבוצת בייטים של MSX CAS שזוהתה לפי המבנה.",
+    "MediaEngine.MsxTapeNoTsx": "לא ניתן להרחיב את חסימת הנתונים MSX מהתמונה TSX.",
+    "MediaEngine.MsxTapePcm": "פרופיל השמע PCM אינו שלם או אינו תואם.",
+    "MediaEngine.MsxTapeNoFsk": "שום מסגרת סדרתית MSX FSK מלאה לא נמצאה בערוץ אודיו הנבחר.",
+    "MediaEngine.MsxTapeDecodeLimit": "נתוני קלטת MSX שפוענחו חורגים ממגבלת הבייטים הנתמכת."
+  }
+}

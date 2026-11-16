@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "المستند غير متوافق مع مفكك ترميز أشرطة Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "ملف تعريف صوت PCM غير مكتمل أو غير متوافق.",
+    "MediaEngine.SpectrumTapeNoBlocks": "لم يتم العثور على كتلة بيانات Spectrum مكتملة.",
+    "MediaEngine.SpectrumTapeNoPulses": "لم يتم اكتشاف كتلة نبضات Spectrum قياسية في القناة الصوتية المحددة.",
+    "MediaEngine.SpectrumTapeEncode": "يتطلب ترميز Spectrum مجاميع تحقق XOR صالحة ومعدل أخذ عينات لصوت PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "تتجاوز إشارة شريط Spectrum الحد المدعوم لعدد العينات.",
+    "MediaEngine.MsxTapeIncompatible": "لا يحتوي المستند على سياق شريط MSX متوافق.",
+    "MediaEngine.MsxTapeNoCas": "لم يتم العثور على مجموعة بايتات MSX CAS محددة بنيويًا.",
+    "MediaEngine.MsxTapeNoTsx": "تعذر توسيع أي كتلة بيانات MSX من صورة TSX.",
+    "MediaEngine.MsxTapePcm": "ملف تعريف صوت PCM غير مكتمل أو غير متوافق.",
+    "MediaEngine.MsxTapeNoFsk": "لم يتم العثور على إطار تسلسلي MSX FSK مكتمل في القناة الصوتية المحددة.",
+    "MediaEngine.MsxTapeDecodeLimit": "تتجاوز بيانات شريط MSX المفككة الحد المدعوم لعدد البايتات."
+  }
+}

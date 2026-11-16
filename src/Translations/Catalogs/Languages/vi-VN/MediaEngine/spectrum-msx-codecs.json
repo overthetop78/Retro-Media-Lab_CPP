@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Tài liệu không tương thích với bộ giải mã băng Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Hồ sơ âm thanh PCM không đầy đủ hoặc không tương thích.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Chưa tìm thấy khối dữ liệu Spectrum đầy đủ.",
+    "MediaEngine.SpectrumTapeNoPulses": "Không phát hiện khối xung Spectrum tiêu chuẩn nào trong kênh âm thanh đã chọn.",
+    "MediaEngine.SpectrumTapeEncode": "Mã hóa Spectrum yêu cầu tổng kiểm tra XOR hợp lệ và tần số lấy mẫu cho âm thanh PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Tín hiệu băng Spectrum vượt quá giới hạn mẫu được hỗ trợ.",
+    "MediaEngine.MsxTapeIncompatible": "Tài liệu không tương thích với bối cảnh băng MSX.",
+    "MediaEngine.MsxTapeNoCas": "Không tìm thấy nhóm byte MSX CAS nào được nhận diện theo cấu trúc.",
+    "MediaEngine.MsxTapeNoTsx": "Không có khối dữ liệu MSX nào có thể được mở rộng từ ảnh TSX.",
+    "MediaEngine.MsxTapePcm": "Hồ sơ âm thanh PCM không đầy đủ hoặc không tương thích.",
+    "MediaEngine.MsxTapeNoFsk": "Không tìm thấy khung nối tiếp MSX FSK trong kênh âm thanh đã chọn.",
+    "MediaEngine.MsxTapeDecodeLimit": "Dữ liệu băng MSX đã được giải mã vượt quá giới hạn byte được hỗ trợ."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Belge, Spectrum kaset decoder ile uyumlu değildir.",
+    "MediaEngine.SpectrumTapePcm": "PCM ses profili eksik veya uyumsuzdur.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Tam Spectrum veri bloğu bulunamadı.",
+    "MediaEngine.SpectrumTapeNoPulses": "Seçilen ses kanalında standart Spectrum nabız blok tespit edilmedi.",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum encoding, PCM ses için geçerli XOR kontrolleri ve örnek bir oranı gerektirir.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrum kaset sinyali desteklenen örnek sınırı aşıyor.",
+    "MediaEngine.MsxTapeIncompatible": "Belgenin uyumlu MSX kaset bağlamı yoktur.",
+    "MediaEngine.MsxTapeNoCas": "Yapısal olarak tanımlanmış bir MSX CAS bayt grubu bulunamadı.",
+    "MediaEngine.MsxTapeNoTsx": "TSX görüntüsünden hiçbir MSX veri bloğu genişletilemedi.",
+    "MediaEngine.MsxTapePcm": "PCM ses profili eksik veya uyumsuzdur.",
+    "MediaEngine.MsxTapeNoFsk": "Seçilen ses kanalında tam MSX FSK seri çerçevesi bulunamadı.",
+    "MediaEngine.MsxTapeDecodeLimit": "Çözümlenen MSX kaset verileri desteklenen bayt sınırını aşıyor."
+  }
+}

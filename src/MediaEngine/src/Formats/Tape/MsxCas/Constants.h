@@ -35,4 +35,5 @@ inline constexpr std::string_view SerialFramesValidMetadataKey="serialFramesVali
 inline constexpr std::string_view FormatId="tape.msx-cas",Extension=".cas",WriterId="tape-msx-cas",MachineId="msx",WaveFormat="tape.wav",NoTiming="not-stored",BinaryType="binary",BasicType="basic",AsciiType="ascii",TrueValue="True",ChannelKey="channel",InterleavedKey="interleaved",ChannelZero="0",EncodedWave="encoded.wav";
 inline constexpr int BufferSize=65536;
 inline constexpr std::size_t MaximumPcmSamples=128*1024*1024;
+inline constexpr std::string_view CswFormat="tape.csw",RawFormat="tape.raw",CasSource="cas",TsxSource="tsx",FskSource="wav-fsk",FalseValue="False";
 }

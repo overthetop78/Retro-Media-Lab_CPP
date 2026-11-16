@@ -417,8 +417,14 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Fsk\Serial.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Models.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Models.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Msx\Decoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Msx\Decoder.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Registry.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Registry.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Decoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Decoder.h" />
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Pulses.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Pulses.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Tzx\Expansion.cpp" />
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Tzx\Expansion.h" />
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Tzx\SignalDecoder.cpp" />
@@ -457,6 +463,8 @@
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Registry.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Request.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Request.h" />
+    <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Spectrum\Encoder.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Spectrum\Encoder.h" />
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Tzx\SignalEncoder.cpp" />
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Tzx\SignalEncoder.h" />
     <ClInclude Include="src\MediaEngine\src\Encoding\TimingConstants.h" />
@@ -1517,6 +1525,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\st-writing.json" />
@@ -1700,6 +1709,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\st-writing.json" />
@@ -1883,6 +1893,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\st-writing.json" />
@@ -2066,6 +2077,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\st-writing.json" />
@@ -2249,6 +2261,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\st-writing.json" />
@@ -2432,6 +2445,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\st-writing.json" />
@@ -2615,6 +2629,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\st-writing.json" />
@@ -2798,6 +2813,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\st-writing.json" />
@@ -2981,6 +2997,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\st-writing.json" />
@@ -3164,6 +3181,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\st-writing.json" />
@@ -3347,6 +3365,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\st-writing.json" />
@@ -3530,6 +3549,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\st-writing.json" />
@@ -3713,6 +3733,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\st-writing.json" />
@@ -3896,6 +3917,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\st-writing.json" />
@@ -4079,6 +4101,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\st-writing.json" />
@@ -4262,6 +4285,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\st-writing.json" />
@@ -4445,6 +4469,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\st-writing.json" />
@@ -4628,6 +4653,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\st-writing.json" />
@@ -4811,6 +4837,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\st-writing.json" />
@@ -4994,6 +5021,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\st-writing.json" />
@@ -5177,6 +5205,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\st-writing.json" />
@@ -5360,6 +5389,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\st-writing.json" />
@@ -5543,6 +5573,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\st-writing.json" />
@@ -5726,6 +5757,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\st-writing.json" />
@@ -5909,6 +5941,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\st-writing.json" />
@@ -6092,6 +6125,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\st-writing.json" />
@@ -6275,6 +6309,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\st-writing.json" />
@@ -6458,6 +6493,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\st-writing.json" />
@@ -6641,6 +6677,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\st-writing.json" />
@@ -6824,6 +6861,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-encoding.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\sequential-pcm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\simh-tape.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\spectrum-msx-codecs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\spectrum-tzx.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-geometry.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\st-writing.json" />

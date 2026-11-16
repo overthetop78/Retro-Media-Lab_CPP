@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "เอกสารไม่เข้ากันกับตัวถอดรหัสเทป Spectrum",
+    "MediaEngine.SpectrumTapePcm": "โพรไฟล์เสียง PCM ไม่สมบูรณ์หรือเข้ากันไม่ได้",
+    "MediaEngine.SpectrumTapeNoBlocks": "ไม่พบบล็อกข้อมูล Spectrum ที่สมบูรณ์",
+    "MediaEngine.SpectrumTapeNoPulses": "ไม่พบบล็อกพัลส์ Spectrum มาตรฐานในช่องเสียงที่เลือก",
+    "MediaEngine.SpectrumTapeEncode": "การเข้ารหัส Spectrum ต้องมีผลรวมตรวจสอบ XOR ที่ถูกต้องและอัตราสุ่มตัวอย่างสำหรับเสียง PCM",
+    "MediaEngine.SpectrumTapeSignalLimit": "สัญญาณเทป Spectrum เกินข้อจํากัดของตัวอย่างที่รองรับ",
+    "MediaEngine.MsxTapeIncompatible": "เอกสารไม่มีบริบทของเทป MSX ที่เข้ากันได้",
+    "MediaEngine.MsxTapeNoCas": "ไม่พบกลุ่มไบต์ MSX CAS ที่ระบุได้จากโครงสร้าง",
+    "MediaEngine.MsxTapeNoTsx": "ไม่มีบล็อกข้อมูล MSX ใดสามารถขยายภาพจากภาพ TSX ได้",
+    "MediaEngine.MsxTapePcm": "โพรไฟล์เสียง PCM ไม่สมบูรณ์หรือเข้ากันไม่ได้",
+    "MediaEngine.MsxTapeNoFsk": "ไม่พบเฟรมอนุกรม MSX FSK ที่สมบูรณ์ในช่องเสียงที่เลือก",
+    "MediaEngine.MsxTapeDecodeLimit": "ข้อมูลเทป MSX ที่ถอดรหัสแล้ว เกินกว่าค่าจํากัดที่รองรับ ไบต์"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Il documento è incompatibile con lo Spectrum tape decoder.",
+    "MediaEngine.SpectrumTapePcm": "Il profilo audio PCM è incompleto o incompatibile.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Nessun blocco dati Spectrum completo è stato trovato.",
+    "MediaEngine.SpectrumTapeNoPulses": "Nessun blocco standard di impulso Spectrum è stato rilevato nel canale audio selezionato.",
+    "MediaEngine.SpectrumTapeEncode": "La codifica Spectrum richiede controlli XOR validi e una frequenza di campionamento per l'audio PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Il segnale del nastro Spectrum supera il limite del campione supportato.",
+    "MediaEngine.MsxTapeIncompatible": "Il documento non ha un contesto di nastri MSX compatibile.",
+    "MediaEngine.MsxTapeNoCas": "Non è stato trovato alcun gruppo di byte MSX CAS strutturalmente identificato.",
+    "MediaEngine.MsxTapeNoTsx": "Nessun blocco dati MSX potrebbe essere ampliato dall'immagine TSX.",
+    "MediaEngine.MsxTapePcm": "Il profilo audio PCM è incompleto o incompatibile.",
+    "MediaEngine.MsxTapeNoFsk": "Nessun frame seriale completo MSX FSK è stato trovato nel canale audio selezionato.",
+    "MediaEngine.MsxTapeDecodeLimit": "I dati del nastro MSX decodificato superano il limite di byte supportato."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Dokumen tidak kompatibel dengan pengambil sandi kaset Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Profil audio PCM tidak lengkap atau tidak kompatibel.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Tidak ditemukan data blok Spectrum lengkap.",
+    "MediaEngine.SpectrumTapeNoPulses": "Tidak ada blok pulsa Spectrum standar terdeteksi dalam saluran audio yang dipilih.",
+    "MediaEngine.SpectrumTapeEncode": "Encoding Spectrum membutuhkan checksum XOR yang valid dan laju contoh untuk audio PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Sinyal tape Spectrum melebihi batas yang didukung.",
+    "MediaEngine.MsxTapeIncompatible": "Dokumen tidak memiliki konteks MSX tape yang kompatibel.",
+    "MediaEngine.MsxTapeNoCas": "Tidak ditemukan grup MSX CAS byte secara struktural.",
+    "MediaEngine.MsxTapeNoTsx": "Tidak ada blok data MSX yang dapat diperluas dari gambar TSX.",
+    "MediaEngine.MsxTapePcm": "Profil audio PCM tidak lengkap atau tidak kompatibel.",
+    "MediaEngine.MsxTapeNoFsk": "Tak ada bingkai seri MSX FSK lengkap yang ditemukan di saluran audio yang dipilih.",
+    "MediaEngine.MsxTapeDecodeLimit": "Data MSX tape decode melebihi batas byte yang didukung."
+  }
+}

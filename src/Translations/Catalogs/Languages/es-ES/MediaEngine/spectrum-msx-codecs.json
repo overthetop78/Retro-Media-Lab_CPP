@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "El documento es incompatible con el decodificador de cinta de Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "El perfil de audio PCM es incompleto o incompatible.",
+    "MediaEngine.SpectrumTapeNoBlocks": "No se encontró ningún bloque completo de datos de Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "No se detectó ningún bloque de pulso Spectrum estándar en el canal de audio seleccionado.",
+    "MediaEngine.SpectrumTapeEncode": "La codificación Spectrum requiere comprobaciones XOR válidas y una tasa de muestra para el audio PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "La señal de cinta Spectrum supera el número máximo de muestras admitido.",
+    "MediaEngine.MsxTapeIncompatible": "El documento no tiene un contexto de cinta compatible con MSX.",
+    "MediaEngine.MsxTapeNoCas": "No se encontró ningún grupo de bytes MSX CAS estructuralmente identificado.",
+    "MediaEngine.MsxTapeNoTsx": "Ningún bloque de datos MSX podría ampliarse de la imagen TSX.",
+    "MediaEngine.MsxTapePcm": "El perfil de audio PCM es incompleto o incompatible.",
+    "MediaEngine.MsxTapeNoFsk": "No se encontró ningún marco de serie MSX FSK completo en el canal de audio seleccionado.",
+    "MediaEngine.MsxTapeDecodeLimit": "Los datos de cinta MSX decodificados exceden el límite de byte soportado."
+  }
+}

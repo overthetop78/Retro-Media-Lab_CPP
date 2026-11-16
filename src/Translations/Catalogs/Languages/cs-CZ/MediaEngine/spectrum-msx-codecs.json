@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Dokument není kompatibilní s dekodérem pásky Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Zvukový profil PCM je neúplný nebo nekompatibilní.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Nebyl nalezen žádný kompletní datový blok Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "Ve zvoleném audio kanálu nebyl zjištěn žádný standardní pulzní blok Spectrum.",
+    "MediaEngine.SpectrumTapeEncode": "kódování Spectrum vyžaduje platné kontrolní součty XOR a vzorkovací rychlost pro PCM audio.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Signál pásky Spectrum překračuje podporovaný limit vzorku.",
+    "MediaEngine.MsxTapeIncompatible": "Dokument nemá kompatibilní kontext MSX pásky.",
+    "MediaEngine.MsxTapeNoCas": "Nebyla nalezena žádná strukturálně identifikovaná skupina MSX CAS byte.",
+    "MediaEngine.MsxTapeNoTsx": "Z TSX obrazu nelze rozšířit žádný MSX datový blok.",
+    "MediaEngine.MsxTapePcm": "Zvukový profil PCM je neúplný nebo nekompatibilní.",
+    "MediaEngine.MsxTapeNoFsk": "Ve zvoleném audio kanálu nebyl nalezen žádný kompletní MSX FSK sériový snímek.",
+    "MediaEngine.MsxTapeDecodeLimit": "Dekódovaná data MSX pásky překračují podporovaný limit byte."
+  }
+}

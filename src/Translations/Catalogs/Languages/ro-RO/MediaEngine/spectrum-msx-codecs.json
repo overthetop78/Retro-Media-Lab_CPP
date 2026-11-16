@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Documentul este incompatibil cu decodorul de bandă Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Profilul audio PCM este incomplet sau incompatibil.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Nu a fost găsit niciun bloc complet de date Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "Nu a fost detectat niciun bloc de impulsuri standard Spectrum în canalul audio selectat.",
+    "MediaEngine.SpectrumTapeEncode": "Codificarea Spectrum necesită controale XOR valabile și o rată de eșantionare pentru audio PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Semnalul de bandă Spectrum depășește limita de eșantionare susținută.",
+    "MediaEngine.MsxTapeIncompatible": "Documentul nu are context MSX compatibil.",
+    "MediaEngine.MsxTapeNoCas": "Nu a fost găsit niciun grup de octeți MSX CAS identificat structural.",
+    "MediaEngine.MsxTapeNoTsx": "Niciun bloc de date MSX nu ar putea fi extins din imaginea TSX.",
+    "MediaEngine.MsxTapePcm": "Profilul audio PCM este incomplet sau incompatibil.",
+    "MediaEngine.MsxTapeNoFsk": "Nu a fost găsit niciun cadru serial MSX FSK complet în canalul audio selectat.",
+    "MediaEngine.MsxTapeDecodeLimit": "Datele decodate de bandă MSX depășesc limita octet susținută."
+  }
+}

@@ -3,6 +3,18 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::SpectrumTapeIncompatible:return DiagnosticKeys::SpectrumTapeIncompatible;
+    case DiagnosticCode::SpectrumTapePcm:return DiagnosticKeys::SpectrumTapePcm;
+    case DiagnosticCode::SpectrumTapeNoBlocks:return DiagnosticKeys::SpectrumTapeNoBlocks;
+    case DiagnosticCode::SpectrumTapeNoPulses:return DiagnosticKeys::SpectrumTapeNoPulses;
+    case DiagnosticCode::SpectrumTapeEncode:return DiagnosticKeys::SpectrumTapeEncode;
+    case DiagnosticCode::SpectrumTapeSignalLimit:return DiagnosticKeys::SpectrumTapeSignalLimit;
+    case DiagnosticCode::MsxTapeIncompatible:return DiagnosticKeys::MsxTapeIncompatible;
+    case DiagnosticCode::MsxTapeNoCas:return DiagnosticKeys::MsxTapeNoCas;
+    case DiagnosticCode::MsxTapeNoTsx:return DiagnosticKeys::MsxTapeNoTsx;
+    case DiagnosticCode::MsxTapePcm:return DiagnosticKeys::MsxTapePcm;
+    case DiagnosticCode::MsxTapeNoFsk:return DiagnosticKeys::MsxTapeNoFsk;
+    case DiagnosticCode::MsxTapeDecodeLimit:return DiagnosticKeys::MsxTapeDecodeLimit;
     case DiagnosticCode::TzxSignalDocument:return DiagnosticKeys::TzxSignalDocument;
     case DiagnosticCode::TzxSignalId:return DiagnosticKeys::TzxSignalId;
     case DiagnosticCode::TzxSignalUnsupported:return DiagnosticKeys::TzxSignalUnsupported;

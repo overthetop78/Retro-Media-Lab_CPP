@@ -1,6 +1,19 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SpectrumTapeIncompatible="MediaEngine.SpectrumTapeIncompatible";
+inline constexpr std::string_view SpectrumTapePcm="MediaEngine.SpectrumTapePcm";
+inline constexpr std::string_view SpectrumTapeNoBlocks="MediaEngine.SpectrumTapeNoBlocks";
+inline constexpr std::string_view SpectrumTapeNoPulses="MediaEngine.SpectrumTapeNoPulses";
+inline constexpr std::string_view SpectrumTapeEncode="MediaEngine.SpectrumTapeEncode";
+inline constexpr std::string_view SpectrumTapeSignalLimit="MediaEngine.SpectrumTapeSignalLimit";
+inline constexpr std::string_view MsxTapeIncompatible="MediaEngine.MsxTapeIncompatible";
+inline constexpr std::string_view MsxTapeNoCas="MediaEngine.MsxTapeNoCas";
+inline constexpr std::string_view MsxTapeNoTsx="MediaEngine.MsxTapeNoTsx";
+inline constexpr std::string_view MsxTapePcm="MediaEngine.MsxTapePcm";
+inline constexpr std::string_view MsxTapeNoFsk="MediaEngine.MsxTapeNoFsk";
+inline constexpr std::string_view MsxTapeDecodeLimit="MediaEngine.MsxTapeDecodeLimit";
+
 inline constexpr std::string_view TzxSignalDocument="MediaEngine.TzxSignalDocument";
 inline constexpr std::string_view TzxSignalId="MediaEngine.TzxSignalId";
 inline constexpr std::string_view TzxSignalUnsupported="MediaEngine.TzxSignalUnsupported";

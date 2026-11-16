@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "ドキュメントはSpectrumテープデコーダーと互換性がありません。",
+    "MediaEngine.SpectrumTapePcm": "PCMオーディオプロファイルは不完全または非互換性です。",
+    "MediaEngine.SpectrumTapeNoBlocks": "完全なSpectrumのデータブロックが見つかりませんでした。",
+    "MediaEngine.SpectrumTapeNoPulses": "Spectrumのパルスブロックは、選択したオーディオチャネルで検出されませんでした。",
+    "MediaEngine.SpectrumTapeEncode": "Spectrumエンコーディングは、有効なXORチェックサムとPCMオーディオのサンプルレートが必要です。",
+    "MediaEngine.SpectrumTapeSignalLimit": "Spectrumのテープ信号は支えられたサンプル限界を超過します。",
+    "MediaEngine.MsxTapeIncompatible": "ドキュメントには互換性のあるMSXテープのコンテキストはありません。",
+    "MediaEngine.MsxTapeNoCas": "構造的に特定されたMSX CASバイトグループが見つかりませんでした。",
+    "MediaEngine.MsxTapeNoTsx": "MSX のデータブロックは TSX イメージから展開できません。",
+    "MediaEngine.MsxTapePcm": "PCMオーディオプロファイルは不完全または非互換性です。",
+    "MediaEngine.MsxTapeNoFsk": "MSX FSKのシリアルフレームは、選択したオーディオチャンネルで見つかりませんでした。",
+    "MediaEngine.MsxTapeDecodeLimit": "MSX テープのデコードされたデータは、サポートされているバイト制限を超える。"
+  }
+}

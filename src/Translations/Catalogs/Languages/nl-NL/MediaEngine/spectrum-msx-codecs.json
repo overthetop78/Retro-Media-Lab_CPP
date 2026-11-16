@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Het document is niet compatibel met de Spectrum tape decoder.",
+    "MediaEngine.SpectrumTapePcm": "Het PCM-audioprofiel is onvolledig of onverenigbaar.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Er is geen volledig Spectrum-datablok gevonden.",
+    "MediaEngine.SpectrumTapeNoPulses": "Er werd geen standaard Spectrum pulsblok gedetecteerd in het geselecteerde audiokanaal.",
+    "MediaEngine.SpectrumTapeEncode": "Spectrum codering vereist geldige XOR checksums en een sample rate voor PCM audio.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Het Spectrum tape signaal overschrijdt de ondersteunde sample limiet.",
+    "MediaEngine.MsxTapeIncompatible": "Het document heeft geen compatibele MSX tape context.",
+    "MediaEngine.MsxTapeNoCas": "Er werd geen structureel geïdentificeerde MSX CAS bytegroep gevonden.",
+    "MediaEngine.MsxTapeNoTsx": "Geen MSX-gegevensblok kon worden uitgebreid van de TSX-afbeelding.",
+    "MediaEngine.MsxTapePcm": "Het PCM-audioprofiel is onvolledig of onverenigbaar.",
+    "MediaEngine.MsxTapeNoFsk": "Er is geen volledig MSX FSK seriële frame gevonden in het geselecteerde audiokanaal.",
+    "MediaEngine.MsxTapeDecodeLimit": "De gedecodeerde MSX tape data overschrijdt de ondersteunde byte limiet."
+  }
+}

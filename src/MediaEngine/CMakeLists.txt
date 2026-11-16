@@ -307,6 +307,10 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Encoding/Sequential/Registry.cpp
   src/Encoding/Sequential/Compatibility.cpp
   src/Encoding/Sequential/Atari/Records.cpp
+  src/Decoding/Sequential/Spectrum/Decoder.cpp
+  src/Decoding/Sequential/Spectrum/Pulses.cpp
+  src/Decoding/Sequential/Msx/Decoder.cpp
+  src/Encoding/Sequential/Spectrum/Encoder.cpp
   src/Formats/Tape/Tzx/Metadata.cpp
   src/Decoding/Sequential/Tzx/SignalDecoder.cpp
   src/Decoding/Sequential/Tzx/Expansion.cpp

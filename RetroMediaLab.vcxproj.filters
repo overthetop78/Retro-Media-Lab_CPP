@@ -226,6 +226,12 @@
     <Filter Include="src\MediaEngine\src\Decoding\Sequential\Fsk">
       <UniqueIdentifier>{9269458F-B625-5D9C-BD79-878EC275AFD3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Msx">
+      <UniqueIdentifier>{53AD76E2-6752-5025-A110-F757D7DB6910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Decoding\Sequential\Spectrum">
+      <UniqueIdentifier>{BAD7CF69-B3BD-5E17-B174-C455CB65E0B3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Decoding\Sequential\Tzx">
       <UniqueIdentifier>{54B213A2-349A-52F0-A85C-DBB4C374358A}</UniqueIdentifier>
     </Filter>
@@ -243,6 +249,9 @@
     </Filter>
     <Filter Include="src\MediaEngine\src\Encoding\Sequential\Msx">
       <UniqueIdentifier>{006F1B97-8973-5C35-B452-6FA31C675FFF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\MediaEngine\src\Encoding\Sequential\Spectrum">
+      <UniqueIdentifier>{BA53CCC6-E33F-5548-87B1-725F21030098}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\MediaEngine\src\Encoding\Sequential\Tzx">
       <UniqueIdentifier>{B75BB4BB-4A3E-5018-AB9E-CA6EE67E37A6}</UniqueIdentifier>
@@ -2880,11 +2889,29 @@
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Models.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Msx\Decoder.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Msx</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Msx\Decoder.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Msx</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Registry.cpp">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Registry.h">
       <Filter>src\MediaEngine\src\Decoding\Sequential</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Decoder.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Spectrum</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Decoder.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Spectrum</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Pulses.cpp">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Spectrum</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Decoding\Sequential\Spectrum\Pulses.h">
+      <Filter>src\MediaEngine\src\Decoding\Sequential\Spectrum</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Decoding\Sequential\Tzx\Expansion.cpp">
       <Filter>src\MediaEngine\src\Decoding\Sequential\Tzx</Filter>
@@ -2999,6 +3026,12 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Request.h">
       <Filter>src\MediaEngine\src\Encoding\Sequential</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Spectrum\Encoder.cpp">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Spectrum</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Encoding\Sequential\Spectrum\Encoder.h">
+      <Filter>src\MediaEngine\src\Encoding\Sequential\Spectrum</Filter>
     </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Encoding\Sequential\Tzx\SignalEncoder.cpp">
       <Filter>src\MediaEngine\src\Encoding\Sequential\Tzx</Filter>
@@ -6180,6 +6213,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -6727,6 +6763,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\spectrum-tzx.json">
@@ -7278,6 +7317,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaEngine</Filter>
     </None>
@@ -7825,6 +7867,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\spectrum-tzx.json">
@@ -8376,6 +8421,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaEngine</Filter>
     </None>
@@ -8923,6 +8971,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\spectrum-tzx.json">
@@ -9474,6 +9525,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaEngine</Filter>
     </None>
@@ -10021,6 +10075,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\spectrum-tzx.json">
@@ -10572,6 +10629,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaEngine</Filter>
     </None>
@@ -11119,6 +11179,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\spectrum-tzx.json">
@@ -11670,6 +11733,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaEngine</Filter>
     </None>
@@ -12217,6 +12283,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\spectrum-tzx.json">
@@ -12768,6 +12837,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaEngine</Filter>
     </None>
@@ -13315,6 +13387,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\spectrum-tzx.json">
@@ -13866,6 +13941,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaEngine</Filter>
     </None>
@@ -14413,6 +14491,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\spectrum-tzx.json">
@@ -14964,6 +15045,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaEngine</Filter>
     </None>
@@ -15511,6 +15595,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\spectrum-tzx.json">
@@ -16062,6 +16149,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaEngine</Filter>
     </None>
@@ -16609,6 +16699,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\spectrum-tzx.json">
@@ -17160,6 +17253,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaEngine</Filter>
     </None>
@@ -17707,6 +17803,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\spectrum-tzx.json">
@@ -18258,6 +18357,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaEngine</Filter>
     </None>
@@ -18805,6 +18907,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\spectrum-tzx.json">
@@ -19356,6 +19461,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaEngine</Filter>
     </None>
@@ -19903,6 +20011,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\spectrum-tzx.json">
@@ -20454,6 +20565,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaEngine</Filter>
     </None>
@@ -21001,6 +21115,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\spectrum-tzx.json">
@@ -21552,6 +21669,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\simh-tape.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\spectrum-msx-codecs.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\spectrum-tzx.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaEngine</Filter>
     </None>
@@ -22099,6 +22219,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\simh-tape.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\spectrum-msx-codecs.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\spectrum-tzx.json">

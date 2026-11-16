@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Το έγγραφο είναι ασυμβίβαστο με τον αποκωδικοποιητή ταινίας Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Το προφίλ ήχου PCM είναι ημιτελές ή ασυμβίβαστο.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Δεν βρέθηκε πλήρης φραγμός δεδομένων Spectrum.",
+    "MediaEngine.SpectrumTapeNoPulses": "Δεν εντοπίστηκε κανένα τυπικό μπλοκ παλμών Spectrum στο επιλεγμένο κανάλι ήχου.",
+    "MediaEngine.SpectrumTapeEncode": "Η κωδικοποίηση Spectrum απαιτεί έγκυρα αθροίσματα ελέγχου XOR και ρυθμό δειγματοληψίας για ήχο PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Το σήμα ταινίας Spectrum υπερβαίνει το υποστηριζόμενο όριο δείγματος.",
+    "MediaEngine.MsxTapeIncompatible": "Το έγγραφο δεν έχει συμβατό πλαίσιο κασέτας MSX.",
+    "MediaEngine.MsxTapeNoCas": "Δεν βρέθηκε δομικά αναγνωρισμένη ομάδα MSX CAS byte.",
+    "MediaEngine.MsxTapeNoTsx": "Κανένα μπλοκ δεδομένων MSX δεν θα μπορούσε να επεκταθεί από την εικόνα TSX.",
+    "MediaEngine.MsxTapePcm": "Το προφίλ ήχου PCM είναι ημιτελές ή ασυμβίβαστο.",
+    "MediaEngine.MsxTapeNoFsk": "Δεν βρέθηκε πλήρες σειριακό πλαίσιο MSX FSK στο επιλεγμένο κανάλι ήχου.",
+    "MediaEngine.MsxTapeDecodeLimit": "Τα αποκωδικοποιημένα δεδομένα της κασέτας MSX υπερβαίνουν το υποστηριζόμενο όριο byte."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapeIncompatible": "Документ несовместим с декодером ленты Spectrum.",
+    "MediaEngine.SpectrumTapePcm": "Аудиопрофиль PCM является неполным или несовместимым.",
+    "MediaEngine.SpectrumTapeNoBlocks": "Полный блок данных Spectrum не найден.",
+    "MediaEngine.SpectrumTapeNoPulses": "В выбранном аудиоканале не было обнаружено стандартного блока импульсов Spectrum.",
+    "MediaEngine.SpectrumTapeEncode": "Для кодирования Spectrum требуются действительные контрольные суммы XOR и частота выборки для аудио PCM.",
+    "MediaEngine.SpectrumTapeSignalLimit": "Ленточный сигнал Spectrum превышает поддерживаемый предел выборки.",
+    "MediaEngine.MsxTapeIncompatible": "Документ не имеет совместимого контекста ленты MSX.",
+    "MediaEngine.MsxTapeNoCas": "Структурно идентифицированной байтовой группы MSX CAS обнаружено не было.",
+    "MediaEngine.MsxTapeNoTsx": "Никакой блок данных MSX не может быть расширен из изображения TSX.",
+    "MediaEngine.MsxTapePcm": "Аудиопрофиль PCM является неполным или несовместимым.",
+    "MediaEngine.MsxTapeNoFsk": "Полный серийный кадр MSX FSK в выбранном аудиоканале не найден.",
+    "MediaEngine.MsxTapeDecodeLimit": "Декодированные данные ленты MSX превышают поддерживаемый предел байта."
+  }
+}
