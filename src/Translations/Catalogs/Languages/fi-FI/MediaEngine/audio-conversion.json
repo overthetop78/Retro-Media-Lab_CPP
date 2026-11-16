@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Äänenmuuntoparametrit ovat virheellisiä.",
+    "MediaEngine.FfmpegInput": "Äänilähdetiedosto ei ole saatavilla: {0}.",
+    "MediaEngine.FfmpegOutput": "Äänikohteeseen ei voi kirjoittaa, se on jo olemassa tai se on sama kuin lähde: {0}.",
+    "MediaEngine.FfmpegMissing": "FFmpeg-suorite puuttuu: {0}.",
+    "MediaEngine.FfmpegStart": "Äänimuunninta ei voitu käynnistää (prosessivirhe {0}).",
+    "MediaEngine.FfmpegFailed": "Äänen muuntaminen epäonnistui (paluukoodi {0})."
+  }
+}

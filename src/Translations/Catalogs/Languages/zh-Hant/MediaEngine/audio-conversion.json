@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "音訊轉換參數無效。",
+    "MediaEngine.FfmpegInput": "音訊來源檔案無法使用：{0}。",
+    "MediaEngine.FfmpegOutput": "音訊目標無法寫入、已經存在，或與來源相同：{0}。",
+    "MediaEngine.FfmpegMissing": "隨附的 FFmpeg 執行檔遺失：{0}。",
+    "MediaEngine.FfmpegStart": "無法啟動音訊轉換器（處理程序錯誤 {0}）。",
+    "MediaEngine.FfmpegFailed": "音訊轉換失敗（結束代碼 {0}）。"
+  }
+}

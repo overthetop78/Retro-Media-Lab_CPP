@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="scripts\local-building\build.ps1" />
+    <None Include="scripts\local-building\prepare-ffmpeg.ps1" />
     <None Include="scripts\local-building\update-solution.py" />
     <None Include="scripts\quality\audit_literals.py" />
     <None Include="scripts\quality\audit_media_architecture.py" />
@@ -216,6 +217,7 @@
     <ClInclude Include="src\MediaAnalysis\src\Constants\Signatures.h" />
     <ClCompile Include="src\MediaAnalysis\src\Recognition.cpp" />
     <None Include="src\MediaEngine\CMakeLists.txt" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\AudioConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveMechanics.h" />
@@ -230,6 +232,8 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\VolumeInfo.h" />
+    <ClInclude Include="src\MediaEngine\src\Audio\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Audio\Conversion.cpp" />
     <ClInclude Include="src\MediaEngine\src\Codecs\Aed6200p\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Decoder.cpp" />
     <ClCompile Include="src\MediaEngine\src\Codecs\Aed6200p\Encoder.cpp" />
@@ -1479,6 +1483,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\centurion-mfm.json" />
@@ -1667,6 +1672,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\centurion-mfm.json" />
@@ -1855,6 +1861,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\centurion-mfm.json" />
@@ -2043,6 +2050,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\centurion-mfm.json" />
@@ -2231,6 +2239,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\centurion-mfm.json" />
@@ -2419,6 +2428,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\centurion-mfm.json" />
@@ -2607,6 +2617,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\centurion-mfm.json" />
@@ -2795,6 +2806,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\centurion-mfm.json" />
@@ -2983,6 +2995,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\centurion-mfm.json" />
@@ -3171,6 +3184,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\centurion-mfm.json" />
@@ -3359,6 +3373,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\centurion-mfm.json" />
@@ -3547,6 +3562,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\centurion-mfm.json" />
@@ -3735,6 +3751,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\centurion-mfm.json" />
@@ -3923,6 +3940,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\centurion-mfm.json" />
@@ -4111,6 +4129,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\centurion-mfm.json" />
@@ -4299,6 +4318,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\centurion-mfm.json" />
@@ -4487,6 +4507,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\centurion-mfm.json" />
@@ -4675,6 +4696,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\centurion-mfm.json" />
@@ -4863,6 +4885,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\centurion-mfm.json" />
@@ -5051,6 +5074,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\centurion-mfm.json" />
@@ -5239,6 +5263,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\centurion-mfm.json" />
@@ -5427,6 +5452,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\centurion-mfm.json" />
@@ -5615,6 +5641,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\centurion-mfm.json" />
@@ -5803,6 +5830,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\centurion-mfm.json" />
@@ -5991,6 +6019,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\centurion-mfm.json" />
@@ -6179,6 +6208,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\centurion-mfm.json" />
@@ -6367,6 +6397,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\centurion-mfm.json" />
@@ -6555,6 +6586,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\centurion-mfm.json" />
@@ -6743,6 +6775,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\centurion-mfm.json" />
@@ -6931,6 +6964,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atom-tap.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atomic-set.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\atr-atx.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\audio-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\audio-tape.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\centurion-mfm.json" />
@@ -7098,6 +7132,8 @@
     <None Include="third_party\bzip2\LICENSE" />
     <ClCompile Include="third_party\bzip2\randtable.c" />
     <None Include="third_party\CMakeLists.txt" />
+    <None Include="third_party\ffmpeg\package.json" />
+    <None Include="third_party\ffmpeg\README.md" />
     <None Include="third_party\libarchive\.editorconfig" />
     <None Include="third_party\libarchive\.gitattributes" />
     <None Include="third_party\libarchive\.gitignore" />

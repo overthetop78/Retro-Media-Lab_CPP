@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "音频转换参数无效 。",
+    "MediaEngine.FfmpegInput": "音频源文件不可用 :{0}.",
+    "MediaEngine.FfmpegOutput": "音频目标无法写入, 已经存在, 或来源为 {0} 。",
+    "MediaEngine.FfmpegMissing": "捆绑的 FFmpeg 可执行文件缺失: {0}.",
+    "MediaEngine.FfmpegStart": "音频转换器无法启动( 进程错误{0}) 。",
+    "MediaEngine.FfmpegFailed": "音频转换失败( 退出代码{0}) 。"
+  }
+}

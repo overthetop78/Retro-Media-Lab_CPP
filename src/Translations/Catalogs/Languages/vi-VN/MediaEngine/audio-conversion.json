@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Tham số chuyển đổi âm thanh không hợp lệ.",
+    "MediaEngine.FfmpegInput": "Tệp nguồn âm thanh không khả dụng: {0}.",
+    "MediaEngine.FfmpegOutput": "Không thể ghi tệp đích âm thanh, tệp đã tồn tại hoặc trùng với tệp nguồn: {0}.",
+    "MediaEngine.FfmpegMissing": "Thiếu tệp thực thi FFmpeg đi kèm: {0}.",
+    "MediaEngine.FfmpegStart": "Không thể khởi chạy bộ chuyển đổi âm thanh (lỗi tiến trình {0}).",
+    "MediaEngine.FfmpegFailed": "Chuyển đổi âm thanh thất bại (mã thoát {0})."
+  }
+}

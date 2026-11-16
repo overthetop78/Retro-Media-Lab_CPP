@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Parameter konversi audio tidak valid.",
+    "MediaEngine.FfmpegInput": "Berkas sumber audio tak tersedia: {0}.",
+    "MediaEngine.FfmpegOutput": "Tujuan audio tak dapat ditulis, sudah ada, atau sumber: {0}.",
+    "MediaEngine.FfmpegMissing": "Pengeksekusi FFmpeg yang bundled hilang: {0}.",
+    "MediaEngine.FfmpegStart": "Konverter audio tidak dapat dimulai (kesalahan proses {0}).",
+    "MediaEngine.FfmpegFailed": "konversi audio gagal (kode keluar {0})."
+  }
+}

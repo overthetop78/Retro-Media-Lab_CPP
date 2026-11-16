@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Audio/Conversion.cpp
   src/Formats/Common/Audio/DecodedPcm.cpp
   src/Formats/Tape/Audio/Reader.cpp
   src/Images/Conversion/Sequential/Service.cpp

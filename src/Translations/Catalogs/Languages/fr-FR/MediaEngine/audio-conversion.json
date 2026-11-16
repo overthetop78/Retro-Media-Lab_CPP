@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Les paramètres de conversion audio sont invalides.",
+    "MediaEngine.FfmpegInput": "Le fichier source audio n'est pas disponible : {0}.",
+    "MediaEngine.FfmpegOutput": "La destination audio ne peut pas être écrite, existe déjà ou est la source : {0}.",
+    "MediaEngine.FfmpegMissing": "L’exécutable FFmpeg embarqué est introuvable : {0}.",
+    "MediaEngine.FfmpegStart": "Impossible de démarrer le convertisseur audio (erreur de processus {0}).",
+    "MediaEngine.FfmpegFailed": "La conversion audio a échoué (code de sortie {0})."
+  }
+}

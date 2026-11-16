@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Parametry konwersji audio są nieprawidłowe.",
+    "MediaEngine.FfmpegInput": "Plik źródłowy audio jest niedostępny: {0}.",
+    "MediaEngine.FfmpegOutput": "Cel audio nie może być zapisany, już istnieje lub jest źródłem: {0}.",
+    "MediaEngine.FfmpegMissing": "Brak powiązanego pliku wykonywalnego FFmpeg: {0}.",
+    "MediaEngine.FfmpegStart": "Konwerter audio nie mógł się uruchomić (błąd procesu {0}).",
+    "MediaEngine.FfmpegFailed": "Konwersja dźwięku nie powiodła się (kod wyjścia {0})."
+  }
+}

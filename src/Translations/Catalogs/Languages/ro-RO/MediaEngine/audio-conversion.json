@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Parametrii de conversie audio sunt invalidi.",
+    "MediaEngine.FfmpegInput": "Fișierul sursă audio nu este disponibil: {0}.",
+    "MediaEngine.FfmpegOutput": "Destinaţia audio nu poate fi scrisă, există deja sau este sursa: {0}.",
+    "MediaEngine.FfmpegMissing": "Executabilul de FFmpeg în pachet lipseşte: {0}.",
+    "MediaEngine.FfmpegStart": "Convertorul audio nu a putut porni (eroare de proces {0}).",
+    "MediaEngine.FfmpegFailed": "Conversia audio a eșuat (cod de ieșire {0})."
+  }
+}

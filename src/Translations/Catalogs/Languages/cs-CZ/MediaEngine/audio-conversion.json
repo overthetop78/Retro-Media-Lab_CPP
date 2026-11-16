@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Parametry audio konverze jsou neplatné.",
+    "MediaEngine.FfmpegInput": "Audio zdrojový soubor není k dispozici: {0}.",
+    "MediaEngine.FfmpegOutput": "Do cílového zvukového souboru nelze zapisovat, již existuje nebo je totožný se zdrojem: {0}.",
+    "MediaEngine.FfmpegMissing": "Sdružený spustitelný FFmpeg chybí: {0}.",
+    "MediaEngine.FfmpegStart": "Audio převodník nemohl spustit (chyba procesu {0}).",
+    "MediaEngine.FfmpegFailed": "Audio konverze selhala (výstupní kód {0})."
+  }
+}

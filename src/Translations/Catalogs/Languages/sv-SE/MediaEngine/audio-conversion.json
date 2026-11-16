@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Ljudkonverteringsparametrarna är ogiltiga.",
+    "MediaEngine.FfmpegInput": "Ljudkällans fil är inte tillgänglig: {0}.",
+    "MediaEngine.FfmpegOutput": "Ljuddestinationen kan inte skrivas, redan finns, eller är källan: {0}.",
+    "MediaEngine.FfmpegMissing": "Den buntade FFmpeg körbar saknas: {0}.",
+    "MediaEngine.FfmpegStart": "Ljudkonverteraren kunde inte starta (processfel {0}).",
+    "MediaEngine.FfmpegFailed": "Ljudkonvertering misslyckades (exit code {0})."
+  }
+}

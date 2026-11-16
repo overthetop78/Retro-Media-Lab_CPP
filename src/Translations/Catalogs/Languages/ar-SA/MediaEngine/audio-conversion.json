@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "معلمات تحويل الصوت غير صالحة.",
+    "MediaEngine.FfmpegInput": "ملف مصدر الصوت غير متاح: {0}.",
+    "MediaEngine.FfmpegOutput": "لا يمكن كتابة وجهة الصوت، أو أنها موجودة بالفعل، أو أنها المصدر نفسه: {0}.",
+    "MediaEngine.FfmpegMissing": "ملف FFmpeg التنفيذي المرفق مفقود: {0}.",
+    "MediaEngine.FfmpegStart": "تعذر بدء محول الصوت (خطأ العملية {0}).",
+    "MediaEngine.FfmpegFailed": "فشل تحويل الصوت (رمز الخروج {0})."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "Ses dönüştürme parametreleri geçersizdir.",
+    "MediaEngine.FfmpegInput": "Ses kaynağı dosyası mevcut değildir: {0}.",
+    "MediaEngine.FfmpegOutput": "Ses hedefi yazılamaz, zaten var veya kaynaktır: {0}.",
+    "MediaEngine.FfmpegMissing": "Birlikte sunulan FFmpeg çalıştırılabilir dosyası eksik: {0}.",
+    "MediaEngine.FfmpegStart": "Ses dönüştürücü başlamayabilir (işlem hatası {0}).",
+    "MediaEngine.FfmpegFailed": "Ses dönüştürme başarısız oldu (çıkış kodu {0})."
+  }
+}

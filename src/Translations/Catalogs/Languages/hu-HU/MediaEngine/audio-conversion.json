@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "A hangátalakítási paraméterek érvénytelenek.",
+    "MediaEngine.FfmpegInput": "A hangforrás fájl nem elérhető: {0}.",
+    "MediaEngine.FfmpegOutput": "A hangcél nem írható, már létezik, vagy a forrás: {0}.",
+    "MediaEngine.FfmpegMissing": "A csomagolt FFmpeg program hiányzik: {0}.",
+    "MediaEngine.FfmpegStart": "Az audió konverter nem tudott elindítani (folyamat hiba {0}).",
+    "MediaEngine.FfmpegFailed": "Hangátalakítás sikertelen (kilépési kód: {0})."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "พารามิเตอร์ของการแปลงเสียงไม่ถูกต้อง",
+    "MediaEngine.FfmpegInput": "ไม่มีแฟ้มแหล่งเพลง: {0}",
+    "MediaEngine.FfmpegOutput": "ไม่สามารถเขียนปลายทางเพลงได้, มีอยู่แล้ว หรือเป็นแหล่งกําเนิด: {0}",
+    "MediaEngine.FfmpegMissing": "ไม่พบไฟล์เรียกทำงาน FFmpeg ที่มาพร้อมโปรแกรม: {0}",
+    "MediaEngine.FfmpegStart": "ไม่สามารถเริ่มตัวแปลงเสียงได้ (โพรเซสผิดพลาด {0})",
+    "MediaEngine.FfmpegFailed": "การแปลงเสียงล้มเหลว (รหัสออก {0})"
+  }
+}

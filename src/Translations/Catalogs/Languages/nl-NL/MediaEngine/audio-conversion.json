@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "De audioconversieparameters zijn ongeldig.",
+    "MediaEngine.FfmpegInput": "Het audiobronbestand is niet beschikbaar: {0}.",
+    "MediaEngine.FfmpegOutput": "De audio-bestemming kan niet worden geschreven, bestaat al, of is de bron: {0}.",
+    "MediaEngine.FfmpegMissing": "Het gebundelde FFmpeg uitvoerbare bestand ontbreekt: {0}.",
+    "MediaEngine.FfmpegStart": "De audio-converter kon niet starten (procesfout {0}).",
+    "MediaEngine.FfmpegFailed": "Audioconversie mislukt (exitcode {0})."
+  }
+}

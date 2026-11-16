@@ -3,6 +3,13 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::FfmpegRequest:return DiagnosticKeys::FfmpegRequest;
+    case DiagnosticCode::FfmpegInput:return DiagnosticKeys::FfmpegInput;
+    case DiagnosticCode::FfmpegOutput:return DiagnosticKeys::FfmpegOutput;
+    case DiagnosticCode::FfmpegMissing:return DiagnosticKeys::FfmpegMissing;
+    case DiagnosticCode::FfmpegStart:return DiagnosticKeys::FfmpegStart;
+    case DiagnosticCode::FfmpegFailed:return DiagnosticKeys::FfmpegFailed;
+
     case DiagnosticCode::AudioPcmData:return DiagnosticKeys::AudioPcmData;
     case DiagnosticCode::AudioPcmRuntime:return DiagnosticKeys::AudioPcmRuntime;
     case DiagnosticCode::AudioPcmDecode:return DiagnosticKeys::AudioPcmDecode;

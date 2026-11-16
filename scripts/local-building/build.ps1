@@ -70,6 +70,13 @@ try {
     $destination = Join-Path $projectRoot "build/$Configuration/Retro Media Lab"
     & $cmake --install "build/$preset" --prefix $destination
     if ($LASTEXITCODE -ne 0) { throw 'Installation into the run directory failed.' }
+    # Resolve once at build time; the distributed application never needs a system FFmpeg.
+    $ffmpegCache = & (Join-Path $PSScriptRoot 'prepare-ffmpeg.ps1')
+    $ffmpegDestination = Join-Path $destination 'lib/FFmpeg'
+    New-Item -ItemType Directory -Path $ffmpegDestination -Force | Out-Null
+    foreach ($name in @('ffmpeg.exe','LICENSE','README.txt','package.json')) {
+        Copy-Item -LiteralPath (Join-Path $ffmpegCache $name) -Destination (Join-Path $ffmpegDestination $name) -Force
+    }
     $buildRoot = [IO.Path]::GetFullPath((Join-Path $projectRoot 'build')) + [IO.Path]::DirectorySeparatorChar
     function Assert-BuildPath([string]$Path) {
         $absolute = [IO.Path]::GetFullPath($Path)

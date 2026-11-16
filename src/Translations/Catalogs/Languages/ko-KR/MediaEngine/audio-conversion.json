@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "오디오 변환 매개 변수가 유효하지 않습니다.",
+    "MediaEngine.FfmpegInput": "오디오 원본 파일을 사용할 수 없습니다: {0}.",
+    "MediaEngine.FfmpegOutput": "오디오 대상 파일에 쓸 수 없거나, 이미 존재하거나, 원본 파일과 같습니다: {0}.",
+    "MediaEngine.FfmpegMissing": "포함된 FFmpeg 실행 파일이 없습니다: {0}.",
+    "MediaEngine.FfmpegStart": "오디오 변환기를 시작할 수 없습니다(프로세스 오류 {0}).",
+    "MediaEngine.FfmpegFailed": "오디오 변환에 실패했습니다(종료 코드 {0})."
+  }
+}

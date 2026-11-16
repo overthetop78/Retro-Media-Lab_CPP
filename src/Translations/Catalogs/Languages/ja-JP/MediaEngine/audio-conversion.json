@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "MediaEngine.FfmpegRequest": "音声変換パラメーターが無効です。",
+    "MediaEngine.FfmpegInput": "音声ソースファイルを利用できません: {0}。",
+    "MediaEngine.FfmpegOutput": "音声出力先に書き込めないか、既に存在するか、ソースと同じファイルです: {0}。",
+    "MediaEngine.FfmpegMissing": "同梱の FFmpeg 実行ファイルが見つかりません: {0}。",
+    "MediaEngine.FfmpegStart": "音声コンバーターを起動できませんでした（プロセスエラー {0}）。",
+    "MediaEngine.FfmpegFailed": "音声変換に失敗しました（終了コード {0}）。"
+  }
+}
