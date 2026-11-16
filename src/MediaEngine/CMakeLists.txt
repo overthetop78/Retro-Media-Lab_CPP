@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Preparation/CueDocument.cpp
+  src/Preparation/CueWaveFiles.cpp
   src/Drives/Profiles.cpp
   src/Drives/Mechanics.cpp
   src/Drives/Audio.cpp

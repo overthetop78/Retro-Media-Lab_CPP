@@ -871,6 +871,9 @@
     <Filter Include="src\MediaEngine\src\Models\Sequential">
       <UniqueIdentifier>{1A8AAEE1-2289-5DE3-9815-0D1D9B3FE7E0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Preparation">
+      <UniqueIdentifier>{D25F6007-A826-5FAA-9450-39C0F09C3FE2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Primitives">
       <UniqueIdentifier>{BEE818AB-74EC-5973-A488-EC93B3503D53}</UniqueIdentifier>
     </Filter>
@@ -7941,6 +7944,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\AudioConversion.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -10794,6 +10800,12 @@
     <ClInclude Include="src\MediaEngine\src\Models\Sequential\TapeSignal.h">
       <Filter>src\MediaEngine\src\Models\Sequential</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Preparation\CueDocument.cpp">
+      <Filter>src\MediaEngine\src\Preparation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Preparation\CueWaveFiles.cpp">
+      <Filter>src\MediaEngine\src\Preparation</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h">
       <Filter>src\MediaEngine\src\Primitives</Filter>
     </ClInclude>

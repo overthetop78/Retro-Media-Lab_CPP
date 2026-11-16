@@ -1977,6 +1977,7 @@
     <None Include="src\MediaEngine\Assets\MechanicalAudio\Tape\Unidentified\Tape-player\Tape-insert.flac" />
     <None Include="src\MediaEngine\CMakeLists.txt" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\AudioConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveMechanics.h" />
@@ -2928,6 +2929,8 @@
     <ClInclude Include="src\MediaEngine\src\Models\Sequential\Image.h" />
     <ClCompile Include="src\MediaEngine\src\Models\Sequential\TapeSignal.cpp" />
     <ClInclude Include="src\MediaEngine\src\Models\Sequential\TapeSignal.h" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\CueDocument.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Preparation\CueWaveFiles.cpp" />
     <ClInclude Include="src\MediaEngine\src\Primitives\BitConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Bits.h" />
     <ClCompile Include="src\MediaEngine\src\Primitives\Crc32C.cpp" />
