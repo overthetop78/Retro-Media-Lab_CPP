@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.HxcNoRevolutions": "HxC Stream requires captured flux revolutions.",
+    "MediaEngine.HxcPulseInterval": "HxC pulse interval cannot be represented exactly.",
+    "MediaEngine.HxcIndexPeriod": "Flux transitions exceed the index period.",
+    "MediaEngine.HxcIoLength": "HxC I/O capture is too long.",
+    "MediaEngine.HxcChunkLength": "HxC chunk is too large.",
+    "MediaEngine.HxcResolution": "HxC pulse or index sampling cannot preserve these source timings exactly.",
+    "MediaEngine.HxcLz4Encode": "Cannot encode HxC LZ4 block."
+  }
+}

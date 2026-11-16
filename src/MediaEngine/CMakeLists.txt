@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HxcStream/Encoding.cpp
+  src/Formats/HxcStream/Blocks.cpp
+  src/Formats/HxcStream/Digest.cpp
   src/Formats/I86f/Reader.cpp
   src/Formats/I86f/ProtectedImage.cpp
   src/Formats/I86f/Adapter.cpp
@@ -336,7 +339,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Sources/FileIdentity.cpp)
 target_compile_definitions(RetroMediaLab.MediaEngine PRIVATE RETROMEDIALAB_MEDIAENGINE_BUILD)
 target_include_directories(RetroMediaLab.MediaEngine PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic)
+target_link_libraries(RetroMediaLab.MediaEngine PRIVATE Qt6::Core RetroMediaLab.MediaFileSystems zlibstatic lz4_static)
 set_target_properties(RetroMediaLab.MediaEngine PROPERTIES OUTPUT_NAME MediaEngine PREFIX "")
 install(TARGETS RetroMediaLab.MediaEngine RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 

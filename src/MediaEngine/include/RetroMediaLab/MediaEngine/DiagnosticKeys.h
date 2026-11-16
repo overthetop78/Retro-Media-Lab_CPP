@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view HxcNoRevolutions="MediaEngine.HxcNoRevolutions";
+inline constexpr std::string_view HxcPulseInterval="MediaEngine.HxcPulseInterval";
+inline constexpr std::string_view HxcIndexPeriod="MediaEngine.HxcIndexPeriod";
+inline constexpr std::string_view HxcIoLength="MediaEngine.HxcIoLength";
+inline constexpr std::string_view HxcChunkLength="MediaEngine.HxcChunkLength";
+inline constexpr std::string_view HxcResolution="MediaEngine.HxcResolution";
+inline constexpr std::string_view HxcLz4Encode="MediaEngine.HxcLz4Encode";
 inline constexpr std::string_view I86fSignature="MediaEngine.I86fSignature";
 inline constexpr std::string_view I86fTable="MediaEngine.I86fTable";
 inline constexpr std::string_view I86fOffset="MediaEngine.I86fOffset";

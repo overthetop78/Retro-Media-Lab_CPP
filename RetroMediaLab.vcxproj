@@ -610,6 +610,12 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Hfe\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Hfe\V3Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Hfe\Writer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Blocks.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HxcStream\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Digest.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\HxcStream\Encoding.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HxcStream\Internal.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\HxcStream\Stream.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\I86f\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\I86f\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\I86f\I86f.h" />
@@ -1154,6 +1160,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\heathkit-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hfe.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\hp-mmfm.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\hxc-encoding.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\image-disk.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-collection.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\iso-fm-decoding.json" />
@@ -1249,6 +1256,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\amiga-mfm.json" />
@@ -1390,6 +1398,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\amiga-mfm.json" />
@@ -1531,6 +1540,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\amiga-mfm.json" />
@@ -1672,6 +1682,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\amiga-mfm.json" />
@@ -1813,6 +1824,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\amiga-mfm.json" />
@@ -1954,6 +1966,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\amiga-mfm.json" />
@@ -2095,6 +2108,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\amiga-mfm.json" />
@@ -2236,6 +2250,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\amiga-mfm.json" />
@@ -2377,6 +2392,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\amiga-mfm.json" />
@@ -2518,6 +2534,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\amiga-mfm.json" />
@@ -2659,6 +2676,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\amiga-mfm.json" />
@@ -2800,6 +2818,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\amiga-mfm.json" />
@@ -2941,6 +2960,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\amiga-mfm.json" />
@@ -3082,6 +3102,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\amiga-mfm.json" />
@@ -3223,6 +3244,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\amiga-mfm.json" />
@@ -3364,6 +3386,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\amiga-mfm.json" />
@@ -3505,6 +3528,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\amiga-mfm.json" />
@@ -3646,6 +3670,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\amiga-mfm.json" />
@@ -3787,6 +3812,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\amiga-mfm.json" />
@@ -3928,6 +3954,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\amiga-mfm.json" />
@@ -4069,6 +4096,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\amiga-mfm.json" />
@@ -4210,6 +4238,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\amiga-mfm.json" />
@@ -4351,6 +4380,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\amiga-mfm.json" />
@@ -4492,6 +4522,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\amiga-mfm.json" />
@@ -4633,6 +4664,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\amiga-mfm.json" />
@@ -4774,6 +4806,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\amiga-mfm.json" />
@@ -4915,6 +4948,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\amiga-mfm.json" />
@@ -5056,6 +5090,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\amiga-mfm.json" />
@@ -5197,6 +5232,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\themes.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaAnalysis\content-types.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\86f.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\adf.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\aed6200p-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\amiga-mfm.json" />
