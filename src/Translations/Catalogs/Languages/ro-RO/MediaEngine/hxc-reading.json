@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Numele fișierului HxC Stream trebuie să se termine cu NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Nu s-a găsit niciun fișier de pistă HxC Stream.",
+    "MediaEngine.HxcChunk": "Bloc de date HxC Stream nevalid la octetul {0}.",
+    "MediaEngine.HxcCrc": "CRC HxC Stream nevalid la octetul {0}.",
+    "MediaEngine.HxcBlockType": "Tip de bloc HxC Stream {0} necunoscut la octetul {1}.",
+    "MediaEngine.HxcIoOdd": "Blocul de intrări și ieșiri HxC Stream are o dimensiune impară după decomprimare.",
+    "MediaEngine.HxcLz4Incomplete": "Blocul HxC Stream LZ4 este incomplet.",
+    "MediaEngine.HxcPulseCode": "Impulsul HxC Stream folosește un cod necunoscut de lungime variabilă.",
+    "MediaEngine.HxcPulseCount": "Blocul de impulsuri HxC Stream s-a terminat înainte de numărul de impulsuri declarat.",
+    "MediaEngine.HxcPulseTruncated": "Impulsul HxC Stream este trunchiat.",
+    "MediaEngine.HxcDuration": "Durata unei rotații HxC Stream depășește intervalul acceptat.",
+    "MediaEngine.HxcBlockSize": "Dimensiunea blocului HxC Stream {0} depășește limita acceptată.",
+    "MediaEngine.HxcTruncated": "Structura HxC Stream este trunchiată."
+  }
+}

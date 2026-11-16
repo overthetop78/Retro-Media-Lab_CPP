@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Stream 파일 이름은 NN.S.hxcstream으로 끝나야 합니다.",
+    "MediaEngine.HxcNoFiles": "HxC Stream 트랙 파일을 찾을 수 없습니다.",
+    "MediaEngine.HxcChunk": "바이트 위치 {0}의 HxC Stream 데이터 블록이 올바르지 않습니다.",
+    "MediaEngine.HxcCrc": "바이트 위치 {0}의 HxC Stream CRC가 올바르지 않습니다.",
+    "MediaEngine.HxcBlockType": "바이트 위치 {1}의 HxC Stream 블록 유형 {0}을 알 수 없습니다.",
+    "MediaEngine.HxcIoOdd": "HxC Stream 입출력 블록의 압축 해제 후 크기가 홀수입니다.",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4 블록이 불완전합니다.",
+    "MediaEngine.HxcPulseCode": "HxC Stream 펄스가 알 수 없는 가변 길이 코드를 사용합니다.",
+    "MediaEngine.HxcPulseCount": "HxC Stream 펄스 블록이 선언된 펄스 수에 도달하기 전에 끝났습니다.",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream 펄스가 잘렸습니다.",
+    "MediaEngine.HxcDuration": "HxC Stream 회전 시간이 지원 범위를 초과합니다.",
+    "MediaEngine.HxcBlockSize": "HxC Stream 블록 크기 {0}이 지원 한도를 초과합니다.",
+    "MediaEngine.HxcTruncated": "HxC Stream 구조가 잘렸습니다."
+  }
+}

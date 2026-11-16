@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "يجب أن ينتهي اسم ملف HxC Stream باللاحقة NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "لم يُعثر على أي ملف مسار HxC Stream.",
+    "MediaEngine.HxcChunk": "كتلة بيانات HxC Stream غير صالحة عند البايت {0}.",
+    "MediaEngine.HxcCrc": "قيمة CRC الخاصة بـ HxC Stream غير صالحة عند البايت {0}.",
+    "MediaEngine.HxcBlockType": "نوع كتلة HxC Stream غير معروف: {0} عند البايت {1}.",
+    "MediaEngine.HxcIoOdd": "حجم كتلة الإدخال والإخراج في HxC Stream بعد فك الضغط عدد فردي.",
+    "MediaEngine.HxcLz4Incomplete": "كتلة HxC Stream LZ4 غير مكتملة.",
+    "MediaEngine.HxcPulseCode": "تستخدم نبضة HxC Stream رمزًا متغير الطول غير معروف.",
+    "MediaEngine.HxcPulseCount": "انتهت كتلة نبضات HxC Stream قبل بلوغ عدد النبضات المعلن.",
+    "MediaEngine.HxcPulseTruncated": "نبضة HxC Stream مبتورة.",
+    "MediaEngine.HxcDuration": "تتجاوز مدة دورة HxC Stream النطاق المدعوم.",
+    "MediaEngine.HxcBlockSize": "حجم كتلة HxC Stream وهو {0} يتجاوز الحد المدعوم.",
+    "MediaEngine.HxcTruncated": "بنية HxC Stream مبتورة."
+  }
+}

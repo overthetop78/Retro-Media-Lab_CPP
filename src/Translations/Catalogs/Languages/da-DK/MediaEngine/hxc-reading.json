@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Filnavnet til HxC Stream skal slutte med NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Ingen HxC Stream-sporfil blev fundet.",
+    "MediaEngine.HxcChunk": "Ugyldig HxC Stream-datablok ved byte {0}.",
+    "MediaEngine.HxcCrc": "Ugyldig HxC Stream-CRC ved byte {0}.",
+    "MediaEngine.HxcBlockType": "Ukendt HxC Stream-bloktype {0} ved byte {1}.",
+    "MediaEngine.HxcIoOdd": "Ind- og udgangsblokken i HxC Stream har en ulige størrelse efter udpakning.",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4-blokken er ufuldstændig.",
+    "MediaEngine.HxcPulseCode": "HxC Stream-pulsen bruger en ukendt kode med variabel længde.",
+    "MediaEngine.HxcPulseCount": "HxC Stream-pulsblokken sluttede, før det angivne antal pulser var nået.",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream-pulsen er afkortet.",
+    "MediaEngine.HxcDuration": "Varigheden af en HxC Stream-omdrejning overstiger det understøttede område.",
+    "MediaEngine.HxcBlockSize": "HxC Stream-blokstørrelsen {0} overstiger den understøttede grænse.",
+    "MediaEngine.HxcTruncated": "HxC Stream-strukturen er afkortet."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Назва файлу HxC Stream має закінчуватися на NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Файл доріжки HxC Stream не знайдено.",
+    "MediaEngine.HxcChunk": "Недійсний блок даних HxC Stream у байті {0}.",
+    "MediaEngine.HxcCrc": "Недійсний CRC HxC Stream у байті {0}.",
+    "MediaEngine.HxcBlockType": "Невідомий тип блоку HxC Stream {0} у байті {1}.",
+    "MediaEngine.HxcIoOdd": "Блок входів і виходів HxC Stream має непарний розмір після розпакування.",
+    "MediaEngine.HxcLz4Incomplete": "Блок HxC Stream LZ4 неповний.",
+    "MediaEngine.HxcPulseCode": "Імпульс HxC Stream використовує невідомий код змінної довжини.",
+    "MediaEngine.HxcPulseCount": "Блок імпульсів HxC Stream закінчився до досягнення заявленої кількості імпульсів.",
+    "MediaEngine.HxcPulseTruncated": "Імпульс HxC Stream обрізаний.",
+    "MediaEngine.HxcDuration": "Тривалість оберту HxC Stream перевищує підтримуваний діапазон.",
+    "MediaEngine.HxcBlockSize": "Розмір блоку HxC Stream {0} перевищує підтримувану межу.",
+    "MediaEngine.HxcTruncated": "Структура HxC Stream обрізана."
+  }
+}

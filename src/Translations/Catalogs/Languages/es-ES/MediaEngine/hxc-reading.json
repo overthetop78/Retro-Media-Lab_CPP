@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "El nombre del archivo HxC Stream debe terminar en NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "No se encontró ningún archivo de pista HxC Stream.",
+    "MediaEngine.HxcChunk": "Bloque de datos HxC Stream no válido en el byte {0}.",
+    "MediaEngine.HxcCrc": "CRC HxC Stream no válido en el byte {0}.",
+    "MediaEngine.HxcBlockType": "Tipo de bloque HxC Stream {0} desconocido en el byte {1}.",
+    "MediaEngine.HxcIoOdd": "El tamaño descomprimido del bloque de entradas y salidas HxC Stream es impar.",
+    "MediaEngine.HxcLz4Incomplete": "El bloque HxC Stream LZ4 está incompleto.",
+    "MediaEngine.HxcPulseCode": "El pulso HxC Stream utiliza un código de longitud variable desconocido.",
+    "MediaEngine.HxcPulseCount": "El bloque de pulsos HxC Stream terminó antes de alcanzar el número de pulsos declarado.",
+    "MediaEngine.HxcPulseTruncated": "El pulso HxC Stream está truncado.",
+    "MediaEngine.HxcDuration": "La duración de una revolución HxC Stream supera el intervalo admitido.",
+    "MediaEngine.HxcBlockSize": "El tamaño del bloque HxC Stream {0} supera el límite admitido.",
+    "MediaEngine.HxcTruncated": "La estructura HxC Stream está truncada."
+  }
+}

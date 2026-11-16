@@ -4,6 +4,8 @@
 #include <string>
 namespace RetroMediaLab::MediaEngine::HxcStream {
 using Metadata=std::map<std::string,std::string>;
+struct DecodedTrack {std::vector<Flux::TrackFluxRevolution> revolutions;bool writeProtected=false;Metadata metadata;std::vector<std::uint8_t> nativeBytes;};
+RETROMEDIALAB_MEDIAENGINE_API DecodedTrack readTrack(std::vector<std::uint8_t>,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API std::string nativeKey(std::int32_t cylinder,std::int32_t head);
 RETROMEDIALAB_MEDIAENGINE_API std::string digestKey(std::int32_t cylinder,std::int32_t head);
 RETROMEDIALAB_MEDIAENGINE_API std::string fieldsPrefix(std::int32_t cylinder,std::int32_t head);

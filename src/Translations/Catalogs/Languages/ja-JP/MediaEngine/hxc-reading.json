@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Streamのファイル名はNN.S.hxcstreamで終わる必要があります。",
+    "MediaEngine.HxcNoFiles": "HxC Streamのトラックファイルが見つかりません。",
+    "MediaEngine.HxcChunk": "バイト位置{0}のHxC Streamデータブロックが無効です。",
+    "MediaEngine.HxcCrc": "バイト位置{0}のHxC Stream CRCが無効です。",
+    "MediaEngine.HxcBlockType": "バイト位置{1}のHxC Streamブロック型{0}は不明です。",
+    "MediaEngine.HxcIoOdd": "HxC Streamの入出力ブロックの展開後のサイズが奇数です。",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4ブロックが不完全です。",
+    "MediaEngine.HxcPulseCode": "HxC Streamのパルスで不明な可変長コードが使用されています。",
+    "MediaEngine.HxcPulseCount": "HxC Streamのパルスブロックが宣言されたパルス数に達する前に終了しました。",
+    "MediaEngine.HxcPulseTruncated": "HxC Streamのパルスが途中で切れています。",
+    "MediaEngine.HxcDuration": "HxC Streamの回転時間が対応範囲を超えています。",
+    "MediaEngine.HxcBlockSize": "HxC Streamブロックのサイズ{0}が対応上限を超えています。",
+    "MediaEngine.HxcTruncated": "HxC Streamの構造が途中で切れています。"
+  }
+}

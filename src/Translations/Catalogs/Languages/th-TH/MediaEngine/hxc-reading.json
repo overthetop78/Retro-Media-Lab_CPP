@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "ชื่อแฟ้ม HxC Stream ต้องลงท้ายด้วย NN.S.hxcstream",
+    "MediaEngine.HxcNoFiles": "ไม่พบแฟ้มแทร็ก HxC Stream",
+    "MediaEngine.HxcChunk": "บล็อกข้อมูล HxC Stream ไม่ถูกต้องที่ไบต์ {0}",
+    "MediaEngine.HxcCrc": "CRC ของ HxC Stream ไม่ถูกต้องที่ไบต์ {0}",
+    "MediaEngine.HxcBlockType": "ไม่รู้จักชนิดบล็อก HxC Stream {0} ที่ไบต์ {1}",
+    "MediaEngine.HxcIoOdd": "ขนาดหลังคลายการบีบอัดของบล็อกอินพุตและเอาต์พุต HxC Stream เป็นเลขคี่",
+    "MediaEngine.HxcLz4Incomplete": "บล็อก HxC Stream LZ4 ไม่สมบูรณ์",
+    "MediaEngine.HxcPulseCode": "พัลส์ HxC Stream ใช้รหัสความยาวแปรผันที่ไม่รู้จัก",
+    "MediaEngine.HxcPulseCount": "บล็อกพัลส์ HxC Stream สิ้นสุดก่อนถึงจำนวนพัลส์ที่ระบุไว้",
+    "MediaEngine.HxcPulseTruncated": "พัลส์ HxC Stream ถูกตัดทอน",
+    "MediaEngine.HxcDuration": "ระยะเวลาหนึ่งรอบการหมุนของ HxC Stream เกินช่วงที่รองรับ",
+    "MediaEngine.HxcBlockSize": "ขนาดบล็อก HxC Stream {0} เกินขีดจำกัดที่รองรับ",
+    "MediaEngine.HxcTruncated": "โครงสร้าง HxC Stream ถูกตัดทอน"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "A HxC Stream fájlnévnek NN.S.hxcstream végződésűnek kell lennie.",
+    "MediaEngine.HxcNoFiles": "Nem található HxC Stream sávfájl.",
+    "MediaEngine.HxcChunk": "Érvénytelen HxC Stream adatblokk a(z) {0} bájtnál.",
+    "MediaEngine.HxcCrc": "Érvénytelen HxC Stream CRC a(z) {0} bájtnál.",
+    "MediaEngine.HxcBlockType": "Ismeretlen HxC Stream blokktípus {0} a(z) {1} bájtnál.",
+    "MediaEngine.HxcIoOdd": "A HxC Stream be- és kimeneti blokkjának kibontott mérete páratlan.",
+    "MediaEngine.HxcLz4Incomplete": "A HxC Stream LZ4 blokk hiányos.",
+    "MediaEngine.HxcPulseCode": "A HxC Stream impulzus ismeretlen változó hosszúságú kódot használ.",
+    "MediaEngine.HxcPulseCount": "A HxC Stream impulzusblokk a megadott impulzusszám elérése előtt véget ért.",
+    "MediaEngine.HxcPulseTruncated": "A HxC Stream impulzus csonka.",
+    "MediaEngine.HxcDuration": "A HxC Stream fordulat időtartama meghaladja a támogatott tartományt.",
+    "MediaEngine.HxcBlockSize": "A HxC Stream blokk {0} mérete meghaladja a támogatott határt.",
+    "MediaEngine.HxcTruncated": "A HxC Stream struktúra csonka."
+  }
+}

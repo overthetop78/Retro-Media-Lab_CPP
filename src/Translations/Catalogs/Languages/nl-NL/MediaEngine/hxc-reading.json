@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "De bestandsnaam van HxC Stream moet eindigen op NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Geen HxC Stream-spoorbestand gevonden.",
+    "MediaEngine.HxcChunk": "Ongeldig HxC Stream-gegevensblok op byte {0}.",
+    "MediaEngine.HxcCrc": "Ongeldige HxC Stream-CRC op byte {0}.",
+    "MediaEngine.HxcBlockType": "Onbekend HxC Stream-bloktype {0} op byte {1}.",
+    "MediaEngine.HxcIoOdd": "Het HxC Stream-invoer- en uitvoerblok heeft een oneven grootte na het uitpakken.",
+    "MediaEngine.HxcLz4Incomplete": "Het HxC Stream LZ4-blok is onvolledig.",
+    "MediaEngine.HxcPulseCode": "De HxC Stream-puls gebruikt een onbekende code met variabele lengte.",
+    "MediaEngine.HxcPulseCount": "Het HxC Stream-pulsblok eindigde voordat het opgegeven aantal pulsen was bereikt.",
+    "MediaEngine.HxcPulseTruncated": "De HxC Stream-puls is afgebroken.",
+    "MediaEngine.HxcDuration": "De duur van een HxC Stream-omwenteling overschrijdt het ondersteunde bereik.",
+    "MediaEngine.HxcBlockSize": "De HxC Stream-blokgrootte {0} overschrijdt de ondersteunde limiet.",
+    "MediaEngine.HxcTruncated": "De HxC Stream-structuur is afgebroken."
+  }
+}

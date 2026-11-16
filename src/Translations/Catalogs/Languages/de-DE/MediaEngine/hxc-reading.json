@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Der HxC Stream-Dateiname muss mit NN.S.hxcstream enden.",
+    "MediaEngine.HxcNoFiles": "Keine HxC Stream-Spurdatei gefunden.",
+    "MediaEngine.HxcChunk": "Ungültiger HxC Stream-Datenblock bei Byte {0}.",
+    "MediaEngine.HxcCrc": "Ungültiger HxC Stream-CRC bei Byte {0}.",
+    "MediaEngine.HxcBlockType": "Unbekannter HxC Stream-Blocktyp {0} bei Byte {1}.",
+    "MediaEngine.HxcIoOdd": "Der HxC Stream-Ein-/Ausgabeblock hat nach dem Entpacken eine ungerade Größe.",
+    "MediaEngine.HxcLz4Incomplete": "Der HxC Stream LZ4-Block ist unvollständig.",
+    "MediaEngine.HxcPulseCode": "Der HxC Stream-Impuls verwendet einen unbekannten Code mit variabler Länge.",
+    "MediaEngine.HxcPulseCount": "Der HxC Stream-Impulsblock endete vor der angegebenen Anzahl von Impulsen.",
+    "MediaEngine.HxcPulseTruncated": "Der HxC Stream-Impuls ist abgeschnitten.",
+    "MediaEngine.HxcDuration": "Die Dauer einer HxC Stream-Umdrehung überschreitet den unterstützten Bereich.",
+    "MediaEngine.HxcBlockSize": "Die HxC Stream-Blockgröße {0} überschreitet den unterstützten Grenzwert.",
+    "MediaEngine.HxcTruncated": "Die HxC Stream-Struktur ist abgeschnitten."
+  }
+}

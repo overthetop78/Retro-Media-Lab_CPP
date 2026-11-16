@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Stream 文件名必须以 NN.S.hxcstream 结尾。",
+    "MediaEngine.HxcNoFiles": "未找到 HxC Stream 磁道文件。",
+    "MediaEngine.HxcChunk": "字节 {0} 处的 HxC Stream 数据块无效。",
+    "MediaEngine.HxcCrc": "字节 {0} 处的 HxC Stream CRC 无效。",
+    "MediaEngine.HxcBlockType": "字节 {1} 处的 HxC Stream 块类型 {0} 未知。",
+    "MediaEngine.HxcIoOdd": "HxC Stream 输入输出块的解压后大小为奇数。",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4 块不完整。",
+    "MediaEngine.HxcPulseCode": "HxC Stream 脉冲使用未知的可变长度编码。",
+    "MediaEngine.HxcPulseCount": "HxC Stream 脉冲块在达到声明的脉冲数量之前结束。",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream 脉冲被截断。",
+    "MediaEngine.HxcDuration": "HxC Stream 旋转一周的时间超出支持范围。",
+    "MediaEngine.HxcBlockSize": "HxC Stream 块大小 {0} 超出支持上限。",
+    "MediaEngine.HxcTruncated": "HxC Stream 结构被截断。"
+  }
+}

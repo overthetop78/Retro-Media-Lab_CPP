@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Nama berkas HxC Stream harus diakhiri dengan NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Tidak ditemukan berkas trek HxC Stream.",
+    "MediaEngine.HxcChunk": "Blok data HxC Stream tidak valid pada byte {0}.",
+    "MediaEngine.HxcCrc": "CRC HxC Stream tidak valid pada byte {0}.",
+    "MediaEngine.HxcBlockType": "Jenis blok HxC Stream {0} tidak dikenal pada byte {1}.",
+    "MediaEngine.HxcIoOdd": "Ukuran blok masukan dan keluaran HxC Stream setelah dekompresi bernilai ganjil.",
+    "MediaEngine.HxcLz4Incomplete": "Blok HxC Stream LZ4 tidak lengkap.",
+    "MediaEngine.HxcPulseCode": "Pulsa HxC Stream menggunakan kode dengan panjang variabel yang tidak dikenal.",
+    "MediaEngine.HxcPulseCount": "Blok pulsa HxC Stream berakhir sebelum mencapai jumlah pulsa yang dinyatakan.",
+    "MediaEngine.HxcPulseTruncated": "Pulsa HxC Stream terpotong.",
+    "MediaEngine.HxcDuration": "Durasi putaran HxC Stream melampaui rentang yang didukung.",
+    "MediaEngine.HxcBlockSize": "Ukuran blok HxC Stream {0} melampaui batas yang didukung.",
+    "MediaEngine.HxcTruncated": "Struktur HxC Stream terpotong."
+  }
+}

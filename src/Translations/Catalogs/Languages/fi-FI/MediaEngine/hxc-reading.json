@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Stream-tiedoston nimen on päätyttävä merkkijonoon NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "HxC Stream-raitatiedostoa ei löytynyt.",
+    "MediaEngine.HxcChunk": "Virheellinen HxC Stream-datalohko tavussa {0}.",
+    "MediaEngine.HxcCrc": "Virheellinen HxC Stream-CRC tavussa {0}.",
+    "MediaEngine.HxcBlockType": "Tuntematon HxC Stream-lohkotyyppi {0} tavussa {1}.",
+    "MediaEngine.HxcIoOdd": "HxC Stream-tulo- ja lähtölohkon purettu koko on pariton.",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4 -lohko on puutteellinen.",
+    "MediaEngine.HxcPulseCode": "HxC Stream-pulssi käyttää tuntematonta vaihtuvapituista koodia.",
+    "MediaEngine.HxcPulseCount": "HxC Stream-pulssilohko päättyi ennen ilmoitettua pulssimäärää.",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream-pulssi on katkennut.",
+    "MediaEngine.HxcDuration": "HxC Stream-kierroksen kesto ylittää tuetun alueen.",
+    "MediaEngine.HxcBlockSize": "HxC Stream-lohkon koko {0} ylittää tuetun rajan.",
+    "MediaEngine.HxcTruncated": "HxC Stream-rakenne on katkennut."
+  }
+}

@@ -1,6 +1,19 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view HxcFileName="MediaEngine.HxcFileName";
+inline constexpr std::string_view HxcNoFiles="MediaEngine.HxcNoFiles";
+inline constexpr std::string_view HxcChunk="MediaEngine.HxcChunk";
+inline constexpr std::string_view HxcCrc="MediaEngine.HxcCrc";
+inline constexpr std::string_view HxcBlockType="MediaEngine.HxcBlockType";
+inline constexpr std::string_view HxcIoOdd="MediaEngine.HxcIoOdd";
+inline constexpr std::string_view HxcLz4Incomplete="MediaEngine.HxcLz4Incomplete";
+inline constexpr std::string_view HxcPulseCode="MediaEngine.HxcPulseCode";
+inline constexpr std::string_view HxcPulseCount="MediaEngine.HxcPulseCount";
+inline constexpr std::string_view HxcPulseTruncated="MediaEngine.HxcPulseTruncated";
+inline constexpr std::string_view HxcDuration="MediaEngine.HxcDuration";
+inline constexpr std::string_view HxcBlockSize="MediaEngine.HxcBlockSize";
+inline constexpr std::string_view HxcTruncated="MediaEngine.HxcTruncated";
 inline constexpr std::string_view HxcNoRevolutions="MediaEngine.HxcNoRevolutions";
 inline constexpr std::string_view HxcPulseInterval="MediaEngine.HxcPulseInterval";
 inline constexpr std::string_view HxcIndexPeriod="MediaEngine.HxcIndexPeriod";

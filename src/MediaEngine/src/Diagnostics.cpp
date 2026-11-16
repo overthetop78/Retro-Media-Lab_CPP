@@ -3,6 +3,20 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::HxcFileName:return DiagnosticKeys::HxcFileName;
+    case DiagnosticCode::HxcNoFiles:return DiagnosticKeys::HxcNoFiles;
+    case DiagnosticCode::HxcChunk:return DiagnosticKeys::HxcChunk;
+    case DiagnosticCode::HxcCrc:return DiagnosticKeys::HxcCrc;
+    case DiagnosticCode::HxcBlockType:return DiagnosticKeys::HxcBlockType;
+    case DiagnosticCode::HxcIoOdd:return DiagnosticKeys::HxcIoOdd;
+    case DiagnosticCode::HxcLz4Incomplete:return DiagnosticKeys::HxcLz4Incomplete;
+    case DiagnosticCode::HxcPulseCode:return DiagnosticKeys::HxcPulseCode;
+    case DiagnosticCode::HxcPulseCount:return DiagnosticKeys::HxcPulseCount;
+    case DiagnosticCode::HxcPulseTruncated:return DiagnosticKeys::HxcPulseTruncated;
+    case DiagnosticCode::HxcDuration:return DiagnosticKeys::HxcDuration;
+    case DiagnosticCode::HxcBlockSize:return DiagnosticKeys::HxcBlockSize;
+    case DiagnosticCode::HxcTruncated:return DiagnosticKeys::HxcTruncated;
+
     case DiagnosticCode::HxcNoRevolutions:return DiagnosticKeys::HxcNoRevolutions;
     case DiagnosticCode::HxcPulseInterval:return DiagnosticKeys::HxcPulseInterval;
     case DiagnosticCode::HxcIndexPeriod:return DiagnosticKeys::HxcIndexPeriod;

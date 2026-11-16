@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "שם קובץ HxC Stream חייב להסתיים בסיומת NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "לא נמצא קובץ רצועה של HxC Stream.",
+    "MediaEngine.HxcChunk": "בלוק נתונים לא תקין של HxC Stream בבית {0}.",
+    "MediaEngine.HxcCrc": "CRC לא תקין של HxC Stream בבית {0}.",
+    "MediaEngine.HxcBlockType": "סוג בלוק HxC Stream לא מוכר: {0} בבית {1}.",
+    "MediaEngine.HxcIoOdd": "הגודל של בלוק הקלט והפלט של HxC Stream לאחר הפענוח הוא אי־זוגי.",
+    "MediaEngine.HxcLz4Incomplete": "בלוק HxC Stream LZ4 אינו שלם.",
+    "MediaEngine.HxcPulseCode": "פולס HxC Stream משתמש בקוד באורך משתנה שאינו מוכר.",
+    "MediaEngine.HxcPulseCount": "בלוק הפולסים של HxC Stream הסתיים לפני מספר הפולסים המוצהר.",
+    "MediaEngine.HxcPulseTruncated": "פולס HxC Stream קטוע.",
+    "MediaEngine.HxcDuration": "משך סיבוב HxC Stream חורג מהטווח הנתמך.",
+    "MediaEngine.HxcBlockSize": "גודל בלוק HxC Stream, ‏{0}, חורג מהמגבלה הנתמכת.",
+    "MediaEngine.HxcTruncated": "מבנה HxC Stream קטוע."
+  }
+}

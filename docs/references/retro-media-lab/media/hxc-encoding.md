@@ -2,7 +2,7 @@
 
 Références C# en lecture seule : les cinq fichiers de `F:/GW GUI/src/RetroMediaLab.MediaEngine/Images/Formats/Floppy/HxcStream/`. Leurs SHA256 actuels concordent avec `inventaire-csharp.csv`.
 
-Ce bloc porte `HxcStreamEncoding`, les trois fonctions de clés par piste de `HxcStreamMetadataKeys`, les constantes nécessaires au codage et le CRC de `HxcStreamReader`. Le lecteur de captures et le writer de fichiers ne sont pas encore portés.
+Ce bloc porte `HxcStreamEncoding`, les trois fonctions de clés par piste de `HxcStreamMetadataKeys`, les constantes nécessaires au codage et le CRC de `HxcStreamReader`. Le lecteur de captures est terminé dans le bloc 138 (`hxc-reader.md`). Le writer de fichiers reste à porter.
 
 ## Règles du codage
 

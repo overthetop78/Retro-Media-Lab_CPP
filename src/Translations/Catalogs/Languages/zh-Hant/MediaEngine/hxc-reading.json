@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Stream 檔案名稱必須以 NN.S.hxcstream 結尾。",
+    "MediaEngine.HxcNoFiles": "找不到 HxC Stream 磁軌檔案。",
+    "MediaEngine.HxcChunk": "位元組 {0} 處的 HxC Stream 資料區塊無效。",
+    "MediaEngine.HxcCrc": "位元組 {0} 處的 HxC Stream CRC 無效。",
+    "MediaEngine.HxcBlockType": "位元組 {1} 處的 HxC Stream 區塊類型 {0} 不明。",
+    "MediaEngine.HxcIoOdd": "HxC Stream 輸入輸出區塊的解壓縮後大小為奇數。",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4 區塊不完整。",
+    "MediaEngine.HxcPulseCode": "HxC Stream 脈衝使用不明的可變長度編碼。",
+    "MediaEngine.HxcPulseCount": "HxC Stream 脈衝區塊在達到宣告的脈衝數量之前結束。",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream 脈衝遭到截斷。",
+    "MediaEngine.HxcDuration": "HxC Stream 旋轉一周的時間超出支援範圍。",
+    "MediaEngine.HxcBlockSize": "HxC Stream 區塊大小 {0} 超出支援上限。",
+    "MediaEngine.HxcTruncated": "HxC Stream 結構遭到截斷。"
+  }
+}

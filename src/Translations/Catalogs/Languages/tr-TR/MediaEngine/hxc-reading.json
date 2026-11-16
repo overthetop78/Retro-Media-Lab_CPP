@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "HxC Stream dosya adı NN.S.hxcstream ile bitmelidir.",
+    "MediaEngine.HxcNoFiles": "HxC Stream iz dosyası bulunamadı.",
+    "MediaEngine.HxcChunk": "{0} baytında geçersiz HxC Stream veri bloğu.",
+    "MediaEngine.HxcCrc": "{0} baytında geçersiz HxC Stream CRC.",
+    "MediaEngine.HxcBlockType": "{1} baytında bilinmeyen HxC Stream blok türü {0}.",
+    "MediaEngine.HxcIoOdd": "HxC Stream giriş ve çıkış bloğunun açılmış boyutu tek sayıdır.",
+    "MediaEngine.HxcLz4Incomplete": "HxC Stream LZ4 bloğu eksik.",
+    "MediaEngine.HxcPulseCode": "HxC Stream darbesi bilinmeyen bir değişken uzunluk kodu kullanıyor.",
+    "MediaEngine.HxcPulseCount": "HxC Stream darbe bloğu, belirtilen darbe sayısına ulaşmadan sona erdi.",
+    "MediaEngine.HxcPulseTruncated": "HxC Stream darbesi kesilmiş.",
+    "MediaEngine.HxcDuration": "HxC Stream dönüş süresi desteklenen aralığı aşıyor.",
+    "MediaEngine.HxcBlockSize": "HxC Stream blok boyutu {0}, desteklenen sınırı aşıyor.",
+    "MediaEngine.HxcTruncated": "HxC Stream yapısı kesilmiş."
+  }
+}

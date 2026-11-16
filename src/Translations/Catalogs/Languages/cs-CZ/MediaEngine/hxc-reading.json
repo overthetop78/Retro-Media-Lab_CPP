@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Název souboru HxC Stream musí končit příponou NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Nebyl nalezen žádný soubor stopy HxC Stream.",
+    "MediaEngine.HxcChunk": "Neplatný datový blok HxC Stream na bajtu {0}.",
+    "MediaEngine.HxcCrc": "Neplatný CRC HxC Stream na bajtu {0}.",
+    "MediaEngine.HxcBlockType": "Neznámý typ bloku HxC Stream {0} na bajtu {1}.",
+    "MediaEngine.HxcIoOdd": "Blok vstupů a výstupů HxC Stream má lichou rozbalenou velikost.",
+    "MediaEngine.HxcLz4Incomplete": "Blok HxC Stream LZ4 je neúplný.",
+    "MediaEngine.HxcPulseCode": "Impulz HxC Stream používá neznámý kód proměnné délky.",
+    "MediaEngine.HxcPulseCount": "Blok impulzů HxC Stream skončil před dosažením deklarovaného počtu impulzů.",
+    "MediaEngine.HxcPulseTruncated": "Impulz HxC Stream je zkrácený.",
+    "MediaEngine.HxcDuration": "Doba otáčky HxC Stream překračuje podporovaný rozsah.",
+    "MediaEngine.HxcBlockSize": "Velikost bloku HxC Stream {0} překračuje podporovaný limit.",
+    "MediaEngine.HxcTruncated": "Struktura HxC Stream je zkrácená."
+  }
+}

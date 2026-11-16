@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Το όνομα αρχείου HxC Stream πρέπει να τελειώνει σε NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Δεν βρέθηκε αρχείο τροχιάς HxC Stream.",
+    "MediaEngine.HxcChunk": "Μη έγκυρο μπλοκ δεδομένων HxC Stream στο byte {0}.",
+    "MediaEngine.HxcCrc": "Μη έγκυρο CRC HxC Stream στο byte {0}.",
+    "MediaEngine.HxcBlockType": "Άγνωστος τύπος μπλοκ HxC Stream {0} στο byte {1}.",
+    "MediaEngine.HxcIoOdd": "Το μπλοκ εισόδων και εξόδων HxC Stream έχει περιττό μέγεθος μετά την αποσυμπίεση.",
+    "MediaEngine.HxcLz4Incomplete": "Το μπλοκ HxC Stream LZ4 είναι ελλιπές.",
+    "MediaEngine.HxcPulseCode": "Ο παλμός HxC Stream χρησιμοποιεί άγνωστο κώδικα μεταβλητού μήκους.",
+    "MediaEngine.HxcPulseCount": "Το μπλοκ παλμών HxC Stream έληξε πριν συμπληρωθεί το δηλωμένο πλήθος παλμών.",
+    "MediaEngine.HxcPulseTruncated": "Ο παλμός HxC Stream έχει περικοπεί.",
+    "MediaEngine.HxcDuration": "Η διάρκεια περιστροφής HxC Stream υπερβαίνει το υποστηριζόμενο εύρος.",
+    "MediaEngine.HxcBlockSize": "Το μέγεθος μπλοκ HxC Stream {0} υπερβαίνει το υποστηριζόμενο όριο.",
+    "MediaEngine.HxcTruncated": "Η δομή HxC Stream έχει περικοπεί."
+  }
+}

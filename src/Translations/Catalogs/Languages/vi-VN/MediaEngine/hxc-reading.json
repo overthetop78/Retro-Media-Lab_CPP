@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.HxcFileName": "Tên tập tin HxC Stream phải kết thúc bằng NN.S.hxcstream.",
+    "MediaEngine.HxcNoFiles": "Không tìm thấy tập tin rãnh HxC Stream.",
+    "MediaEngine.HxcChunk": "Khối dữ liệu HxC Stream không hợp lệ tại byte {0}.",
+    "MediaEngine.HxcCrc": "CRC của HxC Stream không hợp lệ tại byte {0}.",
+    "MediaEngine.HxcBlockType": "Không rõ loại khối HxC Stream {0} tại byte {1}.",
+    "MediaEngine.HxcIoOdd": "Kích thước sau giải nén của khối đầu vào và đầu ra HxC Stream là số lẻ.",
+    "MediaEngine.HxcLz4Incomplete": "Khối HxC Stream LZ4 không đầy đủ.",
+    "MediaEngine.HxcPulseCode": "Xung HxC Stream sử dụng mã có độ dài biến đổi không rõ.",
+    "MediaEngine.HxcPulseCount": "Khối xung HxC Stream kết thúc trước khi đạt số xung đã khai báo.",
+    "MediaEngine.HxcPulseTruncated": "Xung HxC Stream bị cắt ngắn.",
+    "MediaEngine.HxcDuration": "Thời gian một vòng quay HxC Stream vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.HxcBlockSize": "Kích thước khối HxC Stream {0} vượt quá giới hạn được hỗ trợ.",
+    "MediaEngine.HxcTruncated": "Cấu trúc HxC Stream bị cắt ngắn."
+  }
+}

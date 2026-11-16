@@ -20,7 +20,7 @@ La tâche 135 termine le lecteur CP2 : groupes et descripteurs, reconstruction I
 
 La tâche 136 termine le lecteur 86F, ses modèles, sa conversion en pistes protégées et son adaptateur du registre ; compilation et contrôle ciblé réussis.
 
-La tâche 137 porte le codage exact HxC Stream, les blocs LZ4/CRC et les empreintes/clés de captures natives. Le lecteur et la publication du jeu multipiste restent à porter ; ils ne sont pas déclarés terminés.
+La tâche 137 porte le codage exact HxC Stream, les blocs LZ4/CRC et les empreintes/clés de captures natives. La tâche 138 termine le lecteur multipiste et son adaptateur du registre avec captures natives, empreintes et protection globale ; compilation et contrôle ciblé réussis. Le writer et la publication du jeu multipiste restent à porter.
 
 ## Travail restant
 

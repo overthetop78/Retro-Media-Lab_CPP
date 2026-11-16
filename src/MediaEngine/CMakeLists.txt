@@ -1,4 +1,11 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HxcStream/Reading.cpp
+  src/Formats/HxcStream/Pulses.cpp
+  src/Formats/HxcStream/Revolutions.cpp
+  src/Formats/HxcStream/Metadata.cpp
+  src/Formats/HxcStream/Files.cpp
+  src/Formats/HxcStream/Adapter.cpp
+
   src/Formats/HxcStream/Encoding.cpp
   src/Formats/HxcStream/Blocks.cpp
   src/Formats/HxcStream/Digest.cpp
