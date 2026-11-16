@@ -1,6 +1,14 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view UefHeader="MediaEngine.UefHeader";
+inline constexpr std::string_view UefChunk="MediaEngine.UefChunk";
+inline constexpr std::string_view UefSize="MediaEngine.UefSize";
+inline constexpr std::string_view UefCompression="MediaEngine.UefCompression";
+inline constexpr std::string_view UefWrite="MediaEngine.UefWrite";
+inline constexpr std::string_view UefValue="MediaEngine.UefValue";
+inline constexpr std::string_view UefUnknown="MediaEngine.UefUnknown";
+
 inline constexpr std::string_view CswHeader="MediaEngine.CswHeader";
 inline constexpr std::string_view CswCompression="MediaEngine.CswCompression";
 inline constexpr std::string_view CswPulse="MediaEngine.CswPulse";

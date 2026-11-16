@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Header UEF atau versi tidak didukung.",
+    "MediaEngine.UefChunk": "A UEF chunk header dipotong atau payload nya melebihi kontainer.",
+    "MediaEngine.UefSize": "Kontainer UEF melebihi batas dekompresi yang dikonfigurasi.",
+    "MediaEngine.UefCompression": "Arus gzip UEF tidak valid, dipotong atau tidak dapat dikompresi.",
+    "MediaEngine.UefWrite": "Dokumen tidak dapat ditulis sebagai aliran blok UEF tanpa kehilangan data.",
+    "MediaEngine.UefValue": "Nilai waktu UEF melebihi jangkauan numerik yang didukung.",
+    "MediaEngine.UefUnknown": "Potongan UEF 0x {0} ditahan tanpa interpretasi."
+  }
+}

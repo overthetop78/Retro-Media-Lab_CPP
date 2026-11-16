@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF başlığı veya versiyonu desteklenmez.",
+    "MediaEngine.UefChunk": "Bir UEF blok başlığı kesilmiş veya blok verileri kapsayıcı sınırlarını aşıyor.",
+    "MediaEngine.UefSize": "UEF kapsayıcısı yapılandırılmış açma boyutu sınırını aşıyor.",
+    "MediaEngine.UefCompression": "UEF gzip akışı geçersiz, kesilmiş veya sıkıştırılamadı.",
+    "MediaEngine.UefWrite": "Belge kayıpsız UEF chunk akışı olarak yazılamaz.",
+    "MediaEngine.UefValue": "UEF zamanlama değeri desteklenen sayısal aralığı aşıyor.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} yorum yapmadan muhafaza edildi."
+  }
+}

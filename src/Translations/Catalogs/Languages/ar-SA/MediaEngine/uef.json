@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "ترويسة UEF أو إصداره غير مدعوم.",
+    "MediaEngine.UefChunk": "ترويسة مقطع UEF مبتورة أو تتجاوز بياناته حدود الحاوية.",
+    "MediaEngine.UefSize": "تتجاوز حاوية UEF الحد المضبوط لفك الضغط.",
+    "MediaEngine.UefCompression": "تدفق gzip لحاوية UEF غير صالح أو مبتور أو تعذر ضغطه.",
+    "MediaEngine.UefWrite": "لا يمكن كتابة المستند كتدفق مقاطع UEF دون فقدان بيانات.",
+    "MediaEngine.UefValue": "تتجاوز قيمة توقيت UEF النطاق العددي المدعوم.",
+    "MediaEngine.UefUnknown": "تم الاحتفاظ بمقطع UEF ‏0x{0} دون تفسير."
+  }
+}

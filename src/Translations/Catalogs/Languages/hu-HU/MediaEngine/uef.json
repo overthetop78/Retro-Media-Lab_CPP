@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Az UEF fejléc vagy verzió nem támogatott.",
+    "MediaEngine.UefChunk": "Az UEF darabfejlécet csonkítják, vagy hasznos terhe meghaladja a tartályt.",
+    "MediaEngine.UefSize": "Az UEF tartály meghaladja a konfigurált dekompressziós határértéket.",
+    "MediaEngine.UefCompression": "Az UEF gzip patak érvénytelen, csonka vagy nem lehet tömöríteni.",
+    "MediaEngine.UefWrite": "A dokumentumot nem lehet veszteségmentes UEF áradatként írni.",
+    "MediaEngine.UefValue": "Az UEF időzítő értéke meghaladja a támogatott numerikus tartományt.",
+    "MediaEngine.UefUnknown": "Az UEF chunk 0x {0} értéket értelmezés nélkül megtartották."
+  }
+}

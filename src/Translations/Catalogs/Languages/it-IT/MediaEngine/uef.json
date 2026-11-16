@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "L'intestazione o la versione UEF non è supportata.",
+    "MediaEngine.UefChunk": "L'intestazione UEF chunk è troncata o il suo carico utile supera il contenitore.",
+    "MediaEngine.UefSize": "Il contenitore UEF supera il limite di decompressione configurato.",
+    "MediaEngine.UefCompression": "Il flusso di gzip UEF è non valido, troncato o non può essere compresso.",
+    "MediaEngine.UefWrite": "Il documento non può essere scritto come un flusso di blocchi UEF senza perdita di dati.",
+    "MediaEngine.UefValue": "Un valore di temporizzazione UEF supera l'intervallo numerico supportato.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} è stato mantenuto senza interpretazione."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF 헤더 또는 버전을 지원하지 않습니다.",
+    "MediaEngine.UefChunk": "UEF 청크 헤더가 잘렸거나 데이터가 컨테이너 범위를 초과합니다.",
+    "MediaEngine.UefSize": "UEF 컨테이너가 설정된 압축 해제 크기 제한을 초과합니다.",
+    "MediaEngine.UefCompression": "UEF gzip 스트림이 잘못되었거나 잘렸거나 압축하지 못했습니다.",
+    "MediaEngine.UefWrite": "문서를 데이터 손실 없는 UEF 청크 스트림으로 쓸 수 없습니다.",
+    "MediaEngine.UefValue": "UEF 시간 값이 지원되는 숫자 범위를 초과합니다.",
+    "MediaEngine.UefUnknown": "UEF 청크 0x{0}을 해석하지 않고 보존했습니다."
+  }
+}

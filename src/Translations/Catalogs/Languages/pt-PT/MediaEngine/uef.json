@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "O cabeçalho ou versão UEF não é suportado.",
+    "MediaEngine.UefChunk": "Um cabeçalho de bloco UEF é truncado ou sua carga útil excede o recipiente.",
+    "MediaEngine.UefSize": "O recipiente UEF excede o limite de descompressão configurado.",
+    "MediaEngine.UefCompression": "O fluxo UEF gzip é inválido, truncado ou não pode ser comprimido.",
+    "MediaEngine.UefWrite": "O documento não pode ser escrito como um fluxo de blocos UEF sem perdas.",
+    "MediaEngine.UefValue": "Um valor de temporização UEF excede o intervalo numérico suportado.",
+    "MediaEngine.UefUnknown": "O bloco UEF 0x{0} foi mantido sem interpretação."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "De UEF header of versie wordt niet ondersteund.",
+    "MediaEngine.UefChunk": "Een UEF brok header wordt afgekapt of zijn lading overschrijdt de container.",
+    "MediaEngine.UefSize": "De UEF container overschrijdt de geconfigureerde decompressie limiet.",
+    "MediaEngine.UefCompression": "De UEF gzip-stream is ongeldig, afgekapt of kan niet gecomprimeerd worden.",
+    "MediaEngine.UefWrite": "Het document kan niet worden geschreven als een verliesloze UEF-blokstroom.",
+    "MediaEngine.UefValue": "Een UEF timing waarde overschrijdt het ondersteunde numerieke bereik.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} werd bewaard zonder interpretatie."
+  }
+}

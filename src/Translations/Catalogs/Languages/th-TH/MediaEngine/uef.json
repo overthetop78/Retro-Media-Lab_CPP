@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "ไม่รองรับส่วนหัวหรือรุ่น UEF นี้",
+    "MediaEngine.UefChunk": "ส่วนหัวของบล็อก UEF ถูกตัดทอน หรือข้อมูลของบล็อกเกินขอบเขตของคอนเทนเนอร์",
+    "MediaEngine.UefSize": "คอนเทนเนอร์ UEF เกินขนาดสูงสุดของการคลายการบีบอัดที่กำหนดไว้",
+    "MediaEngine.UefCompression": "สตรีม gzip ของ UEF ไม่ถูกต้อง ถูกตัดทอน หรือไม่สามารถบีบอัดได้",
+    "MediaEngine.UefWrite": "ไม่สามารถเขียนเอกสารเป็นสตรีมบล็อก UEF โดยไม่สูญเสียข้อมูลได้",
+    "MediaEngine.UefValue": "ค่าเวลาของ UEF เกินช่วงตัวเลขที่รองรับ",
+    "MediaEngine.UefUnknown": "เก็บบล็อก UEF 0x{0} ไว้โดยไม่ตีความ"
+  }
+}

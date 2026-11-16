@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Заголовок или версия UEF не поддерживается.",
+    "MediaEngine.UefChunk": "Заголовок UEF усечен или его полезная нагрузка превышает контейнер.",
+    "MediaEngine.UefSize": "Контейнер UEF превышает сконфигурированный предел декомпрессии.",
+    "MediaEngine.UefCompression": "Поток UEF gzip недействителен, усечен или не может быть сжат.",
+    "MediaEngine.UefWrite": "Документ не может быть написан как поток без потерь UEF.",
+    "MediaEngine.UefValue": "Значение времени UEF превышает поддерживаемый численный диапазон.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} был сохранен без интерпретации."
+  }
+}

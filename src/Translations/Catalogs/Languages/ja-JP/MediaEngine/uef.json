@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF ヘッダーまたはバージョンは未対応です。",
+    "MediaEngine.UefChunk": "UEF チャンクヘッダーが途中で切れているか、データがコンテナの範囲を超えています。",
+    "MediaEngine.UefSize": "UEF コンテナが設定された展開サイズの上限を超えています。",
+    "MediaEngine.UefCompression": "UEF の gzip ストリームが無効か、途中で切れているか、圧縮できませんでした。",
+    "MediaEngine.UefWrite": "文書をデータ損失のない UEF チャンクストリームとして書き込めません。",
+    "MediaEngine.UefValue": "UEF の時間値が対応する数値範囲を超えています。",
+    "MediaEngine.UefUnknown": "UEF チャンク 0x{0} は解釈せずに保持されました。"
+  }
+}

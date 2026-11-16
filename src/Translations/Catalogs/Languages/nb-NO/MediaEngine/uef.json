@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF-hodet eller versjonen støttes ikke.",
+    "MediaEngine.UefChunk": "En UEF-delhode er avkortet eller dens nyttelast overstiger beholderen.",
+    "MediaEngine.UefSize": "UEF-beholderen overstiger den konfigurerte dekompresjonsgrensen.",
+    "MediaEngine.UefCompression": "UEF gzip-strømmen er ugyldig, avkortet eller kunne ikke komprimeres.",
+    "MediaEngine.UefWrite": "Dokumentet kan ikke skrives som en tapsfri strøm av UEF-blokker.",
+    "MediaEngine.UefValue": "En UEF-tidsverdi overstiger det støttede numeriske området.",
+    "MediaEngine.UefUnknown": "UEF-blokk 0x{0} ble beholdt uten tolkning."
+  }
+}

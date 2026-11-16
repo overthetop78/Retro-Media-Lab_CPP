@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Nagłówek lub wersja UEF nie jest obsługiwana.",
+    "MediaEngine.UefChunk": "Nagłówek bloku UEF jest ucięty lub jego dane przekraczają granice kontenera.",
+    "MediaEngine.UefSize": "Pojemnik UEF przekracza skonfigurowany limit dekompresji.",
+    "MediaEngine.UefCompression": "Strumień UEF gzip jest nieprawidłowy, okrojony lub nie może być skompresowany.",
+    "MediaEngine.UefWrite": "Dokument nie może być napisany jako bezstratny strumień UEF.",
+    "MediaEngine.UefValue": "Wartość czasu UEF przekracza obsługiwany zakres liczbowy.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x {0} został zachowany bez interpretacji."
+  }
+}

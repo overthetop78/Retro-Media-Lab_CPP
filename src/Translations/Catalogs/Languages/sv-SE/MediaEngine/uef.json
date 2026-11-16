@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF-rubriken eller versionen stöds inte.",
+    "MediaEngine.UefChunk": "Ett UEF-blockhuvud är trunkerat eller dess data överskrider behållarens gränser.",
+    "MediaEngine.UefSize": "UEF-behållaren överstiger den konfigurerade dekompressionsgränsen.",
+    "MediaEngine.UefCompression": "UEF-gzipströmmen är ogiltig, trunkerad eller kan inte komprimeras.",
+    "MediaEngine.UefWrite": "Dokumentet kan inte skrivas som en förlustfri ström av UEF-block.",
+    "MediaEngine.UefValue": "Ett UEF-tidsvärde överstiger det stödda numeriska intervallet.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} behölls utan tolkning."
+  }
+}

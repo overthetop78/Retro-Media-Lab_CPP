@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF-otsaketta tai versiota ei tueta.",
+    "MediaEngine.UefChunk": "UEF-palan otsikko on typistetty tai sen hyötykuorma ylittää säiliön.",
+    "MediaEngine.UefSize": "UEF-säiliö ylittää määritetyn purkukoon rajan.",
+    "MediaEngine.UefCompression": "UEF gzip-virta on virheellinen, katkaistu tai sitä ei voitu pakata.",
+    "MediaEngine.UefWrite": "Asiakirjaa ei voi kirjoittaa häviöttömänä UEF-palavirtana.",
+    "MediaEngine.UefValue": "UEF-aika-arvo ylittää tuetun numeerisen alueen.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} säilytettiin ilman tulkintaa."
+  }
+}

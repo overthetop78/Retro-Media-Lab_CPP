@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Hlavička nebo verze UEF není podporována.",
+    "MediaEngine.UefChunk": "Záhlaví bloku UEF je zkrácené nebo jeho data přesahují kontejner.",
+    "MediaEngine.UefSize": "Kontejner UEF překračuje nastavený limit dekomprese.",
+    "MediaEngine.UefCompression": "UEF gzip stream je neplatný, zkrácený nebo nemohl být stlačen.",
+    "MediaEngine.UefWrite": "Dokument nelze zapsat jako bezztrátový proud bloků UEF.",
+    "MediaEngine.UefValue": "Časová hodnota UEF překračuje podporovaný číselný rozsah.",
+    "MediaEngine.UefUnknown": "Blok UEF 0x{0} byl zachován bez interpretace."
+  }
+}

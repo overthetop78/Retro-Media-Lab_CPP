@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "不支援此 UEF 標頭或版本。",
+    "MediaEngine.UefChunk": "UEF 區塊標頭遭截斷，或其資料超出容器範圍。",
+    "MediaEngine.UefSize": "UEF 容器超過設定的解壓縮大小上限。",
+    "MediaEngine.UefCompression": "UEF gzip 串流無效、遭截斷或無法壓縮。",
+    "MediaEngine.UefWrite": "無法將文件寫為無損的 UEF 區塊串流。",
+    "MediaEngine.UefValue": "UEF 時間值超出支援的數值範圍。",
+    "MediaEngine.UefUnknown": "UEF 區塊 0x{0} 已保留，未進行解譯。"
+  }
+}

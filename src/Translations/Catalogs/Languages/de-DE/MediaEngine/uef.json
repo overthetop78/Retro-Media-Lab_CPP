@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Der UEF-Header oder die Version wird nicht unterstützt.",
+    "MediaEngine.UefChunk": "Ein UEF-Chunk-Header wird abgeschnitten oder seine Nutzlast überschreitet den Container.",
+    "MediaEngine.UefSize": "Der UEF-Container überschreitet die konfigurierte Dekompressionsgrenze.",
+    "MediaEngine.UefCompression": "Der UEF gzip-Stream ist ungültig, gekürzt oder konnte nicht komprimiert werden.",
+    "MediaEngine.UefWrite": "Das Dokument kann nicht als verlustfreier UEF-Chunkstrom geschrieben werden.",
+    "MediaEngine.UefValue": "Ein UEF-Timingwert überschreitet den unterstützten numerischen Bereich.",
+    "MediaEngine.UefUnknown": "UEF Chunk 0x{0} wurde ohne Interpretation beibehalten."
+  }
+}

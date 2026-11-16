@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "antetul sau versiunea UEF nu este susținută.",
+    "MediaEngine.UefChunk": "Un antet UEF este trunchiat sau sarcina sa utilă depășește containerul.",
+    "MediaEngine.UefSize": "Containerul UEF depășește limita de decompresie configurată.",
+    "MediaEngine.UefCompression": "Fluxul UEF gzip este invalid, trunchiat sau nu poate fi comprimat.",
+    "MediaEngine.UefWrite": "Documentul nu poate fi scris ca un flux fără pierderi UEF.",
+    "MediaEngine.UefValue": "O valoare a temporizării UEF depășește intervalul numeric susținut.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x {0} a fost păstrat fără interpretare."
+  }
+}

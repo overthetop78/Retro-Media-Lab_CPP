@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "The UEF header or version is unsupported.",
+    "MediaEngine.UefChunk": "A UEF chunk header is truncated or its payload exceeds the container.",
+    "MediaEngine.UefSize": "The UEF container exceeds the configured decompression limit.",
+    "MediaEngine.UefCompression": "The UEF gzip stream is invalid, truncated or could not be compressed.",
+    "MediaEngine.UefWrite": "The document cannot be written as a lossless UEF chunk stream.",
+    "MediaEngine.UefValue": "A UEF timing value exceeds the supported numeric range.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x{0} was retained without interpretation."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "UEF-header eller version er ikke understøttet.",
+    "MediaEngine.UefChunk": "Et UEF-stykke header er afkortet eller dens nyttelast overstiger beholderen.",
+    "MediaEngine.UefSize": "UEF-beholderen overskrider den indstillede dekompressionsgrænse.",
+    "MediaEngine.UefCompression": "UEF gzip-strømmen er ugyldig, afkortet eller kunne ikke komprimeres.",
+    "MediaEngine.UefWrite": "Dokumentet kan ikke skrives som et tabsfrit UEF-stykke strøm.",
+    "MediaEngine.UefValue": "En UEF-tidsværdi overstiger det understøttede numeriske interval.",
+    "MediaEngine.UefUnknown": "UEF chunk 0x {0} blev bibeholdt uden fortolkning."
+  }
+}

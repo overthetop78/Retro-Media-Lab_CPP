@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "כותרת UEF או הגרסה אינן נתמכות.",
+    "MediaEngine.UefChunk": "כותרת מקטע UEF קטועה או שהנתונים שלו חורגים מגבולות המכל.",
+    "MediaEngine.UefSize": "מכל UEF חורג ממגבלת הפריסה שהוגדרה.",
+    "MediaEngine.UefCompression": "זרם gzip של UEF אינו תקין, קטוע או שלא ניתן היה לדחוס אותו.",
+    "MediaEngine.UefWrite": "לא ניתן לכתוב את המסמך כזרם מקטעי UEF ללא אובדן נתונים.",
+    "MediaEngine.UefValue": "ערך תזמון UEF חורג מהטווח המספרי הנתמך.",
+    "MediaEngine.UefUnknown": "מקטע UEF ‏0x{0} נשמר ללא פירוש."
+  }
+}

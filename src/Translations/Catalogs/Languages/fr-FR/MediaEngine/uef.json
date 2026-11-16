@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "L’en-tête ou la version UEF n’est pas pris en charge.",
+    "MediaEngine.UefChunk": "Un en-tête de chunk UEF est tronqué ou ses données dépassent le conteneur.",
+    "MediaEngine.UefSize": "Le conteneur UEF dépasse la limite de décompression configurée.",
+    "MediaEngine.UefCompression": "Le flux gzip UEF est invalide, tronqué ou n’a pas pu être compressé.",
+    "MediaEngine.UefWrite": "Le document ne peut pas être écrit comme un flux de chunks UEF sans perte.",
+    "MediaEngine.UefValue": "Une valeur temporelle UEF dépasse la plage numérique prise en charge.",
+    "MediaEngine.UefUnknown": "Le chunk UEF 0x{0} est conservé sans interprétation."
+  }
+}

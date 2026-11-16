@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.UefHeader": "Không hỗ trợ tiêu đề hoặc phiên bản UEF này.",
+    "MediaEngine.UefChunk": "Tiêu đề khối UEF bị cắt cụt hoặc dữ liệu của khối vượt quá phạm vi vùng chứa.",
+    "MediaEngine.UefSize": "Vùng chứa UEF vượt quá giới hạn giải nén đã cấu hình.",
+    "MediaEngine.UefCompression": "Luồng gzip UEF không hợp lệ, bị cắt cụt hoặc không thể nén.",
+    "MediaEngine.UefWrite": "Không thể ghi tài liệu thành luồng khối UEF không mất dữ liệu.",
+    "MediaEngine.UefValue": "Giá trị thời gian UEF vượt quá phạm vi số được hỗ trợ.",
+    "MediaEngine.UefUnknown": "Khối UEF 0x{0} được giữ lại mà không diễn giải."
+  }
+}
