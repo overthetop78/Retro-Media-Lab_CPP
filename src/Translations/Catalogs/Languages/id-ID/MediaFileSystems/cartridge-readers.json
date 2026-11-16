@@ -1,14 +1,14 @@
 {
   "strings": {
     "MediaFileSystems.AmstradCartridgeUnsupported": "Volume yang dipilih bukan kartrid Amstrad yang didukung atau struktur ROM.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Jumlah uang Amstrad cartridge hilang atau tidak valid.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Jumlah bank memori kartrid Amstrad tidak ada atau tidak valid.",
     "MediaFileSystems.AmstradCartridgeBankLength": "Panjang bank Amstrad {0} tak valid.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Jumlah rekening bank Amstrad tidak cocok dengan bank yang dipetakan.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Jumlah bank memori kartrid Amstrad yang dinyatakan tidak cocok dengan bank yang dipetakan.",
     "MediaFileSystems.ConsoleCartridgeUnsupported": "Volume kartrid konsol yang dipilih tidak dapat dibaca.",
     "MediaFileSystems.ConsoleCartridgeBankCount": "Jumlah bank konsol cartridge hilang atau tidak valid.",
     "MediaFileSystems.ConsoleCartridgeBankSize": "Ukuran konsol cartridge bank hilang atau tidak valid.",
     "MediaFileSystems.ConsoleCartridgeBankLength": "Kartrid bank konsol {0} memiliki panjang yang tidak valid.",
     "MediaFileSystems.ConsoleCartridgeBankAddress": "Alamat bank konsol cartridge melebihi jangkauan referensi penyimpanan yang didukung.",
-    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad cartridge banks"
+    "MediaFileSystems.AmstradCartridgeBanks": "Bank memori kartrid Amstrad"
   }
 }

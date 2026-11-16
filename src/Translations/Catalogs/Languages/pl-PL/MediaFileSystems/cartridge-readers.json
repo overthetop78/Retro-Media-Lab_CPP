@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaFileSystems.AmstradCartridgeUnsupported": "Wybrana objętość nie jest wspieranym wkładem Amstrad ani strukturą ROM.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Brak lub nieprawidłowe dane dotyczące liczby wkładów Amstrad.",
+    "MediaFileSystems.AmstradCartridgeUnsupported": "Wybrany wolumin nie ma obsługiwanej struktury kartridża Amstrad ani ROM.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Brak liczby banków pamięci kartridża Amstrad lub jest ona nieprawidłowa.",
     "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad bank {0} ma nieprawidłową długość.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Zgłoszona liczba wkładów Amstrad nie pasuje do jej mapowanych banków.",
-    "MediaFileSystems.ConsoleCartridgeUnsupported": "Wybrana pojemność wkładu konsoli nie jest czytelna.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "Liczba konsoli na wkładzie jest brakująca lub nieprawidłowa.",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "Rozmiar konsoli jest brakujący lub nieprawidłowy.",
-    "MediaFileSystems.ConsoleCartridgeBankLength": "Konsola na wkład {0} ma nieprawidłową długość.",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "Adres konsoli na wkładzie przewyższa obsługiwany zakres odniesienia do przechowywania.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Zadeklarowana liczba banków pamięci kartridża Amstrad nie odpowiada zmapowanym bankom.",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "Nie można odczytać wybranego woluminu kartridża konsoli.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "Brak liczby banków pamięci kartridża konsoli lub jest ona nieprawidłowa.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "Brak rozmiaru banku pamięci kartridża konsoli lub jest on nieprawidłowy.",
+    "MediaFileSystems.ConsoleCartridgeBankLength": "Bank pamięci {0} kartridża konsoli ma nieprawidłową długość.",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "Adres banku pamięci kartridża konsoli przekracza obsługiwany zakres odwołań do pamięci masowej.",
     "MediaFileSystems.AmstradCartridgeBanks": "Banki wkładów Amstrad"
   }
 }

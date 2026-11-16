@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.FdsUnsupported": "Wybrany wolumin Famicom Disk System nie jest czytelny.",
-    "MediaFileSystems.FdsSideCount": "Liczba boczna Famicom Disk System jest brakująca lub nieprawidłowa.",
-    "MediaFileSystems.FdsSideLength": "Brak lub niepoprawność długości bocznej Famicom Disk System.",
+    "MediaFileSystems.FdsSideCount": "Brak liczby stron Famicom Disk System lub jest ona nieprawidłowa.",
+    "MediaFileSystems.FdsSideLength": "Brak długości strony Famicom Disk System lub jest ona nieprawidłowa.",
     "MediaFileSystems.FdsNoFiles": "Nie znaleziono poprawnego bloku plików Famicom Disk System.",
     "MediaFileSystems.FdsDiskInfo": "Strona systemu Famicom Disk System {0} nie posiada poprawnego bloku informacji o dysku.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} nie ma poprawnego bloku liczenia plików.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} ma nieprawidłowy nagłówek pliku.",
+    "MediaFileSystems.FdsFileCount": "Strona {0} Famicom Disk System nie ma prawidłowego bloku liczby plików.",
+    "MediaFileSystems.FdsFileHeader": "Strona {0} Famicom Disk System ma nieprawidłowy nagłówek pliku.",
     "MediaFileSystems.FdsIncomplete": "Famicom Disk System plik {0} po stronie {1} posiada niekompletne dane."
   }
 }

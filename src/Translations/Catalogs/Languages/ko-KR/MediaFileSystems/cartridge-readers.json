@@ -1,14 +1,14 @@
 {
   "strings": {
     "MediaFileSystems.AmstradCartridgeUnsupported": "선택한 볼륨은 지원되는 Amstrad 카트리지 또는 ROM 구조가 아닙니다.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Amstrad 카트리지 은행은 누락되거나 무효합니다.",
-    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad 은행 {0}에는 잘못된 길이가 있습니다.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "선언 된 Amstrad 카트리지 은행은 매핑 된 은행과 일치하지 않습니다.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Amstrad 카트리지의 메모리 뱅크 수가 없거나 잘못되었습니다.",
+    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad 메모리 뱅크 {0}의 길이가 잘못되었습니다.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "선언된 Amstrad 카트리지의 메모리 뱅크 수가 매핑된 뱅크 수와 일치하지 않습니다.",
     "MediaFileSystems.ConsoleCartridgeUnsupported": "선택한 콘솔 카트리지 볼륨은 읽을 수 없습니다.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "콘솔 카트리지 은행 카운트가 누락되거나 무효합니다.",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "콘솔 카트리지 은행 크기는 누락되거나 무효합니다.",
-    "MediaFileSystems.ConsoleCartridgeBankLength": "콘솔 카트리지 은행 {0}는 잘못된 길이가 있습니다.",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "콘솔 카트리지 은행 주소는 지원되는 저장 참고 범위를 초과합니다.",
-    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad 카트리지 은행"
+    "MediaFileSystems.ConsoleCartridgeBankCount": "콘솔 카트리지의 메모리 뱅크 수가 없거나 잘못되었습니다.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "콘솔 카트리지의 메모리 뱅크 크기가 없거나 잘못되었습니다.",
+    "MediaFileSystems.ConsoleCartridgeBankLength": "콘솔 카트리지의 메모리 뱅크 {0}의 길이가 잘못되었습니다.",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "콘솔 카트리지의 뱅크 주소가 지원되는 저장소 참조 범위를 초과합니다.",
+    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad 카트리지 메모리 뱅크"
   }
 }

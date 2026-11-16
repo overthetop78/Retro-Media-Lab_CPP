@@ -1,20 +1,20 @@
 {
   "strings": {
-    "MediaFileSystems.GameCubeNotIso": "เอกสารนี้ไม่ใช่ภาพแบบภาพ ISO",
-    "MediaFileSystems.GameCubeNotImage": "เอกสารไม่ใช่อิมเมจของ Gamebra",
-    "MediaFileSystems.GameCubeTrackRequired": "Game Burbe FST ต้องการข้อมูลติดตามแสง",
-    "MediaFileSystems.GameCubeNoTrack": "ไม่มีร่องข้อมูลสําหรับระดับเสียงของ Games FST",
-    "MediaFileSystems.GameCubeSectorSize": "Game Burbe FST ต้องการภาคแสง 2048 ไบต์",
-    "MediaFileSystems.GameCubeHeader": "ส่วนหัวแผ่นของ Games Blue ไม่ถูกต้อง",
-    "MediaFileSystems.GameCubeDescriptor": "Game Burbe FST decriptor ไม่ถูกต้อง",
-    "MediaFileSystems.GameCubeRoot": "รายการ root ของ Game Burbe",
-    "MediaFileSystems.GameCubeCount": "จํานวนรายการของ Game Burbe FST ไม่ถูกต้อง",
-    "MediaFileSystems.GameCubeDepth": "ต้นไดเร็กทอรี Game Burbe FST นั้นลึกเกินไป",
-    "MediaFileSystems.GameCubeDirectoryRange": "ช่วงของไดเร็กทอรี Gamebra FST ไม่ถูกต้อง",
-    "MediaFileSystems.GameCubeContentLimit": "Gamebraue แฟ้ม '{0}' มีขนาดใหญ่กว่าจํากัดเนื้อหา และยังไม่ถูกโหลด",
-    "MediaFileSystems.GameCubeNameOffset": "Game Brobe FST ชื่อออฟเซ็ตอยู่นอกตารางสตริง",
-    "MediaFileSystems.GameCubeSectorData": "Game Brobe Fault Project ไม่มีข้อมูลที่อ่านได้",
-    "MediaFileSystems.GameCubeExtent": "The Game Burbe FST September อยู่นอกลู่สายตา",
-    "MediaFileSystems.GameCubeOverflow": "ค่าของ Game BroupFST เกินช่วงตัวเลขที่รองรับ"
+    "MediaFileSystems.GameCubeNotIso": "เอกสารนี้ไม่ใช่อิมเมจ ISO ของดิสก์แสง",
+    "MediaFileSystems.GameCubeNotImage": "เอกสารนี้ไม่ใช่อิมเมจ GameCube",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST ต้องใช้ข้อมูลแทร็กแสง",
+    "MediaFileSystems.GameCubeNoTrack": "ไม่มีแทร็กข้อมูลสำหรับโวลุม GameCube FST",
+    "MediaFileSystems.GameCubeSectorSize": "GameCube FST ต้องใช้เซกเตอร์แสงขนาด 2048 ไบต์",
+    "MediaFileSystems.GameCubeHeader": "ส่วนหัวดิสก์ GameCube ไม่ถูกต้อง",
+    "MediaFileSystems.GameCubeDescriptor": "ตัวอธิบาย GameCube FST ไม่ถูกต้อง",
+    "MediaFileSystems.GameCubeRoot": "รายการรากของ GameCube FST ไม่ถูกต้อง",
+    "MediaFileSystems.GameCubeCount": "จำนวนรายการของ GameCube FST ไม่ถูกต้อง",
+    "MediaFileSystems.GameCubeDepth": "โครงสร้างไดเรกทอรี GameCube FST ลึกเกินไป",
+    "MediaFileSystems.GameCubeDirectoryRange": "ช่วงไดเรกทอรี GameCube FST ไม่ถูกต้อง",
+    "MediaFileSystems.GameCubeContentLimit": "ไฟล์ GameCube '{0}' มีขนาดเกินขีดจำกัดเนื้อหาและไม่ได้ถูกโหลด",
+    "MediaFileSystems.GameCubeNameOffset": "ออฟเซ็ตชื่อ GameCube FST อยู่นอกตารางสตริง",
+    "MediaFileSystems.GameCubeSectorData": "เซกเตอร์แสง GameCube ไม่มีข้อมูลที่อ่านได้",
+    "MediaFileSystems.GameCubeExtent": "ช่วงข้อมูล GameCube FST อยู่นอกแทร็กแสง",
+    "MediaFileSystems.GameCubeOverflow": "ค่า GameCube FST เกินช่วงตัวเลขที่รองรับ"
   }
 }

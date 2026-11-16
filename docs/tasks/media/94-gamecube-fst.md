@@ -7,5 +7,7 @@
 
 Validation : compilation et contrôle ciblé du parcours/bornage ; aucune nouvelle batterie comparative.
 
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/` du présent bloc : corriger les contresens restants après lecture des langues non encore relues.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/` du présent bloc : corriger les contresens restants après lecture des langues non encore relues.
+
+Relecture des trois catalogues dans les 29 langues effectuée le 17 novembre 2026 ; corrections et limites dans `docs/validation/media/relecture-cartouches-fds-gamecube.md`.

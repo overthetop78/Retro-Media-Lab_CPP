@@ -1,20 +1,20 @@
 {
   "strings": {
     "MediaFileSystems.GameCubeNotIso": "المستند ليس صورة ISO لقرص ضوئي.",
-    "MediaFileSystems.GameCubeNotImage": "الوثيقة ليست صورة لعبة",
-    "MediaFileSystems.GameCubeTrackRequired": "\"اللعبة الأولى تتطلب بيانات المسار البصري\"",
-    "MediaFileSystems.GameCubeNoTrack": "ولا يوجد أي مسار بيانات لحجم &quot; غاميكوب &quot; .",
-    "MediaFileSystems.GameCubeSectorSize": "وتقتضي مؤسسة &quot; غاميكوب &quot; 2048 قطاعاً بصرياً.",
-    "MediaFileSystems.GameCubeHeader": "رئيس أقراص اللعبة غير صحيح",
-    "MediaFileSystems.GameCubeDescriptor": "مُخطّط (اللعبة الأولى) غير صحيح.",
-    "MediaFileSystems.GameCubeRoot": "الدخول الجذري لـ (اللعبة الأولى) غير صحيح",
-    "MediaFileSystems.GameCubeCount": "إحصاء دخول (الألعاب الأولى) غير صحيح",
-    "MediaFileSystems.GameCubeDepth": "شجرة دليل لعبة كابي فيست عميقة جدا.",
-    "MediaFileSystems.GameCubeDirectoryRange": "The GameCube FST directory range is invalid.",
-    "MediaFileSystems.GameCubeContentLimit": "ملف اللعبة{0}أكبر من الحد الأقصى للمحتوى ولم يتم تحميله",
-    "MediaFileSystems.GameCubeNameOffset": "The GameCube FST name compensate is outside the string table.",
-    "MediaFileSystems.GameCubeSectorData": "The GameCube optical sector has no readable data.",
-    "MediaFileSystems.GameCubeExtent": "The GameCube FST extent is outside the optical track.",
-    "MediaFileSystems.GameCubeOverflow": "وتتجاوز قيمة &quot; لعبة كاب &quot; النطاق الرقمي المدعوم."
+    "MediaFileSystems.GameCubeNotImage": "المستند ليس صورة قرص GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "يتطلب GameCube FST بيانات مسار ضوئي.",
+    "MediaFileSystems.GameCubeNoTrack": "لا يتوفر مسار بيانات لوحدة تخزين GameCube FST.",
+    "MediaFileSystems.GameCubeSectorSize": "يتطلب GameCube FST قطاعات ضوئية بحجم 2048 بايت.",
+    "MediaFileSystems.GameCubeHeader": "ترويسة قرص GameCube غير صالحة.",
+    "MediaFileSystems.GameCubeDescriptor": "واصف GameCube FST غير صالح.",
+    "MediaFileSystems.GameCubeRoot": "إدخال الجذر في GameCube FST غير صالح.",
+    "MediaFileSystems.GameCubeCount": "عدد الإدخالات في GameCube FST غير صالح.",
+    "MediaFileSystems.GameCubeDepth": "شجرة أدلة GameCube FST متداخلة بعمق كبير جداً.",
+    "MediaFileSystems.GameCubeDirectoryRange": "نطاق دليل GameCube FST غير صالح.",
+    "MediaFileSystems.GameCubeContentLimit": "ملف GameCube «{0}» أكبر من حد المحتوى ولم يتم تحميله.",
+    "MediaFileSystems.GameCubeNameOffset": "إزاحة اسم GameCube FST خارج جدول السلاسل النصية.",
+    "MediaFileSystems.GameCubeSectorData": "لا يحتوي قطاع GameCube الضوئي على بيانات قابلة للقراءة.",
+    "MediaFileSystems.GameCubeExtent": "امتداد بيانات GameCube FST خارج المسار الضوئي.",
+    "MediaFileSystems.GameCubeOverflow": "قيمة GameCube FST تتجاوز النطاق العددي المدعوم."
   }
 }

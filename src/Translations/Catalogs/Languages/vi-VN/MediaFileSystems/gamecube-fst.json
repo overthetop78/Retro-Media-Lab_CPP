@@ -1,20 +1,20 @@
 {
   "strings": {
     "MediaFileSystems.GameCubeNotIso": "Tài liệu này không phải là ảnh ISO quang học.",
-    "MediaFileSystems.GameCubeNotImage": "Tài liệu không phải là ảnh trò chơiCube.",
-    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST yêu cầu dữ liệu theo dõi quang học.",
-    "MediaFileSystems.GameCubeNoTrack": "Không có dữ liệu theo dõi cho âm lượng trò chơiCube FST.",
+    "MediaFileSystems.GameCubeNotImage": "Tài liệu không phải là ảnh đĩa GameCube.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST yêu cầu dữ liệu rãnh đĩa quang.",
+    "MediaFileSystems.GameCubeNoTrack": "Không có rãnh dữ liệu cho ổ đĩa GameCube FST.",
     "MediaFileSystems.GameCubeSectorSize": "GameCube FST yêu cầu 2048-byte khu vực quang học.",
-    "MediaFileSystems.GameCubeHeader": "Bộ đầu đĩa trò chơiCube không hợp lệ.",
-    "MediaFileSystems.GameCubeDescriptor": "Bộ mô tả trò chơiCube FST không hợp lệ.",
-    "MediaFileSystems.GameCubeRoot": "Mục nhập gốc trò chơiCube FST không hợp lệ.",
+    "MediaFileSystems.GameCubeHeader": "Đầu đĩa GameCube không hợp lệ.",
+    "MediaFileSystems.GameCubeDescriptor": "Bộ mô tả GameCube FST không hợp lệ.",
+    "MediaFileSystems.GameCubeRoot": "Mục gốc GameCube FST không hợp lệ.",
     "MediaFileSystems.GameCubeCount": "Số đếm mục nhập của GameCube FST không hợp lệ.",
     "MediaFileSystems.GameCubeDepth": "Cây thư mục của GameCube FST quá sâu.",
-    "MediaFileSystems.GameCubeDirectoryRange": "Phạm vi thư mục FST không hợp lệ.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Phạm vi thư mục GameCube FST không hợp lệ.",
     "MediaFileSystems.GameCubeContentLimit": "Tập tin GameCube '{0}' lớn hơn giới hạn nội dung và chưa được nạp.",
-    "MediaFileSystems.GameCubeNameOffset": "Khoảng cách tên trò chơiCube FST nằm bên ngoài bảng chuỗi.",
+    "MediaFileSystems.GameCubeNameOffset": "Độ lệch tên GameCube FST nằm ngoài bảng chuỗi.",
     "MediaFileSystems.GameCubeSectorData": "Khu vực quang học GameCube không có dữ liệu đọc được.",
-    "MediaFileSystems.GameCubeExtent": "Mức độ của gameCube FST nằm bên ngoài đường ray quang học.",
-    "MediaFileSystems.GameCubeOverflow": "Giá trị trò chơiCube FST vượt quá phạm vi số được hỗ trợ."
+    "MediaFileSystems.GameCubeExtent": "Phạm vi dữ liệu GameCube FST nằm ngoài rãnh đĩa quang.",
+    "MediaFileSystems.GameCubeOverflow": "Giá trị GameCube FST vượt quá phạm vi số được hỗ trợ."
   }
 }

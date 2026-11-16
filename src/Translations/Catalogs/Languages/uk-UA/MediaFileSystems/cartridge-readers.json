@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaFileSystems.AmstradCartridgeUnsupported": "Вибраний об'єм не підтримується Amstrad картридж або ROM структура.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Про нас Amstrad кількість патронів відсутній або недійсний.",
-    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad bank {0} має недійсну довжину.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Задекларований Amstrad кількість картриджів не відповідає його картографічним банкам.",
-    "MediaFileSystems.ConsoleCartridgeUnsupported": "Об'єм вибраного консольного картриджа не прочитаний.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "Кількість консольних патронів відсутній або недійсний.",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "Розмір консольного картриджа відсутній або недійсний.",
+    "MediaFileSystems.AmstradCartridgeUnsupported": "Вибраний том не має підтримуваної структури картриджа Amstrad або ROM.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Кількість банків пам’яті картриджа Amstrad відсутня або неприпустима.",
+    "MediaFileSystems.AmstradCartridgeBankLength": "Банк пам’яті Amstrad {0} має неприпустиму довжину.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Заявлена кількість банків пам’яті картриджа Amstrad не відповідає відображеним банкам.",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "Вибраний том картриджа консолі неможливо прочитати.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "Кількість банків пам’яті картриджа консолі відсутня або неприпустима.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "Розмір банку пам’яті картриджа консолі відсутній або неприпустимий.",
     "MediaFileSystems.ConsoleCartridgeBankLength": "Консольний картридж банку {0} має недійсну довжину.",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "Підтримуваний діапазон посилань на зберігання консолі.",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "Адреса банку пам’яті картриджа консолі перевищує підтримуваний діапазон посилань на сховище.",
     "MediaFileSystems.AmstradCartridgeBanks": "Amstrad картриджні банки"
   }
 }

@@ -1,12 +1,12 @@
 {
   "strings": {
-    "MediaFileSystems.FdsUnsupported": "Вибраний обсяг Famicom Disk System не прочитаний.",
-    "MediaFileSystems.FdsSideCount": "Підрахунок Famicom Disk System відсутній або недійсний.",
-    "MediaFileSystems.FdsSideLength": "Довжина Famicom Disk System відсутній або недійсний.",
-    "MediaFileSystems.FdsNoFiles": "Знайдено файл Famicom Disk System.",
-    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} не має дійсного блоку інформації про диск.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} не має дійсного блоку кількість файлів.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} має недійсний заголовок файлів.",
+    "MediaFileSystems.FdsUnsupported": "Вибраний том Famicom Disk System неможливо прочитати.",
+    "MediaFileSystems.FdsSideCount": "Кількість сторін Famicom Disk System відсутня або неприпустима.",
+    "MediaFileSystems.FdsSideLength": "Довжина сторони Famicom Disk System відсутня або неприпустима.",
+    "MediaFileSystems.FdsNoFiles": "Не знайдено жодного коректного файлового блока Famicom Disk System.",
+    "MediaFileSystems.FdsDiskInfo": "Сторона {0} Famicom Disk System не має коректного блока інформації про диск.",
+    "MediaFileSystems.FdsFileCount": "Сторона {0} Famicom Disk System не має коректного блока кількості файлів.",
+    "MediaFileSystems.FdsFileHeader": "Сторона {0} Famicom Disk System має некоректний заголовок файла.",
     "MediaFileSystems.FdsIncomplete": "Famicom Disk System файл {0} на боці {1} має неповні дані."
   }
 }

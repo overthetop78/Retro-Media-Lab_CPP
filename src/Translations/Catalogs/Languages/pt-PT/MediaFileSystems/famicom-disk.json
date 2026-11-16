@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.FdsUnsupported": "O volume Famicom Disk System selecionado não é legível.",
-    "MediaFileSystems.FdsSideCount": "A contagem lateral do Famicom Disk System está ausente ou inválida.",
+    "MediaFileSystems.FdsSideCount": "O número de lados de Famicom Disk System está ausente ou é inválido.",
     "MediaFileSystems.FdsSideLength": "O comprimento do lado Famicom Disk System está ausente ou inválido.",
     "MediaFileSystems.FdsNoFiles": "Nenhum bloco de arquivo Famicom Disk System válido foi encontrado.",
-    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} não tem nenhum bloco de informações de disco válido.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} não tem bloco de contagem de arquivos válido.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} tem um cabeçalho de arquivo inválido.",
+    "MediaFileSystems.FdsDiskInfo": "O lado {0} de Famicom Disk System não tem um bloco válido de informações do disco.",
+    "MediaFileSystems.FdsFileCount": "O lado {0} de Famicom Disk System não tem um bloco válido de contagem de ficheiros.",
+    "MediaFileSystems.FdsFileHeader": "O lado {0} de Famicom Disk System tem um cabeçalho de ficheiro inválido.",
     "MediaFileSystems.FdsIncomplete": "O ficheiro Famicom Disk System {0} do lado {1} tem dados incompletos."
   }
 }

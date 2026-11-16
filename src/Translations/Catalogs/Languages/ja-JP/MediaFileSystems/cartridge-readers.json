@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaFileSystems.AmstradCartridgeUnsupported": "選択したボリュームは、AmstradカートリッジまたはROM構造をサポートしていません。",
+    "MediaFileSystems.AmstradCartridgeUnsupported": "選択したボリュームは、対応するAmstradカートリッジまたはROM構造ではありません。",
     "MediaFileSystems.AmstradCartridgeBankCount": "Amstradカートリッジバンクカウントが欠落または無効です。",
-    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad銀行{0}は無効な長さを持っています。",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "宣言された Amstrad カートリッジ銀行のカウントは、マップされた銀行と一致しません。",
+    "MediaFileSystems.AmstradCartridgeBankLength": "Amstradメモリバンク{0}の長さが無効です。",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "宣言されたAmstradカートリッジのバンク数が、マッピングされたバンク数と一致しません。",
     "MediaFileSystems.ConsoleCartridgeUnsupported": "選択したコンソールカートリッジのボリュームは読み込めません。",
     "MediaFileSystems.ConsoleCartridgeBankCount": "コンソールカートリッジバンクカウントが欠落または無効です。",
     "MediaFileSystems.ConsoleCartridgeBankSize": "コンソールカートリッジバンクサイズが欠落または無効です。",
-    "MediaFileSystems.ConsoleCartridgeBankLength": "コンソール カートリッジ銀行 {0} に無効な長さがあります。",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "コンソール カートリッジ銀行アドレスは支えられた貯蔵の参照の範囲を超過します。",
-    "MediaFileSystems.AmstradCartridgeBanks": "Amstradのカートリッジ銀行"
+    "MediaFileSystems.ConsoleCartridgeBankLength": "コンソールカートリッジのメモリバンク{0}の長さが無効です。",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "コンソールカートリッジのバンクアドレスが、対応するストレージ参照範囲を超えています。",
+    "MediaFileSystems.AmstradCartridgeBanks": "Amstradカートリッジのメモリバンク"
   }
 }

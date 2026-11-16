@@ -14,5 +14,7 @@ Validation : compilation incrémentale ; conserver les fichiers déjà lus lorsq
 - [x] Protection des invariants
   - [x] Modifier `scripts/translations/ignores/common.txt` : ajouter Famicom Disk System et Nintendo GameCube FST aux noms invariants communs avant traduction.
 
-- [ ] Relecture linguistique restante
-  - [ ] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/` du présent bloc : corriger les contresens restants après lecture des langues non encore relues.
+- [x] Relecture linguistique restante
+  - [x] Modifier les catalogues `src/Translations/Catalogs/Languages/<langue>/MediaFileSystems/` du présent bloc : corriger les contresens restants après lecture des langues non encore relues.
+
+Relecture des trois catalogues dans les 29 langues effectuée le 17 novembre 2026 ; corrections et limites dans `docs/validation/media/relecture-cartouches-fds-gamecube.md`.

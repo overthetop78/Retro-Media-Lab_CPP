@@ -1,11 +1,11 @@
 {
   "strings": {
     "MediaFileSystems.AmstradCartridgeUnsupported": "Det valgte volumen er ikke en understøttet Amstrad patron eller ROM struktur.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Amstrad-patronens antal mangler eller er ugyldig.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Antallet af hukommelsesbanker i Amstrad-cartridgen mangler eller er ugyldigt.",
     "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad bank {0} har en ugyldig længde.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Det erklærede antal Amstrad-patroner svarer ikke til de kortlagte banker.",
-    "MediaFileSystems.ConsoleCartridgeUnsupported": "Det valgte volumen af konsolcylinderampuller kan ikke læses.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "Konsol-patronens antal mangler eller er ugyldig.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Det angivne antal hukommelsesbanker i Amstrad-cartridgen svarer ikke til de tilknyttede banker.",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "Det valgte konsolcartridgevolumen kan ikke læses.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "Antallet af hukommelsesbanker i konsolcartridgen mangler eller er ugyldigt.",
     "MediaFileSystems.ConsoleCartridgeBankSize": "Konsol-patronens bankstørrelse mangler eller er ugyldig.",
     "MediaFileSystems.ConsoleCartridgeBankLength": "Konsol patron bank {0} har en ugyldig længde.",
     "MediaFileSystems.ConsoleCartridgeBankAddress": "Konsol-patronens bankadresse overstiger det understøttede opbevaringsområde.",

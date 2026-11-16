@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.FdsUnsupported": "Zvolený objem Famicom Disk System není čitelný.",
-    "MediaFileSystems.FdsSideCount": "Boční počet Famicom Disk System chybí nebo je neplatný.",
-    "MediaFileSystems.FdsSideLength": "Boční délka Famicom Disk System chybí nebo je neplatná.",
+    "MediaFileSystems.FdsSideCount": "Počet stran Famicom Disk System chybí nebo je neplatný.",
+    "MediaFileSystems.FdsSideLength": "Délka strany Famicom Disk System chybí nebo je neplatná.",
     "MediaFileSystems.FdsNoFiles": "Nebyl nalezen žádný platný blok souboru Famicom Disk System.",
-    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} nemá platný informační blok disku.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} nemá platný blok počtu souborů.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} má neplatné záhlaví souboru.",
+    "MediaFileSystems.FdsDiskInfo": "Strana Famicom Disk System {0} nemá platný blok informací o disku.",
+    "MediaFileSystems.FdsFileCount": "Strana Famicom Disk System {0} nemá platný blok počtu souborů.",
+    "MediaFileSystems.FdsFileHeader": "Strana Famicom Disk System {0} má neplatné záhlaví souboru.",
     "MediaFileSystems.FdsIncomplete": "Famicom Disk System soubor {0} na straně {1} má neúplná data."
   }
 }

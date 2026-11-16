@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaFileSystems.AmstradCartridgeUnsupported": "Zvolený objem není podporovaná Amstradská zásobní vložka nebo ROM struktura.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Počet zásobníků Amstrad chybí nebo je neplatný.",
+    "MediaFileSystems.AmstradCartridgeUnsupported": "Vybraný svazek nemá podporovanou strukturu cartridge Amstrad ani ROM.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Počet paměťových bank cartridge Amstrad chybí nebo je neplatný.",
     "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad banka {0} má neplatnou délku.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Prohlášený počet zásobníků Amstrad neodpovídá jejich mapovaným bankám.",
-    "MediaFileSystems.ConsoleCartridgeUnsupported": "Objem vybrané konzolové zásobní vložky není čitelný.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "Počet bankomatů konzole chybí nebo je neplatný.",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "Velikost konzolové zásobní vložky chybí nebo je neplatná.",
-    "MediaFileSystems.ConsoleCartridgeBankLength": "Konzolová zásobní vložka {0} má neplatnou délku.",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "Bankovní adresa konzolové schránky překračuje podporovaný referenční rozsah úložiště.",
-    "MediaFileSystems.AmstradCartridgeBanks": "Zásobní vložky Amstrad"
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Deklarovaný počet paměťových bank cartridge Amstrad neodpovídá mapovaným bankám.",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "Vybraný svazek konzolové cartridge nelze číst.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "Počet paměťových bank konzolové cartridge chybí nebo je neplatný.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "Velikost paměťové banky konzolové cartridge chybí nebo je neplatná.",
+    "MediaFileSystems.ConsoleCartridgeBankLength": "Paměťová banka konzolové cartridge {0} má neplatnou délku.",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "Adresa paměťové banky konzolové cartridge překračuje podporovaný rozsah odkazů na úložiště.",
+    "MediaFileSystems.AmstradCartridgeBanks": "Paměťové banky cartridge Amstrad"
   }
 }

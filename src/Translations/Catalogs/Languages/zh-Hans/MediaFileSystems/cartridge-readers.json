@@ -1,14 +1,14 @@
 {
   "strings": {
-    "MediaFileSystems.AmstradCartridgeUnsupported": "所选的音量不是一个支持的 Amstrad 墨盒或 ROM 结构 。",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Amstrad弹匣的银行点数缺失或无效 。",
-    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad Bank {0} 长度无效 。",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "已申报的Amstrad弹壳银行数量与其所绘制的银行数量不符。",
-    "MediaFileSystems.ConsoleCartridgeUnsupported": "选定的控制台墨盒体积无法读取 。",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "控制台弹匣库数缺失或无效 。",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "控制台弹匣库大小缺失或无效 。",
-    "MediaFileSystems.ConsoleCartridgeBankLength": "控制台墨盒库{0}的长度无效 。",
-    "MediaFileSystems.ConsoleCartridgeBankAddress": "控制台墨盒库地址超过了支持的存储引用范围.",
-    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad子弹库"
+    "MediaFileSystems.AmstradCartridgeUnsupported": "所选卷不是受支持的 Amstrad 卡带或 ROM 结构。",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Amstrad 卡带的存储体数量缺失或无效。",
+    "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad 存储体 {0} 的长度无效。",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "声明的 Amstrad 卡带存储体数量与映射的存储体不匹配。",
+    "MediaFileSystems.ConsoleCartridgeUnsupported": "无法读取所选的游戏机卡带卷。",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "游戏机卡带的存储体数量缺失或无效。",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "游戏机卡带的存储体大小缺失或无效。",
+    "MediaFileSystems.ConsoleCartridgeBankLength": "游戏机卡带存储体 {0} 的长度无效。",
+    "MediaFileSystems.ConsoleCartridgeBankAddress": "游戏机卡带的存储体地址超出了支持的存储引用范围。",
+    "MediaFileSystems.AmstradCartridgeBanks": "Amstrad 卡带存储体"
   }
 }

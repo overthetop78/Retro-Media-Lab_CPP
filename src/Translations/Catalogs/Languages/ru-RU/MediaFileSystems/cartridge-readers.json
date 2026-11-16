@@ -1,12 +1,12 @@
 {
   "strings": {
     "MediaFileSystems.AmstradCartridgeUnsupported": "Выбранный объем не является поддерживаемым картриджем Amstrad или структурой ROM.",
-    "MediaFileSystems.AmstradCartridgeBankCount": "Количество картриджей Amstrad отсутствует или недействительно.",
+    "MediaFileSystems.AmstradCartridgeBankCount": "Количество банков памяти картриджа Amstrad отсутствует или недопустимо.",
     "MediaFileSystems.AmstradCartridgeBankLength": "Amstrad банк {0} имеет недействительную длину.",
-    "MediaFileSystems.AmstradCartridgeBankMismatch": "Заявленное количество картриджей Amstrad не соответствует его картографированным банкам.",
+    "MediaFileSystems.AmstradCartridgeBankMismatch": "Заявленное количество банков памяти картриджа Amstrad не соответствует отображённым банкам.",
     "MediaFileSystems.ConsoleCartridgeUnsupported": "Выбранный объем картриджа консоли не читается.",
-    "MediaFileSystems.ConsoleCartridgeBankCount": "Количество картриджей для консолей отсутствует или недействительно.",
-    "MediaFileSystems.ConsoleCartridgeBankSize": "Размер картриджа консоли отсутствует или недействителен.",
+    "MediaFileSystems.ConsoleCartridgeBankCount": "Количество банков памяти картриджа консоли отсутствует или недопустимо.",
+    "MediaFileSystems.ConsoleCartridgeBankSize": "Размер банка памяти картриджа консоли отсутствует или недопустим.",
     "MediaFileSystems.ConsoleCartridgeBankLength": "Консольный картридж банка {0} имеет недействительную длину.",
     "MediaFileSystems.ConsoleCartridgeBankAddress": "Адрес банка картриджей консоли превышает поддерживаемый эталонный диапазон хранения.",
     "MediaFileSystems.AmstradCartridgeBanks": "Картриджные банки Amstrad"

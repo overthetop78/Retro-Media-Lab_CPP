@@ -4,9 +4,9 @@
     "MediaFileSystems.FdsSideCount": "Il conteggio laterale Famicom Disk System è mancante o non valido.",
     "MediaFileSystems.FdsSideLength": "La lunghezza laterale Famicom Disk System è mancante o non valida.",
     "MediaFileSystems.FdsNoFiles": "Nessun blocco di file Famicom Disk System valido è stato trovato.",
-    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} non ha un blocco di informazioni su disco valido.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} non ha un blocco di conteggio file valido.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} ha un intestazione file non valida.",
+    "MediaFileSystems.FdsDiskInfo": "Il lato {0} di Famicom Disk System non ha un blocco valido di informazioni sul disco.",
+    "MediaFileSystems.FdsFileCount": "Il lato {0} di Famicom Disk System non ha un blocco valido con il numero di file.",
+    "MediaFileSystems.FdsFileHeader": "Il lato {0} di Famicom Disk System ha un'intestazione di file non valida.",
     "MediaFileSystems.FdsIncomplete": "Famicom Disk System file {0} sul lato {1} ha dati incompleti."
   }
 }

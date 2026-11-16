@@ -2,19 +2,19 @@
   "strings": {
     "MediaFileSystems.GameCubeNotIso": "Documentul nu este o imagine optică ISO.",
     "MediaFileSystems.GameCubeNotImage": "Documentul nu este o imagine GameCube.",
-    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST necesită date optice.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST necesită datele pistei optice.",
     "MediaFileSystems.GameCubeNoTrack": "Nu este disponibilă nicio pistă de date pentru volumul GameCube FST.",
     "MediaFileSystems.GameCubeSectorSize": "GameCube FST necesită 2048-byte sectoare optice.",
     "MediaFileSystems.GameCubeHeader": "Capul discului GameCube este invalid.",
     "MediaFileSystems.GameCubeDescriptor": "Descriptorul GameCube FST este invalid.",
     "MediaFileSystems.GameCubeRoot": "Intrarea rădăcină a GameCube FST este invalidă.",
-    "MediaFileSystems.GameCubeCount": "GameCube FST număr de intrare este invalid.",
+    "MediaFileSystems.GameCubeCount": "Numărul de intrări GameCube FST este invalid.",
     "MediaFileSystems.GameCubeDepth": "Directorul GameCube FST este prea adânc.",
-    "MediaFileSystems.GameCubeDirectoryRange": "GameCube FST director gama este invalid.",
-    "MediaFileSystems.GameCubeContentLimit": "Fișierul GameCube \"{0} \" este mai mare decât limita de conținut și nu a fost încărcat.",
-    "MediaFileSystems.GameCubeNameOffset": "GameCube numele FST offset este în afara mesei de sir.",
+    "MediaFileSystems.GameCubeDirectoryRange": "Intervalul directorului GameCube FST este invalid.",
+    "MediaFileSystems.GameCubeContentLimit": "Fișierul GameCube „{0}” depășește limita de conținut și nu a fost încărcat.",
+    "MediaFileSystems.GameCubeNameOffset": "Deplasamentul numelui GameCube FST este în afara tabelului de șiruri.",
     "MediaFileSystems.GameCubeSectorData": "Sectorul optic GameCube nu are date lizibile.",
-    "MediaFileSystems.GameCubeExtent": "GameCube FST este în afara pistei optice.",
+    "MediaFileSystems.GameCubeExtent": "Intervalul de date GameCube FST este în afara pistei optice.",
     "MediaFileSystems.GameCubeOverflow": "Valoarea FST a GameCube depășește gama numerică susținută."
   }
 }

@@ -1,12 +1,12 @@
 {
   "strings": {
-    "MediaFileSystems.FdsUnsupported": "The selected Famicom Disk System volume is not readable.",
-    "MediaFileSystems.FdsSideCount": "The Famicom Disk System العد الجانبي مفقود أو غير صحيح",
-    "MediaFileSystems.FdsSideLength": "The Famicom Disk System side length is missing or invalid.",
-    "MediaFileSystems.FdsNoFiles": "No valid Famicom Disk System file block was found.",
-    "MediaFileSystems.FdsDiskInfo": "Famicom Disk System side {0} has no valid disk information block.",
-    "MediaFileSystems.FdsFileCount": "Famicom Disk System side {0} has no valid file count block.",
-    "MediaFileSystems.FdsFileHeader": "Famicom Disk System side {0} has an invalid file header.",
-    "MediaFileSystems.FdsIncomplete": "Famicom Disk System file {0} on side {1} has incomplete data."
+    "MediaFileSystems.FdsUnsupported": "لا يمكن قراءة وحدة تخزين Famicom Disk System المحددة.",
+    "MediaFileSystems.FdsSideCount": "عدد أوجه Famicom Disk System مفقود أو غير صالح.",
+    "MediaFileSystems.FdsSideLength": "طول وجه Famicom Disk System مفقود أو غير صالح.",
+    "MediaFileSystems.FdsNoFiles": "لم يتم العثور على كتلة ملف صالحة في Famicom Disk System.",
+    "MediaFileSystems.FdsDiskInfo": "لا يحتوي وجه Famicom Disk System رقم {0} على كتلة معلومات قرص صالحة.",
+    "MediaFileSystems.FdsFileCount": "لا يحتوي وجه Famicom Disk System رقم {0} على كتلة عدد ملفات صالحة.",
+    "MediaFileSystems.FdsFileHeader": "يحتوي وجه Famicom Disk System رقم {0} على ترويسة ملف غير صالحة.",
+    "MediaFileSystems.FdsIncomplete": "بيانات ملف Famicom Disk System رقم {0} على الوجه {1} غير مكتملة."
   }
 }

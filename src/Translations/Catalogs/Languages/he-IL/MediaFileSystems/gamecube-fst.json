@@ -2,19 +2,19 @@
   "strings": {
     "MediaFileSystems.GameCubeNotIso": "המסמך אינו תמונת ISO אופטית.",
     "MediaFileSystems.GameCubeNotImage": "המסמך אינו תמונה של GameCube.",
-    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST דורש נתוני מעקב אופטיים.",
+    "MediaFileSystems.GameCubeTrackRequired": "GameCube FST דורש נתוני רצועה אופטית.",
     "MediaFileSystems.GameCubeNoTrack": "אין מסלול נתונים זמין לנפח GameCube FST.",
     "MediaFileSystems.GameCubeSectorSize": "GameCube FST דורש 2048-byte מגזרים אופטיים.",
-    "MediaFileSystems.GameCubeHeader": "מנהל הדיסק GameCube הוא לא חוקי.",
-    "MediaFileSystems.GameCubeDescriptor": "המשחק GameCube FST Proscriptor הוא לא חוקי.",
+    "MediaFileSystems.GameCubeHeader": "כותרת הדיסק של GameCube אינה תקינה.",
+    "MediaFileSystems.GameCubeDescriptor": "המתאר של GameCube FST אינו תקין.",
     "MediaFileSystems.GameCubeRoot": "הכניסה הבסיסית של GameCube FST היא לא חוקית.",
     "MediaFileSystems.GameCubeCount": "ספירת הכניסה של GameCube FST אינה בתוקף.",
-    "MediaFileSystems.GameCubeDepth": "עץ המשחקCube FST הוא עמוק מדי.",
-    "MediaFileSystems.GameCubeDirectoryRange": "טווח ה-GameCube FST הוא לא חוקי.",
-    "MediaFileSystems.GameCubeContentLimit": "קובץ GameCube ' {0} גדול יותר ממגבלת התוכן ולא היה טעון.",
-    "MediaFileSystems.GameCubeNameOffset": "שם המשחקCube FST הוא מחוץ לשולחן המיתרים.",
-    "MediaFileSystems.GameCubeSectorData": "ל-GameCube אופטי אין נתונים קריאים.",
-    "MediaFileSystems.GameCubeExtent": "המשחקCube FST הוא מחוץ למסלול אופטי.",
-    "MediaFileSystems.GameCubeOverflow": "הערך GameCube FST עולה על הטווח האנמרי הנתמך."
+    "MediaFileSystems.GameCubeDepth": "עץ התיקיות של GameCube FST עמוק מדי.",
+    "MediaFileSystems.GameCubeDirectoryRange": "טווח התיקייה של GameCube FST אינו תקין.",
+    "MediaFileSystems.GameCubeContentLimit": "קובץ GameCube '{0}' גדול ממגבלת התוכן ולא נטען.",
+    "MediaFileSystems.GameCubeNameOffset": "ההיסט של שם GameCube FST נמצא מחוץ לטבלת המחרוזות.",
+    "MediaFileSystems.GameCubeSectorData": "בסקטור האופטי של GameCube אין נתונים קריאים.",
+    "MediaFileSystems.GameCubeExtent": "טווח הנתונים של GameCube FST נמצא מחוץ לרצועה האופטית.",
+    "MediaFileSystems.GameCubeOverflow": "הערך של GameCube FST חורג מהטווח המספרי הנתמך."
   }
 }
