@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Creation/Blank.cpp
+  src/Images/Creation/Catalog.cpp
+  src/Images/Creation/Migration.cpp
   src/Formats/Cartridge/Console.cpp
   src/Composition/Recognition.cpp
   src/Formats/Tape/Common/SignalIO.cpp

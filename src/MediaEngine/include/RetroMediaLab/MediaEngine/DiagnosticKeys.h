@@ -934,3 +934,9 @@ inline constexpr std::string_view FdsUndeclared="MediaEngine.FdsUndeclared";
 inline constexpr std::string_view FdsWrite="MediaEngine.FdsWrite";
 inline constexpr std::string_view FdsHeader="MediaEngine.FdsHeader";
 }
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view MigrationTarget="MediaEngine.MigrationTarget";
+inline constexpr std::string_view MigrationAppleTarget="MediaEngine.MigrationAppleTarget";
+inline constexpr std::string_view MigrationCommodoreTarget="MediaEngine.MigrationCommodoreTarget";
+}

@@ -24,4 +24,18 @@ Compilation Debug MediaFileSystems réussie. Contrôle ciblé réussi sur les se
 Les cinq erreurs d’injection ont été générées avec Argos, relues et corrigées dans les catalogues concernés, puis les 30 catalogues DLL ont été compilés. Audit final : 1371 fichiers C++, 56 clés App, 29 langues, conforme. Le contrôle temporaire et ses sorties ont été supprimés.
 
 
-Le service global de migration de MediaEngine (choix du format/conteneur et écriture du fichier de sortie) reste à raccorder.
+
+
+## API MediaEngine et écriture du conteneur
+
+Le service global est porté dans `Images/Creation`, avec une API publique `MediaEngine/Migration.h` qui ne contient aucun type MediaFileSystems. Le résultat conserve un document opaque possédant son image, et un rapport de pertes public. Le document généré utilise une source technique `migration` ; il ne prétend pas provenir d’un fichier déjà existant. `writeAsync` capture les données par valeur et exécute création et écriture hors du thread appelant.
+
+Le catalogue conserve les onze destinations et l’ordre du C# : ADF Amiga FFS, ST 720, IBM 720, MSX 2DD, Apple DOS 140, ProDOS 140/800, SOS, Commodore 1541/1571/1581. La recherche de destination est insensible à la casse et fournit les identifiants canoniques. Les pertes sont converties explicitement par type. La projection du volume public transmet tous les champs utilisés par MigrationPlanner ; les métadonnées d’exploration ignorées par ce planificateur ne sont pas reconstruites. La conversion inverse générale des volumes reste identifiée séparément dans l’inventaire.
+
+La fabrique d’images vierges réutilise les profils existants : entêtes Acorn ADFS/DOS Plus, catalogues Atom/BBC DFS, FAT12 ST/IBM/MSX, Amiga DD/HD, Apple DOS/ProDOS/SOS, Apple GCR zoné et Commodore zoné. Elle conserve la numérotation et les adresses physiques. Comme en C#, ADFS 1600 ne figure pas dans cette fabrique, même si son profil de lecture existe.
+
+Le choix du conteneur reprend le C# : écrivains Amiga et FAT12 ; Apple 2MG, NIB/WOZ lorsque compatibles, ou secteur brut ; D64/D71/D81 selon le format exact. Les écrivains existants assurent les écritures atomiques. L’application reste une interface graphique ; aucun appel matériel ni analyse de fichiers n’est ajouté à App.
+
+Validation ciblée Debug réussie : pour les onze destinations, validation, création, écriture dans un fichier temporaire, reconnaissance via le registre natif puis relecture du fichier injecté par MediaFileSystems. Les contenus et identifiants des systèmes de fichiers correspondent. Vérifiés également : recherche de destination en majuscules, rejet d’une destination inconnue, refus de perte non acceptée et acceptation explicite, refus d’un conteneur incompatible en conservant le fichier existant, annulation préalable, présence et exploration des dix images vierges Acorn/BBC/Atom (DOS Plus contrôlé structurellement), refus ADFS 1600. Les variantes NIB/WOZ sont raccordées aux écrivains déjà portés ; ce contrôle utilise les conteneurs par défaut du catalogue et ne constitue pas une nouvelle validation exhaustive de ces écrivains.
+
+Compilation Debug MediaEngine sans avertissement C++, 30 catalogues compilés. Trois erreurs traduisibles générées avec Argos, relues dans les 29 langues et corrigées lorsque nécessaire. Audit : 1377 fichiers C++, 56 clés App, 29 langues, conforme. Les contrôles et médias temporaires ont été supprimés. Le raccordement des commandes de migration à App et la vérification finale du portage global restent à réaliser.

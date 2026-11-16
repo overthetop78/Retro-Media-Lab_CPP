@@ -517,6 +517,9 @@
     <Filter Include="src\MediaEngine\src\Images\Conversion\Sequential">
       <UniqueIdentifier>{3D2CA738-F850-5B81-AA8D-FC3F0EF459EE}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Images\Creation">
+      <UniqueIdentifier>{287843D3-F826-54B1-8927-AE6A5B2208AD}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Images\Optical">
       <UniqueIdentifier>{BD0729B0-F048-5ECE-A53D-0B72583DF0C0}</UniqueIdentifier>
     </Filter>
@@ -2356,6 +2359,9 @@
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h">
@@ -4881,6 +4887,21 @@
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Sequential\SignalConverter.h">
       <Filter>src\MediaEngine\src\Images\Conversion\Sequential</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Blank.cpp">
+      <Filter>src\MediaEngine\src\Images\Creation</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\Creation\Blank.h">
+      <Filter>src\MediaEngine\src\Images\Creation</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Catalog.cpp">
+      <Filter>src\MediaEngine\src\Images\Creation</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Images\Creation\Constants.h">
+      <Filter>src\MediaEngine\src\Images\Creation</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Migration.cpp">
+      <Filter>src\MediaEngine\src\Images\Creation</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Images\DocumentFactory.cpp">
       <Filter>src\MediaEngine\src\Images</Filter>
     </ClCompile>
@@ -6375,6 +6396,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micropolis-mfm.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\migration.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\msa.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
@@ -7182,6 +7206,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
     </None>
@@ -7756,6 +7783,9 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration.json">
@@ -8334,6 +8364,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
     </None>
@@ -8908,6 +8941,9 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration.json">
@@ -9486,6 +9522,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
     </None>
@@ -10060,6 +10099,9 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration.json">
@@ -10638,6 +10680,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
     </None>
@@ -11212,6 +11257,9 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration.json">
@@ -11790,6 +11838,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
     </None>
@@ -12364,6 +12415,9 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration.json">
@@ -12942,6 +12996,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
     </None>
@@ -13516,6 +13573,9 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration.json">
@@ -14094,6 +14154,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
     </None>
@@ -14668,6 +14731,9 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration.json">
@@ -15246,6 +15312,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
     </None>
@@ -15820,6 +15889,9 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration.json">
@@ -16398,6 +16470,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
     </None>
@@ -16972,6 +17047,9 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration.json">
@@ -17550,6 +17628,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
     </None>
@@ -18124,6 +18205,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration.json">
@@ -18702,6 +18786,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
     </None>
@@ -19276,6 +19363,9 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration.json">
@@ -19854,6 +19944,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
     </None>
@@ -20428,6 +20521,9 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration.json">
@@ -21006,6 +21102,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
     </None>
@@ -21580,6 +21679,9 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration.json">
@@ -22158,6 +22260,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
     </None>
@@ -22734,6 +22839,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\media-exploration.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration-injection.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
     </None>
@@ -23308,6 +23416,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\media-exploration.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration-injection.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration.json">

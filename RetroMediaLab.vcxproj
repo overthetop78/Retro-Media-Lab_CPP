@@ -227,6 +227,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ImageFormat.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MessageInfo.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Migration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalDiscSession.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
@@ -1068,6 +1069,11 @@
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Sequential\Service.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\Sequential\SignalConverter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Sequential\SignalConverter.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Blank.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\Creation\Blank.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Catalog.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Images\Creation\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Creation\Migration.cpp" />
     <ClCompile Include="src\MediaEngine\src\Images\DocumentFactory.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\DocumentFactory.h" />
     <ClCompile Include="src\MediaEngine\src\Images\ExplorationMapper.cpp" />
@@ -1566,6 +1572,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\mfm-emu.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micraln-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\micropolis-mfm.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\migration.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\msa.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\msx-cas.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\northstar-mfm.json" />
@@ -1835,6 +1842,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\optical-models.json" />
@@ -2027,6 +2035,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\optical-models.json" />
@@ -2219,6 +2228,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\optical-models.json" />
@@ -2411,6 +2421,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\optical-models.json" />
@@ -2603,6 +2614,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\optical-models.json" />
@@ -2795,6 +2807,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\optical-models.json" />
@@ -2987,6 +3000,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\optical-models.json" />
@@ -3179,6 +3193,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\optical-models.json" />
@@ -3371,6 +3386,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\optical-models.json" />
@@ -3563,6 +3579,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\optical-models.json" />
@@ -3755,6 +3772,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\optical-models.json" />
@@ -3947,6 +3965,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\optical-models.json" />
@@ -4139,6 +4158,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\optical-models.json" />
@@ -4331,6 +4351,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\optical-models.json" />
@@ -4523,6 +4544,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\optical-models.json" />
@@ -4715,6 +4737,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\optical-models.json" />
@@ -4907,6 +4930,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\optical-models.json" />
@@ -5099,6 +5123,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\optical-models.json" />
@@ -5291,6 +5316,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\optical-models.json" />
@@ -5483,6 +5509,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\optical-models.json" />
@@ -5675,6 +5702,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\optical-models.json" />
@@ -5867,6 +5895,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\optical-models.json" />
@@ -6059,6 +6088,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\optical-models.json" />
@@ -6251,6 +6281,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\optical-models.json" />
@@ -6443,6 +6474,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\optical-models.json" />
@@ -6635,6 +6667,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\optical-models.json" />
@@ -6827,6 +6860,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\optical-models.json" />
@@ -7019,6 +7053,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\optical-models.json" />
@@ -7211,6 +7246,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\macintosh-mfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\media-document.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\media-exploration.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration-injection.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\migration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\optical-filesystems.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\optical-models.json" />
