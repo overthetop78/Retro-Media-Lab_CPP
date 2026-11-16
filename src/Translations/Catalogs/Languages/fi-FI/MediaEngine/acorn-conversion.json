@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Lähdemuoto \"{0}\" ei sisällä täydellisiä validoituja sektoreita Acorn-kohteelle \"{1}.\"",
+    "MediaEngine.AcornRawAdfLoss": "Raakatiedosto ryhmitellään uudelleen validoiduiksi Acorn ADF -sektoreiksi muuttamatta sen tavuja. Raakatiedostot eivät sisällä tallennettuja sektoritunnisteita tai tarkistussummaa.",
+    "MediaEngine.AcornRawDfsLoss": "Raakatiedosto ryhmitellään uudelleen validoiduiksi BBC DFS -sektoreiksi muuttamatta sen tavuja. Raakatiedostot eivät sisällä tallennettuja sektoritunnisteita tai tarkistussummaa.",
+    "MediaEngine.AcornJfdLoss": "JFD-kontin metatietoja ei säily ADF-muodossa.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU-konttien otsikoita, raiteen ulkoasua ja ajoitusta ei säily ADF-muodossa.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk-otsaketta, kommenttia, kappalejärjestystä ja konttimetatietoja ei säily ADF-muodossa.",
+    "MediaEngine.AcornTrailingLoss": "Kohdeprofiilin ulkopuoliset tyhjät raitataulukon loppumerkinnät jätetään pois; kaikki kohdesektorit ovat mukana."
+  }
+}

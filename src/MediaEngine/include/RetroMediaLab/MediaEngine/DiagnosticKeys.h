@@ -983,3 +983,13 @@ inline constexpr std::string_view RepresentationHfeLoss="MediaEngine.Representat
 inline constexpr std::string_view RepresentationConvertingTracks="MediaEngine.RepresentationConvertingTracks";
 inline constexpr std::string_view RepresentationConvertingTrack="MediaEngine.RepresentationConvertingTrack";
 }
+
+namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view AcornRepresentation="MediaEngine.AcornRepresentation";
+inline constexpr std::string_view AcornRawAdfLoss="MediaEngine.AcornRawAdfLoss";
+inline constexpr std::string_view AcornRawDfsLoss="MediaEngine.AcornRawDfsLoss";
+inline constexpr std::string_view AcornJfdLoss="MediaEngine.AcornJfdLoss";
+inline constexpr std::string_view AcornCpcLoss="MediaEngine.AcornCpcLoss";
+inline constexpr std::string_view AcornTd0Loss="MediaEngine.AcornTd0Loss";
+inline constexpr std::string_view AcornTrailingLoss="MediaEngine.AcornTrailingLoss";
+}

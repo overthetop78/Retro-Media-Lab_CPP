@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "源格式 '{0}' 不包含 Acorn 目标 '{1}' 所需的完整且已验证的扇区。",
+    "MediaEngine.AcornRawAdfLoss": "原始文件的字节按已验证的 Acorn ADF 扇区重新分组，字节本身不变。原始文件不包含记录的扇区标识符或校验和。",
+    "MediaEngine.AcornRawDfsLoss": "原始文件的字节按已验证的 BBC DFS 扇区重新分组，字节本身不变。原始文件不包含记录的扇区标识符或校验和。",
+    "MediaEngine.AcornJfdLoss": "原始 ADF 表示不保留 JFD 容器元数据。",
+    "MediaEngine.AcornCpcLoss": "原始 ADF 表示不保留 CPCEMU 容器头、磁道布局和时序。",
+    "MediaEngine.AcornTd0Loss": "原始 ADF 表示不保留 TeleDisk 头、注释、磁道顺序和容器元数据。",
+    "MediaEngine.AcornTrailingLoss": "省略目标配置之外磁道表末尾的空槽位；所有目标扇区均存在。"
+  }
+}

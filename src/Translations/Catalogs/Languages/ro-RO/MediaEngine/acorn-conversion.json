@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Format sursă \"{0} \" nu conține sectoare validate complete pentru obiectivul Acorn \"{1} .\"",
+    "MediaEngine.AcornRawAdfLoss": "Fișierul brut este regrupat în sectoarele Acorn ADF validate fără schimbarea octeților. Fişierele brute nu conţin identificatori sau liste de verificare înregistrate.",
+    "MediaEngine.AcornRawDfsLoss": "Fișierul brut este regrupat în sectoarele BBC DFS validate fără a-și schimba octeții. Fişierele brute nu conţin identificatori sau liste de verificare înregistrate.",
+    "MediaEngine.AcornJfdLoss": "Metadatele containerelor JFD nu sunt păstrate în reprezentarea ADF brută.",
+    "MediaEngine.AcornCpcLoss": "Capetele containerului CPCEMU, dispunerea și sincronizarea liniilor nu se păstrează în reprezentarea ADF brută.",
+    "MediaEngine.AcornTd0Loss": "Antetul TeleDisk, comentariul, ordinea pistelor și metadatele containerului nu sunt păstrate în reprezentarea ADF brută.",
+    "MediaEngine.AcornTrailingLoss": "Sunt omise sloturile goale de cale în afara profilului țintă; toate sectoarele țintă sunt prezente."
+  }
+}

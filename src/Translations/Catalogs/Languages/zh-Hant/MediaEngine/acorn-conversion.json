@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "來源格式 '{0}' 不包含 Acorn 目標 '{1}' 所需的完整且已驗證磁區。",
+    "MediaEngine.AcornRawAdfLoss": "原始檔案的位元組按已驗證的 Acorn ADF 磁區重新分組，位元組本身不變。原始檔案不包含記錄的磁區識別碼或總和檢查碼。",
+    "MediaEngine.AcornRawDfsLoss": "原始檔案的位元組按已驗證的 BBC DFS 磁區重新分組，位元組本身不變。原始檔案不包含記錄的磁區識別碼或總和檢查碼。",
+    "MediaEngine.AcornJfdLoss": "原始 ADF 表示不保留 JFD 容器中繼資料。",
+    "MediaEngine.AcornCpcLoss": "原始 ADF 表示不保留 CPCEMU 容器標頭、磁軌配置和時序。",
+    "MediaEngine.AcornTd0Loss": "原始 ADF 表示不保留 TeleDisk 標頭、註解、磁軌順序和容器中繼資料。",
+    "MediaEngine.AcornTrailingLoss": "省略目標設定之外磁軌表末尾的空槽位；所有目標磁區均存在。"
+  }
+}

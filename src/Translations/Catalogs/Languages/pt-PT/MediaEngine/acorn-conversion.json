@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "O formato fonte '{0}' não contém setores validados completos para o alvo Acorn '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "O arquivo bruto é reagrupado nos setores Acorn ADF validados sem alterar seus bytes. Os ficheiros brutos não contêm identificadores de sector ou somas de verificação registadas.",
+    "MediaEngine.AcornRawDfsLoss": "O arquivo bruto é reagrupado nos setores validados da BBC DFS sem alterar seus bytes. Os ficheiros brutos não contêm identificadores de sector ou somas de verificação registadas.",
+    "MediaEngine.AcornJfdLoss": "Os metadados do recipiente JFD não são preservados na representação ADF em bruto.",
+    "MediaEngine.AcornCpcLoss": "Os cabeçalhos do recipiente CPCEMU, o layout da faixa e o timing não são preservados na representação ADF bruta.",
+    "MediaEngine.AcornTd0Loss": "O cabeçalho, comentário, ordem de faixas e metadados do recipiente do TeleDisk não são preservados na representação ADF em bruto.",
+    "MediaEngine.AcornTrailingLoss": "Espaços vazios na tabela de faixas fora do perfil do alvo são omitidos; todos os setores alvo estão presentes."
+  }
+}

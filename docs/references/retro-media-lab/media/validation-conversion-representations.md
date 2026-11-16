@@ -10,7 +10,7 @@ Secteurs vers flux : réutilisation de `Scp::SectorConverter` ; cibles SCP, HFE 
 
 Flux vers HFE : première révolution par piste, cellule de la définition bitcell ou estimation médiane arrondie au profil nominal le plus proche ; arrondi pair identique à Math.Round, alignement sur huit bits, égalisation des longueurs par cylindre ; le modèle commun normalise ensuite l'ordre des pistes par cylindre et tête. Préservation de la protection en écriture et des métadonnées, suppression de hfe.bitRate, encodage FM/MFM de la définition. Les temporisations et pertes sont explicitement déclarées.
 
-L'adaptateur du convertisseur de signal réutilise son implémentation existante. La composition des trois convertisseurs Acorn et le service général de planification/écriture restent à porter avant de considérer la composition C# complète.
+L'adaptateur du convertisseur de signal réutilise son implémentation existante. Les trois convertisseurs Acorn ont depuis été ajoutés et vérifiés dans le bloc 211. Le service général de planification/écriture reste à porter.
 
 Validation : compilation Debug MediaEngine et des 30 catalogues réussie, sans avertissement de compilation. Contrôle ciblé réussi : refus des inscriptions nulles et identifiants dupliqués sans tenir compte de la casse, résolution, préparation HFE, alignement et égalisation par cylindre, suppression des anciennes métadonnées de débit, préservation des autres métadonnées et de la protection, filtres de conteneur CPCEMU/UCSD, progression, conservation de la source, génération de flux intermédiaire SCP et pertes déclarées. Annulation et refus des formats non autorisés vérifiés. Aucun fichier média externe, aucun test de codec relancé.
 

@@ -1,5 +1,6 @@
 #include "Conversion.h"
 #include "../Images/Conversion/FluxSectors.h"
+#include "../Images/Conversion/Acorn.h"
 #include "../Images/Conversion/Constants.h"
 #include "../Images/Conversion/Sequential/SignalConverter.h"
 #include "../Formats/FormatIds.h"
@@ -28,6 +29,6 @@ RepresentationConverterRegistry createRepresentationConverters(const MediaRecogn
   if(std::find(capabilities.representationKinds.begin(),capabilities.representationKinds.end(),RepresentationKind::Sectors)!=capabilities.representationKinds.end())formats.insert(capabilities.formatIds.begin(),capabilities.formatIds.end());
  }
  formats.insert(std::string(Formats::IbmScan));for(const auto& [id,definition]:Definitions::rawDefinitions()){(void)definition;formats.insert(id);}
- return RepresentationConverterRegistry({std::make_shared<FluxToSectorConverter>(scp.reader(),std::move(formats)),std::make_shared<SectorToFluxConverter>(),std::make_shared<HfeCellConverter>(),std::make_shared<SignalAdapter>()});
+ return RepresentationConverterRegistry({std::make_shared<FluxToSectorConverter>(scp.reader(),std::move(formats)),std::make_shared<SectorToFluxConverter>(),std::make_shared<AcornConversion::Converter>(AcornConversion::Mode::ContainerAdf),std::make_shared<AcornConversion::Converter>(AcornConversion::Mode::RawAdf),std::make_shared<AcornConversion::Converter>(AcornConversion::Mode::RawDfs),std::make_shared<HfeCellConverter>(),std::make_shared<SignalAdapter>()});
 }
 }

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "ソース形式 '{0}' は、Acorn ターゲット '{1}' の完全検証されたセクターを含んでいません。",
+    "MediaEngine.AcornRawAdfLoss": "生ファイルは、バイトを変更することなく、検証済みのAcorn ADFセクターに再グループ化されます。 生のファイルには、記録されたセクターの識別子やチェックサムが含まれていません。",
+    "MediaEngine.AcornRawDfsLoss": "生ファイルは、バイトを変更することなく、検証済みのBBC DFSセクターに再グループ化されます。 生のファイルには、記録されたセクターの識別子やチェックサムが含まれていません。",
+    "MediaEngine.AcornJfdLoss": "JFD コンテナメタデータは、生の ADF 表現では保存されません。",
+    "MediaEngine.AcornCpcLoss": "CPCEMUコンテナヘッダ、トラックレイアウト、タイミングは、生のADF表現では保存されません。",
+    "MediaEngine.AcornTd0Loss": "TeleDisk のヘッダー、コメント、トラック順序、コンテナのメタデータは、生の ADF 表現では保持されません。",
+    "MediaEngine.AcornTrailingLoss": "対象プロファイル外にあるトラックテーブル末尾の空きスロットは省略されます。対象の全セクターは存在します。"
+  }
+}

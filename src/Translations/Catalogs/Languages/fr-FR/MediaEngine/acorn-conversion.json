@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Le format source '{0}' ne contient pas de secteurs validés complets pour la cible Acorn '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Les octets du fichier brut sont regroupés selon le profil Acorn ADF validé, sans modification. Les fichiers bruts ne contiennent ni identifiants de secteurs enregistrés ni sommes de contrôle.",
+    "MediaEngine.AcornRawDfsLoss": "Les octets du fichier brut sont regroupés selon le profil BBC DFS validé, sans modification. Les fichiers bruts ne contiennent ni identifiants de secteurs enregistrés ni sommes de contrôle.",
+    "MediaEngine.AcornJfdLoss": "Les métadonnées des conteneurs JFD ne sont pas conservées dans la représentation ADF brute.",
+    "MediaEngine.AcornCpcLoss": "Les en-têtes du conteneur CPCEMU, la disposition des pistes et les temporisations ne sont pas conservés dans la représentation ADF brute.",
+    "MediaEngine.AcornTd0Loss": "L'en-tête TeleDisk, le commentaire, l'ordre des pistes et les métadonnées du conteneur ne sont pas conservés dans la représentation ADF brute.",
+    "MediaEngine.AcornTrailingLoss": "Les emplacements vides en fin de table des pistes, hors du profil cible, sont omis ; tous les secteurs cibles sont présents."
+  }
+}

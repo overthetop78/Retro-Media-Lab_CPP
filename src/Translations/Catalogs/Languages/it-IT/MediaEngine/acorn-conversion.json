@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Il formato di origine '{0}' non contiene settori completi e convalidati per la destinazione Acorn '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Il file grezzo viene raggruppato nei settori Acorn ADF convalidati senza cambiare i suoi byte. I file crudi non contengono identificatori di settore registrati o checksum.",
+    "MediaEngine.AcornRawDfsLoss": "Il file raw viene raggruppato nei settori convalidati della BBC DFS senza cambiare i suoi byte. I file crudi non contengono identificatori di settore registrati o checksum.",
+    "MediaEngine.AcornJfdLoss": "I metadati dei container JFD non sono conservati nella rappresentazione ADF grezzo.",
+    "MediaEngine.AcornCpcLoss": "Le intestazioni dei container CPCEMU, il tracciato e i tempi non sono conservati nella rappresentazione ADF grezza.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk intestazione, commento, ordine traccia e metadati container non sono conservati nella rappresentazione ADF grezzo.",
+    "MediaEngine.AcornTrailingLoss": "Le voci vuote finali della tabella delle tracce esterne al profilo di destinazione vengono omesse; tutti i settori di destinazione sono presenti."
+  }
+}

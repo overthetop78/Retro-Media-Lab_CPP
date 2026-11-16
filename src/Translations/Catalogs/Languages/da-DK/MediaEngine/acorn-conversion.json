@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Kildeformat '{0}' indeholder ikke komplette validerede sektorer for Acorn target '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Den rå fil er samlet i de validerede Acorn ADF sektorer uden at ændre sine bytes. Råfiler indeholder ingen registrerede sektoridentifikatorer eller checksummer.",
+    "MediaEngine.AcornRawDfsLoss": "Den rå fil er samlet i de validerede BBC DFS sektorer uden at ændre dens bytes. Råfiler indeholder ingen registrerede sektoridentifikatorer eller checksummer.",
+    "MediaEngine.AcornJfdLoss": "JFD container metadata er ikke bevaret i den rå ADF repræsentation.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU container headers, track layout og timing er ikke bevaret i den rå ADF repræsentation.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk header, kommentar, spor rækkefølge og container metadata er ikke bevaret i den rå ADF repræsentation.",
+    "MediaEngine.AcornTrailingLoss": "Tomme tracktable slots uden for målprofilen er udeladt; alle målsektorer er til stede."
+  }
+}

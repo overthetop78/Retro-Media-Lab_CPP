@@ -993,6 +993,13 @@ case DiagnosticCode::AdfNoAcornCatalogue:return DiagnosticKeys::AdfNoAcornCatalo
     case DiagnosticCode::RepresentationHfeLoss:return DiagnosticKeys::RepresentationHfeLoss;
     case DiagnosticCode::RepresentationConvertingTracks:return DiagnosticKeys::RepresentationConvertingTracks;
     case DiagnosticCode::RepresentationConvertingTrack:return DiagnosticKeys::RepresentationConvertingTrack;
+    case DiagnosticCode::AcornRepresentation:return DiagnosticKeys::AcornRepresentation;
+    case DiagnosticCode::AcornRawAdfLoss:return DiagnosticKeys::AcornRawAdfLoss;
+    case DiagnosticCode::AcornRawDfsLoss:return DiagnosticKeys::AcornRawDfsLoss;
+    case DiagnosticCode::AcornJfdLoss:return DiagnosticKeys::AcornJfdLoss;
+    case DiagnosticCode::AcornCpcLoss:return DiagnosticKeys::AcornCpcLoss;
+    case DiagnosticCode::AcornTd0Loss:return DiagnosticKeys::AcornTd0Loss;
+    case DiagnosticCode::AcornTrailingLoss:return DiagnosticKeys::AcornTrailingLoss;
     case DiagnosticCode::Cancelled:return DiagnosticKeys::Cancelled;
 }
     return DiagnosticKeys::RawUnknownGeometry;

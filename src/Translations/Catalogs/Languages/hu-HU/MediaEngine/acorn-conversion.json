@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Az \"{0}\" forrásformátum nem tartalmazza az Acorn cél \"{1}\" teljes validált szektorait.",
+    "MediaEngine.AcornRawAdfLoss": "A nyers fájl átkerül a validált Acorn ADF szektorba anélkül, hogy megváltoztatná a bájtjait. A nyers fájlok nem tartalmaznak rögzített szektorazonosítókat vagy ellenőrző összegeket.",
+    "MediaEngine.AcornRawDfsLoss": "A nyers fájl átkerül a validált BBC DFS szektorba anélkül, hogy megváltoztatná a bájtjait. A nyers fájlok nem tartalmaznak rögzített szektorazonosítókat vagy ellenőrző összegeket.",
+    "MediaEngine.AcornJfdLoss": "A JFD konténer metaadatait nem őrzik meg az ADF nyers ábrázolásában.",
+    "MediaEngine.AcornCpcLoss": "A CPCEMU tartály fejlécei, vágány elrendezése és időzítése nem marad meg a nyers ADF ábrázolásban.",
+    "MediaEngine.AcornTd0Loss": "A TeleDisk fejléc, komment, track order és konténer metaadatok nem maradnak meg a nyers ADF ábrázolásban.",
+    "MediaEngine.AcornTrailingLoss": "A célprofilon kívüli üres pályaválasztási résidők kimaradnak; valamennyi célágazat jelen van."
+  }
+}

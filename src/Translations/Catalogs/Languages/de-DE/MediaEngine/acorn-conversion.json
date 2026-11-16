@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Das Quellformat '{0}' enthält keine vollständigen validierten Sektoren für das Acorn-Ziel '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Die Rohdatei wird in die validierten Acorn ADF-Sektoren umgruppiert, ohne ihre Bytes zu ändern. Rohdateien enthalten keine erfassten Sektorkennungen oder Prüfsummen.",
+    "MediaEngine.AcornRawDfsLoss": "Die Rohdatei wird in die validierten BBC DFS-Sektoren umgruppiert, ohne ihre Bytes zu ändern. Rohdateien enthalten keine erfassten Sektorkennungen oder Prüfsummen.",
+    "MediaEngine.AcornJfdLoss": "JFD-Container-Metadaten werden nicht in der rohen ADF-Darstellung gespeichert.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU Container-Header, Track-Layout und Timing werden in der rohen ADF-Darstellung nicht beibehalten.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk Header, Kommentar, Track Order und Container-Metadaten werden in der rohen ADF-Darstellung nicht beibehalten.",
+    "MediaEngine.AcornTrailingLoss": "Leere nachlaufende Tracktable-Slots außerhalb des Zielprofils entfallen; alle Zielsektoren sind vorhanden."
+  }
+}

@@ -2856,6 +2856,10 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Xfd\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Xfd\Reader.h" />
     <ClInclude Include="src\MediaEngine\src\Images\Constants.h" />
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\Acorn.h" />
+    <ClInclude Include="src\MediaEngine\src\Images\Conversion\AcornConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\AcornContainer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\AcornRaw.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Images\Conversion\FluxSectors.cpp" />
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\FluxSectors.h" />
@@ -3343,6 +3347,7 @@
     <None Include="src\Translations\Catalogs\Constants\App\window.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\adaptec.json" />
@@ -3549,6 +3554,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\adaptec.json" />
@@ -3755,6 +3761,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\adaptec.json" />
@@ -3961,6 +3968,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\adaptec.json" />
@@ -4167,6 +4175,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\adaptec.json" />
@@ -4373,6 +4382,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\adaptec.json" />
@@ -4579,6 +4589,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\adaptec.json" />
@@ -4785,6 +4796,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\adaptec.json" />
@@ -4991,6 +5003,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\adaptec.json" />
@@ -5197,6 +5210,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\adaptec.json" />
@@ -5403,6 +5417,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\adaptec.json" />
@@ -5609,6 +5624,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\adaptec.json" />
@@ -5815,6 +5831,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\adaptec.json" />
@@ -6021,6 +6038,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\adaptec.json" />
@@ -6227,6 +6245,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\adaptec.json" />
@@ -6433,6 +6452,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\adaptec.json" />
@@ -6639,6 +6659,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\adaptec.json" />
@@ -6845,6 +6866,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\adaptec.json" />
@@ -7051,6 +7073,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\adaptec.json" />
@@ -7257,6 +7280,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\adaptec.json" />
@@ -7463,6 +7487,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\adaptec.json" />
@@ -7669,6 +7694,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\adaptec.json" />
@@ -7875,6 +7901,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\adaptec.json" />
@@ -8081,6 +8108,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\adaptec.json" />
@@ -8287,6 +8315,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\adaptec.json" />
@@ -8493,6 +8522,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\adaptec.json" />
@@ -8699,6 +8729,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\adaptec.json" />
@@ -8905,6 +8936,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\adaptec.json" />
@@ -9111,6 +9143,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\adaptec.json" />
@@ -9317,6 +9350,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\window.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaAnalysis\content-types.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\86f.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\acorn-conversion.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\acorn-kcs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\acorn-winchester.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\adaptec.json" />

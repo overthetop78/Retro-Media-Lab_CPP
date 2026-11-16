@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Kildeformat «{0}» inneholder ikke fullstendig validerte sektorer for Acorn-målet «{1}».",
+    "MediaEngine.AcornRawAdfLoss": "Den rå filen er omgruppert i den validerte Acorn ADF-sektoren uten å endre bytene. Råfiler inneholder ingen registrerte sektoridentifikatorer eller kontrollsummer.",
+    "MediaEngine.AcornRawDfsLoss": "Den rå filen er omgruppert i den validerte BBC DFS-sektoren uten å endre bytene. Råfiler inneholder ingen registrerte sektoridentifikatorer eller kontrollsummer.",
+    "MediaEngine.AcornJfdLoss": "JFD container metadata er ikke bevart i den rå ADF representasjon.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU beholderhoder, spor layout og timing er ikke bevart i rå ADF representasjon.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk header, kommentar, spor rekkefølge og beholder metadata er ikke bevart i rå ADF representasjon.",
+    "MediaEngine.AcornTrailingLoss": "Tomme sportabellspor utenfor målprofilen er utelatt; alle målsektorer er til stede."
+  }
+}

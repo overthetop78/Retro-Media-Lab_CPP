@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Formát zdroje \"{0}\" neobsahuje kompletní schválené sektory pro cíl Acorn \"{1}\".",
+    "MediaEngine.AcornRawAdfLoss": "Surový soubor se přeskupí do ověřených sektorů Acorn ADF, aniž by se změnily jeho bajty. Syrové soubory neobsahují žádné zaznamenané sektorové identifikátory ani kontrolní součty.",
+    "MediaEngine.AcornRawDfsLoss": "Surový soubor se přeskupí do ověřených sektorů BBC DFS, aniž by se změnily jeho bajty. Syrové soubory neobsahují žádné zaznamenané sektorové identifikátory ani kontrolní součty.",
+    "MediaEngine.AcornJfdLoss": "Metadata kontejneru JFD se v surové reprezentaci ADF neuchovávají.",
+    "MediaEngine.AcornCpcLoss": "Záhlaví kontejnerů CPCEMU, rozvržení tratí a načasování nejsou v surové reprezentaci ADF zachovány.",
+    "MediaEngine.AcornTd0Loss": "Hlavička TeleDisk, komentář, pořadí stop a metadata kontejneru se v surové reprezentaci ADF nezachovávají.",
+    "MediaEngine.AcornTrailingLoss": "Prázdné koncové položky tabulky stop mimo cílový profil se vynechají; všechny cílové sektory jsou přítomny."
+  }
+}

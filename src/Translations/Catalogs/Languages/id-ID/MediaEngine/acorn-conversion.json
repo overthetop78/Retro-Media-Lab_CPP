@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Format sumber '{0}' tak memuat sektor tervalidasi lengkap bagi target Acorn '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Berkas mentah dikelompokkan ke dalam sektor Acorn ADF yang sah tanpa mengubah bita. Berkas mentah tidak berisi pengidentifikasi sektor rekaman atau checksums.",
+    "MediaEngine.AcornRawDfsLoss": "Berkas mentah dikelompokkan ke dalam sektor bervalidasi BBC DFS tanpa mengubah byte-nya. Berkas mentah tidak berisi pengidentifikasi sektor rekaman atau checksums.",
+    "MediaEngine.AcornJfdLoss": "Metadata kontainer JFD tidak diawetkan dalam representasi ADF mentah.",
+    "MediaEngine.AcornCpcLoss": "Tajuk kontainer CPCEMU, tata letak trek dan waktu tidak diawetkan dalam representasi ADF mentah.",
+    "MediaEngine.AcornTd0Loss": "Header TeleDisk, komentar, urutan trek dan metadata kontainer tidak diawetkan dalam representasi ADF mentah.",
+    "MediaEngine.AcornTrailingLoss": "Kosong track-table slot diluar profil target diabaikan; semua sektor target hadir."
+  }
+}

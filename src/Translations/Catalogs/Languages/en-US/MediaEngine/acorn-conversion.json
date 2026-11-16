@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Source format '{0}' does not contain complete validated sectors for Acorn target '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "The raw file is regrouped into the validated Acorn ADF sectors without changing its bytes. Raw files contain no recorded sector identifiers or checksums.",
+    "MediaEngine.AcornRawDfsLoss": "The raw file is regrouped into the validated BBC DFS sectors without changing its bytes. Raw files contain no recorded sector identifiers or checksums.",
+    "MediaEngine.AcornJfdLoss": "JFD container metadata is not preserved in the raw ADF representation.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU container headers, track layout and timing are not preserved in the raw ADF representation.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk header, comment, track order and container metadata are not preserved in the raw ADF representation.",
+    "MediaEngine.AcornTrailingLoss": "Empty trailing track-table slots outside the target profile are omitted; all target sectors are present."
+  }
+}

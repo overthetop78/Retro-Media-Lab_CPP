@@ -1,4 +1,6 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Images/Conversion/AcornRaw.cpp
+  src/Images/Conversion/AcornContainer.cpp
   src/Images/Conversion/Representation.cpp
   src/Images/Conversion/FluxSectors.cpp
   src/Images/Conversion/HfeCells.cpp

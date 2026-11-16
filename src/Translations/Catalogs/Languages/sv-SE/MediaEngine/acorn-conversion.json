@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Källa format \"{0}\" innehåller inte fullständigt validerade sektorer för Acorn-målet \"{1}\".",
+    "MediaEngine.AcornRawAdfLoss": "Den råa filen omgrupperas till de validerade Acorn ADF-sektorerna utan att ändra dess byte. Råa filer innehåller inga registrerade sektorsidentifierare eller kontrollsummor.",
+    "MediaEngine.AcornRawDfsLoss": "Den råa filen omgrupperas till de validerade BBC DFS-sektorerna utan att ändra byte. Råa filer innehåller inga registrerade sektorsidentifierare eller kontrollsummor.",
+    "MediaEngine.AcornJfdLoss": "JFD-behållare metadata bevaras inte i den råa ADF-representationen.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU container headers, track layout och timing är inte bevarade i den råa ADF-representationen.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk header, kommentar, spårorder och containermetadata bevaras inte i den råa ADF-representationen.",
+    "MediaEngine.AcornTrailingLoss": "Tomma spårbordsslots utanför målprofilen utelämnas; alla målsektorer är närvarande."
+  }
+}

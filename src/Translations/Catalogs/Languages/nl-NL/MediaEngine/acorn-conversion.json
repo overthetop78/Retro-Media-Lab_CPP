@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Bronformaat \"{0}' bevat geen volledige gevalideerde sectoren voor Acorn-doel \"{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Het ruwe bestand wordt gehergroepeerd in de gevalideerde Acorn ADF sectoren zonder de bytes te veranderen. Rauwe bestanden bevatten geen geregistreerde sectoridentificaties of controlesums.",
+    "MediaEngine.AcornRawDfsLoss": "Het ruwe bestand wordt gehergroepeerd in de gevalideerde BBC DFS sectoren zonder de bytes te wijzigen. Rauwe bestanden bevatten geen geregistreerde sectoridentificaties of controlesums.",
+    "MediaEngine.AcornJfdLoss": "JFD container metadata wordt niet bewaard in de ruwe ADF-weergave.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU container headers, track lay-out en timing worden niet bewaard in de ruwe ADF vertegenwoordiging.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk header, comment, track order en container metadata worden niet bewaard in de ruwe ADF weergave.",
+    "MediaEngine.AcornTrailingLoss": "Lege track-table slots buiten het doelprofiel worden weggelaten; alle doelsectoren zijn aanwezig."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Format źródłowy \"{0}\" nie zawiera kompletnych zatwierdzonych sektorów dla Acorn target \"{1}\".",
+    "MediaEngine.AcornRawAdfLoss": "Bajty pliku surowego są grupowane w zweryfikowane sektory Acorn ADF bez ich zmiany. Pliki surowe nie zawierają zapisanych identyfikatorów sektorów ani sum kontrolnych.",
+    "MediaEngine.AcornRawDfsLoss": "Bajty pliku surowego są grupowane w zweryfikowane sektory BBC DFS bez ich zmiany. Pliki surowe nie zawierają zapisanych identyfikatorów sektorów ani sum kontrolnych.",
+    "MediaEngine.AcornJfdLoss": "Metadane kontenera JFD nie są zachowane w surowej reprezentacji ADF.",
+    "MediaEngine.AcornCpcLoss": "Nagłówki kontenerów CPCEMU, układ torów i czas nie są zachowane w surowej reprezentacji ADF.",
+    "MediaEngine.AcornTd0Loss": "Nagłówek TeleDisk, komentarz, kolejność ścieżek i metadane kontenera nie są zachowywane w surowej reprezentacji ADF.",
+    "MediaEngine.AcornTrailingLoss": "Puste miejsca na track- table poza profilem docelowym są pomijane; wszystkie sektory docelowe są obecne."
+  }
+}

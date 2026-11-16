@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "El formato de origen '{0}' no contiene sectores completos y validados para el destino Acorn '{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "El archivo crudo se reagrupa en los sectores Acorn ADF validados sin cambiar sus bytes. Los archivos brutos no contienen identificadores del sector registrado o sumas de comprobación.",
+    "MediaEngine.AcornRawDfsLoss": "El archivo crudo se reagrupa en los sectores validados de BBC DFS sin cambiar sus bytes. Los archivos brutos no contienen identificadores del sector registrado o sumas de comprobación.",
+    "MediaEngine.AcornJfdLoss": "Los metadatos de contenedores JFD no se conservan en la representación cruda de ADF.",
+    "MediaEngine.AcornCpcLoss": "Los encabezados de contenedores CPCEMU, el diseño de pistas y el tiempo no se conservan en la representación de ADF cruda.",
+    "MediaEngine.AcornTd0Loss": "El encabezado de TeleDisk, comentario, orden de pista y metadatos de contenedores no se conservan en la representación cruda de ADF.",
+    "MediaEngine.AcornTrailingLoss": "Se omiten las posiciones vacías al final de la tabla de pistas fuera del perfil de destino; todos los sectores de destino están presentes."
+  }
+}

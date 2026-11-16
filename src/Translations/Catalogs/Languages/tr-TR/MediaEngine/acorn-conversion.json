@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Kaynak biçimi '{0}', Acorn hedefi '{1}' için eksiksiz ve doğrulanmış sektörler içermiyor.",
+    "MediaEngine.AcornRawAdfLoss": "Ham dosyanın baytları değiştirilmeden doğrulanmış Acorn ADF sektörlerine göre yeniden gruplandırılır. Ham dosyalar kayıtlı sektör tanımlayıcıları veya sağlama toplamları içermez.",
+    "MediaEngine.AcornRawDfsLoss": "Ham dosyanın baytları değiştirilmeden doğrulanmış BBC DFS sektörlerine göre yeniden gruplandırılır. Ham dosyalar kayıtlı sektör tanımlayıcıları veya sağlama toplamları içermez.",
+    "MediaEngine.AcornJfdLoss": "JFD konteyner metadata ham ADF temsilinde korunmuyor.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU kapsayıcı başlıkları, iz düzeni ve zamanlama ham ADF gösteriminde korunmaz.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk başlığı, yorum, iz sırası ve kapsayıcı meta verileri ham ADF gösteriminde korunmaz.",
+    "MediaEngine.AcornTrailingLoss": "Hedef profilin dışındaki iz tablosunun sonundaki boş yuvalar atlanır; tüm hedef sektörler mevcuttur."
+  }
+}

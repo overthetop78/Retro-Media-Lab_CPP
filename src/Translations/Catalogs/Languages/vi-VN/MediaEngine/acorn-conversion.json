@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "Định dạng nguồn{0}Không chứa các khu vực có thẩm quyền đầy đủ cho Acorn đích{1}'.",
+    "MediaEngine.AcornRawAdfLoss": "Hồ sơ thô được tập hợp lại thành khu Acorn ADF có hiệu lực mà không thay đổi byte. Tập tin thô không chứa bộ nhận diện phân khu hoặc tổng kiểm tra.",
+    "MediaEngine.AcornRawDfsLoss": "Tập tin thô được tập hợp lại thành xác thực BBC DFS Phân khu mà không thay đổi byte. Tập tin thô không chứa bộ nhận diện phân khu hoặc tổng kiểm tra.",
+    "MediaEngine.AcornJfdLoss": "Dữ liệu siêu dữ liệu JFD không được bảo tồn trong bản đại diện ADF thô.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU dẫn đầu công-te-nơ, bố trí và thời gian theo dõi không được bảo tồn trong biểu diễn ADF thô.",
+    "MediaEngine.AcornTd0Loss": "Đầu trang TeleDisk, chú thích, thứ tự theo dõi và siêu dữ liệu container không được bảo tồn trong biểu diễn ADF thô.",
+    "MediaEngine.AcornTrailingLoss": "Các khe cắm theo dấu trống bên ngoài hồ sơ đích bị bỏ qua; tất cả các khu vực mục tiêu đều có mặt."
+  }
+}

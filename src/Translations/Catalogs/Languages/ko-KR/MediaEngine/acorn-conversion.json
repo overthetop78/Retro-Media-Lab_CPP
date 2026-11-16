@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.AcornRepresentation": "소스 형식 '{0}'은 Acorn Target '{1}'의 완전한 검증된 섹터를 포함하지 않습니다.",
+    "MediaEngine.AcornRawAdfLoss": "원시 파일은 바이트를 변경하지 않고 검증 된 Acorn ADF 섹터로 재구성됩니다. Raw 파일은 기록 된 섹터 식별자 또는 체크섬이 없습니다.",
+    "MediaEngine.AcornRawDfsLoss": "원시 파일은 바이트를 변경하지 않고 검증 된 BBC DFS 섹터로 재구성됩니다. Raw 파일은 기록 된 섹터 식별자 또는 체크섬이 없습니다.",
+    "MediaEngine.AcornJfdLoss": "JFD 컨테이너 메타데이터는 원시 ADF 표현에 보존되지 않습니다.",
+    "MediaEngine.AcornCpcLoss": "CPCEMU 컨테이너 헤더, 트랙 레이아웃 및 타이밍은 원시 ADF 표현에 보존되지 않습니다.",
+    "MediaEngine.AcornTd0Loss": "TeleDisk 헤더, 주석, 트랙 순서 및 컨테이너 메타데이터는 원시 ADF 표현에 보존되지 않습니다.",
+    "MediaEngine.AcornTrailingLoss": "대상 프로필 밖의 트랙 테이블 끝부분에 있는 빈 슬롯은 생략됩니다. 모든 대상 섹터가 존재합니다."
+  }
+}
