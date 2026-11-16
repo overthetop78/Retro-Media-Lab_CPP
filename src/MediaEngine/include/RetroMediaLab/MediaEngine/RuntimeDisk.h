@@ -43,6 +43,7 @@ public:
     RETROMEDIALAB_MEDIAENGINE_API std::vector<std::int64_t> trackSectors(std::int32_t cylinder,std::int32_t head)const;
     RETROMEDIALAB_MEDIAENGINE_API std::future<MediaDiskSector> readSectorAsync(std::int64_t,std::stop_token={})const;
     RETROMEDIALAB_MEDIAENGINE_API void writeSector(std::int64_t,std::span<const std::uint8_t>,std::optional<bool> deletedDataMark={});
+    RETROMEDIALAB_MEDIAENGINE_API void formatTrack(std::int32_t cylinder,std::int32_t head,std::span<const MediaDiskSector>,std::optional<std::int32_t> dataRate={},std::optional<bool> mfm={});
     RETROMEDIALAB_MEDIAENGINE_API std::future<void> flushAsync(std::stop_token={});
     RETROMEDIALAB_MEDIAENGINE_API void close();
 private:

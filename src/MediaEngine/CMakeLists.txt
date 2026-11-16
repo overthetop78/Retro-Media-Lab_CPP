@@ -2,6 +2,8 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Runtime/Disk.cpp
   src/Runtime/Sectors.cpp
   src/Runtime/Persistence.cpp
+  src/Runtime/SectorTracks.cpp
+  src/Runtime/FormatTrack.cpp
   src/Runtime/Metadata.cpp
   src/Composition/Writing.cpp
   src/Images/WritingService.cpp

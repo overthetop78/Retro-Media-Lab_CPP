@@ -2970,9 +2970,12 @@
     <ClInclude Include="src\MediaEngine\src\Reconstruction\Sector\Registry.h" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Disk.cpp" />
     <ClInclude Include="src\MediaEngine\src\Runtime\DiskState.h" />
+    <ClCompile Include="src\MediaEngine\src\Runtime\FormatTrack.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Metadata.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Persistence.cpp" />
     <ClCompile Include="src\MediaEngine\src\Runtime\Sectors.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Runtime\SectorTracks.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Runtime\SectorTracks.h" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicImageSetWriter.h" />

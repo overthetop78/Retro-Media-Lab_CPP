@@ -10926,6 +10926,9 @@
     <ClInclude Include="src\MediaEngine\src\Runtime\DiskState.h">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Runtime\FormatTrack.cpp">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Runtime\Metadata.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
@@ -10935,6 +10938,12 @@
     <ClCompile Include="src\MediaEngine\src\Runtime\Sectors.cpp">
       <Filter>src\MediaEngine\src\Runtime</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Runtime\SectorTracks.cpp">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Runtime\SectorTracks.h">
+      <Filter>src\MediaEngine\src\Runtime</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Sources\AtomicConstants.h">
       <Filter>src\MediaEngine\src\Sources</Filter>
     </ClInclude>
