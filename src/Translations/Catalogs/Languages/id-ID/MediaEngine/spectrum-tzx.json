@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Citra Spectrum TAP kosong atau memuat panjang blok tidak lengkap atau tidak valid.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP block {0} memiliki checksum XOR yang tidak valid.",
+    "MediaEngine.SpectrumTapWrite": "Keluaran Spectrum TAP memerlukan blok lengkap dengan pemeriksaan XOR yang valid.",
+    "MediaEngine.TzxHeader": "Header TZX hilang atau tidak lengkap.",
+    "MediaEngine.TzxVersion": "TZX versi {0}.{1} diluar profil yang didukung 1.20.",
+    "MediaEngine.TzxBlock": "Sebuah blok TZX atau panjang bidang meluas di luar gambar.",
+    "MediaEngine.TzxControlFlow": "Citra TZX berisi awal atau akhir perulangan tanpa pasangan, atau pengembalian sebelum urutan pemanggilan apa pun.",
+    "MediaEngine.TzxTarget": "target TZX blok {0} blok {1}, diluar gambar.",
+    "MediaEngine.TzxWrite": "Dokumen tidak dapat ditulis sebagai TZX tanpa kehilangan blok payloads."
+  }
+}

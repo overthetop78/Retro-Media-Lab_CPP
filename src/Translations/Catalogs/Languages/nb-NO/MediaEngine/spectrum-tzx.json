@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP-bildet er tomt eller inneholder en ufullstendig eller ugyldig blokklengde.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP blokk {0} har en ugyldig XOR kontrollsum.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP-utgang krever komplette blokker med gyldige XOR-summer.",
+    "MediaEngine.TzxHeader": "TZX-hodet mangler eller er ufullstendig.",
+    "MediaEngine.TzxVersion": "TZX versjon {0}.{1} er utenfor den støttede 1.20-profilen.",
+    "MediaEngine.TzxBlock": "En TZX blokk eller dens lengdefelt strekker seg utover bildet.",
+    "MediaEngine.TzxControlFlow": "TZX-bildet inneholder en løkkestart eller løkkeslutt uten motstykke, eller en retur før noen kallsekvens.",
+    "MediaEngine.TzxTarget": "TZX-blokk {0} målblokk {1}, utenfor bildet.",
+    "MediaEngine.TzxWrite": "Dokumentet kan ikke skrives som TZX uten å miste blokk nyttelast."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP kuva on tyhjä tai sisältää epätäydellisen tai virheellinen lohkon pituus.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP lohko {0} on virheellinen XOR tarkistussumma.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP lähtö vaatii kaikki lohkot voimassa XOR tarkistussummat.",
+    "MediaEngine.TzxHeader": "TZX-otsikko puuttuu tai on puutteellinen.",
+    "MediaEngine.TzxVersion": "TZX versio {0}.{1} on tuetun 1.20 profiilin ulkopuolella.",
+    "MediaEngine.TzxBlock": "TZX-lohko tai sen pituuskenttä ulottuu kuvan ulkopuolelle.",
+    "MediaEngine.TzxControlFlow": "TZX-kuvassa on silmukan alku tai loppu ilman vastinetta tai paluu ennen yhtäkään kutsusarjaa.",
+    "MediaEngine.TzxTarget": "TZX lohko {0} kohde lohko {1}, kuvan ulkopuolella.",
+    "MediaEngine.TzxWrite": "Asiakirjaa ei voi kirjoittaa TZX:nä menettämättä lohkokuormia."
+  }
+}

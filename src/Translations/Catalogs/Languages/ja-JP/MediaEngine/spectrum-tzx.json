@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAPイメージが空か、ブロック長が不完全または無効です。",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAPブロック {0} には、XOR チェックサムが無効になっています。",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP出力には、有効なXORチェックサムを持つ完全なブロックが必要です。",
+    "MediaEngine.TzxHeader": "TZX ヘッダーが欠落しているか、不完全である。",
+    "MediaEngine.TzxVersion": "TZX バージョン {0}.{1} は、サポートされている 1.20 プロファイルの外にあります。",
+    "MediaEngine.TzxBlock": "TZXブロックまたはその長さフィールドはイメージを超えて拡張します。",
+    "MediaEngine.TzxControlFlow": "TZXイメージに対応する開始または終了がないループ、または呼び出しシーケンスより前のリターンが含まれています。",
+    "MediaEngine.TzxTarget": "TZX ブロック {0} ターゲットは、画像の外側に {1} をブロックします。",
+    "MediaEngine.TzxWrite": "文書は、ブロックペイロードを失うことなくTZXとして記述することはできません。"
+  }
+}

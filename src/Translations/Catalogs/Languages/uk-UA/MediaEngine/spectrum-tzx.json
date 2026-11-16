@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Зображення Spectrum TAP є порожнім або містить неповну або недійсну довжину блоку.",
+    "MediaEngine.SpectrumTapChecksum": "Блок Spectrum TAP {0} має недійсну контрольну суму XOR.",
+    "MediaEngine.SpectrumTapWrite": "Виведення Spectrum TAP потребує повних блоків із правильними контрольними сумами XOR.",
+    "MediaEngine.TzxHeader": "Заголовок TZX відсутній або неповний.",
+    "MediaEngine.TzxVersion": "Версія TZX {0}.{1} поза підтримкою 1.20 профілю.",
+    "MediaEngine.TzxBlock": "Блок TZX або його поле довжиною поширюється за межі зображення.",
+    "MediaEngine.TzxControlFlow": "Образ TZX містить початок або кінець циклу без пари чи повернення до будь-якої послідовності викликів.",
+    "MediaEngine.TzxTarget": "TZX блок {0} цілі блок {1}, поза зображенням.",
+    "MediaEngine.TzxWrite": "Документ неможливо записати як TZX без втрати даних блоків."
+  }
+}

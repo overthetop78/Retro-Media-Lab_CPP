@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Imaginea Spectrum TAP este goală sau conține o lungime de bloc incompletă sau invalidă.",
+    "MediaEngine.SpectrumTapChecksum": "Blocul Spectrum TAP {0} are o sumă de control XOR invalidă.",
+    "MediaEngine.SpectrumTapWrite": "Ieșirea Spectrum TAP necesită blocuri complete cu sume de control XOR valide.",
+    "MediaEngine.TzxHeader": "Antetul TZX lipseşte sau este incomplet.",
+    "MediaEngine.TzxVersion": "Versiunea TZX {0}.{1} este în afara profilului 1.20 susţinut.",
+    "MediaEngine.TzxBlock": "Un bloc TZX sau câmpul său de lungime se extinde dincolo de imagine.",
+    "MediaEngine.TzxControlFlow": "Imaginea TZX conține un început sau un sfârșit de buclă fără pereche, ori o revenire înainte de orice secvență de apeluri.",
+    "MediaEngine.TzxTarget": "Blocul TZX {0} țintă bloc {1}, în afara imaginii.",
+    "MediaEngine.TzxWrite": "Documentul nu poate fi scris ca TZX fără a pierde încărcăturile utile."
+  }
+}

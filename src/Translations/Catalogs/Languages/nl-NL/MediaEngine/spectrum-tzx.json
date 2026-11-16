@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "De Spectrum TAP-afbeelding is leeg of bevat een onvolledige of ongeldige bloklengte.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP blok {0} heeft een ongeldig XOR controlesom.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP uitgang vereist volledige blokken met geldige XOR controlesums.",
+    "MediaEngine.TzxHeader": "De TZX header ontbreekt of is onvolledig.",
+    "MediaEngine.TzxVersion": "TZX versie {0}.{1} is buiten het ondersteunde 1.20 profiel.",
+    "MediaEngine.TzxBlock": "Een TZX-blok of het lengteveld strekt zich verder dan de afbeelding.",
+    "MediaEngine.TzxControlFlow": "De TZX-image bevat een lus zonder bijbehorend begin of einde, of een terugkeer vóór enige aanroepreeks.",
+    "MediaEngine.TzxTarget": "TZX blok {0} doelwitten blok {1}, buiten de afbeelding.",
+    "MediaEngine.TzxWrite": "Het document kan niet als TZX worden geschreven zonder blokladingen te verliezen."
+  }
+}

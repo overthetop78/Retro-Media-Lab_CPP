@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP 映像為空，或包含不完整或無效的區塊長度。",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP 區塊 {0} 的 XOR 校驗和無效。",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP 輸出需要具有有效 XOR 校驗和的完整區塊。",
+    "MediaEngine.TzxHeader": "TZX 標頭遺失或不完整。",
+    "MediaEngine.TzxVersion": "TZX 版本 {0}.{1} 超出支援的 1.20 規格範圍。",
+    "MediaEngine.TzxBlock": "TZX 區塊或其長度欄位超出映像範圍。",
+    "MediaEngine.TzxControlFlow": "TZX 映像包含不匹配的迴圈起點或終點，或在任何呼叫序列之前出現返回。",
+    "MediaEngine.TzxTarget": "TZX 區塊 {0} 指向映像範圍外的區塊 {1}。",
+    "MediaEngine.TzxWrite": "無法在不遺失區塊資料的情況下將文件寫成 TZX。"
+  }
+}

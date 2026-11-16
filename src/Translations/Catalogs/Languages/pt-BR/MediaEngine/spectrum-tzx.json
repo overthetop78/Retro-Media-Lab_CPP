@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "A imagem Spectrum TAP está vazia ou contém um comprimento de bloco incompleto ou inválido.",
+    "MediaEngine.SpectrumTapChecksum": "O bloco TAP Spectrum {0} tem um checksum XOR inválido.",
+    "MediaEngine.SpectrumTapWrite": "A saída do Spectrum TAP requer blocos completos com checksums XOR válidos.",
+    "MediaEngine.TzxHeader": "O cabeçalho TZX está faltando ou incompleto.",
+    "MediaEngine.TzxVersion": "A versão do TZX {0}.{1} está fora do perfil 1.20 suportado.",
+    "MediaEngine.TzxBlock": "Um bloco TZX ou seu campo de comprimento se estende além da imagem.",
+    "MediaEngine.TzxControlFlow": "A imagem TZX contém um início ou fim de laço sem correspondência, ou um retorno antes de qualquer sequência de chamadas.",
+    "MediaEngine.TzxTarget": "Bloco TZX {0} alvos bloco {1}, fora da imagem.",
+    "MediaEngine.TzxWrite": "O documento não pode ser escrito como TZX sem perder carga útil de bloco."
+  }
+}

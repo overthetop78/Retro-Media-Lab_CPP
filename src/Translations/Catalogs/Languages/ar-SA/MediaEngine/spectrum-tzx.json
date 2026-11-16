@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "صورة Spectrum TAP فارغة أو تحتوي على طول كتلة غير مكتمل أو غير صالح.",
+    "MediaEngine.SpectrumTapChecksum": "تحتوي كتلة Spectrum TAP {0} على مجموع تحقق XOR غير صالح.",
+    "MediaEngine.SpectrumTapWrite": "يتطلب إخراج Spectrum TAP كتلًا مكتملة ذات مجاميع تحقق XOR صالحة.",
+    "MediaEngine.TzxHeader": "ترويسة TZX مفقودة أو غير مكتملة.",
+    "MediaEngine.TzxVersion": "إصدار TZX {0}.{1} خارج النطاق المدعوم 1.20.",
+    "MediaEngine.TzxBlock": "تمتد كتلة TZX أو حقل طولها إلى خارج الصورة.",
+    "MediaEngine.TzxControlFlow": "تحتوي صورة TZX على بداية حلقة أو نهايتها دون تطابق، أو على رجوع قبل أي تسلسل استدعاءات.",
+    "MediaEngine.TzxTarget": "تستهدف كتلة TZX {0} الكتلة {1} خارج الصورة.",
+    "MediaEngine.TzxWrite": "لا يمكن كتابة المستند بصيغة TZX دون فقدان بيانات الكتل."
+  }
+}

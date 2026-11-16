@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "ภาพ สเปกตรัม TAP ว่าง หรือ มี ความ ยาว ไม่ ครบ ถ้วน หรือ ไม่ คงที่.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP Block {0} มีการตรวจสอบ XOR ไม่ถูกต้อง",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP จะต้องการบล็อกที่สมบูรณ์ด้วยการตรวจสอบ XOR ที่ถูกต้อง",
+    "MediaEngine.TzxHeader": "หัว TZX ขาดหายไปหรือไม่สมบูรณ์",
+    "MediaEngine.TzxVersion": "TZX รุ่น {0}.{1} อยู่นอกโพรไฟล์ที่รองรับ 1.20",
+    "MediaEngine.TzxBlock": "บล็อก TZX หรือสนามยาวที่ขยายเกินภาพ",
+    "MediaEngine.TzxControlFlow": "อิมเมจ TZX มีจุดเริ่มต้นหรือจุดสิ้นสุดของลูปที่ไม่มีคู่ หรือลำดับการคืนค่าก่อนลำดับการเรียกใด ๆ",
+    "MediaEngine.TzxTarget": "TZX บล็อก {0} เป้าหมายบล็อก {1} นอกภาพ",
+    "MediaEngine.TzxWrite": "เอกสารไม่สามารถเขียนเป็น TZX ได้ โดยไม่ต้องสูญเสียภาระ"
+  }
+}

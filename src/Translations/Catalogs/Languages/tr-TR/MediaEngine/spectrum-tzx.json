@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP görüntüsü boş veya eksik veya geçersiz bir blok uzunluğu içeriyor.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP bloğu {0} geçersiz bir XOR checksum vardır.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP çıkışı geçerli XOR kontrolleri ile tam bloklar gerektirir.",
+    "MediaEngine.TzxHeader": "TZX başlığı eksik veya eksik.",
+    "MediaEngine.TzxVersion": "TZX versiyonu {0}.{1}, desteklenen 1.20 profili dışındadır.",
+    "MediaEngine.TzxBlock": "Bir TZX bloğu veya uzun alanı görüntünün ötesine uzanır.",
+    "MediaEngine.TzxControlFlow": "TZX görüntüsü eşleşmeyen bir döngü başlangıcı veya sonu ya da herhangi bir çağrı dizisinden önce bir dönüş içeriyor.",
+    "MediaEngine.TzxTarget": "TZX bloğu {0} Hedefler {1}, görüntü dışında.",
+    "MediaEngine.TzxWrite": "Belge, blok ödeme yüklerini kaybetmeden TZX olarak yazılamaz."
+  }
+}

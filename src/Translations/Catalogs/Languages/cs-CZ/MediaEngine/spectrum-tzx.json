@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Obraz Spectrum TAP je prázdný nebo obsahuje neúplnou nebo neplatnou délku bloku.",
+    "MediaEngine.SpectrumTapChecksum": "Blok Spectrum TAP {0} má neplatný kontrolní součet XOR.",
+    "MediaEngine.SpectrumTapWrite": "Výstup Spectrum TAP vyžaduje úplné bloky s platnými kontrolními součty XOR.",
+    "MediaEngine.TzxHeader": "Záhlaví TZX chybí nebo není kompletní.",
+    "MediaEngine.TzxVersion": "TZX verze {0}.{1} je mimo podporovaný 1.20 profil.",
+    "MediaEngine.TzxBlock": "TZX blok nebo jeho délka pole sahá za obrázek.",
+    "MediaEngine.TzxControlFlow": "Obraz TZX obsahuje nespárovaný začátek nebo konec smyčky, nebo návrat před jakoukoli sekvencí volání.",
+    "MediaEngine.TzxTarget": "TZX blok {0} cíle blok {1}, mimo obraz.",
+    "MediaEngine.TzxWrite": "Dokument nemůže být zapsán jako TZX, aniž by ztratil blokové užitečné zatížení."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Das Spectrum TAP-Bild ist leer oder enthält eine unvollständige oder ungültige Blocklänge.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP Block {0} hat eine ungültige XOR Prüfsumme.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP-Ausgabe erfordert vollständige Blöcke mit gültigen XOR-Prüfsummen.",
+    "MediaEngine.TzxHeader": "Der TZX-Header fehlt oder ist unvollständig.",
+    "MediaEngine.TzxVersion": "Die TZX-Version {0}.{1} befindet sich außerhalb des unterstützten 1.20-Profils.",
+    "MediaEngine.TzxBlock": "Ein TZX-Block bzw. dessen Längenfeld erstreckt sich über das Bild hinaus.",
+    "MediaEngine.TzxControlFlow": "Das TZX-Abbild enthält eine Schleife ohne passenden Anfang oder Abschluss oder einen Rücksprung vor einer Aufrufsequenz.",
+    "MediaEngine.TzxTarget": "TZX block {0} zielt auf block {1}, außerhalb des Bildes.",
+    "MediaEngine.TzxWrite": "Das Dokument kann nicht als TZX geschrieben werden, ohne Blocknutzlasten zu verlieren."
+  }
+}

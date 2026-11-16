@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "תמונת Spectrum TAP ריקה או מכילה אורך בלוק לא שלם או לא תקין.",
+    "MediaEngine.SpectrumTapChecksum": "לבלוק Spectrum TAP {0} יש סכום ביקורת XOR לא תקין.",
+    "MediaEngine.SpectrumTapWrite": "פלט Spectrum TAP דורש בלוקים שלמים עם סכומי ביקורת XOR תקינים.",
+    "MediaEngine.TzxHeader": "ראש TZX חסר או לא שלם.",
+    "MediaEngine.TzxVersion": "TZX גירסה {0}.{1} מחוץ לפרופיל 1.20 הנתמך.",
+    "MediaEngine.TzxBlock": "בלוק TZX או שטח האורך שלו משתרע מעבר לתמונה.",
+    "MediaEngine.TzxControlFlow": "תמונת TZX מכילה התחלה או סוף של לולאה ללא התאמה, או חזרה לפני רצף קריאות כלשהו.",
+    "MediaEngine.TzxTarget": "TZX לחסום {0} מטרות לחסום {1}, מחוץ לתמונה.",
+    "MediaEngine.TzxWrite": "לא ניתן לכתוב את המסמך כ-TZX בלי לאבד את נתוני הבלוקים."
+  }
+}

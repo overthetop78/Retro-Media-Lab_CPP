@@ -1,0 +1,15 @@
+# Conteneurs Spectrum TAP et TZX
+
+Références C# en lecture seule : `Constants/{SpectrumTapConstants,TzxConstants}.cs` et `Images/Formats/Tape/{SpectrumTap,Tzx}/*{Format,Reader,Writer}.cs` dans `F:/GW GUI`. Les huit SHA256 correspondent à l’inventaire.
+
+Le conteneur Spectrum TAP conserve chaque bloc, son flag, la distinction d’en-tête et la validité XOR. La reconnaissance exige le framing complet, un fichier non vide et tous les XOR valides ; une lecture explicite conserve un bloc au XOR incorrect avec un avertissement traduisible. Les octets sont lus directement dans la source possédée, par bloc de 65535 octets maximum, sans charger le fichier entier dans le cache de reconnaissance. Les données restent accessibles par plages possédées ; aucun timing n’est inventé.
+
+Le writer TAP trie les segments de façon stable, exige les métadonnées et les plages compatibles, puis écrit atomiquement. Amélioration par rapport au C# : il recalcule le XOR des octets avant écriture, afin qu’une métadonnée checksumValid falsifiée ne permette pas une sortie corrompue. Un échec sur un bloc ultérieur ne remplace pas la destination existante.
+
+Le lecteur TZX conserve les 25 types déclarés par le C# et les blocs inconnus à préfixe de longueur 32 bits. Les champs de longueur sont bornés avant lecture/allocation. Les blocs sans payload restent sans plage de données. La validation structurelle des cibles de sauts/appels, des boucles et des retours reprend le C# ; elle ne simule pas l’exécution du programme TZX. Le contexte CDT/TSX est conservé séparément du format commun. La reconnaissance utilise la signature ; la lecture refuse les versions hors du profil 1.20. Les écritures conservent les payloads accessibles sans les interpréter et publient atomiquement, avec les mêmes règles de métadonnées de version que le C#.
+
+Compilation Debug réussie sans avertissement. Contrôle ciblé PASS : TAP valide, vide, tronqué, longueur invalide, XOR invalide conservé, en-tête Spectrum, aller-retour binaire exact et refus d’une fausse validation XOR avec destination intacte. TZX : toutes les familles de longueurs des 25 identifiants connus, bloc inconnu conservé, payload vide, signature, version future reconnue mais refusée à la lecture, cibles hors image, boucles non appariées, retour sans appel et appel vide. Aller-retour binaire exact pour les trois extensions TZX/CDT/TSX. Annulation avant écriture avec destination conservée. Le banc temporaire est supprimé après consignation ; aucun média utilisateur n’est intégré.
+
+Neuf diagnostics générés avec Argos dans les 29 langues puis relus et corrigés : notamment XOR, invariant Spectrum, sens des boucles non appariées, arabe et chinois traditionnel. Les 30 DLL de catalogues compilent en Debug. Audit des constantes et catalogues PASS : 1296 fichiers C++, 56 clés d’erreur App et 29 langues.
+
+Ce bloc concerne les conteneurs : expansion du signal TZX/TSX, codecs Spectrum, décodeur MSX TSX et composition globale restent à porter. Aucun de ces composants n’est marqué terminé par ce contrôle.

@@ -47,7 +47,7 @@ inline constexpr std::string_view BlockIdMetadataKey="tzxBlockId";
 inline constexpr std::string_view DecoderId="tzx-signal";
 inline constexpr std::string_view EncoderId="tzx-signal";
 inline constexpr std::string_view FormatId="tape.tzx",WriterId="tape-tzx",TzxExtension=".tzx",CdtExtension=".cdt",TsxExtension=".tsx",PayloadKey="payloadLength",KnownKey="known",MajorKey="majorVersion",MinorKey="minorVersion",ContextKey="contextExtension",TrueValue="True",FalseValue="False";
-inline constexpr int SignatureSize=8,MarkerOffset=7,MajorOffset=8,MinorOffset=9,ByteWidth=1,WordWidth=2,TripleWidth=3,DwordWidth=4,TurboHeaderSize=18,TurboLengthOffset=15,PureHeaderSize=10,PureLengthOffset=7,DirectHeaderSize=8,DirectLengthOffset=5,CustomHeaderSize=20,CustomLengthOffset=16,GlueLength=9,HexRadix=16,ByteBits=8,HexWidth=2,MaximumByte=255;
+inline constexpr int SignatureSize=8,MarkerOffset=7,MajorOffset=8,MinorOffset=9,ByteWidth=1,WordWidth=2,TripleWidth=3,DwordWidth=4,TurboHeaderSize=18,TurboLengthOffset=15,PureHeaderSize=10,PureLengthOffset=7,DirectHeaderSize=8,DirectLengthOffset=5,CustomHeaderSize=20,CustomLengthOffset=16,GlueLength=9,DecimalRadix=10,HexRadix=16,ByteBits=8,HexWidth=2,MaximumByte=255;
 inline constexpr char DigitZero='0';
 inline constexpr std::array<std::uint8_t,25> SupportedBlockIds{StandardSpeedData,TurboSpeedData,PureTone,PulseSequence,PureData,DirectRecording,CswRecording,GeneralizedData,Pause,GroupStart,GroupEnd,Jump,LoopStart,LoopEnd,CallSequence,Return,Select,StopIf48K,SetSignalLevel,TextDescription,Message,ArchiveInfo,HardwareType,CustomInfo,Glue};
 }

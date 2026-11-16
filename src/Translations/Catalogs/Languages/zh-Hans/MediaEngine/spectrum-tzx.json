@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP 图像为空或包含一个不完整或无效的块长度.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP块{0} 有一个无效的XOR校验和.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP输出需要带有有效XOR校验和的完整块.",
+    "MediaEngine.TzxHeader": "TZX 头缺少或不完整 。",
+    "MediaEngine.TzxVersion": "TZX版本{0}.{1}在被支持的1.20配置文件之外.",
+    "MediaEngine.TzxBlock": "一个TZX块或其长度场延伸出图像外.",
+    "MediaEngine.TzxControlFlow": "TZX 映像包含不匹配的循环起点或终点，或在任何调用序列之前出现返回。",
+    "MediaEngine.TzxTarget": "TZX块{0}目标块{1},图像外.",
+    "MediaEngine.TzxWrite": "文档不能被写成TZX而不丢失块有效载荷."
+  }
+}

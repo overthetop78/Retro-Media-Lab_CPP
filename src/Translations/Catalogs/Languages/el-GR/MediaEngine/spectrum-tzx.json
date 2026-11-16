@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Η εικόνα του Spectrum TAP είναι κενή ή περιέχει ένα ημιτελές ή μη έγκυρο μήκος μπλοκ.",
+    "MediaEngine.SpectrumTapChecksum": "Το μπλοκ Spectrum TAP {0} έχει μη έγκυρο άθροισμα ελέγχου XOR.",
+    "MediaEngine.SpectrumTapWrite": "Η έξοδος Spectrum TAP απαιτεί πλήρη μπλοκ με έγκυρα αθροίσματα ελέγχου XOR.",
+    "MediaEngine.TzxHeader": "Η κεφαλίδα TZX λείπει ή είναι ελλιπής.",
+    "MediaEngine.TzxVersion": "Η έκδοση TZX {0}.{1} είναι έξω από το υποστηριζόμενο προφίλ 1.20.",
+    "MediaEngine.TzxBlock": "Ένα μπλοκ TZX ή το πεδίο μήκους του εκτείνεται πέρα από την εικόνα.",
+    "MediaEngine.TzxControlFlow": "Η εικόνα TZX περιέχει βρόχο χωρίς αντίστοιχη αρχή ή τέλος, ή επιστροφή πριν από οποιαδήποτε ακολουθία κλήσεων.",
+    "MediaEngine.TzxTarget": "Το μπλοκ TZX {0} στοχεύει το μπλοκ {1}, έξω από την εικόνα.",
+    "MediaEngine.TzxWrite": "Το έγγραφο δεν μπορεί να γραφτεί ως TZX χωρίς να χάσει μπλοκ ωφέλιμο φορτίο."
+  }
+}

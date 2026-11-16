@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Spectrum TAP 이미지는 비어 있거나 불완전하거나 잘못된 블록 길이를 포함합니다.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP 블록 {0}에는 잘못된 XOR 체크섬이 있습니다.",
+    "MediaEngine.SpectrumTapWrite": "Spectrum TAP 출력은 유효한 XOR checksums를 가진 완전한 구획을 요구합니다.",
+    "MediaEngine.TzxHeader": "TZX 헤더가 누락되거나 불완전합니다.",
+    "MediaEngine.TzxVersion": "TZX 버전 {0}.{1}은 지원된 1.20 프로파일 밖에 있습니다.",
+    "MediaEngine.TzxBlock": "TZX 블록 또는 길이 필드는 이미지를 넘어 확장합니다.",
+    "MediaEngine.TzxControlFlow": "TZX 이미지에 짝이 없는 반복 시작 또는 끝이 있거나 호출 시퀀스 앞에 반환이 있습니다.",
+    "MediaEngine.TzxTarget": "TZX 블록 {0} 대상 블록 {1}, 외부 이미지.",
+    "MediaEngine.TzxWrite": "문서는 블록 페이로드를 잃지 않고 TZX로 작성할 수 없습니다."
+  }
+}

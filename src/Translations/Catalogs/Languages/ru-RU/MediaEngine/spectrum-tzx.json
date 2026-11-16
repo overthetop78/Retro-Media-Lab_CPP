@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Изображение Spectrum TAP является пустым или содержит неполную или неверную длину блока.",
+    "MediaEngine.SpectrumTapChecksum": "У блока Spectrum TAP {0} есть недействительная контрольная сумма XOR.",
+    "MediaEngine.SpectrumTapWrite": "Выход Spectrum TAP требует полных блоков с действительными контрольными суммами XOR.",
+    "MediaEngine.TzxHeader": "Заголовок TZX отсутствует или неполный.",
+    "MediaEngine.TzxVersion": "Версия TZX {0}.{1} находится вне поддерживаемого профиля 1.20.",
+    "MediaEngine.TzxBlock": "Блок TZX или его поле длины выходит за пределы изображения.",
+    "MediaEngine.TzxControlFlow": "Образ TZX содержит начало или конец цикла без пары либо возврат до любой последовательности вызовов.",
+    "MediaEngine.TzxTarget": "Блок TZX {0} нацелен на блок {1} вне изображения.",
+    "MediaEngine.TzxWrite": "Документ не может быть написан как TZX без потери полезной нагрузки блока."
+  }
+}

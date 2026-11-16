@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "Ảnh kiểu Spectrum TAP trống hoặc chứa chiều dài khối không đầy đủ hoặc không hợp lệ.",
+    "MediaEngine.SpectrumTapChecksum": "Khối Spectrum TAP{0} có một tổng kiểm tra XOR không hợp lệ.",
+    "MediaEngine.SpectrumTapWrite": "Kết xuất Spectrum TAP yêu cầu các khối đầy đủ với kiểm tra XOR hợp lệ.",
+    "MediaEngine.TzxHeader": "Tiêu đề TZX bị thiếu hoặc không đầy đủ.",
+    "MediaEngine.TzxVersion": "TZX phiên bản {0}.{1} nằm ngoài hồ sơ được hỗ trợ 1.20.",
+    "MediaEngine.TzxBlock": "Một khối TZX hoặc trường chiều dài của nó mở rộng ra ngoài hình ảnh.",
+    "MediaEngine.TzxControlFlow": "Ảnh TZX chứa điểm đầu hoặc cuối vòng lặp không có cặp, hoặc lệnh trở về trước mọi chuỗi gọi.",
+    "MediaEngine.TzxTarget": "TZX chặn {0} chặn {1}, bên ngoài ảnh.",
+    "MediaEngine.TzxWrite": "Không thể ghi tài liệu dưới dạng TZX mà không mất dữ liệu các khối."
+  }
+}

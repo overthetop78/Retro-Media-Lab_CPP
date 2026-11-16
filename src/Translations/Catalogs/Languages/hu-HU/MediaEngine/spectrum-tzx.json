@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "MediaEngine.SpectrumTapStructure": "A Spectrum TAP kép üres, vagy tartalmaz egy hiányos vagy érvénytelen blokk hossza.",
+    "MediaEngine.SpectrumTapChecksum": "Spectrum TAP blokk {0} érvénytelen XOR ellenőrző összeg.",
+    "MediaEngine.SpectrumTapWrite": "A Spectrum TAP kimenet teljes blokkokat igényel érvényes XOR ellenőrző összegekkel.",
+    "MediaEngine.TzxHeader": "A TZX fejléc hiányzik vagy hiányos.",
+    "MediaEngine.TzxVersion": "A TZX verzió {0}.{1} kívül esik a támogatott 1.20 profilon.",
+    "MediaEngine.TzxBlock": "A TZX blokk vagy hossz mező túlnyúlik a képen.",
+    "MediaEngine.TzxControlFlow": "A TZX kép pár nélküli cikluskezdést vagy ciklusvéget, illetve hívássorozat előtti visszatérést tartalmaz.",
+    "MediaEngine.TzxTarget": "TZX blokk {0} cél blokk {1}, kívül a kép.",
+    "MediaEngine.TzxWrite": "A dokumentumot nem lehet TZX-ként írni anélkül, hogy ne veszítené el a blokkterheléseket."
+  }
+}

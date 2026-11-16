@@ -1,6 +1,16 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view SpectrumTapStructure="MediaEngine.SpectrumTapStructure";
+inline constexpr std::string_view SpectrumTapChecksum="MediaEngine.SpectrumTapChecksum";
+inline constexpr std::string_view SpectrumTapWrite="MediaEngine.SpectrumTapWrite";
+inline constexpr std::string_view TzxHeader="MediaEngine.TzxHeader";
+inline constexpr std::string_view TzxVersion="MediaEngine.TzxVersion";
+inline constexpr std::string_view TzxBlock="MediaEngine.TzxBlock";
+inline constexpr std::string_view TzxControlFlow="MediaEngine.TzxControlFlow";
+inline constexpr std::string_view TzxTarget="MediaEngine.TzxTarget";
+inline constexpr std::string_view TzxWrite="MediaEngine.TzxWrite";
+
 inline constexpr std::string_view MsxCasSeparator="MediaEngine.MsxCasSeparator";
 inline constexpr std::string_view MsxCasPrefix="MediaEngine.MsxCasPrefix";
 inline constexpr std::string_view MsxCasEmptySeparator="MediaEngine.MsxCasEmptySeparator";
