@@ -783,6 +783,11 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Metadata.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\CloneCd\Descriptor.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Descriptor.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\CloneCd\Reader.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Reader.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Gdi\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Gdi\Container.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Optical\Gdi\Descriptor.cpp" />
@@ -1282,6 +1287,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-harddisk.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-optical.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\clonecd.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-gcr.json" />

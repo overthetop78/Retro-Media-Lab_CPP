@@ -50,6 +50,8 @@ La tâche 153 porte le bloc GDI complet : descripteur Unicode, pistes associées
 
 La tâche 154 termine le bloc BIN/CUE : modèles CUE possédés, parseur/sérialiseur, sources PCM WAVE/Vorbis, reconnaissance, pistes/index/pregaps et publication atomique multipiste. Tremor entier et libogg officiels sont intégrés statiquement ; les PCM stéréo, mono et chaînés sont identiques au C# sur les échantillons contrôlés. Une erreur de callback libère le décodeur et une lecture suivante le rouvre. Compilation Debug, contrôle ciblé, audit et catalogues réussis. Le raccordement à la composition globale reste distinct.
 
+La tâche 155 porte le lecteur CloneCD 2/3 : descripteur CCD possédé, TOC/sessions/pistes, entiers signés/hexadécimaux, IMG brut et SUB optionnel, index/pregaps et propriétés. Compilation Debug, contrôle ciblé, audit et catalogues réussis ; aucun writer absent du C# n’est ajouté.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

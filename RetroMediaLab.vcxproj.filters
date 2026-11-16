@@ -361,6 +361,9 @@
     <Filter Include="src\MediaEngine\src\Formats\Optical\Chd">
       <UniqueIdentifier>{39E73420-8FD0-5A9B-A8FC-A39FEAFC5AFA}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Optical\CloneCd">
+      <UniqueIdentifier>{AACF7E17-DB5C-56DE-98C8-2C39F09C3651}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\Optical\Gdi">
       <UniqueIdentifier>{5EDCC562-5458-5B85-9529-2EE31135A2BD}</UniqueIdentifier>
     </Filter>
@@ -3885,6 +3888,21 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Chd\Reader.h">
       <Filter>src\MediaEngine\src\Formats\Optical\Chd</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\CloneCd</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\CloneCd\Descriptor.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\CloneCd</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Descriptor.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\CloneCd</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Optical\CloneCd\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Optical\CloneCd</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Optical\CloneCd\Reader.h">
+      <Filter>src\MediaEngine\src\Formats\Optical\CloneCd</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Formats\Optical\Gdi\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Optical\Gdi</Filter>
     </ClInclude>
@@ -5380,6 +5398,9 @@
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-optical.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\clonecd.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-container-writer.json">

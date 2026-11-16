@@ -1,6 +1,8 @@
 add_library(RetroMediaLab.MediaEngine SHARED
   src/Formats/Optical/BinCue/Sheet.cpp
   src/Formats/Optical/BinCue/SheetWriter.cpp
+  src/Formats/Optical/CloneCd/Descriptor.cpp
+  src/Formats/Optical/CloneCd/Reader.cpp
   src/Formats/Common/Audio/Vorbis/PcmSource.cpp
   src/Formats/Optical/BinCue/Reader.cpp
   src/Formats/Optical/BinCue/Writer.cpp

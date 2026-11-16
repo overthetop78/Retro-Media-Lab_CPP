@@ -1,6 +1,10 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view CloneCdDescriptor="MediaEngine.CloneCdDescriptor";
+inline constexpr std::string_view CloneCdProfile="MediaEngine.CloneCdProfile";
+inline constexpr std::string_view CloneCdIo="MediaEngine.CloneCdIo";
+inline constexpr std::string_view CloneCdImage="MediaEngine.CloneCdImage";
 inline constexpr std::string_view VorbisData="MediaEngine.VorbisData";
 inline constexpr std::string_view VorbisProfile="MediaEngine.VorbisProfile";
 inline constexpr std::string_view VorbisRange="MediaEngine.VorbisRange";
