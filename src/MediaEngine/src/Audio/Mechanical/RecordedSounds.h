@@ -26,6 +26,7 @@ RETROMEDIALAB_MEDIAENGINE_API std::span<const RecordedProfile> recordedProfiles(
 RETROMEDIALAB_MEDIAENGINE_API const RecordedProfile* findRecordedProfile(std::string_view id);
 RETROMEDIALAB_MEDIAENGINE_API std::optional<std::string_view> baseRecordedProfile(std::string_view device) noexcept;
 RETROMEDIALAB_MEDIAENGINE_API std::vector<const RecordedProfile*> recordedProfilesForDevice(std::string_view device);
+RETROMEDIALAB_MEDIAENGINE_API const RecordedSample* selectRecordedSampleInProfile(const RecordedProfile&, std::string_view operation, std::int32_t distance = 1, std::int32_t direction = 1, std::int32_t cylinder = -1);
 // Select a sample using the same stable priorities as the C# catalogue.
 RETROMEDIALAB_MEDIAENGINE_API const RecordedSample* selectRecordedSample(const RecordedProfile&, std::string_view operation, std::int32_t distance = 1, std::int32_t direction = 1, std::int32_t cylinder = -1);
 }

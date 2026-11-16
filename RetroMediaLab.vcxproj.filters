@@ -7998,6 +7998,12 @@
     <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\Constants.h">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.cpp">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Audio\Mechanical\RecordedRenderer.h">
+      <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Audio\Mechanical\RecordedSounds.cpp">
       <Filter>src\MediaEngine\src\Audio\Mechanical</Filter>
     </ClCompile>

@@ -40,8 +40,7 @@ std::vector<const RecordedProfile*> recordedProfilesForDevice(std::string_view d
     std::stable_partition(result.begin(),result.end(),[&](const auto* profile){return fallback&&profile->id==*fallback;});
     return result;
 }
-namespace {
-const RecordedSample* select(const RecordedProfile& profile,std::string_view operation,std::int32_t distance,std::int32_t direction,std::int32_t cylinder){
+const RecordedSample* selectRecordedSampleInProfile(const RecordedProfile& profile,std::string_view operation,std::int32_t distance,std::int32_t direction,std::int32_t cylinder){
     using Rank=std::tuple<bool,std::int64_t,std::int64_t>;
     const auto sign=(direction>0)-(direction<0);const auto absolute=std::abs(std::int64_t(distance));
     std::optional<Rank> best;const RecordedSample* selected=nullptr;
@@ -52,11 +51,10 @@ const RecordedSample* select(const RecordedProfile& profile,std::string_view ope
     }
     return selected;
 }
-}
 const RecordedSample* selectRecordedSample(const RecordedProfile& profile,std::string_view operation,std::int32_t distance,std::int32_t direction,std::int32_t cylinder){
-    if(const auto* sample=select(profile,operation,distance,direction,cylinder))return sample;
+    if(const auto* sample=selectRecordedSampleInProfile(profile,operation,distance,direction,cylinder))return sample;
     const auto fallback=baseRecordedProfile(profile.device);
-    if(fallback&&*fallback!=profile.id)if(const auto* base=findRecordedProfile(*fallback))return select(*base,operation,distance,direction,cylinder);
+    if(fallback&&*fallback!=profile.id)if(const auto* base=findRecordedProfile(*fallback))return selectRecordedSampleInProfile(*base,operation,distance,direction,cylinder);
     return nullptr;
 }
 }
