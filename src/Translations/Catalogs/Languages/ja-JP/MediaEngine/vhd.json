@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "ファイルが短すぎるため、VHD 終端レコードを格納できません。",
+    "MediaEngine.VhdCookie": "VHD 終端レコードの署名がありません。",
+    "MediaEngine.VhdFooterChecksum": "VHD 終端レコードのチェックサムが無効です。",
+    "MediaEngine.VhdVersion": "VHD版 {0} はサポートされていません。",
+    "MediaEngine.VhdSize": "VHDの現在のサイズは支えられた64-bitの範囲外にあります。",
+    "MediaEngine.VhdAlignment": "VHDの現在のサイズは512-byteのセクターに整列されていません。",
+    "MediaEngine.VhdChanged": "認識後にVHDの長さが変更されました。",
+    "MediaEngine.VhdPayload": "固定 VHD のデータ長が終端レコードの容量と一致しません。",
+    "MediaEngine.VhdParent": "差分 VHD イメージには、未登録の親イメージ解決機構が必要です。",
+    "MediaEngine.VhdType": "VHDイメージタイプ {0} はサポートされていません。",
+    "MediaEngine.VhdHeaderOffset": "VHD 動的ヘッダーのオフセットがファイル外にあります。",
+    "MediaEngine.VhdDynamicCookie": "VHD 動的ヘッダーの署名がありません。",
+    "MediaEngine.VhdDynamicChecksum": "VHD動的ヘッダーチェックサムは無効です。",
+    "MediaEngine.VhdTableOffset": "VHD BAT オフセットは、サポート範囲を超えた",
+    "MediaEngine.VhdBlockSize": "VHDダイナミックブロックサイズは無効です。",
+    "MediaEngine.VhdTableCoverage": "VHD BATは、宣言された容量をカバーしていません。",
+    "MediaEngine.VhdTableRange": "VHD BATブロックマップは、ファイルを超える。",
+    "MediaEngine.VhdEntryRange": "VHD BATブロックマップエントリ {0} はファイル外でポイントします。",
+    "MediaEngine.VhdWrite": "媒体文書は完全なVHDイメージとして記述できません。",
+    "MediaEngine.VhdWriteTable": "VHD BATブロックテーブルが大きすぎます。",
+    "MediaEngine.VhdWriteAlignment": "動的 VHD ブロックがセクター境界に揃っていません。",
+    "MediaEngine.VhdWriteOffset": "動的 VHD ブロック オフセットは BAT の範囲を超過します。"
+  }
+}

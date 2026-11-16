@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "파일이 너무 짧아 VHD 끝 레코드를 포함할 수 없습니다.",
+    "MediaEngine.VhdCookie": "VHD 끝 레코드 서명이 없습니다.",
+    "MediaEngine.VhdFooterChecksum": "VHD 끝 레코드 체크섬이 잘못되었습니다.",
+    "MediaEngine.VhdVersion": "VHD 버전 {0}는 지원되지 않습니다.",
+    "MediaEngine.VhdSize": "VHD 현재 크기는 지원되는 64-bit 범위 밖에 있습니다.",
+    "MediaEngine.VhdAlignment": "VHD 현재 크기는 512-byte 분야에 맞추지 않습니다.",
+    "MediaEngine.VhdChanged": "VHD 길이는 인식 후 변경됩니다.",
+    "MediaEngine.VhdPayload": "고정 VHD 데이터 길이가 끝 레코드의 용량과 일치하지 않습니다.",
+    "MediaEngine.VhdParent": "차등 VHD 이미지에 필요한 부모 이미지 확인 기능이 등록되지 않았습니다.",
+    "MediaEngine.VhdType": "VHD 이미지 유형 {0}는 지원되지 않습니다.",
+    "MediaEngine.VhdHeaderOffset": "VHD 동적 헤더 오프셋이 파일 밖에 있습니다.",
+    "MediaEngine.VhdDynamicCookie": "VHD 동적 헤더 서명이 없습니다.",
+    "MediaEngine.VhdDynamicChecksum": "VHD 동적 헤더 체크섬은 유효하지 않습니다.",
+    "MediaEngine.VhdTableOffset": "VHD BAT 상쇄는 지원되는 범위를 초과합니다.",
+    "MediaEngine.VhdBlockSize": "VHD 동적 블록 크기는 유효하지 않습니다.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT는 선언 된 용량을 커버하지 않습니다.",
+    "MediaEngine.VhdTableRange": "VHD BAT 블록 맵은 파일을 초과합니다.",
+    "MediaEngine.VhdEntryRange": "VHD BAT 블록 맵 항목 {0}이 파일 밖을 가리킵니다.",
+    "MediaEngine.VhdWrite": "미디어 문서는 완전한 VHD 이미지로 작성할 수 없습니다.",
+    "MediaEngine.VhdWriteTable": "VHD BAT 구획 테이블은 너무 크습니다.",
+    "MediaEngine.VhdWriteAlignment": "동적 VHD 블록은 섹터가 정렬되지 않습니다.",
+    "MediaEngine.VhdWriteOffset": "동적 VHD 블록 오프셋은 BAT 범위를 초과합니다."
+  }
+}

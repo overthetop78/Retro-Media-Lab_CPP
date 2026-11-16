@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "The file is too short to contain a VHD footer.",
+    "MediaEngine.VhdCookie": "The VHD footer cookie is missing.",
+    "MediaEngine.VhdFooterChecksum": "The VHD footer checksum is invalid.",
+    "MediaEngine.VhdVersion": "VHD format version {0} is unsupported.",
+    "MediaEngine.VhdSize": "The VHD current size is outside the supported 64-bit range.",
+    "MediaEngine.VhdAlignment": "The VHD current size is not aligned to 512-byte sectors.",
+    "MediaEngine.VhdChanged": "The VHD length changed after recognition.",
+    "MediaEngine.VhdPayload": "The fixed VHD payload length does not match its footer capacity.",
+    "MediaEngine.VhdParent": "Differencing VHD images require a parent resolver that is not registered.",
+    "MediaEngine.VhdType": "VHD disk type {0} is unsupported.",
+    "MediaEngine.VhdHeaderOffset": "The VHD dynamic header offset is outside the file.",
+    "MediaEngine.VhdDynamicCookie": "The VHD dynamic header cookie is missing.",
+    "MediaEngine.VhdDynamicChecksum": "The VHD dynamic header checksum is invalid.",
+    "MediaEngine.VhdTableOffset": "The VHD BAT offset exceeds the supported range.",
+    "MediaEngine.VhdBlockSize": "The VHD dynamic block size is invalid.",
+    "MediaEngine.VhdTableCoverage": "The VHD BAT does not cover the declared capacity.",
+    "MediaEngine.VhdTableRange": "The VHD BAT exceeds the file.",
+    "MediaEngine.VhdEntryRange": "VHD BAT entry {0} points outside the file.",
+    "MediaEngine.VhdWrite": "The media document cannot be written as a complete VHD image.",
+    "MediaEngine.VhdWriteTable": "The hard disk is too large for the VHD dynamic BAT.",
+    "MediaEngine.VhdWriteAlignment": "The dynamic VHD block is not sector aligned.",
+    "MediaEngine.VhdWriteOffset": "The dynamic VHD block offset exceeds the BAT range."
+  }
+}

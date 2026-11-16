@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Filen er for kort til at indeholde en VHD-slutpost.",
+    "MediaEngine.VhdCookie": "Signaturen i VHD-slutposten mangler.",
+    "MediaEngine.VhdFooterChecksum": "Kontrolsummen i VHD-slutposten er ugyldig.",
+    "MediaEngine.VhdVersion": "VHD version {0} er ikke understøttet.",
+    "MediaEngine.VhdSize": "VHD-strømstørrelsen ligger uden for det understøttede 64-bit-område.",
+    "MediaEngine.VhdAlignment": "Den aktuelle VHD størrelse er ikke tilpasset til 512-byte sektorer.",
+    "MediaEngine.VhdChanged": "VHD længden ændret efter anerkendelse.",
+    "MediaEngine.VhdPayload": "Datalængden i den faste VHD svarer ikke til kapaciteten i slutposten.",
+    "MediaEngine.VhdParent": "Differentielle VHD-diskbilleder kræver en mekanisme til at finde det overordnede billede, som ikke er registreret.",
+    "MediaEngine.VhdType": "VHD billedtype {0} er ikke understøttet.",
+    "MediaEngine.VhdHeaderOffset": "Forskydningen af den dynamiske VHD-header ligger uden for filen.",
+    "MediaEngine.VhdDynamicCookie": "Signaturen i den dynamiske VHD-header mangler.",
+    "MediaEngine.VhdDynamicChecksum": "VHD dynamisk header checksum er ugyldig.",
+    "MediaEngine.VhdTableOffset": "VHD BAT-offset overstiger det understøttede område.",
+    "MediaEngine.VhdBlockSize": "VHD-blokkens dynamiske blokstørrelse er ugyldig.",
+    "MediaEngine.VhdTableCoverage": "VHD-BAT omfatter ikke den angivne kapacitet.",
+    "MediaEngine.VhdTableRange": "VHD BAT blokkort overstiger filen.",
+    "MediaEngine.VhdEntryRange": "Post {0} i VHD BAT-blokkortet peger uden for filen.",
+    "MediaEngine.VhdWrite": "Mediedokumentet kan ikke skrives som et komplet VHD-billede.",
+    "MediaEngine.VhdWriteTable": "VHD BAT-bloktabellen er for stor.",
+    "MediaEngine.VhdWriteAlignment": "Den dynamiske VHD blok er ikke sektor tilpasset.",
+    "MediaEngine.VhdWriteOffset": "Den dynamiske VHD-blokforskydning overstiger BAT-området."
+  }
+}

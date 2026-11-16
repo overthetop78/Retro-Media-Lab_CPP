@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "แฟ้มสั้นเกินกว่าจะมีระเบียนท้าย VHD",
+    "MediaEngine.VhdCookie": "ไม่พบลายเซ็นของระเบียนท้าย VHD",
+    "MediaEngine.VhdFooterChecksum": "ผลรวมตรวจสอบของระเบียนท้าย VHD ไม่ถูกต้อง",
+    "MediaEngine.VhdVersion": "ไม่สนับสนุนรุ่นของ VHD {0}",
+    "MediaEngine.VhdSize": "ขนาดปัจจุบัน VHD อยู่นอกช่วง 64-bit ที่รองรับ",
+    "MediaEngine.VhdAlignment": "VHD ขนาดปัจจุบันไม่ได้เรียงตามแกน 512-byte",
+    "MediaEngine.VhdChanged": "ความยาวของ VHD มีการเปลี่ยนแปลงหลังจากการจดจํา",
+    "MediaEngine.VhdPayload": "ความยาวข้อมูล VHD แบบคงที่ไม่ตรงกับความจุในระเบียนท้าย",
+    "MediaEngine.VhdParent": "อิมเมจ VHD แบบส่วนต่างต้องใช้กลไกค้นหาอิมเมจต้นทางที่ยังไม่ได้ลงทะเบียน",
+    "MediaEngine.VhdType": "ไม่รองรับชนิดอิมเมจ VHD {0}",
+    "MediaEngine.VhdHeaderOffset": "ตำแหน่งส่วนหัวแบบไดนามิก VHD อยู่นอกแฟ้ม",
+    "MediaEngine.VhdDynamicCookie": "ไม่พบลายเซ็นของส่วนหัวแบบไดนามิก VHD",
+    "MediaEngine.VhdDynamicChecksum": "ผลรวมตรวจสอบของส่วนหัวแบบไดนามิก VHD ไม่ถูกต้อง",
+    "MediaEngine.VhdTableOffset": "ตำแหน่งของ VHD BAT เกินช่วงที่รองรับ",
+    "MediaEngine.VhdBlockSize": "ขนาดบล็อกไดนามิกของ VHD ไม่ถูกต้อง",
+    "MediaEngine.VhdTableCoverage": "VHD BAT ไม่ครอบคลุมความจุดังกล่าว",
+    "MediaEngine.VhdTableRange": "VHD BAT บล็อกแผนที่มากกว่าไฟล์",
+    "MediaEngine.VhdEntryRange": "รายการ {0} ในตารางบล็อก VHD BAT ชี้ออกนอกแฟ้ม",
+    "MediaEngine.VhdWrite": "ไม่สามารถเขียนเอกสารสื่อในรูปแบบอิมเมจของ VHD ได้สมบูรณ์",
+    "MediaEngine.VhdWriteTable": "ตารางบล็อก VHD BAT ใหญ่เกินไป",
+    "MediaEngine.VhdWriteAlignment": "บล็อก VHD แบบไดนามิกไม่ตรงกับขอบเขตเซกเตอร์",
+    "MediaEngine.VhdWriteOffset": "การปรับค่าบล็อกแบบไดนามิก VHD เกินช่วง BAT"
+  }
+}

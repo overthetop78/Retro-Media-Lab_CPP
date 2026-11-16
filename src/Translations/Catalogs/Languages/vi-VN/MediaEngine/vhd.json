@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Tập tin quá ngắn để chứa bản ghi cuối VHD.",
+    "MediaEngine.VhdCookie": "Thiếu chữ ký của bản ghi cuối VHD.",
+    "MediaEngine.VhdFooterChecksum": "Tổng kiểm tra bản ghi cuối VHD không hợp lệ.",
+    "MediaEngine.VhdVersion": "VHD phiên bản {0} không được hỗ trợ.",
+    "MediaEngine.VhdSize": "VHD hiện tại ở ngoài phạm vi 64-bit được hỗ trợ.",
+    "MediaEngine.VhdAlignment": "Kích thước của VHD không liên kết đến 512-byte.",
+    "MediaEngine.VhdChanged": "Chiều dài của VHD thay đổi sau khi nhận diện.",
+    "MediaEngine.VhdPayload": "Độ dài dữ liệu VHD cố định không khớp với dung lượng trong bản ghi cuối.",
+    "MediaEngine.VhdParent": "Ảnh VHD sai phân cần bộ phân giải ảnh gốc chưa được đăng ký.",
+    "MediaEngine.VhdType": "Kiểu ảnh VHD {0} không được hỗ trợ.",
+    "MediaEngine.VhdHeaderOffset": "Vị trí đầu VHD động nằm ngoài tập tin.",
+    "MediaEngine.VhdDynamicCookie": "Thiếu chữ ký đầu VHD động.",
+    "MediaEngine.VhdDynamicChecksum": "Tổng kiểm tra đầu VHD động không hợp lệ.",
+    "MediaEngine.VhdTableOffset": "Vị trí VHD BAT vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.VhdBlockSize": "Kích cỡ khối động VHD không hợp lệ.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT không bao phủ dung lượng đã khai báo.",
+    "MediaEngine.VhdTableRange": "Bản đồ khối VHD BAT vượt quá tập tin.",
+    "MediaEngine.VhdEntryRange": "Mục nhập bản đồ chặn VHD BAT {0} Chỉ ra ngoài hồ sơ.",
+    "MediaEngine.VhdWrite": "Tài liệu phương tiện không thể được viết như một hình ảnh VHD đầy đủ.",
+    "MediaEngine.VhdWriteTable": "Bảng khối VHD BAT quá lớn.",
+    "MediaEngine.VhdWriteAlignment": "Khối VHD động không căn theo ranh giới của các cung.",
+    "MediaEngine.VhdWriteOffset": "Vị trí khối VHD động vượt quá phạm vi BAT."
+  }
+}

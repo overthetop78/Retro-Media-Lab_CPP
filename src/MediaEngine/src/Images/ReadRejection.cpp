@@ -7,6 +7,25 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VhdShortFooter:
+    case DiagnosticCode::VhdCookie:
+    case DiagnosticCode::VhdFooterChecksum:
+    case DiagnosticCode::VhdVersion:
+    case DiagnosticCode::VhdSize:
+    case DiagnosticCode::VhdAlignment:
+    case DiagnosticCode::VhdChanged:
+    case DiagnosticCode::VhdPayload:
+    case DiagnosticCode::VhdParent:
+    case DiagnosticCode::VhdType:
+    case DiagnosticCode::VhdHeaderOffset:
+    case DiagnosticCode::VhdDynamicCookie:
+    case DiagnosticCode::VhdDynamicChecksum:
+    case DiagnosticCode::VhdTableOffset:
+    case DiagnosticCode::VhdBlockSize:
+    case DiagnosticCode::VhdTableCoverage:
+    case DiagnosticCode::VhdTableRange:
+    case DiagnosticCode::VhdEntryRange:
+
     case DiagnosticCode::VdiShortHeader:
     case DiagnosticCode::VdiSignature:
     case DiagnosticCode::VdiVersion:

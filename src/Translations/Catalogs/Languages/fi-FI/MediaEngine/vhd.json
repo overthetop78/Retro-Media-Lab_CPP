@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Tiedosto on liian lyhyt VHD-lopputietueelle.",
+    "MediaEngine.VhdCookie": "VHD-lopputietueen tunniste puuttuu.",
+    "MediaEngine.VhdFooterChecksum": "VHD-lopputietueen tarkistussumma on virheellinen.",
+    "MediaEngine.VhdVersion": "VHD-versiota {0} ei tueta.",
+    "MediaEngine.VhdSize": "VHD:n nykyinen koko on tuetun 64-bittisen alueen ulkopuolella.",
+    "MediaEngine.VhdAlignment": "VHD:n nykyinen koko ei ole linjassa 512-byte-sektorien kanssa.",
+    "MediaEngine.VhdChanged": "VHD:n pituus muuttui tunnistamisen jälkeen.",
+    "MediaEngine.VhdPayload": "Kiinteän VHD:n datan pituus ei vastaa lopputietueen kapasiteettia.",
+    "MediaEngine.VhdParent": "VHD-erotuskuvat edellyttävät rekisteröimätöntä pääkuvan hakumekanismia.",
+    "MediaEngine.VhdType": "VHD-kuvatyyppi {0} ei ole tuettu.",
+    "MediaEngine.VhdHeaderOffset": "VHD:n dynaamisen otsakkeen sijainti on tiedoston ulkopuolella.",
+    "MediaEngine.VhdDynamicCookie": "VHD:n dynaamisen otsakkeen tunniste puuttuu.",
+    "MediaEngine.VhdDynamicChecksum": "VHD-dynaaminen otsaketarkistussumma on virheellinen.",
+    "MediaEngine.VhdTableOffset": "VHD BAT -taulukon sijainti ylittää tuetun alueen.",
+    "MediaEngine.VhdBlockSize": "VHD:n dynaaminen lohkon koko on virheellinen.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT ei kata ilmoitettua kapasiteettia.",
+    "MediaEngine.VhdTableRange": "VHD BAT-lohkon kartta ylittää tiedoston.",
+    "MediaEngine.VhdEntryRange": "VHD BAT-lohkokartan merkintä {0} osoittaa tiedoston ulkopuolelle.",
+    "MediaEngine.VhdWrite": "Mediadokumenttia ei voi kirjoittaa täydellisenä VHD-kuvana.",
+    "MediaEngine.VhdWriteTable": "VHD BAT-lohkotaulukko on liian suuri.",
+    "MediaEngine.VhdWriteAlignment": "Dynaaminen VHD-lohko ei ole sektorin linjassa.",
+    "MediaEngine.VhdWriteOffset": "Dynaaminen VHD-lohkon offset ylittää BAT-alueen."
+  }
+}

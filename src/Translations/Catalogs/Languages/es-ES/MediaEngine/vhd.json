@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "El archivo es demasiado corto para contener un registro final VHD.",
+    "MediaEngine.VhdCookie": "Falta la firma del registro final VHD.",
+    "MediaEngine.VhdFooterChecksum": "La suma de comprobación del registro final VHD es inválida.",
+    "MediaEngine.VhdVersion": "La versión VHD {0} no es compatible.",
+    "MediaEngine.VhdSize": "El tamaño actual VHD está fuera de la gama 64-bit compatible.",
+    "MediaEngine.VhdAlignment": "El tamaño actual de VHD no está alineado con los sectores 512-byte.",
+    "MediaEngine.VhdChanged": "La longitud VHD cambió después del reconocimiento.",
+    "MediaEngine.VhdPayload": "La longitud de los datos del VHD fijo no coincide con la capacidad del registro final.",
+    "MediaEngine.VhdParent": "Las imágenes VHD diferenciales requieren un resolvedor de imagen padre que no está registrado.",
+    "MediaEngine.VhdType": "El tipo de imagen VHD {0} no es compatible.",
+    "MediaEngine.VhdHeaderOffset": "El desplazamiento del encabezado dinámico VHD queda fuera del archivo.",
+    "MediaEngine.VhdDynamicCookie": "Falta la firma del encabezado dinámico VHD.",
+    "MediaEngine.VhdDynamicChecksum": "El chequeo de cabecera dinámico VHD es inválido.",
+    "MediaEngine.VhdTableOffset": "El VHD BAT offset supera el rango soportado.",
+    "MediaEngine.VhdBlockSize": "El tamaño del bloque dinámico VHD es inválido.",
+    "MediaEngine.VhdTableCoverage": "El VHD BAT no cubre la capacidad declarada.",
+    "MediaEngine.VhdTableRange": "El mapa del bloque VHD BAT supera el archivo.",
+    "MediaEngine.VhdEntryRange": "La entrada {0} de la tabla de bloques VHD BAT apunta fuera del archivo.",
+    "MediaEngine.VhdWrite": "El documento multimedia no puede ser escrito como una imagen VHD completa.",
+    "MediaEngine.VhdWriteTable": "La tabla de bloques VHD BAT es demasiado grande.",
+    "MediaEngine.VhdWriteAlignment": "El bloque dinámico VHD no está alineado con el sector.",
+    "MediaEngine.VhdWriteOffset": "El offset dinámico del bloque VHD supera el rango de BAT."
+  }
+}

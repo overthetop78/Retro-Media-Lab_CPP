@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Dosya VHD son kaydını içermek için çok kısa.",
+    "MediaEngine.VhdCookie": "VHD son kaydının imzası eksik.",
+    "MediaEngine.VhdFooterChecksum": "VHD son kaydının sağlama toplamı geçersiz.",
+    "MediaEngine.VhdVersion": "VHD versiyonu {0} desteklenmez.",
+    "MediaEngine.VhdSize": "VHD mevcut büyüklüğü desteklenen 64-bit aralığı dışındadır.",
+    "MediaEngine.VhdAlignment": "VHD şu anki büyüklüğü 512-byte sektörlerine uygun değildir.",
+    "MediaEngine.VhdChanged": "VHD uzunluğu tanımadan sonra değişti.",
+    "MediaEngine.VhdPayload": "Sabit VHD veri uzunluğu son kayıttaki kapasiteyle eşleşmiyor.",
+    "MediaEngine.VhdParent": "Fark VHD görüntüleri için üst görüntüyü bulan kayıtlı bir çözümleyici gereklidir.",
+    "MediaEngine.VhdType": "VHD görüntü türü {0} desteklenmez.",
+    "MediaEngine.VhdHeaderOffset": "Dinamik VHD başlık konumu dosyanın dışında.",
+    "MediaEngine.VhdDynamicCookie": "Dinamik VHD başlığının imzası eksik.",
+    "MediaEngine.VhdDynamicChecksum": "VHD dinamik kafa kontrolü geçersizdir.",
+    "MediaEngine.VhdTableOffset": "VHD BAT, desteklenen aralığı aşıyor.",
+    "MediaEngine.VhdBlockSize": "VHD dinamik blok boyutu geçersizdir.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT, ilan edilen kapasiteyi kapsamaz.",
+    "MediaEngine.VhdTableRange": "VHD BAT blok haritası dosyayı aşıyor.",
+    "MediaEngine.VhdEntryRange": "VHD BAT blok tablosu girdisi {0} dosyanın dışını gösteriyor.",
+    "MediaEngine.VhdWrite": "Medya belgesi tam bir VHD görüntüsü olarak yazılamaz.",
+    "MediaEngine.VhdWriteTable": "VHD BAT blok tablosu çok büyük.",
+    "MediaEngine.VhdWriteAlignment": "Dinamik VHD bloğu sektörle uyumlu değildir.",
+    "MediaEngine.VhdWriteOffset": "Dinamik VHD bloğu BAT aralığını aşıyor."
+  }
+}

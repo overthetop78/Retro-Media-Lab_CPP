@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Soubor je příliš krátký, aby obsahoval koncový záznam VHD.",
+    "MediaEngine.VhdCookie": "Chybí podpis koncového záznamu VHD.",
+    "MediaEngine.VhdFooterChecksum": "Kontrolní součet koncového záznamu VHD je neplatný.",
+    "MediaEngine.VhdVersion": "VHD verze {0} není podporována.",
+    "MediaEngine.VhdSize": "Aktuální velikost VHD je mimo podporovaný rozsah 64-bit.",
+    "MediaEngine.VhdAlignment": "Aktuální velikost VHD není sladěna s sektory 512-byte.",
+    "MediaEngine.VhdChanged": "Délka VHD se po rozpoznání změnila.",
+    "MediaEngine.VhdPayload": "Délka dat pevného VHD neodpovídá kapacitě v koncovém záznamu.",
+    "MediaEngine.VhdParent": "Rozdílové obrazy VHD vyžadují nezaregistrovaný mechanismus pro vyhledání nadřazeného obrazu.",
+    "MediaEngine.VhdType": "Typ VHD obrazu {0} není podporován.",
+    "MediaEngine.VhdHeaderOffset": "Posun dynamické hlavičky VHD leží mimo soubor.",
+    "MediaEngine.VhdDynamicCookie": "Chybí podpis dynamické hlavičky VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Dynamický kontrolní součet hlavičky VHD je neplatný.",
+    "MediaEngine.VhdTableOffset": "Posun VHD BAT překračuje podporovaný rozsah.",
+    "MediaEngine.VhdBlockSize": "Dynamická velikost bloku VHD je neplatná.",
+    "MediaEngine.VhdTableCoverage": "BAT pro VHD nezahrnuje deklarovanou kapacitu.",
+    "MediaEngine.VhdTableRange": "Mapa bloku VHD BAT přesahuje soubor.",
+    "MediaEngine.VhdEntryRange": "Položka {0} mapy bloků VHD BAT odkazuje mimo soubor.",
+    "MediaEngine.VhdWrite": "Mediální dokument nelze zapsat jako kompletní VHD obrázek.",
+    "MediaEngine.VhdWriteTable": "Tabulka bloků VHD BAT je příliš velká.",
+    "MediaEngine.VhdWriteAlignment": "Dynamický blok VHD není v souladu s sektorem.",
+    "MediaEngine.VhdWriteOffset": "Dynamický posun bloku VHD překračuje rozsah BAT."
+  }
+}

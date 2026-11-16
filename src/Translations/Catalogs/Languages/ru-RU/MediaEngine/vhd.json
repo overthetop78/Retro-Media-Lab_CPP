@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Файл слишком короткий для конечной записи VHD.",
+    "MediaEngine.VhdCookie": "Отсутствует сигнатура конечной записи VHD.",
+    "MediaEngine.VhdFooterChecksum": "Контрольная сумма конечной записи VHD недействительна.",
+    "MediaEngine.VhdVersion": "Версия VHD {0} не поддерживается.",
+    "MediaEngine.VhdSize": "Текущий размер VHD находится за пределами поддерживаемого диапазона 64-bit.",
+    "MediaEngine.VhdAlignment": "Текущий размер VHD не соответствует секторам 512-byte.",
+    "MediaEngine.VhdChanged": "Длина VHD изменилась после распознавания.",
+    "MediaEngine.VhdPayload": "Длина данных фиксированного VHD не соответствует ёмкости в конечной записи.",
+    "MediaEngine.VhdParent": "Разностные образы VHD требуют незарегистрированного механизма поиска родительского образа.",
+    "MediaEngine.VhdType": "Тип изображения VHD {0} не поддерживается.",
+    "MediaEngine.VhdHeaderOffset": "Смещение динамического заголовка VHD находится за пределами файла.",
+    "MediaEngine.VhdDynamicCookie": "Отсутствует сигнатура динамического заголовка VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Динамическая контрольная сумма заголовка VHD недействительна.",
+    "MediaEngine.VhdTableOffset": "Смещение VHD BAT превышает поддерживаемый диапазон.",
+    "MediaEngine.VhdBlockSize": "Динамический размер блока VHD недействителен.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT не покрывает заявленную емкость.",
+    "MediaEngine.VhdTableRange": "Карта блоков VHD BAT превышает размер файла.",
+    "MediaEngine.VhdEntryRange": "Запись {0} таблицы блоков VHD BAT указывает за пределы файла.",
+    "MediaEngine.VhdWrite": "Медиа-документ не может быть написан как полное VHD-изображение.",
+    "MediaEngine.VhdWriteTable": "Таблица блоков VHD BAT слишком велика.",
+    "MediaEngine.VhdWriteAlignment": "Динамический блок VHD не выровнен по секторам.",
+    "MediaEngine.VhdWriteOffset": "Динамическое смещение блока VHD превышает диапазон BAT."
+  }
+}

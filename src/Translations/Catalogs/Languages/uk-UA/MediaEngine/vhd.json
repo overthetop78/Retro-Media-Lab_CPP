@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Файл надто короткий для кінцевого запису VHD.",
+    "MediaEngine.VhdCookie": "Відсутня сигнатура кінцевого запису VHD.",
+    "MediaEngine.VhdFooterChecksum": "Контрольна сума кінцевого запису VHD недійсна.",
+    "MediaEngine.VhdVersion": "Версія VHD {0} не підтримується.",
+    "MediaEngine.VhdSize": "Поточний розмір VHD поза підтримкою 64-bit.",
+    "MediaEngine.VhdAlignment": "Поточний розмір VHD не вирівняний до 512-byte.",
+    "MediaEngine.VhdChanged": "Довжина VHD змінюється після розпізнавання.",
+    "MediaEngine.VhdPayload": "Довжина даних фіксованого VHD не відповідає місткості в кінцевому записі.",
+    "MediaEngine.VhdParent": "Різницеві образи VHD потребують незареєстрованого механізму пошуку батьківського образу.",
+    "MediaEngine.VhdType": "VHD тип зображення {0} не підтримується.",
+    "MediaEngine.VhdHeaderOffset": "Зміщення динамічного заголовка VHD перебуває за межами файлу.",
+    "MediaEngine.VhdDynamicCookie": "Відсутня сигнатура динамічного заголовка VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Контрольна сума динамічного заголовка VHD недійсна.",
+    "MediaEngine.VhdTableOffset": "Оффсет VHD BAT перевищує підтримуваний діапазон.",
+    "MediaEngine.VhdBlockSize": "Розмір динамічного блоку VHD недійсний.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT не охоплює заявлену місткість.",
+    "MediaEngine.VhdTableRange": "Карта VHD BAT блок перевищує файл.",
+    "MediaEngine.VhdEntryRange": "Запис {0} таблиці блоків VHD BAT вказує за межі файлу.",
+    "MediaEngine.VhdWrite": "Документ носія неможливо записати як повний образ VHD.",
+    "MediaEngine.VhdWriteTable": "Таблиця VHD BAT блок занадто великий.",
+    "MediaEngine.VhdWriteAlignment": "Динамічний VHD блок не вирівнюється.",
+    "MediaEngine.VhdWriteOffset": "Зміщення динамічного блоку VHD перевищує діапазон BAT."
+  }
+}

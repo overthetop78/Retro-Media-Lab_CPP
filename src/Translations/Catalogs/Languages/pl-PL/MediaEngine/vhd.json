@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Plik jest zbyt krótki, aby zawierać rekord końcowy VHD.",
+    "MediaEngine.VhdCookie": "Brak sygnatury rekordu końcowego VHD.",
+    "MediaEngine.VhdFooterChecksum": "Suma kontrolna rekordu końcowego VHD jest nieprawidłowa.",
+    "MediaEngine.VhdVersion": "Wersja VHD {0} nie jest obsługiwana.",
+    "MediaEngine.VhdSize": "Aktualny rozmiar VHD wykracza poza obsługiwany zakres 64-bitowy.",
+    "MediaEngine.VhdAlignment": "Aktualny rozmiar VHD nie jest dostosowany do sektorów 512-byte.",
+    "MediaEngine.VhdChanged": "Długość VHD zmieniła się po rozpoznaniu.",
+    "MediaEngine.VhdPayload": "Długość danych stałego VHD nie odpowiada pojemności w rekordzie końcowym.",
+    "MediaEngine.VhdParent": "Obrazy różnicowe VHD wymagają niezarejestrowanego mechanizmu wyszukiwania obrazu nadrzędnego.",
+    "MediaEngine.VhdType": "Typ obrazu VHD {0} nie jest obsługiwany.",
+    "MediaEngine.VhdHeaderOffset": "Przesunięcie dynamicznego nagłówka VHD znajduje się poza plikiem.",
+    "MediaEngine.VhdDynamicCookie": "Brak sygnatury dynamicznego nagłówka VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Dynamiczna suma kontrolna nagłówka VHD jest nieprawidłowa.",
+    "MediaEngine.VhdTableOffset": "Offset VHD BAT przekracza zakres obsługiwany.",
+    "MediaEngine.VhdBlockSize": "Dynamiczny rozmiar bloku VHD jest nieprawidłowy.",
+    "MediaEngine.VhdTableCoverage": "BAT VHD nie obejmują deklarowanej pojemności.",
+    "MediaEngine.VhdTableRange": "Mapa bloku VHD BAT przewyższa plik.",
+    "MediaEngine.VhdEntryRange": "Wpis mapy bloku VHD BAT {0} wskazuje poza plikiem.",
+    "MediaEngine.VhdWrite": "Dokument medialny nie może być zapisany jako kompletny obraz VHD.",
+    "MediaEngine.VhdWriteTable": "Tabela bloków VHD BAT jest zbyt duża.",
+    "MediaEngine.VhdWriteAlignment": "Dynamiczny blok VHD nie jest dopasowany do sektora.",
+    "MediaEngine.VhdWriteOffset": "Dynamiczne przesunięcie bloku VHD przekracza zakres BAT."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Berkas terlalu pendek untuk memuat rekaman akhir VHD.",
+    "MediaEngine.VhdCookie": "Tanda pengenal rekaman akhir VHD tidak ditemukan.",
+    "MediaEngine.VhdFooterChecksum": "Checksum rekaman akhir VHD tidak valid.",
+    "MediaEngine.VhdVersion": "VHD versi {0} tidak didukung.",
+    "MediaEngine.VhdSize": "Ukuran VHD saat ini diluar jangkauan 64-bit yang didukung.",
+    "MediaEngine.VhdAlignment": "Ukuran VHD saat ini tidak selaras ke 512-byte sektor.",
+    "MediaEngine.VhdChanged": "Panjang VHD berubah setelah pengakuan.",
+    "MediaEngine.VhdPayload": "Panjang data VHD tetap tidak cocok dengan kapasitas dalam rekaman akhirnya.",
+    "MediaEngine.VhdParent": "Citra VHD diferensial memerlukan mekanisme pencarian citra induk yang belum didaftarkan.",
+    "MediaEngine.VhdType": "Tipe gambar VHD {0} tidak didukung.",
+    "MediaEngine.VhdHeaderOffset": "Offset header dinamis VHD berada di luar berkas.",
+    "MediaEngine.VhdDynamicCookie": "Tanda pengenal header dinamis VHD tidak ditemukan.",
+    "MediaEngine.VhdDynamicChecksum": "Checksum header dinamis VHD tidak valid.",
+    "MediaEngine.VhdTableOffset": "Ofset VHD BAT melebihi jangkauan yang didukung.",
+    "MediaEngine.VhdBlockSize": "Ukuran blok dinamis VHD tidak valid.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT tidak mencakup kapasitas yang dideklarasikan.",
+    "MediaEngine.VhdTableRange": "Peta blok VHD BAT melebihi berkas.",
+    "MediaEngine.VhdEntryRange": "entri peta blok VHD BAT {0} menunjuk di luar berkas.",
+    "MediaEngine.VhdWrite": "Dokumen media tidak dapat ditulis sebagai gambar VHD lengkap.",
+    "MediaEngine.VhdWriteTable": "Tabel blok VHD BAT terlalu besar.",
+    "MediaEngine.VhdWriteAlignment": "Blok dinamis VHD tidak ditata sektor.",
+    "MediaEngine.VhdWriteOffset": "Ofset blok VHD dinamis melebihi jangkauan BAT."
+  }
+}

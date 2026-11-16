@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Το αρχείο είναι πολύ μικρό για να περιέχει τελική εγγραφή VHD.",
+    "MediaEngine.VhdCookie": "Λείπει η υπογραφή της τελικής εγγραφής VHD.",
+    "MediaEngine.VhdFooterChecksum": "Το άθροισμα ελέγχου της τελικής εγγραφής VHD είναι άκυρο.",
+    "MediaEngine.VhdVersion": "Η έκδοση VHD {0} δεν υποστηρίζεται.",
+    "MediaEngine.VhdSize": "Το τρέχον μέγεθος VHD βρίσκεται εκτός του υποστηριζόμενου εύρους 64 bit.",
+    "MediaEngine.VhdAlignment": "Το μέγεθος ρεύματος VHD δεν ευθυγραμμίζεται με τομείς 512-byte.",
+    "MediaEngine.VhdChanged": "Το μήκος VHD άλλαξε μετά την αναγνώριση.",
+    "MediaEngine.VhdPayload": "Το μήκος δεδομένων του σταθερού VHD δεν συμφωνεί με τη χωρητικότητα της τελικής εγγραφής.",
+    "MediaEngine.VhdParent": "Οι διαφορικές εικόνες VHD απαιτούν μη καταχωρημένο μηχανισμό εύρεσης της γονικής εικόνας.",
+    "MediaEngine.VhdType": "Ο τύπος εικόνας VHD {0} δεν υποστηρίζεται.",
+    "MediaEngine.VhdHeaderOffset": "Η μετατόπιση της δυναμικής κεφαλίδας VHD βρίσκεται εκτός αρχείου.",
+    "MediaEngine.VhdDynamicCookie": "Λείπει η υπογραφή της δυναμικής κεφαλίδας VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Το άθροισμα ελέγχου της δυναμικής κεφαλίδας VHD είναι άκυρο.",
+    "MediaEngine.VhdTableOffset": "Η αντιστάθμιση VHD BAT υπερβαίνει το υποστηριζόμενο εύρος.",
+    "MediaEngine.VhdBlockSize": "Το δυναμικό μέγεθος μπλοκ VHD είναι άκυρο.",
+    "MediaEngine.VhdTableCoverage": "Το VHD BAT δεν καλύπτει τη δηλωθείσα χωρητικότητα.",
+    "MediaEngine.VhdTableRange": "Ο χάρτης φραγμών VHD BAT υπερβαίνει το αρχείο.",
+    "MediaEngine.VhdEntryRange": "Η καταχώρηση χάρτη φραγμών VHD BAT {0} δείχνει έξω από το αρχείο.",
+    "MediaEngine.VhdWrite": "Το έγγραφο πολυμέσων δεν μπορεί να γραφτεί ως πλήρης εικόνα VHD.",
+    "MediaEngine.VhdWriteTable": "Ο πίνακας μπλοκ VHD BAT είναι πολύ μεγάλος.",
+    "MediaEngine.VhdWriteAlignment": "Το δυναμικό μπλοκ VHD δεν είναι ευθυγραμμισμένο τομέα.",
+    "MediaEngine.VhdWriteOffset": "Η δυναμική μετατόπιση μπλοκ VHD υπερβαίνει την περιοχή BAT."
+  }
+}

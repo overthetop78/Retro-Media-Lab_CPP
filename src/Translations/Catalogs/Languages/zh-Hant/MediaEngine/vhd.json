@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "檔案太短，無法包含 VHD 尾端記錄。",
+    "MediaEngine.VhdCookie": "缺少 VHD 尾端記錄簽章。",
+    "MediaEngine.VhdFooterChecksum": "VHD 尾端記錄校驗和無效。",
+    "MediaEngine.VhdVersion": "不支援 VHD 版本 {0}。",
+    "MediaEngine.VhdSize": "VHD 目前大小超出支援的 64 位元範圍。",
+    "MediaEngine.VhdAlignment": "VHD 目前大小未對齊 512 位元組的磁區。",
+    "MediaEngine.VhdChanged": "辨識後 VHD 長度已變更。",
+    "MediaEngine.VhdPayload": "固定 VHD 資料長度與尾端記錄中的容量不符。",
+    "MediaEngine.VhdParent": "差分 VHD 映像需要尚未註冊的父映像解析器。",
+    "MediaEngine.VhdType": "不支援 VHD 映像類型 {0}。",
+    "MediaEngine.VhdHeaderOffset": "VHD 動態標頭偏移位於檔案之外。",
+    "MediaEngine.VhdDynamicCookie": "缺少 VHD 動態標頭簽章。",
+    "MediaEngine.VhdDynamicChecksum": "VHD 動態標頭校驗和無效。",
+    "MediaEngine.VhdTableOffset": "VHD BAT 偏移超出支援範圍。",
+    "MediaEngine.VhdBlockSize": "VHD 動態區塊大小無效。",
+    "MediaEngine.VhdTableCoverage": "VHD BAT 未涵蓋宣告容量。",
+    "MediaEngine.VhdTableRange": "VHD BAT 區塊對應表超出檔案範圍。",
+    "MediaEngine.VhdEntryRange": "VHD BAT 區塊對應表項目 {0} 指向檔案之外。",
+    "MediaEngine.VhdWrite": "無法將媒體文件寫入為完整的 VHD 映像。",
+    "MediaEngine.VhdWriteTable": "VHD BAT 區塊表太大。",
+    "MediaEngine.VhdWriteAlignment": "動態 VHD 區塊未對齊磁區邊界。",
+    "MediaEngine.VhdWriteOffset": "動態 VHD 區塊偏移超出 BAT 範圍。"
+  }
+}

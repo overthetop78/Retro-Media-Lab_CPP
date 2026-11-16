@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Het bestand is te kort voor een VHD-eindrecord.",
+    "MediaEngine.VhdCookie": "De handtekening van het VHD-eindrecord ontbreekt.",
+    "MediaEngine.VhdFooterChecksum": "De controlesom van het VHD-eindrecord is ongeldig.",
+    "MediaEngine.VhdVersion": "VHD versie {0} wordt niet ondersteund.",
+    "MediaEngine.VhdSize": "De VHD huidige grootte ligt buiten het ondersteunde 64-bit bereik.",
+    "MediaEngine.VhdAlignment": "De VHD huidige grootte is niet afgestemd op 512-byte sectoren.",
+    "MediaEngine.VhdChanged": "De VHD lengte veranderde na herkenning.",
+    "MediaEngine.VhdPayload": "De gegevenslengte van de vaste VHD komt niet overeen met de capaciteit in het eindrecord.",
+    "MediaEngine.VhdParent": "Differentiële VHD-schijfkopieën vereisen een niet-geregistreerde resolver voor de bovenliggende schijfkopie.",
+    "MediaEngine.VhdType": "VHD-afbeeldingtype {0} wordt niet ondersteund.",
+    "MediaEngine.VhdHeaderOffset": "De offset van de dynamische VHD-header ligt buiten het bestand.",
+    "MediaEngine.VhdDynamicCookie": "De handtekening van de dynamische VHD-header ontbreekt.",
+    "MediaEngine.VhdDynamicChecksum": "De VHD dynamische header checksum is ongeldig.",
+    "MediaEngine.VhdTableOffset": "De VHD BAT offset overschrijdt het ondersteunde bereik.",
+    "MediaEngine.VhdBlockSize": "De VHD dynamische blokgrootte is ongeldig.",
+    "MediaEngine.VhdTableCoverage": "De VHD BAT dekt de opgegeven capaciteit niet.",
+    "MediaEngine.VhdTableRange": "De VHD BAT-blokkaart overtreft het bestand.",
+    "MediaEngine.VhdEntryRange": "VHD BAT-blokkaartinvoer {0} wijst buiten het bestand.",
+    "MediaEngine.VhdWrite": "Het mediadocument kan niet als een volledige VHD-afbeelding worden geschreven.",
+    "MediaEngine.VhdWriteTable": "De VHD BAT-bloktabel is te groot.",
+    "MediaEngine.VhdWriteAlignment": "Het dynamische VHD blok is niet sectorgericht.",
+    "MediaEngine.VhdWriteOffset": "De dynamische VHD blok offset overtreft het BAT bereik."
+  }
+}

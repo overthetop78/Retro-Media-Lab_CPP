@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Die Datei ist zu kurz für einen VHD-Abschlussdatensatz.",
+    "MediaEngine.VhdCookie": "Die Signatur des VHD-Abschlussdatensatzes fehlt.",
+    "MediaEngine.VhdFooterChecksum": "Die Prüfsumme des VHD-Abschlussdatensatzes ist ungültig.",
+    "MediaEngine.VhdVersion": "VHD Version {0} wird nicht unterstützt.",
+    "MediaEngine.VhdSize": "Die aktuelle Größe von VHD liegt außerhalb des unterstützten 64-bit-Bereichs.",
+    "MediaEngine.VhdAlignment": "Die aktuelle Größe von VHD ist nicht auf 512-byte-Sektoren ausgerichtet.",
+    "MediaEngine.VhdChanged": "Die VHD-Länge änderte sich nach der Erkennung.",
+    "MediaEngine.VhdPayload": "Die Datenlänge des festen VHD entspricht nicht der Kapazität im Abschlussdatensatz.",
+    "MediaEngine.VhdParent": "Differenzierende VHD-Abbilder benötigen einen nicht registrierten Resolver für das übergeordnete Abbild.",
+    "MediaEngine.VhdType": "VHD-Abbildtyp {0} wird nicht unterstützt.",
+    "MediaEngine.VhdHeaderOffset": "Der Offset des dynamischen VHD-Headers liegt außerhalb der Datei.",
+    "MediaEngine.VhdDynamicCookie": "Die Signatur des dynamischen VHD-Headers fehlt.",
+    "MediaEngine.VhdDynamicChecksum": "Die VHD Dynamic Header Checksumme ist ungültig.",
+    "MediaEngine.VhdTableOffset": "Der VHD-BAT-Offset überschreitet den unterstützten Bereich.",
+    "MediaEngine.VhdBlockSize": "Die VHD dynamische Blockgröße ist ungültig.",
+    "MediaEngine.VhdTableCoverage": "Der VHD BAT deckt nicht die deklarierte Kapazität ab.",
+    "MediaEngine.VhdTableRange": "Die VHD BAT Block Map übersteigt die Datei.",
+    "MediaEngine.VhdEntryRange": "VHD BAT-Blocktabelleneintrag {0} verweist außerhalb der Datei.",
+    "MediaEngine.VhdWrite": "Das Mediendokument kann nicht als vollständiges VHD-Bild geschrieben werden.",
+    "MediaEngine.VhdWriteTable": "Die VHD BAT-Blocktabelle ist zu groß.",
+    "MediaEngine.VhdWriteAlignment": "Der dynamische VHD-Block ist nicht sektororientiert.",
+    "MediaEngine.VhdWriteOffset": "Der dynamische VHD-Blockoffset überschreitet den BAT-Bereich."
+  }
+}

@@ -1,21 +1,12 @@
 #include "Container.h"
 #include "../../../Sources/AtomicImageWriter.h"
-#include "../../../Primitives/Identifiers.h"
+#include "../Variant.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <QtEndian>
 #include <QUuid>
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine::Vdi {
 namespace {
-bool fixedVariant(const MediaDocument& document,const BlockImage& blocks){
-    using namespace Constants;const auto found=document.metadata().find(std::string(VariantKey));
-    if(Primitives::ordinalIdentifierEqualsIgnoreCase(document.formatId(),FormatId)&&found!=document.metadata().end()){
-        const auto text=QString::fromUtf8(found->second).trimmed();const auto value=text.toUtf8().toStdString();bool numeric=false;const auto number=text.toInt(&numeric);
-        if(Primitives::ordinalIdentifierEqualsIgnoreCase(value,FixedVariant)||(numeric&&number==FixedEnumValue))return true;
-        if(Primitives::ordinalIdentifierEqualsIgnoreCase(value,DynamicVariant)||(numeric&&number==DynamicEnumValue))return false;
-    }
-    return std::none_of(blocks.ranges().begin(),blocks.ranges().end(),[](const auto& range){return range.kind()==DataRangeKind::Zero||range.kind()==DataRangeKind::Unallocated;});
-}
 std::vector<std::uint8_t> createHeader(const BlockImage& blocks,bool fixed,std::uint32_t dataOffset,std::uint32_t count,std::uint32_t allocated){
     using namespace Constants;std::vector<std::uint8_t> header(HeaderSize);
     const auto put=[&](std::size_t offset,std::uint32_t value){qToLittleEndian(value,header.data()+offset);};
@@ -48,7 +39,7 @@ bool Writer::canWrite(const MediaDocument& document,std::string_view format,std:
 std::future<std::vector<std::filesystem::path>> Writer::writeAsync(std::shared_ptr<const MediaDocument> document,std::filesystem::path path,std::string target,std::stop_token token)const {
     return std::async(std::launch::deferred,[document=std::move(document),path=std::move(path),target=std::move(target),token]{
         if(!document)throw MediaError(DiagnosticCode::HardDiskRawNullDocument);const auto ext=path.extension().u8string();if(!Writer{}.canWrite(*document,target,std::string(ext.begin(),ext.end())))throw MediaError(DiagnosticCode::VdiWrite);
-        const auto& blocks=dynamic_cast<const BlockImage&>(document->representation());const auto fixed=fixedVariant(*document,blocks);
+        const auto& blocks=dynamic_cast<const BlockImage&>(document->representation());const auto fixed=HardDiskContainers::selectFixedVariant(*document,blocks,Constants::FormatId);
         writeAtomicSeekableImage(path,[&](const auto& output,auto stop){writeContainer(blocks,fixed,output,stop);},token);return std::vector<std::filesystem::path>{path};
     });
 }

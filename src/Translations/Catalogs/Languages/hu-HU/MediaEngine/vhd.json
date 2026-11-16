@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "A fájl túl rövid a VHD zárórekordhoz.",
+    "MediaEngine.VhdCookie": "A VHD zárórekord aláírása hiányzik.",
+    "MediaEngine.VhdFooterChecksum": "A VHD zárórekord ellenőrző összege érvénytelen.",
+    "MediaEngine.VhdVersion": "A VHD {0} verzió nem támogatott.",
+    "MediaEngine.VhdSize": "A VHD jelenlegi mérete kívül esik a támogatott 64-bit tartományon.",
+    "MediaEngine.VhdAlignment": "A VHD jelenlegi mérete nem igazodik a 512-byte szektorhoz.",
+    "MediaEngine.VhdChanged": "A VHD hossza az elismerés után megváltozott.",
+    "MediaEngine.VhdPayload": "A rögzített VHD adathossza nem egyezik a zárórekord kapacitásával.",
+    "MediaEngine.VhdParent": "A VHD képek differenciálása nem regisztrált szülő-felbontót igényel.",
+    "MediaEngine.VhdType": "A(z) {0} VHD képtípus nem támogatott.",
+    "MediaEngine.VhdHeaderOffset": "A dinamikus VHD fejléc eltolása a fájlon kívülre mutat.",
+    "MediaEngine.VhdDynamicCookie": "A dinamikus VHD fejléc aláírása hiányzik.",
+    "MediaEngine.VhdDynamicChecksum": "A VHD dinamikus fejléc ellenőrző összege érvénytelen.",
+    "MediaEngine.VhdTableOffset": "A VHD BAT offset meghaladja a támogatott tartományt.",
+    "MediaEngine.VhdBlockSize": "A VHD dinamikus blokkmérete érvénytelen.",
+    "MediaEngine.VhdTableCoverage": "A VHD BAT nem terjed ki a bejelentett kapacitásra.",
+    "MediaEngine.VhdTableRange": "A VHD BAT blokktérkép meghaladja a fájlt.",
+    "MediaEngine.VhdEntryRange": "A VHD BAT blokktérkép {0} bejegyzése a fájlon kívülre mutat.",
+    "MediaEngine.VhdWrite": "A médiadokumentum nem írható teljes VHD képként.",
+    "MediaEngine.VhdWriteTable": "A VHD BAT blokktáblázat túl nagy.",
+    "MediaEngine.VhdWriteAlignment": "A dinamikus VHD blokk nem illeszkedik szektorba.",
+    "MediaEngine.VhdWriteOffset": "A dinamikus VHD blokk eltolása meghaladja a BAT-tartományt."
+  }
+}

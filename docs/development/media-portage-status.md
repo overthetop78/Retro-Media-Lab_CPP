@@ -26,6 +26,8 @@ La tâche 140 termine le lecteur KryoFlux multipiste : opcodes, index hors bande,
 
 La tâche 141 porte la lecture/écriture VDI 1.1 fixe et dynamique, avec table des blocs, UUID et géométrie. La sortie atomique commune accepte désormais le positionnement pour compléter les en-têtes sans seconde lecture des données. Les rejets de lecture VDI/KryoFlux sont raccordés au registre ; compilation et contrôle ciblé réussis.
 
+La tâche 142 porte la lecture/écriture VHD fixe et dynamique, avec footer, checksums, BAT et bitmaps. Le choix de variante est partagé avec VDI ; compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complÃ¨te des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement Ã  l'application restent Ã  terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent Ã  porter. Les lecteurs/writers bruts gÃ©nÃ©riques et le catalogue principal sont portÃ©s : 98 formats rÃ©servÃ©s et 90 dÃ©finitions brutes aprÃ¨s exclusion complÃ¨te. Les fonctions existantes ne doivent pas Ãªtre prises pour une composition par dÃ©faut complÃ¨te.

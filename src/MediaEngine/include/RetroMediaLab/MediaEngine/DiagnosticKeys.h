@@ -1,6 +1,29 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view VhdShortFooter="MediaEngine.VhdShortFooter";
+inline constexpr std::string_view VhdCookie="MediaEngine.VhdCookie";
+inline constexpr std::string_view VhdFooterChecksum="MediaEngine.VhdFooterChecksum";
+inline constexpr std::string_view VhdVersion="MediaEngine.VhdVersion";
+inline constexpr std::string_view VhdSize="MediaEngine.VhdSize";
+inline constexpr std::string_view VhdAlignment="MediaEngine.VhdAlignment";
+inline constexpr std::string_view VhdChanged="MediaEngine.VhdChanged";
+inline constexpr std::string_view VhdPayload="MediaEngine.VhdPayload";
+inline constexpr std::string_view VhdParent="MediaEngine.VhdParent";
+inline constexpr std::string_view VhdType="MediaEngine.VhdType";
+inline constexpr std::string_view VhdHeaderOffset="MediaEngine.VhdHeaderOffset";
+inline constexpr std::string_view VhdDynamicCookie="MediaEngine.VhdDynamicCookie";
+inline constexpr std::string_view VhdDynamicChecksum="MediaEngine.VhdDynamicChecksum";
+inline constexpr std::string_view VhdTableOffset="MediaEngine.VhdTableOffset";
+inline constexpr std::string_view VhdBlockSize="MediaEngine.VhdBlockSize";
+inline constexpr std::string_view VhdTableCoverage="MediaEngine.VhdTableCoverage";
+inline constexpr std::string_view VhdTableRange="MediaEngine.VhdTableRange";
+inline constexpr std::string_view VhdEntryRange="MediaEngine.VhdEntryRange";
+inline constexpr std::string_view VhdWrite="MediaEngine.VhdWrite";
+inline constexpr std::string_view VhdWriteTable="MediaEngine.VhdWriteTable";
+inline constexpr std::string_view VhdWriteAlignment="MediaEngine.VhdWriteAlignment";
+inline constexpr std::string_view VhdWriteOffset="MediaEngine.VhdWriteOffset";
+
 inline constexpr std::string_view AtomicSeek="MediaEngine.AtomicSeek";
 inline constexpr std::string_view VdiShortHeader="MediaEngine.VdiShortHeader";
 inline constexpr std::string_view VdiSignature="MediaEngine.VdiSignature";

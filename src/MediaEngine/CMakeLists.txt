@@ -1,4 +1,9 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Variant.cpp
+  src/Formats/HardDisk/Vhd/Header.cpp
+  src/Formats/HardDisk/Vhd/Reader.cpp
+  src/Formats/HardDisk/Vhd/Geometry.cpp
+  src/Formats/HardDisk/Vhd/Writer.cpp
   src/Formats/HardDisk/Vdi/Header.cpp
   src/Formats/HardDisk/Vdi/Reader.cpp
   src/Formats/HardDisk/Vdi/Writer.cpp

@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "O arquivo é curto demais para conter o registro final VHD.",
+    "MediaEngine.VhdCookie": "Falta a assinatura do registro final VHD.",
+    "MediaEngine.VhdFooterChecksum": "A soma de verificação do registro final VHD é inválida.",
+    "MediaEngine.VhdVersion": "A versão do VHD {0} não é suportada.",
+    "MediaEngine.VhdSize": "O tamanho atual VHD está fora da faixa suportada 64-bit.",
+    "MediaEngine.VhdAlignment": "O tamanho atual do VHD não está alinhado com os setores 512-byte.",
+    "MediaEngine.VhdChanged": "O comprimento do VHD mudou após o reconhecimento.",
+    "MediaEngine.VhdPayload": "O tamanho dos dados do VHD fixo não corresponde à capacidade do registro final.",
+    "MediaEngine.VhdParent": "Imagens VHD diferenciais exigem um resolvedor de imagem pai que não está registrado.",
+    "MediaEngine.VhdType": "O tipo de imagem VHD {0} não é suportado.",
+    "MediaEngine.VhdHeaderOffset": "O deslocamento do cabeçalho dinâmico VHD está fora do arquivo.",
+    "MediaEngine.VhdDynamicCookie": "Falta a assinatura do cabeçalho dinâmico VHD.",
+    "MediaEngine.VhdDynamicChecksum": "A soma de verificação do cabeçalho dinâmico VHD é inválida.",
+    "MediaEngine.VhdTableOffset": "O deslocamento VHD BAT excede a faixa suportada.",
+    "MediaEngine.VhdBlockSize": "O tamanho do bloco dinâmico VHD é inválido.",
+    "MediaEngine.VhdTableCoverage": "O VHD BAT não abrange a capacidade declarada.",
+    "MediaEngine.VhdTableRange": "O mapa de blocos VHD BAT excede o arquivo.",
+    "MediaEngine.VhdEntryRange": "A entrada {0} da tabela de blocos VHD BAT aponta para fora do arquivo.",
+    "MediaEngine.VhdWrite": "O documento multimédia não pode ser escrito como uma imagem VHD completa.",
+    "MediaEngine.VhdWriteTable": "A tabela de blocos VHD BAT é muito grande.",
+    "MediaEngine.VhdWriteAlignment": "O bloco dinâmico VHD não está alinhado pelo setor.",
+    "MediaEngine.VhdWriteOffset": "O deslocamento dinâmico do bloco VHD excede a faixa BAT."
+  }
+}

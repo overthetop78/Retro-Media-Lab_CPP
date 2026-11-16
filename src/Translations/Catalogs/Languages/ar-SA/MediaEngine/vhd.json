@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "الملف أقصر من أن يحتوي على سجل نهاية VHD.",
+    "MediaEngine.VhdCookie": "توقيع سجل نهاية VHD مفقود.",
+    "MediaEngine.VhdFooterChecksum": "المجموع الاختباري لسجل نهاية VHD غير صالح.",
+    "MediaEngine.VhdVersion": "إصدار VHD رقم {0} غير مدعوم.",
+    "MediaEngine.VhdSize": "حجم VHD الحالي خارج نطاق 64 بت المدعوم.",
+    "MediaEngine.VhdAlignment": "حجم VHD الحالي غير محاذى لقطاعات من 512 بايت.",
+    "MediaEngine.VhdChanged": "تغير طول VHD بعد التعرف عليه.",
+    "MediaEngine.VhdPayload": "لا يطابق طول بيانات VHD الثابت سعة القرص المحددة في سجل النهاية.",
+    "MediaEngine.VhdParent": "تتطلب صور VHD التفاضلية آلية لتحديد الصورة الأصلية، وهي غير مسجلة.",
+    "MediaEngine.VhdType": "نوع صورة VHD رقم {0} غير مدعوم.",
+    "MediaEngine.VhdHeaderOffset": "إزاحة ترويسة VHD الديناميكية تقع خارج الملف.",
+    "MediaEngine.VhdDynamicCookie": "توقيع ترويسة VHD الديناميكية مفقود.",
+    "MediaEngine.VhdDynamicChecksum": "المجموع الاختباري لترويسة VHD الديناميكية غير صالح.",
+    "MediaEngine.VhdTableOffset": "تتجاوز إزاحة VHD BAT النطاق المدعوم.",
+    "MediaEngine.VhdBlockSize": "حجم كتلة VHD الديناميكية غير صالح.",
+    "MediaEngine.VhdTableCoverage": "لا يغطي VHD BAT السعة المعلنة.",
+    "MediaEngine.VhdTableRange": "يتجاوز جدول كتل VHD BAT حدود الملف.",
+    "MediaEngine.VhdEntryRange": "يشير إدخال جدول كتل VHD BAT رقم {0} إلى موضع خارج الملف.",
+    "MediaEngine.VhdWrite": "لا يمكن كتابة مستند الوسائط كصورة VHD كاملة.",
+    "MediaEngine.VhdWriteTable": "جدول كتل VHD BAT كبير جدًا.",
+    "MediaEngine.VhdWriteAlignment": "كتلة VHD الديناميكية غير محاذاة لحدود القطاعات.",
+    "MediaEngine.VhdWriteOffset": "تتجاوز إزاحة كتلة VHD الديناميكية نطاق BAT."
+  }
+}

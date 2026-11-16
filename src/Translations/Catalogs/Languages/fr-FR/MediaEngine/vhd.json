@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Le fichier est trop court pour contenir un enregistrement final VHD.",
+    "MediaEngine.VhdCookie": "La signature de l’enregistrement final VHD est absente.",
+    "MediaEngine.VhdFooterChecksum": "La somme de contrôle de l’enregistrement final VHD est invalide.",
+    "MediaEngine.VhdVersion": "La version VHD {0} n'est pas prise en charge.",
+    "MediaEngine.VhdSize": "La taille actuelle du VHD dépasse la plage de 64 bits prise en charge.",
+    "MediaEngine.VhdAlignment": "La taille actuelle du VHD n’est pas alignée sur des secteurs de 512 octets.",
+    "MediaEngine.VhdChanged": "La longueur du VHD a changé après la reconnaissance.",
+    "MediaEngine.VhdPayload": "La longueur des données du VHD fixe ne correspond pas à la capacité indiquée dans son enregistrement final.",
+    "MediaEngine.VhdParent": "Les images VHD différentielles nécessitent un résolveur d’image parente qui n’est pas enregistré.",
+    "MediaEngine.VhdType": "Le type d'image VHD {0} n'est pas pris en charge.",
+    "MediaEngine.VhdHeaderOffset": "Le décalage de l’en-tête dynamique VHD se trouve hors du fichier.",
+    "MediaEngine.VhdDynamicCookie": "La signature de l’en-tête dynamique VHD est absente.",
+    "MediaEngine.VhdDynamicChecksum": "La somme de contrôle de l’en-tête dynamique VHD est invalide.",
+    "MediaEngine.VhdTableOffset": "Le décalage de la BAT VHD dépasse la plage prise en charge.",
+    "MediaEngine.VhdBlockSize": "La taille du bloc dynamique VHD est invalide.",
+    "MediaEngine.VhdTableCoverage": "La BAT VHD ne couvre pas la capacité déclarée.",
+    "MediaEngine.VhdTableRange": "La table de blocs VHD BAT dépasse les limites du fichier.",
+    "MediaEngine.VhdEntryRange": "L’entrée {0} de la table de blocs VHD BAT pointe hors du fichier.",
+    "MediaEngine.VhdWrite": "Le document média ne peut pas être écrit comme une image VHD complète.",
+    "MediaEngine.VhdWriteTable": "La table de blocs VHD BAT est trop grande.",
+    "MediaEngine.VhdWriteAlignment": "Le bloc dynamique VHD n'est pas aligné sur le secteur.",
+    "MediaEngine.VhdWriteOffset": "Le décalage du bloc VHD dynamique dépasse la plage de la BAT."
+  }
+}

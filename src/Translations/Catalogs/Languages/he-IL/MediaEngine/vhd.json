@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "הקובץ קצר מכדי להכיל רשומת סיום VHD.",
+    "MediaEngine.VhdCookie": "חתימת רשומת הסיום של VHD חסרה.",
+    "MediaEngine.VhdFooterChecksum": "סכום הביקורת של רשומת הסיום של VHD אינו תקין.",
+    "MediaEngine.VhdVersion": "VHD גירסה {0} היא ללא תמיכה.",
+    "MediaEngine.VhdSize": "גודל VHD הנוכחי הוא מחוץ לטווח 64-bit נתמך.",
+    "MediaEngine.VhdAlignment": "הגודל הנוכחי של VHD אינו מתאים ל 512-byte מגזרים.",
+    "MediaEngine.VhdChanged": "אורך VHD השתנה לאחר ההכרה.",
+    "MediaEngine.VhdPayload": "אורך הנתונים ב־VHD קבוע אינו תואם לקיבולת ברשומת הסיום.",
+    "MediaEngine.VhdParent": "תמונות VHD הפרשיות דורשות מנגנון לאיתור תמונת האב שאינו רשום.",
+    "MediaEngine.VhdType": "סוג תמונה VHD {0} אינו נתמך.",
+    "MediaEngine.VhdHeaderOffset": "ההיסט של כותרת VHD הדינמית נמצא מחוץ לקובץ.",
+    "MediaEngine.VhdDynamicCookie": "חתימת כותרת VHD הדינמית חסרה.",
+    "MediaEngine.VhdDynamicChecksum": "סכום הביקורת של כותרת VHD הדינמית אינו תקין.",
+    "MediaEngine.VhdTableOffset": "ההיסט של VHD BAT חורג מהטווח הנתמך.",
+    "MediaEngine.VhdBlockSize": "גודל בלוק דינמי VHD הוא לא חוקי.",
+    "MediaEngine.VhdTableCoverage": "VHD BAT אינו מכסה את היכולת המוצהרת.",
+    "MediaEngine.VhdTableRange": "מפת בלוק VHD BAT עולה על הקובץ.",
+    "MediaEngine.VhdEntryRange": "רשומת מפת הבלוקים של VHD BAT מספר {0} מצביעה מחוץ לקובץ.",
+    "MediaEngine.VhdWrite": "לא ניתן לכתוב את המסמך כתמונה VHD מלאה.",
+    "MediaEngine.VhdWriteTable": "טבלת הבלוקים של VHD BAT גדולה מדי.",
+    "MediaEngine.VhdWriteAlignment": "בלוק VHD דינמי אינו מתואם.",
+    "MediaEngine.VhdWriteOffset": "ההיסט של בלוק VHD דינמי חורג מטווח BAT."
+  }
+}

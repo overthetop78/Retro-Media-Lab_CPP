@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "Fișierul este prea scurt pentru o înregistrare finală VHD.",
+    "MediaEngine.VhdCookie": "Lipsește semnătura înregistrării finale VHD.",
+    "MediaEngine.VhdFooterChecksum": "Suma de control a înregistrării finale VHD este invalidă.",
+    "MediaEngine.VhdVersion": "Versiunea VHD {0} nu este susținută.",
+    "MediaEngine.VhdSize": "Dimensiunea curentă VHD este în afara intervalului 64-bit susținut.",
+    "MediaEngine.VhdAlignment": "Dimensiunea curentă VHD nu este aliniată la sectoarele 512-byte.",
+    "MediaEngine.VhdChanged": "Lungimea VHD s-a schimbat după recunoaștere.",
+    "MediaEngine.VhdPayload": "Lungimea datelor VHD fix nu corespunde capacității din înregistrarea finală.",
+    "MediaEngine.VhdParent": "Imaginile VHD diferențiale necesită un mecanism neînregistrat de identificare a imaginii părinte.",
+    "MediaEngine.VhdType": "Tipul de imagine VHD {0} este nesusţinut.",
+    "MediaEngine.VhdHeaderOffset": "Deplasamentul antetului dinamic VHD este în afara fișierului.",
+    "MediaEngine.VhdDynamicCookie": "Lipsește semnătura antetului dinamic VHD.",
+    "MediaEngine.VhdDynamicChecksum": "Suma de control a antetului dinamic VHD este invalidă.",
+    "MediaEngine.VhdTableOffset": "Offset-ul VHD BAT depășește intervalul susținut.",
+    "MediaEngine.VhdBlockSize": "Dimensiunea blocului dinamic VHD este invalidă.",
+    "MediaEngine.VhdTableCoverage": "BAT pentru VHD nu acoperă capacitatea declarată.",
+    "MediaEngine.VhdTableRange": "Harta blocului VHD BAT depășește fișierul.",
+    "MediaEngine.VhdEntryRange": "Intrarea {0} din harta blocurilor VHD BAT indică în afara fișierului.",
+    "MediaEngine.VhdWrite": "Documentul media nu poate fi scris ca o imagine VHD completă.",
+    "MediaEngine.VhdWriteTable": "Tabelul blocurilor VHD BAT este prea mare.",
+    "MediaEngine.VhdWriteAlignment": "Blocul dinamic VHD nu este aliniat sectorului.",
+    "MediaEngine.VhdWriteOffset": "Offset-ul blocului dinamic VHD depășește intervalul BAT."
+  }
+}

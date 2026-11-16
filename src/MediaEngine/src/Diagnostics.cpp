@@ -3,6 +3,29 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::VhdShortFooter:return DiagnosticKeys::VhdShortFooter;
+    case DiagnosticCode::VhdCookie:return DiagnosticKeys::VhdCookie;
+    case DiagnosticCode::VhdFooterChecksum:return DiagnosticKeys::VhdFooterChecksum;
+    case DiagnosticCode::VhdVersion:return DiagnosticKeys::VhdVersion;
+    case DiagnosticCode::VhdSize:return DiagnosticKeys::VhdSize;
+    case DiagnosticCode::VhdAlignment:return DiagnosticKeys::VhdAlignment;
+    case DiagnosticCode::VhdChanged:return DiagnosticKeys::VhdChanged;
+    case DiagnosticCode::VhdPayload:return DiagnosticKeys::VhdPayload;
+    case DiagnosticCode::VhdParent:return DiagnosticKeys::VhdParent;
+    case DiagnosticCode::VhdType:return DiagnosticKeys::VhdType;
+    case DiagnosticCode::VhdHeaderOffset:return DiagnosticKeys::VhdHeaderOffset;
+    case DiagnosticCode::VhdDynamicCookie:return DiagnosticKeys::VhdDynamicCookie;
+    case DiagnosticCode::VhdDynamicChecksum:return DiagnosticKeys::VhdDynamicChecksum;
+    case DiagnosticCode::VhdTableOffset:return DiagnosticKeys::VhdTableOffset;
+    case DiagnosticCode::VhdBlockSize:return DiagnosticKeys::VhdBlockSize;
+    case DiagnosticCode::VhdTableCoverage:return DiagnosticKeys::VhdTableCoverage;
+    case DiagnosticCode::VhdTableRange:return DiagnosticKeys::VhdTableRange;
+    case DiagnosticCode::VhdEntryRange:return DiagnosticKeys::VhdEntryRange;
+    case DiagnosticCode::VhdWrite:return DiagnosticKeys::VhdWrite;
+    case DiagnosticCode::VhdWriteTable:return DiagnosticKeys::VhdWriteTable;
+    case DiagnosticCode::VhdWriteAlignment:return DiagnosticKeys::VhdWriteAlignment;
+    case DiagnosticCode::VhdWriteOffset:return DiagnosticKeys::VhdWriteOffset;
+
     case DiagnosticCode::AtomicSeek:return DiagnosticKeys::AtomicSeek;
     case DiagnosticCode::VdiShortHeader:return DiagnosticKeys::VdiShortHeader;
     case DiagnosticCode::VdiSignature:return DiagnosticKeys::VdiSignature;

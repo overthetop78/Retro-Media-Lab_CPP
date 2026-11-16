@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "MediaEngine.VhdShortFooter": "文件太短，无法包含 VHD 尾部记录。",
+    "MediaEngine.VhdCookie": "缺少 VHD 尾部记录签名。",
+    "MediaEngine.VhdFooterChecksum": "VHD 尾部记录校验和无效。",
+    "MediaEngine.VhdVersion": "VHD 版本{0} 不支持 。",
+    "MediaEngine.VhdSize": "VHD当前大小在所支持的64-bit范围外.",
+    "MediaEngine.VhdAlignment": "VHD当前规模与512-byte区不相适应.",
+    "MediaEngine.VhdChanged": "VHD长度在识别后会发生变化.",
+    "MediaEngine.VhdPayload": "固定 VHD 数据长度与尾部记录中的容量不符。",
+    "MediaEngine.VhdParent": "差分 VHD 映像需要尚未注册的父映像解析器。",
+    "MediaEngine.VhdType": "VHD 图像类型{0} 不支持 。",
+    "MediaEngine.VhdHeaderOffset": "VHD 动态头部偏移位于文件之外。",
+    "MediaEngine.VhdDynamicCookie": "缺少 VHD 动态头部签名。",
+    "MediaEngine.VhdDynamicChecksum": "VHD 动态头部校验和无效。",
+    "MediaEngine.VhdTableOffset": "VHD BAT的抵消超过了所支持的范围.",
+    "MediaEngine.VhdBlockSize": "VHD 动态块大小无效 。",
+    "MediaEngine.VhdTableCoverage": "VHD BAT不涵盖申报容量.",
+    "MediaEngine.VhdTableRange": "VHD BAT 块映射超过文件.",
+    "MediaEngine.VhdEntryRange": "VHD BAT 块映射条目 {0} 指向文件之外。",
+    "MediaEngine.VhdWrite": "媒体文档不能被写成完整的VHD图像.",
+    "MediaEngine.VhdWriteTable": "VHD BAT块表太大了.",
+    "MediaEngine.VhdWriteAlignment": "动态 VHD 块没有扇区对齐 。",
+    "MediaEngine.VhdWriteOffset": "动态 VHD 块的偏移超出 BAT 范围。"
+  }
+}
