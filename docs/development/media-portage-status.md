@@ -66,6 +66,8 @@ La tâche 161 porte le reader/writer Creative Voice legacy Caprice32 : blocs son
 
 La tâche 162 porte SIMH : parseur de framing complet, records et marqueurs séquentiels, avertissements traduisibles, tri stable et writer atomique avec mots encadrants/padding. Les objets après EOM sont refusés pour éviter des records invisibles. Compilation, contrôle ciblé, catalogues et audit réussis.
 
+La tâche 163 porte le contenu séquentiel dans MFS : blocs possédés, regroupement fidèle des fichiers nommés, intégrité à trois états, métadonnées et avertissements traduits. Le détecteur déjà présent est contrôlé et son inventaire corrigé sans duplication. Compilation, contrôle ciblé, catalogues et audit réussis ; registre/adaptateur moteur et protocoles restent à raccorder.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

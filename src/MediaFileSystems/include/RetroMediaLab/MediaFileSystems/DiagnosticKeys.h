@@ -1,6 +1,11 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaFileSystems::DiagnosticKeys {
+inline constexpr std::string_view SequentialBlockPosition="MediaFileSystems.SequentialBlockPosition";
+inline constexpr std::string_view SequentialFileInvalid="MediaFileSystems.SequentialFileInvalid";
+inline constexpr std::string_view SequentialAnonymous="MediaFileSystems.SequentialAnonymous";
+inline constexpr std::string_view SequentialIntegrity="MediaFileSystems.SequentialIntegrity";
+inline constexpr std::string_view SequentialNoFiles="MediaFileSystems.SequentialNoFiles";
 inline constexpr std::string_view CbmWriteType="MediaFileSystems.CbmWriteType";
 inline constexpr std::string_view CbmWriteRecordLength="MediaFileSystems.CbmWriteRecordLength";
 inline constexpr std::string_view CbmWriteFormat="MediaFileSystems.CbmWriteFormat";

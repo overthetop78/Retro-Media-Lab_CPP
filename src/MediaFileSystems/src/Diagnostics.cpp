@@ -4,6 +4,12 @@
 namespace RetroMediaLab::MediaFileSystems {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch (code) {
+    case DiagnosticCode::SequentialBlockPosition:return DiagnosticKeys::SequentialBlockPosition;
+    case DiagnosticCode::SequentialFileInvalid:return DiagnosticKeys::SequentialFileInvalid;
+    case DiagnosticCode::SequentialAnonymous:return DiagnosticKeys::SequentialAnonymous;
+    case DiagnosticCode::SequentialIntegrity:return DiagnosticKeys::SequentialIntegrity;
+    case DiagnosticCode::SequentialNoFiles:return DiagnosticKeys::SequentialNoFiles;
+
     case DiagnosticCode::RegistryNullReader:return DiagnosticKeys::RegistryNullReader;
     case DiagnosticCode::RegistryEmptyReaderId:return DiagnosticKeys::RegistryEmptyReaderId;
     case DiagnosticCode::RegistryDuplicateReaderId:return DiagnosticKeys::RegistryDuplicateReaderId;
@@ -467,6 +473,12 @@ case DiagnosticCode::AmigaFileSize:return DiagnosticKeys::AmigaFileSize;
 }
 ErrorKind diagnosticErrorKind(DiagnosticCode code) noexcept {
     switch(code) {
+    case DiagnosticCode::SequentialBlockPosition:return ErrorKind::ArgumentOutOfRange;
+    case DiagnosticCode::SequentialFileInvalid:return ErrorKind::InvalidData;
+    case DiagnosticCode::SequentialAnonymous:return ErrorKind::InvalidData;
+    case DiagnosticCode::SequentialIntegrity:return ErrorKind::InvalidData;
+    case DiagnosticCode::SequentialNoFiles:return ErrorKind::InvalidData;
+
     case DiagnosticCode::AppleDosLoadAddress: return ErrorKind::Overflow;
     case DiagnosticCode::AppleDosCatalogMissing: return ErrorKind::InvalidData;
     case DiagnosticCode::AppleDosCatalogChain: return ErrorKind::Other;

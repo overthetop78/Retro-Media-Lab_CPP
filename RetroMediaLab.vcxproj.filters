@@ -490,6 +490,9 @@
     <Filter Include="src\MediaFileSystems\src\Exploration\Composition">
       <UniqueIdentifier>{34CF599B-B178-5CC1-8B0B-B961636A31B4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaFileSystems\src\Exploration\Sequential">
+      <UniqueIdentifier>{88A88197-88D1-5987-AFE2-70691BB48CDA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaFileSystems\src\Exploration\Volumes">
       <UniqueIdentifier>{DE7DA9AF-DA93-533C-9409-1C652EBEBA1B}</UniqueIdentifier>
     </Filter>
@@ -4833,6 +4836,9 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SectorRegistry.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SequentialContent.h">
+      <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Sources.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
@@ -4883,6 +4889,15 @@
     </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Exploration\MediaExplorer.cpp">
       <Filter>src\MediaFileSystems\src\Exploration</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Sequential\Block.cpp">
+      <Filter>src\MediaFileSystems\src\Exploration\Sequential</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaFileSystems\src\Exploration\Sequential\Constants.h">
+      <Filter>src\MediaFileSystems\src\Exploration\Sequential</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Sequential\Reader.cpp">
+      <Filter>src\MediaFileSystems\src\Exploration\Sequential</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Volumes\Detectors.cpp">
       <Filter>src\MediaFileSystems\src\Exploration\Volumes</Filter>
@@ -5946,6 +5961,9 @@
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Constants\MediaFileSystems</Filter>
     </None>
@@ -6454,6 +6472,9 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sparta-dos.json">
@@ -6966,6 +6987,9 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems</Filter>
     </None>
@@ -7474,6 +7498,9 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sparta-dos.json">
@@ -7986,6 +8013,9 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\MediaFileSystems</Filter>
     </None>
@@ -8494,6 +8524,9 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sparta-dos.json">
@@ -9006,6 +9039,9 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\MediaFileSystems</Filter>
     </None>
@@ -9514,6 +9550,9 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sparta-dos.json">
@@ -10026,6 +10065,9 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems</Filter>
     </None>
@@ -10534,6 +10576,9 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sparta-dos.json">
@@ -11046,6 +11091,9 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\MediaFileSystems</Filter>
     </None>
@@ -11554,6 +11602,9 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sparta-dos.json">
@@ -12066,6 +12117,9 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\MediaFileSystems</Filter>
     </None>
@@ -12574,6 +12628,9 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sparta-dos.json">
@@ -13086,6 +13143,9 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems</Filter>
     </None>
@@ -13594,6 +13654,9 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sparta-dos.json">
@@ -14106,6 +14169,9 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems</Filter>
     </None>
@@ -14614,6 +14680,9 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sparta-dos.json">
@@ -15126,6 +15195,9 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems</Filter>
     </None>
@@ -15634,6 +15706,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sparta-dos.json">
@@ -16146,6 +16221,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems</Filter>
     </None>
@@ -16654,6 +16732,9 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sparta-dos.json">
@@ -17166,6 +17247,9 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems</Filter>
     </None>
@@ -17674,6 +17758,9 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sparta-dos.json">
@@ -18186,6 +18273,9 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\MediaFileSystems</Filter>
     </None>
@@ -18694,6 +18784,9 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sparta-dos.json">
@@ -19206,6 +19299,9 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems</Filter>
     </None>
@@ -19714,6 +19810,9 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sparta-dos.json">
@@ -20226,6 +20325,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sector-registry.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sequential-content.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sparta-dos.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems</Filter>
     </None>
@@ -20734,6 +20836,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sector-registry.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sequential-content.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sparta-dos.json">

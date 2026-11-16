@@ -12,6 +12,8 @@ add_library(RetroMediaLab.MediaFileSystems SHARED
   src/FileSystems/Udf/Descriptors.cpp
   src/FileSystems/Udf/Reader.cpp
   src/FileSystems/Udf/Entries.cpp
+  src/Exploration/Sequential/Block.cpp
+  src/Exploration/Sequential/Reader.cpp
   # Exploration
   src/Exploration/EntryAnalysis.cpp
   # FileSystems/Acorn

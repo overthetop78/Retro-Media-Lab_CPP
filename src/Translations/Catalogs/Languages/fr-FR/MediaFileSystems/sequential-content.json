@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.SequentialBlockPosition": "La position du bloc séquentiel décodé doit être supérieure ou égale à zéro.",
+    "MediaFileSystems.SequentialFileInvalid": "Le fichier décodé a un bloc invalide.",
+    "MediaFileSystems.SequentialAnonymous": "{0} blocs décodés n’ont pas de nom de fichier enregistré.",
+    "MediaFileSystems.SequentialIntegrity": "Un ou plusieurs blocs décodés ont échoué à leur contrôle d'intégrité.",
+    "MediaFileSystems.SequentialNoFiles": "Aucun fichier nommé n’est disponible pour l’exploration."
+  }
+}

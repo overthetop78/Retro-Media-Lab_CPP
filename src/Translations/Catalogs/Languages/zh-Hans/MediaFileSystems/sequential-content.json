@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.SequentialBlockPosition": "解码后的顺序块位置必须大于或等于零。",
+    "MediaFileSystems.SequentialFileInvalid": "解码后的文件含有无效块。",
+    "MediaFileSystems.SequentialAnonymous": "{0} 个已解码块没有存储的文件名。",
+    "MediaFileSystems.SequentialIntegrity": "一个或多个已解码块未通过完整性检查。",
+    "MediaFileSystems.SequentialNoFiles": "没有可供浏览的命名文件。"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.SequentialBlockPosition": "The decoded sequential block position must be nonnegative.",
+    "MediaFileSystems.SequentialFileInvalid": "The decoded file has an invalid block.",
+    "MediaFileSystems.SequentialAnonymous": "{0} decoded blocks have no stored file name.",
+    "MediaFileSystems.SequentialIntegrity": "One or more decoded blocks failed their integrity check.",
+    "MediaFileSystems.SequentialNoFiles": "No named file is available for exploration."
+  }
+}

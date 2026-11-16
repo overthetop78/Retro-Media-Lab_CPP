@@ -1087,6 +1087,7 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SectorImage.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SectorReader.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SectorRegistry.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SequentialContent.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Sources.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\SpartaDos.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Ucsd.h" />
@@ -1104,6 +1105,9 @@
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Registry.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\EntryAnalysis.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\MediaExplorer.cpp" />
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Sequential\Block.cpp" />
+    <ClInclude Include="src\MediaFileSystems\src\Exploration\Sequential\Constants.h" />
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Sequential\Reader.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Volumes\Detectors.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Volumes\Registry.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\FileSystems\Acorn\Adfs\BlockView.cpp" />
@@ -1458,6 +1462,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaFileSystems\volume-contract.json" />
@@ -1628,6 +1633,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaFileSystems\volume-contract.json" />
@@ -1798,6 +1804,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaFileSystems\volume-contract.json" />
@@ -1968,6 +1975,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaFileSystems\volume-contract.json" />
@@ -2138,6 +2146,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaFileSystems\volume-contract.json" />
@@ -2308,6 +2317,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaFileSystems\volume-contract.json" />
@@ -2478,6 +2488,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaFileSystems\volume-contract.json" />
@@ -2648,6 +2659,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaFileSystems\volume-contract.json" />
@@ -2818,6 +2830,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaFileSystems\volume-contract.json" />
@@ -2988,6 +3001,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaFileSystems\volume-contract.json" />
@@ -3158,6 +3172,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaFileSystems\volume-contract.json" />
@@ -3328,6 +3343,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaFileSystems\volume-contract.json" />
@@ -3498,6 +3514,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaFileSystems\volume-contract.json" />
@@ -3668,6 +3685,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaFileSystems\volume-contract.json" />
@@ -3838,6 +3856,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaFileSystems\volume-contract.json" />
@@ -4008,6 +4027,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaFileSystems\volume-contract.json" />
@@ -4178,6 +4198,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaFileSystems\volume-contract.json" />
@@ -4348,6 +4369,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaFileSystems\volume-contract.json" />
@@ -4518,6 +4540,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaFileSystems\volume-contract.json" />
@@ -4688,6 +4711,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaFileSystems\volume-contract.json" />
@@ -4858,6 +4882,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaFileSystems\volume-contract.json" />
@@ -5028,6 +5053,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaFileSystems\volume-contract.json" />
@@ -5198,6 +5224,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaFileSystems\volume-contract.json" />
@@ -5368,6 +5395,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaFileSystems\volume-contract.json" />
@@ -5538,6 +5566,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaFileSystems\volume-contract.json" />
@@ -5708,6 +5737,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaFileSystems\volume-contract.json" />
@@ -5878,6 +5908,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaFileSystems\volume-contract.json" />
@@ -6048,6 +6079,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaFileSystems\volume-contract.json" />
@@ -6218,6 +6250,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaFileSystems\volume-contract.json" />
@@ -6388,6 +6421,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\prodos.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\rt11.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sector-registry.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sequential-content.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\sparta-dos.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\ucsd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaFileSystems\volume-contract.json" />

@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.SequentialBlockPosition": "Декодированное последовательное положение блока должно быть неотрицательным.",
+    "MediaFileSystems.SequentialFileInvalid": "Декодированный файл имеет недействительный блок.",
+    "MediaFileSystems.SequentialAnonymous": "Декодированные блоки {0} не имеют сохраненного имени файла.",
+    "MediaFileSystems.SequentialIntegrity": "Один или несколько декодированных блоков не прошли проверку целостности.",
+    "MediaFileSystems.SequentialNoFiles": "Именованный файл не доступен для исследования."
+  }
+}

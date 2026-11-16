@@ -1,0 +1,9 @@
+{
+  "strings": {
+    "MediaFileSystems.SequentialBlockPosition": "La posición de bloque secuencial decodificada debe ser no negativa.",
+    "MediaFileSystems.SequentialFileInvalid": "El archivo decodificado tiene un bloque inválido.",
+    "MediaFileSystems.SequentialAnonymous": "Los bloques decodificados {0} no tienen nombre de archivo almacenado.",
+    "MediaFileSystems.SequentialIntegrity": "Uno o más bloques decodificados fallaron su control de integridad.",
+    "MediaFileSystems.SequentialNoFiles": "No hay archivo llamado disponible para la exploración."
+  }
+}
