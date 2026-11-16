@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "نطاق بيانات CHD خارج الصورة.",
+    "MediaEngine.ChdHeader": "توقيع CHD أو إصدار الرأس أو حجمه غير صالح.",
+    "MediaEngine.ChdParent": "يتطلب CHD صورة أصل غير مدعومة.",
+    "MediaEngine.ChdDimensions": "الحجم المنطقي لـ CHD أو عدد الكتل أو حجم الكتلة أو الوحدة غير صالح.",
+    "MediaEngine.ChdMap": "إدخال خريطة كتل CHD أو نوعه أو طوله أو علامة النهاية غير صالح.",
+    "MediaEngine.ChdMapCrc": "لا تتطابق قيمة CRC لخريطة كتل CHD.",
+    "MediaEngine.ChdMetadata": "وسم بيانات CHD الوصفية أو الفهرس أو السلسلة المرتبطة غير صالح.",
+    "MediaEngine.ChdHunkReference": "مرجع كتلة CHD خارج الصورة أو دائري.",
+    "MediaEngine.ChdHunkBuffer": "مخزن خرج كتلة CHD قصير جداً.",
+    "MediaEngine.ChdHunkCrc": "لا تتطابق قيمة CRC لكتلة CHD.",
+    "MediaEngine.ChdCodec": "مرمز ضغط CHD أو محاذاة كتلته غير مدعوم.",
+    "MediaEngine.ChdFlacOrder": "علامة ترتيب البايتات CHD FLAC غير صالحة.",
+    "MediaEngine.ChdCdHeader": "رأس ضغط CHD CD أو البيانات الرئيسية مبتورة."
+  }
+}

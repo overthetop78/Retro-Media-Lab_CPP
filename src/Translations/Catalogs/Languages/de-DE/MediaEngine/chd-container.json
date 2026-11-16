@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Der CHD-Datenbereich liegt außerhalb des Bildes.",
+    "MediaEngine.ChdHeader": "Die CHD-Signatur, Header-Version oder Header-Größe ist ungültig.",
+    "MediaEngine.ChdParent": "Der CHD erfordert ein Elternbild, das nicht unterstützt wird.",
+    "MediaEngine.ChdDimensions": "Die logische CHD-Größe, die Stückzahl, die Stückgröße oder die Einheitsgröße ist ungültig.",
+    "MediaEngine.ChdMap": "Der CHD-Hunk-Karteneintrag, Typ, Länge oder die Endmarkierung ist ungültig.",
+    "MediaEngine.ChdMapCrc": "Die CHD Hunk Map CRC stimmt nicht überein.",
+    "MediaEngine.ChdMetadata": "Der CHD-Metadaten-Tag, Index oder die verknüpfte Kette ist ungültig.",
+    "MediaEngine.ChdHunkReference": "Die CHD-Hunk-Referenz befindet sich außerhalb des Bildes oder zyklisch.",
+    "MediaEngine.ChdHunkBuffer": "Der CHD-Hunk-Outputpuffer ist zu kurz.",
+    "MediaEngine.ChdHunkCrc": "Der CHD-Hunk CRC stimmt nicht überein.",
+    "MediaEngine.ChdCodec": "Der CHD-Komprimierungscodec oder seine Hunk-Ausrichtung wird nicht unterstützt.",
+    "MediaEngine.ChdFlacOrder": "Der CHD FLAC Byte Order Marker ist ungültig.",
+    "MediaEngine.ChdCdHeader": "Der CHD-CD-Kompressionsheader oder die Hauptdaten sind abgeschnitten."
+  }
+}

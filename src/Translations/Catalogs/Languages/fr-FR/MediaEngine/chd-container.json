@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "La plage de données CHD est hors de l’image.",
+    "MediaEngine.ChdHeader": "La signature, la version ou la taille de l’en-tête CHD est invalide.",
+    "MediaEngine.ChdParent": "Le CHD nécessite une image parente non prise en charge.",
+    "MediaEngine.ChdDimensions": "La taille logique CHD, le nombre ou la taille des hunks, ou la taille d’unité est invalide.",
+    "MediaEngine.ChdMap": "L’entrée de carte des hunks CHD, son type, sa longueur ou sa marque de fin est invalide.",
+    "MediaEngine.ChdMapCrc": "Le CRC de la carte des hunks CHD ne correspond pas.",
+    "MediaEngine.ChdMetadata": "La balise de métadonnées CHD, l’index ou la chaîne liée est invalide.",
+    "MediaEngine.ChdHunkReference": "La référence de hunk CHD est hors de l’image ou cyclique.",
+    "MediaEngine.ChdHunkBuffer": "Le tampon de sortie du hunk CHD est trop court.",
+    "MediaEngine.ChdHunkCrc": "Le CRC du hunk CHD ne correspond pas.",
+    "MediaEngine.ChdCodec": "Le codec de compression CHD ou l’alignement de ses hunks n’est pas pris en charge.",
+    "MediaEngine.ChdFlacOrder": "Le marqueur d’ordre des octets CHD FLAC est invalide.",
+    "MediaEngine.ChdCdHeader": "L’en-tête de compression CHD CD ou les données principales sont tronqués."
+  }
+}

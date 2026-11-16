@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "El rango de datos CHD está fuera de la imagen.",
+    "MediaEngine.ChdHeader": "La firma CHD, la versión de encabezado o el tamaño de la cabecera es inválida.",
+    "MediaEngine.ChdParent": "El CHD requiere una imagen padre que no es compatible.",
+    "MediaEngine.ChdDimensions": "El tamaño lógico de CHD, conteo de hunk, tamaño de hunk o tamaño de unidad es inválido.",
+    "MediaEngine.ChdMap": "La entrada del mapa de bloques CHD, el tipo, la longitud o la marca de fin es inválida.",
+    "MediaEngine.ChdMapCrc": "El CHD hunk mapa CRC no coincide.",
+    "MediaEngine.ChdMetadata": "La etiqueta de metadatos CHD, índice o cadena vinculada es inválida.",
+    "MediaEngine.ChdHunkReference": "La referencia CHD hunk está fuera de la imagen o cíclica.",
+    "MediaEngine.ChdHunkBuffer": "El búfer de salida del bloque CHD es demasiado corto.",
+    "MediaEngine.ChdHunkCrc": "El CHD hunk CRC no coincide.",
+    "MediaEngine.ChdCodec": "El códec de compresión CHD o su alineación con el hunk no está soportado.",
+    "MediaEngine.ChdFlacOrder": "El marcador de orden de byte CHD FLAC es inválido.",
+    "MediaEngine.ChdCdHeader": "El encabezado de compresión de CD CHD o los datos principales están truncados."
+  }
+}

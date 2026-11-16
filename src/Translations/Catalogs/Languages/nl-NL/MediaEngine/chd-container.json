@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Het CHD-databereik ligt buiten het beeld.",
+    "MediaEngine.ChdHeader": "De CHD handtekening, header versie of header grootte is ongeldig.",
+    "MediaEngine.ChdParent": "De CHD vereist een ouderafbeelding die niet wordt ondersteund.",
+    "MediaEngine.ChdDimensions": "De CHD logische grootte, hunk aantal, hunk grootte of eenheid grootte is ongeldig.",
+    "MediaEngine.ChdMap": "Het CHD-hunkkaartitem, type, lengte of de eindmarkering is ongeldig.",
+    "MediaEngine.ChdMapCrc": "De CHD hunk map CRC komt niet overeen.",
+    "MediaEngine.ChdMetadata": "De CHD metadata tag, index of gekoppelde keten is ongeldig.",
+    "MediaEngine.ChdHunkReference": "De CHD hunk referentie is buiten het beeld of cyclisch.",
+    "MediaEngine.ChdHunkBuffer": "De CHD hunk output buffer is te kort.",
+    "MediaEngine.ChdHunkCrc": "De CHD hunk CRC komt niet overeen.",
+    "MediaEngine.ChdCodec": "De CHD compressie codec of zijn hunk uitlijning is niet ondersteund.",
+    "MediaEngine.ChdFlacOrder": "De CHD FLAC byte order marker is ongeldig.",
+    "MediaEngine.ChdCdHeader": "De CHD-cd-compressieheader of hoofdgegevens zijn afgekapt."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "The CHD data range is outside the image.",
+    "MediaEngine.ChdHeader": "The CHD signature, header version or header size is invalid.",
+    "MediaEngine.ChdParent": "The CHD requires a parent image that is not supported.",
+    "MediaEngine.ChdDimensions": "The CHD logical size, hunk count, hunk size or unit size is invalid.",
+    "MediaEngine.ChdMap": "The CHD hunk map entry, type, length or end cookie is invalid.",
+    "MediaEngine.ChdMapCrc": "The CHD hunk map CRC does not match.",
+    "MediaEngine.ChdMetadata": "The CHD metadata tag, index or linked chain is invalid.",
+    "MediaEngine.ChdHunkReference": "The CHD hunk reference is outside the image or cyclic.",
+    "MediaEngine.ChdHunkBuffer": "The CHD hunk output buffer is too short.",
+    "MediaEngine.ChdHunkCrc": "The CHD hunk CRC does not match.",
+    "MediaEngine.ChdCodec": "The CHD compression codec or its hunk alignment is unsupported.",
+    "MediaEngine.ChdFlacOrder": "The CHD FLAC byte order marker is invalid.",
+    "MediaEngine.ChdCdHeader": "The CHD CD compression header or main data is truncated."
+  }
+}

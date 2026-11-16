@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Το εύρος δεδομένων CHD είναι έξω από την εικόνα.",
+    "MediaEngine.ChdHeader": "Η υπογραφή CHD, η έκδοση κεφαλίδας ή το μέγεθος κεφαλίδας είναι άκυρη.",
+    "MediaEngine.ChdParent": "Το CHD απαιτεί μια μητρική εικόνα που δεν υποστηρίζεται.",
+    "MediaEngine.ChdDimensions": "Το λογικό μέγεθος CHD, ο αριθμός hunk, το μέγεθος hunk ή το μέγεθος μονάδας είναι άκυρο.",
+    "MediaEngine.ChdMap": "Η καταχώριση χάρτη τμημάτων CHD, ο τύπος, το μήκος ή ο δείκτης τέλους είναι άκυρα.",
+    "MediaEngine.ChdMapCrc": "Ο χάρτης CHD hunk CRC δεν ταιριάζει.",
+    "MediaEngine.ChdMetadata": "Η ετικέτα μεταδεδομένων CHD, δείκτης ή συνδεδεμένη αλυσίδα είναι άκυρη.",
+    "MediaEngine.ChdHunkReference": "Η αναφορά CHD hunk είναι έξω από την εικόνα ή κυκλική.",
+    "MediaEngine.ChdHunkBuffer": "Η ενδιάμεση μνήμη εξόδου CHD είναι πολύ μικρή.",
+    "MediaEngine.ChdHunkCrc": "Το CHD hunk CRC δεν ταιριάζει.",
+    "MediaEngine.ChdCodec": "Ο κώδικας συμπίεσης CHD ή η ευθυγράμμιση hunk του δεν υποστηρίζεται.",
+    "MediaEngine.ChdFlacOrder": "Ο δείκτης σειράς byte CHD FLAC είναι άκυρος.",
+    "MediaEngine.ChdCdHeader": "Η κεφαλίδα συμπίεσης CD CHD ή τα κύρια δεδομένα κατατέμνονται."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD veri aralığı görüntünün dışındadır.",
+    "MediaEngine.ChdHeader": "CHD imzası, başlık versiyonu veya başlık büyüklüğü geçersizdir.",
+    "MediaEngine.ChdParent": "CHD, desteklenmeyen bir ebeveyn imajı gerektirir.",
+    "MediaEngine.ChdDimensions": "CHD mantıksal boyutu, hunk say, hunk büyüklüğü veya birim büyüklüğü geçersizdir.",
+    "MediaEngine.ChdMap": "CHD blok haritası girdisi, türü, uzunluğu veya bitiş işaretçisi geçersizdir.",
+    "MediaEngine.ChdMapCrc": "CHD hunk haritası CRC eşleşmez.",
+    "MediaEngine.ChdMetadata": "CHD metadata etiketi, indeks veya bağlantılı zincir geçersizdir.",
+    "MediaEngine.ChdHunkReference": "CHD hunk referansı görüntü veya döngü dışındadır.",
+    "MediaEngine.ChdHunkBuffer": "CHD hunk çıktı tampon çok kısa.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC eşleşmez.",
+    "MediaEngine.ChdCodec": "CHD sıkıştırma kodu veya hunk hizası desteklenmez.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC bayt sırası işaretçisi geçersizdir.",
+    "MediaEngine.ChdCdHeader": "CHD CD sıkıştırma başlığı veya ana veriler kesilmiştir."
+  }
+}

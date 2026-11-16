@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Common/Chd/Container.cpp
+  src/Formats/Common/Chd/Map.cpp
+  src/Formats/Common/Chd/ContainerCodecs.cpp
   src/Formats/Common/Chd/Huffman.cpp
   src/Formats/Common/Chd/Compression.cpp
   src/Formats/Common/Chd/Flac.cpp

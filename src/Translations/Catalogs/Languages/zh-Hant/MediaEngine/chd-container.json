@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD 資料範圍超出映像。",
+    "MediaEngine.ChdHeader": "CHD 簽章、標頭版本或標頭大小無效。",
+    "MediaEngine.ChdParent": "CHD 需要不受支援的父映像。",
+    "MediaEngine.ChdDimensions": "CHD 邏輯大小、資料區塊數量、資料區塊大小或單位大小無效。",
+    "MediaEngine.ChdMap": "CHD 資料區塊對映項目、類型、長度或結束標記無效。",
+    "MediaEngine.ChdMapCrc": "CHD 資料區塊對映 CRC 不符。",
+    "MediaEngine.ChdMetadata": "CHD 中繼資料標記、索引或連結鏈無效。",
+    "MediaEngine.ChdHunkReference": "CHD 資料區塊參照超出映像或形成循環。",
+    "MediaEngine.ChdHunkBuffer": "CHD 資料區塊輸出緩衝區過短。",
+    "MediaEngine.ChdHunkCrc": "CHD 資料區塊 CRC 不符。",
+    "MediaEngine.ChdCodec": "不支援 CHD 壓縮編解碼器或其資料區塊對齊方式。",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC 位元組順序標記無效。",
+    "MediaEngine.ChdCdHeader": "CHD CD 壓縮標頭或主要資料遭到截斷。"
+  }
+}

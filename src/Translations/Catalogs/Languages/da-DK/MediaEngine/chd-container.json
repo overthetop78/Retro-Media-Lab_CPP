@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD dataområdet er uden for billedet.",
+    "MediaEngine.ChdHeader": "CHD signatur, header version eller header størrelse er ugyldig.",
+    "MediaEngine.ChdParent": "CHD kræver en forælder billede, der ikke er understøttet.",
+    "MediaEngine.ChdDimensions": "Den logiske CHD-størrelse, antallet af blokke, blokstørrelsen eller enhedsstørrelsen er ugyldig.",
+    "MediaEngine.ChdMap": "CHD-blokkortets post, type, længde eller slutmarkør er ugyldig.",
+    "MediaEngine.ChdMapCrc": "CHD hunk kort CRC matcher ikke.",
+    "MediaEngine.ChdMetadata": "CHD metadata tag, indeks eller forbundet kæde er ugyldig.",
+    "MediaEngine.ChdHunkReference": "CHD hunk reference er uden for billedet eller cyklisk.",
+    "MediaEngine.ChdHunkBuffer": "CHD pufferen er for kort.",
+    "MediaEngine.ChdHunkCrc": "CHD 's CRC matcher ikke.",
+    "MediaEngine.ChdCodec": "CHD-komprimeringskodeken eller blokjusteringen understøttes ikke.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC byte order markør er ugyldig.",
+    "MediaEngine.ChdCdHeader": "CHD CD komprimeringsheader eller hoveddata er afkortet."
+  }
+}

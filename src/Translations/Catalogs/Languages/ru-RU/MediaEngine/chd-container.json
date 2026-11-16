@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Диапазон данных CHD находится за пределами изображения.",
+    "MediaEngine.ChdHeader": "Подпись CHD, версия заголовка или размер заголовка недействительны.",
+    "MediaEngine.ChdParent": "CHD требует родительского изображения, которое не поддерживается.",
+    "MediaEngine.ChdDimensions": "Логический размер CHD, количество кусков, размер кусков или размер единицы недействительны.",
+    "MediaEngine.ChdMap": "Запись карты блоков CHD, тип, длина или маркер конца недействительны.",
+    "MediaEngine.ChdMapCrc": "CHD hunk map CRC не совпадает.",
+    "MediaEngine.ChdMetadata": "Тег метаданных CHD, индекс или связанная цепочка недействительны.",
+    "MediaEngine.ChdHunkReference": "Ссылка на CHD находится вне изображения или циклична.",
+    "MediaEngine.ChdHunkBuffer": "CHD hunk выходной буфер слишком короткий.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC не совпадает.",
+    "MediaEngine.ChdCodec": "Кодек сжатия CHD или его выравнивание не поддерживается.",
+    "MediaEngine.ChdFlacOrder": "Маркер порядка байтов CHD FLAC недействителен.",
+    "MediaEngine.ChdCdHeader": "Заголовок сжатия CD CHD или основные данные усечены."
+  }
+}

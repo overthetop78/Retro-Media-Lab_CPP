@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "A CHD adattartománya kívül esik a képen.",
+    "MediaEngine.ChdHeader": "A CHD aláírása, fejlécverziója vagy fejlécmérete érvénytelen.",
+    "MediaEngine.ChdParent": "A CHD nem támogatott szülői képet igényel.",
+    "MediaEngine.ChdDimensions": "A CHD logikai mérete, blokkszáma, blokkmérete vagy egységmérete érvénytelen.",
+    "MediaEngine.ChdMap": "A CHD blokktérkép bejegyzése, típusa, hossza vagy zárójelölője érvénytelen.",
+    "MediaEngine.ChdMapCrc": "A CHD blokktérkép CRC értéke nem egyezik.",
+    "MediaEngine.ChdMetadata": "A CHD metaadatcímke, index vagy kapcsolódó lánc érvénytelen.",
+    "MediaEngine.ChdHunkReference": "A CHD hunk hivatkozás kívül esik a képen vagy ciklikus.",
+    "MediaEngine.ChdHunkBuffer": "A CHD kimenet puffere túl rövid.",
+    "MediaEngine.ChdHunkCrc": "A CHD Hunk CRC nem egyezik.",
+    "MediaEngine.ChdCodec": "A CHD tömörítő codec vagy a hunk beállítás nem támogatott.",
+    "MediaEngine.ChdFlacOrder": "A CHD FLAC bájtsorrendjelölője érvénytelen.",
+    "MediaEngine.ChdCdHeader": "A CHD CD tömörítő fejléc vagy a fő adatok csonkítva vannak."
+  }
+}

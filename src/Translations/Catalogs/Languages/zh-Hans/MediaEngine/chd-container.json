@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD 数据范围超出镜像。",
+    "MediaEngine.ChdHeader": "CHD 签名、头部版本或头部大小无效。",
+    "MediaEngine.ChdParent": "CHD 需要不受支持的父镜像。",
+    "MediaEngine.ChdDimensions": "CHD 逻辑大小、数据块数量、数据块大小或单元大小无效。",
+    "MediaEngine.ChdMap": "CHD 数据块映射条目、类型、长度或结束标记无效。",
+    "MediaEngine.ChdMapCrc": "CHD 数据块映射 CRC 不匹配。",
+    "MediaEngine.ChdMetadata": "CHD 元数据标记、索引或链接链无效。",
+    "MediaEngine.ChdHunkReference": "CHD 数据块引用超出镜像或形成循环。",
+    "MediaEngine.ChdHunkBuffer": "CHD 数据块输出缓冲区过短。",
+    "MediaEngine.ChdHunkCrc": "CHD 数据块 CRC 不匹配。",
+    "MediaEngine.ChdCodec": "不支持 CHD 压缩编解码器或其数据块对齐方式。",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC 字节顺序标记无效。",
+    "MediaEngine.ChdCdHeader": "CHD CD 压缩头部或主数据被截断。"
+  }
+}

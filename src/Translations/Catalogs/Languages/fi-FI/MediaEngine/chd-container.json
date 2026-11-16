@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD-tietoalue on kuvan ulkopuolella.",
+    "MediaEngine.ChdHeader": "CHD- allekirjoitus, otsikkoversio tai otsikkokoko on virheellinen.",
+    "MediaEngine.ChdParent": "CHD vaatii vanhemman kuvan, jota ei tueta.",
+    "MediaEngine.ChdDimensions": "CHD:n looginen koko, lohkojen määrä, lohkokoko tai yksikkökoko on virheellinen.",
+    "MediaEngine.ChdMap": "CHD-lohkokartan merkintä, tyyppi, pituus tai loppumerkki on virheellinen.",
+    "MediaEngine.ChdMapCrc": "CHD-lohkokartan CRC ei täsmää.",
+    "MediaEngine.ChdMetadata": "CHD metatietotunniste, indeksi tai linkitetty ketju on virheellinen.",
+    "MediaEngine.ChdHunkReference": "CHD-lohkoviittaus on kuvan ulkopuolella tai syklinen.",
+    "MediaEngine.ChdHunkBuffer": "CHD-lohkon tulostuspuskuri on liian lyhyt.",
+    "MediaEngine.ChdHunkCrc": "CHD-lohkon CRC ei täsmää.",
+    "MediaEngine.ChdCodec": "CHD-pakkauskoodekkia tai lohkojen kohdistusta ei tueta.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC -tavujärjestysmerkki on virheellinen.",
+    "MediaEngine.ChdCdHeader": "CHD CD -pakkausotsake tai päädata on katkaistu."
+  }
+}

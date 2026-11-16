@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD-dataområdet ligger utenfor bildet.",
+    "MediaEngine.ChdHeader": "CHD-signaturen, hovedversjonen eller headerstørrelsen er ugyldig.",
+    "MediaEngine.ChdParent": "CHD krever et foreldrebilde som ikke støttes.",
+    "MediaEngine.ChdDimensions": "CHD logisk størrelse, hunk telling, hunk størrelse eller enhetsstørrelse er ugyldig.",
+    "MediaEngine.ChdMap": "CHD-blokkartoppføringen, typen, lengden eller sluttmarkøren er ugyldig.",
+    "MediaEngine.ChdMapCrc": "CHD-hunk-kartet CRC stemmer ikke.",
+    "MediaEngine.ChdMetadata": "CHD-metadatamerket, indeksen eller lenket kjede er ugyldig.",
+    "MediaEngine.ChdHunkReference": "CHD-henvisningen er utenfor bildet eller cyklisk.",
+    "MediaEngine.ChdHunkBuffer": "CHD hunk utgangsbufferen er for kort.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC passer ikke.",
+    "MediaEngine.ChdCodec": "CHD kompresjonskodeken eller dens hunk justering er ikke støttet.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC byte ordre markør er ugyldig.",
+    "MediaEngine.ChdCdHeader": "CHD CD kompresjonshodet eller hoveddata er avkortet."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Gama de date CHD este în afara imaginii.",
+    "MediaEngine.ChdHeader": "Semnătura CHD, versiunea antet sau dimensiunea antetului este invalidă.",
+    "MediaEngine.ChdParent": "CHD necesită o imagine părinte care nu este susținută.",
+    "MediaEngine.ChdDimensions": "Dimensiunea logică CHD, numărul de bucăți, dimensiunea bucății sau dimensiunea unității este invalidă.",
+    "MediaEngine.ChdMap": "Intrarea din harta blocurilor CHD, tipul, lungimea sau marcajul de sfârșit este invalid.",
+    "MediaEngine.ChdMapCrc": "HARTA CHD HUNK CRC nu se potriveşte.",
+    "MediaEngine.ChdMetadata": "Eticheta de metadate CHD, index sau lanț legat este invalidă.",
+    "MediaEngine.ChdHunkReference": "Referinta CHD este in afara imaginii sau ciclic.",
+    "MediaEngine.ChdHunkBuffer": "Tamponul de ieşire al lui CHD e prea scurt.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC nu se potrivește.",
+    "MediaEngine.ChdCodec": "Codec-ul de compresie CHD sau alinierea sa la bucată nu este suportat.",
+    "MediaEngine.ChdFlacOrder": "Marcajul ordinii octeților CHD FLAC este invalid.",
+    "MediaEngine.ChdCdHeader": "Antetul de compresie CHD CD sau datele principale sunt trunchiate."
+  }
+}

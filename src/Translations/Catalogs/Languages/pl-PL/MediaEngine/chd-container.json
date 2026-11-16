@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Zakres danych CHD jest poza obrazem.",
+    "MediaEngine.ChdHeader": "Podpis CHD, wersja nagłówka lub rozmiar nagłówka jest nieprawidłowy.",
+    "MediaEngine.ChdParent": "CHD wymaga obrazu rodzica, który nie jest obsługiwany.",
+    "MediaEngine.ChdDimensions": "Rozmiar logiczny CHD, liczba bloków, rozmiar bloku lub rozmiar jednostki są nieprawidłowe.",
+    "MediaEngine.ChdMap": "Wpis mapy bloków CHD, typ, długość lub znacznik końca są nieprawidłowe.",
+    "MediaEngine.ChdMapCrc": "CHD hunk map CRC nie pasuje.",
+    "MediaEngine.ChdMetadata": "Tag metadanych CHD, indeks lub łańcuch powiązany jest nieprawidłowy.",
+    "MediaEngine.ChdHunkReference": "Odniesienie do CHD jest poza obrazem lub cykliczny.",
+    "MediaEngine.ChdHunkBuffer": "Bufor wyjściowy CHD Hunk jest zbyt krótki.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC nie pasuje.",
+    "MediaEngine.ChdCodec": "Kodek kompresji CHD lub jego dopasowanie nie jest obsługiwane.",
+    "MediaEngine.ChdFlacOrder": "Znacznik kolejności bajtów CHD FLAC jest nieprawidłowy.",
+    "MediaEngine.ChdCdHeader": "Nagłówek kompresji CHD CD lub główne dane są obcinane."
+  }
+}

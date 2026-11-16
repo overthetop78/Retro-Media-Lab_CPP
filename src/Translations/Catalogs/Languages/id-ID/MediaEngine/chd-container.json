@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Jangkauan data CHD berada di luar gambar.",
+    "MediaEngine.ChdHeader": "Tanda tangan CHD, versi header atau ukuran header tidak valid.",
+    "MediaEngine.ChdParent": "CHD memerlukan citra induk yang tidak didukung.",
+    "MediaEngine.ChdDimensions": "Ukuran logis CHD, jumlah blok, ukuran blok atau ukuran unit tidak valid.",
+    "MediaEngine.ChdMap": "Entri peta blok CHD, tipe, panjang atau penanda akhir tidak valid.",
+    "MediaEngine.ChdMapCrc": "Peta CHD hunk CRC tidak cocok.",
+    "MediaEngine.ChdMetadata": "Tag metadata CHD, indeks atau rantai terkait tidak valid.",
+    "MediaEngine.ChdHunkReference": "Referensi CHD hunk berada di luar gambar atau siklik.",
+    "MediaEngine.ChdHunkBuffer": "Buffer keluaran CHD hunk terlalu pendek.",
+    "MediaEngine.ChdHunkCrc": "CRC blok CHD tidak cocok.",
+    "MediaEngine.ChdCodec": "Codec kompresi CHD atau alignmen sebongkah tidak didukung.",
+    "MediaEngine.ChdFlacOrder": "Tanda urutan CHD FLAC byte tidak valid.",
+    "MediaEngine.ChdCdHeader": "Header kompresi CD CHD atau data utama dipotong."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Діапазон даних CHD виходить за межі образу.",
+    "MediaEngine.ChdHeader": "Сигнатура, версія або розмір заголовка CHD недійсні.",
+    "MediaEngine.ChdParent": "CHD потребує батьківського образу, який не підтримується.",
+    "MediaEngine.ChdDimensions": "Логічний розмір CHD, кількість або розмір блоків чи розмір одиниці недійсні.",
+    "MediaEngine.ChdMap": "Запис карти блоків CHD, тип, довжина або маркер кінця недійсні.",
+    "MediaEngine.ChdMapCrc": "CRC карти блоків CHD не збігається.",
+    "MediaEngine.ChdMetadata": "Тег метаданих CHD, індекс або зв’язаний ланцюг недійсні.",
+    "MediaEngine.ChdHunkReference": "Посилання на блок CHD виходить за межі образу або утворює цикл.",
+    "MediaEngine.ChdHunkBuffer": "Вихідний буфер блоку CHD закороткий.",
+    "MediaEngine.ChdHunkCrc": "CRC блоку CHD не збігається.",
+    "MediaEngine.ChdCodec": "Кодек стиснення CHD або вирівнювання блоків не підтримується.",
+    "MediaEngine.ChdFlacOrder": "Маркер порядку байтів CHD FLAC недійсний.",
+    "MediaEngine.ChdCdHeader": "Заголовок стиснення CHD CD або основні дані обрізані."
+  }
+}

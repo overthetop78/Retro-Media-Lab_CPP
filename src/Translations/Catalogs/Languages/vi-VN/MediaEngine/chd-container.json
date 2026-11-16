@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Phạm vi dữ liệu CHD nằm ngoài ảnh đĩa.",
+    "MediaEngine.ChdHeader": "Chữ ký, phiên bản hoặc kích thước phần đầu CHD không hợp lệ.",
+    "MediaEngine.ChdParent": "CHD yêu cầu một ảnh cha không được hỗ trợ.",
+    "MediaEngine.ChdDimensions": "Kích thước logic CHD, số lượng hoặc kích thước khối, hay kích thước đơn vị không hợp lệ.",
+    "MediaEngine.ChdMap": "Mục nhập bản đồ khối CHD, kiểu, độ dài hoặc dấu kết thúc không hợp lệ.",
+    "MediaEngine.ChdMapCrc": "CRC của bản đồ khối CHD không khớp.",
+    "MediaEngine.ChdMetadata": "Thẻ siêu dữ liệu CHD, chỉ mục hoặc chuỗi liên kết không hợp lệ.",
+    "MediaEngine.ChdHunkReference": "Tham chiếu khối CHD nằm ngoài ảnh đĩa hoặc tạo thành vòng lặp.",
+    "MediaEngine.ChdHunkBuffer": "Bộ đệm đầu ra của khối CHD quá ngắn.",
+    "MediaEngine.ChdHunkCrc": "CRC của khối CHD không khớp.",
+    "MediaEngine.ChdCodec": "Bộ mã hóa nén CHD hoặc căn chỉnh khối không được hỗ trợ.",
+    "MediaEngine.ChdFlacOrder": "Dấu thứ tự byte CHD FLAC không hợp lệ.",
+    "MediaEngine.ChdCdHeader": "Phần đầu nén CHD CD hoặc dữ liệu chính bị cắt cụt."
+  }
+}

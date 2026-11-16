@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD-dataområdet ligger utanför bilden.",
+    "MediaEngine.ChdHeader": "CHD-signatur, rubrikversion eller rubrikstorlek är ogiltig.",
+    "MediaEngine.ChdParent": "CHD kräver en förälderbild som inte stöds.",
+    "MediaEngine.ChdDimensions": "CHD logisk storlek, hunk count, hunk storlek eller enhet storlek är ogiltig.",
+    "MediaEngine.ChdMap": "CHD-blockkartposten, typen, längden eller slutmarkören är ogiltig.",
+    "MediaEngine.ChdMapCrc": "CHD-hunkkartan CRC matchar inte.",
+    "MediaEngine.ChdMetadata": "CHD metadata tag, index eller länkad kedja är ogiltig.",
+    "MediaEngine.ChdHunkReference": "CHD hunk referensen är utanför bilden eller cyklisk.",
+    "MediaEngine.ChdHunkBuffer": "CHD hunk output buffert är för kort.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC matchar inte.",
+    "MediaEngine.ChdCodec": "CHD-komprimering codec eller dess hunk inriktning stöds inte.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC byte ordermarkör är ogiltig.",
+    "MediaEngine.ChdCdHeader": "CHD CD-komprimeringshuvudet eller huvuddata är avkortade."
+  }
+}

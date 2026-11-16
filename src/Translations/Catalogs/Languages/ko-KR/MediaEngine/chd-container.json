@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHD 데이터 범위는 이미지 밖에 있습니다.",
+    "MediaEngine.ChdHeader": "CHD 서명, 헤더 버전 또는 헤더 크기는 유효하지 않습니다.",
+    "MediaEngine.ChdParent": "CHD는 지원되지 않는 부모 이미지를 요구합니다.",
+    "MediaEngine.ChdDimensions": "CHD 논리 크기, hunk count, hunk 크기 또는 단위 크기는 유효하지 않습니다.",
+    "MediaEngine.ChdMap": "CHD 청크 맵 항목, 유형, 길이 또는 종료 마커가 유효하지 않습니다.",
+    "MediaEngine.ChdMapCrc": "CHD hunk 지도 CRC는 일치하지 않습니다.",
+    "MediaEngine.ChdMetadata": "CHD 메타데이터 태그, 인덱스 또는 링크 체인은 유효하지 않습니다.",
+    "MediaEngine.ChdHunkReference": "CHD hunk 참고는 이미지 또는 순환 밖에 있습니다.",
+    "MediaEngine.ChdHunkBuffer": "CHD hunk 산출 완충기는 너무 짧습니다.",
+    "MediaEngine.ChdHunkCrc": "CHD hunk CRC는 일치하지 않습니다.",
+    "MediaEngine.ChdCodec": "CHD 압축 코덱 또는 hunk 정렬은 지원되지 않습니다.",
+    "MediaEngine.ChdFlacOrder": "CHD FLAC 바이트 순서 마커가 유효하지 않습니다.",
+    "MediaEngine.ChdCdHeader": "CHD CD 압축 헤더 또는 주 데이터가 잘렸습니다."
+  }
+}

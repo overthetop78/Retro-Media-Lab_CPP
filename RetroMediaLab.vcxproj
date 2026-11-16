@@ -528,10 +528,16 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\CodecConstants.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Compression.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Compression.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Container.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Container.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\ContainerCodecs.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\ContainerConstants.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\EccTables.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Flac.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Flac.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Huffman.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Common\Chd\Huffman.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Common\Chd\Map.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Cp2.h" />
@@ -1243,6 +1249,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-gcr.json" />
@@ -1399,6 +1406,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\MediaEngine\commodore-gcr.json" />
@@ -1555,6 +1563,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\MediaEngine\commodore-gcr.json" />
@@ -1711,6 +1720,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\MediaEngine\commodore-gcr.json" />
@@ -1867,6 +1877,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\MediaEngine\commodore-gcr.json" />
@@ -2023,6 +2034,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\MediaEngine\commodore-gcr.json" />
@@ -2179,6 +2191,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\MediaEngine\commodore-gcr.json" />
@@ -2335,6 +2348,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\MediaEngine\commodore-gcr.json" />
@@ -2491,6 +2505,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\MediaEngine\commodore-gcr.json" />
@@ -2647,6 +2662,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\MediaEngine\commodore-gcr.json" />
@@ -2803,6 +2819,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\MediaEngine\commodore-gcr.json" />
@@ -2959,6 +2976,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\MediaEngine\commodore-gcr.json" />
@@ -3115,6 +3133,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\MediaEngine\commodore-gcr.json" />
@@ -3271,6 +3290,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\MediaEngine\commodore-gcr.json" />
@@ -3427,6 +3447,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\MediaEngine\commodore-gcr.json" />
@@ -3583,6 +3604,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\MediaEngine\commodore-gcr.json" />
@@ -3739,6 +3761,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\MediaEngine\commodore-gcr.json" />
@@ -3895,6 +3918,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\MediaEngine\commodore-gcr.json" />
@@ -4051,6 +4075,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\MediaEngine\commodore-gcr.json" />
@@ -4207,6 +4232,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\MediaEngine\commodore-gcr.json" />
@@ -4363,6 +4389,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\MediaEngine\commodore-gcr.json" />
@@ -4519,6 +4546,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\MediaEngine\commodore-gcr.json" />
@@ -4675,6 +4703,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\MediaEngine\commodore-gcr.json" />
@@ -4831,6 +4860,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\MediaEngine\commodore-gcr.json" />
@@ -4987,6 +5017,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\MediaEngine\commodore-gcr.json" />
@@ -5143,6 +5174,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\MediaEngine\commodore-gcr.json" />
@@ -5299,6 +5331,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\MediaEngine\commodore-gcr.json" />
@@ -5455,6 +5488,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\MediaEngine\commodore-gcr.json" />
@@ -5611,6 +5645,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\MediaEngine\commodore-gcr.json" />
@@ -5767,6 +5802,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\bbc-dfs.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\centurion-mfm.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-codecs.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\chd-container.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-container-writer.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-disks.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\MediaEngine\commodore-gcr.json" />

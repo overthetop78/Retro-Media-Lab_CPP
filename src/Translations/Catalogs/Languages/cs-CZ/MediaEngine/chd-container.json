@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "Rozsah dat CHD je mimo obraz.",
+    "MediaEngine.ChdHeader": "Podpis CHD, verze hlavičky nebo velikost hlavičky je neplatná.",
+    "MediaEngine.ChdParent": "CHD vyžaduje rodičovský obrázek, který není podporován.",
+    "MediaEngine.ChdDimensions": "Logická velikost CHD, počet kusů, velikost kusů nebo velikost jednotky je neplatná.",
+    "MediaEngine.ChdMap": "Položka mapy bloků CHD, typ, délka nebo koncová značka je neplatná.",
+    "MediaEngine.ChdMapCrc": "CHD mapka CRC neodpovídá.",
+    "MediaEngine.ChdMetadata": "Značka, index nebo propojený řetězec metadat CHD je neplatný.",
+    "MediaEngine.ChdHunkReference": "Odkaz na CHD je mimo obraz nebo cyklický.",
+    "MediaEngine.ChdHunkBuffer": "Výstupní buffer CHD je příliš krátký.",
+    "MediaEngine.ChdHunkCrc": "CRC bloku CHD neodpovídá.",
+    "MediaEngine.ChdCodec": "Kodek komprese CHD nebo jeho zarovnání není podporováno.",
+    "MediaEngine.ChdFlacOrder": "Značka pořadí bajtů CHD FLAC je neplatná.",
+    "MediaEngine.ChdCdHeader": "Hlavička komprese CHD CD nebo hlavní data jsou zkráceny."
+  }
+}

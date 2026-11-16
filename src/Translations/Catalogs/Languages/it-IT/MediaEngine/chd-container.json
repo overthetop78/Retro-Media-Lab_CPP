@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "L'intervallo di dati CHD è fuori dall'immagine.",
+    "MediaEngine.ChdHeader": "La firma CHD, la versione dell'intestazione o la dimensione dell'intestazione è invalida.",
+    "MediaEngine.ChdParent": "Il CHD richiede un'immagine madre che non è supportata.",
+    "MediaEngine.ChdDimensions": "La dimensione logica del CHD, il conteggio del hunk, la dimensione del hunk o la dimensione dell'unità è invalida.",
+    "MediaEngine.ChdMap": "La voce della mappa dei blocchi CHD, il tipo, la lunghezza o il marcatore finale non è valido.",
+    "MediaEngine.ChdMapCrc": "La mappa CHD hunk CRC non corrisponde.",
+    "MediaEngine.ChdMetadata": "Il tag metadati CHD, l'indice o la catena collegata non è valido.",
+    "MediaEngine.ChdHunkReference": "Il riferimento CHD hunk è al di fuori dell'immagine o ciclico.",
+    "MediaEngine.ChdHunkBuffer": "Il buffer di uscita CHD hunk è troppo corto.",
+    "MediaEngine.ChdHunkCrc": "Il CHD hunk CRC non corrisponde.",
+    "MediaEngine.ChdCodec": "Il codec di compressione CHD o il suo allineamento del hunk non è supportato.",
+    "MediaEngine.ChdFlacOrder": "Il marcatore di ordine del byte CHD FLAC non è valido.",
+    "MediaEngine.ChdCdHeader": "L'intestazione di compressione CHD CD o i dati principali sono troncati."
+  }
+}

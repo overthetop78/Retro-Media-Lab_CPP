@@ -1,6 +1,19 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view ChdRange="MediaEngine.ChdRange";
+inline constexpr std::string_view ChdHeader="MediaEngine.ChdHeader";
+inline constexpr std::string_view ChdParent="MediaEngine.ChdParent";
+inline constexpr std::string_view ChdDimensions="MediaEngine.ChdDimensions";
+inline constexpr std::string_view ChdMap="MediaEngine.ChdMap";
+inline constexpr std::string_view ChdMapCrc="MediaEngine.ChdMapCrc";
+inline constexpr std::string_view ChdMetadata="MediaEngine.ChdMetadata";
+inline constexpr std::string_view ChdHunkReference="MediaEngine.ChdHunkReference";
+inline constexpr std::string_view ChdHunkBuffer="MediaEngine.ChdHunkBuffer";
+inline constexpr std::string_view ChdHunkCrc="MediaEngine.ChdHunkCrc";
+inline constexpr std::string_view ChdCodec="MediaEngine.ChdCodec";
+inline constexpr std::string_view ChdFlacOrder="MediaEngine.ChdFlacOrder";
+inline constexpr std::string_view ChdCdHeader="MediaEngine.ChdCdHeader";
 inline constexpr std::string_view ChdBitWidth="MediaEngine.ChdBitWidth";
 inline constexpr std::string_view ChdHuffmanParameters="MediaEngine.ChdHuffmanParameters";
 inline constexpr std::string_view ChdHuffmanCode="MediaEngine.ChdHuffmanCode";

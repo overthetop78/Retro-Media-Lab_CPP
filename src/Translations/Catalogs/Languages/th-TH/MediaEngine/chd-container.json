@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "ช่วงข้อมูล CHD อยู่นอกอิมเมจ",
+    "MediaEngine.ChdHeader": "ลายเซ็น รุ่นส่วนหัว หรือขนาดส่วนหัว CHD ไม่ถูกต้อง",
+    "MediaEngine.ChdParent": "CHD ต้องการอิมเมจแม่ที่ไม่รองรับ",
+    "MediaEngine.ChdDimensions": "ขนาดเชิงตรรกะ จำนวนหรือขนาดบล็อก หรือขนาดหน่วย CHD ไม่ถูกต้อง",
+    "MediaEngine.ChdMap": "รายการแมปบล็อก CHD ชนิด ความยาว หรือเครื่องหมายสิ้นสุดไม่ถูกต้อง",
+    "MediaEngine.ChdMapCrc": "CRC ของแมปบล็อก CHD ไม่ตรงกัน",
+    "MediaEngine.ChdMetadata": "แท็กเมทาดาทา ดัชนี หรือโซ่เชื่อมโยง CHD ไม่ถูกต้อง",
+    "MediaEngine.ChdHunkReference": "การอ้างอิงบล็อก CHD อยู่นอกอิมเมจหรือเป็นวงจร",
+    "MediaEngine.ChdHunkBuffer": "บัฟเฟอร์เอาต์พุตบล็อก CHD สั้นเกินไป",
+    "MediaEngine.ChdHunkCrc": "CRC ของบล็อก CHD ไม่ตรงกัน",
+    "MediaEngine.ChdCodec": "ไม่รองรับตัวเข้ารหัสการบีบอัด CHD หรือการจัดแนวบล็อก",
+    "MediaEngine.ChdFlacOrder": "เครื่องหมายลำดับไบต์ CHD FLAC ไม่ถูกต้อง",
+    "MediaEngine.ChdCdHeader": "ส่วนหัวการบีบอัด CHD CD หรือข้อมูลหลักถูกตัดทอน"
+  }
+}

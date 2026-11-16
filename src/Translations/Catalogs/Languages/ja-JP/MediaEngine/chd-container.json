@@ -1,0 +1,17 @@
+{
+  "strings": {
+    "MediaEngine.ChdRange": "CHDのデータ範囲はイメージの外にあります。",
+    "MediaEngine.ChdHeader": "CHD署名、ヘッダバージョン、ヘッダサイズは無効です。",
+    "MediaEngine.ChdParent": "CHDはサポートされていない親イメージが必要です。",
+    "MediaEngine.ChdDimensions": "CHD論理サイズ、チャンクカウント、チャンクサイズまたはユニットサイズが無効です。",
+    "MediaEngine.ChdMap": "CHD チャンクマップのエントリ、種類、長さ、または終端マーカーが無効です。",
+    "MediaEngine.ChdMapCrc": "CHD チャンクマップの CRC が一致しません。",
+    "MediaEngine.ChdMetadata": "CHDメタデータタグ、インデックス、リンクチェーンは無効です。",
+    "MediaEngine.ChdHunkReference": "CHD チャンク参照がイメージの範囲外にあるか、循環しています。",
+    "MediaEngine.ChdHunkBuffer": "CHDチャンク出力バッファは短すぎます。",
+    "MediaEngine.ChdHunkCrc": "CHD チャンクの CRC が一致しません。",
+    "MediaEngine.ChdCodec": "CHD圧縮コーデックまたはチャンクアライメントはサポートされていません。",
+    "MediaEngine.ChdFlacOrder": "CHD FLACバイトオーダーマーカーは無効です。",
+    "MediaEngine.ChdCdHeader": "CHD CD 圧縮ヘッダーまたはメインデータが途中で切れています。"
+  }
+}

@@ -3,6 +3,19 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::ChdRange:return DiagnosticKeys::ChdRange;
+    case DiagnosticCode::ChdHeader:return DiagnosticKeys::ChdHeader;
+    case DiagnosticCode::ChdParent:return DiagnosticKeys::ChdParent;
+    case DiagnosticCode::ChdDimensions:return DiagnosticKeys::ChdDimensions;
+    case DiagnosticCode::ChdMap:return DiagnosticKeys::ChdMap;
+    case DiagnosticCode::ChdMapCrc:return DiagnosticKeys::ChdMapCrc;
+    case DiagnosticCode::ChdMetadata:return DiagnosticKeys::ChdMetadata;
+    case DiagnosticCode::ChdHunkReference:return DiagnosticKeys::ChdHunkReference;
+    case DiagnosticCode::ChdHunkBuffer:return DiagnosticKeys::ChdHunkBuffer;
+    case DiagnosticCode::ChdHunkCrc:return DiagnosticKeys::ChdHunkCrc;
+    case DiagnosticCode::ChdCodec:return DiagnosticKeys::ChdCodec;
+    case DiagnosticCode::ChdFlacOrder:return DiagnosticKeys::ChdFlacOrder;
+    case DiagnosticCode::ChdCdHeader:return DiagnosticKeys::ChdCdHeader;
     case DiagnosticCode::ChdBitWidth:return DiagnosticKeys::ChdBitWidth;
     case DiagnosticCode::ChdHuffmanParameters:return DiagnosticKeys::ChdHuffmanParameters;
     case DiagnosticCode::ChdHuffmanCode:return DiagnosticKeys::ChdHuffmanCode;
