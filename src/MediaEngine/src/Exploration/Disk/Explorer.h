@@ -3,6 +3,7 @@
 #include "../../Images/Recognition/Interpretations.h"
 #include "../../Reconstruction/Scp/Reader.h"
 #include "../Scp/Inspection.h"
+#include <RetroMediaLab/MediaEngine/DiskMetadata.h>
 namespace RetroMediaLab::MediaEngine {
 // Technical disk result. GUI metadata and presentation are projected separately.
 struct DiskExploration {
@@ -14,6 +15,7 @@ struct DiskExploration {
  std::string primaryFormatId;
  Scp::SharedImage capture;
  bool fileSystemRecognized=false;
+ DiskImageMetadata metadata;
  RETROMEDIALAB_MEDIAENGINE_API std::vector<std::string> detectedFormats()const;
  RETROMEDIALAB_MEDIAENGINE_API bool isHybrid()const;
  RETROMEDIALAB_MEDIAENGINE_API std::optional<DiskExploration> selectFormat(std::string_view)const;

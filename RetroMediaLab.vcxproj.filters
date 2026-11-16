@@ -607,6 +607,9 @@
     <Filter Include="src\MediaEngine\src\Exploration\Disk">
       <UniqueIdentifier>{B1A53E3F-45FF-56E9-B248-42181DCB0C20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Exploration\Metadata">
+      <UniqueIdentifier>{6CBAD136-97B3-5BFA-9309-164BF8E1CB41}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Exploration\Scp">
       <UniqueIdentifier>{69165751-2E01-554E-93A6-DBAE3430E855}</UniqueIdentifier>
     </Filter>
@@ -7977,6 +7980,12 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadata.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadataIds.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveMechanics.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8041,6 +8050,15 @@
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpCaptureInfo.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpHeader.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpHeaderConstants.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialConversion.h">
@@ -8912,6 +8930,18 @@
     </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h">
       <Filter>src\MediaEngine\src\Exploration\Disk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Constants.h">
+      <Filter>src\MediaEngine\src\Exploration\Metadata</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Content.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Metadata</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Identification.cpp">
+      <Filter>src\MediaEngine\src\Exploration\Metadata</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Metadata.h">
+      <Filter>src\MediaEngine\src\Exploration\Metadata</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h">
       <Filter>src\MediaEngine\src\Exploration\Scp</Filter>
@@ -10212,6 +10242,9 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\Adapter.h">
       <Filter>src\MediaEngine\src\Formats\Scp</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Scp\CaptureInfo.cpp">
+      <Filter>src\MediaEngine\src\Formats\Scp</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\CaptureReader.h">
       <Filter>src\MediaEngine\src\Formats\Scp</Filter>
     </ClInclude>

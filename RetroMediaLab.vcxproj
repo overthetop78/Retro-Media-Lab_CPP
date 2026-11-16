@@ -1982,6 +1982,8 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadata.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadataIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveMechanics.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DriveService.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ExplorationInfo.h" />
@@ -2004,6 +2006,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\OpticalTrackMode.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RepresentationInfo.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\RuntimeDisk.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpCaptureInfo.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpHeader.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\ScpHeaderConstants.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialConversion.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\SequentialTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\TapeFormatIds.h" />
@@ -2294,6 +2299,10 @@
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Disk\Explorer.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Disk\Explorer.h" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Constants.h" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Content.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Exploration\Metadata\Identification.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Exploration\Metadata\Metadata.h" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Exploration\Scp\Inspection.cpp" />
     <ClInclude Include="src\MediaEngine\src\Exploration\Scp\Inspection.h" />
@@ -2727,6 +2736,7 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Rx02\Writer.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Scp\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\Adapter.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Scp\CaptureInfo.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\CaptureReader.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\Constants.h" />
     <ClInclude Include="src\MediaEngine\src\Formats\Scp\DiskTypeConstants.h" />

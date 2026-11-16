@@ -2,6 +2,7 @@
 #include <array>
 #include <cstdint>
 #include <string_view>
+#include <RetroMediaLab/MediaEngine/ScpHeader.h>
 namespace RetroMediaLab::MediaEngine::Scp::Constants {
 inline constexpr std::array<std::uint8_t,3> Signature{'S','C','P'}, TrackSignature{'T','R','K'};
 inline constexpr std::uint32_t HeaderBytes=16,TrackSlots=168,WordBytes=2,FieldBytes=4,TrackHeaderBytes=4,RevolutionDescriptorBytes=12;
@@ -10,7 +11,8 @@ inline constexpr std::uint32_t CountOffset=4,DataOffset=8,TrackNumberOffset=3,Ta
 inline constexpr std::uint32_t MinimumRevolutions=1,MaximumRevolutions=64,ExplicitWidth=16,MaximumHeads=2,HeadCount=2;
 inline constexpr std::uint32_t WritableFlag=0x10,ExtendedFlag=0x40,OverflowTicks=65536,ChunkBytes=65536;
 inline constexpr std::uint64_t MaximumLength=2147483647,MaximumInterval=4294967295;
-inline constexpr std::int32_t RoundingDivisor=2,ResolutionStep=25,VersionShift=4,VersionMask=15;
+inline constexpr std::int32_t RoundingDivisor=2,ResolutionStep=ScpHeaderConstants::ResolutionStep,VersionShift=4,VersionMask=15;
+inline constexpr std::size_t CaptureInfoBufferSize=81920;
 inline constexpr double NanosecondsPerMillisecond=1000000,MillisecondsPerMinute=60000;
 inline constexpr std::uint8_t CaptureVersion=0x19,CaptureResolution=0,CaptureRevolutions=1;
 inline constexpr std::uint64_t InitialFileSize=0;

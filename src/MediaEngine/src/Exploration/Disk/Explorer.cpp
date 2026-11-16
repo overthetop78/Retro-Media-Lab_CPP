@@ -1,5 +1,6 @@
 #include "Explorer.h"
 #include "Constants.h"
+#include "../Metadata/Metadata.h"
 #include "../../Models/Sectors/SectorImages.h"
 #include "../../Models/Sectors/Representation.h"
 #include "../../Models/Flux/Representation.h"
@@ -15,14 +16,14 @@ namespace {
 bool same(std::string_view a,std::string_view b){return Primitives::ordinalIdentifierEqualsIgnoreCase(a,b);}
 void add(std::vector<std::string>& values,std::string_view value){if(std::none_of(values.begin(),values.end(),[&](const auto& old){return same(old,value);}))values.emplace_back(value);}
 std::string utf8(const std::filesystem::path& path){const auto text=path.u8string();return {text.begin(),text.end()};}
-DiskExploration make(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document,SectorImageOwner image,std::vector<ScpInspection::MatchOwner> detected,std::vector<SectorImageOwner> images,Scp::SharedImage capture){
+DiskExploration make(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document,SectorImageOwner image,std::vector<ScpInspection::MatchOwner> detected,std::vector<SectorImageOwner> images,Scp::SharedImage capture,std::stop_token token){
  DiskExploration result;result.sourcePath=path;result.document=std::move(document);result.image=detected.empty()?std::move(image):detected.front()->image;result.detected=std::move(detected);result.capture=std::move(capture);result.fileSystemRecognized=!result.detected.empty();result.primaryFormatId=result.image->geometry().formatId;
- std::vector<std::string> formats;for(auto& candidate:images){if(std::any_of(formats.begin(),formats.end(),[&](const auto& id){return same(id,candidate->geometry().formatId);}))continue;formats.push_back(candidate->geometry().formatId);result.decodedImages.push_back(std::move(candidate));}return result;
+ std::vector<std::string> formats;for(auto& candidate:images){if(std::any_of(formats.begin(),formats.end(),[&](const auto& id){return same(id,candidate->geometry().formatId);}))continue;formats.push_back(candidate->geometry().formatId);result.decodedImages.push_back(std::move(candidate));}result.metadata=DiskMetadata::create(*result.image,result.detectedFormats(),token);return result;
 }
-DiskExploration unknown(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document={},Scp::SharedImage capture={}){
+DiskExploration unknown(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document={},Scp::SharedImage capture={},std::stop_token token={}){
  using namespace DiskExplorationConstants;const QFileInfo info(QString::fromStdU16String(path.u16string()));if(!info.isFile()||info.size()<0)throw MediaError(DiagnosticCode::AtomicOpen,{utf8(path)});
  auto image=sparseSectorImage({std::string(UnknownFormat),UnknownBlockSize,UnknownDimension,UnknownDimension,UnknownDimension},{},{false,std::uint64_t(info.size()),UnknownBlockCount});
- return make(path,std::move(document),image,{},{image},std::move(capture));
+ return make(path,std::move(document),image,{},{image},std::move(capture),token);
 }
 bool unsupported(const std::exception_ptr& failure){
  try{std::rethrow_exception(failure);}
@@ -53,7 +54,7 @@ std::shared_ptr<const MediaDocument> DiskImageExplorer::readDocument(const std::
 }
 DiskExploration DiskImageExplorer::explore(const std::filesystem::path& path,std::optional<std::string> format,const ScpInspection::Progress& progress,std::stop_token token)const{
  checkCancellation(token);if(!QFileInfo(QString::fromStdU16String(path.u16string())).isFile())throw MediaError(DiagnosticCode::AtomicOpen,{utf8(path)});
- std::shared_ptr<const MediaDocument> document;try{document=readDocument(path,format,token);}catch(...){if(!unsupported(std::current_exception()))throw;return unknown(path);}
+ std::shared_ptr<const MediaDocument> document;try{document=readDocument(path,format,token);}catch(...){if(!unsupported(std::current_exception()))throw;return unknown(path,{},{},token);}
  return explore(std::move(document),std::move(format),progress,token);
 }
 DiskExploration DiskImageExplorer::exploreSectors(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document,SectorImageOwner image,std::optional<std::string> format,Scp::SharedImage capture,std::stop_token token)const{
@@ -65,12 +66,12 @@ DiskExploration DiskImageExplorer::exploreSectors(const std::filesystem::path& p
   std::vector<SectorImageOwner> candidates{image};auto additional=interpretations_.additional(image,token);candidates.insert(candidates.end(),additional.begin(),additional.end());
   for(auto& match:fileSystems_.readDistinctCandidates(candidates,token))detected.push_back(std::make_shared<const ScpInspection::Match>(std::move(match)));
  }
- return make(path,std::move(document),image,std::move(detected),{image},std::move(capture));
+ return make(path,std::move(document),image,std::move(detected),{image},std::move(capture),token);
 }
 DiskExploration DiskImageExplorer::fromScp(const std::filesystem::path& path,std::shared_ptr<const MediaDocument> document,ScpInspection::Result result,std::stop_token token)const{
- checkCancellation(token);if(!result.ranking.bestDecoded)return unknown(path,std::move(document),std::move(result.capture));
+ checkCancellation(token);if(!result.ranking.bestDecoded)return unknown(path,std::move(document),std::move(result.capture),token);
  auto image=result.ranking.bestRecognized?result.ranking.bestRecognized:result.ranking.bestDecoded;
- return make(path,std::move(document),std::move(image),std::move(result.detected),std::move(result.credibleImages),std::move(result.capture));
+ return make(path,std::move(document),std::move(image),std::move(result.detected),std::move(result.credibleImages),std::move(result.capture),token);
 }
 DiskExploration DiskImageExplorer::exploreScp(const std::filesystem::path& path,Scp::SharedImage capture,const ScpInspection::Progress& progress,std::stop_token token)const{return fromScp(path,{},scp_.explore(path,std::move(capture),progress,token),token);}
 DiskExploration DiskImageExplorer::explore(std::shared_ptr<const MediaDocument> document,std::optional<std::string> format,const ScpInspection::Progress& progress,std::stop_token token,const DiskCaptureLoaded& loaded)const{
@@ -81,13 +82,13 @@ DiskExploration DiskImageExplorer::explore(std::shared_ptr<const MediaDocument> 
   const auto capture=std::make_shared<const Scp::Image>(Scp::fromProtected(flux->image(),document->metadata(),token));if(loaded)loaded(capture);
   if(same(document->formatId(),Scp::Constants::FormatId)){
    result=fromScp(path,document,scp_.explore(path,capture,progress,token),token);
-   if(format){auto selected=result.selectFormat(*format);result=selected?std::move(*selected):unknown(path,document,capture);}
+   if(format){auto selected=result.selectFormat(*format);result=selected?std::move(*selected):unknown(path,document,capture,token);}
   }else{
    ScpReconstruction::Progress units;if(progress)units=[&](const auto& value){progress({value.kind==IsoReconstruction::CollectionProgressKind::TrackDecoded?ScpInspection::ProgressKind::TrackDecoded:ScpInspection::ProgressKind::RevolutionDecoded,document->formatId(),std::size_t(value.completed),std::size_t(value.total),{},value.cylinder,value.head});};
-   try{auto image=sectors_.read(flux->image(),format,units,token);result=exploreSectors(path,document,std::move(image),format,capture,token);}catch(...){if(!rejectedFlux(std::current_exception()))throw;result=unknown(path,document,capture);}
+   try{auto image=sectors_.read(flux->image(),format,units,token);result=exploreSectors(path,document,std::move(image),format,capture,token);}catch(...){if(!rejectedFlux(std::current_exception()))throw;result=unknown(path,document,capture,token);}
   }
  }else if(const auto sectors=dynamic_cast<const SectorRepresentation*>(&document->representation()))result=exploreSectors(path,document,sectors->imageOwner(),std::move(format),{},token);
- else result=unknown(path,document);
+ else result=unknown(path,document,{},token);
  activity.finish();return result;
 }
 }

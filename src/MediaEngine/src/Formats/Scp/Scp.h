@@ -2,18 +2,12 @@
 #include "Constants.h"
 #include "../../Models/Flux/Flux.h"
 #include <RetroMediaLab/MediaEngine/Export.h>
+#include <RetroMediaLab/MediaEngine/ScpHeader.h>
 #include <RetroMediaLab/MediaFileSystems/Sources.h>
 #include <functional>
 #include <string>
 namespace RetroMediaLab::MediaEngine::Flux {class ProtectedTrack;}
 namespace RetroMediaLab::MediaEngine::Scp {
-struct Header {
-    std::uint8_t version=0,diskType=0,revolutions=0,startTrack=0,endTrack=0,flags=0,bitCellEncoding=0,heads=0,resolution=0;
-    std::uint32_t checksum=0;
-    std::int32_t trackCount() const noexcept {return std::int32_t(endTrack)-startTrack+1;}
-    std::int32_t resolutionNanoseconds() const noexcept {return Constants::ResolutionStep*(std::int32_t(resolution)+1);}
-    RETROMEDIALAB_MEDIAENGINE_API std::string versionText() const;
-};
 enum class RevolutionOrigin {Captured,Synthetic};
 struct Revolution {
     Flux::Revolution flux;
