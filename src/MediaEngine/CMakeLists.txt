@@ -18,6 +18,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Preparation/Tape.cpp
   src/Audio/Mechanical/Service.cpp
   src/Audio/Mechanical/Mix.cpp
+  src/Models/Sectors/Builders.cpp
   src/Preparation/ScpConversion.cpp
   src/Preparation/Disks.cpp
   src/Preparation/Catalog.cpp

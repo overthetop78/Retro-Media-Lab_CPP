@@ -4,22 +4,15 @@
 #include "SectorOrder.h"
 #include "Constants.h"
 #include "../FormatIds.h"
-#include "../../Models/Sectors/SectorImages.h"
+#include "../../Models/Sectors/Builders.h"
+#include "../../Sources/RandomAccessSources.h"
 #include "../../Primitives/Identifiers.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 namespace RetroMediaLab::MediaEngine::Apple {
 namespace {
 ReadResult build(Bytes data,std::string_view id,MatchKind match,bool zoned,std::uint32_t heads,std::uint32_t sectorBytes,std::uint32_t sectors,std::uint32_t cylinders,std::stop_token token){
-    std::vector<MediaFileSystems::SectorBlock> blocks;
-    const auto count=data.size()/sectorBytes;blocks.reserve(count);
-    for(std::size_t logical=0;logical<count;++logical){
-        checkCancellation(token);MediaFileSystems::SectorBlock block;block.logicalBlock=logical;
-        if(zoned)block.address=Geometry::MacintoshGcr::address(std::int32_t(logical),std::int32_t(heads));
-        else block.address={std::int64_t(logical/(heads*sectors)),std::int64_t(logical/sectors%heads),std::int64_t(logical%sectors)};
-        const auto payload=data.subspan(logical*sectorBytes,sectorBytes);block.data.assign(payload.begin(),payload.end());blocks.push_back(std::move(block));
-    }
-    MediaFileSystems::SectorImageOptions options;options.capacity=data.size();options.logicalBlockCount=count;
-    return {sparseSectorImage({std::string(id),sectorBytes,cylinders,heads,sectors},std::move(blocks),options),match};
+    if(zoned)return {macintoshSectorImage(data,std::string(id),static_cast<std::int32_t>(heads),token),match};
+    return {linearSectorImage(memorySource(data),{std::string(id),sectorBytes,cylinders,heads,sectors},SectorNumbering::ZeroBased,token),match};
 }
 ReadResult appleII(Bytes data,std::string_view id,MatchKind match,bool prodos,std::stop_token token){return build(data,id,match,false,Geometry::SingleHead,prodos?Geometry::AppleII::ProDosBlockSize:Geometry::AppleII::SectorSize,prodos?Geometry::AppleII::ProDosBlocksPerTrack:Geometry::AppleII::SectorsPerTrack,Geometry::AppleII::TrackCount,token);}
 }

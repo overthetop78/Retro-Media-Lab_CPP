@@ -6,7 +6,7 @@
 #include "../FormatIds.h"
 #include "../../Codecs/AppleII/Gcr.h"
 #include "../../Codecs/AppleRwts18/Gcr.h"
-#include "../../Models/Sectors/SectorImages.h"
+#include "../../Models/Sectors/Builders.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <algorithm>
 #include <map>
@@ -16,10 +16,10 @@ namespace Constants=TrackSelectionConstants;
 namespace {
 using Sector=Decoding::Sector;
 using Block=MediaFileSystems::SectorBlock;
-struct Selected {std::int32_t track;Sector sector;};
-void select(std::vector<Selected>& result,std::map<std::pair<std::int32_t,std::int32_t>,std::size_t>& indices,std::int32_t track,const std::vector<Decoding::Sector>& decoded,std::int32_t sectorCount,std::size_t size){
+using Selected=SelectedSector;
+void select(std::vector<Selected>& result,std::map<std::pair<std::int32_t,std::int32_t>,std::size_t>& indices,std::int32_t track,const std::vector<Decoding::Sector>& decoded,const std::function<bool(const Sector&)>& accept){
     for(const auto& sector:decoded){
-        if(sector.number<0||sector.number>=sectorCount||!sector.data||sector.data->size()!=size)continue;
+        if(!accept(sector))continue;
         const auto key=std::pair{track,sector.number};const auto found=indices.find(key);
         if(found==indices.end()){indices.emplace(key,result.size());result.push_back({track,sector});}
         else if(sector.integrityValid==true&&result[found->second].sector.integrityValid!=true)result[found->second].sector=sector;
@@ -49,14 +49,12 @@ std::shared_ptr<const MediaFileSystems::SectorImage> build(const std::vector<Sel
             block.data.insert(block.data.end(),second->second->data->begin(),second->second->data->end());block.integrityValid=first->second->integrityValid==true&&second->second->integrityValid==true;proDos.push_back(std::move(block));
         }
         if(proDos.size()==std::size_t(tracks)*G::AppleII::ProDosBlocksPerTrack){
-            std::vector<std::uint8_t> dense(proDos.size()*G::AppleII::ProDosBlockSize);
-            for(const auto& block:proDos)std::copy(block.data.begin(),block.data.end(),dense.begin()+block.logicalBlock*G::AppleII::ProDosBlockSize);
-            if(Apple::looksLikeProDos(dense))return sparseSectorImage({std::string(Formats::AppleIIProDos),G::AppleII::ProDosBlockSize,std::uint32_t(tracks),G::SingleHead,G::AppleII::ProDosBlocksPerTrack},std::move(proDos));
+            const auto dense=denseSectorImage(proDos,tracks*G::AppleII::ProDosBlocksPerTrack,G::AppleII::ProDosBlockSize);
+            if(Apple::looksLikeProDos(dense.data))return sparseSectorImage({std::string(Formats::AppleIIProDos),G::AppleII::ProDosBlockSize,std::uint32_t(tracks),G::SingleHead,G::AppleII::ProDosBlocksPerTrack},std::move(proDos));
         }
         if(blocks.size()==std::size_t(tracks)*G::AppleII::SectorsPerTrack){
-            std::vector<std::uint8_t> dense(blocks.size()*G::AppleII::SectorSize);
-            for(const auto& block:blocks)std::copy(block.data.begin(),block.data.end(),dense.begin()+block.logicalBlock*G::AppleII::SectorSize);
-            if(Apple::looksLikeDos33(dense))id=Formats::AppleIIDos33;
+            const auto dense=denseSectorImage(blocks,tracks*G::AppleII::SectorsPerTrack,G::AppleII::SectorSize);
+            if(Apple::looksLikeDos33(dense.data))id=Formats::AppleIIDos33;
         }
     }
     return sparseSectorImage({std::string(id),std::uint32_t(size),std::uint32_t(tracks),G::SingleHead,std::uint32_t(sectors)},std::move(blocks));
@@ -77,15 +75,15 @@ TrackCandidates decodeTrack(Flux::BitView bits,std::int32_t track,std::stop_toke
     auto rwts=filter(AppleRwts18::decodeBits(bits,token),track,Constants::RwtsSectorCount,Constants::RwtsSectorSize);
     const auto standardScore=score(standard),rwtsScore=score(rwts);return {std::move(standard),std::move(rwts),standardScore,rwtsScore};
 }
-std::shared_ptr<const MediaFileSystems::SectorImage> buildStandard(std::span<const DecodedTrack> tracks){
+std::vector<SelectedSector> selectBestDecoded(std::span<const DecodedTrack> tracks,const std::function<bool(const Decoding::Sector&)>& accept){
     std::vector<Selected> selected;std::map<std::pair<std::int32_t,std::int32_t>,std::size_t> indices;
-    for(const auto& track:tracks)select(selected,indices,track.track,track.sectors,Geometry::AppleII::SectorsPerTrack,Geometry::AppleII::SectorSize);
-    return build(selected,false);
+    for(const auto& track:tracks)select(selected,indices,track.track,track.sectors,accept);return selected;
+}
+std::shared_ptr<const MediaFileSystems::SectorImage> buildStandard(std::span<const DecodedTrack> tracks){
+    const auto selected=selectBestDecoded(tracks,[](const auto& sector){return sector.number>=0&&sector.number<Geometry::AppleII::SectorsPerTrack&&sector.data&&sector.data->size()==Geometry::AppleII::SectorSize;});return build(selected,false);
 }
 std::shared_ptr<const MediaFileSystems::SectorImage> buildRwts18(std::span<const DecodedTrack> tracks){
-    std::vector<Selected> selected;std::map<std::pair<std::int32_t,std::int32_t>,std::size_t> indices;std::size_t count=0;
-    for(const auto& track:tracks){count+=track.sectors.size();select(selected,indices,track.track,track.sectors,Constants::RwtsSectorCount,Constants::RwtsSectorSize);}
-    if(selected.empty())throw MediaError(DiagnosticCode::AppleNoRwtsSectors,{std::to_string(count),std::to_string(tracks.size())});
-    return build(selected,true);
+    const auto selected=selectBestDecoded(tracks,[](const auto& sector){return sector.number>=0&&sector.number<Constants::RwtsSectorCount&&sector.data&&sector.data->size()==Constants::RwtsSectorSize;});std::size_t count=0;for(const auto& track:tracks)count+=track.sectors.size();
+    if(selected.empty())throw MediaError(DiagnosticCode::AppleNoRwtsSectors,{std::to_string(count),std::to_string(tracks.size())});return build(selected,true);
 }
 }
