@@ -1,9 +1,14 @@
 #include "MediaExplorer.h"
 #include "ExplorationMapper.h"
+#include "SequentialContentAdapter.h"
+#include "../Composition/SequentialMedia.h"
 #include "../Sources/DriveOperation.h"
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine {
-MediaExplorer MediaExplorer::createDefault(){return MediaExplorer(MediaFileSystems::MediaExplorer::createDefault());}
+MediaExplorer MediaExplorer::createDefault(){
+    const auto sequential=SequentialMediaComposition::createDefault();
+    return MediaExplorer(MediaFileSystems::MediaExplorer::createDefault({std::make_shared<SequentialContentAdapter>(sequential.decoders())}));
+}
 std::future<ExploredMediaImage> MediaExplorer::exploreAsync(std::shared_ptr<const MediaDocument> document,std::stop_token token)const{
     return std::async(std::launch::deferred,[explorer=explorer_,document=std::move(document),token]{
         if(!document)throw MediaFileSystems::MediaError(MediaFileSystems::DiagnosticCode::DocumentNull);

@@ -1,5 +1,6 @@
 #pragma once
 #include "Export.h"
+#include "MessageRecipe.h"
 #include <exception>
 #include <optional>
 #include <stop_token>
@@ -14,9 +15,12 @@ struct Diagnostic {
     std::vector<std::string> arguments;
     std::vector<std::string> context{};
     std::vector<Diagnostic> causes{};
+    // A boundary can retain the originating library's translation without depending on it.
+    std::optional<MessageRecipe> messageOverride{};
     bool operator==(const Diagnostic&) const = default;
 };
 RETROMEDIALAB_MEDIAFILESYSTEMS_API std::string_view diagnosticKey(DiagnosticCode) noexcept;
+RETROMEDIALAB_MEDIAFILESYSTEMS_API MessageRecipe diagnosticMessage(const Diagnostic&);
 RETROMEDIALAB_MEDIAFILESYSTEMS_API ErrorKind diagnosticErrorKind(DiagnosticCode) noexcept;
 class MediaError final : public std::exception {
 public:

@@ -1,6 +1,9 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaFileSystems::DiagnosticKeys {
+inline constexpr std::string_view TranslationDomain="MediaFileSystems";
+}
+namespace RetroMediaLab::MediaFileSystems::DiagnosticKeys {
 inline constexpr std::string_view SequentialBlockPosition="MediaFileSystems.SequentialBlockPosition";
 inline constexpr std::string_view SequentialFileInvalid="MediaFileSystems.SequentialFileInvalid";
 inline constexpr std::string_view SequentialAnonymous="MediaFileSystems.SequentialAnonymous";

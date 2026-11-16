@@ -960,6 +960,10 @@ MediaError::MediaError(DiagnosticCode code, std::vector<std::string> arguments) 
 MediaError::MediaError(Diagnostic diagnostic) : diagnostic_(std::move(diagnostic)), kind_(diagnosticErrorKind(diagnostic_.code)) {}
 MediaError::MediaError(DiagnosticCode code, std::vector<std::string> arguments, ErrorKind kind) : diagnostic_{code,std::move(arguments)}, kind_(kind) {}
 MediaError::MediaError(Diagnostic diagnostic, ErrorKind kind) : diagnostic_(std::move(diagnostic)), kind_(kind) {}
-const char* MediaError::what() const noexcept { return diagnosticKey(diagnostic_.code).data(); }
+MessageRecipe diagnosticMessage(const Diagnostic& diagnostic) {
+    if(diagnostic.messageOverride)return *diagnostic.messageOverride;
+    return {std::string(diagnosticKey(diagnostic.code)),diagnostic.arguments,std::string(DiagnosticKeys::TranslationDomain)};
+}
+const char* MediaError::what() const noexcept { return diagnostic_.messageOverride ? diagnostic_.messageOverride->resourceKey.c_str() : diagnosticKey(diagnostic_.code).data(); }
 void checkCancellation(std::stop_token token) { if (token.stop_requested()) throw MediaError(DiagnosticCode::Cancelled); }
 }

@@ -11,6 +11,23 @@
 namespace RetroMediaLab::MediaEngine {
 namespace M=MediaFileSystems;
 namespace {
+// These cases correspond to InvalidDataException in the C# decoder boundary.
+bool invalidDecodedData(DiagnosticCode code) {
+    switch(code){
+    case DiagnosticCode::SequentialContentVolume:
+    case DiagnosticCode::AtariTapeIncompatible:
+    case DiagnosticCode::AcornTapeIncompatible:
+    case DiagnosticCode::AtomTapeIncompatible:
+    case DiagnosticCode::CpcTapeIncompatible:
+    case DiagnosticCode::CommodoreTapeIncompatible:
+    case DiagnosticCode::SpectrumTapeIncompatible:
+    case DiagnosticCode::MsxTapeIncompatible:
+    case DiagnosticCode::TzxSignalDocument:
+    case DiagnosticCode::TzxSignalBits:
+    case DiagnosticCode::TzxBlock:return true;
+    default:return false;
+    }
+}
 class Content final:public M::SequentialContent {
 public:
     std::optional<std::string> decoder;std::vector<M::SequentialDecodedBlock> values;std::vector<std::string> raw;std::vector<M::MessageRecipe> recipes;
@@ -27,6 +44,7 @@ bool SequentialContentAdapter::canRead(const M::ImageDocument& document,const M:
     return native&&native->mediaKind()==MediaKind::Tape&&dynamic_cast<const SequentialImage*>(&document.representation())&&((volume.fileSystemId()&&sameIdentifier(*volume.fileSystemId(),id()))||sameIdentifier(volume.origin(),M::VolumeConstants::SequentialContent));
 }
 M::FileSystemVolume SequentialContentAdapter::read(const M::ImageDocument& document,const M::VolumeDescriptor& volume,std::stop_token token)const {
+    try {
     if(!canRead(document,volume,token))throw MediaError(DiagnosticCode::SequentialContentVolume);
     const auto& native=dynamic_cast<const MediaDocument&>(document);std::vector<SequentialDecodeResult> results;
     for(const auto& decoder:decoders_.findCompatible(native,{},token)){checkCancellation(token);results.push_back(decoder->decodeAsync(native,{},token).get());}
@@ -45,5 +63,11 @@ M::FileSystemVolume SequentialContentAdapter::read(const M::ImageDocument& docum
     }
     const auto found=document.metadata().find(std::string(SequentialDecodingConstants::InternalNameKey));const auto name=found==document.metadata().end()?std::string{}:QString::fromStdString(found->second).trimmed().toStdString();
     return M::SequentialContentReader{}.read(document,volume,content,name,token);
+    } catch(const MediaError& error) {
+        if(!invalidDecodedData(error.diagnostic().code))throw;
+        const auto& diagnostic=error.diagnostic();
+        M::MessageRecipe message{std::string(diagnosticKey(diagnostic.code)),diagnostic.arguments,std::string(ImageConstants::EngineDomain)};
+        throw M::MediaError(M::Diagnostic{M::DiagnosticCode::UnknownDiagnostic,diagnostic.arguments,{},{},std::move(message)},M::ErrorKind::InvalidData);
+    }
 }
 }

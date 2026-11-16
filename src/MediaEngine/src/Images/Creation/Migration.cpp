@@ -4,6 +4,7 @@
 #include "Blank.h"
 #include "Constants.h"
 #include "../MediaDocument.h"
+#include "../ExplorationMapper.h"
 #include "../../Models/Sectors/Representation.h"
 #include "../../Primitives/Identifiers.h"
 #include "../../Formats/Adf/AdfImages.h"
@@ -17,20 +18,8 @@
 namespace RetroMediaLab::MediaEngine {
 namespace {
 namespace M = MediaFileSystems;
-// Project only the fields consumed by MigrationPlanner; exploration metadata is not rewritten.
-M::FileSystemEntry migrationEntry(const FileSystemEntryInfo& source) {
-    M::FileSystemEntry result;result.name=source.name;result.size=source.size;
-    switch(source.kind){case FileSystemEntryKind::Directory:result.kind=M::EntryKind::Directory;break;case FileSystemEntryKind::File:result.kind=M::EntryKind::File;break;case FileSystemEntryKind::Link:result.kind=M::EntryKind::Link;break;default:result.kind=M::EntryKind::Unknown;break;}
-    if(source.content)result.content=*source.content;
-    if(source.modified){const auto& t=*source.modified;result.modified=M::Timestamp{t.year,t.month,t.day,t.hour,t.minute,t.second,t.nanosecond,t.offsetMinutes};}
-    result.comment=source.comment;result.rawAttributes=source.rawAttributes;result.metadataValid=source.metadataValid;
-    for(const auto& child:source.children)result.children.push_back(migrationEntry(child));
-    return result;
-}
 M::MigrationPlan plan(const FileSystemVolumeInfo& source,const FileSystemMigrationTarget& target) {
-    M::FileSystemVolume volume;volume.name=source.name;volume.fileSystemId=source.fileSystemId;
-    for(const auto& entry:source.entries)volume.entries.push_back(migrationEntry(entry));
-    return M::FileSystemMigrationService::createPlan(volume,std::string(target.fileSystemId));
+    return M::FileSystemMigrationService::createPlan(ExplorationMapper::toFileSystemsVolume(source),std::string(target.fileSystemId));
 }
 MigrationLossKind lossKind(M::MigrationLossKind value) {
     switch(value){
