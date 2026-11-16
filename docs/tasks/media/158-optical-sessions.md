@@ -10,6 +10,8 @@
 - [x] Contrôle ciblé
   - [x] Créer `build/verification-optical-session/CMakeLists.txt`, `main.cpp` : audio associé, séquences/pregaps/padding, résumé/boucles, lecture streaming/cache, annulation de précache, fermeture et durée de vie des sources.
   - [x] Supprimer `build/verification-optical-session/` avec ses projets, binaires et fixtures après consignation.
-- [ ] Raccordement global (après les services de lecture/écriture)
-  - [ ] Modifier `src/MediaEngine/include/RetroMediaLab/MediaEngine/OpticalDiscSession.h` et créer `src/MediaEngine/src/Images/Optical/OpenSession.cpp` : ouverture par chemin via la composition globale et audio associé facultatif, sans registre concurrent.
-  - [ ] Créer `src/MediaEngine/src/Images/Conversion/Optical/ConversionService.h`, `ConversionService.cpp` : destinations du registre de writers, validation et conversion via les services globaux, progression.
+- [x] Raccordement global (après les services de lecture/écriture)
+  - [x] Modifier `src/MediaEngine/include/RetroMediaLab/MediaEngine/OpticalDiscSession.h` et créer `src/MediaEngine/src/Images/Optical/OpenSession.cpp` : ouverture par chemin via la composition globale et audio associé facultatif, sans registre concurrent.
+  - [x] Créer `src/MediaEngine/src/Images/Conversion/Optical.h`, `Optical.cpp` : destinations du registre de writers, validation et conversion via les services globaux, progression.
+
+Cloture du raccordement : ouverture par chemin realisee au bloc 235 ; conversion specialisee et composition globale dans `Images/Conversion/Optical.*` et `Composition/Runtime.h`. Les chemins initiaux du service ont ete adaptes au rangement effectif.

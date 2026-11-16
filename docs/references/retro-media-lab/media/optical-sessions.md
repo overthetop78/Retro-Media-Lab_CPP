@@ -23,3 +23,7 @@ close est idempotent : document, pistes et caches sont libérés avant reset de 
 ## Raccordement restant
 
 L’OpenAsync par chemin du C# dépend de la composition globale des readers et du service de lecture, dont le repli RAW utilise également les readers de bandes non encore portés. La conversion optique dépend en plus du service global de writing, de ses mécaniques et de sa progression de visualisation. Aucun registre optique concurrent ni service incomplet parallèle n’est créé pour contourner ces dépendances. Ces deux actions restent ouvertes dans la tâche 158 ; OpticalDiscSession demeure partiel dans l’inventaire. Les services de conversion ne sont pas déclarés portés.
+
+## Actualisation du raccordement
+
+Le paragraphe « Raccordement restant » decrit le releve initial. Ces dependances sont maintenant raccordees : `Images/Optical/OpenSession.cpp` (bloc 235), `Images/Conversion/Optical.h` et `Optical.cpp`, puis `Composition/Runtime.h`. Aucun registre optique concurrent n’a ete ajoute.

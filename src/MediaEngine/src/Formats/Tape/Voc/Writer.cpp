@@ -1,5 +1,6 @@
 #include "Reader.h"
 #include "Constants.h"
+#include "../../../Primitives/Bits.h"
 #include "../../../Sources/AtomicImageWriter.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <QtEndian>
@@ -45,7 +46,7 @@ std::future<std::vector<std::filesystem::path>> Writer::writeAsync(std::shared_p
             std::array<std::uint8_t,HeaderSize> header{};std::copy(Signature.begin(),Signature.end(),header.begin());qToLittleEndian(std::uint16_t(HeaderSize),header.data()+DataOffset);qToLittleEndian(Version,header.data()+VersionOffset);qToLittleEndian(std::uint16_t(~Version+ChecksumBase),header.data()+ChecksumOffset);output(header);
             std::size_t offset=0;
             do {
-                checkCancellation(stop);const auto first=offset==0;const auto count=std::min(pcm.size()-offset,std::size_t(first?MaximumFirstBlock:MaximumBlock));const auto length=std::uint32_t(count+(first?SoundFields:0));std::array<std::uint8_t,BlockHeaderSize> block{};block[0]=first?Sound:Continuation;for(int i=0;i<LengthBytes;++i)block[i+1]=std::uint8_t(length>>(i*ByteBits));output(block);
+                checkCancellation(stop);const auto first=offset==0;const auto count=std::min(pcm.size()-offset,std::size_t(first?MaximumFirstBlock:MaximumBlock));const auto length=std::uint32_t(count+(first?SoundFields:0));std::array<std::uint8_t,BlockHeaderSize> block{};block[0]=first?Sound:Continuation;Primitives::writeLittle24(block,1,length);output(block);
                 if(first){const std::array<std::uint8_t,SoundFields> fields{timeConstant,0};output(fields);}output(std::span(pcm).subspan(offset,count));offset+=count;
             }while(offset<pcm.size());
             const std::array<std::uint8_t,1> end{};output(end);

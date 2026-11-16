@@ -1,4 +1,5 @@
 #include "Encoder.h"
+#include "../../../Primitives/Bits.h"
 #include "../../../Formats/Tape/Amstrad/Constants.h"
 #include "../../../Formats/Tape/Amstrad/Records.h"
 #include "../../../Formats/Tape/Tzx/Constants.h"
@@ -43,7 +44,7 @@ std::shared_ptr<const SequentialImage> tzx(const std::vector<std::vector<std::ui
     for(const auto& record:records){
         checkCancellation(token);using namespace Tzx::Constants;std::vector<std::uint8_t> payload(TurboHeaderSize+record.size());
         qToLittleEndian(OnePulseTStates,payload.data());qToLittleEndian(ZeroPulseTStates,payload.data()+TurboSyncFirstOffset);qToLittleEndian(ZeroPulseTStates,payload.data()+TurboSyncSecondOffset);qToLittleEndian(ZeroPulseTStates,payload.data()+TurboZeroOffset);qToLittleEndian(OnePulseTStates,payload.data()+TurboOneOffset);qToLittleEndian(PilotPulseCount,payload.data()+TurboPilotCountOffset);payload[TurboUsedBitsOffset]=UsedBitsInLastByte;qToLittleEndian(PauseMilliseconds,payload.data()+TurboPauseOffset);
-        for(int byte=0;byte<TripleWidth;++byte)payload[TurboLengthOffset+byte]=static_cast<std::uint8_t>(record.size()>>(byte*Tzx::Constants::ByteBits));std::copy(record.begin(),record.end(),payload.begin()+TurboHeaderSize);
+        Primitives::writeLittle24(payload,TurboLengthOffset,static_cast<std::uint32_t>(record.size()));std::copy(record.begin(),record.end(),payload.begin()+TurboHeaderSize);
         SequentialSegmentFields value;value.position=output.size();value.kind=SequentialSegmentKind::DataBlock;value.length=payload.size();value.dataRange=DataRange(0,payload.size(),DataRangeKind::Stored,memorySource(payload));value.metadata={{std::string(BlockIdMetadataKey),Tzx::blockIdText(TurboSpeedData)},{std::string(PayloadKey),std::to_string(payload.size())},{std::string(KnownKey),std::string(AmstradTape::Constants::TrueValue)},{std::string(ReconstructionKey),std::string(AmstradTape::Constants::TrueValue)}};
         length+=payload.size();output.emplace_back(std::move(value));
     }
