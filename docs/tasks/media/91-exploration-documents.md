@@ -14,6 +14,6 @@
 
 Vérification : compilation et contrôles ciblés utiles uniquement, sans batteries de comparaison par composant conformément à la dernière consigne utilisateur.
 
-- [ ] Contrôle ciblé du raccordement
+- [x] Contrôle ciblé du raccordement
   - [x] Modifier `build/verification-volume-contract/main.cpp` : vérifier un unique parcours document → détection → lecteur → analyse, le registre de 21 lecteurs et le partage du contenu sans relancer les comparaisons de composants.
   - [x] Supprimer `build/verification-volume-contract/` après ce contrôle et conservation des résultats utiles.

@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
+  src/Exploration/Composition/Interpretation.cpp
   # Common
   src/Diagnostics.cpp
   src/Sources.cpp

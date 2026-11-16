@@ -1226,6 +1226,8 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FileSystemModels.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\FormatIds.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\GameCubeFst.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Interpretation.h" />
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\InterpretationConstants.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Lisa.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\MacHfs.h" />
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\MacMfs.h" />
@@ -1258,6 +1260,7 @@
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Document.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Identity.cpp" />
     <ClInclude Include="src\MediaFileSystems\src\Exploration\Composition\Internal.h" />
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Interpretation.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Registry.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\EntryAnalysis.cpp" />
     <ClCompile Include="src\MediaFileSystems\src\Exploration\MediaExplorer.cpp" />

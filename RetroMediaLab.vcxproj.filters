@@ -5349,6 +5349,12 @@
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\GameCubeFst.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Interpretation.h">
+      <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\InterpretationConstants.h">
+      <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems\Lisa.h">
       <Filter>src\MediaFileSystems\include\RetroMediaLab\MediaFileSystems</Filter>
     </ClInclude>
@@ -5445,6 +5451,9 @@
     <ClInclude Include="src\MediaFileSystems\src\Exploration\Composition\Internal.h">
       <Filter>src\MediaFileSystems\src\Exploration\Composition</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Interpretation.cpp">
+      <Filter>src\MediaFileSystems\src\Exploration\Composition</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaFileSystems\src\Exploration\Composition\Registry.cpp">
       <Filter>src\MediaFileSystems\src\Exploration\Composition</Filter>
     </ClCompile>

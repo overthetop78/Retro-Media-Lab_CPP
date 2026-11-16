@@ -1,5 +1,6 @@
 #include "Internal.h"
 #include "Constants.h"
+#include <RetroMediaLab/MediaFileSystems/Interpretation.h>
 #include <QString>
 #include <QList>
 #include <QChar>
@@ -20,5 +21,10 @@ void appendEntries(std::string& target,const std::vector<FileSystemEntry>& entri
     for(const auto* entry:ordered){if(!first)target+=EntrySeparator;first=false;const auto path=prefix+entry->name;target+=path;target+=Null;target+=kind(entry->kind);target+=Null;target+=std::to_string(entry->size);appendEntries(target,entry->children,path+PathSeparator,first);}
 }
 }
-std::u16string identity(std::string_view format,const FileSystemVolume& volume){std::string result(format.substr(0,format.find(FormatSeparator)));result+=Null;result+=volume.name;result+=Null;bool first=true;appendEntries(result,volume.entries,{},first);return ordinalKey(result);}
+std::u16string identity(std::string_view format,const FileSystemVolume& volume){return ordinalKey(FileSystemInterpretationIdentity::create(format,volume));}
+}
+namespace RetroMediaLab::MediaFileSystems {
+std::string FileSystemInterpretationIdentity::formatFamily(std::string_view format){return std::string(format.substr(0,format.find(Composition::FormatSeparator)));}
+std::string FileSystemInterpretationIdentity::createVolume(const FileSystemVolume& volume){std::string result=volume.name;result+=Composition::Null;bool first=true;Composition::appendEntries(result,volume.entries,{},first);return result;}
+std::string FileSystemInterpretationIdentity::create(std::string_view format,const FileSystemVolume& volume){auto result=formatFamily(format);result+=Composition::Null;result+=createVolume(volume);return result;}
 }
