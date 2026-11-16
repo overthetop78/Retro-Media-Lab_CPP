@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Images/Conversion/ScpFile.cpp
     src/Formats/Definitions/BuiltInArguments.cpp
     src/Images/Optical/SessionOpening.cpp
     src/Images/Conversion/AtrPayload.cpp

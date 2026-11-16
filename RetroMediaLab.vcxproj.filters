@@ -10914,6 +10914,9 @@
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Representation.h">
       <Filter>src\MediaEngine\src\Images\Conversion</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Images\Conversion\ScpFile.cpp">
+      <Filter>src\MediaEngine\src\Images\Conversion</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Images\Conversion\Sequential\Constants.h">
       <Filter>src\MediaEngine\src\Images\Conversion\Sequential</Filter>
     </ClInclude>

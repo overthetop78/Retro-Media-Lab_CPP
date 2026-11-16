@@ -7,6 +7,8 @@
 namespace RetroMediaLab::MediaEngine {
 RETROMEDIALAB_MEDIAENGINE_API bool canConvertFluxContainer(const std::filesystem::path& source,std::string_view format,std::string_view targetExtension);
 RETROMEDIALAB_MEDIAENGINE_API std::future<void> convertFluxContainerAsync(std::filesystem::path source,std::filesystem::path output,std::stop_token={});
+RETROMEDIALAB_MEDIAENGINE_API bool canCreateSectorScp(std::string_view format,std::string_view extension);
+RETROMEDIALAB_MEDIAENGINE_API std::future<void> convertSectorFileToScpAsync(std::filesystem::path source,std::filesystem::path output,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API bool canCreateSectorHfe(std::string_view format,std::string_view extension);
 RETROMEDIALAB_MEDIAENGINE_API std::future<void> convertSectorFileToHfeAsync(std::filesystem::path source,std::filesystem::path output,std::stop_token={});
 }
