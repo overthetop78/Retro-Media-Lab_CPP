@@ -7983,6 +7983,9 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskClassification.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExploration.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
@@ -8041,6 +8044,9 @@
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h">
+      <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaIconIds.h">
       <Filter>src\MediaEngine\include\RetroMediaLab\MediaEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h">
@@ -9261,6 +9267,9 @@
     <ClInclude Include="src\MediaEngine\src\Formats\Catalog\Catalogue.h">
       <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
     </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Classification.cpp">
+      <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
+    </ClCompile>
     <ClInclude Include="src\MediaEngine\src\Formats\Catalog\Constants.h">
       <Filter>src\MediaEngine\src\Formats\Catalog</Filter>
     </ClInclude>
@@ -11154,6 +11163,9 @@
     <ClInclude Include="src\MediaEngine\src\Primitives\Identifiers.h">
       <Filter>src\MediaEngine\src\Primitives</Filter>
     </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Primitives\Path.h">
+      <Filter>src\MediaEngine\src\Primitives</Filter>
+    </ClInclude>
     <ClCompile Include="src\MediaEngine\src\Reconstruction\AmigaReader.cpp">
       <Filter>src\MediaEngine\src\Reconstruction</Filter>
     </ClCompile>
@@ -11421,6 +11433,12 @@
     <ClCompile Include="src\MediaEngine\src\Visualization\BlockProvider.cpp">
       <Filter>src\MediaEngine\src\Visualization</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Visualization\Classification.cpp">
+      <Filter>src\MediaEngine\src\Visualization</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Visualization\ClassificationConstants.h">
+      <Filter>src\MediaEngine\src\Visualization</Filter>
+    </ClInclude>
     <ClInclude Include="src\MediaEngine\src\Visualization\Constants.h">
       <Filter>src\MediaEngine\src\Visualization</Filter>
     </ClInclude>
@@ -11428,6 +11446,12 @@
       <Filter>src\MediaEngine\src\Visualization</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Visualization\Facade.cpp">
+      <Filter>src\MediaEngine\src\Visualization</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Visualization\IconConstants.h">
+      <Filter>src\MediaEngine\src\Visualization</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Visualization\Icons.cpp">
       <Filter>src\MediaEngine\src\Visualization</Filter>
     </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Visualization\LinearProviders.cpp">

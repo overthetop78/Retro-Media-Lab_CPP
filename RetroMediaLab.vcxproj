@@ -1982,6 +1982,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\CuePreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiagnosticKeys.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\Diagnostics.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskClassification.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExploration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskExplorationTypes.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\DiskMetadata.h" />
@@ -2002,6 +2003,7 @@
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExploration.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaExplorationProgress.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaFileConversion.h" />
+    <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaIconIds.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaKind.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaPreparation.h" />
     <ClInclude Include="src\MediaEngine\include\RetroMediaLab\MediaEngine\MediaVisualization.h" />
@@ -2408,6 +2410,7 @@
     <ClCompile Include="src\MediaEngine\src\Formats\Cartridge\Writers.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Catalogue.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Catalog\Catalogue.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Classification.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\Catalog\Constants.h" />
     <None Include="src\MediaEngine\src\Formats\Catalog\Data\formats.json" />
     <ClCompile Include="src\MediaEngine\src\Formats\Catalog\Greaseweazle.cpp" />
@@ -3039,6 +3042,7 @@
     <ClInclude Include="src\MediaEngine\src\Primitives\Crc32CConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\IdentifierConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Primitives\Identifiers.h" />
+    <ClInclude Include="src\MediaEngine\src\Primitives\Path.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\AmigaReader.cpp" />
     <ClInclude Include="src\MediaEngine\src\Reconstruction\AmigaReader.h" />
     <ClCompile Include="src\MediaEngine\src\Reconstruction\Apple\AppleII.cpp" />
@@ -3128,9 +3132,13 @@
     <ClCompile Include="src\MediaEngine\src\Sources\UnavailableRandomAccessData.cpp" />
     <ClInclude Include="src\MediaEngine\src\Sources\UnavailableRandomAccessData.h" />
     <ClCompile Include="src\MediaEngine\src\Visualization\BlockProvider.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\Classification.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Visualization\ClassificationConstants.h" />
     <ClInclude Include="src\MediaEngine\src\Visualization\Constants.h" />
     <ClCompile Include="src\MediaEngine\src\Visualization\Descriptor.cpp" />
     <ClCompile Include="src\MediaEngine\src\Visualization\Facade.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Visualization\IconConstants.h" />
+    <ClCompile Include="src\MediaEngine\src\Visualization\Icons.cpp" />
     <ClCompile Include="src\MediaEngine\src\Visualization\LinearProviders.cpp" />
     <ClCompile Include="src\MediaEngine\src\Visualization\PhysicalProviders.cpp" />
     <ClInclude Include="src\MediaEngine\src\Visualization\Providers.h" />

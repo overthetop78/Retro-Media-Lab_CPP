@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+    src/Formats/Catalog/Classification.cpp
+    src/Visualization/Classification.cpp
+    src/Visualization/Icons.cpp
     src/Images/WritingProgress.cpp
     src/Visualization/Descriptor.cpp
     src/Visualization/Registry.cpp
