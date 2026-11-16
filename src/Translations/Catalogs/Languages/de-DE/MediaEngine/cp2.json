@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Die Datei enthält keine SNATCH-IT CP2-Signatur.",
+    "MediaEngine.Cp2Description": "Der CP2-Spurbeschreibungsblock bei Offset {0} ist ungültig: {1} Bytes angegeben, {2} verfügbar.",
+    "MediaEngine.Cp2DescriptionTruncated": "Der CP2-Spurbeschreibungsblock bei Offset {0} ist abgeschnitten: {1} Bytes angegeben, {2} verfügbar.",
+    "MediaEngine.Cp2Payload": "CP2-Sektor {0}:{1}:{2} am Offset {3} erfordert {4} Bytes, {5} verfügbar.",
+    "MediaEngine.Cp2NoSectors": "Das CP2-Abbild enthält keine lesbaren Sektoren.",
+    "MediaEngine.Cp2Geometry": "Die Geometrie des CP2-Abbilds ist ungültig: {0} Köpfe und {1} Sektoren pro Spur.",
+    "MediaEngine.Cp2DescriptorCount": "Die CP2-Sektorbeschreibungszahl {0} ist ungültig; Maximum {1}."
+  }
+}

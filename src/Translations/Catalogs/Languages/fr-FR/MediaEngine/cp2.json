@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Le fichier ne contient pas de signature SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Le bloc de description des pistes CP2 à la position {0} est invalide : {1} octets déclarés, {2} disponibles.",
+    "MediaEngine.Cp2DescriptionTruncated": "Le bloc de description des pistes CP2 à la position {0} est tronqué : {1} octets déclarés, {2} disponibles.",
+    "MediaEngine.Cp2Payload": "Le secteur CP2 {0}:{1}:{2} à la position {3} nécessite {4} octets ; {5} sont disponibles.",
+    "MediaEngine.Cp2NoSectors": "L’image CP2 ne contient aucun secteur lisible.",
+    "MediaEngine.Cp2Geometry": "La géométrie de l’image CP2 est invalide : {0} têtes et {1} secteurs par piste.",
+    "MediaEngine.Cp2DescriptorCount": "Le nombre de descripteurs de secteurs CP2, {0}, est invalide ; maximum : {1}."
+  }
+}

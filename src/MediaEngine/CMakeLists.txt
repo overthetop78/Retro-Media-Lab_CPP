@@ -1,4 +1,7 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/Cp2/Layout.cpp
+  src/Formats/Cp2/Reader.cpp
+  src/Formats/Cp2/Adapter.cpp
   src/Formats/Jfd/Create.cpp
   src/Formats/Jfd/Reader.cpp
   src/Formats/Jfd/Writer.cpp

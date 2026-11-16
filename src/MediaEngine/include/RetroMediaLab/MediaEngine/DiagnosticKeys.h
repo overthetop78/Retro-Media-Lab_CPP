@@ -1,6 +1,13 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view Cp2Signature="MediaEngine.Cp2Signature";
+inline constexpr std::string_view Cp2Description="MediaEngine.Cp2Description";
+inline constexpr std::string_view Cp2DescriptionTruncated="MediaEngine.Cp2DescriptionTruncated";
+inline constexpr std::string_view Cp2Payload="MediaEngine.Cp2Payload";
+inline constexpr std::string_view Cp2NoSectors="MediaEngine.Cp2NoSectors";
+inline constexpr std::string_view Cp2Geometry="MediaEngine.Cp2Geometry";
+inline constexpr std::string_view Cp2DescriptorCount="MediaEngine.Cp2DescriptorCount";
 inline constexpr std::string_view JfdCreate="MediaEngine.JfdCreate";
 inline constexpr std::string_view JfdNativeMetadata="MediaEngine.JfdNativeMetadata";
 inline constexpr std::string_view JfdCompressionWrite="MediaEngine.JfdCompressionWrite";

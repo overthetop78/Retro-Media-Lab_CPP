@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Plik nie zawiera podpisu SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Blok opisu ścieżek CP2 przy przesunięciu {0} jest nieprawidłowy: zadeklarowano {1} bajtów, dostępnych {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "Blok opisu ścieżek CP2 przy przesunięciu {0} jest ucięty: zadeklarowano {1} bajtów, dostępnych {2}.",
+    "MediaEngine.Cp2Payload": "Sektor CP2 {0}: {1}: {2} przy przesunięciu {3} wymaga {4} bajtów, {5} dostępnych.",
+    "MediaEngine.Cp2NoSectors": "Obraz CP2 nie zawiera czytelnych sektorów.",
+    "MediaEngine.Cp2Geometry": "Geometria obrazu CP2 jest nieprawidłowa: {0} głowic i {1} sektorów na ścieżkę.",
+    "MediaEngine.Cp2DescriptorCount": "Liczba opisów sektorowych CP2 {0} jest nieprawidłowa; maksimum {1}."
+  }
+}

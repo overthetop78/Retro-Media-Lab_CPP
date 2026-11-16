@@ -265,6 +265,9 @@
     <Filter Include="src\MediaEngine\src\Formats\CommodoreDisks">
       <UniqueIdentifier>{1B8ED887-D956-5BAA-9005-5B618699C2E6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MediaEngine\src\Formats\Cp2">
+      <UniqueIdentifier>{3498FCB2-5300-5334-8E38-4BCCF6EEB6C2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\MediaEngine\src\Formats\CpcDsk">
       <UniqueIdentifier>{A6CD1196-BCD6-539E-87D6-FAF30D2BD9CF}</UniqueIdentifier>
     </Filter>
@@ -3027,6 +3030,21 @@
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Writer.cpp">
       <Filter>src\MediaEngine\src\Formats\CommodoreDisks</Filter>
     </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Adapter.cpp">
+      <Filter>src\MediaEngine\src\Formats\Cp2</Filter>
+    </ClCompile>
+    <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Constants.h">
+      <Filter>src\MediaEngine\src\Formats\Cp2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Cp2.h">
+      <Filter>src\MediaEngine\src\Formats\Cp2</Filter>
+    </ClInclude>
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Layout.cpp">
+      <Filter>src\MediaEngine\src\Formats\Cp2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Reader.cpp">
+      <Filter>src\MediaEngine\src\Formats\Cp2</Filter>
+    </ClCompile>
     <ClCompile Include="src\MediaEngine\src\Formats\CpcDsk\Adapter.cpp">
       <Filter>src\MediaEngine\src\Formats\CpcDsk</Filter>
     </ClCompile>
@@ -4816,6 +4834,9 @@
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore900.json">
+      <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\cp2.json">
       <Filter>src\Translations\Catalogs\Constants\MediaEngine</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cpc-dsk.json">

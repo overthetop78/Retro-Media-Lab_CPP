@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Il file non contiene una firma SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Il blocco di descrizione delle tracce CP2 all’offset {0} non è valido: {1} byte dichiarati, {2} disponibili.",
+    "MediaEngine.Cp2DescriptionTruncated": "Il blocco di descrizione delle tracce CP2 all’offset {0} è troncato: {1} byte dichiarati, {2} disponibili.",
+    "MediaEngine.Cp2Payload": "Il settore CP2 {0}:{1}:{2} in offset {3} richiede {4} byte, {5} disponibili.",
+    "MediaEngine.Cp2NoSectors": "L'immagine CP2 non contiene settori leggibili.",
+    "MediaEngine.Cp2Geometry": "La geometria dell'immagine CP2 non è valida: {0} teste e {1} settori per traccia.",
+    "MediaEngine.Cp2DescriptorCount": "Il numero di descrittori di settore CP2 {0} non è valido; massimo {1}."
+  }
+}

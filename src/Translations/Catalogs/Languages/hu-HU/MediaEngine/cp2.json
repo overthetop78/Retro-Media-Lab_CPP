@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "A fájl nem tartalmaz SNATCH-IT CP2 aláírást.",
+    "MediaEngine.Cp2Description": "A CP2 sávleíró blokk a(z) {0} eltolásnál érvénytelen: megadva {1} bájt, elérhető {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "A CP2 sávleíró blokk a(z) {0} eltolásnál csonka: megadva {1} bájt, elérhető {2}.",
+    "MediaEngine.Cp2Payload": "CP2 szektor {0}: {1}: {2} ofszet esetén {3} megköveteli {4} bájt, {5} elérhető.",
+    "MediaEngine.Cp2NoSectors": "A CP2-kép nem tartalmaz olvasható szektorokat.",
+    "MediaEngine.Cp2Geometry": "A CP2 lemezkép geometriája érvénytelen: {0} fej és sávonként {1} szektor.",
+    "MediaEngine.Cp2DescriptorCount": "A CP2 szektorleírók száma {0}, ami érvénytelen; a maximum {1}."
+  }
+}

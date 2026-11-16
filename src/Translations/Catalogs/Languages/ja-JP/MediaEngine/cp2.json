@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "ファイルにSNATCH-IT CP2シグネチャが含まれていません。",
+    "MediaEngine.Cp2Description": "オフセット{0}のCP2トラック記述ブロックが無効です。宣言サイズは{1}バイト、利用可能なのは{2}バイトです。",
+    "MediaEngine.Cp2DescriptionTruncated": "オフセット{0}のCP2トラック記述ブロックが途中で切れています。宣言サイズは{1}バイト、利用可能なのは{2}バイトです。",
+    "MediaEngine.Cp2Payload": "オフセット{3}のCP2セクター{0}:{1}:{2}には{4}バイトが必要ですが、利用可能なのは{5}バイトです。",
+    "MediaEngine.Cp2NoSectors": "CP2イメージに読み取り可能なセクターがありません。",
+    "MediaEngine.Cp2Geometry": "CP2イメージのジオメトリが無効です。ヘッド数は{0}、トラックあたりのセクター数は{1}です。",
+    "MediaEngine.Cp2DescriptorCount": "CP2セクター記述子数{0}は無効です。最大値は{1}です。"
+  }
+}

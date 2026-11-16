@@ -524,6 +524,11 @@
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Router.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CommodoreDisks\Writer.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Adapter.cpp" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Constants.h" />
+    <ClInclude Include="src\MediaEngine\src\Formats\Cp2\Cp2.h" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Layout.cpp" />
+    <ClCompile Include="src\MediaEngine\src\Formats\Cp2\Reader.cpp" />
     <ClCompile Include="src\MediaEngine\src\Formats\CpcDsk\Adapter.cpp" />
     <ClInclude Include="src\MediaEngine\src\Formats\CpcDsk\Adapter.h" />
     <ClCompile Include="src\MediaEngine\src\Formats\CpcDsk\Builder.cpp" />
@@ -1121,6 +1126,7 @@
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore-scp-mfm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore900-gcr.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\commodore900.json" />
+    <None Include="src\Translations\Catalogs\Constants\MediaEngine\cp2.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\cpc-dsk.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\datageneral-fm.json" />
     <None Include="src\Translations\Catalogs\Constants\MediaEngine\defined-raw.json" />

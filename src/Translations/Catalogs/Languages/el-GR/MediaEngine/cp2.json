@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Το αρχείο δεν περιέχει υπογραφή SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Το μπλοκ περιγραφής τροχιών CP2 στη μετατόπιση {0} δεν είναι έγκυρο: δηλώθηκαν {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "Το μπλοκ περιγραφής τροχιών CP2 στη μετατόπιση {0} έχει περικοπεί: δηλώθηκαν {1} byte, διαθέσιμα {2}.",
+    "MediaEngine.Cp2Payload": "Ο τομέας CP2 {0}: {1}: {2} στο όφσετ {3} απαιτεί {4} bytes, {5} διαθέσιμα.",
+    "MediaEngine.Cp2NoSectors": "Η εικόνα CP2 δεν περιέχει αναγνώσιμους τομείς.",
+    "MediaEngine.Cp2Geometry": "Η γεωμετρία εικόνας CP2 δεν είναι έγκυρη: {0} κεφαλές και {1} τομείς ανά τροχιά.",
+    "MediaEngine.Cp2DescriptorCount": "Ο αριθμός περιγραφής τομέα CP2 {0} είναι άκυρος; μέγιστος {1}."
+  }
+}

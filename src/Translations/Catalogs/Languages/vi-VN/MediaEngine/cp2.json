@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Tập tin không chứa chữ ký SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Khối mô tả rãnh CP2 tại độ lệch {0} không hợp lệ: khai báo {1} byte, có {2} byte.",
+    "MediaEngine.Cp2DescriptionTruncated": "Khối mô tả rãnh CP2 tại độ lệch {0} bị cắt ngắn: khai báo {1} byte, có {2} byte.",
+    "MediaEngine.Cp2Payload": "Cung từ CP2 {0}:{1}:{2} tại độ lệch {3} cần {4} byte, có {5} byte.",
+    "MediaEngine.Cp2NoSectors": "Ảnh đĩa CP2 không chứa cung từ có thể đọc.",
+    "MediaEngine.Cp2Geometry": "Hình học ảnh đĩa CP2 không hợp lệ: {0} đầu đọc và {1} cung từ mỗi rãnh.",
+    "MediaEngine.Cp2DescriptorCount": "Số bộ mô tả cung từ CP2 {0} không hợp lệ; tối đa {1}."
+  }
+}

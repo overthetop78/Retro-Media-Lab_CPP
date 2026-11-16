@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Berkas tidak memuat tanda tangan SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Blok deskripsi trek CP2 pada ofset {0} tidak valid: dinyatakan {1} byte, tersedia {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "Blok deskripsi trek CP2 pada ofset {0} terpotong: dinyatakan {1} byte, tersedia {2}.",
+    "MediaEngine.Cp2Payload": "Sektor CP2 {0}:{1}:{2} pada ofset {3} memerlukan {4} byte, tersedia {5}.",
+    "MediaEngine.Cp2NoSectors": "Citra disk CP2 tidak berisi sektor yang dapat dibaca.",
+    "MediaEngine.Cp2Geometry": "Geometri citra disk CP2 tidak valid: {0} kepala dan {1} sektor per trek.",
+    "MediaEngine.Cp2DescriptorCount": "Jumlah deskriptor sektor CP2 {0} tidak valid; maksimum {1}."
+  }
+}

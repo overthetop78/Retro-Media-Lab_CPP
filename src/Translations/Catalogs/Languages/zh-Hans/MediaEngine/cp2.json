@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "文件不包含 SNATCH-IT CP2 签名。",
+    "MediaEngine.Cp2Description": "偏移量 {0} 处的 CP2 磁道描述块无效：声明 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Cp2DescriptionTruncated": "偏移量 {0} 处的 CP2 磁道描述块被截断：声明 {1} 字节，可用 {2} 字节。",
+    "MediaEngine.Cp2Payload": "偏移量 {3} 处的 CP2 扇区 {0}:{1}:{2} 需要 {4} 字节，可用 {5} 字节。",
+    "MediaEngine.Cp2NoSectors": "CP2 映像不包含可读扇区。",
+    "MediaEngine.Cp2Geometry": "CP2 映像几何结构无效：{0} 个磁头，每条磁道 {1} 个扇区。",
+    "MediaEngine.Cp2DescriptorCount": "CP2 扇区描述符数量 {0} 无效；最大值为 {1}。"
+  }
+}

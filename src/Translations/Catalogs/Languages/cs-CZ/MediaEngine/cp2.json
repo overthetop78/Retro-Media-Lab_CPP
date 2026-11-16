@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Soubor neobsahuje SNATCH-IT CP2 podpis.",
+    "MediaEngine.Cp2Description": "Blok popisu stop CP2 na posunu {0} je neplatný: deklarováno {1} bajtů, k dispozici {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "Blok popisu stop CP2 na posunu {0} je zkrácený: deklarováno {1} bajtů, k dispozici {2}.",
+    "MediaEngine.Cp2Payload": "Sektor CP2 {0}:{1}:{2} na posunu {3} vyžaduje {4} bajtů, k dispozici {5}.",
+    "MediaEngine.Cp2NoSectors": "Obraz CP2 neobsahuje čitelné sektory.",
+    "MediaEngine.Cp2Geometry": "Geometrie obrazu CP2 je neplatná: {0} hlavy a {1} sektory na stopu.",
+    "MediaEngine.Cp2DescriptorCount": "Počet deskriptorů sektorů CP2 {0} je neplatný; maximum {1}."
+  }
+}

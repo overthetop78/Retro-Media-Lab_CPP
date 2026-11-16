@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Dosya SNATCH-IT CP2 imzası içermiyor.",
+    "MediaEngine.Cp2Description": "{0} ofsetindeki CP2 iz açıklama bloğu geçersiz: belirtilen {1} bayt, kullanılabilir {2} bayt.",
+    "MediaEngine.Cp2DescriptionTruncated": "{0} ofsetindeki CP2 iz açıklama bloğu kesilmiş: belirtilen {1} bayt, kullanılabilir {2} bayt.",
+    "MediaEngine.Cp2Payload": "{3} ofsetindeki CP2 sektörü {0}:{1}:{2}, {4} bayt gerektirir; {5} bayt kullanılabilir.",
+    "MediaEngine.Cp2NoSectors": "CP2 disk görüntüsü okunabilir sektör içermiyor.",
+    "MediaEngine.Cp2Geometry": "CP2 disk görüntüsü geometrisi geçersiz: {0} kafa ve iz başına {1} sektör.",
+    "MediaEngine.Cp2DescriptorCount": "CP2 sektör tanımlayıcısı sayısı {0} geçersiz; en fazla {1}."
+  }
+}

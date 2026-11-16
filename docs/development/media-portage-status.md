@@ -16,6 +16,8 @@ Les tâches 124, 125 et 126 portent respectivement les writers Epson/ImageDisk, 
 
 La tâche 133 porte la structure native JFD : tables principales/delta, secteurs absents, conservation des pistes brutes, édition sans perte et gzip avec vérification CRC ; compilation et contrôle ciblé réussis. La tâche 134 termine la création de nouvelles images et les adaptateurs lecteur/writer des registres JFD, les métadonnées natives strictes et la compression gzip atomique ; les contrôles ciblés passent.
 
+La tâche 135 termine le lecteur CP2 : groupes et descripteurs, reconstruction IBM et registre commun, avec contrôle ciblé réussi.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

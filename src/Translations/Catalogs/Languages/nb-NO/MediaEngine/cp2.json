@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Filen inneholder ikke en SNATCH-IT CP2-signatur.",
+    "MediaEngine.Cp2Description": "CP2-sporbeskrivelsesblokken ved forskyvning {0} er ugyldig: angitt {1} byte, {2} tilgjengelige.",
+    "MediaEngine.Cp2DescriptionTruncated": "CP2-sporbeskrivelsesblokken ved forskyvning {0} er avkortet: angitt {1} byte, {2} tilgjengelige.",
+    "MediaEngine.Cp2Payload": "CP2-sektor {0}:{1}: {2} i forskyvning {3} krever {4} byte, {5} tilgjengelig.",
+    "MediaEngine.Cp2NoSectors": "CP2-bildet inneholder ingen leselige sektorer.",
+    "MediaEngine.Cp2Geometry": "CP2-bildegeometrien er ugyldig: {0} hoder og {1} sektorer per spor.",
+    "MediaEngine.Cp2DescriptorCount": "Antallet CP2-sektorbeskrivelser {0} er ugyldig; maksimalt {1}."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Tiedostossa ei ole SNATCH-IT CP2- allekirjoitusta.",
+    "MediaEngine.Cp2Description": "CP2-raitojen kuvauslohko siirtymässä {0} on virheellinen: ilmoitettu {1} tavua, {2} käytettävissä.",
+    "MediaEngine.Cp2DescriptionTruncated": "CP2-raitojen kuvauslohko siirtymässä {0} on katkennut: ilmoitettu {1} tavua, {2} käytettävissä.",
+    "MediaEngine.Cp2Payload": "CP2-sektori {0}:{1}:{2} siirtymässä {3} vaatii {4} tavua, {5} käytettävissä.",
+    "MediaEngine.Cp2NoSectors": "CP2-kuvassa ei ole luettavia sektoreita.",
+    "MediaEngine.Cp2Geometry": "CP2-levykuvan geometria on virheellinen: {0} päätä ja {1} sektoria raitaa kohti.",
+    "MediaEngine.Cp2DescriptorCount": "CP2-sektorin kuvausluku {0} on virheellinen; maksimi {1}."
+  }
+}

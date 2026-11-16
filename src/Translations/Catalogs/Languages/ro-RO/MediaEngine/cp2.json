@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Fișierul nu conține o semnătură SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "Blocul de descriere a pistelor CP2 la deplasarea {0} este nevalid: declarați {1} octeți, disponibili {2}.",
+    "MediaEngine.Cp2DescriptionTruncated": "Blocul de descriere a pistelor CP2 la deplasarea {0} este trunchiat: declarați {1} octeți, disponibili {2}.",
+    "MediaEngine.Cp2Payload": "CP2 sector {0}:{1}:{2} la offset {3} necesită octeți {4}, {5} disponibile.",
+    "MediaEngine.Cp2NoSectors": "Imaginea CP2 nu conține sectoare lizibile.",
+    "MediaEngine.Cp2Geometry": "Geometria imaginii CP2 este nevalidă: {0} capete și {1} sectoare pe pistă.",
+    "MediaEngine.Cp2DescriptorCount": "Numărul de descripţii din sectorul CP2 {0} este invalid; maxim {1}."
+  }
+}

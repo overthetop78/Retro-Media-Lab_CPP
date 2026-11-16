@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "Het bestand bevat geen SNATCH-IT CP2 handtekening.",
+    "MediaEngine.Cp2Description": "Het CP2-spoorbeschrijvingsblok op offset {0} is ongeldig: {1} bytes opgegeven, {2} beschikbaar.",
+    "MediaEngine.Cp2DescriptionTruncated": "Het CP2-spoorbeschrijvingsblok op offset {0} is afgebroken: {1} bytes opgegeven, {2} beschikbaar.",
+    "MediaEngine.Cp2Payload": "CP2-sector {0}:{1}:{2} op offset {3} vereist {4} bytes, {5} beschikbaar.",
+    "MediaEngine.Cp2NoSectors": "De CP2-schijfkopie bevat geen leesbare sectoren.",
+    "MediaEngine.Cp2Geometry": "De geometrie van de CP2-schijfkopie is ongeldig: {0} koppen en {1} sectoren per spoor.",
+    "MediaEngine.Cp2DescriptorCount": "Het aantal CP2 sectorbeschrijvingen {0} is ongeldig; maximum {1}."
+  }
+}

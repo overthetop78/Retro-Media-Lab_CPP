@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "檔案不包含 SNATCH-IT CP2 簽章。",
+    "MediaEngine.Cp2Description": "位移量 {0} 處的 CP2 磁軌描述區塊無效：宣告 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Cp2DescriptionTruncated": "位移量 {0} 處的 CP2 磁軌描述區塊遭到截斷：宣告 {1} 位元組，可用 {2} 位元組。",
+    "MediaEngine.Cp2Payload": "位移量 {3} 處的 CP2 磁區 {0}:{1}:{2} 需要 {4} 位元組，可用 {5} 位元組。",
+    "MediaEngine.Cp2NoSectors": "CP2 映像不包含可讀取的磁區。",
+    "MediaEngine.Cp2Geometry": "CP2 映像幾何結構無效：{0} 個磁頭，每條磁軌 {1} 個磁區。",
+    "MediaEngine.Cp2DescriptorCount": "CP2 磁區描述元數量 {0} 無效；最大值為 {1}。"
+  }
+}

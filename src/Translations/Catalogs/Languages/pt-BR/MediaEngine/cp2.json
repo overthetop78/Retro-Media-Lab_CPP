@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "O arquivo não contém uma assinatura SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "O bloco de descrição de trilhas CP2 no deslocamento {0} é inválido: {1} bytes declarados, {2} disponíveis.",
+    "MediaEngine.Cp2DescriptionTruncated": "O bloco de descrição de trilhas CP2 no deslocamento {0} está truncado: {1} bytes declarados, {2} disponíveis.",
+    "MediaEngine.Cp2Payload": "O setor CP2 {0}:{1}:{2} no deslocamento {3} requer {4} bytes; {5} estão disponíveis.",
+    "MediaEngine.Cp2NoSectors": "A imagem CP2 não contém setores legíveis.",
+    "MediaEngine.Cp2Geometry": "A geometria da imagem CP2 é inválida: {0} cabeças e {1} setores por trilha.",
+    "MediaEngine.Cp2DescriptorCount": "A contagem CP2 de descrição do setor {0} é inválida; máximo {1}."
+  }
+}

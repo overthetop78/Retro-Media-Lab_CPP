@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "El archivo no contiene una firma SNATCH-IT CP2.",
+    "MediaEngine.Cp2Description": "El bloque de descripción de pistas CP2 en el desplazamiento {0} no es válido: {1} bytes declarados, {2} disponibles.",
+    "MediaEngine.Cp2DescriptionTruncated": "El bloque de descripción de pistas CP2 en el desplazamiento {0} está truncado: {1} bytes declarados, {2} disponibles.",
+    "MediaEngine.Cp2Payload": "CP2 sector {0}:{1}:{2} en offset {3} requiere {4} bytes, {5} disponible.",
+    "MediaEngine.Cp2NoSectors": "La imagen CP2 no contiene sectores legibles.",
+    "MediaEngine.Cp2Geometry": "La geometría de imagen CP2 es inválida: {0} cabezas y {1} sectores por pista.",
+    "MediaEngine.Cp2DescriptorCount": "El recuento de descripción del sector CP2 {0} es inválido; máximo {1}."
+  }
+}

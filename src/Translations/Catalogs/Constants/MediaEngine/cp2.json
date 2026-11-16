@@ -1,0 +1,11 @@
+{
+  "strings": {
+    "MediaEngine.Cp2Signature": "The file does not contain a SNATCH-IT CP2 signature.",
+    "MediaEngine.Cp2Description": "The CP2 track-description block at offset {0} is invalid: declared {1} bytes, {2} available.",
+    "MediaEngine.Cp2DescriptionTruncated": "The CP2 track-description block at offset {0} is truncated: declared {1} bytes, {2} available.",
+    "MediaEngine.Cp2Payload": "CP2 sector {0}:{1}:{2} at offset {3} requires {4} bytes, {5} available.",
+    "MediaEngine.Cp2NoSectors": "The CP2 image contains no readable sectors.",
+    "MediaEngine.Cp2Geometry": "The CP2 image geometry is invalid: {0} heads and {1} sectors per track.",
+    "MediaEngine.Cp2DescriptorCount": "The CP2 sector-description count {0} is invalid; maximum {1}."
+  }
+}
