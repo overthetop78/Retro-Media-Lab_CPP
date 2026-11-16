@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "The file is too short to contain a VMDK image header.",
+    "MediaEngine.VmdkDescriptorSize": "The VMDK descriptor exceeds the supported size.",
+    "MediaEngine.VmdkSignature": "The VMDK descriptor signature is missing.",
+    "MediaEngine.VmdkParent": "A VMDK parent chain requires a parent resolver that is not registered.",
+    "MediaEngine.VmdkType": "VMDK create type {0} is unsupported.",
+    "MediaEngine.VmdkExtentCount": "Only a single monolithic VMDK extent is supported.",
+    "MediaEngine.VmdkExtentName": "The VMDK extent file name is invalid.",
+    "MediaEngine.VmdkExtentCapacity": "The VMDK extent capacity is invalid.",
+    "MediaEngine.VmdkExtentOffset": "The VMDK extent offset is invalid.",
+    "MediaEngine.VmdkExtentMode": "Only one writable FLAT extent is supported for monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "The VMDK extent {0} is missing.",
+    "MediaEngine.VmdkExtentShort": "The VMDK FLAT extent is shorter than its declared capacity.",
+    "MediaEngine.VmdkAssignment": "The VMDK descriptor has no {0} value.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse version {0} is unsupported.",
+    "MediaEngine.VmdkCompression": "Compressed or streamOptimized VMDK extents are not supported.",
+    "MediaEngine.VmdkUnclean": "The VMDK sparse extent is marked unclean.",
+    "MediaEngine.VmdkGeometry": "The VMDK sparse geometry or a sector offset is invalid.",
+    "MediaEngine.VmdkDescriptorRange": "The embedded VMDK descriptor is outside the file.",
+    "MediaEngine.VmdkDirectory": "The VMDK grain directory or grain table exceeds the supported range.",
+    "MediaEngine.VmdkTableMissing": "VMDK grain table {0} is missing.",
+    "MediaEngine.VmdkGrainOutside": "VMDK grain {0} points outside the file.",
+    "MediaEngine.VmdkWrite": "The media document cannot be written as a supported VMDK image.",
+    "MediaEngine.VmdkWriteLimits": "The VMDK output tables or offsets exceed the supported limits.",
+    "MediaEngine.VmdkWriteAlignment": "The VMDK grain is not sector aligned.",
+    "MediaEngine.VmdkGeneratedDescriptor": "The generated VMDK descriptor is too large."
+  }
+}

@@ -7,6 +7,28 @@ bool isImageReadRejection(const std::exception_ptr& failure){
     try{std::rethrow_exception(failure);}
     catch(const MediaFileSystems::MediaError& error){return error.kind()==MediaFileSystems::ErrorKind::InvalidData||error.kind()==MediaFileSystems::ErrorKind::Unsupported;}
     catch(const MediaError& error){switch(error.diagnostic().code){
+    case DiagnosticCode::VmdkSource:
+    case DiagnosticCode::VmdkDescriptorSize:
+    case DiagnosticCode::VmdkSignature:
+    case DiagnosticCode::VmdkParent:
+    case DiagnosticCode::VmdkType:
+    case DiagnosticCode::VmdkExtentCount:
+    case DiagnosticCode::VmdkExtentName:
+    case DiagnosticCode::VmdkExtentCapacity:
+    case DiagnosticCode::VmdkExtentOffset:
+    case DiagnosticCode::VmdkExtentMode:
+    case DiagnosticCode::VmdkExtentMissing:
+    case DiagnosticCode::VmdkExtentShort:
+    case DiagnosticCode::VmdkAssignment:
+    case DiagnosticCode::VmdkSparseVersion:
+    case DiagnosticCode::VmdkCompression:
+    case DiagnosticCode::VmdkUnclean:
+    case DiagnosticCode::VmdkGeometry:
+    case DiagnosticCode::VmdkDescriptorRange:
+    case DiagnosticCode::VmdkDirectory:
+    case DiagnosticCode::VmdkTableMissing:
+    case DiagnosticCode::VmdkGrainOutside:
+
     case DiagnosticCode::QcowHeader:
     case DiagnosticCode::QcowSignature:
     case DiagnosticCode::QcowVersion:

@@ -1,6 +1,32 @@
 #pragma once
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::DiagnosticKeys {
+inline constexpr std::string_view VmdkSource="MediaEngine.VmdkSource";
+inline constexpr std::string_view VmdkDescriptorSize="MediaEngine.VmdkDescriptorSize";
+inline constexpr std::string_view VmdkSignature="MediaEngine.VmdkSignature";
+inline constexpr std::string_view VmdkParent="MediaEngine.VmdkParent";
+inline constexpr std::string_view VmdkType="MediaEngine.VmdkType";
+inline constexpr std::string_view VmdkExtentCount="MediaEngine.VmdkExtentCount";
+inline constexpr std::string_view VmdkExtentName="MediaEngine.VmdkExtentName";
+inline constexpr std::string_view VmdkExtentCapacity="MediaEngine.VmdkExtentCapacity";
+inline constexpr std::string_view VmdkExtentOffset="MediaEngine.VmdkExtentOffset";
+inline constexpr std::string_view VmdkExtentMode="MediaEngine.VmdkExtentMode";
+inline constexpr std::string_view VmdkExtentMissing="MediaEngine.VmdkExtentMissing";
+inline constexpr std::string_view VmdkExtentShort="MediaEngine.VmdkExtentShort";
+inline constexpr std::string_view VmdkAssignment="MediaEngine.VmdkAssignment";
+inline constexpr std::string_view VmdkSparseVersion="MediaEngine.VmdkSparseVersion";
+inline constexpr std::string_view VmdkCompression="MediaEngine.VmdkCompression";
+inline constexpr std::string_view VmdkUnclean="MediaEngine.VmdkUnclean";
+inline constexpr std::string_view VmdkGeometry="MediaEngine.VmdkGeometry";
+inline constexpr std::string_view VmdkDescriptorRange="MediaEngine.VmdkDescriptorRange";
+inline constexpr std::string_view VmdkDirectory="MediaEngine.VmdkDirectory";
+inline constexpr std::string_view VmdkTableMissing="MediaEngine.VmdkTableMissing";
+inline constexpr std::string_view VmdkGrainOutside="MediaEngine.VmdkGrainOutside";
+inline constexpr std::string_view VmdkWrite="MediaEngine.VmdkWrite";
+inline constexpr std::string_view VmdkWriteLimits="MediaEngine.VmdkWriteLimits";
+inline constexpr std::string_view VmdkWriteAlignment="MediaEngine.VmdkWriteAlignment";
+inline constexpr std::string_view VmdkGeneratedDescriptor="MediaEngine.VmdkGeneratedDescriptor";
+
 inline constexpr std::string_view QcowHeader="MediaEngine.QcowHeader";
 inline constexpr std::string_view QcowSignature="MediaEngine.QcowSignature";
 inline constexpr std::string_view QcowVersion="MediaEngine.QcowVersion";

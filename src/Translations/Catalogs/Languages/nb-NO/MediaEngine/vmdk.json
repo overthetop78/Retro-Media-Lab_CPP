@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Filen er for kort til å inneholde en VMDK bildehode.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK-deskriptoren overstiger den støttede størrelsen.",
+    "MediaEngine.VmdkSignature": "VMDK-deskriptorens signatur mangler.",
+    "MediaEngine.VmdkParent": "En VMDK-forelderkjede krever en forelderoppløser som ikke er registrert.",
+    "MediaEngine.VmdkType": "VMDK opprette type {0} er ikke støttet.",
+    "MediaEngine.VmdkExtentCount": "Bare en enkelt monolitisk VMDK-utvidelse støttes.",
+    "MediaEngine.VmdkExtentName": "VMDK-filnavnet er ugyldig.",
+    "MediaEngine.VmdkExtentCapacity": "VMDK grad kapasitet er ugyldig.",
+    "MediaEngine.VmdkExtentOffset": "VMDK-utvidelsens forskyvning er ugyldig.",
+    "MediaEngine.VmdkExtentMode": "Kun én skrivbar FLAT-mengde støttes for monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "VMDK grad {0} mangler.",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT graden er kortere enn den deklarerte kapasitet.",
+    "MediaEngine.VmdkAssignment": "VMDK-deskriptoren har ingen {0}-verdi.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse-versjon {0} støttes ikke.",
+    "MediaEngine.VmdkCompression": "Kompresserte eller streamOptimized VMDK-dimensjoner støttes ikke.",
+    "MediaEngine.VmdkUnclean": "VMDK-spara omfang er merket urent.",
+    "MediaEngine.VmdkGeometry": "VMDK sparsam geometri eller en sektor offset er ugyldig.",
+    "MediaEngine.VmdkDescriptorRange": "Den innebygde VMDK-deskriptoren er utenfor filen.",
+    "MediaEngine.VmdkDirectory": "VMDK kornkatalog eller korntabell overstiger det støttede området.",
+    "MediaEngine.VmdkTableMissing": "VMDK korn bord {0} mangler.",
+    "MediaEngine.VmdkGrainOutside": "VMDK-allokeringsblokk {0} peker utenfor filen.",
+    "MediaEngine.VmdkWrite": "Mediedokumentet kan ikke skrives som et støttet VMDK-bilde.",
+    "MediaEngine.VmdkWriteLimits": "VMDK-utgangstabellene eller forskyvningene overstiger de støttede grensene.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK-allokeringsblokken er ikke justert til en sektorgrense.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Den genererte VMDK-deskriptoren er for stor."
+  }
+}

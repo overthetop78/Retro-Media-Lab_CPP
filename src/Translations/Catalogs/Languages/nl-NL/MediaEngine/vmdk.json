@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Het bestand is te kort om een VMDK-koptekst te bevatten.",
+    "MediaEngine.VmdkDescriptorSize": "De VMDK-descriptor overtreft de ondersteunde grootte.",
+    "MediaEngine.VmdkSignature": "De handtekening van de VMDK-descriptor ontbreekt.",
+    "MediaEngine.VmdkParent": "Een VMDK ouderketen vereist een ouderoplosser die niet geregistreerd is.",
+    "MediaEngine.VmdkType": "VMDK aanmaken type {0} wordt niet ondersteund.",
+    "MediaEngine.VmdkExtentCount": "Slechts één monolithische VMDK-omvang wordt ondersteund.",
+    "MediaEngine.VmdkExtentName": "De VMDK extent bestandsnaam is ongeldig.",
+    "MediaEngine.VmdkExtentCapacity": "De VMDK-capaciteit is ongeldig.",
+    "MediaEngine.VmdkExtentOffset": "De VMDK extent offset is ongeldig.",
+    "MediaEngine.VmdkExtentMode": "Voor monolithicFlat VMDK wordt slechts één beschrijfbare FLAT-omvang ondersteund.",
+    "MediaEngine.VmdkExtentMissing": "De VMDK-omvang {0} ontbreekt.",
+    "MediaEngine.VmdkExtentShort": "De VMDK FLAT-omvang is korter dan de opgegeven capaciteit.",
+    "MediaEngine.VmdkAssignment": "De VMDK-descriptor heeft geen {0} waarde.",
+    "MediaEngine.VmdkSparseVersion": "VMDK schaarse versie {0} wordt niet ondersteund.",
+    "MediaEngine.VmdkCompression": "Gecomprimeerde of streamOptimized VMDK maten worden niet ondersteund.",
+    "MediaEngine.VmdkUnclean": "De sparse VMDK-extent is gemarkeerd als niet schoon afgesloten.",
+    "MediaEngine.VmdkGeometry": "De sparse VMDK-geometrie of een sectorverschuiving is ongeldig.",
+    "MediaEngine.VmdkDescriptorRange": "De ingebouwde VMDK-descriptor staat buiten het bestand.",
+    "MediaEngine.VmdkDirectory": "De VMDK graanmap of graantabel overschrijdt het ondersteunde bereik.",
+    "MediaEngine.VmdkTableMissing": "VMDK graantabel {0} ontbreekt.",
+    "MediaEngine.VmdkGrainOutside": "VMDK grain {0} wijst buiten het bestand.",
+    "MediaEngine.VmdkWrite": "Het mediadocument kan niet worden geschreven als een ondersteunde VMDK-afbeelding.",
+    "MediaEngine.VmdkWriteLimits": "De VMDK uitvoertabellen of offsets overschrijden de ondersteunde limieten.",
+    "MediaEngine.VmdkWriteAlignment": "Het VMDK-toewijzingsblok is niet uitgelijnd op een sectorgrens.",
+    "MediaEngine.VmdkGeneratedDescriptor": "De gegenereerde VMDK-descriptor is te groot."
+  }
+}

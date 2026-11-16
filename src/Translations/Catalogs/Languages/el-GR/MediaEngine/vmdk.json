@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Το αρχείο είναι πολύ μικρό για να περιέχει κεφαλίδα εικόνας VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Ο περιγραφέας VMDK υπερβαίνει το υποστηριζόμενο μέγεθος.",
+    "MediaEngine.VmdkSignature": "Λείπει η υπογραφή του περιγραφέα VMDK.",
+    "MediaEngine.VmdkParent": "Μια γονική αλυσίδα VMDK απαιτεί γονική λύση που δεν είναι καταχωρημένη.",
+    "MediaEngine.VmdkType": "Ο τύπος δημιουργίας VMDK {0} δεν υποστηρίζεται.",
+    "MediaEngine.VmdkExtentCount": "Υποστηρίζεται μόνο μια μονολιθική έκταση VMDK.",
+    "MediaEngine.VmdkExtentName": "Το όνομα αρχείου έκτασης VMDK δεν είναι έγκυρο.",
+    "MediaEngine.VmdkExtentCapacity": "Η ικανότητα έκτασης VMDK είναι άκυρη.",
+    "MediaEngine.VmdkExtentOffset": "Η αντιστάθμιση έκτασης VMDK είναι άκυρη.",
+    "MediaEngine.VmdkExtentMode": "Μόνο ένα εγγράψιμο FLAT βαθμό υποστηρίζεται για monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "Λείπει ο βαθμός VMDK {0}.",
+    "MediaEngine.VmdkExtentShort": "Η έκταση της VMDK FLAT είναι μικρότερη από τη δηλωθείσα παραγωγική της ικανότητα.",
+    "MediaEngine.VmdkAssignment": "Ο περιγραφέας VMDK δεν έχει τιμή {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK αραιή έκδοση {0} δεν υποστηρίζεται.",
+    "MediaEngine.VmdkCompression": "Συμπιεσμένη ή streamOptimized VMDK βαθμόι δεν υποστηρίζονται.",
+    "MediaEngine.VmdkUnclean": "Η VMDK αραιή έκταση είναι σημειωμένη ακάθαρτη.",
+    "MediaEngine.VmdkGeometry": "Η αραιή γεωμετρία VMDK ή μια μετατόπιση τομέα είναι άκυρη.",
+    "MediaEngine.VmdkDescriptorRange": "Ο ενσωματωμένος περιγραφέας VMDK είναι έξω από το αρχείο.",
+    "MediaEngine.VmdkDirectory": "Ο κατάλογος ή ο πίνακας σιτηρών VMDK υπερβαίνει το υποστηριζόμενο εύρος.",
+    "MediaEngine.VmdkTableMissing": "Λείπει ο πίνακας σπερμάτων VMDK {0}.",
+    "MediaEngine.VmdkGrainOutside": "Το μπλοκ κατανομής VMDK {0} δείχνει έξω από το αρχείο.",
+    "MediaEngine.VmdkWrite": "Το έγγραφο πολυμέσων δεν μπορεί να γραφτεί ως υποστηριζόμενη εικόνα VMDK.",
+    "MediaEngine.VmdkWriteLimits": "Οι πίνακες ή αντισταθμίσεις εξόδου VMDK υπερβαίνουν τα υποστηριζόμενα όρια.",
+    "MediaEngine.VmdkWriteAlignment": "Το μπλοκ κατανομής VMDK δεν είναι ευθυγραμμισμένο σε όριο τομέα.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Ο περιγραφέας VMDK που παράγεται είναι πολύ μεγάλος."
+  }
+}

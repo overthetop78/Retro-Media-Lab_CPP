@@ -3,6 +3,32 @@
 namespace RetroMediaLab::MediaEngine {
 std::string_view diagnosticKey(DiagnosticCode code) noexcept {
     switch(code){
+    case DiagnosticCode::VmdkSource:return DiagnosticKeys::VmdkSource;
+    case DiagnosticCode::VmdkDescriptorSize:return DiagnosticKeys::VmdkDescriptorSize;
+    case DiagnosticCode::VmdkSignature:return DiagnosticKeys::VmdkSignature;
+    case DiagnosticCode::VmdkParent:return DiagnosticKeys::VmdkParent;
+    case DiagnosticCode::VmdkType:return DiagnosticKeys::VmdkType;
+    case DiagnosticCode::VmdkExtentCount:return DiagnosticKeys::VmdkExtentCount;
+    case DiagnosticCode::VmdkExtentName:return DiagnosticKeys::VmdkExtentName;
+    case DiagnosticCode::VmdkExtentCapacity:return DiagnosticKeys::VmdkExtentCapacity;
+    case DiagnosticCode::VmdkExtentOffset:return DiagnosticKeys::VmdkExtentOffset;
+    case DiagnosticCode::VmdkExtentMode:return DiagnosticKeys::VmdkExtentMode;
+    case DiagnosticCode::VmdkExtentMissing:return DiagnosticKeys::VmdkExtentMissing;
+    case DiagnosticCode::VmdkExtentShort:return DiagnosticKeys::VmdkExtentShort;
+    case DiagnosticCode::VmdkAssignment:return DiagnosticKeys::VmdkAssignment;
+    case DiagnosticCode::VmdkSparseVersion:return DiagnosticKeys::VmdkSparseVersion;
+    case DiagnosticCode::VmdkCompression:return DiagnosticKeys::VmdkCompression;
+    case DiagnosticCode::VmdkUnclean:return DiagnosticKeys::VmdkUnclean;
+    case DiagnosticCode::VmdkGeometry:return DiagnosticKeys::VmdkGeometry;
+    case DiagnosticCode::VmdkDescriptorRange:return DiagnosticKeys::VmdkDescriptorRange;
+    case DiagnosticCode::VmdkDirectory:return DiagnosticKeys::VmdkDirectory;
+    case DiagnosticCode::VmdkTableMissing:return DiagnosticKeys::VmdkTableMissing;
+    case DiagnosticCode::VmdkGrainOutside:return DiagnosticKeys::VmdkGrainOutside;
+    case DiagnosticCode::VmdkWrite:return DiagnosticKeys::VmdkWrite;
+    case DiagnosticCode::VmdkWriteLimits:return DiagnosticKeys::VmdkWriteLimits;
+    case DiagnosticCode::VmdkWriteAlignment:return DiagnosticKeys::VmdkWriteAlignment;
+    case DiagnosticCode::VmdkGeneratedDescriptor:return DiagnosticKeys::VmdkGeneratedDescriptor;
+
     case DiagnosticCode::QcowHeader:return DiagnosticKeys::QcowHeader;
     case DiagnosticCode::QcowSignature:return DiagnosticKeys::QcowSignature;
     case DiagnosticCode::QcowVersion:return DiagnosticKeys::QcowVersion;

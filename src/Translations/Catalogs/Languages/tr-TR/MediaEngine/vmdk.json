@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Dosya bir VMDK görüntü başlığı içeren çok kısadır.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK descriptor desteklenen boyutu aşıyor.",
+    "MediaEngine.VmdkSignature": "VMDK tanımlayıcı imza eksik.",
+    "MediaEngine.VmdkParent": "Bir VMDK ebeveyn zinciri kayıtlı olmayan bir ebeveyn çözümü gerektirir.",
+    "MediaEngine.VmdkType": "VMDK türü yaratır {0} desteklenmez.",
+    "MediaEngine.VmdkExtentCount": "Sadece tek bir monolithic VMDK boyutu destekleniyor.",
+    "MediaEngine.VmdkExtentName": "VMDK olarak dosya adı geçersizdir.",
+    "MediaEngine.VmdkExtentCapacity": "VMDK büyüklüğü geçersizdir.",
+    "MediaEngine.VmdkExtentOffset": "VMDK kapsam ofseti geçersizdir.",
+    "MediaEngine.VmdkExtentMode": "monolithicFlat VMDK için yalnızca bir yazılabilir FLAT kapsamı desteklenir.",
+    "MediaEngine.VmdkExtentMissing": "VMDK boyutu {0} eksik.",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT, ilan kapasitesinden daha kısadır.",
+    "MediaEngine.VmdkAssignment": "VMDK descriptor {0} değeri yoktur.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse versiyonu {0} desteklenmez.",
+    "MediaEngine.VmdkCompression": "Sıkıştırılmış veya streamOptimized VMDK kapsamları desteklenmez.",
+    "MediaEngine.VmdkUnclean": "VMDK sparse kapsamı düzgün kapatılmamış olarak işaretlenmiş.",
+    "MediaEngine.VmdkGeometry": "VMDK sparse geometrisi veya bir sektör ofseti geçersizdir.",
+    "MediaEngine.VmdkDescriptorRange": "gömülü VMDK descriptor dosyanın dışındadır.",
+    "MediaEngine.VmdkDirectory": "VMDK ayırma bloğu dizini veya tablosu desteklenen aralığı aşıyor.",
+    "MediaEngine.VmdkTableMissing": "VMDK ayırma bloğu tablosu {0} eksik.",
+    "MediaEngine.VmdkGrainOutside": "VMDK ayırma bloğu {0} dosyanın dışını gösteriyor.",
+    "MediaEngine.VmdkWrite": "Medya belgesi desteklenen VMDK görüntüsü olarak yazılamaz.",
+    "MediaEngine.VmdkWriteLimits": "VMDK çıktı tabloları veya ofsetleri desteklenen sınırları aşıyor.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK ayırma bloğu sektör sınırına hizalı değil.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Oluşturulan VMDK descriptor çok büyük."
+  }
+}

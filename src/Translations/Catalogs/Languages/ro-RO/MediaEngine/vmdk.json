@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Fișierul este prea scurt pentru a conține un antet de imagine VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Descriptorul VMDK depășește dimensiunea suportată.",
+    "MediaEngine.VmdkSignature": "Semnătura descriptorului VMDK lipseşte.",
+    "MediaEngine.VmdkParent": "Un lanț-mamă VMDK necesită un dispozitiv de soluționare părintească care nu este înregistrat.",
+    "MediaEngine.VmdkType": "VMDK creează tipul {0} este nesusţinut.",
+    "MediaEngine.VmdkExtentCount": "Este sprijinită doar o singură măsură VMDK monolitică.",
+    "MediaEngine.VmdkExtentName": "Numele fișierului de întindere VMDK este invalid.",
+    "MediaEngine.VmdkExtentCapacity": "Capacitatea de întindere VMDK este invalidă.",
+    "MediaEngine.VmdkExtentOffset": "Offset-ul de întindere VMDK este invalid.",
+    "MediaEngine.VmdkExtentMode": "Pentru monolithicFlat VMDK este acceptată o singură extensie FLAT inscriptibilă.",
+    "MediaEngine.VmdkExtentMissing": "VMDK Grade {0} lipsește.",
+    "MediaEngine.VmdkExtentShort": "Dimensiunea VMDK FLAT este mai mică decât capacitatea declarată.",
+    "MediaEngine.VmdkAssignment": "Descriptorul VMDK nu are valoare {0}.",
+    "MediaEngine.VmdkSparseVersion": "Versiunea redusă VMDK {0} este nesusţinută.",
+    "MediaEngine.VmdkCompression": "Extensiile VMDK comprimate sau streamOptimized nu sunt acceptate.",
+    "MediaEngine.VmdkUnclean": "Extensia sparse VMDK este marcată ca neînchisă corect.",
+    "MediaEngine.VmdkGeometry": "Geometria redusă VMDK sau o compensare sectorială este invalidă.",
+    "MediaEngine.VmdkDescriptorRange": "Descriptorul VMDK încorporat este în afara fișierului.",
+    "MediaEngine.VmdkDirectory": "Directorul sau tabelul blocurilor de alocare VMDK depășește intervalul acceptat.",
+    "MediaEngine.VmdkTableMissing": "Tabelul blocurilor de alocare VMDK {0} lipsește.",
+    "MediaEngine.VmdkGrainOutside": "Blocul de alocare VMDK {0} indică în afara fișierului.",
+    "MediaEngine.VmdkWrite": "Documentul media nu poate fi scris ca o imagine VMDK susținută.",
+    "MediaEngine.VmdkWriteLimits": "Tabelele de ieșire VMDK sau de compensare depășesc limitele acceptate.",
+    "MediaEngine.VmdkWriteAlignment": "Blocul de alocare VMDK nu este aliniat la limita unui sector.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Descriptorul VMDK generat este prea mare."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "הקובץ קצר מכדי להכיל כותרת תמונת VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "מתאר VMDK חורג מהגודל הנתמך.",
+    "MediaEngine.VmdkSignature": "החתימה של VMDK חסרה.",
+    "MediaEngine.VmdkParent": "שרשרת קובצי אב של VMDK דורשת פותר קובץ אב שאינו רשום.",
+    "MediaEngine.VmdkType": "סוג יצירת VMDK בערך {0} אינו נתמך.",
+    "MediaEngine.VmdkExtentCount": "רק היקף מונוליטי VMDK נתמך.",
+    "MediaEngine.VmdkExtentName": "שם הקובץ VMDK הוא לא חוקי.",
+    "MediaEngine.VmdkExtentCapacity": "היכולת של VMDK היא לא חוקית.",
+    "MediaEngine.VmdkExtentOffset": "היסט מקטע VMDK אינו תקין.",
+    "MediaEngine.VmdkExtentMode": "נתמך רק מקטע FLAT אחד הניתן לכתיבה עבור monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "מקטע VMDK מספר {0} חסר.",
+    "MediaEngine.VmdkExtentShort": "היקף VMDK FLAT קצר יותר מיכולתו המוצהרת.",
+    "MediaEngine.VmdkAssignment": "למתאר VMDK אין ערך {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK Sparse version {0} אינו נתמך.",
+    "MediaEngine.VmdkCompression": "מקטעי VMDK דחוסים או מסוג streamOptimized אינם נתמכים.",
+    "MediaEngine.VmdkUnclean": "מקטע VMDK הדליל מסומן כלא סגור כראוי.",
+    "MediaEngine.VmdkGeometry": "מבנה VMDK הדליל או היסט סקטור אינם תקינים.",
+    "MediaEngine.VmdkDescriptorRange": "מתאר VMDK המוטבע נמצא מחוץ לקובץ.",
+    "MediaEngine.VmdkDirectory": "ספריית בלוקי ההקצאה של VMDK או הטבלה שלהם חורגת מהטווח הנתמך.",
+    "MediaEngine.VmdkTableMissing": "טבלת בלוקי ההקצאה של VMDK מספר {0} חסרה.",
+    "MediaEngine.VmdkGrainOutside": "בלוק הקצאה של VMDK מספר {0} מצביע מחוץ לקובץ.",
+    "MediaEngine.VmdkWrite": "לא ניתן לכתוב את המסמך כתמונה VMDK נתמכת.",
+    "MediaEngine.VmdkWriteLimits": "טבלאות הפלט VMDK או  offsets עולה על הגבולות הנתמכות.",
+    "MediaEngine.VmdkWriteAlignment": "בלוק ההקצאה של VMDK אינו מיושר לגבול סקטור.",
+    "MediaEngine.VmdkGeneratedDescriptor": "מתאר VMDK שנוצר גדול מדי."
+  }
+}

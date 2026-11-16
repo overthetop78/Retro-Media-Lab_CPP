@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "الملف أقصر من أن يحتوي على ترويسة صورة VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "يتجاوز واصف VMDK الحجم المدعوم.",
+    "MediaEngine.VmdkSignature": "توقيع واصف VMDK مفقود.",
+    "MediaEngine.VmdkParent": "تتطلب سلسلة الملفات الأصلية VMDK محلل ملفات أصل غير مسجل.",
+    "MediaEngine.VmdkType": "نوع إنشاء VMDK بقيمة {0} غير مدعوم.",
+    "MediaEngine.VmdkExtentCount": "لا يُدعم سوى امتداد VMDK أحادي واحد.",
+    "MediaEngine.VmdkExtentName": "اسم ملف امتداد VMDK غير صالح.",
+    "MediaEngine.VmdkExtentCapacity": "سعة امتداد VMDK غير صالحة.",
+    "MediaEngine.VmdkExtentOffset": "إزاحة امتداد VMDK غير صالحة.",
+    "MediaEngine.VmdkExtentMode": "لا يُدعم سوى امتداد FLAT واحد قابل للكتابة في monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "امتداد VMDK رقم {0} مفقود.",
+    "MediaEngine.VmdkExtentShort": "امتداد VMDK FLAT أقصر من سعته المعلنة.",
+    "MediaEngine.VmdkAssignment": "واصف VMDK لا يحتوي على قيمة {0}.",
+    "MediaEngine.VmdkSparseVersion": "إصدار VMDK المتناثر رقم {0} غير مدعوم.",
+    "MediaEngine.VmdkCompression": "امتدادات VMDK المضغوطة أو من نوع streamOptimized غير مدعومة.",
+    "MediaEngine.VmdkUnclean": "امتداد VMDK المتناثر معلّم بأنه غير مغلق بشكل سليم.",
+    "MediaEngine.VmdkGeometry": "هندسة VMDK المتناثرة أو إزاحة قطاع غير صالحة.",
+    "MediaEngine.VmdkDescriptorRange": "واصف VMDK المضمن خارج الملف.",
+    "MediaEngine.VmdkDirectory": "يتجاوز دليل كتل تخصيص VMDK أو جدولها النطاق المدعوم.",
+    "MediaEngine.VmdkTableMissing": "جدول كتل تخصيص VMDK رقم {0} مفقود.",
+    "MediaEngine.VmdkGrainOutside": "تشير كتلة تخصيص VMDK رقم {0} إلى خارج الملف.",
+    "MediaEngine.VmdkWrite": "لا يمكن كتابة مستند الوسائط كصورة VMDK مدعومة.",
+    "MediaEngine.VmdkWriteLimits": "تتجاوز جداول إخراج VMDK أو إزاحاته الحدود المدعومة.",
+    "MediaEngine.VmdkWriteAlignment": "كتلة تخصيص VMDK غير محاذاة إلى حدود القطاعات.",
+    "MediaEngine.VmdkGeneratedDescriptor": "واصف VMDK المنشأ أكبر من المسموح."
+  }
+}

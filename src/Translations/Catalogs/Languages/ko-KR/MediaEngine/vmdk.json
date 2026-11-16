@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "파일은 VMDK 이미지 헤더를 포함하기가 너무 짧습니다.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK descriptor는 지원된 크기를 초과합니다.",
+    "MediaEngine.VmdkSignature": "VMDK descriptor 서명이 누락되었습니다.",
+    "MediaEngine.VmdkParent": "VMDK 부모 파일 체인에는 등록되지 않은 부모 파일 확인기가 필요합니다.",
+    "MediaEngine.VmdkType": "VMDK create type {0}는 지원되지 않습니다.",
+    "MediaEngine.VmdkExtentCount": "단일 monolithic VMDK 범위만 지원됩니다.",
+    "MediaEngine.VmdkExtentName": "VMDK 정도 파일 이름은 유효하지 않습니다.",
+    "MediaEngine.VmdkExtentCapacity": "VMDK 용량은 유효하지 않습니다.",
+    "MediaEngine.VmdkExtentOffset": "VMDK 범위 오프셋은 유효하지 않습니다.",
+    "MediaEngine.VmdkExtentMode": "1개의 writable FLAT 범위는 monolithicFlat VMDK를 위해 지원됩니다.",
+    "MediaEngine.VmdkExtentMissing": "VMDK 범위 {0}가 누락됩니다.",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT 범위는 선언 된 용량보다 더 짧습니다.",
+    "MediaEngine.VmdkAssignment": "VMDK descriptor는 {0} 값이 없습니다.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse version {0}는 지원되지 않습니다.",
+    "MediaEngine.VmdkCompression": "압축 또는 streamOptimized VMDK 범위는 지원되지 않습니다.",
+    "MediaEngine.VmdkUnclean": "VMDK 스파스 영역에 비정상 종료 플래그가 설정되어 있습니다.",
+    "MediaEngine.VmdkGeometry": "VMDK sparse 기하학 또는 부문 상쇄는 유효하지 않습니다.",
+    "MediaEngine.VmdkDescriptorRange": "임베디드 VMDK descriptor는 파일 밖에 있습니다.",
+    "MediaEngine.VmdkDirectory": "VMDK 할당 블록 디렉터리 또는 테이블이 지원 범위를 초과합니다.",
+    "MediaEngine.VmdkTableMissing": "VMDK 할당 블록 테이블 {0}이 없습니다.",
+    "MediaEngine.VmdkGrainOutside": "VMDK 할당 블록 {0}이 파일 밖을 가리킵니다.",
+    "MediaEngine.VmdkWrite": "미디어 문서는 지원된 VMDK 이미지로 작성할 수 없습니다.",
+    "MediaEngine.VmdkWriteLimits": "VMDK 산출 테이블 또는 상쇄는 지원한 한계를 초과합니다.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK 할당 블록이 섹터 경계에 정렬되지 않았습니다.",
+    "MediaEngine.VmdkGeneratedDescriptor": "생성된 VMDK descriptor는 너무 크다."
+  }
+}

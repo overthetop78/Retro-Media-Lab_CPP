@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Le fichier est trop court pour contenir un en-tête d'image VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Le descripteur VMDK dépasse la taille supportée.",
+    "MediaEngine.VmdkSignature": "La signature du descripteur VMDK est manquante.",
+    "MediaEngine.VmdkParent": "Une chaîne de fichiers parents VMDK nécessite un résolveur parent qui n’est pas enregistré.",
+    "MediaEngine.VmdkType": "Le type de création VMDK {0} n’est pas pris en charge.",
+    "MediaEngine.VmdkExtentCount": "Seule une seule étendue VMDK monolithique est prise en charge.",
+    "MediaEngine.VmdkExtentName": "Le nom du fichier d'étendue VMDK est invalide.",
+    "MediaEngine.VmdkExtentCapacity": "La capacité de l’étendue VMDK est invalide.",
+    "MediaEngine.VmdkExtentOffset": "Le décalage de l’étendue VMDK est invalide.",
+    "MediaEngine.VmdkExtentMode": "Une seule étendue FLAT en écriture est prise en charge pour monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "L'étendue de VMDK {0} est manquante.",
+    "MediaEngine.VmdkExtentShort": "L'étendue du FLAT VMDK est plus courte que sa capacité déclarée.",
+    "MediaEngine.VmdkAssignment": "Le descripteur VMDK n'a pas de valeur {0}.",
+    "MediaEngine.VmdkSparseVersion": "La version sparse VMDK {0} n’est pas prise en charge.",
+    "MediaEngine.VmdkCompression": "Les étendues VMDK compressées ou streamOptimized ne sont pas prises en charge.",
+    "MediaEngine.VmdkUnclean": "L’étendue sparse VMDK est marquée comme non propre.",
+    "MediaEngine.VmdkGeometry": "La géométrie sparse VMDK ou un décalage de secteur est invalide.",
+    "MediaEngine.VmdkDescriptorRange": "Le descripteur VMDK intégré est à l'extérieur du fichier.",
+    "MediaEngine.VmdkDirectory": "Le répertoire de grains VMDK ou la table de grains dépasse la plage prise en charge.",
+    "MediaEngine.VmdkTableMissing": "La table de grains VMDK {0} manque.",
+    "MediaEngine.VmdkGrainOutside": "Le grain VMDK {0} pointe en dehors du fichier.",
+    "MediaEngine.VmdkWrite": "Le document média ne peut pas être écrit comme une image VMDK supportée.",
+    "MediaEngine.VmdkWriteLimits": "Les tables de sortie ou les offsets VMDK dépassent les limites supportées.",
+    "MediaEngine.VmdkWriteAlignment": "Le grain VMDK n'est pas aligné sur le secteur.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Le descripteur VMDK généré est trop grand."
+  }
+}

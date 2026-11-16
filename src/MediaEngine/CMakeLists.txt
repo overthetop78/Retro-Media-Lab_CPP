@@ -1,4 +1,9 @@
 add_library(RetroMediaLab.MediaEngine SHARED
+  src/Formats/HardDisk/Vmdk/Descriptor.cpp
+  src/Formats/HardDisk/Vmdk/Sparse.cpp
+  src/Formats/HardDisk/Vmdk/Reader.cpp
+  src/Formats/HardDisk/Vmdk/SparseWriter.cpp
+  src/Formats/HardDisk/Vmdk/Writer.cpp
   src/Formats/HardDisk/Qcow2/Header.cpp
   src/Formats/HardDisk/Qcow2/Refcounts.cpp
   src/Formats/HardDisk/Qcow2/Reader.cpp

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Tập tin quá ngắn để chứa đầu trang ảnh VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Bộ mô tả VMDK vượt quá kích cỡ được hỗ trợ.",
+    "MediaEngine.VmdkSignature": "Chữ ký của VMDK bị mất.",
+    "MediaEngine.VmdkParent": "Chuỗi tệp cha VMDK yêu cầu bộ phân giải tệp cha chưa được đăng ký.",
+    "MediaEngine.VmdkType": "VMDK tạo loại {0} không được hỗ trợ.",
+    "MediaEngine.VmdkExtentCount": "Chỉ hỗ trợ một vùng dữ liệu VMDK nguyên khối.",
+    "MediaEngine.VmdkExtentName": "Tên tập tin quy mô VMDK không hợp lệ.",
+    "MediaEngine.VmdkExtentCapacity": "Khả năng của VMDK không hợp lệ.",
+    "MediaEngine.VmdkExtentOffset": "Độ lệch VMDK không hợp lệ.",
+    "MediaEngine.VmdkExtentMode": "Chỉ hỗ trợ một vùng FLAT có thể ghi cho monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "Thiếu vùng dữ liệu VMDK {0}.",
+    "MediaEngine.VmdkExtentShort": "Mức VMDK FLAT ngắn hơn mức đã được công bố.",
+    "MediaEngine.VmdkAssignment": "Bộ mô tả VMDK không có giá trị {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK phiên bản {0} không được hỗ trợ.",
+    "MediaEngine.VmdkCompression": "Đã nén hoặc streamOptimized VMDK Không hỗ trợ cấp độ.",
+    "MediaEngine.VmdkUnclean": "Vùng dữ liệu sparse VMDK được đánh dấu là chưa đóng đúng cách.",
+    "MediaEngine.VmdkGeometry": "Cấu trúc sparse VMDK hoặc độ lệch sector không hợp lệ.",
+    "MediaEngine.VmdkDescriptorRange": "Bộ mô tả VMDK nhúng nằm bên ngoài tập tin.",
+    "MediaEngine.VmdkDirectory": "Danh mục hoặc bảng khối cấp phát VMDK vượt quá phạm vi được hỗ trợ.",
+    "MediaEngine.VmdkTableMissing": "Thiếu bảng khối cấp phát VMDK {0}.",
+    "MediaEngine.VmdkGrainOutside": "Khối cấp phát VMDK {0} trỏ ra ngoài tệp.",
+    "MediaEngine.VmdkWrite": "Tài liệu phương tiện không thể được ghi như ảnh được hỗ trợ của VMDK.",
+    "MediaEngine.VmdkWriteLimits": "Bảng kết xuất VMDK hoặc bù đắp vượt quá giới hạn được hỗ trợ.",
+    "MediaEngine.VmdkWriteAlignment": "Khối cấp phát VMDK không căn chỉnh theo biên sector.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Bộ mô tả VMDK được tạo quá lớn."
+  }
+}

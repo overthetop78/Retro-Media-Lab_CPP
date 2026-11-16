@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "A fájl túl rövid egy VMDK képfejléchez.",
+    "MediaEngine.VmdkDescriptorSize": "A VMDK leírás meghaladja a támogatott méretet.",
+    "MediaEngine.VmdkSignature": "A VMDK leíró aláírás hiányzik.",
+    "MediaEngine.VmdkParent": "A VMDK szülőfájllánchoz nem regisztrált szülőfájl-feloldó szükséges.",
+    "MediaEngine.VmdkType": "VMDK létrehozása típus {0} nem támogatott.",
+    "MediaEngine.VmdkExtentCount": "Csak egyetlen monolitikus VMDK-szint támogatott.",
+    "MediaEngine.VmdkExtentName": "A VMDK kiterjedés fájl neve érvénytelen.",
+    "MediaEngine.VmdkExtentCapacity": "A VMDK kiterjedési kapacitása érvénytelen.",
+    "MediaEngine.VmdkExtentOffset": "A VMDK kiterjedés eltolása érvénytelen.",
+    "MediaEngine.VmdkExtentMode": "A monolithicFlat VMDK csak egy írható FLAT kiterjedést támogat.",
+    "MediaEngine.VmdkExtentMissing": "A VMDK kiterjedés {0} hiányzik.",
+    "MediaEngine.VmdkExtentShort": "A VMDK FLAT mértéke rövidebb, mint a bejelentett kapacitása.",
+    "MediaEngine.VmdkAssignment": "A VMDK leírásnak nincs {0} értéke.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse verzió {0} nem támogatott.",
+    "MediaEngine.VmdkCompression": "Tömörített vagy streamOptimized VMDK extensek nem támogatják.",
+    "MediaEngine.VmdkUnclean": "A VMDK gyér kiterjedése tisztátalan.",
+    "MediaEngine.VmdkGeometry": "A VMDK gyér geometria vagy ágazati offset érvénytelen.",
+    "MediaEngine.VmdkDescriptorRange": "A beágyazott VMDK leíró kívül esik a fájlon.",
+    "MediaEngine.VmdkDirectory": "A VMDK foglalási blokkjainak könyvtára vagy táblája meghaladja a támogatott tartományt.",
+    "MediaEngine.VmdkTableMissing": "A VMDK foglalási blokkjainak {0} táblája hiányzik.",
+    "MediaEngine.VmdkGrainOutside": "A VMDK {0} foglalási blokkja a fájlon kívülre mutat.",
+    "MediaEngine.VmdkWrite": "A médiadokumentum nem írható támogatott VMDK képként.",
+    "MediaEngine.VmdkWriteLimits": "A VMDK kimeneti táblák vagy offset-ek meghaladják a támogatott határértékeket.",
+    "MediaEngine.VmdkWriteAlignment": "A VMDK foglalási blokkja nincs szektorhatárhoz igazítva.",
+    "MediaEngine.VmdkGeneratedDescriptor": "A generált VMDK leíró túl nagy."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Filen är för kort för att innehålla en VMDK bildrubrik.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK-beskrivningen överstiger den stödda storleken.",
+    "MediaEngine.VmdkSignature": "VMDK descriptor signatur saknas.",
+    "MediaEngine.VmdkParent": "En VMDK föräldrakedja kräver en förälderslösare som inte är registrerad.",
+    "MediaEngine.VmdkType": "VMDK skapar typ {0} stöds inte.",
+    "MediaEngine.VmdkExtentCount": "Endast en monolitisk VMDK-omfattning stöds.",
+    "MediaEngine.VmdkExtentName": "VMDK omfattning filnamnet är ogiltigt.",
+    "MediaEngine.VmdkExtentCapacity": "VMDKs omfattningsförmåga är ogiltig.",
+    "MediaEngine.VmdkExtentOffset": "VMDK-områdets förskjutning är ogiltig.",
+    "MediaEngine.VmdkExtentMode": "Endast en skrivbar FLAT-omfattning stöds för monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "VMDK omfattning {0} saknas.",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT är kortare än dess deklarerade kapacitet.",
+    "MediaEngine.VmdkAssignment": "VMDK-beskrivningen har inget {0}-värde.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse version {0} stöds inte.",
+    "MediaEngine.VmdkCompression": "Komprimerade eller streamOptimized VMDK-omfattningar stöds inte.",
+    "MediaEngine.VmdkUnclean": "VMDK sparsam omfattning är markerad oren.",
+    "MediaEngine.VmdkGeometry": "Den glesa VMDK-geometrin eller en sektorförskjutning är ogiltig.",
+    "MediaEngine.VmdkDescriptorRange": "Den inbäddade VMDK-beskrivningen är utanför filen.",
+    "MediaEngine.VmdkDirectory": "Katalogen eller tabellen för VMDK-allokeringsblock överskrider det stödda intervallet.",
+    "MediaEngine.VmdkTableMissing": "Tabell {0} för VMDK-allokeringsblock saknas.",
+    "MediaEngine.VmdkGrainOutside": "VMDK-allokeringsblock {0} pekar utanför filen.",
+    "MediaEngine.VmdkWrite": "Mediedokumentet kan inte skrivas som en stödd VMDK-bild.",
+    "MediaEngine.VmdkWriteLimits": "VMDK-utgångstabeller eller kompensationer överstiger de stödda gränserna.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK-allokeringsblocket är inte justerat till en sektorgräns.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Den genererade VMDK-beskrivningen är för stor."
+  }
+}

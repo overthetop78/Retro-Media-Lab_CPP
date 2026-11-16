@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Die Datei ist zu kurz, um einen VMDK-Bildkopf zu enthalten.",
+    "MediaEngine.VmdkDescriptorSize": "Der VMDK-Deskriptor übersteigt die unterstützte Größe.",
+    "MediaEngine.VmdkSignature": "Die VMDK-Deskriptorsignatur fehlt.",
+    "MediaEngine.VmdkParent": "Eine VMDK-Mutterkette erfordert einen Elternresolver, der nicht registriert ist.",
+    "MediaEngine.VmdkType": "VMDK create type {0} wird nicht unterstützt.",
+    "MediaEngine.VmdkExtentCount": "Es wird nur ein einziger monolithischer VMDK-Ausschnitt unterstützt.",
+    "MediaEngine.VmdkExtentName": "Der Dateiname des VMDK-Extents ist ungültig.",
+    "MediaEngine.VmdkExtentCapacity": "Die VMDK-Ausdehnungskapazität ist ungültig.",
+    "MediaEngine.VmdkExtentOffset": "Der VMDK-Erstreckungsversatz ist ungültig.",
+    "MediaEngine.VmdkExtentMode": "Nur eine beschreibbare FLAT-Ausdehnung wird für monolithicFlat VMDK unterstützt.",
+    "MediaEngine.VmdkExtentMissing": "Die VMDK-Ausdehnung {0} fehlt.",
+    "MediaEngine.VmdkExtentShort": "Die VMDK FLAT-Ausdehnung ist kürzer als die deklarierte Kapazität.",
+    "MediaEngine.VmdkAssignment": "Der VMDK-Deskriptor hat keinen {0}-Wert.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse Version {0} wird nicht unterstützt.",
+    "MediaEngine.VmdkCompression": "Komprimierte oder streamOptimized VMDK-Ausdehnungen werden nicht unterstützt.",
+    "MediaEngine.VmdkUnclean": "Der Sparse-VMDK-Extent ist als unsauber markiert.",
+    "MediaEngine.VmdkGeometry": "Die VMDK-Spärgeometrie oder ein Sektorversatz ist ungültig.",
+    "MediaEngine.VmdkDescriptorRange": "Der eingebettete VMDK-Deskriptor befindet sich außerhalb der Datei.",
+    "MediaEngine.VmdkDirectory": "Das VMDK Kornverzeichnis bzw. die Korntabelle überschreitet den unterstützten Bereich.",
+    "MediaEngine.VmdkTableMissing": "VMDK-Zuordnungstabelle {0} fehlt.",
+    "MediaEngine.VmdkGrainOutside": "VMDK-Zuordnungsblock {0} verweist auf einen Bereich außerhalb der Datei.",
+    "MediaEngine.VmdkWrite": "Das Mediendokument kann nicht als unterstütztes VMDK-Bild geschrieben werden.",
+    "MediaEngine.VmdkWriteLimits": "Die VMDK-Ausgabetabellen oder -Offsets überschreiten die unterstützten Grenzwerte.",
+    "MediaEngine.VmdkWriteAlignment": "Der VMDK-Zuordnungsblock ist nicht an einer Sektorgrenze ausgerichtet.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Der generierte VMDK-Deskriptor ist zu groß."
+  }
+}

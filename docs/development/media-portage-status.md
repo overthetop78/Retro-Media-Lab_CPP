@@ -34,6 +34,8 @@ La tâche 145 termine le conteneur physique MFM EMU : en-têtes conservés, fen�
 
 La tâche 146 porte QCOW2 autonome en versions 2 et 3, avec tables L1/L2, validation des compteurs de références, plages stockées/zéro/non allouées et écriture sparse atomique conservant la version source. Les profils parents, snapshots, chiffrement et compression restent refusés comme dans le C#. Compilation et contrôle ciblé réussis.
 
+La tâche 147 porte VMDK monolithicFlat et monolithicSparse autonomes : analyse des descripteurs, source FLAT avec décalage, grain directory/tables, plages stockées/zéro/non allouées, choix de variante et publication atomique. Compilation et contrôle ciblé réussis.
+
 ## Travail restant
 
 La composition complète des lecteurs et writers, les services globaux de lecture/conversion/ouverture et leur raccordement à l'application restent à terminer. Plusieurs familles de conteneurs disque dur, optiques et bandes restent à porter. Les lecteurs/writers bruts génériques et le catalogue principal sont portés : 98 formats réservés et 90 définitions brutes après exclusion complète. Les fonctions existantes ne doivent pas être prises pour une composition par défaut complète.

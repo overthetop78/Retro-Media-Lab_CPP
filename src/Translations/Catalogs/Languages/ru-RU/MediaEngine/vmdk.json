@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Файл слишком короткий, чтобы содержать заголовок изображения VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Дескриптор VMDK превышает поддерживаемый размер.",
+    "MediaEngine.VmdkSignature": "Подпись дескриптора VMDK отсутствует.",
+    "MediaEngine.VmdkParent": "Родительская цепочка VMDK требует родительского решателя, который не зарегистрирован.",
+    "MediaEngine.VmdkType": "Тип создания VMDK {0} не поддерживается.",
+    "MediaEngine.VmdkExtentCount": "Поддерживается только одна монолитная степень VMDK.",
+    "MediaEngine.VmdkExtentName": "Имя файла VMDK недействительно.",
+    "MediaEngine.VmdkExtentCapacity": "Вместимость VMDK недействительна.",
+    "MediaEngine.VmdkExtentOffset": "Смещение степени VMDK является недействительным.",
+    "MediaEngine.VmdkExtentMode": "Для monolithicFlat VMDK поддерживается только один доступный для записи экстент FLAT.",
+    "MediaEngine.VmdkExtentMissing": "Степень VMDK {0} отсутствует.",
+    "MediaEngine.VmdkExtentShort": "Протяженность VMDK FLAT меньше заявленной мощности.",
+    "MediaEngine.VmdkAssignment": "Дескриптор VMDK не имеет значения {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK скудная версия {0} не поддерживается.",
+    "MediaEngine.VmdkCompression": "Сжатые или streamOptimized VMDK степени не поддерживаются.",
+    "MediaEngine.VmdkUnclean": "Разреженная степень VMDK отмечена как нечистая.",
+    "MediaEngine.VmdkGeometry": "Разреженная геометрия VMDK или смещение сектора недействительны.",
+    "MediaEngine.VmdkDescriptorRange": "Встроенный дескриптор VMDK находится вне файла.",
+    "MediaEngine.VmdkDirectory": "Каталог или таблица блоков распределения VMDK выходит за поддерживаемый диапазон.",
+    "MediaEngine.VmdkTableMissing": "Таблица блоков распределения VMDK {0} отсутствует.",
+    "MediaEngine.VmdkGrainOutside": "Блок распределения VMDK {0} указывает за пределы файла.",
+    "MediaEngine.VmdkWrite": "Медиа-документ не может быть написан как поддерживаемое изображение VMDK.",
+    "MediaEngine.VmdkWriteLimits": "Выходные таблицы или смещения VMDK превышают поддерживаемые пределы.",
+    "MediaEngine.VmdkWriteAlignment": "Зерно VMDK не выровнено по секторам.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Сгенерированный дескриптор VMDK слишком велик."
+  }
+}

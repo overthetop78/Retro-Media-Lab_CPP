@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "แฟ้มนี้สั้นเกินที่จะบรรจุส่วนหัวภาพแบบ VMDK",
+    "MediaEngine.VmdkDescriptorSize": "ตัวบรรยาย VMDK มีขนาดเกินที่รองรับ",
+    "MediaEngine.VmdkSignature": "ไม่พบลายเซ็นของตัวบรรยาย VMDK",
+    "MediaEngine.VmdkParent": "ห่วงโซ่แม่ VMDK ต้องการตัวแก้ไขที่ยังไม่ได้ลงทะเบียน",
+    "MediaEngine.VmdkType": "VMDK สร้างประเภท {0} ไม่รองรับ",
+    "MediaEngine.VmdkExtentCount": "แค่ก้อนเดียว VMDK มี การ สนับสนุน ขอบ เขต.",
+    "MediaEngine.VmdkExtentName": "ชื่อแฟ้มขนาด VMDK ไม่ถูกต้อง",
+    "MediaEngine.VmdkExtentCapacity": "ความจุของ VMDK ไม่ถูกต้อง",
+    "MediaEngine.VmdkExtentOffset": "ปรับค่าขนาด VMDK ไม่ถูกต้อง",
+    "MediaEngine.VmdkExtentMode": "รองรับส่วนข้อมูล FLAT ที่เขียนได้เพียงส่วนเดียวสำหรับ monolithicFlat VMDK",
+    "MediaEngine.VmdkExtentMissing": "ส่วน VMDK {0} หายไป",
+    "MediaEngine.VmdkExtentShort": "มาตรา VMDK FLAT สั้นกว่าความจุที่ปรากฏ",
+    "MediaEngine.VmdkAssignment": "ตัวบรรยาย VMDK ไม่มีค่า {0}",
+    "MediaEngine.VmdkSparseVersion": "ไม่รองรับ VMDK รุ่น sparse {0}",
+    "MediaEngine.VmdkCompression": "ถูกบีบอัดหรือ streamOptimized VMDK ไม่สนับสนุนขอบเขต",
+    "MediaEngine.VmdkUnclean": "ขอบเขตของ VMDK ถูกทําเครื่องหมายว่าไม่สะอาด",
+    "MediaEngine.VmdkGeometry": "โครงสร้าง sparse VMDK หรือออฟเซ็ตเซกเตอร์ไม่ถูกต้อง",
+    "MediaEngine.VmdkDescriptorRange": "ตัวบรรยาย VMDK ที่ฝังอยู่ อยู่นอกไฟล์",
+    "MediaEngine.VmdkDirectory": "ไดเรกทอรีหรือตารางบล็อกการจัดสรร VMDK เกินช่วงที่รองรับ",
+    "MediaEngine.VmdkTableMissing": "ไม่พบตารางบล็อกการจัดสรร VMDK {0}",
+    "MediaEngine.VmdkGrainOutside": "แผ่น VMDK {0} ชี้ไปนอกแฟ้ม",
+    "MediaEngine.VmdkWrite": "ไม่สามารถเขียนเอกสารสื่อเป็นอิมเมจของ VMDK ที่รองรับได้",
+    "MediaEngine.VmdkWriteLimits": "ตารางการแสดงผลของ VMDK หรือออฟเซ็ตเกินข้อจํากัดที่รองรับ",
+    "MediaEngine.VmdkWriteAlignment": "บล็อกการจัดสรร VMDK ไม่ตรงกับขอบเขตเซกเตอร์",
+    "MediaEngine.VmdkGeneratedDescriptor": "ตัวบรรยาย VMDK ที่สร้างมีขนาดใหญ่เกินไป"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "文件太短,无法包含 VMDK 图像头.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK描述符超过了支持的大小.",
+    "MediaEngine.VmdkSignature": "VMDK 描述符签名缺失.",
+    "MediaEngine.VmdkParent": "一个VMDK母链需要一个未注册的母解析器.",
+    "MediaEngine.VmdkType": "VMDK 创建类型{0} 不支持 。",
+    "MediaEngine.VmdkExtentCount": "只支持单一的VMDK范围.",
+    "MediaEngine.VmdkExtentName": "VMDK 范围文件名无效 。",
+    "MediaEngine.VmdkExtentCapacity": "VMDK 范围容量无效 。",
+    "MediaEngine.VmdkExtentOffset": "VMDK 范围偏移无效 。",
+    "MediaEngine.VmdkExtentMode": "monolithicFlat VMDK 仅支持一个可写的 FLAT 区段。",
+    "MediaEngine.VmdkExtentMissing": "缺少 VMDK 范围{0} 。",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT范围比其申报容量短.",
+    "MediaEngine.VmdkAssignment": "VMDK 描述符没有{0} 值 。",
+    "MediaEngine.VmdkSparseVersion": "VMDK 稀疏版本{0}是不支持的.",
+    "MediaEngine.VmdkCompression": "压缩或streamOptimized VMDK 范围不支持.",
+    "MediaEngine.VmdkUnclean": "VMDK 稀疏区段带有未正常关闭标志。",
+    "MediaEngine.VmdkGeometry": "VMDK 稀疏几何配置或扇区偏移无效。",
+    "MediaEngine.VmdkDescriptorRange": "嵌入式VMDK描述器位于文件外.",
+    "MediaEngine.VmdkDirectory": "VMDK 分配块目录或分配块表超出支持的范围。",
+    "MediaEngine.VmdkTableMissing": "缺少 VMDK 分配块表 {0}。",
+    "MediaEngine.VmdkGrainOutside": "VMDK 分配块 {0} 指向文件之外。",
+    "MediaEngine.VmdkWrite": "媒体文档不能被写成支持的VMDK图像.",
+    "MediaEngine.VmdkWriteLimits": "VMDK输出表或相抵超过所支持的限度.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK 分配块未按扇区边界对齐。",
+    "MediaEngine.VmdkGeneratedDescriptor": "所生成的VMDK描述符太大了."
+  }
+}

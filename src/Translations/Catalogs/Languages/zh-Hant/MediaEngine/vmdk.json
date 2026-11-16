@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "檔案過短，無法包含 VMDK 映像標頭。",
+    "MediaEngine.VmdkDescriptorSize": "VMDK 描述元超出支援的大小。",
+    "MediaEngine.VmdkSignature": "缺少 VMDK 描述元簽章。",
+    "MediaEngine.VmdkParent": "VMDK 父檔案鏈需要尚未註冊的父檔案解析器。",
+    "MediaEngine.VmdkType": "不支援 VMDK 建立類型 {0}。",
+    "MediaEngine.VmdkExtentCount": "僅支援單一的整體式 VMDK 區段。",
+    "MediaEngine.VmdkExtentName": "VMDK 區段檔案名稱無效。",
+    "MediaEngine.VmdkExtentCapacity": "VMDK 區段容量無效。",
+    "MediaEngine.VmdkExtentOffset": "VMDK 區段偏移無效。",
+    "MediaEngine.VmdkExtentMode": "monolithicFlat VMDK 僅支援一個可寫入的 FLAT 區段。",
+    "MediaEngine.VmdkExtentMissing": "缺少 VMDK 區段 {0}。",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT 區段短於其宣告的容量。",
+    "MediaEngine.VmdkAssignment": "VMDK 描述元沒有 {0} 值。",
+    "MediaEngine.VmdkSparseVersion": "不支援 VMDK 稀疏版本 {0}。",
+    "MediaEngine.VmdkCompression": "不支援壓縮或 streamOptimized VMDK 區段。",
+    "MediaEngine.VmdkUnclean": "VMDK 稀疏區段帶有未正常關閉標記。",
+    "MediaEngine.VmdkGeometry": "VMDK 稀疏幾何配置或磁區偏移無效。",
+    "MediaEngine.VmdkDescriptorRange": "內嵌的 VMDK 描述元位於檔案以外。",
+    "MediaEngine.VmdkDirectory": "VMDK 配置區塊目錄或配置區塊表超出支援的範圍。",
+    "MediaEngine.VmdkTableMissing": "缺少 VMDK 配置區塊表 {0}。",
+    "MediaEngine.VmdkGrainOutside": "VMDK 配置區塊 {0} 指向檔案以外。",
+    "MediaEngine.VmdkWrite": "無法將媒體文件寫入為支援的 VMDK 映像。",
+    "MediaEngine.VmdkWriteLimits": "VMDK 輸出表格或偏移超出支援的限制。",
+    "MediaEngine.VmdkWriteAlignment": "VMDK 配置區塊未按磁區邊界對齊。",
+    "MediaEngine.VmdkGeneratedDescriptor": "產生的 VMDK 描述元過大。"
+  }
+}

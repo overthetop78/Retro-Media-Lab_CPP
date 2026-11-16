@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "ファイルが VMDK のイメージヘッダを含むのに短すぎる。",
+    "MediaEngine.VmdkDescriptorSize": "VMDKの記述子は支えられたサイズを超過します。",
+    "MediaEngine.VmdkSignature": "VMDKの記述子の署名は欠落しています。",
+    "MediaEngine.VmdkParent": "VMDK の親チェーンでは、登録されていない親のリゾルバーが必要です。",
+    "MediaEngine.VmdkType": "VMDK作成タイプ{0}はサポートされていません。",
+    "MediaEngine.VmdkExtentCount": "単体VMDKのみ対応",
+    "MediaEngine.VmdkExtentName": "VMDK はファイル名が無効です。",
+    "MediaEngine.VmdkExtentCapacity": "VMDKの容量が無効です。",
+    "MediaEngine.VmdkExtentOffset": "VMDK 範囲のオフセットは無効です。",
+    "MediaEngine.VmdkExtentMode": "monolithicFlat VMDKでは書き込み可能なFLATエクステントを1つだけサポートします。",
+    "MediaEngine.VmdkExtentMissing": "VMDK は {0} が欠落しています。",
+    "MediaEngine.VmdkExtentShort": "VMDK FLATは、宣言された容量よりも短い範囲です。",
+    "MediaEngine.VmdkAssignment": "VMDK 記述子は {0} 値がありません。",
+    "MediaEngine.VmdkSparseVersion": "VMDK Sparse バージョン {0} はサポートされていません。",
+    "MediaEngine.VmdkCompression": "圧縮または streamOptimized VMDK 範囲はサポートされていません。",
+    "MediaEngine.VmdkUnclean": "VMDKのスパースエクステントに未クリーンのフラグが設定されています。",
+    "MediaEngine.VmdkGeometry": "VMDK はジオメトリやセクターオフセットが無効です。",
+    "MediaEngine.VmdkDescriptorRange": "埋め込まれたVMDKの記述子はファイル外にあります。",
+    "MediaEngine.VmdkDirectory": "VMDKの割り当てブロックディレクトリまたはテーブルが対応範囲を超えています。",
+    "MediaEngine.VmdkTableMissing": "VMDK グレインテーブル {0} が見つかりません。",
+    "MediaEngine.VmdkGrainOutside": "VMDK割り当てブロック{0}はファイル外を指しています。",
+    "MediaEngine.VmdkWrite": "サポートされているVMDKイメージとして、メディア文書を記述することはできません。",
+    "MediaEngine.VmdkWriteLimits": "VMDK の出力テーブルかオフセットは支えられた限界を超過します。",
+    "MediaEngine.VmdkWriteAlignment": "VMDK割り当てブロックがセクター境界に整列していません。",
+    "MediaEngine.VmdkGeneratedDescriptor": "生成されたVMDK記述子は大きすぎます。"
+  }
+}

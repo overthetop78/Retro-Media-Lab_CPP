@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "El archivo es demasiado corto para contener un encabezado de imagen VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "El descriptor VMDK supera el tamaño soportado.",
+    "MediaEngine.VmdkSignature": "Falta la firma descriptor VMDK.",
+    "MediaEngine.VmdkParent": "Una cadena de padres VMDK requiere una resolución de padres que no está registrada.",
+    "MediaEngine.VmdkType": "El tipo de creación VMDK {0} no es compatible.",
+    "MediaEngine.VmdkExtentCount": "Sólo se admite una sola extensión monolítica VMDK.",
+    "MediaEngine.VmdkExtentName": "El nombre de archivo de extensión VMDK es inválido.",
+    "MediaEngine.VmdkExtentCapacity": "La capacidad de extensión VMDK es inválida.",
+    "MediaEngine.VmdkExtentOffset": "El desplazamiento de la extensión VMDK no es válido.",
+    "MediaEngine.VmdkExtentMode": "Solo se admite una extensión FLAT escribible para monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "Falta el alcance VMDK {0}.",
+    "MediaEngine.VmdkExtentShort": "La extensión VMDK FLAT es más corta que su capacidad declarada.",
+    "MediaEngine.VmdkAssignment": "El descriptor VMDK no tiene valor {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK versión escasa {0} no es compatible.",
+    "MediaEngine.VmdkCompression": "Los alcances comprimidos o streamOptimized VMDK no son compatibles.",
+    "MediaEngine.VmdkUnclean": "La extensión sparse VMDK está marcada como no limpia.",
+    "MediaEngine.VmdkGeometry": "La geometría espaciadora VMDK o un offset sector es inválido.",
+    "MediaEngine.VmdkDescriptorRange": "El descriptor integrado VMDK está fuera del archivo.",
+    "MediaEngine.VmdkDirectory": "El directorio de granos VMDK o mesa de granos supera el rango soportado.",
+    "MediaEngine.VmdkTableMissing": "VMDK mesa de granos {0} falta.",
+    "MediaEngine.VmdkGrainOutside": "El bloque de asignación VMDK {0} apunta fuera del archivo.",
+    "MediaEngine.VmdkWrite": "El documento multimedia no puede ser escrito como una imagen compatible VMDK.",
+    "MediaEngine.VmdkWriteLimits": "Los cuadros o compensaciones de salida VMDK exceden los límites soportados.",
+    "MediaEngine.VmdkWriteAlignment": "El grano VMDK no está alineado en el sector.",
+    "MediaEngine.VmdkGeneratedDescriptor": "El descriptor VMDK generado es demasiado grande."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Filen er for kort til at indeholde en VMDK billedheader.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK-deskriptoren overstiger den støttede størrelse.",
+    "MediaEngine.VmdkSignature": "VMDK-deskriptorens underskrift mangler.",
+    "MediaEngine.VmdkParent": "En VMDK forældrekæde kræver en forælder resolver, der ikke er registreret.",
+    "MediaEngine.VmdkType": "VMDK create type {0} er ikke understøttet.",
+    "MediaEngine.VmdkExtentCount": "Kun en enkelt monolitisk VMDK udstrækning understøttes.",
+    "MediaEngine.VmdkExtentName": "VMDK udstrækning filnavn er ugyldig.",
+    "MediaEngine.VmdkExtentCapacity": "VMDK grad kapacitet er ugyldig.",
+    "MediaEngine.VmdkExtentOffset": "VMDK udstrækning forskydning er ugyldig.",
+    "MediaEngine.VmdkExtentMode": "Kun én skrivbar FLAT udstrækning er understøttet for monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "VMDK udstrækning {0} mangler.",
+    "MediaEngine.VmdkExtentShort": "Omfanget af VMDK FLAT er kortere end den oplyste kapacitet.",
+    "MediaEngine.VmdkAssignment": "VMDK-deskriptoren har ingen {0} værdi.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse version {0} er ikke understøttet.",
+    "MediaEngine.VmdkCompression": "Komprimeret eller streamOptimized VMDK strækningerne understøttes ikke.",
+    "MediaEngine.VmdkUnclean": "Den sparsomme VMDK-udstrækning er markeret som ikke korrekt afsluttet.",
+    "MediaEngine.VmdkGeometry": "VMDK sparsomme geometri eller en sektor forskydning er ugyldig.",
+    "MediaEngine.VmdkDescriptorRange": "Den indlejrede VMDK-deskriptor er uden for filen.",
+    "MediaEngine.VmdkDirectory": "VMDK kornmappe eller kornbord overstiger det understøttede område.",
+    "MediaEngine.VmdkTableMissing": "VMDK kornbord {0} mangler.",
+    "MediaEngine.VmdkGrainOutside": "VMDK-allokeringsblok {0} peger uden for filen.",
+    "MediaEngine.VmdkWrite": "Mediedokumentet kan ikke skrives som et understøttet VMDK-billede.",
+    "MediaEngine.VmdkWriteLimits": "VMDK outputtabellerne eller outputsættene overstiger de understøttede grænser.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK korn er ikke sektor tilpasset.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Den genererede VMDK-deskriptor er for stor."
+  }
+}

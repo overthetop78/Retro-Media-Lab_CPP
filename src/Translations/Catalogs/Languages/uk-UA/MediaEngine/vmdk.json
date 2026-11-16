@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Файл занадто короткий, щоб містити заголовок зображення VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Дескриптор VMDK перевищить підтримуваний розмір.",
+    "MediaEngine.VmdkSignature": "Відсутній підпис VMDK.",
+    "MediaEngine.VmdkParent": "Р VMDK батьківська мережа вимагає батьківського вирішувача, який не зареєстрований.",
+    "MediaEngine.VmdkType": "VMDK створити тип {0} не підтримується.",
+    "MediaEngine.VmdkExtentCount": "Підтримується єдиний монолітний VMDK.",
+    "MediaEngine.VmdkExtentName": "Ім’я файлу екстенту VMDK недійсне.",
+    "MediaEngine.VmdkExtentCapacity": "Місткість екстенту VMDK недійсна.",
+    "MediaEngine.VmdkExtentOffset": "Зсув екстенту VMDK недійсний.",
+    "MediaEngine.VmdkExtentMode": "Для monolithicFlat VMDK підтримується лише один екстент FLAT із можливістю запису.",
+    "MediaEngine.VmdkExtentMissing": "VMDK не вистачає {0}.",
+    "MediaEngine.VmdkExtentShort": "Розмір VMDK FLAT коротший, ніж його заявлена потужність.",
+    "MediaEngine.VmdkAssignment": "Дескриптор VMDK не має значення {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse версія {0} не підтримується.",
+    "MediaEngine.VmdkCompression": "Стиснуті екстенти VMDK або streamOptimized не підтримуються.",
+    "MediaEngine.VmdkUnclean": "Розріджений екстент VMDK позначено як некоректно закритий.",
+    "MediaEngine.VmdkGeometry": "Геометрія розрідженого VMDK або зсув сектора недійсні.",
+    "MediaEngine.VmdkDescriptorRange": "Вбудований VMDK дескриптор зовні файлу.",
+    "MediaEngine.VmdkDirectory": "Каталог або таблиця блоків розподілу VMDK перевищує підтримуваний діапазон.",
+    "MediaEngine.VmdkTableMissing": "Таблиця блоків розподілу VMDK {0} відсутня.",
+    "MediaEngine.VmdkGrainOutside": "Блок розподілу VMDK {0} вказує за межі файлу.",
+    "MediaEngine.VmdkWrite": "Файловий документ не може бути записаний як підтриманий VMDK зображення.",
+    "MediaEngine.VmdkWriteLimits": "Вихідні таблиці VMDK або офсети перевищують підтримувані ліміти.",
+    "MediaEngine.VmdkWriteAlignment": "Блок розподілу VMDK не вирівняно за межею сектора.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Згенерований дескриптор VMDK занадто великий."
+  }
+}

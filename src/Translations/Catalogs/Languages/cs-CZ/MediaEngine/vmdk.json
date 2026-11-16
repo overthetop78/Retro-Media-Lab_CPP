@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Soubor je příliš krátký na to, aby obsahoval hlavičku VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Deskriptor VMDK přesahuje podporovanou velikost.",
+    "MediaEngine.VmdkSignature": "Chybí signatura deskriptoru VMDK.",
+    "MediaEngine.VmdkParent": "Mateřský řetězec VMDK vyžaduje rodičovského rozhodce, který není registrován.",
+    "MediaEngine.VmdkType": "Typ vytvoření VMDK {0} není podporován.",
+    "MediaEngine.VmdkExtentCount": "Podporuje se pouze jeden monolitický rozsah VMDK.",
+    "MediaEngine.VmdkExtentName": "Název souboru rozsahu VMDK je neplatný.",
+    "MediaEngine.VmdkExtentCapacity": "Kapacita rozsahu VMDK je neplatná.",
+    "MediaEngine.VmdkExtentOffset": "Posun rozsahu VMDK je neplatný.",
+    "MediaEngine.VmdkExtentMode": "Pro monolithicFlat VMDK je podporován pouze jeden zapisovatelný rozsah FLAT.",
+    "MediaEngine.VmdkExtentMissing": "VMDK rozsah {0} chybí.",
+    "MediaEngine.VmdkExtentShort": "Rozsah VMDK FLAT je kratší než deklarovaná kapacita.",
+    "MediaEngine.VmdkAssignment": "Deskriptor VMDK nemá hodnotu {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse verze {0} je nepodporována.",
+    "MediaEngine.VmdkCompression": "Komprimované nebo streamOptimized VMDK extenty nejsou podporovány.",
+    "MediaEngine.VmdkUnclean": "VMDK řídký rozsah je označen jako nečistý.",
+    "MediaEngine.VmdkGeometry": "Geometrie řídkého VMDK nebo posun sektoru je neplatný.",
+    "MediaEngine.VmdkDescriptorRange": "Vložený deskriptor VMDK je mimo soubor.",
+    "MediaEngine.VmdkDirectory": "Adresář zrn VMDK nebo tabulka zrn překračují podporovaný rozsah.",
+    "MediaEngine.VmdkTableMissing": "Chybí tabulka alokačních bloků VMDK {0}.",
+    "MediaEngine.VmdkGrainOutside": "Alokační blok VMDK {0} ukazuje mimo soubor.",
+    "MediaEngine.VmdkWrite": "Mediální dokument nelze zapsat jako podporovaný VMDK obrázek.",
+    "MediaEngine.VmdkWriteLimits": "Výstupní tabulky nebo odstupy VMDK překračují podporované limity.",
+    "MediaEngine.VmdkWriteAlignment": "Alokační blok VMDK není zarovnán na sektor.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Vygenerovaný deskriptor VMDK je příliš velký."
+  }
+}

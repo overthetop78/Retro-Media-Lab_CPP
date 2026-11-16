@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Berkas ini terlalu pendek untuk memuat header gambar VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Deskripsi VMDK melebihi ukuran yang didukung.",
+    "MediaEngine.VmdkSignature": "Tanda tangan deskripsi VMDK hilang.",
+    "MediaEngine.VmdkParent": "Rantai induk VMDK memerlukan penanganan induk yang tidak terdaftar.",
+    "MediaEngine.VmdkType": "VMDK membuat tipe {0} tidak didukung.",
+    "MediaEngine.VmdkExtentCount": "Hanya satu wilayah monolitik VMDK yang didukung.",
+    "MediaEngine.VmdkExtentName": "Nama berkas extent VMDK tidak valid.",
+    "MediaEngine.VmdkExtentCapacity": "Kapasitas extent VMDK tidak valid.",
+    "MediaEngine.VmdkExtentOffset": "Ofset extent VMDK tidak valid.",
+    "MediaEngine.VmdkExtentMode": "Hanya satu FLAT yang bisa ditulis yang didukung untuk monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "Tingkat VMDK {0} hilang.",
+    "MediaEngine.VmdkExtentShort": "Tingkat FLAT VMDK lebih pendek dari kapasitas yang dideklarasikan.",
+    "MediaEngine.VmdkAssignment": "Deskripsi VMDK tidak memiliki {0} nilai.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse versi {0} tidak didukung.",
+    "MediaEngine.VmdkCompression": "Extent streamOptimized VMDK tidak didukung.",
+    "MediaEngine.VmdkUnclean": "Rentang kecil VMDK ditandai najis.",
+    "MediaEngine.VmdkGeometry": "Geometri sparse VMDK atau ofset sektor tidak valid.",
+    "MediaEngine.VmdkDescriptorRange": "Deskripsi VMDK tertanam di luar berkas.",
+    "MediaEngine.VmdkDirectory": "Direktori butir VMDK atau tabel butir melebihi jangkauan yang didukung.",
+    "MediaEngine.VmdkTableMissing": "Tabel butir VMDK {0} hilang.",
+    "MediaEngine.VmdkGrainOutside": "VMDK butir {0} menunjuk di luar berkas.",
+    "MediaEngine.VmdkWrite": "Dokumen media tidak dapat ditulis sebagai citra VMDK yang didukung.",
+    "MediaEngine.VmdkWriteLimits": "Tabel keluaran VMDK atau offset melebihi batas yang didukung.",
+    "MediaEngine.VmdkWriteAlignment": "Padi VMDK tidak teralign sektor.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Deskripsi VMDK yang dihasilkan terlalu besar."
+  }
+}

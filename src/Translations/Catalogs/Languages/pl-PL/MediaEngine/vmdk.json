@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Plik jest zbyt krótki, aby zawierać nagłówek obrazu VMDK.",
+    "MediaEngine.VmdkDescriptorSize": "Deskryptor VMDK przekracza obsługiwany rozmiar.",
+    "MediaEngine.VmdkSignature": "Brak podpisu deskryptora VMDK.",
+    "MediaEngine.VmdkParent": "Łańcuch macierzysty VMDK wymaga rozwiązania rodzicielskiego, który nie jest zarejestrowany.",
+    "MediaEngine.VmdkType": "VMDK Create type {0} nie jest obsługiwany.",
+    "MediaEngine.VmdkExtentCount": "Tylko jeden monolityczny zasięg VMDK jest obsługiwany.",
+    "MediaEngine.VmdkExtentName": "Nazwa pliku zakresu VMDK jest nieprawidłowa.",
+    "MediaEngine.VmdkExtentCapacity": "Pojemność VMDK jest nieważna.",
+    "MediaEngine.VmdkExtentOffset": "Osunięcie zakresu VMDK jest nieprawidłowe.",
+    "MediaEngine.VmdkExtentMode": "Dla monolithicFlat VMDK obsługiwany jest tylko jeden zapisywalny zakres FLAT.",
+    "MediaEngine.VmdkExtentMissing": "Brak zasięgu VMDK {0}.",
+    "MediaEngine.VmdkExtentShort": "Zakres VMDK FLAT jest krótszy od deklarowanej zdolności produkcyjnej.",
+    "MediaEngine.VmdkAssignment": "Deskryptor VMDK nie ma wartości {0}.",
+    "MediaEngine.VmdkSparseVersion": "VMDK sparse version {0} nie jest obsługiwany.",
+    "MediaEngine.VmdkCompression": "Kompresowane lub streamOptimized VMDK nie są obsługiwane.",
+    "MediaEngine.VmdkUnclean": "Zasięg VMDK jest nieczysty.",
+    "MediaEngine.VmdkGeometry": "Nieprawidłowa geometria VMDK lub przesunięcie sektorowe.",
+    "MediaEngine.VmdkDescriptorRange": "Wbudowany deskryptor VMDK jest poza plikiem.",
+    "MediaEngine.VmdkDirectory": "Katalog ziaren VMDK lub tabela ziarna przekracza obsługiwany zakres.",
+    "MediaEngine.VmdkTableMissing": "Brak tabeli ziaren VMDK {0}.",
+    "MediaEngine.VmdkGrainOutside": "VMDK grain {0} wskazuje poza plikiem.",
+    "MediaEngine.VmdkWrite": "Dokument medialny nie może być napisany jako obsługiwany obraz VMDK.",
+    "MediaEngine.VmdkWriteLimits": "Tabele wyjściowe lub przesunięcia VMDK przekraczają obsługiwane limity.",
+    "MediaEngine.VmdkWriteAlignment": "Blok alokacji VMDK nie jest wyrównany do granicy sektora.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Wygenerowany deskryptor VMDK jest zbyt duży."
+  }
+}

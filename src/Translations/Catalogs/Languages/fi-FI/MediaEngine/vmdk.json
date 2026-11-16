@@ -1,0 +1,29 @@
+{
+  "strings": {
+    "MediaEngine.VmdkSource": "Tiedosto on liian lyhyt sisältämään VMDK-kuvan otsikkoa.",
+    "MediaEngine.VmdkDescriptorSize": "VMDK-kuvaus ylittää tuetun koon.",
+    "MediaEngine.VmdkSignature": "VMDK-kuvaajan allekirjoitus puuttuu.",
+    "MediaEngine.VmdkParent": "VMDK-emoketju edellyttää vanhemman ratkaisijaa, jota ei ole rekisteröity.",
+    "MediaEngine.VmdkType": "VMDK-luontityyppiä {0} ei tueta.",
+    "MediaEngine.VmdkExtentCount": "Tukea annetaan vain yhdelle monoliittiselle VMDK-laajuudelle.",
+    "MediaEngine.VmdkExtentName": "VMDK-laajennustiedoston nimi on virheellinen.",
+    "MediaEngine.VmdkExtentCapacity": "VMDK-laajennuskapasiteetti on virheellinen.",
+    "MediaEngine.VmdkExtentOffset": "VMDK-laajuuden offset on virheellinen.",
+    "MediaEngine.VmdkExtentMode": "Vain yksi kirjoitettava FLAT laajuus on tuettu monolithicFlat VMDK.",
+    "MediaEngine.VmdkExtentMissing": "VMDK-laajuus {0} puuttuu.",
+    "MediaEngine.VmdkExtentShort": "VMDK FLAT:n laajuus on ilmoitettua kapasiteettia lyhyempi.",
+    "MediaEngine.VmdkAssignment": "VMDK-kuvaajalla ei ole {0} arvoa.",
+    "MediaEngine.VmdkSparseVersion": "VMDK harva versio {0} on tueton.",
+    "MediaEngine.VmdkCompression": "Pakattuja tai streamOptimized VMDK -alueita ei tueta.",
+    "MediaEngine.VmdkUnclean": "VMDK:n harvaosaisuus on merkitty epäpuhtaudeksi.",
+    "MediaEngine.VmdkGeometry": "VMDK:n harva geometria tai alakohtainen offset on virheellinen.",
+    "MediaEngine.VmdkDescriptorRange": "Sisällytetty VMDK-kuvaus on tiedoston ulkopuolella.",
+    "MediaEngine.VmdkDirectory": "VMDK:n varauslohkojen hakemisto tai taulukko ylittää tuetun alueen.",
+    "MediaEngine.VmdkTableMissing": "VMDK-varauslohkotaulukko {0} puuttuu.",
+    "MediaEngine.VmdkGrainOutside": "VMDK-varauslohko {0} osoittaa tiedoston ulkopuolelle.",
+    "MediaEngine.VmdkWrite": "Media-asiakirjaa ei voi kirjoittaa tuettuna VMDK-kuvana.",
+    "MediaEngine.VmdkWriteLimits": "VMDK-ulostulotaulukot tai offsets ylittävät tuetut rajat.",
+    "MediaEngine.VmdkWriteAlignment": "VMDK-varauslohkoa ei ole kohdistettu sektorirajaan.",
+    "MediaEngine.VmdkGeneratedDescriptor": "Syntynyt VMDK-kuvaus on liian suuri."
+  }
+}
