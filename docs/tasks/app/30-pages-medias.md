@@ -20,8 +20,13 @@
     - [ ] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
     - [ ] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
   - [ ] Visualisation
-    - [ ] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
-    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : rendu des faces, pistes, secteurs, flux, blocs et signal ; sélection et zoom selon les données publiques du moteur.
+    - [x] Modifier `WorkspaceState.h`, les CMake App/Infrastructure et `audit_literals.py` pour conserver et compiler la visualisation et ses constantes.
+    - [x] Créer `src/Translations/Catalogs/Constants/App/visualization.json` et `Languages/*/App/visualization.json` : reprendre les libellés Visualizer et les commandes communes nécessaires depuis les RESX C#.
+    - [ ] Modifier `VisualizationSession.cpp`, `VisualizationPage.cpp` et `MediaGraph.cpp` : compléter les inspections dédiées des médias optiques, blocs et bandes, la classification dégradée des secteurs et les légendes C#.
+    - [ ] Modifier les vues médias si les essais de langue, de reconstruction du thème et des autres représentations révèlent des écarts.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
