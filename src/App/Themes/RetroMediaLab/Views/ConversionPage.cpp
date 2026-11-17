@@ -1,4 +1,6 @@
 #include "ConversionPage.h"
+#include "ConversionDialogs.h"
+#include "Media/ConversionSessionConstants.h"
 #include "ConversionPageConstants.h"
 #include "CaptureConstants.h"
 #include "Shared/Controls/Card.h"
@@ -70,7 +72,12 @@ ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationSer
 QString ConversionPage::text(const char* key)const{return QString::fromStdString(translations_.text(key));}
 void ConversionPage::showEvent(QShowEvent* event){QWidget::showEvent(event);refresh();}
 void ConversionPage::openSource() {
-    try {session_->open(source_->text(),state_.engines().engineFor(EngineConstants::Greaseweazle,EngineConstants::Conversion)==EngineConstants::Internal);}
+    try {
+        const bool internal=state_.engines().engineFor(EngineConstants::Greaseweazle,EngineConstants::Conversion)==EngineConstants::Internal;
+        std::optional<E::TapePcmProfile> profile;
+        if(internal && Infrastructure::ConversionSession::requiresPcmInput(source_->text())){profile=requestPcmProfile(translations_,this,true,session_->draft.sourcePcm);if(!profile){source_->setText(session_->draft.source);return;}}
+        session_->open(source_->text(),internal,profile);
+    }
     catch(const std::exception& error){summary_->setText(mediaErrorText(translations_,error));}
 }
 void ConversionPage::rebuildFormats() {
@@ -132,15 +139,13 @@ void ConversionPage::askLosses() {
 void ConversionPage::execute() {
     if(session_->busy()){QMessageBox dialog(QMessageBox::Question,text(C::StopTitle),text(C::StopConfirm),QMessageBox::Yes|QMessageBox::No,this);dialog.setDefaultButton(QMessageBox::No);if(dialog.exec()==QMessageBox::Yes)session_->cancel();return;}
     try {
-        auto decision=Infrastructure::ConversionConflict::Overwrite;QStringList existing;
-        for(const auto& target:session_->plan(state_.conversion()))if(QFileInfo::exists(QString::fromStdU16String(target.outputPath.u16string())))existing.push_back(QString::fromStdU16String(target.outputPath.u16string()));
-        if(!existing.isEmpty()){
-            QMessageBox dialog(QMessageBox::Question,text(C::Conflict),existing.join(QString::fromLatin1(C::NewLine)),QMessageBox::NoButton,this);
-            auto* overwrite=dialog.addButton(text(C::Overwrite),QMessageBox::DestructiveRole);auto* skip=dialog.addButton(text(C::Skip),QMessageBox::ActionRole);auto* number=dialog.addButton(text(C::Number),QMessageBox::ActionRole);auto* cancel=dialog.addButton(text(C::Cancel),QMessageBox::RejectRole);dialog.setDefaultButton(cancel);dialog.exec();
-            if(dialog.clickedButton()==cancel)return;if(dialog.clickedButton()==number)decision=Infrastructure::ConversionConflict::Number;else if(dialog.clickedButton()==skip)decision=Infrastructure::ConversionConflict::Skip;else if(dialog.clickedButton()!=overwrite)return;
-        }
+        const auto planned=session_->plan(state_.conversion());
+        if(state_.engines().engineFor(EngineConstants::Greaseweazle,EngineConstants::Conversion)==EngineConstants::Internal && std::any_of(planned.begin(),planned.end(),[](const auto& output){return output.formatId==Infrastructure::ConversionSessionConstants::RawFormat;})){
+            const auto profile=requestPcmProfile(translations_,this,false,session_->draft.targetPcm);if(!profile)return;session_->draft.targetPcm=profile;
+        }else session_->draft.targetPcm.reset();
+        const auto decisions=requestConversionConflicts(translations_,this,planned);if(!decisions)return;
         state_.console.setContent(session_->preview(state_.hardware(),state_.engines(),state_.conversion(),QCoreApplication::applicationDirPath()),{});
-        session_->start(state_.hardware(),state_.engines(),state_.conversion(),QCoreApplication::applicationDirPath(),decision);
+        session_->start(state_.hardware(),state_.engines(),state_.conversion(),QCoreApplication::applicationDirPath(),*decisions);
     }catch(const std::exception& error){QMessageBox::warning(this,text(C::Title),mediaErrorText(translations_,error));}
 }
 void ConversionPage::saveProfile(){

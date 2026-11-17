@@ -50,6 +50,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/MediaGraph.cpp
   Themes/RetroMediaLab/Views/CapturePage.cpp
   Themes/RetroMediaLab/Views/ConversionPage.cpp
+  Themes/RetroMediaLab/Views/ConversionDialogs.cpp
   Themes/RetroMediaLab/Views/StatusBar.cpp
   Themes/RetroMediaLab/RetroMediaLabStyle.cpp
   Themes/RetroMediaLab/RetroMediaLabLayout.cpp

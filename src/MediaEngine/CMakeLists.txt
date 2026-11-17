@@ -53,6 +53,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
   src/Images/Conversion/Planner.cpp
   src/Images/Conversion/Service.cpp
   src/Images/Conversion/Facade.cpp
+  src/Images/ReadingFacade.cpp
   src/Images/Conversion/AcornRaw.cpp
   src/Images/Conversion/AcornContainer.cpp
   src/Images/Conversion/Representation.cpp

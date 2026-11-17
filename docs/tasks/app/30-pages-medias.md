@@ -37,7 +37,13 @@
     - [x] Créer temporairement `build/verification-conversion/input.ssd` : copie de travail du SSD de référence pour une conversion réelle depuis le GUI, sans modifier le média original.
     - [x] Supprimer `build/verification-conversion/input.ssd` et les sorties générées dans ce même dossier après la vérification du lot.
     - [x] Modifier `src/App/Themes/RetroMediaLab/Views/StatusBar.h` et `.cpp` : afficher Conversion pendant les lots du moteur interne, via la notification de session existante.
-    - [ ] Modifier `ConversionSession.h`, `.cpp`, `ConversionPage.h` et `.cpp` : compléter les profils RAW d'entrée/sortie C# et les décisions de conflit par fichier.
+    - [x] Modifier `ConversionSession.h`, `.cpp`, `ConversionPage.h` et `.cpp` : compléter les profils RAW d'entrée/sortie C# et les décisions de conflit par fichier.
+    - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/MediaReading.h` et `src/MediaEngine/src/Images/ReadingFacade.cpp`, puis modifier son CMake : exposer la lecture paramétrée et le profil PCM existants sans exposer les modèles internes.
+    - [x] Créer `src/Infrastructure/Media/ConversionConflicts.h`, `.cpp` et modifier le CMake Infrastructure : appliquer une décision explicite par conflit, réserver les noms du lot et empêcher l'écrasement du fichier source.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/ConversionDialogs.h`, `.cpp`, `ConversionDialogConstants.h` et modifier le CMake App : dialogues PCM et tableau des conflits avec actions globales, textes issus des traductions C#.
+    - [x] Modifier les catalogues `App/conversion-page.json` Constants/Languages et `audit_literals.py` : intégrer les clés existantes des dialogues et leurs constantes nommées.
+    - [x] Créer temporairement `build/verification-conversion-dialogs/main.cpp`, son exécutable et ses petits fichiers d'entrée/sortie : vérifier les décisions mixtes et la lecture/conversion PCM paramétrée.
+    - [x] Supprimer `build/verification-conversion-dialogs/main.cpp`, l'exécutable et tous leurs artefacts après la vérification.
   - [ ] Visualisation
     - [x] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.

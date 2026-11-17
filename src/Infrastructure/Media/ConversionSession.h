@@ -1,5 +1,7 @@
 #pragma once
 #include "CaptureSession.h"
+#include "ConversionConflicts.h"
+#include <RetroMediaLab/MediaEngine/MediaReading.h>
 #include "Conversion/ConversionSettings.h"
 #include "Logging/ConsoleLogSession.h"
 #include <RetroMediaLab/MediaEngine/ConversionPlanning.h>
@@ -8,13 +10,13 @@
 #include <mutex>
 namespace RetroMediaLab::Infrastructure {
 RETROMEDIALAB_INFRASTRUCTURE_API const std::vector<CaptureOptionDefinition>& conversionOptions();
-enum class ConversionConflict {Overwrite,Skip,Number};
 struct ConversionDraft {
     QString source,name,expert;
     bool addTags=false,advancedOpen=false;
     QMap<QString,QString> values;
     QSet<QString> enabled;
     std::vector<MediaEngine::ConversionSelection> selections;
+    std::optional<MediaEngine::TapePcmProfile> sourcePcm,targetPcm;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API ConversionSession final:public QObject {
 public:
@@ -25,7 +27,8 @@ public:
     void applyProfile(std::size_t);
     void saveProfile(QString,bool replace=false);
     std::size_t selectedProfile=0;
-    void open(const QString&,bool internal);
+    static bool requiresPcmInput(const QString&);
+    void open(const QString&,bool internal,std::optional<MediaEngine::TapePcmProfile> = {});
     void cancel();
     void changed();
     bool busy()const;
@@ -38,7 +41,7 @@ public:
     const std::optional<MediaEngine::MessageInfo>& error()const noexcept{return error_;}
     std::vector<MediaEngine::ConversionOutput> plan(const ConversionSettings&)const;
     QString preview(const HardwareSettings&,const EngineSettings&,const ConversionSettings&,const QString&)const;
-    void start(const HardwareSettings&,const EngineSettings&,const ConversionSettings&,const QString&,ConversionConflict);
+    void start(const HardwareSettings&,const EngineSettings&,const ConversionSettings&,const QString&,const ConversionConflictDecisions&);
     double progress()const;
     ExplorerSession::Subscription subscribe(std::function<void()>);
     std::function<void(const QString&,const QString&)> output;
@@ -54,6 +57,7 @@ private:
     void complete(bool);
     void report(MediaEngine::MessageInfo);
     void pruneSelections();
+    QString previewOutputs(std::span<const MediaEngine::ConversionOutput>,bool,const HardwareSettings&,const QString&)const;
     GwToolCommand command(const MediaEngine::ConversionOutput&)const;
     std::vector<MediaEngine::EnabledOption> options()const;
     QTimer timer_;
@@ -74,6 +78,7 @@ private:
     std::vector<MediaEngine::MessageInfo> losses_,messages_;
     std::optional<MediaEngine::MessageInfo> error_;
     HardwareSettings hardware_;
+    std::map<std::string,std::string> targetParameters_,sourceParameters_;
     QString applicationDirectory_,commandText_,openedPath_;
     bool sourceInternal_=false,running_=false,external_=false,hostRunning_=false,awaitingLosses_=false,acceptedLosses_=false;
     std::size_t position_=0,succeeded_=0,failed_=0;
