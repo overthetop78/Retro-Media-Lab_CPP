@@ -1,5 +1,6 @@
 #include "MediaGraph.h"
 #include "LinearGraph.h"
+#include "SequentialGraph.h"
 #include "VisualizationConstants.h"
 #include "../ThemeConstants.h"
 #include <QMouseEvent>
@@ -122,6 +123,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         }
         return;
     }
+    if(cached_->sequential && !session_->showWaveform){painter.fillRect(rect(),theme->color(SequentialBackground));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintSequentialGraph(painter,size(),*cached_->sequential,session_->selectedElement,*theme);return;}
     if (cached_->tape && !cached_->tape->samples().empty()) {
         const auto samples = cached_->tape->samples();
         const auto visible = std::max<std::size_t>(1, static_cast<std::size_t>(samples.size() / session_->zoom));
@@ -155,6 +157,8 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     if (!cached_ || event->button() != Qt::LeftButton) return;
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->sequential && !session_->showWaveform){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestSequentialGraph(size(),*cached_->sequential,point))session_->inspect(*selected);return;}
+    if(cached_->sequential && session_->showWaveform)return;
     if(cached_->linear){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestLinearGraph(size(),*cached_->linear,*cached_->descriptor,point))session_->inspect(*selected);return;}
     if(cached_->sectors && cached_->sectors->logical){
         const auto& items=cached_->sectors->sectors;if(items.empty())return;

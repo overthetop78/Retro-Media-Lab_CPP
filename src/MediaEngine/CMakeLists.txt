@@ -25,6 +25,7 @@ add_library(RetroMediaLab.MediaEngine SHARED
     src/Visualization/Facade.cpp
     src/Visualization/Sectors.cpp
     src/Visualization/LinearInspection.cpp
+    src/Visualization/SequentialInspection.cpp
     src/Visualization/PhysicalProviders.cpp
     src/Visualization/BlockProvider.cpp
     src/Visualization/LinearProviders.cpp

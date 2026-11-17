@@ -20,6 +20,14 @@
 #include <algorithm>
 namespace RetroMediaLab {
 using namespace VisualizationConstants;
+namespace {
+QString sequentialTime(std::int64_t ticks){
+    const auto seconds=ticks/MediaEngine::SequentialTicksPerSecond;
+    const auto milliseconds=(ticks%MediaEngine::SequentialTicksPerSecond)*MillisecondsPerSecond/MediaEngine::SequentialTicksPerSecond;
+    return QString::fromLatin1(TimePattern).arg(seconds/SecondsPerHour,SequentialTimeDigits,DecimalBase,QLatin1Char(HexPadding)).arg(seconds/SecondsPerMinute%SecondsPerMinute,SequentialTimeDigits,DecimalBase,QLatin1Char(HexPadding)).arg(seconds%SecondsPerMinute,SequentialTimeDigits,DecimalBase,QLatin1Char(HexPadding)).arg(milliseconds,SequentialMillisecondDigits,DecimalBase,QLatin1Char(HexPadding));
+}
+}
+
 VisualizationPage::VisualizationPage(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state, QWidget* parent)
     : QWidget(parent), translations_(translations),themes_(themes) {
     if (!state.explorer) state.explorer = std::make_shared<Infrastructure::ExplorerSession>();
@@ -29,7 +37,8 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     auto* toolbar = new QHBoxLayout;
     open_ = new QPushButton(this); reset_ = new QPushButton(this);
     zoomOut_ = new QPushButton(QString::fromUtf8(ZoomOut),this); zoomIn_ = new QPushButton(QString::fromUtf8(ZoomIn),this); zoom_ = new QLabel(this);
-    toolbar->addWidget(open_); toolbar->addStretch(); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
+    representation_=new QComboBox(this);representation_->addItems({QString{},QString{}});
+    toolbar->addWidget(open_);toolbar->addWidget(representation_); toolbar->addStretch(); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
     layout->addLayout(toolbar);
     status_ = new QLabel(this); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); layout->addWidget(status_);
     summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
@@ -57,13 +66,14 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     connect(open_,&QPushButton::clicked,this,[this,&state] {
         const auto path=QFileDialog::getOpenFileName(this,text(Open),state.defaultImageDirectory()); if(!path.isEmpty()) session_->opening()->open(path);
     });
+    connect(representation_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0)session_->setWaveform(index!=0);});
     connect(reset_,&QPushButton::clicked,this,[this]{session_->setZoom(InitialZoom);});
     connect(zoomIn_,&QPushButton::clicked,this,[this]{session_->setZoom(std::min(MaximumZoom,session_->zoom*ZoomStep));});
     connect(zoomOut_,&QPushButton::clicked,this,[this]{session_->setZoom(std::max(InitialZoom,session_->zoom/ZoomStep));});
     connect(side_,&QSpinBox::valueChanged,this,[this](int value){session_->select(value,session_->position);});
     connect(track_,&QSpinBox::valueChanged,this,[this](int value){session_->select(session_->surface,value);});
     connect(revolutions_,&QComboBox::currentIndexChanged,this,[this](int value){if(value>=0)session_->setRevolution(static_cast<std::size_t>(value));});
-    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && session_->snapshot() && session_->snapshot()->linear){session_->inspect(static_cast<std::size_t>(row));return;}if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
+    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && session_->snapshot() && (session_->snapshot()->linear || session_->snapshot()->sequential)){session_->inspect(static_cast<std::size_t>(row));return;}if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
     subscription_=session_->subscribe([this]{refresh();});
     openingSubscription_=session_->opening()->subscribe([this]{refresh();});
     languageSubscription_=translations.subscribe([this]{refresh();});
@@ -74,6 +84,11 @@ void VisualizationPage::refresh() {
     open_->setText(text(Open)); reset_->setText(text(Reset)); sideLabel_->setText(text(Side)); trackLabel_->setText(text(Track)); revolutionLabel_->setText(text(Revolution));
     zoom_->setText(QLocale().toString(session_->zoom*PercentFactor,PercentNumberFormat,0)+QString::fromLatin1(Percent));
     open_->setEnabled(!session_->opening()->busy());
+    const QSignalBlocker blockedRepresentation(representation_);
+    representation_->setAccessibleName(text(DisplayMode));representation_->setItemText(0,text(Segments));representation_->setItemText(1,text(Signal));
+    representation_->setVisible(session_->snapshot() && session_->snapshot()->sequential.has_value());
+    representation_->setCurrentIndex(session_->showWaveform?1:0);
+    representation_->setEnabled(session_->snapshot() && session_->snapshot()->tape && !session_->snapshot()->tape->samples().empty());
     status_->setText(session_->opening()->busy() || session_->busy()?text(Loading):session_->opening()->path().isEmpty()?text(Empty):session_->opening()->path());
     const auto error=session_->error()?session_->error():session_->snapshot()?session_->snapshot()->warning:std::optional<MediaEngine::MessageInfo>{};
     if (error) {
@@ -83,12 +98,33 @@ void VisualizationPage::refresh() {
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);
     sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear();rowStates_.clear(); revolutions_->clear();
     summary_->clear();elementDetails_->clear();
-    legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value()));
+    legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value() || session_->snapshot()->sequential.has_value()));
     for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->setText(text(SectorLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SectorBrushes[index]));legendDots_[index]->setPalette(palette);}
     for(std::size_t index=0;index<SectorLabels.size();++index)legendLabels_[index]->parentWidget()->show();
     if(!session_->snapshot()) {hex_->setBytes({});return;}
     const auto& snapshot=*session_->snapshot();
     const auto& descriptor=snapshot.descriptor->fields();
+    if(snapshot.sequential){
+        const auto& model=*snapshot.sequential;
+        for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->hide();
+        QStringList summary;
+        if(model.durationTicks)summary<<text(Duration)+QString::fromUtf8(ValueSeparator)+sequentialTime(*model.durationTicks);
+        if(model.logicalLength)summary<<text(Capacity)+QString::fromUtf8(ValueSeparator)+QLocale().formattedDataSize(*model.logicalLength);
+        summary<<text(Segments)+QString::fromUtf8(ValueSeparator)+QString::number(model.segments.size());
+        for(std::size_t index=0;index<SequentialSummaryKeys.size();++index){const auto found=model.metadata.find(SequentialSummaryKeys[index]);if(found!=model.metadata.end() && !found->second.empty())summary<<text(SequentialSummaryLabels[index])+QString::fromUtf8(ValueSeparator)+QString::fromStdString(found->second);}
+        summary_->setText(summary.join(QString::fromUtf8(InfoSeparator)));
+        QStringList sequentialHeaders;for(const auto key:SequentialColumns)sequentialHeaders<<text(key);sectors_->setHorizontalHeaderLabels(sequentialHeaders);
+        for(int column=0;column<sectors_->columnCount();++column)sectors_->setColumnHidden(column,false);
+        for(std::size_t index=0;index<SequentialLabels.size();++index){legendLabels_[index]->setText(text(SequentialLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SequentialBrushes[index]));legendDots_[index]->setPalette(palette);legendLabels_[index]->parentWidget()->setVisible(!session_->showWaveform);}
+        sectors_->setRowCount(static_cast<int>(model.segments.size()));
+        for(std::size_t index=0;index<model.segments.size();++index){const auto& item=model.segments[index];const auto kind=static_cast<std::size_t>(item.kind);
+            const QStringList values{item.startTicks?sequentialTime(*item.startTicks):QString::number(item.position),item.durationTicks?sequentialTime(*item.durationTicks):QString{},text(SequentialLabels[kind]),item.face?QString::number(*item.face):QString{},item.track?QString::number(*item.track):QString{},item.channel?QString::number(*item.channel):QString{},item.storedLength?QLocale().formattedDataSize(*item.storedLength):QString{}};
+            for(int column=0;column<values.size();++column)sectors_->setItem(static_cast<int>(index),column,new QTableWidgetItem(values[column]));sectors_->item(static_cast<int>(index),InspectorColumn)->setForeground(themes_.data()->color(SequentialBrushes[kind]));
+        }
+        QStringList details;
+        if(session_->selectedElement && *session_->selectedElement<model.segments.size()){const auto selected=*session_->selectedElement;sectors_->setCurrentCell(static_cast<int>(selected),0);const auto& item=model.segments[selected];for(std::size_t index=0;index<SequentialMetadataKeys.size();++index){const auto found=item.metadata.find(SequentialMetadataKeys[index]);if(found!=item.metadata.end() && !found->second.empty())details<<text(SequentialMetadataLabels[index])+QString::fromUtf8(ValueSeparator)+QString::fromStdString(found->second);}}
+        elementDetails_->setText(details.join(QString::fromUtf8(InfoSeparator)));showBytes(session_->preview);return;
+    }
     if(snapshot.linear){
         const auto& model=*snapshot.linear;const bool optical=descriptor.representationKind==MediaEngine::RepresentationKind::OpticalTracks;
         for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->hide();

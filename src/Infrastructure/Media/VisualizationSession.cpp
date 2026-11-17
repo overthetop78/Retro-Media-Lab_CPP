@@ -41,6 +41,7 @@ void VisualizationSession::sourceChanged() {
         }
         if(value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::Blocks || value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::OpticalTracks)value.linear=MediaEngine::describeLinearVisualization(value.document,*value.descriptor,token);
         if (value.descriptor->fields().representationKind == MediaEngine::RepresentationKind::Sequential) {
+            value.sequential=MediaEngine::describeSequentialVisualization(value.document,*value.descriptor,token);
             try { value.tape = std::make_shared<const MediaEngine::MediaTapeSignal>(MediaEngine::readTapeAsync(path, token).get()); }
             catch (const MediaEngine::MediaError& error) { MediaEngine::checkCancellation(token); value.warning=MediaEngine::MessageInfo{std::string(MediaEngine::diagnosticKey(error.diagnostic().code)),error.diagnostic().arguments,MediaDomain}; }
         }
@@ -62,6 +63,7 @@ void VisualizationSession::poll() {
             auto result = pending_.get();
             if (!cancellation_.stop_requested()) {
                 snapshot_ = std::make_shared<const VisualizationSnapshot>(std::move(result));
+                showWaveform=snapshot_->sequential && snapshot_->sequential->segments.empty() && snapshot_->tape;
                 selectedElement.reset(); preview.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
             }
         } catch (const MediaEngine::MediaError& error) { if (!cancellation_.stop_requested()) captureError(error); }
@@ -85,12 +87,13 @@ void VisualizationSession::selectSector(std::uint64_t logical){if(!snapshot_ || 
 void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && value >= 1 && value <= MaximumZoom) { zoom = value; if (value == 1) { panX = 0; panY = 0; } publish(); } }
 void VisualizationSession::setRevolution(std::size_t value) { revolution = value; publish(); }
 void VisualizationSession::setPan(double x, double y) { if (std::isfinite(x) && std::isfinite(y)) { panX = x; panY = y; publish(); } }
+void VisualizationSession::setWaveform(bool value){if(value==showWaveform)return;showWaveform=value;zoom=1;panX=0;panY=0;publish();}
 void VisualizationSession::inspect(std::size_t element) {
-    if (!snapshot_ || !snapshot_->linear || pending_.valid() || element >= snapshot_->descriptor->fields().elements.size()) return;
+    if (!snapshot_ || (!snapshot_->linear && !snapshot_->sequential) || pending_.valid() || element >= snapshot_->descriptor->fields().elements.size()) return;
     if(selectedElement!=element){selectedElement=element;preview.clear();error_.reset();}
     if(inspection_.valid()){publish();return;}
     inspecting_ = element;
-    inspection_ = MediaEngine::readVisualizationPreviewAsync(snapshot_->document, snapshot_->descriptor->fields().elements[element], cancellation_.get_token());
+    inspection_ = snapshot_->sequential?MediaEngine::readSequentialVisualizationPreviewAsync(snapshot_->document,element,cancellation_.get_token()):MediaEngine::readVisualizationPreviewAsync(snapshot_->document, snapshot_->descriptor->fields().elements[element], cancellation_.get_token());
     timer_.start();publish();
 }
 ExplorerSession::Subscription VisualizationSession::subscribe(std::function<void()> callback) {

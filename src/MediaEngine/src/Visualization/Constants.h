@@ -2,6 +2,7 @@
 #include <cstddef>
 #include <string_view>
 namespace RetroMediaLab::MediaEngine::Visualization::Constants {
+inline constexpr double MinimumSequentialLength=1;
 inline constexpr std::size_t PreviewBytes=4096;
 inline constexpr std::size_t ReadBufferSize=64*1024;
 inline constexpr std::size_t LaneFace=0,LaneTrack=1,LaneChannel=2;

@@ -4,6 +4,7 @@
 #include <RetroMediaLab/MediaEngine/SectorVisualization.h>
 #include <RetroMediaLab/MediaEngine/TapeSignal.h>
 #include <RetroMediaLab/MediaEngine/LinearVisualization.h>
+#include <RetroMediaLab/MediaEngine/SequentialVisualization.h>
 namespace RetroMediaLab::Infrastructure {
 struct VisualizationSnapshot {
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> source;
@@ -13,6 +14,7 @@ struct VisualizationSnapshot {
     std::optional<MediaEngine::MessageInfo> warning;
     std::optional<MediaEngine::SectorVisualizationModel> sectors;
     std::optional<MediaEngine::LinearVisualizationModel> linear;
+    std::optional<MediaEngine::SequentialVisualizationModel> sequential;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API VisualizationSession final : public QObject {
 public:
@@ -29,6 +31,8 @@ public:
     void setRevolution(std::size_t);
     void setPan(double x, double y);
     void inspect(std::size_t element);
+    void setWaveform(bool);
+    bool showWaveform=false;
     std::int32_t surface = 0;
     std::int64_t position = 0;
     std::size_t revolution = 0;

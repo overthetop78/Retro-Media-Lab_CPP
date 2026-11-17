@@ -28,7 +28,7 @@ private:
     QLabel *summary_,*elementDetails_,*status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_;
     QPushButton *open_, *reset_, *zoomIn_, *zoomOut_;
     QSpinBox *side_, *track_;
-    QComboBox* revolutions_;
+    QComboBox *revolutions_,*representation_;
     QTableWidget* sectors_;
     HexGrid* hex_;
     std::vector<const MediaEngine::DiskSectorInfo*> rows_;

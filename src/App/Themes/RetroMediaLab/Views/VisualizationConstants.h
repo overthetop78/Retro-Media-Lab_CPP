@@ -1,6 +1,18 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::VisualizationConstants {
+inline constexpr int SequentialLines=6,SequentialTimeDigits=2,SequentialMillisecondDigits=3,SecondsPerMinute=60,SecondsPerHour=3600,MillisecondsPerSecond=1000;
+inline constexpr double SequentialMargin=24,SequentialLaneGap=8,SequentialGapRatio=.25,SequentialBandMaximum=42,SequentialMinimumPart=.25;
+inline constexpr int SequentialAlpha=210,DecimalBase=10;
+inline constexpr auto DisplayMode="Visual.Representation",Segments="Visual.SegmentCountLabel",Signal="Visual.SequentialSignal",Duration="Visual.DurationLabel",TimePattern="%1:%2:%3.%4";
+inline constexpr auto SequentialBackground="Theme.SequentialBackgroundBrush",SequentialTape="Theme.SequentialTapeBrush";
+inline constexpr std::array SequentialLabels{"Visual.SequentialSegmentKind.Unknown","Visual.SequentialSignal","Visual.SequentialSilence","Visual.SequentialDecoded"};
+inline constexpr std::array SequentialBrushes{"Theme.SequentialUnknownBrush","Theme.SequentialSignalBrush","Theme.SequentialSilenceBrush","Theme.SequentialDecodedBrush"};
+inline constexpr std::array SequentialColumns{"Visual.StartLabel","Visual.DurationLabel","Visual.SegmentKindLabel","Visual.SideLabel","Visual.TrackLabel","Visual.ChannelLabel","Visual.SizeLabel"};
+inline constexpr std::array SequentialMetadataKeys{"chunkId","baudRate","auxiliary"};
+inline constexpr std::array SequentialSummaryKeys{"internalName","baudRates","chunkCount","chunkTypes","dataChunkCount","fskChunkCount"};
+inline constexpr std::array SequentialSummaryLabels{"Explorer.InternalName","Explorer.BaudRates","Explorer.Chunks","Explorer.Chunks","Explorer.DataBlocks","Explorer.FskBlocks"};
+inline constexpr std::array SequentialMetadataLabels{"Explorer.ChunkType","Explorer.BaudRate","Explorer.DelayBeforeBlock"};
 inline constexpr std::array BlockLabels{"Visual.BlockState.Unknown","Visual.BlockState.Available","Visual.BlockState.Allocated"};
 inline constexpr std::array OpticalLabels{"Visual.OpticalTrackKind.Unknown","Visual.OpticalDataTrack","Visual.OpticalAudioTrack"};
 inline constexpr std::array BlockBrushes{"Theme.BlockUnknownBrush","Theme.BlockAvailableBrush","Theme.BlockAllocatedBrush"};

@@ -95,6 +95,12 @@
     - [x] Modifier `WorkspaceState.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et `MediaPageConstants.h` : bouton de lecture/arrêt avec confirmation, lecteur sélectionné, console et état conservé à la reconstruction du thème.
     - [x] Créer temporairement `build/verification-explorer-read/main.cpp`, son exécutable et ses sorties : fournir un faux outil de capture et vérifier succès, arrêt, choix strict du moteur et durée de vie du fichier temporaire sans accès matériel.
     - [x] Supprimer le programme, l'exécutable et leurs artefacts temporaires après utilisation.
+  - [x] Inspection et rendu des bandes
+    - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/SequentialVisualization.h` et `src/MediaEngine/src/Visualization/SequentialInspection.cpp`, puis modifier le CMake et `LinearProviders.cpp` : décrire les segments/voies, leurs métadonnées et la disposition temporelle ou logique du C#, accepter les durées nulles par une longueur minimale et lire un aperçu borné du segment sélectionné.
+    - [x] Modifier `VisualizationSession.h` et `.cpp` : conserver le modèle séquentiel, la sélection, l'aperçu et le choix segments/signal indépendamment du thème.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/SequentialGraph.h` et `.cpp`, puis modifier `MediaGraph.cpp`, `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h`, le CMake et les palettes : bandes par voie sur lignes repliées, pointage partagé, tableau et métadonnées traduits, choix du signal existant.
+    - [x] Créer temporairement `build/verification-sequential-visualization/main.cpp`, son exécutable et son WAV : vérifier dispositions temporelle/logique, aperçu, pointage et affichage ; conserver un petit rendu de référence dans `docs/references/retro-media-lab/media/screenshots/`.
+    - [x] Supprimer le programme, l'exécutable, le WAV et leurs artefacts temporaires après utilisation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
