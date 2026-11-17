@@ -7,6 +7,7 @@ set(app_sources
   Shared/Controls/TerminalView.cpp
   Shared/Controls/StatusIndicator.cpp
   Shared/Navigation/WorkspacePages.cpp
+  Shared/Localization/MediaText.cpp
   Themes/ThemeService.cpp
 )
 add_library(RetroMediaLab.Gui OBJECT ${app_sources})
@@ -47,6 +48,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/ExplorerPage.cpp
   Themes/RetroMediaLab/Views/VisualizationPage.cpp
   Themes/RetroMediaLab/Views/MediaGraph.cpp
+  Themes/RetroMediaLab/Views/CapturePage.cpp
   Themes/RetroMediaLab/Views/StatusBar.cpp
   Themes/RetroMediaLab/RetroMediaLabStyle.cpp
   Themes/RetroMediaLab/RetroMediaLabLayout.cpp

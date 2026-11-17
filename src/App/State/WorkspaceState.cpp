@@ -1,8 +1,20 @@
 #include <ErrorKeys.h>
 #include "WorkspaceState.h"
+#include "Media/CaptureSession.h"
+#include <RetroMediaLab/Translations/TranslationService.h>
 #include <algorithm>
 #include <stdexcept>
 namespace RetroMediaLab {
+void WorkspaceState::ensureMediaOperations(Translations::TranslationService& translations) {
+    if(!greaseweazleTools)greaseweazleTools=std::make_shared<GreaseweazleTools>(logsDirectory,[this]{return logging();},[&translations](const QString& key){return QString::fromStdString(translations.text(key.toStdString()));});
+    const auto initialize=[this](auto& session,Infrastructure::CaptureMode mode) {
+        if(session)return;
+        session=std::make_shared<Infrastructure::CaptureSession>(mode,greaseweazleTools);
+        session->draft.directory=defaultImageDirectory();
+        session->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
+    };
+    initialize(reading,Infrastructure::CaptureMode::Read);initialize(writing,Infrastructure::CaptureMode::Write);
+}
 bool WorkspaceState::hasGeometry() const noexcept { return !mainWindowGeometry.isEmpty(); }
 void WorkspaceState::setDefaultImageDirectory(QString directory) {
     if (directory.contains(QChar::Null)) throw std::invalid_argument(ErrorKeys::InvalidImageDirectory);

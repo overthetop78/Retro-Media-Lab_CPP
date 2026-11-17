@@ -26,5 +26,6 @@ private:
     QString initialStatus_;
     Translations::TranslationService::Subscription languageSubscription_;
     ThemeService::Subscription themeSubscription_;
+    ConsoleState::Subscription outputSubscription_;
 };
 }

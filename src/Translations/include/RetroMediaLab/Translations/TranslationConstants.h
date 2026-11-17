@@ -1,6 +1,8 @@
 #pragma once
 // Technical constants; displayed text is resolved through translation catalogs.
 namespace RetroMediaLab::TranslationConstants {
+inline constexpr auto MediaEngine = "MediaEngine";
+inline constexpr auto ArgumentPattern = "{%1}";
 inline constexpr auto App = "App";
 inline constexpr auto TranslationsLanguagesJson = ":/Translations/Languages.json";
 inline constexpr auto Code = "code";

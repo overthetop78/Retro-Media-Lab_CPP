@@ -37,7 +37,9 @@ public:
     RETROMEDIALAB_INFRASTRUCTURE_API void setValue(const QString& verb, const QString& field, const QString& value);
     RETROMEDIALAB_INFRASTRUCTURE_API void setEnabled(const QString& verb, const QString& field, bool);
     RETROMEDIALAB_INFRASTRUCTURE_API void execute(const QString& verb, const HardwareSettings&, const QString& deviceId);
+    RETROMEDIALAB_INFRASTRUCTURE_API void executeCommand(const QString& operation, const GwToolCommand& command);
     RETROMEDIALAB_INFRASTRUCTURE_API void stop();
+    RETROMEDIALAB_INFRASTRUCTURE_API void abortAndWait();
     RETROMEDIALAB_INFRASTRUCTURE_API QString activeOperation() const;
     RETROMEDIALAB_INFRASTRUCTURE_API Subscription subscribe(std::function<void()>);
 private:

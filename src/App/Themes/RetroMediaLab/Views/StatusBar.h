@@ -12,5 +12,6 @@ private:
     Translations::TranslationService::Subscription languageSubscription_;
     ThemeService::Subscription themeSubscription_;
     WorkspaceState::DirectorySubscription hardwareSubscription_;
+    WorkspaceState::DirectorySubscription operationSubscription_;
 };
 }

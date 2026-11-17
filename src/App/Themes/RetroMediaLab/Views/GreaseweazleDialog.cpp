@@ -23,7 +23,7 @@ GreaseweazleDialog::GreaseweazleDialog(ThemeService& themes, Translations::Trans
     setWindowModality(Qt::WindowModal);
     setWindowIcon(parent->windowIcon());
     setSizeGripEnabled(true);
-    if (!state.greaseweazleTools) state.greaseweazleTools = std::make_shared<GreaseweazleTools>(state.logsDirectory, [&state] { return state.logging(); }, [&translations](const QString& key) { return QString::fromStdString(translations.text(key.toStdString())); });
+    state.ensureMediaOperations(translations);
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(PreferencesLayout::OuterPadding, PreferencesLayout::OuterPadding, PreferencesLayout::OuterPadding, PreferencesLayout::OuterPadding);
     auto* readerRow = new QHBoxLayout;

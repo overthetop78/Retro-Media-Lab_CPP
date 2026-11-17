@@ -2,6 +2,7 @@
 #include "WorkspaceTabs.h"
 #include "ExplorerPage.h"
 #include "VisualizationPage.h"
+#include "CapturePage.h"
 #include "Shared/Navigation/WorkspacePages.h"
 #include "../ThemeIcons.h"
 namespace RetroMediaLab {
@@ -17,6 +18,7 @@ WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationServ
             QWidget* view;
             if (id == AppConstants::Explorer) view = new ExplorerPage(themes, translations, state, this);
             else if (id == AppConstants::Visualize) view = new VisualizationPage(themes, translations, state, this);
+            else if (id == AppConstants::Read || id == AppConstants::Write) view = new CapturePage(id == AppConstants::Read ? Infrastructure::CaptureMode::Read : Infrastructure::CaptureMode::Write,themes,translations,state,[this](const QString& target){for(int index=0;index<count();++index)if(widget(index)->objectName()==target){setCurrentIndex(index);break;}},this);
             else view = new QWidget(this);
             view->setObjectName(id);
             view->setAutoFillBackground(true);

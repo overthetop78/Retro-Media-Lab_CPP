@@ -1,5 +1,6 @@
 #pragma once
 namespace RetroMediaLab::GwToolsConstants {
+inline constexpr auto Read = "read", Write = "write", Convert = "convert";
 inline constexpr auto Info = "info";
 inline constexpr auto Bandwidth = "bandwidth";
 inline constexpr auto Rpm = "rpm";

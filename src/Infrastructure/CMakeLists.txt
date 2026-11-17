@@ -1,6 +1,8 @@
 add_library(RetroMediaLab.Infrastructure SHARED
   Media/ExplorerSession.cpp
   Media/VisualizationSession.cpp
+  Media/MediaCommands.cpp
+  Media/CaptureSession.cpp
   State/PreferencesStore.cpp
   Engines/EngineSettings.cpp
   Maintenance/GreaseweazleTools.cpp

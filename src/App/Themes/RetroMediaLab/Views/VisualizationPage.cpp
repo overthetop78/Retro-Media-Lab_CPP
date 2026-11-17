@@ -1,6 +1,7 @@
 #include "VisualizationPage.h"
 #include "VisualizationConstants.h"
 #include "Shared/Controls/Card.h"
+#include "Shared/Localization/MediaText.h"
 #include <Errors.h>
 #include <QComboBox>
 #include <QFileDialog>
@@ -70,10 +71,7 @@ void VisualizationPage::refresh() {
     status_->setText(session_->opening()->busy() || session_->busy()?text(Loading):session_->opening()->path().isEmpty()?text(Empty):session_->opening()->path());
     const auto error=session_->error()?session_->error():session_->snapshot()?session_->snapshot()->warning:std::optional<MediaEngine::MessageInfo>{};
     if (error) {
-        auto value=QString::fromStdString(translations_.text(error->resourceKey,error->translationDomain));
-        for(std::size_t index=0;index<error->arguments.size();++index) value.replace(QString::fromLatin1(ArgumentPrefix)+QString::number(index)+QString::fromLatin1(ArgumentSuffix),QString::fromStdString(error->arguments[index]));
-        if(error->resourceKey==UnexpectedKey)value.replace(QString::fromLatin1(ErrorDetail),error->arguments.empty()?QString{}:QString::fromStdString(error->arguments.front()));
-        status_->setText(value);
+        status_->setText(mediaText(translations_,*error));
     } else if(!session_->opening()->error().isEmpty()) status_->setText(QString::fromStdString(Errors::render(translations_.language(),session_->opening()->error().toStdString())));
     QStringList headers; for(const auto key:Columns)headers.push_back(text(key)); sectors_->setHorizontalHeaderLabels(headers);
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);

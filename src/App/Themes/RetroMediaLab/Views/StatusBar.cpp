@@ -2,6 +2,8 @@
 #include "StatusBar.h"
 #include "Shared/Controls/StatusIndicator.h"
 #include "../ThemeIcons.h"
+#include "Maintenance/GreaseweazleTools.h"
+#include "Maintenance/GwToolsConstants.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
@@ -55,7 +57,12 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
         hardware->setToolTip(selector->count() ? selector->currentText() : QString());
     };
     connect(selector, &QComboBox::currentIndexChanged, this, [updateSelection] { updateSelection(); });
-    const auto refresh = [this, ready, console, selector, updateSelection, &state, &themes, &translations] {
+    const auto refreshOperation=[ready,&state,&translations] {
+        const auto active=state.greaseweazleTools?state.greaseweazleTools->activeOperation():QString{};
+        const auto* key=active==EngineConstants::Read?AppConstants::TabRead:active==EngineConstants::Write?AppConstants::TabWrite:active==GwToolsConstants::Convert?AppConstants::TabConvert:active.isEmpty()?ThemeConstants::StatusReadyShort:GwToolsConstants::RunningKey;
+        ready->setText(QString::fromStdString(translations.text(key)));
+    };
+    const auto refresh = [this, refreshOperation, console, selector, updateSelection, &state, &themes, &translations] {
         const QSignalBlocker blocked(selector);
         selector->clear();
         QMap<QString, QMap<QString, int>> numbers;
@@ -80,7 +87,7 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
         const auto previous = selector->findData(state.selectedHardwareDeviceId);
         selector->setCurrentIndex(previous >= 0 ? previous : selector->count() ? 0 : -1);
         updateSelection();
-        ready->setText(QString::fromStdString(translations.text(ThemeConstants::StatusReadyShort)));
+        refreshOperation();
         const auto label = QString::fromStdString(translations.text(ThemeConstants::CommonConsole));
         console->setToolTip(label);
         console->setAccessibleName(label);
@@ -94,6 +101,7 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
     languageSubscription_ = translations.subscribe(refresh);
     themeSubscription_ = themes.subscribe(refresh);
     hardwareSubscription_ = state.subscribeToHardware(refresh);
+    if(state.greaseweazleTools)operationSubscription_=state.greaseweazleTools->subscribe(refreshOperation);
 }
 }
 

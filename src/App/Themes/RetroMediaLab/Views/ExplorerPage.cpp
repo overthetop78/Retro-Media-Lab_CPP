@@ -1,6 +1,7 @@
 #include "ExplorerPage.h"
 #include "MediaPageConstants.h"
 #include "Shared/Controls/Card.h"
+#include "Shared/Localization/MediaText.h"
 #include <Errors.h>
 #include <QComboBox>
 #include <QDateTime>
@@ -142,9 +143,7 @@ void ExplorerPage::refresh() {
     else if (!session_->error().isEmpty()) {
         auto detail = QString::fromStdString(Errors::render(translations_.language(), session_->error().toStdString()));
         if (const auto& message = session_->errorMessage()) {
-            detail = QString::fromStdString(translations_.text(message->resourceKey, message->translationDomain));
-            for (std::size_t i = 0; i < message->arguments.size(); ++i)
-                detail.replace(QString::fromLatin1(ArgumentPattern).arg(i), QString::fromStdString(message->arguments[i]));
+            detail = mediaText(translations_,*message);
         }
         status_->setText(text(LoadFailed).replace(QString::fromLatin1(Argument), detail));
     }

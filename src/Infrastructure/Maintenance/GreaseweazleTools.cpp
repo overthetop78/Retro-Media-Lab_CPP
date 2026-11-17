@@ -1,4 +1,5 @@
 #include "GreaseweazleTools.h"
+#include "Media/MediaCommands.h"
 #include "GwToolsConstants.h"
 #include "Logging/ConsoleLogSession.h"
 #include "Logging/DiagnosticLog.h"
@@ -24,36 +25,6 @@ int integer(const QString& text, bool positive = false) {
     bool ok = false; const auto result = text.toInt(&ok);
     if (!ok || !QRegularExpression(IntegerPattern).match(text.trimmed()).hasMatch() || result < 0 || (positive && result == 0)) invalid();
     return result;
-}
-QStringList elements(const QString& text) { const auto result = text.split(Colon); if (result.contains(QString())) invalid(); return result; }
-QPair<QString,QString> assignment(const QString& text) { const auto values = text.split(Equals); if (values.size() != AssignmentParts || values[0].isEmpty() || values[1].isEmpty()) invalid(); return {values[0],values[1]}; }
-void tracks(const QString& text) {
-    QSet<QString> keys;
-    for (const auto& part : elements(text)) {
-        if (part == HeadSwap) { if (keys.contains(part)) invalid(); keys.insert(part); continue; }
-        const auto [key,value] = assignment(part); if (keys.contains(key)) invalid(); keys.insert(key);
-        if (key == CylinderKey || key == HeadKey) {
-            const QRegularExpression pattern(key == CylinderKey ? CylinderPattern : HeadPattern);
-            for (const auto& range : value.split(Comma)) {
-                const auto match = pattern.match(range); if (!match.hasMatch()) invalid();
-                bool ok = false; const auto first = match.captured(1).toInt(&ok); if (!ok) invalid();
-                if (!match.captured(LastRangeGroup).isEmpty()) { const auto last = match.captured(LastRangeGroup).toInt(&ok); if (!ok || first > last) invalid(); }
-            }
-        } else if (key == StepKey) { if (!QRegularExpression(StepPattern).match(value).hasMatch()) invalid(); }
-        else if (QRegularExpression(OffsetKeyPattern).match(key).hasMatch()) { if (!QRegularExpression(OffsetPattern).match(value).hasMatch()) invalid(); }
-        else invalid();
-    }
-    if (!keys.contains(CylinderKey) || !keys.contains(HeadKey)) invalid();
-}
-void pll(const QString& text) {
-    QSet<QString> keys;
-    for (const auto& part : elements(text)) {
-        const auto [key,value] = assignment(part); if (keys.contains(key)) invalid(); keys.insert(key);
-        bool ok = false;
-        if (key == PeriodKey || key == PhaseKey) { value.toInt(&ok); if (!ok) invalid(); }
-        else if (key == LowpassKey) { const auto number = value.toDouble(&ok); if (!ok || !qIsFinite(number) || number <= 0) invalid(); }
-        else invalid();
-    }
 }
 #ifdef Q_OS_WIN
 struct ProcessJob {
@@ -109,11 +80,11 @@ GwToolCommand GreaseweazleTools::build(const QString& verb, const QMap<QString,Q
     else if (verb == Delays) { for (const auto& parameter : found->parameters) if (enabled.contains(parameter.id)) add(parameter.id, number(parameter.id)); }
     else if (verb == Align) {
         if ((enabled.contains(FakeIndexParameter) && enabled.contains(HardSectorsParameter)) || (enabled.contains(DenselParameter) && enabled.contains(GenTg43Parameter))) invalid();
-        const auto spec = required(values, TracksParameter); tracks(spec); add(TracksParameter, spec); add(RevsParameter, number(RevsParameter, true)); add(ReadsParameter, number(ReadsParameter, true));
+        const auto spec = required(values, TracksParameter); Infrastructure::validateGwTrackSpec(spec); add(TracksParameter, spec); add(RevsParameter, number(RevsParameter, true)); add(ReadsParameter, number(ReadsParameter, true));
         for (const auto* key : {FormatParameter, DiskdefsParameter, FakeIndexParameter, AdjustSpeedParameter, PllParameter, DenselParameter}) if (enabled.contains(key)) {
             const auto value = required(values, key);
             if (QString(key) == DenselParameter && value != High && value != Low) invalid();
-            if (QString(key) == PllParameter) pll(value);
+            if (QString(key) == PllParameter) Infrastructure::validateGwPllSpec(value);
             if (QString(key) == FakeIndexParameter || QString(key) == AdjustSpeedParameter) { const auto match = QRegularExpression(SpeedPattern).match(value); bool ok = false; const auto speed = match.captured(1).toDouble(&ok); if (!match.hasMatch() || !ok || !qIsFinite(speed) || speed <= 0) invalid(); }
             add(key, value);
         }
@@ -144,6 +115,7 @@ GreaseweazleTools::GreaseweazleTools(QString directory, std::function<LoggingSet
     : data_(std::make_unique<Data>()) {
     data_->directory = std::move(directory); data_->logging = std::move(logging); data_->translate = std::move(translate);
     for (const auto& tool : gwToolDefinitions()) { GwToolDraft draft; draft.summaryKey = ReadyKey; for (const auto& parameter : tool.parameters) if (parameter.kind != GwParameterKind::Flag) draft.values.insert(parameter.id, parameter.initial); data_->drafts.insert(tool.id, draft); }
+    for (const auto* operation : {Read, Write, Convert}) { GwToolDraft draft; draft.summaryKey = ReadyKey; data_->drafts.insert(operation, draft); }
     data_->process.setProcessChannelMode(QProcess::MergedChannels); data_->stopTimer.setSingleShot(true);
     connect(&data_->process, &QProcess::readyReadStandardOutput, this, [this] { output(); });
     connect(&data_->process, &QProcess::started, this, [this] { data_->group = data_->process.processId(); });
@@ -177,8 +149,13 @@ GwToolCommand GreaseweazleTools::command(const QString& verb, const HardwareSett
     const auto& current = draft(verb); return build(verb, current.values, current.enabled, hardware.gwPath, found->address, found->selection);
 }
 void GreaseweazleTools::execute(const QString& verb, const HardwareSettings& hardware, const QString& id) {
+    executeCommand(verb, command(verb, hardware, id));
+}
+void GreaseweazleTools::executeCommand(const QString& verb, const GwToolCommand& built) {
     if (!data_->active.isEmpty()) throw std::runtime_error(BusyKey);
-    const auto built = command(verb, hardware, id);
+    draft(verb);
+    if (!QFileInfo(built.executable).isFile() || built.executable.contains(QChar::Null)) throw std::runtime_error(StartFailedKey);
+    for (const auto& argument : built.arguments) if (argument.contains(QChar::Null)) invalid();
     try {
 #ifdef Q_OS_WIN
     data_->job = std::make_unique<ProcessJob>();
@@ -201,6 +178,17 @@ void GreaseweazleTools::execute(const QString& verb, const HardwareSettings& har
     publish();
 }
 QString GreaseweazleTools::activeOperation() const { return data_->active; }
+void GreaseweazleTools::abortAndWait() {
+    if(data_->active.isEmpty())return;
+    data_->cancelled=true;data_->stopTimer.stop();
+#ifdef Q_OS_WIN
+    data_->job.reset();
+#else
+    if(data_->group>0)::kill(-data_->group,SIGKILL);
+#endif
+    if(data_->process.state()!=QProcess::NotRunning){data_->process.kill();data_->process.waitForFinished(InfiniteWait);}
+    if(!data_->active.isEmpty())finish(0,false);
+}
 void GreaseweazleTools::stop() {
     if (data_->active.isEmpty() || data_->cancelled) return; data_->cancelled = true;
 #ifdef Q_OS_WIN

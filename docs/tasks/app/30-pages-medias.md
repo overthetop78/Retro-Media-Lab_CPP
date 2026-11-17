@@ -14,8 +14,20 @@
     - [ ] Modifier `ExplorerSession.h`, `ExplorerSession.cpp` et `ExplorerPage.cpp` : terminer les diagnostics, les détails étendus, le lien vers la lecture physique et la restauration de la sélection de fichier.
     - [ ] Modifier `ExplorerPage.cpp` et `MediaPageConstants.h` si nécessaire après vérification visuelle : état vide, rendu compact, changement de langue et reconstruction du thème.
   - [ ] Lecture et écriture
-    - [ ] Créer `src/Infrastructure/Media/CaptureSession.h` et `.cpp` : reprendre les requêtes et opérations du C# via les services matériels et MediaEngine.
-    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/CapturePage.h` et `.cpp` : destination/source, profil, options avancées, exécution et annulation ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Modifier `src/Infrastructure/Maintenance/GreaseweazleTools.h`, `.cpp` et `GwToolsConstants.h` : exposer l'exécution d'une commande validée pour Lecture/Écriture/Conversion, avec le lanceur, les journaux et le nettoyage déjà existants, sans ajouter d'onglets de maintenance.
+    - [x] Créer `src/Infrastructure/Media/MediaCommands.h`, `.cpp` et `MediaCommandConstants.h` : reprendre le validateur d'options et le tokenizer C#, mutualiser les spécifications déjà utilisées en maintenance.
+    - [x] Créer `src/Infrastructure/Media/CaptureSession.h` et `.cpp` : reprendre les requêtes et opérations du C# via les services matériels et MediaEngine.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/CapturePage.h` et `.cpp` : destination/source, profil, options avancées, exécution et annulation ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/CaptureConstants.h` : constantes de présentation et clés de traduction des deux pages.
+    - [x] Modifier `ConsoleState.h`, `TerminalView.h` et `.cpp` : notifications de commande/sortie et mise à jour du terminal existant en préservant sa sélection et son défilement.
+    - [x] Modifier `WorkspaceState.h`, les CMake App/Infrastructure et `audit_literals.py` : conserver les brouillons et compiler les nouveaux composants.
+    - [x] Créer `src/Translations/Catalogs/Constants/App/capture.json` et `Languages/*/App/capture.json` : reprendre les textes Lecture, Écriture, options et actions nécessaires depuis les RESX C#.
+    - [x] Créer `src/App/Shared/Localization/MediaText.h` et `.cpp` : rendu commun des diagnostics MediaEngine et des erreurs Infrastructure ; raccorder les vues médias et les constantes dans TranslationConstants.h.
+    - [x] Modifier `StatusBar.h` et `.cpp` : afficher l'opération active du lanceur commun au lieu de conserver Prêt pendant une opération.
+    - [x] Modifier `WorkspaceState.cpp`, `WorkspaceState.h`, `CapturePage.cpp` et `GreaseweazleDialog.cpp` : créer les sessions et leurs callbacks persistants dans App.dll, pour qu'aucun callback de session ne dépende du code d'un thème déchargé.
+    - [ ] Modifier `CaptureSession.h`, `.cpp`, `PreferencesStore.h`, `.cpp`, `WorkspaceState.cpp` et `ProfileSettingsPage.cpp` : persister et réexposer les profils enregistrés, raccorder leur gestion aux préférences.
+    - [ ] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
+    - [ ] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
   - [ ] Conversion
     - [ ] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
     - [ ] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.

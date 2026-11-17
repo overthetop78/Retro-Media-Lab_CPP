@@ -16,7 +16,8 @@
 #include <memory>
 #include <vector>
 namespace RetroMediaLab {
-namespace Infrastructure { class ExplorerSession; class VisualizationSession; }
+namespace Translations {class TranslationService;}
+namespace Infrastructure { class ExplorerSession; class VisualizationSession; class CaptureSession; }
 class GreaseweazleTools;
 // Session-owned state survives destruction of theme windows. Business models will live outside views.
 struct WorkspaceState {
@@ -27,6 +28,8 @@ struct WorkspaceState {
     ConsoleState console;
     bool preferencesOpen = false;
     std::shared_ptr<GreaseweazleTools> greaseweazleTools;
+    std::shared_ptr<Infrastructure::CaptureSession> reading,writing;
+    RETROMEDIALAB_APP_API void ensureMediaOperations(Translations::TranslationService&);
     bool greaseweazleOpen = false;
     int greaseweazleTab = 0;
     QString greaseweazleDeviceId;

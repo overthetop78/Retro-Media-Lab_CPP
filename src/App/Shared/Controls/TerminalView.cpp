@@ -82,6 +82,18 @@ TerminalView::TerminalView(ThemeService& themes, Translations::TranslationServic
     cursor.setPosition(qBound(0, state.commandPosition, commandEnd), QTextCursor::KeepAnchor);
     command_->setTextCursor(cursor);
     restoreScroll();
+    outputSubscription_=state.subscribe([this] {
+        if(command_->toPlainText()!=state_.commandPreview)command_->setPlainText(state_.commandPreview);
+        const auto previous=output_->toPlainText();
+        if(previous==state_.output)return;
+        const bool atEnd=output_->verticalScrollBar()->value()==output_->verticalScrollBar()->maximum();
+        const auto selection=output_->textCursor();
+        if(state_.output.startsWith(previous)) {
+            auto tail=output_->textCursor();tail.movePosition(QTextCursor::End);tail.insertText(state_.output.mid(previous.size()));
+            output_->setTextCursor(selection);
+        } else output_->setPlainText(state_.output);
+        if(atEnd)output_->verticalScrollBar()->setValue(output_->verticalScrollBar()->maximum());
+    });
 }
 void TerminalView::setCopyIcon(const QIcon& icon) { copy_->setIcon(icon); }
 void TerminalView::restoreScroll() {
