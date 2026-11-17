@@ -1,4 +1,5 @@
 add_library(RetroMediaLab.Infrastructure SHARED
+  Media/ExplorerSession.cpp
   State/PreferencesStore.cpp
   Engines/EngineSettings.cpp
   Maintenance/GreaseweazleTools.cpp
@@ -16,7 +17,7 @@ add_library(RetroMediaLab.Infrastructure SHARED
   Logging/LogPaths.cpp)
 target_compile_definitions(RetroMediaLab.Infrastructure PRIVATE RETROMEDIALAB_INFRASTRUCTURE_BUILD RETROMEDIALAB_APP_VERSION="${PROJECT_VERSION}")
 target_include_directories(RetroMediaLab.Infrastructure PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" include)
-target_link_libraries(RetroMediaLab.Infrastructure PUBLIC Qt6::Core RetroMediaLab.Runtime
+target_link_libraries(RetroMediaLab.Infrastructure PUBLIC Qt6::Core RetroMediaLab.Runtime RetroMediaLab.MediaEngine
   PRIVATE RetroMediaLab.Translations RetroMediaLab.Platform Qt6::Network RetroMediaLab.Archives)
 if(WIN32)
   target_sources(RetroMediaLab.Infrastructure PRIVATE Windows/HardwareDiscovery.cpp Windows/StorageCommands.cpp Windows/ElevatedDiskProbe.cpp)

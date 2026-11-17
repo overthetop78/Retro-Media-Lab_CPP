@@ -58,6 +58,7 @@ struct TranslationService::Implementation {
     std::string language;
     Strings constants;
     Strings localized;
+    std::map<std::string, std::unique_ptr<TranslationService>> domains;
     std::set<std::string> invariants;
     std::vector<std::weak_ptr<const std::function<void()>>> observers;
 };
@@ -81,12 +82,25 @@ void TranslationService::setLanguage(const std::string& language) {
     load(data.root / language, data.domain, candidate);
     data.localized.swap(candidate);
     data.language = language;
+    data.domains.clear();
     // A snapshot allows observers to detach/attach during notification.
     auto observers = data.observers;
     std::erase_if(data.observers, [](const auto& item) { return item.expired(); });
     for (const auto& observer : observers) if (const auto live = observer.lock()) (*live)();
 }
 std::string TranslationService::language() const { return implementation_->language; }
+std::string TranslationService::text(const std::string& key, const std::string& domain) const {
+    auto& data = *implementation_;
+    if (domain.empty() || domain == data.domain) return text(key);
+    validateSegment(domain);
+    auto found = data.domains.find(domain);
+    if (found == data.domains.end()) {
+        auto service = std::make_unique<TranslationService>(data.root, domain);
+        service->setLanguage(data.language);
+        found = data.domains.emplace(domain, std::move(service)).first;
+    }
+    return found->second->text(key);
+}
 std::string TranslationService::text(const std::string& key) const {
     const auto& data = *implementation_;
     if (!data.invariants.contains(key))

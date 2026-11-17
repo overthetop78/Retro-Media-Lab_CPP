@@ -1,5 +1,6 @@
 #include "../ThemeConstants.h"
 #include "WorkspaceTabs.h"
+#include "ExplorerPage.h"
 #include "Shared/Navigation/WorkspacePages.h"
 #include "../ThemeIcons.h"
 namespace RetroMediaLab {
@@ -12,7 +13,7 @@ WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationServ
     for (const auto& id : state.openPageIds) {
         for (const auto& page : workspacePages()) {
             if (id != page.id) continue;
-            auto* view = new QWidget(this);
+            auto* view = id == AppConstants::Explorer ? static_cast<QWidget*>(new ExplorerPage(themes, translations, state, this)) : new QWidget(this);
             view->setObjectName(id);
             view->setAutoFillBackground(true);
             addTab(view, themeIcon(id, themes.data()->color(ThemeConstants::MutedTextBrush)),

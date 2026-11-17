@@ -17,6 +17,7 @@ public:
     RETROMEDIALAB_TRANSLATIONS_API void setLanguage(const std::string& language);
     RETROMEDIALAB_TRANSLATIONS_API std::string language() const;
     RETROMEDIALAB_TRANSLATIONS_API std::string text(const std::string& key) const;
+    RETROMEDIALAB_TRANSLATIONS_API std::string text(const std::string& key, const std::string& domain) const;
     RETROMEDIALAB_TRANSLATIONS_API Subscription subscribe(std::function<void()> observer);
 private:
     struct Implementation;

@@ -1,0 +1,27 @@
+# Pages médias — portage depuis le C#
+
+- [ ] Raccorder les cinq pages aux services existants
+  - [ ] Exploration et état indépendant du thème
+    - [x] Créer `src/Infrastructure/Media/ExplorerSession.h` et `.cpp` : ouverture asynchrone par MediaEngine, annulation, résultat conservé et notification GUI.
+    - [x] Créer `src/Infrastructure/Media/MediaSessionConstants.h` : constantes techniques des opérations asynchrones.
+    - [x] Modifier `src/Infrastructure/CMakeLists.txt` : compiler la session et relier MediaEngine en privé.
+    - [x] Modifier `src/App/State/WorkspaceState.h` : conserver la session d'exploration pendant les changements de thème.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/ExplorerPage.h`, `.cpp` et `MediaPageConstants.h` : sélection du fichier et du volume, arbre des dossiers, contenu et détails traduits.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/WorkspaceTabs.cpp` et `src/App/CMakeLists.txt` : remplacer la page Explorateur vide et compiler sa vue.
+    - [x] Créer `src/Translations/Catalogs/Constants/App/explorer.json` et `src/Translations/Catalogs/Languages/*/App/explorer.json` : reprendre les libellés existants du C#, sans retraduire les textes déjà traduits.
+    - [x] Modifier `src/Translations/include/RetroMediaLab/Translations/TranslationService.h` et `src/Translations/src/TranslationService.cpp` : résoudre un texte de domaine média via le service existant, avec son repli et ses invariants.
+    - [x] Modifier `scripts/quality/audit_literals.py` : vérifier les deux nouveaux en-têtes comme définitions de constantes.
+    - [ ] Modifier `ExplorerSession.h`, `ExplorerSession.cpp` et `ExplorerPage.cpp` : terminer les diagnostics, les détails étendus, le lien vers la lecture physique et la restauration de la sélection de fichier.
+    - [ ] Modifier `ExplorerPage.cpp` et `MediaPageConstants.h` si nécessaire après vérification visuelle : état vide, rendu compact, changement de langue et reconstruction du thème.
+  - [ ] Lecture et écriture
+    - [ ] Créer `src/Infrastructure/Media/CaptureSession.h` et `.cpp` : reprendre les requêtes et opérations du C# via les services matériels et MediaEngine.
+    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/CapturePage.h` et `.cpp` : destination/source, profil, options avancées, exécution et annulation ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+  - [ ] Conversion
+    - [ ] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
+    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+  - [ ] Visualisation
+    - [ ] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
+    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+  - [ ] Finalisation
+    - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
+    - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
