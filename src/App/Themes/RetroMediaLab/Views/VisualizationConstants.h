@@ -1,6 +1,14 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::VisualizationConstants {
+inline constexpr std::array BlockLabels{"Visual.BlockState.Unknown","Visual.BlockState.Available","Visual.BlockState.Allocated"};
+inline constexpr std::array OpticalLabels{"Visual.OpticalTrackKind.Unknown","Visual.OpticalDataTrack","Visual.OpticalAudioTrack"};
+inline constexpr std::array BlockBrushes{"Theme.BlockUnknownBrush","Theme.BlockAvailableBrush","Theme.BlockAllocatedBrush"};
+inline constexpr std::array OpticalBrushes{"Theme.BlockUnknownBrush","Theme.OpticalDataBrush","Theme.OpticalAudioBrush"};
+inline constexpr std::array LinearColumns{"Visual.StartLabel","Visual.LengthLabel","Visual.SessionLabel","Visual.TrackLabel","Visual.StateLabel","Visual.PartitionTableLabel","Visual.FileSystemLabel"};
+inline constexpr auto BlocksUnit="Visual.BlocksUnit",SectorsUnit="Visual.SectorsUnit",PartitionNumber="Visual.PartitionNumberLabel",Pregap="Visual.OpticalPregap";
+inline constexpr auto Capacity="Visual.CapacityLabel",Faces="Visual.FaceCountLabel",Layers="Visual.LayerCountLabel",TrackCount="Visual.TrackCountLabel",AssociatedFiles="Visual.AssociatedFilesTitle",Origin="Visual.VolumeOriginLabel",Start="Visual.StartLabel",Length="Visual.LengthLabel",Geometry="CHS",InfoSeparator=" · ",ValueSeparator=": ",GeometrySeparator=" × ";
+inline constexpr int LinearStateColumn=4;
 inline constexpr auto Open = "Visual.OpenImage", Empty = "Visual.NoFile", Loading = "Visual.Loading", Inspector = "Visual.Inspector";
 inline constexpr auto Side = "Visual.SideLabel", Track = "Visual.TrackLabel", Sector = "Visual.SectorLabel", Size = "Visual.SizeLabel";
 inline constexpr auto Revolution = "Visual.RevolutionLabel", Reset = "Common.Reset", Data = "Visual.StructureData";

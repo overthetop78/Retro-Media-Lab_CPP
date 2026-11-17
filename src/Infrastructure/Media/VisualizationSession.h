@@ -3,7 +3,7 @@
 #include <RetroMediaLab/MediaEngine/MediaVisualization.h>
 #include <RetroMediaLab/MediaEngine/SectorVisualization.h>
 #include <RetroMediaLab/MediaEngine/TapeSignal.h>
-#include <map>
+#include <RetroMediaLab/MediaEngine/LinearVisualization.h>
 namespace RetroMediaLab::Infrastructure {
 struct VisualizationSnapshot {
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> source;
@@ -12,6 +12,7 @@ struct VisualizationSnapshot {
     std::shared_ptr<const MediaEngine::MediaTapeSignal> tape;
     std::optional<MediaEngine::MessageInfo> warning;
     std::optional<MediaEngine::SectorVisualizationModel> sectors;
+    std::optional<MediaEngine::LinearVisualizationModel> linear;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API VisualizationSession final : public QObject {
 public:
@@ -34,7 +35,8 @@ public:
     double zoom = 1;
     double panX = 0, panY = 0;
     std::optional<std::uint64_t> selectedSector;
-    std::map<std::size_t, bool> inspectedElements;
+    std::optional<std::size_t> selectedElement;
+    std::vector<std::uint8_t> preview;
 private:
     void sourceChanged();
     void poll();
@@ -45,7 +47,7 @@ private:
     std::shared_ptr<const VisualizationSnapshot> snapshot_;
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> requested_;
     std::future<VisualizationSnapshot> pending_;
-    std::future<bool> inspection_;
+    std::future<std::vector<std::uint8_t>> inspection_;
     std::size_t inspecting_ = 0;
     std::optional<MediaEngine::MessageInfo> error_;
     std::stop_source cancellation_;

@@ -16,6 +16,7 @@ public:
 private:
     void refresh();
     void showSector(int);
+    void showBytes(const std::vector<std::uint8_t>&);
     QString text(const char*) const;
     Translations::TranslationService& translations_;
     ThemeService& themes_;
@@ -23,7 +24,7 @@ private:
     std::array<QLabel*,VisualizationConstants::SectorLabels.size()> legendDots_,legendLabels_;
     ThemeService::Subscription themeSubscription_;
     std::shared_ptr<Infrastructure::VisualizationSession> session_;
-    QLabel *status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_;
+    QLabel *summary_,*elementDetails_,*status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_;
     QPushButton *open_, *reset_, *zoomIn_, *zoomOut_;
     QSpinBox *side_, *track_;
     QComboBox* revolutions_;

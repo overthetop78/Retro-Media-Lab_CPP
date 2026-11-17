@@ -130,6 +130,19 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         }
         return;
     }
+    if(cached_->linear){
+        const auto& model=*cached_->linear;const auto& elements=cached_->descriptor->fields().elements;const bool optical=kind==RepresentationKind::OpticalTracks;
+        const auto total=std::max<std::int64_t>(1,model.logicalLength);const auto heads=model.geometry?model.geometry->heads():1;const auto cylinders=model.geometry?model.geometry->cylinders():1;
+        painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
+        const auto faceWidth=static_cast<double>(width())/heads;const auto radius=std::min(faceWidth,static_cast<double>(height()))*OuterRadius;const auto inner=radius*HoleRadius;const auto ringWidth=(radius-inner)/cylinders;
+        for(std::size_t index=0;index<model.items.size();++index){const auto& fields=elements[index].fields();const auto& item=model.items[index];const auto stateIndex=optical?static_cast<std::size_t>(item.opticalKind):static_cast<std::size_t>(item.blockState);const auto color=theme->color(optical?OpticalBrushes[stateIndex]:BlockBrushes[stateIndex]);
+            if(model.cartridge){const QRectF range(static_cast<double>(fields.position)/total*width(),height()*HoleRadius,std::max(MinViewSize,static_cast<double>(fields.length.value_or(1))/total*width()),height()*(1-HoleRadius-HoleRadius));painter.fillRect(range,color);painter.setPen(QPen(session_->selectedElement==index?foreground:theme->color(ThemeConstants::BorderBrush),session_->selectedElement==index?SelectionWidth:LineWidth));painter.drawRect(range);continue;}
+            const auto trackBlocks=model.geometry?model.geometry->sectorsPerTrack():total;const auto track=fields.position/trackBlocks;const auto cylinder=model.geometry?track/heads:0;const auto head=model.geometry?track%heads:0;if(cylinder>=cylinders)continue;
+            const auto radial=radius-(cylinder+Half)*ringWidth;const QPointF center(faceWidth*(head+Half),height()*Half);const QRectF circle(center.x()-radial,center.y()-radial,radial/Half,radial/Half);
+            const auto start=static_cast<int>(static_cast<double>(fields.position%trackBlocks)/trackBlocks*FullCircle*AngularUnits);const auto span=std::max(1,static_cast<int>(static_cast<double>(fields.length.value_or(1))/trackBlocks*FullCircle*AngularUnits));painter.setPen(QPen(color,ringWidth+RingOverlap,Qt::SolidLine,Qt::FlatCap));painter.drawArc(circle,start,span);
+            if(session_->selectedElement==index){painter.setPen(QPen(foreground,SelectionWidth,Qt::SolidLine,Qt::FlatCap));painter.drawArc(circle,start,span);}
+        }return;
+    }
     const auto& elements = cached_->descriptor->fields().elements;
     if (elements.empty()) return;
     const auto maxPosition = std::max_element(elements.begin(), elements.end(), [](const auto& a,const auto& b) { return a.fields().position+a.fields().length.value_or(1) < b.fields().position+b.fields().length.value_or(1); });
@@ -137,7 +150,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
     for (std::size_t index = 0; index < elements.size(); ++index) {
         const auto& element = elements[index].fields();
         auto color = unknown;
-        if (const auto found = session_->inspectedElements.find(index); found != session_->inspectedElements.end()) color = found->second ? success : theme->color(ThemeConstants::BorderBrush);
+
         const auto x = (static_cast<double>(element.position)/length+session_->panX)*width()*session_->zoom;
         const auto extent = std::max(MinViewSize, static_cast<double>(element.length.value_or(1))/length*width()*session_->zoom);
         painter.fillRect(QRectF(x, height()*HoleRadius, extent, height()*(1-HoleRadius-HoleRadius)), color);
@@ -148,6 +161,14 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     if (!cached_ || event->button() != Qt::LeftButton) return;
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->linear){
+        const auto& model=*cached_->linear;const auto& elements=cached_->descriptor->fields().elements;
+        const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
+        const auto total=std::max<std::int64_t>(1,model.logicalLength);std::int64_t position=0;
+        if(model.cartridge){if(point.x()<0 || point.x()>=width() || point.y()<height()*HoleRadius || point.y()>height()*(1-HoleRadius))return;position=static_cast<std::int64_t>(point.x()/width()*total);}
+        else {const auto heads=model.geometry?model.geometry->heads():1;const auto cylinders=model.geometry?model.geometry->cylinders():1;const auto faceWidth=static_cast<double>(width())/heads;if(point.x()<0 || point.x()>=width())return;const auto head=static_cast<std::int32_t>(point.x()/faceWidth);const QPointF center(faceWidth*(head+Half),height()*Half);const auto radius=std::min(faceWidth,static_cast<double>(height()))*OuterRadius;const auto inner=radius*HoleRadius;const auto distance=std::hypot(point.x()-center.x(),point.y()-center.y());if(distance<inner || distance>radius)return;const auto cylinder=std::min<std::int64_t>(cylinders-1,static_cast<std::int64_t>((radius-distance)/(radius-inner)*cylinders));auto angle=std::atan2(center.y()-point.y(),point.x()-center.x());if(angle<0)angle+=FullTurn;const auto trackBlocks=model.geometry?model.geometry->sectorsPerTrack():total;position=(cylinder*heads+head)*trackBlocks+static_cast<std::int64_t>(angle/FullTurn*trackBlocks);}
+        for(std::size_t index=0;index<elements.size();++index){const auto& fields=elements[index].fields();if(position>=fields.position && position-fields.position<fields.length.value_or(1)){session_->inspect(index);return;}}return;
+    }
     if(cached_->sectors && cached_->sectors->logical){
         const auto& items=cached_->sectors->sectors;if(items.empty())return;
         const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());

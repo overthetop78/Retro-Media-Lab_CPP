@@ -32,6 +32,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     toolbar->addWidget(open_); toolbar->addStretch(); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
     layout->addLayout(toolbar);
     status_ = new QLabel(this); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); layout->addWidget(status_);
+    summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
     auto* splitter = new QSplitter(Qt::Vertical,this);
     auto* graph = new MediaGraph(themes,session_,splitter);
     auto* inspector = new Card(themes.data(),splitter);
@@ -41,6 +42,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     side_ = new QSpinBox(inspector); track_ = new QSpinBox(inspector); revolutions_ = new QComboBox(inspector);
     coordinates->addWidget(sideLabel_); coordinates->addWidget(side_); coordinates->addWidget(trackLabel_); coordinates->addWidget(track_);
     coordinates->addWidget(revolutionLabel_); coordinates->addWidget(revolutions_); coordinates->addStretch(); details->addLayout(coordinates);
+    elementDetails_=new QLabel(inspector);elementDetails_->setWordWrap(true);elementDetails_->setTextFormat(Qt::PlainText);details->addWidget(elementDetails_);
     auto* contents = new QSplitter(inspector);
     sectors_ = new QTableWidget(contents); sectors_->setColumnCount(static_cast<int>(Columns.size()));
     sectors_->setEditTriggers(QAbstractItemView::NoEditTriggers); sectors_->setSelectionBehavior(QAbstractItemView::SelectRows); sectors_->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -61,7 +63,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     connect(side_,&QSpinBox::valueChanged,this,[this](int value){session_->select(value,session_->position);});
     connect(track_,&QSpinBox::valueChanged,this,[this](int value){session_->select(session_->surface,value);});
     connect(revolutions_,&QComboBox::currentIndexChanged,this,[this](int value){if(value>=0)session_->setRevolution(static_cast<std::size_t>(value));});
-    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
+    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && session_->snapshot() && session_->snapshot()->linear){session_->inspect(static_cast<std::size_t>(row));return;}if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
     subscription_=session_->subscribe([this]{refresh();});
     openingSubscription_=session_->opening()->subscribe([this]{refresh();});
     languageSubscription_=translations.subscribe([this]{refresh();});
@@ -80,11 +82,32 @@ void VisualizationPage::refresh() {
     QStringList headers; for(const auto key:Columns)headers.push_back(text(key)); sectors_->setHorizontalHeaderLabels(headers);
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);
     sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear();rowStates_.clear(); revolutions_->clear();
-    legend_->setVisible(session_->snapshot() && session_->snapshot()->sectors.has_value());
+    summary_->clear();elementDetails_->clear();
+    legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value()));
     for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->setText(text(SectorLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SectorBrushes[index]));legendDots_[index]->setPalette(palette);}
+    for(std::size_t index=0;index<SectorLabels.size();++index)legendLabels_[index]->parentWidget()->show();
     if(!session_->snapshot()) {hex_->clear();return;}
     const auto& snapshot=*session_->snapshot();
     const auto& descriptor=snapshot.descriptor->fields();
+    if(snapshot.linear){
+        const auto& model=*snapshot.linear;const bool optical=descriptor.representationKind==MediaEngine::RepresentationKind::OpticalTracks;
+        for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->hide();
+        QStringList summary{text(Capacity)+QString::fromUtf8(ValueSeparator)+QLocale().toString(static_cast<qlonglong>(model.logicalLength))+QLatin1Char(HexSeparator)+text(optical?SectorsUnit:BlocksUnit)};
+        if(model.geometry)summary<<QString::fromUtf8(Geometry)+QString::fromUtf8(ValueSeparator)+QString::number(model.geometry->cylinders())+QString::fromUtf8(GeometrySeparator)+QString::number(model.geometry->heads())+QString::fromUtf8(GeometrySeparator)+QString::number(model.geometry->sectorsPerTrack());
+        if(model.faces)summary<<text(Faces)+QString::fromUtf8(ValueSeparator)+QString::number(*model.faces);if(model.layers)summary<<text(Layers)+QString::fromUtf8(ValueSeparator)+QString::number(*model.layers);
+        if(optical)summary<<text(TrackCount)+QString::fromUtf8(ValueSeparator)+QString::number(model.items.size());summary_->setText(summary.join(QString::fromUtf8(InfoSeparator)));
+        QStringList linearHeaders;for(const auto key:LinearColumns)linearHeaders<<text(key);sectors_->setHorizontalHeaderLabels(linearHeaders);
+        for(int column=0;column<sectors_->columnCount();++column)sectors_->setColumnHidden(column,!optical && (column==TrackColumn || column==SectorColumn));
+        for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->parentWidget()->setVisible(index<BlockLabels.size());if(index<BlockLabels.size()){legendLabels_[index]->setText(text(optical?OpticalLabels[index]:BlockLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(optical?OpticalBrushes[index]:BlockBrushes[index]));legendDots_[index]->setPalette(palette);}}
+        sectors_->setRowCount(static_cast<int>(model.items.size()));
+        for(std::size_t index=0;index<model.items.size();++index){const auto& item=model.items[index];const auto& fields=descriptor.elements[index].fields();const auto stateIndex=optical?static_cast<std::size_t>(item.opticalKind):static_cast<std::size_t>(item.blockState);
+            const QStringList values{QString::number(fields.position),QString::number(fields.length.value_or(1)),fields.sessionNumber?QString::number(*fields.sessionNumber):QString{},fields.trackNumber?QString::number(*fields.trackNumber):QString{},text(optical?OpticalLabels[stateIndex]:BlockLabels[stateIndex]),item.volume && item.volume->partitionTable?QString::fromStdString(*item.volume->partitionTable):QString{},item.volume && item.volume->fileSystemId?QString::fromStdString(*item.volume->fileSystemId):QString{}};
+            for(int column=0;column<values.size();++column)sectors_->setItem(static_cast<int>(index),column,new QTableWidgetItem(values[column]));sectors_->item(static_cast<int>(index),LinearStateColumn)->setForeground(themes_.data()->color(optical?OpticalBrushes[stateIndex]:BlockBrushes[stateIndex]));
+        }
+        QStringList details;
+        if(session_->selectedElement && *session_->selectedElement<model.items.size()){const auto selected=*session_->selectedElement;sectors_->setCurrentCell(static_cast<int>(selected),0);const auto& item=model.items[selected];if(item.volume){details<<text(Origin)+QString::fromUtf8(ValueSeparator)+QString::fromStdString(item.volume->origin);if(item.volume->partitionNumber)details<<text(PartitionNumber)+QString::fromUtf8(ValueSeparator)+QString::number(*item.volume->partitionNumber);}if(item.storedSectorSize)details<<text(Size)+QString::fromUtf8(ValueSeparator)+QLocale().formattedDataSize(*item.storedSectorSize);if(item.pregap)details<<text(Pregap)+QString::fromUtf8(ValueSeparator)+QString::number(*item.pregap);}
+        if(!model.associatedFiles.empty()){details<<text(AssociatedFiles);for(const auto& file:model.associatedFiles)details<<QString::fromStdString(file);}elementDetails_->setText(details.join(QString::fromUtf8(InfoSeparator)));showBytes(session_->preview);return;
+    }
     const bool logical=snapshot.sectors && snapshot.sectors->logical;
     const bool coordinatesVisible=!logical && (descriptor.representationKind==MediaEngine::RepresentationKind::Flux || descriptor.representationKind==MediaEngine::RepresentationKind::Sectors);
     for(int column:{SideColumn,TrackColumn,SectorColumn})sectors_->setColumnHidden(column,logical);sectors_->setColumnHidden(StateColumn,!snapshot.sectors);
@@ -126,7 +149,9 @@ void VisualizationPage::refresh() {
 void VisualizationPage::showSector(int row) {
     if(row<0 || static_cast<std::size_t>(row)>=rows_.size() || !rows_[row]->data) {hex_->clear();return;}
     session_->selectedSector=rows_[row]->logicalBlock;
-    const auto& bytes=*rows_[row]->data;
+    showBytes(*rows_[row]->data);
+}
+void VisualizationPage::showBytes(const std::vector<std::uint8_t>& bytes) {
     QStringList lines;
     for(std::size_t offset=0;offset<std::min(bytes.size(),static_cast<std::size_t>(HexPreviewBytes));offset+=HexBytesPerLine) {
         QStringList line;

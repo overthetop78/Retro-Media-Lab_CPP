@@ -39,6 +39,7 @@ void VisualizationSession::sourceChanged() {
             if(found!=disk.formats.end())value.sectors=MediaEngine::describeSectorVisualization(value.document,*found);
             else if(!disk.formats.empty())value.sectors=MediaEngine::describeSectorVisualization(value.document,disk.formats.front());
         }
+        if(value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::Blocks || value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::OpticalTracks)value.linear=MediaEngine::describeLinearVisualization(value.document,*value.descriptor,token);
         if (value.descriptor->fields().representationKind == MediaEngine::RepresentationKind::Sequential) {
             try { value.tape = std::make_shared<const MediaEngine::MediaTapeSignal>(MediaEngine::readTapeAsync(path, token).get()); }
             catch (const MediaEngine::MediaError& error) { MediaEngine::checkCancellation(token); value.warning=MediaEngine::MessageInfo{std::string(MediaEngine::diagnosticKey(error.diagnostic().code)),error.diagnostic().arguments,MediaDomain}; }
@@ -61,7 +62,7 @@ void VisualizationSession::poll() {
             auto result = pending_.get();
             if (!cancellation_.stop_requested()) {
                 snapshot_ = std::make_shared<const VisualizationSnapshot>(std::move(result));
-                inspectedElements.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
+                selectedElement.reset(); preview.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
             }
         } catch (const MediaEngine::MediaError& error) { if (!cancellation_.stop_requested()) captureError(error); }
           catch (const std::exception& error) { if (!cancellation_.stop_requested()) captureError(error); }
@@ -69,10 +70,11 @@ void VisualizationSession::poll() {
         changed = true;
     }
     if (inspection_.valid() && inspection_.wait_for(std::chrono::seconds::zero()) == std::future_status::ready) {
-        try { const auto result = inspection_.get(); if (!cancellation_.stop_requested()) inspectedElements[inspecting_] = result; }
+        try { auto result = inspection_.get(); if (!cancellation_.stop_requested() && selectedElement==inspecting_) preview=std::move(result); }
         catch (const MediaEngine::MediaError& error) { if (!cancellation_.stop_requested()) captureError(error); }
         catch (const std::exception& error) { if (!cancellation_.stop_requested()) captureError(error); }
         catch (...) { if (!cancellation_.stop_requested()) error_ = MediaEngine::MessageInfo{UnexpectedError, {}, {}}; }
+        if(!cancellation_.stop_requested() && selectedElement && *selectedElement!=inspecting_)inspect(*selectedElement);
         changed = true;
     }
     if (!pending_.valid() && !inspection_.valid()) { timer_.stop(); sourceChanged(); }
@@ -84,10 +86,12 @@ void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && v
 void VisualizationSession::setRevolution(std::size_t value) { revolution = value; publish(); }
 void VisualizationSession::setPan(double x, double y) { if (std::isfinite(x) && std::isfinite(y)) { panX = x; panY = y; publish(); } }
 void VisualizationSession::inspect(std::size_t element) {
-    if (!snapshot_ || inspection_.valid() || pending_.valid() || element >= snapshot_->descriptor->fields().elements.size()) return;
+    if (!snapshot_ || !snapshot_->linear || pending_.valid() || element >= snapshot_->descriptor->fields().elements.size()) return;
+    if(selectedElement!=element){selectedElement=element;preview.clear();error_.reset();}
+    if(inspection_.valid()){publish();return;}
     inspecting_ = element;
-    inspection_ = MediaEngine::readBlockVisualizationElementAsync(snapshot_->document, snapshot_->descriptor->fields().elements[element], cancellation_.get_token());
-    timer_.start();
+    inspection_ = MediaEngine::readVisualizationPreviewAsync(snapshot_->document, snapshot_->descriptor->fields().elements[element], cancellation_.get_token());
+    timer_.start();publish();
 }
 ExplorerSession::Subscription VisualizationSession::subscribe(std::function<void()> callback) {
     auto value = std::make_shared<const std::function<void()>>(std::move(callback)); observers_.push_back(value); return value;

@@ -65,6 +65,13 @@
     - [x] Modifier les CMake Infrastructure, `audit_literals.py` et les catalogues `App/profiles.json` Constants/Languages : compiler la collection et reprendre les traductions C# manquantes.
     - [x] Créer temporairement `build/verification-profiles/main.cpp` et son exécutable : vérifier la conservation des valeurs et des identifiants après sérialisation, le cloisonnement des opérations, les doublons et la protection des profils par défaut.
     - [x] Supprimer `build/verification-profiles/main.cpp`, l'exécutable et leurs artefacts de compilation après utilisation.
+  - [x] Inspecteurs optiques et blocs
+    - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/LinearVisualization.h` et `src/MediaEngine/src/Visualization/LinearInspection.cpp`, puis modifier le CMake : modèles publics des plages, pistes, volumes, géométrie et aperçu borné, sans lecture intégrale au clic.
+    - [x] Modifier `src/MediaEngine/src/Visualization/BlockProvider.cpp` : préserver les frontières de volumes et de plages pour les disques avec géométrie.
+    - [x] Modifier `VisualizationSession.h` et `.cpp` : conserver les métadonnées et l'aperçu asynchrone de l'élément sélectionné, indépendant du thème.
+    - [x] Modifier `VisualizationPage.h`, `.cpp`, `MediaGraph.cpp`, `VisualizationConstants.h` et les palettes : tableaux/inspecteurs dédiés, états de plages, pistes optiques circulaires et sélection synchronisée.
+    - [x] Créer temporairement `build/verification-linear-visualization/main.cpp`, son exécutable et ses artefacts : vérifier volumes, frontières, données d'aperçu et pistes audio/données.
+    - [x] Supprimer les fichiers temporaires de `build/verification-linear-visualization/` après utilisation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
