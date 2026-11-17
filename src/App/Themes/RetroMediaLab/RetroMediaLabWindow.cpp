@@ -4,6 +4,7 @@
 #include "DisplayDensity.h"
 #include "State/WorkspaceState.h"
 #include "Views/PreferencesDialog.h"
+#include "Views/MigrationDialog.h"
 #include "Views/GreaseweazleDialog.h"
 #include <RetroMediaLab/Platform/WindowAppearance.h>
 #include <QApplication>
@@ -18,7 +19,7 @@ RetroMediaLabWindow::RetroMediaLabWindow(ThemeService& themes, Translations::Tra
     setObjectName(ThemeConstants::RetroMediaLabWindow);
     setWindowTitle(QString::fromStdString(translations.text(ThemeConstants::AppTitle)));
     setWindowIcon(QIcon(QApplication::applicationDirPath() + ThemeConstants::AssetsAppIconIco));
-    setCentralWidget(new RetroMediaLabLayout(themes, translations, state, [this] { openPreferences(); }, [this] { openGreaseweazle(); }, this));
+    setCentralWidget(new RetroMediaLabLayout(themes, translations, state, [this] { openPreferences(); }, [this] { openGreaseweazle(); }, [this] { openMigration(); }, this));
     const auto available = screen()->availableGeometry();
     const auto room = (available.size() - QSize(ThemeConstants::Window::ScreenInset, ThemeConstants::Window::ScreenInset)).expandedTo(QSize(1, 1));
     setMinimumSize(qMin(ThemeConstants::Window::MinimumWidth, room.width()), qMin(ThemeConstants::Window::MinimumHeight, room.height()));
@@ -38,6 +39,10 @@ RetroMediaLabWindow::RetroMediaLabWindow(ThemeService& themes, Translations::Tra
     });
 }
 RetroMediaLabWindow::~RetroMediaLabWindow() = default;
+void RetroMediaLabWindow::openMigration() {
+    if(!migration_)migration_=std::make_unique<MigrationDialog>(themes_,translations_,state_,this);
+    state_.migrationOpen=true;migration_->show();migration_->raise();migration_->activateWindow();
+}
 void RetroMediaLabWindow::openPreferences() {
     if (!preferences_) preferences_ = std::make_unique<PreferencesDialog>(themes_, translations_, state_, this);
     state_.preferencesOpen = true;
@@ -61,10 +66,12 @@ void RetroMediaLabWindow::showEvent(QShowEvent* event) {
             themes_.data()->color(ThemeConstants::CaptionBrush).rgba(), themes_.data()->color(ThemeConstants::TextBrush).rgba(), themes_.data()->nativeSystemColors);
     });
     if (state_.preferencesOpen) openPreferences();
+    if (state_.migrationOpen) openMigration();
     if (state_.greaseweazleOpen) openGreaseweazle();
 }
 void RetroMediaLabWindow::synchronizeState() {
     if (preferences_) preferences_->synchronizeState();
+    if (migration_) migration_->synchronizeState();
     if (greaseweazle_) greaseweazle_->synchronizeState();
     static_cast<RetroMediaLabLayout*>(centralWidget())->synchronizeState();
     state_.mainWindowGeometry = saveGeometry();

@@ -1,4 +1,6 @@
 #include "ConversionPage.h"
+#include "MigrationDialogConstants.h"
+#include "Media/MigrationSession.h"
 #include "ConversionDialogs.h"
 #include "Media/ConversionSessionConstants.h"
 #include "ConversionPageConstants.h"
@@ -30,7 +32,7 @@ namespace RetroMediaLab {
 namespace C=ConversionPageConstants;
 namespace M=Infrastructure::MediaCommandConstants;
 namespace E=MediaEngine;
-ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationService& translations,WorkspaceState& state,QWidget* parent)
+ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationService& translations,WorkspaceState& state,std::function<void()> openMigration,QWidget* parent)
     :QWidget(parent),translations_(translations),state_(state) {
     state.ensureMediaOperations(translations);session_=state.converting;
     auto* layout=new QVBoxLayout(this);layout->setContentsMargins(C::Padding,C::Padding,C::Padding,C::Padding);layout->setSpacing(C::Gap);
@@ -53,7 +55,8 @@ ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationSer
         options->addWidget(field);fields_.push_back({definition,check,value});connect(check,&QCheckBox::toggled,this,[this,definition](bool enabled){if(enabled)session_->draft.enabled.insert(definition.argument);else session_->draft.enabled.remove(definition.argument);session_->changed();});
     }
     scroll->setWidget(optionsHost);advancedLayout->addWidget(scroll);expertLabel_=new QLabel(advanced_);expert_=new QLineEdit(advanced_);advancedLayout->addWidget(expertLabel_);advancedLayout->addWidget(expert_);body->addWidget(advanced_);layout->addWidget(inputs_,1);
-    auto* footer=new QHBoxLayout;summary_=new QLabel(this);summary_->setWordWrap(true);progress_=new QProgressBar(this);progress_->setRange(0,C::ProgressMaximum);execute_=new QPushButton(this);footer->addWidget(summary_,1);footer->addWidget(progress_);footer->addWidget(execute_);layout->addLayout(footer);
+    auto* footer=new QHBoxLayout;summary_=new QLabel(this);summary_->setWordWrap(true);progress_=new QProgressBar(this);progress_->setRange(0,C::ProgressMaximum);execute_=new QPushButton(this);migration_=new QPushButton(this);footer->addWidget(summary_,1);footer->addWidget(progress_);footer->addWidget(migration_);footer->addWidget(execute_);layout->addLayout(footer);
+    connect(migration_,&QPushButton::clicked,this,[this,openMigration=std::move(openMigration)]{if(!session_->draft.source.isEmpty()&&!state_.migration->busy()&&state_.migration->sourcePath()!=session_->draft.source)state_.migration->open(session_->draft.source);if(openMigration)openMigration();});
     connect(browse_,&QPushButton::clicked,this,[this]{const auto path=QFileDialog::getOpenFileName(this,text(C::Source),source_->text());if(!path.isEmpty()){source_->setText(path);openSource();}});
     connect(source_,&QLineEdit::editingFinished,this,[this]{if(source_->text()!=session_->draft.source)openSource();});
     connect(name_,&QLineEdit::textEdited,this,[this](const QString& value){session_->draft.name=value;session_->changed();});
@@ -108,6 +111,7 @@ void ConversionPage::selectFormats() {
 }
 QString ConversionPage::selectionSignature()const{QString result;for(const auto& selection:session_->draft.selections){result+=QString::fromStdString(selection.formatId)+QString::fromLatin1(C::NewLine);for(const auto& extension:selection.explicitExtensions)result+=QString::fromStdString(extension)+QString::fromLatin1(C::NewLine);}return result;}
 void ConversionPage::refresh() {
+    migration_->setText(text(MigrationDialogConstants::Open));
     const bool busy=session_->busy();inputs_->setEnabled(!busy);execute_->setText(text(busy?C::Stop:C::Execute));
     sourceLabel_->setText(text(C::Source));nameLabel_->setText(text(C::Name));browse_->setText(text(C::Browse));tags_->setText(text(C::AddTags));rare_->setText(text(C::ShowRare));formatLabel_->setText(text(C::Formats));selectedLabel_->setText(text(C::Selected));expertLabel_->setText(text(C::Expert));advancedToggle_->setText(text(C::Advanced));
     profileLabel_->setText(text(C::Profile));save_->setText(text(C::Save));reset_->setText(text(C::Reset));

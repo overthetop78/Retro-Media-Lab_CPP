@@ -5,6 +5,7 @@
 namespace RetroMediaLab {
 struct WorkspaceState;
 class PreferencesDialog;
+class MigrationDialog;
 class GreaseweazleDialog;
 class DisplayDensity;
 class RetroMediaLabWindow final : public QMainWindow {
@@ -17,11 +18,13 @@ protected:
     void showEvent(QShowEvent*) override;
 private:
     void openPreferences();
+    void openMigration();
     void openGreaseweazle();
     ThemeService& themes_;
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     std::unique_ptr<PreferencesDialog> preferences_;
+    std::unique_ptr<MigrationDialog> migration_;
     std::unique_ptr<GreaseweazleDialog> greaseweazle_;
     std::unique_ptr<DisplayDensity> density_;
     ThemeService::Subscription themeSubscription_;

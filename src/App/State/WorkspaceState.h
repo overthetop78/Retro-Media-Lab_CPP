@@ -18,7 +18,7 @@
 #include <vector>
 namespace RetroMediaLab {
 namespace Translations {class TranslationService;}
-namespace Infrastructure { class ExplorerSession; class ExplorerReadSession; class VisualizationSession; class CaptureSession; class ConversionSession; }
+namespace Infrastructure { class MigrationSession; class ExplorerSession; class ExplorerReadSession; class VisualizationSession; class CaptureSession; class ConversionSession; }
 class GreaseweazleTools;
 // Session-owned state survives destruction of theme windows. Business models will live outside views.
 struct WorkspaceState {
@@ -30,6 +30,9 @@ struct WorkspaceState {
     QString activePageId = AppConstants::Read;
     ConsoleState console;
     bool preferencesOpen = false;
+    bool migrationOpen = false;
+    QByteArray migrationGeometry;
+    std::shared_ptr<Infrastructure::MigrationSession> migration;
     std::shared_ptr<GreaseweazleTools> greaseweazleTools;
     std::shared_ptr<Infrastructure::CaptureSession> reading,writing;
     std::shared_ptr<Infrastructure::ConversionSession> converting;

@@ -6,7 +6,7 @@
 namespace RetroMediaLab {
 class WorkspaceTabs final : public QTabWidget {
 public:
-    WorkspaceTabs(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
+    WorkspaceTabs(ThemeService&, Translations::TranslationService&, WorkspaceState&, std::function<void()>, QWidget*);
 private:
     Translations::TranslationService::Subscription subscription_;
     ThemeService::Subscription themeSubscription_;

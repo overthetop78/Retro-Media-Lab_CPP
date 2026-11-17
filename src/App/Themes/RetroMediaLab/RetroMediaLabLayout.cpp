@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 namespace RetroMediaLab {
 RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::TranslationService& translations,
-    WorkspaceState& state, std::function<void()> openPreferences, std::function<void()> openGreaseweazle, QWidget* parent)
+    WorkspaceState& state, std::function<void()> openPreferences, std::function<void()> openGreaseweazle, std::function<void()> openMigration, QWidget* parent)
     : QWidget(parent), state_(state) {
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -22,7 +22,7 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
     splitter_->setObjectName(ThemeConstants::WorkspaceSplitter);
     splitter_->setHandleWidth(ThemeConstants::Layout::OuterSpacing);
     splitter_->setChildrenCollapsible(false);
-    auto* pages = new WorkspaceTabs(themes, translations, state, splitter_);
+    auto* pages = new WorkspaceTabs(themes, translations, state, std::move(openMigration), splitter_);
     terminal_ = new TerminalView(themes, translations, state.console, splitter_);
     const auto refreshIcon = [this, &themes] {
         terminal_->setCopyIcon(themeIcon(ThemeConstants::Copy, themes.data()->color(ThemeConstants::TerminalText)));

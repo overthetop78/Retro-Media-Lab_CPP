@@ -115,6 +115,22 @@
     - [x] Créer les catalogues `src/Translations/Catalogs/Constants/App/capture-progress.json` et `Languages/*/App/capture-progress.json` : reprendre uniquement les clés C# manquantes de progression et résumé.
     - [x] Créer temporairement `build/verification-capture-progress/main.cpp`, son exécutable et ses sorties : simuler GW et vérifier progression fractionnée, lecture/écriture, succès/échec/arrêt, résumé SCP et conservation des brouillons.
     - [x] Supprimer le programme temporaire, son exécutable et ses sorties après validation.
+  - [x] Vérification transversale dans le thème RML
+    - [x] Créer temporairement `build/verification-media-pages/main.cpp`, les configurations d'écrans JSON et les copies d'entrée nécessaires : parcourir les cinq pages vides puis chargées, vérifier changements de langue/couleurs, sélections et brouillons après reconstruction réelle du thème, en fenêtre normale sur 1080p et 800×600 ; enregistrer les captures dans `docs/validation/app/pages-medias/`.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/ExplorerPage.cpp` et `MediaPageConstants.h` : traduire les identifiants de catégorie/format/aperçu, reprendre les noms d'encodage et les détails d'exécution/enregistrements du présentateur C# ; ne pas afficher NotApplicable.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/CapturePage.h` et `.cpp` : ajouter le bouton Parcourir des définitions personnalisées et le sélecteur H/L de Densel visibles sur les captures C#, en gardant les mêmes valeurs et validations de session.
+    - [x] Supprimer le programme temporaire, son exécutable, les configurations et copies d'entrée après validation.
+  - [x] Migration de fichiers depuis Conversion
+    - [x] Créer `src/Infrastructure/Media/MigrationSession.h`, `.cpp` et `MigrationConstants.h`, modifier le CMake Infrastructure : reprendre FileMigrationCoordinator, chargement, validation des pertes et écriture annulable avec le service Migration existant de MediaEngine.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/MigrationDialog.h`, `.cpp` et `MigrationDialogConstants.h`, modifier `ConversionPage.h`, `.cpp` et le CMake App : bouton Migration de fichiers de la capture, source/destination, pertes et acceptation, sauvegarde et arrêt.
+    - [x] Modifier `WorkspaceState.h`, `.cpp`, `RetroMediaLabWindow.h`, `.cpp`, `RetroMediaLabLayout.h`, `.cpp` et `WorkspaceTabs.h`, `.cpp` : conserver session/visibilité/géométrie et restaurer le dialogue après reconstruction du thème, sans callback persistant vers une DLL de thème déchargée.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/ThemePreview.cpp` : adapter le callback de migration de l’aperçu sans permettre d’opération depuis cet aperçu.
+    - [x] Modifier `scripts/quality/audit_literals.py` : déclarer les deux en-têtes de constantes de migration.
+    - [x] Créer les catalogues `Constants/App/migration.json` et `Languages/*/App/migration.json` : reprendre les traductions C# de Migration, avec les messages d'erreur nécessaires.
+    - [x] Créer temporairement `build/verification-migration/` : vérifier le dialogue, validation bloquante/acceptation des pertes, sauvegarde et annulation sur petits médias ; supprimer le programme, ses entrées/sorties et ses artefacts après validation.
+  - [ ] Commandes de classification et zoom du C#
+    - [ ] Modifier `src/Infrastructure/Media/VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : reprendre le choix de liaison des zooms de plusieurs faces du C#, en conservant les transformations dans la session.
+    - [ ] Modifier `src/Infrastructure/Media/ExplorerSession.h`, `.cpp`, `VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et les constantes associées : reprendre le sélecteur de classification manuelle du C# derrière les options avancées et son raccordement aux formats.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

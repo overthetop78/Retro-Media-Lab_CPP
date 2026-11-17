@@ -16,7 +16,7 @@ class QComboBox;
 namespace RetroMediaLab {
 class ConversionPage final:public QWidget {
 public:
-    ConversionPage(ThemeService&,Translations::TranslationService&,WorkspaceState&,QWidget*);
+    ConversionPage(ThemeService&,Translations::TranslationService&,WorkspaceState&,std::function<void()>,QWidget*);
 protected:
     void showEvent(QShowEvent*)override;
 private:
@@ -37,7 +37,7 @@ private:
     QLabel *sourceLabel_,*nameLabel_,*selectedLabel_,*formatLabel_,*expertLabel_,*summary_;
     QCheckBox *tags_,*rare_;
     QToolButton* advancedToggle_;
-    QPushButton *browse_,*execute_;
+    QPushButton *browse_,*execute_,*migration_;
     QTreeWidget* formats_;
     QListWidget* selected_;
     QProgressBar* progress_;
