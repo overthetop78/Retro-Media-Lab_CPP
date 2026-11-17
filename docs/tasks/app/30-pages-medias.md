@@ -26,7 +26,7 @@
     - [x] Modifier `StatusBar.h` et `.cpp` : afficher l'opération active du lanceur commun au lieu de conserver Prêt pendant une opération.
     - [x] Modifier `WorkspaceState.cpp`, `WorkspaceState.h`, `CapturePage.cpp` et `GreaseweazleDialog.cpp` : créer les sessions et leurs callbacks persistants dans App.dll, pour qu'aucun callback de session ne dépende du code d'un thème déchargé.
     - [x] Modifier `CaptureSession.h`, `.cpp`, `PreferencesStore.h`, `.cpp`, `WorkspaceState.cpp` et `ProfileSettingsPage.cpp` : persister et réexposer les profils enregistrés, raccorder leur gestion aux préférences.
-    - [ ] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
+    - [x] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
     - [ ] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
   - [ ] Conversion
     - [x] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
@@ -108,6 +108,13 @@
     - [x] Modifier `src/App/Shared/Controls/HexGrid.cpp` : tenir compte des marges du délégué Qt dans les cellules pour que les deux chiffres restent lisibles avec le style natif.
     - [x] Créer temporairement `build/verification-flux-visualization/main.cpp`, son exécutable et ses artefacts : vérifier calculs, synthèse, qualité, inspection et rendu à partir de petites données ; conserver une capture dans `docs/references/retro-media-lab/media/screenshots/`.
     - [x] Supprimer le programme temporaire, son exécutable et ses artefacts après validation.
+  - [x] Progression des captures et résultat final
+    - [x] Créer `src/Infrastructure/Media/GwProgressTracker.h` et `.cpp`, modifier `MediaCommandConstants.h`, `GreaseweazleTools.h`, `.cpp` et le CMake Infrastructure : parser les lignes GW par morceaux, compter les pistes sans doublons et conserver succès/reprises/échecs.
+    - [x] Modifier `CaptureSession.h`, `.cpp` et `MediaSessionConstants.h` : lire le résumé SCP via le service MediaEngine existant après réussite, avec annulation et libération du travail asynchrone.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/CaptureProgressView.h` et `.cpp`, modifier `CapturePage.h`, `.cpp`, `CaptureConstants.h` et le CMake App : bandes par face, progression et résumé final traduit conservés à la reconstruction du thème.
+    - [x] Créer les catalogues `src/Translations/Catalogs/Constants/App/capture-progress.json` et `Languages/*/App/capture-progress.json` : reprendre uniquement les clés C# manquantes de progression et résumé.
+    - [x] Créer temporairement `build/verification-capture-progress/main.cpp`, son exécutable et ses sorties : simuler GW et vérifier progression fractionnée, lecture/écriture, succès/échec/arrêt, résumé SCP et conservation des brouillons.
+    - [x] Supprimer le programme temporaire, son exécutable et ses sorties après validation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

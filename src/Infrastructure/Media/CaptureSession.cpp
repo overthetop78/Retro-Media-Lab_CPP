@@ -1,4 +1,7 @@
 #include "CaptureSession.h"
+#include "MediaSessionConstants.h"
+#include <chrono>
+#include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include "Maintenance/GwToolsConstants.h"
 #include <ErrorKeys.h>
 #include <RetroMediaLab/MediaEngine/GwFormatCapabilities.h>
@@ -25,14 +28,15 @@ const std::vector<CaptureOptionDefinition>& captureOptions(CaptureMode mode) {
     return mode!=CaptureMode::Write?read:write;
 }
 CaptureSession::CaptureSession(CaptureMode kind,std::shared_ptr<GreaseweazleTools> tools,std::shared_ptr<OperationProfiles> profiles):mode(kind),tools_(std::move(tools)),profiles_(std::move(profiles)) {
+    captureInfoTimer_.setInterval(MediaSessionConstants::PollMilliseconds);QObject::connect(&captureInfoTimer_,&QTimer::timeout,&captureInfoTimer_,[this]{pollCaptureInfo();});
     for(const auto& option:captureOptions(mode))if(!option.flag)draft.values.insert(option.argument,QString::fromUtf8(option.initial));
     profileId_=this->profiles().front().id;
     profileSubscription_=profiles_->subscribe([this]{const auto& items=this->profiles();const auto found=std::find_if(items.begin(),items.end(),[this](const auto& item){return item.id==profileId_;});selectedProfile=found==items.end()?0:static_cast<std::size_t>(found-items.begin());profileId_=items[selectedProfile].id;publish();});
     subscription_=tools_->subscribe([this]{update();});
 }
-CaptureSession::~CaptureSession() {subscription_.reset();if(busy()){tools_->abortAndWait();if(mode!=CaptureMode::Write)QFile::remove(activePath_);}}
+CaptureSession::~CaptureSession() {captureInfoTimer_.stop();captureInfoCancellation_.request_stop();if(captureInfoPending_.valid())captureInfoPending_.wait();subscription_.reset();if(busy()){tools_->abortAndWait();if(mode!=CaptureMode::Write)QFile::remove(activePath_);}}
 QString CaptureSession::operation()const{if(mode==CaptureMode::ExplorerRead)return QString::fromLatin1(C::ReadExplorer);return mode!=CaptureMode::Write?QString::fromLatin1(C::Read):QString::fromLatin1(C::Write);}
-bool CaptureSession::canStart()const{return tools_->activeOperation().isEmpty();}
+bool CaptureSession::canStart()const{return tools_->activeOperation().isEmpty() && !captureInfoPending_.valid();}
 bool CaptureSession::busy()const{return tools_->activeOperation()==operation();}
 const GwToolDraft& CaptureSession::execution()const{return tools_->draft(operation());}
 QString CaptureSession::targetPath()const {
@@ -70,11 +74,12 @@ GwToolCommand CaptureSession::command(const HardwareSettings& hardware,const Eng
     return {hardware.gwPath,values};
 }
 void CaptureSession::start(const HardwareSettings& hardware,const EngineSettings& engines,const QString& directory,bool overwrite) {
+    if(captureInfoPending_.valid())throw std::invalid_argument(GwToolsConstants::BusyKey);
     const auto built=command(hardware,engines,directory);
     const auto target=targetPath();
     if(mode!=CaptureMode::Write && QFileInfo::exists(target) && !overwrite)throw std::invalid_argument(C::FileExists);
     if(mode!=CaptureMode::Write && !QDir().mkpath(QFileInfo(target).absolutePath()))throw std::invalid_argument(ErrorKeys::InvalidImageDirectory);
-    activePath_=target;completed_.clear();cleanupError_.clear();
+    activePath_=target;activeRaw_=draft.raw;completed_.clear();cleanupError_.clear();captureInfo_.reset();captureInfoError_.reset();captureInfoCancellation_=std::stop_source{};
     tools_->executeCommand(operation(),built);
 }
 void CaptureSession::stop(){if(busy())tools_->stop();}
@@ -122,11 +127,16 @@ void CaptureSession::update() {
         if(wasRunning_ && !running) {
             if(result.summaryKey==C::Completed) {
                 completed_=activePath_;
+                if(mode==CaptureMode::Read && activeRaw_){try{captureInfoPending_=MediaEngine::readScpCaptureInfoAsync(std::filesystem::path(completed_.toStdU16String()),captureInfoCancellation_.get_token());captureInfoTimer_.start();}catch(const std::exception& error){captureInfoError_=MediaEngine::MessageInfo{MediaSessionConstants::UnexpectedError,{error.what()},{}};}}
                 if(mode!=CaptureMode::Write && draft.autoNumber) {qint64 sequence=0;if(parseCaptureSequence(draft.sequence,draft.alphabetic,sequence) && sequence<std::numeric_limits<qint64>::max())draft.sequence=captureSequence(sequence+1,draft.alphabetic,1);}
             } else if(mode!=CaptureMode::Write && result.summaryKey==C::Cancelled && QFileInfo::exists(activePath_)) {QFile partial(activePath_);if(!partial.remove())cleanupError_=partial.errorString();}
         }
     }
     wasRunning_=running;publish();
+}
+void CaptureSession::pollCaptureInfo(){
+    if(!captureInfoPending_.valid() || captureInfoPending_.wait_for(std::chrono::seconds::zero())!=std::future_status::ready)return;
+    captureInfoTimer_.stop();try{captureInfo_=captureInfoPending_.get();}catch(const MediaEngine::MediaError& error){captureInfoError_=MediaEngine::MessageInfo{std::string(MediaEngine::diagnosticKey(error.diagnostic().code)),error.diagnostic().arguments,MediaSessionConstants::MediaDomain};}catch(const std::exception& error){captureInfoError_=MediaEngine::MessageInfo{MediaSessionConstants::UnexpectedError,{error.what()},{}};}catch(...){captureInfoError_=MediaEngine::MessageInfo{MediaSessionConstants::UnexpectedError,{},{}};}publish();
 }
 ExplorerSession::Subscription CaptureSession::subscribe(std::function<void()> callback) {auto value=std::make_shared<const std::function<void()>>(std::move(callback));observers_.push_back(value);return value;}
 void CaptureSession::publish(){const auto observers=observers_;std::erase_if(observers_,[](const auto& item){return item.expired();});for(const auto& observer:observers)if(const auto callback=observer.lock())(*callback)();}

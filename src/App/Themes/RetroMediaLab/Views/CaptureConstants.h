@@ -1,5 +1,10 @@
 #pragma once
 namespace RetroMediaLab::CaptureConstants {
+inline constexpr int ProgressRowHeight=22,ProgressLabelWidth=64,ProgressCountWidth=70,ProgressCellGap=1;
+inline constexpr double ProgressMinimumWidth=1;
+inline constexpr auto ProgressSide="Visual.Side",ProgressDivider=" / ",NumericArgument="{%1:N0}";
+inline constexpr auto ProgressSuccessBrush="Theme.SectorDataBrush",ProgressRetryBrush="Theme.WarningBrush",ProgressFailedBrush="Theme.ErrorBrush";
+inline constexpr auto ScpBanner="Read.ScpBannerSummary",ScpUnavailable="Read.ScpSummaryUnavailable",ChecksumValid="Visual.ChecksumValid",ChecksumInvalid="Visual.ChecksumInvalid";
 inline constexpr int Padding=8,Gap=6,OptionWidth=120,AdvancedHeight=260,SequenceWidth=75;
 inline constexpr int NameColumn=2;
 inline constexpr int ComboMinimumLength=10;

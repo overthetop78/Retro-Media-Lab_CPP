@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "측면 {0}: 트랙 {1} — {2}/{3}",
+    "Status.TrackProgress": "트랙 {0}, 측면 {1} — {2}/{3}",
+    "Status.TrackUnknown": "트랙 {0}, 측면 {1} — {2} 처리됨",
+    "Read.ScpSummaryTitle": "최종 SCP 결과:",
+    "Read.ScpTracksSummary": "트랙: {0} 양호, {1} 누락 또는 유효하지 않음({2} 실린더, {3} 측면).",
+    "Read.ScpTechnicalSummary": "회전 수: {0} · 해상도: {1} ns · 크기: {2:N0} 바이트 · 체크섬: {3}.",
+    "Read.ScpOutputFile": "파일: {0}",
+    "Read.ScpSummaryUnavailable": "SCP 요약을 사용할 수 없음: {0}",
+    "Read.ScpBannerSummary": "{0} 양호한 트랙 · {1} 누락 또는 유효하지 않음 · {2} 실린더 · {3} 측면 · {4} 회전 · {5:N0} 바이트 · {6} 체크섬"
+  }
+}

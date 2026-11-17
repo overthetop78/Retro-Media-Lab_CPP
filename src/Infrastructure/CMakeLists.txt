@@ -4,6 +4,7 @@ add_library(RetroMediaLab.Infrastructure SHARED
   Media/VisualizationSession.cpp
   Media/MediaCommands.cpp
   Media/CaptureSession.cpp
+  Media/GwProgressTracker.cpp
   Media/ConversionSession.cpp
   Media/ConversionConflicts.cpp
   Profiles/OperationProfiles.cpp

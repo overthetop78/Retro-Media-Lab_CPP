@@ -1,5 +1,6 @@
 #pragma once
 #include "InfrastructureApi.h"
+#include "Media/GwProgressTracker.h"
 #include "Hardware/HardwareSettings.h"
 #include "Logging/LogSettings.h"
 #include <QObject>
@@ -24,6 +25,7 @@ struct GwToolDraft {
     QString output, summaryKey, lastCommand;
     QStringList summaryArguments;
     QString model, firmware, port;
+    Infrastructure::GwTrackProgress progress;
     bool information = false, networkWarning = false, logFailed = false;
 };
 class GreaseweazleTools final : public QObject {

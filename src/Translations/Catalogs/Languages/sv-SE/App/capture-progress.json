@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "Sida {0}: spår {1} — {2}/{3}",
+    "Status.TrackProgress": "Spår {0}, sida {1} — {2}/{3}",
+    "Status.TrackUnknown": "Spår {0}, sida {1} — {2} bearbetad",
+    "Read.ScpSummaryTitle": "Slutligt SCP resultat:",
+    "Read.ScpTracksSummary": "Spår: {0} bra, {1} saknas eller ogiltigt ({2} cylindrar, {3} sidor).",
+    "Read.ScpTechnicalSummary": "Varv: {0} · Upplösning: {1} ns · Storlek: {2:N0} byte · Kontrollsumma: {3}.",
+    "Read.ScpOutputFile": "Fil: {0}",
+    "Read.ScpSummaryUnavailable": "SCP sammanfattning otillgänglig: {0}",
+    "Read.ScpBannerSummary": "{0} bra spår · {1} saknas eller ogiltig · {2} cylindrar · {3} sidor · {4} varv · {5:N0} byte · {6} kontrollsumma"
+  }
+}

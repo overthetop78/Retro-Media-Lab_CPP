@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "Πλευρά {0}: κομμάτι {1} — {2}/{3}",
+    "Status.TrackProgress": "Κομμάτι {0}, πλευρά {1} — {2}/{3}",
+    "Status.TrackUnknown": "Κομμάτι {0}, πλευρά {1} — {2} σε επεξεργασία",
+    "Read.ScpSummaryTitle": "Τελικό SCP αποτέλεσμα:",
+    "Read.ScpTracksSummary": "Κομμάτια: {0} καλό, {1} λείπει ή δεν είναι έγκυρο ({2} κύλινδροι, {3} πλευρές).",
+    "Read.ScpTechnicalSummary": "Περιστροφές: {0} · Ανάλυση: {1} ns · Μέγεθος: {2:N0} bytes · Άθροισμα ελέγχου: {3}.",
+    "Read.ScpOutputFile": "Αρχείο: {0}",
+    "Read.ScpSummaryUnavailable": "Η περίληψη SCP δεν είναι διαθέσιμη: {0}",
+    "Read.ScpBannerSummary": "{0} καλά κομμάτια · {1} λείπουν ή δεν είναι έγκυρα · {2} κύλινδροι · {3} πλευρές · {4} στροφές · {5:N0} byte · {6} άθροισμα ελέγχου"
+  }
+}

@@ -53,6 +53,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/FluxGraph.cpp
   Themes/RetroMediaLab/Views/MediaGraph.cpp
   Themes/RetroMediaLab/Views/CapturePage.cpp
+  Themes/RetroMediaLab/Views/CaptureProgressView.cpp
   Themes/RetroMediaLab/Views/ConversionPage.cpp
   Themes/RetroMediaLab/Views/ConversionDialogs.cpp
   Themes/RetroMediaLab/Views/StatusBar.cpp

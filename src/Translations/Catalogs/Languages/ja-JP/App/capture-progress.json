@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "サイド {0}: トラック {1} — {2}/{3}",
+    "Status.TrackProgress": "トラック {0}, 側面 {1} — {2}/{3}",
+    "Status.TrackUnknown": "トラック {0}, 側面 {1} — {2} 処理される",
+    "Read.ScpSummaryTitle": "最終的なSCP結果:",
+    "Read.ScpTracksSummary": "トラック: {0} は良好、{1} が欠落または無効 ({2} シリンダー、{3} 側面)。",
+    "Read.ScpTechnicalSummary": "革命: {0} · 決断: {1} ns · サイズ: {2:N0} バイト・チェックサム: {3}.",
+    "Read.ScpOutputFile": "ファイル: {0}",
+    "Read.ScpSummaryUnavailable": "SCP 概要は利用できません: {0}",
+    "Read.ScpBannerSummary": "{0} 良好なトラック · {1} が見つからないか無効です · {2} シリンダ · {3} 側面 · {4} 回転数 · {5:N0} バイト · {6} チェックサム"
+  }
+}

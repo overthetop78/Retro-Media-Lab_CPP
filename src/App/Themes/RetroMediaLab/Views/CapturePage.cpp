@@ -1,4 +1,6 @@
 #include "CapturePage.h"
+#include "CaptureProgressView.h"
+#include <QLocale>
 #include "CaptureConstants.h"
 #include "Shared/Controls/Card.h"
 #include "Shared/Localization/MediaText.h"
@@ -78,6 +80,7 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     advancedBody->addWidget(sequencePanel_);sequencePanel_->setVisible(mode==CaptureMode::Read);
     expertLabel_=new QLabel(advanced_);expert_=new QLineEdit(advanced_);advancedBody->addWidget(expertLabel_);advancedBody->addWidget(expert_);body->addWidget(advanced_);
     layout->addWidget(inputs_);layout->addStretch();
+    progress_=new CaptureProgressView(themes,this);layout->addWidget(progress_);
     summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
     auto* footer=new QHBoxLayout;visualize_=new QPushButton(this);explore_=new QPushButton(this);execute_=new QPushButton(this);
     footer->addWidget(visualize_);footer->addWidget(explore_);footer->addStretch();footer->addWidget(execute_);layout->addLayout(footer);
@@ -128,8 +131,12 @@ void CapturePage::refresh() {
     {const QSignalBlocker blocked(advancedToggle_);advancedToggle_->setText(text(C::Advanced));advancedToggle_->setChecked(draft.advancedOpen);}advanced_->setVisible(draft.advancedOpen);advancedToggle_->setArrowType(draft.advancedOpen?Qt::DownArrow:Qt::RightArrow);
     for(const auto& field:fields_){const QSignalBlocker blocked(field.check);field.check->setText(text(field.definition.label));field.check->setChecked(draft.enabled.contains(field.definition.argument));if(field.value){field.value->setEnabled(field.check->isChecked());set(field.value,draft.values.value(field.definition.argument));}}
     {const QSignalBlocker a(autoNumber_),b(sequenceKind_),c(sequenceWidth_);autoNumber_->setText(text(C::AutoNumber));autoNumber_->setChecked(draft.autoNumber);sequenceKind_->setItemText(0,text(C::Digits));sequenceKind_->setItemText(1,text(C::Letters));sequenceKind_->setCurrentIndex(draft.alphabetic?1:0);sequenceWidth_->setValue(draft.sequenceWidth);}
-    expertLabel_->setText(text(C::Expert));execute_->setText(text(session_->busy()?C::Stop:C::Execute));execute_->setEnabled(session_->busy() || state_.greaseweazleTools->activeOperation().isEmpty());
-    auto summary=text(session_->execution().summaryKey.toUtf8().constData());for(int index=0;index<session_->execution().summaryArguments.size();++index)summary.replace(QString::fromLatin1(C::Argument).arg(index),session_->execution().summaryArguments[index]);summary_->setText(summary);
+    expertLabel_->setText(text(C::Expert));execute_->setText(text(session_->busy()?C::Stop:C::Execute));execute_->setEnabled(session_->busy() || session_->canStart());
+    auto summary=text(session_->execution().summaryKey.toUtf8().constData());for(int index=0;index<session_->execution().summaryArguments.size();++index)summary.replace(QString::fromLatin1(C::Argument).arg(index),session_->execution().summaryArguments[index]);const auto substitute=[this](const char* key,const QStringList& arguments){auto value=text(key);for(int index=0;index<arguments.size();++index){value.replace(QString::fromLatin1(C::Argument).arg(index),arguments[index]);value.replace(QString::fromLatin1(C::NumericArgument).arg(index),arguments[index]);}return value;};
+    const auto& tracking=session_->execution().progress;QStringList labels;for(const auto head:tracking.heads)labels<<substitute(C::ProgressSide,{QString::number(head)});progress_->setProgress(tracking,labels,session_->busy());
+    if(session_->captureInfo()){const auto& info=*session_->captureInfo();summary+=QLatin1Char(C::NewLine)+substitute(C::ScpBanner,{QString::number(info.capturedTracks),QString::number(info.missingTracks),QString::number(info.cylinders),QString::number(info.sides),QString::number(info.header.revolutions),QLocale().toString(static_cast<qulonglong>(info.fileSize)),text(info.checksumValid?C::ChecksumValid:C::ChecksumInvalid)});}
+    else if(session_->captureInfoError())summary+=QLatin1Char(C::NewLine)+substitute(C::ScpUnavailable,{mediaText(translations_,*session_->captureInfoError())});
+    if(!session_->completedPath().isEmpty())summary+=QLatin1Char(C::NewLine)+session_->completedPath();summary_->setText(summary);
     if(!session_->cleanupError().isEmpty())summary_->setText(summary+QLatin1Char(C::NewLine)+mediaText(translations_,{C::CleanupFailed,{session_->cleanupPath().toStdString(),session_->cleanupError().toStdString()},{}}));
     visualize_->setText(text(C::OpenVisual));explore_->setText(text(C::OpenExplorer));const bool hasResult=read?!session_->completedPath().isEmpty():QFileInfo::exists(draft.source);visualize_->setVisible(hasResult);explore_->setVisible(hasResult);
     if(isVisible() && state_.greaseweazleTools->activeOperation().isEmpty())try {const auto command=session_->command(state_.hardware(),state_.engines(),QCoreApplication::applicationDirPath());state_.console.setContent(command.displayText(),state_.console.output);}catch(const std::exception&){state_.console.setContent({},state_.console.output);}

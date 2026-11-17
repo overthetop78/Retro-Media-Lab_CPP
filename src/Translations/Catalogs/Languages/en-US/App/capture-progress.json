@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "Side {0}: track {1} — {2}/{3}",
+    "Status.TrackProgress": "Track {0}, side {1} — {2}/{3}",
+    "Status.TrackUnknown": "Track {0}, side {1} — {2} processed",
+    "Read.ScpSummaryTitle": "Final SCP result:",
+    "Read.ScpTracksSummary": "Tracks: {0} good, {1} missing or invalid ({2} cylinders, {3} sides).",
+    "Read.ScpTechnicalSummary": "Revolutions: {0} · Resolution: {1} ns · Size: {2:N0} bytes · Checksum: {3}.",
+    "Read.ScpOutputFile": "File: {0}",
+    "Read.ScpSummaryUnavailable": "SCP summary unavailable: {0}",
+    "Read.ScpBannerSummary": "{0} good tracks · {1} missing or invalid · {2} cylinders · {3} sides · {4} revolution(s) · {5:N0} bytes · {6} checksum"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "Partea {0}: pista {1} — {2}/{3}",
+    "Status.TrackProgress": "Piesa {0}, lateral {1} — {2}/{3}",
+    "Status.TrackUnknown": "Piesa {0}, partea {1} — {2} procesată",
+    "Read.ScpSummaryTitle": "Rezultatul final SCP:",
+    "Read.ScpTracksSummary": "Piese: {0} bune, {1} lipsă sau nevalide ({2} cilindri, {3} laturi).",
+    "Read.ScpTechnicalSummary": "Revoluții: {0} · Rezoluție: {1} ns · Dimensiune: {2:N0} octeți · Sumă de control: {3}.",
+    "Read.ScpOutputFile": "Fișier: {0}",
+    "Read.ScpSummaryUnavailable": "SCP rezumat indisponibil: {0}",
+    "Read.ScpBannerSummary": "{0} piste bune · {1} lipsă sau invalidă · {2} cilindri · {3} laturi · {4} revoluție(i) · {5:N0} octeți · {6} sumă de control"
+  }
+}

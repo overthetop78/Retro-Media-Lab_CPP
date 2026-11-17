@@ -99,6 +99,7 @@ GwToolCommand GreaseweazleTools::build(const QString& verb, const QMap<QString,Q
 struct GreaseweazleTools::Data {
     QMap<QString,GwToolDraft> drafts;
     QString active, directory;
+    Infrastructure::GwProgressTracker progress;
     bool cancelled = false, destroying = false;
     qint64 group = 0;
     std::function<LoggingSettings()> logging;
@@ -164,8 +165,8 @@ void GreaseweazleTools::executeCommand(const QString& verb, const GwToolCommand&
 #else
     data_->process.setUnixProcessParameters(QProcess::UnixProcessFlag::CreateNewSession);
 #endif
-    data_->cancelled = false; data_->group = 0; data_->active = verb; data_->decoder.resetState();
-    auto& current = data_->drafts[verb]; current.lastCommand = built.displayText(); current.output.clear(); current.summaryKey = RunningKey; current.summaryArguments.clear(); current.information = false; current.networkWarning = false; current.logFailed = false;
+    data_->cancelled = false; data_->group = 0; data_->active = verb; data_->decoder.resetState();data_->progress.reset();
+    auto& current = data_->drafts[verb]; current.progress={};current.lastCommand = built.displayText(); current.output.clear(); current.summaryKey = RunningKey; current.summaryArguments.clear(); current.information = false; current.networkWarning = false; current.logFailed = false;
     data_->log = std::make_unique<ConsoleLogSession>(data_->directory, data_->logging); current.logFailed = !data_->log->begin(verb, built.displayText());
     data_->process.setProgram(built.executable); data_->process.setArguments(built.arguments); data_->process.start();
     } catch (...) {
@@ -202,12 +203,14 @@ void GreaseweazleTools::stop() {
 void GreaseweazleTools::output() {
     if (data_->active.isEmpty()) return;
     auto& current = data_->drafts[data_->active]; const QString text = data_->decoder(data_->process.readAllStandardOutput());
+    data_->progress.acceptChunk(text);current.progress=data_->progress.progress();
     current.output += text; if (current.output.size() > OutputLimit) current.output = current.output.right(OutputLimit);
     if (data_->log && !data_->log->appendText(text)) current.logFailed = true; publish();
 }
 void GreaseweazleTools::finish(int code, bool normal, bool startFailed) {
     if (data_->active.isEmpty() || data_->destroying) return;
     output(); data_->stopTimer.stop(); auto& current = data_->drafts[data_->active];
+    data_->progress.acceptChunk({},true);current.progress=data_->progress.progress();
     current.summaryArguments.clear();
     current.summaryKey = startFailed ? StartFailedKey : data_->cancelled ? CancelledKey : normal && code == 0 ? SucceededKey : ExitCodeKey;
     if (current.summaryKey == ExitCodeKey) current.summaryArguments << QString::number(code);

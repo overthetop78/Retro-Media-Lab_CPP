@@ -1,6 +1,10 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::Infrastructure::MediaCommandConstants {
+inline constexpr auto ProgressHeader=R"(^(?:Reading|Writing|Converting|Erasing)\s+c=([0-9,\-/]+):h=([0-9,\-/]+))",ProgressTrack=R"(^T(\d+)\.([01])(?::|\s|$))",ProgressRange=R"(^(\d+)(?:-(\d+)(?:/(\d+))?)?$)";
+inline constexpr auto RetryToken="Retry",FailedToken="fail",ErrorToken="error";
+inline constexpr int ProgressFirst=1,ProgressSecond=2,ProgressThird=3,MaximumProgressCoordinates=65536,MaximumProgressLine=8192;
+inline constexpr char ProgressComma=',',ProgressNewline='\n',ProgressReturn='\r';
 inline constexpr auto ReadExplorer="read-explorer",ExplorerTemporaryPattern="RetroMediaLab-explorer-XXXXXX",ExplorerCaptureName="capture";
 inline constexpr auto Read = "read", Write = "write", Convert = "convert";
 inline constexpr auto Raw = "--raw", HardSectors = "--hard-sectors", Reverse = "--reverse", Tg43 = "--gen-tg43";

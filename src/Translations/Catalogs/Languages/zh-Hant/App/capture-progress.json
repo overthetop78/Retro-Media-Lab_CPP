@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "侧面 {0}: 音轨 {1} -- {2}/{3}",
+    "Status.TrackProgress": "音轨 {0}, 侧 {1} -- {2}/{3}",
+    "Status.TrackUnknown": "音轨 {0}, 侧 {1} -- {2} 已处理",
+    "Read.ScpSummaryTitle": "最終 SCP 結果：",
+    "Read.ScpTracksSummary": "軌跡：{0} 良好，{1} 缺失或無效（{2} 圓柱體，{3} 側邊）。",
+    "Read.ScpTechnicalSummary": "革命 : {0} ・ 分辨率 : {1} ns = 大小 : {2:N0} 字节 \\ 校验和 : {3}.",
+    "Read.ScpOutputFile": "文件：{0}",
+    "Read.ScpSummaryUnavailable": "SCP 摘要不可用：{0}",
+    "Read.ScpBannerSummary": "{0} 良好磁軌 · {1} 缺失或無效 · {2} 柱面 · {3} 邊數 · {4} 轉數 · {5:N0} 位元組 · {6} 校驗和"
+  }
+}

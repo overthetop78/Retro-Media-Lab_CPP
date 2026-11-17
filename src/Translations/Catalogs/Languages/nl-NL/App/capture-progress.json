@@ -1,0 +1,13 @@
+{
+  "strings": {
+    "Status.FaceTrackProgress": "Kant {0}: spoor {1} — {2}/{3}",
+    "Status.TrackProgress": "Spoor {0}, zijkant {1} — {2}/{3}",
+    "Status.TrackUnknown": "Spoor {0}, zijkant {1} — {2} verwerkt",
+    "Read.ScpSummaryTitle": "Uiteindelijk resultaat SCP:",
+    "Read.ScpTracksSummary": "Sporen: {0} goed, {1} ontbreekt of ongeldig ({2} cilinders, {3} zijkanten).",
+    "Read.ScpTechnicalSummary": "Omwentelingen: {0} · Resolutie: {1} ns · Grootte: {2:N0} bytes · Controlesom: {3}.",
+    "Read.ScpOutputFile": "Bestand: {0}",
+    "Read.ScpSummaryUnavailable": "SCP samenvatting niet beschikbaar: {0}",
+    "Read.ScpBannerSummary": "{0} goede sporen · {1} ontbreekt of is ongeldig · {2} cilinders · {3} zijden · {4} omwenteling(en) · {5:N0} bytes · {6} checksum"
+  }
+}

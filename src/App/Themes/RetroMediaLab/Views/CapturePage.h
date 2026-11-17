@@ -13,6 +13,7 @@ class QCheckBox;
 class QSpinBox;
 class QToolButton;
 namespace RetroMediaLab {
+class CaptureProgressView;
 class CapturePage final:public QWidget {
 public:
     CapturePage(Infrastructure::CaptureMode,ThemeService&,Translations::TranslationService&,WorkspaceState&,std::function<void(const QString&)>,QWidget*);
@@ -31,6 +32,7 @@ private:
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     std::function<void(const QString&)> navigate_;
+    CaptureProgressView* progress_;
     QWidget *inputs_,*advanced_,*sequencePanel_;
     QLabel *pathLabel_,*nameLabel_,*profileLabel_,*expertLabel_,*summary_;
     QLineEdit *path_,*name_,*expert_,*sequence_;
