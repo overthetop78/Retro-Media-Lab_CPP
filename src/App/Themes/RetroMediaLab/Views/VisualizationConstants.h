@@ -1,6 +1,19 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::VisualizationConstants {
+inline constexpr int LegendCapacity=13;
+inline constexpr double FluxRadius=.47,FluxHole=.25,FluxBand=.72,FluxStroke=.24;
+inline constexpr std::array FluxQualityLimits{.10,.40,.65,.85};
+inline constexpr std::array FluxQualityBrushes{"Theme.FluxDeadBrush","Theme.FluxPoorBrush","Theme.FluxPartialBrush","Theme.FluxGoodBrush","Theme.FluxExcellentBrush"};
+inline constexpr std::array FluxBrushes{"Theme.FluxShortBrush","Theme.FluxNormalBrush","Theme.FluxLongBrush","Theme.FluxHeaderBrush","Theme.FluxDataBrush","Theme.FluxDeletedBrush","Theme.FluxTimingBrush","Theme.FluxOtherBrush"};
+inline constexpr std::array FluxLabels{"Visual.ShortTransition","Visual.NormalFlux","Visual.LongTransition","Visual.StructureHeader","Visual.StructureData","Visual.StructureKind.DeletedDataAddressMark","Visual.StructureKind.TimingAnomaly","Visual.StructureKind.Sync","Visual.QualityDead","Visual.QualityPoor","Visual.QualityPartial","Visual.QualityGood","Visual.QualityExcellent"};
+inline constexpr std::array FluxLegendBrushes{"Theme.FluxShortBrush","Theme.FluxNormalBrush","Theme.FluxLongBrush","Theme.FluxHeaderBrush","Theme.FluxDataBrush","Theme.FluxDeletedBrush","Theme.FluxTimingBrush","Theme.FluxOtherBrush","Theme.FluxDeadBrush","Theme.FluxPoorBrush","Theme.FluxPartialBrush","Theme.FluxGoodBrush","Theme.FluxExcellentBrush"};
+inline constexpr auto FluxDiskBrush="Theme.FluxDiskBrush",FluxHubBrush="Theme.FluxHubBrush",FluxBackgroundStart="Theme.FluxBackgroundStartBrush",FluxBackgroundMiddle="Theme.FluxBackgroundMiddleBrush",FluxBackgroundEnd="Theme.FluxBackgroundEndBrush";
+inline constexpr double FluxGradientMiddle=.62,FluxDegreesPerUnit=16;
+inline constexpr auto Decoder="Visual.Decoder",Automatic="Visual.Automatic",DecoderPrefix="Visual.DecoderName.",Synthesis="Visual.RevolutionSummary",Transitions="Visual.TransitionsUnit",ScpEntry="Visual.ScpEntryLabel",Confidence="Visual.ConfidenceLabel",Cell="Visual.CellLabel",Structures="Visual.StructuresLabel",AnalysedRevolution="Visual.AnalysedRevolution",FormatDetected="Visual.FormatDetected",BitOffset="Visual.BitOffset",Ticks="Visual.TicksUnit";
+inline constexpr auto FluxTimeSuffix=" ms",FluxRpmSuffix=" RPM";
+inline constexpr int FluxDetailLimit=30,FluxNumericPrecision=2,FluxDetailsMaximumHeight=110,FluxDecoderMaximumWidth=260;
+inline constexpr auto FirstArgument="{0}",NumberArgument="{0:N0}",StructureOffsetSeparator=" @ ";
 inline constexpr int SequentialLines=6,SequentialTimeDigits=2,SequentialMillisecondDigits=3,SecondsPerMinute=60,SecondsPerHour=3600,MillisecondsPerSecond=1000;
 inline constexpr double SequentialMargin=24,SequentialLaneGap=8,SequentialGapRatio=.25,SequentialBandMaximum=42,SequentialMinimumPart=.25;
 inline constexpr int SequentialAlpha=210,DecimalBase=10;

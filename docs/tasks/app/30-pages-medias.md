@@ -50,7 +50,7 @@
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : rendu des faces, pistes, secteurs, flux, blocs et signal ; sélection et zoom selon les données publiques du moteur.
     - [x] Modifier `WorkspaceState.h`, les CMake App/Infrastructure et `audit_literals.py` pour conserver et compiler la visualisation et ses constantes.
     - [x] Créer `src/Translations/Catalogs/Constants/App/visualization.json` et `Languages/*/App/visualization.json` : reprendre les libellés Visualizer et les commandes communes nécessaires depuis les RESX C#.
-    - [ ] Modifier `VisualizationSession.cpp`, `VisualizationPage.cpp` et `MediaGraph.cpp` : compléter les inspections dédiées des médias optiques, blocs et bandes, la classification dégradée des secteurs et les légendes C#.
+    - [x] Modifier `VisualizationSession.cpp`, `VisualizationPage.cpp` et `MediaGraph.cpp` : compléter les inspections dédiées des médias optiques, blocs et bandes, la classification dégradée des secteurs et les légendes C#.
     - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/SectorVisualization.h` et `src/MediaEngine/src/Visualization/Sectors.cpp`, puis modifier le CMake : reprendre les quatre états C# avec intégrité, données absentes, adresses incohérentes/dupliquées et tailles variables, à partir des données déjà ouvertes.
     - [x] Modifier `VisualizationSession.h`, `.cpp`, `MediaGraph.h` et `.cpp` : conserver le modèle des secteurs, grouper les pistes selon leur position logique et sélectionner le secteur pointé dans le graphique.
     - [x] Modifier `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h` et les palettes `light.json`/`dark.json` : afficher une légende et une colonne d'état utilisant les mêmes rôles de couleurs ; conserver la sélection et l'affichage hexadécimal.
@@ -101,6 +101,13 @@
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/SequentialGraph.h` et `.cpp`, puis modifier `MediaGraph.cpp`, `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h`, le CMake et les palettes : bandes par voie sur lignes repliées, pointage partagé, tableau et métadonnées traduits, choix du signal existant.
     - [x] Créer temporairement `build/verification-sequential-visualization/main.cpp`, son exécutable et son WAV : vérifier dispositions temporelle/logique, aperçu, pointage et affichage ; conserver un petit rendu de référence dans `docs/references/retro-media-lab/media/screenshots/`.
     - [x] Supprimer le programme, l'exécutable, le WAV et leurs artefacts temporaires après utilisation.
+  - [x] Flux : rendu et inspection C#
+    - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/FluxVisualization.h`, `src/MediaEngine/src/Visualization/FluxInspection.cpp` ; modifier `Constants.h` et le CMake : arcs de transitions, accord des révolutions, synthèse, liste des décodeurs et inspection de piste avec structures/secteurs.
+    - [x] Modifier `VisualizationSession.h` et `.cpp` : préparation hors GUI, inspection asynchrone de piste, choix du décodeur et conservation des sélections.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/FluxGraph.h` et `.cpp` ; modifier `MediaGraph.h`, `.cpp`, `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h`, les palettes et le CMake : rendu et pointage communs, qualité et transitions C#, synthèse/révolutions, décodeur et inspecteur traduit.
+    - [x] Modifier `src/App/Shared/Controls/HexGrid.cpp` : tenir compte des marges du délégué Qt dans les cellules pour que les deux chiffres restent lisibles avec le style natif.
+    - [x] Créer temporairement `build/verification-flux-visualization/main.cpp`, son exécutable et ses artefacts : vérifier calculs, synthèse, qualité, inspection et rendu à partir de petites données ; conserver une capture dans `docs/references/retro-media-lab/media/screenshots/`.
+    - [x] Supprimer le programme temporaire, son exécutable et ses artefacts après validation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

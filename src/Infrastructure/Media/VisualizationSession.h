@@ -5,6 +5,7 @@
 #include <RetroMediaLab/MediaEngine/TapeSignal.h>
 #include <RetroMediaLab/MediaEngine/LinearVisualization.h>
 #include <RetroMediaLab/MediaEngine/SequentialVisualization.h>
+#include <RetroMediaLab/MediaEngine/FluxVisualization.h>
 namespace RetroMediaLab::Infrastructure {
 struct VisualizationSnapshot {
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> source;
@@ -15,6 +16,7 @@ struct VisualizationSnapshot {
     std::optional<MediaEngine::SectorVisualizationModel> sectors;
     std::optional<MediaEngine::LinearVisualizationModel> linear;
     std::optional<MediaEngine::SequentialVisualizationModel> sequential;
+    std::optional<MediaEngine::FluxVisualizationModel> flux;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API VisualizationSession final : public QObject {
 public:
@@ -23,7 +25,7 @@ public:
     const std::shared_ptr<ExplorerSession>& opening() const noexcept { return opening_; }
     const std::shared_ptr<const VisualizationSnapshot>& snapshot() const noexcept { return snapshot_; }
     const std::optional<MediaEngine::MessageInfo>& error() const noexcept { return error_; }
-    bool busy() const noexcept { return pending_.valid(); }
+    bool busy() const noexcept { return pending_.valid() || fluxPending_.valid(); }
     ExplorerSession::Subscription subscribe(std::function<void()>);
     void select(std::int32_t surface, std::int64_t position);
     void selectSector(std::uint64_t logicalBlock);
@@ -32,7 +34,12 @@ public:
     void setPan(double x, double y);
     void inspect(std::size_t element);
     void setWaveform(bool);
+    void setFluxDecoder(std::optional<std::string>);
+    std::optional<std::string> fluxDecoder;
+    std::optional<MediaEngine::FluxTrackInspection> fluxInspection;
+    bool fluxInspecting() const noexcept {return fluxPending_.valid();}
     bool showWaveform=false;
+    bool fluxSynthesis=true;
     std::int32_t surface = 0;
     std::int64_t position = 0;
     std::size_t revolution = 0;
@@ -43,6 +50,7 @@ public:
     std::vector<std::uint8_t> preview;
 private:
     void sourceChanged();
+    void inspectFlux();
     void poll();
     void publish();
     std::shared_ptr<ExplorerSession> opening_;
@@ -52,6 +60,10 @@ private:
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> requested_;
     std::future<VisualizationSnapshot> pending_;
     std::future<std::vector<std::uint8_t>> inspection_;
+    std::future<MediaEngine::FluxTrackInspection> fluxPending_;
+    std::int32_t inspectingSide_=0;
+    std::int64_t inspectingTrack_=0;
+    std::optional<std::string> inspectingDecoder_;
     std::size_t inspecting_ = 0;
     std::optional<MediaEngine::MessageInfo> error_;
     std::stop_source cancellation_;

@@ -8,6 +8,7 @@ class QPushButton;
 class QSpinBox;
 class QComboBox;
 class QTableWidget;
+class QPlainTextEdit;
 
 namespace RetroMediaLab {
 class HexGrid;
@@ -22,13 +23,14 @@ private:
     Translations::TranslationService& translations_;
     ThemeService& themes_;
     QWidget* legend_;
-    std::array<QLabel*,VisualizationConstants::SectorLabels.size()> legendDots_,legendLabels_;
+    std::array<QLabel*,VisualizationConstants::LegendCapacity> legendDots_,legendLabels_;
     ThemeService::Subscription themeSubscription_;
     std::shared_ptr<Infrastructure::VisualizationSession> session_;
-    QLabel *summary_,*elementDetails_,*status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_;
+    QLabel *summary_,*elementDetails_,*status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_,*decoderLabel_;
     QPushButton *open_, *reset_, *zoomIn_, *zoomOut_;
     QSpinBox *side_, *track_;
-    QComboBox *revolutions_,*representation_;
+    QComboBox *revolutions_,*representation_,*decoder_;
+    QPlainTextEdit* fluxDetails_;
     QTableWidget* sectors_;
     HexGrid* hex_;
     std::vector<const MediaEngine::DiskSectorInfo*> rows_;

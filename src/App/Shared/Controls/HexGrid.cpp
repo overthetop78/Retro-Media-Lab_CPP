@@ -6,6 +6,7 @@
 #include <QResizeEvent>
 #include <QScrollBar>
 #include <QStyle>
+#include <QStyleOptionViewItem>
 #include <QTimer>
 #include <algorithm>
 namespace RetroMediaLab {
@@ -21,7 +22,9 @@ void HexGrid::setBytes(std::vector<std::uint8_t> bytes){if(bytes_==bytes)return;
 void HexGrid::resizeEvent(QResizeEvent* event){QTableWidget::resizeEvent(event);reflow();}
 void HexGrid::changeEvent(QEvent* event){QTableWidget::changeEvent(event);if((event->type()==QEvent::FontChange || event->type()==QEvent::StyleChange) && !scheduled_){scheduled_=true;QTimer::singleShot(0,this,[this]{scheduled_=false;reflow(true);});}}
 void HexGrid::reflow(bool force){
-    const auto metrics=fontMetrics();const auto padding=std::max(CellPadding,style()->pixelMetric(QStyle::PM_FocusFrameHMargin)+CellPadding);const auto cell=metrics.horizontalAdvance(QString::fromLatin1(Sample))+padding+padding+GridLine;
+    const auto metrics=fontMetrics();const auto padding=std::max(CellPadding,style()->pixelMetric(QStyle::PM_FocusFrameHMargin)+CellPadding);QStyleOptionViewItem option;option.initFrom(this);option.font=font();option.fontMetrics=metrics;option.text=QString::fromLatin1(Sample);option.features=QStyleOptionViewItem::HasDisplay;
+    const auto preferred=style()->sizeFromContents(QStyle::CT_ItemViewItem,&option,QSize(metrics.horizontalAdvance(option.text),metrics.height()),this);
+    const auto cell=std::max(metrics.horizontalAdvance(option.text),preferred.width())+padding+padding+GridLine;
     const auto offsetWidth=metrics.horizontalAdvance(QString::fromLatin1(OffsetSample))+padding+padding;
     const auto available=width()-offsetWidth-frameWidth()-frameWidth()-style()->pixelMetric(QStyle::PM_ScrollBarExtent);
     const auto characterWidth=metrics.horizontalAdvance(QString::fromLatin1(CharacterSample));

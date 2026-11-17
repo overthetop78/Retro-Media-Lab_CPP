@@ -18,11 +18,12 @@ VisualizationSession::~VisualizationSession() {
     timer_.stop(); openingSubscription_.reset(); cancellation_.request_stop();
     if (pending_.valid()) pending_.wait();
     if (inspection_.valid()) inspection_.wait();
+    if (fluxPending_.valid()) fluxPending_.wait();
 }
 void VisualizationSession::sourceChanged() {
     if (!opening_->result() || opening_->result() == requested_) return;
     cancellation_.request_stop();
-    if (pending_.valid() || inspection_.valid()) { timer_.start(); return; }
+    if (pending_.valid() || inspection_.valid() || fluxPending_.valid()) { timer_.start(); return; }
     requested_ = opening_->result();
     cancellation_ = std::stop_source{};
     error_.reset();
@@ -34,6 +35,7 @@ void VisualizationSession::sourceChanged() {
         value.source = source;
         value.document = MediaEngine::prepareMediaVisualization(source->document, token);
         value.descriptor = std::make_shared<const MediaEngine::VisualizationDescriptor>(MediaEngine::describeMediaVisualization(value.document, token));
+        if(value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::Flux && source->diskExploration)value.flux=MediaEngine::describeFluxVisualization(source->diskExploration->info(),token);
         if(value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::Sectors && source->diskExploration){
             const auto& disk=source->diskExploration->info();const auto found=std::find_if(disk.formats.begin(),disk.formats.end(),[&](const auto& format){return format.formatId==disk.primaryFormatId;});
             if(found!=disk.formats.end())value.sectors=MediaEngine::describeSectorVisualization(value.document,*found);
@@ -64,7 +66,9 @@ void VisualizationSession::poll() {
             if (!cancellation_.stop_requested()) {
                 snapshot_ = std::make_shared<const VisualizationSnapshot>(std::move(result));
                 showWaveform=snapshot_->sequential && snapshot_->sequential->segments.empty() && snapshot_->tape;
+                fluxInspection.reset();
                 selectedElement.reset(); preview.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
+                if(snapshot_->flux && !snapshot_->flux->tracks.empty()){surface=snapshot_->flux->tracks.front().head;position=snapshot_->flux->tracks.front().cylinder;inspectFlux();}
             }
         } catch (const MediaEngine::MediaError& error) { if (!cancellation_.stop_requested()) captureError(error); }
           catch (const std::exception& error) { if (!cancellation_.stop_requested()) captureError(error); }
@@ -79,10 +83,26 @@ void VisualizationSession::poll() {
         if(!cancellation_.stop_requested() && selectedElement && *selectedElement!=inspecting_)inspect(*selectedElement);
         changed = true;
     }
-    if (!pending_.valid() && !inspection_.valid()) { timer_.stop(); sourceChanged(); }
+    if(fluxPending_.valid() && fluxPending_.wait_for(std::chrono::seconds::zero())==std::future_status::ready){
+        const bool current=inspectingSide_==surface && inspectingTrack_==position && inspectingDecoder_==fluxDecoder;
+        try{auto result=fluxPending_.get();if(!cancellation_.stop_requested() && current)fluxInspection=std::move(result);}
+        catch(const MediaEngine::MediaError& error){if(!cancellation_.stop_requested() && current)captureError(error);}
+        catch(const std::exception& error){if(!cancellation_.stop_requested() && current)captureError(error);}
+        catch(...){if(!cancellation_.stop_requested() && current)error_=MediaEngine::MessageInfo{UnexpectedError,{},{}};}
+        if(!cancellation_.stop_requested() && !current)inspectFlux();changed=true;
+    }
+    if (!pending_.valid() && !inspection_.valid() && !fluxPending_.valid()) { timer_.stop(); sourceChanged(); }
     if (changed) publish();
 }
-void VisualizationSession::select(std::int32_t side, std::int64_t track) { if (surface != side || position != track) selectedSector.reset(); surface = side; position = track; revolution = 0; publish(); }
+void VisualizationSession::select(std::int32_t side, std::int64_t track) {if(surface==side && position==track)return;selectedSector.reset();fluxInspection.reset();surface=side;position=track;revolution=0;inspectFlux();publish();}
+void VisualizationSession::setFluxDecoder(std::optional<std::string> decoder){if(fluxDecoder==decoder)return;fluxDecoder=std::move(decoder);fluxInspection.reset();selectedSector.reset();inspectFlux();publish();}
+void VisualizationSession::inspectFlux(){
+    if(!snapshot_ || !snapshot_->flux || !snapshot_->source->diskExploration || fluxPending_.valid() || cancellation_.stop_requested())return;
+    const auto source=snapshot_->source;const auto& tracks=source->diskExploration->info().tracks;
+    const auto found=std::find_if(tracks.begin(),tracks.end(),[this](const auto& track){return track.head==surface && track.cylinder==position;});if(found==tracks.end())return;
+    const auto index=static_cast<std::size_t>(found-tracks.begin());inspectingSide_=surface;inspectingTrack_=position;inspectingDecoder_=fluxDecoder;const auto token=cancellation_.get_token();const auto decoder=fluxDecoder;error_.reset();
+    try{fluxPending_=std::async(std::launch::async,[source,index,decoder,token]{return MediaEngine::inspectFluxVisualization(source->diskExploration->info().tracks[index],decoder,token);});timer_.start();}catch(const std::exception& error){error_=MediaEngine::MessageInfo{UnexpectedError,{error.what()},{}};}
+}
 void VisualizationSession::selectSector(std::uint64_t logical){if(!snapshot_ || !snapshot_->sectors)return;const auto& sectors=snapshot_->sectors->sectors;const auto found=std::find_if(sectors.begin(),sectors.end(),[&](const auto& item){return item.logicalBlock==logical;});if(found==sectors.end())return;if(surface==found->head && position==found->cylinder && selectedSector==logical)return;surface=static_cast<std::int32_t>(found->head);position=found->cylinder;selectedSector=logical;publish();}
 void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && value >= 1 && value <= MaximumZoom) { zoom = value; if (value == 1) { panX = 0; panY = 0; } publish(); } }
 void VisualizationSession::setRevolution(std::size_t value) { revolution = value; publish(); }

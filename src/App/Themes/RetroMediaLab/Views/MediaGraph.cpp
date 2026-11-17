@@ -1,6 +1,7 @@
 #include "MediaGraph.h"
 #include "LinearGraph.h"
 #include "SequentialGraph.h"
+#include "FluxGraph.h"
 #include "VisualizationConstants.h"
 #include "../ThemeConstants.h"
 #include <QMouseEvent>
@@ -31,7 +32,7 @@ const MediaEngine::DiskFormatInfo* MediaGraph::format() const {
 void MediaGraph::rebuild() {
     if (cached_ == session_->snapshot() && cachedRevolution_ == session_->revolution) return;
     cachedRevolution_ = session_->revolution;
-    cached_ = session_->snapshot(); flux_.clear(); sectorTracks_.clear();surfaces_.clear(); cylinders_ = 0;
+    cached_ = session_->snapshot(); sectorTracks_.clear();surfaces_.clear(); cylinders_ = 0;
     if (!cached_) return;
     const auto kind = cached_->descriptor->fields().representationKind;
     if (kind != RepresentationKind::Flux && kind != RepresentationKind::Sectors) return;
@@ -42,30 +43,7 @@ void MediaGraph::rebuild() {
         for(auto& [key,track]:sectorTracks_)std::stable_sort(track.begin(),track.end(),[](const auto* left,const auto* right){return left->number<right->number;});
         return;
     }
-    std::set<std::int32_t> sides;
-    if (const auto* value = format()) {
-        for (const auto& sector : value->sectors) { sides.insert(static_cast<std::int32_t>(sector.head)); cylinders_ = std::max(cylinders_, static_cast<std::int32_t>(sector.cylinder + 1)); }
-    }
-    if (cached_->source->diskExploration) for (const auto& track : cached_->source->diskExploration->info().tracks) {
-        sides.insert(track.head); cylinders_ = std::max(cylinders_, track.cylinder + 1);
-        if (track.revolutions.empty()) continue;
-        const auto& revolution = track.revolutions[std::min(session_->revolution,track.revolutions.size()-1)];
-        if (!revolution.fluxIntervals || revolution.fluxIntervals->empty()) continue;
-        FluxRing ring{track.head, track.cylinder, std::vector<double>(RingBins)};
-        std::vector<std::size_t> counts(RingBins);
-        const auto total = std::accumulate(revolution.fluxIntervals->begin(), revolution.fluxIntervals->end(), double{});
-        if (total <= 0) continue;
-        double elapsed = 0;
-        for (const auto interval : *revolution.fluxIntervals) {
-            const auto bin = std::min(static_cast<std::size_t>(RingBins - 1), static_cast<std::size_t>(elapsed / total * RingBins));
-            ring.values[bin] += interval; ++counts[bin]; elapsed += interval;
-        }
-        double maximum = 0;
-        for (std::size_t i = 0; i < counts.size(); ++i) if (counts[i]) { ring.values[i] /= counts[i]; maximum = std::max(maximum, ring.values[i]); }
-        if (maximum > 0) for (auto& value : ring.values) value /= maximum;
-        flux_.push_back(std::move(ring));
-    }
-    surfaces_.assign(sides.begin(), sides.end());
+
 }
 void MediaGraph::paintEvent(QPaintEvent*) {
     QPainter painter(this);
@@ -87,6 +65,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         for(std::size_t index=0;index<items.size();++index){const QRectF cell((index%columns)*cellWidth,(index/columns)*cellHeight,std::max(MinViewSize,cellWidth-RingOverlap),std::max(MinViewSize,cellHeight-RingOverlap));painter.fillRect(cell,theme->color(SectorBrushes[static_cast<std::size_t>(items[index].state)]));if(session_->selectedSector==items[index].logicalBlock){painter.setPen(QPen(foreground,SelectionWidth));painter.drawRect(cell);}}
         return;
     }
+    if(cached_->flux){painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintFluxGraph(painter,size(),*cached_->flux,session_->revolution,session_->fluxSynthesis,session_->surface,session_->position,session_->fluxInspection?&*session_->fluxInspection:nullptr,*theme);return;}
     const bool disk = !surfaces_.empty() && cylinders_ > 0 && (kind == RepresentationKind::Flux || kind == RepresentationKind::Sectors);
     if (disk) {
         painter.translate(width()*Half,height()*Half);
@@ -101,15 +80,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
             const QPointF center(cellWidth * (static_cast<double>(side) + Half), height() * Half);
             const auto circle = [&](int cylinder) { const auto r = radius - (cylinder + Half) * ringWidth; return QRectF(center.x()-r, center.y()-r, r+r, r+r); };
             painter.setPen(QPen(unknown, LineWidth)); painter.setBrush(Qt::NoBrush); painter.drawEllipse(center, radius, radius);
-            if (kind == RepresentationKind::Flux) {
-                for (const auto& track : flux_) if (track.head == surfaces_[side]) {
-                    for (std::size_t bin = 0; bin < track.values.size(); ++bin) {
-                        auto color = track.values[bin] > 0 ? success : unknown; color.setAlphaF(LightFloor + LightRange * track.values[bin]);
-                        painter.setPen(QPen(color, ringWidth + RingOverlap));
-                        painter.drawArc(circle(track.cylinder), static_cast<int>(static_cast<double>(bin) / RingBins * FullCircle * AngularUnits), static_cast<int>(static_cast<double>(FullCircle * AngularUnits) / RingBins) + 1);
-                    }
-                }
-            } else if (selectedFormat) {
+            if (selectedFormat) {
                 for(int cylinder=0;cylinder<cylinders_;++cylinder){
                     const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found==sectorTracks_.end())continue;
                     const auto& sectors=found->second;const auto sweep=static_cast<double>(FullCircle)/sectors.size();const auto outer=radius-cylinder*ringWidth,inside=std::max(inner,outer-ringWidth);const QRectF outerRect(center.x()-outer,center.y()-outer,outer+outer,outer+outer),innerRect(center.x()-inside,center.y()-inside,inside+inside,inside+inside);
@@ -157,6 +128,7 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     if (!cached_ || event->button() != Qt::LeftButton) return;
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->flux){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestFluxGraph(size(),*cached_->flux,point))session_->select(selected->first,selected->second);return;}
     if(cached_->sequential && !session_->showWaveform){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestSequentialGraph(size(),*cached_->sequential,point))session_->inspect(*selected);return;}
     if(cached_->sequential && session_->showWaveform)return;
     if(cached_->linear){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestLinearGraph(size(),*cached_->linear,*cached_->descriptor,point))session_->inspect(*selected);return;}

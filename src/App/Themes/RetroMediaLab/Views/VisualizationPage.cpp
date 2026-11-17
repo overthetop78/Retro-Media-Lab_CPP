@@ -12,6 +12,7 @@
 #include <QLocale>
 #include "Shared/Controls/HexGrid.h"
 #include <QPushButton>
+#include <QPlainTextEdit>
 #include <QSignalBlocker>
 #include <QSpinBox>
 #include <QSplitter>
@@ -50,8 +51,9 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     sideLabel_ = new QLabel(inspector); trackLabel_ = new QLabel(inspector); revolutionLabel_ = new QLabel(inspector);
     side_ = new QSpinBox(inspector); track_ = new QSpinBox(inspector); revolutions_ = new QComboBox(inspector);
     coordinates->addWidget(sideLabel_); coordinates->addWidget(side_); coordinates->addWidget(trackLabel_); coordinates->addWidget(track_);
-    coordinates->addWidget(revolutionLabel_); coordinates->addWidget(revolutions_); coordinates->addStretch(); details->addLayout(coordinates);
+    coordinates->addWidget(revolutionLabel_); coordinates->addWidget(revolutions_);decoderLabel_=new QLabel(inspector);decoder_=new QComboBox(inspector);decoder_->setMaximumWidth(FluxDecoderMaximumWidth);coordinates->addWidget(decoderLabel_);coordinates->addWidget(decoder_); coordinates->addStretch(); details->addLayout(coordinates);
     elementDetails_=new QLabel(inspector);elementDetails_->setWordWrap(true);elementDetails_->setTextFormat(Qt::PlainText);details->addWidget(elementDetails_);
+    fluxDetails_=new QPlainTextEdit(inspector);fluxDetails_->setReadOnly(true);fluxDetails_->setMaximumHeight(FluxDetailsMaximumHeight);details->addWidget(fluxDetails_);
     auto* contents = new QSplitter(inspector);
     sectors_ = new QTableWidget(contents); sectors_->setColumnCount(static_cast<int>(Columns.size()));
     sectors_->setEditTriggers(QAbstractItemView::NoEditTriggers); sectors_->setSelectionBehavior(QAbstractItemView::SelectRows); sectors_->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -61,7 +63,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     splitter->addWidget(graph); splitter->addWidget(inspector); splitter->setStretchFactor(0,GraphWeight); splitter->setStretchFactor(1,DetailsWeight);
     layout->addWidget(splitter,1);
     legend_=new QWidget(this);auto* legendLayout=new FlowLayout(legend_);legendLayout->setContentsMargins(0,0,0,0);legendLayout->setSpacing(Gap);
-    for(std::size_t index=0;index<SectorLabels.size();++index){auto* item=new QWidget(legend_);auto* row=new QHBoxLayout(item);row->setContentsMargins(0,0,0,0);row->setSpacing(Gap);legendDots_[index]=new QLabel(QString::fromUtf8(LegendMark),item);legendLabels_[index]=new QLabel(item);row->addWidget(legendDots_[index]);row->addWidget(legendLabels_[index]);legendLayout->addWidget(item);}layout->addWidget(legend_);
+    for(std::size_t index=0;index<legendLabels_.size();++index){auto* item=new QWidget(legend_);auto* row=new QHBoxLayout(item);row->setContentsMargins(0,0,0,0);row->setSpacing(Gap);legendDots_[index]=new QLabel(QString::fromUtf8(LegendMark),item);legendLabels_[index]=new QLabel(item);row->addWidget(legendDots_[index]);row->addWidget(legendLabels_[index]);legendLayout->addWidget(item);}layout->addWidget(legend_);
     themeSubscription_=themes.subscribe([this]{refresh();});
     connect(open_,&QPushButton::clicked,this,[this,&state] {
         const auto path=QFileDialog::getOpenFileName(this,text(Open),state.defaultImageDirectory()); if(!path.isEmpty()) session_->opening()->open(path);
@@ -72,7 +74,8 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     connect(zoomOut_,&QPushButton::clicked,this,[this]{session_->setZoom(std::max(InitialZoom,session_->zoom/ZoomStep));});
     connect(side_,&QSpinBox::valueChanged,this,[this](int value){session_->select(value,session_->position);});
     connect(track_,&QSpinBox::valueChanged,this,[this](int value){session_->select(session_->surface,value);});
-    connect(revolutions_,&QComboBox::currentIndexChanged,this,[this](int value){if(value>=0)session_->setRevolution(static_cast<std::size_t>(value));});
+    connect(revolutions_,&QComboBox::currentIndexChanged,this,[this](int value){if(value<0)return;if(session_->snapshot() && session_->snapshot()->flux){session_->fluxSynthesis=value==0;session_->setRevolution(value==0?0:static_cast<std::size_t>(value-1));}else session_->setRevolution(static_cast<std::size_t>(value));});
+    connect(decoder_,&QComboBox::currentIndexChanged,this,[this](int index){if(index<0)return;const auto id=decoder_->itemData(index).toString();session_->setFluxDecoder(id.isEmpty()?std::nullopt:std::optional<std::string>(id.toStdString()));});
     connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && session_->snapshot() && (session_->snapshot()->linear || session_->snapshot()->sequential)){session_->inspect(static_cast<std::size_t>(row));return;}if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
     subscription_=session_->subscribe([this]{refresh();});
     openingSubscription_=session_->opening()->subscribe([this]{refresh();});
@@ -97,13 +100,36 @@ void VisualizationPage::refresh() {
     QStringList headers; for(const auto key:Columns)headers.push_back(text(key)); sectors_->setHorizontalHeaderLabels(headers);
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);
     sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear();rowStates_.clear(); revolutions_->clear();
-    summary_->clear();elementDetails_->clear();
-    legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value() || session_->snapshot()->sequential.has_value()));
+    summary_->clear();elementDetails_->clear();fluxDetails_->clear();
+    const bool flux=session_->snapshot() && session_->snapshot()->flux.has_value();
+    decoder_->setVisible(flux);decoderLabel_->setVisible(flux);decoderLabel_->setText(text(Decoder));fluxDetails_->setVisible(flux);
+    const QSignalBlocker blockedDecoder(decoder_);decoder_->clear();
+    for(auto* label:legendLabels_)label->parentWidget()->hide();
+    legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value() || session_->snapshot()->sequential.has_value() || flux));
     for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->setText(text(SectorLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SectorBrushes[index]));legendDots_[index]->setPalette(palette);}
     for(std::size_t index=0;index<SectorLabels.size();++index)legendLabels_[index]->parentWidget()->show();
     if(!session_->snapshot()) {hex_->setBytes({});return;}
     const auto& snapshot=*session_->snapshot();
     const auto& descriptor=snapshot.descriptor->fields();
+    if(snapshot.flux){
+        decoder_->addItem(text(Automatic),QString{});for(const auto& id:snapshot.flux->decoders)decoder_->addItem(text((std::string(DecoderPrefix)+id).c_str()),QString::fromStdString(id));decoder_->setCurrentIndex(session_->fluxDecoder?decoder_->findData(QString::fromStdString(*session_->fluxDecoder)):0);
+        for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->show();
+        std::int32_t maximumHead=0,maximumTrack=0;for(const auto& track:snapshot.flux->tracks){maximumHead=std::max(maximumHead,track.head);maximumTrack=std::max(maximumTrack,track.cylinder);}side_->setRange(0,maximumHead);side_->setValue(session_->surface);track_->setRange(0,maximumTrack);track_->setValue(static_cast<int>(session_->position));
+        const auto found=std::find_if(snapshot.flux->tracks.begin(),snapshot.flux->tracks.end(),[this](const auto& item){return item.head==session_->surface && item.cylinder==session_->position;});QStringList summary,details;
+        revolutions_->addItem(text(Synthesis));
+        if(found!=snapshot.flux->tracks.end()){if(found->sourceNumber)summary<<text(ScpEntry)+QString::fromUtf8(ValueSeparator)+QString::number(*found->sourceNumber);summary<<text(TrackCount)+QString::fromUtf8(ValueSeparator)+QString::number(snapshot.flux->tracks.size());
+            for(std::size_t index=0;index<found->revolutions.size();++index){const auto& value=found->revolutions[index];revolutions_->addItem(QString::number(index+1));details<<QString::number(index+1)+QString::fromUtf8(ValueSeparator)+QLocale().toString(static_cast<qulonglong>(value.transitions))+QLatin1Char(HexSeparator)+text(Transitions)+QString::fromUtf8(InfoSeparator)+QLocale().toString(value.milliseconds,PercentNumberFormat,FluxNumericPrecision)+QString::fromLatin1(FluxTimeSuffix)+QString::fromUtf8(InfoSeparator)+QLocale().toString(value.rpm,PercentNumberFormat,FluxNumericPrecision)+QString::fromLatin1(FluxRpmSuffix);}
+        }
+        revolutions_->setCurrentIndex(session_->fluxSynthesis?0:static_cast<int>(session_->revolution+1));
+        if(session_->fluxInspection){const auto& inspection=*session_->fluxInspection;if(!inspection.decoderId.empty()){summary<<text(FormatDetected)+QString::fromUtf8(ValueSeparator)+text((std::string(DecoderPrefix)+inspection.decoderId).c_str());summary<<text(Confidence)+QString::fromUtf8(ValueSeparator)+QLocale().toString(inspection.confidence*PercentFactor,PercentNumberFormat,0)+QString::fromLatin1(Percent);summary<<text(Cell)+QString::fromUtf8(ValueSeparator)+QLocale().toString(inspection.cellTicks,PercentNumberFormat,FluxNumericPrecision)+QLatin1Char(HexSeparator)+text(Ticks);summary<<text(Structures)+QString::fromUtf8(ValueSeparator)+QString::number(inspection.details.size());details<<text(AnalysedRevolution).replace(QString::fromLatin1(FirstArgument),QString::number(inspection.revolution+1));}
+            for(std::size_t index=0;index<std::min<std::size_t>(inspection.details.size(),FluxDetailLimit);++index){const auto& item=inspection.details[index];details<<text(item.kindKey.c_str())+QString::fromLatin1(StructureOffsetSeparator)+text(BitOffset).replace(QString::fromLatin1(NumberArgument),QLocale().toString(static_cast<qulonglong>(item.bitOffset)));}for(const auto& sector:inspection.sectors)rows_.push_back(&sector);
+        }
+        summary_->setText(summary.join(QString::fromUtf8(InfoSeparator)));fluxDetails_->setPlainText(details.join(QLatin1Char(LineSeparator)));
+        for(std::size_t index=0;index<FluxLabels.size();++index){legendLabels_[index]->parentWidget()->show();legendLabels_[index]->setText(text(FluxLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(FluxLegendBrushes[index]));legendDots_[index]->setPalette(palette);}
+        for(int column=0;column<sectors_->columnCount();++column)sectors_->setColumnHidden(column,column==StateColumn);sectors_->setRowCount(static_cast<int>(rows_.size()));
+        int selected=0;for(std::size_t index=0;index<rows_.size();++index){const auto& sector=*rows_[index];const QStringList values{QString::number(sector.logicalBlock),QString::number(sector.head),QString::number(sector.cylinder),QString::number(sector.number),QLocale().formattedDataSize(static_cast<qint64>(sector.size)),text(sector.dataValid?(*sector.dataValid?ValidKey:InvalidKey):UnavailableKey)};for(int column=0;column<values.size();++column)sectors_->setItem(static_cast<int>(index),column,new QTableWidgetItem(values[column]));if(session_->selectedSector==sector.logicalBlock)selected=static_cast<int>(index);}
+        if(!rows_.empty()){sectors_->setCurrentCell(selected,0);showSector(selected);}else hex_->setBytes({});return;
+    }
     if(snapshot.sequential){
         const auto& model=*snapshot.sequential;
         for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->hide();
