@@ -1,3 +1,4 @@
+#include "Media/ExplorerReadSession.h"
 #include <ErrorKeys.h>
 #include "WorkspaceState.h"
 #include "Media/CaptureSession.h"
@@ -16,6 +17,8 @@ void WorkspaceState::ensureMediaOperations(Translations::TranslationService& tra
         session->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
     };
     initialize(reading,Infrastructure::CaptureMode::Read);initialize(writing,Infrastructure::CaptureMode::Write);
+    if(!explorer)explorer=std::make_shared<Infrastructure::ExplorerSession>();
+    if(!explorerReading){explorerReading=std::make_shared<Infrastructure::ExplorerReadSession>(explorer,greaseweazleTools,profiles);explorerReading->capture().output=[this](const QString& command,const QString& output){console.setContent(command,output);};}
     if(!converting){
         converting=std::make_shared<Infrastructure::ConversionSession>(greaseweazleTools,logsDirectory,[this]{return logging();},[&translations](const auto& message){return mediaText(translations,message);},profiles);
         converting->draft.addTags=conversion().addTags;

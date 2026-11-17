@@ -11,7 +11,7 @@
     - [x] Créer `src/Translations/Catalogs/Constants/App/explorer.json` et `src/Translations/Catalogs/Languages/*/App/explorer.json` : reprendre les libellés existants du C#, sans retraduire les textes déjà traduits.
     - [x] Modifier `src/Translations/include/RetroMediaLab/Translations/TranslationService.h` et `src/Translations/src/TranslationService.cpp` : résoudre un texte de domaine média via le service existant, avec son repli et ses invariants.
     - [x] Modifier `scripts/quality/audit_literals.py` : vérifier les deux nouveaux en-têtes comme définitions de constantes.
-    - [ ] Modifier `ExplorerSession.h`, `ExplorerSession.cpp` et `ExplorerPage.cpp` : terminer les diagnostics, les détails étendus, le lien vers la lecture physique et la restauration de la sélection de fichier.
+    - [x] Modifier `ExplorerSession.h`, `ExplorerSession.cpp` et `ExplorerPage.cpp` : terminer les diagnostics, les détails étendus, le lien vers la lecture physique et la restauration de la sélection de fichier.
     - [ ] Modifier `ExplorerPage.cpp` et `MediaPageConstants.h` si nécessaire après vérification visuelle : état vide, rendu compact, changement de langue et reconstruction du thème.
   - [ ] Lecture et écriture
     - [x] Modifier `src/Infrastructure/Maintenance/GreaseweazleTools.h`, `.cpp` et `GwToolsConstants.h` : exposer l'exécution d'une commande validée pour Lecture/Écriture/Conversion, avec le lanceur, les journaux et le nettoyage déjà existants, sans ajouter d'onglets de maintenance.
@@ -87,6 +87,13 @@
   - [x] Colonne alphanumérique de la grille hexadécimale
     - [x] Modifier `src/App/Shared/Controls/HexGrid.h`, `.cpp` et `HexGridConstants.h` : ajouter une colonne ASCII extensible après les 16 ou 8 octets, réserver sa largeur et remplacer les octets non imprimables par un point.
     - [x] Modifier `build/verification-explorer-state/main.cpp` : vérifier la correspondance ASCII/octets, la dernière ligne partielle et le passage 17/9 colonnes.
+    - [x] Supprimer le programme, l'exécutable et leurs artefacts temporaires après utilisation.
+  - [x] Lecture physique depuis l'explorateur
+    - [x] Modifier `CaptureSession.h`, `.cpp`, `MediaCommandConstants.h`, `GreaseweazleTools.cpp`, `LogSettings.cpp` et `StatusBar.cpp` : distinguer la capture de l'explorateur, respecter son moteur sélectionné et conserver la commande GW read et les réglages des journaux de lecture.
+    - [x] Modifier `ExplorerSession.h` et `.cpp` : conserver la ressource temporaire avec le résultat d'ouverture, tant que ses consommateurs le retiennent.
+    - [x] Créer `src/Infrastructure/Media/ExplorerReadSession.h` et `.cpp`, puis modifier le CMake Infrastructure : réutiliser CaptureSession pour la capture SCP temporaire, l'arrêt et l'ouverture du résultat, avec nettoyage sur échec/exception/fermeture.
+    - [x] Modifier `WorkspaceState.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et `MediaPageConstants.h` : bouton de lecture/arrêt avec confirmation, lecteur sélectionné, console et état conservé à la reconstruction du thème.
+    - [x] Créer temporairement `build/verification-explorer-read/main.cpp`, son exécutable et ses sorties : fournir un faux outil de capture et vérifier succès, arrêt, choix strict du moteur et durée de vie du fichier temporaire sans accès matériel.
     - [x] Supprimer le programme, l'exécutable et leurs artefacts temporaires après utilisation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.

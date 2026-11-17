@@ -25,16 +25,17 @@ private:
     std::shared_ptr<const MediaEngine::FileSystemVolumeInfo> volume() const;
     Translations::TranslationService& translations_;
     std::shared_ptr<Infrastructure::ExplorerSession> session_;
-    QPushButton *open_, *cancel_;
+    std::shared_ptr<Infrastructure::ExplorerReadSession> reading_;
+    QPushButton *open_, *cancel_,*read_;
     QComboBox *volumes_, *sessions_, *formats_;
-    QLabel *status_, *details_;
+    QLabel *status_, *details_,*readStatus_;
     QTreeWidget* folders_;
     QTableWidget* contents_;
     std::vector<const MediaEngine::FileSystemEntryInfo*> rows_;
     std::vector<std::size_t> visibleVolumes_;
     std::map<QTreeWidgetItem*, std::vector<std::size_t>> paths_;
     std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult> displayed_;
-    Infrastructure::ExplorerSession::Subscription operationSubscription_;
+    Infrastructure::ExplorerSession::Subscription operationSubscription_,readSubscription_;
     Translations::TranslationService::Subscription languageSubscription_;
 };
 }

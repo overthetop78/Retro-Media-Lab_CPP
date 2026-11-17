@@ -16,13 +16,15 @@ ExplorerSession::~ExplorerSession() {
     cancellation_.request_stop();
     // The asynchronous operation must finish before its resources are destroyed.
     if (pending_.valid()) pending_.wait();
+    pending_={};pendingLifetime_.reset();
 }
-void ExplorerSession::open(const QString& path, std::optional<std::string> format) {
+void ExplorerSession::open(const QString& path, std::optional<std::string> format, std::shared_ptr<const void> lifetime) {
     if (busy() || path.isEmpty()) return;
     cancellation_ = std::stop_source{};
     cancelled_ = false;
     error_.clear();
     errorMessage_.reset();
+    pendingLifetime_=std::move(lifetime);
     pendingPath_ = path;
     pendingFormat_ = format;
     try {
@@ -36,6 +38,7 @@ void ExplorerSession::open(const QString& path, std::optional<std::string> forma
     } catch (...) {
         error_ = QString::fromLatin1(UnexpectedError);
     }
+    if(!pending_.valid())pendingLifetime_.reset();
     notify();
 }
 void ExplorerSession::cancel() {
@@ -49,7 +52,13 @@ void ExplorerSession::poll() {
     try {
         auto value = pending_.get();
         if (!cancelled_) {
-            result_ = std::make_shared<const MediaEngine::MediaOpeningAnalysisResult>(std::move(value));
+            if(pendingLifetime_){
+                struct OwnedDocument {std::shared_ptr<const void> lifetime;std::shared_ptr<const MediaEngine::MediaDocument> document;};
+                const auto retain=[&](auto& document){if(!document)return;auto owner=std::make_shared<OwnedDocument>(OwnedDocument{pendingLifetime_,document});document=std::shared_ptr<const MediaEngine::MediaDocument>(owner,owner->document.get());};
+                retain(value.document);if(value.mediaExploration)retain(value.mediaExploration->document);
+            }
+            struct OwnedResult {std::shared_ptr<const void> lifetime;MediaEngine::MediaOpeningAnalysisResult result;};
+            auto owner=std::make_shared<OwnedResult>(OwnedResult{std::move(pendingLifetime_),std::move(value)});result_=std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult>(owner,&owner->result);
             path_ = pendingPath_;
             selectedFormat = pendingFormat_;
             selectedVolume = 0;
@@ -71,6 +80,7 @@ void ExplorerSession::poll() {
     } catch (...) {
         if (!cancelled_) error_ = QString::fromLatin1(UnexpectedError);
     }
+    pendingLifetime_.reset();
     notify();
 }
 ExplorerSession::Subscription ExplorerSession::subscribe(std::function<void()> callback) {

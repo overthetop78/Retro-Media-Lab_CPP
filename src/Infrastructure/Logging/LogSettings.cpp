@@ -1,3 +1,4 @@
+#include "Media/MediaCommandConstants.h"
 #include "LogSettings.h"
 #include <ErrorKeys.h>
 #include <stdexcept>
@@ -29,7 +30,7 @@ ActionLogSettings decode(const QJsonObject& object, ActionLogSettings fallback) 
     return fallback;
 }
 }
-ActionLogSettings LoggingSettings::forAction(const QString& action) const { return actions.value(action.toLower(),defaults); }
+ActionLogSettings LoggingSettings::forAction(const QString& action) const { return actions.value(action==Infrastructure::MediaCommandConstants::ReadExplorer?QString::fromLatin1(LogConstants::Read):action.toLower(),defaults); }
 void LoggingSettings::validate() const {
     if(defaults.maximumKilobytes<LogConstants::Unlimited)throw std::invalid_argument(ErrorKeys::InvalidLoggingSettings);
     for(auto it=actions.begin();it!=actions.end();++it)

@@ -1,3 +1,4 @@
+#include "Media/MediaCommandConstants.h"
 #include "GreaseweazleTools.h"
 #include "Media/MediaCommands.h"
 #include "GwToolsConstants.h"
@@ -115,7 +116,7 @@ GreaseweazleTools::GreaseweazleTools(QString directory, std::function<LoggingSet
     : data_(std::make_unique<Data>()) {
     data_->directory = std::move(directory); data_->logging = std::move(logging); data_->translate = std::move(translate);
     for (const auto& tool : gwToolDefinitions()) { GwToolDraft draft; draft.summaryKey = ReadyKey; for (const auto& parameter : tool.parameters) if (parameter.kind != GwParameterKind::Flag) draft.values.insert(parameter.id, parameter.initial); data_->drafts.insert(tool.id, draft); }
-    for (const auto* operation : {Read, Write, Convert}) { GwToolDraft draft; draft.summaryKey = ReadyKey; data_->drafts.insert(operation, draft); }
+    for (const auto* operation : {Read, Write, Convert,Infrastructure::MediaCommandConstants::ReadExplorer}) { GwToolDraft draft; draft.summaryKey = ReadyKey; data_->drafts.insert(operation, draft); }
     data_->process.setProcessChannelMode(QProcess::MergedChannels); data_->stopTimer.setSingleShot(true);
     connect(&data_->process, &QProcess::readyReadStandardOutput, this, [this] { output(); });
     connect(&data_->process, &QProcess::started, this, [this] { data_->group = data_->process.processId(); });

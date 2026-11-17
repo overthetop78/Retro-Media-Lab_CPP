@@ -18,12 +18,13 @@
 #include <vector>
 namespace RetroMediaLab {
 namespace Translations {class TranslationService;}
-namespace Infrastructure { class ExplorerSession; class VisualizationSession; class CaptureSession; class ConversionSession; }
+namespace Infrastructure { class ExplorerSession; class ExplorerReadSession; class VisualizationSession; class CaptureSession; class ConversionSession; }
 class GreaseweazleTools;
 // Session-owned state survives destruction of theme windows. Business models will live outside views.
 struct WorkspaceState {
     std::shared_ptr<Infrastructure::OperationProfiles> profiles=std::make_shared<Infrastructure::OperationProfiles>();
     std::shared_ptr<Infrastructure::ExplorerSession> explorer;
+    std::shared_ptr<Infrastructure::ExplorerReadSession> explorerReading;
     std::shared_ptr<Infrastructure::VisualizationSession> visualization;
     QStringList openPageIds{AppConstants::Read, AppConstants::Write, AppConstants::Convert, AppConstants::Visualize, AppConstants::Explorer, AppConstants::Tools, AppConstants::Emulation};
     QString activePageId = AppConstants::Read;

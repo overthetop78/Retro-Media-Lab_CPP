@@ -1,6 +1,7 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::Infrastructure::MediaCommandConstants {
+inline constexpr auto ReadExplorer="read-explorer",ExplorerTemporaryPattern="RetroMediaLab-explorer-XXXXXX",ExplorerCaptureName="capture";
 inline constexpr auto Read = "read", Write = "write", Convert = "convert";
 inline constexpr auto Raw = "--raw", HardSectors = "--hard-sectors", Reverse = "--reverse", Tg43 = "--gen-tg43";
 inline constexpr auto NoClobber = "--no-clobber", PreErase = "--pre-erase", EraseEmpty = "--erase-empty", NoVerify = "--no-verify";

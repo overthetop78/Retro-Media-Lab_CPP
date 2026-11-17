@@ -7,7 +7,7 @@
 #include "Profiles/OperationProfiles.h"
 #include <QSet>
 namespace RetroMediaLab::Infrastructure {
-enum class CaptureMode {Read,Write};
+enum class CaptureMode {Read,Write,ExplorerRead};
 struct CaptureOptionDefinition {const char* argument;const char* label;const char* initial;bool flag=false;};
 RETROMEDIALAB_INFRASTRUCTURE_API const std::vector<CaptureOptionDefinition>& captureOptions(CaptureMode);
 struct CaptureDraft {
@@ -35,10 +35,11 @@ public:
     void applyProfile(std::size_t);
     void saveProfile(QString name,bool replace=false);
     const std::vector<OperationProfile>& profiles() const {return profiles_->forOperation(profileOperation());}
-    ProfileOperation profileOperation()const noexcept{return mode==CaptureMode::Read?ProfileOperation::Read:ProfileOperation::Write;}
+    ProfileOperation profileOperation()const noexcept{return mode!=CaptureMode::Write?ProfileOperation::Read:ProfileOperation::Write;}
     std::size_t selectedProfile=0;
     void nextAvailable();
     bool busy() const;
+    bool canStart() const;
     const GwToolDraft& execution() const;
     const QString& completedPath() const noexcept {return completed_;}
     const QString& cleanupError() const noexcept {return cleanupError_;}

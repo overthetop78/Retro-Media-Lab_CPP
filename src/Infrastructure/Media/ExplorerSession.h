@@ -16,7 +16,7 @@ public:
     using Subscription = std::shared_ptr<const std::function<void()>>;
     ExplorerSession();
     ~ExplorerSession() override;
-    void open(const QString& path, std::optional<std::string> format = {});
+    void open(const QString& path, std::optional<std::string> format = {}, std::shared_ptr<const void> sourceLifetime = {});
     void cancel();
     bool busy() const noexcept { return pending_.valid(); }
     const QString& path() const noexcept { return path_; }
@@ -39,6 +39,7 @@ private:
     QString path_, pendingPath_, error_;
     std::optional<std::string> pendingFormat_;
     std::optional<MediaEngine::MessageInfo> errorMessage_;
+    std::shared_ptr<const void> pendingLifetime_;
     bool cancelled_ = false;
     std::vector<std::weak_ptr<const std::function<void()>>> observers_;
 };

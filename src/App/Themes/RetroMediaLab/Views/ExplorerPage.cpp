@@ -1,9 +1,12 @@
 #include "ExplorerPage.h"
+#include "Media/ExplorerReadSession.h"
 #include "MediaPageConstants.h"
 #include "Shared/Controls/Card.h"
 #include "Shared/Localization/MediaText.h"
 #include <Errors.h>
 #include <QComboBox>
+#include <QCoreApplication>
+#include <QMessageBox>
 #include <QDateTime>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -28,19 +31,22 @@ using MediaEngine::FileSystemEntryInfo;
 using MediaEngine::FileSystemEntryKind;
 ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state, QWidget* parent)
     : QWidget(parent), translations_(translations) {
+    state.ensureMediaOperations(translations);
+    reading_=state.explorerReading;
     if (!state.explorer) state.explorer = std::make_shared<Infrastructure::ExplorerSession>();
     session_ = state.explorer;
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(Padding, Padding, Padding, Padding);
     layout->setSpacing(Gap);
     auto* toolbar = new QHBoxLayout;
+    read_=new QPushButton(this);
     open_ = new QPushButton(this);
     cancel_ = new QPushButton(this);
     volumes_ = new QComboBox(this);
     sessions_ = new QComboBox(this);
     formats_ = new QComboBox(this);
     volumes_->setMinimumWidth(0);
-    toolbar->addWidget(open_);
+    toolbar->addWidget(read_);toolbar->addWidget(open_);
     toolbar->addWidget(formats_);
     toolbar->addWidget(sessions_);
     toolbar->addWidget(volumes_, 1);
@@ -50,6 +56,7 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     status_->setTextFormat(Qt::PlainText);
     status_->setWordWrap(true);
     layout->addWidget(status_);
+    readStatus_=new QLabel(this);readStatus_->setWordWrap(true);readStatus_->setTextFormat(Qt::PlainText);layout->addWidget(readStatus_);
     auto* splitter = new QSplitter(this);
     folders_ = new QTreeWidget(splitter);
     folders_->setHeaderHidden(true);
@@ -75,6 +82,13 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     splitter->setStretchFactor(1, ContentsStretch);
     splitter->setStretchFactor(DetailsPaneIndex, DetailsStretch);
     layout->addWidget(splitter, 1);
+    connect(read_,&QPushButton::clicked,this,[this,&state]{
+        if(reading_->busy()){if(QMessageBox::question(this,text(StopTitle),text(StopConfirm),QMessageBox::Yes|QMessageBox::No,QMessageBox::No)==QMessageBox::Yes)reading_->stop();return;}
+        const auto id=state.selectedHardwareDeviceId.isEmpty()?state.reading->draft.deviceId:state.selectedHardwareDeviceId;
+        const auto found=std::find_if(state.hardware().devices.begin(),state.hardware().devices.end(),[&](const auto& device){return device.id==id;});const auto label=found==state.hardware().devices.end()?text(Unknown):found->name;
+        if(QMessageBox::question(this,text(ReadConfirmTitle),text(ReadConfirm).replace(QString::fromLatin1(Argument),label),QMessageBox::Yes|QMessageBox::No,QMessageBox::No)!=QMessageBox::Yes)return;
+        try{reading_->start(state.hardware(),state.engines(),QCoreApplication::applicationDirPath(),id);}catch(const std::exception& error){readStatus_->setText(mediaErrorText(translations_,error));readStatus_->show();}
+    });
     connect(open_, &QPushButton::clicked, this, [this, &state] {
         const auto path = QFileDialog::getOpenFileName(this, text(Open), state.defaultImageDirectory());
         if (!path.isEmpty()) session_->open(path);
@@ -121,6 +135,7 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     });
     rebuildVolumes();
     rebuildTree();
+    readSubscription_=reading_->subscribe([this]{refresh();});
     operationSubscription_ = session_->subscribe([this] { refresh(); });
     languageSubscription_ = translations.subscribe([this] { displayed_.reset(); refresh(); });
     refresh();
@@ -135,9 +150,11 @@ std::shared_ptr<const MediaEngine::FileSystemVolumeInfo> ExplorerPage::volume() 
     return displayed_->diskExploration ? displayed_->diskExploration->info().volume : nullptr;
 }
 void ExplorerPage::refresh() {
-    open_->setText(text(Open)); cancel_->setText(text(Cancel));
-    open_->setEnabled(!session_->busy()); cancel_->setVisible(session_->busy());
-    formats_->setEnabled(!session_->busy());
+    open_->setText(text(Open)); cancel_->setText(text(Cancel));read_->setText(text(reading_->busy()?Stop:ReadDisk));
+    read_->setEnabled(reading_->busy() || reading_->canStart());
+    const auto& execution=reading_->capture().execution();auto readSummary=QString::fromStdString(translations_.text(execution.summaryKey.toStdString()));for(int index=0;index<execution.summaryArguments.size();++index)readSummary.replace(QString::fromLatin1(ArgumentPattern).arg(index),execution.summaryArguments[index]);readStatus_->setText(readSummary);readStatus_->setVisible(reading_->busy() || !execution.lastCommand.isEmpty());
+    open_->setEnabled(!session_->busy() && !reading_->busy()); cancel_->setVisible(session_->busy() && !reading_->busy());
+    formats_->setEnabled(!session_->busy() && !reading_->busy());
     formats_->setAccessibleName(text(Format));
     sessions_->setAccessibleName(text(Session));
     volumes_->setAccessibleName(text(Volume));

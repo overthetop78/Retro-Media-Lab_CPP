@@ -1,3 +1,4 @@
+#include "Media/MediaCommandConstants.h"
 #include "../ThemeConstants.h"
 #include "StatusBar.h"
 #include "Shared/Controls/StatusIndicator.h"
@@ -60,7 +61,7 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
     connect(selector, &QComboBox::currentIndexChanged, this, [updateSelection] { updateSelection(); });
     const auto refreshOperation=[ready,&state,&translations] {
         const auto active=state.converting && state.converting->converting()?QString::fromLatin1(GwToolsConstants::Convert):state.greaseweazleTools?state.greaseweazleTools->activeOperation():QString{};
-        const auto* key=active==EngineConstants::Read?AppConstants::TabRead:active==EngineConstants::Write?AppConstants::TabWrite:active==GwToolsConstants::Convert?AppConstants::TabConvert:active.isEmpty()?ThemeConstants::StatusReadyShort:GwToolsConstants::RunningKey;
+        const auto* key=(active==EngineConstants::Read || active==Infrastructure::MediaCommandConstants::ReadExplorer)?AppConstants::TabRead:active==EngineConstants::Write?AppConstants::TabWrite:active==GwToolsConstants::Convert?AppConstants::TabConvert:active.isEmpty()?ThemeConstants::StatusReadyShort:GwToolsConstants::RunningKey;
         ready->setText(QString::fromStdString(translations.text(key)));
     };
     const auto refresh = [this, refreshOperation, console, selector, updateSelection, &state, &themes, &translations] {
