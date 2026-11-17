@@ -18,9 +18,13 @@ struct ConversionDraft {
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API ConversionSession final:public QObject {
 public:
-    ConversionSession(std::shared_ptr<GreaseweazleTools>,QString,std::function<LoggingSettings()>,std::function<QString(const MediaEngine::MessageInfo&)>);
+    ConversionSession(std::shared_ptr<GreaseweazleTools>,QString,std::function<LoggingSettings()>,std::function<QString(const MediaEngine::MessageInfo&)>,std::shared_ptr<OperationProfiles>);
     ~ConversionSession() override;
     ConversionDraft draft;
+    const std::vector<OperationProfile>& profiles()const{return profiles_->forOperation(ProfileOperation::Convert);}
+    void applyProfile(std::size_t);
+    void saveProfile(QString,bool replace=false);
+    std::size_t selectedProfile=0;
     void open(const QString&,bool internal);
     void cancel();
     void changed();
@@ -49,6 +53,7 @@ private:
     void next();
     void complete(bool);
     void report(MediaEngine::MessageInfo);
+    void pruneSelections();
     GwToolCommand command(const MediaEngine::ConversionOutput&)const;
     std::vector<MediaEngine::EnabledOption> options()const;
     QTimer timer_;
@@ -57,6 +62,9 @@ private:
     std::future<std::vector<MediaEngine::MessageInfo>> preflight_;
     std::future<MediaEngine::MediaConversionResult> conversion_;
     std::shared_ptr<GreaseweazleTools> tools_;
+    std::shared_ptr<OperationProfiles> profiles_;
+    OperationProfiles::Subscription profileSubscription_;
+    QString profileId_;
     ConsoleLogSession log_;
     std::function<QString(const MediaEngine::MessageInfo&)> translate_;
     QString outputText_;

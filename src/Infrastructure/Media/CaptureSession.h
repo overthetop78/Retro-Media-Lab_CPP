@@ -4,6 +4,7 @@
 #include "Maintenance/GreaseweazleTools.h"
 #include "Engines/EngineSettings.h"
 #include "ExplorerSession.h"
+#include "Profiles/OperationProfiles.h"
 #include <QSet>
 namespace RetroMediaLab::Infrastructure {
 enum class CaptureMode {Read,Write};
@@ -18,10 +19,9 @@ struct CaptureDraft {
     QMap<QString,QString> values;
     QSet<QString> enabled;
 };
-struct CaptureProfile {QString name;CaptureDraft settings;};
 class RETROMEDIALAB_INFRASTRUCTURE_API CaptureSession final {
 public:
-    CaptureSession(CaptureMode,std::shared_ptr<GreaseweazleTools>);
+    CaptureSession(CaptureMode,std::shared_ptr<GreaseweazleTools>,std::shared_ptr<OperationProfiles>);
     ~CaptureSession();
     CaptureDraft draft;
     const CaptureMode mode;
@@ -34,7 +34,8 @@ public:
     void selectSource(const QString&);
     void applyProfile(std::size_t);
     void saveProfile(QString name,bool replace=false);
-    const std::vector<CaptureProfile>& profiles() const noexcept {return profiles_;}
+    const std::vector<OperationProfile>& profiles() const {return profiles_->forOperation(profileOperation());}
+    ProfileOperation profileOperation()const noexcept{return mode==CaptureMode::Read?ProfileOperation::Read:ProfileOperation::Write;}
     std::size_t selectedProfile=0;
     void nextAvailable();
     bool busy() const;
@@ -52,6 +53,8 @@ private:
     std::vector<std::weak_ptr<const std::function<void()>>> observers_;
     bool wasRunning_=false;
     QString activePath_,completed_,cleanupError_;
-    std::vector<CaptureProfile> profiles_;
+    std::shared_ptr<OperationProfiles> profiles_;
+    OperationProfiles::Subscription profileSubscription_;
+    QString profileId_;
 };
 }

@@ -12,6 +12,7 @@ class QTreeWidget;
 class QListWidget;
 class QProgressBar;
 class QToolButton;
+class QComboBox;
 namespace RetroMediaLab {
 class ConversionPage final:public QWidget {
 public:
@@ -23,9 +24,11 @@ private:
     void refresh();
     void rebuildFormats();
     void selectFormats();
+    QString selectionSignature()const;
     void openSource();
     void execute();
     void askLosses();
+    void saveProfile();
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     std::shared_ptr<Infrastructure::ConversionSession> session_;
@@ -38,9 +41,13 @@ private:
     QTreeWidget* formats_;
     QListWidget* selected_;
     QProgressBar* progress_;
+    QComboBox* profiles_;
+    QLabel* profileLabel_;
+    QPushButton *save_,*reset_;
     struct Field {Infrastructure::CaptureOptionDefinition definition;QCheckBox* check;QLineEdit* value;};
     std::vector<Field> fields_;
     std::vector<std::string> displayedIds_;
+    QString selectionSignature_;
     bool showingLosses_=false,rebuild_=true;
     Infrastructure::ExplorerSession::Subscription subscription_;
     WorkspaceState::DirectorySubscription engineSubscription_,settingsSubscription_;

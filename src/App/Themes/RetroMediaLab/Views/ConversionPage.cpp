@@ -7,6 +7,8 @@
 #include "../ContentScrollArea.h"
 #include "../FlowLayout.h"
 #include <QCheckBox>
+#include <QComboBox>
+#include <QInputDialog>
 #include <QCoreApplication>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -31,6 +33,7 @@ ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationSer
     state.ensureMediaOperations(translations);session_=state.converting;
     auto* layout=new QVBoxLayout(this);layout->setContentsMargins(C::Padding,C::Padding,C::Padding,C::Padding);layout->setSpacing(C::Gap);
     inputs_=new QWidget(this);auto* body=new QVBoxLayout(inputs_);body->setContentsMargins(0,0,0,0);body->setSpacing(C::Gap);
+    auto* profileCard=new Card(themes.data(),inputs_);auto* profileRow=new QHBoxLayout(profileCard);profileLabel_=new QLabel(profileCard);profiles_=new QComboBox(profileCard);save_=new QPushButton(profileCard);reset_=new QPushButton(profileCard);profileRow->addWidget(profileLabel_);profileRow->addWidget(profiles_,1);profileRow->addWidget(save_);profileRow->addWidget(reset_);body->addWidget(profileCard);
     auto* sourceCard=new Card(themes.data(),inputs_);auto* row=new QGridLayout(sourceCard);
     sourceLabel_=new QLabel(sourceCard);source_=new QLineEdit(sourceCard);source_->setObjectName(C::SourceInput);browse_=new QPushButton(sourceCard);
     nameLabel_=new QLabel(sourceCard);name_=new QLineEdit(sourceCard);name_->setObjectName(C::NameInput);tags_=new QCheckBox(sourceCard);
@@ -54,10 +57,12 @@ ConversionPage::ConversionPage(ThemeService& themes,Translations::TranslationSer
     connect(name_,&QLineEdit::textEdited,this,[this](const QString& value){session_->draft.name=value;session_->changed();});
     connect(tags_,&QCheckBox::toggled,this,[this](bool enabled){session_->draft.addTags=enabled;session_->changed();});
     connect(rare_,&QCheckBox::toggled,this,[this]{rebuild_=true;refresh();});
-    connect(formats_,&QTreeWidget::itemChanged,this,[this]{selectFormats();});
+    connect(formats_,&QTreeWidget::itemChanged,this,[this](QTreeWidgetItem* item){if(item->data(0,C::ExtensionRole).isValid() && item->checkState(0)==Qt::Checked){const QSignalBlocker blocked(formats_);item->parent()->setCheckState(0,Qt::Checked);}selectFormats();});
     connect(advancedToggle_,&QToolButton::toggled,this,[this](bool enabled){session_->draft.advancedOpen=enabled;session_->changed();});
     connect(expert_,&QLineEdit::textEdited,this,[this](const QString& value){session_->draft.expert=value;session_->changed();});
     connect(execute_,&QPushButton::clicked,this,[this]{execute();});
+    connect(profiles_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0)session_->applyProfile(static_cast<std::size_t>(index));});
+    connect(save_,&QPushButton::clicked,this,[this]{saveProfile();});connect(reset_,&QPushButton::clicked,this,[this]{session_->applyProfile(session_->selectedProfile);});
     subscription_=session_->subscribe([this]{refresh();});
     engineSubscription_=state.subscribeToEngines([this]{if(!session_->busy() && !session_->draft.source.isEmpty())openSource();});
     settingsSubscription_=state.subscribeToConversion([this]{refresh();});languageSubscription_=translations.subscribe([this]{rebuild_=true;refresh();});refresh();
@@ -92,18 +97,22 @@ void ConversionPage::selectFormats() {
         if(item->checkState(0)!=Qt::Checked)continue;
         E::ConversionSelection selection{id,{}};for(int ext=0;ext<item->childCount();++ext)if(item->child(ext)->checkState(0)==Qt::Checked)selection.explicitExtensions.push_back(item->child(ext)->data(0,C::ExtensionRole).toString().toStdString());
         selections.push_back(std::move(selection));
-    }session_->draft.selections=std::move(selections);session_->changed();
+    }session_->draft.selections=std::move(selections);selectionSignature_=selectionSignature();session_->changed();
 }
+QString ConversionPage::selectionSignature()const{QString result;for(const auto& selection:session_->draft.selections){result+=QString::fromStdString(selection.formatId)+QString::fromLatin1(C::NewLine);for(const auto& extension:selection.explicitExtensions)result+=QString::fromStdString(extension)+QString::fromLatin1(C::NewLine);}return result;}
 void ConversionPage::refresh() {
     const bool busy=session_->busy();inputs_->setEnabled(!busy);execute_->setText(text(busy?C::Stop:C::Execute));
     sourceLabel_->setText(text(C::Source));nameLabel_->setText(text(C::Name));browse_->setText(text(C::Browse));tags_->setText(text(C::AddTags));rare_->setText(text(C::ShowRare));formatLabel_->setText(text(C::Formats));selectedLabel_->setText(text(C::Selected));expertLabel_->setText(text(C::Expert));advancedToggle_->setText(text(C::Advanced));
+    profileLabel_->setText(text(C::Profile));save_->setText(text(C::Save));reset_->setText(text(C::Reset));
+    {const QSignalBlocker blocked(profiles_);profiles_->clear();for(const auto& profile:session_->profiles())profiles_->addItem(profile.system?text(C::DefaultProfile):profile.name,profile.id);profiles_->setCurrentIndex(static_cast<int>(session_->selectedProfile));}
     const auto set=[](QLineEdit* edit,const QString& value){if(edit->text()!=value)edit->setText(value);};
     set(source_,session_->draft.source);set(name_,session_->draft.name);set(expert_,session_->draft.expert);
     {const QSignalBlocker blocked(tags_);tags_->setChecked(session_->draft.addTags);}
     {const QSignalBlocker blocked(advancedToggle_);advancedToggle_->setChecked(session_->draft.advancedOpen);advanced_->setVisible(session_->draft.advancedOpen);}
     advancedToggle_->setArrowType(session_->draft.advancedOpen?Qt::DownArrow:Qt::RightArrow);
     for(auto& field:fields_){field.check->setText(text(field.definition.argument==M::OutputTracks?C::OutputTracks:field.definition.label));const QSignalBlocker blocked(field.check);field.check->setChecked(session_->draft.enabled.contains(field.definition.argument));if(field.value){set(field.value,session_->draft.values.value(field.definition.argument));field.value->setEnabled(field.check->isChecked());}}
-    std::vector<std::string> ids;for(const auto& format:session_->formats())ids.push_back(format.id);if(rebuild_ || ids!=displayedIds_)rebuildFormats();
+    const auto signature=selectionSignature();
+    std::vector<std::string> ids;for(const auto& format:session_->formats())ids.push_back(format.id);if(rebuild_ || ids!=displayedIds_ || signature!=selectionSignature_){rebuildFormats();selectionSignature_=signature;}
     progress_->setVisible(session_->converting());progress_->setValue(static_cast<int>(session_->progress()));
     QStringList messages;for(const auto& message:session_->messages())messages.push_back(mediaText(translations_,message));
     if(session_->error())summary_->setText(mediaText(translations_,*session_->error()));else if(!messages.isEmpty())summary_->setText(messages.back());
@@ -133,5 +142,11 @@ void ConversionPage::execute() {
         state_.console.setContent(session_->preview(state_.hardware(),state_.engines(),state_.conversion(),QCoreApplication::applicationDirPath()),{});
         session_->start(state_.hardware(),state_.engines(),state_.conversion(),QCoreApplication::applicationDirPath(),decision);
     }catch(const std::exception& error){QMessageBox::warning(this,text(C::Title),mediaErrorText(translations_,error));}
+}
+void ConversionPage::saveProfile(){
+    bool accepted=false;const auto name=QInputDialog::getText(this,text(C::SaveProfile),text(C::ProfileName),QLineEdit::Normal,{},&accepted);if(!accepted)return;
+    if(name.trimmed().compare(text(C::DefaultProfile),Qt::CaseInsensitive)==0){QMessageBox::warning(this,text(C::Profile),text(C::ReservedProfile));return;}
+    bool replace=false;for(const auto& profile:session_->profiles())if(profile.name.compare(name.trimmed(),Qt::CaseInsensitive)==0){QMessageBox dialog(QMessageBox::Question,text(C::SaveProfile),text(C::ReplaceProfile),QMessageBox::Yes|QMessageBox::No,this);dialog.setDefaultButton(QMessageBox::No);replace=dialog.exec()==QMessageBox::Yes;if(!replace)return;}
+    try{session_->saveProfile(name,replace);}catch(const std::exception& error){QMessageBox::warning(this,text(C::Profile),mediaErrorText(translations_,error));}
 }
 }

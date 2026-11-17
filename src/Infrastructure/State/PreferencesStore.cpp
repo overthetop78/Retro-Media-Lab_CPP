@@ -17,6 +17,7 @@ void validate(const UserPreferences& value) {
     if (!DisplayConstants::supported(value.interfaceScale)) throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
     value.logging.validate();
     value.engines.validate();
+    Infrastructure::OperationProfiles profiles;profiles.reset(value.profiles);
     if (!Translations::isSupportedLanguage(value.language.toStdString()))
         throw std::runtime_error(ErrorKeys::UnsupportedPreferenceLanguage);
     for (auto it = value.themeSettings.begin(); it != value.themeSettings.end(); ++it)
@@ -46,6 +47,7 @@ UserPreferences PreferencesStore::load(const UserPreferences& defaults) const {
     result.hardware = HardwareSettings::fromJson(data.value(HardwareConstants::Section));
     result.conversion = ConversionSettings::fromJson(data.value(ConversionConstants::Section));
     result.logging = LoggingSettings::fromJson(data.value(LogConstants::Logging));
+    Infrastructure::OperationProfiles profiles;profiles.reset(data.value(Infrastructure::ProfileConstants::Section));result.profiles=profiles.toJson();
     if (version == AppConstants::PreferencesStoreValues::LegacySchemaVersion) {
         const auto appearance = data.value(AppConstants::Appearance);
         if (appearance != AppConstants::Light && appearance != AppConstants::Dark && appearance != AppConstants::System)
@@ -74,6 +76,7 @@ void PreferencesStore::save(const UserPreferences& value) const {
         {ConversionConstants::Section, value.conversion.toJson()},
         {HardwareConstants::Section, value.hardware.toJson()},
         {EngineConstants::Section, value.engines.toJson()},
+        {Infrastructure::ProfileConstants::Section, value.profiles},
         {DisplayConstants::Preference, value.interfaceScale},
         {AppConstants::DefaultImageDirectory, value.defaultImageDirectory}
     }).toJson();

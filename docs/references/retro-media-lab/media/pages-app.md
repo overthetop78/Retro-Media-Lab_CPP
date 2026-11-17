@@ -50,3 +50,14 @@ La vue propose formats/extensions par famille, sorties et fidélité, tags, opti
 Vérification effective dans le GUI Release : chargement d’une copie temporaire du SSD Acorn DFS `AMX Art 2.1.ssd`, sélection des deux destinations `cpcemu.dsk` et `raw.scp`, exécution du lot par le moteur interne. Deux fichiers produits : DSK 112896 octets et SCP 2966712 octets ; source de travail 102400 octets. Le dernier contrôle a identifié puis corrigé l’ordre des notifications de progression pour garder le bilan de lot en dernier. Fenêtre fermée normalement ; fixtures et sorties temporaires supprimées. Aucun accès en écriture à un lecteur physique.
 
 Restent explicitement ouverts : profils RAW d’entrée/sortie, choix de conflit par fichier (actuellement décision globale au lot), profils persistants de conversion et validation des conversions séquentielles avec pertes. Ce résultat ne clôture pas les cinq pages du point principal.
+
+
+### Profils des opérations — persistance commune (2026-11-17)
+
+Référence C# : OperationProfileCollection, InMemoryProfileStore, ProfileSettings, ProfileOptionsController et les méthodes Capture/Apply des ViewModels des trois opérations. Infrastructure possède maintenant la collection commune OperationProfiles. Elle conserve un identifiant stable lors du remplacement et du renommage ; chaque opération garde son défaut permanent, non sérialisé. Les doublons sont rejetés par opération. Un chargement JSON invalide laisse intacte la collection précédente.
+
+Les valeurs reprennent les conventions C# : options sans préfixe --, expert, result (raw/known), format, extension et folder pour Lecture ; tags, format:<id> et extensions:<id> pour Conversion. Les fichiers sources ne sont pas enregistrés dans les profils. La destination de Lecture est conservée comme en C#. Les sélections de Conversion restent conservées au chargement d’une nouvelle source si elles sont compatibles.
+
+PreferencesStore ajoute la section profiles au fichier utilisateur existant ; son absence reste compatible. Bootstrap charge la collection avant les vues et souscrit à ses changements pour utiliser QSaveFile. Sessions et vues partagent la collection, indépendante du thème. Préférences permet renommage/suppression avec confirmation, menu contextuel et F2/Suppr ; les trois pages possèdent sélection, enregistrement/remplacement et réinitialisation.
+
+Validation : compilation Release sans avertissement ; contrôle temporaire réussi sur sauvegarde/rechargement, valeurs/options, identifiants, séparation des opérations, doublons, protection des défauts et chargement invalide atomique. Source, exécutable, objet, journal et JSON temporaire supprimés ensuite. Contrôle visuel réel du sélecteur Conversion et des trois listes de Préférences : défaut traduit, renommage/suppression désactivés sur les défauts ; fenêtres fermées normalement. Aucun profil de test ajouté aux préférences réelles.

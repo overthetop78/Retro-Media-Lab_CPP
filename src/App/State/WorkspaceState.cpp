@@ -11,13 +11,13 @@ void WorkspaceState::ensureMediaOperations(Translations::TranslationService& tra
     if(!greaseweazleTools)greaseweazleTools=std::make_shared<GreaseweazleTools>(logsDirectory,[this]{return logging();},[&translations](const QString& key){return QString::fromStdString(translations.text(key.toStdString()));});
     const auto initialize=[this](auto& session,Infrastructure::CaptureMode mode) {
         if(session)return;
-        session=std::make_shared<Infrastructure::CaptureSession>(mode,greaseweazleTools);
+        session=std::make_shared<Infrastructure::CaptureSession>(mode,greaseweazleTools,profiles);
         session->draft.directory=defaultImageDirectory();
         session->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
     };
     initialize(reading,Infrastructure::CaptureMode::Read);initialize(writing,Infrastructure::CaptureMode::Write);
     if(!converting){
-        converting=std::make_shared<Infrastructure::ConversionSession>(greaseweazleTools,logsDirectory,[this]{return logging();},[&translations](const auto& message){return mediaText(translations,message);});
+        converting=std::make_shared<Infrastructure::ConversionSession>(greaseweazleTools,logsDirectory,[this]{return logging();},[&translations](const auto& message){return mediaText(translations,message);},profiles);
         converting->draft.addTags=conversion().addTags;
         converting->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
     }

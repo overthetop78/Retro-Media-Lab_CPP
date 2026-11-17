@@ -30,11 +30,31 @@ E::MessageInfo describe(const std::exception& error) {
 }
 bool matches(const E::MediaConversionDestination& destination,const E::ConversionOutput& output) {return destination.formatId==output.formatId && destination.extension==output.extension;}
 }
-ConversionSession::ConversionSession(std::shared_ptr<GreaseweazleTools> tools,QString directory,std::function<LoggingSettings()> settings,std::function<QString(const E::MessageInfo&)> translate)
-    :tools_(std::move(tools)),log_(std::move(directory),std::move(settings)),translate_(std::move(translate)) {
+ConversionSession::ConversionSession(std::shared_ptr<GreaseweazleTools> tools,QString directory,std::function<LoggingSettings()> settings,std::function<QString(const E::MessageInfo&)> translate,std::shared_ptr<OperationProfiles> profiles)
+    :tools_(std::move(tools)),profiles_(std::move(profiles)),log_(std::move(directory),std::move(settings)),translate_(std::move(translate)) {
     timer_.setInterval(MediaSessionConstants::PollMilliseconds);
     connect(&timer_,&QTimer::timeout,this,[this]{poll();});
     for(const auto& option:conversionOptions())if(!option.flag)draft.values.insert(option.argument,QString::fromUtf8(option.initial));
+    profileId_=this->profiles().front().id;
+    profileSubscription_=profiles_->subscribe([this]{const auto& items=this->profiles();const auto found=std::find_if(items.begin(),items.end(),[this](const auto& item){return item.id==profileId_;});selectedProfile=found==items.end()?0:static_cast<std::size_t>(found-items.begin());profileId_=items[selectedProfile].id;publish();});
+}
+void ConversionSession::applyProfile(std::size_t index){
+    namespace P=ProfileConstants;
+    if(busy() || index>=profiles().size())return;const auto& profile=profiles()[index];draft.expert=profile.values.value(P::Expert);draft.enabled.clear();draft.selections.clear();draft.addTags=profile.enabled.contains(P::Tags);
+    for(const auto& option:conversionOptions()){const auto key=QString::fromLatin1(option.argument).mid(QString::fromLatin1(P::OptionPrefix).size());if(profile.enabled.contains(key))draft.enabled.insert(option.argument);if(!option.flag && profile.values.contains(key))draft.values.insert(option.argument,profile.values.value(key));}
+    for(const auto& key:profile.enabled)if(key.startsWith(P::FormatPrefix)){
+        const auto id=key.mid(QString::fromLatin1(P::FormatPrefix).size());E::ConversionSelection selection{id.toStdString(),{}};
+        for(const auto& extension:profile.values.value(QString::fromLatin1(P::ExtensionsPrefix)+id).split(QLatin1Char(P::ExtensionSeparator),Qt::SkipEmptyParts))selection.explicitExtensions.push_back(extension.trimmed().toStdString());
+        draft.selections.push_back(std::move(selection));
+    }
+    selectedProfile=index;profileId_=profile.id;if(openedPath_==draft.source && !openedPath_.isEmpty())pruneSelections();publish();
+}
+void ConversionSession::saveProfile(QString name,bool replace){
+    namespace P=ProfileConstants;
+    if(busy())return;OperationProfile profile;profile.operation=ProfileOperation::Convert;profile.name=std::move(name);profile.values.insert(P::Expert,draft.expert);if(draft.addTags)profile.enabled.insert(P::Tags);
+    for(const auto& option:conversionOptions()){const auto key=QString::fromLatin1(option.argument).mid(QString::fromLatin1(P::OptionPrefix).size());if(draft.enabled.contains(option.argument))profile.enabled.insert(key);if(!option.flag)profile.values.insert(key,draft.values.value(option.argument));}
+    for(const auto& selection:draft.selections){const auto id=QString::fromStdString(selection.formatId);profile.enabled.insert(QString::fromLatin1(P::FormatPrefix)+id);QStringList extensions;for(const auto& extension:selection.explicitExtensions)extensions.push_back(QString::fromStdString(extension));if(!extensions.isEmpty())profile.values.insert(QString::fromLatin1(P::ExtensionsPrefix)+id,extensions.join(QLatin1Char(P::ExtensionSeparator)));}
+    profileId_=profiles_->save(std::move(profile),replace);const auto& items=profiles();selectedProfile=static_cast<std::size_t>(std::find_if(items.begin(),items.end(),[this](const auto& item){return item.id==profileId_;})-items.begin());publish();
 }
 ConversionSession::~ConversionSession() {
     timer_.stop();cancellation_.request_stop();
@@ -44,7 +64,7 @@ ConversionSession::~ConversionSession() {
 bool ConversionSession::busy()const{return opening_.valid() || running_;}
 void ConversionSession::open(const QString& path,bool internal) {
     if(busy())return;
-    error_.reset();draft.source=path;draft.name=QFileInfo(path).completeBaseName();draft.selections.clear();formats_.clear();source_={};openedPath_.clear();sourceInternal_=internal;
+    error_.reset();draft.source=path;draft.name=QFileInfo(path).completeBaseName();formats_.clear();source_={};openedPath_.clear();sourceInternal_=internal;
     cancellation_=std::stop_source{};const auto token=cancellation_.get_token();
     opening_=std::async(std::launch::async,[path,internal,token] {
         Source value;const auto source=std::filesystem::path(path.toStdU16String());
@@ -172,7 +192,7 @@ void ConversionSession::poll() {
     try {
         // Drain worker progress before final messages, so it cannot overwrite the batch summary.
         {std::optional<E::MessageInfo> value;{const std::lock_guard lock(progressMutex_);value=std::exchange(progressMessage_,{});}if(value)report(std::move(*value));}
-        if(ready(opening_)){auto value=opening_.get();if(!cancellation_.stop_requested()){source_=std::move(value);formats_=source_.formats;openedPath_=draft.source;}publish();}
+        if(ready(opening_)){auto value=opening_.get();if(!cancellation_.stop_requested()){source_=std::move(value);formats_=source_.formats;openedPath_=draft.source;pruneSelections();}publish();}
         if(ready(preflight_)){losses_=preflight_.get();if(cancellation_.stop_requested())next();else if(!losses_.empty())awaitingLosses_=true;else next();publish();}
         if(ready(conversion_)){
             processingConversion=true;
@@ -185,6 +205,9 @@ void ConversionSession::poll() {
     if(!busy())timer_.stop();
 }
 double ConversionSession::progress()const {const std::lock_guard lock(progressMutex_);return batch_.empty()?0:(static_cast<double>(position_)*C::Percent+currentProgress_)/static_cast<double>(batch_.size());}
+void ConversionSession::pruneSelections(){
+    std::erase_if(draft.selections,[this](auto& selection){const auto found=std::find_if(formats_.begin(),formats_.end(),[&](const auto& format){return format.id==selection.formatId;});if(found==formats_.end())return true;std::erase_if(selection.explicitExtensions,[&](const auto& extension){return std::none_of(found->extensions.begin(),found->extensions.end(),[&](const auto& candidate){return candidate.extension==extension;});});return false;});
+}
 void ConversionSession::report(E::MessageInfo message){
     if(!external_){const auto text=translate_(message);log_.appendLine(text);outputText_+=text+QString::fromLatin1(C::Separator);if(outputText_.size()>C::MaximumOutputLines)outputText_=outputText_.right(C::MaximumOutputLines);if(output)output(commandText_,outputText_);}
     messages_.push_back(std::move(message));publish();

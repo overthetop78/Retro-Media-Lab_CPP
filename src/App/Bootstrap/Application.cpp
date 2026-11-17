@@ -65,6 +65,7 @@ int Application::run(int argc, char** argv) {
     ThemeService themes(themeModule);
     themes.applySettings(selected.themeSettings.value(themes.id()).toObject());
     WorkspaceState state;
+    state.profiles->reset(selected.profiles);
     state.logsDirectory = logsDirectory(executableDirectory);
     state.setLogging(selected.logging);
     state.setConversion(selected.conversion);
@@ -80,6 +81,7 @@ int Application::run(int argc, char** argv) {
         selected.conversion = state.conversion();
         selected.hardware = state.hardware();
         selected.engines = state.engines();
+        selected.profiles = state.profiles->toJson();
         selected.interfaceScale = state.interfaceScale();
         selected.themeSettings.insert(themes.id(), themes.settings());
         preferences.save(selected);
@@ -92,6 +94,7 @@ int Application::run(int argc, char** argv) {
     const auto enginePreference = state.subscribeToEngines(savePreferences);
     const auto conversionPreference = state.subscribeToConversion(savePreferences);
     const auto loggingPreference = state.subscribeToLogging(savePreferences);
+    const auto profilesPreference = state.profiles->subscribe(savePreferences);
     app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.
     WindowCoordinator windows([&] {
         return themes.createPresentation(translations, state);

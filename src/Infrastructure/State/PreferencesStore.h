@@ -6,6 +6,7 @@
 #include "Engines/EngineSettings.h"
 #include "Conversion/ConversionSettings.h"
 #include "Hardware/HardwareSettings.h"
+#include "Profiles/OperationProfiles.h"
 #include <QJsonObject>
 #include <QString>
 #include <utility>
@@ -19,6 +20,7 @@ struct UserPreferences {
     HardwareSettings hardware;
     EngineSettings engines;
     int interfaceScale = DisplayConstants::DefaultPercent;
+    QJsonArray profiles;
 };
 class PreferencesStore final {
 public:

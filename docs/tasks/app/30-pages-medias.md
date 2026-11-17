@@ -25,7 +25,7 @@
     - [x] Créer `src/App/Shared/Localization/MediaText.h` et `.cpp` : rendu commun des diagnostics MediaEngine et des erreurs Infrastructure ; raccorder les vues médias et les constantes dans TranslationConstants.h.
     - [x] Modifier `StatusBar.h` et `.cpp` : afficher l'opération active du lanceur commun au lieu de conserver Prêt pendant une opération.
     - [x] Modifier `WorkspaceState.cpp`, `WorkspaceState.h`, `CapturePage.cpp` et `GreaseweazleDialog.cpp` : créer les sessions et leurs callbacks persistants dans App.dll, pour qu'aucun callback de session ne dépende du code d'un thème déchargé.
-    - [ ] Modifier `CaptureSession.h`, `.cpp`, `PreferencesStore.h`, `.cpp`, `WorkspaceState.cpp` et `ProfileSettingsPage.cpp` : persister et réexposer les profils enregistrés, raccorder leur gestion aux préférences.
+    - [x] Modifier `CaptureSession.h`, `.cpp`, `PreferencesStore.h`, `.cpp`, `WorkspaceState.cpp` et `ProfileSettingsPage.cpp` : persister et réexposer les profils enregistrés, raccorder leur gestion aux préférences.
     - [ ] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
     - [ ] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
   - [ ] Conversion
@@ -37,7 +37,7 @@
     - [x] Créer temporairement `build/verification-conversion/input.ssd` : copie de travail du SSD de référence pour une conversion réelle depuis le GUI, sans modifier le média original.
     - [x] Supprimer `build/verification-conversion/input.ssd` et les sorties générées dans ce même dossier après la vérification du lot.
     - [x] Modifier `src/App/Themes/RetroMediaLab/Views/StatusBar.h` et `.cpp` : afficher Conversion pendant les lots du moteur interne, via la notification de session existante.
-    - [x] Modifier `ConversionSession.h`, `.cpp`, `ConversionPage.h` et `.cpp` : compléter les profils RAW d'entrée/sortie C#, les décisions de conflit par fichier et les profils persistants de conversion.
+    - [ ] Modifier `ConversionSession.h`, `.cpp`, `ConversionPage.h` et `.cpp` : compléter les profils RAW d'entrée/sortie C# et les décisions de conflit par fichier.
   - [ ] Visualisation
     - [x] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
@@ -46,6 +46,14 @@
     - [x] Créer `src/Translations/Catalogs/Constants/App/visualization.json` et `Languages/*/App/visualization.json` : reprendre les libellés Visualizer et les commandes communes nécessaires depuis les RESX C#.
     - [ ] Modifier `VisualizationSession.cpp`, `VisualizationPage.cpp` et `MediaGraph.cpp` : compléter les inspections dédiées des médias optiques, blocs et bandes, la classification dégradée des secteurs et les légendes C#.
     - [ ] Modifier les vues médias si les essais de langue, de reconstruction du thème et des autres représentations révèlent des écarts.
+  - [x] Profils persistants des opérations
+    - [x] Créer `src/Infrastructure/Profiles/OperationProfiles.h`, `.cpp` et `ProfileConstants.h` : collection commune reprenant les profils C#, identifiants stables, défaut permanent par opération, sauvegarde, renommage, suppression et sérialisation validée.
+    - [x] Modifier `CaptureSession.h`, `.cpp`, `ConversionSession.h` et `.cpp` : remplacer les profils temporaires par la collection commune et reprendre les valeurs/options C# sans enregistrer les chemins des médias.
+    - [x] Modifier `PreferencesStore.h`, `.cpp`, `WorkspaceState.h`, `.cpp` et `Bootstrap/Application.cpp` : charger les profils et les enregistrer via le fichier de préférences atomique existant.
+    - [x] Modifier `ProfileSettingsPage.h`, `.cpp`, `PreferencesDialog.cpp`, `ConversionPage.h`, `.cpp` et `ConversionPageConstants.h` : afficher et gérer les profils des trois opérations ; ajouter sélection, enregistrement et réinitialisation à Conversion.
+    - [x] Modifier les CMake Infrastructure, `audit_literals.py` et les catalogues `App/profiles.json` Constants/Languages : compiler la collection et reprendre les traductions C# manquantes.
+    - [x] Créer temporairement `build/verification-profiles/main.cpp` et son exécutable : vérifier la conservation des valeurs et des identifiants après sérialisation, le cloisonnement des opérations, les doublons et la protection des profils par défaut.
+    - [x] Supprimer `build/verification-profiles/main.cpp`, l'exécutable et leurs artefacts de compilation après utilisation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

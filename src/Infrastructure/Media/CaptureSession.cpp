@@ -24,9 +24,10 @@ const std::vector<CaptureOptionDefinition>& captureOptions(CaptureMode mode) {
         {C::Densel,C::DenselLabel,C::High},{C::Tg43,C::Tg43Label,C::DefaultName,true},{C::DiskDefs,C::DiskDefsLabel,C::DefaultName}};
     return mode==CaptureMode::Read?read:write;
 }
-CaptureSession::CaptureSession(CaptureMode kind,std::shared_ptr<GreaseweazleTools> tools):mode(kind),tools_(std::move(tools)) {
+CaptureSession::CaptureSession(CaptureMode kind,std::shared_ptr<GreaseweazleTools> tools,std::shared_ptr<OperationProfiles> profiles):mode(kind),tools_(std::move(tools)),profiles_(std::move(profiles)) {
     for(const auto& option:captureOptions(mode))if(!option.flag)draft.values.insert(option.argument,QString::fromUtf8(option.initial));
-    profiles_.push_back({{},draft});
+    profileId_=this->profiles().front().id;
+    profileSubscription_=profiles_->subscribe([this]{const auto& items=this->profiles();const auto found=std::find_if(items.begin(),items.end(),[this](const auto& item){return item.id==profileId_;});selectedProfile=found==items.end()?0:static_cast<std::size_t>(found-items.begin());profileId_=items[selectedProfile].id;publish();});
     subscription_=tools_->subscribe([this]{update();});
 }
 CaptureSession::~CaptureSession() {subscription_.reset();if(busy()){tools_->abortAndWait();if(mode==CaptureMode::Read)QFile::remove(activePath_);}}
@@ -85,17 +86,27 @@ void CaptureSession::selectSource(const QString& path) {
     publish();
 }
 void CaptureSession::applyProfile(std::size_t index) {
-    if(busy() || index>=profiles_.size())return;
-    const auto& settings=profiles_[index].settings;
-    draft.raw=settings.raw;draft.formatId=settings.formatId;draft.extension=settings.extension;draft.expert=settings.expert;
-    draft.values=settings.values;draft.enabled=settings.enabled;selectedProfile=index;publish();
+    namespace P=ProfileConstants;
+    if(busy() || index>=profiles().size())return;
+    const auto& profile=profiles()[index];
+    draft.expert=profile.values.value(P::Expert);draft.enabled.clear();
+    for(const auto& option:captureOptions(mode)){
+        const auto key=QString::fromLatin1(option.argument).mid(QString::fromLatin1(P::OptionPrefix).size());
+        if(profile.enabled.contains(key))draft.enabled.insert(option.argument);
+        if(!option.flag && profile.values.contains(key))draft.values.insert(option.argument,profile.values.value(key));
+    }
+    draft.formatId=profile.values.value(P::Format);
+    if(mode==CaptureMode::Read){draft.raw=profile.system || profile.values.value(P::Result)==P::Raw;draft.extension=profile.values.value(P::Extension,C::ScpExtension);const auto folder=profile.values.value(P::Folder);if(!folder.trimmed().isEmpty())draft.directory=folder;}
+    selectedProfile=index;profileId_=profile.id;publish();
 }
 void CaptureSession::saveProfile(QString name,bool replace) {
-    if(busy())return;name=name.trimmed();if(name.isEmpty())throw std::invalid_argument(C::ProfileNameRequired);
-    const auto found=std::find_if(profiles_.begin()+1,profiles_.end(),[&](const auto& profile){return profile.name.compare(name,Qt::CaseInsensitive)==0;});
-    if(found!=profiles_.end()) {if(!replace)throw std::invalid_argument(C::DuplicateProfile);found->settings=draft;selectedProfile=static_cast<std::size_t>(found-profiles_.begin());}
-    else {profiles_.push_back({std::move(name),draft});selectedProfile=profiles_.size()-1;}
-    publish();
+    namespace P=ProfileConstants;
+    if(busy())return;
+    OperationProfile profile;profile.operation=profileOperation();profile.name=std::move(name);profile.values.insert(P::Expert,draft.expert);profile.values.insert(P::Format,draft.formatId);
+    if(mode==CaptureMode::Read){profile.values.insert(P::Result,draft.raw?P::Raw:P::Known);profile.values.insert(P::Extension,draft.extension);profile.values.insert(P::Folder,draft.directory);}
+    for(const auto& option:captureOptions(mode)){const auto key=QString::fromLatin1(option.argument).mid(QString::fromLatin1(P::OptionPrefix).size());if(draft.enabled.contains(option.argument))profile.enabled.insert(key);if(!option.flag)profile.values.insert(key,draft.values.value(option.argument));}
+    profileId_=profiles_->save(std::move(profile),replace);
+    const auto& items=profiles();selectedProfile=static_cast<std::size_t>(std::find_if(items.begin(),items.end(),[this](const auto& item){return item.id==profileId_;})-items.begin());publish();
 }
 void CaptureSession::nextAvailable() {
     if(busy() || mode!=CaptureMode::Read)return;draft.autoNumber=true;

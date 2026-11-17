@@ -109,7 +109,7 @@ PreferencesDialog::PreferencesDialog(ThemeService& themes, Translations::Transla
     addSection(hardware_);
     engines_ = new EngineSettingsPage(themes, translations, state, sections_);
     addSection(engines_);
-    addSection(new ProfileSettingsPage(themes, translations, sections_));
+    addSection(new ProfileSettingsPage(themes, translations, state, sections_));
     layout->addWidget(sections_, 1);
     close_ = new QPushButton(this);
     close_->setObjectName(ThemeConstants::ClosePreferences);
