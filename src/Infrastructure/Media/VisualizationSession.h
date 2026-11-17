@@ -1,6 +1,7 @@
 #pragma once
 #include "ExplorerSession.h"
 #include <RetroMediaLab/MediaEngine/MediaVisualization.h>
+#include <RetroMediaLab/MediaEngine/SectorVisualization.h>
 #include <RetroMediaLab/MediaEngine/TapeSignal.h>
 #include <map>
 namespace RetroMediaLab::Infrastructure {
@@ -10,6 +11,7 @@ struct VisualizationSnapshot {
     std::shared_ptr<const MediaEngine::VisualizationDescriptor> descriptor;
     std::shared_ptr<const MediaEngine::MediaTapeSignal> tape;
     std::optional<MediaEngine::MessageInfo> warning;
+    std::optional<MediaEngine::SectorVisualizationModel> sectors;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API VisualizationSession final : public QObject {
 public:
@@ -21,6 +23,7 @@ public:
     bool busy() const noexcept { return pending_.valid(); }
     ExplorerSession::Subscription subscribe(std::function<void()>);
     void select(std::int32_t surface, std::int64_t position);
+    void selectSector(std::uint64_t logicalBlock);
     void setZoom(double);
     void setRevolution(std::size_t);
     void setPan(double x, double y);

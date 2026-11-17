@@ -1,6 +1,7 @@
 #include "VisualizationPage.h"
 #include "VisualizationConstants.h"
 #include "Shared/Controls/Card.h"
+#include "../FlowLayout.h"
 #include "Shared/Localization/MediaText.h"
 #include <Errors.h>
 #include <QComboBox>
@@ -20,7 +21,7 @@
 namespace RetroMediaLab {
 using namespace VisualizationConstants;
 VisualizationPage::VisualizationPage(ThemeService& themes, Translations::TranslationService& translations, WorkspaceState& state, QWidget* parent)
-    : QWidget(parent), translations_(translations) {
+    : QWidget(parent), translations_(translations),themes_(themes) {
     if (!state.explorer) state.explorer = std::make_shared<Infrastructure::ExplorerSession>();
     if (!state.visualization) state.visualization = std::make_shared<Infrastructure::VisualizationSession>(state.explorer);
     session_ = state.visualization;
@@ -48,6 +49,9 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     details->addWidget(contents,1);
     splitter->addWidget(graph); splitter->addWidget(inspector); splitter->setStretchFactor(0,GraphWeight); splitter->setStretchFactor(1,DetailsWeight);
     layout->addWidget(splitter,1);
+    legend_=new QWidget(this);auto* legendLayout=new FlowLayout(legend_);legendLayout->setContentsMargins(0,0,0,0);legendLayout->setSpacing(Gap);
+    for(std::size_t index=0;index<SectorLabels.size();++index){auto* item=new QWidget(legend_);auto* row=new QHBoxLayout(item);row->setContentsMargins(0,0,0,0);row->setSpacing(Gap);legendDots_[index]=new QLabel(QString::fromUtf8(LegendMark),item);legendLabels_[index]=new QLabel(item);row->addWidget(legendDots_[index]);row->addWidget(legendLabels_[index]);legendLayout->addWidget(item);}layout->addWidget(legend_);
+    themeSubscription_=themes.subscribe([this]{refresh();});
     connect(open_,&QPushButton::clicked,this,[this,&state] {
         const auto path=QFileDialog::getOpenFileName(this,text(Open),state.defaultImageDirectory()); if(!path.isEmpty()) session_->opening()->open(path);
     });
@@ -57,7 +61,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     connect(side_,&QSpinBox::valueChanged,this,[this](int value){session_->select(value,session_->position);});
     connect(track_,&QSpinBox::valueChanged,this,[this](int value){session_->select(session_->surface,value);});
     connect(revolutions_,&QComboBox::currentIndexChanged,this,[this](int value){if(value>=0)session_->setRevolution(static_cast<std::size_t>(value));});
-    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){showSector(row);});
+    connect(sectors_,&QTableWidget::currentCellChanged,this,[this](int row){if(row>=0 && static_cast<std::size_t>(row)<rows_.size() && session_->snapshot() && session_->snapshot()->sectors)session_->selectSector(rows_[row]->logicalBlock);else showSector(row);});
     subscription_=session_->subscribe([this]{refresh();});
     openingSubscription_=session_->opening()->subscribe([this]{refresh();});
     languageSubscription_=translations.subscribe([this]{refresh();});
@@ -75,11 +79,15 @@ void VisualizationPage::refresh() {
     } else if(!session_->opening()->error().isEmpty()) status_->setText(QString::fromStdString(Errors::render(translations_.language(),session_->opening()->error().toStdString())));
     QStringList headers; for(const auto key:Columns)headers.push_back(text(key)); sectors_->setHorizontalHeaderLabels(headers);
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);
-    sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear(); revolutions_->clear();
+    sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear();rowStates_.clear(); revolutions_->clear();
+    legend_->setVisible(session_->snapshot() && session_->snapshot()->sectors.has_value());
+    for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->setText(text(SectorLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SectorBrushes[index]));legendDots_[index]->setPalette(palette);}
     if(!session_->snapshot()) {hex_->clear();return;}
     const auto& snapshot=*session_->snapshot();
     const auto& descriptor=snapshot.descriptor->fields();
-    const bool coordinatesVisible=descriptor.representationKind==MediaEngine::RepresentationKind::Flux || descriptor.representationKind==MediaEngine::RepresentationKind::Sectors;
+    const bool logical=snapshot.sectors && snapshot.sectors->logical;
+    const bool coordinatesVisible=!logical && (descriptor.representationKind==MediaEngine::RepresentationKind::Flux || descriptor.representationKind==MediaEngine::RepresentationKind::Sectors);
+    for(int column:{SideColumn,TrackColumn,SectorColumn})sectors_->setColumnHidden(column,logical);sectors_->setColumnHidden(StateColumn,!snapshot.sectors);
     for(auto* control:{static_cast<QWidget*>(sideLabel_),static_cast<QWidget*>(side_),static_cast<QWidget*>(trackLabel_),static_cast<QWidget*>(track_),static_cast<QWidget*>(revolutionLabel_),static_cast<QWidget*>(revolutions_)})control->setVisible(coordinatesVisible);
     const auto maximumSurface=descriptor.surfaces.empty()?0:*std::max_element(descriptor.surfaces.begin(),descriptor.surfaces.end());
     side_->setRange(0,maximumSurface);side_->setValue(session_->surface);
@@ -87,10 +95,10 @@ void VisualizationPage::refresh() {
     if(snapshot.source->diskExploration) {
         const auto& disk=snapshot.source->diskExploration->info();
         for(const auto& format:disk.formats) if(format.formatId==disk.primaryFormatId || disk.formats.size()==1) {
-            for(const auto& sector:format.sectors) {
-                maximumCylinder=std::max(maximumCylinder,static_cast<std::int32_t>(sector.cylinder));
-                if(sector.head==session_->surface && sector.cylinder==session_->position)rows_.push_back(&sector);
-            }
+            if(snapshot.sectors){
+                maximumCylinder=static_cast<std::int32_t>(snapshot.sectors->cylinders? snapshot.sectors->cylinders-1:0);
+                for(const auto& item:snapshot.sectors->sectors)if(logical || (item.head==session_->surface && item.cylinder==session_->position)){if(item.sourceIndex<format.sectors.size()){rows_.push_back(&format.sectors[item.sourceIndex]);rowStates_.push_back(item.state);}}
+            }else for(const auto& sector:format.sectors){maximumCylinder=std::max(maximumCylinder,static_cast<std::int32_t>(sector.cylinder));if(sector.head==session_->surface && sector.cylinder==session_->position)rows_.push_back(&sector);}
             break;
         }
         for(const auto& track:disk.tracks) {
@@ -105,8 +113,9 @@ void VisualizationPage::refresh() {
     for(std::size_t index=0;index<rows_.size();++index) {
         const auto& sector=*rows_[index];
         const auto integrity=sector.dataValid?(*sector.dataValid?ValidKey:InvalidKey):UnavailableKey;
-        const QStringList values{QString::number(sector.head),QString::number(sector.cylinder),QString::number(sector.number),QLocale().formattedDataSize(static_cast<qint64>(sector.size)),text(integrity)};
+        const QStringList values{QString::number(sector.logicalBlock),QString::number(sector.head),QString::number(sector.cylinder),QString::number(sector.number),QLocale().formattedDataSize(static_cast<qint64>(sector.size)),text(integrity),index<rowStates_.size()?text(SectorLabels[static_cast<std::size_t>(rowStates_[index])]):QString{}};
         for(int column=0;column<values.size();++column)sectors_->setItem(static_cast<int>(index),column,new QTableWidgetItem(values[column]));
+        if(index<rowStates_.size())sectors_->item(static_cast<int>(index),StateColumn)->setForeground(themes_.data()->color(SectorBrushes[static_cast<std::size_t>(rowStates_[index])]));
     }
     if(!rows_.empty()) {
         int selected=0;

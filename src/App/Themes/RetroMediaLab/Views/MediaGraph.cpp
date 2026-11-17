@@ -28,10 +28,16 @@ const MediaEngine::DiskFormatInfo* MediaGraph::format() const {
 void MediaGraph::rebuild() {
     if (cached_ == session_->snapshot() && cachedRevolution_ == session_->revolution) return;
     cachedRevolution_ = session_->revolution;
-    cached_ = session_->snapshot(); flux_.clear(); surfaces_.clear(); cylinders_ = 0;
+    cached_ = session_->snapshot(); flux_.clear(); sectorTracks_.clear();surfaces_.clear(); cylinders_ = 0;
     if (!cached_) return;
     const auto kind = cached_->descriptor->fields().representationKind;
     if (kind != RepresentationKind::Flux && kind != RepresentationKind::Sectors) return;
+    if(cached_->sectors){
+        cylinders_=static_cast<std::int32_t>(cached_->sectors->cylinders);
+        for(std::uint32_t head=0;head<cached_->sectors->heads;++head)surfaces_.push_back(static_cast<std::int32_t>(head));
+        for(const auto& sector:cached_->sectors->sectors)sectorTracks_[{sector.head,sector.cylinder}].push_back(&sector);
+        return;
+    }
     std::set<std::int32_t> sides;
     if (const auto* value = format()) {
         for (const auto& sector : value->sectors) { sides.insert(static_cast<std::int32_t>(sector.head)); cylinders_ = std::max(cylinders_, static_cast<std::int32_t>(sector.cylinder + 1)); }
@@ -68,6 +74,14 @@ void MediaGraph::paintEvent(QPaintEvent*) {
     const auto unknown = theme->color(ThemeConstants::MutedTextBrush);
     const auto invalid = theme->color(ErrorBrush);
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->sectors && cached_->sectors->logical){
+        const auto& items=cached_->sectors->sectors;if(items.empty())return;
+        painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
+        const auto columns=std::max<std::size_t>(1,static_cast<std::size_t>(std::sqrt(static_cast<double>(items.size())*std::max(1,width())/std::max(1,height()))));
+        const auto rows=(items.size()+columns-1)/columns;const auto cellWidth=static_cast<double>(width())/columns,cellHeight=static_cast<double>(height())/rows;
+        for(std::size_t index=0;index<items.size();++index){const QRectF cell((index%columns)*cellWidth,(index/columns)*cellHeight,std::max(MinViewSize,cellWidth-RingOverlap),std::max(MinViewSize,cellHeight-RingOverlap));painter.fillRect(cell,theme->color(SectorBrushes[static_cast<std::size_t>(items[index].state)]));if(session_->selectedSector==items[index].logicalBlock){painter.setPen(QPen(foreground,SelectionWidth));painter.drawRect(cell);}}
+        return;
+    }
     const bool disk = !surfaces_.empty() && cylinders_ > 0 && (kind == RepresentationKind::Flux || kind == RepresentationKind::Sectors);
     if (disk) {
         painter.translate(width()*Half,height()*Half);
@@ -91,16 +105,10 @@ void MediaGraph::paintEvent(QPaintEvent*) {
                     }
                 }
             } else if (selectedFormat) {
-                for (int cylinder = 0; cylinder < cylinders_; ++cylinder) {
-                    std::vector<const MediaEngine::DiskSectorInfo*> sectors;
-                    for (const auto& sector : selectedFormat->sectors) if (sector.head == surfaces_[side] && sector.cylinder == cylinder) sectors.push_back(&sector);
-                    for (std::size_t index = 0; index < sectors.size(); ++index) {
-                        const auto& sector = *sectors[index];
-                        const auto color = sector.state == MediaEngine::DiskSectorState::Invalid ? invalid : sector.state == MediaEngine::DiskSectorState::Missing ? unknown : success;
-                        painter.setPen(QPen(color, ringWidth));
-                        const auto angle = static_cast<double>(FullCircle * AngularUnits) / sectors.size();
-                        painter.drawArc(circle(cylinder), static_cast<int>(index * angle), std::max(1, static_cast<int>(angle)-1));
-                    }
+                for(int cylinder=0;cylinder<cylinders_;++cylinder){
+                    const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found==sectorTracks_.end())continue;
+                    const auto& sectors=found->second;const auto angle=static_cast<double>(FullCircle*AngularUnits)/sectors.size();
+                    for(std::size_t index=0;index<sectors.size();++index){const auto& sector=*sectors[index];painter.setPen(QPen(theme->color(SectorBrushes[static_cast<std::size_t>(sector.state)]),ringWidth));painter.drawArc(circle(cylinder),static_cast<int>(index*angle),std::max(1,static_cast<int>(angle)-1));if(session_->selectedSector==sector.logicalBlock){painter.setPen(QPen(foreground,std::max(static_cast<double>(SelectionWidth),ringWidth*Half)));painter.drawArc(circle(cylinder),static_cast<int>(index*angle),std::max(1,static_cast<int>(angle)-1));}}
                 }
             }
             if (session_->surface == surfaces_[side] && session_->position < cylinders_) { painter.setPen(QPen(foreground, SelectionWidth)); painter.drawEllipse(circle(static_cast<int>(session_->position))); }
@@ -140,6 +148,13 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     if (!cached_ || event->button() != Qt::LeftButton) return;
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->sectors && cached_->sectors->logical){
+        const auto& items=cached_->sectors->sectors;if(items.empty())return;
+        const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
+        if(point.x()<0 || point.y()<0 || point.x()>=width() || point.y()>=height())return;
+        const auto columns=std::max<std::size_t>(1,static_cast<std::size_t>(std::sqrt(static_cast<double>(items.size())*std::max(1,width())/std::max(1,height()))));const auto rows=(items.size()+columns-1)/columns;
+        const auto index=static_cast<std::size_t>(point.y()/height()*rows)*columns+static_cast<std::size_t>(point.x()/width()*columns);if(index<items.size())session_->selectSector(items[index].logicalBlock);return;
+    }
     if (!surfaces_.empty() && cylinders_ > 0 && (kind == RepresentationKind::Flux || kind == RepresentationKind::Sectors)) {
         const double cellWidth = static_cast<double>(width()) / surfaces_.size();
         const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
@@ -149,6 +164,7 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
         const auto distance = std::hypot(point.x()-center.x(),point.y()-center.y());
         if (distance > radius || distance < radius*HoleRadius) return;
         const auto cylinder = std::clamp(static_cast<int>((radius-distance)/(radius*(1-HoleRadius))*cylinders_),0,cylinders_-1);
+        if(kind==RepresentationKind::Sectors){const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found!=sectorTracks_.end() && !found->second.empty()){auto angle=std::atan2(center.y()-point.y(),point.x()-center.x());if(angle<0)angle+=FullTurn;const auto index=std::min(found->second.size()-1,static_cast<std::size_t>(angle/FullTurn*found->second.size()));session_->selectSector(found->second[index]->logicalBlock);return;}}
         session_->select(surfaces_[side],cylinder); return;
     }
     const auto& elements = cached_->descriptor->fields().elements;

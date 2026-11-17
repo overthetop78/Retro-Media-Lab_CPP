@@ -51,6 +51,11 @@
     - [x] Modifier `WorkspaceState.h`, les CMake App/Infrastructure et `audit_literals.py` pour conserver et compiler la visualisation et ses constantes.
     - [x] Créer `src/Translations/Catalogs/Constants/App/visualization.json` et `Languages/*/App/visualization.json` : reprendre les libellés Visualizer et les commandes communes nécessaires depuis les RESX C#.
     - [ ] Modifier `VisualizationSession.cpp`, `VisualizationPage.cpp` et `MediaGraph.cpp` : compléter les inspections dédiées des médias optiques, blocs et bandes, la classification dégradée des secteurs et les légendes C#.
+    - [x] Créer `src/MediaEngine/include/RetroMediaLab/MediaEngine/SectorVisualization.h` et `src/MediaEngine/src/Visualization/Sectors.cpp`, puis modifier le CMake : reprendre les quatre états C# avec intégrité, données absentes, adresses incohérentes/dupliquées et tailles variables, à partir des données déjà ouvertes.
+    - [x] Modifier `VisualizationSession.h`, `.cpp`, `MediaGraph.h` et `.cpp` : conserver le modèle des secteurs, grouper les pistes selon leur position logique et sélectionner le secteur pointé dans le graphique.
+    - [x] Modifier `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h` et les palettes `light.json`/`dark.json` : afficher une légende et une colonne d'état utilisant les mêmes rôles de couleurs ; conserver la sélection et l'affichage hexadécimal.
+    - [x] Créer temporairement `build/verification-sector-visualization/main.cpp` et son exécutable : contrôler les priorités de classification C#, les adresses dupliquées/incohérentes et la sélection logique, sans média externe.
+    - [x] Supprimer `build/verification-sector-visualization/main.cpp`, son exécutable et leurs artefacts après utilisation.
     - [ ] Modifier les vues médias si les essais de langue, de reconstruction du thème et des autres représentations révèlent des écarts.
   - [x] Profils persistants des opérations
     - [x] Créer `src/Infrastructure/Profiles/OperationProfiles.h`, `.cpp` et `ProfileConstants.h` : collection commune reprenant les profils C#, identifiants stables, défaut permanent par opération, sauvegarde, renommage, suppression et sérialisation validée.

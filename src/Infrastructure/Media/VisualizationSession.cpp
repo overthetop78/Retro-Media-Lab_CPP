@@ -34,6 +34,11 @@ void VisualizationSession::sourceChanged() {
         value.source = source;
         value.document = MediaEngine::prepareMediaVisualization(source->document, token);
         value.descriptor = std::make_shared<const MediaEngine::VisualizationDescriptor>(MediaEngine::describeMediaVisualization(value.document, token));
+        if(value.descriptor->fields().representationKind==MediaEngine::RepresentationKind::Sectors && source->diskExploration){
+            const auto& disk=source->diskExploration->info();const auto found=std::find_if(disk.formats.begin(),disk.formats.end(),[&](const auto& format){return format.formatId==disk.primaryFormatId;});
+            if(found!=disk.formats.end())value.sectors=MediaEngine::describeSectorVisualization(value.document,*found);
+            else if(!disk.formats.empty())value.sectors=MediaEngine::describeSectorVisualization(value.document,disk.formats.front());
+        }
         if (value.descriptor->fields().representationKind == MediaEngine::RepresentationKind::Sequential) {
             try { value.tape = std::make_shared<const MediaEngine::MediaTapeSignal>(MediaEngine::readTapeAsync(path, token).get()); }
             catch (const MediaEngine::MediaError& error) { MediaEngine::checkCancellation(token); value.warning=MediaEngine::MessageInfo{std::string(MediaEngine::diagnosticKey(error.diagnostic().code)),error.diagnostic().arguments,MediaDomain}; }
@@ -74,6 +79,7 @@ void VisualizationSession::poll() {
     if (changed) publish();
 }
 void VisualizationSession::select(std::int32_t side, std::int64_t track) { if (surface != side || position != track) selectedSector.reset(); surface = side; position = track; revolution = 0; publish(); }
+void VisualizationSession::selectSector(std::uint64_t logical){if(!snapshot_ || !snapshot_->sectors)return;const auto& sectors=snapshot_->sectors->sectors;const auto found=std::find_if(sectors.begin(),sectors.end(),[&](const auto& item){return item.logicalBlock==logical;});if(found==sectors.end())return;if(surface==found->head && position==found->cylinder && selectedSector==logical)return;surface=static_cast<std::int32_t>(found->head);position=found->cylinder;selectedSector=logical;publish();}
 void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && value >= 1 && value <= MaximumZoom) { zoom = value; if (value == 1) { panX = 0; panY = 0; } publish(); } }
 void VisualizationSession::setRevolution(std::size_t value) { revolution = value; publish(); }
 void VisualizationSession::setPan(double x, double y) { if (std::isfinite(x) && std::isfinite(y)) { panX = x; panY = y; publish(); } }

@@ -3,6 +3,7 @@
 #include "Themes/ThemeService.h"
 #include <QWidget>
 #include <QPointF>
+#include <map>
 namespace RetroMediaLab {
 class MediaGraph final : public QWidget {
 public:
@@ -20,6 +21,7 @@ private:
     std::shared_ptr<const Infrastructure::VisualizationSnapshot> cached_;
     struct FluxRing {std::int32_t head, cylinder; std::vector<double> values;};
     std::vector<FluxRing> flux_;
+    std::map<std::pair<std::int64_t,std::int64_t>,std::vector<const MediaEngine::SectorVisualizationItem*>> sectorTracks_;
     std::vector<std::int32_t> surfaces_;
     std::int32_t cylinders_ = 0;
     std::size_t cachedRevolution_ = 0;
