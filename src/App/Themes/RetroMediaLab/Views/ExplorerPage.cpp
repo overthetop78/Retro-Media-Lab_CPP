@@ -14,6 +14,8 @@
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QSplitter>
+#include <QScrollArea>
+#include <QSet>
 #include <QTableWidget>
 #include <QTreeWidget>
 #include <QVBoxLayout>
@@ -59,7 +61,8 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     contents_->verticalHeader()->hide();
     contents_->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     contents_->horizontalHeader()->setSectionResizeMode(NameColumn, QHeaderView::Stretch);
-    auto* card = new Card(themes.data(), splitter);
+    auto* detailScroll=new QScrollArea(splitter);detailScroll->setWidgetResizable(true);detailScroll->setFrameShape(QFrame::NoFrame);
+    auto* card = new Card(themes.data(), detailScroll);detailScroll->setWidget(card);
     auto* detailLayout = new QVBoxLayout(card);
     details_ = new QLabel(card);
     details_->setTextFormat(Qt::PlainText);
@@ -67,7 +70,7 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     details_->setTextInteractionFlags(Qt::TextSelectableByMouse);
     detailLayout->addWidget(details_);
     detailLayout->addStretch();
-    for (auto* child : {static_cast<QWidget*>(folders_), static_cast<QWidget*>(contents_), static_cast<QWidget*>(card)}) child->setMinimumWidth(0);
+    for (auto* child : {static_cast<QWidget*>(folders_), static_cast<QWidget*>(contents_), static_cast<QWidget*>(detailScroll)}) child->setMinimumWidth(0);
     splitter->setStretchFactor(0, TreeStretch);
     splitter->setStretchFactor(1, ContentsStretch);
     splitter->setStretchFactor(DetailsPaneIndex, DetailsStretch);
@@ -81,13 +84,13 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
         if (index < 0) return;
         if (static_cast<std::size_t>(index) >= visibleVolumes_.size()) return;
         session_->selectedVolume = visibleVolumes_[index];
-        session_->folderPath.clear();
+        session_->folderPath.clear();session_->selectedEntry.reset();
         rebuildTree();
     });
     connect(sessions_, &QComboBox::currentIndexChanged, this, [this](int index) {
         if (index < 0) return;
         session_->selectedSession = sessions_->itemData(index).toInt();
-        session_->folderPath.clear();
+        session_->folderPath.clear();session_->selectedEntry.reset();
         rebuildVolumes(); rebuildTree();
     });
     connect(formats_, &QComboBox::currentIndexChanged, this, [this](int index) {
@@ -101,7 +104,9 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     });
     connect(contents_, &QTableWidget::itemSelectionChanged, this, [this] {
         const auto row = contents_->currentRow();
-        showDetails(row >= 0 && static_cast<std::size_t>(row) < rows_.size() ? rows_[row] : nullptr);
+        const auto* entry=row>=0 && static_cast<std::size_t>(row)<rows_.size()?rows_[row]:nullptr;
+        if(entry){const auto current=volume();if(current){const auto* entries=&current->entries;for(const auto index:session_->folderPath)entries=&entries->at(index).children;session_->selectedEntry=static_cast<std::size_t>(entry-entries->data());}}else session_->selectedEntry.reset();
+        showDetails(entry);
     });
     connect(contents_, &QTableWidget::cellDoubleClicked, this, [this](int row) {
         if (row < 0 || static_cast<std::size_t>(row) >= rows_.size() || rows_[row]->kind != FileSystemEntryKind::Directory) return;
@@ -147,7 +152,7 @@ void ExplorerPage::refresh() {
         }
         status_->setText(text(LoadFailed).replace(QString::fromLatin1(Argument), detail));
     }
-    else status_->setText(session_->path());
+    else status_->setText(session_->path().isEmpty()?text(NoImage):session_->path());
     if (displayed_ != session_->result()) {
         displayed_ = session_->result();
         rebuildVolumes();
@@ -179,11 +184,11 @@ void ExplorerPage::rebuildVolumes() {
         for (std::size_t index = 0; index < values.size(); ++index) {
             const auto& value = values[index];
             if (session_->selectedSession && value.descriptor.sessionNumber && value.descriptor.sessionNumber != session_->selectedSession) continue;
-            const auto name = value.fileSystem ? value.fileSystem->name : value.descriptor.name.value_or(std::string{});
-            volumes_->addItem(name.empty() ? text(Unnamed) : QString::fromStdString(name));
+            const auto name=value.fileSystem?volumeName(*value.fileSystem):value.descriptor.nameRecipe?mediaText(translations_,*value.descriptor.nameRecipe):QString::fromStdString(value.descriptor.name.value_or(std::string{}));
+            volumes_->addItem(name.isEmpty()?text(Unnamed):name);
             visibleVolumes_.push_back(index);
         }
-    } else if (const auto value = volume()) { volumes_->addItem(QString::fromStdString(value->name)); visibleVolumes_.push_back(0); }
+    } else if (const auto value = volume()) { volumes_->addItem(volumeName(*value)); visibleVolumes_.push_back(0); }
     auto selected = std::find(visibleVolumes_.begin(), visibleVolumes_.end(), session_->selectedVolume);
     if (selected == visibleVolumes_.end() && !visibleVolumes_.empty()) { session_->selectedVolume = visibleVolumes_.front(); selected = visibleVolumes_.begin(); }
     volumes_->setCurrentIndex(selected == visibleVolumes_.end() ? -1 : static_cast<int>(selected - visibleVolumes_.begin()));
@@ -193,8 +198,8 @@ void ExplorerPage::rebuildTree() {
     const QSignalBlocker blocked(folders_);
     paths_.clear(); folders_->clear();
     const auto currentVolume = volume();
-    if (!currentVolume) { rows_.clear(); contents_->setRowCount(0); details_->setText(text(SelectEntry)); return; }
-    auto* root = new QTreeWidgetItem(folders_, QStringList{currentVolume->name.empty() ? text(Unnamed) : QString::fromStdString(currentVolume->name)});
+    if (!currentVolume) { rows_.clear(); contents_->setRowCount(0); showDetails(nullptr); return; }
+    auto* root = new QTreeWidgetItem(folders_, QStringList{volumeName(*currentVolume)});
     paths_[root] = {};
     QTreeWidgetItem* selection = root;
     const auto append = [&](auto&& self, QTreeWidgetItem* parent, const std::vector<FileSystemEntryInfo>& entries, std::vector<std::size_t> path) -> void {
@@ -216,6 +221,7 @@ void ExplorerPage::showFolder(const std::vector<std::size_t>& path) {
     const auto currentVolume = volume(); if (!currentVolume) return;
     const auto* entries = &currentVolume->entries;
     for (const auto index : path) { if (index >= entries->size()) return; entries = &entries->at(index).children; }
+    if(session_->folderPath!=path)session_->selectedEntry.reset();
     session_->folderPath = path;
     const QSignalBlocker blocked(contents_);
     contents_->clearContents(); rows_.clear();
@@ -235,22 +241,42 @@ void ExplorerPage::showFolder(const std::vector<std::size_t>& path) {
         contents_->setItem(static_cast<int>(row), SizeColumn, new QTableWidgetItem(QLocale().formattedDataSize(static_cast<qint64>(entry.size))));
         if (entry.modified) { const auto& t = *entry.modified; contents_->setItem(static_cast<int>(row), ModifiedColumn, new QTableWidgetItem(QLocale().toString(QDateTime(QDate(t.year,t.month,t.day), QTime(t.hour,t.minute,t.second)), QLocale::ShortFormat))); }
     }
-    showDetails(nullptr);
+    const FileSystemEntryInfo* selected=nullptr;
+    if(session_->selectedEntry && *session_->selectedEntry<entries->size())for(std::size_t row=0;row<rows_.size();++row)if(rows_[row]==&entries->at(*session_->selectedEntry)){contents_->setCurrentCell(static_cast<int>(row),NameColumn);selected=rows_[row];break;}
+    showDetails(selected);
 }
+QString ExplorerPage::volumeName(const MediaEngine::FileSystemVolumeInfo& value) const {return value.nameRecipe?mediaText(translations_,*value.nameRecipe):value.name.empty()?text(Unnamed):QString::fromStdString(value.name);}
 void ExplorerPage::showDetails(const FileSystemEntryInfo* entry) {
     QStringList lines;
     const auto add = [&](const char* key, const QString& value) { lines.push_back(text(key) + QString::fromLatin1(DetailSeparator) + value); };
     if (entry) {
         lines.push_back(QString::fromStdString(entry->name));
+        add(Type,entry->analysis && !entry->analysis->typeResourceKey.empty()?QString::fromStdString(translations_.text(entry->analysis->typeResourceKey,entry->analysis->typeTranslationDomain)):text(entry->kind==FileSystemEntryKind::Directory?Directory:entry->kind==FileSystemEntryKind::File?File:entry->kind==FileSystemEntryKind::Link?Link:Unknown));
         add(HeaderKeys[SizeColumn], QLocale().formattedDataSize(static_cast<qint64>(entry->size)));
-        if (!entry->comment.empty()) add(Comment, QString::fromStdString(entry->comment));
+        if(entry->modified){const auto& t=*entry->modified;add(HeaderKeys[ModifiedColumn],QLocale().toString(QDateTime(QDate(t.year,t.month,t.day),QTime(t.hour,t.minute,t.second)),QLocale::ShortFormat));}
+        if(entry->commentResourceKey)add(Comment,mediaText(translations_,{*entry->commentResourceKey,entry->commentArguments,entry->commentTranslationDomain.value_or(std::string{})}));else if(!entry->comment.empty())add(Comment,QString::fromStdString(entry->comment));
+        if(entry->linkTarget)add(Link,QString::fromStdString(*entry->linkTarget));
+        if(entry->analysis){if(!entry->analysis->contentFormatId.empty())add(ContentFormat,QString::fromStdString(entry->analysis->contentFormatId));if(!entry->analysis->textEncodingId.empty())add(TextEncoding,QString::fromStdString(entry->analysis->textEncodingId));}
     } else if (const auto value = volume()) {
-        add(Volume, QString::fromStdString(value->name));
-        add(FileSystem, value->fileSystemDisplayResourceKey ? QString::fromStdString(translations_.text(*value->fileSystemDisplayResourceKey, value->fileSystemDisplayTranslationDomain.value_or(std::string{}))) : QString::fromStdString(value->fileSystemDisplayName));
+        add(Volume,volumeName(*value));
+        add(FileSystem,value->fileSystemDisplayResourceKey?mediaText(translations_,{*value->fileSystemDisplayResourceKey,value->fileSystemDisplayArguments,value->fileSystemDisplayTranslationDomain.value_or(std::string{})}):QString::fromStdString(value->fileSystemDisplayName));
         add(Capacity, QLocale().formattedDataSize(static_cast<qint64>(value->capacity)));
         if (value->freeSpaceKnown) add(Free, QLocale().formattedDataSize(static_cast<qint64>(value->freeBytes)));
-        add(Entries, QLocale().toString(static_cast<qulonglong>(value->entries.size())));
-    } else lines.push_back(text(SelectEntry));
+        const auto count=[](auto&& self,const std::vector<FileSystemEntryInfo>& entries)->std::uint64_t{std::uint64_t total=entries.size();for(const auto& item:entries)total+=self(self,item.children);return total;};add(Entries,QLocale().toString(static_cast<qulonglong>(count(count,value->entries))));
+    } else if(displayed_){add(Volume,text(Unnamed));add(FileSystem,displayed_->diskExploration?text(NoFileSystem):text(Unknown));}else lines.push_back(text(SelectEntry));
+    if(!entry && displayed_ && displayed_->mediaExploration && session_->selectedVolume<displayed_->mediaExploration->volumes.size()){
+        const auto& descriptor=displayed_->mediaExploration->volumes[session_->selectedVolume].descriptor;
+        if(descriptor.sessionNumber)add(Session,QString::number(*descriptor.sessionNumber));if(descriptor.trackNumber)add(Track,QString::number(*descriptor.trackNumber));if(descriptor.partitionTable)add(PartitionTable,QString::fromStdString(*descriptor.partitionTable).toUpper());if(descriptor.partitionNumber)add(PartitionNumber,QString::number(*descriptor.partitionNumber));if(descriptor.partitionType)add(PartitionType,QString::fromStdString(*descriptor.partitionType));if(descriptor.partitionId)add(PartitionId,QString::fromStdString(*descriptor.partitionId));if(!volume())add(Capacity,QLocale().formattedDataSize(descriptor.length));
+    }
+    QStringList diagnostics;QSet<QString> seen;
+    const auto append=[&](auto&& self,const MediaEngine::DiagnosticInfo& diagnostic)->void{const auto rendered=mediaText(translations_,diagnostic.message);if(!seen.contains(rendered)){seen.insert(rendered);diagnostics.push_back(rendered);}for(const auto& cause:diagnostic.causes)self(self,cause);};
+    if(entry){for(const auto& diagnostic:entry->diagnostics)append(append,diagnostic);}
+    else if(displayed_){
+        if(const auto current=volume()){for(const auto& diagnostic:current->warnings)append(append,diagnostic);for(const auto& message:current->sourceMessages){const auto rendered=mediaText(translations_,message);if(!seen.contains(rendered)){seen.insert(rendered);diagnostics.push_back(rendered);}}}
+        if(displayed_->mediaExploration){for(const auto& diagnostic:displayed_->mediaExploration->explorationDiagnostics)append(append,diagnostic);if(session_->selectedVolume<displayed_->mediaExploration->volumes.size())for(const auto& diagnostic:displayed_->mediaExploration->volumes[session_->selectedVolume].diagnostics)append(append,diagnostic);for(const auto& message:displayed_->mediaExploration->messages){const auto rendered=mediaText(translations_,message);if(!seen.contains(rendered)){seen.insert(rendered);diagnostics.push_back(rendered);}}}
+        if(displayed_->diskExploration)for(const auto& diagnostic:displayed_->diskExploration->info().diagnostics)append(append,diagnostic);
+    }
+    add(Warnings,QLocale().toString(diagnostics.size()));lines.append(diagnostics);
     details_->setText(lines.join(LineSeparator));
 }
 }

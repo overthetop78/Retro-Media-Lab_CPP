@@ -5,6 +5,8 @@ inline constexpr int Padding = 8, Gap = 6, PollInterval = 40;
 inline constexpr int NameColumn = 0, ModifiedColumn = 1, TypeColumn = 2, SizeColumn = 3, ColumnCount = 4;
 inline constexpr int TreeStretch = 1, ContentsStretch = 4, DetailsStretch = 2;
 inline constexpr int DetailsPaneIndex = 2;
+inline constexpr auto NoFileSystem="Explorer.PhysicalSectorsNoFileSystem";
+inline constexpr auto Type="Explorer.Type",TextEncoding="Explorer.TextEncoding",ContentFormat="Explorer.ContentFormat",Warnings="Explorer.Warnings",PartitionTable="Visual.PartitionTableLabel",PartitionNumber="Visual.PartitionNumberLabel",PartitionType="Explorer.PartitionType",PartitionId="Explorer.PartitionId",Track="Explorer.Track",NoImage="Visual.NoFile";
 inline constexpr auto Open = "Explorer.OpenImage";
 inline constexpr auto Loading = "Explorer.Loading";
 inline constexpr auto Unnamed = "Explorer.Unnamed";

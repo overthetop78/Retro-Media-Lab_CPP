@@ -80,6 +80,14 @@
     - [x] Modifier `DisplayDensity.cpp` et `HexGrid.cpp` : laisser la grille calculer ses sections depuis la police déjà mise à l’échelle, sans seconde réduction des colonnes.
     - [x] Créer temporairement `build/verification-visual-layout/main.cpp`, son exécutable et les images de rendu : vérifier le passage 16/8 colonnes, les cellules, les offsets et le pointage des pistes du graphique corrigé.
     - [x] Supprimer le programme, l'exécutable et leurs artefacts temporaires après vérification ; conserver les images de référence sous `docs/references/retro-media-lab/media/screenshots/`.
+  - [x] Détails et état de sélection de l'explorateur
+    - [x] Modifier `src/Infrastructure/Media/ExplorerSession.h` et `.cpp` : conserver l'indice du fichier sélectionné dans son dossier et le réinitialiser au chargement d'un nouveau média.
+    - [x] Modifier `ExplorerPage.h`, `.cpp` et `MediaPageConstants.h` : restaurer la sélection à la reconstruction/langue, résoudre les noms/commentaires traduisibles, afficher type, dates, encodage, partitions et diagnostics hiérarchiques dans un panneau défilant.
+    - [x] Créer temporairement `build/verification-explorer-state/main.cpp` et son exécutable : ouvrir un média fourni en argument, sélectionner un fichier, changer de langue et reconstruire la vue sans perdre sa sélection.
+  - [ ] Colonne alphanumérique de la grille hexadécimale
+    - [ ] Modifier `src/App/Shared/Controls/HexGrid.h`, `.cpp` et `HexGridConstants.h` : ajouter une colonne ASCII extensible après les 16 ou 8 octets, réserver sa largeur et remplacer les octets non imprimables par un point.
+    - [ ] Modifier `build/verification-explorer-state/main.cpp` : vérifier la correspondance ASCII/octets, la dernière ligne partielle et le passage 17/9 colonnes.
+    - [ ] Supprimer le programme, l'exécutable et leurs artefacts temporaires après utilisation.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

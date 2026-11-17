@@ -59,7 +59,7 @@ void ExplorerSession::poll() {
                 for (std::size_t index = 0; index < volumes.size(); ++index)
                     if (volumes[index].fileSystem) { selectedVolume = index; selectedSession = volumes[index].descriptor.sessionNumber; break; }
             }
-            folderPath.clear();
+            folderPath.clear(); selectedEntry.reset();
         }
     } catch (const MediaEngine::MediaError& error) {
         if (!cancelled_) {

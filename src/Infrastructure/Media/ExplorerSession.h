@@ -26,6 +26,7 @@ public:
     Subscription subscribe(std::function<void()>);
     std::size_t selectedVolume = 0;
     std::vector<std::size_t> folderPath;
+    std::optional<std::size_t> selectedEntry;
     std::optional<std::int32_t> selectedSession;
     std::optional<std::string> selectedFormat;
 private:

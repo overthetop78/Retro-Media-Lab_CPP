@@ -20,6 +20,7 @@ private:
     void rebuildVolumes();
     void rebuildTree();
     void showFolder(const std::vector<std::size_t>&);
+    QString volumeName(const MediaEngine::FileSystemVolumeInfo&) const;
     void showDetails(const MediaEngine::FileSystemEntryInfo*);
     std::shared_ptr<const MediaEngine::FileSystemVolumeInfo> volume() const;
     Translations::TranslationService& translations_;
