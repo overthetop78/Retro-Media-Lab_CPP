@@ -1,6 +1,7 @@
 add_library(RetroMediaLab.Infrastructure SHARED
   Media/ExplorerSession.cpp
   Media/MigrationSession.cpp
+  Media/ClassificationSelection.cpp
   Media/ExplorerReadSession.cpp
   Media/VisualizationSession.cpp
   Media/MediaCommands.cpp

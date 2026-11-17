@@ -4,7 +4,7 @@ namespace RetroMediaLab::VisualizationConstants {
 inline constexpr auto GraphObjectName="mediaVisualizationGraph";
 inline constexpr auto LinkZoom="Visual.LinkZoom";
 inline constexpr int LegendCapacity=13;
-inline constexpr double FluxRadius=.47,FluxHole=.25,FluxBand=.72,FluxStroke=.24;
+inline constexpr double FluxRadius=.47,FluxKnownRadius=.43,FluxHole=.25,FluxBand=.72,FluxStroke=.24;
 inline constexpr std::array FluxQualityLimits{.10,.40,.65,.85};
 inline constexpr std::array FluxQualityBrushes{"Theme.FluxDeadBrush","Theme.FluxPoorBrush","Theme.FluxPartialBrush","Theme.FluxGoodBrush","Theme.FluxExcellentBrush"};
 inline constexpr std::array FluxBrushes{"Theme.FluxShortBrush","Theme.FluxNormalBrush","Theme.FluxLongBrush","Theme.FluxHeaderBrush","Theme.FluxDataBrush","Theme.FluxDeletedBrush","Theme.FluxTimingBrush","Theme.FluxOtherBrush"};

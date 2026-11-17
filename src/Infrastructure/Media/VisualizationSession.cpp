@@ -66,6 +66,7 @@ void VisualizationSession::poll() {
             if (!cancellation_.stop_requested()) {
                 snapshot_ = std::make_shared<const VisualizationSnapshot>(std::move(result));
                 showWaveform=snapshot_->sequential && snapshot_->sequential->segments.empty() && snapshot_->tape;
+                if(snapshot_->source->diskExploration){classification.detect(snapshot_->source->diskExploration->info());const auto selected=classification.visualization();mediaCategory=selected.mediaCategory;fluxDecoder=selected.decoderId;}
                 fluxInspection.reset();
                 viewports_.clear();defaultViewport_={};
                 selectedElement.reset(); preview.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
@@ -96,6 +97,7 @@ void VisualizationSession::poll() {
     if (changed) publish();
 }
 void VisualizationSession::select(std::int32_t side, std::int64_t track) {if(surface==side && position==track)return;selectedSector.reset();fluxInspection.reset();restoreViewport(side);surface=side;position=track;revolution=0;inspectFlux();publish();}
+void VisualizationSession::applyClassification(){const auto value=classification.visualization();mediaCategory=value.mediaCategory;setFluxDecoder(value.decoderId);publish();}
 void VisualizationSession::setFluxDecoder(std::optional<std::string> decoder){if(fluxDecoder==decoder)return;fluxDecoder=std::move(decoder);fluxInspection.reset();selectedSector.reset();inspectFlux();publish();}
 void VisualizationSession::inspectFlux(){
     if(!snapshot_ || !snapshot_->flux || !snapshot_->source->diskExploration || fluxPending_.valid() || cancellation_.stop_requested())return;

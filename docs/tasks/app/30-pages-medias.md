@@ -1,10 +1,10 @@
 # Pages médias — portage depuis le C#
 
-- [ ] Raccorder les cinq pages aux services existants
-  - [ ] Exploration et état indépendant du thème
+- [x] Raccorder les cinq pages aux services existants
+  - [x] Exploration et état indépendant du thème
     - [x] Créer `src/Infrastructure/Media/ExplorerSession.h` et `.cpp` : ouverture asynchrone par MediaEngine, annulation, résultat conservé et notification GUI.
     - [x] Créer `src/Infrastructure/Media/MediaSessionConstants.h` : constantes techniques des opérations asynchrones.
-    - [x] Modifier `src/Infrastructure/CMakeLists.txt` : compiler la session et relier MediaEngine en privé.
+    - [x] Modifier `src/Infrastructure/CMakeLists.txt` : compiler la session et relier le contrat public de MediaEngine (les implémentations MediaFileSystems/MediaAnalysis restent privées au moteur).
     - [x] Modifier `src/App/State/WorkspaceState.h` : conserver la session d'exploration pendant les changements de thème.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/ExplorerPage.h`, `.cpp` et `MediaPageConstants.h` : sélection du fichier et du volume, arbre des dossiers, contenu et détails traduits.
     - [x] Modifier `src/App/Themes/RetroMediaLab/Views/WorkspaceTabs.cpp` et `src/App/CMakeLists.txt` : remplacer la page Explorateur vide et compiler sa vue.
@@ -12,8 +12,8 @@
     - [x] Modifier `src/Translations/include/RetroMediaLab/Translations/TranslationService.h` et `src/Translations/src/TranslationService.cpp` : résoudre un texte de domaine média via le service existant, avec son repli et ses invariants.
     - [x] Modifier `scripts/quality/audit_literals.py` : vérifier les deux nouveaux en-têtes comme définitions de constantes.
     - [x] Modifier `ExplorerSession.h`, `ExplorerSession.cpp` et `ExplorerPage.cpp` : terminer les diagnostics, les détails étendus, le lien vers la lecture physique et la restauration de la sélection de fichier.
-    - [ ] Modifier `ExplorerPage.cpp` et `MediaPageConstants.h` si nécessaire après vérification visuelle : état vide, rendu compact, changement de langue et reconstruction du thème.
-  - [ ] Lecture et écriture
+    - [x] Modifier `ExplorerPage.cpp` et `MediaPageConstants.h` si nécessaire après vérification visuelle : état vide, rendu compact, changement de langue et reconstruction du thème.
+  - [x] Lecture et écriture
     - [x] Modifier `src/Infrastructure/Maintenance/GreaseweazleTools.h`, `.cpp` et `GwToolsConstants.h` : exposer l'exécution d'une commande validée pour Lecture/Écriture/Conversion, avec le lanceur, les journaux et le nettoyage déjà existants, sans ajouter d'onglets de maintenance.
     - [x] Créer `src/Infrastructure/Media/MediaCommands.h`, `.cpp` et `MediaCommandConstants.h` : reprendre le validateur d'options et le tokenizer C#, mutualiser les spécifications déjà utilisées en maintenance.
     - [x] Créer `src/Infrastructure/Media/CaptureSession.h` et `.cpp` : reprendre les requêtes et opérations du C# via les services matériels et MediaEngine.
@@ -27,8 +27,8 @@
     - [x] Modifier `WorkspaceState.cpp`, `WorkspaceState.h`, `CapturePage.cpp` et `GreaseweazleDialog.cpp` : créer les sessions et leurs callbacks persistants dans App.dll, pour qu'aucun callback de session ne dépende du code d'un thème déchargé.
     - [x] Modifier `CaptureSession.h`, `.cpp`, `PreferencesStore.h`, `.cpp`, `WorkspaceState.cpp` et `ProfileSettingsPage.cpp` : persister et réexposer les profils enregistrés, raccorder leur gestion aux préférences.
     - [x] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
-    - [ ] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
-  - [ ] Conversion
+    - [x] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
+  - [x] Conversion
     - [x] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
     - [x] Créer `src/Infrastructure/Media/ConversionSessionConstants.h` et `src/App/Themes/RetroMediaLab/Views/ConversionPageConstants.h` : clés C#, options, dimensions et identifiants nommés.
@@ -44,7 +44,7 @@
     - [x] Modifier les catalogues `App/conversion-page.json` Constants/Languages et `audit_literals.py` : intégrer les clés existantes des dialogues et leurs constantes nommées.
     - [x] Créer temporairement `build/verification-conversion-dialogs/main.cpp`, son exécutable et ses petits fichiers d'entrée/sortie : vérifier les décisions mixtes et la lecture/conversion PCM paramétrée.
     - [x] Supprimer `build/verification-conversion-dialogs/main.cpp`, l'exécutable et tous leurs artefacts après la vérification.
-  - [ ] Visualisation
+  - [x] Visualisation
     - [x] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : rendu des faces, pistes, secteurs, flux, blocs et signal ; sélection et zoom selon les données publiques du moteur.
@@ -56,7 +56,7 @@
     - [x] Modifier `VisualizationPage.h`, `.cpp`, `VisualizationConstants.h` et les palettes `light.json`/`dark.json` : afficher une légende et une colonne d'état utilisant les mêmes rôles de couleurs ; conserver la sélection et l'affichage hexadécimal.
     - [x] Créer temporairement `build/verification-sector-visualization/main.cpp` et son exécutable : contrôler les priorités de classification C#, les adresses dupliquées/incohérentes et la sélection logique, sans média externe.
     - [x] Supprimer `build/verification-sector-visualization/main.cpp`, son exécutable et leurs artefacts après utilisation.
-    - [ ] Modifier les vues médias si les essais de langue, de reconstruction du thème et des autres représentations révèlent des écarts.
+    - [x] Modifier les vues médias si les essais de langue, de reconstruction du thème et des autres représentations révèlent des écarts.
   - [x] Profils persistants des opérations
     - [x] Créer `src/Infrastructure/Profiles/OperationProfiles.h`, `.cpp` et `ProfileConstants.h` : collection commune reprenant les profils C#, identifiants stables, défaut permanent par opération, sauvegarde, renommage, suppression et sérialisation validée.
     - [x] Modifier `CaptureSession.h`, `.cpp`, `ConversionSession.h` et `.cpp` : remplacer les profils temporaires par la collection commune et reprendre les valeurs/options C# sans enregistrer les chemins des médias.
@@ -128,11 +128,15 @@
     - [x] Modifier `scripts/quality/audit_literals.py` : déclarer les deux en-têtes de constantes de migration.
     - [x] Créer les catalogues `Constants/App/migration.json` et `Languages/*/App/migration.json` : reprendre les traductions C# de Migration, avec les messages d'erreur nécessaires.
     - [x] Créer temporairement `build/verification-migration/` : vérifier le dialogue, validation bloquante/acceptation des pertes, sauvegarde et annulation sur petits médias ; supprimer le programme, ses entrées/sorties et ses artefacts après validation.
-  - [ ] Commandes de classification et zoom du C#
+  - [x] Commandes de classification et zoom du C#
     - [x] Modifier `src/Infrastructure/Media/VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : reprendre le choix de liaison des zooms de plusieurs faces du C#, en conservant les transformations dans la session.
     - [x] Modifier `src/App/Themes/RetroMediaLab/Views/FluxGraph.h` et `.cpp` : limiter chaque rendu transformé à sa face pour empêcher le débordement d’une autre face lors du déplacement.
-    - [ ] Modifier `src/Infrastructure/Media/ExplorerSession.h`, `.cpp`, `VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et les constantes associées : reprendre le sélecteur de classification manuelle du C# derrière les options avancées et son raccordement aux formats.
+    - [x] Modifier `src/Infrastructure/Media/ExplorerSession.h`, `.cpp`, `VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et les constantes associées : reprendre le sélecteur de classification manuelle du C# derrière les options avancées et son raccordement aux formats.
     - [x] Créer temporairement `build/verification-linked-zoom/main.cpp`, son exécutable et une petite image à deux faces : vérifier zoom/déplacement séparés, liaison et pointage dans le thème réel ; conserver une capture puis supprimer les fichiers temporaires.
-  - [ ] Finalisation
-    - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
-    - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
+    - [x] Créer `src/Infrastructure/Media/ClassificationSelection.h` et `.cpp` et modifier le CMake : état et catalogue communs de classification, détection et validation des choix, sans dépendance GUI.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/ClassificationPanel.h`, `.cpp` et `ClassificationConstants.h`, modifier le CMake et `scripts/quality/audit_literals.py` : contrôles de machine/format/protection communs, détection automatique pour l’Explorateur, indicateurs des choix détectés et libellés traduits.
+    - [x] Créer `Constants/App/classification.json` et `Languages/*/App/classification.json` depuis les RESX C# ; vérifier le raccordement et la conservation des choix avec un programme temporaire sous `build/verification-classification/`, puis supprimer ses fichiers.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/FluxGraph.h`, `.cpp`, `MediaGraph.cpp` et `VisualizationConstants.h` : appliquer au dessin et au pointage le rayon C# des catégories physiques connues (.43 au lieu de .47 pour inconnu).
+  - [x] Finalisation
+    - [x] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
+    - [x] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

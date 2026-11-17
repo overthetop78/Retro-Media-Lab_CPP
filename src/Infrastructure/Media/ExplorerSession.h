@@ -1,5 +1,6 @@
 #pragma once
 #include "InfrastructureApi.h"
+#include "ClassificationSelection.h"
 #include <RetroMediaLab/MediaEngine/MediaExploration.h>
 #include <QObject>
 #include <QTimer>
@@ -18,6 +19,8 @@ public:
     ~ExplorerSession() override;
     void open(const QString& path, std::optional<std::string> format = {}, std::shared_ptr<const void> sourceLifetime = {});
     void cancel();
+    void reclassify(bool automaticChanged=false);
+    ClassificationSelection classification;
     bool busy() const noexcept { return pending_.valid(); }
     const QString& path() const noexcept { return path_; }
     const QString& error() const noexcept { return error_; }

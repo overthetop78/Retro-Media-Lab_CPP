@@ -1,4 +1,7 @@
 #include "VisualizationPage.h"
+#include "ClassificationPanel.h"
+#include "ClassificationConstants.h"
+#include <QToolButton>
 #include "VisualizationConstants.h"
 #include "Shared/Controls/Card.h"
 #include "../FlowLayout.h"
@@ -42,8 +45,11 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     zoomOut_ = new QPushButton(QString::fromUtf8(ZoomOut),this); zoomIn_ = new QPushButton(QString::fromUtf8(ZoomIn),this); zoom_ = new QLabel(this);
     representation_=new QComboBox(this);representation_->addItems({QString{},QString{}});
     linkZoom_=new QCheckBox(this);
+    classificationToggle_=new QToolButton(this);classificationToggle_->setObjectName(ClassificationConstants::ToggleObject);classificationToggle_->setCheckable(true);toolbar->addWidget(classificationToggle_);
     toolbar->addWidget(open_);toolbar->addWidget(representation_); toolbar->addStretch();toolbar->addWidget(linkZoom_); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
     layout->addLayout(toolbar);
+    classification_=new ClassificationPanel(session_->classification,translations,false,[this](bool){session_->applyClassification();},this);layout->addWidget(classification_);
+    connect(classificationToggle_,&QToolButton::toggled,this,[this](bool visible){session_->classification.expanded=visible;classification_->setVisible(visible);});
     status_ = new QLabel(this); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); layout->addWidget(status_);
     summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
     auto* splitter = new QSplitter(Qt::Vertical,this);
@@ -88,6 +94,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
 }
 QString VisualizationPage::text(const char* key) const {return QString::fromStdString(translations_.text(key));}
 void VisualizationPage::refresh() {
+    classificationToggle_->setText(text(ClassificationConstants::Advanced));const bool classificationAvailable=session_->snapshot()&&session_->snapshot()->source->diskExploration;classificationToggle_->setEnabled(classificationAvailable&&!session_->busy());{const QSignalBlocker blocked(classificationToggle_);classificationToggle_->setChecked(session_->classification.expanded);}classification_->refresh();classification_->setVisible(classificationAvailable&&session_->classification.expanded);classification_->setEnabled(!session_->busy());
     linkZoom_->setText(text(LinkZoom));{const QSignalBlocker blocked(linkZoom_);linkZoom_->setChecked(session_->linkedZoom());}
     std::set<std::int32_t> heads;if(session_->snapshot()){if(session_->snapshot()->flux)for(const auto& track:session_->snapshot()->flux->tracks)heads.insert(track.head);else if(session_->snapshot()->sectors&&!session_->snapshot()->sectors->logical)for(const auto& sector:session_->snapshot()->sectors->sectors)heads.insert(static_cast<std::int32_t>(sector.head));}linkZoom_->setVisible(heads.size()>1);
     open_->setText(text(Open)); reset_->setText(text(Reset)); sideLabel_->setText(text(Side)); trackLabel_->setText(text(Track)); revolutionLabel_->setText(text(Revolution));
@@ -102,7 +109,8 @@ void VisualizationPage::refresh() {
     const auto error=session_->error()?session_->error():session_->snapshot()?session_->snapshot()->warning:std::optional<MediaEngine::MessageInfo>{};
     if (error) {
         status_->setText(mediaText(translations_,*error));
-    } else if(!session_->opening()->error().isEmpty()) status_->setText(QString::fromStdString(Errors::render(translations_.language(),session_->opening()->error().toStdString())));
+    } else if(session_->opening()->errorMessage()) status_->setText(mediaText(translations_,*session_->opening()->errorMessage()));
+    else if(!session_->opening()->error().isEmpty()) status_->setText(QString::fromStdString(Errors::render(translations_.language(),session_->opening()->error().toStdString())));
     QStringList headers; for(const auto key:Columns)headers.push_back(text(key)); sectors_->setHorizontalHeaderLabels(headers);
     const QSignalBlocker blockedSectors(sectors_),blockedSide(side_),blockedTrack(track_),blockedRevolutions(revolutions_);
     sectors_->clearContents(); sectors_->setRowCount(0); rows_.clear();rowStates_.clear(); revolutions_->clear();

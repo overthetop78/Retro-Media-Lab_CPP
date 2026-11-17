@@ -11,4 +11,4 @@ Les cinq pages ont été parcourues vides puis avec une petite image SSD : Lectu
 
 Résultat : parcours réussi dans les deux résolutions. Les PNG de chaque sous-dossier montrent la surface cliente Qt dans le bureau virtuel ; ils ne sont pas des captures de décoration native DWM. Le programme temporaire et ses copies de médias sont supprimés après utilisation.
 
-Ce contrôle ne clôture pas la migration de fichiers depuis Conversion, dont le raccordement du dialogue reste suivi dans la liste des tâches.
+Le raccordement de la migration et ses contrôles complémentaires sont consignés dans migration/validation.md. La clôture globale est détaillée dans completion.md.

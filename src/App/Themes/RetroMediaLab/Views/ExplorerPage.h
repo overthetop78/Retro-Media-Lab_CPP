@@ -7,14 +7,18 @@
 class QComboBox;
 class QLabel;
 class QPushButton;
+class QToolButton;
 class QTreeWidget;
 class QTreeWidgetItem;
 class QTableWidget;
 namespace RetroMediaLab {
+class ClassificationPanel;
 class ExplorerPage final : public QWidget {
 public:
     ExplorerPage(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
 private:
+    QToolButton* classificationToggle_;
+    ClassificationPanel* classification_;
     QString text(const char*) const;
     void refresh();
     void rebuildVolumes();

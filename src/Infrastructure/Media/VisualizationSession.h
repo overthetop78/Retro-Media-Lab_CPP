@@ -39,6 +39,9 @@ public:
     void setPan(double x, double y);
     void inspect(std::size_t element);
     void setWaveform(bool);
+    void applyClassification();
+    ClassificationSelection classification;
+    MediaEngine::DiskMediaCategory mediaCategory=MediaEngine::DiskMediaCategory::Unknown;
     void setFluxDecoder(std::optional<std::string>);
     std::optional<std::string> fluxDecoder;
     std::optional<MediaEngine::FluxTrackInspection> fluxInspection;

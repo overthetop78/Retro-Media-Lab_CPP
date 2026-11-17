@@ -157,3 +157,8 @@ CaptureProgressView ne fait que dessiner les faces 0/1, compteurs et états reç
 Validation avec un programme temporaire unique jouant aussi le rôle de GW, sans accès matériel : sortie fractionnée, CR/LF et dernière ligne, déduplication, reprises après succès, plage invalide, processus exclusif, lecture et écriture réussies, résumé calculé depuis un petit SCP réel, échec sans faux succès ni incrément de séquence, arrêt de lecture avec suppression de la sortie partielle, arrêt d'écriture préservant la source, destruction pendant une capture avec arrêt/nettoyage, commande de lecture au format connu et refus d'une écriture ambiguë. Le faux outil annonce volontairement plusieurs pistes tandis que le fichier synthétique en contient une : le bilan natif provient bien du fichier, indépendamment de la progression annoncée.
 
 Widget Lecture hors écran : progression, bilan et chemin affichés, brouillon conservé au changement français/anglais et à la recréation de la page. Capture isolée `screenshots/capture-progress.png` au style Qt natif. Compilation complète Release et installation réussies, audits constantes/frontières et contrôle d'espaces réussis. Programme temporaire, exécutable, sorties SCP, objets et journaux supprimés. La vérification transversale des cinq pages reste ouverte.
+
+
+### Clôture du raccordement des cinq pages
+
+Les étapes historiques ci-dessus sont complétées par les contrôles transversaux, la migration de fichiers, le zoom indépendant et la classification manuelle. État final, sources et portée des preuves : [clôture des pages](../../../validation/app/pages-medias/completion.md). Les essais de capture matérielle utilisent un fournisseur simulé ; aucune écriture physique utilisateur n’est revendiquée.

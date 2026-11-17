@@ -20,6 +20,7 @@ ExplorerSession::~ExplorerSession() {
 }
 void ExplorerSession::open(const QString& path, std::optional<std::string> format, std::shared_ptr<const void> lifetime) {
     if (busy() || path.isEmpty()) return;
+    if(!format&&!classification.automatic())format=classification.format();
     cancellation_ = std::stop_source{};
     cancelled_ = false;
     error_.clear();
@@ -41,6 +42,7 @@ void ExplorerSession::open(const QString& path, std::optional<std::string> forma
     if(!pending_.valid())pendingLifetime_.reset();
     notify();
 }
+void ExplorerSession::reclassify(bool automaticChanged){if(busy())return;if(path_.isEmpty()){notify();return;}const auto format=automaticChanged&&classification.automatic()?std::optional<std::string>{}:classification.format();open(path_,format,result_);}
 void ExplorerSession::cancel() {
     if (!busy()) return;
     cancelled_ = true;
@@ -61,6 +63,7 @@ void ExplorerSession::poll() {
             auto owner=std::make_shared<OwnedResult>(OwnedResult{std::move(pendingLifetime_),std::move(value)});result_=std::shared_ptr<const MediaEngine::MediaOpeningAnalysisResult>(owner,&owner->result);
             path_ = pendingPath_;
             selectedFormat = pendingFormat_;
+            if(result_->diskExploration)classification.detect(result_->diskExploration->info());
             selectedVolume = 0;
             selectedSession.reset();
             if (result_->mediaExploration) {

@@ -6,12 +6,14 @@
 class QLabel;
 class QCheckBox;
 class QPushButton;
+class QToolButton;
 class QSpinBox;
 class QComboBox;
 class QTableWidget;
 class QPlainTextEdit;
 
 namespace RetroMediaLab {
+class ClassificationPanel;
 class HexGrid;
 class VisualizationPage final : public QWidget {
 public:
@@ -20,6 +22,8 @@ private:
     void refresh();
     void showSector(int);
     void showBytes(const std::vector<std::uint8_t>&);
+    QToolButton* classificationToggle_;
+    ClassificationPanel* classification_;
     QString text(const char*) const;
     Translations::TranslationService& translations_;
     ThemeService& themes_;

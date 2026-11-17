@@ -1,4 +1,7 @@
 #include "ExplorerPage.h"
+#include "ClassificationPanel.h"
+#include "ClassificationConstants.h"
+#include <QToolButton>
 #include "Media/ExplorerReadSession.h"
 #include "MediaPageConstants.h"
 #include "Shared/Controls/Card.h"
@@ -52,7 +55,10 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     toolbar->addWidget(sessions_);
     toolbar->addWidget(volumes_, 1);
     toolbar->addWidget(cancel_);
+    classificationToggle_=new QToolButton(this);classificationToggle_->setObjectName(ClassificationConstants::ToggleObject);classificationToggle_->setCheckable(true);toolbar->addWidget(classificationToggle_);
     layout->addLayout(toolbar);
+    classification_=new ClassificationPanel(session_->classification,translations,true,[this](bool automaticChanged){session_->reclassify(automaticChanged);},this);layout->addWidget(classification_);
+    connect(classificationToggle_,&QToolButton::toggled,this,[this](bool visible){session_->classification.expanded=visible;classification_->setVisible(visible);});
     status_ = new QLabel(this);
     status_->setTextFormat(Qt::PlainText);
     status_->setWordWrap(true);
@@ -111,7 +117,7 @@ ExplorerPage::ExplorerPage(ThemeService& themes, Translations::TranslationServic
     connect(formats_, &QComboBox::currentIndexChanged, this, [this](int index) {
         if (index < 0 || session_->busy()) return;
         const auto format = formats_->itemData(index).toString();
-        session_->open(session_->path(), format.isEmpty() ? std::optional<std::string>{} : format.toStdString());
+        session_->classification.setAutomatic(format.isEmpty());if(!format.isEmpty())session_->classification.selectFormat(format.toStdString());session_->reclassify(format.isEmpty());
     });
     connect(folders_, &QTreeWidget::currentItemChanged, this, [this](QTreeWidgetItem* current) {
         const auto found = paths_.find(current);
@@ -151,6 +157,7 @@ std::shared_ptr<const MediaEngine::FileSystemVolumeInfo> ExplorerPage::volume() 
     return displayed_->diskExploration ? displayed_->diskExploration->info().volume : nullptr;
 }
 void ExplorerPage::refresh() {
+    classificationToggle_->setText(text(ClassificationConstants::Advanced));const bool classificationAvailable=session_->result()&&session_->result()->diskExploration;classificationToggle_->setEnabled(classificationAvailable&&!session_->busy()&&!reading_->busy());{const QSignalBlocker blocked(classificationToggle_);classificationToggle_->setChecked(session_->classification.expanded);}classification_->refresh();classification_->setVisible(classificationAvailable&&session_->classification.expanded);classification_->setEnabled(!session_->busy()&&!reading_->busy());
     open_->setText(text(Open)); cancel_->setText(text(Cancel));read_->setText(text(reading_->busy()?Stop:ReadDisk));
     read_->setEnabled(reading_->busy() || reading_->canStart());
     const auto& execution=reading_->capture().execution();auto readSummary=QString::fromStdString(translations_.text(execution.summaryKey.toStdString()));for(int index=0;index<execution.summaryArguments.size();++index)readSummary.replace(QString::fromLatin1(ArgumentPattern).arg(index),execution.summaryArguments[index]);readStatus_->setText(readSummary);readStatus_->setVisible(reading_->busy() || !execution.lastCommand.isEmpty());
