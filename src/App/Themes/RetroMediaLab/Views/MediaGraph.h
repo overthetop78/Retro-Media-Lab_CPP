@@ -16,6 +16,9 @@ protected:
 private:
     const MediaEngine::DiskFormatInfo* format() const;
     void rebuild();
+    std::vector<std::int32_t> diskSurfaces()const;
+    QPointF diskPoint(QPointF,std::size_t,std::size_t)const;
+    void focusSurface(QPointF);
     ThemeService& themes_;
     std::shared_ptr<Infrastructure::VisualizationSession> session_;
     std::shared_ptr<const Infrastructure::VisualizationSnapshot> cached_;

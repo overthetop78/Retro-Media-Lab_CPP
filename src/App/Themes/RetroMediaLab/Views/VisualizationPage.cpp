@@ -5,6 +5,8 @@
 #include "Shared/Localization/MediaText.h"
 #include <Errors.h>
 #include <QComboBox>
+#include <QCheckBox>
+#include <set>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -39,7 +41,8 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     open_ = new QPushButton(this); reset_ = new QPushButton(this);
     zoomOut_ = new QPushButton(QString::fromUtf8(ZoomOut),this); zoomIn_ = new QPushButton(QString::fromUtf8(ZoomIn),this); zoom_ = new QLabel(this);
     representation_=new QComboBox(this);representation_->addItems({QString{},QString{}});
-    toolbar->addWidget(open_);toolbar->addWidget(representation_); toolbar->addStretch(); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
+    linkZoom_=new QCheckBox(this);
+    toolbar->addWidget(open_);toolbar->addWidget(representation_); toolbar->addStretch();toolbar->addWidget(linkZoom_); toolbar->addWidget(reset_); toolbar->addWidget(zoomOut_); toolbar->addWidget(zoom_); toolbar->addWidget(zoomIn_);
     layout->addLayout(toolbar);
     status_ = new QLabel(this); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); layout->addWidget(status_);
     summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
@@ -69,6 +72,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
         const auto path=QFileDialog::getOpenFileName(this,text(Open),state.defaultImageDirectory()); if(!path.isEmpty()) session_->opening()->open(path);
     });
     connect(representation_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0)session_->setWaveform(index!=0);});
+    connect(linkZoom_,&QCheckBox::toggled,this,[this](bool value){session_->setLinkedZoom(value);});
     connect(reset_,&QPushButton::clicked,this,[this]{session_->setZoom(InitialZoom);});
     connect(zoomIn_,&QPushButton::clicked,this,[this]{session_->setZoom(std::min(MaximumZoom,session_->zoom*ZoomStep));});
     connect(zoomOut_,&QPushButton::clicked,this,[this]{session_->setZoom(std::max(InitialZoom,session_->zoom/ZoomStep));});
@@ -84,6 +88,8 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
 }
 QString VisualizationPage::text(const char* key) const {return QString::fromStdString(translations_.text(key));}
 void VisualizationPage::refresh() {
+    linkZoom_->setText(text(LinkZoom));{const QSignalBlocker blocked(linkZoom_);linkZoom_->setChecked(session_->linkedZoom());}
+    std::set<std::int32_t> heads;if(session_->snapshot()){if(session_->snapshot()->flux)for(const auto& track:session_->snapshot()->flux->tracks)heads.insert(track.head);else if(session_->snapshot()->sectors&&!session_->snapshot()->sectors->logical)for(const auto& sector:session_->snapshot()->sectors->sectors)heads.insert(static_cast<std::int32_t>(sector.head));}linkZoom_->setVisible(heads.size()>1);
     open_->setText(text(Open)); reset_->setText(text(Reset)); sideLabel_->setText(text(Side)); trackLabel_->setText(text(Track)); revolutionLabel_->setText(text(Revolution));
     zoom_->setText(QLocale().toString(session_->zoom*PercentFactor,PercentNumberFormat,0)+QString::fromLatin1(Percent));
     open_->setEnabled(!session_->opening()->busy());

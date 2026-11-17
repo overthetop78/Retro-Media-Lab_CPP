@@ -67,6 +67,7 @@ void VisualizationSession::poll() {
                 snapshot_ = std::make_shared<const VisualizationSnapshot>(std::move(result));
                 showWaveform=snapshot_->sequential && snapshot_->sequential->segments.empty() && snapshot_->tape;
                 fluxInspection.reset();
+                viewports_.clear();defaultViewport_={};
                 selectedElement.reset(); preview.clear(); surface = 0; position = 0; revolution = 0; zoom = 1; panX = 0; panY = 0; selectedSector.reset();
                 if(snapshot_->flux && !snapshot_->flux->tracks.empty()){surface=snapshot_->flux->tracks.front().head;position=snapshot_->flux->tracks.front().cylinder;inspectFlux();}
             }
@@ -94,7 +95,7 @@ void VisualizationSession::poll() {
     if (!pending_.valid() && !inspection_.valid() && !fluxPending_.valid()) { timer_.stop(); sourceChanged(); }
     if (changed) publish();
 }
-void VisualizationSession::select(std::int32_t side, std::int64_t track) {if(surface==side && position==track)return;selectedSector.reset();fluxInspection.reset();surface=side;position=track;revolution=0;inspectFlux();publish();}
+void VisualizationSession::select(std::int32_t side, std::int64_t track) {if(surface==side && position==track)return;selectedSector.reset();fluxInspection.reset();restoreViewport(side);surface=side;position=track;revolution=0;inspectFlux();publish();}
 void VisualizationSession::setFluxDecoder(std::optional<std::string> decoder){if(fluxDecoder==decoder)return;fluxDecoder=std::move(decoder);fluxInspection.reset();selectedSector.reset();inspectFlux();publish();}
 void VisualizationSession::inspectFlux(){
     if(!snapshot_ || !snapshot_->flux || !snapshot_->source->diskExploration || fluxPending_.valid() || cancellation_.stop_requested())return;
@@ -103,10 +104,14 @@ void VisualizationSession::inspectFlux(){
     const auto index=static_cast<std::size_t>(found-tracks.begin());inspectingSide_=surface;inspectingTrack_=position;inspectingDecoder_=fluxDecoder;const auto token=cancellation_.get_token();const auto decoder=fluxDecoder;error_.reset();
     try{fluxPending_=std::async(std::launch::async,[source,index,decoder,token]{return MediaEngine::inspectFluxVisualization(source->diskExploration->info().tracks[index],decoder,token);});timer_.start();}catch(const std::exception& error){error_=MediaEngine::MessageInfo{UnexpectedError,{error.what()},{}};}
 }
-void VisualizationSession::selectSector(std::uint64_t logical){if(!snapshot_ || !snapshot_->sectors)return;const auto& sectors=snapshot_->sectors->sectors;const auto found=std::find_if(sectors.begin(),sectors.end(),[&](const auto& item){return item.logicalBlock==logical;});if(found==sectors.end())return;if(surface==found->head && position==found->cylinder && selectedSector==logical)return;surface=static_cast<std::int32_t>(found->head);position=found->cylinder;selectedSector=logical;publish();}
-void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && value >= 1 && value <= MaximumZoom) { zoom = value; if (value == 1) { panX = 0; panY = 0; } publish(); } }
+void VisualizationSession::selectSector(std::uint64_t logical){if(!snapshot_ || !snapshot_->sectors)return;const auto& sectors=snapshot_->sectors->sectors;const auto found=std::find_if(sectors.begin(),sectors.end(),[&](const auto& item){return item.logicalBlock==logical;});if(found==sectors.end())return;if(surface==found->head && position==found->cylinder && selectedSector==logical)return;restoreViewport(static_cast<std::int32_t>(found->head));surface=static_cast<std::int32_t>(found->head);position=found->cylinder;selectedSector=logical;publish();}
+SurfaceViewport VisualizationSession::viewport(std::int32_t head)const{if(linkedZoom_)return {zoom,panX,panY};const auto found=viewports_.find(head);return found==viewports_.end()?defaultViewport_:found->second;}
+void VisualizationSession::saveViewport(){if(!linkedZoom_)viewports_[surface]={zoom,panX,panY};}
+void VisualizationSession::restoreViewport(std::int32_t head){if(head==surface||linkedZoom_)return;const auto value=viewport(head);zoom=value.zoom;panX=value.panX;panY=value.panY;}
+void VisualizationSession::setLinkedZoom(bool value){if(value==linkedZoom_)return;defaultViewport_={zoom,panX,panY};viewports_.clear();linkedZoom_=value;publish();}
+void VisualizationSession::setZoom(double value) { if (std::isfinite(value) && value >= 1 && value <= MaximumZoom) { zoom = value; if (value == 1) { panX = 0; panY = 0; } saveViewport();publish(); } }
 void VisualizationSession::setRevolution(std::size_t value) { revolution = value; publish(); }
-void VisualizationSession::setPan(double x, double y) { if (std::isfinite(x) && std::isfinite(y)) { panX = x; panY = y; publish(); } }
+void VisualizationSession::setPan(double x, double y) { if (std::isfinite(x) && std::isfinite(y)) { panX = x; panY = y; saveViewport();publish(); } }
 void VisualizationSession::setWaveform(bool value){if(value==showWaveform)return;showWaveform=value;zoom=1;panX=0;panY=0;publish();}
 void VisualizationSession::inspect(std::size_t element) {
     if (!snapshot_ || (!snapshot_->linear && !snapshot_->sequential) || pending_.valid() || element >= snapshot_->descriptor->fields().elements.size()) return;

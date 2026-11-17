@@ -4,6 +4,7 @@
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 class QLabel;
+class QCheckBox;
 class QPushButton;
 class QSpinBox;
 class QComboBox;
@@ -26,6 +27,7 @@ private:
     std::array<QLabel*,VisualizationConstants::LegendCapacity> legendDots_,legendLabels_;
     ThemeService::Subscription themeSubscription_;
     std::shared_ptr<Infrastructure::VisualizationSession> session_;
+    QCheckBox* linkZoom_;
     QLabel *summary_,*elementDetails_,*status_, *sideLabel_, *trackLabel_, *revolutionLabel_, *zoom_,*decoderLabel_;
     QPushButton *open_, *reset_, *zoomIn_, *zoomOut_;
     QSpinBox *side_, *track_;

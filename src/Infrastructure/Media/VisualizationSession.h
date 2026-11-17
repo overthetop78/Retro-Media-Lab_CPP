@@ -1,5 +1,6 @@
 #pragma once
 #include "ExplorerSession.h"
+#include <map>
 #include <RetroMediaLab/MediaEngine/MediaVisualization.h>
 #include <RetroMediaLab/MediaEngine/SectorVisualization.h>
 #include <RetroMediaLab/MediaEngine/TapeSignal.h>
@@ -18,6 +19,7 @@ struct VisualizationSnapshot {
     std::optional<MediaEngine::SequentialVisualizationModel> sequential;
     std::optional<MediaEngine::FluxVisualizationModel> flux;
 };
+struct SurfaceViewport {double zoom=1,panX=0,panY=0;};
 class RETROMEDIALAB_INFRASTRUCTURE_API VisualizationSession final : public QObject {
 public:
     explicit VisualizationSession(std::shared_ptr<ExplorerSession>);
@@ -30,6 +32,9 @@ public:
     void select(std::int32_t surface, std::int64_t position);
     void selectSector(std::uint64_t logicalBlock);
     void setZoom(double);
+    void setLinkedZoom(bool);
+    bool linkedZoom()const noexcept{return linkedZoom_;}
+    SurfaceViewport viewport(std::int32_t)const;
     void setRevolution(std::size_t);
     void setPan(double x, double y);
     void inspect(std::size_t element);
@@ -50,6 +55,11 @@ public:
     std::vector<std::uint8_t> preview;
 private:
     void sourceChanged();
+    void restoreViewport(std::int32_t);
+    void saveViewport();
+    bool linkedZoom_=true;
+    SurfaceViewport defaultViewport_;
+    std::map<std::int32_t,SurfaceViewport> viewports_;
     void inspectFlux();
     void poll();
     void publish();

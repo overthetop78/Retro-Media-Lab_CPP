@@ -129,8 +129,10 @@
     - [x] Créer les catalogues `Constants/App/migration.json` et `Languages/*/App/migration.json` : reprendre les traductions C# de Migration, avec les messages d'erreur nécessaires.
     - [x] Créer temporairement `build/verification-migration/` : vérifier le dialogue, validation bloquante/acceptation des pertes, sauvegarde et annulation sur petits médias ; supprimer le programme, ses entrées/sorties et ses artefacts après validation.
   - [ ] Commandes de classification et zoom du C#
-    - [ ] Modifier `src/Infrastructure/Media/VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : reprendre le choix de liaison des zooms de plusieurs faces du C#, en conservant les transformations dans la session.
+    - [x] Modifier `src/Infrastructure/Media/VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `MediaGraph.h`, `.cpp` et `VisualizationConstants.h` : reprendre le choix de liaison des zooms de plusieurs faces du C#, en conservant les transformations dans la session.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/FluxGraph.h` et `.cpp` : limiter chaque rendu transformé à sa face pour empêcher le débordement d’une autre face lors du déplacement.
     - [ ] Modifier `src/Infrastructure/Media/ExplorerSession.h`, `.cpp`, `VisualizationSession.h`, `.cpp`, `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h`, `.cpp`, `ExplorerPage.h`, `.cpp` et les constantes associées : reprendre le sélecteur de classification manuelle du C# derrière les options avancées et son raccordement aux formats.
+    - [x] Créer temporairement `build/verification-linked-zoom/main.cpp`, son exécutable et une petite image à deux faces : vérifier zoom/déplacement séparés, liaison et pointage dans le thème réel ; conserver une capture puis supprimer les fichiers temporaires.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.

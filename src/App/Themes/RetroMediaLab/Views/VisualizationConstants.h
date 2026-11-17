@@ -1,6 +1,8 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::VisualizationConstants {
+inline constexpr auto GraphObjectName="mediaVisualizationGraph";
+inline constexpr auto LinkZoom="Visual.LinkZoom";
 inline constexpr int LegendCapacity=13;
 inline constexpr double FluxRadius=.47,FluxHole=.25,FluxBand=.72,FluxStroke=.24;
 inline constexpr std::array FluxQualityLimits{.10,.40,.65,.85};
