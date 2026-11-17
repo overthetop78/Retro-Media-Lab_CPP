@@ -13,6 +13,7 @@ protected:
     void changeEvent(QEvent*)override;
 private:
     void reflow(bool force=false);
+    int bytesPerRow_=0;
     bool scheduled_=false;
     std::vector<std::uint8_t> bytes_;
 };
