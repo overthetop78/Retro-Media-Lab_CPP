@@ -13,5 +13,6 @@ private:
     ThemeService::Subscription themeSubscription_;
     WorkspaceState::DirectorySubscription hardwareSubscription_;
     WorkspaceState::DirectorySubscription operationSubscription_;
+    WorkspaceState::DirectorySubscription conversionSubscription_;
 };
 }

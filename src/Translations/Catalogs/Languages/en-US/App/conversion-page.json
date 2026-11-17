@@ -1,0 +1,31 @@
+{
+  "strings": {
+    "Advanced.OutputTracks": "Output tracks",
+    "Common.Cancel": "Cancel",
+    "Conflict.AllNumber": "Number all",
+    "Conflict.AllOverwrite": "Overwrite all",
+    "Conflict.AllSkip": "Skip all",
+    "Conflict.Title": "Existing files",
+    "Conversion.AddTags": "Add tags",
+    "Conversion.CheckOutput": "Check at least one output format.",
+    "Conversion.CommonFormats": "Common formats",
+    "Conversion.EngineExternal": "Host Tools: converting {0}.",
+    "Conversion.EngineInternalComplete": "Internal conversion completed: {0}.",
+    "Conversion.EngineInternalStart": "Internal engine: converting {0} to {1}.",
+    "Conversion.EngineInternalUnavailable": "The internal engine does not support this conversion: {0}.",
+    "Conversion.Failed": "Conversion failed for {0}: {1}",
+    "Conversion.Fidelity.PreservedFlux": "original flux preserved",
+    "Conversion.Fidelity.ReconstructedTracks": "reconstructed tracks; original flux not preserved",
+    "Conversion.Fidelity.SectorData": "sector data; protections not preserved",
+    "Conversion.NameRequired": "Enter the output filenames.",
+    "Conversion.OutputNames": "Output names",
+    "Conversion.Selected": "Selected",
+    "Conversion.SequentialLossesConfirm": "This conversion cannot preserve all source information:\n\n{0}\n\nDo you want to continue?",
+    "Conversion.SequentialLossesTitle": "Potential data loss",
+    "Conversion.ShowRare": "Show rarely used formats",
+    "Conversion.Source": "Source",
+    "Conversion.SourceRequired": "Choose an existing source image.",
+    "Conversion.Summary": "Summary: {0} succeeded, {1} failed.",
+    "Conversion.Title": "Conversion"
+  }
+}

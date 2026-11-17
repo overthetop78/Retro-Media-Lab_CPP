@@ -29,8 +29,15 @@
     - [ ] Modifier `CaptureSession.cpp`, `CapturePage.cpp` et les contrats de progression existants : compléter les événements de capture, les résumés finaux et la validation des exécutions/arrêts avec un fournisseur de test réutilisable ou un support explicitement choisi.
     - [ ] Modifier `CapturePage.cpp` si les vérifications des formats connus, de l’écriture ambiguë et des changements de langue/thème révèlent des écarts.
   - [ ] Conversion
-    - [ ] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
-    - [ ] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Créer `src/Infrastructure/Media/ConversionSession.h` et `.cpp` : sélection des formats, validation, conversion et progression via le contrat MediaEngine.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/ConversionPage.h` et `.cpp` : reprendre les sélections C# et raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.
+    - [x] Créer `src/Infrastructure/Media/ConversionSessionConstants.h` et `src/App/Themes/RetroMediaLab/Views/ConversionPageConstants.h` : clés C#, options, dimensions et identifiants nommés.
+    - [x] Modifier `WorkspaceState.h`, `WorkspaceState.cpp`, les CMake App/Infrastructure et `scripts/quality/audit_literals.py` : conserver la session indépendamment du thème et compiler les nouveaux fichiers.
+    - [x] Créer `Catalogs/Constants/App/conversion-page.json` et `Catalogs/Languages/*/App/conversion-page.json` sous `src/Translations` : reprendre les traductions C# sans clés dupliquées.
+    - [x] Créer temporairement `build/verification-conversion/input.ssd` : copie de travail du SSD de référence pour une conversion réelle depuis le GUI, sans modifier le média original.
+    - [x] Supprimer `build/verification-conversion/input.ssd` et les sorties générées dans ce même dossier après la vérification du lot.
+    - [x] Modifier `src/App/Themes/RetroMediaLab/Views/StatusBar.h` et `.cpp` : afficher Conversion pendant les lots du moteur interne, via la notification de session existante.
+    - [x] Modifier `ConversionSession.h`, `.cpp`, `ConversionPage.h` et `.cpp` : compléter les profils RAW d'entrée/sortie C#, les décisions de conflit par fichier et les profils persistants de conversion.
   - [ ] Visualisation
     - [x] Créer `src/Infrastructure/Media/VisualizationSession.h` et `.cpp` : conserver les résultats et sélections des fournisseurs MediaEngine.
     - [x] Créer `src/App/Themes/RetroMediaLab/Views/VisualizationPage.h` et `.cpp` : graphiques adaptés au support, zoom et inspection ; raccorder dans `WorkspaceTabs.cpp` et les CMake concernés.

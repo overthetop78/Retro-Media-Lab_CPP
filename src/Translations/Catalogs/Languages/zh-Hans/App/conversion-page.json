@@ -1,0 +1,31 @@
+{
+  "strings": {
+    "Advanced.OutputTracks": "输出曲目",
+    "Common.Cancel": "取消",
+    "Conflict.AllNumber": "全部编号",
+    "Conflict.AllOverwrite": "覆盖全部",
+    "Conflict.AllSkip": "全部跳过",
+    "Conflict.Title": "现有文件",
+    "Conversion.AddTags": "添加标签",
+    "Conversion.CheckOutput": "检查至少一种输出格式。",
+    "Conversion.CommonFormats": "常见格式",
+    "Conversion.EngineExternal": "主机工具: 转换 {0}. . . . . . . . . . . .",
+    "Conversion.EngineInternalComplete": "完成内部转换: {0}. . . . . . . . . . . .",
+    "Conversion.EngineInternalStart": "内部引擎: 转换 {0} 改为 {1}. . . . . . . . . . . .",
+    "Conversion.EngineInternalUnavailable": "内部引擎不支持此转换 : {0}. . . . . . . . . . . .",
+    "Conversion.Failed": "转换失败 {0}: {1}",
+    "Conversion.Fidelity.PreservedFlux": "原通量保留",
+    "Conversion.Fidelity.ReconstructedTracks": "已重建的音轨; 原始通量未保存",
+    "Conversion.Fidelity.SectorData": "扇区数据; 未保存的保护",
+    "Conversion.NameRequired": "输入输出文件名。",
+    "Conversion.OutputNames": "输出名称",
+    "Conversion.Selected": "已选择",
+    "Conversion.SequentialLossesConfirm": "此转换无法保存所有源信息 :\n\n{0}\n\n你想继续吗?",
+    "Conversion.SequentialLossesTitle": "潜在数据损失",
+    "Conversion.ShowRare": "显示很少使用的格式",
+    "Conversion.Source": "来源",
+    "Conversion.SourceRequired": "选择现有的源图像。",
+    "Conversion.Summary": "摘要：{0} 成功，{1} 失败。",
+    "Conversion.Title": "转换"
+  }
+}

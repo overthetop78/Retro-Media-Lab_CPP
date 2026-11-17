@@ -39,3 +39,14 @@ Compilation Release réussie, sans avertissement C++ relevé ; catalogues Consta
 Essai de l’application installée : nom de capture saisi, console ouverte et activation de l’option Révolutions ; commande observée `read --device COM3 --drive A --revs 5 G:/Retro/RML-capture-preview.scp`. Choix de l’image Acorn SSD depuis la page Écriture ; assemblage `write --device COM3 --drive A "F:/Retro/AMX Art 2.1.ssd"` observé avant l’ajout du blocage explicite des formats ambigus du C#. Aucun bouton d’exécution matérielle n’a été actionné. Les cadres source pleine largeur et lecture brute sans sélecteur vide ont été revus ensuite. La fenêtre de vérification a été fermée normalement.
 
 Les profils sont actuellement conservés pendant la session, mais leur persistance reste à raccorder. La progression détaillée et les résumés de capture, la validation des exécutions/arrêts et la page Conversion demeurent ouverts : ces vues ne clôturent pas l’objectif global.
+
+
+### Conversion — session et premier lot GUI (2026-11-17)
+
+Références C# : `Controllers/MainWindow/ConversionTabController.cs`, `Services/Conversion/ConversionBatchExecutor.cs`, `Infrastructure/Conversion/ConversionCommandBuilder.cs`. La session Infrastructure utilise les destinations directes et séquentielles du moteur, puis ConversionPlanner ; le filtre du catalogue runtime reprend la compatibilité avec la source chargée, comme le C#. Le moteur sélectionné est respecté, sans repli silencieux vers Host Tools.
+
+La vue propose formats/extensions par famille, sorties et fidélité, tags, options avancées et exécution par lots. Les conflits proposent écrasement, saut ou numérotation pour le lot. Les pertes séquentielles demandent une confirmation avant écriture. Le service possède les futures, leur annulation et leur attente à la destruction ; les callbacks persistants et le rendu des journaux restent dans App.dll. Les journaux internes utilisent ConsoleLogSession, les commandes externes le lanceur GreaseweazleTools existant. Les 30 catalogues reprennent les RESX C# existants, sans traduction automatique.
+
+Vérification effective dans le GUI Release : chargement d’une copie temporaire du SSD Acorn DFS `AMX Art 2.1.ssd`, sélection des deux destinations `cpcemu.dsk` et `raw.scp`, exécution du lot par le moteur interne. Deux fichiers produits : DSK 112896 octets et SCP 2966712 octets ; source de travail 102400 octets. Le dernier contrôle a identifié puis corrigé l’ordre des notifications de progression pour garder le bilan de lot en dernier. Fenêtre fermée normalement ; fixtures et sorties temporaires supprimées. Aucun accès en écriture à un lecteur physique.
+
+Restent explicitement ouverts : profils RAW d’entrée/sortie, choix de conflit par fichier (actuellement décision globale au lot), profils persistants de conversion et validation des conversions séquentielles avec pertes. Ce résultat ne clôture pas les cinq pages du point principal.

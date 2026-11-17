@@ -2,6 +2,8 @@
 #include "WorkspaceState.h"
 #include "Media/CaptureSession.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
+#include "Media/ConversionSession.h"
+#include "Shared/Localization/MediaText.h"
 #include <algorithm>
 #include <stdexcept>
 namespace RetroMediaLab {
@@ -14,6 +16,11 @@ void WorkspaceState::ensureMediaOperations(Translations::TranslationService& tra
         session->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
     };
     initialize(reading,Infrastructure::CaptureMode::Read);initialize(writing,Infrastructure::CaptureMode::Write);
+    if(!converting){
+        converting=std::make_shared<Infrastructure::ConversionSession>(greaseweazleTools,logsDirectory,[this]{return logging();},[&translations](const auto& message){return mediaText(translations,message);});
+        converting->draft.addTags=conversion().addTags;
+        converting->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
+    }
 }
 bool WorkspaceState::hasGeometry() const noexcept { return !mainWindowGeometry.isEmpty(); }
 void WorkspaceState::setDefaultImageDirectory(QString directory) {

@@ -1,0 +1,31 @@
+{
+  "strings": {
+    "Advanced.OutputTracks": "出力トラック",
+    "Common.Cancel": "キャンセル",
+    "Conflict.AllNumber": "すべてに番号を付ける",
+    "Conflict.AllOverwrite": "すべて上書き",
+    "Conflict.AllSkip": "すべてスキップ",
+    "Conflict.Title": "既存のファイル",
+    "Conversion.AddTags": "タグを追加する",
+    "Conversion.CheckOutput": "少なくとも 1 つの出力形式を確認してください。",
+    "Conversion.CommonFormats": "一般的なフォーマット",
+    "Conversion.EngineExternal": "ホストツール:変換 {0}. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "Conversion.EngineInternalComplete": "内部変換が完了しました: {0}. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "Conversion.EngineInternalStart": "内部エンジン:変換 {0} に に へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ へ {1}. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "Conversion.EngineInternalUnavailable": "社内エンジンはこの変換をサポートしていません。 {0}. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+    "Conversion.Failed": "変換が失敗しました {0}: {1}",
+    "Conversion.Fidelity.PreservedFlux": "元のフラックスは保存しました",
+    "Conversion.Fidelity.ReconstructedTracks": "再建されたトラック;元の変化は保存されませんでした",
+    "Conversion.Fidelity.SectorData": "セクターデータ、保存されていない保護",
+    "Conversion.NameRequired": "出力ファイル名を入力します。",
+    "Conversion.OutputNames": "出力名",
+    "Conversion.Selected": "選択済み",
+    "Conversion.SequentialLossesConfirm": "この変換は、すべてのソース情報を保存できません。\n\n{0}\n\n続行したいですか?",
+    "Conversion.SequentialLossesTitle": "潜在的なデータ損失",
+    "Conversion.ShowRare": "あまり使用されない形式を表示する",
+    "Conversion.Source": "ソース",
+    "Conversion.SourceRequired": "既存のソース イメージを選択します。",
+    "Conversion.Summary": "概要: {0} は成功しましたが、{1} は失敗しました。",
+    "Conversion.Title": "変換"
+  }
+}

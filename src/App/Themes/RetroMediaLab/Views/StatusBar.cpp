@@ -4,6 +4,7 @@
 #include "../ThemeIcons.h"
 #include "Maintenance/GreaseweazleTools.h"
 #include "Maintenance/GwToolsConstants.h"
+#include "Media/ConversionSession.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QToolButton>
@@ -58,7 +59,7 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
     };
     connect(selector, &QComboBox::currentIndexChanged, this, [updateSelection] { updateSelection(); });
     const auto refreshOperation=[ready,&state,&translations] {
-        const auto active=state.greaseweazleTools?state.greaseweazleTools->activeOperation():QString{};
+        const auto active=state.converting && state.converting->converting()?QString::fromLatin1(GwToolsConstants::Convert):state.greaseweazleTools?state.greaseweazleTools->activeOperation():QString{};
         const auto* key=active==EngineConstants::Read?AppConstants::TabRead:active==EngineConstants::Write?AppConstants::TabWrite:active==GwToolsConstants::Convert?AppConstants::TabConvert:active.isEmpty()?ThemeConstants::StatusReadyShort:GwToolsConstants::RunningKey;
         ready->setText(QString::fromStdString(translations.text(key)));
     };
@@ -102,6 +103,7 @@ StatusBar::StatusBar(ThemeService& themes, Translations::TranslationService& tra
     themeSubscription_ = themes.subscribe(refresh);
     hardwareSubscription_ = state.subscribeToHardware(refresh);
     if(state.greaseweazleTools)operationSubscription_=state.greaseweazleTools->subscribe(refreshOperation);
+    if(state.converting)conversionSubscription_=state.converting->subscribe(refreshOperation);
 }
 }
 

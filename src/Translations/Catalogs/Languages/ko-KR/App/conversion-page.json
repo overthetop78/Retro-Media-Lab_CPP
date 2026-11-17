@@ -1,0 +1,31 @@
+{
+  "strings": {
+    "Advanced.OutputTracks": "출력 트랙",
+    "Common.Cancel": "취소",
+    "Conflict.AllNumber": "모두 번호 매기기",
+    "Conflict.AllOverwrite": "모두 덮어쓰기",
+    "Conflict.AllSkip": "모두 건너뛰기",
+    "Conflict.Title": "기존 파일",
+    "Conversion.AddTags": "태그 추가",
+    "Conversion.CheckOutput": "하나 이상의 출력 형식을 확인하십시오.",
+    "Conversion.CommonFormats": "일반적인 형식",
+    "Conversion.EngineExternal": "호스트 도구: 변환 {0}.",
+    "Conversion.EngineInternalComplete": "내부 변환 완료: {0}.",
+    "Conversion.EngineInternalStart": "내부 엔진: 변환 {0} to {1}.",
+    "Conversion.EngineInternalUnavailable": "내부 엔진은 이 변환을 지원하지 않습니다: {0}.",
+    "Conversion.Failed": "변환은 실패 {0}: {1}",
+    "Conversion.Fidelity.PreservedFlux": "유출 보존",
+    "Conversion.Fidelity.ReconstructedTracks": "재구성된 궤도; 본래 유출은 보존하지 않습니다",
+    "Conversion.Fidelity.SectorData": "분야 데이터; 보호는 보존되지 않습니다",
+    "Conversion.NameRequired": "출력 파일 이름을 입력합니다.",
+    "Conversion.OutputNames": "출력 이름",
+    "Conversion.Selected": "선택된",
+    "Conversion.SequentialLossesConfirm": "이 변환은 모든 소스 정보를 보존할 수 없습니다:\n\n{0}\n\n계속하시겠습니까?",
+    "Conversion.SequentialLossesTitle": "잠재적인 데이터 손실",
+    "Conversion.ShowRare": "거의 사용되지 않는 형식 표시",
+    "Conversion.Source": "원천",
+    "Conversion.SourceRequired": "기존 소스 이미지를 선택합니다.",
+    "Conversion.Summary": "요약: {0} 성공, {1} 실패.",
+    "Conversion.Title": "변환"
+  }
+}
