@@ -1,6 +1,15 @@
 #pragma once
 #include <array>
 namespace RetroMediaLab::MediaPageConstants {
+inline constexpr auto Category="Explorer.Category",Preview="Explorer.Preview",Execution="Explorer.Execution";
+inline constexpr auto CategoryPrefix="Explorer.Category.",ContentFormatPrefix="Explorer.ContentFormat.",PreviewPrefix="Explorer.Preview.",ExecutionPrefix="Explorer.Execution.";
+inline constexpr auto ContentUnknown="Explorer.ContentFormat.Unknown",PreviewNone="Explorer.Preview.None",NotApplicable="NotApplicable",UnknownId="Unknown";
+inline constexpr std::array TextEncodingIds{"Ascii","DosOem","Atascii","Petscii","Latin1","MacRoman","AppleAscii","Msx"};
+inline constexpr std::array TextEncodingNames{"ASCII","DOS OEM","ATASCII","PETSCII","Latin-1","Mac Roman","Apple ASCII","MSX"};
+inline constexpr std::array ExecutionIds{"NativeExecutable","InterpretedProgram","CommandScript"};
+inline constexpr std::array RecordMetadataKeys{"recordCount","fullRecordCount","partialRecordCount","baudRates"};
+inline constexpr std::array RecordMetadataLabels{"Explorer.Records","Explorer.FullRecords","Explorer.PartialRecords","Explorer.BaudRates"};
+inline constexpr auto EndRecordKey="endRecordPresent",EndRecordLabel="Explorer.EndRecord",TrueValue="true",Yes="Common.Yes",No="Common.No";
 inline constexpr int Padding = 8, Gap = 6, PollInterval = 40;
 inline constexpr int NameColumn = 0, ModifiedColumn = 1, TypeColumn = 2, SizeColumn = 3, ColumnCount = 4;
 inline constexpr int TreeStretch = 1, ContentsStretch = 4, DetailsStretch = 2;

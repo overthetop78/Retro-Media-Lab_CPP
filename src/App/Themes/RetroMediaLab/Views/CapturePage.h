@@ -42,7 +42,7 @@ private:
     QCheckBox* autoNumber_;
     QToolButton* advancedToggle_;
     QPushButton *browse_,*execute_,*save_,*reset_,*visualize_,*explore_;
-    struct OptionField {Infrastructure::CaptureOptionDefinition definition;QCheckBox* check;QLineEdit* value;};
+    struct OptionField {Infrastructure::CaptureOptionDefinition definition;QCheckBox* check;QLineEdit* value;QComboBox* choices;QPushButton* browse;};
     std::vector<OptionField> fields_;
     Infrastructure::ExplorerSession::Subscription subscription_;
     WorkspaceState::DirectorySubscription hardwareSubscription_,engineSubscription_;

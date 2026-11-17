@@ -1,5 +1,6 @@
 #include "CapturePage.h"
 #include "CaptureProgressView.h"
+#include "Maintenance/GwToolsConstants.h"
 #include <QLocale>
 #include "CaptureConstants.h"
 #include "Shared/Controls/Card.h"
@@ -59,8 +60,13 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     for(const auto& definition:Infrastructure::captureOptions(mode)) {
         auto* container=new QWidget(optionHost);auto* row=new QHBoxLayout(container);row->setContentsMargins(0,0,0,0);row->setSpacing(C::Gap);
         auto* check=new QCheckBox(container);row->addWidget(check);QLineEdit* value=nullptr;
-        if(!definition.flag) {value=new QLineEdit(container);value->setFixedWidth(C::OptionWidth);row->addWidget(value);}
-        fields_.push_back({definition,check,value});options->addWidget(container);
+        QComboBox* choices=nullptr;QPushButton* browse=nullptr;
+        if(!definition.flag){
+            if(QString::fromLatin1(definition.argument)==M::Densel){choices=new QComboBox(container);choices->addItems({QString::fromLatin1(GwToolsConstants::High),QString::fromLatin1(GwToolsConstants::Low)});row->addWidget(choices);connect(choices,&QComboBox::currentTextChanged,this,[this,argument=QString::fromLatin1(definition.argument)](const QString& text){session_->draft.values[argument]=text;session_->changed();});}
+            else{value=new QLineEdit(container);value->setFixedWidth(C::OptionWidth);row->addWidget(value);}
+            if(QString::fromLatin1(definition.argument)==M::DiskDefs){browse=new QPushButton(container);row->addWidget(browse);connect(browse,&QPushButton::clicked,this,[this]{const auto path=QFileDialog::getOpenFileName(this,text(C::Browse),session_->draft.values.value(M::DiskDefs));if(!path.isEmpty()){session_->draft.values[M::DiskDefs]=path;session_->draft.enabled.insert(M::DiskDefs);session_->changed();}});}
+        }
+        fields_.push_back({definition,check,value,choices,browse});options->addWidget(container);
         connect(check,&QCheckBox::toggled,this,[this,argument=QString::fromLatin1(definition.argument)](bool enabled) {
             if(enabled)session_->draft.enabled.insert(argument);else session_->draft.enabled.remove(argument);
             if(enabled) {
@@ -129,7 +135,7 @@ void CapturePage::refresh() {
     extensions_->setVisible(read && !draft.raw);extensions_->setAccessibleName(text(C::Extension));
     if(raw_){const QSignalBlocker a(raw_),b(known_);raw_->setText(text(C::Raw));known_->setText(text(C::Known));raw_->setChecked(draft.raw);known_->setChecked(!draft.raw);}
     {const QSignalBlocker blocked(advancedToggle_);advancedToggle_->setText(text(C::Advanced));advancedToggle_->setChecked(draft.advancedOpen);}advanced_->setVisible(draft.advancedOpen);advancedToggle_->setArrowType(draft.advancedOpen?Qt::DownArrow:Qt::RightArrow);
-    for(const auto& field:fields_){const QSignalBlocker blocked(field.check);field.check->setText(text(field.definition.label));field.check->setChecked(draft.enabled.contains(field.definition.argument));if(field.value){field.value->setEnabled(field.check->isChecked());set(field.value,draft.values.value(field.definition.argument));}}
+    for(const auto& field:fields_){const QSignalBlocker blocked(field.check);field.check->setText(text(field.definition.label));field.check->setChecked(draft.enabled.contains(field.definition.argument));if(field.value){field.value->setEnabled(field.check->isChecked());set(field.value,draft.values.value(field.definition.argument));}if(field.choices){const QSignalBlocker choices(field.choices);field.choices->setEnabled(field.check->isChecked());field.choices->setCurrentText(draft.values.value(field.definition.argument));}if(field.browse)field.browse->setText(text(C::Browse));}
     {const QSignalBlocker a(autoNumber_),b(sequenceKind_),c(sequenceWidth_);autoNumber_->setText(text(C::AutoNumber));autoNumber_->setChecked(draft.autoNumber);sequenceKind_->setItemText(0,text(C::Digits));sequenceKind_->setItemText(1,text(C::Letters));sequenceKind_->setCurrentIndex(draft.alphabetic?1:0);sequenceWidth_->setValue(draft.sequenceWidth);}
     expertLabel_->setText(text(C::Expert));execute_->setText(text(session_->busy()?C::Stop:C::Execute));execute_->setEnabled(session_->busy() || session_->canStart());
     auto summary=text(session_->execution().summaryKey.toUtf8().constData());for(int index=0;index<session_->execution().summaryArguments.size();++index)summary.replace(QString::fromLatin1(C::Argument).arg(index),session_->execution().summaryArguments[index]);const auto substitute=[this](const char* key,const QStringList& arguments){auto value=text(key);for(int index=0;index<arguments.size();++index){value.replace(QString::fromLatin1(C::Argument).arg(index),arguments[index]);value.replace(QString::fromLatin1(C::NumericArgument).arg(index),arguments[index]);}return value;};

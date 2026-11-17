@@ -19,3 +19,6 @@ Correction du 14 novembre : la normalisation des polices hÃ©ritÃ©es sâ€�
 ## Dimensions des sélecteurs et du contenu
 
 Le [code officiel QComboBox](https://raw.githubusercontent.com/qt/qtbase/6.10/src/widgets/widgets/qcombobox.cpp), consulté le 14 novembre 2026, montre que FontChange invalide sizeHint mais pas minimumSizeHint ; StyleChange invalide les deux. Après adaptation des métriques, transmettre StyleChange aux sélecteurs évite de conserver une ancienne hauteur minimale. Les listes courtes calculent leur hauteur sur leur layout adapté, et non sur une mesure figée avant adaptation. Les champs GreaseWeazle reprennent une disposition avec retour à la ligne inspirée du WrapPanel C# et une largeur de saisie de référence de 150.
+
+
+Précision pour réutiliser le backend hors écran (17 novembre 2026) : le JSON accepte `screens` avec, pour chaque écran, `name`, `x`, `y`, `width`, `height`, `logicalDpi`, `logicalBaseDpi` et `dpr`. Les options globales `synchronousWindowSystemEvents` et `windowFrameMargins` contrôlent les événements et marges simulées. Une configuration à 96 DPI de base/logiques et DPR 1 représente 100 %. Ces paramètres ont été repris du [source officiel Qt](https://raw.githubusercontent.com/qt/qtbase/dev/src/plugins/platforms/offscreen/qoffscreenintegration.cpp), sans modifier l'affichage Windows de l'utilisateur.

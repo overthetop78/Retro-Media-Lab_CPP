@@ -4,6 +4,7 @@
 #include "Shared/Controls/Card.h"
 #include "Shared/Localization/MediaText.h"
 #include <Errors.h>
+#include <RetroMediaLab/Translations/TranslationConstants.h>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QMessageBox>
@@ -273,7 +274,17 @@ void ExplorerPage::showDetails(const FileSystemEntryInfo* entry) {
         if(entry->modified){const auto& t=*entry->modified;add(HeaderKeys[ModifiedColumn],QLocale().toString(QDateTime(QDate(t.year,t.month,t.day),QTime(t.hour,t.minute,t.second)),QLocale::ShortFormat));}
         if(entry->commentResourceKey)add(Comment,mediaText(translations_,{*entry->commentResourceKey,entry->commentArguments,entry->commentTranslationDomain.value_or(std::string{})}));else if(!entry->comment.empty())add(Comment,QString::fromStdString(entry->comment));
         if(entry->linkTarget)add(Link,QString::fromStdString(*entry->linkTarget));
-        if(entry->analysis){if(!entry->analysis->contentFormatId.empty())add(ContentFormat,QString::fromStdString(entry->analysis->contentFormatId));if(!entry->analysis->textEncodingId.empty())add(TextEncoding,QString::fromStdString(entry->analysis->textEncodingId));}
+        if(entry->analysis && entry->kind==FileSystemEntryKind::File){
+            const auto& analysis=*entry->analysis;
+            const auto localized=[this](const char* prefix,const std::string& id,const char* fallback){const auto key=std::string(prefix)+id;const auto value=translations_.text(key);return value==TranslationConstants::MissingKeyOpen+key+TranslationConstants::MissingKeyClose?text(fallback):QString::fromStdString(value);};
+            if(!analysis.categoryId.empty())add(Category,localized(CategoryPrefix,analysis.categoryId,File));
+            if(!analysis.contentFormatId.empty())add(ContentFormat,localized(ContentFormatPrefix,analysis.contentFormatId,ContentUnknown));
+            if(!analysis.textEncodingId.empty() && analysis.textEncodingId!=NotApplicable){const auto encoding=std::find(TextEncodingIds.begin(),TextEncodingIds.end(),analysis.textEncodingId);add(TextEncoding,encoding==TextEncodingIds.end()?text(Unknown):QString::fromLatin1(TextEncodingNames[static_cast<std::size_t>(encoding-TextEncodingIds.begin())]));}
+            if(!analysis.previewKindId.empty())add(Preview,localized(PreviewPrefix,analysis.previewKindId,PreviewNone));
+            if(std::find(ExecutionIds.begin(),ExecutionIds.end(),analysis.executionKindId)!=ExecutionIds.end())add(Execution,localized(ExecutionPrefix,analysis.executionKindId,Unknown));
+        }
+        for(std::size_t index=0;index<RecordMetadataKeys.size();++index){const auto found=entry->metadata.find(RecordMetadataKeys[index]);if(found!=entry->metadata.end() && !found->second.empty())add(RecordMetadataLabels[index],QString::fromStdString(found->second));}
+        if(const auto found=entry->metadata.find(EndRecordKey);found!=entry->metadata.end())add(EndRecordLabel,text(QString::fromStdString(found->second).compare(QLatin1String(TrueValue),Qt::CaseInsensitive)==0?Yes:No));
     } else if (const auto value = volume()) {
         add(Volume,volumeName(*value));
         add(FileSystem,value->fileSystemDisplayResourceKey?mediaText(translations_,{*value->fileSystemDisplayResourceKey,value->fileSystemDisplayArguments,value->fileSystemDisplayTranslationDomain.value_or(std::string{})}):QString::fromStdString(value->fileSystemDisplayName));
