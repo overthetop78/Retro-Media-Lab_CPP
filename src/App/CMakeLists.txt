@@ -2,6 +2,7 @@ set(app_sources
   Bootstrap/Application.cpp
   State/WorkspaceState.cpp
   Windows/WindowCoordinator.cpp
+  Shared/Controls/HexGrid.cpp
   Shared/Controls/Card.cpp
   Shared/Controls/LocalizedAction.cpp
   Shared/Controls/TerminalView.cpp
@@ -47,6 +48,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/WorkspaceTabs.cpp
   Themes/RetroMediaLab/Views/ExplorerPage.cpp
   Themes/RetroMediaLab/Views/VisualizationPage.cpp
+  Themes/RetroMediaLab/Views/LinearGraph.cpp
   Themes/RetroMediaLab/Views/MediaGraph.cpp
   Themes/RetroMediaLab/Views/CapturePage.cpp
   Themes/RetroMediaLab/Views/ConversionPage.cpp

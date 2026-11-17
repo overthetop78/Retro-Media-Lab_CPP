@@ -8,8 +8,9 @@ class QPushButton;
 class QSpinBox;
 class QComboBox;
 class QTableWidget;
-class QPlainTextEdit;
+
 namespace RetroMediaLab {
+class HexGrid;
 class VisualizationPage final : public QWidget {
 public:
     VisualizationPage(ThemeService&, Translations::TranslationService&, WorkspaceState&, QWidget*);
@@ -29,7 +30,7 @@ private:
     QSpinBox *side_, *track_;
     QComboBox* revolutions_;
     QTableWidget* sectors_;
-    QPlainTextEdit* hex_;
+    HexGrid* hex_;
     std::vector<const MediaEngine::DiskSectorInfo*> rows_;
     std::vector<MediaEngine::SectorVisualizationState> rowStates_;
     Infrastructure::ExplorerSession::Subscription subscription_, openingSubscription_;

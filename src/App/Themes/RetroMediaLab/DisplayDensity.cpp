@@ -1,3 +1,4 @@
+#include "Shared/Controls/HexGridConstants.h"
 #include "DisplayDensity.h"
 #include "ThemeConstants.h"
 #include <QScopedValueRollback>
@@ -170,7 +171,7 @@ void DisplayDensity::refresh() {
         if (auto* tabs = qobject_cast<QTabBar*>(widget); tabs && record.icon.isValid()) tabs->setIconSize(size(record.icon, scale * tabFactor(widget)));
         if (auto* view = qobject_cast<QAbstractItemView*>(widget); view && record.icon.isValid()) view->setIconSize(size(record.icon, scale));
         if (auto* splitter = qobject_cast<QSplitter*>(widget)) splitter->setHandleWidth(metric(record.handle, scale));
-        if (auto* header = qobject_cast<QHeaderView*>(widget)) { header->setMinimumSectionSize(metric(record.minimumSection, scale)); header->setDefaultSectionSize(metric(record.section, scale)); }
+        if (auto* header = qobject_cast<QHeaderView*>(widget); header && !header->property(HexGridConstants::OwnSectionMetricsProperty).toBool()) { header->setMinimumSectionSize(metric(record.minimumSection, scale)); header->setDefaultSectionSize(metric(record.section, scale)); }
         if (auto* list = qobject_cast<QListWidget*>(widget)) for (int i = 0; i < qMin(list->count(), record.items.size()); ++i) if (record.items[i].isValid()) list->item(i)->setSizeHint(size(record.items[i], scale));
         widget->setProperty(AppliedProperty, scale);
         widget->updateGeometry();

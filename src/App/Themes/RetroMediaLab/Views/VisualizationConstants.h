@@ -9,6 +9,13 @@ inline constexpr std::array LinearColumns{"Visual.StartLabel","Visual.LengthLabe
 inline constexpr auto BlocksUnit="Visual.BlocksUnit",SectorsUnit="Visual.SectorsUnit",PartitionNumber="Visual.PartitionNumberLabel",Pregap="Visual.OpticalPregap";
 inline constexpr auto Capacity="Visual.CapacityLabel",Faces="Visual.FaceCountLabel",Layers="Visual.LayerCountLabel",TrackCount="Visual.TrackCountLabel",AssociatedFiles="Visual.AssociatedFilesTitle",Origin="Visual.VolumeOriginLabel",Start="Visual.StartLabel",Length="Visual.LengthLabel",Geometry="CHS",InfoSeparator=" · ",ValueSeparator=": ",GeometrySeparator=" × ";
 inline constexpr int LinearStateColumn=4;
+inline constexpr auto SectorBackgroundBrush="Theme.SectorBackgroundBrush",SectorBoundaryBrush="Theme.SectorBoundaryBrush";
+inline constexpr double SectorHoleRatio=.22,SectorOuterMargin=18,SectorGapDegrees=.35,SectorMinimumSweep=.12,SectorSelectionWidth=2.5;
+inline constexpr double LinearOuterMargin=24,OpticalHoleRatio=.18,BlockHoleRatio=.28,TrackGapDegrees=.3,MinimumArcDegrees=.08,QuarterCircle=90;
+inline constexpr int LinearSelectionWidth=3,CartridgeColumns=8,CartridgeContacts=20;
+inline constexpr double CartridgeAspect=1.3,CartridgeWidthRatio=.68,CartridgeHeightRatio=.82,CartridgeCorner=18,CartridgeCellRadius=3,CartridgeGap=2;
+inline constexpr double PanelLeft=.07,PanelTop=.08,PanelBottom=.20,ContentHorizontal=.025,ContentVertical=.035,ConnectorLeft=.18,ConnectorTop=.12,ConnectorBottom=.035,ContactInset=.20;
+inline constexpr auto VisualBackgroundBrush="Theme.VisualizationBackgroundBrush",VisualSelectionBrush="Theme.VisualizationSelectionBrush",CartridgeBodyBrush="Theme.CartridgeBodyBrush",CartridgePanelBrush="Theme.CartridgePanelBrush",CartridgeBorderBrush="Theme.CartridgeBorderBrush",CartridgeContactBrush="Theme.CartridgeContactBrush";
 inline constexpr auto Open = "Visual.OpenImage", Empty = "Visual.NoFile", Loading = "Visual.Loading", Inspector = "Visual.Inspector";
 inline constexpr auto Side = "Visual.SideLabel", Track = "Visual.TrackLabel", Sector = "Visual.SectorLabel", Size = "Visual.SizeLabel";
 inline constexpr auto Revolution = "Visual.RevolutionLabel", Reset = "Common.Reset", Data = "Visual.StructureData";

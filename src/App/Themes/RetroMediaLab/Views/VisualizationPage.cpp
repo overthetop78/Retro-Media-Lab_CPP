@@ -10,7 +10,7 @@
 #include <QHeaderView>
 #include <QLabel>
 #include <QLocale>
-#include <QPlainTextEdit>
+#include "Shared/Controls/HexGrid.h"
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QSpinBox>
@@ -47,7 +47,7 @@ VisualizationPage::VisualizationPage(ThemeService& themes, Translations::Transla
     sectors_ = new QTableWidget(contents); sectors_->setColumnCount(static_cast<int>(Columns.size()));
     sectors_->setEditTriggers(QAbstractItemView::NoEditTriggers); sectors_->setSelectionBehavior(QAbstractItemView::SelectRows); sectors_->setSelectionMode(QAbstractItemView::SingleSelection);
     sectors_->verticalHeader()->hide(); sectors_->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    hex_ = new QPlainTextEdit(contents); hex_->setReadOnly(true); hex_->setLineWrapMode(QPlainTextEdit::NoWrap);
+    hex_ = new HexGrid(contents);
     details->addWidget(contents,1);
     splitter->addWidget(graph); splitter->addWidget(inspector); splitter->setStretchFactor(0,GraphWeight); splitter->setStretchFactor(1,DetailsWeight);
     layout->addWidget(splitter,1);
@@ -86,7 +86,7 @@ void VisualizationPage::refresh() {
     legend_->setVisible(session_->snapshot() && (session_->snapshot()->sectors.has_value() || session_->snapshot()->linear.has_value()));
     for(std::size_t index=0;index<SectorLabels.size();++index){legendLabels_[index]->setText(text(SectorLabels[index]));auto palette=legendDots_[index]->palette();palette.setColor(QPalette::WindowText,themes_.data()->color(SectorBrushes[index]));legendDots_[index]->setPalette(palette);}
     for(std::size_t index=0;index<SectorLabels.size();++index)legendLabels_[index]->parentWidget()->show();
-    if(!session_->snapshot()) {hex_->clear();return;}
+    if(!session_->snapshot()) {hex_->setBytes({});return;}
     const auto& snapshot=*session_->snapshot();
     const auto& descriptor=snapshot.descriptor->fields();
     if(snapshot.linear){
@@ -144,21 +144,14 @@ void VisualizationPage::refresh() {
         int selected=0;
         if(session_->selectedSector)for(std::size_t index=0;index<rows_.size();++index)if(rows_[index]->logicalBlock==*session_->selectedSector) {selected=static_cast<int>(index);break;}
         sectors_->setCurrentCell(selected,0);showSector(selected);
-    } else hex_->clear();
+    } else hex_->setBytes({});
 }
 void VisualizationPage::showSector(int row) {
-    if(row<0 || static_cast<std::size_t>(row)>=rows_.size() || !rows_[row]->data) {hex_->clear();return;}
+    if(row<0 || static_cast<std::size_t>(row)>=rows_.size() || !rows_[row]->data) {hex_->setBytes({});return;}
     session_->selectedSector=rows_[row]->logicalBlock;
     showBytes(*rows_[row]->data);
 }
 void VisualizationPage::showBytes(const std::vector<std::uint8_t>& bytes) {
-    QStringList lines;
-    for(std::size_t offset=0;offset<std::min(bytes.size(),static_cast<std::size_t>(HexPreviewBytes));offset+=HexBytesPerLine) {
-        QStringList line;
-        for(std::size_t index=offset;index<std::min(bytes.size(),offset+HexBytesPerLine);++index)
-            line.push_back(QString::number(bytes[index],HexBase).rightJustified(HexDigits,QLatin1Char(HexPadding)).toUpper());
-        lines.push_back(line.join(QLatin1Char(HexSeparator)));
-    }
-    hex_->setPlainText(lines.join(QLatin1Char(LineSeparator)));
+    const auto count=std::min(bytes.size(),static_cast<std::size_t>(HexPreviewBytes));hex_->setBytes(std::vector<std::uint8_t>(bytes.begin(),bytes.begin()+count));
 }
 }

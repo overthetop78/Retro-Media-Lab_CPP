@@ -1,8 +1,10 @@
 #include "MediaGraph.h"
+#include "LinearGraph.h"
 #include "VisualizationConstants.h"
 #include "../ThemeConstants.h"
 #include <QMouseEvent>
 #include <QPainter>
+#include <QPainterPath>
 #include <QWheelEvent>
 #include <algorithm>
 #include <cmath>
@@ -36,6 +38,7 @@ void MediaGraph::rebuild() {
         cylinders_=static_cast<std::int32_t>(cached_->sectors->cylinders);
         for(std::uint32_t head=0;head<cached_->sectors->heads;++head)surfaces_.push_back(static_cast<std::int32_t>(head));
         for(const auto& sector:cached_->sectors->sectors)sectorTracks_[{sector.head,sector.cylinder}].push_back(&sector);
+        for(auto& [key,track]:sectorTracks_)std::stable_sort(track.begin(),track.end(),[](const auto* left,const auto* right){return left->number<right->number;});
         return;
     }
     std::set<std::int32_t> sides;
@@ -74,6 +77,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
     const auto unknown = theme->color(ThemeConstants::MutedTextBrush);
     const auto invalid = theme->color(ErrorBrush);
     const auto kind = cached_->descriptor->fields().representationKind;
+    if(cached_->sectors)painter.fillRect(rect(),theme->color(SectorBackgroundBrush));
     if(cached_->sectors && cached_->sectors->logical){
         const auto& items=cached_->sectors->sectors;if(items.empty())return;
         painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
@@ -88,8 +92,8 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         painter.scale(session_->zoom,session_->zoom);
         painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
         const double cellWidth = static_cast<double>(width()) / surfaces_.size();
-        const double radius = std::min(cellWidth, static_cast<double>(height())) * OuterRadius;
-        const double inner = radius * HoleRadius;
+        const double radius = kind==RepresentationKind::Sectors?std::max(MinViewSize,std::min(cellWidth,static_cast<double>(height()))*Half-SectorOuterMargin):std::min(cellWidth, static_cast<double>(height())) * OuterRadius;
+        const double inner = radius * (kind==RepresentationKind::Sectors?SectorHoleRatio:HoleRadius);
         const double ringWidth = (radius - inner) / cylinders_;
         const auto* selectedFormat = format();
         for (std::size_t side = 0; side < surfaces_.size(); ++side) {
@@ -107,12 +111,14 @@ void MediaGraph::paintEvent(QPaintEvent*) {
             } else if (selectedFormat) {
                 for(int cylinder=0;cylinder<cylinders_;++cylinder){
                     const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found==sectorTracks_.end())continue;
-                    const auto& sectors=found->second;const auto angle=static_cast<double>(FullCircle*AngularUnits)/sectors.size();
-                    for(std::size_t index=0;index<sectors.size();++index){const auto& sector=*sectors[index];painter.setPen(QPen(theme->color(SectorBrushes[static_cast<std::size_t>(sector.state)]),ringWidth));painter.drawArc(circle(cylinder),static_cast<int>(index*angle),std::max(1,static_cast<int>(angle)-1));if(session_->selectedSector==sector.logicalBlock){painter.setPen(QPen(foreground,std::max(static_cast<double>(SelectionWidth),ringWidth*Half)));painter.drawArc(circle(cylinder),static_cast<int>(index*angle),std::max(1,static_cast<int>(angle)-1));}}
+                    const auto& sectors=found->second;const auto sweep=static_cast<double>(FullCircle)/sectors.size();const auto outer=radius-cylinder*ringWidth,inside=std::max(inner,outer-ringWidth);const QRectF outerRect(center.x()-outer,center.y()-outer,outer+outer,outer+outer),innerRect(center.x()-inside,center.y()-inside,inside+inside,inside+inside);
+                    painter.setPen(QPen(theme->color(SectorBoundaryBrush),LineWidth));painter.setBrush(Qt::NoBrush);painter.drawEllipse(outerRect);
+                    for(std::size_t index=0;index<sectors.size();++index){const auto& sector=*sectors[index];const auto start=QuarterCircle-index*sweep-SectorGapDegrees*Half;const auto span=std::max(SectorMinimumSweep,sweep-SectorGapDegrees);QPainterPath path;path.arcMoveTo(outerRect,start);path.arcTo(outerRect,start,-span);const auto end=(start-span)/FullCircle*FullTurn;path.lineTo(center.x()+inside*std::cos(end),center.y()-inside*std::sin(end));path.arcTo(innerRect,start-span,span);path.closeSubpath();painter.setPen(Qt::NoPen);painter.setBrush(theme->color(SectorBrushes[static_cast<std::size_t>(sector.state)]));painter.drawPath(path);if(session_->selectedSector==sector.logicalBlock){painter.setPen(QPen(theme->color(VisualSelectionBrush),SectorSelectionWidth));painter.setBrush(Qt::NoBrush);painter.drawPath(path);}}
+
                 }
             }
-            if (session_->surface == surfaces_[side] && session_->position < cylinders_) { painter.setPen(QPen(foreground, SelectionWidth)); painter.drawEllipse(circle(static_cast<int>(session_->position))); }
-            painter.setPen(foreground); painter.drawText(QRectF(cellWidth * side, 0, cellWidth, GraphLabelHeight), Qt::AlignCenter, QString::number(surfaces_[side]));
+            if (kind==RepresentationKind::Flux && session_->surface == surfaces_[side] && session_->position < cylinders_) { painter.setPen(QPen(foreground, SelectionWidth)); painter.drawEllipse(circle(static_cast<int>(session_->position))); }
+            if(kind==RepresentationKind::Flux){painter.setPen(foreground); painter.drawText(QRectF(cellWidth * side, 0, cellWidth, GraphLabelHeight), Qt::AlignCenter, QString::number(surfaces_[side]));}
         }
         return;
     }
@@ -130,19 +136,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         }
         return;
     }
-    if(cached_->linear){
-        const auto& model=*cached_->linear;const auto& elements=cached_->descriptor->fields().elements;const bool optical=kind==RepresentationKind::OpticalTracks;
-        const auto total=std::max<std::int64_t>(1,model.logicalLength);const auto heads=model.geometry?model.geometry->heads():1;const auto cylinders=model.geometry?model.geometry->cylinders():1;
-        painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
-        const auto faceWidth=static_cast<double>(width())/heads;const auto radius=std::min(faceWidth,static_cast<double>(height()))*OuterRadius;const auto inner=radius*HoleRadius;const auto ringWidth=(radius-inner)/cylinders;
-        for(std::size_t index=0;index<model.items.size();++index){const auto& fields=elements[index].fields();const auto& item=model.items[index];const auto stateIndex=optical?static_cast<std::size_t>(item.opticalKind):static_cast<std::size_t>(item.blockState);const auto color=theme->color(optical?OpticalBrushes[stateIndex]:BlockBrushes[stateIndex]);
-            if(model.cartridge){const QRectF range(static_cast<double>(fields.position)/total*width(),height()*HoleRadius,std::max(MinViewSize,static_cast<double>(fields.length.value_or(1))/total*width()),height()*(1-HoleRadius-HoleRadius));painter.fillRect(range,color);painter.setPen(QPen(session_->selectedElement==index?foreground:theme->color(ThemeConstants::BorderBrush),session_->selectedElement==index?SelectionWidth:LineWidth));painter.drawRect(range);continue;}
-            const auto trackBlocks=model.geometry?model.geometry->sectorsPerTrack():total;const auto track=fields.position/trackBlocks;const auto cylinder=model.geometry?track/heads:0;const auto head=model.geometry?track%heads:0;if(cylinder>=cylinders)continue;
-            const auto radial=radius-(cylinder+Half)*ringWidth;const QPointF center(faceWidth*(head+Half),height()*Half);const QRectF circle(center.x()-radial,center.y()-radial,radial/Half,radial/Half);
-            const auto start=static_cast<int>(static_cast<double>(fields.position%trackBlocks)/trackBlocks*FullCircle*AngularUnits);const auto span=std::max(1,static_cast<int>(static_cast<double>(fields.length.value_or(1))/trackBlocks*FullCircle*AngularUnits));painter.setPen(QPen(color,ringWidth+RingOverlap,Qt::SolidLine,Qt::FlatCap));painter.drawArc(circle,start,span);
-            if(session_->selectedElement==index){painter.setPen(QPen(foreground,SelectionWidth,Qt::SolidLine,Qt::FlatCap));painter.drawArc(circle,start,span);}
-        }return;
-    }
+    if(cached_->linear){painter.fillRect(rect(),theme->color(VisualBackgroundBrush));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintLinearGraph(painter,size(),*cached_->linear,*cached_->descriptor,session_->selectedElement,*theme);return;}
     const auto& elements = cached_->descriptor->fields().elements;
     if (elements.empty()) return;
     const auto maxPosition = std::max_element(elements.begin(), elements.end(), [](const auto& a,const auto& b) { return a.fields().position+a.fields().length.value_or(1) < b.fields().position+b.fields().length.value_or(1); });
@@ -161,14 +155,7 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     if (!cached_ || event->button() != Qt::LeftButton) return;
     const auto kind = cached_->descriptor->fields().representationKind;
-    if(cached_->linear){
-        const auto& model=*cached_->linear;const auto& elements=cached_->descriptor->fields().elements;
-        const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
-        const auto total=std::max<std::int64_t>(1,model.logicalLength);std::int64_t position=0;
-        if(model.cartridge){if(point.x()<0 || point.x()>=width() || point.y()<height()*HoleRadius || point.y()>height()*(1-HoleRadius))return;position=static_cast<std::int64_t>(point.x()/width()*total);}
-        else {const auto heads=model.geometry?model.geometry->heads():1;const auto cylinders=model.geometry?model.geometry->cylinders():1;const auto faceWidth=static_cast<double>(width())/heads;if(point.x()<0 || point.x()>=width())return;const auto head=static_cast<std::int32_t>(point.x()/faceWidth);const QPointF center(faceWidth*(head+Half),height()*Half);const auto radius=std::min(faceWidth,static_cast<double>(height()))*OuterRadius;const auto inner=radius*HoleRadius;const auto distance=std::hypot(point.x()-center.x(),point.y()-center.y());if(distance<inner || distance>radius)return;const auto cylinder=std::min<std::int64_t>(cylinders-1,static_cast<std::int64_t>((radius-distance)/(radius-inner)*cylinders));auto angle=std::atan2(center.y()-point.y(),point.x()-center.x());if(angle<0)angle+=FullTurn;const auto trackBlocks=model.geometry?model.geometry->sectorsPerTrack():total;position=(cylinder*heads+head)*trackBlocks+static_cast<std::int64_t>(angle/FullTurn*trackBlocks);}
-        for(std::size_t index=0;index<elements.size();++index){const auto& fields=elements[index].fields();if(position>=fields.position && position-fields.position<fields.length.value_or(1)){session_->inspect(index);return;}}return;
-    }
+    if(cached_->linear){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestLinearGraph(size(),*cached_->linear,*cached_->descriptor,point))session_->inspect(*selected);return;}
     if(cached_->sectors && cached_->sectors->logical){
         const auto& items=cached_->sectors->sectors;if(items.empty())return;
         const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
@@ -181,11 +168,12 @@ void MediaGraph::mousePressEvent(QMouseEvent* event) {
         const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
         const auto side = std::min(surfaces_.size()-1, static_cast<std::size_t>(std::max(MinimumOffset,point.x())/std::max(MinViewSize,cellWidth)));
         const QPointF center(cellWidth * (static_cast<double>(side)+Half), height()*Half);
-        const auto radius = std::min(cellWidth,static_cast<double>(height()))*OuterRadius;
+        const auto radius = kind==RepresentationKind::Sectors?std::max(MinViewSize,std::min(cellWidth,static_cast<double>(height()))*Half-SectorOuterMargin):std::min(cellWidth,static_cast<double>(height()))*OuterRadius;
         const auto distance = std::hypot(point.x()-center.x(),point.y()-center.y());
-        if (distance > radius || distance < radius*HoleRadius) return;
-        const auto cylinder = std::clamp(static_cast<int>((radius-distance)/(radius*(1-HoleRadius))*cylinders_),0,cylinders_-1);
-        if(kind==RepresentationKind::Sectors){const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found!=sectorTracks_.end() && !found->second.empty()){auto angle=std::atan2(center.y()-point.y(),point.x()-center.x());if(angle<0)angle+=FullTurn;const auto index=std::min(found->second.size()-1,static_cast<std::size_t>(angle/FullTurn*found->second.size()));session_->selectSector(found->second[index]->logicalBlock);return;}}
+        const auto hole=kind==RepresentationKind::Sectors?SectorHoleRatio:HoleRadius;
+        if (distance > radius || distance < radius*hole) return;
+        const auto cylinder = std::clamp(static_cast<int>((radius-distance)/(radius*(1-hole))*cylinders_),0,cylinders_-1);
+        if(kind==RepresentationKind::Sectors){const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found!=sectorTracks_.end() && !found->second.empty()){auto angle=std::atan2(point.y()-center.y(),point.x()-center.x())+FullTurn/FullCircle*QuarterCircle;if(angle<0)angle+=FullTurn;if(angle>=FullTurn)angle-=FullTurn;const auto index=std::min(found->second.size()-1,static_cast<std::size_t>(angle/FullTurn*found->second.size()));session_->selectSector(found->second[index]->logicalBlock);return;}}
         session_->select(surfaces_[side],cylinder); return;
     }
     const auto& elements = cached_->descriptor->fields().elements;

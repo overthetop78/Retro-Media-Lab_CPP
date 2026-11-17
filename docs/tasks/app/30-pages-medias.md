@@ -72,6 +72,14 @@
     - [x] Modifier `VisualizationPage.h`, `.cpp`, `MediaGraph.cpp`, `VisualizationConstants.h` et les palettes : tableaux/inspecteurs dédiés, états de plages, pistes optiques circulaires et sélection synchronisée.
     - [x] Créer temporairement `build/verification-linear-visualization/main.cpp`, son exécutable et ses artefacts : vérifier volumes, frontières, données d'aperçu et pistes audio/données.
     - [x] Supprimer les fichiers temporaires de `build/verification-linear-visualization/` après utilisation.
+  - [x] Correction du graphique et grille hexadécimale demandées
+    - [x] Créer `src/App/Shared/Controls/HexGrid.h`, `.cpp` et `HexGridConstants.h` : octets en cellules, offsets hexadécimaux, 16 colonnes ou 8 suivant la place disponible ; modifier le CMake et l'audit des constantes.
+    - [x] Modifier `VisualizationPage.h` et `.cpp` : remplacer le texte hexadécimal par la grille commune et conserver les données lors du redimensionnement.
+    - [x] Créer `src/App/Themes/RetroMediaLab/Views/LinearGraph.h` et `.cpp`, puis modifier `MediaGraph.cpp`, `VisualizationConstants.h`, le CMake et les palettes : reprendre proportions, disposition, début en haut/sens horaire et sélection extérieure des rendus C# ; partager la géométrie de dessin et de pointage.
+    - [x] Modifier `MediaGraph.cpp` et `VisualizationConstants.h` : secteurs en portions d’anneaux séparées, tri des numéros, proportions et pointage horaire du rendu C#.
+    - [x] Modifier `DisplayDensity.cpp` et `HexGrid.cpp` : laisser la grille calculer ses sections depuis la police déjà mise à l’échelle, sans seconde réduction des colonnes.
+    - [x] Créer temporairement `build/verification-visual-layout/main.cpp`, son exécutable et les images de rendu : vérifier le passage 16/8 colonnes, les cellules, les offsets et le pointage des pistes du graphique corrigé.
+    - [x] Supprimer le programme, l'exécutable et leurs artefacts temporaires après vérification ; conserver les images de référence sous `docs/references/retro-media-lab/media/screenshots/`.
   - [ ] Finalisation
     - [ ] Modifier les catalogues `src/Translations/Catalogs/Constants/App/` et `Languages/*/App/` pour les commandes supplémentaires des quatre autres pages.
     - [ ] Modifier les fichiers créés ci-dessus pour corriger les écarts constatés lors de la compilation et de la vérification des cinq pages, sans retester les codecs inchangés.
