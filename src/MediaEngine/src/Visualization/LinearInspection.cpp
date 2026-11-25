@@ -29,6 +29,25 @@ LinearVisualizationModel describeLinearVisualization(std::shared_ptr<const Media
         result.logicalLength=std::max(result.logicalLength,fields.position+fields.length.value_or(1));result.items.push_back(std::move(item));
     }return result;
 }
+std::future<bool> checkLinearVisualizationElementAsync(
+    std::shared_ptr<const MediaDocument> document, VisualizationElement element, std::stop_token token) {
+    return std::async(std::launch::async, [document=std::move(document), element=std::move(element), token] {
+        if (!document) throw MediaError(DiagnosticCode::ReaderNullDocument);
+        checkCancellation(token);
+        if (dynamic_cast<const BlockImage*>(&document->representation()))
+            return Visualization::readBlockElement(*document, element, token);
+
+        const auto& optical = Visualization::representation<OpticalImage>(*document);
+        const auto& fields = element.fields();
+        if (!optical.options().tracks) return false;
+        for (const auto& track : *optical.options().tracks) {
+            if (track->sessionNumber() == fields.sessionNumber && track->trackNumber() == fields.trackNumber)
+                return !track->readStoredSectorAsync(0, token).get().empty();
+        }
+        return false;
+    });
+}
+
 std::future<std::vector<std::uint8_t>> readVisualizationPreviewAsync(std::shared_ptr<const MediaDocument> document,VisualizationElement element,std::stop_token token){
     return std::async(std::launch::async,[document=std::move(document),element=std::move(element),token]{
         if(!document)throw MediaError(DiagnosticCode::ReaderNullDocument);checkCancellation(token);const auto& fields=element.fields();

@@ -99,4 +99,40 @@ void writeAtomicImageSet(std::span<const ImageFileOutput> files,std::stop_token 
     }
     if(!transaction.cleanup())throw MediaError(DiagnosticCode::AtomicCleanup);
 }
+
+void publishNewImageSet(std::span<const std::filesystem::path> preparedFiles,
+        const std::filesystem::path& preparationDirectory, const std::filesystem::path& destinationDirectory,
+        std::stop_token token) {
+    checkCancellation(token);
+    if (preparedFiles.empty()) throw MediaError(DiagnosticCode::AtomicSetEmpty);
+    const QDir staging(QString::fromStdU16String(preparationDirectory.u16string()));
+    const QDir destination(QString::fromStdU16String(destinationDirectory.u16string()));
+    Transaction transaction;
+    transaction.outputs.reserve(preparedFiles.size());
+    for (const auto& file : preparedFiles) {
+        const QFileInfo info(QString::fromStdU16String(file.u16string()));
+        if (info.absolutePath() != staging.absolutePath() || info.isSymLink() || !info.isFile())
+            throw MediaError(DiagnosticCode::AtomicSetProducer, {info.absoluteFilePath().toStdString()});
+        const auto path = destination.absoluteFilePath(info.fileName());
+        if (std::ranges::any_of(transaction.outputs, [&](const auto& output) {
+                return output.path.compare(path, Qt::CaseInsensitive) == 0;
+            })) throw MediaError(DiagnosticCode::AtomicSetDuplicate);
+        const QFileInfo target(path);
+        if (target.exists() || target.isSymLink())
+            throw MediaError(DiagnosticCode::AtomicSetExists, {path.toStdString()});
+        transaction.outputs.push_back({path, info.absoluteFilePath(), {}, nullptr});
+    }
+    try {
+        for (auto& output : transaction.outputs) {
+            checkCancellation(token);
+            if (!QFile::rename(output.temporary, output.path))
+                throw MediaError(DiagnosticCode::AtomicCommit, {output.context()});
+            output.published = true;
+        }
+        transaction.complete = true;
+    } catch (...) {
+        if (!transaction.recover()) std::throw_with_nested(MediaError(DiagnosticCode::AtomicRestore));
+        throw;
+    }
+}
 }

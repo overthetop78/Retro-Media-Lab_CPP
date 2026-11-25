@@ -45,14 +45,40 @@ FileSystemVolume read(const SectorImage& image,std::stop_token token){
     if(const auto block=image.block(std::uint64_t(root->number),token);block&&!Internal::recordedIntegrity(*block))result.warnings.push_back({DiagnosticCode::AmigaRecordedIntegrity,{std::to_string(root->number)}});
     result.entries=Internal::directory(image,root->data,root->hashSize,root->variant,visited,result.warnings,0,token);
     std::uint64_t free=0;
-    for(int pointer=0;pointer<MaximumBitmapPointerCount;++pointer){
-        checkCancellation(token);const auto number=Internal::integer(root->data,BitmapPointersOffset+pointer*WordSize);if(number==0)break;
+    const auto countBitmap = [&](std::int32_t number) {
+        checkCancellation(token);
         const auto block=number>=0&&std::uint64_t(number)<image.blockCount()?image.block(std::uint64_t(number),token):nullptr;
-        if(!block){result.warnings.push_back({DiagnosticCode::AmigaMissingBitmap,{std::to_string(number)}});continue;}
+        if(!block){result.warnings.push_back({DiagnosticCode::AmigaMissingBitmap,{std::to_string(number)}});return;}
         if(!validChecksum(block->data))result.warnings.push_back({DiagnosticCode::AmigaBitmapChecksum,{std::to_string(number)}});
-        if(block->data.size()!=BlockSize){result.warnings.push_back({DiagnosticCode::AmigaShortBlock,{std::to_string(number),std::to_string(block->data.size())}});continue;}
+        if(block->data.size()!=BlockSize){result.warnings.push_back({DiagnosticCode::AmigaShortBlock,{std::to_string(number),std::to_string(block->data.size())}});return;}
         if(!Internal::recordedIntegrity(*block))result.warnings.push_back({DiagnosticCode::AmigaRecordedIntegrity,{std::to_string(number)}});
         for(int offset=BitmapDataOffset;offset<BlockSize;offset+=WordSize)free+=std::popcount(Internal::unsignedInteger(block->data,offset));
+    };
+    const auto countPointers = [&](Bytes data, int offset, int count) {
+        for (int i = 0; i < count; ++i) {
+            const auto number = Internal::integer(data, offset + i * WordSize);
+            if (!number) break;
+            if (visited.insert(number).second) countBitmap(number);
+        }
+    };
+    countPointers(root->data, BitmapPointersOffset, MaximumBitmapPointerCount);
+    auto extension = Internal::integer(root->data, BitmapExtensionOffset);
+    constexpr auto BitmapBits = BitmapDataWordCount * WordBits;
+    const auto maximumExtensions = image.blockCount() / (BitmapBits * BitmapDataWordCount) + 1;
+    for (std::uint64_t count = 0; extension && count < maximumExtensions; ++count) {
+        checkCancellation(token);
+        if (extension < BootBlockCount || std::uint64_t(extension) >= image.blockCount() ||
+            !visited.insert(extension).second) {
+            result.warnings.push_back({DiagnosticCode::AmigaMissingBitmap, {std::to_string(extension)}});
+            break;
+        }
+        const auto block = image.block(std::uint64_t(extension), token);
+        if (!block || block->data.size() != BlockSize || !Internal::recordedIntegrity(*block)) {
+            result.warnings.push_back({DiagnosticCode::AmigaMissingBitmap, {std::to_string(extension)}});
+            break;
+        }
+        countPointers(block->data, 0, BitmapDataWordCount);
+        extension = Internal::integer(block->data, BitmapExtensionNextOffset);
     }
     result.name=readName(root->data,OrdinaryNameOffset,OrdinaryNameMaximumLength);result.fileSystemId=fileSystemId(root->variant);applyFileSystemDisplayName(result,image.geometry());
     result.capacity=image.capacity();result.freeBytes=std::min(free,image.blockCount())*BlockSize;

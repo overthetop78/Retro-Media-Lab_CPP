@@ -1,4 +1,5 @@
 #include <RetroMediaLab/MediaFileSystems/Volumes.h>
+#include <RetroMediaLab/MediaFileSystems/AtariHardDisk.h>
 #include "Helpers.h"
 #include <QString>
 #include <algorithm>
@@ -29,7 +30,9 @@ VolumeDetectionResult detectWholeMedia(const BlockMedia& media, std::stop_token 
 }
 VolumeDetectionResult detectBlockVolumes(const BlockMedia& media, std::stop_token token) {
     if(auto result=detectGpt(media,token))return std::move(*result);
+    if(auto result=detectRdb(media,token))return std::move(*result);
     if(auto result=detectMbr(media,token))return std::move(*result);
+    if(auto result=AtariHardDisk::detectVolumes(media,token))return std::move(*result);
     return detectWholeMedia(media,token);
 }
 }

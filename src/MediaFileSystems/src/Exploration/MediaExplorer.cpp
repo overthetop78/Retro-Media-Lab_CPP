@@ -9,6 +9,9 @@
 #include <algorithm>
 #include <map>
 namespace RetroMediaLab::MediaFileSystems {
+namespace Composition {
+std::shared_ptr<const MediaFileSystemReader> createAtariFatDocumentReader();
+}
 struct MediaExplorer::Impl {
     std::vector<std::shared_ptr<const MediaFileSystemReader>> readers;
     VolumeDetectorRegistry detectors;
@@ -58,6 +61,7 @@ MediaExplorer MediaExplorer::createDefault(std::vector<std::shared_ptr<const Med
     std::vector<std::shared_ptr<const MediaFileSystemReader>> readers;
     for(const auto& reader:sectors.readers())readers.push_back(reader);
     for(auto& reader:adapters)readers.push_back(std::move(reader));
+    readers.push_back(Composition::createAtariFatDocumentReader());
     readers.push_back(std::make_shared<AmstradCartridgeReader>());
     readers.push_back(std::make_shared<ConsoleCartridgeReader>());
     readers.push_back(std::make_shared<FamicomDiskReader>());

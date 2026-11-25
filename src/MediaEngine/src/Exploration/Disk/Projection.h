@@ -7,13 +7,13 @@ using Block=std::shared_ptr<const MediaFileSystems::SectorBlock>;
 struct ImageBlocks {std::map<std::uint64_t,Block> values;std::vector<std::uint64_t> order;};
 struct Cache {
  std::map<const MediaFileSystems::SectorImage*,ImageBlocks> images;
+ std::map<const ScpInspection::Match*,std::shared_ptr<const FileSystemVolumeInfo>> volumes;
  Block block(const MediaFileSystems::SectorImage&,std::uint64_t)const;
 };
 std::shared_ptr<const Cache> load(const DiskExploration&,std::stop_token);
 DiskContainerInfo container(const DiskExploration&);
 std::vector<DiskTrackInfo> tracks(const DiskExploration&,const Cache&);
 std::vector<DiskFormatInfo> formats(const DiskExploration&,const Cache&,std::stop_token);
-std::shared_ptr<const FileSystemVolumeInfo> volume(const ScpInspection::MatchOwner&);
 std::shared_ptr<const FileSystemVolumeInfo> physicalVolume(const DiskExploration&);
 DiskImageInfo project(const DiskExploration&,const Cache&,std::stop_token);
 }

@@ -8,6 +8,12 @@
 #include <stop_token>
 #include <string>
 namespace RetroMediaLab::MediaEngine {
+namespace HardDiskPreparationIds {
+inline constexpr auto AmigaRdbOfs = "amiga-rdb-ofs";
+inline constexpr auto AmigaRdbFfs = "amiga-rdb-ffs";
+inline constexpr auto AtariAhdiFat16 = "atari-ahdi-fat16";
+inline constexpr auto AtariIdeFat16 = "atari-ide-fat16";
+}
 RETROMEDIALAB_MEDIAENGINE_API std::future<void> extractAtrPayloadAsync(std::filesystem::path source,std::filesystem::path output,std::stop_token={});
 RETROMEDIALAB_MEDIAENGINE_API std::future<void> createBlankDiskAsync(std::filesystem::path,std::string formatId,std::stop_token={});
 // HDD creation never overwrites an existing target or descriptor.

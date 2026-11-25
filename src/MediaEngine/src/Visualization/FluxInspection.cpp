@@ -6,6 +6,7 @@
 #include "../Decoding/Scoring.h"
 #include <algorithm>
 #include <numeric>
+#include <tuple>
 #include <cmath>
 namespace RetroMediaLab::MediaEngine {
 namespace {
@@ -21,19 +22,29 @@ FluxVisualRevolution prepare(const DiskRevolutionInfo& source,std::stop_token to
 FluxVisualMark structureMark(Decoding::StructureKind kind){using enum Decoding::StructureKind;switch(kind){case IdAddressMark:case AppleAddress:case CommodoreHeader:case FormatHeader:return FluxVisualMark::Header;case DataAddressMark:case AppleData:case FormatData:return FluxVisualMark::Data;case DeletedDataAddressMark:return FluxVisualMark::Deleted;case TimingAnomaly:return FluxVisualMark::Timing;default:return FluxVisualMark::Other;}}
 }
 FluxVisualizationModel describeFluxVisualization(const DiskImageInfo& disk,std::stop_token token){
+    return describeFluxVisualization(disk, token, {});
+}
+FluxVisualizationModel describeFluxVisualization(const DiskImageInfo& disk, std::stop_token token,
+    const std::function<void(const FluxVisualTrack&)>& prepared) {
     FluxVisualizationModel result;const Decoding::Registry registry;for(const auto& decoder:registry.decoders())result.decoders.emplace_back(decoder->id());
-    for(const auto& source:disk.tracks){checkCancellation(token);FluxVisualTrack track;track.head=source.head;track.cylinder=source.cylinder;track.sourceNumber=source.sourceNumber;std::vector<double> durations,counts;
+    std::vector<const DiskTrackInfo*> ordered;
+    for (const auto& track : disk.tracks) ordered.push_back(&track);
+    std::stable_sort(ordered.begin(), ordered.end(), [](const auto* a, const auto* b) {
+        return std::tie(a->cylinder, a->head) < std::tie(b->cylinder, b->head);
+    });
+    for(const auto* entry : ordered){const auto& source=*entry;checkCancellation(token);FluxVisualTrack track;track.head=source.head;track.cylinder=source.cylinder;track.sourceNumber=source.sourceNumber;std::vector<double> durations,counts;
         for(const auto& revolution:source.revolutions){track.revolutions.push_back(prepare(revolution,token));durations.push_back(static_cast<double>(revolution.durationNanoseconds));counts.push_back(static_cast<double>(track.revolutions.back().transitions));}
         const auto medianDuration=middle(std::move(durations)),medianCount=middle(std::move(counts));
         std::size_t samples=0;for(std::size_t index=0;index<track.revolutions.size();++index){auto& value=track.revolutions[index];if(track.revolutions.size()==1)value.quality=value.transitions?1:0;else if(value.transitions && medianDuration>0 && medianCount>0){const auto durationDeviation=std::abs(static_cast<double>(source.revolutions[index].durationNanoseconds)-medianDuration)/medianDuration;const auto countDeviation=std::abs(static_cast<double>(value.transitions)-medianCount)/medianCount;value.quality=std::clamp(1-durationDeviation/FluxDurationTolerance,FluxMinimumQuality,FluxMaximumQuality)*FluxDurationWeight+std::clamp(1-countDeviation/FluxCountTolerance,FluxMinimumQuality,FluxMaximumQuality)*FluxCountWeight;}samples=std::max(samples,value.arcs.size());track.synthesis.quality+=value.quality;}
         if(!track.revolutions.empty())track.synthesis.quality/=track.revolutions.size();
         for(std::size_t sample=0;sample<samples;++sample){checkCancellation(token);std::vector<FluxVisualMark> order;std::vector<std::size_t> votes;for(const auto& revolution:track.revolutions)if(!revolution.arcs.empty()){const auto mark=revolution.arcs[std::min(revolution.arcs.size()-1,sample*revolution.arcs.size()/samples)].mark;const auto found=std::find(order.begin(),order.end(),mark);if(found==order.end()){order.push_back(mark);votes.push_back(1);}else ++votes[found-order.begin()];}const auto best=static_cast<std::size_t>(std::max_element(votes.begin(),votes.end())-votes.begin());track.synthesis.arcs.push_back({-FluxTop+sample*FluxCircle/samples,FluxCircle/samples,order[best]});}
+        if (prepared) prepared(track);
         result.tracks.push_back(std::move(track));
     }return result;
 }
-FluxTrackInspection inspectFluxVisualization(const DiskTrackInfo& track,std::optional<std::string> decoder,std::stop_token token){
+FluxTrackInspection inspectFluxVisualization(const DiskTrackInfo& track,std::optional<std::string> decoder,std::stop_token token,std::optional<std::size_t> revolution){
     Decoding::Registry registry;std::vector<Flux::SharedRevolution> revolutions;std::vector<std::size_t> indices;
-    for(std::size_t index=0;index<track.revolutions.size();++index){checkCancellation(token);const auto& source=track.revolutions[index];if(!source.fluxIntervals || source.fluxIntervals->empty())continue;auto value=std::make_shared<Flux::Revolution>();value->intervals=*source.fluxIntervals;const auto total=std::accumulate(value->intervals.begin(),value->intervals.end(),double{});const auto period=source.resolutionNanoseconds>0?static_cast<double>(source.durationNanoseconds)/source.resolutionNanoseconds:total;if(period<0 || period>std::numeric_limits<std::uint32_t>::max())throw MediaError(DiagnosticCode::ScpOverflow);value->indexTimeTicks=static_cast<std::uint32_t>(period);indices.push_back(index);revolutions.push_back(std::move(value));}
+    for(std::size_t index=0;index<track.revolutions.size();++index){checkCancellation(token);if(revolution&&index!=*revolution)continue;const auto& source=track.revolutions[index];if(!source.fluxIntervals || source.fluxIntervals->empty())continue;auto value=std::make_shared<Flux::Revolution>();value->intervals=*source.fluxIntervals;const auto total=std::accumulate(value->intervals.begin(),value->intervals.end(),double{});const auto period=source.resolutionNanoseconds>0?static_cast<double>(source.durationNanoseconds)/source.resolutionNanoseconds:total;if(period<0 || period>std::numeric_limits<std::uint32_t>::max())throw MediaError(DiagnosticCode::ScpOverflow);value->indexTimeTicks=static_cast<std::uint32_t>(period);indices.push_back(index);revolutions.push_back(std::move(value));}
     FluxTrackInspection output;if(revolutions.empty())return output;std::optional<Decoding::Selection> best;
     for(std::size_t index=0;index<revolutions.size();++index){Decoding::SharedResult candidate;
         if(decoder){checkCancellation(token);candidate=registry.decode(*decoder,revolutions[index]);}

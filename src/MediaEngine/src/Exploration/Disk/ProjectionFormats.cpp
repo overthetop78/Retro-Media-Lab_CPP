@@ -16,20 +16,29 @@ DiskSectorInfo sector(const MediaFileSystems::SectorImage& image,std::uint64_t l
 }
 std::string encoding(std::string_view id){if(Primitives::ordinalIdentifierStartsWithIgnoreCase(id,Formats::AmigaPrefix))return std::string(Constants::AmigaEncoding);if(Primitives::ordinalIdentifierStartsWithIgnoreCase(id,Formats::IbmPrefix)||Primitives::ordinalIdentifierStartsWithIgnoreCase(id,Formats::AtariStPrefix))return std::string(Constants::IbmEncoding);return {};}
 std::uint64_t entryCount(std::span<const FileSystemEntryInfo> entries){std::uint64_t count=0;std::vector<const FileSystemEntryInfo*> pending;for(const auto& entry:entries)pending.push_back(&entry);while(!pending.empty()){const auto entry=pending.back();pending.pop_back();++count;for(const auto& child:entry->children)pending.push_back(&child);}return count;}
+std::shared_ptr<const FileSystemVolumeInfo> physicalVolume(const std::filesystem::path& path, const MediaFileSystems::SectorImage& image) {
+ auto result=std::make_shared<FileSystemVolumeInfo>();
+ const auto name=path.stem().u8string();
+ result->name.assign(name.begin(),name.end());
+ result->capacity=image.capacity();
+ result->freeSpaceKnown=false;
+ return result;
+}
 DiskFormatInfo format(const DiskExploration& disk,const SectorImageOwner& image,const ScpInspection::MatchOwner& match,const Cache& cache,std::stop_token token){
  DiskFormatInfo result;const auto& geometry=image->geometry();result.machineId=DiskMetadata::systemId(geometry.formatId).value_or(std::string{});result.formatId=geometry.formatId;result.encodingId=encoding(geometry.formatId);result.cylinders=geometry.cylinders;result.heads=geometry.heads;result.sectorsPerTrack=geometry.sectorsPerTrack;result.sectorSize=geometry.blockSize;result.capacity=image->capacity();
  for(std::uint64_t logical=0;logical<image->blockCount();++logical){checkCancellation(token);auto value=sector(*image,logical,cache);switch(value.state){case DiskSectorState::Available:++result.validSectors;break;case DiskSectorState::Invalid:++result.invalidSectors;break;case DiskSectorState::Missing:++result.missingSectors;break;}result.sectors.push_back(std::move(value));}
  if(match){
-  result.volume=volume(match);if(!Primitives::isBlankIdentifier(result.volume->name))result.volumeName=result.volume->name;
+  result.volume=cache.volumes.at(match.get());if(!Primitives::isBlankIdentifier(result.volume->name))result.volumeName=result.volume->name;
   if(result.volume->freeSpaceKnown){result.freeBytes=result.volume->freeBytes;result.usedBytes=result.volume->capacity>=result.volume->freeBytes?result.volume->capacity-result.volume->freeBytes:0;}
   result.bootable=result.volume->bootable;result.entryCount=entryCount(result.volume->entries);result.diagnostics=result.volume->warnings;
+ } else if (disk.capture) {
+  result.volume=physicalVolume(disk.sourcePath,*image);
  }
  if(!result.bootable&&disk.metadata.content.hasValidAmigaBootLoader)result.bootable=true;
  result.content=disk.metadata.content;result.protectionId=disk.metadata.protectionId;return result;
 }
 }
-std::shared_ptr<const FileSystemVolumeInfo> volume(const ScpInspection::MatchOwner& match){return ExplorationMapper::volumeForDisk(std::shared_ptr<const MediaFileSystems::FileSystemVolume>(match,&match->match.volume));}
-std::shared_ptr<const FileSystemVolumeInfo> physicalVolume(const DiskExploration& disk){auto result=std::make_shared<FileSystemVolumeInfo>();const auto name=disk.sourcePath.stem().u8string();result->name.assign(name.begin(),name.end());result->fileSystemId=disk.image->geometry().formatId;result->fileSystemDisplayName=result->fileSystemId;result->capacity=disk.image->capacity();return result;}
+std::shared_ptr<const FileSystemVolumeInfo> physicalVolume(const DiskExploration& disk){return physicalVolume(disk.sourcePath,*disk.image);}
 std::vector<DiskFormatInfo> formats(const DiskExploration& disk,const Cache& cache,std::stop_token token){
  std::vector<DiskFormatInfo> result;std::vector<std::string> represented;
  const auto includes=[&](std::string_view id){return std::any_of(represented.begin(),represented.end(),[&](const auto& old){return Primitives::ordinalIdentifierEqualsIgnoreCase(old,id);});};

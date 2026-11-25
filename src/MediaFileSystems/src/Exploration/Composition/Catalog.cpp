@@ -1,7 +1,6 @@
 #include "CatalogConstants.h"
 #include "AdfsDocument.h"
 #include <RetroMediaLab/MediaFileSystems/SectorReader.h>
-#include <RetroMediaLab/MediaFileSystems/AmigaDos.h>
 #include <RetroMediaLab/MediaFileSystems/AmigaFlatArchive.h>
 #include <RetroMediaLab/MediaFileSystems/BbcDfs.h>
 #include <RetroMediaLab/MediaFileSystems/Coherent.h>
@@ -19,6 +18,9 @@
 #include <RetroMediaLab/MediaFileSystems/AtariDos.h>
 #include "../../FileSystems/Atari/FormatRecognition.h"
 namespace RetroMediaLab::MediaFileSystems {
+namespace Composition {
+std::shared_ptr<const SectorReader> createAmigaDosDocumentReader();
+}
 namespace {
 using Probe=bool(*)(const SectorImage&,std::stop_token);
 using Read=FileSystemVolume(*)(const SectorImage&,std::stop_token);
@@ -35,7 +37,7 @@ public:
 std::vector<std::shared_ptr<const SectorReader>> createDefaultSectorReaders(){
     using namespace Composition::CatalogConstants;
     return {
-        std::make_shared<Reader>(Reader0,Formats0,Probe(AmigaDos::canRead),Read(AmigaDos::read)),
+        Composition::createAmigaDosDocumentReader(),
         std::make_shared<Reader>(Reader1,Formats1,Probe(AmigaFlatArchive::canRead),Read(AmigaFlatArchive::read)),
         Composition::createAdfsDocumentReader(),
         std::make_shared<Reader>(Reader3,Formats3,Probe(BbcDfs::canRead),Read(BbcDfs::read)),

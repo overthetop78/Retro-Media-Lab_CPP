@@ -1,6 +1,7 @@
 #include "Internal.h"
 #include <RetroMediaLab/MediaFileSystems/FormatIds.h>
 #include <QString>
+#include <algorithm>
 #include <map>
 #include <chrono>
 namespace RetroMediaLab::MediaFileSystems::AmigaDos {
@@ -9,6 +10,20 @@ using namespace Constants;
 void put(MutableBytes data,std::size_t offset,std::uint32_t value){Binary::writeBig(data,offset,value);}
 void text(MutableBytes data,std::size_t offset,std::size_t maximum,std::string_view value){
     const auto bytes=QString::fromUtf8(value.data(),qsizetype(value.size())).toLatin1();const auto length=std::min(maximum,std::size_t(bytes.size()));data[offset]=std::uint8_t(length);std::copy_n(bytes.begin(),length,data.begin()+offset+1);
+}
+std::vector<std::uint8_t> bootBlocks(Variant variant, std::uint32_t root) {
+    std::vector<std::uint8_t> data(BlockSize * BootBlockCount);
+    std::copy(DosSignature.begin(), DosSignature.end(), data.begin());
+    data[DosVariantOffset] = std::uint8_t(variant);
+    put(data, BootRootPointerOffset, root);
+    std::uint32_t sum = 0;
+    for (std::size_t offset = 0; offset < data.size(); offset += WordSize) {
+        const auto previous = sum;
+        sum += Internal::unsignedInteger(data, offset);
+        if (sum < previous) ++sum;
+    }
+    put(data, WordSize, ~sum);
+    return data;
 }
 Timestamp now(){
     using namespace std::chrono;const auto instant=system_clock::now();const auto date=year_month_day(floor<days>(instant));const hh_mm_ss clock(instant-floor<days>(instant));
@@ -62,8 +77,7 @@ class Builder {
 public:
     Builder(const MigrationPlan& plan,Variant variant,SectorGeometry geometry,Timestamp time,std::uint32_t count,std::stop_token token):plan_(plan),variant_(variant),geometry_(std::move(geometry)),default_(time),token_(token),count_(count),root_(count/BootBlockCount),bitmap_(root_+1){allocated_={0,1,root_,bitmap_};}
     SectorWritePlan build(){
-        std::vector<std::uint8_t> boot(BlockSize*BootBlockCount);std::copy(DosSignature.begin(),DosSignature.end(),boot.begin());boot[DosVariantOffset]=std::uint8_t(variant_);put(boot,BootRootPointerOffset,root_);
-        std::uint32_t sum=0;for(std::size_t offset=0;offset<boot.size();offset+=WordSize){if(offset==WordSize)continue;const auto previous=sum;sum+=Internal::unsignedInteger(boot,offset);if(sum<previous)++sum;}put(boot,WordSize,~sum);
+        const auto boot = bootBlocks(variant_, root_);
         blocks_[0]={boot.begin(),boot.begin()+BlockSize};blocks_[1]={boot.begin()+BlockSize,boot.end()};
         blocks_[root_]=metadata(RootSecondaryType,0,0,plan_.volumeName,{},0);put(blocks_.at(root_),HashTableSizeOffset,RootHashTableEntryCount);put(blocks_.at(root_),BitmapValidityOffset,std::numeric_limits<std::uint32_t>::max());put(blocks_.at(root_),BitmapPointersOffset,bitmap_);checksums_.insert(root_);
         entries(root_,plan_.entries,0);std::vector<std::uint8_t> bitmap(BlockSize);
@@ -75,6 +89,80 @@ public:
     }
 };
 }
+HardDiskVolume prepareHardDiskVolume(std::uint64_t capacity, Variant variant, std::string_view name,
+        std::stop_token token) {
+    using namespace Constants;
+    constexpr std::uint64_t MinimumCapacity = 1024 * 1024, MaximumCapacity = 2ull * 1024 * 1024 * 1024;
+    constexpr auto BitmapBits = BitmapDataWordCount * WordBits;
+    checkCancellation(token);
+    if (variant > Variant::FfsDirectoryCache)
+        throw MediaError(DiagnosticCode::AmigaWriterVariant, {std::to_string(std::uint8_t(variant))});
+    if (capacity < MinimumCapacity || capacity >= MaximumCapacity || capacity % BlockSize)
+        throw MediaError(DiagnosticCode::AmigaWriterGeometry, {std::string(fileSystemId(variant))});
+    if (!validName(name) || std::ranges::any_of(name, [](char c) { return std::uint8_t(c) <= ControlFirstEnd; }))
+        throw MediaError(DiagnosticCode::AmigaInvalidEntry, {std::string(RootPath)});
+
+    const auto blocks = std::uint32_t(capacity / BlockSize);
+    const auto rootIndex = blocks / BootBlockCount;
+    const auto bitmapCount = (blocks - BootBlockCount + BitmapBits - 1) / BitmapBits;
+    const auto rootPointers = std::min(bitmapCount, std::uint32_t(MaximumBitmapPointerCount));
+    const auto extensionCount = (bitmapCount - rootPointers + BitmapDataWordCount - 1) / BitmapDataWordCount;
+    const auto firstExtension = rootIndex + 1 + bitmapCount;
+    const auto cacheIndex = firstExtension + extensionCount;
+    const bool withCache = variant >= Variant::OfsDirectoryCache;
+    const auto reservedEnd = cacheIndex + std::uint32_t(withCache);
+    HardDiskVolume volume{bootBlocks(variant, rootIndex), std::uint64_t(rootIndex) * BlockSize,
+        std::vector<std::uint8_t>((reservedEnd - rootIndex) * BlockSize)};
+    const auto block = [&](std::uint32_t index) {
+        return MutableBytes(volume.metadata).subspan((index - rootIndex) * BlockSize, BlockSize);
+    };
+
+    auto root = block(rootIndex);
+    put(root, PrimaryTypeOffset, HeaderPrimaryType);
+    put(root, HashTableSizeOffset, RootHashTableEntryCount);
+    put(root, BitmapValidityOffset, std::numeric_limits<std::uint32_t>::max());
+    put(root, SecondaryTypeOffset, RootSecondaryType);
+    text(root, OrdinaryNameOffset, OrdinaryNameMaximumLength, name);
+    for (std::uint32_t i = 0; i < rootPointers; ++i)
+        put(root, BitmapPointersOffset + i * WordSize, rootIndex + 1 + i);
+    if (extensionCount) put(root, BitmapExtensionOffset, firstExtension);
+    if (withCache) put(root, ExtensionBlockOffset, cacheIndex);
+    Internal::setChecksum(root, ChecksumOffset);
+
+    if (withCache) {
+        auto cache = block(cacheIndex);
+        put(cache, PrimaryTypeOffset, DirectoryCachePrimaryType);
+        put(cache, HeaderKeyOffset, cacheIndex);
+        put(cache, HighSequenceOffset, rootIndex);
+        Internal::setChecksum(cache, ChecksumOffset);
+    }
+    for (std::uint32_t i = 0; i < bitmapCount; ++i) {
+        checkCancellation(token);
+        auto bitmap = block(rootIndex + 1 + i);
+        const auto first = BootBlockCount + i * BitmapBits;
+        for (std::uint32_t word = 0; word < BitmapDataWordCount; ++word) {
+            std::uint32_t available = 0;
+            for (std::uint32_t bit = 0; bit < WordBits; ++bit) {
+                const auto sector = first + word * WordBits + bit;
+                if (sector < blocks && (sector < rootIndex || sector >= reservedEnd))
+                    available |= std::uint32_t(1) << bit;
+            }
+            put(bitmap, BitmapDataOffset + word * WordSize, available);
+        }
+        Internal::setChecksum(bitmap, PrimaryTypeOffset);
+    }
+    for (std::uint32_t i = 0; i < extensionCount; ++i) {
+        checkCancellation(token);
+        auto extension = block(firstExtension + i);
+        const auto first = rootPointers + i * BitmapDataWordCount;
+        const auto count = std::min(std::uint32_t(BitmapDataWordCount), bitmapCount - first);
+        for (std::uint32_t j = 0; j < count; ++j)
+            put(extension, j * WordSize, rootIndex + 1 + first + j);
+        if (i + 1 < extensionCount) put(extension, BitmapExtensionNextOffset, firstExtension + i + 1);
+    }
+    return volume;
+}
+
 SectorWritePlan write(const MigrationPlan& plan,Variant variant,const SectorGeometry& geometry,std::optional<Timestamp> defaultTime,std::stop_token token){
     checkCancellation(token);if(variant!=Variant::Ofs&&variant!=Variant::Ffs)throw MediaError(DiagnosticCode::AmigaWriterVariant,{std::to_string(std::uint8_t(variant))});
     if(!validName(plan.volumeName))throw MediaError(DiagnosticCode::AmigaInvalidEntry,{std::string(RootPath)});

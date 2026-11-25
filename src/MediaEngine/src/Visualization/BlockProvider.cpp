@@ -38,7 +38,9 @@ public:
 }
 std::shared_ptr<const Provider> blockProvider(){return std::make_shared<Blocks>();}
 bool readBlockElement(const MediaDocument& document,const VisualizationElement& element,std::stop_token token){
- const auto image=dynamic_cast<const BlockImage*>(&document.representation());if(!image)throw MediaError(DiagnosticCode::VisualizationValue,{std::string(Constants::BlockImage)});const auto& fields=element.fields();const auto address=multiply(fields.position,image->logicalBlockSize());const auto length=multiply(fields.length.value_or(1),image->logicalBlockSize());if(address>image->capacity()||length>image->capacity()-address)throw MediaError(DiagnosticCode::VisualizationValue,{std::string(Constants::Length)});
+ const auto image=dynamic_cast<const BlockImage*>(&document.representation());if(!image)throw MediaError(DiagnosticCode::VisualizationValue,{std::string(Constants::BlockImage)});const auto& fields=element.fields();const auto address=multiply(fields.position,image->logicalBlockSize());const auto limit = visualLength(document, *image);
+ if(address >= limit) throw MediaError(DiagnosticCode::VisualizationValue,{std::string(Constants::Length)});
+ const auto length = std::min(multiply(fields.length.value_or(1),image->logicalBlockSize()), limit-address);
  std::vector<std::uint8_t> buffer(std::size_t(std::min<std::int64_t>(Constants::ReadBufferSize,length)));
  try{for(std::int64_t offset=0;offset<length;){checkCancellation(token);const auto count=std::size_t(std::min<std::int64_t>(buffer.size(),length-offset));image->readExactly(address+offset,std::span(buffer).first(count),token);offset+=std::int64_t(count);}return true;}
  catch(const MediaFileSystems::MediaError& error){if(error.kind()==MediaFileSystems::ErrorKind::Io||error.kind()==MediaFileSystems::ErrorKind::InvalidData)return false;throw;}

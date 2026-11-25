@@ -40,6 +40,7 @@ struct VolumeDetectionResult {
 // nullopt means the detector declined this representation; an empty result can carry errors.
 RETROMEDIALAB_MEDIAFILESYSTEMS_API std::optional<VolumeDetectionResult> detectMbr(const BlockMedia&, std::stop_token = {});
 RETROMEDIALAB_MEDIAFILESYSTEMS_API std::optional<VolumeDetectionResult> detectGpt(const BlockMedia&, std::stop_token = {});
+RETROMEDIALAB_MEDIAFILESYSTEMS_API std::optional<VolumeDetectionResult> detectRdb(const BlockMedia&, std::stop_token = {});
 RETROMEDIALAB_MEDIAFILESYSTEMS_API VolumeDetectionResult detectWholeMedia(const BlockMedia&, std::stop_token = {});
 RETROMEDIALAB_MEDIAFILESYSTEMS_API VolumeDetectionResult detectBlockVolumes(const BlockMedia&, std::stop_token = {});
 }

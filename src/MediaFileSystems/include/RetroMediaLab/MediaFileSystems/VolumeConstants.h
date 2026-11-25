@@ -11,4 +11,5 @@ inline constexpr std::string_view OpticalTrack = "optical-track";
 inline constexpr std::string_view SequentialContent = "sequential-content";
 inline constexpr std::string_view Mbr = "mbr";
 inline constexpr std::string_view Gpt = "gpt";
+inline constexpr std::string_view Rdb = "rdb";
 }

@@ -1,5 +1,7 @@
 add_library(RetroMediaLab.MediaFileSystems SHARED
   src/Exploration/Composition/AdfsDocument.cpp
+  src/Exploration/Composition/AmigaDosDocument.cpp
+  src/Exploration/Composition/AtariFatDocument.cpp
   src/Definitions/DisplayNames.cpp
   src/Exploration/FileTreeCursor.cpp
   src/Exploration/Composition/Interpretation.cpp
@@ -128,6 +130,7 @@ add_library(RetroMediaLab.MediaFileSystems SHARED
   src/Exploration/MediaExplorer.cpp
   # FileSystems/Fat
   src/FileSystems/Fat/BootAndNames.cpp
+  src/FileSystems/Fat/AtariHardDisk.cpp
   src/FileSystems/Fat/Fat12/Directory.cpp
   src/FileSystems/Fat/Fat12/Layout.cpp
   src/FileSystems/Fat/Fat12/Reader.cpp
@@ -138,6 +141,7 @@ add_library(RetroMediaLab.MediaFileSystems SHARED
   # Partitioning
   src/Partitioning/Gpt.cpp
   src/Partitioning/Mbr.cpp
+  src/Partitioning/Rdb.cpp
   src/Partitioning/Volumes.cpp
   # Primitives
   src/Primitives/Petscii.cpp

@@ -59,13 +59,12 @@ struct DiskImageInfo {
  std::uint64_t fileSize=0;
  DiskContainerInfo container;
  DiskImageMetadata metadata;
- bool fileSystemRecognized=false;
  std::shared_ptr<const FileSystemVolumeInfo> volume;
  std::vector<DiskTrackInfo> tracks;
  std::vector<DiskFormatInfo> formats;
  std::vector<std::string> detectedFormatIds;
  std::vector<DiagnosticInfo> diagnostics;
- bool usesCustomSectorLoader()const noexcept{return !fileSystemRecognized&&metadata.content.hasCataloglessOrganization();}
+ bool usesCustomSectorLoader()const noexcept{return (!volume||volume->fileSystemId.empty())&&metadata.content.hasCataloglessOrganization();}
 };
 enum class DiskExplorationStage {FormatProbeStarted,FormatProbeCompleted,CandidateStarted,RevolutionDecoded,TrackDecoded,CandidateCompleted};
 struct DiskExplorationProgress {DiskExplorationStage kind;std::string detail;std::size_t completed,total;std::optional<bool> recognized;std::optional<std::int32_t> cylinder,head;};

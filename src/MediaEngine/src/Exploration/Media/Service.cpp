@@ -3,6 +3,7 @@
 #include "../../Images/ReadRejection.h"
 #include "../Disk/Projection.h"
 #include "../../Formats/Tape/Common/SignalBlocks.h"
+#include "../../Formats/Scp/Constants.h"
 #include "../../Models/Flux/Representation.h"
 #include "../../Models/Sectors/Representation.h"
 #include "../../Primitives/Identifiers.h"
@@ -14,7 +15,9 @@ void report(const MediaExplorationProgressCallback& callback,MediaExplorationSta
 }
 MediaExplorationService::MediaExplorationService(MediaImageReadingService reading,DiskImageExplorer disks,MediaExplorer media):reading_(std::move(reading)),disks_(std::move(disks)),media_(std::move(media)){}
 std::shared_ptr<const MediaDocument> MediaExplorationService::read(const std::filesystem::path& path,std::optional<std::string> format,std::stop_token token)const{
- checkCancellation(token);SourceOptions options;options.primaryPath=utf8(path);if(Primitives::isBlankIdentifier(options.primaryPath))throw MediaError(DiagnosticCode::ConversionRequest);options.requestedFormatId=std::move(format);
+ checkCancellation(token);SourceOptions options;options.primaryPath=utf8(path);if(Primitives::isBlankIdentifier(options.primaryPath))throw MediaError(DiagnosticCode::ConversionRequest);// A filesystem interpretation is not the format of the flux container.
+ if(!Primitives::ordinalIdentifierEqualsIgnoreCase(utf8(path.extension()),Scp::Constants::Extension))
+     options.requestedFormatId=std::move(format);
  std::shared_ptr<const MediaDocument> document;
  try{document=reading_.readAsync(std::make_shared<MediaSource>(options),token).get();}catch(...){if(!options.requestedFormatId||!isUnsupportedImageRead(std::current_exception()))throw;options.requestedFormatId.reset();document=reading_.readAsync(std::make_shared<MediaSource>(std::move(options)),token).get();}
  checkCancellation(token);return TapeSignal::indexBlocks(std::move(document),token);

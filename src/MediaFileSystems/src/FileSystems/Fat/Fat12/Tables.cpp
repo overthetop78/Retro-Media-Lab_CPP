@@ -12,6 +12,12 @@ std::optional<std::uint16_t> readTableEntry(Bytes fat,std::uint32_t cluster) {
 }
 bool plausibleTableHeader(Bytes fat) {return fat.size()>=Values::FatHeaderLength && fat[0]>=Fat12Table::MinimumMediaDescriptor && fat[1]==Fat12Table::ReservedEntryByte && fat[Values::LastHeaderByte]==Fat12Table::ReservedEntryByte;}
 namespace Internal {
+std::optional<std::uint16_t> clusterEntry(Bytes fat, std::uint32_t cluster, TableKind kind) {
+    if (kind == TableKind::Fat12) return readTableEntry(fat, cluster);
+    if (cluster >= fat.size() / sizeof(std::uint16_t)) return {};
+    return Binary::little<std::uint16_t>(fat, std::size_t(cluster) * sizeof(std::uint16_t));
+}
+
 Range sectors(const SectorImage& image,std::uint64_t first,std::uint32_t count,std::vector<Diagnostic>& warnings,std::stop_token token) {
     const auto blockSize=image.geometry().blockSize;
     if(std::uint64_t(count)*blockSize>Values::MaximumDecodedBytes)throw MediaError(DiagnosticCode::FatResourceLimit,{std::string(Values::SectorRangeName)});
@@ -31,27 +37,34 @@ Range sectors(const SectorImage& image,std::uint64_t first,std::uint32_t count,s
     return range;
 }
 namespace {
-std::uint32_t score(Bytes fat,std::uint32_t count) {
+std::uint32_t score(Bytes fat,std::uint32_t count,TableKind kind) {
+    const auto reserved = kind == TableKind::Fat16 ? Fat16FirstReserved : Fat12Table::FirstReservedCluster;
+    const auto last = kind == TableKind::Fat16 ? std::numeric_limits<std::uint16_t>::max() : Fat12Table::LastEndOfChain;
     std::uint32_t result=0;
     for(auto cluster=Fat12Table::FirstDataCluster;cluster<Fat12Table::FirstDataCluster+count;++cluster) {
-        const auto value=readTableEntry(fat,cluster);if(!value || *value==Fat12Table::FreeCluster)continue;
+        const auto value=clusterEntry(fat,cluster,kind);if(!value || *value==Fat12Table::FreeCluster)continue;
         const bool data=*value>=Fat12Table::FirstDataCluster && *value<Fat12Table::FirstDataCluster+count;
-        const bool terminal=*value>=Fat12Table::FirstReservedCluster && *value<=Fat12Table::LastEndOfChain;
+        const bool terminal=*value>=reserved && *value<=last;
         if(data || terminal)++result;
     }
     return result;
 }
 }
-bool usableTable(Bytes fat,std::uint8_t descriptor,std::uint32_t count) {
-    return plausibleTableHeader(fat) || (descriptor==FatBootSectorLayout::UnknownMediaDescriptor && fat.size()>=Values::FatHeaderLength && fat[0]==0 && fat[1]==0 && fat[Values::LastHeaderByte]==0 && score(fat,count)>0);
+bool usableTable(Bytes fat,std::uint8_t descriptor,std::uint32_t count,TableKind kind) {
+    if (kind == TableKind::Fat16) {
+        constexpr std::uint16_t ReservedPrefix = 0xff00, EndOfChainMask = 0x3fff;
+        const auto media = clusterEntry(fat, 0, kind), reserved = clusterEntry(fat, 1, kind);
+        return media == (ReservedPrefix | descriptor) && reserved && (*reserved & EndOfChainMask) == EndOfChainMask;
+    }
+    return plausibleTableHeader(fat) || (descriptor==FatBootSectorLayout::UnknownMediaDescriptor && fat.size()>=Values::FatHeaderLength && fat[0]==0 && fat[1]==0 && fat[Values::LastHeaderByte]==0 && score(fat,count,kind)>0);
 }
-Range bestTable(const SectorImage& image,const Layout& layout,std::uint8_t descriptor,std::vector<Diagnostic>& warnings,std::stop_token token) {
+Range bestTable(const SectorImage& image,const Layout& layout,std::uint8_t descriptor,std::vector<Diagnostic>& warnings,std::stop_token token,TableKind kind) {
     std::optional<Range> best;std::uint32_t bestScore=0;std::vector<Diagnostic> selectedWarnings;
     for(std::uint32_t copy=0;copy<layout.fatCount;++copy) {
         std::vector<Diagnostic> candidateWarnings;
         auto candidate=sectors(image,layout.reservedSectors+copy*layout.sectorsPerFat,layout.sectorsPerFat,candidateWarnings,token);
-        if(!candidate.complete() || !usableTable(candidate.bytes,descriptor,layout.clusterCount))continue;
-        const auto candidateScore=score(candidate.bytes,layout.clusterCount);
+        if(!candidate.complete() || !usableTable(candidate.bytes,descriptor,layout.clusterCount,kind))continue;
+        const auto candidateScore=score(candidate.bytes,layout.clusterCount,kind);
         if(!best || (candidate.trusted && !best->trusted) || (candidate.trusted==best->trusted && candidateScore>bestScore)) {
             best=std::move(candidate);bestScore=candidateScore;selectedWarnings=std::move(candidateWarnings);
         }
@@ -62,7 +75,8 @@ Range bestTable(const SectorImage& image,const Layout& layout,std::uint8_t descr
 Chain clusterChain(ReadContext& context,const Range& fat,const Layout& layout,std::uint32_t first,std::string_view name) {
     Chain result;if(first<Fat12Table::FirstDataCluster)return result;
     result.valid=fat.valid();result.trusted=fat.trusted;auto cluster=first;
-    while(cluster<Fat12Table::FirstEndOfChain) {
+    const auto endOfChain = context.kind == TableKind::Fat16 ? Fat16FirstEndOfChain : Fat12Table::FirstEndOfChain;
+    while(cluster<endOfChain) {
         checkCancellation(context.token);
         if(cluster<Fat12Table::FirstDataCluster || cluster>=layout.clusterCount+Fat12Table::FirstDataCluster) {
             context.warnings.push_back({DiagnosticCode::FatClusterOutsideRange,{std::string(name),std::to_string(cluster)}});result.valid=false;break;
@@ -78,7 +92,7 @@ Chain clusterChain(ReadContext& context,const Range& fat,const Layout& layout,st
         const auto start=layout.dataStart+(cluster-Fat12Table::FirstDataCluster)*layout.sectorsPerCluster;
         const auto range=sectors(context.image,start,layout.sectorsPerCluster,context.warnings,context.token);
         result.bytes.insert(result.bytes.end(),range.bytes.begin(),range.bytes.end());result.valid&=range.valid();result.trusted&=range.trusted;
-        const auto next=readTableEntry(fat.bytes,cluster);
+        const auto next=clusterEntry(fat.bytes,cluster,context.kind);
         if(!next) {context.warnings.push_back({DiagnosticCode::FatTruncatedTable,{std::to_string(cluster)}});result.valid=false;break;}
         cluster=*next;
     }

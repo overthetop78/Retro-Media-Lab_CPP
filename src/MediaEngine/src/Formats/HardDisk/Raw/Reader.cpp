@@ -1,9 +1,11 @@
 #include "Reader.h"
+#include <RetroMediaLab/MediaFileSystems/AtariHardDisk.h>
 #include "Format.h"
 #include "../../../Models/Blocks/BlockImage.h"
 #include "../../../Sources/RandomAccessSources.h"
 #include "../../../Primitives/Identifiers.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
+#include <RetroMediaLab/MediaFileSystems/Rdb.h>
 #include <algorithm>
 namespace RetroMediaLab::MediaEngine::HardDiskRaw {
 namespace {
@@ -16,7 +18,14 @@ std::optional<std::int32_t> structuredBlockSize(const RecognitionContext& contex
     if(gpt(context,LargeBlockSize,token))return LargeBlockSize;
     if(gpt(context,LegacyBlockSize,token))return LegacyBlockSize;
     if(context.length()>=LegacyBlockSize&&compatible(context.length(),LegacyBlockSize)){
-        const auto signature=context.readAsync(MbrSignatureOffset,std::int32_t(MbrSignature.size()),token).get();
+        namespace Rdb = MediaFileSystems::Rdb;
+        const auto probeBytes = std::min<std::int64_t>(context.length(), Rdb::HeaderSearchSectors * Rdb::SectorSize);
+        const auto probe = context.readAsync(0, std::int32_t(probeBytes), token).get();
+        const MediaFileSystems::Bytes headers(probe);
+        for (std::size_t offset = 0; offset + Rdb::SectorSize <= headers.size(); offset += Rdb::SectorSize)
+            if (Rdb::validHeader(headers.subspan(offset, Rdb::SectorSize))) return LegacyBlockSize;
+        if (MediaFileSystems::AtariHardDisk::probe(headers, context.length())) return LegacyBlockSize;
+        const auto signature = headers.subspan(MbrSignatureOffset, MbrSignature.size());
         if(std::equal(signature.begin(),signature.end(),MbrSignature.begin(),MbrSignature.end()))return LegacyBlockSize;
     }
     return {};

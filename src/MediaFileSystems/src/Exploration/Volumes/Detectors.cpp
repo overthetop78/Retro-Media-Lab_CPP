@@ -1,4 +1,5 @@
 #include <RetroMediaLab/MediaFileSystems/VolumeDetectors.h>
+#include <RetroMediaLab/MediaFileSystems/AtariHardDisk.h>
 #include <RetroMediaLab/MediaFileSystems/FileSystemIds.h>
 #include "../../Partitioning/PartitionConstants.h"
 #include <filesystem>
@@ -6,7 +7,7 @@
 
 namespace RetroMediaLab::MediaFileSystems {
 namespace {
-enum class DetectorKind {Sequential,Optical,Gpt,Mbr,Whole};
+enum class DetectorKind {Sequential,Optical,Gpt,Mbr,Rdb,Atari,Whole};
 std::int64_t product(std::int64_t left,std::int32_t right) {
     constexpr auto high=std::numeric_limits<std::int64_t>::max(),low=std::numeric_limits<std::int64_t>::min();
     if((left>0&&((right>0&&left>high/right)||(right<0&&right<low/left)))||
@@ -62,12 +63,15 @@ std::optional<VolumeDetectionResult> detect(std::shared_ptr<const ImageDocument>
     if(kind==DetectorKind::Mbr) {
         if(size<std::int64_t(PartitionConstants::BootRecordSize)||capacity<size)return {};
         if(count<=0)throw MediaError(DiagnosticCode::MbrBootOutside);
-    }else if(count<std::int64_t(PartitionConstants::MinimumGptBlockCount))return {};
+    }else if(kind==DetectorKind::Gpt&&count<std::int64_t(PartitionConstants::MinimumGptBlockCount))return {};
+    if (kind == DetectorKind::Rdb && count <= 0) return {};
     if(size<0)throw MediaError(DiagnosticCode::InvalidBlockSize,{},ErrorKind::Overflow);
     if(size==0)return {};
     if(capacity<0)throw MediaError(DiagnosticCode::InvalidSource);
     auto source=std::make_shared<BlockSource>(document,*blocks);
     const BlockMedia media(std::move(source),std::uint32_t(size),true,std::uint64_t(count));
+    if (kind == DetectorKind::Rdb) return detectRdb(media, token);
+    if (kind == DetectorKind::Atari) return AtariHardDisk::detectVolumes(media, token);
     return kind==DetectorKind::Mbr?detectMbr(media,token):detectGpt(media,token);
 }
 class Detector final:public VolumeDetector {
@@ -80,6 +84,6 @@ public:
 };
 }
 std::vector<std::shared_ptr<const VolumeDetector>> createDefaultVolumeDetectors() {
-    return {std::make_shared<Detector>(DetectorKind::Sequential),std::make_shared<Detector>(DetectorKind::Optical),std::make_shared<Detector>(DetectorKind::Gpt),std::make_shared<Detector>(DetectorKind::Mbr),std::make_shared<Detector>(DetectorKind::Whole)};
+    return {std::make_shared<Detector>(DetectorKind::Sequential),std::make_shared<Detector>(DetectorKind::Optical),std::make_shared<Detector>(DetectorKind::Gpt),std::make_shared<Detector>(DetectorKind::Rdb),std::make_shared<Detector>(DetectorKind::Mbr),std::make_shared<Detector>(DetectorKind::Atari),std::make_shared<Detector>(DetectorKind::Whole)};
 }
 }

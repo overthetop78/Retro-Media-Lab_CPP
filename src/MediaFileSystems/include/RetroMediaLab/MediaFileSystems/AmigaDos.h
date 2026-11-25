@@ -15,6 +15,13 @@ RETROMEDIALAB_MEDIAFILESYSTEMS_API bool validName(std::string_view);
 RETROMEDIALAB_MEDIAFILESYSTEMS_API std::optional<Timestamp> readTime(Bytes,std::int64_t offset);
 RETROMEDIALAB_MEDIAFILESYSTEMS_API bool canRead(const SectorImage&,std::stop_token = {});
 RETROMEDIALAB_MEDIAFILESYSTEMS_API FileSystemVolume read(const SectorImage&,std::stop_token = {});
+struct HardDiskVolume {
+    std::vector<std::uint8_t> boot;
+    std::uint64_t metadataOffset;
+    std::vector<std::uint8_t> metadata;
+};
+RETROMEDIALAB_MEDIAFILESYSTEMS_API HardDiskVolume prepareHardDiskVolume(
+    std::uint64_t capacity, Variant, std::string_view name, std::stop_token = {});
 // defaultTime freezes the default metadata timestamp for a build; absent uses the current UTC clock.
 RETROMEDIALAB_MEDIAFILESYSTEMS_API SectorWritePlan write(const MigrationPlan&,Variant,const SectorGeometry&,std::optional<Timestamp> defaultTime = {},std::stop_token = {});
 }

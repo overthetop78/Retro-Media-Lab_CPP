@@ -101,5 +101,5 @@ std::shared_ptr<const FileSystemVolumeInfo> mapVolume(std::shared_ptr<const M::F
 }
 }
 std::shared_ptr<const FileSystemVolumeInfo> volume(std::shared_ptr<const M::FileSystemVolume> value,std::optional<std::span<const M::AnalyzedFileSystemEntry>> analyzed){return mapVolume(std::move(value),analyzed,false);}
-std::shared_ptr<const FileSystemVolumeInfo> volumeForDisk(std::shared_ptr<const M::FileSystemVolume> value){return mapVolume(std::move(value),{},true);}
+std::shared_ptr<const FileSystemVolumeInfo> volumeForDisk(std::shared_ptr<const M::FileSystemVolume> value,std::optional<std::span<const M::AnalyzedFileSystemEntry>> analyzed){return mapVolume(std::move(value),analyzed,true);}
 }

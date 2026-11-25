@@ -13,8 +13,8 @@ struct DiskExploration {
  std::vector<ScpInspection::MatchOwner> detected;
  std::vector<SectorImageOwner> decodedImages;
  std::string primaryFormatId;
+ std::optional<std::string> manualFormatId;
  Scp::SharedImage capture;
- bool fileSystemRecognized=false;
  DiskImageMetadata metadata;
  RETROMEDIALAB_MEDIAENGINE_API std::vector<std::string> detectedFormats()const;
  RETROMEDIALAB_MEDIAENGINE_API bool isHybrid()const;

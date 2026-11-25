@@ -22,6 +22,8 @@ struct LinearVisualizationModel {
     std::vector<LinearVisualizationItem> items;
 };
 RETROMEDIALAB_MEDIAENGINE_API LinearVisualizationModel describeLinearVisualization(std::shared_ptr<const MediaDocument>,const VisualizationDescriptor&,std::stop_token={});
+// Checks a complete block range or one stored sector from an optical track.
+RETROMEDIALAB_MEDIAENGINE_API std::future<bool> checkLinearVisualizationElementAsync(std::shared_ptr<const MediaDocument>,VisualizationElement,std::stop_token={});
 // Reads only the beginning of the selected range or one stored optical sector.
 RETROMEDIALAB_MEDIAENGINE_API std::future<std::vector<std::uint8_t>> readVisualizationPreviewAsync(std::shared_ptr<const MediaDocument>,VisualizationElement,std::stop_token={});
 }
