@@ -48,6 +48,15 @@
     "Operation.Busy": "En Greaseweazle kommando kører allerede. Vent til det er færdigt, eller stop det, før du åbner dette værktøj.",
     "Tool.StartFailed": "Kan ikke starte Greaseweazle- kommandoen. Tjek den konfigurerede eksekverbar og dens tilladelser.",
     "Tool.SelectGreaseweazle": "Vælg et tilgængeligt konfigureret Greaseweazle drev.",
-    "Tool.LogFailed": "Operationsloggen kunne ikke gemmes."
+    "Tool.LogFailed": "Operationsloggen kunne ikke gemmes.",
+    "Tools.Erase": "Slet en disk",
+    "Tools.EraseWarning": "Alle data på disken vil blive ødelagt.",
+    "Tools.LimitTracks": "Begræns spor",
+    "Tools.Revolutions": "Revolutioner",
+    "Tools.Clean": "Rens hoveder",
+    "Tools.CleanWarning": "Indsæt en rensedisk, aldrig en disk med data.",
+    "Tools.Cylinders": "Cylindre",
+    "Tools.Passes": "Består",
+    "Tools.Linger": "Varighed pr. cylinder (ms)"
   }
 }

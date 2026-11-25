@@ -48,6 +48,15 @@
     "Operation.Busy": "Ett Greaseweazle-kommando körs redan. Vänta tills det är klart eller stoppa det innan du öppnar det här verktyget.",
     "Tool.StartFailed": "Kan inte starta Greaseweazle-kommandot. Kontrollera den konfigurerade programfilen och dess behörigheter.",
     "Tool.SelectGreaseweazle": "Välj en tillgänglig konfigurerad Greaseweazle-enhet.",
-    "Tool.LogFailed": "Operationsloggen kunde inte sparas."
+    "Tool.LogFailed": "Operationsloggen kunde inte sparas.",
+    "Tools.Erase": "Radera en disk",
+    "Tools.EraseWarning": "All data på disken kommer att förstöras.",
+    "Tools.LimitTracks": "Begränsa spår",
+    "Tools.Revolutions": "Revolutioner",
+    "Tools.Clean": "Rengör huvuden",
+    "Tools.CleanWarning": "Sätt i en rengöringsskiva, aldrig en skiva som innehåller data.",
+    "Tools.Cylinders": "Cylindrar",
+    "Tools.Passes": "Passerar",
+    "Tools.Linger": "Längd per cylinder (ms)"
   }
 }

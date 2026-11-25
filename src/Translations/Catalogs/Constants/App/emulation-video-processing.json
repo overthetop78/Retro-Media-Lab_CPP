@@ -1,0 +1,34 @@
+{
+  "strings": {
+    "Emulation.Video.Technology": "Display type",
+    "Emulation.Video.Settings.RetroMediaLabProcessing": "Retro Media Lab video processing",
+    "Emulation.Video.Settings.Restoration": "Image restoration",
+    "Emulation.Video.Screen.Host": "Host display (no simulation)",
+    "Emulation.Video.Screen.LedBacklitLcd": "LCD-LED",
+    "Emulation.Video.Screen.Vector": "Vector display",
+    "Emulation.Video.Screen.Vfd": "VFD (vacuum fluorescent display)",
+    "Emulation.Video.Screen.SegmentDisplay": "Segment display",
+    "Emulation.Video.Screen.EPaper": "E-Paper (electronic paper)",
+    "Emulation.Video.Gamma": "Gamma",
+    "Emulation.Video.Parameter.Brightness": "Brightness",
+    "Emulation.Video.Parameter.Contrast": "Contrast",
+    "Emulation.Video.Parameter.Saturation": "Saturation",
+    "Emulation.Video.Parameter.Sharpness": "Sharpness",
+    "Emulation.Video.Parameter.Deinterlacing": "Deinterlacing",
+    "Emulation.Video.Deinterlacing.Off": "Off",
+    "Emulation.Video.Deinterlacing.Blend": "Vertical blend",
+    "Emulation.Video.Gamma.Original": "Original (no correction)",
+    "Emulation.Video.Deinterlacing.Bob": "Bob",
+    "Emulation.Video.Deinterlacing.Weave": "Weave",
+    "Emulation.Video.Deinterlacing.Adaptive": "Motion adaptive",
+    "Emulation.Video.Settings.Rendering": "Rendering",
+    "Emulation.Video.Renderer.OpenGL": "OpenGL",
+    "Emulation.Video.Renderer.Direct3D11": "Direct3D 11",
+    "Emulation.Video.Shader.Loading": "Loading video shader…"
+  },
+  "invariants": [
+    "Emulation.Video.Deinterlacing.Bob",
+    "Emulation.Video.Renderer.Direct3D11",
+    "Emulation.Video.Renderer.OpenGL"
+  ]
+}

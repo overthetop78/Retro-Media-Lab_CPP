@@ -1,0 +1,28 @@
+{
+  "strings": {
+    "Emulation.Video.Tab.Rendering": "Rendering",
+    "Emulation.Video.Tab.Signal": "Signal",
+    "Emulation.Video.Parameter.SignalConnection": "Connection quality",
+    "Emulation.Video.Parameter.SignalConnectionIntensity": "Connection degradation",
+    "Emulation.Video.Parameter.SignalStandard": "Color standard",
+    "Emulation.Video.Parameter.SignalStandardIntensity": "Standard effect intensity",
+    "Emulation.Video.Signal.Connection.RgbScart": "RGB (SCART)",
+    "Emulation.Video.Signal.Connection.Component": "Component (YPbPr)",
+    "Emulation.Video.Signal.Connection.SVideo": "S-Video",
+    "Emulation.Video.Signal.Connection.Composite": "Composite",
+    "Emulation.Video.Signal.Connection.Rf": "RF",
+    "Emulation.Video.Signal.Standard.Automatic": "Automatic",
+    "Emulation.Video.Signal.Standard.Pal": "PAL",
+    "Emulation.Video.Signal.Standard.Ntsc": "NTSC",
+    "Emulation.Video.Signal.Standard.Secam": "SECAM",
+    "Emulation.Video.Signal.Connection.None": "None"
+  },
+  "invariants": [
+    "Emulation.Video.Signal.Connection.Rf",
+    "Emulation.Video.Signal.Connection.RgbScart",
+    "Emulation.Video.Signal.Connection.SVideo",
+    "Emulation.Video.Signal.Standard.Ntsc",
+    "Emulation.Video.Signal.Standard.Pal",
+    "Emulation.Video.Signal.Standard.Secam"
+  ]
+}

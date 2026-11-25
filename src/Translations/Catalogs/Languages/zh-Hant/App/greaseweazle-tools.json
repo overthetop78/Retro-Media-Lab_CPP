@@ -48,6 +48,15 @@
     "Operation.Busy": "Greaseweazle 指令已在執行。等待其完成或停止，然後再開啟此工具。",
     "Tool.StartFailed": "無法啟動 Greaseweazle 命令。請檢查設定的執行檔及其權限。",
     "Tool.SelectGreaseweazle": "請選取已設定且可用的 Greaseweazle 磁碟機。",
-    "Tool.LogFailed": "無法儲存操作記錄。"
+    "Tool.LogFailed": "無法儲存操作記錄。",
+    "Tools.Erase": "清除磁碟",
+    "Tools.EraseWarning": "磁碟上的所有資料都將被破壞。",
+    "Tools.LimitTracks": "限製曲目",
+    "Tools.Revolutions": "轉數",
+    "Tools.Clean": "清潔頭部",
+    "Tools.CleanWarning": "插入清潔磁碟，切勿插入包含資料的磁碟。",
+    "Tools.Cylinders": "汽缸",
+    "Tools.Passes": "通行證",
+    "Tools.Linger": "每個氣缸的持續時間（毫秒）"
   }
 }

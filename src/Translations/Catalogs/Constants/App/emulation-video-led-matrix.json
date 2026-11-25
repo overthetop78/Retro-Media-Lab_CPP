@@ -1,0 +1,26 @@
+{
+  "strings": {
+    "Emulation.Video.LedMatrix.Color.Amber": "Amber",
+    "Emulation.Video.LedMatrix.Color.Blue": "Blue",
+    "Emulation.Video.LedMatrix.Color.Green": "Green",
+    "Emulation.Video.LedMatrix.Color.Red": "Red",
+    "Emulation.Video.LedMatrix.Color.Rgb": "RGB",
+    "Emulation.Video.LedMatrix.Color.White": "White",
+    "Emulation.Video.LedMatrix.Shape.Round": "Round",
+    "Emulation.Video.LedMatrix.Shape.Square": "Square",
+    "Emulation.Video.Parameter.LedMatrixBlackDepth": "Black depth",
+    "Emulation.Video.Parameter.LedMatrixBrightness": "LED brightness",
+    "Emulation.Video.Parameter.LedMatrixCellGap": "LED cell spacing",
+    "Emulation.Video.Parameter.LedMatrixCellSize": "LED cell size",
+    "Emulation.Video.Parameter.LedMatrixColor": "LED color",
+    "Emulation.Video.Parameter.LedMatrixDiffusion": "Halo intensity",
+    "Emulation.Video.Parameter.LedMatrixHaloRadius": "Halo radius",
+    "Emulation.Video.Parameter.LedMatrixShape": "LED shape",
+    "Emulation.Video.Technology.LedMatrix": "LED matrix",
+    "Emulation.Video.LedMatrix.Group.Structure": "Matrix structure",
+    "Emulation.Video.LedMatrix.Group.Emission": "Light emission"
+  },
+  "invariants": [
+    "Emulation.Video.LedMatrix.Color.Rgb"
+  ]
+}

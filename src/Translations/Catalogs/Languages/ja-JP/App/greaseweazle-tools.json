@@ -48,6 +48,15 @@
     "Operation.Busy": "Greaseweazle コマンドはすでに実行されています。完了するまで待つか、このツールを開く前に停止してください。",
     "Tool.StartFailed": "Greaseweazle コマンドを起動できません。設定した実行ファイルとその権限を確認してください。",
     "Tool.SelectGreaseweazle": "利用可能なGreaseweazleドライブを選択します。",
-    "Tool.LogFailed": "操作ログは保存できません。"
+    "Tool.LogFailed": "操作ログは保存できません。",
+    "Tools.Erase": "ディスクを消去する",
+    "Tools.EraseWarning": "ディスク上のすべてのデータは破壊されます。",
+    "Tools.LimitTracks": "トラックを制限する",
+    "Tools.Revolutions": "回転数",
+    "Tools.Clean": "ヘッドをクリーンにする",
+    "Tools.CleanWarning": "クリーニング ディスクを挿入します。データが含まれているディスクは決して挿入しないでください。",
+    "Tools.Cylinders": "シリンダー",
+    "Tools.Passes": "パス",
+    "Tools.Linger": "シリンダーあたりの持続時間 (ミリ秒)"
   }
 }

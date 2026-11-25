@@ -48,6 +48,15 @@
     "Operation.Busy": "Une commande Greaseweazle est déjà en cours. Attendez sa fin ou interrompez-la avant d’ouvrir cet outil.",
     "Tool.StartFailed": "Impossible de démarrer la commande Greaseweazle. Vérifiez l'exécutable configuré et ses autorisations.",
     "Tool.SelectGreaseweazle": "Sélectionnez un lecteur Greaseweazle configuré disponible.",
-    "Tool.LogFailed": "Le journal des opérations n'a pas pu être enregistré."
+    "Tool.LogFailed": "Le journal des opérations n'a pas pu être enregistré.",
+    "Tools.Erase": "Effacer une disquette",
+    "Tools.EraseWarning": "Toutes les données de la disquette seront détruites.",
+    "Tools.LimitTracks": "Limiter les pistes",
+    "Tools.Revolutions": "Révolutions",
+    "Tools.Clean": "Nettoyer les têtes",
+    "Tools.CleanWarning": "Insérez une disquette de nettoyage, jamais une disquette contenant des données.",
+    "Tools.Cylinders": "Cylindres",
+    "Tools.Passes": "Passages",
+    "Tools.Linger": "Durée par cylindre (ms)"
   }
 }

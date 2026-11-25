@@ -48,6 +48,15 @@
     "Operation.Busy": "Ya se está ejecutando un comando Greaseweazle. Espere a que termine o se detenga antes de abrir esta herramienta.",
     "Tool.StartFailed": "Incapaz de iniciar el comando Greaseweazle. Compruebe el ejecutable configurado y sus permisos.",
     "Tool.SelectGreaseweazle": "Seleccione una unidad Greaseweazle configurada.",
-    "Tool.LogFailed": "El registro de operaciones no podía ser guardado."
+    "Tool.LogFailed": "El registro de operaciones no podía ser guardado.",
+    "Tools.Erase": "borrar un disco",
+    "Tools.EraseWarning": "Todos los datos del disco serán destruidos.",
+    "Tools.LimitTracks": "Limitar pistas",
+    "Tools.Revolutions": "Revoluciones",
+    "Tools.Clean": "Cabezas limpias",
+    "Tools.CleanWarning": "Inserte un disco de limpieza, nunca un disco que contenga datos.",
+    "Tools.Cylinders": "Cilindros",
+    "Tools.Passes": "Pases",
+    "Tools.Linger": "Duración por cilindro (ms)"
   }
 }

@@ -48,6 +48,15 @@
     "Operation.Busy": "A Greaseweazle command is already running. Wait for it to finish or stop it before opening this tool.",
     "Tool.StartFailed": "Unable to start the Greaseweazle command. Check the configured executable and its permissions.",
     "Tool.SelectGreaseweazle": "Select an available configured Greaseweazle drive.",
-    "Tool.LogFailed": "The operation log could not be saved."
+    "Tool.LogFailed": "The operation log could not be saved.",
+    "Tools.Erase": "Erase a disk",
+    "Tools.EraseWarning": "All data on the disk will be destroyed.",
+    "Tools.LimitTracks": "Limit tracks",
+    "Tools.Revolutions": "Revolutions",
+    "Tools.Clean": "Clean heads",
+    "Tools.CleanWarning": "Insert a cleaning disk, never a disk containing data.",
+    "Tools.Cylinders": "Cylinders",
+    "Tools.Passes": "Passes",
+    "Tools.Linger": "Duration per cylinder (ms)"
   }
 }

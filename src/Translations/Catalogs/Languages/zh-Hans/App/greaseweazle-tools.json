@@ -48,6 +48,15 @@
     "Operation.Busy": "Greaseweazle 命令已在运行。等待其完成或停止，然后再打开此工具。",
     "Tool.StartFailed": "无法启动 Greaseweazle 命令 。 检查已配置的可执行文件及其权限 。",
     "Tool.SelectGreaseweazle": "选择一个已配置的 Greaseweazle 驱动器 。",
-    "Tool.LogFailed": "无法保存操作日志 。"
+    "Tool.LogFailed": "无法保存操作日志 。",
+    "Tools.Erase": "擦除磁盘",
+    "Tools.EraseWarning": "磁盘上的所有数据都将被破坏。",
+    "Tools.LimitTracks": "限制曲目",
+    "Tools.Revolutions": "转数",
+    "Tools.Clean": "清洁头部",
+    "Tools.CleanWarning": "插入清洁磁盘，切勿插入包含数据的磁盘。",
+    "Tools.Cylinders": "气缸",
+    "Tools.Passes": "通行证",
+    "Tools.Linger": "每个气缸的持续时间（毫秒）"
   }
 }

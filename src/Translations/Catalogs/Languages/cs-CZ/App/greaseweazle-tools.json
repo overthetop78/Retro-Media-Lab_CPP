@@ -48,6 +48,15 @@
     "Operation.Busy": "Příkaz Greaseweazle již běží. Před otevřením tohoto nástroje počkejte na dokončení nebo jej zastavte.",
     "Tool.StartFailed": "Nelze spustit příkaz Greaseweazle. Zkontrolujte nastavený spustitelný soubor a jeho oprávnění.",
     "Tool.SelectGreaseweazle": "Vyberte dostupnou konfigurovanou jednotku Greaseweazle.",
-    "Tool.LogFailed": "Operační záznam nemohl být uložen."
+    "Tool.LogFailed": "Operační záznam nemohl být uložen.",
+    "Tools.Erase": "Vymazat disk",
+    "Tools.EraseWarning": "Všechna data na disku budou zničena.",
+    "Tools.LimitTracks": "Omezit stopy",
+    "Tools.Revolutions": "Revoluce",
+    "Tools.Clean": "Čisté hlavy",
+    "Tools.CleanWarning": "Vložte čisticí disk, nikdy disk obsahující data.",
+    "Tools.Cylinders": "Válce",
+    "Tools.Passes": "Passy",
+    "Tools.Linger": "Doba trvání na válec (ms)"
   }
 }
