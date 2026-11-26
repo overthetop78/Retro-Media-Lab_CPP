@@ -1,6 +1,7 @@
 #pragma once
 #include "InfrastructureApi.h"
 #include "ClassificationSelection.h"
+#include "OpeningProgress.h"
 #include <RetroMediaLab/MediaEngine/MediaExploration.h>
 #include <QObject>
 #include <QTimer>
@@ -22,6 +23,8 @@ public:
     void reclassify(bool automaticChanged=false);
     ClassificationSelection classification;
     bool busy() const noexcept { return pending_.valid(); }
+    LoadingProgress progress()const{return progress_->snapshot();}
+    const QString& loadingPath()const noexcept{return busy()?pendingPath_:path_;}
     const QString& path() const noexcept { return path_; }
     const QString& error() const noexcept { return error_; }
     const std::optional<MediaEngine::MessageInfo>& errorMessage() const noexcept { return errorMessage_; }
@@ -33,6 +36,7 @@ public:
     std::optional<std::int32_t> selectedSession;
     std::optional<std::string> selectedFormat;
 private:
+    void startOpening(const QString&, std::optional<std::string>, std::shared_ptr<const void>, bool trial);
     void poll();
     void notify();
     QTimer timer_;
@@ -44,6 +48,9 @@ private:
     std::optional<MediaEngine::MessageInfo> errorMessage_;
     std::shared_ptr<const void> pendingLifetime_;
     bool cancelled_ = false;
+    bool trial_ = false;
+    std::shared_ptr<OpeningProgress> progress_=std::make_shared<OpeningProgress>();
+    std::uint64_t progressRevision_=0;
     std::vector<std::weak_ptr<const std::function<void()>>> observers_;
 };
 }

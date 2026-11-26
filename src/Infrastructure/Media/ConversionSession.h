@@ -1,4 +1,5 @@
 #pragma once
+#include <chrono>
 #include "CaptureSession.h"
 #include "ConversionConflicts.h"
 #include <RetroMediaLab/MediaEngine/MediaReading.h>
@@ -32,6 +33,8 @@ public:
     void cancel();
     void changed();
     bool busy()const;
+    LoadingProgress loadingProgress()const;
+    qint64 elapsedMilliseconds()const;
     bool converting()const noexcept{return running_;}
     bool awaitingLosses()const noexcept{return awaitingLosses_;}
     void acceptLosses(bool);
@@ -53,6 +56,7 @@ private:
     };
     void poll();
     void publish();
+    std::chrono::steady_clock::time_point started_{};
     void next();
     void complete(bool);
     void report(MediaEngine::MessageInfo);

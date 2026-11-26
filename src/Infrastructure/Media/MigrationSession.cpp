@@ -73,7 +73,7 @@ void MigrationSession::poll(){
             auto result=opening_.get();
             if(!cancelled_){
                 explored_=std::move(result);
-                if(explored_&&explored_->info().fileSystemRecognized&&explored_->info().volume){source_=explored_->info().volume;suggestOutput();validate();}
+                if(explored_&&explored_->info().volume&&!explored_->info().volume->fileSystemId.empty()){source_=explored_->info().volume;suggestOutput();validate();}
                 else message_=MediaEngine::MessageInfo{SourceUnrecognized,{},AppDomain};
             }
         }catch(...){if(!cancelled_)captureError(SourceFailed);}

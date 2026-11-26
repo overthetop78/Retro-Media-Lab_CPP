@@ -1,6 +1,16 @@
 #pragma once
 namespace RetroMediaLab::GwToolsConstants {
 inline constexpr auto Read = "read", Write = "write", Convert = "convert";
+inline constexpr auto Erase = "erase", Clean = "clean";
+inline constexpr auto EraseTitle = "Tools.Erase", CleanTitle = "Tools.Clean",
+    EraseWarning = "Tools.EraseWarning", CleanWarning = "Tools.CleanWarning";
+inline constexpr auto EraseTrackLabel = "Tools.LimitTracks", EraseTrackDefault = "c=0-79:h=0-1";
+inline constexpr auto EraseRevsLabel = "Tools.Revolutions";
+inline constexpr auto CleanCylinders = "cylinders", CleanCylindersLabel = "Tools.Cylinders", CleanCylindersDefault = "80";
+inline constexpr auto CleanPasses = "passes", CleanPassesLabel = "Tools.Passes", CleanPassesDefault = "3";
+inline constexpr auto CleanLinger = "linger", CleanLingerLabel = "Tools.Linger", CleanLingerDefault = "100";
+inline constexpr auto ExpertParameter = "expert", ExpertLabel = "Common.ExpertArguments", ExpertDefault = "";
+inline constexpr auto ShortDeviceOption = "-d";
 inline constexpr auto Info = "info";
 inline constexpr auto Bandwidth = "bandwidth";
 inline constexpr auto Rpm = "rpm";

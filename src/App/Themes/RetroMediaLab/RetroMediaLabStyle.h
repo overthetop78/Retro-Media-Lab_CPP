@@ -1,5 +1,5 @@
 #pragma once
-#include "../ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include <QProxyStyle>
 namespace RetroMediaLab {
 class RetroMediaLabStyle final : public QProxyStyle {

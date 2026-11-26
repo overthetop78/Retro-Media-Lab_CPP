@@ -1,5 +1,5 @@
 #pragma once
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>
 class QLabel;

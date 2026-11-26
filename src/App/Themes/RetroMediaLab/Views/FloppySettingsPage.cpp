@@ -12,7 +12,7 @@
 #include <QAbstractButton>
 #include <QMap>
 #include <QPushButton>
-#include "../ContentScrollArea.h"
+#include "Shared/Controls/ContentScrollArea.h"
 #include <QSignalBlocker>
 #include <QVBoxLayout>
 #include <algorithm>

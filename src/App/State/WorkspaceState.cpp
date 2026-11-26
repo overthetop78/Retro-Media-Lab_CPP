@@ -1,7 +1,10 @@
+#include "Shared/Controls/RememberedFileDialogConstants.h"
 #include "Media/ExplorerReadSession.h"
 #include "Media/MigrationSession.h"
+#include "Media/VisualizationSession.h"
 #include <ErrorKeys.h>
 #include "WorkspaceState.h"
+#include "Shared/Emulation/EmulationWorkspace.h"
 #include "Media/CaptureSession.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include "Media/ConversionSession.h"
@@ -14,12 +17,15 @@ void WorkspaceState::ensureMediaOperations(Translations::TranslationService& tra
     const auto initialize=[this](auto& session,Infrastructure::CaptureMode mode) {
         if(session)return;
         session=std::make_shared<Infrastructure::CaptureSession>(mode,greaseweazleTools,profiles);
-        session->draft.directory=defaultImageDirectory();
+        session->draft.directory=mode==Infrastructure::CaptureMode::Read
+            ? fileDialogDirectories().value(FileDialogScope::ReadDestination).toString(defaultImageDirectory())
+            : defaultImageDirectory();
         session->output=[this](const QString& command,const QString& output){console.setContent(command,output);};
     };
     initialize(reading,Infrastructure::CaptureMode::Read);initialize(writing,Infrastructure::CaptureMode::Write);
     if(!migration)migration=std::make_shared<Infrastructure::MigrationSession>();
     if(!explorer)explorer=std::make_shared<Infrastructure::ExplorerSession>();
+    if(!visualization)visualization=std::make_shared<Infrastructure::VisualizationSession>(explorer);
     if(!explorerReading){explorerReading=std::make_shared<Infrastructure::ExplorerReadSession>(explorer,greaseweazleTools,profiles);explorerReading->capture().output=[this](const QString& command,const QString& output){console.setContent(command,output);};}
     if(!converting){
         converting=std::make_shared<Infrastructure::ConversionSession>(greaseweazleTools,logsDirectory,[this]{return logging();},[&translations](const auto& message){return mediaText(translations,message);},profiles);
@@ -40,6 +46,77 @@ void WorkspaceState::setDefaultImageDirectory(QString directory) {
 WorkspaceState::DirectorySubscription WorkspaceState::subscribeToDefaultImageDirectory(std::function<void()> observer) {
     auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
     directoryObservers_.push_back(subscription);
+    return subscription;
+}
+void WorkspaceState::setFileDialogDirectory(const QString& scope, const QString& directory) {
+    if (scope.isEmpty() || directory.contains(QChar::Null))
+        throw std::invalid_argument(ErrorKeys::InvalidPreferencesFile);
+    const auto value = fileDialogDirectories_.value(scope);
+    if (value.isString() && value.toString() == directory) return;
+    fileDialogDirectories_.insert(scope, directory);
+    const auto observers = fileDialogDirectoryObservers_;
+    std::erase_if(fileDialogDirectoryObservers_, [](const auto& observer) { return observer.expired(); });
+    for (const auto& observer : observers)
+        if (const auto live = observer.lock()) (*live)();
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToFileDialogDirectories(std::function<void()> observer) {
+    auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
+    fileDialogDirectoryObservers_.push_back(subscription);
+    return subscription;
+}
+void WorkspaceState::setEmulationFolders(EmulationFolders folders) {
+    if (folders.storage.contains(QChar::Null) || folders.captures.contains(QChar::Null) ||
+        folders.states.contains(QChar::Null))
+        throw std::invalid_argument(ErrorKeys::InvalidPreferencesFile);
+    folders = {folders.storage.trimmed(), folders.captures.trimmed(), folders.states.trimmed()};
+    if (folders == emulationFolders_) return;
+    const auto resolved = resolveEmulationFolders(folders);
+    const auto observers = emulationFolderObservers_;
+    auto previous = std::exchange(emulationFolders_, std::move(folders));
+    std::erase_if(emulationFolderObservers_, [](const auto& observer) { return observer.expired(); });
+    try {
+        for (const auto& observer : observers)
+            if (const auto live = observer.lock()) (*live)();
+    } catch (...) {
+        emulationFolders_ = std::move(previous);
+        throw;
+    }
+    if (emulation) emulation->setStorageDirectories(resolved.storage, resolved.states);
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToEmulationFolders(std::function<void()> observer) {
+    auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
+    emulationFolderObservers_.push_back(subscription);
+    return subscription;
+}
+void WorkspaceState::setEmulationShortcuts(QJsonObject shortcuts) {
+    if (shortcuts == emulationShortcuts_) return;
+    const auto observers = emulationShortcutObservers_;
+    auto previous = std::exchange(emulationShortcuts_, std::move(shortcuts));
+    std::erase_if(emulationShortcutObservers_, [](const auto& observer) { return observer.expired(); });
+    try {
+        for (const auto& observer : observers)
+            if (const auto live = observer.lock()) (*live)();
+    } catch (...) {
+        emulationShortcuts_ = std::move(previous);
+        throw;
+    }
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToEmulationShortcuts(std::function<void()> observer) {
+    auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
+    emulationShortcutObservers_.push_back(subscription);
+    return subscription;
+}
+void WorkspaceState::setShowFullscreenEmulationStatistics(bool visible) {
+    if (visible == showFullscreenEmulationStatistics_) return;
+    showFullscreenEmulationStatistics_ = visible;
+    const auto observers = emulationStatisticsObservers_;
+    std::erase_if(emulationStatisticsObservers_, [](const auto& observer) { return observer.expired(); });
+    for (const auto& observer : observers)
+        if (const auto live = observer.lock()) (*live)();
+}
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToEmulationStatistics(std::function<void()> observer) {
+    auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
+    emulationStatisticsObservers_.push_back(subscription);
     return subscription;
 }
 LoggingSettings WorkspaceState::logging() const {

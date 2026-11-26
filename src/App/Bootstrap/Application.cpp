@@ -3,7 +3,7 @@
 #include <Constants/AppConstants.h>
 #include "Application.h"
 #include <Errors.h>
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "Windows/WindowCoordinator.h"
 #include "State/WorkspaceState.h"
 #include "State/PreferencesStore.h"
@@ -73,10 +73,18 @@ int Application::run(int argc, char** argv) {
     state.setEngines(selected.engines);
     state.setInterfaceScale(selected.interfaceScale);
     state.setDefaultImageDirectory(selected.defaultImageDirectory);
+    state.setEmulationFolders(selected.emulationFolders);
+    state.setEmulationShortcuts(selected.emulationShortcuts);
+    state.setShowFullscreenEmulationStatistics(selected.showFullscreenEmulationStatistics);
+    state.restoreFileDialogDirectories(selected.fileDialogDirectories.value_or(QJsonObject{}));
     const auto savePreferences = [&] {
         selected.language = QString::fromStdString(translations.language());
         errorLanguage = translations.language();
         selected.defaultImageDirectory = state.defaultImageDirectory();
+        selected.fileDialogDirectories = state.fileDialogDirectories();
+        selected.emulationFolders = state.emulationFolders();
+        selected.emulationShortcuts = state.emulationShortcuts();
+        selected.showFullscreenEmulationStatistics = state.showFullscreenEmulationStatistics();
         selected.logging = state.logging();
         selected.conversion = state.conversion();
         selected.hardware = state.hardware();
@@ -89,6 +97,10 @@ int Application::run(int argc, char** argv) {
     const auto languagePreference = translations.subscribe(savePreferences);
     const auto themePreference = themes.subscribe(savePreferences);
     const auto directoryPreference = state.subscribeToDefaultImageDirectory(savePreferences);
+    const auto fileDialogPreference = state.subscribeToFileDialogDirectories(savePreferences);
+    const auto emulationFolderPreference = state.subscribeToEmulationFolders(savePreferences);
+    const auto emulationShortcutPreference = state.subscribeToEmulationShortcuts(savePreferences);
+    const auto emulationStatisticsPreference = state.subscribeToEmulationStatistics(savePreferences);
     const auto hardwarePreference = state.subscribeToHardware(savePreferences);
     const auto displayPreference = state.subscribeToInterfaceScale(savePreferences);
     const auto enginePreference = state.subscribeToEngines(savePreferences);

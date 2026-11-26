@@ -12,6 +12,7 @@ struct GwTrackProgress {
     std::map<std::pair<int,int>,GwTrackState> states;
     std::optional<int> cylinder,head,nextCylinder,nextHead,total,totalOnHead;
     std::map<int,int> completedPerHead;
+    std::map<int,std::vector<int>> cylindersPerHead;
     int completed=0,completedOnHead=0;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API GwProgressTracker final {

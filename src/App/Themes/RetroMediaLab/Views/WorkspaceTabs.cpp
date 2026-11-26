@@ -1,12 +1,28 @@
 #include "../ThemeConstants.h"
 #include "WorkspaceTabs.h"
 #include "ExplorerPage.h"
+#include "EmulationPage.h"
 #include "VisualizationPage.h"
 #include "CapturePage.h"
 #include "ConversionPage.h"
 #include "Shared/Navigation/WorkspacePages.h"
 #include "../ThemeIcons.h"
 namespace RetroMediaLab {
+void WorkspaceTabs::openEmulationSettings() {
+    for (int index = 0; index < count(); ++index) {
+        if (widget(index)->objectName() != QLatin1String(AppConstants::Emulation)) continue;
+        setCurrentIndex(index);
+        static_cast<EmulationPage*>(widget(index))->openSettings();
+        return;
+    }
+}
+void WorkspaceTabs::openEmulationModuleOptions(const QString& module) {
+    for (int index = 0; index < count(); ++index) {
+        if (widget(index)->objectName() != QLatin1String(AppConstants::Emulation)) continue;
+        static_cast<EmulationPage*>(widget(index))->openModuleOptions(module);
+        return;
+    }
+}
 WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationService& translations,
     WorkspaceState& state, std::function<void()> openMigration, QWidget* parent) : QTabWidget(parent) {
     setObjectName(ThemeConstants::WorkspaceTabs);
@@ -21,6 +37,7 @@ WorkspaceTabs::WorkspaceTabs(ThemeService& themes, Translations::TranslationServ
             else if (id == AppConstants::Visualize) view = new VisualizationPage(themes, translations, state, this);
             else if (id == AppConstants::Convert) view = new ConversionPage(themes, translations, state, openMigration, this);
             else if (id == AppConstants::Read || id == AppConstants::Write) view = new CapturePage(id == AppConstants::Read ? Infrastructure::CaptureMode::Read : Infrastructure::CaptureMode::Write,themes,translations,state,[this](const QString& target){for(int index=0;index<count();++index)if(widget(index)->objectName()==target){setCurrentIndex(index);break;}},this);
+            else if (id == AppConstants::Emulation) view = new EmulationPage(themes, translations, state, this);
             else view = new QWidget(this);
             view->setObjectName(id);
             view->setAutoFillBackground(true);

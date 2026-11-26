@@ -1,12 +1,17 @@
+#include "../ThemeIcons.h"
+#include "../ThemeConstants.h"
+#include "MediaPageConstants.h"
+#include "Shared/Controls/RememberedFileDialog.h"
 #include "CapturePage.h"
+#include "MediaLoadingOverlay.h"
 #include "CaptureProgressView.h"
 #include "Maintenance/GwToolsConstants.h"
 #include <QLocale>
 #include "CaptureConstants.h"
 #include "Shared/Controls/Card.h"
 #include "Shared/Localization/MediaText.h"
-#include "../FlowLayout.h"
-#include "../ContentScrollArea.h"
+#include "Shared/Controls/FlowLayout.h"
+#include "Shared/Controls/ContentScrollArea.h"
 #include "Media/ExplorerSession.h"
 #include "Media/MediaSessionConstants.h"
 #include <RetroMediaLab/MediaEngine/ImageFormat.h>
@@ -24,6 +29,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 #include <QSignalBlocker>
+#include <QScrollArea>
 #include <QSpinBox>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -33,7 +39,7 @@ namespace C=CaptureConstants;
 namespace M=Infrastructure::MediaCommandConstants;
 using Infrastructure::CaptureMode;
 CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::TranslationService& translations,WorkspaceState& state,std::function<void(const QString&)> navigate,QWidget* parent)
-    :QWidget(parent),translations_(translations),state_(state),navigate_(std::move(navigate)) {
+    :QWidget(parent),themes_(themes),translations_(translations),state_(state),navigate_(std::move(navigate)) {
     state.ensureMediaOperations(translations);
     session_=mode==CaptureMode::Read?state.reading:state.writing;
     auto* layout=new QVBoxLayout(this);layout->setContentsMargins(C::Padding,C::Padding,C::Padding,C::Padding);layout->setSpacing(C::Gap);
@@ -41,7 +47,8 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     auto* header=new Card(themes.data(),inputs_);auto* headerRow=new QHBoxLayout(header);
     devices_=new QComboBox(header);devices_->setMinimumWidth(0);devices_->setObjectName(C::DeviceInput);
     profiles_=new QComboBox(header);profileLabel_=new QLabel(header);save_=new QPushButton(header);reset_=new QPushButton(header);
-    headerRow->addWidget(devices_,1);headerRow->addWidget(profileLabel_);headerRow->addWidget(profiles_,1);headerRow->addWidget(save_);headerRow->addWidget(reset_);body->addWidget(header);
+    headerRow->addWidget(devices_,1);headerRow->addWidget(profileLabel_);headerRow->addWidget(profiles_,1);headerRow->addWidget(save_);headerRow->addWidget(reset_);
+    body->addWidget(header);
     auto* sourceCard=new Card(themes.data(),inputs_);auto* sourceRow=new QGridLayout(sourceCard);
     pathLabel_=new QLabel(sourceCard);path_=new QLineEdit(sourceCard);browse_=new QPushButton(sourceCard);
     path_->setObjectName(mode==CaptureMode::Read?C::DirectoryInput:C::SourceInput);
@@ -49,12 +56,14 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     nameLabel_=new QLabel(sourceCard);name_=new QLineEdit(sourceCard);name_->setObjectName(C::NameInput);
     if(mode==CaptureMode::Read) {sourceRow->addWidget(nameLabel_,0,C::NameColumn);sourceRow->addWidget(name_,1,C::NameColumn);}
     else {nameLabel_->hide();name_->hide();}
-    sourceRow->setColumnStretch(0,1);if(mode==CaptureMode::Read)sourceRow->setColumnStretch(C::NameColumn,1);body->addWidget(sourceCard);
+    sourceRow->setColumnStretch(0,1);if(mode==CaptureMode::Read)sourceRow->setColumnStretch(C::NameColumn,1);
     auto* formatCard=new Card(themes.data(),inputs_);auto* formatRow=new QHBoxLayout(formatCard);
     if(mode==CaptureMode::Read) {raw_=new QRadioButton(formatCard);known_=new QRadioButton(formatCard);formatRow->addWidget(raw_);formatRow->addWidget(known_);}
-    formats_=new QComboBox(formatCard);formats_->setMinimumWidth(0);formats_->setObjectName(C::FormatInput);formatRow->addWidget(formats_,1);body->addWidget(formatCard);
+    formats_=new QComboBox(formatCard);formats_->setMinimumWidth(0);formats_->setObjectName(C::FormatInput);formatRow->addWidget(formats_,1);
+    body->addWidget(sourceCard);
     extensions_=new QComboBox(formatCard);formatRow->addWidget(extensions_);
-    advancedToggle_=new QToolButton(inputs_);advancedToggle_->setCheckable(true);advancedToggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);body->addWidget(advancedToggle_,0,Qt::AlignLeft);
+    body->addWidget(formatCard);
+    advancedToggle_=new QToolButton(inputs_);advancedToggle_->setCheckable(true);advancedToggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     advanced_=new Card(themes.data(),inputs_);auto* advancedBody=new QVBoxLayout(advanced_);
     auto* scroll=new ContentScrollArea(C::AdvancedHeight,advanced_);auto* optionHost=new QWidget(scroll);auto* options=new FlowLayout(optionHost);options->setContentsMargins(0,0,0,0);options->setSpacing(C::Gap);
     for(const auto& definition:Infrastructure::captureOptions(mode)) {
@@ -64,7 +73,7 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
         if(!definition.flag){
             if(QString::fromLatin1(definition.argument)==M::Densel){choices=new QComboBox(container);choices->addItems({QString::fromLatin1(GwToolsConstants::High),QString::fromLatin1(GwToolsConstants::Low)});row->addWidget(choices);connect(choices,&QComboBox::currentTextChanged,this,[this,argument=QString::fromLatin1(definition.argument)](const QString& text){session_->draft.values[argument]=text;session_->changed();});}
             else{value=new QLineEdit(container);value->setFixedWidth(C::OptionWidth);row->addWidget(value);}
-            if(QString::fromLatin1(definition.argument)==M::DiskDefs){browse=new QPushButton(container);row->addWidget(browse);connect(browse,&QPushButton::clicked,this,[this]{const auto path=QFileDialog::getOpenFileName(this,text(C::Browse),session_->draft.values.value(M::DiskDefs));if(!path.isEmpty()){session_->draft.values[M::DiskDefs]=path;session_->draft.enabled.insert(M::DiskDefs);session_->changed();}});}
+            if(QString::fromLatin1(definition.argument)==M::DiskDefs){browse=new QPushButton(container);row->addWidget(browse);connect(browse,&QPushButton::clicked,this,[this]{const auto path=RememberedFileDialog::choose(this,state_,text(C::Browse),session_->mode==CaptureMode::Read?FileDialogScope::Read:FileDialogScope::Write,session_->draft.values.value(M::DiskDefs));if(!path.isEmpty()){session_->draft.values[M::DiskDefs]=path;session_->draft.enabled.insert(M::DiskDefs);session_->changed();}});}
         }
         fields_.push_back({definition,check,value,choices,browse});options->addWidget(container);
         connect(check,&QCheckBox::toggled,this,[this,argument=QString::fromLatin1(definition.argument)](bool enabled) {
@@ -84,15 +93,36 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     sequence_=new QLineEdit(sequencePanel_);sequence_->setFixedWidth(C::SequenceWidth);
     sequenceRow->addWidget(autoNumber_);sequenceRow->addWidget(sequenceKind_);sequenceRow->addWidget(sequenceWidth_);sequenceRow->addWidget(sequence_);sequenceRow->addStretch();
     advancedBody->addWidget(sequencePanel_);sequencePanel_->setVisible(mode==CaptureMode::Read);
-    expertLabel_=new QLabel(advanced_);expert_=new QLineEdit(advanced_);advancedBody->addWidget(expertLabel_);advancedBody->addWidget(expert_);body->addWidget(advanced_);
-    layout->addWidget(inputs_);layout->addStretch();
+    expertLabel_=new QLabel(advanced_);expert_=new QLineEdit(advanced_);advancedBody->addWidget(expertLabel_);advancedBody->addWidget(expert_);body->addWidget(advancedToggle_, 0, Qt::AlignLeft);
+    body->addWidget(advanced_);
+    layout->addWidget(inputs_);
+    if (mode == CaptureMode::Read) {
+        captureHistory_ = new QScrollArea(this);
+        captureHistory_->setWidgetResizable(true);
+        captureHistory_->setFrameShape(QFrame::NoFrame);
+        captureHistory_->viewport()->setAutoFillBackground(false);
+        auto* cards = new QWidget(captureHistory_);
+        captureCards_ = new QVBoxLayout(cards);
+        captureCards_->setContentsMargins(0,0,0,0);
+        captureCards_->setSpacing(C::CaptureCardGap);
+        captureCards_->setAlignment(Qt::AlignTop);
+        captureHistory_->setWidget(cards);
+        layout->addWidget(captureHistory_,1);
+        captureHistory_->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    }
+    if (mode != CaptureMode::Read) layout->addStretch();
     progress_=new CaptureProgressView(themes,this);layout->addWidget(progress_);
     summary_=new QLabel(this);summary_->setWordWrap(true);summary_->setTextFormat(Qt::PlainText);layout->addWidget(summary_);
     auto* footer=new QHBoxLayout;visualize_=new QPushButton(this);explore_=new QPushButton(this);execute_=new QPushButton(this);
+    execute_->setProperty(ThemeConstants::Style::PrimaryAction, true);
     footer->addWidget(visualize_);footer->addWidget(explore_);footer->addStretch();footer->addWidget(execute_);layout->addLayout(footer);
     connect(devices_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0){session_->draft.deviceId=devices_->itemData(index).toString();session_->changed();}});
     connect(formats_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0){session_->draft.formatId=formats_->itemData(index).toString();if(const auto* format=MediaEngine::findImageFormat(session_->draft.formatId.toStdString());format && !format->extensions.empty())session_->draft.extension=QString::fromStdString(format->extensions.front().extension);session_->changed();}});
     connect(path_,&QLineEdit::textEdited,this,[this](const QString& value){if(session_->mode==CaptureMode::Read)session_->draft.directory=value;else {session_->draft.source=value;sourceEdited_=true;}session_->changed();});
+    if (mode == CaptureMode::Read)
+        connect(path_,&QLineEdit::textEdited,this,[this](const QString& directory){
+            state_.setFileDialogDirectory(FileDialogScope::ReadDestination,directory.trimmed());
+        });
     connect(path_,&QLineEdit::editingFinished,this,[this]{if(sourceEdited_){sourceEdited_=false;try{session_->selectSource(path_->text());}catch(const std::exception& error){summary_->setText(mediaErrorText(translations_,error));}}});
     connect(extensions_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0){session_->draft.extension=extensions_->itemData(index).toString();session_->changed();}});
     connect(name_,&QLineEdit::textEdited,this,[this](const QString& value){session_->draft.fileName=value;session_->changed();});
@@ -106,10 +136,11 @@ CapturePage::CapturePage(CaptureMode mode,ThemeService& themes,Translations::Tra
     connect(sequenceKind_,&QComboBox::currentIndexChanged,this,[this](int index){qint64 value=0;if(!Infrastructure::parseCaptureSequence(session_->draft.sequence,session_->draft.alphabetic,value))value=0;session_->draft.alphabetic=index==1;session_->draft.sequence=Infrastructure::captureSequence(value,session_->draft.alphabetic,1);session_->changed();});
     connect(profiles_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0)session_->applyProfile(static_cast<std::size_t>(index));});
     connect(reset_,&QPushButton::clicked,this,[this]{session_->applyProfile(session_->selectedProfile);});connect(save_,&QPushButton::clicked,this,[this]{saveProfile();});
-    connect(visualize_,&QPushButton::clicked,this,[this]{openResult(AppConstants::Visualize);});connect(explore_,&QPushButton::clicked,this,[this]{openResult(AppConstants::Explorer);});
+    connect(visualize_,&QPushButton::clicked,this,[this]{openResult(AppConstants::Visualize,session_->draft.source);});connect(explore_,&QPushButton::clicked,this,[this]{openResult(AppConstants::Explorer,session_->draft.source);});
     for(auto* combo:{devices_,profiles_,formats_}){combo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);combo->setMinimumContentsLength(C::ComboMinimumLength);}
+    loading_=new MediaLoadingOverlay(themes,translations,[this]{if(session_->busy())execute();else session_->stop();},this);
     rebuildFormats();subscription_=session_->subscribe([this]{refresh();});hardwareSubscription_=state.subscribeToHardware([this]{refresh();});engineSubscription_=state.subscribeToEngines([this]{refresh();});
-    languageSubscription_=translations.subscribe([this]{rebuildFormats();refresh();});refresh();
+    languageSubscription_=translations.subscribe([this]{refreshCaptureLabels_=true;rebuildFormats();refresh();});refresh();
 }
 QString CapturePage::text(const char* key)const{return QString::fromStdString(translations_.text(key));}
 void CapturePage::showEvent(QShowEvent* event){QWidget::showEvent(event);refresh();}
@@ -122,11 +153,19 @@ void CapturePage::rebuildFormats() {
     }
 }
 void CapturePage::refresh() {
+    loading_->display(session_->loading(),session_->loadingProgress());
     const auto& draft=session_->draft;const bool read=session_->mode==CaptureMode::Read;inputs_->setEnabled(!session_->busy());
     {const QSignalBlocker blocked(devices_);devices_->clear();for(const auto& device:state_.hardware().devices)if(device.category==HardwareConstants::Floppy)devices_->addItem(device.name+QString::fromUtf8(C::Separator)+device.address,device.id);
         auto index=devices_->findData(draft.deviceId);if(index<0 && devices_->count()>0){index=0;session_->draft.deviceId=devices_->itemData(index).toString();}devices_->setCurrentIndex(index);}
     {const QSignalBlocker blocked(profiles_);profiles_->clear();for(std::size_t index=0;index<session_->profiles().size();++index)profiles_->addItem(index?session_->profiles()[index].name:text(C::DefaultProfile));profiles_->setCurrentIndex(static_cast<int>(session_->selectedProfile));}
-    profileLabel_->setText(text(C::Profile));save_->setText(text(C::Save));reset_->setText(text(C::Reset));
+    const auto color = themes_.data()->color(ThemeConstants::TextBrush);
+    save_->setIcon(themeIcon(MediaPageConstants::SaveIcon, color));
+    save_->setToolTip(text(C::Save));
+    save_->setAccessibleName(text(C::Save));
+    reset_->setIcon(themeIcon(MediaPageConstants::RefreshIcon, color));
+    reset_->setToolTip(text(C::Reset));
+    reset_->setAccessibleName(text(C::Reset));
+    profileLabel_->setText(text(C::Profile));
     pathLabel_->setText(text(read?C::Folder:C::Source));nameLabel_->setText(text(C::Name));browse_->setText(text(C::Browse));
     const auto set=[](QLineEdit* edit,const QString& value){if(edit->text()!=value)edit->setText(value);};set(path_,read?draft.directory:draft.source);set(name_,draft.fileName);set(expert_,draft.expert);set(sequence_,draft.sequence);
     {const QSignalBlocker blocked(formats_);formats_->setCurrentIndex(formats_->findData(draft.formatId));}formats_->setEnabled(!read || !draft.raw);
@@ -140,16 +179,18 @@ void CapturePage::refresh() {
     expertLabel_->setText(text(C::Expert));execute_->setText(text(session_->busy()?C::Stop:C::Execute));execute_->setEnabled(session_->busy() || session_->canStart());
     auto summary=text(session_->execution().summaryKey.toUtf8().constData());for(int index=0;index<session_->execution().summaryArguments.size();++index)summary.replace(QString::fromLatin1(C::Argument).arg(index),session_->execution().summaryArguments[index]);const auto substitute=[this](const char* key,const QStringList& arguments){auto value=text(key);for(int index=0;index<arguments.size();++index){value.replace(QString::fromLatin1(C::Argument).arg(index),arguments[index]);value.replace(QString::fromLatin1(C::NumericArgument).arg(index),arguments[index]);}return value;};
     const auto& tracking=session_->execution().progress;QStringList labels;for(const auto head:tracking.heads)labels<<substitute(C::ProgressSide,{QString::number(head)});progress_->setProgress(tracking,labels,session_->busy());
-    if(session_->captureInfo()){const auto& info=*session_->captureInfo();summary+=QLatin1Char(C::NewLine)+substitute(C::ScpBanner,{QString::number(info.capturedTracks),QString::number(info.missingTracks),QString::number(info.cylinders),QString::number(info.sides),QString::number(info.header.revolutions),QLocale().toString(static_cast<qulonglong>(info.fileSize)),text(info.checksumValid?C::ChecksumValid:C::ChecksumInvalid)});}
-    else if(session_->captureInfoError())summary+=QLatin1Char(C::NewLine)+substitute(C::ScpUnavailable,{mediaText(translations_,*session_->captureInfoError())});
-    if(!session_->completedPath().isEmpty())summary+=QLatin1Char(C::NewLine)+session_->completedPath();summary_->setText(summary);
+    if(!read && session_->captureInfo()){const auto& info=*session_->captureInfo();summary+=QLatin1Char(C::NewLine)+substitute(C::ScpBanner,{QString::number(info.capturedTracks),QString::number(info.missingTracks),QString::number(info.cylinders),QString::number(info.sides),QString::number(info.header.revolutions),QLocale().toString(static_cast<qulonglong>(info.fileSize)),text(info.checksumValid?C::ChecksumValid:C::ChecksumInvalid)});}
+    else if(!read && session_->captureInfoError())summary+=QLatin1Char(C::NewLine)+substitute(C::ScpUnavailable,{mediaText(translations_,*session_->captureInfoError())});
+    if(!read && !session_->completedPath().isEmpty())summary+=QLatin1Char(C::NewLine)+session_->completedPath();summary_->setText(summary);
+    if(session_->sourceError())summary_->setText(mediaText(translations_,*session_->sourceError()));
     if(!session_->cleanupError().isEmpty())summary_->setText(summary+QLatin1Char(C::NewLine)+mediaText(translations_,{C::CleanupFailed,{session_->cleanupPath().toStdString(),session_->cleanupError().toStdString()},{}}));
-    visualize_->setText(text(C::OpenVisual));explore_->setText(text(C::OpenExplorer));const bool hasResult=read?!session_->completedPath().isEmpty():QFileInfo::exists(draft.source);visualize_->setVisible(hasResult);explore_->setVisible(hasResult);
+    visualize_->setText(text(C::OpenVisual));explore_->setText(text(C::OpenExplorer));const bool hasResult=!read&&QFileInfo::exists(draft.source);visualize_->setVisible(hasResult);explore_->setVisible(hasResult);
+    refreshReadCaptures();
     if(isVisible() && state_.greaseweazleTools->activeOperation().isEmpty())try {const auto command=session_->command(state_.hardware(),state_.engines(),QCoreApplication::applicationDirPath());state_.console.setContent(command.displayText(),state_.console.output);}catch(const std::exception&){state_.console.setContent({},state_.console.output);}
 }
 void CapturePage::browse() {
-    if(session_->mode==CaptureMode::Read){const auto folder=QFileDialog::getExistingDirectory(this,text(C::Folder),session_->draft.directory);if(!folder.isEmpty()){session_->draft.directory=folder;session_->changed();}}
-    else {const auto path=QFileDialog::getOpenFileName(this,text(C::Source),state_.defaultImageDirectory());if(!path.isEmpty())try{session_->selectSource(path);}catch(const std::exception& error){summary_->setText(mediaErrorText(translations_,error));}}
+    if(session_->mode==CaptureMode::Read){const auto folder=RememberedFileDialog::choose(this,state_,text(C::Folder),FileDialogScope::ReadDestinationPicker,session_->draft.directory,QFileDialog::Directory);if(!folder.isEmpty()){session_->draft.directory=folder;state_.setFileDialogDirectory(FileDialogScope::ReadDestination,folder);session_->changed();}}
+    else {const auto path=RememberedFileDialog::choose(this,state_,text(C::Source),FileDialogScope::Write,state_.defaultImageDirectory());if(!path.isEmpty())try{session_->selectSource(path);}catch(const std::exception& error){summary_->setText(mediaErrorText(translations_,error));}}
 }
 bool CapturePage::confirm(const QString& title,const QString& message){QMessageBox box(QMessageBox::Warning,title,message,QMessageBox::Yes|QMessageBox::No,this);box.setTextFormat(Qt::PlainText);box.setDefaultButton(QMessageBox::No);box.button(QMessageBox::Yes)->setText(text(C::Yes));box.button(QMessageBox::No)->setText(text(C::No));return box.exec()==QMessageBox::Yes;}
 void CapturePage::execute() {
@@ -169,5 +210,75 @@ void CapturePage::execute() {
     }catch(const std::exception& error){auto message=mediaErrorText(translations_,error);message.replace(QString::fromLatin1(C::Argument).arg(0),text(EngineConstants::InternalKey));summary_->setText(message);}
 }
 void CapturePage::saveProfile(){bool ok=false;const auto name=QInputDialog::getText(this,text(C::SaveProfile),text(C::ProfileName),QLineEdit::Normal,{},&ok);if(!ok)return;if(name.trimmed().compare(text(C::DefaultProfile),Qt::CaseInsensitive)==0){summary_->setText(text(C::ReservedProfile));return;}bool replace=false;for(const auto& profile:session_->profiles())if(profile.name.compare(name.trimmed(),Qt::CaseInsensitive)==0){replace=confirm(text(C::SaveProfile),text(C::ReplaceProfile));if(!replace)return;}try{session_->saveProfile(name,replace);}catch(const std::exception& error){summary_->setText(mediaErrorText(translations_,error));}}
-void CapturePage::openResult(const char* page){const auto path=session_->mode==CaptureMode::Read?session_->completedPath():session_->draft.source;if(path.isEmpty())return;if(!state_.explorer)state_.explorer=std::make_shared<Infrastructure::ExplorerSession>();state_.explorer->open(path);navigate_(QString::fromLatin1(page));}
+void CapturePage::refreshReadCaptures() {
+    if (!captureHistory_) return;
+    const auto& captures = session_->readCaptures();
+
+    if (!refreshCaptureLabels_ && captureRevision_ == session_->readCaptureRevision()) return;
+    refreshCaptureLabels_ = false;
+    captureRevision_ = session_->readCaptureRevision();
+    while (auto* item = captureCards_->takeAt(0)) {
+        delete item->widget();
+        delete item;
+    }
+    for (const auto& capture : captures) {
+        auto cardTheme = std::make_shared<ThemeData>(*themes_.data());
+        const auto& colors = capture.archived ? C::ArchivedCaptureColors :
+            capture.completed ? C::CompletedCaptureColors : C::RunningCaptureColors;
+        cardTheme->colors[AppConstants::CardBrush] = QColor::fromRgb(colors.front());
+        cardTheme->colors[AppConstants::BorderBrush] = QColor::fromRgb(colors.back());
+        cardTheme->cardRadius = C::CaptureCardRadius;
+        auto* card = new Card(std::move(cardTheme),captureHistory_->widget());
+        auto palette = card->palette();
+        palette.setColor(QPalette::WindowText,QColor::fromRgb(C::CaptureTextRgb));
+        card->setPalette(palette);
+        auto* row = new QHBoxLayout(card);
+        row->setContentsMargins(C::CaptureCardPadding,C::CaptureCardPadding,C::CaptureCardPadding,C::CaptureCardPadding);
+        row->setSpacing(C::CaptureActionGap);
+        auto* identity = new QVBoxLayout;
+        auto* name = new QLabel(QFileInfo(capture.path).fileName(),card);
+        name->setTextFormat(Qt::PlainText);
+        name->setToolTip(capture.path);
+        name->setWordWrap(true);
+        auto bold = name->font();
+        bold.setBold(true);
+        name->setFont(bold);
+        identity->addWidget(name);
+        identity->addWidget(new QLabel(text(capture.completed ? C::ReadSuccess : C::ReadRunning),card));
+        if (capture.info || capture.infoError) {
+            auto* details = new QLabel(card);
+            details->setTextFormat(Qt::PlainText);
+            details->setWordWrap(true);
+            if (capture.info) {
+                const auto& info = *capture.info;
+                auto summary = text(C::ScpBanner);
+                const QStringList fields{QString::number(info.capturedTracks),QString::number(info.missingTracks),
+                    QString::number(info.cylinders),QString::number(info.sides),QString::number(info.header.revolutions),
+                    QLocale().toString(static_cast<qulonglong>(info.fileSize)),text(info.checksumValid?C::ChecksumValid:C::ChecksumInvalid)};
+                for (int index = 0; index < fields.size(); ++index)
+                    summary.replace(QString::fromLatin1(C::Argument).arg(index),fields[index])
+                           .replace(QString::fromLatin1(C::NumericArgument).arg(index),fields[index]);
+                details->setText(summary);
+            } else {
+                details->setText(mediaText(translations_,{C::ScpUnavailable,
+                    {mediaText(translations_,*capture.infoError).toStdString()},{}}));
+            }
+            identity->addWidget(details);
+        }
+        row->addLayout(identity,1);
+        auto* explore = new QPushButton(text(C::OpenExplorer),card);
+        auto* visualize = new QPushButton(text(C::OpenVisual),card);
+        const auto iconColor = themes_.data()->color(ThemeConstants::TextBrush);
+        explore->setIcon(themeIcon(MediaPageConstants::ExplorerIcon, iconColor));
+        visualize->setIcon(themeIcon(MediaPageConstants::VisualizationIcon, iconColor));
+        for (auto* action : {explore,visualize}) {
+            action->setEnabled(capture.completed);
+            row->addWidget(action);
+        }
+        connect(explore,&QPushButton::clicked,this,[this,path=capture.path]{openResult(AppConstants::Explorer,path);});
+        connect(visualize,&QPushButton::clicked,this,[this,path=capture.path]{openResult(AppConstants::Visualize,path);});
+        captureCards_->addWidget(card);
+    }
+}
+void CapturePage::openResult(const char* page,const QString& path){if(path.isEmpty())return;if(!state_.explorer)state_.explorer=std::make_shared<Infrastructure::ExplorerSession>();state_.explorer->open(path);navigate_(QString::fromLatin1(page));}
 }

@@ -1,9 +1,11 @@
 #pragma once
+#include <QPixmap>
 #include "Media/VisualizationSession.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include <QWidget>
 #include <QPointF>
 #include <map>
+#include <tuple>
 namespace RetroMediaLab {
 class MediaGraph final : public QWidget {
 public:
@@ -14,6 +16,9 @@ protected:
     void mouseMoveEvent(QMouseEvent*) override;
     void wheelEvent(QWheelEvent*) override;
 private:
+    QPixmap presentedDisk_;
+    int renderedTracks_ = 0;
+    void clearPresentedDisk() { presentedDisk_ = {}; renderedTracks_ = 0; }
     const MediaEngine::DiskFormatInfo* format() const;
     void rebuild();
     std::vector<std::int32_t> diskSurfaces()const;
@@ -25,7 +30,10 @@ private:
     std::map<std::pair<std::int64_t,std::int64_t>,std::vector<const MediaEngine::SectorVisualizationItem*>> sectorTracks_;
     std::vector<std::int32_t> surfaces_;
     std::int32_t cylinders_ = 0;
-    std::size_t cachedRevolution_ = 0;
+    std::optional<std::string> cachedFormat_;
+    using FluxRenderKey = std::tuple<const MediaEngine::FluxVisualizationModel*, std::size_t, bool,
+        MediaEngine::DiskMediaCategory, std::vector<std::tuple<double,double,double>>>;
+    std::optional<FluxRenderKey> fluxKey_;
     QPointF previousMouse_;
     Infrastructure::ExplorerSession::Subscription subscription_;
     ThemeService::Subscription themeSubscription_;

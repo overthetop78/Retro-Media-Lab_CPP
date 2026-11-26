@@ -1,3 +1,4 @@
+#include "Shared/Controls/RememberedFileDialog.h"
 #include "../ThemeConstants.h"
 #include "PreferencesDialog.h"
 #include "ThemeSettingsPage.h"
@@ -142,6 +143,7 @@ void PreferencesDialog::browseDirectory() {
         directoryPicker_ = std::make_unique<QFileDialog>(this);
         directoryPicker_->setFileMode(QFileDialog::Directory);
         directoryPicker_->setOption(QFileDialog::ShowDirsOnly);
+        RememberedFileDialog::remember(*directoryPicker_, state_, FileDialogScope::General);
         directoryPicker_->setWindowModality(Qt::WindowModal);
         connect(directoryPicker_.get(), &QFileDialog::fileSelected, this, [this](const QString& path) {
             directory_->setText(path);
@@ -149,7 +151,7 @@ void PreferencesDialog::browseDirectory() {
         });
     }
     directoryPicker_->setWindowTitle(QString::fromStdString(translations_.text(ThemeConstants::PreferencesSelectDirectory)));
-    directoryPicker_->setDirectory(directory_->text());
+    RememberedFileDialog::prepare(*directoryPicker_, state_, FileDialogScope::General, directory_->text());
     directoryPicker_->open();
 }
 void PreferencesDialog::refreshTexts() {

@@ -1,4 +1,5 @@
 #include <ErrorKeys.h>
+#include "Shared/Presentation/AssetPath.h"
 #include "ThemeConstants.h"
 #include "RetroMediaLabConfiguration.h"
 #include <QApplication>
@@ -13,7 +14,7 @@
 namespace RetroMediaLab {
 namespace {
 QJsonObject readObject(const QString& path) {
-    QFile file(path);
+    QFile file(assetPath(path));
     if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error(ErrorKeys::CannotReadRetroMediaLabThemeData);
     QJsonParseError error;
     const auto document = QJsonDocument::fromJson(file.readAll(), &error);

@@ -1,4 +1,5 @@
 #pragma once
+#include <chrono>
 #include "MediaCommands.h"
 #include "MediaCommandConstants.h"
 #include "Maintenance/GreaseweazleTools.h"
@@ -6,6 +7,7 @@
 #include "ExplorerSession.h"
 #include "Profiles/OperationProfiles.h"
 #include <QSet>
+#include <RetroMediaLab/MediaEngine/ImageFormatDetection.h>
 #include <RetroMediaLab/MediaEngine/ScpCaptureInfo.h>
 namespace RetroMediaLab::Infrastructure {
 enum class CaptureMode {Read,Write,ExplorerRead};
@@ -19,6 +21,12 @@ struct CaptureDraft {
     QString sequence=MediaCommandConstants::DefaultSequence;
     QMap<QString,QString> values;
     QSet<QString> enabled;
+};
+struct ReadCaptureEntry {
+    QString path;
+    bool completed = false, archived = false;
+    std::optional<MediaEngine::ScpCaptureInfo> info;
+    std::optional<MediaEngine::MessageInfo> infoError;
 };
 class RETROMEDIALAB_INFRASTRUCTURE_API CaptureSession final {
 public:
@@ -40,11 +48,18 @@ public:
     std::size_t selectedProfile=0;
     void nextAvailable();
     bool busy() const;
+    bool preparingSource()const noexcept{return sourcePending_.valid();}
+    bool loading()const{return busy()||summarizing();}
+    LoadingProgress loadingProgress()const;
+    qint64 elapsedMilliseconds()const;
+    const std::optional<MediaEngine::MessageInfo>& sourceError()const noexcept{return sourceError_;}
     bool canStart() const;
     const GwToolDraft& execution() const;
     const std::optional<MediaEngine::ScpCaptureInfo>& captureInfo()const noexcept{return captureInfo_;}
     const std::optional<MediaEngine::MessageInfo>& captureInfoError()const noexcept{return captureInfoError_;}
     bool summarizing()const noexcept{return captureInfoPending_.valid();}
+    const std::vector<ReadCaptureEntry>& readCaptures() const noexcept { return readCaptures_; }
+    std::size_t readCaptureRevision() const noexcept { return readCaptureRevision_; }
     const QString& completedPath() const noexcept {return completed_;}
     const QString& cleanupError() const noexcept {return cleanupError_;}
     const QString& cleanupPath() const noexcept {return activePath_;}
@@ -54,6 +69,7 @@ private:
     void update();
     void pollCaptureInfo();
     void publish();
+    std::chrono::steady_clock::time_point started_{};
     std::shared_ptr<GreaseweazleTools> tools_;
     GreaseweazleTools::Subscription subscription_;
     std::vector<std::weak_ptr<const std::function<void()>>> observers_;
@@ -63,6 +79,11 @@ private:
     std::future<MediaEngine::ScpCaptureInfo> captureInfoPending_;
     std::stop_source captureInfoCancellation_;
     QTimer captureInfoTimer_;
+    std::future<MediaEngine::DetectedImageFormat> sourcePending_;
+    std::stop_source sourceCancellation_;
+    std::optional<MediaEngine::MessageInfo> sourceError_;
+    std::vector<ReadCaptureEntry> readCaptures_;
+    std::size_t readCaptureRevision_ = 0;
     QString activePath_,completed_,cleanupError_;
     std::shared_ptr<OperationProfiles> profiles_;
     OperationProfiles::Subscription profileSubscription_;

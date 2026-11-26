@@ -5,7 +5,7 @@ const std::array<WorkspacePage, AppConstants::WorkspacePagesValues::PageCount>& 
     static const std::array<WorkspacePage, AppConstants::WorkspacePagesValues::PageCount> pages{{
         {AppConstants::Read, AppConstants::TabRead}, {AppConstants::Write, AppConstants::TabWrite}, {AppConstants::Convert, AppConstants::TabConvert},
         {AppConstants::Visualize, AppConstants::TabVisualize}, {AppConstants::Explorer, AppConstants::TabExplorer},
-        {AppConstants::Tools, AppConstants::TabTools}, {AppConstants::Emulation, AppConstants::TabEmulation}
+        {AppConstants::Emulation, AppConstants::TabEmulation}
     }};
     return pages;
 }

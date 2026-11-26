@@ -2,7 +2,8 @@
 #include "ClassificationConstants.h"
 #include <QComboBox>
 #include <QCheckBox>
-#include <QFont>
+#include <QPainter>
+#include <QPixmap>
 #include <QGridLayout>
 #include <QLabel>
 #include <QSignalBlocker>
@@ -10,6 +11,20 @@
 #include <algorithm>
 namespace RetroMediaLab {
 namespace C=ClassificationConstants;
+
+QIcon recognizedFormatIcon(){
+    QPixmap image(C::RecognitionIconExtent,C::RecognitionIconExtent);
+    image.fill(Qt::transparent);
+    QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor::fromRgb(C::RecognitionDotRgb));
+    painter.drawEllipse(image.rect().adjusted(C::RecognitionDotInset,C::RecognitionDotInset,
+        -C::RecognitionDotInset,-C::RecognitionDotInset));
+    painter.end();
+    return QIcon(image);
+}
+
 ClassificationPanel::ClassificationPanel(Infrastructure::ClassificationSelection& selection,Translations::TranslationService& translations,bool showAutomatic,std::function<void(bool)> changed,QWidget* parent)
  :QWidget(parent),selection_(selection),translations_(translations),changed_(std::move(changed)),showAutomatic_(showAutomatic){
     auto* layout=new QVBoxLayout(this);layout->setContentsMargins(C::Padding,C::Padding,C::Padding,C::Padding);layout->setSpacing(C::Spacing);
@@ -26,9 +41,9 @@ void ClassificationPanel::refresh(){
     const auto text=[this](const char* key){return QString::fromStdString(translations_.text(key));};const auto resolve=[this](std::string_view key){return translations_.text(std::string(key),C::Domain);};
     const QSignalBlocker machineBlocked(machine_),formatBlocked(format_),protectionBlocked(protection_),automaticBlocked(automatic_);
     automatic_->setText(text(C::Automatic));automatic_->setVisible(showAutomatic_);automatic_->setChecked(selection_.automatic());machineLabel_->setText(text(C::Machine));formatLabel_->setText(text(C::Format));protectionLabel_->setText(text(C::Protection));
-    const auto& catalog=selection_.catalog();machine_->clear();for(const auto& machine:catalog.machines()){const auto formats=catalog.formatsFor(machine);machine_->addItem(formats.empty()?QString::fromStdString(machine):QString::fromStdString(MediaEngine::imageFormatFamilyName(formats.front(),resolve)),QString::fromStdString(machine));if(std::any_of(selection_.detectedFormats().begin(),selection_.detectedFormats().end(),[&](const auto& id){const auto* detected=catalog.resolveFormat(id);return detected&&detected->family==machine;})){auto bold=font();bold.setBold(true);machine_->setItemData(machine_->count()-1,bold,Qt::FontRole);}}
+    const auto& catalog=selection_.catalog();machine_->clear();for(const auto& machine:catalog.machines()){const auto formats=catalog.formatsFor(machine);machine_->addItem(formats.empty()?QString::fromStdString(machine):QString::fromStdString(MediaEngine::imageFormatFamilyName(formats.front(),resolve)),QString::fromStdString(machine));if(std::any_of(selection_.detectedFormats().begin(),selection_.detectedFormats().end(),[&](const auto& id){const auto* detected=catalog.resolveFormat(id);return detected&&detected->family==machine;})){machine_->setItemIcon(machine_->count()-1,recognizedFormatIcon());}}
     machine_->setCurrentIndex(selection_.machine()?machine_->findData(QString::fromStdString(*selection_.machine())):-1);
-    format_->clear();for(const auto& format:catalog.formatsFor(selection_.machine())){format_->addItem(QString::fromStdString(MediaEngine::imageFormatName(format,resolve)),QString::fromStdString(format.id));if(std::find(selection_.detectedFormats().begin(),selection_.detectedFormats().end(),format.id)!=selection_.detectedFormats().end()){auto bold=font();bold.setBold(true);format_->setItemData(format_->count()-1,bold,Qt::FontRole);}}
+    format_->clear();for(const auto& format:catalog.formatsFor(selection_.machine())){format_->addItem(QString::fromStdString(MediaEngine::imageFormatName(format,resolve)),QString::fromStdString(format.id));if(std::find(selection_.detectedFormats().begin(),selection_.detectedFormats().end(),format.id)!=selection_.detectedFormats().end()){format_->setItemIcon(format_->count()-1,recognizedFormatIcon());}}
     format_->setCurrentIndex(selection_.format()?format_->findData(QString::fromStdString(*selection_.format())):-1);
     protection_->clear();const auto protections=catalog.protectionsFor(selection_.machine(),selection_.format());protection_->addItem(QString::fromUtf8(C::NoProtection),QString{});for(const auto& protection:protections)protection_->addItem(QString::fromStdString(protection.displayName),QString::fromStdString(protection.id));protection_->setCurrentIndex(selection_.protection()?protection_->findData(QString::fromStdString(*selection_.protection())):0);protection_->setVisible(!protections.empty());protectionLabel_->setVisible(!protections.empty());
 }

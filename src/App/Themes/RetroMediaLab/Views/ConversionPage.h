@@ -1,6 +1,6 @@
 #pragma once
 #include "Media/ConversionSession.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>
@@ -14,12 +14,14 @@ class QProgressBar;
 class QToolButton;
 class QComboBox;
 namespace RetroMediaLab {
+class MediaLoadingOverlay;
 class ConversionPage final:public QWidget {
 public:
     ConversionPage(ThemeService&,Translations::TranslationService&,WorkspaceState&,std::function<void()>,QWidget*);
 protected:
     void showEvent(QShowEvent*)override;
 private:
+    MediaLoadingOverlay* loading_;
     QString text(const char*)const;
     void refresh();
     void rebuildFormats();

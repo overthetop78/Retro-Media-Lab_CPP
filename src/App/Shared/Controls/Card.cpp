@@ -1,6 +1,6 @@
 #include <Constants/AppConstants.h>
 #include "Card.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include <QPainter>
 namespace RetroMediaLab {
 Card::Card(std::shared_ptr<const ThemeData> theme, QWidget* parent) : QWidget(parent), theme_(std::move(theme)) {}

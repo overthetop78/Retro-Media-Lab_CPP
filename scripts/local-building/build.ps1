@@ -85,7 +85,7 @@ try {
     $staging = Join-Path $projectRoot "build/qt-staging/$preset"
     Assert-BuildPath $staging
     New-Item -ItemType Directory -Path $staging -Force | Out-Null
-    & (Join-Path $QtRoot 'bin/windeployqt.exe') --no-translations --no-compiler-runtime --dir $staging (Join-Path $destination 'lib/App.dll') (Join-Path $destination 'lib/Infrastructure.dll') (Join-Path $destination 'lib/MediaEngine.dll')
+    & (Join-Path $QtRoot 'bin/windeployqt.exe') --no-translations --no-compiler-runtime --dir $staging (Join-Path $destination 'lib/App.dll') (Join-Path $destination 'lib/Infrastructure.dll') (Join-Path $destination 'lib/MediaEngine.dll') (Join-Path $destination 'lib/VideoPresentation.dll')
     if ($LASTEXITCODE -ne 0) { throw 'Qt deployment failed.' }
     function Move-Dependency([IO.FileInfo]$File) {
         $category = switch -Regex ($File.Name) {

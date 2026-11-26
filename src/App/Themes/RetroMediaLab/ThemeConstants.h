@@ -36,7 +36,7 @@ inline constexpr int Index = 2;
 inline constexpr auto ChooseTheme = "chooseTheme";
 inline constexpr auto ThemesChoose = "Themes.Choose";
 inline constexpr auto ChooseParameter = "{choose}";
-inline constexpr auto ThemesRetroMediaLabMetricsJson = ":/Themes/RetroMediaLab/metrics.json";
+inline constexpr auto ThemesRetroMediaLabMetricsJson = "Themes/RetroMediaLab/metrics.json";
 inline constexpr auto FontSize = "fontSize";
 inline constexpr auto ControlHeight = "controlHeight";
 inline constexpr auto CardPadding = "cardPadding";
@@ -46,8 +46,8 @@ inline constexpr auto TabPaddingX = "tabPaddingX";
 inline constexpr auto TabPaddingY = "tabPaddingY";
 inline constexpr auto TabRadius = "tabRadius";
 inline constexpr auto SegoeUI = "Segoe UI";
-inline constexpr auto ThemesRetroMediaLabDarkJson = ":/Themes/RetroMediaLab/dark.json";
-inline constexpr auto ThemesRetroMediaLabLightJson = ":/Themes/RetroMediaLab/light.json";
+inline constexpr auto ThemesRetroMediaLabDarkJson = "Themes/RetroMediaLab/dark.json";
+inline constexpr auto ThemesRetroMediaLabLightJson = "Themes/RetroMediaLab/light.json";
 inline constexpr auto WindowBrush = "WindowBrush";
 inline constexpr auto CardBrush = "CardBrush";
 inline constexpr auto ControlBrush = "ControlBrush";
@@ -78,7 +78,7 @@ inline constexpr auto AssetsAppIconIco = "/Assets/app-icon.ico";
 inline constexpr auto ErrorBufferFormat = "%s";
 inline constexpr auto ThemesRetroMediaLab = ":/Themes/RetroMediaLab";
 inline constexpr auto RetroMediaLab = "RetroMediaLab";
-inline constexpr auto ThemesRetroMediaLabIconsJson = ":/Themes/RetroMediaLab/icons.json";
+inline constexpr auto ThemesRetroMediaLabIconsJson = "Themes/RetroMediaLab/icons.json";
 inline constexpr auto CanvasSize = "canvasSize";
 inline constexpr auto DevicePixelRatio = "devicePixelRatio";
 inline constexpr auto StrokeWidth = "strokeWidth";
@@ -205,6 +205,16 @@ inline constexpr auto MinimumContentHeight = 110;
 inline constexpr auto MinimumConsoleHeight = 100;
 }
 namespace Style {
+inline constexpr auto PrimaryAction = "primaryAction", MigrationAction = "migrationAction";
+inline constexpr auto MigrationTop = "Theme.MigrationTopColor", MigrationBottom = "Theme.MigrationBottomColor";
+inline constexpr auto MigrationHover = "Theme.MigrationHover", MigrationBorder = "Theme.MigrationBorder", MigrationShadow = "Theme.MigrationShadow";
+inline constexpr auto PrimaryForeground = "Theme.PrimaryForeground", PrimaryShadow = "Theme.PrimaryShadow";
+inline constexpr auto PrimaryBorder = "Theme.PrimaryBorder", PrimaryHover = "Theme.PrimaryHover";
+inline constexpr auto PrimaryTop = "Theme.PrimaryTopColor", PrimaryBottom = "Theme.PrimaryBottomColor";
+inline constexpr int PrimaryWidth = 160, PrimaryHeight = 44, PrimaryFontSize = 15;
+inline constexpr int PrimaryHorizontalPadding = 22, PrimaryVerticalPadding = 8;
+inline constexpr int PrimaryInset = 3, PrimaryRadius = 9, PrimaryPressOffset = 2;
+inline constexpr double PrimaryDisabledOpacity = .5;
 inline constexpr int ControlVerticalPadding = 6;
 inline constexpr int ControlHorizontalPadding = 16;
 inline constexpr auto BorderInset = .5;
@@ -315,12 +325,8 @@ inline constexpr const char* LabelKeys[] = {"Profiles.Read", "Profiles.Write", "
 }
 
 namespace Density {
-inline constexpr auto CompactFactor = 0.70;
 inline constexpr auto SecondaryTabFactor = 0.90;
 inline constexpr auto NestedTabFactor = 0.80;
-inline constexpr auto MinimumScreenFactor = 0.75;
-inline constexpr int ReferenceWidth = 1600;
-inline constexpr int ReferenceHeight = 900;
 }
 
 namespace GreaseweazleDialog {
@@ -348,8 +354,8 @@ inline constexpr int NavigationWidth = 250;
 inline constexpr int NavigationPadding = 8;
 inline constexpr int NavigationGap = 12;
 inline constexpr int NavigationRowHeight = 56;
-inline constexpr const char* Ids[] = {"info", "bandwidth", "rpm", "seek", "align", "pin", "reset", "delays", "update"};
-inline constexpr const char* Labels[] = {"Tool.Title.Info", "Tool.Title.Bandwidth", "Tool.Title.Rpm", "Tool.Title.Seek", "Tool.Title.Align", "Tool.Title.Pin", "Tool.Title.Reset", "Tool.Title.Delays", "Tool.Title.Update"};
+inline constexpr int MaintenanceHeadingPage = -1;
+inline constexpr const char* Labels[] = {"Tool.Title.Info", "Tool.Title.Bandwidth", "Tool.Title.Rpm", "Tool.Title.Seek", "Tool.Title.Align", "Tool.Title.Pin", "Tool.Title.Reset", "Tool.Title.Delays", "Tool.Title.Update", "Tools.Erase", "Tools.Clean"};
 }
 
 }

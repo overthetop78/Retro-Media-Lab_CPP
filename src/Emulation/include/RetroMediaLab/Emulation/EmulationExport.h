@@ -1,0 +1,8 @@
+#pragma once
+#include <QtGlobal>
+
+#if defined(RETROMEDIALAB_EMULATION_BUILD)
+#define RETROMEDIALAB_EMULATION_API Q_DECL_EXPORT
+#else
+#define RETROMEDIALAB_EMULATION_API Q_DECL_IMPORT
+#endif

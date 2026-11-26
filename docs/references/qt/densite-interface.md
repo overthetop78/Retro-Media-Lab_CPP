@@ -8,7 +8,7 @@ Sources primaires consultÃ©es le 14 novembre 2026 :
 
 ## DÃ©cision du thÃ¨me RetroMediaLab
 
-Les tailles historiques sont conservÃ©es comme rÃ©fÃ©rences non modifiÃ©es. Ã€ 100 %, le nouveau contenu utilise 70 % de ces tailles ; cette rÃ©duction de 30 % est un choix de prÃ©sentation pour rÃ©pondre Ã  la demande de compacitÃ©. Lâ€™espace logique disponible rÃ©duit encore ce facteur lorsquâ€™il est infÃ©rieur Ã  la rÃ©fÃ©rence 1600 Ã— 900, avec une borne automatique de 75 %. Le choix utilisateur 50/75/100/125/150/200 % multiplie ce rÃ©sultat.
+Depuis la correction demandée le 17 novembre 2026, le pourcentage utilisateur correspond directement aux tailles d’origine : 50 % = 0,5 ; 75 % = 0,75 ; 100 % = 1 ; 125 % = 1,25 ; 150 % = 1,5 ; 200 % = 2. Le facteur compact de 70 % et la réduction automatique selon la résolution sont supprimés. Les proportions spécifiques des sous-onglets restent une règle de présentation distincte.
 
 Le facteur Windows reste appliquÃ© par Qt. On ne dÃ©duit pas une diagonale fiable en pouces de la seule rÃ©solution : le rÃ©glage utilisateur permet dâ€™ajuster notamment un portable 14 pouces. Le recalcul utilise chaque fenÃªtre et son Ã©cran, sans redimensionner volontairement sa gÃ©omÃ©trie.
 

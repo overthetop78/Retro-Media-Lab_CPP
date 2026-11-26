@@ -1,6 +1,7 @@
 #include "ConversionSession.h"
 #include "ConversionSessionConstants.h"
 #include "MediaSessionConstants.h"
+#include "OpeningProgressConstants.h"
 #include <RetroMediaLab/MediaEngine/Diagnostics.h>
 #include <RetroMediaLab/MediaEngine/GwFormatCapabilities.h>
 #include <RetroMediaLab/MediaEngine/ImageFormatDetection.h>
@@ -148,7 +149,7 @@ void ConversionSession::start(const HardwareSettings& hardware,const EngineSetti
     external_=engines.engineFor(EngineConstants::Greaseweazle,EngineConstants::Conversion)!=EngineConstants::Internal;
     targetParameters_=draft.targetPcm?E::tapePcmParameters(*draft.targetPcm):std::map<std::string,std::string>{};sourceParameters_=draft.sourcePcm?E::tapePcmParameters(*draft.sourcePcm):std::map<std::string,std::string>{};
     commandText_=previewOutputs(batch_,!external_,hardware,directory);
-    messages_.clear();error_.reset();losses_.clear();position_=succeeded_=failed_=0;running_=true;acceptedLosses_=awaitingLosses_=false;cancellation_=std::stop_source{};
+    messages_.clear();error_.reset();losses_.clear();position_=succeeded_=failed_=0;started_=std::chrono::steady_clock::now();running_=true;acceptedLosses_=awaitingLosses_=false;cancellation_=std::stop_source{};
     {const std::lock_guard lock(progressMutex_);currentProgress_=0;progressMessage_.reset();}
     outputText_.clear();if(!external_)log_.begin(M::Convert,commandText_);
     try {if(external_)next();else {
@@ -190,10 +191,16 @@ void ConversionSession::poll() {
             const auto result=conversion_.get();for(const auto& message:result.diagnostics)report(message);for(const auto& message:result.losses)report(message);
             if(!cancellation_.stop_requested())report({C::Complete,{batch_[position_].outputPath.filename().string()},{}});complete(!cancellation_.stop_requested());publish();
         }
-        if(hostRunning_){const auto& result=tools_->draft(M::Convert);if(output)output(result.lastCommand,result.output);if(tools_->activeOperation()!=M::Convert){hostRunning_=false;complete(result.summaryKey==M::Completed);publish();}}
+        if(hostRunning_){const auto& result=tools_->draft(M::Convert);if(output)output(result.lastCommand,result.output);if(tools_->activeOperation()!=M::Convert){hostRunning_=false;complete(result.summaryKey==M::Completed);publish();}else publish();}
     }catch(const std::exception& error){if(!cancellation_.stop_requested()){error_=describe(error);report(*error_);}if(processingConversion)complete(false);else running_=false;publish();}
     catch(...){error_=E::MessageInfo{MediaSessionConstants::UnexpectedError,{},{}};running_=false;publish();}
     if(!busy())timer_.stop();
+}
+qint64 ConversionSession::elapsedMilliseconds()const{return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now()-started_).count();}
+LoadingProgress ConversionSession::loadingProgress()const{
+    namespace P=OpeningProgressConstants;LoadingProgress value;value.stage.resourceKey=opening_.valid()?P::Reading:P::Convert;value.detail=QFileInfo(draft.source).fileName().toStdString();
+    if(!opening_.valid()&&!preflight_.valid()){value.value=progress();value.indeterminate=false;if(!messages_.empty())value.detailMessage=messages_.back();if(hostRunning_){const auto& track=tools_->draft(M::Convert).progress;value.indeterminate=!track.total||*track.total<=0;if(!value.indeterminate&&!batch_.empty())value.value=(position_*P::Maximum+P::Maximum*track.completed/ *track.total)/batch_.size();}}
+    return value;
 }
 double ConversionSession::progress()const {const std::lock_guard lock(progressMutex_);return batch_.empty()?0:(static_cast<double>(position_)*C::Percent+currentProgress_)/static_cast<double>(batch_.size());}
 void ConversionSession::pruneSelections(){

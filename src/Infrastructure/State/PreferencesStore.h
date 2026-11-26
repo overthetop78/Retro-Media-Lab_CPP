@@ -2,6 +2,7 @@
 #include <Constants/AppConstants.h>
 #include <Constants/DisplayConstants.h>
 #include "InfrastructureApi.h"
+#include "EmulationFolders.h"
 #include "Logging/LogSettings.h"
 #include "Engines/EngineSettings.h"
 #include "Conversion/ConversionSettings.h"
@@ -10,6 +11,7 @@
 #include <QJsonObject>
 #include <QString>
 #include <utility>
+#include <optional>
 namespace RetroMediaLab {
 struct UserPreferences {
     QString language = AppConstants::EnUS;
@@ -21,6 +23,10 @@ struct UserPreferences {
     EngineSettings engines;
     int interfaceScale = DisplayConstants::DefaultPercent;
     QJsonArray profiles;
+    std::optional<QJsonObject> fileDialogDirectories;
+    EmulationFolders emulationFolders;
+    QJsonObject emulationShortcuts;
+    bool showFullscreenEmulationStatistics = false;
 };
 class PreferencesStore final {
 public:

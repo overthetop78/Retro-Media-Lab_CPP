@@ -1,5 +1,5 @@
 #pragma once
-#include "../IThemePresentation.h"
+#include "Shared/Presentation/IThemePresentation.h"
 #include <memory>
 namespace RetroMediaLab {
 class RetroMediaLabWindow;

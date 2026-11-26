@@ -1,8 +1,8 @@
 #include "GreaseweazleToolPage.h"
 #include "../ThemeConstants.h"
 #include "Maintenance/GwToolsConstants.h"
-#include "../FlowLayout.h"
-#include "../ContentScrollArea.h"
+#include "Shared/Controls/FlowLayout.h"
+#include "Shared/Controls/ContentScrollArea.h"
 #include <QVBoxLayout>
 #include <QScrollArea>
 #include <QLabel>
@@ -15,6 +15,8 @@
 #include <QFontDatabase>
 #include <QSignalBlocker>
 #include <QTextCursor>
+#include <algorithm>
+#include <stdexcept>
 namespace RetroMediaLab {
 using namespace GwToolsConstants;
 namespace View = ThemeConstants::GreaseweazleDialog;
@@ -23,6 +25,12 @@ GreaseweazleToolPage::GreaseweazleToolPage(const GwToolDefinition& definition, T
     setObjectName(verb_);
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding, ThemeConstants::PreferencesLayout::CardPadding);
+    if (verb_ == Erase || verb_ == Clean) {
+        warning_ = new QLabel(this);
+        warning_->setTextFormat(Qt::PlainText);
+        warning_->setWordWrap(true);
+        layout->addWidget(warning_);
+    }
     if (!definition.parameters.isEmpty()) {
         auto* scroll = new ContentScrollArea(View::ParametersMaximumHeight, this);
         auto* host = new QWidget(scroll); auto* flow = new FlowLayout(host); flow->setContentsMargins(0,0,0,0); flow->setSpacing(View::ParameterGap);
@@ -53,6 +61,7 @@ GreaseweazleToolPage::GreaseweazleToolPage(const GwToolDefinition& definition, T
 GreaseweazleToolPage::~GreaseweazleToolPage() = default;
 QString GreaseweazleToolPage::text(const QString& key) const { return QString::fromStdString(translations_.text(key.toStdString())); }
 void GreaseweazleToolPage::refresh() {
+    if (warning_) warning_->setText(text(verb_ == Erase ? EraseWarning : CleanWarning));
     const auto& service = *state_.greaseweazleTools; const auto& draft = service.draft(verb_); const auto active = service.activeOperation(); const bool running = active == verb_;
     for (const auto& field : fields_) {
         if (field.label) field.label->setText(text(field.labelKey));
@@ -74,14 +83,38 @@ void GreaseweazleToolPage::refresh() {
     outputTitle_->setText(text(OutputKey)); output_->setAccessibleName(text(OutputKey)); commandTitle_->setText(text(CommandKey)); command_->setAccessibleName(text(CommandKey));
     execute_->setText(text(running ? StoppedKey : ExecuteKey)); execute_->setEnabled(running || (active.isEmpty() && validation.isEmpty()));
 }
-void GreaseweazleToolPage::confirm(const char* title, const char* message, std::function<void()> accepted) {
+void GreaseweazleToolPage::confirm(const char* title, const char* message, std::function<void()> accepted,const QString& details) {
     if (confirmation_ && confirmation_->isVisible()) return;
     confirmation_ = std::make_unique<QMessageBox>(QMessageBox::Warning, text(title), text(message), QMessageBox::Yes | QMessageBox::No, this);
+    confirmation_->setTextFormat(Qt::PlainText);
+    if (!details.isEmpty()) confirmation_->setInformativeText(details);
     confirmation_->setDefaultButton(QMessageBox::No); confirmation_->button(QMessageBox::Yes)->setText(text(View::Yes)); confirmation_->button(QMessageBox::No)->setText(text(View::No));
     connect(confirmation_.get(), &QMessageBox::finished, this, [accepted = std::move(accepted)](int result) { if (result == QMessageBox::Yes) accepted(); }); confirmation_->open();
 }
 void GreaseweazleToolPage::execute() {
     if (state_.greaseweazleTools->activeOperation() == verb_) { confirm(StopTitleKey, StopConfirmKey, [this] { state_.greaseweazleTools->stop(); }); return; }
+    if (verb_ == Erase) {
+        try {
+            const auto hardware = state_.hardware();
+            const auto reader = state_.greaseweazleDeviceId;
+            const auto approved = state_.greaseweazleTools->command(verb_,hardware,reader);
+            const auto found = std::find_if(hardware.devices.begin(),hardware.devices.end(),[&reader](const auto& device) { return device.id == reader; });
+            const auto details = QString::fromUtf8(View::DeviceFormat).arg(found->name,found->address,found->selection);
+            confirm(EraseTitle, EraseWarning, [this,reader,approved] {
+                try {
+                    const auto current = state_.greaseweazleTools->command(verb_, state_.hardware(),state_.greaseweazleDeviceId);
+                    if (state_.greaseweazleDeviceId != reader || current.executable != approved.executable || current.arguments != approved.arguments)
+                        throw std::invalid_argument(InvalidKey);
+                    state_.greaseweazleTools->executeCommand(verb_,approved);
+                } catch (const std::exception& error) {
+                    summary_->setText(text(QString::fromUtf8(error.what())));
+                }
+            }, details);
+        } catch (const std::exception& error) {
+            summary_->setText(text(QString::fromUtf8(error.what())));
+        }
+        return;
+    }
     if (verb_ == Update && state_.greaseweazleTools->draft(verb_).enabled.contains(BootloaderParameter)) { confirm(BootTitleKey, BootWarningKey, [this] { start(); }); return; }
     start();
 }

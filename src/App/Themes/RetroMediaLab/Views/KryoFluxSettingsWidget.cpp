@@ -1,3 +1,4 @@
+#include "Shared/Controls/RememberedFileDialog.h"
 #include "KryoFluxSettingsWidget.h"
 #include <QApplication>
 #include "Hardware/HostToolsService.h"
@@ -21,8 +22,9 @@ KryoFluxSettingsWidget::KryoFluxSettingsWidget(Translations::TranslationService&
     connect(find_,&QPushButton::clicked,this,[this]{findTool();});
     connect(browse_,&QPushButton::clicked,this,[this]{
         if(!picker_){picker_=std::make_unique<QFileDialog>(this);picker_->setFileMode(QFileDialog::ExistingFile);picker_->setNameFilter(DtcFilter);
+            RememberedFileDialog::remember(*picker_, state_, FileDialogScope::Floppy);
             connect(picker_.get(),&QFileDialog::fileSelected,this,[this](const QString& path){path_->setText(path);notFound_=false;synchronizeState();refreshTexts();});}
-        picker_->setWindowTitle(QString::fromStdString(translations_.text(DtcPathKey)));picker_->open();
+        picker_->setWindowTitle(QString::fromStdString(translations_.text(DtcPathKey)));RememberedFileDialog::prepare(*picker_, state_, FileDialogScope::Floppy, path_->text()); picker_->open();
     });
     subscription_=translations.subscribe([this]{refreshTexts();});refreshTexts();
 }

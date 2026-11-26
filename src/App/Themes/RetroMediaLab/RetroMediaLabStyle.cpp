@@ -3,10 +3,26 @@
 #include "RetroMediaLabStyle.h"
 #include "DisplayDensity.h"
 #include <QPainter>
+#include <QLinearGradient>
 #include <QStyleFactory>
 #include <QStyleOption>
 #include <QComboBox>
 namespace RetroMediaLab {
+namespace {
+namespace S = ThemeConstants::Style;
+
+bool isPrimaryAction(const QWidget* widget) {
+    return widget && widget->property(S::PrimaryAction).toBool();
+}
+
+QFont primaryFont(const QWidget& button) {
+    auto font = button.font();
+    font.setPixelSize(qMax(1, qRound(S::PrimaryFontSize * DisplayDensity::factor(&button))));
+    font.setWeight(QFont::DemiBold);
+    return font;
+}
+}
+
 RetroMediaLabStyle::RetroMediaLabStyle(std::shared_ptr<const ThemeData> data)
     : QProxyStyle(QStyleFactory::create(ThemeConstants::Fusion)), data_(std::move(data)) {}
 void RetroMediaLabStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const {
@@ -38,6 +54,12 @@ QSize RetroMediaLabStyle::sizeFromContents(ContentsType type, const QStyleOption
     auto size = QProxyStyle::sizeFromContents(type, option, content, widget);
     const auto scaled = [widget](int value) { return qRound(value * DisplayDensity::factor(widget)); };
     const auto tabScaled = [widget](int value) { return qRound(value * DisplayDensity::factor(widget) * DisplayDensity::tabFactor(widget)); };
+    if (type == CT_PushButton && isPrimaryAction(widget)) {
+        const auto* button = qstyleoption_cast<const QStyleOptionButton*>(option);
+        const QFontMetrics metrics(primaryFont(*widget));
+        return {qMax(scaled(S::PrimaryWidth), metrics.horizontalAdvance(button->text) + scaled(2 * S::PrimaryHorizontalPadding)),
+                qMax(scaled(S::PrimaryHeight), metrics.height() + scaled(2 * S::PrimaryVerticalPadding))};
+    }
     if (type == CT_TabBarTab) {
         const auto* tab = qstyleoption_cast<const QStyleOptionTab*>(option);
         auto font = widget ? widget->font() : QFont();
@@ -62,6 +84,7 @@ int RetroMediaLabStyle::styleHint(StyleHint hint, const QStyleOption* option, co
 }
 void RetroMediaLabStyle::polish(QWidget* widget) {
     QProxyStyle::polish(widget);
+    if (isPrimaryAction(widget)) widget->setAttribute(Qt::WA_Hover);
     if (auto* combo = qobject_cast<QComboBox*>(widget)) combo->setMaxVisibleItems(ThemeConstants::Style::TabUnderlineInset);
 }
 int RetroMediaLabStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const {
@@ -81,6 +104,37 @@ int RetroMediaLabStyle::pixelMetric(PixelMetric metric, const QStyleOption* opti
     }
 }
 void RetroMediaLabStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const {
+    if (element == CE_PushButton && isPrimaryAction(widget)) {
+        const auto* button = qstyleoption_cast<const QStyleOptionButton*>(option);
+        const auto scale = DisplayDensity::factor(widget);
+        const auto migration = widget->property(S::MigrationAction).toBool();
+        const auto inset = S::PrimaryInset * scale;
+        const auto radius = S::PrimaryRadius * scale;
+        const auto offset = S::PrimaryPressOffset * scale;
+        const bool pressed = button->state & State_Sunken;
+        auto face = QRectF(button->rect).adjusted(inset, inset, -inset, -inset);
+        painter->save();
+        painter->setRenderHint(QPainter::Antialiasing);
+        if (!(button->state & State_Enabled)) painter->setOpacity(S::PrimaryDisabledOpacity);
+        if (pressed) {
+            face.translate(0, offset);
+        } else {
+            painter->setPen(Qt::NoPen);
+            painter->setBrush(data_->color(migration ? S::MigrationShadow : S::PrimaryShadow));
+            painter->drawRoundedRect(face.translated(0, offset), radius, radius);
+        }
+        QLinearGradient gradient(face.topLeft(), face.bottomLeft());
+        gradient.setColorAt(0, data_->color(migration ? S::MigrationTop : S::PrimaryTop));
+        gradient.setColorAt(1, data_->color(migration ? S::MigrationBottom : S::PrimaryBottom));
+        painter->setPen(data_->color(button->state & State_HasFocus ? S::PrimaryForeground : migration ? S::MigrationBorder : S::PrimaryBorder));
+        painter->setBrush(button->state & State_MouseOver ? QBrush(data_->color(migration ? S::MigrationHover : S::PrimaryHover)) : QBrush(gradient));
+        painter->drawRoundedRect(face, radius, radius);
+        painter->setFont(primaryFont(*widget));
+        painter->setPen(data_->color(S::PrimaryForeground));
+        painter->drawText(face, Qt::AlignCenter | Qt::TextHideMnemonic, button->text);
+        painter->restore();
+        return;
+    }
     if (element == CE_TabBarTabShape) {
         painter->save();
         painter->setRenderHint(QPainter::Antialiasing);

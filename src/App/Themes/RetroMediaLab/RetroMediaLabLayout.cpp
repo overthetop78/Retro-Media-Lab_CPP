@@ -14,7 +14,6 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
     auto* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(0);
-    layout->addWidget(new MainMenu(translations, std::move(openPreferences), std::move(openGreaseweazle), this));
     auto* area = new QWidget(this);
     auto* areaLayout = new QVBoxLayout(area);
     areaLayout->setContentsMargins(ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::PagePadding, ThemeConstants::Layout::ConsoleToggleIconSize, ThemeConstants::Layout::ContentSpacing);
@@ -23,6 +22,9 @@ RetroMediaLabLayout::RetroMediaLabLayout(ThemeService& themes, Translations::Tra
     splitter_->setHandleWidth(ThemeConstants::Layout::OuterSpacing);
     splitter_->setChildrenCollapsible(false);
     auto* pages = new WorkspaceTabs(themes, translations, state, std::move(openMigration), splitter_);
+    layout->addWidget(new MainMenu(translations, std::move(openPreferences), std::move(openGreaseweazle),
+        [pages] { pages->openEmulationSettings(); }, state,
+        [pages](const QString& module) { pages->openEmulationModuleOptions(module); }, this));
     terminal_ = new TerminalView(themes, translations, state.console, splitter_);
     const auto refreshIcon = [this, &themes] {
         terminal_->setCopyIcon(themeIcon(ThemeConstants::Copy, themes.data()->color(ThemeConstants::TerminalText)));

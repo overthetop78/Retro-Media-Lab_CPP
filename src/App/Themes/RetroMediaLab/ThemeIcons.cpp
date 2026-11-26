@@ -1,3 +1,4 @@
+#include "Shared/Presentation/AssetPath.h"
 #include <ErrorKeys.h>
 #include "ThemeConstants.h"
 #include "ThemeIcons.h"
@@ -19,7 +20,7 @@ struct IconData {
 };
 const IconData& iconData() {
     static const auto data = [] {
-        QFile file(ThemeConstants::ThemesRetroMediaLabIconsJson);
+        QFile file(assetPath(QString::fromLatin1(ThemeConstants::ThemesRetroMediaLabIconsJson)));
         if (!file.open(QIODevice::ReadOnly)) throw std::runtime_error(ErrorKeys::CannotReadRetroMediaLabThemeData);
         QJsonParseError error;
         const auto document = QJsonDocument::fromJson(file.readAll(), &error);

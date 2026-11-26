@@ -1,5 +1,5 @@
 #pragma once
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>
@@ -14,5 +14,6 @@ private:
     WorkspaceState::DirectorySubscription hardwareSubscription_;
     WorkspaceState::DirectorySubscription operationSubscription_;
     WorkspaceState::DirectorySubscription conversionSubscription_;
+    WorkspaceState::DirectorySubscription openingSubscription_,visualizationSubscription_,readingSubscription_,writingSubscription_,explorerReadingSubscription_;
 };
 }

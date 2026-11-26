@@ -3,7 +3,15 @@
 namespace RetroMediaLab::VisualizationConstants {
 inline constexpr auto GraphObjectName="mediaVisualizationGraph";
 inline constexpr auto LinkZoom="Visual.LinkZoom";
-inline constexpr int LegendCapacity=13;
+inline constexpr int LegendCapacity=5, InspectorFaces=2, LegendColumns=3;
+inline constexpr auto VisualizationSettingsIcon="preferences";
+inline constexpr int HeaderTitleRow=0, HeaderSummaryRow=1, HeaderOptionsRow=2;
+inline constexpr int HeaderIconColumn=0, HeaderTitleColumn=1, HeaderActionsColumn=2, HeaderColumnCount=3, HeaderContentColumns=2;
+inline constexpr int InspectorDataHeight=152;
+inline constexpr auto ScpSummary="Visual.Summary",ScpChecksumValid="Visual.ChecksumValid",ScpChecksumInvalid="Visual.ChecksumInvalid";
+inline constexpr auto RawFlux="Visual.DecoderName.raw";
+inline constexpr unsigned PendingFluxRgb=0x4A4239;
+inline constexpr std::array FluxQualityLabels{"Visual.QualityDead","Visual.QualityPoor","Visual.QualityPartial","Visual.QualityGood","Visual.QualityExcellent"};
 inline constexpr double FluxRadius=.47,FluxKnownRadius=.43,FluxHole=.25,FluxBand=.72,FluxStroke=.24;
 inline constexpr std::array FluxQualityLimits{.10,.40,.65,.85};
 inline constexpr std::array FluxQualityBrushes{"Theme.FluxDeadBrush","Theme.FluxPoorBrush","Theme.FluxPartialBrush","Theme.FluxGoodBrush","Theme.FluxExcellentBrush"};
@@ -60,7 +68,7 @@ inline constexpr auto UnexpectedKey = "Errors.UnexpectedDetails", ErrorDetail = 
 inline constexpr auto ValidKey = "Visual.CrcValid", InvalidKey = "Visual.CrcInvalid", UnavailableKey = "Visual.IntegrityUnavailable";
 inline constexpr int PercentFactor = 100;
 inline constexpr int Padding = 8, Gap = 6, GraphMinimumHeight = 140, HexBytesPerLine = 16, HexBase = 16, HexDigits = 2;
-inline constexpr int HexPreviewBytes = 4096, InspectorColumn = 2, DetailsWeight = 1, GraphWeight = 3;
+inline constexpr int HexPreviewBytes = 4096, InspectorColumn = 2;
 inline constexpr int RingBins = 512, AngularUnits = 16, FullCircle = 360, GraphLabelHeight = 24;
 inline constexpr double HoleRadius = .24, OuterRadius = .46, ZoomStep = 1.2, InitialZoom = 1, MaximumZoom = 64;
 inline constexpr double MinimumOffset = 0.0;

@@ -6,10 +6,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TOKEN = re.compile(r'//[^\n]*|/\*[\s\S]*?\*/|(?:L|u8)?"(?:\\.|[^"\\])*"|(?:L)?\x27(?:\\.|[^\x27\\])*\x27|(?<![\w.])(?:0x[\da-fA-F]+|\d+\.\d+|\.\d+|\d+)(?![\w.])')
 CONSTANT_HEADERS = {
+    "src/Infrastructure/Media/OpeningProgressConstants.h",
+    "src/App/Themes/RetroMediaLab/Views/LoadingConstants.h",
     "src/App/Themes/RetroMediaLab/Views/ClassificationConstants.h",
     "src/App/Themes/RetroMediaLab/Views/MigrationDialogConstants.h",
     "src/Infrastructure/Media/MigrationConstants.h",
     "src/App/Shared/Controls/HexGridConstants.h",
+    "src/App/Shared/Controls/RememberedFileDialogConstants.h",
+    "src/Common/Constants/FileDialogPreferences.h",
     "src/App/Themes/RetroMediaLab/Views/ConversionDialogConstants.h",
     "src/Infrastructure/Profiles/ProfileConstants.h",
     "src/Infrastructure/Media/ConversionSessionConstants.h",

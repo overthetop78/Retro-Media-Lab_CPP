@@ -60,7 +60,14 @@ const QVector<GwToolDefinition>& gwToolDefinitions() {
         {Pin, {{PinParameter, PinParameterLabel, PinParameterDefault, GwParameterKind::Required}, {SetParameter, SetParameterLabel, SetParameterDefault, GwParameterKind::Flag}, {HighParameter, HighParameterLabel, HighParameterDefault, GwParameterKind::Flag}}},
         {Reset, {}},
         {Delays, {{SelectParameter, SelectParameterLabel, SelectParameterDefault, GwParameterKind::Optional}, {StepParameter, StepParameterLabel, StepParameterDefault, GwParameterKind::Optional}, {SettleParameter, SettleParameterLabel, SettleParameterDefault, GwParameterKind::Optional}, {MotorParameter, MotorParameterLabel, MotorParameterDefault, GwParameterKind::Optional}, {WatchdogParameter, WatchdogParameterLabel, WatchdogParameterDefault, GwParameterKind::Optional}, {PreWriteParameter, PreWriteParameterLabel, PreWriteParameterDefault, GwParameterKind::Optional}, {PostWriteParameter, PostWriteParameterLabel, PostWriteParameterDefault, GwParameterKind::Optional}, {IndexMaskParameter, IndexMaskParameterLabel, IndexMaskParameterDefault, GwParameterKind::Optional}}},
-        {Update, {{BootloaderParameter, BootloaderParameterLabel, BootloaderParameterDefault, GwParameterKind::Flag}}}
+        {Update, {{BootloaderParameter, BootloaderParameterLabel, BootloaderParameterDefault, GwParameterKind::Flag}}},
+        {Erase, {{TracksParameter, EraseTrackLabel, EraseTrackDefault, GwParameterKind::Optional},
+                 {RevsParameter, EraseRevsLabel, RevsParameterDefault, GwParameterKind::Optional},
+                 {ExpertParameter, ExpertLabel, ExpertDefault, GwParameterKind::Required}}},
+        {Clean, {{CleanCylinders, CleanCylindersLabel, CleanCylindersDefault, GwParameterKind::Optional},
+                 {CleanPasses, CleanPassesLabel, CleanPassesDefault, GwParameterKind::Optional},
+                 {CleanLinger, CleanLingerLabel, CleanLingerDefault, GwParameterKind::Optional},
+                 {ExpertParameter, ExpertLabel, ExpertDefault, GwParameterKind::Required}}}
     };
     return definitions;
 }
@@ -75,6 +82,31 @@ GwToolCommand GreaseweazleTools::build(const QString& verb, const QMap<QString,Q
     QStringList args{verb};
     const auto number = [&](const char* key, bool positive = false) { return QString::number(integer(required(values, key), positive)); };
     const auto add = [&](const QString& key, const QString& value) { args << QString(Prefix) + key << value; };
+    if (verb == Erase || verb == Clean) {
+        if (device.trimmed().isEmpty() || drive.trimmed().isEmpty() || device.contains(QChar::Null) || drive.contains(QChar::Null)) throw std::invalid_argument(NoReaderKey);
+        args << DeviceOption << device << DriveOption << drive;
+        if (verb == Erase) {
+            if (enabled.contains(TracksParameter)) {
+                const auto spec = required(values, TracksParameter);
+                Infrastructure::validateGwTrackSpec(spec);
+                add(TracksParameter, spec);
+            }
+            if (enabled.contains(RevsParameter)) add(RevsParameter, number(RevsParameter, true));
+        } else {
+            for (const auto* parameter : {CleanCylinders, CleanPasses, CleanLinger})
+                if (enabled.contains(parameter)) add(parameter, number(parameter, parameter != CleanLinger));
+        }
+        const auto expert = Infrastructure::tokenizeExpertArguments(values.value(ExpertParameter));
+        for (const auto& value : expert) {
+            const auto option = value.section(Equals, 0, 0);
+            if (option == Prefix || (option.startsWith(Prefix) &&
+                (QString::fromLatin1(DeviceOption).startsWith(option) || QString::fromLatin1(DriveOption).startsWith(option))) ||
+                option.startsWith(ShortDeviceOption) || value.contains(QChar::Null))
+                invalid();
+        }
+        args.append(expert);
+        return {executable, args};
+    }
     if (verb == Rpm) add(NrParameter, number(NrParameter, true));
     else if (verb == Seek) { args << number(CylinderParameter); for (const auto* flag : {ForceParameter, MotorOnParameter}) if (enabled.contains(flag)) args << QString(Prefix) + flag; }
     else if (verb == Pin) { const auto pin = integer(required(values, PinParameter)); if (pin != Pin8 && pin != Pin26 && pin != Pin28) invalid(); const bool set = enabled.contains(SetParameter); args << (set ? Set : Get) << QString::number(pin); if (set) args << (enabled.contains(HighParameter) ? High : Low); }

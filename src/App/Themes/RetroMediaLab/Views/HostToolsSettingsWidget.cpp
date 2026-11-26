@@ -1,3 +1,4 @@
+#include "Shared/Controls/RememberedFileDialog.h"
 #include "HostToolsSettingsWidget.h"
 #include "Hardware/HardwareConstants.h"
 #include "Logging/DiagnosticLog.h"
@@ -27,8 +28,9 @@ HostToolsSettingsWidget::HostToolsSettingsWidget(Translations::TranslationServic
     connect(path_,&QLineEdit::editingFinished,this,[this]{synchronizeState();});
     connect(browse_,&QPushButton::clicked,this,[this]{
         if(!picker_){picker_=std::make_unique<QFileDialog>(this);picker_->setFileMode(QFileDialog::ExistingFile);picker_->setNameFilter(FileFilter);
+            RememberedFileDialog::remember(*picker_, state_, FileDialogScope::Floppy);
             connect(picker_.get(),&QFileDialog::fileSelected,this,[this](const QString& value){selectPath(value);});}
-        picker_->setWindowTitle(QString::fromStdString(translations_.text(GwPathLabelKey)));picker_->open();
+        picker_->setWindowTitle(QString::fromStdString(translations_.text(GwPathLabelKey)));RememberedFileDialog::prepare(*picker_, state_, FileDialogScope::Floppy, path_->text()); picker_->open();
     });
     connect(detect_,&QPushButton::clicked,this,[this]{
         const auto found=HostToolsService::findExecutable(path_->text(),managedRoot(),QApplication::applicationDirPath());

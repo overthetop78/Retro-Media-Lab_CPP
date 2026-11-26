@@ -1,5 +1,6 @@
 #include "GreaseweazleDialog.h"
 #include "GreaseweazleToolPage.h"
+#include "Maintenance/GwToolsConstants.h"
 #include <QComboBox>
 #include <QLabel>
 #include <QHBoxLayout>
@@ -52,7 +53,7 @@ GreaseweazleDialog::GreaseweazleDialog(ThemeService& themes, Translations::Trans
     contentLayout->setContentsMargins(0, 0, 0, 0);
     pages_ = new QStackedWidget(contentCard);
     pages_->setObjectName(DialogConstants::Pages);
-    for (const auto& definition : gwToolDefinitions()) {
+    const auto addNavigationRow = [&](int page) {
         auto* item = new QListWidgetItem(navigation_);
         item->setSizeHint(QSize(0, DialogConstants::NavigationRowHeight));
         auto* label = new QLabel(navigation_);
@@ -61,6 +62,18 @@ GreaseweazleDialog::GreaseweazleDialog(ThemeService& themes, Translations::Trans
         label->setAttribute(Qt::WA_TransparentForMouseEvents);
         label->setContentsMargins(DialogConstants::NavigationPadding, 0, DialogConstants::NavigationPadding, 0);
         navigation_->setItemWidget(item, label);
+        item->setData(Qt::UserRole, page);
+        if (page == DialogConstants::MaintenanceHeadingPage) {
+            item->setFlags(Qt::NoItemFlags);
+            auto font = label->font();
+            font.setBold(true);
+            label->setFont(font);
+        }
+    };
+    for (const auto& definition : gwToolDefinitions()) {
+        if (QString::fromLatin1(definition.id) == GwToolsConstants::Erase)
+            addNavigationRow(DialogConstants::MaintenanceHeadingPage);
+        addNavigationRow(pages_->count());
         pages_->addWidget(new GreaseweazleToolPage(definition, translations, state, pages_));
     }
     contentLayout->addWidget(pages_);
@@ -69,10 +82,17 @@ GreaseweazleDialog::GreaseweazleDialog(ThemeService& themes, Translations::Trans
     layout->addLayout(body, 1);
     connect(navigation_, &QListWidget::currentRowChanged, this, [this](int index) {
         if (index < 0) return;
-        pages_->setCurrentIndex(index);
-        state_.greaseweazleTab = index;
+        const auto page = navigation_->item(index)->data(Qt::UserRole).toInt();
+        if (page < 0) return;
+        pages_->setCurrentIndex(page);
+        state_.greaseweazleTab = page;
     });
-    navigation_->setCurrentRow(qBound(0, state.greaseweazleTab, pages_->count() - 1));
+    const auto selectedPage = qBound(0, state.greaseweazleTab, pages_->count() - 1);
+    for (int row = 0; row < navigation_->count(); ++row)
+        if (navigation_->item(row)->data(Qt::UserRole).toInt() == selectedPage) {
+            navigation_->setCurrentRow(row);
+            break;
+        }
     close_ = new QPushButton(this);
     close_->setMinimumWidth(PreferencesLayout::ActionMinimumWidth);
     layout->addWidget(close_, 0, Qt::AlignRight);
@@ -102,9 +122,11 @@ GreaseweazleDialog::GreaseweazleDialog(ThemeService& themes, Translations::Trans
 void GreaseweazleDialog::refreshTexts() {
     setWindowTitle(QString::fromStdString(translations_.text(ThemeConstants::GreaseweazleDialog::Title)));
     const QSignalBlocker blocked(navigation_);
-    for (int index = 0; index < pages_->count(); ++index) {
-        const auto text = QString::fromStdString(translations_.text(ThemeConstants::GreaseweazleDialog::Labels[index]));
+    for (int index = 0; index < navigation_->count(); ++index) {
         auto* item = navigation_->item(index);
+        const auto page = item->data(Qt::UserRole).toInt();
+        const auto key = page < 0 ? AppConstants::TabTools : ThemeConstants::GreaseweazleDialog::Labels[page];
+        const auto text = QString::fromStdString(translations_.text(key));
         item->setData(Qt::AccessibleTextRole, text);
         auto* label = static_cast<QLabel*>(navigation_->itemWidget(item));
         label->setText(text);

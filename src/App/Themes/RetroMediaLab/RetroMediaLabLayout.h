@@ -1,5 +1,5 @@
 #pragma once
-#include "../ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>

@@ -10,7 +10,14 @@ StatusIndicator::StatusIndicator(QWidget* parent) : QWidget(parent), label_(new 
     layout->addWidget(label_);
 }
 void StatusIndicator::setStatus(const QString& text, const QColor& color) {
-    label_->setText(text); setAccessibleName(text); color_ = color; update();
+    if (label_->text() != text) {
+        label_->setText(text);
+        setAccessibleName(text);
+    }
+    if (color_ != color) {
+        color_ = color;
+        update();
+    }
 }
 void StatusIndicator::paintEvent(QPaintEvent*) {
     QPainter painter(this); painter.setRenderHint(QPainter::Antialiasing);

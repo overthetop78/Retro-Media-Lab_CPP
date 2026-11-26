@@ -1,9 +1,15 @@
 #pragma once
+#include <array>
 namespace RetroMediaLab::CaptureConstants {
 inline constexpr int ProgressRowHeight=22,ProgressLabelWidth=64,ProgressCountWidth=70,ProgressCellGap=1;
 inline constexpr double ProgressMinimumWidth=1;
 inline constexpr auto ProgressSide="Visual.Side",ProgressDivider=" / ",NumericArgument="{%1:N0}";
 inline constexpr auto ProgressSuccessBrush="Theme.SectorDataBrush",ProgressRetryBrush="Theme.WarningBrush",ProgressFailedBrush="Theme.ErrorBrush";
+inline constexpr auto ReadRunning="Status.Running", ReadSuccess="Status.Success";
+inline constexpr int CaptureCardPadding=12, CaptureCardRadius=8, CaptureCardGap=10, CaptureActionGap=8;
+inline constexpr unsigned CaptureTextRgb=0x222222;
+inline constexpr std::array<unsigned,2> RunningCaptureColors{0xE7F0FF,0x4D76E8},
+    CompletedCaptureColors{0xE5F5EA,0x42A566}, ArchivedCaptureColors{0xF1F3F5,0xC7CDD4};
 inline constexpr auto ScpBanner="Read.ScpBannerSummary",ScpUnavailable="Read.ScpSummaryUnavailable",ChecksumValid="Visual.ChecksumValid",ChecksumInvalid="Visual.ChecksumInvalid";
 inline constexpr int Padding=8,Gap=6,OptionWidth=120,AdvancedHeight=260,SequenceWidth=75;
 inline constexpr int NameColumn=2;

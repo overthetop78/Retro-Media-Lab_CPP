@@ -94,6 +94,6 @@ inline constexpr auto DefaultTabPaddingY = 11;
 inline constexpr auto DefaultTabRadius = 9;
 }
 namespace WorkspacePagesValues {
-inline constexpr auto PageCount = 7;
+inline constexpr auto PageCount = 6;
 }
 }

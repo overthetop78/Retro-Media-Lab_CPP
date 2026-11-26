@@ -9,12 +9,20 @@ set(app_sources
   Shared/Controls/StatusIndicator.cpp
   Shared/Navigation/WorkspacePages.cpp
   Shared/Localization/MediaText.cpp
-  Themes/ThemeService.cpp
+  Shared/Presentation/ThemeService.cpp
+  Shared/Controls/FlowLayout.cpp
+  Shared/Controls/ContentScrollArea.cpp
+  Shared/Emulation/EmulationHostKeyboard.cpp
+  Shared/Emulation/EmulationWorkspace.cpp
+  Shared/Emulation/EmulationControllerFeedback.cpp
+  Shared/Controls/ControllerArtwork.cpp
+  Shared/Controls/ControllerOutputs.cpp
+  Shared/Controls/MachineInputBindings.cpp
 )
 add_library(RetroMediaLab.Gui OBJECT ${app_sources})
 target_compile_definitions(RetroMediaLab.Gui PRIVATE RETROMEDIALAB_APP_BUILD RETROMEDIALAB_APP_VERSION="${PROJECT_VERSION}")
 target_include_directories(RetroMediaLab.Gui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
-target_link_libraries(RetroMediaLab.Gui PUBLIC Qt6::Widgets RetroMediaLab.Translations RetroMediaLab.Runtime RetroMediaLab.Infrastructure PRIVATE RetroMediaLab.Platform)
+target_link_libraries(RetroMediaLab.Gui PUBLIC Qt6::Widgets RetroMediaLab.Translations RetroMediaLab.Runtime RetroMediaLab.Infrastructure PRIVATE RetroMediaLab.Platform RetroMediaLab.Emulation RetroMediaLab.VideoPresentation)
 add_library(RetroMediaLab.App SHARED Bootstrap/EntryPoint.cpp)
 target_compile_definitions(RetroMediaLab.App PRIVATE RETROMEDIALAB_APP_BUILD)
 set_target_properties(RetroMediaLab.App PROPERTIES OUTPUT_NAME App PREFIX "")
@@ -23,8 +31,6 @@ target_link_libraries(RetroMediaLab.App PRIVATE RetroMediaLab.Gui PUBLIC Qt6::Wi
 install(TARGETS RetroMediaLab.App RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
 
 add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
-  Themes/RetroMediaLab/ContentScrollArea.cpp
-  Themes/RetroMediaLab/FlowLayout.cpp
   Themes/RetroMediaLab/DisplayDensity.cpp
   Themes/RetroMediaLab/RetroMediaLabConfiguration.cpp
   Themes/RetroMediaLab/ThemeEntry.cpp
@@ -46,7 +52,14 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/ThemeSettingsPage.cpp
   Themes/RetroMediaLab/Views/ThemePreview.cpp
   Themes/RetroMediaLab/Views/WorkspaceTabs.cpp
+  Themes/RetroMediaLab/Views/EmulationPage.cpp
+  Themes/RetroMediaLab/Views/EmulationStoragePanel.cpp
+  Themes/RetroMediaLab/Views/MachineControllerPorts.cpp
+  Themes/RetroMediaLab/Views/EmulationConfigurationsPanel.cpp
+  Themes/RetroMediaLab/Views/EmulationNetworkPanel.cpp
+  Themes/RetroMediaLab/Views/EmulationPreferencesDialog.cpp
   Themes/RetroMediaLab/Views/ClassificationPanel.cpp
+  Themes/RetroMediaLab/Views/MediaLoadingOverlay.cpp
   Themes/RetroMediaLab/Views/ExplorerPage.cpp
   Themes/RetroMediaLab/Views/VisualizationPage.cpp
   Themes/RetroMediaLab/Views/LinearGraph.cpp
@@ -63,11 +76,13 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/RetroMediaLabLayout.cpp
   Themes/RetroMediaLab/RetroMediaLabWindow.cpp
   Themes/RetroMediaLab/RetroMediaLabPresentation.cpp)
+if(MSVC)
+  # Debug emits more COFF sections than the standard object format can hold.
+  set_source_files_properties(Themes/RetroMediaLab/Views/EmulationPage.cpp
+    PROPERTIES COMPILE_OPTIONS /bigobj)
+endif()
 set_target_properties(RetroMediaLab.Theme.RetroMediaLab PROPERTIES OUTPUT_NAME RetroMediaLab PREFIX "")
-target_link_libraries(RetroMediaLab.Theme.RetroMediaLab PRIVATE RetroMediaLab.App RetroMediaLab.Platform)
-qt_add_resources(RetroMediaLab.Theme.RetroMediaLab ThemeData
-  PREFIX "/Themes/RetroMediaLab" BASE Themes/RetroMediaLab
-  FILES Themes/RetroMediaLab/icons.json Themes/RetroMediaLab/metrics.json Themes/RetroMediaLab/light.json Themes/RetroMediaLab/dark.json)
+target_link_libraries(RetroMediaLab.Theme.RetroMediaLab PRIVATE RetroMediaLab.App RetroMediaLab.Platform RetroMediaLab.Emulation RetroMediaLab.VideoPresentation)
 install(TARGETS RetroMediaLab.Theme.RetroMediaLab RUNTIME DESTINATION lib/Themes LIBRARY DESTINATION lib/Themes)
 
 if(WIN32)
@@ -80,6 +95,15 @@ else()
   qt_add_executable(RetroMediaLab main.cpp)
   target_link_libraries(RetroMediaLab PRIVATE RetroMediaLab.App)
 endif()
-add_dependencies(RetroMediaLab RetroMediaLab.Theme.RetroMediaLab)
+set(asset_copy_command copy_directory_if_different)
+if(CMAKE_VERSION VERSION_LESS "3.26")
+  set(asset_copy_command copy_directory)
+endif()
+add_custom_target(RetroMediaLab.Assets
+  COMMAND ${CMAKE_COMMAND} -E ${asset_copy_command}
+    "${CMAKE_CURRENT_SOURCE_DIR}/Assets" "$<TARGET_FILE_DIR:RetroMediaLab>/Assets"
+  VERBATIM)
+add_dependencies(RetroMediaLab RetroMediaLab.Theme.RetroMediaLab RetroMediaLab.Assets)
 set_target_properties(RetroMediaLab PROPERTIES OUTPUT_NAME retromedialab)
 install(TARGETS RetroMediaLab RUNTIME DESTINATION . BUNDLE DESTINATION .)
+install(DIRECTORY Assets DESTINATION .)

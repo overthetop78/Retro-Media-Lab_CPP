@@ -1,5 +1,6 @@
 #include "Shared/Controls/HexGridConstants.h"
 #include "DisplayDensity.h"
+#include "Shared/Presentation/DisplayFactor.h"
 #include "ThemeConstants.h"
 #include <QScopedValueRollback>
 #include <Constants/DisplayConstants.h>
@@ -57,14 +58,11 @@ struct DisplayDensity::Data {
         return false;
     }
 };
-qreal DisplayDensity::factorFor(const QSize& available, int percent) {
-    const auto fit = qBound(MinimumScreenFactor, qMin(qreal(available.width()) / ReferenceWidth, qreal(available.height()) / ReferenceHeight), Unit);
-    return CompactFactor * fit * percent / DefaultPercent;
+qreal DisplayDensity::factorFor(const QSize&, int percent) {
+    return qreal(percent) / DefaultPercent;
 }
 qreal DisplayDensity::factor(const QWidget* widget) {
-    if (!widget) return Unit;
-    const auto value = widget->window()->property(FactorProperty);
-    return value.isValid() ? value.toReal() : Unit;
+    return displayFactor(widget);
 }
 qreal DisplayDensity::tabFactor(const QWidget* widget) {
     if (!qobject_cast<const QTabBar*>(widget)) return Unit;

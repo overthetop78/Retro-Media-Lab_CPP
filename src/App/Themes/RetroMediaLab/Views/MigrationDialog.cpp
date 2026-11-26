@@ -1,3 +1,4 @@
+#include "Shared/Controls/RememberedFileDialog.h"
 #include "MigrationDialog.h"
 #include "MigrationDialogConstants.h"
 #include "../ThemeConstants.h"
@@ -36,8 +37,8 @@ MigrationDialog::MigrationDialog(ThemeService& themes,Translations::TranslationS
     losses_=new QTreeWidget(this);losses_->setRootIsDecorated(false);losses_->setUniformRowHeights(false);losses_->setColumnCount(C::ColumnCount);losses_->header()->setSectionResizeMode(QHeaderView::ResizeToContents);losses_->header()->setSectionResizeMode(C::DescriptionColumn,QHeaderView::Stretch);layout->addWidget(losses_,1);
     accept_=new QCheckBox(this);layout->addWidget(accept_);
     auto* footer=new QHBoxLayout;progress_=new QProgressBar(this);progress_->setRange(0,0);execute_=new QPushButton(this);close_=new QPushButton(this);footer->addWidget(progress_,1);footer->addStretch();footer->addWidget(execute_);footer->addWidget(close_);layout->addLayout(footer);
-    connect(browseSource_,&QPushButton::clicked,this,[this]{auto path=QFileDialog::getOpenFileName(this,text(C::Source),session_->sourcePath());if(!path.isEmpty())session_->open(path);});
-    connect(browseOutput_,&QPushButton::clicked,this,[this]{auto path=QFileDialog::getSaveFileName(this,text(C::Output),session_->outputPath());if(!path.isEmpty())session_->setOutput(path);});
+    connect(browseSource_,&QPushButton::clicked,this,[this]{auto path=RememberedFileDialog::choose(this,state_,text(C::Source),FileDialogScope::Migration,session_->sourcePath());if(!path.isEmpty())session_->open(path);});
+    connect(browseOutput_,&QPushButton::clicked,this,[this]{auto path=RememberedFileDialog::choose(this,state_,text(C::Output),FileDialogScope::Migration,session_->outputPath(),QFileDialog::AnyFile,true);if(!path.isEmpty())session_->setOutput(path);});
     connect(targets_,&QComboBox::currentIndexChanged,this,[this](int index){if(index>=0)session_->selectTarget(targets_->itemData(index).toString().toStdString());});
     connect(accept_,&QCheckBox::toggled,this,[this](bool value){session_->acceptLosses(value);});
     connect(close_,&QPushButton::clicked,this,[this]{reject();});

@@ -21,26 +21,27 @@ MediaGraph::MediaGraph(ThemeService& themes, std::shared_ptr<Infrastructure::Vis
     setMinimumSize(0, GraphMinimumHeight);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     subscription_ = session_->subscribe([this] { rebuild(); update(); });
-    themeSubscription_ = themes.subscribe([this] { update(); });
+    themeSubscription_ = themes.subscribe([this] { clearPresentedDisk(); update(); });
     rebuild();
 }
 const MediaEngine::DiskFormatInfo* MediaGraph::format() const {
     if (!session_->snapshot() || !session_->snapshot()->source->diskExploration) return nullptr;
     const auto& info = session_->snapshot()->source->diskExploration->info();
-    const auto found = std::find_if(info.formats.begin(), info.formats.end(), [&](const auto& value) { return value.formatId == info.primaryFormatId; });
+    const auto found = std::find_if(info.formats.begin(), info.formats.end(), [&](const auto& value) { return value.formatId == session_->diskFormat().value_or(info.primaryFormatId); });
     return found != info.formats.end() ? &*found : info.formats.empty() ? nullptr : &info.formats.front();
 }
 void MediaGraph::rebuild() {
-    if (cached_ == session_->snapshot() && cachedRevolution_ == session_->revolution) return;
-    cachedRevolution_ = session_->revolution;
+    if (cached_ == session_->snapshot() && cachedFormat_ == session_->diskFormat()) return;
+    cachedFormat_ = session_->diskFormat();
+    clearPresentedDisk();
     cached_ = session_->snapshot(); sectorTracks_.clear();surfaces_.clear(); cylinders_ = 0;
     if (!cached_) return;
-    const auto kind = cached_->descriptor->fields().representationKind;
+    const auto kind = session_->displayedSectors() ? RepresentationKind::Sectors : cached_->descriptor->fields().representationKind;
     if (kind != RepresentationKind::Flux && kind != RepresentationKind::Sectors) return;
-    if(cached_->sectors){
-        cylinders_=static_cast<std::int32_t>(cached_->sectors->cylinders);
-        for(std::uint32_t head=0;head<cached_->sectors->heads;++head)surfaces_.push_back(static_cast<std::int32_t>(head));
-        for(const auto& sector:cached_->sectors->sectors)sectorTracks_[{sector.head,sector.cylinder}].push_back(&sector);
+    if(const auto* sectors=session_->displayedSectors()){
+        cylinders_=static_cast<std::int32_t>(session_->displayedSectors()->cylinders);
+        for(std::uint32_t head=0;head<session_->displayedSectors()->heads;++head)surfaces_.push_back(static_cast<std::int32_t>(head));
+        for(const auto& sector:session_->displayedSectors()->sectors)sectorTracks_[{sector.head,sector.cylinder}].push_back(&sector);
         for(auto& [key,track]:sectorTracks_)std::stable_sort(track.begin(),track.end(),[](const auto* left,const auto* right){return left->number<right->number;});
         return;
     }
@@ -50,23 +51,69 @@ void MediaGraph::paintEvent(QPaintEvent*) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     const auto theme = themes_.data();
-    painter.fillRect(rect(), theme->color(ThemeConstants::WindowBrush));
+    const auto* flux = session_->displayedFlux();
+    if (flux) {
+        const bool incremental = session_->presentingTracks();
+        const auto completed = session_->trackProgress().completed;
+        const auto heads = diskSurfaces();
+        std::vector<std::tuple<double,double,double>> viewports;
+        for (const auto head : heads) {
+            const auto view=session_->viewport(head);
+            viewports.emplace_back(view.zoom, view.panX, view.panY);
+        }
+        FluxRenderKey key{flux,session_->revolution,session_->fluxSynthesis,session_->mediaCategory,std::move(viewports)};
+        const auto pixelSize=(QSizeF(size()) * devicePixelRatioF()).toSize();
+        if (fluxKey_ != key || (incremental && completed < renderedTracks_) ||
+            presentedDisk_.size() != pixelSize || presentedDisk_.devicePixelRatio() != devicePixelRatioF()) {
+            clearPresentedDisk();
+            fluxKey_=std::move(key);
+            presentedDisk_=QPixmap(pixelSize);
+            presentedDisk_.setDevicePixelRatio(devicePixelRatioF());
+            presentedDisk_.fill(Qt::transparent);
+        }
+        const auto cellWidth = static_cast<double>(width()) / std::max<std::size_t>(1, heads.size());
+        const auto render = [&](QPainter& painter, std::size_t firstTrack,bool pendingOnly=false,bool selectionOnly=false) {
+          for (std::size_t index = 0; index < heads.size(); ++index) {
+            painter.save();
+            painter.setClipRect(QRectF(index * cellWidth, 0, cellWidth, height()));
+            const auto view = session_->viewport(heads[index]);
+            const QPointF center(cellWidth * (index + Half), height() * Half);
+            painter.translate(center);
+            painter.scale(view.zoom, view.zoom);
+            painter.translate(-center.x() + view.panX * cellWidth, -center.y() + view.panY * height());
+            paintFluxGraph(painter, size(), *flux, session_->revolution, session_->fluxSynthesis,
+                session_->surface, session_->position, session_->fluxInspection ? &*session_->fluxInspection : nullptr,
+                *theme, heads[index], session_->mediaCategory, firstTrack, pendingOnly, selectionOnly,session_->selectedSector.has_value());
+            painter.restore();
+          }
+        };
+        if (incremental) render(painter,static_cast<std::size_t>(completed),true);
+        const auto visibleTracks=incremental?static_cast<std::size_t>(completed):flux->tracks.size();
+        if (visibleTracks > static_cast<std::size_t>(renderedTracks_)) {
+            QPainter buffer(&presentedDisk_);
+            buffer.setRenderHint(QPainter::Antialiasing);
+            render(buffer,static_cast<std::size_t>(renderedTracks_));
+            renderedTracks_=static_cast<int>(visibleTracks);
+        }
+        painter.drawPixmap(QPoint{},presentedDisk_);
+        if (!incremental) render(painter,0,false,true);
+        return;
+    }
+    clearPresentedDisk();
     if (!cached_) return;
     const auto foreground = theme->color(ThemeConstants::TextBrush);
     const auto success = theme->color(SuccessBrush);
     const auto unknown = theme->color(ThemeConstants::MutedTextBrush);
     const auto invalid = theme->color(ErrorBrush);
-    const auto kind = cached_->descriptor->fields().representationKind;
-    if(cached_->sectors)painter.fillRect(rect(),theme->color(SectorBackgroundBrush));
-    if(cached_->sectors && cached_->sectors->logical){
-        const auto& items=cached_->sectors->sectors;if(items.empty())return;
+    const auto kind = session_->displayedSectors() ? RepresentationKind::Sectors : cached_->descriptor->fields().representationKind;
+    if(session_->displayedSectors() && session_->displayedSectors()->logical){
+        const auto& items=session_->displayedSectors()->sectors;if(items.empty())return;
         painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());
         const auto columns=std::max<std::size_t>(1,static_cast<std::size_t>(std::sqrt(static_cast<double>(items.size())*std::max(1,width())/std::max(1,height()))));
         const auto rows=(items.size()+columns-1)/columns;const auto cellWidth=static_cast<double>(width())/columns,cellHeight=static_cast<double>(height())/rows;
         for(std::size_t index=0;index<items.size();++index){const QRectF cell((index%columns)*cellWidth,(index/columns)*cellHeight,std::max(MinViewSize,cellWidth-RingOverlap),std::max(MinViewSize,cellHeight-RingOverlap));painter.fillRect(cell,theme->color(SectorBrushes[static_cast<std::size_t>(items[index].state)]));if(session_->selectedSector==items[index].logicalBlock){painter.setPen(QPen(foreground,SelectionWidth));painter.drawRect(cell);}}
         return;
     }
-    if(cached_->flux){const auto heads=diskSurfaces();const auto cellWidth=static_cast<double>(width())/std::max<std::size_t>(1,heads.size());for(std::size_t index=0;index<heads.size();++index){painter.save();painter.setClipRect(QRectF(index*cellWidth,0,cellWidth,height()));const auto view=session_->viewport(heads[index]);const QPointF center(cellWidth*(index+Half),height()*Half);painter.translate(center);painter.scale(view.zoom,view.zoom);painter.translate(-center.x()+view.panX*cellWidth,-center.y()+view.panY*height());paintFluxGraph(painter,size(),*cached_->flux,session_->revolution,session_->fluxSynthesis,session_->surface,session_->position,session_->fluxInspection?&*session_->fluxInspection:nullptr,*theme,heads[index],session_->mediaCategory);painter.restore();}return;}
     const bool disk = !surfaces_.empty() && cylinders_ > 0 && (kind == RepresentationKind::Flux || kind == RepresentationKind::Sectors);
     if (disk) {
         const double cellWidth = static_cast<double>(width()) / surfaces_.size();
@@ -81,6 +128,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
             painter.setPen(QPen(unknown, LineWidth)); painter.setBrush(Qt::NoBrush); painter.drawEllipse(center, radius, radius);
             if (selectedFormat) {
                 for(int cylinder=0;cylinder<cylinders_;++cylinder){
+                    if(session_->presentingTracks() && !session_->trackProgress().states.contains({cylinder,surfaces_[side]}))continue;
                     const auto found=sectorTracks_.find({surfaces_[side],cylinder});if(found==sectorTracks_.end())continue;
                     const auto& sectors=found->second;const auto sweep=static_cast<double>(FullCircle)/sectors.size();const auto outer=radius-cylinder*ringWidth,inside=std::max(inner,outer-ringWidth);const QRectF outerRect(center.x()-outer,center.y()-outer,outer+outer,outer+outer),innerRect(center.x()-inside,center.y()-inside,inside+inside,inside+inside);
                     painter.setPen(QPen(theme->color(SectorBoundaryBrush),LineWidth));painter.setBrush(Qt::NoBrush);painter.drawEllipse(outerRect);
@@ -94,7 +142,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         }
         return;
     }
-    if(cached_->sequential && !session_->showWaveform){painter.fillRect(rect(),theme->color(SequentialBackground));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintSequentialGraph(painter,size(),*cached_->sequential,session_->selectedElement,*theme);return;}
+    if(cached_->sequential && !session_->showWaveform){painter.fillRect(rect(),theme->color(SequentialBackground));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintSequentialGraph(painter,size(),*cached_->sequential,session_->selectedElement,*theme,session_->presentedSegments());return;}
     if (cached_->tape && !cached_->tape->samples().empty()) {
         const auto samples = cached_->tape->samples();
         const auto visible = std::max<std::size_t>(1, static_cast<std::size_t>(samples.size() / session_->zoom));
@@ -109,7 +157,7 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         }
         return;
     }
-    if(cached_->linear){painter.fillRect(rect(),theme->color(VisualBackgroundBrush));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintLinearGraph(painter,size(),*cached_->linear,*cached_->descriptor,session_->selectedElement,*theme);return;}
+    if(cached_->linear){painter.fillRect(rect(),theme->color(VisualBackgroundBrush));painter.translate(width()*Half,height()*Half);painter.scale(session_->zoom,session_->zoom);painter.translate(-width()*Half+session_->panX*width(),-height()*Half+session_->panY*height());paintLinearGraph(painter,size(),*cached_->linear,*cached_->descriptor,session_->selectedElement,*theme,session_->linearProgress());return;}
     const auto& elements = cached_->descriptor->fields().elements;
     if (elements.empty()) return;
     const auto maxPosition = std::max_element(elements.begin(), elements.end(), [](const auto& a,const auto& b) { return a.fields().position+a.fields().length.value_or(1) < b.fields().position+b.fields().length.value_or(1); });
@@ -124,20 +172,20 @@ void MediaGraph::paintEvent(QPaintEvent*) {
         painter.setPen(QPen(foreground, LineWidth)); painter.drawRect(QRectF(x, height()*HoleRadius, extent, height()*(1-HoleRadius-HoleRadius)));
     }
 }
-std::vector<std::int32_t> MediaGraph::diskSurfaces()const{if(cached_&&cached_->flux){std::vector<std::int32_t> heads;for(const auto& track:cached_->flux->tracks)heads.push_back(track.head);std::sort(heads.begin(),heads.end());heads.erase(std::unique(heads.begin(),heads.end()),heads.end());return heads;}return surfaces_;}
+std::vector<std::int32_t> MediaGraph::diskSurfaces()const{if(const auto* flux=session_->displayedFlux()){std::vector<std::int32_t> heads;for(const auto& track:flux->tracks)heads.push_back(track.head);std::sort(heads.begin(),heads.end());heads.erase(std::unique(heads.begin(),heads.end()),heads.end());return heads;}return surfaces_;}
 QPointF MediaGraph::diskPoint(QPointF point,std::size_t index,std::size_t count)const{const auto heads=diskSurfaces();const auto view=session_->viewport(heads.at(index));const auto cellWidth=static_cast<double>(width())/count;const QPointF center(cellWidth*(index+Half),height()*Half);return {(point.x()-center.x())/view.zoom+center.x()-view.panX*cellWidth,(point.y()-center.y())/view.zoom+center.y()-view.panY*height()};}
 void MediaGraph::focusSurface(QPointF point){const auto heads=diskSurfaces();if(heads.empty()||point.x()<0||point.x()>=width())return;const auto index=std::min(heads.size()-1,static_cast<std::size_t>(point.x()/std::max(1,width())*heads.size()));if(heads[index]!=session_->surface)session_->select(heads[index],session_->position);}
 void MediaGraph::mousePressEvent(QMouseEvent* event) {
     previousMouse_=event->position();
     focusSurface(event->position());
     if (!cached_ || event->button() != Qt::LeftButton) return;
-    const auto kind = cached_->descriptor->fields().representationKind;
-    if(cached_->flux){const auto heads=diskSurfaces();if(heads.empty())return;const auto index=std::min(heads.size()-1,static_cast<std::size_t>(std::max(MinimumOffset,event->position().x())/std::max(1,width())*heads.size()));const auto point=diskPoint(event->position(),index,heads.size());if(const auto selected=hitTestFluxGraph(size(),*cached_->flux,point,session_->mediaCategory);selected&&selected->first==heads[index])session_->select(selected->first,selected->second);return;}
+    const auto kind = session_->displayedSectors() ? RepresentationKind::Sectors : cached_->descriptor->fields().representationKind;
+    if(session_->displayedFlux()){if(session_->presentingTracks())return;const auto heads=diskSurfaces();if(heads.empty())return;const auto index=std::min(heads.size()-1,static_cast<std::size_t>(std::max(MinimumOffset,event->position().x())/std::max(1,width())*heads.size()));const auto point=diskPoint(event->position(),index,heads.size());if(const auto selected=hitTestFluxGraph(size(),*cached_->flux,point,session_->mediaCategory);selected&&selected->first==heads[index])session_->select(selected->first,selected->second);return;}
     if(cached_->sequential && !session_->showWaveform){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestSequentialGraph(size(),*cached_->sequential,point))session_->inspect(*selected);return;}
     if(cached_->sequential && session_->showWaveform)return;
     if(cached_->linear){const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());if(const auto selected=hitTestLinearGraph(size(),*cached_->linear,*cached_->descriptor,point))session_->inspect(*selected);return;}
-    if(cached_->sectors && cached_->sectors->logical){
-        const auto& items=cached_->sectors->sectors;if(items.empty())return;
+    if(session_->displayedSectors() && session_->displayedSectors()->logical){
+        const auto& items=session_->displayedSectors()->sectors;if(items.empty())return;
         const QPointF point((event->position().x()-width()*Half)/session_->zoom+width()*Half-session_->panX*width(),(event->position().y()-height()*Half)/session_->zoom+height()*Half-session_->panY*height());
         if(point.x()<0 || point.y()<0 || point.x()>=width() || point.y()>=height())return;
         const auto columns=std::max<std::size_t>(1,static_cast<std::size_t>(std::sqrt(static_cast<double>(items.size())*std::max(1,width())/std::max(1,height()))));const auto rows=(items.size()+columns-1)/columns;

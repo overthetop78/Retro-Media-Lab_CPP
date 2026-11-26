@@ -1,6 +1,6 @@
 #pragma once
 #include "Media/CaptureSession.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QWidget>
@@ -12,7 +12,10 @@ class QRadioButton;
 class QCheckBox;
 class QSpinBox;
 class QToolButton;
+class QScrollArea;
+class QVBoxLayout;
 namespace RetroMediaLab {
+class MediaLoadingOverlay;
 class CaptureProgressView;
 class CapturePage final:public QWidget {
 public:
@@ -20,13 +23,20 @@ public:
 protected:
     void showEvent(QShowEvent*) override;
 private:
+    MediaLoadingOverlay* loading_;
     QString text(const char*)const;
     void refresh();
     void rebuildFormats();
     void execute();
     void browse();
     void saveProfile();
-    void openResult(const char*);
+    void openResult(const char*,const QString&);
+    void refreshReadCaptures();
+    QScrollArea* captureHistory_ = nullptr;
+    QVBoxLayout* captureCards_ = nullptr;
+    ThemeService& themes_;
+    std::size_t captureRevision_ = 0;
+    bool refreshCaptureLabels_ = true;
     bool confirm(const QString&,const QString&);
     std::shared_ptr<Infrastructure::CaptureSession> session_;
     Translations::TranslationService& translations_;

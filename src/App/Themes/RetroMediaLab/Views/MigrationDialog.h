@@ -1,6 +1,6 @@
 #pragma once
 #include "State/WorkspaceState.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "Media/MigrationSession.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QDialog>

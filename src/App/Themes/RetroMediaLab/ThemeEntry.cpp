@@ -3,7 +3,7 @@
 #include "RetroMediaLabPresentation.h"
 #include "RetroMediaLabConfiguration.h"
 #include "RetroMediaLabStyle.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include <cstdio>
 #include <exception>
 #include <stdexcept>

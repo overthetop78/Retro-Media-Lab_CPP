@@ -1,6 +1,6 @@
 #pragma once
 #include "HardwareCapabilitiesTable.h"
-#include "Themes/ThemeService.h"
+#include "Shared/Presentation/ThemeService.h"
 #include "State/WorkspaceState.h"
 #include <RetroMediaLab/Infrastructure/HardwareDiscovery.h>
 #include <RetroMediaLab/Translations/TranslationService.h>

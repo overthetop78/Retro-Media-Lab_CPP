@@ -19,13 +19,14 @@ public:
 private:
     void execute();
     void start();
-    void confirm(const char* title, const char* message, std::function<void()>);
+    void confirm(const char* title, const char* message, std::function<void()>,const QString& details = {});
     QString text(const QString&) const;
     struct Field {QString id; const char* labelKey; GwParameterKind kind; QLabel* label; QLineEdit* edit; QCheckBox* check;};
     QString verb_;
     Translations::TranslationService& translations_;
     WorkspaceState& state_;
     QVector<Field> fields_;
+    QLabel* warning_ = nullptr;
     QLabel *summary_, *outputTitle_, *commandTitle_;
     QLineEdit* command_;
     QPlainTextEdit* output_;

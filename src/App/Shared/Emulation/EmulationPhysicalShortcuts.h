@@ -1,0 +1,322 @@
+#pragma once
+
+#include "Shared/Emulation/EmulationKeyboardShortcuts.h"
+#include "Shared/Emulation/EmulationHostKeyboard.h"
+#include <RetroMediaLab/Emulation/InputProcessing.h>
+#include <RetroMediaLab/Platform/Gamepads.h>
+#include <QPoint>
+#include <QSet>
+#include <QStringList>
+#include <Qt>
+#include <algorithm>
+#include <chrono>
+#include <cmath>
+#include <iterator>
+#include <utility>
+
+namespace RetroMediaLab::EmulationPhysicalShortcuts {
+inline constexpr auto MousePrefix = "Mouse:";
+inline constexpr auto ControllerPrefix = "Controller:";
+inline constexpr auto Separator = QLatin1Char(':');
+inline constexpr auto ChordSeparator = QLatin1Char('+');
+inline constexpr float PressedThreshold = 0.5f;
+inline constexpr float RawCaptureDelta = 0.35f;
+inline constexpr auto PositiveSuffix = "Positive";
+inline constexpr auto NegativeSuffix = "Negative";
+
+inline constexpr std::pair<QLatin1StringView, Qt::MouseButton> MouseButtons[] = {
+    {QLatin1String("Left"), Qt::LeftButton}, {QLatin1String("Right"), Qt::RightButton},
+    {QLatin1String("Middle"), Qt::MiddleButton}, {QLatin1String("XButton1"), Qt::XButton1},
+    {QLatin1String("XButton2"), Qt::XButton2},
+};
+
+namespace Controls {
+using namespace Platform;
+inline constexpr std::pair<QLatin1StringView, GamepadButton> GamepadButtons[] = {
+    {QLatin1String("ButtonA"), Confirm}, {QLatin1String("ButtonB"), Cancel},
+    {QLatin1String("ButtonX"), X}, {QLatin1String("ButtonY"), Y},
+    {QLatin1String("Menu"), Menu}, {QLatin1String("View"), View},
+    {QLatin1String("DPadUp"), Up}, {QLatin1String("DPadDown"), Down},
+    {QLatin1String("DPadLeft"), Left}, {QLatin1String("DPadRight"), Right},
+    {QLatin1String("LeftShoulder"), LeftShoulder}, {QLatin1String("RightShoulder"), RightShoulder},
+    {QLatin1String("LeftStickClick"), LeftStick}, {QLatin1String("RightStickClick"), RightStick},
+};
+enum Axis { LeftX, LeftY, RightX, RightY, LeftTrigger, RightTrigger };
+struct AxisDirection { QLatin1StringView name; Axis axis; float sign; };
+inline constexpr AxisDirection Directions[] = {
+    {QLatin1String("LeftStickLeft"), LeftX, -1}, {QLatin1String("LeftStickRight"), LeftX, 1},
+    {QLatin1String("LeftStickUp"), LeftY, 1}, {QLatin1String("LeftStickDown"), LeftY, -1},
+    {QLatin1String("RightStickLeft"), RightX, -1}, {QLatin1String("RightStickRight"), RightX, 1},
+    {QLatin1String("RightStickUp"), RightY, 1}, {QLatin1String("RightStickDown"), RightY, -1},
+    {QLatin1String("LeftTrigger"), LeftTrigger, 1}, {QLatin1String("RightTrigger"), RightTrigger, 1},
+};
+}
+
+struct Input {
+    Qt::MouseButtons mouse;
+    QPoint wheel;
+    const QList<Platform::GamepadState>& controllers;
+    Qt::KeyboardModifiers modifiers{};
+    QSet<int> keys;
+};
+
+inline float controllerPressure(QStringView source, const QList<Platform::GamepadState>& controllers) {
+    if (!source.startsWith(QLatin1String(ControllerPrefix), Qt::CaseInsensitive)) return 0.0f;
+    source = source.sliced(QLatin1String(ControllerPrefix).size());
+    const auto separator = source.lastIndexOf(Separator);
+    const auto device = separator < 0 ? QStringView{} : source.first(separator);
+    const auto control = source.sliced(separator + 1);
+    float strongest = 0.0f;
+    const auto valueFor = [&](const Platform::GamepadState& pad) -> float {
+        if (!device.isEmpty() && device.compare(pad.deviceId, Qt::CaseInsensitive) != 0) return 0.0f;
+        for (const auto& [name, button] : Controls::GamepadButtons)
+            if (control.compare(name, Qt::CaseInsensitive) == 0) return (pad.buttons & button) != 0;
+        for (const auto& [name, axis, sign] : Controls::Directions)
+            if (control.compare(name, Qt::CaseInsensitive) == 0) return std::clamp(pad.axes.value(axis) * sign, 0.0f, 1.0f);
+        namespace Raw = Platform::RawGamepad;
+        const auto positive = QLatin1String(PositiveSuffix);
+        const auto negative = QLatin1String(NegativeSuffix);
+        const int direction = control.endsWith(positive, Qt::CaseInsensitive) ? 1 :
+            control.endsWith(negative, Qt::CaseInsensitive) ? -1 : 0;
+        const auto name = direction ? control.chopped(direction > 0 ? positive.size() : negative.size()) : control;
+        for (auto value = pad.controls.constBegin(); value != pad.controls.constEnd(); ++value) {
+            if (name.compare(value.key(), Qt::CaseInsensitive) != 0) continue;
+            if (direction) return Raw::isAxis(value.key()) ?
+                std::clamp(static_cast<float>(direction) * (*value / Raw::AxisCenter - 1.0f), 0.0f, 1.0f) : 0.0f;
+            return std::clamp(*value, 0.0f, 1.0f);
+        }
+        return 0.0f;
+    };
+    for (const auto& controller : controllers)
+        strongest = std::max(strongest, valueFor(controller));
+    return strongest;
+}
+
+inline bool pressed(QStringView source, const Input& input) {
+    if (source.startsWith(QLatin1String(MousePrefix), Qt::CaseInsensitive)) {
+        source = source.sliced(QLatin1String(MousePrefix).size());
+        for (const auto& [name, button] : MouseButtons)
+            if (source.compare(name, Qt::CaseInsensitive) == 0) return input.mouse.testFlag(button);
+        if (source.compare(QLatin1String("WheelUp"), Qt::CaseInsensitive) == 0) return input.wheel.y() > 0;
+        if (source.compare(QLatin1String("WheelDown"), Qt::CaseInsensitive) == 0) return input.wheel.y() < 0;
+        if (source.compare(QLatin1String("WheelLeft"), Qt::CaseInsensitive) == 0) return input.wheel.x() < 0;
+        if (source.compare(QLatin1String("WheelRight"), Qt::CaseInsensitive) == 0) return input.wheel.x() > 0;
+        return false;
+    }
+    return controllerPressure(source, input.controllers) > PressedThreshold;
+}
+
+inline QString mouseSource(Qt::MouseButton button) {
+    for (const auto& [name, value] : MouseButtons)
+        if (button == value) return QLatin1String(MousePrefix) + name;
+    return {};
+}
+
+inline QString wheelSource(const QPoint& delta) {
+    if (delta.y() > 0) return QLatin1String("Mouse:WheelUp");
+    if (delta.y() < 0) return QLatin1String("Mouse:WheelDown");
+    if (delta.x() > 0) return QLatin1String("Mouse:WheelRight");
+    if (delta.x() < 0) return QLatin1String("Mouse:WheelLeft");
+    return {};
+}
+
+inline QStringList newControllerSources(const QList<Platform::GamepadState>& current,
+    const QList<Platform::GamepadState>& previous,
+    const QList<Platform::GamepadState>& initial) {
+    QStringList sources;
+    for (const auto& pad : current) {
+        const auto baseline = std::ranges::find(previous, pad.id, &Platform::GamepadState::id);
+        if (baseline == previous.end()) continue;
+        auto prefix = QString(QLatin1String(ControllerPrefix));
+        if (!pad.deviceId.isEmpty()) prefix += pad.deviceId + Separator;
+        namespace Raw = Platform::RawGamepad;
+        bool hasRawButtons = false, hasRawAxes = false, hasRawSwitches = false;
+        const auto initialPad = std::ranges::find(initial, pad.id, &Platform::GamepadState::id);
+        for (auto control = pad.controls.constBegin(); control != pad.controls.constEnd(); ++control) {
+            const auto& name = control.key();
+            if (Raw::isAxis(name)) {
+                hasRawAxes = true;
+                const float rest = initialPad == initial.end() ? Raw::AxisCenter :
+                    initialPad->controls.value(name, Raw::AxisCenter);
+                const float prior = baseline->controls.value(name, rest);
+                const auto activates = [&](float value) {
+                    const auto direction = Raw::direction(name, value);
+                    return std::abs(value - rest) >= RawCaptureDelta && direction * (value - rest) > 0.0f ? direction : 0;
+                };
+                const auto direction = activates(*control);
+                if (direction != 0 && direction != activates(prior))
+                    sources.append(prefix + name + QLatin1String(direction > 0 ? PositiveSuffix : NegativeSuffix));
+            } else {
+                hasRawButtons |= name.startsWith(QLatin1String(Raw::ButtonPrefix));
+                hasRawSwitches |= name.startsWith(QLatin1String(Raw::SwitchPrefix));
+                if (*control > PressedThreshold && baseline->controls.value(name) <= PressedThreshold)
+                    sources.append(prefix + name);
+            }
+        }
+        const auto newButtons = pad.buttons & ~baseline->buttons;
+        constexpr quint64 DPad = Platform::Up | Platform::Down | Platform::Left | Platform::Right;
+        for (const auto& [name, button] : Controls::GamepadButtons) {
+            const bool hasRawEquivalent = (button & DPad) != 0 ? hasRawSwitches : hasRawButtons;
+            if (!hasRawEquivalent && (newButtons & button) != 0) sources.append(prefix + name);
+        }
+        if (!hasRawAxes) {
+            for (const auto& [name, axis, sign] : Controls::Directions)
+                if (pad.axes.value(axis) * sign > PressedThreshold &&
+                    baseline->axes.value(axis) * sign <= PressedThreshold) sources.append(prefix + name);
+        }
+    }
+    return sources;
+}
+
+inline constexpr auto KeyboardPrefix = "Keyboard:";
+inline constexpr auto ChordModifiers = Qt::ControlModifier | Qt::AltModifier | Qt::ShiftModifier | Qt::MetaModifier;
+
+struct Chord {
+    QStringList sources;
+    QSet<int> keys;
+    Qt::KeyboardModifiers modifiers{};
+    bool keyboard = false;
+    bool reserved = false;
+    bool allowSingleKey = false;
+
+    bool isEmpty() const {
+        const bool modifierOnly = keys.isEmpty() && (modifiers & ChordModifiers) != Qt::NoModifier;
+        return reserved || (sources.isEmpty() && !modifierOnly && keys.size() < (allowSingleKey ? 1 : 2));
+    }
+};
+
+inline bool modifierKey(int key);
+
+inline Chord chord(const QString& configured, bool allowSingleKey = false) {
+    Chord result;
+    result.allowSingleKey = allowSingleKey;
+    const auto parts = configured.split(ChordSeparator);
+    constexpr std::pair<QLatin1StringView, Qt::KeyboardModifier> modifiers[] = {
+        {QLatin1String("Ctrl"), Qt::ControlModifier}, {QLatin1String("Control"), Qt::ControlModifier},
+        {QLatin1String("Shift"), Qt::ShiftModifier}, {QLatin1String("Maj"), Qt::ShiftModifier},
+        {QLatin1String("Alt"), Qt::AltModifier}, {QLatin1String("Meta"), Qt::MetaModifier},
+        {QLatin1String("Win"), Qt::MetaModifier}, {QLatin1String("Windows"), Qt::MetaModifier},
+        {QLatin1String("Num"), Qt::KeypadModifier},
+    };
+    for (auto part : parts) {
+        part = part.trimmed();
+        if (part.startsWith(QLatin1String(MousePrefix), Qt::CaseInsensitive) ||
+            part.startsWith(QLatin1String(ControllerPrefix), Qt::CaseInsensitive)) {
+            if (!Emulation::InputProcessing::isValidBinding(part)) return {};
+            result.sources.append(part.toCaseFolded());
+            continue;
+        }
+        if (part.startsWith(QLatin1String(KeyboardPrefix), Qt::CaseInsensitive))
+            part.remove(0, QLatin1String(KeyboardPrefix).size());
+        result.keyboard = true;
+        const auto modifier = std::ranges::find_if(modifiers,
+            [&](const auto& entry) { return part.compare(entry.first, Qt::CaseInsensitive) == 0; });
+        if (modifier != std::end(modifiers)) {
+            result.modifiers |= modifier->second;
+            continue;
+        }
+        if (part.compare(QLatin1String("OemPlus"), Qt::CaseInsensitive) == 0 ||
+            part.compare(QLatin1String("Add"), Qt::CaseInsensitive) == 0) {
+            if (part.compare(QLatin1String("Add"), Qt::CaseInsensitive) == 0) result.modifiers |= Qt::KeypadModifier;
+            result.keys.insert(Qt::Key_Plus);
+            continue;
+        }
+        const auto host = EmulationHostKeyboard::hostCombination(part);
+        if (host.key() != Qt::Key_unknown) {
+            result.modifiers |= host.keyboardModifiers();
+            if (!modifierKey(host.key())) result.keys.insert(host.key());
+            continue;
+        }
+        const auto key = EmulationKeyboardShortcuts::parse(part);
+        if (key.count() != 1) return {};
+        result.modifiers |= key[0].keyboardModifiers();
+        result.keys.insert(key[0].key());
+    }
+    if (result.keyboard) {
+        if (result.keys.isEmpty() && result.modifiers == Qt::NoModifier) return {};
+        result.reserved = EmulationKeyboardShortcuts::reserved(
+            QKeySequence(QKeyCombination(result.modifiers, Qt::Key_unknown))) ||
+            std::ranges::any_of(result.keys, [&](const int key) {
+                return EmulationKeyboardShortcuts::reserved(QKeySequence(QKeyCombination(result.modifiers, Qt::Key(key))));
+            });
+    }
+    result.sources.removeDuplicates();
+    result.sources.sort();
+    return result;
+}
+
+inline bool pressed(const Chord& chord, const Input& input) {
+    if (chord.isEmpty()) return false;
+    auto mask = ChordModifiers;
+    if (chord.modifiers.testFlag(Qt::KeypadModifier)) mask |= Qt::KeypadModifier;
+    if (chord.keyboard && ((input.modifiers & mask) != chord.modifiers || input.keys != chord.keys)) return false;
+    return std::ranges::all_of(chord.sources, [&](const QString& source) { return pressed(QStringView(source), input); });
+}
+
+class OsdDirectionRepeat final {
+public:
+    using Clock = std::chrono::steady_clock;
+
+    bool due(const EmulationKeyboardShortcuts::Binding* direction, Clock::time_point now) {
+        if (direction != direction_) {
+            direction_ = direction;
+            next_ = now + InitialDelay;
+        } else if (direction && now >= next_) {
+            next_ = now + Interval;
+            return true;
+        }
+        return false;
+    }
+
+    void clear() { direction_ = nullptr; }
+
+private:
+    static constexpr auto InitialDelay = std::chrono::milliseconds(300);
+    static constexpr auto Interval = std::chrono::milliseconds(35);
+    const EmulationKeyboardShortcuts::Binding* direction_ = nullptr;
+    Clock::time_point next_{};
+};
+
+inline bool isOsdShortcut(QStringView id) {
+    namespace Keys = EmulationKeyboardShortcuts;
+    constexpr const Keys::Binding* bindings[]{
+        &Keys::OsdWithPause, &Keys::OsdWithoutPause, &Keys::OsdStatistics, &Keys::OsdUp, &Keys::OsdDown,
+        &Keys::OsdLeft, &Keys::OsdRight, &Keys::OsdConfirm, &Keys::OsdCancel};
+    const auto suffix = QLatin1String(Keys::AlternativeSuffix);
+    const bool alternative = id.endsWith(suffix);
+    if (alternative) id = id.chopped(suffix.size());
+    return std::ranges::any_of(bindings, [&](const Keys::Binding* binding) {
+        return id == QLatin1String(binding->id) && (!alternative || binding->hasAlternative);
+    });
+}
+
+inline bool hasMidiSource(const Chord& chord) {
+    constexpr auto MidiSourcePrefix = "Controller:midi:";
+    return std::ranges::any_of(chord.sources, [](const QString& source) {
+        return source.startsWith(QLatin1String(MidiSourcePrefix), Qt::CaseInsensitive);
+    });
+}
+
+inline bool conflicts(const Chord& left, const Chord& right) {
+    return !left.isEmpty() && !right.isEmpty() && left.sources == right.sources && left.keyboard == right.keyboard &&
+        left.modifiers == right.modifiers && left.keys == right.keys;
+}
+
+inline QString formatKeyboard(Qt::KeyboardModifiers modifiers, const QList<int>& keys) {
+    QStringList parts;
+    if (modifiers.testFlag(Qt::ControlModifier)) parts.append(QLatin1String("Ctrl"));
+    if (modifiers.testFlag(Qt::AltModifier)) parts.append(QLatin1String("Alt"));
+    if (modifiers.testFlag(Qt::ShiftModifier)) parts.append(QLatin1String("Shift"));
+    if (modifiers.testFlag(Qt::MetaModifier)) parts.append(QLatin1String("Meta"));
+    if (modifiers.testFlag(Qt::KeypadModifier)) parts.append(QLatin1String("Num"));
+    for (const int key : keys)
+        parts.append(key == Qt::Key_Plus ? QString(QLatin1String("OemPlus")) :
+            QKeySequence(Qt::Key(key)).toString(QKeySequence::PortableText));
+    return parts.join(ChordSeparator);
+}
+
+inline bool modifierKey(int key) {
+    return key == Qt::Key_Control || key == Qt::Key_Alt || key == Qt::Key_Shift || key == Qt::Key_Meta ||
+        key == Qt::Key_AltGr;
+}
+}

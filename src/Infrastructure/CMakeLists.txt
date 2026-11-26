@@ -1,9 +1,11 @@
 add_library(RetroMediaLab.Infrastructure SHARED
   Media/ExplorerSession.cpp
+  Media/OpeningProgress.cpp
   Media/MigrationSession.cpp
   Media/ClassificationSelection.cpp
   Media/ExplorerReadSession.cpp
   Media/VisualizationSession.cpp
+  Media/SimulatedDriveAudio.cpp
   Media/MediaCommands.cpp
   Media/CaptureSession.cpp
   Media/GwProgressTracker.cpp
@@ -28,7 +30,7 @@ add_library(RetroMediaLab.Infrastructure SHARED
 target_compile_definitions(RetroMediaLab.Infrastructure PRIVATE RETROMEDIALAB_INFRASTRUCTURE_BUILD RETROMEDIALAB_APP_VERSION="${PROJECT_VERSION}")
 target_include_directories(RetroMediaLab.Infrastructure PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}" include)
 target_link_libraries(RetroMediaLab.Infrastructure PUBLIC Qt6::Core RetroMediaLab.Runtime RetroMediaLab.MediaEngine
-  PRIVATE RetroMediaLab.Translations RetroMediaLab.Platform Qt6::Network RetroMediaLab.Archives)
+  PRIVATE RetroMediaLab.Translations RetroMediaLab.Platform Qt6::Network Qt6::Multimedia RetroMediaLab.Archives)
 if(WIN32)
   target_sources(RetroMediaLab.Infrastructure PRIVATE Windows/HardwareDiscovery.cpp Windows/StorageCommands.cpp Windows/ElevatedDiskProbe.cpp)
   target_link_libraries(RetroMediaLab.Infrastructure PRIVATE shell32 ole32 uuid setupapi advapi32 propsys cfgmgr32)
