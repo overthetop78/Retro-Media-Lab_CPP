@@ -1,6 +1,10 @@
 #include <RetroMediaLab/Emulation/NativeCoreFrames.h>
 #include <RetroMediaLab/Emulation/HostProtocol.h>
+#include <RetroMediaLab/Emulation/NativeCoreLibrary.h>
 #include <algorithm>
+#include <cmath>
+#include <cstring>
+#include <limits>
 #include <stdexcept>
 
 namespace RetroMediaLab::Emulation {
@@ -8,6 +12,12 @@ namespace {
 constexpr std::size_t MaximumFramesPerBatch = 64 * 1024;
 constexpr int StereoSampleCount = 2;
 constexpr auto VideoErrorKey = "Emulation.Error.EmulatorRejected";
+constexpr int VideoFrequencyPrecision = 6;
+constexpr auto NtscName = "NTSC";
+constexpr auto PalName = "PAL";
+constexpr auto SecamName = "SECAM";
+constexpr auto VideoFrequencyFormat = "%1 Hz";
+constexpr auto VideoTimingFormat = "%1 (%2)";
 }
 
 void NativeCoreAudioFrames::setSampleRate(int sampleRate) {
@@ -73,6 +83,73 @@ std::exception_ptr NativeCoreAudioFrames::failure() const {
     return failure_;
 }
 
+int nativeFrameLength(unsigned height, std::size_t pitch) {
+    if (height && pitch > std::size_t(std::numeric_limits<int>::max()) / height)
+        throw std::overflow_error(VideoErrorKey);
+    return int(pitch * height);
+}
+
+void copyNativeFrameRows(const void* pixels, std::span<char> destination, unsigned height, std::size_t pitch) {
+    const auto length = std::size_t(nativeFrameLength(height, pitch));
+    if (!pixels || !length || destination.size() < length)
+        throw std::invalid_argument(VideoErrorKey);
+    std::memcpy(destination.data(), pixels, length);
+}
+
+QByteArray copyNativeFramePixels(const void* pixels, unsigned height, std::size_t pitch) {
+    if (!pixels || !height || !pitch) throw std::invalid_argument(VideoErrorKey);
+    QByteArray frame(nativeFrameLength(height, pitch), Qt::Uninitialized);
+    copyNativeFrameRows(pixels, {frame.data(), std::size_t(frame.size())}, height, pitch);
+    return frame;
+}
+
+QString formatVideoStandard(VideoStandard standard) {
+    switch (standard) {
+    case VideoStandard::Ntsc: return QString::fromLatin1(NtscName);
+    case VideoStandard::Pal: return QString::fromLatin1(PalName);
+    case VideoStandard::Secam: return QString::fromLatin1(SecamName);
+    }
+    throw std::out_of_range(VideoErrorKey);
+}
+
+QString formatVideoFrequency(double frequencyHz) {
+    if (!std::isfinite(frequencyHz) || frequencyHz <= 0) throw std::out_of_range(VideoErrorKey);
+    auto value = QString::number(frequencyHz, 'f', VideoFrequencyPrecision);
+    while (value.endsWith(u'0')) value.chop(1);
+    if (value.endsWith(u'.')) value.chop(1);
+    return QString::fromLatin1(VideoFrequencyFormat).arg(value);
+}
+
+QString formatVideoTiming(VideoStandard standard, double frequencyHz) {
+    return QString::fromLatin1(VideoTimingFormat).arg(formatVideoStandard(standard), formatVideoFrequency(frequencyHz));
+}
+
+NativeCoreVideoBufferSet::NativeCoreVideoBufferSet(int bufferCount) {
+    if (bufferCount <= 0) throw std::invalid_argument(VideoErrorKey);
+    buffers_.resize(bufferCount);
+}
+
+std::span<char> NativeCoreVideoBufferSet::rent(int byteCount) {
+    if (byteCount < 0) throw std::invalid_argument(VideoErrorKey);
+    auto& buffer = buffers_[nextBuffer_];
+    buffer.resizeForOverwrite(byteCount);
+    auto result = std::span(buffer.data(), std::size_t(byteCount));
+    nextBuffer_ = (nextBuffer_ + 1) % buffers_.size();
+    return result;
+}
+
+QByteArray NativeCoreVideoBufferSet::copyFramePixels(const void* pixels, unsigned height, std::size_t pitch) {
+    if (!pixels || !height || !pitch) throw std::invalid_argument(VideoErrorKey);
+    const auto index = nextBuffer_;
+    copyNativeFrameRows(pixels, rent(nativeFrameLength(height, pitch)), height, pitch);
+    return buffers_.at(index);
+}
+
+void NativeCoreVideoBufferSet::clear() {
+    for (auto& buffer : buffers_) buffer.clear();
+    nextBuffer_ = 0;
+}
+
 void NativeCoreVideoFrames::setPixelFormat(PixelFormat format) {
     const std::lock_guard lock(mutex_);
     format_ = format;
@@ -81,6 +158,14 @@ void NativeCoreVideoFrames::setPixelFormat(PixelFormat format) {
 void NativeCoreVideoFrames::setAspectRatio(float aspectRatio) {
     const std::lock_guard lock(mutex_);
     aspectRatio_ = aspectRatio;
+}
+
+void NativeCoreVideoFrames::applyGeometry(const NativeCoreGeometry& geometry) {
+    if (std::isfinite(geometry.aspectRatio) && geometry.aspectRatio > 0) {
+        setAspectRatio(geometry.aspectRatio);
+    } else if (geometry.baseHeight > 0) {
+        setAspectRatio(static_cast<float>(geometry.baseWidth) / static_cast<float>(geometry.baseHeight));
+    }
 }
 
 void NativeCoreVideoFrames::submit(const void* pixels, unsigned width, unsigned height, std::size_t pitch) noexcept {
@@ -96,7 +181,7 @@ void NativeCoreVideoFrames::submit(const void* pixels, unsigned width, unsigned 
                 if (width > pitch / bytesPerPixel || pitch > std::size_t(HostProtocol::VideoSlotCapacity) / height)
                     throw std::runtime_error(VideoErrorKey);
                 frame = std::make_shared<VideoFrame>();
-                frame->pixels = QByteArray(static_cast<const char*>(pixels), qsizetype(pitch * height));
+                frame->pixels = buffers_.copyFramePixels(pixels, height, pitch);
                 frame->width = int(width);
                 frame->height = int(height);
                 frame->pitch = int(pitch);
@@ -124,6 +209,7 @@ std::shared_ptr<const VideoFrame> NativeCoreVideoFrames::latestFrame() const {
 void NativeCoreVideoFrames::clear() {
     const std::lock_guard lock(mutex_);
     latest_.reset();
+    buffers_.clear();
 }
 
 std::exception_ptr NativeCoreVideoFrames::failure() const {

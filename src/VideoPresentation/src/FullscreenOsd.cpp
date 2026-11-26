@@ -10,12 +10,14 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QListWidget>
+#include <QMouseEvent>
 #include <QPainter>
 #include <QPointer>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QSlider>
+#include <QStyleOptionSlider>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QWheelEvent>
@@ -33,6 +35,8 @@ constexpr int IdleMilliseconds = 15000;
 constexpr int CaptionSpacing = 4;
 constexpr int EditorWidth = 420;
 constexpr int InformationMargin = 24;
+constexpr int CenterHeaderIconSize = 24;
+constexpr int CenterHeaderIconGap = 12;
 constexpr int MixerCardWidth = 76;
 constexpr int MixerSliderHeight = 124;
 constexpr int MixerGroupGap = 13;
@@ -126,6 +130,8 @@ constexpr auto SettingLabel = "%1\n%2";
 constexpr auto FooterKey = "<span style=\"background-color:#263957\">&nbsp;%1&nbsp;</span> ";
 constexpr auto FooterLabel = "%1&nbsp;&nbsp;";
 constexpr auto FooterRow = "<p style=\"margin-top:0;margin-bottom:5px;\">%1</p>";
+constexpr auto CenterBackCaption = "%1   %2";
+constexpr auto CenterKeySeparator = " / ";
 
 QString hintGroup(const QStringList& keys, const QString& description) {
     if (keys.isEmpty()) return {};
@@ -137,6 +143,60 @@ QString hintGroup(const QStringList& keys, const QString& description) {
 QString hintRow(const QString& markup) {
     return markup.isEmpty() ? QString{} : QString::fromLatin1(FooterRow).arg(markup);
 }
+
+class MixerSlider final : public QSlider {
+public:
+    explicit MixerSlider(QWidget* parent) : QSlider(Qt::Vertical, parent) {}
+
+protected:
+    void mousePressEvent(QMouseEvent* event) override {
+        QStyleOptionSlider option;
+        initStyleOption(&option);
+        const auto control = style()->hitTestComplexControl(QStyle::CC_Slider, &option,
+                                                            event->position().toPoint(), this);
+        if (event->button() != Qt::LeftButton || control != QStyle::SC_SliderGroove) {
+            QSlider::mousePressEvent(event);
+            return;
+        }
+        absoluteDrag_ = true;
+        setSliderDown(true);
+        moveToPoint(option, event->position().toPoint().y());
+        event->accept();
+    }
+
+    void mouseMoveEvent(QMouseEvent* event) override {
+        if (!absoluteDrag_) {
+            QSlider::mouseMoveEvent(event);
+            return;
+        }
+        QStyleOptionSlider option;
+        initStyleOption(&option);
+        moveToPoint(option, event->position().toPoint().y());
+        event->accept();
+    }
+
+    void mouseReleaseEvent(QMouseEvent* event) override {
+        if (!absoluteDrag_ || event->button() != Qt::LeftButton) {
+            QSlider::mouseReleaseEvent(event);
+            return;
+        }
+        absoluteDrag_ = false;
+        setSliderDown(false);
+        event->accept();
+    }
+
+private:
+    void moveToPoint(const QStyleOptionSlider& option, int y) {
+        const auto groove = style()->subControlRect(QStyle::CC_Slider, &option, QStyle::SC_SliderGroove, this);
+        const auto handle = style()->subControlRect(QStyle::CC_Slider, &option, QStyle::SC_SliderHandle, this);
+        const int span = groove.height() - handle.height();
+        if (span <= 0) return;
+        const int position = std::clamp(y - groove.top() - handle.height() / 2, 0, span);
+        setSliderPosition(QStyle::sliderValueFromPosition(minimum(), maximum(), position, span, option.upsideDown));
+    }
+
+    bool absoluteDrag_ = false;
+};
 }
 
 ShaderLoadingBadge::ShaderLoadingBadge(bool fullscreen, QWidget* parent, Qt::WindowFlags flags)
@@ -350,6 +410,8 @@ struct FullscreenOsd::State {
         QScrollArea* mixer = nullptr;
         std::vector<MixerSection> sections{};
         QSlider* selected = nullptr;
+        QLabel* centerHints = nullptr;
+        QPushButton* centerBack = nullptr;
     };
 
     QWidget& host;
@@ -360,6 +422,8 @@ struct FullscreenOsd::State {
     int submenuTop = 0;
     QTimer* idle = nullptr;
     QTimer* settingSave = nullptr;
+    QTimer* faderSave = nullptr;
+    std::vector<std::pair<const Setting*, int>> pendingFaders;
     bool runningCommand = false;
     bool externalKeyboardNavigation = false;
     QFrame* editor = nullptr;
@@ -398,6 +462,9 @@ FullscreenOsd::FullscreenOsd(QWidget& host, QString machine, QString media, QStr
     state_->settingSave = new QTimer(this);
     state_->settingSave->setSingleShot(true);
     connect(state_->settingSave, &QTimer::timeout, this, &FullscreenOsd::flushPendingSetting);
+    state_->faderSave = new QTimer(this);
+    state_->faderSave->setSingleShot(true);
+    connect(state_->faderSave, &QTimer::timeout, this, &FullscreenOsd::flushPendingFaders);
     state_->editor = new QFrame(this);
     state_->editor->setObjectName(QString::fromLatin1(PanelName));
     auto* editorLayout = new QVBoxLayout(state_->editor);
@@ -482,6 +549,8 @@ void FullscreenOsd::setFooterHints(const FooterHints& hints) {
     state_->footerLabel->setVisible(!content.isEmpty());
     state_->footerSeparator->setVisible(!content.isEmpty());
     refreshEditorHints();
+    refreshCenterHints();
+    positionPanels();
 }
 
 void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& title, const QString& subtitle,
@@ -490,19 +559,36 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     panel->setObjectName(QString::fromLatin1(PanelName));
     auto* content = new QVBoxLayout(panel);
     content->setContentsMargins(0, PanelMargin, 0, PanelMargin);
-    const auto addCaption = [&](const QString& caption) {
+    const auto addCaption = [&](const QString& caption, const QIcon& icon = QIcon{}) {
         auto* label = new QLabel(caption, panel);
         label->setTextFormat(Qt::PlainText);
         label->setWordWrap(true);
-        label->setContentsMargins(PanelMargin, CaptionSpacing, PanelMargin, CaptionSpacing);
-        content->addWidget(label);
+        if (icon.isNull()) {
+            label->setContentsMargins(PanelMargin, CaptionSpacing, PanelMargin, CaptionSpacing);
+            content->addWidget(label);
+        } else {
+            auto* row = new QHBoxLayout;
+            row->setContentsMargins(PanelMargin, CaptionSpacing, PanelMargin, CaptionSpacing);
+            row->setSpacing(CenterHeaderIconGap);
+            auto* glyph = new QLabel(panel);
+            glyph->setPixmap(icon.pixmap(QSize(CenterHeaderIconSize, CenterHeaderIconSize), devicePixelRatioF()));
+            row->addWidget(glyph, 0, Qt::AlignVCenter);
+            row->addWidget(label, 1);
+            content->addLayout(row);
+        }
         return label;
     };
-    auto* header = addCaption(title);
+    const bool centered = parent && (parent->centeredInformation || parent->centeredMixer);
+    auto* header = addCaption(title, centered ? parent->icon : QIcon{});
     auto font = header->font();
     font.setPixelSize(MainHeadingPixels);
     font.setWeight(QFont::DemiBold);
     header->setFont(font);
+    if (centered) {
+        auto* separator = new QFrame(panel);
+        separator->setFrameShape(QFrame::HLine);
+        content->addWidget(separator);
+    }
     if (state_->levels.empty()) {
         state_->gameName = addCaption(subtitle);
         state_->gameName->setVisible(!subtitle.isEmpty());
@@ -550,6 +636,22 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
         invoke(level, rows->row(item), false);
     });
     if (parent && parent->centeredMixer) buildMixer();
+    if (centered) {
+        auto& current = state_->levels.back();
+        auto* footer = new QHBoxLayout;
+        footer->setContentsMargins(parent->centeredMixer ? 0 : PanelMargin, 0,
+                                   parent->centeredMixer ? 0 : PanelMargin, 0);
+        current.centerHints = new QLabel(panel);
+        current.centerHints->setTextFormat(Qt::RichText);
+        current.centerHints->setWordWrap(true);
+        footer->addWidget(current.centerHints, 1);
+        current.centerBack = new QPushButton(panel);
+        current.centerBack->setFocusPolicy(Qt::NoFocus);
+        connect(current.centerBack, &QPushButton::clicked, this, [this] { navigate(Navigation::Cancel); });
+        footer->addWidget(current.centerBack);
+        content->addLayout(footer);
+        refreshCenterHints();
+    }
     for (auto* child : panel->findChildren<QWidget*>()) child->setMouseTracking(true);
     refresh();
     focusLevel();
@@ -559,6 +661,22 @@ void FullscreenOsd::focusLevel() {
     const auto& level = state_->levels.back();
     if (level.mixer) setFocus();
     else level.rows->setFocus();
+}
+
+void FullscreenOsd::refreshCenterHints() {
+    const auto& hints = state_->hints;
+    for (const auto& level : state_->levels) {
+        if (!level.centerBack) continue;
+        const auto markup = level.parent->centeredMixer
+            ? hintGroup(hints.horizontal, hints.navigateLabel) + hintGroup(hints.vertical, hints.adjustLabel)
+            : QString{};
+        level.centerHints->setText(hintRow(markup));
+        level.centerHints->setVisible(!markup.isEmpty());
+        const auto keys = hints.back.join(QLatin1String(CenterKeySeparator));
+        level.centerBack->setText(keys.isEmpty() ? hints.backLabel
+            : QString::fromLatin1(CenterBackCaption).arg(keys, hints.backLabel));
+        level.centerBack->setVisible(!hints.backLabel.isEmpty());
+    }
 }
 
 void FullscreenOsd::buildMixer() {
@@ -608,11 +726,10 @@ void FullscreenOsd::buildMixer() {
         auto* value = new QLabel(card);
         value->setTextFormat(Qt::PlainText);
         value->setStyleSheet(QString::fromLatin1(MixerAccentStyle));
-        auto* slider = new QSlider(Qt::Vertical, card);
+        auto* slider = new MixerSlider(card);
         const auto& setting = *entry.setting;
         slider->setRange(setting.minimum, setting.maximum);
         slider->setFixedHeight(MixerSliderHeight);
-        slider->setTracking(false);
         slider->setFocusPolicy(Qt::NoFocus);
         slider->setAccessibleName(entry.label);
         slider->setToolTip(entry.label);
@@ -627,33 +744,46 @@ void FullscreenOsd::buildMixer() {
         cards->addWidget(card);
         section.faders.push_back({&entry, card, slider, value});
         connect(slider, &QSlider::sliderPressed, this, [this, slider] {
-            if (!state_->levels.back().mixer || !state_->levels.back().panel->isAncestorOf(slider)) return;
-            state_->levels.back().selected = slider;
+            auto& active = state_->levels.back();
+            if (!active.mixer || active.selected == slider || !active.panel->isAncestorOf(slider)) return;
+            active.selected = slider;
             refreshMixer();
         });
-        connect(slider, &QSlider::sliderMoved, this, [this, value, &setting](int draft) {
-            state_->idle->start();
-            value->setText(setting.format(draft));
-            if (setting.preview) setting.preview(draft);
+        connect(slider, &QSlider::sliderReleased, this, [this, slider] {
+            if (state_->levels.back().mixer && state_->levels.back().panel->isAncestorOf(slider))
+                refreshMixer();
         });
-        connect(slider, &QSlider::valueChanged, this, [this, slider, &setting](int draft) {
+        connect(slider, &QSlider::valueChanged, this, [this, slider, value, &setting](int draft) {
             if (!state_->levels.back().mixer || !state_->levels.back().panel->isAncestorOf(slider)) return;
             state_->idle->start();
             state_->levels.back().selected = slider;
+            value->setText(setting.format(draft));
+            auto& pending = state_->pendingFaders;
+            const auto previous = std::ranges::find(pending, &setting, &std::pair<const Setting*, int>::first);
+            if (previous == pending.end()) pending.emplace_back(&setting, draft);
+            else previous->second = draft;
+            if (!state_->faderSave->isActive()) state_->faderSave->start();
             if (setting.preview) setting.preview(draft);
-            if (setting.read() != draft) setting.save(draft);
-            const int current = setting.read();
-            if (current != draft && setting.preview) setting.preview(current);
-            refresh();
         });
     }
     groups->addStretch();
     area->setWidget(body);
     layout->addWidget(area, 1);
-    auto* back = new QPushButton(state_->hints.backLabel, level.panel);
-    back->setFocusPolicy(Qt::NoFocus);
-    connect(back, &QPushButton::clicked, this, [this] { navigate(Navigation::Cancel); });
-    layout->addWidget(back, 0, Qt::AlignRight);
+}
+
+void FullscreenOsd::flushPendingFaders() {
+    if (state_->pendingFaders.empty()) return;
+    state_->faderSave->stop();
+    const auto pending = std::exchange(state_->pendingFaders, {});
+    const QPointer<FullscreenOsd> alive(this);
+    for (const auto& [setting, draft] : pending) {
+        if (setting->read() != draft) setting->save(draft);
+        if (!alive) return;
+        const int current = setting->read();
+        if (current != draft && setting->preview) setting->preview(current);
+        if (!alive) return;
+    }
+    refresh();
 }
 
 void FullscreenOsd::refreshMixer() {
@@ -672,7 +802,9 @@ void FullscreenOsd::refreshMixer() {
             if (visible && !first) first = fader.slider;
             selectionVisible |= visible && fader.slider == level.selected;
             fader.slider->setEnabled(!entry.enabled || entry.enabled());
-            if (!visible || fader.slider->isSliderDown()) continue;
+            const auto& pending = state_->pendingFaders;
+            if (!visible || fader.slider->isSliderDown() ||
+                std::ranges::find(pending, &setting, &std::pair<const Setting*, int>::first) != pending.end()) continue;
             const QSignalBlocker block(fader.slider);
             fader.slider->setValue(setting.read());
             fader.value->setText(setting.format(fader.slider->value()));
@@ -937,6 +1069,9 @@ void FullscreenOsd::adjustValue(int value) {
 }
 
 void FullscreenOsd::flushPendingSetting() {
+    const QPointer<FullscreenOsd> stillAlive(this);
+    flushPendingFaders();
+    if (!stillAlive) return;
     if (!state_->edited || !std::exchange(state_->settingPending, false)) return;
     state_->settingSave->stop();
     const auto* entry = state_->edited;
@@ -1073,6 +1208,20 @@ bool FullscreenOsd::eventFilter(QObject* object, QEvent* event) {
     if (!state_->runningCommand && (type == QEvent::KeyPress ||
         (pointerActivity && usesPointerAt(static_cast<QSinglePointEvent*>(event)->globalPosition().toPoint()))))
         state_->idle->start();
+    if (type == QEvent::MouseButtonPress && static_cast<QMouseEvent*>(event)->button() == Qt::LeftButton) {
+        auto& level = state_->levels.back();
+        for (const auto& section : level.sections) {
+            const auto fader = std::ranges::find_if(section.faders, [target](const auto& item) {
+                return target == item.card || item.card->isAncestorOf(target);
+            });
+            if (fader == section.faders.end()) continue;
+            if (level.selected != fader->slider) {
+                level.selected = fader->slider;
+                refreshMixer();
+            }
+            break;
+        }
+    }
     if (object == state_->editor && event->type() == QEvent::Wheel && state_->edited) {
         const auto delta = static_cast<QWheelEvent*>(event)->angleDelta().y();
         if (delta != 0) adjustValue(state_->draft + (delta < 0 ? -1 : 1));

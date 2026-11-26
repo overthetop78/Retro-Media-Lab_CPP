@@ -1140,3 +1140,51 @@ Le commit C# 1c797743d retire le grain, le VHS, l’aberration chromatique, le h
 Le contrat facultatif IMachineKeyboardBindings reprend la propriété KeyboardBindings de IEmulationInput. L’application traite les sources composites au moment de publier les entrées, comme MachineInputController.Publish. Une affectation explicite retire le caractère hôte de la touche cible. Les sources physiques déjà affectées à un raccourci global sont écartées et le masque du menu plein écran est appliqué à la souris et aux manettes. Windows Release a compilé et a été déployée. La sonde du code partagé a vérifié une combinaison clavier et souris, la molette, une manette nommée, l’exclusion d’une source réservée et la conservation du caractère d’une touche ordinaire. La sonde a été supprimée. La validation avec un module réel et ses périphériques reste ouverte.
 
 La sonde Qt hors écran a ensuite exercé le thème Windows Release avec une machine temporaire qui enregistrait les instantanés reçus. Elle a vérifié que la combinaison clavier et molette transmet la commande à la machine, que le relevé suivant la relâche en gardant la touche ordinaire, et que la molette affectée au volume global ne déclenche pas la commande concurrente. Le défilement utilisé comme raccourci clavier hors capture ne devient pas un déplacement de la souris émulée. La sonde a été supprimée.
+
+### Installation locale des cœurs
+
+CoreReleases reprend les opérations de chemins, d’extraction et de sélection d’une installation active de EmulationCoreReleaseFunctions.cs. La destination est fixée par le module. Le nom de la bibliothèque ZIP est comparé sans tenir compte de la casse, avec conservation optionnelle de la date. Le remplacement exige un fichier préparé sur le même système de fichiers. La lecture des manifestes réutilise ConfigurationFiles, qui fournit aussi leur écriture atomique. La sonde Windows Release a vérifié l’extraction d’une entrée imbriquée, sa date, l’annulation, la conservation du fichier installé si la bibliothèque manque, le remplacement et le marqueur actif avec ou sans manifeste. Les fichiers temporaires ont été supprimés. Les métadonnées et le téléchargement HTTP du contrat restent à porter.
+
+### Catalogue et téléchargement des cœurs
+
+Le service commun reprend EmulationCoreReleaseFunctions.cs. La requête HEAD lit Last-Modified avec repli sur Date et conserve la longueur annoncée. Le SDK reprend la sélection par identifiant et par émulateur ainsi que le repli official-latest. Le téléchargement écrit par blocs avec la progression en octets et publie le fichier par remplacement atomique en fin de transfert. Le module appelle le service depuis le fil de son client Qt et conserve la responsabilité des messages, des étapes d’extraction et de la préparation avant remplacement. Les étapes suivantes écrivent le manifeste puis activent l’installation avant de signaler la fin. Une sonde Windows Release avec un serveur TCP sur la boucle locale a vérifié les dates, les versions avec et sans date, le refus HTTP, le téléchargement, l’annulation avec conservation du fichier, l’ordre des étapes et le refus avant remplacement. La version Windows Release a été déployée et les fichiers temporaires supprimés. Le raccordement aux catalogues réels appartient au portage des modules.
+
+### Contexte OpenGL natif des cœurs
+
+NativeCoreHardwareRender reprend EmulationOpenGlHardwareRenderContext de osd-support. Sous Windows, le contexte WGL commun gère les profils de compatibilité et Core, les callbacks natifs, le framebuffer avec couleur, profondeur et stencil, et la copie BGRA avec origine configurable. Le module pilote encore le cycle de vie du cœur, y compris ses rappels de réinitialisation et de destruction du contexte. La sonde Windows Release a vérifié les deux profils, l’accès aux symboles, les pixels et leur ordre après inversion, le redimensionnement, la restauration du contexte après un échec et la libération. La Release a été déployée et la sonde supprimée. Le backend de rendu matériel des cœurs est disponible sous Windows. [Contexte WGL du fil](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglmakecurrent) · [Résolution des symboles WGL](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-wglgetprocaddress).
+
+### Tampons vidéo réutilisables
+
+`EmulationSdk.CreateVideoBufferSet` expose la rotation de tampons de `EmulationVideoBufferSet.cs`. `EmulationVideoFunctions.cs` calcule le nombre d’octets à partir de la hauteur et du pas, puis copie les pixels en incluant le remplissage des lignes. Le SDK C++ reprend ces opérations dans `NativeCoreFrames`. Le callback utilise deux tampons et le partage implicite de QByteArray maintient les trames déjà publiées intactes lorsque le tampon revient en rotation. Le build Windows Release et la sonde temporaire ont validé la réutilisation, la conservation des trames, la duplication de la dernière trame et les limites de copie.
+
+### Contrôleur de sortie audio du SDK
+
+`EmulationAudioOutputController.cs` distingue la sortie empruntée de la sortie créée par sa fabrique et réessaie une écriture après un échec. Le contrôleur C++ reprend le démarrage, les changements de format, la latence, la coupure, la pause, les états du tampon et la récupération. Le contrôle Release utilise une sortie simulée et vérifie la reprise avec la fabrique, la conservation de la sortie empruntée, la destruction de la sortie possédée et l’arrondi du volume. Une valeur NaN est ramenée à zéro pour éviter de la convertir en entier.
+
+### Géométrie et libellés vidéo
+
+`EmulationVideoFunctions.ApplyGeometry` utilise un rapport d’image explicite s’il est fini et positif. Sinon, la hauteur de base permet de calculer le rapport, et si elle est nulle le rapport précédent est conservé. Le callback natif C++ applique cette règle à l’initialisation et à la réception de SetGeometry. Les libellés NTSC, PAL et SECAM ainsi que les fréquences à six décimales au plus sont invariants, comme dans le SDK C#. La sonde Windows Release a vérifié les deux parcours, un rapport invalide et les libellés avec les paramètres régionaux français. La sonde a été supprimée.
+
+### Cache de pipelines Vulkan entre lancements
+
+Le commit C# 1e3ac89c0 conserve les shaders compilés sur disque avec une empreinte SHA-256 et une écriture atomique. Vulkan utilise les mêmes opérations de stockage que Direct3D 11 pour les données de pipeline QRhi. La clé distingue le périphérique, la version Qt et Vulkan, la cible et les trois shaders compilés. Le fil de préparation importe le cache avant de créer ses pipelines. Si le fichier manque ou que son empreinte est invalide, le même parcours le régénère. La Release Windows a compilé et une sonde sur le moteur Vulkan a vérifié trois lancements distincts avec cache absent, présent puis corrompu. Les fichiers temporaires de la sonde ont été supprimés.
+
+### Utilitaires de traitement audio du SDK
+
+`EmulationAudioFunctions.cs` distingue la validation des choix de latence du chargement des paramètres déjà enregistrés. Le SDK C++ reprend ces deux règles, la copie bornée des échantillons natifs, la sélection des dernières trames et les deux règles de volume. Le contrôleur applique l’arrondi au pair, tandis que l’écriture directe tronque après bornage. Les deux chemins C++ du tampon audio partagent le calcul de capacité. La sonde Windows Release a vérifié les choix de latence, la sortie automatique, les dépassements de taille, le maintien des trames récentes et les deux conversions de volume. Elle a été supprimée.
+
+### En-têtes des panneaux centraux de l’OSD
+
+`FullscreenOsdWindow.CenterPanel.cs` affiche le glyphe du panneau avant le titre, puis un séparateur. Informations reprend les glyphes de `Icons.resx` et l’ordre défini dans `EmulationMachineTabConstants.cs`, avec la ROM avant la RAM. Windows Release a compilé et la sonde Qt hors écran a ouvert le panneau Informations et vérifié son titre, son icône, son séparateur et le glyphe de la section CPU. L’en-tête du Mixeur utilise le même chemin de création. La sonde a été supprimée.
+
+### Commandes des panneaux centraux de l’OSD
+
+`FullscreenOsdWindow.CenterPanel.cs` affiche les raccourcis de déplacement et de réglage du Mixeur, et une action Retour dans les deux panneaux. Le C++ reprend ces indications à partir des affectations actives et actualise un panneau ouvert après un changement de raccourci. La sonde Qt hors écran a vérifié le retour à la souris dans les deux panneaux, la mise à jour du raccourci et le réglage du volume au clavier. La Release Windows a compilé et la sonde a été supprimée.
+
+### Écritures du mixeur en cours de réglage
+
+`FullscreenOsdWindow.CenterPanel.cs` applique immédiatement l’aperçu et regroupe les écritures par réglage avant de les transmettre. Le C++ applique désormais la dernière valeur en attente de chaque voie au prochain passage de la boucle Qt et traite les écritures restantes au retour ou à la fermeture. La sonde hors écran a exercé deux voies, vérifié le regroupement et confirmé qu’un réglage pouvait être écrit avant le relâchement du curseur. La Release Windows a compilé. La sonde a été supprimée.
+
+### Sélection des voies à la souris
+
+`FullscreenOsdWindow.CenterPanel.cs` sélectionne la voie au clic sur sa carte et déplace directement le curseur au point cliqué. Le C++ reprend ces gestes en utilisant la géométrie du curseur du style Qt pour convertir le point en valeur. La sonde Release a sélectionné une voie par son libellé, l’a réglée au clavier, puis a vérifié le saut de valeur sur la piste d’une autre voie ainsi que son enregistrement. La sonde a été supprimée.

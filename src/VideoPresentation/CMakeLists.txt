@@ -50,7 +50,7 @@ qt_add_resources(RetroMediaLab.VideoPresentation "video_adjustments"
     BASE "${CMAKE_CURRENT_SOURCE_DIR}/shaders"
     FILES shaders/image-adjustments.glsl shaders/image-restoration.glsl shaders/crt.glsl shaders/led-matrix.glsl shaders/vfd-cells.glsl shaders/dot-matrix.glsl shaders/native-segments.glsl shaders/raster-segments.glsl shaders/epaper.glsl shaders/panel-grid.glsl shaders/projection.glsl shaders/plasma.glsl shaders/vector-raster.glsl shaders/fixed-pixel.glsl shaders/display-filter.glsl
 )
-target_sources(RetroMediaLab.VideoPresentation PRIVATE src/VulkanSurface.cpp)
+target_sources(RetroMediaLab.VideoPresentation PRIVATE src/VulkanSurface.cpp src/ShaderDiskCache.h)
 target_compile_definitions(RetroMediaLab.VideoPresentation PRIVATE RETROMEDIALAB_VIDEO_PRESENTATION_BUILD)
 target_include_directories(RetroMediaLab.VideoPresentation PUBLIC include)
 set(vulkan_headers "${PROJECT_SOURCE_DIR}/third_party/vulkan-headers")

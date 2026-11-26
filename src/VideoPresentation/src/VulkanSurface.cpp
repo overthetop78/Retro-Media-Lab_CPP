@@ -7,6 +7,7 @@
 #include <rhi/qrhi.h>
 
 #if QT_CONFIG(vulkan)
+#include "ShaderDiskCache.h"
 #include <QCoreApplication>
 #include <QFutureWatcher>
 #include <QPointer>
@@ -22,6 +23,10 @@ using namespace HardwareSamplingShader;
 constexpr auto ShaderStages = QRhiShaderResourceBinding::VertexStage | QRhiShaderResourceBinding::FragmentStage;
 
 #if QT_CONFIG(vulkan)
+constexpr auto VulkanCacheRenderer = "Vulkan";
+constexpr auto VulkanCacheVersion = "qrhi-pipeline-v1";
+constexpr auto VulkanCacheExtension = ".bin";
+
 struct PipelineTarget {
     QByteArray deviceName;
     quint64 deviceId;
@@ -35,6 +40,33 @@ struct PipelineTarget {
         return deviceId == driver.deviceId && vendorId == driver.vendorId && deviceName == driver.deviceName;
     }
 };
+
+QString pipelineCachePath(const PipelineTarget& target, const QString& directory) {
+    if (directory.isEmpty()) return {};
+    QCryptographicHash hash(QCryptographicHash::Sha256);
+    const auto add = [&](QByteArrayView component) {
+        hash.addData(component);
+        hash.addData(QByteArrayView("\0", 1));
+    };
+    add(VulkanCacheVersion);
+    add(qVersion());
+    add(target.deviceName);
+    add(QByteArray::number(target.deviceId));
+    add(QByteArray::number(target.vendorId));
+    add(target.apiVersion.toString().toLatin1());
+    add(QByteArray::number(int(target.format)));
+    add(QByteArray::number(target.depthStencil));
+    for (const auto path : {VertexShader, FragmentShader, CrtFragmentShader}) {
+        QFile shader(QString::fromLatin1(path));
+        if (!shader.open(QIODevice::ReadOnly)) return {};
+        // The digest preserves shader boundaries when hashing the three artifacts.
+        QCryptographicHash shaderHash(QCryptographicHash::Sha256);
+        if (!shaderHash.addData(&shader)) return {};
+        hash.addData(shaderHash.result());
+    }
+    return QDir(directory).filePath(QString::fromLatin1(hash.result().toHex()) +
+                                    QLatin1String(VulkanCacheExtension));
+}
 #endif
 
 struct Layer {
@@ -113,7 +145,7 @@ public:
     }
 
 #if QT_CONFIG(vulkan)
-    static QByteArray buildCache(QVulkanInstance& instance, const PipelineTarget& target) {
+    static QByteArray buildCache(QVulkanInstance& instance, const PipelineTarget& target, const QByteArray& seed) {
         QRhiVulkanInitParams params;
         params.inst = &instance;
         std::unique_ptr<QRhi> device;
@@ -129,6 +161,7 @@ public:
         device.reset(QRhi::create(QRhi::Vulkan, &params, QRhi::EnablePipelineCacheDataSave));
 #endif
         if (!device || !target.matches(device->driverInfo())) return {};
+        if (!seed.isEmpty()) device->setPipelineCacheData(seed);
 
         constexpr QSize Extent(16, 16);
         constexpr int Samples = 1;
@@ -225,7 +258,14 @@ private:
             promise.start();
             worker_.start([this, target, promise = std::move(promise)]() mutable {
                 QByteArray data;
-                try { data = Resources::buildCache(instance_, target); }
+                try {
+                    using namespace ShaderDiskCache;
+                    const auto directory = shaderCacheDirectory(QLatin1String(VulkanCacheRenderer));
+                    const auto path = pipelineCachePath(target, directory);
+                    const auto seed = readShaderBinary(path);
+                    data = Resources::buildCache(instance_, target, seed);
+                    if (data != seed) saveShaderBinary(directory, path, data);
+                }
                 catch (...) { /* An empty cache requests ordinary pipeline creation. */ }
                 promise.addResult(std::move(data));
                 promise.finish();

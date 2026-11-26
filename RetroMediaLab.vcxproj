@@ -827,9 +827,12 @@
     <ClInclude Include="src\Common\StorageProbeConstants.h" />
     <None Include="src\Emulation\CMakeLists.txt" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioBuffer.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioOutputController.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioProcessing.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ConfigurationFiles.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ControllerFeedback.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreDiagnostics.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreReleases.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationExport.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationKey.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorManager.h" />
@@ -850,6 +853,7 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreEnvironment.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreFileSystem.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreFrames.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreHardwareRender.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreLibrary.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreOptions.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreSession.h" />
@@ -862,9 +866,12 @@
     <ClCompile Include="src\Emulation\src\AudioBuffer.cpp" />
     <ClCompile Include="src\Emulation\src\AudioOutput.cpp" />
     <ClInclude Include="src\Emulation\src\AudioOutput.h" />
+    <ClCompile Include="src\Emulation\src\AudioOutputController.cpp" />
+    <ClCompile Include="src\Emulation\src\AudioProcessing.cpp" />
     <ClCompile Include="src\Emulation\src\ConfigurationFiles.cpp" />
     <ClCompile Include="src\Emulation\src\ControllerFeedback.cpp" />
     <ClCompile Include="src\Emulation\src\CoreDiagnostics.cpp" />
+    <ClCompile Include="src\Emulation\src\CoreReleases.cpp" />
     <ClCompile Include="src\Emulation\src\ExecutionRate.cpp" />
     <ClCompile Include="src\Emulation\src\Firmware.cpp" />
     <ClCompile Include="src\Emulation\src\HardwareSettings.cpp" />
@@ -883,6 +890,7 @@
     <ClCompile Include="src\Emulation\src\NativeCoreEnvironment.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreFileSystem.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreFrames.cpp" />
+    <ClCompile Include="src\Emulation\src\NativeCoreHardwareRender.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreLibrary.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreOptions.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreSession.cpp" />
@@ -11767,6 +11775,7 @@
     <ClInclude Include="src\VideoPresentation\src\SamplingFilters.h" />
     <ClCompile Include="src\VideoPresentation\src\SegmentDisplayProcessing.cpp" />
     <ClInclude Include="src\VideoPresentation\src\SegmentDisplayProcessing.h" />
+    <ClInclude Include="src\VideoPresentation\src\ShaderDiskCache.h" />
     <ClInclude Include="src\VideoPresentation\src\SoftwareFrameWorker.h" />
     <ClCompile Include="src\VideoPresentation\src\SoftwareProcessing.cpp" />
     <ClInclude Include="src\VideoPresentation\src\SoftwareProcessing.h" />

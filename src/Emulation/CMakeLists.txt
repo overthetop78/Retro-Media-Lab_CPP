@@ -4,6 +4,8 @@ add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/
   src/SessionDirectories.cpp include/RetroMediaLab/Emulation/SessionDirectories.h
   src/HardwareSettings.cpp include/RetroMediaLab/Emulation/HardwareSettings.h
   src/ConfigurationFiles.cpp include/RetroMediaLab/Emulation/ConfigurationFiles.h
+  src/CoreReleases.cpp include/RetroMediaLab/Emulation/CoreReleases.h
+  src/NativeCoreHardwareRender.cpp include/RetroMediaLab/Emulation/NativeCoreHardwareRender.h
   src/Messages.cpp include/RetroMediaLab/Emulation/Messages.h
   src/MachineExecution.cpp src/CoreDiagnostics.cpp src/NativeCoreContent.cpp src/NativeCoreLibrary.cpp src/NativeCoreFrames.cpp src/NativeCoreEnvironment.cpp src/NativeCoreOptions.cpp
   include/RetroMediaLab/Emulation/CoreDiagnostics.h
@@ -11,6 +13,8 @@ add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/
   include/RetroMediaLab/Emulation/NativeCoreLibrary.h
   include/RetroMediaLab/Emulation/NativeCoreFrames.h
   src/AudioBuffer.cpp include/RetroMediaLab/Emulation/AudioBuffer.h
+  src/AudioOutputController.cpp include/RetroMediaLab/Emulation/AudioOutputController.h
+  src/AudioProcessing.cpp include/RetroMediaLab/Emulation/AudioProcessing.h
   include/RetroMediaLab/Emulation/NativeCoreEnvironment.h
   include/RetroMediaLab/Emulation/NativeCoreOptions.h
   src/NativeCoreFileSystem.cpp include/RetroMediaLab/Emulation/NativeCoreFileSystem.h
@@ -23,6 +27,9 @@ add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/
 set_target_properties(RetroMediaLab.Emulation PROPERTIES AUTOMOC ON)
 target_compile_definitions(RetroMediaLab.Emulation PRIVATE RETROMEDIALAB_EMULATION_BUILD)
 target_include_directories(RetroMediaLab.Emulation PUBLIC include)
-target_link_libraries(RetroMediaLab.Emulation PUBLIC Qt6::Core PRIVATE RetroMediaLab.MediaEngine Qt6::Multimedia Qt6::Network)
+target_link_libraries(RetroMediaLab.Emulation PUBLIC Qt6::Core PRIVATE RetroMediaLab.MediaEngine RetroMediaLab.Archives Qt6::Multimedia Qt6::Network)
+if(WIN32)
+  target_link_libraries(RetroMediaLab.Emulation PRIVATE opengl32 gdi32 user32)
+endif()
 set_target_properties(RetroMediaLab.Emulation PROPERTIES OUTPUT_NAME Emulation)
 install(TARGETS RetroMediaLab.Emulation RUNTIME DESTINATION lib LIBRARY DESTINATION lib)

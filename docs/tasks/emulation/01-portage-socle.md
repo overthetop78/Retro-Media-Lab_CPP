@@ -1706,3 +1706,59 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
 
 - [x] Vérifier la publication des affectations depuis la vue Émulation
   - [x] Créer puis supprimer build/emulation-keyboard-bindings-view-check pour vérifier la combinaison clavier et molette, le relâchement et la priorité des raccourcis dans le thème Release.
+
+- [x] Reprendre les opérations communes d’installation des cœurs
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/CoreReleases.h et src/Emulation/src/CoreReleases.cpp pour construire les chemins, extraire la bibliothèque attendue, remplacer le fichier et résoudre le manifeste de la version active.
+  - [x] Modifier src/Emulation/CMakeLists.txt pour compiler ces opérations et utiliser le libarchive du projet.
+  - [x] Créer puis supprimer build/emulation-core-installation-check pour vérifier le contenu extrait, la conservation de la destination en cas d’échec et la sélection d’une installation complète.
+
+- [x] Métadonnées et téléchargement des versions de cœurs
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/CoreReleases.h et src/Emulation/src/CoreReleases.cpp pour reprendre la sélection du catalogue, les métadonnées HTTP, le téléchargement avec progression et l’ordre d’installation.
+  - [x] Créer puis supprimer build/emulation-core-download-check pour vérifier les réponses HTTP locales, l’écriture du fichier et l’annulation ainsi que l’ordre des étapes d’installation.
+
+- [x] Contexte OpenGL des cœurs sur Windows
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/NativeCoreHardwareRender.h et src/Emulation/src/NativeCoreHardwareRender.cpp pour exposer le contexte, ses callbacks et la copie des trames.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreEnvironment.h et src/Emulation/CMakeLists.txt pour déclarer la commande native et lier le backend Windows.
+  - [x] Créer puis supprimer build/emulation-core-opengl-check pour vérifier les callbacks, les pixels, le redimensionnement et le nettoyage du contexte.
+
+- [x] Tampons vidéo réutilisables du SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreFrames.h et src/Emulation/src/NativeCoreFrames.cpp pour porter le calcul de taille, la copie des pixels et la rotation des tampons, puis les raccorder au callback vidéo natif.
+  - [x] Créer puis supprimer build/emulation-video-buffers-check pour vérifier la rotation, la conservation des trames publiées et les dimensions invalides.
+
+- [x] Contrôleur de sortie audio du SDK
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/AudioOutputController.h et src/Emulation/src/AudioOutputController.cpp pour porter le cycle de vie, le volume, la latence et la récupération de la sortie audio du C#.
+  - [x] Modifier src/Emulation/CMakeLists.txt et actualiser les fichiers Visual C++ générés pour exposer le contrôleur.
+  - [x] Créer puis supprimer build/emulation-audio-controller-check pour vérifier le comportement avec des sorties empruntées et possédées.
+
+- [x] Géométrie et libellés vidéo du SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreFrames.h et src/Emulation/src/NativeCoreFrames.cpp pour appliquer le rapport d’image et produire les libellés de fréquence et de norme comme dans le C#.
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour utiliser la même règle de géométrie à l’initialisation et pendant l’émulation.
+  - [x] Créer puis supprimer build/emulation-video-geometry-check pour vérifier les deux chemins et les libellés.
+
+- [x] Cache de pipelines Vulkan entre lancements
+  - [x] Créer src/VideoPresentation/src/ShaderDiskCache.h à partir des opérations de lecture et d’écriture Direct3D 11.
+  - [x] Modifier src/VideoPresentation/src/Direct3DSurface.cpp et src/VideoPresentation/src/VulkanSurface.cpp pour partager le stockage et réutiliser le cache Vulkan sur le fil de préparation.
+  - [x] Mettre à jour src/VideoPresentation/CMakeLists.txt et les fichiers Visual C++ générés pour inclure le code commun.
+  - [x] Créer puis supprimer build/emulation-vulkan-disk-cache-check pour vérifier la persistance, la lecture et la reconstruction après corruption.
+
+- [x] Utilitaires de traitement audio du SDK
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/AudioProcessing.h et src/Emulation/src/AudioProcessing.cpp pour porter les règles audio de configuration, de copie, de troncature et de volume.
+  - [x] Modifier src/Emulation/src/AudioBuffer.cpp, src/Emulation/src/AudioOutputController.cpp et src/Emulation/CMakeLists.txt pour réutiliser ces règles, puis actualiser les fichiers Visual C++.
+  - [x] Créer puis supprimer build/emulation-audio-processing-check pour vérifier les utilitaires et leur raccordement au tampon audio.
+
+- [x] En-têtes des panneaux centraux de l’OSD
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationCommandIcons.h et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre les glyphes et l’ordre des sections du C#.
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour afficher l’icône du panneau et le séparateur dans Informations et Mixeur.
+  - [x] Créer puis supprimer build/emulation-osd-panel-header-check pour vérifier les en-têtes et les glyphes.
+
+- [x] Commandes affichées dans les panneaux centraux de l’OSD
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour afficher les raccourcis actifs et offrir le retour à la souris dans Informations et Mixeur.
+  - [x] Créer puis supprimer build/emulation-osd-center-footer-check pour vérifier les deux panneaux, l’actualisation des raccourcis et le retour.
+
+- [x] Application des réglages du mixeur plein écran
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour appliquer les changements pendant le déplacement et regrouper les écritures en attente par voie, comme dans le C#.
+  - [x] Créer puis supprimer build/emulation-osd-mixer-save-check pour vérifier le déplacement, la conservation du dernier réglage de chaque voie et l’écriture au retour.
+
+- [x] Sélection des voies à la souris dans le mixeur
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour sélectionner la voie depuis sa carte et déplacer directement le curseur au point cliqué.
+  - [x] Créer puis supprimer build/emulation-osd-fader-pointer-check pour vérifier la sélection depuis le libellé et le réglage sur la piste du curseur.

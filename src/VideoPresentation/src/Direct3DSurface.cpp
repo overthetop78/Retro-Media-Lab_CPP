@@ -1,6 +1,7 @@
 #include "Direct3DSurface.h"
 #include "HardwareSamplingShader.h"
 #include "SamplingFilters.h"
+#include "ShaderDiskCache.h"
 #include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDir>
@@ -8,8 +9,6 @@
 #include <QFutureWatcher>
 #include <QPointer>
 #include <QPromise>
-#include <QSaveFile>
-#include <QStandardPaths>
 #include <QThreadPool>
 #include <QTimer>
 #include <algorithm>
@@ -22,6 +21,7 @@ namespace RetroMediaLab::VideoPresentation {
 namespace {
 using Microsoft::WRL::ComPtr;
 using namespace HardwareSamplingShader;
+using namespace ShaderDiskCache;
 constexpr UINT SwapBufferCount = 2;
 constexpr DXGI_FORMAT PixelFormat = DXGI_FORMAT_B8G8R8A8_UNORM;
 constexpr float Black[]{0.f, 0.f, 0.f, 1.f};
@@ -31,10 +31,9 @@ constexpr char VertexProfile[] = "vs_4_0";
 constexpr char PixelProfile[] = "ps_4_0";
 constexpr char SamplingVertexProfile[] = "vs_5_0";
 constexpr char SamplingPixelProfile[] = "ps_5_0";
-constexpr char CacheDirectory[] = "ShaderCache/Direct3D11";
+constexpr char CacheRenderer[] = "Direct3D11";
 constexpr char CacheVersion[] = "native-dxbc-v1";
 constexpr char CacheExtension[] = ".bin";
-constexpr qsizetype MaximumBinarySize = 16 * 1024 * 1024;
 constexpr UINT CompileFlags = D3DCOMPILE_OPTIMIZATION_LEVEL3;
 constexpr UINT DisplayFallbackCompileFlags = D3DCOMPILE_SKIP_OPTIMIZATION;
 constexpr char DisplayShaderBytecode[] = ":/video-presentation/crt.frag.dxbc";
@@ -59,34 +58,8 @@ float4 pixelMain(Vertex vertex) : SV_TARGET {
 }
 )hlsl";
 
-QString shaderCacheDirectory() {
-    const auto root = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-    return root.isEmpty() ? QString{} : QDir(root).filePath(QLatin1String(CacheDirectory));
-}
-
-QByteArray readShaderBinary(const QString& path) {
-    if (path.isEmpty()) return {};
-    QFile input(path);
-    if (!input.open(QIODevice::ReadOnly)) return {};
-    const qsizetype hashSize = QCryptographicHash::hashLength(QCryptographicHash::Sha256);
-    const auto length = input.size() - hashSize;
-    if (length <= 0 || length > MaximumBinarySize) return {};
-    const auto digest = input.read(hashSize);
-    const auto binary = input.read(length);
-    if (binary.size() != length || !input.atEnd()) return {};
-    return QCryptographicHash::hash(binary, QCryptographicHash::Sha256) == digest ? binary : QByteArray{};
-}
-
-void saveShaderBinary(const QString& directory, const QString& path, const QByteArray& binary) {
-    if (path.isEmpty() || binary.isEmpty() || binary.size() > MaximumBinarySize || !QDir().mkpath(directory)) return;
-    QSaveFile output(path);
-    if (!output.open(QIODevice::WriteOnly)) return;
-    const auto digest = QCryptographicHash::hash(binary, QCryptographicHash::Sha256);
-    if (output.write(digest) == digest.size() && output.write(binary) == binary.size()) output.commit();
-}
-
 QByteArray compile(QByteArrayView source, const char* entry, const char* profile,
-    UINT flags = CompileFlags, const QString& cacheDirectory = shaderCacheDirectory()) {
+    UINT flags = CompileFlags, const QString& cacheDirectory = shaderCacheDirectory(QLatin1String(CacheRenderer))) {
     QString path;
     if (!cacheDirectory.isEmpty()) {
         QCryptographicHash hash(QCryptographicHash::Sha256);

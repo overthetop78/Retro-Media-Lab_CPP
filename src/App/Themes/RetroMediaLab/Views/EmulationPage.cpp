@@ -180,9 +180,14 @@ constexpr auto OsdBackKey = "Emulation.Shortcut.OsdBackHint";
 constexpr auto OsdVideoSettingsKey = "Emulation.Shortcut.OsdVideoSettings";
 constexpr auto AudioTabKey = "Emulation.Tab.Audio";
 constexpr auto OsdInformationKey = "Menu.Information";
-constexpr std::array OsdInformationTabs{
-    "Emulation.Tab.General", "Emulation.Tab.Cpu", "Emulation.Tab.Ram", "Emulation.Tab.Rom",
-    VideoKey, AudioTabKey, "Emulation.Tab.Extensions"};
+constexpr std::pair<const char*, EmulationCommandIcons::Glyph> OsdInformationTabs[]{
+    {"Emulation.Tab.General", EmulationCommandIcons::Settings},
+    {"Emulation.Tab.Cpu", EmulationCommandIcons::Processor},
+    {"Emulation.Tab.Rom", EmulationCommandIcons::File},
+    {"Emulation.Tab.Ram", EmulationCommandIcons::Memory},
+    {VideoKey, EmulationCommandIcons::Display},
+    {AudioTabKey, EmulationCommandIcons::Audio},
+    {"Emulation.Tab.Extensions", EmulationCommandIcons::Connection}};
 constexpr auto OsdAudioKey = "Emulation.Shortcut.OsdAudioSettings";
 constexpr auto AutomaticSettingKey = "Emulation.Controller.Automatic";
 constexpr auto ModuleAudioEnabledKey = "Emulation.Audio.Enabled";
@@ -3389,7 +3394,7 @@ private:
         using Entry = FullscreenOsd::Entry;
         std::vector<Entry> rows;
         std::vector<std::function<bool()>> sections;
-        for (const auto* tab : OsdInformationTabs) {
+        for (const auto& [tab, glyph] : OsdInformationTabs) {
             std::vector<Entry> fields;
             std::vector<std::function<bool()>> visibility;
             for (const auto& block : osdBlocks_) {
@@ -3403,6 +3408,7 @@ private:
             }
             if (fields.empty()) continue;
             Entry heading{moduleSettingText(QLatin1String(tab))};
+            heading.icon = EmulationCommandIcons::icon(*this, glyph, qRgb(255, 255, 255));
             heading.visible = [fields = std::move(visibility)] {
                 return std::ranges::any_of(fields, [](const auto& visible) { return visible(); });
             };
@@ -3411,7 +3417,7 @@ private:
             std::ranges::move(fields, std::back_inserter(rows));
         }
         Entry information{text(translations_, OsdInformationKey), {}, std::move(rows), {},
-            style()->standardIcon(QStyle::SP_MessageBoxInformation)};
+            EmulationCommandIcons::icon(*this, EmulationCommandIcons::Information, qRgb(255, 255, 255))};
         information.visible = [sections = std::move(sections)] {
             return std::ranges::any_of(sections, [](const auto& visible) { return visible(); });
         };

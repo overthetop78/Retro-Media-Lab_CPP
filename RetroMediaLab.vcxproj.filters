@@ -4800,6 +4800,12 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioBuffer.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioOutputController.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioProcessing.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ConfigurationFiles.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
@@ -4807,6 +4813,9 @@
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreDiagnostics.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreReleases.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationExport.h">
@@ -4869,6 +4878,9 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreFrames.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreHardwareRender.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreLibrary.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
@@ -4905,6 +4917,12 @@
     <ClInclude Include="src\Emulation\src\AudioOutput.h">
       <Filter>src\Emulation\src</Filter>
     </ClInclude>
+    <ClCompile Include="src\Emulation\src\AudioOutputController.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Emulation\src\AudioProcessing.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Emulation\src\ConfigurationFiles.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
@@ -4912,6 +4930,9 @@
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\CoreDiagnostics.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Emulation\src\CoreReleases.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\ExecutionRate.cpp">
@@ -4966,6 +4987,9 @@
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\NativeCoreFrames.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Emulation\src\NativeCoreHardwareRender.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\NativeCoreLibrary.cpp">
@@ -37618,6 +37642,9 @@
       <Filter>src\VideoPresentation\src</Filter>
     </ClCompile>
     <ClInclude Include="src\VideoPresentation\src\SegmentDisplayProcessing.h">
+      <Filter>src\VideoPresentation\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoPresentation\src\ShaderDiskCache.h">
       <Filter>src\VideoPresentation\src</Filter>
     </ClInclude>
     <ClInclude Include="src\VideoPresentation\src\SoftwareFrameWorker.h">

@@ -107,7 +107,7 @@ void NativeCoreEnvironment::applyAvInfo(const NativeCoreAvInfo& info) {
     framesPerSecond_ = info.timing.framesPerSecond;
     audio_.setSampleRate(sampleRate(info.timing.sampleRate));
     geometry_ = info.geometry;
-    video_.setAspectRatio(geometry_.aspectRatio);
+    video_.applyGeometry(geometry_);
 }
 
 bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
@@ -263,7 +263,7 @@ bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
         case Command::SetSystemAvInfo: applyAvInfo(*static_cast<const NativeCoreAvInfo*>(data)); return true;
         case Command::SetGeometry:
             geometry_ = *static_cast<const NativeCoreGeometry*>(data);
-            video_.setAspectRatio(geometry_.aspectRatio);
+            video_.applyGeometry(geometry_);
             return true;
         default: return false;
         }

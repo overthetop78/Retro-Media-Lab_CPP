@@ -16,7 +16,7 @@ inline constexpr unsigned NativeCoreExperimentalCommandFlag = 0x10000;
 enum class NativeCoreEnvironmentCommand : unsigned {
     SetRotation = 1, GetOverscan = 2, GetCanDuplicateFrames = 3, SetMessage = 6, Shutdown = 7, SetPerformanceLevel = 8,
     GetSystemDirectory = 9, SetPixelFormat = 10, SetInputDescriptors = 11, SetKeyboardCallback = 12,
-    SetDiskControl = 13,
+    SetDiskControl = 13, SetHardwareRender = 14,
     GetVariable = 15, SetVariables = 16, GetVariableUpdate = 17,
     SetSupportNoGame = 18, GetRumbleInterface = 23, GetInputDeviceCapabilities = 24,
     GetSensorInterface = 25 | NativeCoreExperimentalCommandFlag, GetLogInterface = 27, GetContentDirectory = 30,

@@ -126,10 +126,12 @@ private:
     void showEditor(const Entry&);
     void positionEditor();
     void refreshEditorHints();
+    void refreshCenterHints();
     void adjustValue(int value);
     void editAdjacent(int direction);
     void buildMixer();
     void refreshMixer();
+    void flushPendingFaders();
     void focusLevel();
     void navigateMixer(Navigation direction);
     bool hasPointerCapture() const;
