@@ -7,6 +7,7 @@
 #include <QLocalServer>
 #include <QLocalSocket>
 #include <QProcess>
+#include <QScopeGuard>
 #include <QStandardPaths>
 #include <QtEndian>
 #include <algorithm>
@@ -29,7 +30,9 @@ constexpr quint8 FailureResponse = 2;
 constexpr qsizetype HeaderSize = sizeof(qint32) + sizeof(quint8);
 
 int waitSlice(const QDeadlineTimer& deadline, std::stop_token token) {
-    return token.stop_requested() ? 0 : static_cast<int>(std::clamp(deadline.remainingTime(), qint64{}, qint64{WaitSliceMs}));
+    if (token.stop_requested()) return 0;
+    if (deadline.isForever()) return WaitSliceMs;
+    return static_cast<int>(std::clamp(deadline.remainingTime(), qint64{}, qint64{WaitSliceMs}));
 }
 
 bool readExact(QLocalSocket& socket, char* target, qint64 size, const QDeadlineTimer& deadline, std::stop_token token) {
@@ -80,6 +83,26 @@ std::optional<QByteArray> readResponse(QLocalSocket& socket, const QDeadlineTime
     }
     return result;
 }
+
+class HostedRequestInput final : public QIODevice {
+public:
+    HostedRequestInput(QLocalSocket& socket, std::stop_token token) : socket_(socket), token_(token) {
+        open(ReadOnly | Unbuffered);
+    }
+
+    bool isSequential() const override { return true; }
+
+protected:
+    qint64 readData(char* target, qint64 size) override {
+        return readExact(socket_, target, size, QDeadlineTimer::Forever, token_) ? size : -1;
+    }
+
+    qint64 writeData(const char*, qint64) override { return -1; }
+
+private:
+    QLocalSocket& socket_;
+    std::stop_token token_;
+};
 
 #ifdef Q_OS_WIN
 struct HandleCloser {
@@ -265,13 +288,81 @@ HostProtocol::SharedVideoMemory& HostedCoreTransport::videoMemory() noexcept {
 }
 
 namespace HostProtocol {
+bool runHostedCoreConnection(const QString& pipeName, qint32 version, int connectionTimeoutMs,
+        const HostedCommandHandler& execute, const HostedErrorDescription& describeError, std::stop_token token) {
+    if (pipeName.isEmpty() || connectionTimeoutMs <= 0 || !execute || !describeError || token.stop_requested())
+        return false;
+
+#ifdef Q_OS_WIN
+    const auto previousErrorMode = GetErrorMode();
+    SetErrorMode(previousErrorMode | SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX);
+    const auto restoreErrorMode = qScopeGuard([previousErrorMode] { SetErrorMode(previousErrorMode); });
+#endif
+
+    QLocalSocket socket;
+    socket.setReadBufferSize(PipeBufferSize);
+    socket.connectToServer(pipeName);
+    const QDeadlineTimer deadline(connectionTimeoutMs, Qt::PreciseTimer);
+    while (socket.state() == QLocalSocket::ConnectingState) {
+        const int wait = waitSlice(deadline, token);
+        if (wait <= 0) return false;
+        socket.waitForConnected(wait);
+    }
+    if (socket.state() != QLocalSocket::ConnectedState) return false;
+
+    HostedRequestInput input(socket, token);
+    while (!token.stop_requested()) {
+        while (!socket.bytesAvailable() && socket.state() == QLocalSocket::ConnectedState && !token.stop_requested())
+            socket.waitForReadyRead(WaitSliceMs);
+        if (token.stop_requested()) return false;
+        if (!socket.bytesAvailable()) return true;
+
+        const auto code = readHeader(input, version);
+        if (!code) return false;
+        const auto command = static_cast<HostedCoreCommand>(*code);
+        QByteArray response;
+        QBuffer output(&response);
+        if (!output.open(QIODevice::WriteOnly) || !writeHeader(output, version, SuccessResponse)) return false;
+        try {
+            if (!execute(command, input, output)) return false;
+        } catch (...) {
+            const auto description = describeError(std::current_exception());
+            response.clear();
+            if (!output.seek(0) || !writeHeader(output, version, FailureResponse) ||
+                !writeString(output, QString::fromUtf8(QJsonDocument(description).toJson(QJsonDocument::Compact))))
+                return false;
+        }
+        if (response.size() > MaximumBlobLength) return false;
+        char size[sizeof(qint32)]{};
+        qToLittleEndian(static_cast<qint32>(response.size()), size);
+        if (!writeRequest(socket, QByteArrayView(size, sizeof(size)), QDeadlineTimer::Forever, token) ||
+            !writeRequest(socket, response, QDeadlineTimer::Forever, token)) return false;
+        if (command == HostedCoreCommand::Dispose) return true;
+    }
+    return false;
+}
+
+static bool validMediaSlot(HostedMediaSlot slot) {
+    return slot.category >= HostedMediaCategory::FloppyDrive && slot.category <= HostedMediaCategory::MemoryCard &&
+        slot.index >= 0;
+}
+
 bool writeMediaSlot(QIODevice& device, HostedMediaSlot slot) {
-    if (slot.category < HostedMediaCategory::FloppyDrive || slot.category > HostedMediaCategory::MemoryCard ||
-        slot.index < 0) return false;
+    if (!validMediaSlot(slot)) return false;
     QDataStream stream(&device);
     stream.setByteOrder(QDataStream::LittleEndian);
     stream << static_cast<qint32>(slot.category) << slot.index;
     return stream.status() == QDataStream::Ok;
+}
+
+std::optional<HostedMediaSlot> readMediaSlot(QIODevice& device) {
+    qint32 category{}, index{};
+    QDataStream stream(&device);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    stream >> category >> index;
+    const HostedMediaSlot slot{static_cast<HostedMediaCategory>(category), index};
+    if (stream.status() != QDataStream::Ok || !validMediaSlot(slot)) return {};
+    return slot;
 }
 
 bool writeOption(QIODevice& device, const QString& id, const QString& value) {

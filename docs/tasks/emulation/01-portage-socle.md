@@ -2138,3 +2138,34 @@ identité’identité du C#.
 - [x] Présentation commune des panneaux centrés de l’OSD
   - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour reprendre le fond translucide, les séparateurs entre groupes visibles et le surlignage du mixeur de FullscreenOsdWindow.CenterPanel.cs.
   - [x] Créer puis supprimer build/emulation-osd-center-style-check pour vérifier les séparateurs, le surlignage et les commandes des deux panneaux.
+
+- [x] Boucle commune des commandes du processus hôte
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreTransport.h et src/Emulation/src/HostedCoreTransport.cpp pour ajouter la connexion et la boucle de réception du processus hôte, les réponses encadrées et la restauration du mode d’erreur Windows.
+  - [x] Créer puis supprimer build/emulation-hosted-command-loop-check pour exercer les commandes et la fermeture entre deux processus.
+
+- [x] Commandes communes exécutées dans le cœur hébergé
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreTransport.h et src/Emulation/src/HostedCoreTransport.cpp pour lire et valider les identifiants de lecteurs comme à l’écriture.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour lire l’initialisation et distribuer les commandes C# communes avec les codecs du client.
+  - [x] Créer puis supprimer build/emulation-hosted-dispatch-check pour vérifier ces commandes avec HostedCoreSession et un processus de test.
+
+- [x] Réponses d’initialisation et de trame du processus hôte
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour lire les entrées d’une trame et encoder les réponses d’initialisation et de trame suivant les variantes du C#.
+  - [x] Créer puis supprimer build/emulation-hosted-replies-check pour vérifier les réponses avec HostedCoreSession et un processus de test.
+
+- [x] Cycle de vie commun du cœur dans le processus hôte
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour assembler la création, la libération et la boucle du cœur suivant le C#.
+  - [x] Créer puis supprimer build/emulation-hosted-lifecycle-check pour vérifier le remplacement, le nettoyage après erreur et la réception des entrées et des trames.
+
+- [x] Entrées manette à la fermeture de l’OSD
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour capturer les manettes physiques au moment de la fermeture et libérer les filtres inactifs, comme dans le C#.
+
+- [x] Entrées de la machine à la mise hors tension
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour réinitialiser les entrées et les raccourcis à l’arrêt, et filtrer la remise des entrées selon l’état de la machine.
+
+- [x] Gestion des erreurs et verrouillage du test de vibration
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp, src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.h et src/App/Themes/RetroMediaLab/Views/EmulationPreferencesDialog.cpp pour verrouiller l’intensité durant l’impulsion et consigner les exceptions.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour arrêter les vibrations quand la remise des entrées au moteur échoue.
+
+- [x] Application des profils et repli des moteurs vidéo
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp pour ignorer les profils normalisés identiques après l’initialisation et traiter Direct3D 11 comme indisponible hors Windows.
+  - [x] Créer puis supprimer build/video-profile-fallback-check pour vérifier l’application du profil et le repli Vulkan lors d’un échec réel de l’initialisation.

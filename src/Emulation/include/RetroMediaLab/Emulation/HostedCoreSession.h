@@ -125,7 +125,84 @@ private:
     std::shared_ptr<VideoOutput> videoOutput_;
 };
 
+class IHostedCoreCommands {
+public:
+    virtual ~IHostedCoreCommands() = default;
+    virtual void hardReset() = 0;
+    virtual void softReset() = 0;
+    virtual void stop() = 0;
+    virtual void insertMedia(const QJsonObject&) = 0;
+    virtual void ejectMedia(HostedMediaSlot) = 0;
+    virtual void saveMediaChanges(HostedMediaSlot) = 0;
+    virtual bool hasUnsavedMediaChanges(HostedMediaSlot) = 0;
+    virtual QByteArray saveState() = 0;
+    virtual void loadState(QByteArrayView) = 0;
+    virtual void setOption(const QString& id, const QString& value) = 0;
+    virtual void selectDisk(qint32 index) = 0;
+    virtual HostedCoreDiskReport diskStatus() = 0;
+    virtual void setControllerPortDevice(qint32 port, qint32 device) = 0;
+};
+
 namespace HostProtocol {
+struct HostedCoreInitialization {
+    QString corePath;
+    std::optional<qint32> emulator;
+    QString sessionDirectory;
+    QString saveDirectory;
+    QJsonObject configuration;
+};
+
+// Execute the common commands inside the hosted process. The module handles
+// Initialize, RunFrame and Dispose. A malformed argument returns false.
+RETROMEDIALAB_EMULATION_API bool executeHostedCoreCommand(HostedCoreCommand, IHostedCoreCommands&,
+    QIODevice& request, QIODevice& response);
+RETROMEDIALAB_EMULATION_API std::optional<HostedCoreInitialization> readInitialization(QIODevice&, bool hasEmulator);
+
+struct HostedCoreFrameRequest {
+    CoreInput input;
+    std::optional<AudioBufferStatus> audioStatus;
+};
+
+RETROMEDIALAB_EMULATION_API std::optional<HostedCoreFrameRequest> readHostedFrameRequest(QIODevice&);
+
+// One writer per hosted connection. The module provides the frame and drained audio.
+class RETROMEDIALAB_EMULATION_API HostedCoreReplyWriter final {
+public:
+    explicit HostedCoreReplyWriter(const HostedCoreSessionOptions& layout);
+    bool writeInitializationReply(QIODevice&, const HostedCoreInfo&, const HostedCoreStatus&, const QStringList& diagnostics);
+    bool writeFrameReply(QIODevice&, SharedVideoMemory&, const VideoFrame*, const QList<AudioChunk>&,
+        const HostedCoreStatus&, const QStringList& diagnostics);
+
+private:
+    const bool frameStateSupport_;
+    const bool frameDiskSelection_;
+    const bool shutdownAndFeedback_;
+    const bool initializationDiskSelection_;
+    quint64 lastVideoSequence_ = 0;
+    qsizetype lastDiagnosticCount_ = 0;
+};
+
+class IHostedCoreRuntime : public IHostedCoreCommands {
+public:
+    virtual void initialize(const HostedCoreInitialization&) = 0;
+    virtual HostedCoreInfo info() const = 0;
+    virtual HostedCoreStatus status() const = 0;
+    virtual QStringList diagnostics() const = 0;
+    virtual void setInput(const CoreInput&) = 0;
+    virtual void setAudioBufferStatus(const std::optional<AudioBufferStatus>&) = 0;
+    virtual void runFrame() = 0;
+    virtual std::shared_ptr<const VideoFrame> latestFrame() const = 0;
+    virtual QList<AudioChunk> takeAudio() = 0;
+};
+
+using HostedCoreFactory = std::function<std::unique_ptr<IHostedCoreRuntime>(const HostedCoreInitialization&)>;
+using HostedCoreErrorDescription = std::function<QJsonObject(std::exception_ptr, const QStringList& diagnostics)>;
+
+// Run in a dedicated process. The session owns the core and its video mapping.
+RETROMEDIALAB_EMULATION_API bool runHostedCore(const QString& pipeName, const QString& videoMapName,
+    const HostedCoreSessionOptions&, bool hasEmulator, const HostedCoreFactory&, const HostedCoreErrorDescription&,
+    std::stop_token = {});
+
 // Initialization layout used by the native hosts with an emulator identifier.
 RETROMEDIALAB_EMULATION_API bool writeInitialization(QIODevice&, const QString& corePath, qint32 emulator,
     const QString& sessionDirectory, const QString& saveDirectory, const QJsonObject& configuration);

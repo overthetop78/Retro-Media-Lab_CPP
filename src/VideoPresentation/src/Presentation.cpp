@@ -1005,14 +1005,19 @@ void VideoSurface::resetDisplayHistory() {
 
 void VideoSurface::setProfile(Profile profile) {
     const auto requested = profile.renderer;
-    if (requestedRenderer_ != requested) failedRenderer_.reset();
+    const bool sameRequest = requestedRenderer_ == requested;
+    if (!sameRequest) failedRenderer_.reset();
     requestedRenderer_ = requested;
     if (failedRenderer_ == requested) profile.renderer = Renderer::Software;
+#ifndef Q_OS_WIN
+    if (requested == Renderer::Direct3D11) profile.renderer = Renderer::Software;
+#endif
 
     for (const auto& entry : PanelSignalFields) {
         auto& panel = profile.*std::get<1>(entry);
         normalizePanelInput(std::get<2>(entry), panel);
     }
+    if (sameRequest && profile_ == profile) return;
     if (profile_.displayDeinterlacing() != profile.displayDeinterlacing()) motionSequence_.reset();
     const auto usesLcd = [](const Profile& value) {
         const auto screen = value.screenType();

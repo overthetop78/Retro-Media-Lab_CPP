@@ -2,9 +2,11 @@
 #include "Shared/Controls/ControllerAnalogProfiles.h"
 #include "Shared/Controls/ControllerArtwork.h"
 #include "Shared/Controls/ControllerVisualProfiles.h"
+#include "Logging/DiagnosticLog.h"
 #include <ErrorKeys.h>
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QComboBox>
+#include <QCoreApplication>
 #include <QFocusEvent>
 #include <QFontDatabase>
 #include <QFormLayout>
@@ -16,6 +18,7 @@
 #include <QMouseEvent>
 #include <QPushButton>
 #include <QShowEvent>
+#include <QSet>
 #include <QSignalBlocker>
 #include <QSlider>
 #include <QTimer>
@@ -30,6 +33,9 @@
 #include <array>
 #include <memory>
 #include <optional>
+#include <system_error>
+#include <typeinfo>
+#include <utility>
 
 namespace RetroMediaLab {
 namespace {
@@ -79,6 +85,7 @@ constexpr auto RumbleStrengthKey = "Controllers.RumbleStrength";
 constexpr auto TestRunningKey = "Controllers.TestRunning";
 constexpr auto TestFailedKey = "Controllers.TestFailed";
 constexpr auto TestCompletedKey = "Controllers.TestCompleted";
+constexpr auto RumbleDiagnosticContext = "Emulation.ControllerRumbleTest";
 constexpr int RumblePulseMs = 250;
 constexpr int RumbleMinPercent = 5;
 constexpr int RumbleMaxPercent = 100;
@@ -306,8 +313,8 @@ private:
 
 class ControllerPanel final : public QWidget {
 public:
-    ControllerPanel(QWidget* parent, Translations::TranslationService& translations)
-        : QWidget(parent), translations_(translations) {
+    ControllerPanel(QWidget* parent, Translations::TranslationService& translations, QString logsDirectory)
+        : QWidget(parent), translations_(translations), logsDirectory_(std::move(logsDirectory)) {
         auto* layout = new QVBoxLayout(this);
         auto* header = new QHBoxLayout;
         devices_ = new QComboBox(this);
@@ -502,6 +509,7 @@ private:
 
     void updateRumbleControls() {
         rumble_->setVisible(motorCapabilities_ != 0);
+        rumbleStrength_->setEnabled(motorCapabilities_ != 0 && !rumbleTimer_.isActive());
         for (std::size_t i = 0; i < motors_.size(); ++i)
             motors_[i]->setEnabled(!rumbleTimer_.isActive() && (motorCapabilities_ & Motors[i].capability) != 0);
     }
@@ -516,13 +524,40 @@ private:
             return;
         Platform::GamepadRumble output;
         output.*motor.member = float(rumbleStrength_->value()) / RumbleMaxPercent;
-        if (!source_->updateRumble({{selected_, output}})) {
-            setRumbleStatus(TestFailedKey);
+        try {
+            if (!source_->updateRumble({{selected_, output}})) {
+                finishRumble(TestFailedKey);
+                return;
+            }
+        } catch (...) {
+            finishRumble(TestFailedKey);
+            logRumbleFailure();
             return;
         }
         rumbleTimer_.start(RumblePulseMs);
         setRumbleStatus(TestRunningKey);
         updateRumbleControls();
+    }
+
+    void logRumbleFailure() noexcept {
+        try {
+            const auto report = [this](QByteArray identity, const QString& detail) {
+                if (logsDirectory_.isEmpty() || rumbleErrors_.contains(identity)) return;
+                rumbleErrors_.insert(std::move(identity));
+                writeDiagnostic(logsDirectory_, DiagnosticSeverity::Error, detail, QLatin1String(RumbleDiagnosticContext),
+                    QString::fromStdString(translations_.language()), QCoreApplication::applicationFilePath());
+            };
+            try { throw; }
+            catch (const std::system_error& error) {
+                const auto& code = error.code();
+                report(QByteArray(typeid(error).name()) + code.category().name() + QByteArray::number(code.value()),
+                    QString::fromUtf8(error.what()));
+            } catch (const std::exception& error) {
+                report(typeid(error).name(), QString::fromUtf8(error.what()));
+            } catch (...) {
+                report({}, text(ErrorKeys::UnexpectedApplicationException));
+            }
+        } catch (...) {}
     }
 
     void finishRumble(const char* status = nullptr) {
@@ -1061,6 +1096,8 @@ private:
     struct Field { QLabel* label; QSlider* slider; QLabel* percent; };
     struct Axis { QLabel* label; QLabel* value; };
     Translations::TranslationService& translations_;
+    QString logsDirectory_;
+    QSet<QByteArray> rumbleErrors_;
     QComboBox* devices_;
     QWidget* modelRow_;
     QLabel* modelLabel_;
@@ -1115,7 +1152,8 @@ private:
 };
 }
 
-QWidget* createEmulationControllerPanel(QWidget* parent, Translations::TranslationService& translations) {
-    return new ControllerPanel(parent, translations);
+QWidget* createEmulationControllerPanel(QWidget* parent, Translations::TranslationService& translations,
+    QString logsDirectory) {
+    return new ControllerPanel(parent, translations, std::move(logsDirectory));
 }
 }

@@ -6,7 +6,9 @@
 #include <QFileInfo>
 #include <QJsonDocument>
 #include <QSet>
+#include <algorithm>
 #include <limits>
+#include <stdexcept>
 
 namespace RetroMediaLab::Emulation {
 
@@ -28,6 +30,7 @@ constexpr auto DiskEjectedKey = "isEjected";
 constexpr auto DiskImagesKey = "images";
 constexpr auto DiskImageIndexKey = "index";
 constexpr auto DiskImageLabelKey = "label";
+constexpr auto MachineStartFailed = "Emulation.Error.MachineStartFailed";
 
 QStringList contentExtensions(const QString& extensions) {
     auto result = extensions.split(ExtensionSeparator, Qt::SkipEmptyParts);
@@ -91,6 +94,40 @@ std::optional<HostedCoreDiskReport> readDiskReport(QIODevice& response) {
     return report;
 }
 
+QJsonValue nullableDiskText(const QString& text) {
+    return text.isNull() ? QJsonValue(QJsonValue::Null) : QJsonValue(text);
+}
+
+bool writeDiskReport(QIODevice& response, const HostedCoreDiskReport& report) {
+    QJsonArray images;
+    for (const auto& image : report.images) {
+        images.append(QJsonObject{{QLatin1String(DiskImageIndexKey), image.index},
+            {QLatin1String(MediaPathKey), nullableDiskText(image.path)},
+            {QLatin1String(DiskImageLabelKey), nullableDiskText(image.label)}});
+    }
+    const QJsonObject object{{QLatin1String(DiskImageCountKey), report.imageCount},
+        {QLatin1String(DiskCurrentIndexKey), report.currentIndex},
+        {QLatin1String(DiskEjectedKey), report.ejected}, {QLatin1String(DiskImagesKey), images}};
+    return HostProtocol::writeString(response, QString::fromUtf8(QJsonDocument(object).toJson(QJsonDocument::Compact)));
+}
+
+std::optional<qint32> readIndex(QIODevice& input) {
+    qint32 value{};
+    QDataStream stream(&input);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    stream >> value;
+    if (stream.status() != QDataStream::Ok) return {};
+    return value;
+}
+
+std::optional<QJsonObject> readJsonObject(QIODevice& input) {
+    const auto text = HostProtocol::readString(input);
+    if (!text) return {};
+    const auto document = QJsonDocument::fromJson(text->toUtf8());
+    if (!document.isObject()) return {};
+    return document.object();
+}
+
 std::optional<QJsonArray> readJsonArray(QIODevice& input) {
     const auto text = HostProtocol::readString(input);
     if (!text) return {};
@@ -118,6 +155,24 @@ bool readTiming(QIODevice& input, HostedCoreStatus& status) {
     stream.setFloatingPointPrecision(QDataStream::DoublePrecision);
     stream >> status.framesPerSecond >> status.sampleRate >> status.minimumAudioLatencyMs;
     return stream.status() == QDataStream::Ok;
+}
+
+bool writeTiming(QIODevice& output, const HostedCoreStatus& status) {
+    QDataStream stream(&output);
+    stream.setByteOrder(QDataStream::LittleEndian);
+    stream.setFloatingPointPrecision(QDataStream::DoublePrecision);
+    stream << status.framesPerSecond << status.sampleRate << status.minimumAudioLatencyMs;
+    return stream.status() == QDataStream::Ok;
+}
+
+bool writeJsonArray(QIODevice& output, const QJsonArray& array) {
+    return HostProtocol::writeString(output, QString::fromUtf8(QJsonDocument(array).toJson(QJsonDocument::Compact)));
+}
+
+bool writeStatusTail(QIODevice& output, const HostedCoreStatus& status, bool shutdownAndFeedback) {
+    return HostProtocol::writeLedStates(output, status.leds) && (!shutdownAndFeedback ||
+        (output.putChar(status.shutdownRequested ? char{1} : char{0}) &&
+            HostProtocol::writeControllerFeedback(output, status.controllerFeedback)));
 }
 
 bool readStatusTail(QIODevice& input, HostedCoreStatus& status, bool shutdownAndFeedback) {
@@ -473,6 +528,173 @@ QList<std::shared_ptr<const VideoFrame>> HostedCoreSession::previousVideoFields(
 }
 
 namespace HostProtocol {
+bool executeHostedCoreCommand(HostedCoreCommand command, IHostedCoreCommands& core,
+        QIODevice& request, QIODevice& response) {
+    switch (command) {
+    case HostedCoreCommand::HardReset: core.hardReset(); return true;
+    case HostedCoreCommand::SoftReset: core.softReset(); return true;
+    case HostedCoreCommand::Stop: core.stop(); return true;
+    case HostedCoreCommand::InsertMedia: {
+        const auto media = readJsonObject(request);
+        if (!media) return false;
+        core.insertMedia(*media);
+        return true;
+    }
+    case HostedCoreCommand::EjectMedia:
+    case HostedCoreCommand::SaveMediaChanges:
+    case HostedCoreCommand::HasUnsavedMediaChanges: {
+        const auto slot = readMediaSlot(request);
+        if (!slot) return false;
+        if (command == HostedCoreCommand::EjectMedia) core.ejectMedia(*slot);
+        else if (command == HostedCoreCommand::SaveMediaChanges) core.saveMediaChanges(*slot);
+        else return response.putChar(core.hasUnsavedMediaChanges(*slot) ? char{1} : char{0});
+        return true;
+    }
+    case HostedCoreCommand::GetDiskStatus: return writeDiskReport(response, core.diskStatus());
+    case HostedCoreCommand::SaveState: return writeBytes(response, core.saveState());
+    case HostedCoreCommand::LoadState: {
+        const auto state = readBytes(request);
+        if (!state) return false;
+        core.loadState(*state);
+        return true;
+    }
+    case HostedCoreCommand::SetOption: {
+        const auto id = readString(request);
+        if (!id) return false;
+        const auto value = readString(request);
+        if (!value) return false;
+        core.setOption(*id, *value);
+        return true;
+    }
+    case HostedCoreCommand::SelectDisk: {
+        const auto index = readIndex(request);
+        if (!index) return false;
+        core.selectDisk(*index);
+        return true;
+    }
+    case HostedCoreCommand::SetControllerPortDevice: {
+        const auto port = readIndex(request);
+        if (!port) return false;
+        const auto device = readIndex(request);
+        if (!device) return false;
+        core.setControllerPortDevice(*port, *device);
+        return true;
+    }
+    default: return false;
+    }
+}
+
+std::optional<HostedCoreInitialization> readInitialization(QIODevice& input, bool hasEmulator) {
+    auto path = readString(input);
+    if (!path) return {};
+    const auto emulator = hasEmulator ? readIndex(input) : std::optional<qint32>{};
+    if (hasEmulator && !emulator) return {};
+    auto session = readString(input);
+    if (!session) return {};
+    auto saves = readOptionalString(input);
+    if (!saves) return {};
+    auto configuration = readJsonObject(input);
+    if (!configuration) return {};
+    return HostedCoreInitialization{std::move(*path), emulator, std::move(*session), std::move(*saves),
+        std::move(*configuration)};
+}
+
+std::optional<HostedCoreFrameRequest> readHostedFrameRequest(QIODevice& input) {
+    auto keys = readInput(input);
+    std::optional<AudioBufferStatus> status;
+    if (!keys || !readAudioBufferStatus(input, status)) return {};
+    return HostedCoreFrameRequest{std::move(*keys), status};
+}
+
+HostedCoreReplyWriter::HostedCoreReplyWriter(const HostedCoreSessionOptions& layout)
+    : frameStateSupport_(layout.frameStateSupport), frameDiskSelection_(layout.frameDiskSelection),
+      shutdownAndFeedback_(layout.shutdownAndFeedback), initializationDiskSelection_(layout.initializationDiskSelection) {}
+
+bool HostedCoreReplyWriter::writeInitializationReply(QIODevice& output, const HostedCoreInfo& info,
+        const HostedCoreStatus& status, const QStringList& diagnostics) {
+    if (initializationDiskSelection_ && !status.diskSelection) return false;
+    auto extensions = info.contentExtensions;
+    std::stable_sort(extensions.begin(), extensions.end(), [](const QString& first, const QString& second) {
+        return first.compare(second, Qt::CaseInsensitive) < 0;
+    });
+    if (!writeString(output, info.sha256) || !writeTiming(output, status) ||
+        !output.putChar(status.supportsSaveStates ? char{1} : char{0}) || !writeRuntimeStatus(output, status.runtime) ||
+        !writeJsonArray(output, info.options) || !writeJsonArray(output, QJsonArray::fromStringList(diagnostics)) ||
+        !writeString(output, info.name) || !writeString(output, info.version) ||
+        !writeString(output, extensions.join(ExtensionSeparator)) ||
+        (initializationDiskSelection_ && !writeDiskSelection(output, *status.diskSelection)) ||
+        !writeStatusTail(output, status, shutdownAndFeedback_)) return false;
+    lastDiagnosticCount_ = diagnostics.size();
+    return true;
+}
+
+bool HostedCoreReplyWriter::writeFrameReply(QIODevice& output, SharedVideoMemory& video, const VideoFrame* frame,
+        const QList<AudioChunk>& audio, const HostedCoreStatus& status, const QStringList& diagnostics) {
+    if (frameDiskSelection_ && !status.diskSelection) return false;
+    const auto* nextFrame = frame && frame->sequence != lastVideoSequence_ ? frame : nullptr;
+    const bool diagnosticsChanged = diagnostics.size() != lastDiagnosticCount_;
+    if (!video.writeFrame(output, nextFrame) || !writeAudio(output, audio) || !writeTiming(output, status) ||
+        !writeRuntimeStatus(output, status.runtime) ||
+        (frameStateSupport_ && !output.putChar(status.supportsSaveStates ? char{1} : char{0})) ||
+        (frameDiskSelection_ && !writeDiskSelection(output, *status.diskSelection)) ||
+        !output.putChar(diagnosticsChanged ? char{1} : char{0}) ||
+        (diagnosticsChanged && !writeJsonArray(output, QJsonArray::fromStringList(diagnostics))) ||
+        !writeStatusTail(output, status, shutdownAndFeedback_)) return false;
+    if (frame) lastVideoSequence_ = frame->sequence;
+    lastDiagnosticCount_ = diagnostics.size();
+    return true;
+}
+
+bool runHostedCore(const QString& pipeName, const QString& videoMapName, const HostedCoreSessionOptions& options,
+        bool hasEmulator, const HostedCoreFactory& createCore, const HostedCoreErrorDescription& describeError,
+        std::stop_token token) {
+    if (pipeName.isEmpty() || videoMapName.isEmpty() || !createCore || !describeError || token.stop_requested())
+        return false;
+    auto video = options.transport.videoMapping == HostedVideoMapping::Resizable
+        ? SharedVideoMemory::resizableWriter(videoMapName, options.transport.minimumVideoSlotCapacity)
+        : SharedVideoMemory::openWriter(videoMapName);
+    if (!video) return false;
+    HostedCoreReplyWriter writer(options);
+    std::unique_ptr<IHostedCoreRuntime> core;
+    const auto activeCore = [&]() -> IHostedCoreRuntime& {
+        if (!core) throw std::runtime_error(MachineStartFailed);
+        return *core;
+    };
+    const auto execute = [&](HostedCoreCommand command, QIODevice& input, QIODevice& output) {
+        switch (command) {
+        case HostedCoreCommand::Initialize: {
+            const auto request = readInitialization(input, hasEmulator);
+            if (!request) return false;
+            core.reset();
+            auto candidate = createCore(*request);
+            if (!candidate) throw std::runtime_error(MachineStartFailed);
+            candidate->initialize(*request);
+            core = std::move(candidate);
+            return writer.writeInitializationReply(output, core->info(), core->status(), core->diagnostics());
+        }
+        case HostedCoreCommand::RunFrame: {
+            const auto request = readHostedFrameRequest(input);
+            if (!request) return false;
+            auto& running = activeCore();
+            running.setInput(request->input);
+            running.setAudioBufferStatus(request->audioStatus);
+            running.runFrame();
+            const auto frame = running.latestFrame();
+            const auto status = running.status();
+            const auto audio = running.takeAudio();
+            return writer.writeFrameReply(output, *video, frame.get(), audio, status, running.diagnostics());
+        }
+        case HostedCoreCommand::Dispose:
+            core.reset();
+            return true;
+        default:
+            return executeHostedCoreCommand(command, activeCore(), input, output);
+        }
+    };
+    return runHostedCoreConnection(pipeName, options.version, options.transport.connectionTimeoutMs, execute,
+        [&](std::exception_ptr error) { return describeError(error, core ? core->diagnostics() : QStringList{}); }, token);
+}
+
 static bool writeInitializationDirectories(QIODevice& device, const QString& sessionDirectory,
     const QString& saveDirectory, const QJsonObject& configuration) {
     return writeString(device, QDir(sessionDirectory).absolutePath()) &&

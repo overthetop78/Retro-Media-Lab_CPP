@@ -1515,3 +1515,43 @@ La sonde hors écran a vérifié les positions des deux colonnes dans le rendu, 
 FullscreenOsdWindow.CenterPanel.cs utilise le dégradé du menu principal, un contour arrondi bleu clair et des séparateurs entre groupes. Le port reprend ce fond pour Informations et le mixeur, réserve les séparateurs aux groupes visibles et applique la teinte bleue du C# au curseur sélectionné.
 
 Windows Release a compilé et l’empreinte de la DLL distribuée correspond. Une sonde Qt hors écran a vérifié l’opacité, les séparateurs, le changement de sélection et l’enregistrement d’un réglage par les commandes de navigation. La sonde a été supprimée.
+
+### Boucle du processus hôte
+
+Le socle C++ reprend RunConnectedSession, RunCommandLoop et WriteResponse du C# local. Le processus hôte se connecte au canal créé par HostedCoreTransport, lit les commandes et leurs arguments, puis renvoie une réponse précédée de sa longueur. Une exception remplace la réponse partielle par l’erreur structurée du module. Dispose reçoit sa réponse avant la fermeture de la connexion. Le mode d’erreur Windows est restauré à la sortie.
+
+La Release Windows a compilé et l’empreinte de la DLL distribuée correspond. La sonde entre deux processus a vérifié une requête de 200 Kio, l’erreur structurée, la commande suivante, les indicateurs Windows pendant la session et la sortie après Dispose. La sonde a été supprimée.
+
+### Commandes communes du cœur hébergé
+
+Le socle C++ reprend TryExecuteCoreCommand et TryExecuteCoreStateCommand du C# local. Le processus hôte remet au cœur les commandes de réinitialisation, d’arrêt, de média, d’état, d’option et de port de manette. Le rapport de disques utilise les mêmes clés que le client. Les catégories de lecteur inconnues et les index négatifs sont rejetés avant l’appel au cœur. Le lecteur d’initialisation couvre les variantes avec ou sans identifiant d’émulateur.
+
+La Release Windows a compilé et la DLL distribuée a été vérifiée par empreinte. La sonde a utilisé HostedCoreSession avec un processus synthétique pour vérifier l’insertion, l’éjection, l’état des changements, le rapport de disques, les options, le port de manette, les deux réinitialisations, l’arrêt et la sauvegarde puis le chargement d’un état. Le lecteur d’initialisation a été vérifié dans ses deux variantes. La sonde a été supprimée.
+
+### Réponses du processus hôte
+
+HostedCoreReplyWriter reprend WriteCoreInitialization, WriteNativeCoreFrameResponse, WriteFrameIfChanged et WriteChangedDiagnostics du C# local. La réponse suit l’ordre attendu par HostedCoreSession, y compris les champs facultatifs de sauvegarde, de sélection du disque et de retour manette. Le processus conserve le dernier numéro de trame et le nombre de diagnostics déjà transmis. Le lecteur de requête remet les entrées et l’état de la mémoire tampon audio au module.
+
+La Release Windows a compilé et la DLL distribuée a été vérifiée par empreinte. La sonde entre deux processus a vérifié le transfert en mémoire fixe et redimensionnable, l’audio, la suppression d’une trame répétée, les diagnostics et les statuts facultatifs. Elle a été supprimée après l’essai.
+
+### Cycle de vie commun du processus hôte
+
+Le portage suit la branche locale `osd-support` de RML C# dans `F:\GW GUI\src`, notamment `EmulationHostProtocolFunctions.Host.cs` et le `CoreHost.cs` de Nintendo. L’hôte détruit le cœur précédent avant de créer son remplaçant. Une initialisation échouée libère le cœur candidat et la commande de fermeture libère le cœur courant avant la réponse. Pour chaque trame, l’hôte transmet les entrées et l’état du tampon audio, exécute le cœur, puis relève les compteurs avant de vider le tampon.
+
+Compilation Windows Release et vérification avec un cœur de test dans un second processus. Le contrôle couvre la trame partagée, l’audio, le remplacement, le nettoyage sur erreur et la reprise. Les fichiers temporaires ont été supprimés.
+
+### Entrées de manette à la fermeture de l’OSD
+
+Comme dans MachineInputController.cs et OsdControllerReleaseFilter.cs sur osd-support, la fermeture d’un OSD qui bloquait les entrées relève les manettes physiques lorsque la machine est sous tension. Le filtre masque les contrôles tenus au moment de la fermeture jusqu’à leur relâchement et supprime les entrées devenues neutres. Le thème Windows Release a compilé et la DLL distribuée a la même empreinte que celle du build. La vérification avec une manette en session reste à faire.
+
+### Entrées à la mise hors tension de la machine
+
+Le C++ reprend les règles de SetPowered et CanAcceptInput dans MachineInputController.cs sur osd-support. L’arrêt libère la capture de la souris et réinitialise les entrées, les raccourcis et les filtres OSD. Les commandes d’interface restent accessibles en plein écran. Le clavier, la souris et les manettes transmettent leurs entrées au moteur uniquement lorsque la machine tourne ou est en pause. La compilation du thème a réussi en Windows Release et l’empreinte de la DLL distribuée correspond au build. Le parcours avec des périphériques en session reste à vérifier.
+
+### Nettoyage et diagnostic des vibrations
+
+Le panneau Manettes reprend OptionsControllersSection.Rumble.cs et GameInputRumbleTest.cs de la branche osd-support. Le réglage d’intensité se verrouille pendant l’impulsion de 250 ms. Un échec arrête le retour, affiche le message traduit et consigne les exceptions distinctes dans les journaux. Le chemin de remise des entrées au moteur arrête aussi les vibrations après une exception, comme Publish dans MachineInputController.cs. Le thème Windows Release a compilé et l’empreinte de sa DLL distribuée correspond au build. L’impulsion et la remontée des erreurs restent à vérifier avec une manette à vibrations.
+
+### Application des profils et repli des moteurs vidéo
+
+Comme SetVideoProcessing dans MachineVideoPresenter.cs sur osd-support, la réapplication d’un profil identique après normalisation conserve le rendu et ses historiques. Hors Windows, un profil Direct3D 11 utilise la présentation logicielle. Sous Windows Release, une sonde sans pilote Vulkan accessible a vérifié la transition vers le rendu logiciel, les pixels de la trame, l’absence de relance sur le même profil et une nouvelle tentative après changement de moteur. La sonde a été supprimée et la DLL distribuée correspond au build. Le repli après une panne Direct3D 11 sous Windows et l’ouverture d’un profil Direct3D 11 sous Linux et macOS restent à vérifier.

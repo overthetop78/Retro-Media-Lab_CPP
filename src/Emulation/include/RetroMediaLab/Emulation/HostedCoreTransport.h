@@ -2,6 +2,8 @@
 
 #include "HostProtocol.h"
 #include <QJsonObject>
+#include <exception>
+#include <functional>
 
 namespace RetroMediaLab::Emulation {
 enum class HostedVideoMapping { Fixed, Resizable };
@@ -64,7 +66,17 @@ private:
 };
 
 namespace HostProtocol {
+using HostedCommandHandler = std::function<bool(HostedCoreCommand, QIODevice& request, QIODevice& response)>;
+using HostedErrorDescription = std::function<QJsonObject(std::exception_ptr)>;
+
+// Run on the dedicated host process thread. Consume each command's arguments before replying.
+// A false handler result ends the connection on an invalid or incomplete request.
+// An exception becomes a structured failure response, replacing any partial success.
+RETROMEDIALAB_EMULATION_API bool runHostedCoreConnection(const QString& pipeName, qint32 version,
+    int connectionTimeoutMs, const HostedCommandHandler&, const HostedErrorDescription&, std::stop_token = {});
+
 RETROMEDIALAB_EMULATION_API bool writeMediaSlot(QIODevice&, HostedMediaSlot);
+RETROMEDIALAB_EMULATION_API std::optional<HostedMediaSlot> readMediaSlot(QIODevice&);
 RETROMEDIALAB_EMULATION_API bool writeOption(QIODevice&, const QString& id, const QString& value);
 RETROMEDIALAB_EMULATION_API bool writeIndex(QIODevice&, qint32 index);
 RETROMEDIALAB_EMULATION_API bool writeControllerPortDevice(QIODevice&, qint32 port, qint32 device);

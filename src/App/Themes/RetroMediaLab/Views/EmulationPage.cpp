@@ -1676,7 +1676,8 @@ protected:
             const bool inputTarget = widget && (widget == surface_ || surface_->isAncestorOf(widget) || osdTarget);
             if (inputTarget && keyEvent) {
                 auto& key = *static_cast<QKeyEvent*>(event);
-                const bool routeLiveKey = osd_ && osdPassesInput_ && type != QEvent::ShortcutOverride;
+                const bool routeLiveKey = osd_ && osdPassesInput_ && type != QEvent::ShortcutOverride &&
+                    acceptsMachineInput(session_->machine().state());
                 if (routeLiveKey) hostKeyboard_.update(key, input_);
                 const bool consumed = trackPhysicalKey(key);
                 if (routeLiveKey) {
@@ -1695,7 +1696,7 @@ protected:
                 if (osdPassesInput_ || !input_.pointerCaptured)
                     heldPointerButtons_ &= static_cast<quint32>(buttons.toInt());
                 const bool handled = (buttonEvent || type == QEvent::Wheel) && dispatchPhysicalShortcuts(buttons, wheel);
-                if (routeLive && osd_ &&
+                if (routeLive && osd_ && acceptsMachineInput(session_->machine().state()) &&
                     routeLiveOsdPointer(type, pointer.globalPosition(), buttons, handled ? QPoint{} : wheel))
                     return true;
                 if (handled) return true;
@@ -1715,7 +1716,8 @@ protected:
         }
         if (type == QEvent::KeyPress || type == QEvent::KeyRelease) {
             const auto* key = static_cast<QKeyEvent*>(event);
-            if (fullScreen_ && key->key() == Qt::Key_Escape) return false;
+            if ((fullScreen_ && key->key() == Qt::Key_Escape) ||
+                !acceptsMachineInput(session_->machine().state())) return false;
             if (type == QEvent::KeyRelease)
                 heldOsdKeys_.remove(int(EmulationHostKeyboard::keyFor(*key)));
             if (hostKeyboard_.update(*key, input_)) sendInput();
@@ -2009,6 +2011,10 @@ private:
         bindShortcut(binding, [button] { button->click(); });
     }
 
+    static bool acceptsMachineInput(MachineState state) {
+        return state == MachineState::Running || state == MachineState::Paused;
+    }
+
     bool physicalInputActive() const {
         const auto* modal = QApplication::activeModalWidget();
         const bool inputWindowActive = osd_ ? osd_->isActiveWindow()
@@ -2155,11 +2161,12 @@ private:
             const bool triggered = physicalShortcutsPrimed_ && available && pressed && !entry.held;
             const bool volume = EmulationKeyboardShortcuts::isVolumeShortcut(*entry.binding);
             const bool osdToggle = EmulationKeyboardShortcuts::isOsdToggle(*entry.binding);
-            if (available && pressed && (liveNavigation || (triggered && (volume || osdToggle)))) {
+            if (available && pressed && acceptsMachineInput(powered) &&
+                (liveNavigation || (triggered && (volume || osdToggle)))) {
                 if (primary) consumeShortcutKeys(entry.primary);
                 if (alternative) consumeShortcutKeys(entry.alternative);
             }
-            if (available && pressed && (liveNavigation || osdToggle)) {
+            if (available && pressed && (liveNavigation || osdToggle) && acceptsMachineInput(powered)) {
                 if (primary) consumeOsdSources(entry.primary);
                 if (alternative) consumeOsdSources(entry.alternative);
             }
@@ -2198,9 +2205,10 @@ private:
     void sendInput(const QPoint& uncapturedWheel = {}) {
         try {
             auto& machine = session_->machine();
-            const auto* keyboard = dynamic_cast<const IMachineKeyboardBindings*>(&machine);
             bindingMouseButtons_ = {};
             bindingWheelPending_ = false;
+            if (!acceptsMachineInput(machine.state())) return;
+            const auto* keyboard = dynamic_cast<const IMachineKeyboardBindings*>(&machine);
             if (heldOsdKeys_.isEmpty() && !keyboard) machine.setInput(input_);
             else {
                 auto filtered = input_;
@@ -2228,7 +2236,10 @@ private:
             }
             if (auto* extension = dynamic_cast<IMachineRawControllerInput*>(&machine))
                 extension->setRawControllerInput(rawControllerInput_);
-        } catch (...) { surface_->setIndicator(text(translations_, ErrorKey)); }
+        } catch (...) {
+            if (gamepadSource_) gamepadSource_->stopRumble();
+            surface_->setIndicator(text(translations_, ErrorKey));
+        }
     }
     bool pointerCaptureAllowed() const {
         const auto& machine = session_->machine();
@@ -2317,6 +2328,7 @@ private:
         if (osdPassesInput_ || !input_.pointerCaptured)
             heldPointerButtons_ &= static_cast<quint32>(mouseButtons.toInt());
         dispatchPhysicalShortcuts(mouseButtons);
+        if (!acceptsMachineInput(session_->machine().state())) return;
         const auto forwardedButtons = osd_ && osdPassesInput_
             ? liveOsdButtons(mouseButtons, osd_->usesPointerAt(QCursor::pos())) : input_.pointerButtons;
         QSet<quint64> connected;
@@ -2347,6 +2359,9 @@ private:
                         control = held->controls.erase(control);
                     }
                 }
+                if (held->buttons == 0 && held->controls.isEmpty() &&
+                    std::ranges::all_of(held->axes, [](float value) { return value == 0; }))
+                    heldGamepads_.erase(held);
             }
             forwarded.append(InputSnapshot::Controller{filtered.buttons, std::move(filtered.axes)});
             raw.append(RawControllerState{std::move(filtered.deviceId), std::move(filtered.controls)});
@@ -3680,7 +3695,11 @@ private:
                         physicalKeypadKeys_.clear();
                         heldPointerButtons_ = static_cast<quint32>(QApplication::mouseButtons().toInt());
                         heldGamepads_.clear();
-                        for (const auto& pad : gamepadSamples_) heldGamepads_.insert(pad.id, pad);
+                        if (acceptsMachineInput(session_->machine().state())) {
+                            if (!gamepadSource_) gamepadSource_ = std::make_unique<Platform::GamepadSource>();
+                            for (const auto& pad : ControllerAnalogProfiles::read(*gamepadSource_))
+                                heldGamepads_.insert(pad.id, pad);
+                        }
                     }
                     for (auto& held : heldGamepads_) {
                         for (auto& axis : held.axes) if (std::abs(axis) <= GamepadReleaseThreshold) axis = 0;
@@ -3782,7 +3801,16 @@ private:
                 executionRate_.reset();
             }
             const auto inputState = session_->machine().state();
-            if (inputState == MachineState::Running || inputState == MachineState::Paused || fullScreen_) pollControllers();
+            const bool acceptsInput = acceptsMachineInput(inputState);
+            if (!acceptsInput && lifecycleState_ && acceptsMachineInput(*lifecycleState_)) {
+                physicalShortcutsPrimed_ = false;
+                physicalKeys_.clear();
+                physicalKeypadKeys_.clear();
+                heldGamepads_.clear();
+                heldPointerButtons_ = 0;
+                releaseInput();
+            }
+            if (acceptsInput || fullScreen_) pollControllers();
             auto& machine = session_->machine();
             const auto state = machine.state();
             const bool running = state == MachineState::Running;
