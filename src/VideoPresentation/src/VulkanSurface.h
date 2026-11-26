@@ -8,10 +8,11 @@
 namespace RetroMediaLab::VideoPresentation {
 class VulkanSurface final : public QRhiWidget {
 public:
-    VulkanSurface(std::function<void(QPainter&)>, std::function<void()> samplingStarted, std::function<void()> samplingChanged);
+    VulkanSurface(std::function<void(QPainter&)>, std::function<void()> samplingStarted, std::function<void()> samplingChanged, std::function<void()> rendererFailed);
     ~VulkanSurface() override;
     void attachTo(QWidget& host);
     void showEmbedded();
+    bool hasFailed() const noexcept { return failed_; }
     bool isPresenting() const noexcept;
     bool canSample() const noexcept;
     bool canSampleDisplay() const noexcept;
@@ -31,8 +32,11 @@ private:
 #endif
     QRect physicalBounds(QRect) const;
     std::function<void(QPainter&)> draw_;
+    void fail();
+
     std::function<void()> samplingStarted_;
     std::function<void()> samplingChanged_;
+    std::function<void()> rendererFailed_;
     std::unique_ptr<Resources> resources_;
     QImage sampledFrame_, overlay_;
     QRect viewport_;

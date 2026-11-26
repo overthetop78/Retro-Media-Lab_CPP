@@ -7,7 +7,8 @@
 namespace RetroMediaLab::VideoPresentation {
 class Direct3DSurface final : public QWidget {
 public:
-    Direct3DSurface(std::function<void()> samplingStarted, std::function<void()> samplingChanged, QWidget* parent);
+    Direct3DSurface(std::function<void()> samplingStarted, std::function<void()> samplingChanged,
+        std::function<void()> rendererFailed, QWidget* parent);
     ~Direct3DSurface() override;
     void setScene(QImage frame, QRect viewport, Sampling, QImage overlay, ImageAdjustments, ImageRestoration, const SoftwareProcessing::DisplayShaderParameters&);
     bool isPresenting() const noexcept;
@@ -23,5 +24,6 @@ private:
     std::unique_ptr<Data> data_;
     std::function<void()> samplingStarted_;
     std::function<void()> samplingChanged_;
+    std::function<void()> rendererFailed_;
 };
 }

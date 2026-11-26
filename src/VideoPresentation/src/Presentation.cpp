@@ -26,6 +26,7 @@
 #include <QPainter>
 #include <QRegularExpression>
 #include <QSaveFile>
+#include <QTimer>
 #include <QtEndian>
 #include <algorithm>
 #include <atomic>
@@ -989,13 +990,38 @@ VideoSurface::VideoSurface(QWidget* parent) : QWidget(parent), refresh_(std::mak
     setFocusPolicy(Qt::StrongFocus);
     setAttribute(Qt::WA_OpaquePaintEvent);
 }
+void VideoSurface::resetDisplayHistory() {
+    *temporal_ = {};
+    refresh_->segmentRaster = {};
+    refresh_->plasmaRaster = {};
+    refresh_->plasmaSequence = 0;
+    refresh_->plasmaAverageLight = 0.f;
+    refresh_->vectorRaster = {};
+    refresh_->lcdRaster = {};
+    refresh_->lcdSequence = 0;
+    refresh_->ePaperRaster = {};
+    refresh_->projectionColor = {};
+}
+
 void VideoSurface::setProfile(Profile profile) {
+    const auto requested = profile.renderer;
+    if (requestedRenderer_ != requested) failedRenderer_.reset();
+    requestedRenderer_ = requested;
+    if (failedRenderer_ == requested) profile.renderer = Renderer::Software;
+
     for (const auto& entry : PanelSignalFields) {
         auto& panel = profile.*std::get<1>(entry);
         normalizePanelInput(std::get<2>(entry), panel);
     }
     if (profile_.displayDeinterlacing() != profile.displayDeinterlacing()) motionSequence_.reset();
-    const bool resetHistory = profile_.fixedPixel != profile.fixedPixel || profile_.fixedPixelEnabled != profile.fixedPixelEnabled ||
+    const auto usesLcd = [](const Profile& value) {
+        const auto screen = value.screenType();
+        return screen == ScreenType::Lcd || screen == ScreenType::LedBacklitLcd;
+    };
+    const bool rendererChanged = profile_.renderer != profile.renderer;
+    const bool lcdChanged = (usesLcd(profile_) || usesLcd(profile)) && profile_ != profile;
+    const bool resetHistory = rendererChanged || lcdChanged || profile_.displayTechnology() != profile.displayTechnology() ||
+        profile_.fixedPixel != profile.fixedPixel || profile_.fixedPixelEnabled != profile.fixedPixelEnabled ||
         profile_.effectiveImageAdjustments() != profile.effectiveImageAdjustments() || profile_.signal != profile.signal || profile_.sampling != profile.sampling ||
         profile_.crt.enabled != profile.crt.enabled ||
         profile_.restoration != profile.restoration || profile_.plasma != profile.plasma ||
@@ -1006,25 +1032,18 @@ void VideoSurface::setProfile(Profile profile) {
         profile_.vector != profile.vector || profile_.vfd != profile.vfd || profile_.dotMatrix != profile.dotMatrix ||
         profile_.segmentDisplay != profile.segmentDisplay || profile_.ePaper != profile.ePaper || profile_.projection != profile.projection ||
         profile_.deinterlacing != profile.deinterlacing;
-    if (resetHistory) {
-        *temporal_ = {};
-        refresh_->segmentRaster = {};
-        refresh_->plasmaRaster = {};
-        refresh_->vectorRaster = {};
-        refresh_->lcdRaster = {};
-        refresh_->ePaperRaster = {};
-        refresh_->projectionColor = {};
-    }
+    if (resetHistory) resetDisplayHistory();
     if (processing_) processing_->invalidate(resetHistory);
     const bool clockChanged = profile_.blackFrameInsertion != profile.blackFrameInsertion;
-    if (profile_.renderer != profile.renderer) setShaderLoading(false);
+    if (rendererChanged) setShaderLoading(false);
     profile_ = std::move(profile);
     if (clockChanged) updateRefreshClock(isVisible());
     if (profile_.renderer == Renderer::OpenGL) {
         if (!glSurface_) {
             glSurface_ = new OpenGlSurface([this](QPainter& painter) { draw(painter, true); },
                 [this] { setShaderLoading(true); },
-                [this] { samplingFinished(Renderer::OpenGL); }, this);
+                [this] { samplingFinished(Renderer::OpenGL); },
+                [this] { rendererFailed(Renderer::OpenGL); }, this);
             glSurface_->setGeometry(rect());
             glSurface_->show();
         }
@@ -1036,7 +1055,8 @@ void VideoSurface::setProfile(Profile profile) {
     if (profile_.renderer == Renderer::Direct3D11) {
         if (!d3dSurface_) {
             d3dSurface_ = new Direct3DSurface([this] { setShaderLoading(true); },
-                [this] { samplingFinished(Renderer::Direct3D11); }, this);
+                [this] { samplingFinished(Renderer::Direct3D11); },
+                [this] { rendererFailed(Renderer::Direct3D11); }, this);
             d3dSurface_->setGeometry(rect());
             d3dSurface_->show();
         }
@@ -1048,6 +1068,7 @@ void VideoSurface::setProfile(Profile profile) {
 #endif
     if (profile_.renderer == Renderer::Vulkan) {
         auto& window = refresh_->vulkanWindow;
+        if (!vulkanSurface_ && window && window->hasFailed()) window.reset();
         const bool createWindow = !window;
         if (createWindow) {
             // Finish creating the native host before adding the RHI surface to the widget tree.
@@ -1058,7 +1079,8 @@ void VideoSurface::setProfile(Profile profile) {
                 [this] {
                     if (profile_.renderer == Renderer::Vulkan) setShaderLoading(true);
                 },
-                [this] { samplingFinished(Renderer::Vulkan); });
+                [this] { samplingFinished(Renderer::Vulkan); },
+                [this] { rendererFailed(Renderer::Vulkan); });
         }
         vulkanSurface_ = window.get();
         if (createWindow) {
@@ -1070,6 +1092,7 @@ void VideoSurface::setProfile(Profile profile) {
     } else if (vulkanSurface_) {
         vulkanSurface_->hide();
         vulkanSurface_ = nullptr;
+        if (refresh_->vulkanWindow->hasFailed()) refresh_->vulkanWindow.reset();
     }
     compose(resetHistory);
     scheduleUpdate();
@@ -1138,11 +1161,11 @@ void VideoSurface::showEvent(QShowEvent* event) {
     QWidget::showEvent(event);
     if (vulkanSurface_) vulkanSurface_->showEmbedded();
     updateRefreshClock(true);
-    if (processing_) compose(true);
     scheduleUpdate();
 }
 
 void VideoSurface::hideEvent(QHideEvent* event) {
+    resumePresentation_ = true;
     if (vulkanSurface_) vulkanSurface_->hide();
     if (processing_) processing_->invalidate(true);
     updateRefreshClock(false);
@@ -1166,11 +1189,16 @@ void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
 void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
         std::optional<Emulation::VideoSegmentLevels> segmentLevels, Emulation::VideoVectorSegments vectors,
         const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields) {
+    const bool resumed = frame && isVisible() && std::exchange(resumePresentation_, false);
+    if (resumed) {
+        resetDisplayHistory();
+        if (processing_) processing_->invalidate(true);
+    }
     if (frame == frame_) {
-        if (frame && (segmentLevels != refresh_->segmentLevels || bool(vectors) != bool(refresh_->vectors))) {
+        if (frame && (resumed || segmentLevels != refresh_->segmentLevels || bool(vectors) != bool(refresh_->vectors))) {
             refresh_->segmentLevels = segmentLevels;
             refresh_->vectors = std::move(vectors);
-            compose(false);
+            compose(resumed);
         }
         return;
     }
@@ -1553,18 +1581,12 @@ void VideoSurface::clear() {
     frame_.reset();
     refresh_->segmentLevels.reset();
     refresh_->vectors.reset();
-    refresh_->lcdRaster = {};
-    refresh_->vectorRaster = {};
-    refresh_->segmentRaster = {};
-    refresh_->plasmaRaster = {};
-    refresh_->ePaperRaster = {};
-    refresh_->projectionColor = {};
+    resetDisplayHistory();
     refresh_->machineHz = 0;
     refresh_->active = false;
     refresh_->cadence = {};
     refresh_->presentedImage.reset();
     blackFrame_ = false;
-    *temporal_ = {};
     source_ = previousField_ = sameParity_ = previousComplement_ = image_ = {};
     hardwareSampling_.reset();
     hardwareAdjustments_ = {};
@@ -1607,12 +1629,53 @@ void VideoSurface::setShaderLoading(bool loading) {
     refresh_->shaderLoading = loading;
     if (refresh_->shaderLoadingObserver) refresh_->shaderLoadingObserver(loading);
 }
+void VideoSurface::rendererFailed(Renderer renderer) {
+    if (profile_.renderer != renderer || requestedRenderer_ != renderer || failedRenderer_ == renderer) return;
+    failedRenderer_ = renderer;
+    QTimer::singleShot(0, this, [this, renderer] {
+        if (profile_.renderer == renderer && failedRenderer_ == renderer) setProfile(profile_);
+    });
+}
+
 void VideoSurface::samplingFinished(Renderer renderer) {
     if (profile_.renderer != renderer) return;
     setShaderLoading(false);
     if (processing_) processing_->invalidate(false);
     compose();
 }
+namespace {
+QImage renderSnapshot(const QImage& composed, const Emulation::VideoFrame& frame, const Profile& profile,
+        SignalSimulation signal, QSize viewport, std::optional<Emulation::VideoSegmentLevels> segments,
+        Emulation::VideoVectorSegments vectors) {
+    const bool nativeVectors = profile.displayTechnology() == DisplayTechnology::Vector && vectors;
+    const QSize sourceSize = nativeVectors ? QSize(frame.width, frame.height) : composed.size();
+    if (sourceSize.isEmpty()) return {};
+    const auto aspect = SoftwareProcessing::frameAspectRatio(frame, sourceSize);
+    const auto screen = fit(viewport.expandedTo(QSize(1, 1)), SoftwareProcessing::screenAspectRatio(profile, aspect));
+    SoftwareProcessing::DisplayHistory display;
+    return SoftwareProcessing::process(composed, profile, signal, frame, fit(screen.size(), aspect).size(),
+        display, true, segments, std::move(vectors));
+}
+}
+
+std::function<QImage()> VideoSurface::snapshotTask() const {
+    if (profile_.renderer == Renderer::Software) {
+        if (image_.isNull()) return {};
+        return [image = image_] { return image; };
+    }
+    if (!frame_) return {};
+    auto signal = profile_.signal;
+    if (signal.standard == SignalStandard::Automatic) signal.standard = detectedSignal_;
+    const QSize viewport = size() * devicePixelRatioF();
+    return [frame = frame_, profile = profile_, signal, viewport,
+        source = source_, previous = previousField_, sameParity = sameParity_, complement = previousComplement_,
+        motion = motion_, sequence = motionSequence_, segments = refresh_->segmentLevels, vectors = refresh_->vectors]() mutable {
+        const auto composed = SoftwareProcessing::composeFields(source, previous, sameParity, complement,
+            *frame, profile.displayDeinterlacing(), motion, sequence);
+        return renderSnapshot(composed, *frame, profile, signal, viewport, segments, vectors);
+    };
+}
+
 QImage VideoSurface::softwareSnapshot(const Emulation::VideoFrame& frame, const Profile& profile, QSize viewport,
         const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields,
         std::optional<Emulation::VideoSegmentLevels> segments, Emulation::VideoVectorSegments vectors) {
@@ -1635,14 +1698,7 @@ QImage VideoSurface::softwareSnapshot(const Emulation::VideoFrame& frame, const 
     std::optional<quint64> motionSequence;
     const auto composed = SoftwareProcessing::composeFields(decode(frame), history[0], history[1], history[2],
         frame, mode, motion, motionSequence);
-    const bool nativeVectors = profile.displayTechnology() == DisplayTechnology::Vector && vectors;
-    const QSize sourceSize = nativeVectors ? QSize(frame.width, frame.height) : composed.size();
-    if (sourceSize.isEmpty()) return {};
-    const auto aspect = SoftwareProcessing::frameAspectRatio(frame, sourceSize);
-    const auto screen = fit(viewport.expandedTo(QSize(1, 1)), SoftwareProcessing::screenAspectRatio(profile, aspect));
-    SoftwareProcessing::DisplayHistory display;
-    return SoftwareProcessing::process(composed, profile, signal, frame, fit(screen.size(), aspect).size(),
-        display, true, segments, std::move(vectors));
+    return renderSnapshot(composed, frame, profile, signal, viewport, segments, std::move(vectors));
 }
 
 QImage VideoSurface::currentImage() const {

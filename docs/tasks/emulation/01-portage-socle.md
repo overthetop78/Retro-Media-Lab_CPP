@@ -2113,3 +2113,28 @@ identité’identité du C#.
 - [x] Libellés et valeurs du diagnostic des manettes
   - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour transmettre les descripteurs d’axe, bouton et chapeau GameInput.
   - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher les noms, positions et définitions du C# et ordonner les contrôles par type et index.
+
+- [x] Capture asynchrone des surfaces vidéo matérielles
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour préparer une capture autonome à partir de la trame, des champs et du profil courants.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour exécuter la capture visible dans le travailleur déjà utilisé pour écrire le PNG.
+  - [x] Créer puis supprimer build/emulation-hardware-snapshot-job-check pour vérifier qu’une capture préparée reste valide sur le travailleur après destruction de la surface.
+
+- [x] Reprise de la présentation et historique des écrans
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour réinitialiser les historiques de rendu au retour sur la vue et lors des changements de profil concernés.
+  - [x] Créer puis supprimer build/emulation-video-resume-history-check pour vérifier la rémanence LCD sans réutiliser l’ancienne image après le retour sur la vue.
+
+- [x] Repli logiciel après une défaillance du moteur vidéo
+  - [x] Modifier src/VideoPresentation/src/OpenGlSurface.h et .cpp, Direct3DSurface.h et .cpp et VulkanSurface.h et .cpp pour signaler une défaillance du moteur à VideoSurface.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour remplacer la surface en échec par le rendu logiciel et préserver le choix enregistré.
+  - [x] Créer puis supprimer build/emulation-renderer-fallback-check pour vérifier le repli, la capture et la nouvelle sélection du moteur.
+
+- [x] Champs informatifs des modules dans l’OSD
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour réserver les champs informatifs au panneau Informations, selon MachineController.OsdModuleSettings.cs.
+
+- [x] Présentation du panneau Informations de l’OSD
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour afficher les sections et leurs icônes, les libellés et les valeurs sur deux colonnes avec retour à la ligne.
+  - [x] Créer puis supprimer build/emulation-osd-information-check pour vérifier le rendu des deux colonnes et le retour à la ligne dans le panneau.
+
+- [x] Présentation commune des panneaux centrés de l’OSD
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour reprendre le fond translucide, les séparateurs entre groupes visibles et le surlignage du mixeur de FullscreenOsdWindow.CenterPanel.cs.
+  - [x] Créer puis supprimer build/emulation-osd-center-style-check pour vérifier les séparateurs, le surlignage et les commandes des deux panneaux.

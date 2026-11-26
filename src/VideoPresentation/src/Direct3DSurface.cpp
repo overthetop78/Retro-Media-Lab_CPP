@@ -422,8 +422,10 @@ struct Direct3DSurface::Data {
     bool prepared = false;
 };
 
-Direct3DSurface::Direct3DSurface(std::function<void()> samplingStarted, std::function<void()> samplingChanged, QWidget* parent)
-    : QWidget(parent), data_(std::make_unique<Data>()), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)) {
+Direct3DSurface::Direct3DSurface(std::function<void()> samplingStarted, std::function<void()> samplingChanged,
+    std::function<void()> rendererFailed, QWidget* parent)
+    : QWidget(parent), data_(std::make_unique<Data>()), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)),
+      rendererFailed_(std::move(rendererFailed)) {
     setFocusPolicy(Qt::NoFocus);
     setAttribute(Qt::WA_TransparentForMouseEvents);
     setAttribute(Qt::WA_DontCreateNativeAncestors);
@@ -500,8 +502,7 @@ void Direct3DSurface::presentNow() {
     QTimer::singleShot(0, this, [this] {
         if (data_->presenting) return;
         hide();
-        samplingChanged_();
-        parentWidget()->update();
+        rendererFailed_();
     });
 }
 }

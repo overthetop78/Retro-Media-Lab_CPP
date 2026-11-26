@@ -17,6 +17,7 @@
 #include <QPushButton>
 #include <QSignalBlocker>
 #include <QSlider>
+#include <QStyledItemDelegate>
 #include <QStyleOptionSlider>
 #include <QTimer>
 #include <QVBoxLayout>
@@ -43,10 +44,27 @@ constexpr int MixerGroupGap = 13;
 constexpr int MixerCardPadding = 6;
 constexpr int MixerLabelHeight = 52;
 constexpr auto MixerAccentStyle = "color: lightskyblue";
-constexpr auto MixerSelectionStyle = "QFrame#rmlMixerFader { border: 1px solid lightskyblue; border-radius: 8px; }";
+constexpr auto MixerSelectionStyle = R"(
+QFrame#rmlMixerFader {
+    border: 1px solid lightskyblue; border-radius: 8px; background: rgba(65,152,236,46);
+}
+)";
 constexpr auto MixerFaderName = "rmlMixerFader";
 constexpr int InformationMaximumWidth = 1100;
 constexpr int InformationMaximumHeight = 720;
+constexpr int InformationColumnGap = 12;
+constexpr int InformationLabelWeight = 2;
+constexpr int InformationValueWeight = 3;
+constexpr int InformationRowPadding = 4;
+constexpr int InformationSectionSpacing = 9;
+constexpr int InformationDividerMargin = 12;
+constexpr int CenterDividerSize = 1;
+constexpr int CenterDividerAlpha = 89;
+constexpr int InformationHeadingPixels = 24;
+constexpr int InformationSectionPixels = 16;
+constexpr int InformationLabelPixels = 14;
+constexpr int InformationValuePixels = 15;
+constexpr auto InformationAccent = qRgb(135, 206, 250);
 constexpr int EditorBottomMargin = 28;
 constexpr int HitTestAlpha = 1;
 constexpr int FullOpacity = 255;
@@ -59,6 +77,13 @@ constexpr std::array SectionColors{
     qRgb(64, 43, 24), qRgb(61, 29, 53), qRgb(34, 56, 35)};
 constexpr auto SubmenuColor = qRgb(11, 25, 52);
 constexpr auto SolidPanelBackground = "QFrame#rmlFullscreenOsdPanel { background: rgba(%1,%2,%3,%4); }";
+constexpr auto CenteredPanelBackground = R"(
+QFrame#rmlFullscreenOsdPanel {
+    background: qlineargradient(x1:0.711,y1:0.047,x2:0.289,y2:0.953,stop:0 rgba(10,19,38,%1),stop:1 rgba(15,35,54,%1));
+    border: 1px solid lightskyblue; border-radius: 18px;
+}
+)";
+constexpr auto MixerDividerStyle = "background: rgba(135,206,250,89);";
 constexpr auto EditorBackground = R"(
 QFrame#rmlFullscreenOsdPanel {
     background: qlineargradient(x1:0,y1:0,x2:1,y2:1,stop:0 rgba(14,24,44,%1),stop:1 rgba(20,44,61,%1));
@@ -135,6 +160,8 @@ constexpr auto VolumeValueName = "rmlVolumeValue";
 constexpr auto SubmenuLabel = "%1  ›";
 constexpr int SettingRole = Qt::UserRole;
 constexpr int ActivationRole = Qt::UserRole + 1;
+constexpr int InformationValueRole = Qt::UserRole + 2;
+constexpr int InformationDividerRole = Qt::UserRole + 3;
 constexpr QRgb UnavailableEntryColor = qRgb(161, 174, 197);
 constexpr auto SettingLabel = "%1\n%2";
 constexpr auto FooterKey = "<span style=\"background-color:#263957\">&nbsp;%1&nbsp;</span> ";
@@ -142,6 +169,101 @@ constexpr auto FooterLabel = "%1&nbsp;&nbsp;";
 constexpr auto FooterRow = "<p style=\"margin-top:0;margin-bottom:5px;\">%1</p>";
 constexpr auto CenterBackCaption = "%1   %2";
 constexpr auto CenterKeySeparator = " / ";
+
+class InformationRows final : public QStyledItemDelegate {
+public:
+    explicit InformationRows(QListWidget& list) : QStyledItemDelegate(&list), list_(list) {}
+
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override {
+        const auto row = layout(option, index, list_.viewport()->width());
+        return {0, row.height};
+    }
+
+    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override {
+        const auto row = layout(option, index, option.rect.width());
+        const auto at = [&](const QRect& rect) {
+            return QStyle::visualRect(option.direction, option.rect, rect.translated(option.rect.topLeft()));
+        };
+        const int flags = TextFlags | (option.direction == Qt::RightToLeft ? Qt::AlignRight : Qt::AlignLeft);
+        painter->save();
+        painter->setClipRect(option.rect);
+        if (!row.dividerRect.isEmpty()) {
+            auto color = QColor::fromRgb(InformationAccent);
+            color.setAlpha(CenterDividerAlpha);
+            painter->fillRect(at(row.dividerRect), color);
+        }
+        painter->setFont(row.labelFont);
+        painter->setPen(QColor::fromRgb(InformationAccent));
+        if (!row.icon.isNull()) row.icon.paint(painter, at(row.iconRect));
+        painter->drawText(at(row.labelRect), flags, row.label);
+        if (!row.valueRect.isEmpty()) {
+            painter->setFont(row.valueFont);
+            painter->setPen(Qt::white);
+            painter->drawText(at(row.valueRect), flags, row.value);
+        }
+        painter->restore();
+    }
+
+private:
+    static constexpr int TextFlags = int(Qt::AlignTop) | Qt::TextWordWrap | Qt::TextWrapAnywhere;
+    struct Row {
+        QString label;
+        QString value;
+        QIcon icon;
+        QFont labelFont;
+        QFont valueFont;
+        QRect dividerRect;
+        QRect iconRect;
+        QRect labelRect;
+        QRect valueRect;
+        int height = 0;
+    };
+
+    Row layout(const QStyleOptionViewItem& option, const QModelIndex& index, int width) const {
+        Row row;
+        row.label = index.data(Qt::DisplayRole).toString();
+        row.labelFont = option.font;
+        row.valueFont = option.font;
+        const auto value = index.data(InformationValueRole);
+        const bool heading = !value.isValid();
+        row.labelFont.setPixelSize(heading ? InformationSectionPixels : InformationLabelPixels);
+        row.valueFont.setPixelSize(InformationValuePixels);
+        const int available = std::max(1, width - 2 * PanelMargin);
+        const QFontMetrics labelMetrics(row.labelFont);
+        if (heading) {
+            row.icon = qvariant_cast<QIcon>(index.data(Qt::DecorationRole));
+            const int iconWidth = row.icon.isNull() ? 0 : InformationSectionPixels + InformationColumnGap;
+            const int labelWidth = std::max(1, available - iconWidth);
+            const int textHeight = labelMetrics.boundingRect(0, 0, labelWidth, 0, TextFlags, row.label).height();
+            const int line = std::max(textHeight, InformationSectionPixels);
+            int top = InformationRowPadding;
+            if (index.data(InformationDividerRole).toBool()) {
+                row.dividerRect = QRect(PanelMargin, InformationDividerMargin, available, CenterDividerSize);
+                top += 2 * InformationDividerMargin + CenterDividerSize;
+            }
+            row.labelRect = QRect(PanelMargin + iconWidth, top, labelWidth, line);
+            row.iconRect = QRect(PanelMargin, top, InformationSectionPixels, InformationSectionPixels);
+            row.height = line + top + InformationSectionSpacing;
+            return row;
+        }
+
+        row.value = value.toString();
+        const int labelWidth = std::max(1, available * InformationLabelWeight /
+            (InformationLabelWeight + InformationValueWeight));
+        const int valueWidth = std::max(1, available - labelWidth);
+        const int nameWidth = std::max(1, labelWidth - InformationColumnGap);
+        const int labelHeight = labelMetrics.boundingRect(0, 0, nameWidth, 0, TextFlags, row.label).height();
+        const QFontMetrics valueMetrics(row.valueFont);
+        const int valueHeight = valueMetrics.boundingRect(0, 0, valueWidth, 0, TextFlags, row.value).height();
+        const int line = std::max(labelHeight, valueHeight);
+        row.labelRect = QRect(PanelMargin, InformationRowPadding, nameWidth, line);
+        row.valueRect = QRect(PanelMargin + labelWidth, InformationRowPadding, valueWidth, line);
+        row.height = line + 2 * InformationRowPadding;
+        return row;
+    }
+
+    QListWidget& list_;
+};
 
 QString hintGroup(const QStringList& keys, const QString& description) {
     if (keys.isEmpty()) return {};
@@ -415,6 +537,7 @@ struct FullscreenOsd::State {
         };
         struct MixerSection {
             QWidget* widget;
+            QWidget* divider;
             std::vector<Fader> faders;
         };
         QScrollArea* mixer = nullptr;
@@ -592,7 +715,7 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     const bool centered = parent && (parent->centeredInformation || parent->centeredMixer);
     auto* header = addCaption(title, centered ? parent->icon : QIcon{});
     auto font = header->font();
-    font.setPixelSize(MainHeadingPixels);
+    font.setPixelSize(parent && parent->centeredInformation ? InformationHeadingPixels : MainHeadingPixels);
     font.setWeight(QFont::DemiBold);
     header->setFont(font);
     if (centered) {
@@ -610,7 +733,8 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     rows->setTextElideMode(information ? Qt::ElideNone : Qt::ElideRight);
     if (information) {
         rows->setSelectionMode(QAbstractItemView::NoSelection);
-        rows->setWordWrap(true);
+        rows->setItemDelegate(new InformationRows(*rows));
+        rows->setResizeMode(QListView::Adjust);
     }
     for (const auto& entry : entries) {
         if (entry.separatorBefore) {
@@ -622,11 +746,7 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
         }
         auto* row = new QListWidgetItem(entry.icon,
             entry.children.empty() ? entry.label : QString::fromUtf8(SubmenuLabel).arg(entry.label), rows);
-        if (information && !entry.status) {
-            auto heading = row->font();
-            heading.setWeight(QFont::DemiBold);
-            row->setFont(heading);
-        }
+        if (information && entry.status) row->setData(InformationValueRole, QString{});
         if (!information) row->setSizeHint({0, EntryHeight});
         row->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
         row->setData(SettingRole, entry.setting.has_value());
@@ -705,7 +825,7 @@ void FullscreenOsd::buildMixer() {
     auto* body = new QWidget(area);
     auto* groups = new QHBoxLayout(body);
     groups->setContentsMargins({});
-    groups->setSpacing(MixerGroupGap);
+    groups->setSpacing(0);
     level.mixer = area;
     std::vector<QString> titles;
     for (const auto& entry : *level.entries) {
@@ -725,8 +845,16 @@ void FullscreenOsd::buildMixer() {
             auto* cards = new QHBoxLayout;
             cards->setSpacing(0);
             sectionLayout->addLayout(cards);
+            auto* divider = new QWidget(body);
+            auto* dividerLayout = new QHBoxLayout(divider);
+            dividerLayout->setContentsMargins(MixerGroupGap / 2, 0, MixerGroupGap / 2, 0);
+            auto* line = new QWidget(divider);
+            line->setFixedWidth(CenterDividerSize);
+            line->setStyleSheet(QString::fromLatin1(MixerDividerStyle));
+            dividerLayout->addWidget(line);
+            groups->addWidget(divider);
             groups->addWidget(section);
-            level.sections.push_back({section, {}});
+            level.sections.push_back({section, divider, {}});
         }
         auto& section = level.sections[sectionIndex];
         auto* cards = static_cast<QVBoxLayout*>(section.widget->layout())->itemAt(1)->layout();
@@ -803,6 +931,7 @@ void FullscreenOsd::refreshMixer() {
     if (!level.mixer) return;
     QSlider* first = nullptr;
     bool selectionVisible = false;
+    bool previousSectionVisible = false;
     for (auto& section : level.sections) {
         bool sectionVisible = false;
         for (auto& fader : section.faders) {
@@ -822,6 +951,8 @@ void FullscreenOsd::refreshMixer() {
             fader.value->setText(setting.format(fader.slider->value()));
         }
         section.widget->setVisible(sectionVisible);
+        section.divider->setVisible(sectionVisible && previousSectionVisible);
+        previousSectionVisible |= sectionVisible;
     }
     if (!selectionVisible) level.selected = first;
     for (auto& section : level.sections) {
@@ -906,6 +1037,10 @@ void FullscreenOsd::positionPanels() {
         }
         if (information) {
             const int panelWidth = std::min(InformationMaximumWidth, std::max(1, width() - 2 * InformationMargin));
+            if (level.panel->width() != panelWidth) {
+                level.panel->resize(panelWidth, level.panel->height());
+                level.panel->layout()->activate();
+            }
             int contentHeight = 0;
             for (int row = 0; row < level.rows->count(); ++row) {
                 if (!level.rows->item(row)->isHidden())
@@ -937,8 +1072,13 @@ void FullscreenOsd::positionPanels() {
 void FullscreenOsd::updateSectionBackground(std::size_t depth) {
     if (depth >= state_->levels.size() || (depth == 0 && !state_->edited)) return;
     const auto& level = state_->levels[depth];
-    const int selected = level.rows->currentRow();
     const int alpha = FullOpacity * (FullTransparency - state_->transparency) / FullTransparency;
+    if (level.parent && (level.parent->centeredInformation || level.parent->centeredMixer)) {
+        const auto style = QString::fromLatin1(CenteredPanelBackground).arg(alpha);
+        if (level.panel->styleSheet() != style) level.panel->setStyleSheet(style);
+        return;
+    }
+    const int selected = level.rows->currentRow();
     QString section;
     std::size_t groups = 0;
     int row = 0;
@@ -975,11 +1115,16 @@ void FullscreenOsd::refresh() {
         const int previous = level.rows->currentRow();
         int next = -1, before = -1;
         int index = 0;
+        const bool information = level.parent && level.parent->centeredInformation;
+        bool previousHeadingVisible = false;
         for (const auto& entry : *level.entries) {
             const bool visible = !entry.visible || entry.visible();
             if (entry.separatorBefore) level.rows->item(index++)->setHidden(!visible);
             auto* item = level.rows->item(index);
-            const bool information = level.parent && level.parent->centeredInformation;
+            if (information && !entry.status) {
+                item->setData(InformationDividerRole, previousHeadingVisible);
+                previousHeadingVisible |= visible;
+            }
             const bool enabled = information || !entry.enabled || entry.enabled();
             item->setHidden(!visible);
             item->setData(ActivationRole, enabled);
@@ -997,7 +1142,8 @@ void FullscreenOsd::refresh() {
                     entry.setting->format(&entry == state_->edited ? state_->draft : entry.setting->read())));
             else if (entry.status) {
                 const auto status = entry.status();
-                item->setText(status.isEmpty() ? entry.label : QString::fromLatin1(SettingLabel).arg(entry.label, status));
+                if (information) item->setData(InformationValueRole, status);
+                else item->setText(status.isEmpty() ? entry.label : QString::fromLatin1(SettingLabel).arg(entry.label, status));
             }
         }
         const int selected = next == -1 ? before : next;

@@ -12,7 +12,8 @@ class QThread;
 namespace RetroMediaLab::VideoPresentation {
 class OpenGlSurface final : public QOpenGLWidget {
 public:
-    OpenGlSurface(std::function<void(QPainter&)>, std::function<void()> samplingStarted, std::function<void()> samplingChanged, QWidget* parent);
+    OpenGlSurface(std::function<void(QPainter&)>, std::function<void()> samplingStarted, std::function<void()> samplingChanged,
+        std::function<void()> rendererFailed, QWidget* parent);
     ~OpenGlSurface() override;
     bool canSample() const;
     bool canSampleDisplay() const;
@@ -31,6 +32,7 @@ private:
     std::function<void(QPainter&)> draw_;
     std::function<void()> samplingStarted_;
     std::function<void()> samplingChanged_;
+    std::function<void()> rendererFailed_;
     std::unique_ptr<Resources> resources_;
     std::unique_ptr<QThread> preparation_;
     QMetaObject::Connection contextCleanup_;

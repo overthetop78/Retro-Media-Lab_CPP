@@ -281,20 +281,24 @@ private:
 };
 #endif
 
-VulkanSurface::VulkanSurface(std::function<void(QPainter&)> draw, std::function<void()> samplingStarted, std::function<void()> samplingChanged)
-    : draw_(std::move(draw)), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)) {
+VulkanSurface::VulkanSurface(std::function<void(QPainter&)> draw, std::function<void()> samplingStarted, std::function<void()> samplingChanged, std::function<void()> rendererFailed)
+    : draw_(std::move(draw)), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)),
+      rendererFailed_(std::move(rendererFailed)) {
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint | Qt::WindowTransparentForInput | Qt::WindowDoesNotAcceptFocus);
     setApi(Api::Vulkan);
     setFocusPolicy(Qt::NoFocus);
     setAttribute(Qt::WA_TransparentForMouseEvents);
     connect(this, &QRhiWidget::frameSubmitted, this, [this] { submitted_ = true; });
-    connect(this, &QRhiWidget::renderFailed, this, [this] {
-        submitted_ = false;
-        failed_ = true;
-        QTimer::singleShot(0, this, [this] {
-            hide();
-            samplingChanged_();
-        });
+    connect(this, &QRhiWidget::renderFailed, this, &VulkanSurface::fail);
+}
+
+void VulkanSurface::fail() {
+    if (failed_) return;
+    submitted_ = false;
+    failed_ = true;
+    QTimer::singleShot(0, this, [this] {
+        hide();
+        rendererFailed_();
     });
 }
 
@@ -304,7 +308,10 @@ void VulkanSurface::attachTo(QWidget& host) {
     // Keep a separate QWidget backing store, with a native child window clipped to the host.
     const auto hostId = host.winId();
     const auto surfaceId = winId();
-    if (!hostId || !surfaceId) return;
+    if (!hostId || !surfaceId || !host.windowHandle() || !windowHandle()) {
+        fail();
+        return;
+    }
     windowHandle()->setParent(host.windowHandle());
     setGeometry(host.rect());
     if (host.isVisible()) showEmbedded();
@@ -319,7 +326,7 @@ bool VulkanSurface::canSample() const noexcept { return bool(resources_); }
 bool VulkanSurface::canSampleDisplay() const noexcept { return resources_ && resources_->crtPipeline; }
 
 void VulkanSurface::initialize(QRhiCommandBuffer*) {
-    if (!rhi() || !renderTarget()) return;
+    if (failed_ || !rhi() || !renderTarget()) return;
     if (resources_ && resources_->compatible(rhi(), *renderTarget())) return;
 #if QT_CONFIG(vulkan)
     const auto* color = colorTexture();
@@ -357,7 +364,11 @@ void VulkanSurface::initialize(QRhiCommandBuffer*) {
 #endif
     samplingStarted_();
     auto resources = std::make_unique<Resources>();
-    resources_ = resources->initialize(rhi(), renderTarget()) ? std::move(resources) : nullptr;
+    if (!resources->initialize(rhi(), renderTarget())) {
+        fail();
+        return;
+    }
+    resources_ = std::move(resources);
     QTimer::singleShot(0, this, [this] { samplingChanged_(); });
 }
 

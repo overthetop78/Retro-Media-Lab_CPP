@@ -1489,3 +1489,29 @@ Le diagnostic GameInput v3 reprend GameInputDeviceInspector et GameInputDescript
 La fiche d’identité des manettes reprend GameInputDescriptorPresenter.Identity, GameInputDisplayFormatter et WindowsDeviceNameResolver.GetCandidates. Elle affiche le VID/PID et la famille, les versions, l’usage HID, les identifiants GameInput et la chaîne PnP dans le menu dépliable. L’usage Joystick réutilise la clé traduite existante. Les DLL de la Release Windows distribuée correspondent au build. La remontée de l’identité et de la chaîne PnP reste à vérifier sur matériel.
 
 Les libellés des contrôles, les définitions des chapeaux et les positions affichées reprennent GameInputDisplayFormatter. La table des glyphes associe les noms C# aux valeurs du GameInput SDK local. Le diagnostic trie les entrées par type et index, et distingue les nombres, états de bouton et positions de chapeau. La Release Windows a compilé et ses DLL distribuées correspondent au build. Le rendu avec un périphérique physique reste à vérifier.
+
+EmulationVideoSnapshotFunctions.CreateAsync, OpenGlVideoSurface et VeldridVideoSurface préparent une capture autonome, rendue par le pipeline logiciel hors du fil graphique. Le C++ fige la trame, les champs décodés, le profil et les paramètres natifs, puis utilise le travailleur existant du thème pour rendre et enregistrer le PNG. En rendu logiciel, le travailleur reprend l’image publiée, comme WpfVideoSurface. Sous Windows Release, la sonde Qt hors écran a vérifié l’absence de capture sans trame, l’égalité des pixels avec le rendu logiciel et l’exécution sur un autre fil après destruction de la surface. Elle n’a pas utilisé de contexte OpenGL matériel. La sonde a été supprimée et les deux DLL distribuées ont été vérifiées.
+
+MachineVideoPresenter.PrepareHistory attribue la réinitialisation au premier rendu de la nouvelle génération de présentation. Le C++ suspend le travail logiciel quand la vue est masquée, puis reconstruit les historiques du rendu matériel et logiciel sur la première trame soumise au retour. Le traitement ne prend plus l’ancienne image affichée comme premier échantillon LCD à la réapparition. Le changement de moteur et les changements effectifs d’un profil LCD réinitialisent également ces historiques. La Release Windows et une sonde Qt hors écran ont vérifié la reprise LCD et le retour de la rémanence sur la trame suivante en rendu logiciel. Les DLL distribuées ont été vérifiées et la sonde a été supprimée.
+
+### Repli logiciel après une erreur du moteur graphique
+
+Dans MachineVideoPresenter.cs, FallbackAfterGpuFailure bascule la présentation active sur Wpf. Le C++ signale les défaillances de Direct3D 11, OpenGL et Vulkan à VideoSurface, libère la surface concernée et compose la trame avec le moteur logiciel. Le choix stocké dans le profil est conservé. Sélectionner un autre moteur puis revenir au moteur en échec permet une nouvelle tentative.
+
+La Release Windows a été compilée et déployée. La sonde Qt hors écran a provoqué un échec réel de création du contexte OpenGL et vérifié la suppression de la surface, le rendu et la capture logiciels, puis la nouvelle tentative. La sonde a été supprimée. Les défaillances Direct3D et Vulkan restent à vérifier à l’exécution.
+
+### Champs informatifs dans l’OSD
+
+Dans MachineController.OsdModuleSettings.cs, OsdModuleGroups propose les interrupteurs, sélections et curseurs. OsdMachineInformation rassemble les champs informatifs. Le C++ suit cette répartition. La Release Windows du thème a compilé et la DLL distribuée a été vérifiée par empreinte.
+
+### Colonnes du panneau Informations
+
+FullscreenOsdWindow.CenterPanel.cs affiche les informations par section avec les libellés en bleu clair et les valeurs en blanc. Le panneau C++ reprend les icônes des sections, la proportion 2:3 des colonnes et le retour à la ligne. La mise en page suit la largeur du panneau et le sens de lecture de Qt.
+
+La sonde hors écran a vérifié les positions des deux colonnes dans le rendu, le recalcul de hauteur après la réduction de la fenêtre et le retour au menu de l’OSD. La sonde a été supprimée. La DLL Release Windows distribuée a été vérifiée par empreinte.
+
+### Présentation commune des panneaux centrés
+
+FullscreenOsdWindow.CenterPanel.cs utilise le dégradé du menu principal, un contour arrondi bleu clair et des séparateurs entre groupes. Le port reprend ce fond pour Informations et le mixeur, réserve les séparateurs aux groupes visibles et applique la teinte bleue du C# au curseur sélectionné.
+
+Windows Release a compilé et l’empreinte de la DLL distribuée correspond. Une sonde Qt hors écran a vérifié l’opacité, les séparateurs, le changement de sélection et l’enregistrement d’un réglage par les commandes de navigation. La sonde a été supprimée.

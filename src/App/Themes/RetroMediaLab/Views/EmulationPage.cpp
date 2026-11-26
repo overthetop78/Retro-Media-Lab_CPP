@@ -2805,11 +2805,10 @@ private:
     }
 
     void screenshot() {
-        QImage image;
         std::function<QImage()> capture;
         try {
             if (surface_->isVisible()) {
-                image = surface_->currentImage();
+                capture = surface_->snapshotTask();
             } else if (const auto frame = session_->machine().latestFrame()) {
                 const auto& machine = session_->machine();
                 const auto* nativeSegments = dynamic_cast<const IMachineNativeSegments*>(&machine);
@@ -2827,15 +2826,15 @@ private:
             showScreenshotError(ErrorKey, std::current_exception());
             return;
         }
-        if (image.isNull() && !capture) {
+        if (!capture) {
             showScreenshotError(ShortcutUnavailableKey);
             return;
         }
         const auto directory = resolveEmulationFolders(workspace_.emulationFolders()).captures;
-        screenshotWorkers_.start([this, image = std::move(image), capture = std::move(capture), directory] {
+        screenshotWorkers_.start([this, capture = std::move(capture), directory] {
             QString name;
             std::exception_ptr cause;
-            try { name = saveEmulationScreenshot(capture ? capture() : image, directory); }
+            try { name = saveEmulationScreenshot(capture(), directory); }
             catch (...) { cause = std::current_exception(); }
             QMetaObject::invokeMethod(this, [this, name = std::move(name), cause = std::move(cause)] {
                 if (name.isEmpty()) showScreenshotError(ErrorKey, cause);
@@ -3366,8 +3365,8 @@ private:
                     field.labelResourceKey == QLatin1String(ModuleAudioEnabledKey) || field.id == QLatin1String(Ym2413CoreId)))
                     continue;
                 if (videoSection && osdVideoSections_.value(field.id, VideoSettingsSection::Display) != *videoSection) continue;
-                if (field.editor != SettingsEditor::Information && field.editor != SettingsEditor::Toggle &&
-                    field.editor != SettingsEditor::Choice && field.editor != SettingsEditor::Slider) continue;
+                if (field.editor != SettingsEditor::Toggle && field.editor != SettingsEditor::Choice &&
+                    field.editor != SettingsEditor::Slider) continue;
                 if (tab == QLatin1String(VideoKey) && field.labelResourceKey == QLatin1String("Emulation.Video.Settings.Rendering"))
                     continue;
                 group.children.push_back(osdModuleField(block, field));

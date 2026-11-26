@@ -296,6 +296,7 @@ struct Profile {
     FixedPixelProfile fixedPixel;
     std::array<std::optional<FixedPixelProfile>, 3> fixedPixelProfiles;
     QJsonObject settings;
+    bool operator==(const Profile&) const = default;
 
     RETROMEDIALAB_VIDEO_PRESENTATION_API ScreenType screenType() const;
     RETROMEDIALAB_VIDEO_PRESENTATION_API void selectScreen(ScreenType);
@@ -378,6 +379,8 @@ public:
     void setShaderLoadingObserver(std::function<void(bool)>);
     bool isShaderLoading() const noexcept;
     QImage currentImage() const;
+    // Called on the GUI thread. The returned task owns its inputs and can run after the surface is destroyed.
+    std::function<QImage()> snapshotTask() const;
     static QImage softwareSnapshot(const Emulation::VideoFrame&, const Profile&, QSize viewport,
         const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields,
         std::optional<Emulation::VideoSegmentLevels> = {}, Emulation::VideoVectorSegments = {});
@@ -401,6 +404,8 @@ private:
     std::unique_ptr<SoftwareProcessing::SoftwareFrameWorker> processing_;
     void acceptFrame(std::shared_ptr<const Emulation::VideoFrame>);
     void compose(bool advance = false);
+    void resetDisplayHistory();
+    bool resumePresentation_ = false;
     void refreshViewport();
     void presentImage(QImage, QSize sourceSize, double aspectRatio, std::optional<Sampling> hardwareSampling = {}, ImageAdjustments hardwareAdjustments = {},
         ImageRestoration hardwareRestoration = {}, DisplayTechnology hardwareDisplay = DisplayTechnology::Normal);
@@ -411,6 +416,7 @@ private:
     void scheduleUpdate();
     void setShaderLoading(bool);
     void samplingFinished(Renderer);
+    void rendererFailed(Renderer);
     OpenGlSurface* glSurface_ = nullptr;
     VulkanSurface* vulkanSurface_ = nullptr;
 #ifdef Q_OS_WIN
@@ -419,6 +425,8 @@ private:
     QImage overlay_;
     int osdTransparency_ = 0;
     Profile profile_;
+    std::optional<Renderer> requestedRenderer_;
+    std::optional<Renderer> failedRenderer_;
     std::shared_ptr<const Emulation::VideoFrame> frame_;
     QImage source_, previousField_, sameParity_, previousComplement_, image_;
     QSize imageSourceSize_;

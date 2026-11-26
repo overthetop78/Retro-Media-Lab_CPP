@@ -192,8 +192,10 @@ public:
     bool ready = false;
 };
 
-OpenGlSurface::OpenGlSurface(std::function<void(QPainter&)> draw, std::function<void()> samplingStarted, std::function<void()> samplingChanged, QWidget* parent)
-    : QOpenGLWidget(parent), draw_(std::move(draw)), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)) {
+OpenGlSurface::OpenGlSurface(std::function<void(QPainter&)> draw, std::function<void()> samplingStarted, std::function<void()> samplingChanged,
+    std::function<void()> rendererFailed, QWidget* parent)
+    : QOpenGLWidget(parent), draw_(std::move(draw)), samplingStarted_(std::move(samplingStarted)), samplingChanged_(std::move(samplingChanged)),
+      rendererFailed_(std::move(rendererFailed)) {
     setFocusPolicy(Qt::NoFocus);
     setAttribute(Qt::WA_TransparentForMouseEvents);
 }
@@ -405,7 +407,7 @@ void OpenGlSurface::showEvent(QShowEvent* event) {
     QTimer::singleShot(0, this, [this] {
         if (!isVisible() || isValid()) return;
         hide();
-        parentWidget()->update();
+        rendererFailed_();
     });
 }
 }
