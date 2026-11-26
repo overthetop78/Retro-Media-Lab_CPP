@@ -441,9 +441,14 @@ bool EmulationStoragePanel::confirmImageCreation(QWidget& parent, const Translat
     status->setWordWrap(true);
     layout->addWidget(status);
     auto* actions = new QDialogButtonBox(QDialogButtonBox::Close, &creation);
-    actions->button(QDialogButtonBox::Close)->setText(label("Preferences.Close"));
+    auto* close = actions->button(QDialogButtonBox::Close);
+    close->setText(label("Common.Cancel"));
     auto* create = actions->addButton(label("Common.Create"), QDialogButtonBox::ActionRole);
     auto* mount = actions->addButton(label("Emulation.Storage.Media.CreateAndMount"), QDialogButtonBox::ActionRole);
+    close->setAutoDefault(false);
+    create->setAutoDefault(false);
+    if (canAttach) mount->setDefault(true);
+    else create->setDefault(true);
     auto* progress = new QProgressBar(&creation);
     progress->setRange(0, 0);
     progress->hide();
@@ -473,6 +478,7 @@ bool EmulationStoragePanel::confirmImageCreation(QWidget& parent, const Translat
                 progress->hide();
                 create->setEnabled(!created);
                 mount->setEnabled(canAttach);
+                if (created) close->setText(label("Preferences.Close"));
                 const QFileInfo target(path);
                 const auto key = created ? "Emulation.Storage.Media.Created" :
                     (target.exists() || target.isSymLink() ? "Emulation.Storage.Media.AlreadyExists" :

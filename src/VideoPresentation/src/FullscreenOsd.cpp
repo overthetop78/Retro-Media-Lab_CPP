@@ -532,7 +532,7 @@ void FullscreenOsd::setTransparency(int percent) {
         .arg(MenuStartAlpha * opacity / FullTransparency).arg(MenuEndAlpha * opacity / FullTransparency);
     if (sheet != styleSheet()) setStyleSheet(sheet);
     if (state_->shaderBadge) state_->shaderBadge->setTransparency(state_->transparency);
-    for (std::size_t depth = 1; depth < state_->levels.size(); ++depth) updateSectionBackground(depth);
+    for (std::size_t depth = 0; depth < state_->levels.size(); ++depth) updateSectionBackground(depth);
 }
 
 void FullscreenOsd::setShaderLoading(bool loading, const QString& caption) {
@@ -935,7 +935,7 @@ void FullscreenOsd::positionPanels() {
 }
 
 void FullscreenOsd::updateSectionBackground(std::size_t depth) {
-    if (depth == 0 || depth >= state_->levels.size()) return;
+    if (depth >= state_->levels.size() || (depth == 0 && !state_->edited)) return;
     const auto& level = state_->levels[depth];
     const int selected = level.rows->currentRow();
     const int alpha = FullOpacity * (FullTransparency - state_->transparency) / FullTransparency;
@@ -945,8 +945,9 @@ void FullscreenOsd::updateSectionBackground(std::size_t depth) {
     for (const auto& entry : *level.entries) {
         row += entry.separatorBefore;
         if (row > selected) break;
-        if (entry.sectionHeading && !level.rows->item(row)->isHidden() && section != entry.label) {
-            section = entry.label;
+        const auto& entrySection = entry.sectionHeading ? entry.label : entry.section;
+        if (!entrySection.isEmpty() && !level.rows->item(row)->isHidden() && section != entrySection) {
+            section = entrySection;
             ++groups;
         }
         ++row;
@@ -957,7 +958,7 @@ void FullscreenOsd::updateSectionBackground(std::size_t depth) {
     };
     const auto color = groups ? SectionColors[(groups - 1) % SectionColors.size()] : SubmenuColor;
     const auto panelStyle = styleFor(color);
-    if (level.panel->styleSheet() != panelStyle) level.panel->setStyleSheet(panelStyle);
+    if (depth > 0 && level.panel->styleSheet() != panelStyle) level.panel->setStyleSheet(panelStyle);
     if (depth + 1 == state_->levels.size() && state_->edited) {
         const auto editorStyle = groups ? panelStyle : QString::fromLatin1(EditorBackground).arg(alpha);
         if (state_->editor->styleSheet() != editorStyle) state_->editor->setStyleSheet(editorStyle);

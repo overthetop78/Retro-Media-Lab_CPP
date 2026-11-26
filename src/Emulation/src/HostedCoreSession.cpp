@@ -135,6 +135,24 @@ bool readStatusTail(QIODevice& input, HostedCoreStatus& status, bool shutdownAnd
 }
 }
 
+struct HostedCoreSession::VideoOutput {
+    std::shared_ptr<const VideoFrame> latest;
+    QList<std::shared_ptr<const VideoFrame>> previous;
+
+    void receive(VideoFrame frame) {
+        auto next = std::make_shared<VideoFrame>(std::move(frame));
+        if (latest && latest->scanMode != ScanMode::Progressive && next->scanMode != ScanMode::Progressive &&
+            next->scanMode != latest->scanMode && next->sequence > latest->sequence &&
+            next->sequence - latest->sequence == 1 && next->timestamp > latest->timestamp) {
+            if (previous.size() == IMachineVideoFieldHistory::MaximumFields) previous.removeFirst();
+            previous.append(latest);
+        } else {
+            previous.clear();
+        }
+        latest = std::move(next);
+    }
+};
+
 HostedCoreSession::HostedCoreSession(HostedCoreSessionOptions options) : options_(std::move(options)) {}
 HostedCoreSession::~HostedCoreSession() { close(); }
 
@@ -256,7 +274,10 @@ HostedCoreOperation HostedCoreSession::runFrame(const HostProtocol::CoreInput& k
                 nextStatus.runtime = *runtime;
                 nextStatus.supportsSaveStates = *supportsStates;
                 if (disk) nextStatus.diskSelection = disk;
-                if (frame) latestFrame_ = std::make_shared<VideoFrame>(std::move(*frame));
+                if (frame) {
+                    if (!videoOutput_) videoOutput_ = std::make_shared<VideoOutput>();
+                    videoOutput_->receive(std::move(*frame));
+                }
                 if (diagnostics) diagnostics_ = std::move(*diagnostics);
                 status_ = std::move(nextStatus);
                 output = {std::move(*audio), disk};
@@ -392,7 +413,7 @@ HostedCoreOperation HostedCoreSession::getDiskStatus(HostedCoreDiskReport& repor
 }
 
 void HostedCoreSession::clearOutputs(bool shutdownRequested) noexcept {
-    latestFrame_.reset();
+    videoOutput_.reset();
     status_.runtime.bufferedAudioFrames = 0;
     status_.controllerFeedback.clear();
     status_.shutdownRequested = shutdownRequested;
@@ -412,7 +433,7 @@ void HostedCoreSession::close() noexcept {
     info_ = {};
     status_ = {};
     diagnostics_.clear();
-    latestFrame_.reset();
+    videoOutput_.reset();
 }
 
 bool HostedCoreSession::initialized() const noexcept { return initialized_; }
@@ -442,7 +463,14 @@ CoreRuntimeStatus HostedCoreSession::coreRuntimeStatus() const noexcept {
     return result;
 }
 const QStringList& HostedCoreSession::diagnostics() const noexcept { return diagnostics_; }
-std::shared_ptr<const VideoFrame> HostedCoreSession::latestFrame() const noexcept { return latestFrame_; }
+std::shared_ptr<const VideoFrame> HostedCoreSession::latestFrame() const noexcept {
+    return videoOutput_ ? videoOutput_->latest : nullptr;
+}
+
+QList<std::shared_ptr<const VideoFrame>> HostedCoreSession::previousVideoFields(const VideoFrame& frame) const {
+    if (!videoOutput_ || videoOutput_->latest.get() != &frame) return {};
+    return videoOutput_->previous;
+}
 
 namespace HostProtocol {
 static bool writeInitializationDirectories(QIODevice& device, const QString& sessionDirectory,

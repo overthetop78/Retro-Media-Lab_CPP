@@ -27,6 +27,9 @@ public:
     bool changed() const noexcept { return changed_; }
     void onChanged(std::function<void()> callback) { onChanged_ = std::move(callback); }
 
+    static bool confirmImageCreation(QWidget&, const Translations::TranslationService&, const QString& title, const QString& path,
+        const std::function<void(std::stop_token)>& write, bool canAttach);
+
 private:
     QString label(const char*) const;
     QString deviceLabel(const Emulation::StorageDevice&) const;
@@ -41,8 +44,6 @@ private:
     QString createHardDisk(QWidget&, const Emulation::StorageDevice&, const QString& directory, const QString& scope);
     static void addMemoryCardPathControls(QDialog&, QFormLayout&, QLineEdit&, const Emulation::StorageDevice&,
         WorkspaceState&, const Translations::TranslationService&, const QString& scope, const Localize&);
-    static bool confirmImageCreation(QWidget&, const Translations::TranslationService&, const QString& title, const QString& path,
-        const std::function<void(std::stop_token)>& write, bool canAttach);
 
     Emulation::StorageSettings settings_;
     WorkspaceState& workspace_;

@@ -1372,3 +1372,47 @@ EmulationModuleRegistry.cs signale les bibliothèques isolées et les dossiers d
 ### Distribution du SDK
 
 Le composant EmulationSDK installe les en-têtes publics, la bibliothèque Emulation et ses informations de liaison. La vérification Windows Release a déplacé ce paquet, compilé une DLL externe avec sa cible CMake et chargé celle-ci via le registre natif de RML. Le code du module de vérification a utilisé uniquement les en-têtes du SDK installé et le kit Qt. Les fichiers de la sonde ont été supprimés. Le SDK généré reste dans build/release/EmulationSDK.
+
+### Fond du réglage de transparence
+
+MachineController.cs affecte le réglage de transparence à la rubrique OSD. Le C++ reprend cette rubrique au niveau principal, applique sa couleur à l’éditeur et actualise son opacité pendant le déplacement du curseur. La sonde Qt Release a vérifié la couleur initiale, le passage à 50 % en direct et la mise à jour de la préférence en mémoire. Les DLL du thème et de VideoPresentation ont été déployées et vérifiées par empreinte. La sonde a été supprimée.
+
+### Enveloppe des configurations de machines
+
+Les quatre contrats EmulationConfiguration*Document partagent l’identité et la version du document. Le SDK expose leurs noms JSON, y compris firmware et firmwares, et valide l’identité et la version attendue par le module. La lecture des propriétés accepte les variantes de casse de JsonSerializerDefaults.Web. Les champs spécifiques et les valeurs JSON sont conservés, avec leur validation et leurs chemins sous la responsabilité du module. La sonde Release a vérifié les deux variantes de firmware, les slots, le contenu initial, les champs spécifiques et le rejet des identités ou versions invalides. Elle a été supprimée. Emulation.dll a été mise à jour dans le SDK et dans la distribution Release.
+
+### Chargement des profils de machines
+
+ConfigurationFileAccessFunctions.ReadDocumentsAsync crée le dossier et traite les profils dans l’ordre des chemins. Le SDK C++ propose le même parcours en réutilisant le verrou de lecture et le contrôle du schéma. Le module reçoit les champs JSON et le chemin du document pour restaurer ses propres données. Il peut ignorer un document dont les champs spécifiques sont invalides. La sonde Windows Release a confirmé le rejet des JSON illisibles et des versions non prises en charge, l’ordre de restauration, la création du dossier et la distinction entre une annulation et un dossier inaccessible. La sonde a été supprimée et Emulation.dll a été déployée dans le SDK et dans la distribution.
+
+### Suppression des profils par le SDK
+
+ConfigurationFileAccessFunctions.DeleteDirectoryIfExists laisse au module le choix du mode récursif. Le SDK C++ cible le dossier déterminé par le GUID, reprend le verrou de machine.json sous Windows et refuse un dossier de profil qui est un lien ou une jonction. L’implémentation MSVC supprime les jonctions enfants sans parcourir leur cible. La sonde Release a vérifié l’annulation, le refus d’un dossier non vide en mode non récursif, le refus d’un alias comme profil, la conservation du profil voisin référencé par une jonction et le résultat après suppression. La sonde a été supprimée et Emulation.dll a été déployée dans le SDK et la distribution. [Bibliothèque standard MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/filesystem)
+
+### Bouton d’éjection dans le bandeau des lecteurs
+
+MachineView.cs réserve les 22 × 20 unités logiques du bouton d’éjection lorsque le support est absent et utilise le pictogramme ⏏. Le thème C++ reprend cette disposition. La sonde Windows Release a ouvert une machine temporaire avec deux lecteurs, éjecté le support depuis le bouton de la vue et vérifié que le deuxième lecteur reste à la même position. Le thème a été déployé et la sonde supprimée.
+
+### Création d’une cassette avant enregistrement
+
+Dans `MachineController.cs`, le dialogue `MediaCreationDialog` permet de créer le fichier seul ou de créer et monter la cassette. Seul le second choix poursuit la commande d’enregistrement. Le C++ réutilise son dialogue commun et démarre l’enregistrement sur le fichier déjà créé. La compilation Windows Release et un module temporaire ont vérifié la création seule, le refus d’un fichier absent, le montage et le démarrage sans réécriture de l’image. Le test temporaire a été supprimé.
+
+### Bandeau du transport de cassette
+
+`MachineView.cs` place les commandes dans un cadre aux couleurs du thème, décalé sous le lecteur, et sépare les groupes de lecteurs par un trait vertical. Un module Qt temporaire avec cassette et disquette a vérifié les deux groupes, les six boutons et la position du cadre. Compilation et paquet Windows Release vérifiés.
+
+Le dialogue de création reprend le bouton par défaut de `MediaCreationDialog.cs` et affiche Annuler avant la création puis Fermer. Un essai Qt hors écran a cliqué sur Enregistrement, saisi le fichier dans le sélecteur, puis exercé Créer et Créer et monter séparément. Il a vérifié la création seule et le montage suivi de l’enregistrement. Le module temporaire et ses fichiers ont été supprimés.
+
+### Détection de la cadence vidéo PAL ou NTSC
+
+`SoftwareEmulationVideoProcessingPipeline.ResolveSignalStandard` utilise le seuil de 18,2 ms dans la branche C#. Le C++ conserve ce seuil et rapporte l’intervalle au nombre de trames écoulées, car sa présentation peut sauter des trames. À la première trame, la fréquence fournie par le moteur sert si elle est valide. Une mire Qt a comparé les images automatiques et imposées pour une cadence NTSC avec une trame sautée, une cadence PAL avec une trame sautée et une première trame PAL à 50 Hz. Release Windows compilée et DLL déployée vérifiée par empreinte. Les fichiers de la sonde ont été supprimés.
+
+### Champs entrelacés reçus avant le rendu
+
+Dans le C#, `EmulationVideoFieldComposer` reçoit tous les champs natifs avant la file de rendu. Le SDK C++ expose une interface facultative pour transmettre les trois champs précédents avec la dernière trame. La vue transmet cet historique à VideoPresentation, qui applique les mêmes contraintes de continuité et présente seulement la dernière trame. La mire Release a vérifié que le tissage restauré avec deux champs sautés correspond à la suite complète, également après activation du désentrelacement. Les fichiers de vérification ont été supprimés.
+
+`MachineVideoPresenter.VideoFrameReady` pousse les champs vers le compositeur dès leur réception. `HostedCoreSession` conserve désormais les trois champs précédents dès lecture de la réponse du cœur. Le futur adaptateur peut relayer `previousVideoFields` via le contrat du SDK. Le test Windows Release entre deux processus a vérifié les pixels après réutilisation des tampons partagés, la limite de trois champs, la réponse sans image, la rupture de séquence, le passage au progressif et l’effacement après réinitialisation. La sonde a été supprimée. Release et en-tête SDK déployés et vérifiés par empreinte.
+
+### Capture d’une vue vidéo masquée
+
+`MachineVideoPresenter.CaptureSnapshotAsync` utilise la trame courante et un traitement logiciel en arrière-plan lorsque la présentation est masquée. La vue C++ reprend ce parcours, y compris les champs disponibles et les réglages vidéo, sans redémarrer le moteur de présentation. Une DLL temporaire a présenté une première mire, changé de trame alors que la surface était masquée et vérifié les nouveaux pixels du PNG produit par le bouton de capture. L’appel logiciel a aussi vérifié la luminosité ajustée. Release Windows et DLL déployées vérifiées. Les fichiers temporaires ont été supprimés.

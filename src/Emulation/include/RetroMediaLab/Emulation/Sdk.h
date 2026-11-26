@@ -441,6 +441,14 @@ public:
     virtual VideoVectorSegments vectorSegments(const VideoFrame&) const = 0;
 };
 
+class IMachineVideoFieldHistory {
+public:
+    static constexpr qsizetype MaximumFields = 3;
+    virtual ~IMachineVideoFieldHistory() = default;
+    // Return the previous fields of this frame in capture order, excluding the frame itself.
+    virtual QList<std::shared_ptr<const VideoFrame>> previousVideoFields(const VideoFrame&) const = 0;
+};
+
 class IEmulationModule {
 public:
     virtual ~IEmulationModule() = default;

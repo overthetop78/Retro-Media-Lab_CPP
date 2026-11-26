@@ -1952,3 +1952,57 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
 - [x] Distribution autonome du SDK d’émulation
   - [x] Modifier src/Emulation/CMakeLists.txt et créer src/Emulation/RetroMediaLabEmulationConfig.cmake.in pour installer le SDK et sa cible importée avec CMake.
   - [x] Créer puis supprimer build/emulation-sdk-check pour compiler un module à partir du SDK installé et vérifier son chargement par RML.
+
+- [x] Fond de l’éditeur de transparence du menu plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h pour déclarer la rubrique OSD du contrôle de transparence.
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour appliquer la couleur de cette rubrique à son éditeur au niveau principal et la mettre à jour pendant le réglage.
+  - [x] Créer puis supprimer build/emulation-osd-root-editor-check pour vérifier la rubrique OSD et la mise à jour du fond pendant le réglage.
+
+- [x] Enveloppe des configurations de machines
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/ConfigurationFiles.h et src/Emulation/src/ConfigurationFiles.cpp pour exposer les champs communs et relire l’identité des documents C# en conservant leurs données.
+  - [x] Créer puis supprimer build/emulation-machine-document-check pour vérifier les variantes de firmware, les champs spécifiques et les identités rejetées.
+
+- [x] Chargement des profils de machines
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/ConfigurationFiles.h et src/Emulation/src/ConfigurationFiles.cpp pour lire et restaurer les profils dans l’ordre, ignorer les documents refusés et distinguer l’annulation d’un dossier inaccessible.
+  - [x] Créer puis supprimer build/emulation-configuration-restore-check pour vérifier les documents invalides, l’ordre, la restauration et l’annulation.
+
+- [x] Suppression des profils par le SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/ConfigurationFiles.h et src/Emulation/src/ConfigurationFiles.cpp pour supprimer le dossier du profil identifié par GUID selon la politique du module.
+  - [x] Créer puis supprimer build/emulation-remove-profile-check pour vérifier les modes de suppression, les échecs et la conservation des autres dossiers.
+
+- [x] Stabilité du bandeau des lecteurs émulés
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre le pictogramme d’éjection du C# et garder son emplacement réservé lorsque le lecteur est vide.
+  - [x] Créer puis supprimer build/emulation-device-strip-check pour vérifier le bandeau avec deux lecteurs et l’éjection du premier.
+
+- [x] Création d’une cassette pour l’enregistrement
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour démarrer l’enregistrement sur une image déjà créée sans la recréer.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour ouvrir le dialogue de création existant et lancer l’enregistrement seulement après le choix Créer et monter.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationStoragePanel.h pour rendre le dialogue partagé accessible depuis la vue de session.
+  - [x] Créer puis supprimer build/emulation-tape-creation-check pour vérifier la création seule et le démarrage sur une image déjà créée.
+
+- [x] Disposition des commandes de cassette
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour encadrer les commandes de cassette sous leur lecteur et reprendre le séparateur vertical des lecteurs.
+  - [x] Créer puis supprimer build/emulation-tape-layout-check pour vérifier le rendu Qt du groupe et sa position dans le bandeau.
+
+- [x] Commandes du dialogue de création de cassette
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationStoragePanel.cpp pour proposer Annuler avant la création, Fermer après création et sélectionner Créer et monter par défaut.
+  - [x] Créer puis supprimer build/emulation-tape-dialog-check pour exercer les boutons du dialogue depuis une session de cassette émulée.
+
+- [x] Détection vidéo en présence de trames sautées
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp pour déterminer la cadence PAL ou NTSC à partir de la durée par trame et utiliser la fréquence du signal dès la première trame.
+  - [x] Créer puis supprimer build/emulation-signal-cadence-check pour comparer le rendu automatique aux réglages imposés PAL et NTSC.
+
+- [x] Historique des champs entrelacés avant le rendu
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer les champs précédents via un contrat facultatif.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour intégrer ces champs à l’historique et présenter seulement la dernière trame.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre cet historique lors de la présentation d’un champ entrelacé.
+  - [x] Créer puis supprimer build/emulation-field-history-check pour comparer une trame reconstruite à une suite complète de champs.
+
+- [x] Historique vidéo des cœurs hébergés
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour retenir les trois champs précédents dès leur réception et les effacer lors des ruptures de la séquence ou du cycle de vie.
+  - [x] Créer puis supprimer build/emulation-hosted-fields-check pour vérifier la limite, les ruptures et les sorties du cœur après réinitialisation.
+
+- [x] Capture vidéo d’une machine dont la vue est masquée
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour produire une capture logicielle de la dernière trame avec son profil et ses champs précédents.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser cette capture en arrière-plan lorsque la vue est masquée.
+  - [x] Créer puis supprimer build/emulation-hidden-snapshot-check pour vérifier que la capture reflète la trame courante et ses réglages.

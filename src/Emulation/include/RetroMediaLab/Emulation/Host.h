@@ -65,6 +65,8 @@ public:
     bool ejectMedia(const MediaSlot&, std::stop_token = {});
     bool recordTape(const MediaSlot&, const QString& path, const std::optional<TapePcmSettings>& = {},
         std::stop_token = {});
+    bool recordPreparedTape(const MediaSlot&, const QString& path, const std::optional<TapePcmSettings>& = {},
+        std::stop_token = {});
     static constexpr int FirstStateSlot = 1;
     static constexpr int StateSlotCount = 10;
     QDateTime stateSlotModified(int slot) const;
@@ -86,6 +88,8 @@ private:
     std::optional<Configuration> prepareMountedMedia(const QList<MountedMedia>&, const MediaSlot&,
         const QString& ejectedPath, std::stop_token);
     bool insertMediaImpl(MountedMedia, bool prepareFile, std::stop_token);
+    bool recordTapeImpl(const MediaSlot&, const QString&, const std::optional<TapePcmSettings>&, bool createImage,
+        std::stop_token);
     void persistMountedMedia(const MediaSlot&, const QString& ejectedPath, std::stop_token);
     bool replaceRuntime(std::optional<QList<MountedMedia>>, std::optional<Configuration>, std::stop_token);
     bool requiresRecreation(const MediaSlot&) const;

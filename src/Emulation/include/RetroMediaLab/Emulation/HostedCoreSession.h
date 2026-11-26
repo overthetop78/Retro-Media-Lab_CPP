@@ -104,6 +104,7 @@ public:
     QList<ControllerFeedbackState> controllerFeedback() const;
     const QStringList& diagnostics() const noexcept;
     std::shared_ptr<const VideoFrame> latestFrame() const noexcept;
+    QList<std::shared_ptr<const VideoFrame>> previousVideoFields(const VideoFrame&) const;
 
 private:
     HostedCoreOperation request(HostedCoreCommand, QByteArrayView, QByteArray&, int, std::stop_token);
@@ -120,7 +121,8 @@ private:
     HostedCoreInfo info_;
     HostedCoreStatus status_;
     QStringList diagnostics_;
-    std::shared_ptr<const VideoFrame> latestFrame_;
+    struct VideoOutput;
+    std::shared_ptr<VideoOutput> videoOutput_;
 };
 
 namespace HostProtocol {

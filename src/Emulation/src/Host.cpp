@@ -630,6 +630,17 @@ bool Session::ejectMedia(const MediaSlot& slot, std::stop_token token) try {
 }
 
 bool Session::recordTape(const MediaSlot& slot, const QString& path, const std::optional<TapePcmSettings>& pcm,
+    std::stop_token token) {
+    return recordTapeImpl(slot, path, pcm, true, token);
+}
+
+bool Session::recordPreparedTape(const MediaSlot& slot, const QString& path, const std::optional<TapePcmSettings>& pcm,
+    std::stop_token token) {
+    return recordTapeImpl(slot, path, pcm, false, token);
+}
+
+bool Session::recordTapeImpl(const MediaSlot& slot, const QString& path, const std::optional<TapePcmSettings>& pcm,
+    bool createImage,
     std::stop_token token) try {
     if (token.stop_requested() || slot.kind != MediaKind::Tape || path.isEmpty()) return false;
     auto& runtime = *data_->machine;
@@ -648,12 +659,13 @@ bool Session::recordTape(const MediaSlot& slot, const QString& path, const std::
     QFileInfo file(path);
     const auto suffix = QLatin1Char('.') + file.suffix();
     if (!data_->media->tapeRecordingExtensions(*device).contains(suffix, Qt::CaseInsensitive)) return false;
+    if (!createImage && !file.isFile()) return false;
     if (transport.availableCommands.contains(TapeCommand::Stop) && !runtime.tape(TapeCommand::Stop, token)) return false;
-    if (runtime.hasUnsavedChanges(*live, token) && !runtime.saveChanges(*live, token)) return false;
+    if (createImage && runtime.hasUnsavedChanges(*live, token) && !runtime.saveChanges(*live, token)) return false;
     if (token.stop_requested()) return false;
 
     const auto target = file.absoluteFilePath();
-    data_->media->createBlankTape(target, pcm, token);
+    if (createImage) data_->media->createBlankTape(target, pcm, token);
     const auto current = std::ranges::find_if(data_->mounted, [&](const auto& media) { return sameSlot(media.slot, slot); });
     const auto parameters = pcm ? pcm->parameters() : QHash<QString, QString>{};
     const bool sameMount = current != data_->mounted.end() && QFileInfo(current->path) == file;

@@ -1160,6 +1160,12 @@ void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
 
 void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
         std::optional<Emulation::VideoSegmentLevels> segmentLevels, Emulation::VideoVectorSegments vectors) {
+    submit(std::move(frame), segmentLevels, std::move(vectors), {});
+}
+
+void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
+        std::optional<Emulation::VideoSegmentLevels> segmentLevels, Emulation::VideoVectorSegments vectors,
+        const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields) {
     if (frame == frame_) {
         if (frame && (segmentLevels != refresh_->segmentLevels || bool(vectors) != bool(refresh_->vectors))) {
             refresh_->segmentLevels = segmentLevels;
@@ -1172,15 +1178,42 @@ void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
         clear();
         return;
     }
-    const auto rate = frame->signalFieldRate;
+    if (frame->scanMode != Emulation::ScanMode::Progressive) {
+        const auto start = std::max(qsizetype{0}, previousFields.size() - Emulation::IMachineVideoFieldHistory::MaximumFields);
+        for (auto index = start; index < previousFields.size(); ++index) {
+            const auto& field = previousFields[index];
+            if (!field || field->sequence >= frame->sequence || field->timestamp >= frame->timestamp ||
+                (frame_ && field->sequence <= frame_->sequence)) continue;
+            acceptFrame(field);
+        }
+    }
+    acceptFrame(std::move(frame));
+    refresh_->segmentLevels = segmentLevels;
+    refresh_->vectors = std::move(vectors);
+    compose(true);
+}
+
+namespace {
+bool consecutiveFields(const Emulation::VideoFrame& previous, const Emulation::VideoFrame& frame) {
+    const auto rate = frame.signalFieldRate;
     const auto maximumGap = rate > 0 && std::isfinite(rate) ? std::clamp(1.75 / rate, .001, .15) : .1;
-    const bool consecutive = frame_ && frame->scanMode != Emulation::ScanMode::Progressive &&
-        frame_->scanMode != Emulation::ScanMode::Progressive && frame->scanMode != frame_->scanMode &&
-        frame->sequence - frame_->sequence == 1 && frame->timestamp > frame_->timestamp &&
-        std::chrono::duration<double>(frame->timestamp - frame_->timestamp).count() <= maximumGap &&
-        frame->width == frame_->width && frame->height == frame_->height && frame->pitch == frame_->pitch &&
-        frame->aspectRatio == frame_->aspectRatio && frame->pixelFormat == frame_->pixelFormat && !source_.isNull();
-    if (!consecutive) {
+    return frame.scanMode != Emulation::ScanMode::Progressive && previous.scanMode != Emulation::ScanMode::Progressive &&
+        frame.scanMode != previous.scanMode && frame.sequence > previous.sequence &&
+        frame.sequence - previous.sequence == 1 && frame.timestamp > previous.timestamp &&
+        std::chrono::duration<double>(frame.timestamp - previous.timestamp).count() <= maximumGap &&
+        frame.width == previous.width && frame.height == previous.height && frame.pitch == previous.pitch &&
+        frame.aspectRatio == previous.aspectRatio && frame.pixelFormat == previous.pixelFormat;
+}
+
+SignalStandard signalStandardForRate(double hz) {
+    constexpr auto threshold = std::chrono::seconds(1) / PalDurationThreshold;
+    return std::isfinite(hz) && hz > 0 && hz < threshold ? SignalStandard::Pal : SignalStandard::Ntsc;
+}
+}
+
+void VideoSurface::acceptFrame(std::shared_ptr<const Emulation::VideoFrame> frame) {
+    const auto rate = frame->signalFieldRate;
+    if (!frame_ || source_.isNull() || !consecutiveFields(*frame_, *frame)) {
         previousField_ = sameParity_ = previousComplement_ = {};
         motionSequence_.reset();
     } else {
@@ -1192,7 +1225,6 @@ void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
     const auto previousTimestamp = frame_ ? frame_->timestamp : std::chrono::nanoseconds{};
     const auto duration = frame->sequence > previousSequence && frame->timestamp > previousTimestamp
         ? frame->timestamp - previousTimestamp : std::chrono::nanoseconds{};
-    detectedSignal_ = duration > PalDurationThreshold ? SignalStandard::Pal : SignalStandard::Ntsc;
     if (frame_ && duration.count() > 0) {
         refresh_->machineHz = double(frame->sequence - previousSequence) / std::chrono::duration<double>(duration).count();
     } else if (rate > 0 && std::isfinite(rate)) {
@@ -1200,11 +1232,9 @@ void VideoSurface::submit(std::shared_ptr<const Emulation::VideoFrame> frame,
     } else {
         refresh_->machineHz = 0;
     }
-    refresh_->segmentLevels = segmentLevels;
-    refresh_->vectors = std::move(vectors);
+    detectedSignal_ = signalStandardForRate(refresh_->machineHz);
     frame_ = std::move(frame);
     source_ = decode(*frame_);
-    compose(true);
 }
 void VideoSurface::compose(bool advance) {
     if (!frame_) return;
@@ -1583,6 +1613,38 @@ void VideoSurface::samplingFinished(Renderer renderer) {
     if (processing_) processing_->invalidate(false);
     compose();
 }
+QImage VideoSurface::softwareSnapshot(const Emulation::VideoFrame& frame, const Profile& profile, QSize viewport,
+        const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields,
+        std::optional<Emulation::VideoSegmentLevels> segments, Emulation::VideoVectorSegments vectors) {
+    auto signal = profile.signal;
+    if (signal.standard == SignalStandard::Automatic) signal.standard = signalStandardForRate(frame.signalFieldRate);
+    std::array<QImage, Emulation::IMachineVideoFieldHistory::MaximumFields> history;
+    const auto mode = profile.displayDeinterlacing();
+    if (mode != Deinterlacing::Off) {
+        const auto* current = &frame;
+        auto previous = previousFields.crbegin();
+        for (auto& field : history) {
+            if (previous == previousFields.crend() || !*previous || !consecutiveFields(**previous, *current)) break;
+            field = decode(**previous);
+            if (field.isNull()) break;
+            current = previous->get();
+            ++previous;
+        }
+    }
+    QList<float> motion;
+    std::optional<quint64> motionSequence;
+    const auto composed = SoftwareProcessing::composeFields(decode(frame), history[0], history[1], history[2],
+        frame, mode, motion, motionSequence);
+    const bool nativeVectors = profile.displayTechnology() == DisplayTechnology::Vector && vectors;
+    const QSize sourceSize = nativeVectors ? QSize(frame.width, frame.height) : composed.size();
+    if (sourceSize.isEmpty()) return {};
+    const auto aspect = SoftwareProcessing::frameAspectRatio(frame, sourceSize);
+    const auto screen = fit(viewport.expandedTo(QSize(1, 1)), SoftwareProcessing::screenAspectRatio(profile, aspect));
+    SoftwareProcessing::DisplayHistory display;
+    return SoftwareProcessing::process(composed, profile, signal, frame, fit(screen.size(), aspect).size(),
+        display, true, segments, std::move(vectors));
+}
+
 QImage VideoSurface::currentImage() const {
     if (!hardwareSampling_ || image_.isNull()) return image_;
     const QSize outputSize = imageViewport().size() * devicePixelRatioF();

@@ -257,6 +257,18 @@ constexpr auto ActiveIndicator = 0x32cd32u, MountedIndicator = 0x228b22u, EmptyI
 constexpr auto MediaActivityPersistence = std::chrono::milliseconds(140);
 constexpr int MediaIconSize = 18;
 constexpr auto EjectKey = "Emulation.Media.Eject";
+constexpr auto EjectGlyph = u'\u23cf';
+constexpr QSize EjectButtonSize{22, 20};
+constexpr QMargins MediaDevicePadding{4, 0, 4, 0};
+constexpr int MediaDeviceSpacing = 3;
+constexpr auto MediaDeviceStyle = "QFrame#emulationMediaDevice { border-right: 1px solid #D7DEE7; }";
+constexpr auto MediaDeviceObjectName = "emulationMediaDevice";
+constexpr QMargins TapeTransportMargin{18, 2, 2, 3};
+constexpr int TapeTransportPadding = 2;
+constexpr int TapeTransportButtonSpacing = 2;
+constexpr auto TapeTransportObjectName = "emulationTapeTransport";
+constexpr auto TapeTransportStyle = "QFrame#emulationTapeTransport {"
+    "background-color: %1; border: 1px solid %2; border-radius: 6px; }";
 constexpr auto AudioKey = "Emulation.Tab.Audio";
 constexpr auto ControllerStatusKey = "Emulation.Tab.Controllers";
 constexpr auto PointerStatusKey = "Emulation.Tab.Mouse";
@@ -1413,6 +1425,7 @@ public:
         root->addWidget(surface_, 1);
         mediaStrip_ = new QWidget(this);
         mediaLayout_ = new QHBoxLayout(mediaStrip_);
+        mediaLayout_->setSpacing(MediaDeviceSpacing);
         root->addWidget(mediaStrip_);
         mediaStrip_->hide();
         layout_ = root;
@@ -1837,6 +1850,8 @@ private:
 
     FullscreenOsd::Entry osdTransparencySetting() {
         FullscreenOsd::Entry entry{text(translations_, DisplayConstants::OsdTransparencyLabel)};
+        constexpr auto OsdSection = "OSD";
+        entry.section = QString::fromLatin1(OsdSection);
         entry.setting = FullscreenOsd::Setting{
             [this] { return workspace_.fullscreenOsdTransparency(); },
             [this](int percent) { return formatPercent(percent); },
@@ -2626,7 +2641,10 @@ private:
             pcm = chooseTapePcm(slot, parent);
             if (!pcm) return;
         }
-        run([&] { return session_->recordTape(slot, file.absoluteFilePath(), pcm); }, MediaOperationFailedKey);
+        const auto path = file.absoluteFilePath();
+        if (!EmulationStoragePanel::confirmImageCreation(*parent, translations_, dialog.windowTitle(), path,
+                [&](std::stop_token token) { host_->createBlankTape(path, pcm, token); }, true)) return;
+        run([&] { return session_->recordPreparedTape(slot, path, pcm); }, MediaOperationFailedKey);
     }
     void rebuildMedia(const QList<MediaSlot>& devices) {
         while (auto* item = mediaLayout_->takeAt(0)) {
@@ -2635,8 +2653,12 @@ private:
         }
         rows_.clear();
         for (const auto& slot : devices) {
-            auto* group = new QWidget(mediaStrip_);
+            auto* group = new QFrame(mediaStrip_);
+            group->setObjectName(QString::fromLatin1(MediaDeviceObjectName));
+            group->setStyleSheet(QString::fromLatin1(MediaDeviceStyle));
             auto* layout = new QVBoxLayout(group);
+            layout->setContentsMargins(MediaDevicePadding);
+            layout->setSpacing(0);
             auto* heading = new QHBoxLayout;
             MediaRow row{};
             row.indicator = new StatusIndicator(group);
@@ -2654,17 +2676,32 @@ private:
             if (canOpenMedia(slot)) {
                 row.eject = new QToolButton(group);
                 row.eject->setAutoRaise(true);
-                row.eject->setIcon(style()->standardIcon(QStyle::SP_ArrowUp));
+                row.eject->setText(QString(EjectGlyph));
+                row.eject->setToolButtonStyle(Qt::ToolButtonTextOnly);
+                row.eject->setFixedSize(EjectButtonSize);
+                auto policy = row.eject->sizePolicy();
+                policy.setRetainSizeWhenHidden(true);
+                row.eject->setSizePolicy(policy);
                 connect(row.eject, &QToolButton::clicked, this, [this, slot] { ejectMedia(slot); });
                 heading->addWidget(row.eject);
             }
             layout->addLayout(heading);
             if (slot.kind == MediaKind::Tape) {
                 row.canRecord = !host_->tapeRecordingExtensions(slot).isEmpty();
-                auto* transport = new QHBoxLayout;
+                auto* transportContainer = new QHBoxLayout;
+                transportContainer->setContentsMargins(TapeTransportMargin);
+                auto* frame = new QFrame(group);
+                frame->setObjectName(QString::fromLatin1(TapeTransportObjectName));
+                frame->setStyleSheet(QString::fromLatin1(TapeTransportStyle).arg(
+                    theme_->color(ThemeConstants::ControlBrush).name(),
+                    theme_->color(ThemeConstants::BorderBrush).name()));
+                auto* transport = new QHBoxLayout(frame);
+                transport->setContentsMargins(TapeTransportPadding, TapeTransportPadding,
+                    TapeTransportPadding, TapeTransportPadding);
+                transport->setSpacing(TapeTransportButtonSpacing);
                 for (size_t i = 0; i < TapeControls.size(); ++i) {
                     const auto& definition = TapeControls[i];
-                    auto* button = new TapeTransportButton(definition.command, group);
+                    auto* button = new TapeTransportButton(definition.command, frame);
                     connect(button, &QToolButton::clicked, this, [this, slot, command = definition.command] {
                         if (command == TapeCommand::Record) { recordTape(slot); return; }
                         run([&] { return session_->machine().tape(command, {}); }, MediaOperationFailedKey);
@@ -2672,7 +2709,9 @@ private:
                     row.tape[i] = button;
                     transport->addWidget(button);
                 }
-                layout->addLayout(transport);
+                transportContainer->addWidget(frame);
+                transportContainer->addStretch();
+                layout->addLayout(transportContainer);
             }
             rows_.push_back(row);
             mediaLayout_->addWidget(group);
@@ -2725,6 +2764,7 @@ private:
                 if (row.eject) {
                     row.eject->setToolTip(text(translations_, EjectKey));
                     row.eject->setAccessibleName(row.eject->toolTip());
+                    row.eject->setEnabled(!path.isEmpty());
                     row.eject->setVisible(!path.isEmpty());
                 }
                 row.label->setToolTip(path);
@@ -2764,16 +2804,37 @@ private:
     }
 
     void screenshot() {
-        auto image = surface_->currentImage();
-        if (image.isNull()) {
+        QImage image;
+        std::function<QImage()> capture;
+        try {
+            if (surface_->isVisible()) {
+                image = surface_->currentImage();
+            } else if (const auto frame = session_->machine().latestFrame()) {
+                const auto& machine = session_->machine();
+                const auto* nativeSegments = dynamic_cast<const IMachineNativeSegments*>(&machine);
+                const auto* nativeVectors = dynamic_cast<const IMachineNativeVectors*>(&machine);
+                const auto* fieldHistory = dynamic_cast<const IMachineVideoFieldHistory*>(&machine);
+                const auto viewport = surface_->size() * surface_->devicePixelRatioF();
+                capture = [frame, profile = profile_, viewport,
+                    fields = fieldHistory ? fieldHistory->previousVideoFields(*frame) : QList<std::shared_ptr<const VideoFrame>>{},
+                    segments = nativeSegments ? nativeSegments->segmentLevels(*frame) : std::nullopt,
+                    vectors = nativeVectors ? nativeVectors->vectorSegments(*frame) : nullptr] {
+                    return VideoSurface::softwareSnapshot(*frame, profile, viewport, fields, segments, vectors);
+                };
+            }
+        } catch (...) {
+            showScreenshotError(ErrorKey, std::current_exception());
+            return;
+        }
+        if (image.isNull() && !capture) {
             showScreenshotError(ShortcutUnavailableKey);
             return;
         }
         const auto directory = resolveEmulationFolders(workspace_.emulationFolders()).captures;
-        screenshotWorkers_.start([this, image = std::move(image), directory] {
+        screenshotWorkers_.start([this, image = std::move(image), capture = std::move(capture), directory] {
             QString name;
             std::exception_ptr cause;
-            try { name = saveEmulationScreenshot(image, directory); }
+            try { name = saveEmulationScreenshot(capture ? capture() : image, directory); }
             catch (...) { cause = std::current_exception(); }
             QMetaObject::invokeMethod(this, [this, name = std::move(name), cause = std::move(cause)] {
                 if (name.isEmpty()) showScreenshotError(ErrorKey, cause);
@@ -3761,8 +3822,11 @@ private:
             if (frame && visible) {
                 const auto* nativeSegments = dynamic_cast<const IMachineNativeSegments*>(&machine);
                 const auto* nativeVectors = dynamic_cast<const IMachineNativeVectors*>(&machine);
+                const auto* fieldHistory = frame->scanMode == ScanMode::Progressive
+                    ? nullptr : dynamic_cast<const IMachineVideoFieldHistory*>(&machine);
                 surface_->submit(frame, nativeSegments ? nativeSegments->segmentLevels(*frame) : std::nullopt,
-                    nativeVectors ? nativeVectors->vectorSegments(*frame) : nullptr);
+                    nativeVectors ? nativeVectors->vectorSegments(*frame) : nullptr,
+                    fieldHistory ? fieldHistory->previousVideoFields(*frame) : QList<std::shared_ptr<const VideoFrame>>{});
                 if (running || (fullScreen_ && workspace_.showFullscreenEmulationStatistics())) {
                     if (const auto* status = dynamic_cast<const IMachineCoreRuntimeStatus*>(&machine))
                         clockHz = status->coreRuntimeStatus().processorClockHz;

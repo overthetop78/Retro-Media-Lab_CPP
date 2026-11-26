@@ -369,6 +369,8 @@ public:
     void submit(std::shared_ptr<const Emulation::VideoFrame>, std::optional<Emulation::VideoSegmentLevels>);
     void submit(std::shared_ptr<const Emulation::VideoFrame>, std::optional<Emulation::VideoSegmentLevels>,
         Emulation::VideoVectorSegments);
+    void submit(std::shared_ptr<const Emulation::VideoFrame>, std::optional<Emulation::VideoSegmentLevels>,
+        Emulation::VideoVectorSegments, const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields);
     void clear();
     void setStatistics(QString);
     void setOsdTransparency(int percent);
@@ -376,6 +378,9 @@ public:
     void setShaderLoadingObserver(std::function<void(bool)>);
     bool isShaderLoading() const noexcept;
     QImage currentImage() const;
+    static QImage softwareSnapshot(const Emulation::VideoFrame&, const Profile&, QSize viewport,
+        const QList<std::shared_ptr<const Emulation::VideoFrame>>& previousFields,
+        std::optional<Emulation::VideoSegmentLevels> = {}, Emulation::VideoVectorSegments = {});
     bool usesOpenGl() const;
     bool usesDirect3D11() const;
     bool usesVulkan() const;
@@ -394,6 +399,7 @@ private:
     class TemporalState;
     std::unique_ptr<TemporalState> temporal_;
     std::unique_ptr<SoftwareProcessing::SoftwareFrameWorker> processing_;
+    void acceptFrame(std::shared_ptr<const Emulation::VideoFrame>);
     void compose(bool advance = false);
     void refreshViewport();
     void presentImage(QImage, QSize sourceSize, double aspectRatio, std::optional<Sampling> hardwareSampling = {}, ImageAdjustments hardwareAdjustments = {},

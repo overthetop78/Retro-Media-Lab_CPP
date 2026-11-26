@@ -91,6 +91,7 @@ public:
         bool centeredMixer = false;
         QString mixerSection = {};
         bool sectionHeading = false;
+        QString section = {};
     };
 
     FullscreenOsd(QWidget& host, QString machine, QString media, QString footer,
