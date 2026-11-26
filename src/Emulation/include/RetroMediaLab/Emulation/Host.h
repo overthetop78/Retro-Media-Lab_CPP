@@ -113,6 +113,8 @@ public:
     QString audioOutputFieldId(const QString& moduleId, const Configuration&) const;
     QHash<QString, SettingsNumericRange> numericSettings(const QString& moduleId, const Configuration&) const;
     QHash<QString, VideoSettingsSection> videoSettingsSections(const QString& moduleId, const Configuration&) const;
+    QHash<QString, SettingsChoicePresentation> choicePresentation(const QString& moduleId, const Configuration&) const;
+    QSet<QString> settingsRefreshFields(const QString& moduleId, const Configuration&) const;
     SettingsDependencies settingsDependencies(const QString& moduleId, const Configuration&) const;
     QHash<QString, EditableNumericSetting> editableNumericSettings(const QString& moduleId, const Configuration&) const;
     QSet<QString> audioMixerBlocks(const QString& moduleId, const Configuration&) const;

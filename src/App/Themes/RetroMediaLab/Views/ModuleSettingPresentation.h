@@ -1,6 +1,12 @@
 #pragma once
 
+#include "Shared/Controls/FlowLayout.h"
+#include "Shared/Emulation/ModuleNumericSetting.h"
+#include <QButtonGroup>
 #include <QFormLayout>
+#include <QRadioButton>
+#include <QSignalBlocker>
+#include <functional>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMenu>
@@ -13,6 +19,44 @@
 #include <array>
 
 namespace RetroMediaLab {
+
+class ModuleRadioChoices final : public QWidget {
+public:
+    template<class Localize>
+    ModuleRadioChoices(const QList<Emulation::SettingsChoice>& choices, const QString& value,
+        const QString& unit, const Localize& localize, QWidget* parent)
+        : QWidget(parent), buttons_(new QButtonGroup(this)) {
+        auto* layout = new FlowLayout(this);
+        layout->setContentsMargins(0, 0, 0, 0);
+        for (const auto& choice : choices) {
+            auto* button = new QRadioButton(moduleChoiceDisplay(choice, unit, localize), this);
+            buttons_->addButton(button, static_cast<int>(ids_.size()));
+            ids_.append(choice.id);
+            layout->addWidget(button);
+        }
+        setValue(value);
+    }
+
+    QString value() const { return ids_.value(buttons_->checkedId()); }
+
+    void setValue(const QString& value) {
+        const auto index = ids_.indexOf(value);
+        if (auto* button = buttons_->button(index >= 0 ? static_cast<int>(index) : 0)) {
+            const QSignalBlocker block(buttons_);
+            button->setChecked(true);
+        }
+    }
+
+    void onChanged(std::function<void()> callback) {
+        connect(buttons_, &QButtonGroup::idToggled, this, [callback = std::move(callback)](int, bool checked) {
+            if (checked) callback();
+        });
+    }
+
+private:
+    QButtonGroup* buttons_;
+    QStringList ids_;
+};
 
 class CompactSettingsCards final : public QWidget {
 public:

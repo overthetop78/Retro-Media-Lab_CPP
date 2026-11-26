@@ -873,7 +873,7 @@ Windows Release et un module de test chargé par manifeste ont vérifié le chem
 
 Chaque configuration a dix emplacements indexés par l’identifiant du module et le GUID de la configuration. Le premier conserve le chemin historique utilisé par les raccourcis rapides. La barre de commandes et le menu plein écran affichent les dix choix d’écriture et de lecture. La date distingue les emplacements occupés et seuls ceux-ci sont activés à la lecture. L’écriture utilise un fichier de travail de même extension et publie la sauvegarde atomiquement après réussite du module.
 
-Windows Release a compilé l’interface. Une DLL de test a vérifié les dix écritures et relectures après réouverture, l’isolation entre deux configurations, la compatibilité du fichier historique, la conservation après échec et annulation, et le retrait des fichiers temporaires. L’exercice visuel des menus avec une machine réelle reste à faire.
+Windows Release a compilé l’interface. Une DLL de test a vérifié les dix écritures et relectures après réouverture, l’isolation entre deux configurations, la compatibilité du fichier historique, la conservation après échec et annulation, et le retrait des fichiers temporaires. Une sonde Windows Release hors écran a également ouvert les deux menus de la barre du thème. Elle a vérifié leurs dix choix, l’activation des emplacements occupés à la lecture, l’apparition de la date et le passage effectif de l’écriture puis de la lecture de l’emplacement 10 au module de test. La sonde a été supprimée. Une deuxième sonde Windows Release hors écran a ouvert l’OSD depuis une session active, vérifié les dix choix de chacune des listes, le refus de charger un emplacement vide et le passage de l’écriture puis de la lecture de l’emplacement 10 au module. Un emplacement vide affiche seulement son numéro. Un emplacement occupé affiche aussi sa date. La sonde a été supprimée et la DLL vidéo du paquet Release correspond au binaire compilé.
 
 ### Fermeture de session en erreur
 
@@ -947,7 +947,7 @@ Windows Release a compilé. La sonde du thème a vérifié le centrage, la valeu
 
 ### Transparence de l’OSD
 
-Le réglage global est accessible depuis le menu plein écran et les préférences d’émulation. La plage de 0 à 100 % et la valeur initiale de 5 % reprennent MachineController.cs et AppSettings.cs de la branche osd-support. Le profil utilisateur enregistre fullscreenOsdTransparency. L’aperçu agit sur le fond du menu, de l’éditeur, du panneau central, des statistiques et des indicateurs plein écran, en gardant les textes lisibles. Les libellés proviennent d’EmulationVideo.resx dans les trente catalogues source. Le popup de volume dédié du C# reste à porter.
+Le réglage global est accessible depuis le menu plein écran et les préférences d’émulation. La plage de 0 à 100 % et la valeur initiale de 5 % reprennent MachineController.cs et AppSettings.cs de la branche osd-support. Le profil utilisateur enregistre fullscreenOsdTransparency. L’aperçu agit sur le fond du menu, de l’éditeur, du panneau central, des statistiques et des indicateurs plein écran, en gardant les textes lisibles. Les libellés proviennent d’EmulationVideo.resx dans les trente catalogues source.
 
 Windows Release a compilé. La sonde du thème a vérifié la valeur initiale, l’aperçu du fond à 100 %, la sauvegarde et la relecture du JSON, puis l’enregistrement de 0 % en fermant le menu. La sonde a été supprimée.
 
@@ -1188,3 +1188,95 @@ Le commit C# 1e3ac89c0 conserve les shaders compilés sur disque avec une emprei
 ### Sélection des voies à la souris
 
 `FullscreenOsdWindow.CenterPanel.cs` sélectionne la voie au clic sur sa carte et déplace directement le curseur au point cliqué. Le C++ reprend ces gestes en utilisant la géométrie du curseur du style Qt pour convertir le point en valeur. La sonde Release a sélectionné une voie par son libellé, l’a réglée au clavier, puis a vérifié le saut de valeur sur la piste d’une autre voie ainsi que son enregistrement. La sonde a été supprimée.
+
+### Inventaire des bibliothèques natives avant chargement
+
+`EmulationCoreDiagnosticFunctions.cs` et `EmulationCoreDiagnosticManifest.cs` définissent la vérification différée de l’architecture et la génération d’un manifeste à partir du fichier. Le SDK C++ reprend ces opérations et la validation d’une installation par le module. Les noms exportés sont lus à partir des sections PE et triés. La version déclarée provient de FileVersion sous Windows et vaut unknown si la ressource est indisponible ou sur les autres plateformes. La Release Windows a compilé. La sonde a vérifié la version, l’architecture, les exports triés et l’empreinte d’une DLL Qt Release, puis l’absence de fichier PE et le rejet d’un décalage invalide. La sonde a été supprimée. [Format PE](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format) · [Ressources de version Windows](https://learn.microsoft.com/en-us/windows/win32/menurc/version-information)
+
+### Règles des médias du SDK
+
+Les montages reprennent le contrat de `EmulationMediaRules.cs` et le JSON de `EmulationMediaProtocol.cs`. Le remplacement ajoute le nouveau montage en fin de liste. L’éjection conserve le chemin et les paramètres du média, avec un indicateur de retrait. Les disques durs restent montés et les médias optiques et cartouches exigent le mode lecture seule. Les cartes mémoire suivent leur configuration séparée.
+
+Le protocole JSON prend en charge les identifiants indexés du C#, de la forme `Floppy0` ou `Tape1`. Les attributs d’affichage et les extensions acceptées sont décrits par les périphériques. Le contrôle temporaire Release a vérifié le code numérique distinct de la cassette, les paramètres, les rejets et l’aller-retour. Le dossier du contrôle a été supprimé.
+
+### Empreinte du contenu associé à un état
+
+`StateFile` reprend `HashStream` et `HashPath` de `EmulationStateFileFunctions.cs`. Un flux est lu à partir de sa position courante et son propriétaire le ferme. Pour une arborescence, les chemins relatifs triés sans distinction de casse précèdent le contenu de chaque fichier. Leur longueur UTF-8 est encodée sur quatre octets en petit-boutiste. Le C++ départage les chemins égaux sans distinction de casse par ordre ordinal, pour conserver une empreinte reproductible. Le module fournit le filtre, le séparateur et la taille du tampon.
+
+La compilation Windows Release et la sonde ont vérifié la lecture d’un flux non repositionné, le fichier seul, un dossier filtré avec un sous-dossier, les octets exacts transmis à SHA-256 et le rejet d’un chemin absent. Les fichiers de la sonde ont été supprimés.
+
+### Entrées-sorties des sauvegardes
+
+`StateFile` reprend la reprise de lecture de `EmulationStateFileFunctions.cs`. Une erreur d’entrée-sortie autorise jusqu’à 64 tentatives, espacées de 1 ms. Un fichier mal formé et une identité incompatible sont signalés séparément. L’écriture crée les répertoires parents avant de publier le fichier avec `QSaveFile`.
+
+La compilation Windows Release et la sonde ont vérifié la lecture d’un état publié pendant les reprises, la création des répertoires parents et les diagnostics pour un fichier absent, mal formé ou incompatible. Les fichiers de la sonde ont été supprimés.
+
+### Empreinte de configuration
+
+`StateFile::hashDocument` reprend le tri ordinal des clés et conserve l’ordre des tableaux de `EmulationStateFileFunctions.HashDocument`. Les chaînes utilisent les échappements du sérialiseur C#. L’API prend une valeur JSON Qt. Elle utilise les nombres représentables par Qt et leur forme compacte. Les types numériques d’origine et les écritures distinctes comme `-0` ne sont pas préservés par cette représentation.
+
+La sonde temporaire en Windows Release a comparé le résultat à System.Text.Json sur des objets imbriqués et des clés désordonnées, avec tableaux, booléen, valeur nulle, signes échappés, minimum signé sur 64 bits et valeur en notation exponentielle.
+
+### Journal des cœurs natifs
+
+Le rappel de journal de la session avec liaison automatique reprend `ExternalCoreEnvironmentFunctions.CopyNativeLogTemplate` et `ExternalHostCallbacks.OnLog` de osd-support. Il remplace les arguments par `<native-argument>` et conserve les signes pour cent littéraux. Un rappel fourni par le module garde la priorité. `NativeCoreSession::logDiagnostics` renvoie une copie des messages du rappel par défaut.
+
+La compilation Windows Release et la sonde avec une DLL temporaire ont vérifié la négociation du rappel, le traitement des arguments et des signes pour cent, ainsi que la priorité du rappel du module. Les fichiers de la sonde ont été supprimés.
+
+### Témoins des cœurs natifs
+
+Le rappel par défaut de `NativeCoreSession` reprend `ExternalHostCallbacks.OnSetLedState` de osd-support. Il conserve l’état de chaque index, avec zéro pour un témoin éteint. Le module récupère une copie par `ledStates()` et peut appliquer la correspondance commune des lecteurs ou sa propre correspondance. Un rappel fourni par le module a priorité. La fermeture libère les états.
+
+Le build Windows Release et une DLL temporaire ont vérifié le rappel, la correspondance disquette et CD, l’extinction pendant une trame, la fermeture et la priorité du rappel personnalisé. La sonde a été supprimée.
+
+### Dossiers des réglages de machine
+
+Les boutons de parcours des champs fichier et dossier utilisent la mémorisation des dialogues dans les préférences. La clé contient le module, le modèle de machine et le champ. Sans dossier enregistré, le chemin du brouillon initialise l’ouverture. Si ce chemin indique un fichier dans le dossier affiché, le sélecteur reprend aussi son nom. Le parcours spécialisé des firmwares garde son inventaire et sa validation.
+
+Le thème a compilé sous Windows en Release. La vérification interactive avec un module déclarant ces champs reste à faire. Le rafraîchissement de la description sur changement marqué par le module, présent dans `EmulationModuleSettingsSection.Fields.cs`, reste à porter.
+
+### Rafraîchissement des champs de machine
+
+Comme dans `EmulationModuleSettingsSection.Fields.cs` et `RefreshSettingsDescription`, le dialogue redemande au module la description des champs quand un réglage marqué change. Le SDK expose ces identifiants via `IModuleSettingsRefresh`. Le thème applique les valeurs au brouillon en mémoire, réévalue les groupes, champs, choix et dépendances, puis reconstruit les contrôles du module dans le dialogue ouvert. L’onglet courant reste sélectionné s’il est visible. L’enregistrement reprend après la reconstruction pour les options à sauvegarde automatique. Les sections de stockage, d’entrée et de rendu suivent leur cycle existant.
+
+La sonde Qt hors écran sous Windows Release a ouvert les options depuis le menu Émulation avec un module temporaire. La modification de la case a ajouté l’onglet dépendant, conservé la page sélectionnée et préservé le texte saisi. La configuration est restée en brouillon jusqu’à la validation. Le module a alors reçu les deux valeurs modifiées. La sonde et ses fichiers ont été supprimés.
+
+### Choix radio et unités des réglages machine
+
+EmulationSettingsFieldControlFunctions.cs affiche des boutons radio pour un champ explicitement déclaré comme tel ou pour deux choix déclarés. Les choix de périphériques de sortie audio obtenus dynamiquement restent en liste par défaut. EmulationSettingsValuePresentationFunctions.cs ajoute l’unité aux libellés numériques. Windows Release a compilé le thème. La sonde Qt a vérifié le premier choix par défaut, les unités, l’indépendance des groupes et l’émission d’une seule notification au clic. Pour un lecteur de disquettes dont le module omet la liste de vitesses, EmulationDriveSpeedChoices.cs fournit 100 %, 200 %, 400 %, 800 % et Maximum. Le C++ reprend ces cinq valeurs et applique les listes explicites du module, y compris une liste vide. Le libellé Maximum reprend EmulationValue.resx pour Constants et les 29 langues. La compilation Windows Release et le déploiement local ont réussi.
+
+### Focus de l’indicateur de volume
+
+FullscreenVolumeOsd.cs présente une fenêtre temporaire non focalisable et transparente à la souris. Avec le backend Qt hors écran, le type Tool faisait perdre le focus au menu à l’ouverture. Le type ToolTip conserve la transparence et le placement tout en laissant le focus au contrôle courant. La sonde Qt a vérifié la visibilité de l’indicateur, sa fermeture après le délai et le focus lors de ces deux transitions. La compilation Windows Release est passée. La sonde avec le plugin Qt Windows a également confirmé que le contrôle du menu et sa fenêtre restent actifs pendant et après la présentation du volume.
+
+### Molette dans l’éditeur de l’OSD
+
+FullscreenOsdWindow.Menu.cs applique le signe du mouvement de la molette à la valeur de l’éditeur, sur tout le panneau. Le filtre C++ applique ce pas au panneau et à ses contrôles. La sonde Qt hors écran a vérifié les mouvements dans les deux sens, le curseur, l’aperçu, un mouvement de deux crans dans un seul événement et l’enregistrement de la valeur. Windows Release a compilé et les sondes temporaires ont été supprimées.
+
+### Unités des champs de module dans l’OSD
+
+MachineController.OsdModuleSettings.cs utilise ValueUnitResourceKey pour les choix, les plages numériques et les informations du module. Le thème C++ redemande la description des unités dans la configuration du moteur vidéo actif. Les éditeurs et le mixeur consultent la même description que les lignes en lecture seule. La clé d’unité du champ est prioritaire et la clé portée par la plage sert de repli. Un suffixe invariant explicitement déclaré dans une plage reste prioritaire lors du formatage numérique. Windows Release a compilé. Le rendu avec un module qui publie ces unités reste à vérifier.
+
+### Libellé du curseur numérique standard
+
+EmulationSettingsFieldControlFunctions.cs utilise le format invariant 0.######## défini par EmulationSliderConstants.cs. SliderLabel applique ensuite ValueUnitResourceKey et ajoute le suffixe de la plage tel que déclaré. La légende du curseur numérique standard C++ reprend ces règles. La compilation Windows Release et la sonde temporaire ont vérifié la précision, le suffixe, le mode automatique et le résultat sous une locale française. La sonde a été supprimée.
+
+### Routage des sources physiques qualifiées
+
+EmulationInputMappingFunctions.cs résout une source qualifiée vers le périphérique indiqué et ne tire aucune pression d’une source au préfixe inconnu. Le SDK C++ conserve sa convention documentée pour Controller:A, qui lit la manette fournie par l’appelant. Un préfixe inconnu ou une qualification explicite avec un identifiant vide reste inactif. La validation refuse désormais les qualifications vides. Windows Release a compilé. La sonde temporaire a vérifié les identifiants avec séparateurs internes, les périphériques absents, les entrées génériques, les qualifications invalides et les combinaisons clavier/manette. Elle a été supprimée.
+
+### Publication des sauvegardes numérotées
+
+EmulationStateFileFunctions.cs force la vidange du fichier préparé et le publie par remplacement. Les emplacements C++ donnent au module un chemin de travail sur le même système de fichiers, avec le nom et l’extension définitifs, puis publient le fichier préparé par renommage atomique. Le chemin réutilise le remplacement déjà employé par CoreReleases. Windows Release a compilé. Une sonde sur cette opération commune a vérifié la création, le remplacement, les chemins accentués et la conservation de la destination si la source manque ou si la destination est verrouillée. Les fichiers temporaires de la sonde ont été supprimés.
+
+### Encodage des captures machine
+
+MachineController.CaptureScreenAsync prend un instantané de la présentation vidéo puis confie le PNG à Task.Run. Le thème C++ prend l’image disponible sur le fil GUI, enregistre les captures en arrière-plan et revient sur ce fil pour afficher le résultat. La session laisse finir ses écritures à la fermeture. Le nommage partagé attribue un fichier distinct à chaque capture concurrente dans un processus. Windows Release a compilé. La sonde a vérifié trois PNG demandés simultanément, leurs noms distincts et les pixels de chaque image. Les fichiers temporaires ont été supprimés. Le contrôle en session figure plus bas.
+
+### Capture sans trame vidéo
+
+MachineController.CaptureScreenAsync utilise Emulation.Shortcut.Unavailable lorsque la présentation ne fournit aucun instantané. Le thème C++ affiche ce message dans la vue quand aucune trame ne peut être capturée. Constants et les 29 catalogues reprennent le libellé de EmulationShortcut.resx. Les catalogues JSON ont été validés et Windows Release a compilé le thème et les DLL de langue. Le contrôle en session figure ci-dessous.
+
+### Capture depuis une session dans le thème RetroMediaLab
+
+Une sonde Windows Release avec un module temporaire a déclenché le signal du raccourci de capture configuré dans le thème. Comme dans MachineController.CaptureScreenAsync et son gestionnaire de raccourcis, une capture sans trame ouvre le dialogue d’erreur de la machine avec le message traduit. La sonde a vérifié ce dialogue en français et l’absence de fichier. Dès qu’une trame est disponible, le PNG écrit contient la même image que la surface vidéo. La sonde et ses fichiers ont été supprimés.

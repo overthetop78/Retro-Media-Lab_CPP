@@ -26,7 +26,6 @@
 namespace RetroMediaLab {
 namespace {
 using namespace Emulation;
-constexpr auto DefaultFloppySpeed = "100";
 constexpr auto PathSeparator = " — ";
 constexpr auto BlankImageName = "blank";
 constexpr auto FileExtensionFilter = "%1 (*%2)";
@@ -65,10 +64,12 @@ const char* typeKey(MediaKind kind) {
 
 EmulationStoragePanel::EmulationStoragePanel(StorageSettings settings, WorkspaceState& workspace,
     const Translations::TranslationService& translations, QString scope, Localize localize,
-    QHash<QString, QString> detailedHelpResourceKeys, QWidget* parent)
+    QHash<QString, QString> detailedHelpResourceKeys, QHash<QString, SettingsChoicePresentation> choicePresentation,
+    QWidget* parent)
     : QWidget(parent), settings_(std::move(settings)), workspace_(workspace), translations_(translations),
       scope_(std::move(scope)), localize_(std::move(localize)),
-      detailedHelpResourceKeys_(std::move(detailedHelpResourceKeys)), devices_(new QListWidget(this)),
+      detailedHelpResourceKeys_(std::move(detailedHelpResourceKeys)), choicePresentation_(std::move(choicePresentation)),
+      devices_(new QListWidget(this)),
       add_(new QPushButton(label("Emulation.Storage.Device.Add"), this)),
       remove_(new QPushButton(label("Emulation.Storage.Media.Remove"), this)),
       configure_(new QPushButton(label("Emulation.Storage.Device.Configure"), this)), status_(new QLabel(this)) {
@@ -166,7 +167,7 @@ void EmulationStoragePanel::addDevice() {
         StorageDeviceSettings entry;
         entry.slot = device.slot;
         entry.floppy = FloppyDriveSettings{device.floppyOptions->models.front().choice.id,
-            QString::fromLatin1(DefaultFloppySpeed)};
+            StorageRules::standardDriveSpeedChoices().constFirst().id};
         settings_.deviceSettings.append(std::move(entry));
     }
     changed_ = true;
@@ -676,10 +677,9 @@ void EmulationStoragePanel::configureDevice() {
         form->addRow(control);
         return control;
     };
-    const auto createChoice = [&](const QList<SettingsChoice>& choices, const QString& value) {
+    const auto createChoice = [&](const QList<SettingsChoice>& choices, const QString& value, const QString& unit = {}) {
         auto* control = new QComboBox(&dialog);
-        for (const auto& choice : choices) control->addItem(choice.invariantDisplayValue.isEmpty()
-            ? localize_(choice.displayResourceKey) : choice.invariantDisplayValue, choice.id);
+        for (const auto& choice : choices) control->addItem(moduleChoiceDisplay(choice, unit, localize_), choice.id);
         const int index = control->findData(value);
         if (index >= 0) control->setCurrentIndex(index);
         return control;
@@ -693,14 +693,16 @@ void EmulationStoragePanel::configureDevice() {
     auto* options = &entry.options;
     if (device->configurationKind == StorageConfigurationKind::FloppyDrive && device->floppyOptions) {
         const auto& capabilities = *device->floppyOptions;
-        if (!entry.floppy) entry.floppy = FloppyDriveSettings{{}, QString::fromLatin1(DefaultFloppySpeed)};
+        if (!entry.floppy) entry.floppy = FloppyDriveSettings{{}, StorageRules::standardDriveSpeedChoices().constFirst().id};
         auto& settings = *entry.floppy;
         options = &settings.options;
         QList<SettingsChoice> models;
         for (const auto& model : capabilities.models) models.append(model.choice);
         auto* model = models.isEmpty() ? nullptr : addChoice(label("Emulation.Storage.Floppy.Drive"), models, settings.model);
-        auto* speed = capabilities.canConfigureBehavior && capabilities.speedChoices && !capabilities.speedChoices->isEmpty()
-            ? addChoice(label("Emulation.Storage.Floppy.Speed"), *capabilities.speedChoices, settings.speed) : nullptr;
+        const auto& speeds = capabilities.speedChoices ? *capabilities.speedChoices : StorageRules::standardDriveSpeedChoices();
+        auto* speed = capabilities.canConfigureBehavior && !speeds.isEmpty()
+            ? new ModuleRadioChoices(speeds, settings.speed, {}, localize_, &dialog) : nullptr;
+        if (speed) form->addRow(label("Emulation.Storage.Floppy.Speed"), speed);
         auto* writeProtected = capabilities.canConfigureBehavior && capabilities.canConfigureWriteProtection
             ? addToggle(label("Emulation.Storage.Floppy.WriteProtection"), settings.writeProtected) : nullptr;
         auto* redirect = capabilities.canConfigureBehavior && capabilities.canRedirectWrites
@@ -717,7 +719,7 @@ void EmulationStoragePanel::configureDevice() {
         }
         readDevice = [&, model, speed, writeProtected, redirect] {
             if (model) settings.model = model->currentData().toString();
-            if (speed) settings.speed = speed->currentData().toString();
+            if (speed) settings.speed = speed->value();
             if (writeProtected) settings.writeProtected = writeProtected->isChecked();
             if (redirect) settings.redirectWrites = redirect->isChecked();
         };
@@ -753,6 +755,7 @@ void EmulationStoragePanel::configureDevice() {
         const auto caption = localize_(field.labelResourceKey);
         const auto initial = options->value(field.id, field.value);
         const auto detailed = detailedHelpResourceKeys_.value(field.id);
+        const auto presentation = choicePresentation_.value(field.id);
         const auto addRow = [&](QWidget* control) {
             addModuleSettingRow(*form, control, caption,
                 field.explanationResourceKey.isEmpty() ? QString{} : localize_(field.explanationResourceKey),
@@ -761,7 +764,7 @@ void EmulationStoragePanel::configureDevice() {
         if (field.editor == SettingsEditor::Information) {
             auto current = field;
             current.value = initial;
-            auto* control = new QLabel(moduleFieldDisplay(current, {}, localize_), &dialog);
+            auto* control = new QLabel(moduleFieldDisplay(current, presentation.unitResourceKey, localize_), &dialog);
             control->setTextFormat(Qt::PlainText);
             control->setWordWrap(true);
             addRow(control);
@@ -773,8 +776,14 @@ void EmulationStoragePanel::configureDevice() {
             if (field.enabled) values.append({field.id, [control, field] {
                 return control->isChecked() ? field.enabledValue : field.disabledValue;
             }});
+        } else if (!field.choices.isEmpty() && (presentation.useRadioButtons ||
+            (field.editor == SettingsEditor::Choice && field.choices.size() == 2))) {
+            auto* control = new ModuleRadioChoices(field.choices, initial, presentation.unitResourceKey, localize_, &dialog);
+            control->setEnabled(field.enabled);
+            addRow(control);
+            if (field.enabled) values.append({field.id, [control] { return control->value(); }});
         } else if (!field.choices.isEmpty()) {
-            auto* control = createChoice(field.choices, initial);
+            auto* control = createChoice(field.choices, initial, presentation.unitResourceKey);
             control->setEnabled(field.enabled);
             addRow(control);
             if (field.enabled) values.append({field.id, [control] { return control->currentData().toString(); }});

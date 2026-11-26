@@ -608,6 +608,24 @@ public:
     virtual SettingsPresentation settingsPresentation(const Configuration&) const = 0;
 };
 
+struct SettingsChoicePresentation {
+    bool useRadioButtons = false;
+    QString unitResourceKey;
+};
+
+class IModuleChoicePresentation {
+public:
+    virtual ~IModuleChoicePresentation() = default;
+    virtual QHash<QString, SettingsChoicePresentation> choicePresentation(const Configuration&) const = 0;
+};
+
+class IModuleSettingsRefresh {
+public:
+    virtual ~IModuleSettingsRefresh() = default;
+    // Re-description is performed against the edited draft before persistence.
+    virtual QSet<QString> settingsRefreshFields(const Configuration&) const = 0;
+};
+
 enum class SettingsRuleCategory { MutuallyExclusive, VisibleWhenSourceDiffers };
 
 struct SettingsRule {

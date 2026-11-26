@@ -337,7 +337,7 @@ void FullscreenMuteBadge::reposition(const QWidget& anchor) {
 }
 
 FullscreenVolumeBadge::FullscreenVolumeBadge(QWidget& host, const QIcon& icon)
-    : QFrame(&host, Qt::Tool | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint |
+    : QFrame(&host, Qt::ToolTip | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint |
         Qt::WindowDoesNotAcceptFocus | Qt::WindowTransparentForInput),
       title_(new QLabel(this)), value_(new QLabel(this)), level_(new QProgressBar(this)), hideTimer_(new QTimer(this)) {
     setObjectName(QLatin1String(VolumeBadgeName));
@@ -952,8 +952,10 @@ void FullscreenOsd::refresh() {
             if (entry.setting)
                 item->setText(QString::fromLatin1(SettingLabel).arg(entry.label,
                     entry.setting->format(&entry == state_->edited ? state_->draft : entry.setting->read())));
-            else if (entry.status)
-                item->setText(QString::fromLatin1(SettingLabel).arg(entry.label, entry.status()));
+            else if (entry.status) {
+                const auto status = entry.status();
+                item->setText(status.isEmpty() ? entry.label : QString::fromLatin1(SettingLabel).arg(entry.label, status));
+            }
         }
         const int selected = next == -1 ? before : next;
         if (selected != level.rows->currentRow()) level.rows->setCurrentRow(selected);
@@ -1222,7 +1224,8 @@ bool FullscreenOsd::eventFilter(QObject* object, QEvent* event) {
             break;
         }
     }
-    if (object == state_->editor && event->type() == QEvent::Wheel && state_->edited) {
+    if (!state_->runningCommand && type == QEvent::Wheel && state_->edited &&
+        (target == state_->editor || state_->editor->isAncestorOf(target))) {
         const auto delta = static_cast<QWheelEvent*>(event)->angleDelta().y();
         if (delta != 0) adjustValue(state_->draft + (delta < 0 ? -1 : 1));
         return true;

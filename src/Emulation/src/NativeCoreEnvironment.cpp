@@ -90,6 +90,26 @@ void installNativeCoreCallbacks(const NativeCoreExports& exports, const NativeCo
     exports.setInputState(callbacks.inputState);
 }
 
+QString copyNativeLogTemplate(const char* format, QStringView argumentMarker, QStringView conversionCharacters) {
+    if (!format) return {};
+    const auto source = QString::fromUtf8(format).trimmed();
+    QString result;
+    result.reserve(source.size());
+    for (qsizetype index = 0; index < source.size(); ++index) {
+        const auto character = source.at(index);
+        if (character != u'%' || (index + 1 < source.size() && source.at(index + 1) == u'%')) {
+            result.append(character);
+            if (character == u'%') ++index;
+            continue;
+        }
+        result.append(argumentMarker);
+        while (index + 1 < source.size()) {
+            if (conversionCharacters.contains(source.at(++index))) break;
+        }
+    }
+    return result;
+}
+
 NativeCoreEnvironment::NativeCoreEnvironment(NativeCoreVideoFrames& video, NativeCoreAudioFrames& audio,
     const NativeCoreDirectories& dirs, NativeCoreEnvironmentInterfaces interfaces, QLocale uiLocale)
     : NativeCoreEnvironment(video, audio, dirs, interfaces, std::move(uiLocale), {}) {}

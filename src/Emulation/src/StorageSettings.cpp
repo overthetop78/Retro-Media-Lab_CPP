@@ -1,5 +1,8 @@
 #include <RetroMediaLab/Emulation/StorageSettings.h>
 #include <QFileInfo>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <algorithm>
 #include <limits>
 
@@ -7,10 +10,52 @@ namespace RetroMediaLab::Emulation::StorageRules {
 namespace {
 auto slotKey(const MediaSlot& slot) { return std::pair{slot.kind, slot.id}; }
 
+struct ProtocolMediaKind {
+    MediaKind kind;
+    int category, type;
+    QLatin1StringView prefix;
+};
+
+// The C# category and type enums have different wire values for cartridges and tapes.
+constexpr ProtocolMediaKind ProtocolKinds[] = {
+    {MediaKind::Floppy, 0, 0, QLatin1StringView("Floppy")},
+    {MediaKind::HardDisk, 1, 1, QLatin1StringView("HardDisk")},
+    {MediaKind::OpticalDisc, 2, 2, QLatin1StringView("Cd")},
+    {MediaKind::Cartridge, 3, 4, QLatin1StringView("Cartridge")},
+    {MediaKind::Tape, 4, 5, QLatin1StringView("Tape")},
+};
+constexpr auto PathKey = QLatin1StringView("path");
+constexpr auto SlotKey = QLatin1StringView("slot");
+constexpr auto CategoryKey = QLatin1StringView("category");
+constexpr auto IndexKey = QLatin1StringView("index");
+constexpr auto TypeKey = QLatin1StringView("type");
+constexpr auto ReadOnlyKey = QLatin1StringView("isReadOnly");
+constexpr auto InsertedKey = QLatin1StringView("isInserted");
+constexpr auto ParametersKey = QLatin1StringView("parameters");
+
+bool validMedia(const StorageMount& mount) {
+    const auto kind = mount.media.slot.kind;
+    return !mount.media.path.trimmed().isEmpty() && !mount.media.slot.id.isEmpty() &&
+        std::ranges::any_of(ProtocolKinds, [kind](const auto& entry) { return entry.kind == kind; }) &&
+        (mount.inserted || supportsEjection(kind)) &&
+        (mount.media.readOnly || !requiresReadOnly(kind));
+}
+
 QString normalizedExtension(QStringView extension) {
     while (extension.startsWith(u'.')) extension = extension.sliced(1);
     return extension.toString().toCaseFolded();
 }
+}
+
+const QList<SettingsChoice>& standardDriveSpeedChoices() {
+    static const QList<SettingsChoice> choices{
+        {QStringLiteral("100"), {}, QStringLiteral("100 %")},
+        {QStringLiteral("200"), {}, QStringLiteral("200 %")},
+        {QStringLiteral("400"), {}, QStringLiteral("400 %")},
+        {QStringLiteral("800"), {}, QStringLiteral("800 %")},
+        {QStringLiteral("0"), QStringLiteral("Emulation.Value.Maximum"), {}},
+    };
+    return choices;
 }
 
 std::optional<qint64> hardDiskCapacity(const HardDiskImageGeometry& geometry) noexcept {
@@ -69,9 +114,7 @@ bool validSlots(const StorageSettings& settings, const QList<StorageDevice>& dev
 bool validMount(const StorageMount& mount, const QList<StorageDevice>& devices, const QList<MediaSlot>& configured) {
     const auto& media = mount.media;
     const auto key = slotKey(media.slot);
-    if (media.path.trimmed().isEmpty() || media.slot.kind == MediaKind::MemoryCard ||
-        (!mount.inserted && !supportsEjection(media.slot.kind)) ||
-        (requiresReadOnly(media.slot.kind) && !media.readOnly) ||
+    if (!validMedia(mount) ||
         !std::ranges::any_of(configured, [&](const auto& slot) { return slotKey(slot) == key; })) return false;
 
     const StorageDevice* target = nullptr;
@@ -85,6 +128,86 @@ bool validMount(const StorageMount& mount, const QList<StorageDevice>& devices, 
     return !extension.isEmpty() && std::ranges::any_of(target->slot.acceptedExtensions, [&](const auto& accepted) {
         return normalizedExtension(accepted) == extension.toCaseFolded();
     });
+}
+
+bool validMounts(const QList<StorageMount>& mounts) {
+    QSet<std::pair<MediaKind, QString>> occupied;
+    for (const auto& mount : mounts) {
+        const auto key = slotKey(mount.media.slot);
+        if (!validMedia(mount) || occupied.contains(key)) return false;
+        occupied.insert(key);
+    }
+    return true;
+}
+
+std::optional<QList<StorageMount>> replaceMount(const QList<StorageMount>& mounts, const StorageMount& replacement) {
+    auto result = mounts;
+    result.removeIf([&](const auto& mount) { return slotKey(mount.media.slot) == slotKey(replacement.media.slot); });
+    result.append(replacement);
+    if (!validMounts(result)) return {};
+    return result;
+}
+
+std::optional<QList<StorageMount>> ejectMount(const QList<StorageMount>& mounts, const MediaSlot& slot) {
+    auto result = mounts;
+    const auto existing = std::ranges::find_if(result, [&](const auto& mount) {
+        return slotKey(mount.media.slot) == slotKey(slot);
+    });
+    if (existing == result.end()) return result;
+    existing->inserted = false;
+    if (!validMounts(result)) return {};
+    return result;
+}
+
+std::optional<QByteArray> serializeMounts(const QList<StorageMount>& mounts) {
+    if (!validMounts(mounts)) return {};
+    QJsonArray entries;
+    for (const auto& mount : mounts) {
+        const auto& media = mount.media;
+        const auto kind = std::ranges::find(ProtocolKinds, media.slot.kind, &ProtocolMediaKind::kind);
+        if (!media.slot.id.startsWith(kind->prefix)) return {};
+        bool converted = false;
+        const auto suffix = QStringView(media.slot.id).sliced(kind->prefix.size());
+        const int index = suffix.toInt(&converted);
+        if (!converted || index < 0 || suffix != QString::number(index)) return {};
+        QJsonObject parameters;
+        for (auto it = media.parameters.cbegin(); it != media.parameters.cend(); ++it)
+            parameters.insert(it.key(), it.value());
+        const QJsonObject slot{{CategoryKey, kind->category}, {IndexKey, index}};
+        entries.append(QJsonObject{{PathKey, media.path}, {SlotKey, slot}, {TypeKey, kind->type},
+            {ReadOnlyKey, media.readOnly}, {InsertedKey, mount.inserted},
+            {ParametersKey, parameters.isEmpty() ? QJsonValue(QJsonValue::Null) : QJsonValue(parameters)}});
+    }
+    return QJsonDocument(entries).toJson(QJsonDocument::Compact);
+}
+
+std::optional<QList<StorageMount>> deserializeMounts(const QByteArray& payload) {
+    const auto document = QJsonDocument::fromJson(payload);
+    if (!document.isArray()) return {};
+    QList<StorageMount> mounts;
+    for (const auto& value : document.array()) {
+        const auto entry = value.toObject();
+        const auto slot = entry.value(SlotKey).toObject();
+        constexpr int InvalidValue = -1;
+        const auto kind = std::ranges::find(ProtocolKinds, slot.value(CategoryKey).toInt(InvalidValue),
+            &ProtocolMediaKind::category);
+        const int index = slot.value(IndexKey).toInt(InvalidValue);
+        if (kind == std::end(ProtocolKinds) || index < 0 || entry.value(TypeKey).toInt(InvalidValue) != kind->type ||
+            !entry.value(ReadOnlyKey).isBool() || !entry.value(InsertedKey).isBool()) return {};
+        const auto data = entry.value(ParametersKey);
+        if (!data.isUndefined() && !data.isNull() && !data.isObject()) return {};
+        QHash<QString, QString> parameters;
+        const auto fields = data.toObject();
+        for (auto it = fields.constBegin(); it != fields.constEnd(); ++it) {
+            if (!it.value().isString()) return {};
+            parameters.insert(it.key(), it.value().toString());
+        }
+        MediaSlot mediaSlot{QString(kind->prefix) + QString::number(index), {}, kind->kind};
+        mounts.append(StorageMount{MountedMedia{std::move(mediaSlot), entry.value(PathKey).toString(),
+            entry.value(ReadOnlyKey).toBool(), std::move(parameters)}, entry.value(InsertedKey).toBool()});
+    }
+    if (!validMounts(mounts)) return {};
+    return mounts;
 }
 
 bool acceptsCardFile(const StorageDevice& device, const QString& path) {

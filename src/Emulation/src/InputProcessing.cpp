@@ -517,8 +517,14 @@ float bindingPressure(QStringView source, const CoreInput& input, const CoreCont
     const auto separator = source.lastIndexOf(SourceSeparator);
     if (separator < 0 && bareIsKeyboard) return namedKeyPressed(source, input.keys) ? 1.0f : 0.0f;
     const auto* selected = fallback;
-    if (source.startsWith(ControllerPrefix, Qt::CaseInsensitive) && separator > ControllerPrefix.size())
-        selected = resolveController(source.sliced(ControllerPrefix.size(), separator - ControllerPrefix.size()), input.controllers);
+    if (separator >= 0) {
+        if (!source.startsWith(ControllerPrefix, Qt::CaseInsensitive)) return 0.0f;
+        if (separator >= ControllerPrefix.size()) {
+            const auto deviceId = source.sliced(ControllerPrefix.size(), separator - ControllerPrefix.size());
+            if (deviceId.trimmed().isEmpty()) return 0.0f;
+            selected = resolveController(deviceId, input.controllers);
+        }
+    }
     if (!selected) return 0.0f;
     return applyDeadZone(controllerSourcePressure(sourceControlName(source), *selected), deadZone);
 }
@@ -531,7 +537,10 @@ bool isValidBinding(QStringView binding) {
         if (part.startsWith(MousePrefix, Qt::CaseInsensitive)) {
             if (!mouseBinding(part.sliced(MousePrefix.size()))) return false;
         } else if (part.startsWith(ControllerPrefix, Qt::CaseInsensitive)) {
-            if (part.size() <= ControllerPrefix.size() || part.sliced(part.lastIndexOf(SourceSeparator) + 1).trimmed().isEmpty())
+            const auto separator = part.lastIndexOf(SourceSeparator);
+            if (part.sliced(separator + 1).trimmed().isEmpty()) return false;
+            if (separator >= ControllerPrefix.size() &&
+                part.sliced(ControllerPrefix.size(), separator - ControllerPrefix.size()).trimmed().isEmpty())
                 return false;
         } else {
             const auto key = part.startsWith(KeyboardPrefix, Qt::CaseInsensitive) ? part.sliced(KeyboardPrefix.size()) : part;

@@ -15,7 +15,7 @@
 #include <archive.h>
 #include <archive_entry.h>
 #include <array>
-#include <filesystem>
+#include "StagedFile.h"
 #include <exception>
 #include <memory>
 
@@ -175,14 +175,6 @@ bool installLibrary(const InstallationSteps& steps, std::stop_token token) {
 }
 
 namespace {
-std::filesystem::path nativePath(const QString& path) {
-#ifdef Q_OS_WIN
-    return path.toStdWString();
-#else
-    return QFile::encodeName(path).toStdString();
-#endif
-}
-
 ExtractResult copyLibrary(archive& reader, archive_entry& entry, const QString& destination,
     bool preserveLastWriteTime, std::stop_token token) {
     QSaveFile output(destination);
@@ -244,9 +236,7 @@ ExtractResult extractExpectedLibrary(const QString& archivePath, const QString& 
 }
 
 std::error_code replaceLibrary(const QString& stagedPath, const QString& destination) {
-    std::error_code error;
-    std::filesystem::rename(nativePath(stagedPath), nativePath(destination), error);
-    return error;
+    return replaceStagedFile(stagedPath, destination);
 }
 
 QString readInstalledVersion(const QString& manifestPath, const QString& versionProperty, const QString& fallback) {

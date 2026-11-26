@@ -17,7 +17,7 @@
 #include <QLibrary>
 #include <QMap>
 #include <QRegularExpression>
-#include <QSaveFile>
+#include "StagedFile.h"
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -52,7 +52,6 @@ constexpr auto QuickStateDirectory = "Retro Media Lab/Emulation/States";
 constexpr auto QuickStateFile = "%1-%2.gwas";
 constexpr auto NumberedStateFile = "%1-%2.%3";
 constexpr auto SlotStagingDirectory = ".rml-state-XXXXXX";
-constexpr qsizetype SlotCopyBlockSize = 64 * 1024;
 constexpr auto SessionDirectory = "Sessions";
 constexpr auto RuntimeStateDirectory = "States";
 constexpr auto ConvertedDirectory = "Converted";
@@ -509,20 +508,22 @@ std::optional<Configuration> Session::prepareMountedMedia(const QList<MountedMed
                 configured->memoryCardPath.clear();
             }
         } else {
-            auto configured = std::ranges::find_if(settings.mountedMedia,
-                [&](const auto& item) { return sameSlot(item.media.slot, slot); });
+            std::optional<QList<StorageMount>> next;
             if (ejectedPath.isNull()) {
                 const auto inserted = std::ranges::find_if(mounted,
                     [&](const auto& item) { return sameSlot(item.slot, slot); });
                 if (inserted == mounted.end()) return std::nullopt;
                 StorageMount mount{*inserted, true};
                 if (!StorageRules::validMount(mount, settings.availableDevices, settings.configuredSlots)) return std::nullopt;
-                if (configured == settings.mountedMedia.end()) settings.mountedMedia.append(std::move(mount));
-                else *configured = std::move(mount);
+                next = StorageRules::replaceMount(settings.mountedMedia, mount);
             } else {
-                if (configured == settings.mountedMedia.end() || configured->media.path != ejectedPath) return std::nullopt;
-                configured->inserted = false;
+                const auto existingMount = std::ranges::find_if(settings.mountedMedia,
+                    [&](const auto& item) { return sameSlot(item.media.slot, slot); });
+                if (existingMount == settings.mountedMedia.end() || existingMount->media.path != ejectedPath) return std::nullopt;
+                next = StorageRules::ejectMount(settings.mountedMedia, slot);
             }
+            if (!next) return std::nullopt;
+            settings.mountedMedia = std::move(*next);
         }
         updated = applyStorageDraft(*settingsManager, latest, std::move(settings));
     } else {
@@ -821,15 +822,9 @@ bool Session::saveStateSlot(int slot, std::stop_token token) {
 
     const auto stagedPath = staging.filePath(target.fileName());
     if (!saveState(stagedPath, token) || token.stop_requested()) return false;
-    QFile input(stagedPath);
-    QSaveFile output(path);
-    if (!input.open(QIODevice::ReadOnly) || !output.open(QIODevice::WriteOnly)) return false;
-    while (!input.atEnd()) {
-        if (token.stop_requested()) return false;
-        const auto bytes = input.read(SlotCopyBlockSize);
-        if (bytes.isEmpty() || output.write(bytes) != bytes.size()) return false;
-    }
-    return !token.stop_requested() && output.commit();
+    const QFileInfo staged(stagedPath);
+    if (!staged.isFile() || staged.isSymLink() || token.stop_requested()) return false;
+    return !replaceStagedFile(stagedPath, target.absoluteFilePath());
 }
 
 bool Session::loadStateSlot(int slot, std::stop_token token) {
@@ -1083,6 +1078,18 @@ QHash<QString, VideoSettingsSection> Host::videoSettingsSections(const QString& 
     const auto module = data_->modules.value(id);
     const auto* provider = module ? dynamic_cast<const IModuleVideoSettingsSections*>(module->instance) : nullptr;
     return provider ? provider->videoSettingsSections(configuration) : QHash<QString, VideoSettingsSection>{};
+}
+
+QHash<QString, SettingsChoicePresentation> Host::choicePresentation(const QString& id, const Configuration& configuration) const {
+    const auto module = data_->modules.value(id);
+    const auto* provider = module ? dynamic_cast<const IModuleChoicePresentation*>(module->instance) : nullptr;
+    return provider ? provider->choicePresentation(configuration) : QHash<QString, SettingsChoicePresentation>{};
+}
+
+QSet<QString> Host::settingsRefreshFields(const QString& id, const Configuration& configuration) const {
+    const auto module = data_->modules.value(id);
+    const auto* refresh = module ? dynamic_cast<const IModuleSettingsRefresh*>(module->instance) : nullptr;
+    return refresh ? refresh->settingsRefreshFields(configuration) : QSet<QString>{};
 }
 
 SettingsDependencies Host::settingsDependencies(const QString& id, const Configuration& configuration) const {

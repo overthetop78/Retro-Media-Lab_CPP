@@ -16,6 +16,9 @@ namespace RetroMediaLab::Emulation {
 namespace {
 constexpr auto ErrorKey = "Emulation.Error.EmulatorRejected";
 constexpr std::size_t CallbackSlotCount = 64;
+constexpr int InactiveLed = 0;
+constexpr QStringView NativeLogArgumentMarker = u"<native-argument>";
+constexpr QStringView NativeLogConversionCharacters = u"diuoxXfFeEgGaAcspn";
 
 std::exception_ptr rejection() {
     return std::make_exception_ptr(std::runtime_error(ErrorKey));
@@ -30,6 +33,8 @@ class NativeCoreSession::CallbackBinding final {
         ControllerFeedbackAccumulator feedback;
         std::mutex gate;
         std::exception_ptr failure;
+        QHash<qint32, bool> leds;
+        QStringList diagnostics;
 
         State(NativeCoreEnvironment& env, NativeCoreInputCallbacks callbacks)
             : environment(env), input(std::move(callbacks)) {}
@@ -56,10 +61,45 @@ class NativeCoreSession::CallbackBinding final {
         const auto bound = state<Slot>();
         if (!bound) return false;
         if (bound->environment.dispatch(command, data)) return true;
-        if (!data || command != static_cast<unsigned>(NativeCoreEnvironmentCommand::GetRumbleInterface)) return false;
+        if (!data) return false;
+        switch (static_cast<NativeCoreEnvironmentCommand>(command)) {
+        case NativeCoreEnvironmentCommand::GetRumbleInterface:
+            *static_cast<NativeCoreEnvironmentInterfaces::Rumble*>(data) = rumble<Slot>;
+            return true;
+        case NativeCoreEnvironmentCommand::GetLedInterface:
+            *static_cast<NativeCoreEnvironmentInterfaces::Led*>(data) = led<Slot>;
+            return true;
+        case NativeCoreEnvironmentCommand::GetLogInterface:
+            *static_cast<NativeCoreEnvironmentInterfaces::Log*>(data) = log<Slot>;
+            return true;
+        default: return false;
+        }
+    }
 
-        *static_cast<NativeCoreEnvironmentInterfaces::Rumble*>(data) = rumble<Slot>;
-        return true;
+    template<std::size_t Slot>
+    static void led(int index, int value) {
+        const auto bound = state<Slot>();
+        if (!bound) return;
+        try {
+            std::lock_guard lock(bound->gate);
+            bound->leds.insert(index, value != InactiveLed);
+        } catch (...) {
+            bound->recordFailure();
+        }
+    }
+
+    template<std::size_t Slot>
+    static void log(int, const char* format, ...) {
+        const auto bound = state<Slot>();
+        if (!bound) return;
+        try {
+            auto message = copyNativeLogTemplate(format, NativeLogArgumentMarker, NativeLogConversionCharacters);
+            if (message.isEmpty()) return;
+            std::lock_guard lock(bound->gate);
+            bound->diagnostics.append(std::move(message));
+        } catch (...) {
+            bound->recordFailure();
+        }
     }
 
     template<std::size_t Slot>
@@ -143,6 +183,18 @@ public:
 
     QList<ControllerFeedbackState> feedback() const {
         return bindingState()->feedback.snapshot();
+    }
+
+    QStringList diagnostics() const {
+        const auto bound = bindingState();
+        std::lock_guard lock(bound->gate);
+        return bound->diagnostics;
+    }
+
+    QHash<qint32, bool> ledStates() const {
+        const auto bound = bindingState();
+        std::lock_guard lock(bound->gate);
+        return bound->leds;
     }
 
     void resetFeedbackPort(unsigned port) const {
@@ -349,6 +401,14 @@ void NativeCoreSession::setControllerPortDevice(unsigned port, unsigned device) 
 
 QList<ControllerFeedbackState> NativeCoreSession::controllerFeedback() const {
     return loaded_ && binding_ ? binding_->feedback() : QList<ControllerFeedbackState>{};
+}
+
+QStringList NativeCoreSession::logDiagnostics() const {
+    return binding_ ? binding_->diagnostics() : QStringList{};
+}
+
+QHash<qint32, bool> NativeCoreSession::ledStates() const {
+    return binding_ ? binding_->ledStates() : QHash<qint32, bool>{};
 }
 
 unsigned NativeCoreSession::region() const {

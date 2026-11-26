@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EmulationExport.h"
+#include <QDateTime>
 #include <QStringList>
 #include <QStringView>
 #include <exception>
@@ -10,6 +11,29 @@
 #include <stdexcept>
 
 namespace RetroMediaLab::Emulation {
+namespace CoreDiagnostics {
+struct Manifest {
+    QString releaseId, releaseVersion, downloadUrl;
+    QDateTime downloadedUtc;
+    qint64 archiveSize, librarySize;
+    QString librarySha256, architecture, declaredVersion;
+    QStringList exports;
+};
+
+using ErrorText = std::function<QString()>;
+
+RETROMEDIALAB_EMULATION_API void requireArchitecture(const QString& actual, const QString& expected,
+                                                      const ErrorText& error);
+RETROMEDIALAB_EMULATION_API void verifyWindowsX64Library(const QString& path, const ErrorText& notPe,
+    const ErrorText& invalidPe, const ErrorText& wrongArchitecture);
+RETROMEDIALAB_EMULATION_API QString calculateSha256(const QString& path);
+RETROMEDIALAB_EMULATION_API Manifest createManifest(const QString& releaseId, const QString& releaseVersion,
+    const QString& downloadUrl, qint64 archiveSize, const QString& libraryPath);
+RETROMEDIALAB_EMULATION_API QString findInstalledLibraryPath(const QString& path,
+    const std::function<void(const QString&)>& verifyInstallation = {},
+    const std::function<bool()>& isInstallationComplete = {});
+}
+
 class RETROMEDIALAB_EMULATION_API CoreDiagnosticMonitor final {
 public:
     using FailureFactory = std::function<std::exception_ptr(const QString&)>;

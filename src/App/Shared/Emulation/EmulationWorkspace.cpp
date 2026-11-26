@@ -7,6 +7,7 @@
 #include <QSaveFile>
 #include <QStandardPaths>
 #include <algorithm>
+#include <mutex>
 
 namespace RetroMediaLab {
 namespace {
@@ -110,6 +111,8 @@ QString saveEmulationScreenshot(const QImage& image, const QString& directory) {
     if (image.isNull() || !QDir().mkpath(destination.absolutePath())) return {};
     const auto stem = QString::fromLatin1(CaptureStemFormat).arg(
         QDateTime::currentDateTime().toString(QLatin1String(CaptureTimestampFormat)));
+    static std::mutex publication;
+    const std::lock_guard lock(publication);
     auto name = stem + QLatin1String(CaptureExtension);
     for (int suffix = FirstDuplicateCaptureSuffix; destination.exists(name); ++suffix)
         name = QString::fromLatin1(CaptureDuplicateFormat).arg(stem, QString::number(suffix), QLatin1String(CaptureExtension));

@@ -61,6 +61,16 @@ public:
         return QString::number(numericValue(index), 'g', Precision);
     }
 
+    QString dialogDisplay(int index, const QString& automatic, const QString& translatedUnit) const {
+        if (index == Automatic && range_.automaticValue) return automatic;
+        constexpr int DecimalPlaces = 8;
+        auto value = QString::number(numericValue(index), 'f', DecimalPlaces);
+        while (value.endsWith(u'0')) value.chop(1);
+        if (value.endsWith(u'.')) value.chop(1);
+        if (!translatedUnit.isEmpty()) value += u' ' + translatedUnit;
+        return value + range_.unitSuffix;
+    }
+
     QString display(int index, const QString& automatic, const QString& translatedUnit) const {
         if (index == Automatic && range_.automaticValue) return automatic;
         const auto value = QLocale().toString(numericValue(index), 'g', Precision);

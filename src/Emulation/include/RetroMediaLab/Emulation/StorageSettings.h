@@ -161,6 +161,7 @@ public:
 };
 
 namespace StorageRules {
+RETROMEDIALAB_EMULATION_API const QList<SettingsChoice>& standardDriveSpeedChoices();
 // The external-core LED protocol covers the first slot of each returned kind.
 RETROMEDIALAB_EMULATION_API QHash<MediaKind, bool> firstSlotActivityFromLeds(
     const QHash<qint32, bool>& leds, bool includeOpticalDisc);
@@ -170,6 +171,14 @@ RETROMEDIALAB_EMULATION_API bool validHardDiskRequest(const QString&, const Hard
     const HardDiskImageRequest&);
 RETROMEDIALAB_EMULATION_API bool validSlots(const StorageSettings&, const QList<StorageDevice>&);
 RETROMEDIALAB_EMULATION_API bool validMount(const StorageMount&, const QList<StorageDevice>&, const QList<MediaSlot>&);
+RETROMEDIALAB_EMULATION_API bool validMounts(const QList<StorageMount>&);
+RETROMEDIALAB_EMULATION_API std::optional<QList<StorageMount>> replaceMount(
+    const QList<StorageMount>&, const StorageMount&);
+RETROMEDIALAB_EMULATION_API std::optional<QList<StorageMount>> ejectMount(
+    const QList<StorageMount>&, const MediaSlot&);
+// JSON interchange with osd-support. Only canonical indexed slots (such as Floppy0) are representable.
+RETROMEDIALAB_EMULATION_API std::optional<QByteArray> serializeMounts(const QList<StorageMount>&);
+RETROMEDIALAB_EMULATION_API std::optional<QList<StorageMount>> deserializeMounts(const QByteArray&);
 RETROMEDIALAB_EMULATION_API bool acceptsCardFile(const StorageDevice&, const QString& path);
 enum class MemoryCardPathIssue { None, Missing, InvalidFormat, InvalidSize };
 RETROMEDIALAB_EMULATION_API MemoryCardPathIssue validateMemoryCardPath(const StorageDevice&, const QString& path);

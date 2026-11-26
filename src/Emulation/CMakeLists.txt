@@ -29,7 +29,7 @@ target_compile_definitions(RetroMediaLab.Emulation PRIVATE RETROMEDIALAB_EMULATI
 target_include_directories(RetroMediaLab.Emulation PUBLIC include)
 target_link_libraries(RetroMediaLab.Emulation PUBLIC Qt6::Core PRIVATE RetroMediaLab.MediaEngine RetroMediaLab.Archives Qt6::Multimedia Qt6::Network)
 if(WIN32)
-  target_link_libraries(RetroMediaLab.Emulation PRIVATE opengl32 gdi32 user32)
+  target_link_libraries(RetroMediaLab.Emulation PRIVATE opengl32 gdi32 user32 version)
 endif()
 set_target_properties(RetroMediaLab.Emulation PROPERTIES OUTPUT_NAME Emulation)
 install(TARGETS RetroMediaLab.Emulation RUNTIME DESTINATION lib LIBRARY DESTINATION lib)

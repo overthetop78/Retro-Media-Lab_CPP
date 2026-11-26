@@ -1762,3 +1762,105 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
 - [x] Sélection des voies à la souris dans le mixeur
   - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour sélectionner la voie depuis sa carte et déplacer directement le curseur au point cliqué.
   - [x] Créer puis supprimer build/emulation-osd-fader-pointer-check pour vérifier la sélection depuis le libellé et le réglage sur la piste du curseur.
+
+- [x] Diagnostic des bibliothèques de cœur avant chargement
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/CoreDiagnostics.h et src/Emulation/src/CoreDiagnostics.cpp pour produire le manifeste du C#, vérifier l’architecture et valider une installation en lisant les métadonnées PE.
+  - [x] Modifier src/Emulation/CMakeLists.txt pour lier la lecture Windows des ressources de version.
+  - [x] Créer puis supprimer build/emulation-core-diagnostic-check pour vérifier une DLL Release et les erreurs de vérification.
+
+- [x] Règles des médias du SDK osd-support
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/StorageSettings.h et src/Emulation/src/StorageSettings.cpp pour exposer la validation, le remplacement, l’éjection et le protocole JSON des montages.
+  - [x] Modifier src/Emulation/src/Host.cpp pour appliquer ces règles aux montages persistés.
+  - [x] Créer puis supprimer les fichiers sous build/emulation-media-rules-check pour vérifier les règles et le protocole JSON.
+
+- [x] Empreintes de contenu des sauvegardes
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/StateFile.h et src/Emulation/src/StateFile.cpp pour calculer les empreintes des flux et arborescences de contenu selon osd-support.
+  - [x] Créer puis supprimer build/emulation-state-content-check pour comparer les empreintes de fichiers, flux et dossiers.
+
+- [x] Entrées-sorties des sauvegardes selon osd-support
+  - [x] Modifier src/Emulation/src/StateFile.cpp pour réessayer les erreurs de lecture, conserver les erreurs de format et créer le dossier avant l’écriture atomique.
+  - [x] Créer puis supprimer build/emulation-state-io-check pour vérifier les trois catégories de lecture ainsi que l’écriture dans un nouveau dossier.
+
+- [x] Empreinte canonique de configuration des sauvegardes
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/StateFile.h et src/Emulation/src/StateFile.cpp pour hacher les propriétés JSON dans l’ordre ordinal, sans modifier l’ordre des tableaux.
+  - [x] Créer puis supprimer build/emulation-state-document-check pour comparer les empreintes du SDK au résultat de System.Text.Json.
+
+- [x] Journal des cœurs natifs
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreEnvironment.h et src/Emulation/src/NativeCoreEnvironment.cpp pour porter le traitement des formats de journal de osd-support.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h et src/Emulation/src/NativeCoreSession.cpp pour fournir et lire les diagnostics du journal par défaut.
+  - [x] Créer puis supprimer build/emulation-native-log-check pour vérifier le trajet du rappel derrière une DLL temporaire.
+
+- [x] Témoins du cœur natif
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h et src/Emulation/src/NativeCoreSession.cpp pour recevoir les états LED et les exposer au module.
+  - [x] Créer puis supprimer build/emulation-native-led-check pour vérifier les états du rappel par défaut et la priorité du rappel fourni par le module.
+
+- [x] Mémorisation des dossiers dans les réglages d’émulation
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour mémoriser les dossiers par champ de machine tout en conservant le chemin du brouillon.
+
+- [x] Rafraîchissement des réglages de machine selon osd-support
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/{Sdk,Host}.h et src/Emulation/src/Host.cpp pour exposer les champs qui demandent une nouvelle description.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour redécrire le formulaire depuis le brouillon et reconstruire les champs dans le dialogue ouvert.
+
+- [x] Validation du formulaire de réglages dépendants
+  - [x] Créer puis supprimer build/emulation-settings-refresh-check pour ouvrir les options du thème avec un module temporaire, contrôler les champs redécrits et vérifier la sauvegarde du brouillon.
+
+- [x] Présentation des choix de machine selon osd-support
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h, src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour publier les choix radio et les clés d’unité.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/ModuleSettingPresentation.h, EmulationPage.cpp et EmulationStoragePanel.{h,cpp} pour afficher les choix et les enregistrer selon la description du module.
+  - [x] Créer puis supprimer build/emulation-radio-check pour vérifier la sélection, les unités et les notifications des boutons radio.
+
+- [x] Vitesses génériques des lecteurs de disquettes
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/StorageSettings.h et src/Emulation/src/StorageSettings.cpp pour exposer les préréglages de EmulationDriveSpeedChoices.cs.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationStoragePanel.cpp pour utiliser les vitesses génériques quand le module omet la liste et conserver les choix explicites.
+  - [x] Modifier les catalogues App/emulation-storage.json de Constants et des langues sous src/Translations/Catalogs avec la clé Emulation.Value.Maximum issue de EmulationValue.resx.
+
+- [x] Focus pendant l’affichage du volume en plein écran
+  - [x] Créer puis supprimer build/emulation-volume-focus-check pour vérifier le focus du menu lors de l’apparition et de la disparition de l’indicateur de volume.
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour afficher le volume sans prendre le focus du menu ou de la machine.
+
+- [x] Validation Windows native du focus de l’indicateur de volume
+  - [x] Créer puis supprimer build/emulation-volume-focus-check pour contrôler la fenêtre active avant, pendant et après le volume avec le plugin Windows Qt.
+
+- [x] Molette dans l’éditeur de l’OSD
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour appliquer un seul cran sur tout le panneau de réglage, y compris son curseur.
+  - [x] Créer puis supprimer build/emulation-osd-wheel-check pour vérifier le panneau, le curseur et la sauvegarde.
+
+- [x] Unités des réglages de module dans l’OSD
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre les clés d’unité fournies par le module dans les éditeurs, le mixeur et les lignes d’information de l’OSD.
+
+- [x] Libellés des curseurs numériques du dialogue machine
+  - [x] Modifier src/App/Shared/Emulation/ModuleNumericSetting.h pour formater le libellé du curseur standard avec huit décimales facultatives, son unité localisée et son suffixe.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour appliquer le libellé et la clé déclarée par le module.
+  - [x] Créer puis supprimer build/emulation-slider-label-check pour vérifier la précision, le suffixe et la valeur automatique.
+
+- [x] Routage des sources physiques qualifiées
+  - [x] Modifier src/Emulation/src/InputProcessing.cpp pour refuser les préfixes inconnus et les identifiants de manette vides dans la validation et le calcul de pression.
+  - [x] Créer puis supprimer build/emulation-qualified-input-check pour contrôler les sources génériques, explicites, absentes et invalides.
+
+- [x] Publication des sauvegardes numérotées
+  - [x] Créer src/Emulation/src/StagedFile.h pour mutualiser le remplacement atomique déjà utilisé lors de l’installation des cœurs.
+  - [x] Modifier src/Emulation/src/Host.cpp et src/Emulation/src/CoreReleases.cpp pour publier leurs fichiers préparés avec ce remplacement.
+  - [x] Créer puis supprimer build/emulation-staged-file-check pour vérifier la création, le remplacement et la conservation de la destination après échec.
+
+- [x] Enregistrement asynchrone des captures machine
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour encoder les instantanés en arrière-plan et publier le résultat sur le fil de l’interface.
+  - [x] Modifier src/App/Shared/Emulation/EmulationWorkspace.cpp pour attribuer des noms distincts aux captures concurrentes.
+  - [x] Créer puis supprimer build/emulation-concurrent-capture-check pour vérifier les PNG écrits et leurs noms.
+
+- [x] Message en absence de trame pour une capture machine
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour afficher la raison du refus de capture de MachineController.CaptureScreenAsync.
+  - [x] Modifier App/emulation-shortcuts.json dans Constants et chaque langue pour reprendre Emulation.Shortcut.Unavailable de osd-support.
+
+- [x] Validation de la capture depuis une session
+  - [x] Créer puis supprimer build/emulation-session-capture-check pour exercer la commande configurée dans le thème avec et sans image.
+
+- [x] Dialogue d’erreur des captures de session
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour présenter les échecs de capture dans le dialogue d’erreur de la machine et garder le nom du PNG après réussite.
+  - [x] Créer puis supprimer build/emulation-session-capture-check pour vérifier le refus sans trame et l’écriture avec trame.
+
+- [x] Menus de sauvegarde et de chargement d’une machine
+  - [x] Créer puis supprimer build/emulation-state-menu-check pour vérifier les dix choix des deux menus du thème, puis écrire et recharger le dernier emplacement.
+
+- [x] Emplacements de sauvegarde dans le menu plein écran
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour garder le numéro seul lorsqu’un emplacement n’a pas de date.
+  - [x] Créer puis supprimer build/emulation-osd-state-check pour ouvrir les listes de sauvegarde et de chargement du menu plein écran et exercer l’emplacement 10.

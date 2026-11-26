@@ -68,6 +68,7 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QPointer>
+#include <QThreadPool>
 #include <QPushButton>
 #include <QProgressBar>
 #include <QPixmap>
@@ -194,6 +195,7 @@ constexpr auto ModuleAudioEnabledKey = "Emulation.Audio.Enabled";
 constexpr auto AudioOutputKey = "Emulation.Audio.Output";
 constexpr auto OsdExitKey = "Emulation.Shortcut.OsdExitFullscreen";
 constexpr auto ScreenshotKey = "Emulation.Shortcut.Screenshot";
+constexpr auto ShortcutUnavailableKey = "Emulation.Shortcut.Unavailable";
 constexpr auto EmulationMediaScope = "EmulationMedia/%1/%2/%3";
 constexpr auto EmulationStateScope = "EmulationState";
 constexpr auto CloseKey = "Common.Cancel";
@@ -1558,8 +1560,10 @@ public:
         timer_.start(FramePollMilliseconds);
         mediaTimer_.start(MediaPollMilliseconds);
         tapeBlinkTimer_.setInterval(TapeBlinkMilliseconds);
+        screenshotWorkers_.setMaxThreadCount(1);
     }
     ~SessionView() override {
+        screenshotWorkers_.waitForDone();
         if (osd_) osd_->flushPendingSetting();
         surface_->setShaderLoadingObserver({});
         delete shaderBadge_.data();
@@ -2745,9 +2749,34 @@ private:
             surface_->setIndicator(text(translations_, ErrorKey));
         }
     }
+    void showScreenshotError(const char* key, std::exception_ptr cause = {}) {
+        auto& owner = fullScreen_ ? static_cast<QWidget&>(*fullScreen_) : *this;
+        const EmulationMessageException failure({
+            .category = MessageCategory::Machine,
+            .code = MessageCode::UntranslatedEmulatorMessage,
+            .originalText = text(translations_, key)
+        }, std::move(cause));
+        presentEmulationError(owner, theme_, translations_, failure,
+            emulationMachineName(*host_, translations_, session_->moduleId(), session_->configuration()));
+    }
+
     void screenshot() {
-        const auto name = saveEmulationScreenshot(surface_->currentImage(), resolveEmulationFolders(workspace_.emulationFolders()).captures);
-        surface_->setIndicator(name.isEmpty() ? text(translations_, ErrorKey) : name);
+        auto image = surface_->currentImage();
+        if (image.isNull()) {
+            showScreenshotError(ShortcutUnavailableKey);
+            return;
+        }
+        const auto directory = resolveEmulationFolders(workspace_.emulationFolders()).captures;
+        screenshotWorkers_.start([this, image = std::move(image), directory] {
+            QString name;
+            std::exception_ptr cause;
+            try { name = saveEmulationScreenshot(image, directory); }
+            catch (...) { cause = std::current_exception(); }
+            QMetaObject::invokeMethod(this, [this, name = std::move(name), cause = std::move(cause)] {
+                if (name.isEmpty()) showScreenshotError(ErrorKey, cause);
+                else surface_->setIndicator(name);
+            }, Qt::QueuedConnection);
+        });
     }
     void toggleFullscreenStatistics() {
         run([this] {
@@ -3128,6 +3157,7 @@ private:
         osdDependencies_ = std::move(dependencies);
         osdBlocks_ = std::move(blocks);
         osdRanges_ = std::move(ranges);
+        osdChoicePresentation_ = host_->choicePresentation(session_->moduleId(), config);
         osdVideoSections_ = std::move(videoSections);
     }
 
@@ -3168,12 +3198,17 @@ private:
         const auto range = osdRanges_.constFind(field.id);
         const auto numeric = field.editor == SettingsEditor::Slider && range != osdRanges_.cend()
             ? ModuleNumericSetting::from(*range) : std::nullopt;
-        const auto unitKey = range == osdRanges_.cend() ? QString{} : range->unitResourceKey;
+        const auto unitKey = [this, fieldId = field.id] {
+            const auto choice = osdChoicePresentation_.constFind(fieldId);
+            if (choice != osdChoicePresentation_.cend() && !choice->unitResourceKey.isEmpty())
+                return choice->unitResourceKey;
+            return osdRanges_.value(fieldId).unitResourceKey;
+        };
         if (field.editor == SettingsEditor::Information || (!toggle && !numeric && field.choices.isEmpty())) {
             entry.enabled = [] { return false; };
-            entry.status = [this, current] {
+            entry.status = [this, current, unitKey] {
                 const auto* value = current();
-                return value ? moduleFieldDisplay(*value, osdRanges_.value(value->id).unitResourceKey,
+                return value ? moduleFieldDisplay(*value, unitKey(),
                     [this](const QString& key) { return moduleSettingText(key); })
                     : QString{};
             };
@@ -3186,8 +3221,9 @@ private:
                     return active ? editor.index(active->value) : 0;
                 },
                 [this, editor = *numeric, unitKey](int index) {
+                    const auto key = unitKey();
                     return editor.display(index, text(translations_, AutomaticSettingKey),
-                        unitKey.isEmpty() ? QString{} : moduleSettingText(unitKey));
+                        key.isEmpty() ? QString{} : moduleSettingText(key));
                 },
                 [save, editor = *numeric](int index) { return save(editor.value(index)); },
                 numeric->minimum(), numeric->maximum()};
@@ -3214,7 +3250,7 @@ private:
                         const auto* value = current();
                         return value ? value->value : QString{};
                     }
-                    return moduleChoiceDisplay(choices[index], unitKey,
+                    return moduleChoiceDisplay(choices[index], unitKey(),
                         [this](const QString& key) { return moduleSettingText(key); });
                 },
                 [choices, save](int index) {
@@ -3809,6 +3845,7 @@ private:
     QSet<QString> osdAudioMixerBlocks_;
     SettingsRules::Values osdValues_;
     QHash<QString, SettingsNumericRange> osdRanges_;
+    QHash<QString, SettingsChoicePresentation> osdChoicePresentation_;
     QHash<QString, VideoSettingsSection> osdVideoSections_;
     QToolButton *power_, *pause_, *reset_, *hardReset_;
     std::optional<MachineState> lifecycleState_;
@@ -3817,6 +3854,7 @@ private:
     QHash<QToolButton*, const EmulationKeyboardShortcuts::Binding*> commandShortcuts_;
     QPushButton *save_, *load_;
     QToolButton *quickSave_, *quickLoad_, *screenshotButton_;
+    QThreadPool screenshotWorkers_;
     QToolButton *mute_, *controllerPointer_;
     std::optional<bool> controllerPointerMode_;
     QCheckBox* statistics_;
@@ -4114,11 +4152,14 @@ struct EmulationPage::Data {
         auto profile = profiles.load(module, config.id);
         const auto described = state.emulation->configurationForGraphicsApi(module, config, graphicsApi(profile.renderer));
         const auto describedBlocks = state.emulation->describe(module, described);
-        const auto ranges = state.emulation->numericSettings(module, described);
-        const auto editableSettings = state.emulation->editableNumericSettings(module, described);
-        const auto presentation = state.emulation->settingsPresentation(module, described);
-        const auto dependencies = state.emulation->settingsDependencies(module, described);
-        const auto blocks = machineSettingsEditorBlocks(describedBlocks, dependencies);
+        auto ranges = state.emulation->numericSettings(module, described);
+        auto editableSettings = state.emulation->editableNumericSettings(module, described);
+        auto presentation = state.emulation->settingsPresentation(module, described);
+        auto dependencies = state.emulation->settingsDependencies(module, described);
+        auto blocks = machineSettingsEditorBlocks(describedBlocks, dependencies);
+        auto refreshFields = state.emulation->settingsRefreshFields(module, described);
+        auto choicePresentation = state.emulation->choicePresentation(module, described);
+        auto audioOutputField = state.emulation->audioOutputFieldId(module, described);
         auto feedbackPorts = state.emulation->controllerFeedbackPorts(module, config);
         const auto firmwareDirectory = state.emulation->firmwareDirectory(module, config.machineId);
         QList<FirmwareCandidate> firmware;
@@ -4140,10 +4181,13 @@ struct EmulationPage::Data {
         QDialog dialog(parent);
         QTimer autosave;
         autosave.setSingleShot(true);
+        QTimer refreshDescription;
+        refreshDescription.setSingleShot(true);
+        bool rebuilding = false;
         bool interactive = false, inputDirty = false, storageDirty = false;
         const bool saveWhileEditing = optionsModule && !storedDraft;
         const auto scheduleSave = [&] {
-            if (interactive && saveWhileEditing) autosave.start(0);
+            if (interactive && saveWhileEditing && !rebuilding && !refreshDescription.isActive()) autosave.start(0);
         };
         dialog.setWindowTitle(text(translations, SettingsKey));
         auto* layout = new QVBoxLayout(&dialog);
@@ -4194,6 +4238,7 @@ struct EmulationPage::Data {
         QList<SettingsGroup> groups;
         QList<CompactSettingsCards*> compactRuns;
         QHash<QString, CompactSettingsCards*> openCompactRuns;
+        QHash<QVBoxLayout*, int> moduleInsertionPoints;
         QJsonObject changes;
         QString requestedEmulator;
         std::optional<Profile> requestedVideoProfile;
@@ -4217,7 +4262,7 @@ struct EmulationPage::Data {
             constexpr auto StorageScope = "EmulationStorage/%1/%2";
             storagePage = new EmulationStoragePanel(std::move(*storage), state, translations,
                 QString::fromLatin1(StorageScope).arg(module, config.machineId),
-                [&](const QString& key) { return translated(module, key); }, presentation.detailedHelpResourceKeys, sections);
+                [&](const QString& key) { return translated(module, key); }, presentation.detailedHelpResourceKeys, choicePresentation, sections);
             storagePage->onChanged([&] {
                 storageDirty = true;
                 scheduleSave();
@@ -4249,9 +4294,12 @@ struct EmulationPage::Data {
                 sections->setTabVisible(index, visiblePages.contains(sections->widget(index)));
         };
         const auto applyChange = [&](const QString& id, const QString& value) {
+            if (rebuilding) return;
+            bool describeAgain = false;
             const auto patch = SettingsRules::changesFor(dependencies, currentValues, id, value);
             for (auto field = patch.constBegin(); field != patch.constEnd(); ++field) {
                 const auto next = field.value().toString();
+                describeAgain |= refreshFields.contains(field.key()) && currentValues.value(field.key()) != next;
                 currentValues.insert(field.key(), next);
                 changes.insert(field.key(), next);
                 firmware.removeIf([&](const auto& candidate) {
@@ -4262,318 +4310,362 @@ struct EmulationPage::Data {
                 if (target != controls.end() && target->write) target->write(next);
             }
             refreshVisibility();
+            if (interactive && describeAgain) {
+                autosave.stop();
+                refreshDescription.start(0);
+            }
         };
         const int sessionIndex = session ? activeTab(module, config.machineId, config.id) : -1;
         auto* sessionView = sessionIndex > 0 ? static_cast<SessionView*>(tabs->widget(sessionIndex)) : nullptr;
         const auto saveProfile = [&](const Profile& updated) {
             return sessionView ? sessionView->applyVideoProfile(updated) : profiles.save(module, config.id, updated);
         };
-        for (const auto& block : blocks) {
-            if (!block.visible) continue;
-            auto* section = sectionLayouts.value(block.tabResourceKey);
-            if (!section) {
-                auto* scroll = new QScrollArea(sections);
-                scroll->setWidgetResizable(true);
-                auto* content = new QWidget(scroll);
-                section = new QVBoxLayout(content);
-                if (block.tabResourceKey == QLatin1String(VideoKey)) {
-                    videoPage = scroll;
-                    if (sessionView) section->addWidget(sessionView->createShaderStatusRow(content));
-                    auto* videoRow = new QHBoxLayout;
-                    auto* rendering = new QFormLayout;
-                    videoRow->addLayout(rendering, 2);
-                    videoHardwarePanel = new QGroupBox(text(translations, MachineVideoHardwareKey), content);
-                    videoHardwareLayout = new QVBoxLayout(videoHardwarePanel);
-                    videoRow->addWidget(videoHardwarePanel, 1, Qt::AlignTop);
-                    section->addLayout(videoRow);
-                    auto* renderer = new QComboBox(content);
-                    for (const auto& [value, key] : VideoRenderers)
-                        renderer->addItem(text(translations, key), static_cast<int>(value));
-                    const auto previous = renderer->findData(static_cast<int>(profile.renderer));
-                    renderer->setCurrentIndex(previous >= 0 ? previous :
-                        renderer->findData(static_cast<int>(VideoPresentation::Renderer::Software)));
-                    const auto initialIndex = renderer->currentIndex();
-                    QObject::connect(renderer, &QComboBox::activated, &dialog, [&, renderer, initialIndex](int index) {
-                        if (index == initialIndex) return;
-                        if (!inputValid()) {
-                            renderer->setCurrentIndex(initialIndex);
-                            return;
-                        }
-                        requestedVideoProfile = profile;
-                        requestedVideoProfile->renderer = static_cast<VideoPresentation::Renderer>(renderer->itemData(index).toInt());
-                        dialog.accept();
-                    });
-                    addModuleSettingRow(*rendering, renderer, text(translations, VideoRendererKey),
-                        text(translations, "Emulation.Help.Video.Rendering.Short"),
-                        text(translations, "Emulation.Help.Video.Rendering.Detailed"));
-                    auto* processing = new QPushButton(text(translations, "Emulation.Video.Settings.RetroMediaLabProcessing"), content);
-                    QObject::connect(processing, &QPushButton::clicked, &dialog, [&] {
-                        if (!inputValid()) return;
-                        std::function<QWidget*(QWidget*)> status;
-                        if (sessionView) status = [sessionView](QWidget* parent) { return sessionView->createShaderStatusRow(parent); };
-                        auto updated = editVideoProfile(&dialog, translations, profile, status);
-                        if (!updated) return;
-                        if (updated->renderer != profile.renderer) {
-                            requestedVideoProfile = std::move(updated);
+        const auto buildModuleSettings = [&] {
+            QHash<QVBoxLayout*, int> nextInsertion;
+            for (const auto& block : blocks) {
+                if (!block.visible) continue;
+                auto* section = sectionLayouts.value(block.tabResourceKey);
+                if (!section) {
+                    auto* scroll = new QScrollArea(sections);
+                    scroll->setWidgetResizable(true);
+                    auto* content = new QWidget(scroll);
+                    section = new QVBoxLayout(content);
+                    if (block.tabResourceKey == QLatin1String(VideoKey)) {
+                        videoPage = scroll;
+                        if (sessionView) section->addWidget(sessionView->createShaderStatusRow(content));
+                        auto* videoRow = new QHBoxLayout;
+                        auto* rendering = new QFormLayout;
+                        videoRow->addLayout(rendering, 2);
+                        videoHardwarePanel = new QGroupBox(text(translations, MachineVideoHardwareKey), content);
+                        videoHardwareLayout = new QVBoxLayout(videoHardwarePanel);
+                        videoRow->addWidget(videoHardwarePanel, 1, Qt::AlignTop);
+                        section->addLayout(videoRow);
+                        auto* renderer = new QComboBox(content);
+                        for (const auto& [value, key] : VideoRenderers)
+                            renderer->addItem(text(translations, key), static_cast<int>(value));
+                        const auto previous = renderer->findData(static_cast<int>(profile.renderer));
+                        renderer->setCurrentIndex(previous >= 0 ? previous :
+                            renderer->findData(static_cast<int>(VideoPresentation::Renderer::Software)));
+                        const auto initialIndex = renderer->currentIndex();
+                        QObject::connect(renderer, &QComboBox::activated, &dialog, [&, renderer, initialIndex](int index) {
+                            if (index == initialIndex) return;
+                            if (!inputValid()) {
+                                renderer->setCurrentIndex(initialIndex);
+                                return;
+                            }
+                            requestedVideoProfile = profile;
+                            requestedVideoProfile->renderer = static_cast<VideoPresentation::Renderer>(renderer->itemData(index).toInt());
                             dialog.accept();
-                            return;
-                        }
-                        try {
-                            if (!saveProfile(*updated)) throw std::runtime_error(ErrorKey);
-                            profile = std::move(*updated);
-                            saveError->hide();
-                        } catch (...) {
-                            saveError->setText(text(translations, ErrorKey));
-                            saveError->show();
-                        }
-                    });
-                    rendering->addRow(processing);
+                        });
+                        addModuleSettingRow(*rendering, renderer, text(translations, VideoRendererKey),
+                            text(translations, "Emulation.Help.Video.Rendering.Short"),
+                            text(translations, "Emulation.Help.Video.Rendering.Detailed"));
+                        auto* processing = new QPushButton(text(translations, "Emulation.Video.Settings.RetroMediaLabProcessing"), content);
+                        QObject::connect(processing, &QPushButton::clicked, &dialog, [&] {
+                            if (!inputValid()) return;
+                            std::function<QWidget*(QWidget*)> status;
+                            if (sessionView) status = [sessionView](QWidget* parent) { return sessionView->createShaderStatusRow(parent); };
+                            auto updated = editVideoProfile(&dialog, translations, profile, status);
+                            if (!updated) return;
+                            if (updated->renderer != profile.renderer) {
+                                requestedVideoProfile = std::move(updated);
+                                dialog.accept();
+                                return;
+                            }
+                            try {
+                                if (!saveProfile(*updated)) throw std::runtime_error(ErrorKey);
+                                profile = std::move(*updated);
+                                saveError->hide();
+                            } catch (...) {
+                                saveError->setText(text(translations, ErrorKey));
+                                saveError->show();
+                            }
+                        });
+                        rendering->addRow(processing);
+                    }
+                    scroll->setWidget(content);
+                    sections->addTab(scroll, translated(module, block.tabResourceKey));
+                    sectionLayouts.insert(block.tabResourceKey, section);
+                    sectionPages.insert(block.tabResourceKey, scroll);
+                    moduleInsertionPoints.insert(section, section->count());
                 }
-                scroll->setWidget(content);
-                sections->addTab(scroll, translated(module, block.tabResourceKey));
-                sectionLayouts.insert(block.tabResourceKey, section);
-                sectionPages.insert(block.tabResourceKey, scroll);
-            }
-            constexpr int MaximumCompactCpuFields = 8;
-            constexpr auto CpuTab = "Emulation.Tab.Cpu";
-            const bool videoHardware = block.tabResourceKey == QLatin1String(VideoKey) &&
-                block.titleResourceKey == QLatin1String(MachineVideoHardwareKey);
-            const bool compact = !videoHardware && presentation.compactBlocks.contains(block.id) &&
-                (block.tabResourceKey != QLatin1String(CpuTab) ||
-                    std::ranges::count_if(block.fields, &SettingsField::visible) <= MaximumCompactCpuFields);
-            auto* compactRun = openCompactRuns.value(block.tabResourceKey);
-            if (compact && !compactRun) {
-                compactRun = new CompactSettingsCards(section->parentWidget());
-                section->addWidget(compactRun);
-                openCompactRuns.insert(block.tabResourceKey, compactRun);
-                compactRuns.append(compactRun);
-            } else if (!compact) {
-                openCompactRuns.remove(block.tabResourceKey);
-                compactRun = nullptr;
-            }
-            QWidget* group = nullptr;
-            if (videoHardware) {
-                group = new QWidget(videoHardwarePanel);
-                videoHardwareLayout->addWidget(group);
-            } else {
-                auto* frame = new QGroupBox(translated(module, block.titleResourceKey),
-                    compactRun ? compactRun : section->parentWidget());
-                if (compactRun) compactRun->append(frame);
-                else section->addWidget(frame);
-                group = frame;
-            }
-            auto* form = new QFormLayout(group);
-            if (videoHardware) form->setContentsMargins({});
-            groups.append({&block, group, sectionPages.value(block.tabResourceKey), videoHardware});
-            for (const auto& field : block.fields) {
-                if (!field.visible) continue;
-                const auto addRow = [&](QWidget* control) {
-                    const auto detailed = presentation.detailedHelpResourceKeys.value(field.id);
-                    addModuleSettingRow(*form, control, translated(module, field.labelResourceKey),
-                        field.explanationResourceKey.isEmpty() ? QString{} : translated(module, field.explanationResourceKey),
-                        detailed.isEmpty() ? QString{} : translated(module, detailed));
+                const auto addModuleWidget = [&](QWidget* widget) {
+                    if (!moduleInsertionPoints.contains(section)) moduleInsertionPoints.insert(section, 0);
+                    auto position = nextInsertion.value(section, moduleInsertionPoints.value(section));
+                    section->insertWidget(position++, widget);
+                    nextInsertion.insert(section, position);
                 };
-                QWidget* control = nullptr;
-                std::function<QString()> value;
-                std::function<void(const QString&)> write;
-                QWidget* input = nullptr;
-                ModuleEditableSlider* editable = nullptr;
-                ModuleNumberEdit* numberEdit = nullptr;
-                ModuleIpv4Edit* addressEdit = nullptr;
-                const auto range = ranges.constFind(field.id);
-                const auto numeric = field.editor == SettingsEditor::Slider && range != ranges.cend() ?
-                    ModuleNumericSetting::from(*range) : std::nullopt;
-                if (field.editor == SettingsEditor::OpenDirectory) {
-                    constexpr auto OpenFolderKey = "Common.OpenFolder";
-                    const auto caption = text(translations, OpenFolderKey);
-                    const auto path = field.value;
-                    auto* open = new QPushButton(caption, group);
-                    open->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
-                    open->setEnabled(field.enabled && QFileInfo(path).isAbsolute() && !path.startsWith(u':'));
-                    QObject::connect(open, &QPushButton::clicked, &dialog, [&, path, caption] {
-                        if (!QDir().mkpath(path) || !QDesktopServices::openUrl(QUrl::fromLocalFile(path)))
-                            QMessageBox::warning(&dialog, caption, text(translations, ErrorKey));
-                    });
-                    addRow(open);
-                    controls.append({field.id, form, open, {}, {}});
-                    continue;
+                constexpr int MaximumCompactCpuFields = 8;
+                constexpr auto CpuTab = "Emulation.Tab.Cpu";
+                const bool videoHardware = block.tabResourceKey == QLatin1String(VideoKey) &&
+                    block.titleResourceKey == QLatin1String(MachineVideoHardwareKey);
+                const bool compact = !videoHardware && presentation.compactBlocks.contains(block.id) &&
+                    (block.tabResourceKey != QLatin1String(CpuTab) ||
+                        std::ranges::count_if(block.fields, &SettingsField::visible) <= MaximumCompactCpuFields);
+                auto* compactRun = openCompactRuns.value(block.tabResourceKey);
+                if (compact && !compactRun) {
+                    compactRun = new CompactSettingsCards(section->parentWidget());
+                    addModuleWidget(compactRun);
+                    openCompactRuns.insert(block.tabResourceKey, compactRun);
+                    compactRuns.append(compactRun);
+                } else if (!compact) {
+                    openCompactRuns.remove(block.tabResourceKey);
+                    compactRun = nullptr;
                 }
-                if (field.editor == SettingsEditor::Information) {
-                    auto* status = new QLabel(moduleFieldDisplay(field, ranges.value(field.id).unitResourceKey,
-                        [&](const QString& key) { return translated(module, key); }), group);
-                    status->setTextFormat(Qt::PlainText);
-                    status->setWordWrap(true);
-                    addRow(status);
-                    controls.append({field.id, form, status, {}, {}});
-                    continue;
-                }
-                const auto editableOptions = editableSettings.constFind(field.id);
-                if (numeric && editableOptions != editableSettings.cend())
-                    editable = ModuleEditableSlider::create(*range, *editableOptions, field.value,
-                        text(translations, AutomaticSettingKey), group);
-                if (editable) {
-                    control = editable;
-                    value = [editable] { return editable->value(); };
-                    write = [editable](const QString& value) { editable->setValue(value); };
-                } else if (numeric) {
-                    auto* row = new QWidget(group);
-                    auto* rowLayout = new QHBoxLayout(row);
-                    rowLayout->setContentsMargins(0, 0, 0, 0);
-                    auto* slider = new QSlider(numeric->vertical() ? Qt::Vertical : Qt::Horizontal, row);
-                    slider->setRange(numeric->minimum(), numeric->maximum());
-                    const int initial = numeric->index(field.value);
-                    slider->setValue(initial);
-                    auto* caption = new QLabel(row);
-                    caption->setTextFormat(Qt::PlainText);
-                    const auto unit = range->unitResourceKey.isEmpty() ? QString{} : translated(module, range->unitResourceKey);
-                    const auto automatic = text(translations, AutomaticSettingKey);
-                    const auto update = [caption, editor = *numeric, automatic, unit](int index) {
-                        caption->setText(editor.display(index, automatic, unit));
-                    };
-                    update(initial);
-                    QObject::connect(slider, &QSlider::valueChanged, row, update);
-                    rowLayout->addWidget(slider, 1);
-                    rowLayout->addWidget(caption);
-                    control = row;
-                    input = slider;
-                    write = [slider, editor = *numeric, update](const QString& value) {
-                        const QSignalBlocker block(slider);
-                        slider->setValue(editor.index(value));
-                        update(slider->value());
-                    };
-                    value = [slider, editor = *numeric, initial, original = field.value] {
-                        return slider->value() == initial ? original : editor.value(slider->value());
-                    };
-                } else if (field.editor == SettingsEditor::Number) {
-                    numberEdit = new ModuleNumberEdit(range == ranges.cend() ? nullptr : &*range, field.value,
-                        QLocale(QString::fromStdString(translations.language())), group);
-                    control = input = numberEdit;
-                    value = [numberEdit] { return numberEdit->value(); };
-                    write = [numberEdit](const QString& value) { numberEdit->setValue(value); };
-                } else if (field.editor == SettingsEditor::IPv4) {
-                    addressEdit = new ModuleIpv4Edit(field.value, group);
-                    control = input = addressEdit;
-                    value = [addressEdit] { return addressEdit->value(); };
-                    write = [addressEdit](const QString& value) { addressEdit->setValue(value); };
-                } else if (field.editor == SettingsEditor::Toggle) {
-                    auto* toggle = new QCheckBox(group);
-                    toggle->setChecked(field.value == field.enabledValue);
-                    control = input = toggle;
-                    write = [toggle, enabled = field.enabledValue](const QString& value) {
-                        const QSignalBlocker block(toggle);
-                        toggle->setChecked(value == enabled);
-                    };
-                    value = [toggle, field] { return toggle->isChecked() ? field.enabledValue : field.disabledValue; };
-                } else if (field.editor == SettingsEditor::Choice ||
-                    (field.editor == SettingsEditor::Slider && !field.choices.isEmpty())) {
-                    auto* combo = new QComboBox(group);
-                    for (const auto& item : field.choices)
-                        combo->addItem(item.invariantDisplayValue.isEmpty() ? translated(module, item.displayResourceKey) : item.invariantDisplayValue, item.id);
-                    combo->setCurrentIndex(combo->findData(field.value));
-                    control = input = combo;
-                    write = [combo](const QString& value) {
-                        const QSignalBlocker block(combo);
-                        combo->setCurrentIndex(combo->findData(value));
-                    };
-                    value = [combo, field] { return combo->currentIndex() < 0 ? field.value : combo->currentData().toString(); };
-                } else if (field.editor == SettingsEditor::Multiline) {
-                    auto* multiline = new QPlainTextEdit(field.value, group);
-                    control = input = multiline;
-                    write = [multiline](const QString& value) {
-                        const QSignalBlocker block(multiline);
-                        multiline->setPlainText(value);
-                    };
-                    value = [multiline] { return multiline->toPlainText(); };
+                QWidget* group = nullptr;
+                if (videoHardware) {
+                    group = new QWidget(videoHardwarePanel);
+                    videoHardwareLayout->addWidget(group);
                 } else {
-                    auto* line = new QLineEdit(field.value, group);
-                    control = input = line;
-                    write = [line](const QString& value) {
-                        const QSignalBlocker block(line);
-                        line->setText(value);
+                    auto* frame = new QGroupBox(translated(module, block.titleResourceKey),
+                        compactRun ? compactRun : section->parentWidget());
+                    if (compactRun) compactRun->append(frame);
+                    else addModuleWidget(frame);
+                    group = frame;
+                }
+                auto* form = new QFormLayout(group);
+                if (videoHardware) form->setContentsMargins({});
+                groups.append({&block, group, sectionPages.value(block.tabResourceKey), videoHardware});
+                for (const auto& field : block.fields) {
+                    if (!field.visible) continue;
+                    const auto addRow = [&](QWidget* control) {
+                        const auto detailed = presentation.detailedHelpResourceKeys.value(field.id);
+                        addModuleSettingRow(*form, control, translated(module, field.labelResourceKey),
+                            field.explanationResourceKey.isEmpty() ? QString{} : translated(module, field.explanationResourceKey),
+                            detailed.isEmpty() ? QString{} : translated(module, detailed));
                     };
-                    value = [line] { return line->text(); };
-                    const bool firmwareField = field.editor == SettingsEditor::FirmwareFile;
-                    if (firmwareField || field.editor == SettingsEditor::File || field.editor == SettingsEditor::Folder) {
+                    QWidget* control = nullptr;
+                    std::function<QString()> value;
+                    std::function<void(const QString&)> write;
+                    QWidget* input = nullptr;
+                    ModuleEditableSlider* editable = nullptr;
+                    ModuleNumberEdit* numberEdit = nullptr;
+                    ModuleIpv4Edit* addressEdit = nullptr;
+                    ModuleRadioChoices* radios = nullptr;
+                    const auto choiceStyle = choicePresentation.value(field.id);
+                    const auto localizeChoice = [&](const QString& key) { return translated(module, key); };
+                    const auto range = ranges.constFind(field.id);
+                    const auto numeric = field.editor == SettingsEditor::Slider && range != ranges.cend() ?
+                        ModuleNumericSetting::from(*range) : std::nullopt;
+                    if (field.editor == SettingsEditor::OpenDirectory) {
+                        constexpr auto OpenFolderKey = "Common.OpenFolder";
+                        const auto caption = text(translations, OpenFolderKey);
+                        const auto path = field.value;
+                        auto* open = new QPushButton(caption, group);
+                        open->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+                        open->setEnabled(field.enabled && QFileInfo(path).isAbsolute() && !path.startsWith(u':'));
+                        QObject::connect(open, &QPushButton::clicked, &dialog, [&, path, caption] {
+                            if (!QDir().mkpath(path) || !QDesktopServices::openUrl(QUrl::fromLocalFile(path)))
+                                QMessageBox::warning(&dialog, caption, text(translations, ErrorKey));
+                        });
+                        addRow(open);
+                        controls.append({field.id, form, open, {}, {}});
+                        continue;
+                    }
+                    if (field.editor == SettingsEditor::Information) {
+                        auto* status = new QLabel(moduleFieldDisplay(field, choiceStyle.unitResourceKey.isEmpty()
+                            ? ranges.value(field.id).unitResourceKey : choiceStyle.unitResourceKey,
+                            [&](const QString& key) { return translated(module, key); }), group);
+                        status->setTextFormat(Qt::PlainText);
+                        status->setWordWrap(true);
+                        addRow(status);
+                        controls.append({field.id, form, status, {}, {}});
+                        continue;
+                    }
+                    const auto editableOptions = editableSettings.constFind(field.id);
+                    if (numeric && editableOptions != editableSettings.cend())
+                        editable = ModuleEditableSlider::create(*range, *editableOptions, field.value,
+                            text(translations, AutomaticSettingKey), group);
+                    if (editable) {
+                        control = editable;
+                        value = [editable] { return editable->value(); };
+                        write = [editable](const QString& value) { editable->setValue(value); };
+                    } else if (numeric) {
                         auto* row = new QWidget(group);
                         auto* rowLayout = new QHBoxLayout(row);
                         rowLayout->setContentsMargins(0, 0, 0, 0);
-                        rowLayout->addWidget(line);
-                        auto* browse = new QPushButton(text(translations, OpenKey), row);
-                        rowLayout->addWidget(browse);
-                        const auto label = translated(module, field.labelResourceKey);
-                        QObject::connect(browse, &QPushButton::clicked, row, [&, row, line, field, label, firmwareField] {
-                            if (firmwareField && !firmwareDirectory.isEmpty()) {
-                                try {
-                                    auto draftChanges = changes;
-                                    for (const auto& candidate : firmware) draftChanges.remove(candidate.destinationFieldId);
-                                    auto draft = state.emulation->applySettings(module, config, draftChanges);
-                                    for (const auto& candidate : firmware)
-                                        draft = state.emulation->useFirmware(module, std::move(draft), candidate);
-                                    auto chosen = pickFirmware(row, translations, state.emulation, module, draft,
-                                        field, line->text(), firmwareDirectory);
-                                    if (!chosen) return;
-                                    firmware.removeIf([&](const auto& candidate) { return candidate.destinationFieldId == field.id; });
-                                    line->setText(chosen->path);
-                                    applyChange(field.id, chosen->path);
-                                    if (chosen->compatibility != FirmwareCompatibility::Unknown)
-                                        firmware.append(std::move(*chosen));
-                                    scheduleSave();
-                                } catch (...) {
-                                    line->setToolTip(text(translations, ErrorKey));
-                                }
-                                return;
-                            }
-                            const auto path = field.editor == SettingsEditor::Folder
-                                ? QFileDialog::getExistingDirectory(row, label, line->text())
-                                : QFileDialog::getOpenFileName(row, label, line->text());
-                            if (!path.isEmpty()) {
-                                line->setText(path);
-                                scheduleSave();
-                            }
-                        });
+                        auto* slider = new QSlider(numeric->vertical() ? Qt::Vertical : Qt::Horizontal, row);
+                        slider->setRange(numeric->minimum(), numeric->maximum());
+                        const int initial = numeric->index(field.value);
+                        slider->setValue(initial);
+                        auto* caption = new QLabel(row);
+                        caption->setTextFormat(Qt::PlainText);
+                        const auto& unitKey = choiceStyle.unitResourceKey.isEmpty()
+                            ? range->unitResourceKey : choiceStyle.unitResourceKey;
+                        const auto unit = unitKey.isEmpty() ? QString{} : localizeChoice(unitKey);
+                        const auto automatic = text(translations, AutomaticSettingKey);
+                        const auto update = [caption, editor = *numeric, automatic, unit](int index) {
+                            caption->setText(editor.dialogDisplay(index, automatic, unit));
+                        };
+                        update(initial);
+                        QObject::connect(slider, &QSlider::valueChanged, row, update);
+                        rowLayout->addWidget(slider, 1);
+                        rowLayout->addWidget(caption);
                         control = row;
+                        input = slider;
+                        write = [slider, editor = *numeric, update](const QString& value) {
+                            const QSignalBlocker block(slider);
+                            slider->setValue(editor.index(value));
+                            update(slider->value());
+                        };
+                        value = [slider, editor = *numeric, initial, original = field.value] {
+                            return slider->value() == initial ? original : editor.value(slider->value());
+                        };
+                    } else if (field.editor == SettingsEditor::Number) {
+                        numberEdit = new ModuleNumberEdit(range == ranges.cend() ? nullptr : &*range, field.value,
+                            QLocale(QString::fromStdString(translations.language())), group);
+                        control = input = numberEdit;
+                        value = [numberEdit] { return numberEdit->value(); };
+                        write = [numberEdit](const QString& value) { numberEdit->setValue(value); };
+                    } else if (field.editor == SettingsEditor::IPv4) {
+                        addressEdit = new ModuleIpv4Edit(field.value, group);
+                        control = input = addressEdit;
+                        value = [addressEdit] { return addressEdit->value(); };
+                        write = [addressEdit](const QString& value) { addressEdit->setValue(value); };
+                    } else if (field.editor == SettingsEditor::Toggle) {
+                        auto* toggle = new QCheckBox(group);
+                        toggle->setChecked(field.value == field.enabledValue);
+                        control = input = toggle;
+                        write = [toggle, enabled = field.enabledValue](const QString& value) {
+                            const QSignalBlocker block(toggle);
+                            toggle->setChecked(value == enabled);
+                        };
+                        value = [toggle, field] { return toggle->isChecked() ? field.enabledValue : field.disabledValue; };
+                    } else if (field.editor == SettingsEditor::Choice ||
+                        (field.editor == SettingsEditor::Slider && !field.choices.isEmpty())) {
+                        const bool declaredPair = field.editor == SettingsEditor::Choice && field.choices.size() == 2 &&
+                            field.id != audioOutputField;
+                        if (!field.choices.isEmpty() && (choiceStyle.useRadioButtons || declaredPair)) {
+                            radios = new ModuleRadioChoices(field.choices, field.value, choiceStyle.unitResourceKey, localizeChoice, group);
+                            control = radios;
+                            write = [radios](const QString& value) { radios->setValue(value); };
+                            value = [radios] { return radios->value(); };
+                        } else {
+                            auto* combo = new QComboBox(group);
+                            for (const auto& item : field.choices)
+                                combo->addItem(moduleChoiceDisplay(item, choiceStyle.unitResourceKey, localizeChoice), item.id);
+                            const auto index = combo->findData(field.value);
+                            combo->setCurrentIndex(index >= 0 ? index : (combo->count() > 0 ? 0 : -1));
+                            control = input = combo;
+                            write = [combo](const QString& value) {
+                                const QSignalBlocker block(combo);
+                                combo->setCurrentIndex(combo->findData(value));
+                            };
+                            value = [combo, field] { return combo->currentIndex() < 0 ? field.value : combo->currentData().toString(); };
+                        }
+                    } else if (field.editor == SettingsEditor::Multiline) {
+                        auto* multiline = new QPlainTextEdit(field.value, group);
+                        control = input = multiline;
+                        write = [multiline](const QString& value) {
+                            const QSignalBlocker block(multiline);
+                            multiline->setPlainText(value);
+                        };
+                        value = [multiline] { return multiline->toPlainText(); };
+                    } else {
+                        auto* line = new QLineEdit(field.value, group);
+                        control = input = line;
+                        write = [line](const QString& value) {
+                            const QSignalBlocker block(line);
+                            line->setText(value);
+                        };
+                        value = [line] { return line->text(); };
+                        const bool firmwareField = field.editor == SettingsEditor::FirmwareFile;
+                        if (firmwareField || field.editor == SettingsEditor::File || field.editor == SettingsEditor::Folder) {
+                            auto* row = new QWidget(group);
+                            auto* rowLayout = new QHBoxLayout(row);
+                            rowLayout->setContentsMargins(0, 0, 0, 0);
+                            rowLayout->addWidget(line);
+                            auto* browse = new QPushButton(text(translations, OpenKey), row);
+                            rowLayout->addWidget(browse);
+                            const auto label = translated(module, field.labelResourceKey);
+                            QObject::connect(browse, &QPushButton::clicked, row, [&, row, line, field, label, firmwareField] {
+                                if (firmwareField && !firmwareDirectory.isEmpty()) {
+                                    try {
+                                        auto draftChanges = changes;
+                                        for (const auto& candidate : firmware) draftChanges.remove(candidate.destinationFieldId);
+                                        auto draft = state.emulation->applySettings(module, config, draftChanges);
+                                        for (const auto& candidate : firmware)
+                                            draft = state.emulation->useFirmware(module, std::move(draft), candidate);
+                                        auto chosen = pickFirmware(row, translations, state.emulation, module, draft,
+                                            field, line->text(), firmwareDirectory);
+                                        if (!chosen) return;
+                                        firmware.removeIf([&](const auto& candidate) { return candidate.destinationFieldId == field.id; });
+                                        line->setText(chosen->path);
+                                        applyChange(field.id, chosen->path);
+                                        if (chosen->compatibility != FirmwareCompatibility::Unknown)
+                                            firmware.append(std::move(*chosen));
+                                        scheduleSave();
+                                    } catch (...) {
+                                        line->setToolTip(text(translations, ErrorKey));
+                                    }
+                                    return;
+                                }
+                                constexpr auto SettingsPathScope = "EmulationSettings/%1/%2/%3";
+                                const auto scope = QString::fromLatin1(SettingsPathScope).arg(module, config.machineId, field.id);
+                                const bool chooseFolder = field.editor == SettingsEditor::Folder;
+                                const QFileInfo initial(line->text());
+                                QFileDialog chooser(row, label);
+                                chooser.setFileMode(chooseFolder ? QFileDialog::Directory : QFileDialog::ExistingFile);
+                                if (chooseFolder) chooser.setOption(QFileDialog::ShowDirsOnly);
+                                RememberedFileDialog::prepare(chooser, state, scope, line->text());
+                                if (!chooseFolder && !initial.fileName().isEmpty() && !initial.isDir() &&
+                                    chooser.directory() == initial.absoluteDir())
+                                    chooser.selectFile(initial.fileName());
+                                RememberedFileDialog::remember(chooser, state, scope);
+                                if (chooser.exec() != QDialog::Accepted) return;
+                                const auto path = chooser.selectedFiles().value(0);
+                                if (!path.isEmpty()) {
+                                    line->setText(path);
+                                    scheduleSave();
+                                }
+                            });
+                            control = row;
+                        }
                     }
-                }
-                control->setEnabled(field.enabled);
-                addRow(control);
-                if (field.enabled) {
-                    const auto onChanged = [&, id = field.id, value] { applyChange(id, value()); };
-                    const auto commit = [onChanged, &scheduleSave] {
-                        onChanged();
-                        scheduleSave();
-                    };
-                    if (editable) editable->onValueChanged(commit);
-                    else if (numberEdit) {
-                        numberEdit->onValueChanged(onChanged);
-                        QObject::connect(numberEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
-                    }
-                    else if (addressEdit) {
-                        addressEdit->onValueChanged(onChanged);
-                        QObject::connect(addressEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
-                    }
-                    else if (auto* slider = qobject_cast<QSlider*>(input)) {
-                        QObject::connect(slider, &QSlider::valueChanged, &dialog, [&, slider, onChanged] {
+                    control->setEnabled(field.enabled);
+                    addRow(control);
+                    if (field.enabled) {
+                        const auto onChanged = [&, id = field.id, value] { applyChange(id, value()); };
+                        const auto commit = [onChanged, &scheduleSave] {
                             onChanged();
-                            if (!slider->isSliderDown()) scheduleSave();
-                        });
-                        QObject::connect(slider, &QSlider::sliderReleased, &dialog, scheduleSave);
-                    } else if (auto* toggle = qobject_cast<QCheckBox*>(input))
-                        QObject::connect(toggle, &QCheckBox::toggled, &dialog, commit);
-                    else if (auto* combo = qobject_cast<QComboBox*>(input))
-                        QObject::connect(combo, &QComboBox::currentIndexChanged, &dialog, commit);
-                    else if (auto* line = qobject_cast<QLineEdit*>(input)) {
-                        QObject::connect(line, &QLineEdit::textChanged, &dialog, onChanged);
-                        QObject::connect(line, &QLineEdit::editingFinished, &dialog, scheduleSave);
-                    } else if (auto* multiline = qobject_cast<QPlainTextEdit*>(input))
-                        QObject::connect(multiline, &QPlainTextEdit::textChanged, &dialog, [&, onChanged] {
-                            onChanged();
-                            constexpr int TextIdleMilliseconds = 350;
-                            if (interactive && saveWhileEditing) autosave.start(TextIdleMilliseconds);
-                        });
+                            scheduleSave();
+                        };
+                        if (radios) radios->onChanged(commit);
+                        else if (editable) editable->onValueChanged(commit);
+                        else if (numberEdit) {
+                            numberEdit->onValueChanged(onChanged);
+                            QObject::connect(numberEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
+                        }
+                        else if (addressEdit) {
+                            addressEdit->onValueChanged(onChanged);
+                            QObject::connect(addressEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
+                        }
+                        else if (auto* slider = qobject_cast<QSlider*>(input)) {
+                            QObject::connect(slider, &QSlider::valueChanged, &dialog, [&, slider, onChanged] {
+                                onChanged();
+                                if (!slider->isSliderDown()) scheduleSave();
+                            });
+                            QObject::connect(slider, &QSlider::sliderReleased, &dialog, scheduleSave);
+                        } else if (auto* toggle = qobject_cast<QCheckBox*>(input))
+                            QObject::connect(toggle, &QCheckBox::toggled, &dialog, commit);
+                        else if (auto* combo = qobject_cast<QComboBox*>(input))
+                            QObject::connect(combo, &QComboBox::currentIndexChanged, &dialog, commit);
+                        else if (auto* line = qobject_cast<QLineEdit*>(input)) {
+                            QObject::connect(line, &QLineEdit::textChanged, &dialog, onChanged);
+                            QObject::connect(line, &QLineEdit::editingFinished, &dialog, scheduleSave);
+                        } else if (auto* multiline = qobject_cast<QPlainTextEdit*>(input))
+                            QObject::connect(multiline, &QPlainTextEdit::textChanged, &dialog, [&, onChanged] {
+                                onChanged();
+                                constexpr int TextIdleMilliseconds = 350;
+                                if (interactive && saveWhileEditing && !rebuilding && !refreshDescription.isActive())
+                                    autosave.start(TextIdleMilliseconds);
+                            });
+                    }
+                    controls.append({field.id, form, control, field.enabled ? std::move(value) : nullptr, std::move(write)});
                 }
-                controls.append({field.id, form, control, field.enabled ? std::move(value) : nullptr, std::move(write)});
             }
-        }
+        };
+        buildModuleSettings();
         for (auto& port : feedbackPorts) {
             if (inputDraft && std::ranges::any_of(inputDraft->controllerPorts, [&](const auto& candidate) {
                     return candidate.number == port.number && controllerModelFeedback(candidate).has_value();
@@ -4737,6 +4829,62 @@ struct EmulationPage::Data {
             }
             return outcome;
         };
+        connect(&refreshDescription, &QTimer::timeout, &dialog, [&] {
+            try {
+                auto draftChanges = changes;
+                for (const auto& candidate : firmware) draftChanges.remove(candidate.destinationFieldId);
+                auto draft = draftChanges.isEmpty() ? config : state.emulation->applySettings(module, config, draftChanges);
+                for (const auto& candidate : firmware)
+                    draft = state.emulation->useFirmware(module, std::move(draft), candidate);
+                if (draft.id != config.id || draft.machineId != config.machineId) throw std::runtime_error(ErrorKey);
+                draft = state.emulation->configurationForGraphicsApi(module, draft, graphicsApi(profile.renderer));
+                auto updated = state.emulation->describe(module, draft);
+                auto nextDependencies = state.emulation->settingsDependencies(module, draft);
+                auto nextBlocks = machineSettingsEditorBlocks(updated, nextDependencies);
+                auto nextRanges = state.emulation->numericSettings(module, draft);
+                auto nextEditable = state.emulation->editableNumericSettings(module, draft);
+                auto nextPresentation = state.emulation->settingsPresentation(module, draft);
+                auto nextRefresh = state.emulation->settingsRefreshFields(module, draft);
+                auto nextChoices = state.emulation->choicePresentation(module, draft);
+                auto nextAudioOutputField = state.emulation->audioOutputFieldId(module, draft);
+
+                {
+                    const QScopedValueRollback guard(rebuilding, true);
+                    auto* selectedPage = sections->currentWidget();
+                    const auto previousSections = sectionLayouts;
+                    controls.clear();
+                    for (const auto& group : groups) {
+                        if (!dynamic_cast<CompactSettingsCards*>(group.widget->parentWidget()))
+                            delete group.widget;
+                    }
+                    groups.clear();
+                    for (auto* run : compactRuns) delete run;
+                    compactRuns.clear();
+                    openCompactRuns.clear();
+                    currentValues = SettingsRules::values(updated);
+                    dependencies = std::move(nextDependencies);
+                    blocks = std::move(nextBlocks);
+                    ranges = std::move(nextRanges);
+                    editableSettings = std::move(nextEditable);
+                    presentation = std::move(nextPresentation);
+                    refreshFields = std::move(nextRefresh);
+                    choicePresentation = std::move(nextChoices);
+                    audioOutputField = std::move(nextAudioOutputField);
+                    buildModuleSettings();
+                    for (auto it = sectionLayouts.cbegin(); it != sectionLayouts.cend(); ++it)
+                        if (!previousSections.contains(it.key())) it.value()->addStretch();
+                    refreshVisibility();
+                    const int selectedIndex = sections->indexOf(selectedPage);
+                    if (selectedIndex >= 0 && sections->isTabVisible(selectedIndex)) sections->setCurrentIndex(selectedIndex);
+                    sections->setVisible(sections->count() > 0);
+                }
+                saveError->hide();
+                scheduleSave();
+            } catch (...) {
+                saveError->setText(text(translations, ErrorKey));
+                saveError->show();
+            }
+        });
         connect(&autosave, &QTimer::timeout, &dialog, [&] {
             if (!inputValid() || !pending()) return;
             try {
@@ -4750,6 +4898,7 @@ struct EmulationPage::Data {
         interactive = true;
         const auto result = dialog.exec();
         interactive = false;
+        refreshDescription.stop();
         autosave.stop();
         if (emulatorPage) emulatorPage->finish();
         const bool accepted = result == QDialog::Accepted;

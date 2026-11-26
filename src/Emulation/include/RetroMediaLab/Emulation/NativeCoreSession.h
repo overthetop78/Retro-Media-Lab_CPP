@@ -51,6 +51,8 @@ public:
     void reset();
     void setControllerPortDevice(unsigned port, unsigned device);
     QList<ControllerFeedbackState> controllerFeedback() const;
+    QStringList logDiagnostics() const;
+    QHash<qint32, bool> ledStates() const;
     unsigned region() const;
     CoreRuntimeStatus coreRuntimeStatus(std::size_t maximumStateSize) const;
     bool supportsSavedStates(std::size_t maximumSize) const;

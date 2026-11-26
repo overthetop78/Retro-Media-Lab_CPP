@@ -116,6 +116,8 @@ struct NativeCoreCallbacks {
 };
 
 RETROMEDIALAB_EMULATION_API void installNativeCoreCallbacks(const NativeCoreExports&, const NativeCoreCallbacks&);
+RETROMEDIALAB_EMULATION_API QString copyNativeLogTemplate(const char* format, QStringView argumentMarker,
+    QStringView conversionCharacters);
 
 struct NativeCoreDirectories {
     QString system;
