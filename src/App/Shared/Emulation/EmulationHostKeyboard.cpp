@@ -19,6 +19,8 @@ void EmulationHostKeyboard::applyMachineBindings(Emulation::InputSnapshot& snaps
     namespace Protocol = Emulation::HostProtocol;
     namespace Processing = Emulation::InputProcessing;
     namespace Physical = EmulationPhysicalShortcuts;
+    namespace Raw = Platform::RawGamepad;
+    constexpr float TriggerButtonThreshold = 0.12f;
     Protocol::CoreInput sources;
     sources.keys = snapshot.keys;
     sources.pointer.left = buttons.testFlag(Qt::LeftButton);
@@ -37,23 +39,31 @@ void EmulationHostKeyboard::applyMachineBindings(Emulation::InputSnapshot& snaps
         const auto& controller = snapshot.controllers[i];
         const auto& raw = rawControllers[i];
         Protocol::CoreController source;
-        for (const auto& mapping : Physical::Controls::GamepadButtons) {
-            if ((controller.buttons & mapping.button) == 0) continue;
-            const auto index = Processing::controllerButtonIndex(QString(mapping.name));
+        const auto setButton = [&](QLatin1StringView name, bool pressed) {
+            if (!pressed) return;
+            const auto index = Processing::controllerButtonIndex(QString(name));
             if (index >= 0) source.buttons |= quint32{1} << index;
-        }
+        };
+        for (const auto& mapping : Physical::Controls::GamepadButtons)
+            setButton(mapping.name, (controller.buttons & mapping.button) != 0);
         using enum Physical::Controls::Axis;
         source.leftX = axis(controller.axes.value(LeftX));
-        source.leftY = axis(controller.axes.value(LeftY));
+        source.leftY = axis(-controller.axes.value(LeftY));
         source.rightX = axis(controller.axes.value(RightX));
-        source.rightY = axis(controller.axes.value(RightY));
+        source.rightY = axis(-controller.axes.value(RightY));
         source.leftTrigger = axis(controller.axes.value(LeftTrigger));
         source.rightTrigger = axis(controller.axes.value(RightTrigger));
+        for (const auto& direction : Physical::Controls::Directions) {
+            if (direction.digital == Platform::NoButton) continue;
+            setButton(direction.alias, (controller.buttons & direction.digital) != 0 ||
+                controller.axes.value(direction.axis) > TriggerButtonThreshold);
+        }
+        for (const auto control : {QLatin1String(Raw::GuideButton), QLatin1String(Raw::ShareButton)})
+            setButton(control, raw.controls.value(QString(control)) > Physical::PressedThreshold);
         source.deviceId = raw.deviceId;
         source.controls = raw.controls;
         sources.controllers.append(std::move(source));
     }
-    constexpr float PressedThreshold = 0.5f;
     const auto keys = QMetaEnum::fromType<Emulation::EmulationKey>();
     for (auto binding = bindings.cbegin(); binding != bindings.cend(); ++binding) {
         bool valid = false;
@@ -61,7 +71,7 @@ void EmulationHostKeyboard::applyMachineBindings(Emulation::InputSnapshot& snaps
         if (!valid) continue;
         snapshot.hostCharacters.remove(target);
         if (binding->contains(Physical::Separator) && !reserved(*binding) &&
-            Processing::sourcePressure(*binding, sources) > PressedThreshold)
+            Processing::sourcePressure(*binding, sources) > Physical::PressedThreshold)
             snapshot.keys.insert(target);
     }
 }

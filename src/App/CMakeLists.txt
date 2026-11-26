@@ -16,6 +16,8 @@ set(app_sources
   Shared/Emulation/EmulationWorkspace.cpp
   Shared/Emulation/EmulationControllerFeedback.cpp
   Shared/Controls/ControllerArtwork.cpp
+  Shared/Controls/ControllerVisualProfiles.cpp
+  Shared/Controls/ControllerAnalogProfiles.cpp
   Shared/Controls/ControllerOutputs.cpp
   Shared/Controls/MachineInputBindings.cpp
 )
@@ -59,6 +61,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/EmulationConfigurationsPanel.cpp
   Themes/RetroMediaLab/Views/EmulationNetworkPanel.cpp
   Themes/RetroMediaLab/Views/EmulationPreferencesDialog.cpp
+  Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp
   Themes/RetroMediaLab/Views/ClassificationPanel.cpp
   Themes/RetroMediaLab/Views/MediaLoadingOverlay.cpp
   Themes/RetroMediaLab/Views/ExplorerPage.cpp

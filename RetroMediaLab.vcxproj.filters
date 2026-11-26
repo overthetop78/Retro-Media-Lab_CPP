@@ -4308,9 +4308,24 @@
     <ClInclude Include="src\App\Shared\Controls\ContentScrollArea.h">
       <Filter>src\App\Shared\Controls</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Shared\Controls\ControllerAnalogProfiles.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App\Shared\Controls\ControllerVisualProfiles.cpp">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClCompile>
     <ClCompile Include="src\App\Shared\Controls\ControllerArtwork.cpp">
       <Filter>src\App\Shared\Controls</Filter>
     </ClCompile>
+    <ClInclude Include="src\App\Shared\Controls\ControllerAnalogProfiles.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Shared\Controls\ControllerVisualProfiles.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Shared\Controls\ControllerHostOverlays.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
     <ClInclude Include="src\App\Shared\Controls\ControllerArtwork.h">
       <Filter>src\App\Shared\Controls</Filter>
     </ClInclude>
@@ -4569,6 +4584,12 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationPage.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationControllerPanel.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationControllerPanel.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationPreferencesDialog.cpp">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
@@ -4824,6 +4845,9 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationKey.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorAdapter.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorManager.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
@@ -4908,6 +4932,9 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\StorageSettings.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <None Include="src\Emulation\RetroMediaLabEmulationConfig.cmake.in">
+      <Filter>src\Emulation</Filter>
+    </None>
     <ClCompile Include="src\Emulation\src\AudioBuffer.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
@@ -5007,6 +5034,9 @@
     <ClCompile Include="src\Emulation\src\SessionDirectories.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
+    <ClInclude Include="src\Emulation\src\StagedFile.h">
+      <Filter>src\Emulation\src</Filter>
+    </ClInclude>
     <ClCompile Include="src\Emulation\src\StateFile.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
@@ -15114,12 +15144,18 @@
     <ClCompile Include="src\Platform\Windows\DataDirectory.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClInclude Include="src\Platform\Windows\GameInputGamepadMapping.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\GameInputReportControls.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClCompile Include="src\Platform\Windows\Gamepads.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClInclude Include="src\Platform\Windows\HidReportControls.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
     <ClCompile Include="src\Platform\Windows\MidiInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -15232,6 +15268,9 @@
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\greaseweazle-tools.json">
@@ -15978,6 +16017,9 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
@@ -16720,6 +16762,9 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\greaseweazle-tools.json">
@@ -17466,6 +17511,9 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
@@ -18208,6 +18256,9 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\greaseweazle-tools.json">
@@ -18954,6 +19005,9 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
@@ -19696,6 +19750,9 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\greaseweazle-tools.json">
@@ -20442,6 +20499,9 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
@@ -21184,6 +21244,9 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\greaseweazle-tools.json">
@@ -21930,6 +21993,9 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
@@ -22672,6 +22738,9 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\greaseweazle-tools.json">
@@ -23418,6 +23487,9 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
@@ -24160,6 +24232,9 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\greaseweazle-tools.json">
@@ -24906,6 +24981,9 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
@@ -25648,6 +25726,9 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\greaseweazle-tools.json">
@@ -26394,6 +26475,9 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
@@ -27136,6 +27220,9 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\greaseweazle-tools.json">
@@ -27882,6 +27969,9 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
@@ -28624,6 +28714,9 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\greaseweazle-tools.json">
@@ -29370,6 +29463,9 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
@@ -30112,6 +30208,9 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\greaseweazle-tools.json">
@@ -30858,6 +30957,9 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
@@ -31600,6 +31702,9 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\greaseweazle-tools.json">
@@ -32346,6 +32451,9 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
@@ -33088,6 +33196,9 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\greaseweazle-tools.json">
@@ -33834,6 +33945,9 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
@@ -34576,6 +34690,9 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\greaseweazle-tools.json">
@@ -35322,6 +35439,9 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
@@ -36066,6 +36186,9 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\explorer.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\gameinput-runtime.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\greaseweazle-tools.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
@@ -36808,6 +36931,9 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\explorer.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\gameinput-runtime.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\greaseweazle-tools.json">

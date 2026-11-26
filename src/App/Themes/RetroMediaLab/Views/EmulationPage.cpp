@@ -18,6 +18,7 @@
 #include "MachineControllerPorts.h"
 #include "Shared/Controls/ControllerOutputs.h"
 #include "Shared/Controls/ControllerArtwork.h"
+#include "Shared/Controls/ControllerAnalogProfiles.h"
 #include "Shared/Emulation/EmulationHostKeyboard.h"
 #include "EmulationPreferencesDialog.h"
 #include "Shared/Emulation/EmulationKeyboardShortcuts.h"
@@ -2310,7 +2311,7 @@ private:
         }
 
         if (!gamepadSource_) gamepadSource_ = std::make_unique<Platform::GamepadSource>();
-        gamepadSamples_ = gamepadSource_->read();
+        gamepadSamples_ = ControllerAnalogProfiles::read(*gamepadSource_);
         if (midiInput_) midiSamples_ = midiInput_->read();
         const auto mouseButtons = QApplication::mouseButtons();
         if (osdPassesInput_ || !input_.pointerCaptured)

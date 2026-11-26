@@ -11,18 +11,46 @@
 #include "Logging/LogPaths.h"
 #include "Logging/DiagnosticLog.h"
 #include "Hardware/HardwareAvailability.h"
+#include <RetroMediaLab/Platform/Gamepads.h>
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <RetroMediaLab/Translations/LanguageCatalog.h>
 #include <QApplication>
 #include <QDebug>
 #include <QLocale>
 #include <QFileInfo>
+#include <QMessageBox>
+#include <QAbstractButton>
 #include <QStandardPaths>
 #include <exception>
 #include <filesystem>
 #include <stdexcept>
 namespace RetroMediaLab {
 namespace {
+constexpr auto GameInputProduct = "Emulation.GameInput.Product";
+constexpr auto GameInputInstallPrompt = "Emulation.GameInput.InstallPrompt";
+constexpr auto GameInputInstallFailed = "Emulation.GameInput.InstallFailed";
+constexpr auto Install = "Emulation.Core.Install";
+constexpr auto No = "Common.No";
+constexpr auto Close = "Preferences.Close";
+
+void offerGameInputInstaller(const Translations::TranslationService& translations) {
+    if (!Platform::canOfferGameInputInstaller()) return;
+    const auto text = [&](const char* key) { return QString::fromStdString(translations.text(key)); };
+    const auto title = text(GameInputProduct);
+    QMessageBox question(QMessageBox::Question, title, text(GameInputInstallPrompt), QMessageBox::Yes | QMessageBox::No);
+    question.setTextFormat(Qt::PlainText);
+    question.button(QMessageBox::Yes)->setText(text(Install));
+    question.button(QMessageBox::No)->setText(text(No));
+    question.setDefaultButton(QMessageBox::No);
+    if (question.exec() == QMessageBox::Yes &&
+        Platform::launchGameInputInstaller() == Platform::GameInputInstallResult::Failed) {
+        QMessageBox error(QMessageBox::Warning, title, text(GameInputInstallFailed), QMessageBox::Ok);
+        error.setTextFormat(Qt::PlainText);
+        error.button(QMessageBox::Ok)->setText(text(Close));
+        error.exec();
+    }
+}
+
 class GuardedApplication final : public QApplication {
 public:
     using QApplication::QApplication;
@@ -125,6 +153,7 @@ int Application::run(int argc, char** argv) {
     const auto loggingPreference = state.subscribeToLogging(savePreferences);
     const auto profilesPreference = state.profiles->subscribe(savePreferences);
     app.setStyle(themes.createStyle()); // QApplication owns the style; themeModule outlives it.
+    offerGameInputInstaller(translations);
     WindowCoordinator windows([&] {
         return themes.createPresentation(translations, state);
     });

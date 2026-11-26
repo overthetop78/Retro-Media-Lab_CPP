@@ -1,5 +1,6 @@
 #include "EmulationPreferencesDialog.h"
 #include "EmulationNetworkPanel.h"
+#include "EmulationControllerPanel.h"
 #include "Shared/Emulation/EmulationWorkspace.h"
 #include <ErrorKeys.h>
 #include "Shared/Emulation/EmulationKeyboardShortcuts.h"
@@ -201,10 +202,13 @@ void EmulationPreferencesDialog::open(QWidget* parent, Translations::Translation
     tabs->addTab(page, text(ShortcutsKey));
     tabs->addTab(createEmulationConfigurationsPanel(tabs, translations, state, profiles, std::move(edit)),
         text("Emulation.Configurations"));
+    auto* controllers = createEmulationControllerPanel(tabs, translations);
+    tabs->addTab(controllers, text(EmulationControllerTitleKey));
     auto* network = createEmulationNetworkPanel(tabs, translations);
     tabs->addTab(network, text(EmulationNetworkTitleKey));
     const auto networkTitle = translations.subscribe([&] {
         tabs->setTabText(tabs->indexOf(network), text(EmulationNetworkTitleKey));
+        tabs->setTabText(tabs->indexOf(controllers), text(EmulationControllerTitleKey));
     });
     auto* pageLayout = new QVBoxLayout(page);
     auto* search = new QLineEdit(page);

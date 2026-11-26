@@ -663,7 +663,12 @@
     <ClInclude Include="src\App\Shared\Controls\Card.h" />
     <ClCompile Include="src\App\Shared\Controls\ContentScrollArea.cpp" />
     <ClInclude Include="src\App\Shared\Controls\ContentScrollArea.h" />
+    <ClCompile Include="src\App\Shared\Controls\ControllerAnalogProfiles.cpp" />
+    <ClCompile Include="src\App\Shared\Controls\ControllerVisualProfiles.cpp" />
     <ClCompile Include="src\App\Shared\Controls\ControllerArtwork.cpp" />
+    <ClInclude Include="src\App\Shared\Controls\ControllerAnalogProfiles.h" />
+    <ClInclude Include="src\App\Shared\Controls\ControllerVisualProfiles.h" />
+    <ClInclude Include="src\App\Shared\Controls\ControllerHostOverlays.h" />
     <ClInclude Include="src\App\Shared\Controls\ControllerArtwork.h" />
     <ClCompile Include="src\App\Shared\Controls\ControllerOutputs.cpp" />
     <ClInclude Include="src\App\Shared\Controls\ControllerOutputs.h" />
@@ -750,6 +755,8 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationNetworkPanel.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationPage.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationPage.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationControllerPanel.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationControllerPanel.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationPreferencesDialog.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationPreferencesDialog.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationStoragePanel.cpp" />
@@ -835,6 +842,7 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreReleases.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationExport.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationKey.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorAdapter.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorManager.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ExecutionRate.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Firmware.h" />
@@ -863,6 +871,7 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\SettingsRules.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\StateFile.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\StorageSettings.h" />
+    <None Include="src\Emulation\RetroMediaLabEmulationConfig.cmake.in" />
     <ClCompile Include="src\Emulation\src\AudioBuffer.cpp" />
     <ClCompile Include="src\Emulation\src\AudioOutput.cpp" />
     <ClInclude Include="src\Emulation\src\AudioOutput.h" />
@@ -896,6 +905,7 @@
     <ClCompile Include="src\Emulation\src\NativeCoreSession.cpp" />
     <ClCompile Include="src\Emulation\src\Networks.cpp" />
     <ClCompile Include="src\Emulation\src\SessionDirectories.cpp" />
+    <ClInclude Include="src\Emulation\src\StagedFile.h" />
     <ClCompile Include="src\Emulation\src\StateFile.cpp" />
     <ClCompile Include="src\Emulation\src\StorageSettings.cpp" />
     <None Include="src\Infrastructure\CMakeLists.txt" />
@@ -4265,8 +4275,10 @@
     <ClCompile Include="src\Platform\Unix\WindowAppearance.cpp" />
     <None Include="src\Platform\Windows\App.rc" />
     <ClCompile Include="src\Platform\Windows\DataDirectory.cpp" />
+    <ClInclude Include="src\Platform\Windows\GameInputGamepadMapping.h" />
     <ClInclude Include="src\Platform\Windows\GameInputReportControls.h" />
     <ClCompile Include="src\Platform\Windows\Gamepads.cpp" />
+    <ClInclude Include="src\Platform\Windows\HidReportControls.h" />
     <ClCompile Include="src\Platform\Windows\MidiInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowAppearance.cpp" />
     <None Include="src\Translations\Catalogs\Constants\App\capture-progress.json" />
@@ -4305,6 +4317,7 @@
     <None Include="src\Translations\Catalogs\Constants\App\engines.json" />
     <None Include="src\Translations\Catalogs\Constants\App\errors.json" />
     <None Include="src\Translations\Catalogs\Constants\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Constants\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Constants\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Constants\App\loading-status.json" />
@@ -4553,6 +4566,7 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\loading-status.json" />
@@ -4801,6 +4815,7 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\loading-status.json" />
@@ -5049,6 +5064,7 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\loading-status.json" />
@@ -5297,6 +5313,7 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\loading-status.json" />
@@ -5545,6 +5562,7 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\loading-status.json" />
@@ -5793,6 +5811,7 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\loading-status.json" />
@@ -6041,6 +6060,7 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\loading-status.json" />
@@ -6289,6 +6309,7 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\loading-status.json" />
@@ -6537,6 +6558,7 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\loading-status.json" />
@@ -6785,6 +6807,7 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\loading-status.json" />
@@ -7033,6 +7056,7 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\loading-status.json" />
@@ -7281,6 +7305,7 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\loading-status.json" />
@@ -7529,6 +7554,7 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\loading-status.json" />
@@ -7777,6 +7803,7 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\loading-status.json" />
@@ -8025,6 +8052,7 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\loading-status.json" />
@@ -8273,6 +8301,7 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\loading-status.json" />
@@ -8521,6 +8550,7 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\loading-status.json" />
@@ -8769,6 +8799,7 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\loading-status.json" />
@@ -9017,6 +9048,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\loading-status.json" />
@@ -9265,6 +9297,7 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\loading-status.json" />
@@ -9513,6 +9546,7 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\loading-status.json" />
@@ -9761,6 +9795,7 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\loading-status.json" />
@@ -10009,6 +10044,7 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\loading-status.json" />
@@ -10257,6 +10293,7 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\loading-status.json" />
@@ -10505,6 +10542,7 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\loading-status.json" />
@@ -10753,6 +10791,7 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\loading-status.json" />
@@ -11001,6 +11040,7 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\loading-status.json" />
@@ -11249,6 +11289,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\loading-status.json" />
@@ -11497,6 +11538,7 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\engines.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\explorer.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\gameinput-runtime.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\greaseweazle-tools.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\loading-status.json" />

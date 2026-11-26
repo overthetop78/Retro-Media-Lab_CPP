@@ -4,6 +4,18 @@ target_include_directories(RetroMediaLab.Platform PUBLIC include)
 if(WIN32)
   target_sources(RetroMediaLab.Platform PRIVATE Windows/WindowAppearance.cpp Windows/DataDirectory.cpp Windows/Gamepads.cpp Windows/MidiInput.cpp)
   target_link_libraries(RetroMediaLab.Platform PRIVATE dwmapi shell32 runtimeobject winmm)
+  set(gameinput_version 3.5.268)
+  set(gameinput_package microsoft.gameinput/${gameinput_version}/native/include)
+  find_path(RML_GAMEINPUT_INCLUDE_DIR NAMES v2/GameInput.h
+    HINTS "$ENV{NUGET_PACKAGES}/${gameinput_package}" "$ENV{USERPROFILE}/.nuget/packages/${gameinput_package}"
+    NO_DEFAULT_PATH)
+  if(RML_GAMEINPUT_INCLUDE_DIR)
+    target_include_directories(RetroMediaLab.Platform BEFORE PRIVATE "${RML_GAMEINPUT_INCLUDE_DIR}")
+    target_compile_definitions(RetroMediaLab.Platform PRIVATE
+      RML_GAMEINPUT_V3 RML_GAMEINPUT_MIN_VERSION="${gameinput_version}.0")
+    target_link_libraries(RetroMediaLab.Platform PRIVATE hid version cfgmgr32)
+    install(FILES "${RML_GAMEINPUT_INCLUDE_DIR}/../../redist/GameInputRedist.msi" DESTINATION Runtime OPTIONAL)
+  endif()
 else()
   target_sources(RetroMediaLab.Platform PRIVATE Unix/WindowAppearance.cpp Unix/DataDirectory.cpp Unix/Gamepads.cpp Unix/MidiInput.cpp)
 endif()

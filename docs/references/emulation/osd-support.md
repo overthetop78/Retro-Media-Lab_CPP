@@ -1416,3 +1416,76 @@ Dans le C#, `EmulationVideoFieldComposer` reçoit tous les champs natifs avant l
 ### Capture d’une vue vidéo masquée
 
 `MachineVideoPresenter.CaptureSnapshotAsync` utilise la trame courante et un traitement logiciel en arrière-plan lorsque la présentation est masquée. La vue C++ reprend ce parcours, y compris les champs disponibles et les réglages vidéo, sans redémarrer le moteur de présentation. Une DLL temporaire a présenté une première mire, changé de trame alors que la surface était masquée et vérifié les nouveaux pixels du PNG produit par le bouton de capture. L’appel logiciel a aussi vérifié la luminosité ajustée. Release Windows et DLL déployées vérifiées. Les fichiers temporaires ont été supprimés.
+
+### Nombre de ports du retour de force
+
+`EmulationCoreEnvironmentService.CreateControllerFeedbackAccumulator` prend une limite facultative, avec dix ports par défaut. Le SDK C++ permet le même choix pour l’accumulateur. Sa représentation change et un module compilé avec la version précédente de la classe doit être recompilé. Le contrôle Release a vérifié les limites personnalisées, la valeur par défaut, le rejet des valeurs non positives, les moteurs forts et faibles et la remise à zéro isolée ou complète. La sonde a été supprimée.
+
+Le repli HID de `GameInputDeviceMonitor.TryDescribe` dépend du chemin PnP de son interface GameInput. Le `GameInput.h` actuellement utilisé pour le C++ expose la structure v0, qui ne fournit pas ce chemin. La recherche d’une solution pour cette partie reste ouverte. [Versions de GameInputDeviceInfo](https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/input/gameinput/structs/gameinputdeviceinfo).
+
+Une sonde Windows a initialisé la même interface GameInput v0 que le projet et transmis les 43 chemins HID présents à FindDeviceFromPlatformString. Aucun chemin ne correspondait sur ce poste. La sonde a été supprimée. Ce résultat écarte cette approche dans l’environnement testé. [GameInput FindDeviceFromPlatformString](https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/input/gameinput/interfaces/igameinput/methods/igameinput_finddevicefromplatformstring).
+
+Le C# référence Microsoft.GameInput 3.5.268 et initialise GameInput v3 via GameInputRedist.dll. Ce paquet et le runtime Windows 4.0.306.0 sont présents sur le poste. Une sonde C++ utilisant l’en-tête officiel de ce même paquet a initialisé la v3 et reçu deux manettes avec deux chemins PnP renseignés. Les fichiers temporaires ont été supprimés. Le prochain changement doit utiliser l’ABI v3 pour obtenir le chemin comme le C# et raccorder le décodeur HID aux rapports bruts. La configuration RML continue actuellement à compiler avec l’ABI v0.
+
+### Raccordement des rapports HID GameInput v3
+
+Sous Windows, CMake utilise Microsoft.GameInput 3.5.268 depuis le cache NuGet pour compiler le parcours v3. Une installation dans un autre dossier peut indiquer le chemin native/include via RML_GAMEINPUT_INCLUDE_DIR. La compilation sans le paquet conserve le parcours du SDK Windows. En v3, RML sélectionne le redistribuable le plus récent comme GameInputNative.cs et préfère la copie système à version égale. Lorsqu’un contrôleur annonce des rapports bruts et que sa description ne contient aucun contrôle, le décodeur ouvre son chemin PnP. Il lit les boutons, axes et chapeaux à partir des données préparées par Windows. Comme dans GameInputControllerStateReader.cs, le dernier rapport reçu par notification sert de repli à la lecture instantanée. Les notifications sont désinscrites hors de leur fil et les descripteurs HID sont libérés avec le périphérique. [GameInput UnregisterCallback](https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/input/gameinput/interfaces/igameinput/methods/igameinput_unregistercallback).
+
+Le contrôle Release a lu les deux manettes branchées via GameInput. Des rapports synthétiques ont vérifié l’identifiant du rapport, le décalage des rapports non numérotés, les bornes d’un axe signé, les boutons, le chapeau, les valeurs neutres et la libération du descripteur et du handle. La sonde a été supprimée et les trois DLL affectées ont été vérifiées par empreinte dans le paquet Windows Release. Aucun des contrôles précédents ne valide encore le repli HID sur une manette dépourvue de description de contrôles GameInput.
+
+### Redistribuable GameInput dans le paquet Windows
+
+Comme le projet C# sur osd-support, le paquet Windows contient le MSI Microsoft dans Runtime/GameInputRedist.msi lorsque le paquet NuGet est disponible. Le chargeur du C++ examine les deux vues du registre pour RedistDir et utilise la version minimale de l’installeur C#, 3.5.268.0. Le MSI du paquet Release correspond par empreinte au paquet NuGet et sa signature Microsoft est valide. Une sonde Release a détecté les deux manettes après le changement du chargeur. Elle a été supprimée. La proposition d’installation au démarrage reste à raccorder.
+
+### Proposition à l’ouverture du paquet portable
+
+La vérification du runtime est partagée avec le chargeur GameInput. L’application propose le MSI fourni uniquement si le fichier existe et si aucun runtime compatible n’a été trouvé. Le refus laisse le démarrage se poursuivre. L’accord ouvre Windows Installer avec la demande d’élévation de Windows. Une annulation de cette demande laisse aussi l’application démarrer. En cas d’échec de lancement, le dialogue présente un message dans la langue active. Le nom Microsoft GameInput reste invariant. Les deux nouveaux messages ont été générés avec Argos et relus dans les 29 langues.
+
+La sonde temporaire a couvert l’absence de MSI, l’absence du runtime, la version compatible, la commande et son chemin entre guillemets, l’annulation de l’élévation et l’échec du lancement. Les appels à l’installateur ont été simulés pendant la vérification. La sonde a été supprimée.
+La compilation Windows Release et les empreintes de la DLL App et de trois catalogues déployés ont été vérifiées.
+
+### Mappage des contrôleurs génériques GameInput
+
+GameInputControllerStateMapper.cs utilise le mappage fourni par le périphérique pour calculer les axes et boutons de manette à partir des axes, boutons et chapeaux génériques. Le C++ reprend les directions opposées du chapeau, les paires de boutons, l’inversion et les valeurs neutres. Il utilise le même échantillon pour le mappage et les contrôles bruts. Une manette qui fournit déjà son état standard conserve ce parcours. La sonde temporaire a vérifié les axes inversés, les paires de boutons, les directions du chapeau, les indices hors limites, une palette mappée et les valeurs neutres. Elle a été supprimée. Le mappage a été vérifié avec un périphérique simulé. Les DLL Windows Release du paquet ont été vérifiées par empreinte.
+
+### Commandes supplémentaires de manette
+
+La capture des raccourcis reçoit les quatre palettes et les deux gâchettes numériques de GameInput. Pour les affectations du clavier de machine, le C++ reprend les boutons système, le seuil analogique des gâchettes et le sens des axes Y de `GameInputControllerStateMapper.cs`. La sonde temporaire Windows Release a vérifié la capture et les touches produites par les affectations de la machine. Les DLL distribuées correspondent aux DLL compilées.
+
+### Profils analogiques par manette
+
+Le traitement reprend ControllerAnalogDeadZoneFunctions.cs et ControllerAnalogDeadZoneProfileStore.cs. Il applique une zone morte radiale aux sticks, une plage propre aux gâchettes et une zone extérieure aux sticks. Le jeu, la capture des raccourcis et le suivi de l’illustration lisent des états filtrés. Les valeurs sont enregistrées par identifiant dans Controllers/analog-dead-zones.json, sous le dossier de données installé ou portable comme dans StoragePaths.cs. Windows Release a vérifié la prévisualisation isolée par périphérique, les seuils, les bits de gâchette et la relecture par un nouveau processus en mode portable. Les DLL correspondantes ont été vérifiées dans le paquet et la sonde a été supprimée. La modification de ces valeurs depuis le dialogue Manettes d’Émulation reste à raccorder.
+
+### Zones mortes dans les préférences d’Émulation
+
+La page Manettes des préférences d’Émulation reprend la sélection par périphérique, les plages et l’aperçu de OptionsControllersSection.Devices.cs. Le filtre s’applique pendant le déplacement. L’enregistrement intervient au relâchement de la souris, à la perte du focus du curseur ou lorsque la page se ferme. Les commandes analogiques sont masquées pour un périphérique qui ne fournit pas de manette standard. Les libellés viennent de Controllers.resx pour les 29 langues. La sonde Qt Windows Release a vérifié la sélection de trois périphériques simulés, la prévisualisation, l’écriture de deux profils distincts et le changement de langue. Elle a été supprimée. Les DLL et les 30 catalogues ont été comparés par empreinte.
+
+### Entrées brutes et vibration dans les préférences d’Émulation
+
+La page Manettes affiche les valeurs et l’état actif des contrôles bruts exposés par le périphérique sélectionné. Le test reprend GameInputRumbleTest.cs et OptionsControllersSection.Rumble.cs avec une impulsion de 250 ms, une intensité réglable par pas de 5 % et un bouton par moteur déclaré. Quitter la page ou changer de périphérique interrompt l’impulsion. Les libellés reprennent Controllers.resx dans les 29 langues. La sonde Windows Release a vérifié les états du tableau, le routage des moteurs, la fin de l’impulsion, le changement de sélection, la fermeture et le refus du backend simulé. Le contrôle ne mesure pas la vibration du moteur physique. La sonde a été supprimée et les DLL distribuées ont été vérifiées par empreinte.
+
+### Détection des illustrations de manettes hôtes
+
+La page Manettes utilise la priorité de GameInputDeviceModelCatalog.cs entre VID/PID, nom et famille GameInput. Le VID/PID partagé par différents périphériques rétro conserve le modèle générique. Les 20 images proviennent du catalogue C# ControllerArtworkCatalog.cs et sont chargées depuis Assets/Controllers. La sonde Windows Release a vérifié la priorité du Rematch, le périphérique ambigu, les replis et le rendu des vingt PNG du paquet. Les DLL compilées et distribuées ont été comparées et la sonde supprimée. Le dessin du modèle ArcadeStick, les surbrillances des contrôles et le choix persistant du modèle restent à porter.
+
+### Choix de l’illustration
+
+La sélection de modèle reprend OptionsControllersSection.Devices.cs. Elle est proposée pour les périphériques sans correspondance exacte ou avec un choix déjà enregistré. Le réglage Automatique retire la sélection. Le fichier Controllers/visual-models.json utilise les champs Model et DisplayName et l’ordre des valeurs de ControllerVisualModel du C#. Le libellé Automatique réutilise la clé d’émulation existante. Les noms des modèles suivent les ressources de Controllers.resx et leur repli sur Constants. Une sonde Windows Release a vérifié la lecture d’un profil de forme C#, la correspondance exacte verrouillée, la sélection par périphérique, sa suppression et sa relecture dans un nouveau processus. Les DLL distribuées ont été vérifiées et la sonde supprimée.
+
+### Entrées sur les illustrations des manettes
+
+Le tracé des manettes standard et rétro reprend les coordonnées de ControllerVisualizer.Artwork.XboxAndPlayStation.cs et ControllerVisualizer.Artwork.ClassicConsoles.cs. Les états standard et les contrôles bruts disponibles indiquent les boutons, les directions, le déplacement des sticks et la pression analogique des gâchettes. Le stick arcade reprend le tracé de ControllerVisualizer.Special.cs avec les axes et boutons bruts. Une sonde Qt Windows Release a comparé les pixels au repos, à l’activation et au relâchement pour sept modèles. Elle a été supprimée et les DLL distribuées ont été vérifiées par empreinte. Les états spécialisés du volant, du joystick de vol et du stick arcade restent à raccorder au tracé.
+
+### Entrées spécialisées des manettes
+
+Le port reprend les tracés du volant et du joystick de vol de ControllerVisualizer.Artwork.SpecializedControllers.cs et le stick arcade de ControllerVisualizer.Special.cs. Les états spécialisés suivent GameInput et les index de secours suivent ControllerVisualStateConverter.cs et ControllerVisualInput.cs. La Release Windows et sa distribution ont été générées. Un contrôle Qt temporaire a vérifié les états spécialisés, les entrées brutes de secours et le retour au neutre sur les trois illustrations avec des entrées simulées. Aucun périphérique physique spécialisé n’a été testé.
+
+Le panneau Manettes reprend GameInputDescriptorPresenter.Analog pour l’ordre des valeurs GameInput, le rapport entier du volant et les axes bruts en secours. Les neuf libellés spécialisés proviennent de Controllers.resx dans les 29 langues et dans la base. La Release Windows a compilé et les empreintes du thème et des catalogues livrés correspondent au build. Le nouvel affichage reste à exercer avec un périphérique spécialisé physique.
+
+Le diagnostic dépliable reprend la composition de OptionsControllersSection.xaml et les lignes disponibles de GameInputDescriptorPresenter.Capabilities. Le panneau affiche les entrées en direct, les types d’entrée déclarés, les axes et boutons, les moteurs de vibration, le nombre de moteurs à retour de force, les boutons système, les rapports d’entrée et de sortie et les capacités du volant. Le détail des moteurs à retour de force, le retour haptique et les dispositions de manette restent à porter. Les 18 clés et les paramètres de formatage ont été vérifiés dans la base et les 29 langues. La Release Windows compilée correspond au thème et aux catalogues distribués. Le panneau n’a pas été vérifié sur un périphérique physique.
+
+Le diagnostic GameInput v3 reprend GameInputDeviceInspector et GameInputDescriptorPresenter pour les axes et effets de chaque moteur à retour de force, son état, le point de terminaison et les emplacements haptiques, les commandes déclarées et les index supplémentaires. Les libellés ont été contrôlés dans la base et les 29 catalogues. La Release Windows a compilé et les DLL distribuées correspondent au build. La remontée de ces informations reste à vérifier sur un périphérique physique compatible.
+
+La fiche d’identité des manettes reprend GameInputDescriptorPresenter.Identity, GameInputDisplayFormatter et WindowsDeviceNameResolver.GetCandidates. Elle affiche le VID/PID et la famille, les versions, l’usage HID, les identifiants GameInput et la chaîne PnP dans le menu dépliable. L’usage Joystick réutilise la clé traduite existante. Les DLL de la Release Windows distribuée correspondent au build. La remontée de l’identité et de la chaîne PnP reste à vérifier sur matériel.
+
+Les libellés des contrôles, les définitions des chapeaux et les positions affichées reprennent GameInputDisplayFormatter. La table des glyphes associe les noms C# aux valeurs du GameInput SDK local. Le diagnostic trie les entrées par type et index, et distingue les nombres, états de bouton et positions de chapeau. La Release Windows a compilé et ses DLL distribuées correspondent au build. Le rendu avec un périphérique physique reste à vérifier.

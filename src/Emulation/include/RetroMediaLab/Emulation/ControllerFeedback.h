@@ -3,6 +3,7 @@
 #include "Host.h"
 #include <array>
 #include <mutex>
+#include <vector>
 
 namespace RetroMediaLab::Emulation {
 namespace ControllerFeedbackCommands {
@@ -54,6 +55,8 @@ RETROMEDIALAB_EMULATION_API QList<ControllerOutput> resolveControllerFeedback(co
 
 class RETROMEDIALAB_EMULATION_API ControllerFeedbackAccumulator final {
 public:
+    ControllerFeedbackAccumulator();
+    explicit ControllerFeedbackAccumulator(int portCount);
     bool setState(unsigned port, unsigned effect, quint16 strength);
     QList<ControllerFeedbackState> snapshot() const;
     void resetPort(int port);
@@ -64,6 +67,6 @@ private:
     static constexpr unsigned WeakEffect = 1;
     static constexpr unsigned EffectCount = 2;
     mutable std::mutex mutex_;
-    std::array<std::array<quint16, EffectCount>, ControllerFeedbackCommands::MaximumPortCount> strengths_{};
+    std::vector<std::array<quint16, EffectCount>> strengths_;
 };
 }

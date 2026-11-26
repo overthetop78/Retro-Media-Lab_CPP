@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Shared/Emulation/EmulationPhysicalShortcuts.h"
+#include "Shared/Controls/ControllerAnalogProfiles.h"
 #include <RetroMediaLab/Platform/MidiInput.h>
 #include <optional>
 #include <QDialog>
@@ -18,7 +19,7 @@ class EmulationShortcutCapture final : public QDialog {
 public:
     EmulationShortcutCapture(QWidget* parent, const QString& title, const QString& prompt, bool escapeCancels = true,
         bool prefixKeyboardSource = false, bool captureMidi = false)
-        : QDialog(parent), samples_(source_.read()), initialSamples_(samples_), escapeCancels_(escapeCancels),
+        : QDialog(parent), samples_(ControllerAnalogProfiles::read(source_)), initialSamples_(samples_), escapeCancels_(escapeCancels),
           prefixKeyboardSource_(prefixKeyboardSource) {
         setWindowTitle(title);
         auto* layout = new QVBoxLayout(this);
@@ -30,7 +31,7 @@ public:
             midiSamples_ = midi_->read();
         }
         const auto pollControllers = [this] {
-            auto current = source_.read();
+            auto current = ControllerAnalogProfiles::read(source_);
             namespace Physical = EmulationPhysicalShortcuts;
             auto pressed = Physical::newControllerSources(current, samples_, initialSamples_);
             samples_ = current;

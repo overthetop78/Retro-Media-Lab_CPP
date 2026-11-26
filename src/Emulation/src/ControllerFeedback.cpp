@@ -2,9 +2,11 @@
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <stdexcept>
 
 namespace RetroMediaLab::Emulation {
 namespace {
+constexpr auto InvalidPortCountKey = "Emulation.Error.EmulatorRejected";
 bool validMotor(ControllerMotor motor) {
     switch (motor) {
     case ControllerMotor::LowFrequency:
@@ -75,6 +77,14 @@ QList<ControllerOutput> resolveControllerFeedback(const QList<ControllerFeedback
     return outputs;
 }
 
+ControllerFeedbackAccumulator::ControllerFeedbackAccumulator()
+    : ControllerFeedbackAccumulator(ControllerFeedbackCommands::MaximumPortCount) {}
+
+ControllerFeedbackAccumulator::ControllerFeedbackAccumulator(int portCount) {
+    if (portCount <= 0) throw std::invalid_argument(InvalidPortCountKey);
+    strengths_.resize(static_cast<std::size_t>(portCount));
+}
+
 bool ControllerFeedbackAccumulator::setState(unsigned port, unsigned effect, quint16 strength) {
     if (port >= strengths_.size() || effect >= EffectCount) return false;
     const std::lock_guard lock(mutex_);
@@ -104,6 +114,6 @@ void ControllerFeedbackAccumulator::resetPort(int port) {
 
 void ControllerFeedbackAccumulator::reset() {
     const std::lock_guard lock(mutex_);
-    strengths_ = {};
+    std::ranges::fill(strengths_, std::array<quint16, EffectCount>{});
 }
 }

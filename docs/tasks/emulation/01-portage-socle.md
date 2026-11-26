@@ -2006,3 +2006,110 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
   - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour produire une capture logicielle de la dernière trame avec son profil et ses champs précédents.
   - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser cette capture en arrière-plan lorsque la vue est masquée.
   - [x] Créer puis supprimer build/emulation-hidden-snapshot-check pour vérifier que la capture reflète la trame courante et ses réglages.
+
+- [x] Nombre de ports du retour de force
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/ControllerFeedback.h et src/Emulation/src/ControllerFeedback.cpp pour reprendre la limite configurable de l’accumulateur C# et préserver sa valeur par défaut dans le SDK.
+  - [x] Créer puis supprimer build/emulation-feedback-port-count-check pour vérifier les limites, l’isolation des ports et la réinitialisation.
+
+- [x] Vérification de la correspondance HID avec GameInput
+  - [x] Créer puis supprimer build/emulation-gameinput-path-check pour déterminer si GameInput v0 associe les chemins HID à ses périphériques.
+
+- [x] Vérification de GameInput v3 utilisé par osd-support
+  - [x] Créer puis supprimer build/emulation-gameinput-v3-check pour vérifier l’initialisation et la disponibilité des chemins PnP avec le paquet Microsoft.GameInput utilisé par le C#.
+
+- [x] Raccordement des rapports HID de GameInput v3
+  - [x] Modifier src/Platform/CMakeLists.txt pour utiliser le paquet Microsoft.GameInput hors ligne et lier les API Windows HID et de version.
+  - [x] Créer src/Platform/Windows/HidReportControls.h pour porter le décodage des rapports HID du C# avec la libération automatique des ressources.
+  - [x] Modifier src/Platform/Windows/Gamepads.cpp pour initialiser GameInput v3, utiliser le chemin PnP du périphérique et transmettre ses rapports au décodeur.
+  - [x] Créer puis supprimer build/emulation-hid-controls-check pour vérifier le chargement Windows et le décodage des rapports.
+
+- [x] Redistribuable GameInput du paquet Windows
+  - [x] Modifier src/Platform/CMakeLists.txt pour installer le MSI du paquet Microsoft.GameInput dans Runtime et partager la version minimale avec le chargeur.
+  - [x] Modifier src/Platform/Windows/Gamepads.cpp pour vérifier cette version et lire les deux vues du registre Windows, conformément à l’installeur C#.
+  - [x] Modifier RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour présenter les nouveaux fichiers HID et Emulation dans la solution.
+  - [x] Créer puis supprimer build/emulation-gameinput-runtime-check pour vérifier la détection après application du minimum de version.
+
+- [x] Proposition du redistribuable GameInput au démarrage
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h, src/Platform/Windows/Gamepads.cpp et src/Platform/Unix/Gamepads.cpp pour détecter le besoin et lancer le MSI fourni après accord.
+  - [x] Modifier src/App/Bootstrap/Application.cpp pour proposer le MSI dans la langue active et afficher un message traduit en cas d’échec de lancement.
+  - [x] Créer src/Translations/Catalogs/Constants/App/gameinput-runtime.json et les fichiers App/gameinput-runtime.json des langues du projet pour les libellés et le nom invariant.
+  - [x] Créer puis supprimer build/emulation-gameinput-offer-check pour vérifier la décision de proposer le MSI sans l’exécuter.
+  - [x] Modifier RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour référencer les nouveaux catalogues dans la solution.
+
+- [x] Mappage des contrôleurs génériques GameInput
+  - [x] Modifier src/Platform/Windows/Gamepads.cpp pour réutiliser le même échantillon d’axes, boutons et chapeaux dans le mappage standard et les contrôles bruts.
+  - [x] Créer src/Platform/Windows/GameInputGamepadMapping.h pour reprendre les règles de GameInputControllerStateMapper.cs.
+  - [x] Modifier RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour inclure cet en-tête.
+  - [x] Créer puis supprimer build/emulation-controller-mapping-check pour vérifier les axes inversés, les boutons appariés, les chapeaux et les commandes non mappées.
+
+- [x] Transmission des commandes supplémentaires de manette
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour exposer les codes GameInput des palettes et des gâchettes numériques.
+  - [x] Modifier src/App/Shared/Emulation/EmulationPhysicalShortcuts.h pour lire les palettes et les gâchettes numériques via les mêmes chemins de capture et de relâchement que les autres commandes.
+  - [x] Modifier src/App/Shared/Emulation/EmulationHostKeyboard.cpp pour transmettre au contrat hôte les palettes, les boutons système, les gâchettes et les axes Y comme dans le C#.
+  - [x] Créer puis supprimer build/emulation-gamepad-buttons-check pour vérifier les raccourcis et les associations de clavier de machine.
+
+- [x] Profils analogiques des manettes
+  - [x] Créer src/App/Shared/Controls/ControllerAnalogProfiles.h et .cpp pour porter la normalisation, le filtrage et les profils par périphérique du C#.
+  - [x] Modifier src/App/CMakeLists.txt et les projets Visual C++ suivis pour compiler le service partagé.
+  - [x] Modifier src/App/Shared/Controls/ControllerArtwork.cpp, EmulationShortcutCapture.h et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour employer la lecture filtrée.
+  - [x] Modifier src/Infrastructure/Logging/LogPaths.h et .cpp pour partager la résolution du dossier de données installé et portable.
+  - [x] Créer puis supprimer build/emulation-analog-profiles-check pour vérifier les seuils, la persistance et les boutons de gâchette.
+
+- [x] Réglages analogiques dans Émulation
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour fournir le nom et la disponibilité des axes d’une manette au dialogue.
+  - [x] Modifier src/App/Shared/Controls/ControllerAnalogProfiles.h pour partager les limites avec les curseurs.
+  - [x] Créer src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.h et .cpp, et modifier EmulationPreferencesDialog.cpp pour ajouter la page Manettes avec aperçu, sauvegarde et valeurs en direct.
+  - [x] Modifier src/App/CMakeLists.txt, RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour inclure la page.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-controller-feedback.json et ses équivalents dans Languages avec les libellés C#.
+  - [x] Créer puis supprimer build/emulation-controller-panel-check pour vérifier la sélection, l’aperçu et la sauvegarde des curseurs.
+
+- [x] Diagnostic des manettes dans Émulation
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp et src/Platform/Unix/Gamepads.cpp pour signaler si un moteur sélectionné a reçu une commande de vibration.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher les entrées brutes en direct et piloter les quatre moteurs, avec coupure du test lors du changement de périphérique ou de la fermeture.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-controller-feedback.json et ses équivalents dans Languages avec les libellés du diagnostic C#.
+  - [x] Créer puis supprimer build/emulation-controller-diagnostic-check pour vérifier les entrées brutes et les impulsions par moteur.
+
+- [x] Illustrations des manettes hôtes
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour publier le VID, le PID et les familles de contrôleurs.
+  - [x] Modifier src/App/Shared/Controls/ControllerArtwork.h et .cpp pour résoudre la correspondance C# et charger les illustrations externes des manettes hôtes.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher le modèle détecté pour la sélection courante.
+  - [x] Créer puis supprimer build/emulation-host-artwork-check pour vérifier la priorité VID/PID, les replis et l’illustration du modèle.
+
+- [x] Choix persistant de l’illustration d’une manette
+  - [x] Créer src/App/Shared/Controls/ControllerVisualProfiles.h et .cpp pour charger, modifier et retirer les profils compatibles avec visual-models.json du C#.
+  - [x] Modifier src/App/CMakeLists.txt, RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour référencer le service.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour appliquer la sélection manuelle et retrouver le modèle automatique.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-controller-feedback.json et les 29 catalogues Languages avec les sélections C#.
+  - [x] Créer puis supprimer build/emulation-visual-profiles-check pour vérifier la sélection, le verrouillage, la lecture du JSON C# et sa relecture par un nouveau processus.
+
+- [x] Entrées en direct sur les illustrations des manettes
+  - [x] Créer src/App/Shared/Controls/ControllerHostOverlays.h avec les coordonnées et tracés C# des manettes standard et rétro et du stick arcade.
+  - [x] Modifier src/App/Shared/Controls/ControllerArtwork.h et .cpp et EmulationControllerPanel.cpp pour transmettre et afficher les entrées de la manette sélectionnée.
+  - [x] Modifier RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour inclure le tracé partagé.
+  - [x] Créer puis supprimer build/emulation-host-overlays-check pour vérifier l’activation et le relâchement à l’écran.
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour relever les états GameInput du volant, du joystick de vol et du stick arcade.
+  - [x] Modifier src/App/Shared/Controls/ControllerArtwork.cpp et src/App/Shared/Controls/ControllerHostOverlays.h pour dessiner les commandes spécialisées selon le C# et conserver les entrées brutes en secours.
+  - [x] Créer puis supprimer build/emulation-specialized-controllers-check pour vérifier les tracés spécialisés et le secours par entrées brutes.
+
+- [x] Valeurs analogiques des périphériques spécialisés
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour reprendre les valeurs analogiques GameInput du volant et du joystick de vol et le secours par axes bruts.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-controller-feedback.json et les catalogues App/emulation-controller-feedback.json des langues pour reprendre les libellés des RESX C#.
+
+- [x] Capacités déclarées dans le diagnostic des manettes
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour transmettre les capacités GameInput et les dimensions des contrôles bruts disponibles.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher les capacités à côté des entrées en temps réel, dans un bloc dépliable comme dans le C#.
+  - [x] Modifier les catalogues App/emulation-controller-feedback.json de Constants et des langues pour reprendre les libellés de Controllers.resx.
+
+- [x] Détails du retour de force et de la disposition des commandes
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour exposer les axes et effets des moteurs, le retour haptique, la disposition et les index supplémentaires.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour présenter ces détails dans le bloc existant.
+  - [x] Modifier les catalogues App/emulation-controller-feedback.json pour reprendre les libellés du C#.
+
+- [x] Identification des manettes
+  - [x] Modifier src/Platform/CMakeLists.txt, src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour publier l’identité GameInput et la chaîne de périphériques Windows.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher le résumé et la fiche d’identité du C#.
+identité’identité du C#.
+
+- [x] Libellés et valeurs du diagnostic des manettes
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h et src/Platform/Windows/Gamepads.cpp pour transmettre les descripteurs d’axe, bouton et chapeau GameInput.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationControllerPanel.cpp pour afficher les noms, positions et définitions du C# et ordonner les contrôles par type et index.

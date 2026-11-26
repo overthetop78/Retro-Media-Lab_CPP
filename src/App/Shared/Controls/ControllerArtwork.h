@@ -2,6 +2,8 @@
 #include "AppApi.h"
 
 #include <RetroMediaLab/Emulation/InputSettings.h>
+#include <RetroMediaLab/Platform/Gamepads.h>
+#include <optional>
 #include <QPixmap>
 #include <QSet>
 #include <QTimer>
@@ -9,13 +11,23 @@
 #include <functional>
 
 namespace RetroMediaLab {
-namespace Platform { class GamepadSource; }
+namespace Platform { class GamepadSource; struct GamepadState; }
 class MachineInputBindings;
 class ControllerArtwork final : public QWidget {
 public:
     using Commands = QHash<Emulation::ControllerVisualControl, QString>;
     using Assign = std::function<void(const QString&)>;
     RETROMEDIALAB_APP_API static ControllerArtwork* create(const QString& visualId, Commands, Assign, QWidget* parent);
+
+    enum class HostModel {
+        GenericGamepad, XboxSeries, XboxOne, Xbox360, Xbox360White, XboxRematchCore, PlayStation4, PlayStation5,
+        MasterSystem, NintendoEntertainmentSystem, Nintendo64, SuperNintendo, MegaDrive3, MegaDrive6, PlayStation1,
+        PlayStation2, Saturn, Dreamcast, RacingWheel, FlightStick, ArcadeStick
+    };
+    struct HostMatch { HostModel model; bool exact; };
+    RETROMEDIALAB_APP_API static HostMatch hostModel(const Platform::GamepadState&);
+    RETROMEDIALAB_APP_API static ControllerArtwork* createHost(HostModel, QWidget* parent);
+    RETROMEDIALAB_APP_API void setHostInput(const Platform::GamepadState&);
 
     RETROMEDIALAB_APP_API void observeInput(Platform::GamepadSource&, MachineInputBindings&);
     QSize sizeHint() const override;
@@ -44,6 +56,8 @@ private:
     float activation(const Zone&) const;
 
     QPixmap image_;
+    std::optional<HostModel> hostModel_;
+    Platform::GamepadState hostInput_{};
     QList<Zone> zones_;
     Commands commands_;
     Assign assign_;

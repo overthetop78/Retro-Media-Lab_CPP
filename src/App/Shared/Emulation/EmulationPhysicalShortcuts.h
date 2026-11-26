@@ -48,17 +48,39 @@ inline constexpr ButtonMapping GamepadButtons[] = {
     {QLatin1String("RightShoulder"), QLatin1String("R"), RightShoulder},
     {QLatin1String("LeftStickClick"), QLatin1String("L3"), LeftStick},
     {QLatin1String("RightStickClick"), QLatin1String("R3"), RightStick},
+    {QLatin1String("PaddleLeft1"), {}, PaddleLeft1},
+    {QLatin1String("PaddleLeft2"), {}, PaddleLeft2},
+    {QLatin1String("PaddleRight1"), {}, PaddleRight1},
+    {QLatin1String("PaddleRight2"), {}, PaddleRight2},
 };
 enum Axis { LeftX, LeftY, RightX, RightY, LeftTrigger, RightTrigger };
-struct AxisDirection { QLatin1StringView name; Axis axis; float sign; QLatin1StringView alias{}; };
+struct AxisDirection {
+    QLatin1StringView name;
+    Axis axis;
+    float sign;
+    QLatin1StringView alias{};
+    GamepadButton digital = NoButton;
+};
 inline constexpr AxisDirection Directions[] = {
     {QLatin1String("LeftStickLeft"), LeftX, -1}, {QLatin1String("LeftStickRight"), LeftX, 1},
     {QLatin1String("LeftStickUp"), LeftY, 1}, {QLatin1String("LeftStickDown"), LeftY, -1},
     {QLatin1String("RightStickLeft"), RightX, -1}, {QLatin1String("RightStickRight"), RightX, 1},
     {QLatin1String("RightStickUp"), RightY, 1}, {QLatin1String("RightStickDown"), RightY, -1},
-    {QLatin1String("LeftTrigger"), LeftTrigger, 1, QLatin1String("L2")},
-    {QLatin1String("RightTrigger"), RightTrigger, 1, QLatin1String("R2")},
+    {QLatin1String("LeftTrigger"), LeftTrigger, 1, QLatin1String("L2"), LeftTriggerButton},
+    {QLatin1String("RightTrigger"), RightTrigger, 1, QLatin1String("R2"), RightTriggerButton},
 };
+
+inline float axisPressure(const GamepadState& pad, const AxisDirection& direction, GamepadState* held = nullptr) {
+    const auto value = pad.axes.value(direction.axis);
+    const auto analog = std::clamp(value * direction.sign, 0.0f, 1.0f);
+    const auto digital = pad.buttons & direction.digital;
+    if (held && analog > PressedThreshold) {
+        if (held->axes.size() <= direction.axis) held->axes.resize(direction.axis + 1);
+        held->axes[direction.axis] = value;
+    }
+    if (held && digital) held->buttons |= digital;
+    return digital && analog == 0.0f ? 1.0f : analog;
+}
 }
 
 struct Input {
@@ -79,22 +101,17 @@ inline float controllerPressure(QStringView source, const Platform::GamepadState
     const bool guideAlias = control.compare(QLatin1String("Guide"), Qt::CaseInsensitive) == 0;
     if (!device.isEmpty() && device.compare(pad.deviceId, Qt::CaseInsensitive) != 0) return 0.0f;
     for (const auto& [name, alias, button] : Controls::GamepadButtons) {
-        if (control.compare(name, Qt::CaseInsensitive) != 0 && control.compare(alias, Qt::CaseInsensitive) != 0)
+        if (control.compare(name, Qt::CaseInsensitive) != 0 &&
+            (alias.isEmpty() || control.compare(alias, Qt::CaseInsensitive) != 0))
             continue;
         const bool pressed = (pad.buttons & button) != 0;
         if (held && pressed) held->buttons |= button;
         return pressed ? 1.0f : 0.0f;
     }
-    for (const auto& [name, axis, sign, alias] : Controls::Directions) {
-        if (control.compare(name, Qt::CaseInsensitive) != 0 &&
-            (alias.isEmpty() || control.compare(alias, Qt::CaseInsensitive) != 0)) continue;
-        const auto value = pad.axes.value(axis);
-        const auto pressure = std::clamp(value * sign, 0.0f, 1.0f);
-        if (held && pressure > PressedThreshold) {
-            if (held->axes.size() <= axis) held->axes.resize(axis + 1);
-            held->axes[axis] = value;
-        }
-        return pressure;
+    for (const auto& direction : Controls::Directions) {
+        if (control.compare(direction.name, Qt::CaseInsensitive) == 0 ||
+            (!direction.alias.isEmpty() && control.compare(direction.alias, Qt::CaseInsensitive) == 0))
+            return Controls::axisPressure(pad, direction, held);
     }
     namespace Raw = Platform::RawGamepad;
     const auto positive = QLatin1String(PositiveSuffix);
@@ -188,9 +205,10 @@ inline QStringList newControllerSources(const QList<Platform::GamepadState>& cur
             if (!hasRawEquivalent && (newButtons & button) != 0) sources.append(prefix + name);
         }
         if (!hasRawAxes) {
-            for (const auto& [name, axis, sign, alias] : Controls::Directions)
-                if (pad.axes.value(axis) * sign > PressedThreshold &&
-                    baseline->axes.value(axis) * sign <= PressedThreshold) sources.append(prefix + name);
+            for (const auto& direction : Controls::Directions)
+                if (Controls::axisPressure(pad, direction) > PressedThreshold &&
+                    Controls::axisPressure(*baseline, direction) <= PressedThreshold)
+                    sources.append(prefix + direction.name);
         }
     }
     return sources;
