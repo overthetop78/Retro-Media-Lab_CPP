@@ -41,6 +41,8 @@ public:
         bool readOnly = false;
     };
 
+    static constexpr unsigned InterfaceVersion = 3;
+
     using ReadObserver = std::function<void(const QString&, std::int64_t)>;
     using PathResolver = std::function<ResolvedPath(const QString&)>;
 

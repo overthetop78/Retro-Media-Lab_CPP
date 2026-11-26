@@ -36,6 +36,8 @@ constexpr char CacheVersion[] = "native-dxbc-v1";
 constexpr char CacheExtension[] = ".bin";
 constexpr qsizetype MaximumBinarySize = 16 * 1024 * 1024;
 constexpr UINT CompileFlags = D3DCOMPILE_OPTIMIZATION_LEVEL3;
+constexpr UINT DisplayFallbackCompileFlags = D3DCOMPILE_SKIP_OPTIMIZATION;
+constexpr char DisplayShaderBytecode[] = ":/video-presentation/crt.frag.dxbc";
 constexpr char PresentationShader[] = R"hlsl(
 Texture2D Image : register(t0);
 SamplerState ImageSampler : register(s0);
@@ -84,7 +86,7 @@ void saveShaderBinary(const QString& directory, const QString& path, const QByte
 }
 
 QByteArray compile(QByteArrayView source, const char* entry, const char* profile,
-    const QString& cacheDirectory = shaderCacheDirectory()) {
+    UINT flags = CompileFlags, const QString& cacheDirectory = shaderCacheDirectory()) {
     QString path;
     if (!cacheDirectory.isEmpty()) {
         QCryptographicHash hash(QCryptographicHash::Sha256);
@@ -94,7 +96,7 @@ QByteArray compile(QByteArrayView source, const char* entry, const char* profile
         };
         add(CacheVersion);
         add(QByteArray::number(D3D_COMPILER_VERSION));
-        add(QByteArray::number(CompileFlags));
+        add(QByteArray::number(flags));
         add(entry);
         add(profile);
         hash.addData(source);
@@ -103,7 +105,7 @@ QByteArray compile(QByteArrayView source, const char* entry, const char* profile
     }
     ComPtr<ID3DBlob> bytecode;
     if (FAILED(D3DCompile(source.data(), size_t(source.size()), nullptr, nullptr, nullptr,
-        entry, profile, CompileFlags, 0, bytecode.GetAddressOf(), nullptr))) return {};
+        entry, profile, flags, 0, bytecode.GetAddressOf(), nullptr))) return {};
     const QByteArray binary(static_cast<const char*>(bytecode->GetBufferPointer()), qsizetype(bytecode->GetBufferSize()));
     saveShaderBinary(cacheDirectory, path, binary);
     return binary;
@@ -122,13 +124,14 @@ QShaderKey samplingShaderKey(const QShader& shader) {
         ? QShaderKey(QShader::HlslShader, version, QShader::StandardShader) : dxbc;
 }
 
-QByteArray samplingShaderBytes(const QShader& shader, const QShaderKey& key, const char* profile) {
+QByteArray samplingShaderBytes(const QShader& shader, const QShaderKey& key, const char* profile,
+    UINT flags = CompileFlags) {
     const auto code = shader.shader(key);
     if (key.source() == QShader::DxbcShader || code.shader().isEmpty()) return code.shader();
-    return compile(code.shader(), code.entryPoint().constData(), profile);
+    return compile(code.shader(), code.entryPoint().constData(), profile, flags);
 }
 
-SamplingProgram loadSamplingProgram(const char* path, bool needsLinearSampler) {
+SamplingProgram loadSamplingProgram(const char* path, bool needsLinearSampler, const char* pixelBytecode = nullptr) {
     const auto vertexPack = readShader(VertexShader), fragmentPack = readShader(path);
     const auto vertexKey = samplingShaderKey(vertexPack), fragmentKey = samplingShaderKey(fragmentPack);
     const auto vertexMap = vertexPack.nativeResourceBindingMap(vertexKey);
@@ -140,9 +143,18 @@ SamplingProgram loadSamplingProgram(const char* path, bool needsLinearSampler) {
     if ((std::min)({vertexParameters, pixelParameters, pointTexture, pointSampler}) < 0 ||
         (needsLinearSampler && (linearTexture < 0 || linearSampler < 0)))
         return {};
+    QByteArray pixel;
+    if (pixelBytecode) {
+        QFile file(QString::fromLatin1(pixelBytecode));
+        if (file.open(QIODevice::ReadOnly)) pixel = file.readAll();
+    }
+    if (pixel.isEmpty()) {
+        const auto flags = pixelBytecode ? DisplayFallbackCompileFlags : CompileFlags;
+        pixel = samplingShaderBytes(fragmentPack, fragmentKey, SamplingPixelProfile, flags);
+    }
     return {
         samplingShaderBytes(vertexPack, vertexKey, SamplingVertexProfile),
-        samplingShaderBytes(fragmentPack, fragmentKey, SamplingPixelProfile),
+        std::move(pixel),
         UINT(vertexParameters), UINT(pixelParameters), UINT(pointTexture), UINT(pointSampler), UINT(linearTexture), UINT(linearSampler)
     };
 }
@@ -167,7 +179,7 @@ public:
                     compile(PresentationShader, VertexEntry, VertexProfile),
                     compile(PresentationShader, PixelEntry, PixelProfile),
                     loadSamplingProgram(FragmentShader, true),
-                    loadSamplingProgram(CrtFragmentShader, false)
+                    loadSamplingProgram(CrtFragmentShader, false, DisplayShaderBytecode)
                 });
             } catch (...) {
                 // A failed preparation leaves the ordinary software fallback available.
@@ -346,7 +358,7 @@ public:
         context->PSSetShaderResources(0, 1, &empty);
     }
 
-    void drawSampled(const QRect& bounds, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
+    void drawSampled(const QRect& bounds, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
         const auto& program = *(crt.enabled() ? crtProgram : samplingProgram);
         const D3D11_VIEWPORT viewport{float(bounds.x()), float(bounds.y()), float(bounds.width()), float(bounds.height()), 0.f, 1.f};
         const auto parameters = makeParameters(bounds.size(), sampling, 1, false, adjustments, restoration, crt);
@@ -368,7 +380,7 @@ public:
         if (!crt.enabled()) context->PSSetShaderResources(program.linearTexture, 1, &empty);
     }
 
-    QImage capture(const QImage& video, QSize size, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
+    QImage capture(const QImage& video, QSize size, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
         if (!(crt.enabled() ? crtProgram : samplingProgram) || size.isEmpty() || video.isNull() || !upload(video, frame)) return {};
         D3D11_TEXTURE2D_DESC description{};
         description.Width = UINT(size.width());
@@ -401,7 +413,7 @@ public:
         return capture;
     }
 
-    bool present(const QImage& video, QRect viewport, Sampling sampling, const QImage& hud, QSize logicalSize, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
+    bool present(const QImage& video, QRect viewport, Sampling sampling, const QImage& hud, QSize logicalSize, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
         if (!video.isNull() && !upload(video, frame)) return false;
         if (!hud.isNull() && !upload(hud, overlay)) return false;
         context->OMSetRenderTargets(1, target.GetAddressOf(), nullptr);
@@ -430,7 +442,7 @@ struct Direct3DSurface::Data {
     Sampling sampling = Sampling::Nearest;
     ImageAdjustments adjustments;
     ImageRestoration restoration;
-    SoftwareProcessing::CrtShaderParameters crt;
+    SoftwareProcessing::DisplayShaderParameters crt;
     bool presenting = false;
     bool failed = false;
     bool preparing = false;
@@ -455,7 +467,7 @@ Direct3DSurface::Direct3DSurface(std::function<void()> samplingStarted, std::fun
 
 Direct3DSurface::~Direct3DSurface() = default;
 
-void Direct3DSurface::setScene(QImage frame, QRect viewport, Sampling sampling, QImage overlay, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
+void Direct3DSurface::setScene(QImage frame, QRect viewport, Sampling sampling, QImage overlay, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
     data_->frame = std::move(frame);
     data_->overlay = std::move(overlay);
     data_->viewport = viewport;
@@ -469,10 +481,10 @@ void Direct3DSurface::setScene(QImage frame, QRect viewport, Sampling sampling, 
 bool Direct3DSurface::isPresenting() const noexcept { return isVisible() && data_->presenting; }
 bool Direct3DSurface::canSample() const noexcept { return data_->renderer && data_->renderer->samplingProgram; }
 
-bool Direct3DSurface::canSampleCrt() const noexcept { return data_->renderer && data_->renderer->crtProgram; }
+bool Direct3DSurface::canSampleDisplay() const noexcept { return data_->renderer && data_->renderer->crtProgram; }
 
-QImage Direct3DSurface::captureSampled(const QImage& image, QRect viewport, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
-    if (crt.enabled() ? !canSampleCrt() : !canSample()) return {};
+QImage Direct3DSurface::captureSampled(const QImage& image, QRect viewport, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
+    if (crt.enabled() ? !canSampleDisplay() : !canSample()) return {};
     const auto physical = data_->renderer->physicalBounds(viewport, size());
     return data_->renderer->capture(image, physical.size(), sampling, adjustments, restoration, crt);
 }

@@ -32,23 +32,32 @@ inline constexpr std::pair<QLatin1StringView, Qt::MouseButton> MouseButtons[] = 
 
 namespace Controls {
 using namespace Platform;
-inline constexpr std::pair<QLatin1StringView, GamepadButton> GamepadButtons[] = {
-    {QLatin1String("ButtonA"), Confirm}, {QLatin1String("ButtonB"), Cancel},
-    {QLatin1String("ButtonX"), X}, {QLatin1String("ButtonY"), Y},
-    {QLatin1String("Menu"), Menu}, {QLatin1String("View"), View},
-    {QLatin1String("DPadUp"), Up}, {QLatin1String("DPadDown"), Down},
-    {QLatin1String("DPadLeft"), Left}, {QLatin1String("DPadRight"), Right},
-    {QLatin1String("LeftShoulder"), LeftShoulder}, {QLatin1String("RightShoulder"), RightShoulder},
-    {QLatin1String("LeftStickClick"), LeftStick}, {QLatin1String("RightStickClick"), RightStick},
+struct ButtonMapping { QLatin1StringView name; QLatin1StringView alias; GamepadButton button; };
+inline constexpr ButtonMapping GamepadButtons[] = {
+    {QLatin1String("ButtonA"), QLatin1String("A"), Confirm},
+    {QLatin1String("ButtonB"), QLatin1String("B"), Cancel},
+    {QLatin1String("ButtonX"), QLatin1String("X"), X},
+    {QLatin1String("ButtonY"), QLatin1String("Y"), Y},
+    {QLatin1String("Menu"), QLatin1String("Start"), Menu},
+    {QLatin1String("View"), QLatin1String("Select"), View},
+    {QLatin1String("DPadUp"), QLatin1String("Up"), Up},
+    {QLatin1String("DPadDown"), QLatin1String("Down"), Down},
+    {QLatin1String("DPadLeft"), QLatin1String("Left"), Left},
+    {QLatin1String("DPadRight"), QLatin1String("Right"), Right},
+    {QLatin1String("LeftShoulder"), QLatin1String("L"), LeftShoulder},
+    {QLatin1String("RightShoulder"), QLatin1String("R"), RightShoulder},
+    {QLatin1String("LeftStickClick"), QLatin1String("L3"), LeftStick},
+    {QLatin1String("RightStickClick"), QLatin1String("R3"), RightStick},
 };
 enum Axis { LeftX, LeftY, RightX, RightY, LeftTrigger, RightTrigger };
-struct AxisDirection { QLatin1StringView name; Axis axis; float sign; };
+struct AxisDirection { QLatin1StringView name; Axis axis; float sign; QLatin1StringView alias{}; };
 inline constexpr AxisDirection Directions[] = {
     {QLatin1String("LeftStickLeft"), LeftX, -1}, {QLatin1String("LeftStickRight"), LeftX, 1},
     {QLatin1String("LeftStickUp"), LeftY, 1}, {QLatin1String("LeftStickDown"), LeftY, -1},
     {QLatin1String("RightStickLeft"), RightX, -1}, {QLatin1String("RightStickRight"), RightX, 1},
     {QLatin1String("RightStickUp"), RightY, 1}, {QLatin1String("RightStickDown"), RightY, -1},
-    {QLatin1String("LeftTrigger"), LeftTrigger, 1}, {QLatin1String("RightTrigger"), RightTrigger, 1},
+    {QLatin1String("LeftTrigger"), LeftTrigger, 1, QLatin1String("L2")},
+    {QLatin1String("RightTrigger"), RightTrigger, 1, QLatin1String("R2")},
 };
 }
 
@@ -60,35 +69,54 @@ struct Input {
     QSet<int> keys;
 };
 
-inline float controllerPressure(QStringView source, const QList<Platform::GamepadState>& controllers) {
+inline float controllerPressure(QStringView source, const Platform::GamepadState& pad,
+    Platform::GamepadState* held = nullptr) {
     if (!source.startsWith(QLatin1String(ControllerPrefix), Qt::CaseInsensitive)) return 0.0f;
     source = source.sliced(QLatin1String(ControllerPrefix).size());
     const auto separator = source.lastIndexOf(Separator);
     const auto device = separator < 0 ? QStringView{} : source.first(separator);
     const auto control = source.sliced(separator + 1);
-    float strongest = 0.0f;
-    const auto valueFor = [&](const Platform::GamepadState& pad) -> float {
-        if (!device.isEmpty() && device.compare(pad.deviceId, Qt::CaseInsensitive) != 0) return 0.0f;
-        for (const auto& [name, button] : Controls::GamepadButtons)
-            if (control.compare(name, Qt::CaseInsensitive) == 0) return (pad.buttons & button) != 0;
-        for (const auto& [name, axis, sign] : Controls::Directions)
-            if (control.compare(name, Qt::CaseInsensitive) == 0) return std::clamp(pad.axes.value(axis) * sign, 0.0f, 1.0f);
-        namespace Raw = Platform::RawGamepad;
-        const auto positive = QLatin1String(PositiveSuffix);
-        const auto negative = QLatin1String(NegativeSuffix);
-        const int direction = control.endsWith(positive, Qt::CaseInsensitive) ? 1 :
-            control.endsWith(negative, Qt::CaseInsensitive) ? -1 : 0;
-        const auto name = direction ? control.chopped(direction > 0 ? positive.size() : negative.size()) : control;
-        for (auto value = pad.controls.constBegin(); value != pad.controls.constEnd(); ++value) {
-            if (name.compare(value.key(), Qt::CaseInsensitive) != 0) continue;
-            if (direction) return Raw::isAxis(value.key()) ?
-                std::clamp(static_cast<float>(direction) * (*value / Raw::AxisCenter - 1.0f), 0.0f, 1.0f) : 0.0f;
-            return std::clamp(*value, 0.0f, 1.0f);
+    const bool guideAlias = control.compare(QLatin1String("Guide"), Qt::CaseInsensitive) == 0;
+    if (!device.isEmpty() && device.compare(pad.deviceId, Qt::CaseInsensitive) != 0) return 0.0f;
+    for (const auto& [name, alias, button] : Controls::GamepadButtons) {
+        if (control.compare(name, Qt::CaseInsensitive) != 0 && control.compare(alias, Qt::CaseInsensitive) != 0)
+            continue;
+        const bool pressed = (pad.buttons & button) != 0;
+        if (held && pressed) held->buttons |= button;
+        return pressed ? 1.0f : 0.0f;
+    }
+    for (const auto& [name, axis, sign, alias] : Controls::Directions) {
+        if (control.compare(name, Qt::CaseInsensitive) != 0 &&
+            (alias.isEmpty() || control.compare(alias, Qt::CaseInsensitive) != 0)) continue;
+        const auto value = pad.axes.value(axis);
+        const auto pressure = std::clamp(value * sign, 0.0f, 1.0f);
+        if (held && pressure > PressedThreshold) {
+            if (held->axes.size() <= axis) held->axes.resize(axis + 1);
+            held->axes[axis] = value;
         }
-        return 0.0f;
-    };
+        return pressure;
+    }
+    namespace Raw = Platform::RawGamepad;
+    const auto positive = QLatin1String(PositiveSuffix);
+    const auto negative = QLatin1String(NegativeSuffix);
+    const int direction = control.endsWith(positive, Qt::CaseInsensitive) ? 1 :
+        control.endsWith(negative, Qt::CaseInsensitive) ? -1 : 0;
+    const auto name = direction ? control.chopped(direction > 0 ? positive.size() : negative.size()) : control;
+    for (auto value = pad.controls.constBegin(); value != pad.controls.constEnd(); ++value) {
+        if (name.compare(value.key(), Qt::CaseInsensitive) != 0 &&
+            !(guideAlias && value.key().compare(QLatin1String(Raw::GuideButton), Qt::CaseInsensitive) == 0)) continue;
+        const auto pressure = !direction ? std::clamp(*value, 0.0f, 1.0f) : Raw::isAxis(value.key()) ?
+            std::clamp(static_cast<float>(direction) * (*value / Raw::AxisCenter - 1.0f), 0.0f, 1.0f) : 0.0f;
+        if (held && pressure > PressedThreshold) held->controls.insert(value.key(), *value);
+        return pressure;
+    }
+    return 0.0f;
+}
+
+inline float controllerPressure(QStringView source, const QList<Platform::GamepadState>& controllers) {
+    float strongest = 0.0f;
     for (const auto& controller : controllers)
-        strongest = std::max(strongest, valueFor(controller));
+        strongest = std::max(strongest, controllerPressure(source, controller));
     return strongest;
 }
 
@@ -140,8 +168,8 @@ inline QStringList newControllerSources(const QList<Platform::GamepadState>& cur
                     initialPad->controls.value(name, Raw::AxisCenter);
                 const float prior = baseline->controls.value(name, rest);
                 const auto activates = [&](float value) {
-                    const auto direction = Raw::direction(name, value);
-                    return std::abs(value - rest) >= RawCaptureDelta && direction * (value - rest) > 0.0f ? direction : 0;
+                    const auto delta = value - rest;
+                    return delta >= RawCaptureDelta ? 1 : delta <= -RawCaptureDelta ? -1 : 0;
                 };
                 const auto direction = activates(*control);
                 if (direction != 0 && direction != activates(prior))
@@ -155,12 +183,12 @@ inline QStringList newControllerSources(const QList<Platform::GamepadState>& cur
         }
         const auto newButtons = pad.buttons & ~baseline->buttons;
         constexpr quint64 DPad = Platform::Up | Platform::Down | Platform::Left | Platform::Right;
-        for (const auto& [name, button] : Controls::GamepadButtons) {
+        for (const auto& [name, alias, button] : Controls::GamepadButtons) {
             const bool hasRawEquivalent = (button & DPad) != 0 ? hasRawSwitches : hasRawButtons;
             if (!hasRawEquivalent && (newButtons & button) != 0) sources.append(prefix + name);
         }
         if (!hasRawAxes) {
-            for (const auto& [name, axis, sign] : Controls::Directions)
+            for (const auto& [name, axis, sign, alias] : Controls::Directions)
                 if (pad.axes.value(axis) * sign > PressedThreshold &&
                     baseline->axes.value(axis) * sign <= PressedThreshold) sources.append(prefix + name);
         }
@@ -245,15 +273,17 @@ inline Chord chord(const QString& configured, bool allowSingleKey = false) {
     return result;
 }
 
-inline bool pressed(const Chord& chord, const Input& input) {
+inline bool pressed(const Chord& chord, const Input& input, bool allowAdditionalKeys = false) {
     if (chord.isEmpty()) return false;
     auto mask = ChordModifiers;
     if (chord.modifiers.testFlag(Qt::KeypadModifier)) mask |= Qt::KeypadModifier;
-    if (chord.keyboard && ((input.modifiers & mask) != chord.modifiers || input.keys != chord.keys)) return false;
+    if (chord.keyboard && ((input.modifiers & mask) != chord.modifiers ||
+        (!allowAdditionalKeys && input.keys != chord.keys) ||
+        (allowAdditionalKeys && !input.keys.contains(chord.keys)))) return false;
     return std::ranges::all_of(chord.sources, [&](const QString& source) { return pressed(QStringView(source), input); });
 }
 
-class OsdDirectionRepeat final {
+class ShortcutRepeat final {
 public:
     using Clock = std::chrono::steady_clock;
 
@@ -281,7 +311,8 @@ inline bool isOsdShortcut(QStringView id) {
     namespace Keys = EmulationKeyboardShortcuts;
     constexpr const Keys::Binding* bindings[]{
         &Keys::OsdWithPause, &Keys::OsdWithoutPause, &Keys::OsdStatistics, &Keys::OsdUp, &Keys::OsdDown,
-        &Keys::OsdLeft, &Keys::OsdRight, &Keys::OsdConfirm, &Keys::OsdCancel};
+        &Keys::OsdLeft, &Keys::OsdRight, &Keys::OsdConfirm, &Keys::OsdCancel,
+        &Keys::ToggleMute, &Keys::VolumeDown, &Keys::VolumeUp};
     const auto suffix = QLatin1String(Keys::AlternativeSuffix);
     const bool alternative = id.endsWith(suffix);
     if (alternative) id = id.chopped(suffix.size());

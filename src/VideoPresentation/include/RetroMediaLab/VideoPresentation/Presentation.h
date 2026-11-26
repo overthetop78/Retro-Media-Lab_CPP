@@ -136,16 +136,6 @@ struct OledProfile {
     bool operator==(const OledProfile&) const = default;
 };
 
-struct StylisticEffects {
-    static constexpr int MaximumIntensity = 100;
-    int grain = 0;
-    int vhs = 0;
-    int chromaticAberration = 0;
-    int bloom = 0;
-    bool sepia = false;
-    bool operator==(const StylisticEffects&) const = default;
-};
-
 struct ImageRestoration {
     static constexpr int MaximumIntensity = 100;
     static constexpr std::array DeditheringLevels{0, 33, 67, MaximumIntensity};
@@ -163,44 +153,34 @@ struct PlasmaProfile {
     bool operator==(const PlasmaProfile&) const = default;
 };
 
-enum class VectorPhosphor { Color, Green, Amber, White, Gray };
+enum class VectorPhosphor { Color, Green, Amber, White };
 
 struct VectorProfile {
-    static constexpr int MaximumIntensity = 100;
+    static constexpr int MinimumBeamWidth = -20;
+    static constexpr int MaximumBeamWidth = 20;
     bool enabled = false;
-    int lineThreshold = 0;
-    int lineIntensity = 0;
     int beamWidth = 0;
-    int beamFocus = MaximumIntensity;
     VectorPhosphor phosphorColor = VectorPhosphor::Color;
-    int haloIntensity = 0;
-    int haloRadius = 0;
-    int persistenceIntensity = 0;
+    int curvature = 0;
     bool operator==(const VectorProfile&) const = default;
 };
 
-enum class VfdColor { Blue, Green, Amber, Red };
-enum class VfdStructure { Graphic, DotMatrix };
+enum class MatrixDefinition { Native, Size16x16, Size32x16, Size32x32, Size64x32, Size64x64, Size128x64, Size128x128, Size256x128, Size256x256 };
+RETROMEDIALAB_VIDEO_PRESENTATION_API QSize matrixSize(MatrixDefinition definition, QSize source);
+
+enum class DotMatrixShape { Round, Square, Rectangle };
+enum class VfdColor { BlueGreen, Green, Blue, White, Amber, Red };
 
 struct VfdProfile {
-    static constexpr int MaximumIntensity = 100;
-    static constexpr int MaximumPersistenceMilliseconds = FixedPixelProfile::ResponseMaximumMilliseconds;
     bool enabled = false;
-    VfdColor color = VfdColor::Blue;
-    VfdStructure structure = VfdStructure::Graphic;
-    int phosphorIntensity = 70;
-    int emissionThreshold = 28;
-    int glassDarkening = 75;
-    int cellSize = 70;
-    int cellGap = 20;
-    int haloIntensity = 25;
-    int haloRadius = 25;
-    int persistenceMilliseconds = 20;
+    VfdColor color = VfdColor::BlueGreen;
+    MatrixDefinition definition = MatrixDefinition::Native;
+    DotMatrixShape shape = DotMatrixShape::Round;
     bool operator==(const VfdProfile&) const = default;
 };
 
-enum class LedMatrixColor { Rgb, Red, Green, Amber, Blue, White };
-enum class LedMatrixShape { Round, Square };
+enum class LedMatrixColor { Rgb, Red, Green, Amber, Blue, White, RedGreen };
+enum class LedMatrixShape { Round, Square, RoundedSquare };
 enum class DisplayTechnology { Normal, Crt, FixedPixel, Plasma, Vector, Vfd, LedMatrix, DotMatrix, SegmentDisplay, EPaper, Projection };
 enum class ScreenType { Host, Crt, Lcd, LedBacklitLcd, Oled, Plasma, Projection, Vector, LedMatrix, DotMatrix, Vfd,
     SegmentDisplay, EPaper };
@@ -210,42 +190,30 @@ RETROMEDIALAB_VIDEO_PRESENTATION_API std::span<const CrtConnection> displayConne
 RETROMEDIALAB_VIDEO_PRESENTATION_API std::span<const PanelDefinition> plasmaDefinitionChoices();
 
 enum class ImageAdjustmentControl { Brightness, Contrast, Gamma, Saturation, Sharpness };
-enum class DotMatrixPalette { Green, Gray, Amber, Blue, Rgb, Red, White };
-enum class DotMatrixShape { Round, Square, Rectangle };
+enum class DotMatrixPalette { Black, Gray, Green, Amber, Red, Blue, Rgb };
+enum class DotMatrixTechnology { Reflective, Backlit, Emissive };
 
 struct DotMatrixProfile {
-    static constexpr int MaximumIntensity = 100;
-    static constexpr int MaximumDurationMilliseconds = FixedPixelProfile::ResponseMaximumMilliseconds;
     bool enabled = false;
     DotMatrixPalette palette = DotMatrixPalette::Green;
     DotMatrixShape shape = DotMatrixShape::Round;
-    int dotSize = 55;
-    int contrast = 70;
-    int responseTimeMilliseconds = 120;
-    int cellSize = 25;
-    int cellGap = 20;
-    int brightness = 80;
-    int haloIntensity = 15;
-    int persistenceMilliseconds = 0;
+    MatrixDefinition definition = MatrixDefinition::Native;
+    DotMatrixTechnology technology = DotMatrixTechnology::Reflective;
     bool operator==(const DotMatrixProfile&) const = default;
 };
 
 struct LedMatrixProfile {
-    static constexpr int MaximumIntensity = 100;
     bool enabled = false;
     LedMatrixColor color = LedMatrixColor::Rgb;
     LedMatrixShape shape = LedMatrixShape::Round;
-    int cellSize = 35;
-    int cellGap = 30;
-    int diffusion = 20;
-    int brightness = 75;
-    int haloRadius = 25;
-    int blackDepth = MaximumIntensity;
+    MatrixDefinition definition = MatrixDefinition::Native;
     bool operator==(const LedMatrixProfile&) const = default;
 };
 
 enum class SegmentLayout { Seven, Fourteen, Sixteen };
-enum class SegmentColor { Red, Green, Amber, Blue, White };
+enum class SegmentColor { Red, Green, Amber, Blue, White, Black, Gray, BlueGreen };
+enum class SegmentDisplayTechnology { Led, Lcd, Vfd };
+RETROMEDIALAB_VIDEO_PRESENTATION_API std::span<const SegmentColor> segmentColors(SegmentDisplayTechnology);
 enum class SegmentEndShape { Beveled, Rounded, Straight };
 
 struct SegmentDisplayProfile {
@@ -271,26 +239,16 @@ struct SegmentDisplayProfile {
     int blackDepth = MaximumIntensity;
     int haloRadius = 25;
     int persistenceMilliseconds = 60;
+    SegmentDisplayTechnology technology = SegmentDisplayTechnology::Led;
     bool operator==(const SegmentDisplayProfile&) const = default;
 };
 
-enum class EPaperColorMode { Monochrome, Grayscale16, Color4096 };
+enum class EPaperColorMode { Monochrome, Grayscale16, Color4096, TricolorRed, TricolorYellow, Gallery };
 
 struct EPaperProfile {
-    static constexpr int MaximumIntensity = 100;
-    static constexpr int MaximumDurationMilliseconds = 1000;
     EPaperColorMode colorMode = EPaperColorMode::Monochrome;
     bool enabled = false;
-    int contrast = 70;
-    int dithering = 35;
-    int refreshTimeMilliseconds = 500;
-    int ghosting = 20;
-    int inkDensity = 90;
-    int paperBrightness = 90;
-    int paperWarmth = 35;
-    int colorSaturation = 55;
-    int surfaceTexture = 10;
-    int edgeSoftness = 10;
+    PanelDefinition definition = PanelDefinition::Native;
     bool operator==(const EPaperProfile&) const = default;
 };
 
@@ -319,7 +277,6 @@ struct Profile {
     ImageAdjustments adjustments;
     QHash<ScreenType, ImageAdjustments> screenAdjustments;
     SignalSimulation signal;
-    StylisticEffects stylistic;
     ImageRestoration restoration;
     PlasmaProfile plasma;
     VectorProfile vector;
@@ -409,8 +366,12 @@ public:
     void setProfile(Profile);
     void setEmulationRunning(bool);
     void submit(std::shared_ptr<const Emulation::VideoFrame>);
+    void submit(std::shared_ptr<const Emulation::VideoFrame>, std::optional<Emulation::VideoSegmentLevels>);
+    void submit(std::shared_ptr<const Emulation::VideoFrame>, std::optional<Emulation::VideoSegmentLevels>,
+        Emulation::VideoVectorSegments);
     void clear();
     void setStatistics(QString);
+    void setOsdTransparency(int percent);
     void setIndicator(QString);
     void setShaderLoadingObserver(std::function<void(bool)>);
     bool isShaderLoading() const noexcept;
@@ -436,7 +397,7 @@ private:
     void compose(bool advance = false);
     void refreshViewport();
     void presentImage(QImage, QSize sourceSize, double aspectRatio, std::optional<Sampling> hardwareSampling = {}, ImageAdjustments hardwareAdjustments = {},
-        ImageRestoration hardwareRestoration = {}, bool hardwareCrt = false);
+        ImageRestoration hardwareRestoration = {}, DisplayTechnology hardwareDisplay = DisplayTechnology::Normal);
     void draw(QPainter&, bool openGl = false);
     void drawOverlay(QPainter&);
     QRect imageViewport() const;
@@ -450,6 +411,7 @@ private:
     Direct3DSurface* d3dSurface_ = nullptr;
 #endif
     QImage overlay_;
+    int osdTransparency_ = 0;
     Profile profile_;
     std::shared_ptr<const Emulation::VideoFrame> frame_;
     QImage source_, previousField_, sameParity_, previousComplement_, image_;

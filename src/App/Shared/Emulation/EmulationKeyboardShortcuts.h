@@ -26,6 +26,8 @@ inline constexpr Binding Screenshot{"screenshot", Modifiers | Qt::Key_F9};
 inline constexpr Binding ToggleFullscreen{"toggle-fullscreen", Modifiers | Qt::Key_F11};
 inline constexpr Binding ReleaseMouse{"release-mouse", Modifiers | Qt::Key_F12};
 inline constexpr Binding ToggleMute{"toggle-mute", Modifiers | Qt::Key_M};
+inline constexpr Binding VolumeDown{"volume-down", Modifiers | Qt::Key_Left};
+inline constexpr Binding VolumeUp{"volume-up", Modifiers | Qt::Key_Right};
 inline constexpr Binding OsdWithPause{"osd-with-pause", KeypadModifiers | Qt::Key_Slash, true};
 inline constexpr Binding OsdWithoutPause{"osd-without-pause", KeypadModifiers | Qt::Key_Asterisk, true};
 inline constexpr Binding OsdStatistics{"osd-statistics", KeypadModifiers | Qt::Key_Minus};
@@ -35,6 +37,14 @@ inline constexpr Binding OsdLeft{"osd-left", Qt::Key_Left, true};
 inline constexpr Binding OsdRight{"osd-right", Qt::Key_Right, true};
 inline constexpr Binding OsdConfirm{"osd-confirm", Qt::Key_Return, true};
 inline constexpr Binding OsdCancel{"osd-cancel", Qt::Key_Escape, true};
+
+inline constexpr bool isOsdToggle(const Binding& binding) {
+    return &binding == &OsdWithPause || &binding == &OsdWithoutPause || &binding == &OsdStatistics;
+}
+
+inline constexpr bool isVolumeShortcut(const Binding& binding) {
+    return &binding == &VolumeDown || &binding == &VolumeUp;
+}
 
 inline constexpr bool isOsdDirection(const Binding& binding) {
     return &binding == &OsdUp || &binding == &OsdDown || &binding == &OsdLeft || &binding == &OsdRight;

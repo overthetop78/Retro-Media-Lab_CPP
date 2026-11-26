@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "The emulator requires media before this machine can be powered on. Insert or configure one of the required media shown below.",
+    "Emulation.Error.PowerFailureTitle": "Unable to power on the machine",
+    "Emulation.Error.Machine": "Machine",
+    "Emulation.Error.RequiredMedia": "Required media",
+    "Emulation.Error.Title": "Emulation error",
+    "Emulation.Error.EmulatorNotInstalled": "The required emulator is not installed.",
+    "Emulation.Error.EmulatorUpdateBlocked": "The emulator cannot be updated while it is in use.",
+    "Emulation.Error.FirmwareMissing": "Required firmware is missing.",
+    "Emulation.Error.FirmwareIncompatible": "The selected firmware is incompatible with this machine.",
+    "Emulation.Error.MediaNotFound": "The configured media file was not found.",
+    "Emulation.Error.MediaUnsupported": "The selected media is not supported by this emulator.",
+    "Emulation.Error.OptionInvalid": "An emulator option is invalid.",
+    "Emulation.Error.HostCommunicationFailed": "Communication with the emulator process failed.",
+    "Emulation.Error.MachineStartFailed": "The emulated machine could not be started.",
+    "Emulation.Error.MediaOperationFailed": "The media operation failed.",
+    "Emulation.Error.SavedStateInvalid": "The saved state is invalid or damaged.",
+    "Emulation.Error.SavedStateIncompatible": "The saved state is not compatible with this machine configuration.",
+    "Emulation.Error.SavedStateOperationFailed": "The saved-state operation failed."
+  }
+}

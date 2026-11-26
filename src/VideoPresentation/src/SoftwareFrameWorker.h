@@ -20,6 +20,8 @@ public:
         SignalSimulation signal;
         std::shared_ptr<const Emulation::VideoFrame> frame;
         bool advance;
+        std::optional<Emulation::VideoSegmentLevels> segmentLevels;
+        Emulation::VideoVectorSegments vectors;
     };
 
     using Present = std::function<void(QImage, QSize, double)>;
@@ -72,7 +74,7 @@ private:
             if (reset) history = {};
             QImage image;
             try {
-                image = process(work.source, work.profile, work.signal, *work.frame, work.outputSize, history, work.advance);
+                image = process(work.source, work.profile, work.signal, *work.frame, work.outputSize, history, work.advance, work.segmentLevels, std::move(work.vectors));
             } catch (...) {
                 history = {};
                 continue;

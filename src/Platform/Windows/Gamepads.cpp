@@ -38,6 +38,7 @@ constexpr auto ControllerKinds = static_cast<GameInputKind>(GameInputKindGamepad
     GameInputKindArcadeStick | GameInputKindFlightStick | GameInputKindRacingWheel);
 constexpr auto InputKinds = static_cast<GameInputKind>(ControllerKinds | GameInputKindRawDeviceReport);
 constexpr auto CreateExport = "GameInputCreate";
+constexpr auto SystemButtonFilter = static_cast<GameInputSystemButtons>(GameInputSystemButtonGuide | GameInputSystemButtonShare);
 constexpr auto CallbackDrainTimeout = (std::numeric_limits<uint64_t>::max)();
 static_assert(Confirm == static_cast<quint64>(GameInputGamepadA));
 static_assert(Cancel == static_cast<quint64>(GameInputGamepadB));
@@ -198,7 +199,7 @@ void applyControllerMapping(const ControllerMapping& mapping, const RawControlle
         reading.stick(mapping.controls.value("rightx")), reading.stick(mapping.controls.value("righty")),
         reading.value(mapping.controls.value("lefttrigger")), reading.value(mapping.controls.value("righttrigger"))};
     if (const auto guide = mapping.controls.constFind("guide"); guide != mapping.controls.constEnd())
-        state.controls.insert(QLatin1String("XboxButton"), reading.value(guide.value()));
+        state.controls.insert(QLatin1String(RawGamepad::GuideButton), reading.value(guide.value()));
 }
 
 class RawControllerFallback {
@@ -327,10 +328,18 @@ struct GamepadSource::State {
         if (!create || FAILED(create(input_.GetAddressOf()))) return;
         registered_ = SUCCEEDED(input_->RegisterDeviceCallback(nullptr, InputKinds,
             GameInputDeviceConnected, GameInputBlockingEnumeration, this, &deviceChanged, &token_));
+        if (registered_) {
+            systemButtonsRegistered_ = SUCCEEDED(input_->RegisterSystemButtonCallback(nullptr, SystemButtonFilter,
+                this, &systemButtonsChanged, &systemButtonsToken_));
+        }
     }
 
     ~State() {
         stopRumble();
+        if (systemButtonsRegistered_) {
+            input_->StopCallback(systemButtonsToken_);
+            input_->UnregisterCallback(systemButtonsToken_, CallbackDrainTimeout);
+        }
         if (registered_) {
             input_->StopCallback(token_);
             input_->UnregisterCallback(token_, CallbackDrainTimeout);
@@ -344,6 +353,8 @@ struct GamepadSource::State {
         ControllerIdentity identity;
         GameInputReportControls reportControls;
         GameInputRumbleMotors motors;
+        GameInputSystemButtons supportedSystemButtons;
+        GameInputSystemButtons systemButtons{};
     };
 
     QList<GamepadRumbleDevice> rumbleDevices() {
@@ -431,6 +442,14 @@ struct GamepadSource::State {
             if (controls.isEmpty() && !controller.reportControls.isEmpty())
                 readReportControls(controller, controls);
             if ((controller.kinds & ControllerKinds) == 0 && controls.isEmpty()) continue;
+            if (systemButtonsRegistered_) {
+                if ((controller.supportedSystemButtons & GameInputSystemButtonGuide) != 0)
+                    controls.insert(QLatin1String(RawGamepad::GuideButton),
+                        (controller.systemButtons & GameInputSystemButtonGuide) != 0 ? 1.0f : 0.0f);
+                if ((controller.supportedSystemButtons & GameInputSystemButtonShare) != 0)
+                    controls.insert(QLatin1String(RawGamepad::ShareButton),
+                        (controller.systemButtons & GameInputSystemButtonShare) != 0 ? 1.0f : 0.0f);
+            }
             usableDevices.append(controller.identity);
             result.append(GamepadState{id, static_cast<quint64>(state.buttons), {state.leftThumbstickX, state.leftThumbstickY,
                 state.rightThumbstickX, state.rightThumbstickY, state.leftTrigger, state.rightTrigger}, controller.id, std::move(controls)});
@@ -510,11 +529,24 @@ private:
                     const auto* name = info->displayName;
                     self.devices_.emplace(++self.lastId_, ConnectedDevice{ComPtr<IGameInputDevice>(device), id, info->supportedInput,
                         {info->vendorId, info->productId, name ? QString::fromUtf8(name->data) : QString{}},
-                        std::move(reportControls), info->supportedRumbleMotors});
+                        std::move(reportControls), info->supportedRumbleMotors, info->supportedSystemButtons});
                 }
             } else if (found != self.devices_.end()) {
                 self.devices_.erase(found);
             }
+        } catch (...) {
+            // Exceptions cannot cross the GameInput callback boundary.
+        }
+    }
+
+    static void CALLBACK systemButtonsChanged(GameInputCallbackToken, void* context, IGameInputDevice* device,
+        uint64_t, GameInputSystemButtons current, GameInputSystemButtons) noexcept {
+        auto& self = *static_cast<State*>(context);
+        try {
+            const std::lock_guard lock(self.mutex_);
+            const auto found = std::ranges::find_if(self.devices_,
+                [device](const auto& entry) { return entry.second.device.Get() == device; });
+            if (found != self.devices_.end()) found->second.systemButtons = current;
         } catch (...) {
             // Exceptions cannot cross the GameInput callback boundary.
         }
@@ -530,6 +562,8 @@ private:
     quint64 lastId_ = 0;
     GameInputCallbackToken token_{};
     bool registered_ = false;
+    GameInputCallbackToken systemButtonsToken_{};
+    bool systemButtonsRegistered_ = false;
     RawControllerFallback rawFallback_;
     QHash<QString, ActiveRumble> activeRumble_;
 };

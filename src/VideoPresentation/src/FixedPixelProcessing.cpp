@@ -60,11 +60,23 @@ std::vector<quint8> ledBacklightZones(const QImage& source, LedBacklightType typ
     return levels;
 }
 
+LcdOptics lcdOptics(LcdPanelType panel) {
+    switch (panel) {
+    case LcdPanelType::Tn: return {.005f, .0036f, 5.f};
+    case LcdPanelType::Va: return {.0004f, .0011f, 11.f};
+    default: return {.0018f, .0048f, 8.f};
+    }
+}
+
+float oledLimiter(OledPanelType panel) {
+    return panel == OledPanelType::Woled ? .32f : panel == OledPanelType::QdOled ? .22f : .10f;
+}
+
 void applyLedBacklight(std::vector<LinearColor>& colors, QSize output, QSize source, const std::vector<quint8>& zones,
         const LedBacklightProfile& profile) {
     const float gain = std::pow(float(std::clamp(profile.intensity, 0, FixedPixelProfile::PercentMaximum)) /
         FixedPixelProfile::PercentMaximum, .8f);
-    const float black = profile.panelType == LcdPanelType::Tn ? .005f : profile.panelType == LcdPanelType::Ips ? .0018f : .0004f;
+    const float black = lcdOptics(profile.panelType).black;
     const bool edgeLighting = profile.type == LedBacklightType::Edge;
     constexpr float SignalMaximum = 255.f;
     for (int y = 0; y < output.height(); ++y) {
@@ -181,7 +193,7 @@ float oledFrameLight(const QImage& source) {
 }
 
 void applyOledLight(std::vector<LinearColor>& colors, OledPanelType panel, float frameLight) {
-    const float limiter = panel == OledPanelType::Woled ? .32f : panel == OledPanelType::QdOled ? .22f : .10f;
+    const float limiter = oledLimiter(panel);
     const float gain = 1.f - limiter * smooth((frameLight - .18f) / .72f);
     for (auto& color : colors) {
         if (panel == OledPanelType::Woled) {
@@ -219,8 +231,7 @@ void applyLcdStructure(std::vector<LinearColor>& colors, QSize output, QSize pan
 void applyLcdLight(std::vector<LinearColor>& colors, QSize size, const LcdProfile& profile) {
     const float gain = std::pow(float(std::clamp(profile.intensity, 0, FixedPixelProfile::PercentMaximum)) /
         FixedPixelProfile::PercentMaximum, .8f);
-    const auto [black, leak] = profile.panelType == LcdPanelType::Tn ? std::pair{.005f, .0036f} :
-        profile.panelType == LcdPanelType::Ips ? std::pair{.0018f, .0048f} : std::pair{.0004f, .0011f};
+    const auto optics = lcdOptics(profile.panelType);
     const float spread = std::max(1.f, size.height() * .055f);
     const auto band = [](float distance) { return smooth(1.f - std::abs(distance)); };
     for (int y = 0; y < size.height(); ++y) {
@@ -235,7 +246,7 @@ void applyLcdLight(std::vector<LinearColor>& colors, QSize size, const LcdProfil
                 bottom * std::lerp(bottomTight, bottomBroad, bottom);
             auto& color = colors[size_t(y) * size.width() + x];
             const float dark = unit(1.f - luma(color) / .22f);
-            const float floor = black + leak * edge * dark * dark;
+            const float floor = optics.black + optics.leak * edge * dark * dark;
             for (auto& channel : color)
                 channel = unit(gain * (floor + channel * (1.f - floor)));
         }
@@ -282,7 +293,7 @@ void applyLcdResponse(std::vector<LinearColor>& colors, QSize output, LcdPanelTy
             return;
         }
         const double elapsed = std::max(.001, std::chrono::duration<double, std::milli>(timestamp - history.timestamp).count());
-        const float base = panel == LcdPanelType::Tn ? 5.f : panel == LcdPanelType::Va ? 11.f : 8.f;
+        const float base = lcdOptics(panel).responseMilliseconds;
         const auto blend = [elapsed](float milliseconds) { return float(-std::expm1(-elapsed / milliseconds)); };
         const float response = blend(base);
         for (size_t i = 0; i < colors.size(); ++i) {

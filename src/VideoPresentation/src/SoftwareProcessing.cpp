@@ -2,9 +2,10 @@
 #include "SamplingFilters.h"
 #include "CrtProcessing.h"
 #include "FixedPixelProcessing.h"
-#include "StylisticProcessing.h"
 #include "RestorationProcessing.h"
 #include "LedMatrixProcessing.h"
+#include "VfdProcessing.h"
+#include "DotMatrixProcessing.h"
 #include "PlasmaProcessing.h"
 #include "VectorProcessing.h"
 #include "ColorTransfer.h"
@@ -202,7 +203,6 @@ bool requiresProcessing(const Profile& profile, SignalSimulation signal, QSize i
     const auto restoration = restorationForDisplay(profile);
     const bool displayFilter = !outputSize.isEmpty() &&
         (profile.displayTechnology() != DisplayTechnology::Normal || usesSoftwareSampling(profile.displaySampling()) ||
-            normalized(profile.stylistic) != StylisticEffects{} ||
             (restoration.detailRecovery > 0 && profile.displaySampling() != Sampling::Nearest && outputSize != inputSize));
     const bool usesOwnSignal = profile.displayTechnology() == DisplayTechnology::Crt || profile.panelSignal();
     return displayFilter || (!usesOwnSignal && hasSignalEffect(normalized(signal))) || profile.effectiveImageAdjustments() != ImageAdjustments{} ||
@@ -210,36 +210,36 @@ bool requiresProcessing(const Profile& profile, SignalSimulation signal, QSize i
 }
 
 QImage process(const QImage& input, const Profile& profile, SignalSimulation signal,
-        const Emulation::VideoFrame& frame, QSize outputSize, DisplayHistory& history, bool advance) {
+        const Emulation::VideoFrame& frame, QSize outputSize, DisplayHistory& history, bool advance,
+        std::optional<Emulation::VideoSegmentLevels> segmentLevels, Emulation::VideoVectorSegments vectors) {
     const auto technology = outputSize.isEmpty() ? DisplayTechnology::Normal : profile.displayTechnology();
     const bool crt = technology == DisplayTechnology::Crt;
     const bool dlp = technology == DisplayTechnology::Projection &&
         profile.projection.technology == ProjectionTechnology::SingleChipDlp;
     if ((!dlp || input.isNull()) && !history.projection.previous.isNull()) history.projection = {};
-    if (input.isNull() || !requiresProcessing(profile, signal, input.size(), outputSize)) return input;
+    const bool vectorDisplay = technology == DisplayTechnology::Vector;
+    const bool nativeVectors = vectorDisplay && bool(vectors);
+    if (!vectorDisplay) history.vector = {};
+    if ((input.isNull() && !nativeVectors) || !requiresProcessing(profile, signal, input.size(), outputSize)) return input;
     const auto settings = profile.effectiveImageAdjustments();
     const bool fixedPixel = technology == DisplayTechnology::FixedPixel;
     const bool plasma = technology == DisplayTechnology::Plasma;
     const bool oled = fixedPixel && profile.fixedPixel.technology == FixedPixelTechnology::Oled;
     const bool ledBacklit = fixedPixel && profile.fixedPixel.technology == FixedPixelTechnology::LedBacklitLcd;
-    const bool vectorDisplay = technology == DisplayTechnology::Vector;
     const bool vfd = technology == DisplayTechnology::Vfd;
     const bool dotMatrix = technology == DisplayTechnology::DotMatrix;
     const auto crtProfile = normalized(profile.crt);
     const LcdProfile& lcd = ledBacklit ? static_cast<const LcdProfile&>(profile.ledBacklight) : profile.lcd;
     const auto vectorProfile = normalized(profile.vector);
-    const auto vfdProfile = normalized(profile.vfd);
-    const auto dot = normalized(profile.dotMatrix);
     const auto segments = normalized(profile.segmentDisplay);
-    const auto ePaper = normalized(profile.ePaper);
+    const auto& ePaper = profile.ePaper;
     const bool electronicPaper = technology == DisplayTechnology::EPaper;
     const bool segmentDisplay = technology == DisplayTechnology::SegmentDisplay;
-    const auto stylistic = normalized(profile.stylistic);
     const auto restoration = restorationForDisplay(profile);
     const bool recover = restoration.detailRecovery > 0 && profile.displaySampling() != Sampling::Nearest &&
         !outputSize.isEmpty() && outputSize != input.size();
     const bool softwareSampling = usesSoftwareSampling(profile.displaySampling()) && !outputSize.isEmpty();
-    const bool displayFilter = technology != DisplayTechnology::Normal || softwareSampling || recover || (stylistic != StylisticEffects{} && !outputSize.isEmpty());
+    const bool displayFilter = technology != DisplayTechnology::Normal || softwareSampling || recover;
     signal = normalized(signal);
     const auto* panel = profile.panelSignal();
     const bool analog = profile.displayTechnology() != DisplayTechnology::Crt && !panel && hasSignalEffect(signal);
@@ -264,7 +264,7 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
     const auto transform = [&](Color color) {
         for (auto& channel : color) {
             if (settings.contrast) channel = std::clamp(MiddleGray + (channel - MiddleGray) * gain, 0.f, 1.f);
-            if (settings.brightness && !crt) channel = std::lerp(channel, amount < 0 ? 0.f : 1.f, std::abs(amount));
+            if (settings.brightness && !crt && !vectorDisplay) channel = std::lerp(channel, amount < 0 ? 0.f : 1.f, std::abs(amount));
         }
         if (settings.gamma) {
             const float light = luminance(color);
@@ -282,14 +282,16 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
         }
         return color;
     };
-    QImage output(width, height, input.format());
+    QImage output(width, height, nativeVectors ? QImage::Format_RGB32 : input.format());
     if (output.isNull()) return output;
     std::vector<Color> colors;
     std::vector<quint8> backlightZones;
     float oledLight = 0.f, plasmaLight = 0.f;
     const auto position = [width](int x, int y) { return size_t(y) * size_t(width) + size_t(x); };
-    if (displayFilter || analog || settings.sharpness || restoration.dedithering || restoration.debanding) {
-        const auto prepared = dedither(input, restoration.dedithering);
+    if (nativeVectors) {
+        colors.resize(size_t(width) * height);
+    } else if (displayFilter || analog || settings.sharpness || restoration.dedithering || restoration.debanding) {
+        const auto prepared = vectorDisplay ? input : dedither(input, restoration.dedithering);
         auto source = prepared;
         if (crt) source = filterCrtConnection(prepared, crtProfile, frame);
         else if (panel) source = filterPanelSignal(prepared, *panel, frame);
@@ -304,9 +306,18 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
                 colors[size_t(y) * size_t(inputWidth) + size_t(x)] = decode(source.pixel(x, y));
         const auto reference = recover ? colors : std::vector<Color>{};
         deband(colors, source.size(), restoration.debanding);
-        if (analog) simulateSignal(colors, inputWidth, inputHeight, frame.sequence, signal);
-        const auto panelSize = panel ? panel->panelSize(source.size()) : source.size();
-        if (panel && (panelSize != source.size() || panelSize != size)) {
+        if (analog && !vectorDisplay) simulateSignal(colors, inputWidth, inputHeight, frame.sequence, signal);
+        const auto panelSize = electronicPaper ? DisplaySignalProfile{.definition = ePaper.definition}.panelSize(source.size()) :
+            panel ? panel->panelSize(source.size()) : source.size();
+        const bool ledMatrix = technology == DisplayTechnology::LedMatrix;
+        if (ledMatrix || vfd || dotMatrix) {
+            if (settings != ImageAdjustments{}) {
+                for (auto& color : colors) color = transform(color);
+            }
+            if (vfd) applyVfd(colors, size, source.size(), profile.vfd);
+            else if (dotMatrix) applyDotMatrix(colors, size, source.size(), profile.dotMatrix);
+            else applyLedMatrix(colors, size, source.size(), profile.ledMatrix);
+        } else if ((panel || electronicPaper) && (panelSize != source.size() || panelSize != size)) {
             const auto project = [](int position, int from, int to) {
                 return int((2 * qint64(position) + 1) * to / (2 * qint64(from)));
             };
@@ -343,7 +354,9 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
                 for (int x = 0; x < width; ++x) {
                     const auto column = (float(x) + .5f) / scaleX - .5f;
                     auto& target = resampled[position(x, y)];
-                    if (profile.displaySampling() == Sampling::Nearest) {
+                    if (vectorDisplay) {
+                        target = filterSample(Sampling::Linear, sample, column, row, scaleX, scaleY);
+                    } else if (profile.displaySampling() == Sampling::Nearest) {
                         target = sample(int(std::floor(column + .5f)), int(std::floor(row + .5f)));
                     } else if (perceptualSampling) {
                         target = filterPerceptualSample(profile.displaySampling(), sample, sampleEncoded, column, row);
@@ -355,9 +368,14 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
             colors = std::move(resampled);
         }
         if (recover) recoverDetail(reference, source.size(), colors, size, restoration.detailRecovery);
-        if (settings != ImageAdjustments{}) {
+        if (!ledMatrix && !vfd && !dotMatrix && !vectorDisplay && settings != ImageAdjustments{}) {
             for (auto& color : colors) color = transform(color);
         }
+    }
+    if (vectorDisplay) {
+        renderVector(colors, size, vectorProfile, settings.brightness, frame, vectors, history.vector);
+        if (settings != ImageAdjustments{})
+            for (auto& color : colors) color = transform(color);
     }
     const auto component = [](float value) { return int(std::nearbyint(srgb(value) * ColorMaximum)); };
     if (!displayFilter || settings.sharpness) {
@@ -407,23 +425,18 @@ QImage process(const QImage& input, const Profile& profile, SignalSimulation sig
         }
         if (plasma)
             applyPlasma(colors, size, panel->panelSize(input.size()), frame.sequence, profile.plasma.cellStructure, plasmaLight);
-        if (vectorDisplay) applyVector(colors, size, vectorProfile);
-        if (vfd) applyVfd(colors, size, input.size(), vfdProfile);
-        if (technology == DisplayTechnology::LedMatrix) applyLedMatrix(colors, size, input.size(), normalized(profile.ledMatrix));
-        if (dotMatrix) applyDotMatrix(colors, size, input.size(), dot);
-        if (segmentDisplay) applySegmentDisplay(colors, size, input.size(), segments);
-        if (electronicPaper) applyEPaper(colors, size, ePaper);
+        const bool nativeSegments = segmentDisplay && segmentLevels && applyNativeSegments(colors, size, segments, frame, *segmentLevels);
+        if (segmentDisplay && !nativeSegments) applySegmentDisplay(colors, size, input.size(), segments);
+        if (electronicPaper) applyEPaper(colors, ePaper.colorMode);
         if (technology == DisplayTechnology::Projection)
             applyProjection(colors, size, input.size(), profile.projectionSignal.panelSize(input.size()), normalized(profile.projection));
         if (ledBacklit) applyLedBacklight(colors, size, input.size(), backlightZones, profile.ledBacklight);
-        if (stylistic != StylisticEffects{}) applyStylistic(colors, size, frame.sequence, stylistic);
         if (fixedPixel && !oled) applyLcdResponse(colors, size, lcd.panelType, frame.timestamp, history.fixedPixel, advance);
         if (plasma) applyPlasmaPersistence(colors, size, frame.sequence, history.plasma, advance);
-        if (vectorDisplay) applyVectorPersistence(colors, size, frame.sequence, vectorProfile.persistenceIntensity, history.vector, advance);
-        if (vfd) applyVfdPersistence(colors, size, frame.timestamp, vfdProfile.persistenceMilliseconds, history.vfd, advance);
-        if (dotMatrix) applyDotMatrixTemporal(colors, size, frame.timestamp, dot, history.dotMatrix, advance);
-        if (segmentDisplay) applySegmentTemporal(colors, size, frame.timestamp, segments, history.segmentDisplay, advance);
-        if (electronicPaper) applyEPaperTemporal(colors, size, frame.timestamp, ePaper, history.ePaper, advance);
+        if (nativeSegments || !segmentDisplay) history.segmentDisplay = {};
+        else applySegmentTemporal(colors, size, frame.timestamp, segments, history.segmentDisplay, advance);
+        if (electronicPaper) applyEPaperTemporal(colors, size, frame.timestamp, ePaper, history.ePaper);
+        else history.ePaper = {};
         if (crtSignal) applyCrtMask(colors, size, crtProfile, *crtSignal, beamGain);
         for (int y = 0; y < height; ++y) {
             auto* row = reinterpret_cast<QRgb*>(output.scanLine(y));

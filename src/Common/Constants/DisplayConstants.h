@@ -4,6 +4,10 @@
 namespace RetroMediaLab::DisplayConstants {
 inline constexpr auto Preference = "interfaceScale";
 inline constexpr int DefaultPercent = 100;
+inline constexpr int MinimumOsdTransparency = 0;
+inline constexpr int MaximumOsdTransparency = 100;
+inline constexpr int DefaultOsdTransparency = 5;
+inline constexpr auto OsdTransparencyLabel = "Emulation.Osd.Transparency";
 inline constexpr std::array<int, 6> Percentages{50, 75, 100, 125, 150, 200};
 inline constexpr auto Title = "Display.Size";
 inline constexpr auto PercentLabel = "Display.Percent";

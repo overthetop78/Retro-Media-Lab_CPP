@@ -1,5 +1,7 @@
 #include "EmulationStoragePanel.h"
+#include "ModuleSettingPresentation.h"
 #include "Shared/Emulation/EmulationWorkspace.h"
+#include "Shared/Emulation/ModuleNumericSetting.h"
 #include "Shared/Controls/RememberedFileDialog.h"
 #include <RetroMediaLab/Translations/TranslationService.h>
 #include <QCheckBox>
@@ -62,9 +64,11 @@ const char* typeKey(MediaKind kind) {
 }
 
 EmulationStoragePanel::EmulationStoragePanel(StorageSettings settings, WorkspaceState& workspace,
-    const Translations::TranslationService& translations, QString scope, Localize localize, QWidget* parent)
+    const Translations::TranslationService& translations, QString scope, Localize localize,
+    QHash<QString, QString> detailedHelpResourceKeys, QWidget* parent)
     : QWidget(parent), settings_(std::move(settings)), workspace_(workspace), translations_(translations),
-      scope_(std::move(scope)), localize_(std::move(localize)), devices_(new QListWidget(this)),
+      scope_(std::move(scope)), localize_(std::move(localize)),
+      detailedHelpResourceKeys_(std::move(detailedHelpResourceKeys)), devices_(new QListWidget(this)),
       add_(new QPushButton(label("Emulation.Storage.Device.Add"), this)),
       remove_(new QPushButton(label("Emulation.Storage.Media.Remove"), this)),
       configure_(new QPushButton(label("Emulation.Storage.Device.Configure"), this)), status_(new QLabel(this)) {
@@ -672,12 +676,16 @@ void EmulationStoragePanel::configureDevice() {
         form->addRow(control);
         return control;
     };
-    const auto addChoice = [&](const QString& caption, const QList<SettingsChoice>& choices, const QString& value) {
+    const auto createChoice = [&](const QList<SettingsChoice>& choices, const QString& value) {
         auto* control = new QComboBox(&dialog);
         for (const auto& choice : choices) control->addItem(choice.invariantDisplayValue.isEmpty()
             ? localize_(choice.displayResourceKey) : choice.invariantDisplayValue, choice.id);
         const int index = control->findData(value);
         if (index >= 0) control->setCurrentIndex(index);
+        return control;
+    };
+    const auto addChoice = [&](const QString& caption, const QList<SettingsChoice>& choices, const QString& value) {
+        auto* control = createChoice(choices, value);
         form->addRow(caption, control);
         return control;
     };
@@ -744,20 +752,36 @@ void EmulationStoragePanel::configureDevice() {
         if (!field.visible) return;
         const auto caption = localize_(field.labelResourceKey);
         const auto initial = options->value(field.id, field.value);
-        if (field.editor == SettingsEditor::Toggle) {
-            auto* control = addToggle(caption, initial == field.enabledValue);
+        const auto detailed = detailedHelpResourceKeys_.value(field.id);
+        const auto addRow = [&](QWidget* control) {
+            addModuleSettingRow(*form, control, caption,
+                field.explanationResourceKey.isEmpty() ? QString{} : localize_(field.explanationResourceKey),
+                detailed.isEmpty() ? QString{} : localize_(detailed));
+        };
+        if (field.editor == SettingsEditor::Information) {
+            auto current = field;
+            current.value = initial;
+            auto* control = new QLabel(moduleFieldDisplay(current, {}, localize_), &dialog);
+            control->setTextFormat(Qt::PlainText);
+            control->setWordWrap(true);
+            addRow(control);
+        } else if (field.editor == SettingsEditor::Toggle) {
+            auto* control = new QCheckBox(&dialog);
+            control->setChecked(initial == field.enabledValue);
             control->setEnabled(field.enabled);
+            addRow(control);
             if (field.enabled) values.append({field.id, [control, field] {
                 return control->isChecked() ? field.enabledValue : field.disabledValue;
             }});
         } else if (!field.choices.isEmpty()) {
-            auto* control = addChoice(caption, field.choices, initial);
+            auto* control = createChoice(field.choices, initial);
             control->setEnabled(field.enabled);
+            addRow(control);
             if (field.enabled) values.append({field.id, [control] { return control->currentData().toString(); }});
         } else {
             auto* control = new QLineEdit(initial, &dialog);
-            control->setReadOnly(!field.enabled || field.editor == SettingsEditor::Information);
-            form->addRow(caption, control);
+            control->setReadOnly(!field.enabled);
+            addRow(control);
             if (!control->isReadOnly()) values.append({field.id, [control] { return control->text(); }});
         }
     };

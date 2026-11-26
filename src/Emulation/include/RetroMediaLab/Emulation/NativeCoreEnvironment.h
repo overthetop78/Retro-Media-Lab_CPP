@@ -8,6 +8,7 @@
 #include "NativeCoreFileSystem.h"
 #include "NativeCoreDiskControl.h"
 #include <QLocale>
+#include <memory>
 
 namespace RetroMediaLab::Emulation {
 inline constexpr unsigned NativeCoreExperimentalCommandFlag = 0x10000;
@@ -203,5 +204,6 @@ private:
     bool supportsNoGame_ = false;
     bool supportsAchievements_ = false;
     bool shutdownRequested_ = false;
+    std::unique_ptr<NativeCoreFileSystem> defaultFiles_;
 };
 }

@@ -1,8 +1,11 @@
 #include "Shared/Emulation/EmulationHostKeyboard.h"
+#include "Shared/Emulation/EmulationPhysicalShortcuts.h"
 #include <QKeyEvent>
 #include <QMetaEnum>
 #include <algorithm>
 #include <array>
+#include <cmath>
+#include <limits>
 #include <utility>
 
 #ifdef Q_OS_WIN
@@ -10,6 +13,59 @@
 #endif
 
 namespace RetroMediaLab {
+void EmulationHostKeyboard::applyMachineBindings(Emulation::InputSnapshot& snapshot,
+    const QList<Emulation::RawControllerState>& rawControllers, Qt::MouseButtons buttons, const QPoint& wheel,
+    const QHash<QString, QString>& bindings, const std::function<bool(const QString&)>& reserved) {
+    namespace Protocol = Emulation::HostProtocol;
+    namespace Processing = Emulation::InputProcessing;
+    namespace Physical = EmulationPhysicalShortcuts;
+    Protocol::CoreInput sources;
+    sources.keys = snapshot.keys;
+    sources.pointer.left = buttons.testFlag(Qt::LeftButton);
+    sources.pointer.right = buttons.testFlag(Qt::RightButton);
+    sources.pointer.middle = buttons.testFlag(Qt::MiddleButton);
+    sources.pointer.extendedButton1 = buttons.testFlag(Qt::XButton1);
+    sources.pointer.extendedButton2 = buttons.testFlag(Qt::XButton2);
+    sources.pointer.wheel = wheel.y();
+    sources.pointer.horizontalWheel = wheel.x();
+    const auto axis = [](float value) {
+        constexpr auto maximum = std::numeric_limits<qint16>::max();
+        return std::isfinite(value) ? static_cast<qint16>(std::lround(std::clamp(value, -1.0f, 1.0f) * maximum))
+                                    : qint16{};
+    };
+    for (qsizetype i = 0; i < snapshot.controllers.size() && i < rawControllers.size(); ++i) {
+        const auto& controller = snapshot.controllers[i];
+        const auto& raw = rawControllers[i];
+        Protocol::CoreController source;
+        for (const auto& mapping : Physical::Controls::GamepadButtons) {
+            if ((controller.buttons & mapping.button) == 0) continue;
+            const auto index = Processing::controllerButtonIndex(QString(mapping.name));
+            if (index >= 0) source.buttons |= quint32{1} << index;
+        }
+        using enum Physical::Controls::Axis;
+        source.leftX = axis(controller.axes.value(LeftX));
+        source.leftY = axis(controller.axes.value(LeftY));
+        source.rightX = axis(controller.axes.value(RightX));
+        source.rightY = axis(controller.axes.value(RightY));
+        source.leftTrigger = axis(controller.axes.value(LeftTrigger));
+        source.rightTrigger = axis(controller.axes.value(RightTrigger));
+        source.deviceId = raw.deviceId;
+        source.controls = raw.controls;
+        sources.controllers.append(std::move(source));
+    }
+    constexpr float PressedThreshold = 0.5f;
+    const auto keys = QMetaEnum::fromType<Emulation::EmulationKey>();
+    for (auto binding = bindings.cbegin(); binding != bindings.cend(); ++binding) {
+        bool valid = false;
+        const int target = keys.keyToValue(binding.key().toLatin1().constData(), &valid);
+        if (!valid) continue;
+        snapshot.hostCharacters.remove(target);
+        if (binding->contains(Physical::Separator) && !reserved(*binding) &&
+            Processing::sourcePressure(*binding, sources) > PressedThreshold)
+            snapshot.keys.insert(target);
+    }
+}
+
 namespace {
 using Key = Emulation::EmulationKey;
 

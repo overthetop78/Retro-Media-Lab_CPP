@@ -13,10 +13,6 @@ constexpr std::array Bayer{
     15, 7, 13, 5
 };
 constexpr quint64 MaximumElapsedFrames = 120;
-constexpr float Persistence = .12f;
-constexpr float PhosphorIntensity = .22f;
-constexpr float BrightnessLimiter = .65f;
-constexpr float Dithering = .45f;
 constexpr float BlackFloor = .0025f;
 constexpr float WaffleGap = .018f;
 constexpr int LightSampleCount = 4096;
@@ -93,9 +89,9 @@ float plasmaFrameLight(const QImage& source) {
 
 void applyPlasma(std::vector<LinearColor>& colors, QSize output, QSize panel, quint64 sequence, PlasmaCellStructure structure, float frameLight) {
     if (colors.empty() || output.isEmpty() || panel.isEmpty()) return;
-    const float gain = 1.f - BrightnessLimiter * .42f * smoothStep(.28f, .78f, frameLight);
-    const float levels = std::lerp(255.f, 31.f, Dithering);
-    const int phase = int(sequence % 16);
+    const float gain = 1.f - PlasmaEmissionSettings::BrightnessLimiter * .42f * smoothStep(.28f, .78f, frameLight);
+    const float levels = std::lerp(255.f, 31.f, PlasmaEmissionSettings::Dithering);
+    const int phase = int(sequence % PlasmaEmissionSettings::DitherPhases);
     for (int y = 0; y < output.height(); ++y) {
         const int cellY = int((2 * qint64(y) + 1) * panel.height() / (2 * qint64(output.height())));
         for (int x = 0; x < output.width(); ++x) {
@@ -104,10 +100,10 @@ void applyPlasma(std::vector<LinearColor>& colors, QSize output, QSize panel, qu
             const int cellX = int((2 * qint64(x) + 1) * panel.width() / (2 * qint64(output.width())));
             const float threshold = (Bayer[((cellY + phase / 4) & 3) * 4 + ((cellX + phase) & 3)] + .5f) / 16.f;
             for (auto& value : color) {
-                const float saturated = luminance + (value - luminance) * (1.f + PhosphorIntensity * .28f);
-                const float original = unit(saturated + std::max(0.f, saturated - .42f) * PhosphorIntensity * .48f) * gain;
+                const float saturated = luminance + (value - luminance) * (1.f + PlasmaEmissionSettings::PhosphorIntensity * .28f);
+                const float original = unit(saturated + std::max(0.f, saturated - .42f) * PlasmaEmissionSettings::PhosphorIntensity * .48f) * gain;
                 const float quantized = std::floor(original * levels + threshold) / levels;
-                value = std::lerp(BlackFloor, 1.f, unit(std::lerp(original, quantized, Dithering)));
+                value = std::lerp(BlackFloor, 1.f, unit(std::lerp(original, quantized, PlasmaEmissionSettings::Dithering)));
             }
         }
     }
@@ -121,7 +117,7 @@ void applyPlasmaPersistence(std::vector<LinearColor>& colors, QSize size, quint6
             return;
         }
         const auto elapsed = std::clamp<quint64>(sequence - history.sequence, 1, MaximumElapsedFrames);
-        const float decay = std::pow(Persistence, float(elapsed));
+        const float decay = std::pow(PlasmaEmissionSettings::Persistence, float(elapsed));
         for (size_t i = 0; i < colors.size(); ++i)
             for (size_t c = 0; c < colors[i].size(); ++c)
                 colors[i][c] = unit(std::max(colors[i][c], history.colors[i][c] * decay));

@@ -1,106 +1,71 @@
 #include "VfdProcessing.h"
-
-#include <algorithm>
-#include <cmath>
+#include "MatrixCells.h"
 
 namespace RetroMediaLab::VideoPresentation::SoftwareProcessing {
-namespace {
-constexpr std::array<LinearColor, 4> Tint{{
-    {.18f, .78f, 1.f}, {.12f, 1.f, .28f}, {1.f, .48f, .04f}, {1.f, .08f, .03f}
-}};
-constexpr LinearColor GlassBase{.025f, .055f, .065f};
-constexpr LinearColor GlassResponse{.08f, .12f, .13f};
 
-float amount(int value) { return float(value) / VfdProfile::MaximumIntensity; }
-float unit(float value) { return std::clamp(value, 0.f, 1.f); }
-float smooth(float t) { return t * t * (3.f - 2.f * t); }
-float luma(const LinearColor& color) { return color[0] * .2126f + color[1] * .7152f + color[2] * .0722f; }
-
-float cellOffset(int pixel, int output, int source) {
-    const float position = (pixel + .5f) * source / output;
-    return position - std::floor(position) - .5f;
-}
-
-struct HaloSize {
-    QSize inner, outer;
-};
-
-HaloSize haloSize(QSize output, QSize source, int setting) {
-    const float radius = 1.f + amount(setting) * 5.f;
-    const int x = std::max(1, int(std::nearbyint(radius * output.width() / source.width())));
-    const int y = std::max(1, int(std::nearbyint(radius * output.height() / source.height())));
-    return {{std::max(1, x / 2), std::max(1, y / 2)}, {x, y}};
-}
-
-float sampleRing(const std::vector<float>& emission, QSize size, int x, int y, QSize radius) {
-    const auto at = [&](int dx, int dy) {
-        const int sx = std::clamp(x + dx, 0, size.width() - 1), sy = std::clamp(y + dy, 0, size.height() - 1);
-        return emission[size_t(sy) * size.width() + sx];
-    };
-    const int dx = radius.width(), dy = radius.height();
-    return (at(-dx, -dy) + at(0, -dy) + at(dx, -dy) + at(-dx, 0) +
-        at(dx, 0) + at(-dx, dy) + at(0, dy) + at(dx, dy)) / 8.f;
-}
-}
-
-VfdProfile normalized(VfdProfile value) {
-    for (const auto field : {&VfdProfile::phosphorIntensity, &VfdProfile::emissionThreshold, &VfdProfile::glassDarkening,
-            &VfdProfile::cellSize, &VfdProfile::cellGap, &VfdProfile::haloIntensity, &VfdProfile::haloRadius})
-        value.*field = std::clamp(value.*field, 0, VfdProfile::MaximumIntensity);
-    value.persistenceMilliseconds = std::clamp(value.persistenceMilliseconds, 0, VfdProfile::MaximumPersistenceMilliseconds);
-    return value;
+LinearColor vfdPhosphor(VfdColor color) {
+    switch (color) {
+    case VfdColor::Green: return {.055f, 1.f, .12f};
+    case VfdColor::Blue: return {.055f, .29f, 1.f};
+    case VfdColor::White: return {1.f, 1.f, 1.f};
+    case VfdColor::Amber: return {1.f, .42f, .028f};
+    case VfdColor::Red: return {1.f, .045f, .025f};
+    default: return {.085f, 1.f, .73f};
+    }
 }
 
 void applyVfd(std::vector<LinearColor>& colors, QSize output, QSize source, const VfdProfile& profile) {
     if (colors.empty() || output.isEmpty() || source.isEmpty()) return;
-    const float threshold = amount(profile.emissionThreshold) * .85f;
-    const float radius = (.20f + amount(profile.cellSize) * .28f) * (1.f - amount(profile.cellGap) * .72f);
-    const float phosphor = amount(profile.phosphorIntensity) * 1.8f;
-    const float haloGain = amount(profile.haloIntensity) * .9f;
-    const float glass = amount(profile.glassDarkening);
-    const auto tint = Tint[size_t(profile.color)];
-    std::vector<float> emission(colors.size());
+    const auto grid = matrixSize(profile.definition, source);
+    const int columns = grid.width(), rows = grid.height();
+    std::vector<float> emission(size_t(columns) * rows);
+    for (int y = 0; y < rows; ++y)
+        for (int x = 0; x < columns; ++x)
+            emission[size_t(y) * columns + x] = matrixLuminance(sampleMatrixCell(colors, source, grid, x, y));
+
+    const auto phosphor = vfdPhosphor(profile.color);
+    constexpr LinearColor Glass{.002f, .0045f, .0055f};
+    constexpr float RoundRadius = .38f, RectangleHalfWidth = .28f;
+    constexpr float RoundArea = .454f, SquareArea = .578f, RectangleArea = .426f;
+    constexpr float MinimumEdge = .025f, MaximumEdge = .20f;
+    constexpr float DetailStart = 1.f, DetailEnd = 2.5f;
+    constexpr float MinimumGlowRadius = .035f, MaximumGlowRadius = .115f;
+    constexpr float GlowGain = .24f, EmissionGain = .94f;
+    constexpr float UnlitBase = .0018f, UnlitPhosphor = .004f;
+    const bool round = profile.shape == DotMatrixShape::Round;
+    const bool rectangle = profile.shape == DotMatrixShape::Rectangle;
+    const float meanArea = round ? RoundArea : rectangle ? RectangleArea : SquareArea;
+    const float halfWidth = rectangle ? RectangleHalfWidth : RoundRadius;
+    const float stepX = float(columns) / output.width(), stepY = float(rows) / output.height();
+    const float scale = 1.f / std::max(stepX, stepY);
+    const float edge = std::clamp(.5f / std::max(scale, 1.f), MinimumEdge, MaximumEdge);
+    const float detail = matrixSmoothStep(DetailStart, DetailEnd, scale);
+
+    colors.resize(size_t(output.width()) * output.height());
     for (int y = 0; y < output.height(); ++y) {
-        const float dy = cellOffset(y, output.height(), source.height());
+        const float matrixY = (y + .5f) * stepY;
+        const int row = std::min(rows - 1, int(matrixY));
+        const float dy = std::abs(matrixY - row - .5f);
         for (int x = 0; x < output.width(); ++x) {
-            const size_t i = size_t(y) * output.width() + x;
-            const float light = luma(colors[i]);
-            float value = smooth(unit((light - threshold) / .08f));
-            if (profile.structure == VfdStructure::DotMatrix) {
-                const float dx = cellOffset(x, output.width(), source.width());
-                const float distance = std::sqrt(dx * dx + dy * dy);
-                value *= smooth(unit((radius + .035f - distance) / .035f));
+            const float matrixX = (x + .5f) * stepX;
+            const int column = std::min(columns - 1, int(matrixX));
+            const float dx = std::abs(matrixX - column - .5f);
+            const float distance = round ? std::sqrt(dx * dx + dy * dy) - RoundRadius
+                : std::max(dx - halfWidth, dy - RoundRadius);
+            const float level = emission[size_t(row) * columns + column];
+            const float core = 1.f - matrixSmoothStep(-edge, edge, distance);
+            const float coverage = std::lerp(meanArea, core, detail);
+            const float radius = std::lerp(MinimumGlowRadius, MaximumGlowRadius, level);
+            const float glow = (1.f - matrixSmoothStep(0.f, radius, std::max(distance, 0.f))) *
+                (1.f - core) * (GlowGain * level * level) * detail;
+            auto& color = colors[size_t(y) * output.width() + x];
+            for (size_t channel = 0; channel < color.size(); ++channel) {
+                const float unlit = UnlitBase + phosphor[channel] * UnlitPhosphor;
+                color[channel] = std::min(1.f, Glass[channel] + unlit * coverage +
+                    phosphor[channel] * (EmissionGain * level * coverage + glow));
             }
-            emission[i] = unit(value * phosphor);
-            for (size_t c = 0; c < colors[i].size(); ++c)
-                colors[i][c] = colors[i][c] * .28f * (1.f - glass) + (GlassBase[c] + light * GlassResponse[c]) * glass;
         }
     }
-    const auto radii = haloSize(output, source, profile.haloRadius);
-    for (int y = 0; y < output.height(); ++y)
-        for (int x = 0; x < output.width(); ++x) {
-            const size_t i = size_t(y) * output.width() + x;
-            const float halo = haloGain > 0.f ? unit((sampleRing(emission, output, x, y, radii.inner) * .65f +
-                sampleRing(emission, output, x, y, radii.outer) * .35f) * haloGain) : 0.f;
-            const float light = unit(emission[i] + halo);
-            for (size_t c = 0; c < colors[i].size(); ++c) colors[i][c] = unit(colors[i][c] + light * tint[c]);
-        }
 }
 
-void applyVfdPersistence(std::vector<LinearColor>& colors, QSize size, std::chrono::nanoseconds timestamp, int milliseconds,
-        VfdHistory& history, bool advance) {
-    if (!milliseconds) return;
-    if (history.size == size && history.colors.size() == colors.size() && timestamp >= history.timestamp) {
-        if (!advance && timestamp == history.timestamp) {
-            colors = history.colors;
-            return;
-        }
-        const auto elapsed = std::chrono::duration<double, std::milli>(timestamp - history.timestamp).count();
-        const auto retention = std::exp(-std::max(.001, elapsed) / std::max(1, milliseconds));
-        for (size_t i = 0; i < colors.size(); ++i)
-            for (size_t c = 0; c < colors[i].size(); ++c)
-                colors[i][c] = std::max(colors[i][c], float(history.colors[i][c] * retention));
-    }
-    if (advance) history = {size, timestamp, colors};
-}
 }

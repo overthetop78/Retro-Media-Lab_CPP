@@ -152,7 +152,7 @@ public:
 #endif
 
     bool prepare(Layer& layer, const QImage& image, QRect area, Sampling sampling, bool isOverlay, ImageAdjustments adjustments, ImageRestoration restoration,
-        const SoftwareProcessing::CrtShaderParameters& crt, QRhiResourceUpdateBatch& updates) {
+        const SoftwareProcessing::DisplayShaderParameters& crt, QRhiResourceUpdateBatch& updates) {
         if (image.isNull() || area.isEmpty()) return true;
         if (!layer.parameters) {
             auto parameters = std::unique_ptr<QRhiBuffer>(device->newBuffer(QRhiBuffer::Dynamic,
@@ -276,7 +276,7 @@ void VulkanSurface::showEmbedded() {
 
 bool VulkanSurface::isPresenting() const noexcept { return isVisible() && submitted_; }
 bool VulkanSurface::canSample() const noexcept { return bool(resources_); }
-bool VulkanSurface::canSampleCrt() const noexcept { return resources_ && resources_->crtPipeline; }
+bool VulkanSurface::canSampleDisplay() const noexcept { return resources_ && resources_->crtPipeline; }
 
 void VulkanSurface::initialize(QRhiCommandBuffer*) {
     if (!rhi() || !renderTarget()) return;
@@ -321,7 +321,7 @@ void VulkanSurface::initialize(QRhiCommandBuffer*) {
     QTimer::singleShot(0, this, [this] { samplingChanged_(); });
 }
 
-void VulkanSurface::setSampledScene(QImage frame, QRect viewport, Sampling sampling, QImage overlay, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
+void VulkanSurface::setSampledScene(QImage frame, QRect viewport, Sampling sampling, QImage overlay, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
     sampledFrame_ = std::move(frame);
     viewport_ = viewport;
     sampling_ = sampling;
@@ -339,8 +339,8 @@ QRect VulkanSurface::physicalBounds(QRect bounds) const {
         qRound((bounds.y()+bounds.height())*ratio)-top};
 }
 
-QImage VulkanSurface::captureSampled(const QImage& image, QRect viewport, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt) {
-    if ((crt.enabled() ? !canSampleCrt() : !canSample()) || image.isNull() || viewport.isEmpty()) return {};
+QImage VulkanSurface::captureSampled(const QImage& image, QRect viewport, Sampling sampling, ImageAdjustments adjustments, ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt) {
+    if ((crt.enabled() ? !canSampleDisplay() : !canSample()) || image.isNull() || viewport.isEmpty()) return {};
     QScopedValueRollback frame(sampledFrame_, image);
     QScopedValueRollback bounds(viewport_, viewport);
     QScopedValueRollback mode(sampling_, sampling);
@@ -349,7 +349,7 @@ QImage VulkanSurface::captureSampled(const QImage& image, QRect viewport, Sampli
     QScopedValueRollback display(crt_, crt);
     QScopedValueRollback capturing(capturing_, true);
     const auto capture = grabFramebuffer();
-    return capture.isNull() || (crt.enabled() ? !canSampleCrt() : !canSample()) ? QImage{} : capture.copy(physicalBounds(viewport));
+    return capture.isNull() || (crt.enabled() ? !canSampleDisplay() : !canSample()) ? QImage{} : capture.copy(physicalBounds(viewport));
 }
 
 void VulkanSurface::render(QRhiCommandBuffer* commands) {
@@ -358,7 +358,7 @@ void VulkanSurface::render(QRhiCommandBuffer* commands) {
 #endif
     auto* texture = colorTexture();
     if (!texture || texture->pixelSize().isEmpty()) return;
-    if (resources_ && !viewport_.isEmpty() && (!crt_.enabled() || canSampleCrt())) {
+    if (resources_ && !viewport_.isEmpty() && (!crt_.enabled() || canSampleDisplay())) {
         auto& r = *resources_;
         const QRect area = physicalBounds(viewport_);
         const QRect full(QPoint{}, texture->pixelSize());

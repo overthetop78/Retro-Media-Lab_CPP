@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CrtProcessing.h"
+#include "DisplayShaderParameters.h"
 #include <QRhiWidget>
 #include <functional>
 #include <memory>
@@ -14,9 +14,9 @@ public:
     void showEmbedded();
     bool isPresenting() const noexcept;
     bool canSample() const noexcept;
-    bool canSampleCrt() const noexcept;
-    void setSampledScene(QImage, QRect, Sampling, QImage overlay, ImageAdjustments = {}, ImageRestoration = {}, const SoftwareProcessing::CrtShaderParameters& = {});
-    QImage captureSampled(const QImage&, QRect, Sampling, ImageAdjustments, ImageRestoration, const SoftwareProcessing::CrtShaderParameters&);
+    bool canSampleDisplay() const noexcept;
+    void setSampledScene(QImage, QRect, Sampling, QImage overlay, ImageAdjustments = {}, ImageRestoration = {}, const SoftwareProcessing::DisplayShaderParameters& = {});
+    QImage captureSampled(const QImage&, QRect, Sampling, ImageAdjustments, ImageRestoration, const SoftwareProcessing::DisplayShaderParameters&);
 
 protected:
     void initialize(QRhiCommandBuffer*) override;
@@ -39,7 +39,7 @@ private:
     Sampling sampling_ = Sampling::Nearest;
     ImageAdjustments adjustments_;
     ImageRestoration restoration_;
-    SoftwareProcessing::CrtShaderParameters crt_;
+    SoftwareProcessing::DisplayShaderParameters crt_;
     QImage scene_;
     bool submitted_ = false;
     bool failed_ = false;

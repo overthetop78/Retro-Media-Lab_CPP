@@ -267,6 +267,13 @@ public:
     virtual void updateInputBindings(const Configuration&) = 0;
 };
 
+class IMachineKeyboardBindings {
+public:
+    virtual ~IMachineKeyboardBindings() = default;
+    // Keys are EmulationKey names; values are the configured host bindings.
+    virtual const QHash<QString, QString>& keyboardBindings() const = 0;
+};
+
 class IModuleInputSettingsManager {
 public:
     virtual ~IModuleInputSettingsManager() = default;

@@ -1,6 +1,10 @@
 add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/MediaPreparation.cpp src/StateFile.cpp
   src/ControllerFeedback.cpp src/Firmware.cpp src/HostProtocol.cpp src/HostedCoreTransport.cpp src/HostedCoreSession.cpp
   src/StorageSettings.cpp src/InputFrames.cpp src/InputProcessing.cpp src/Networks.cpp src/ExecutionRate.cpp
+  src/SessionDirectories.cpp include/RetroMediaLab/Emulation/SessionDirectories.h
+  src/HardwareSettings.cpp include/RetroMediaLab/Emulation/HardwareSettings.h
+  src/ConfigurationFiles.cpp include/RetroMediaLab/Emulation/ConfigurationFiles.h
+  src/Messages.cpp include/RetroMediaLab/Emulation/Messages.h
   src/MachineExecution.cpp src/CoreDiagnostics.cpp src/NativeCoreContent.cpp src/NativeCoreLibrary.cpp src/NativeCoreFrames.cpp src/NativeCoreEnvironment.cpp src/NativeCoreOptions.cpp
   include/RetroMediaLab/Emulation/CoreDiagnostics.h
   include/RetroMediaLab/Emulation/NativeCoreContent.h

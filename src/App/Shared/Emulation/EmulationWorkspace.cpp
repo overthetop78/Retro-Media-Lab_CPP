@@ -6,6 +6,7 @@
 #include <QImage>
 #include <QSaveFile>
 #include <QStandardPaths>
+#include <algorithm>
 
 namespace RetroMediaLab {
 namespace {
@@ -22,10 +23,56 @@ constexpr auto CaptureTimestampFormat = "yyyyMMdd-HHmmss";
 constexpr auto CaptureExtension = ".png";
 constexpr auto CaptureDuplicateFormat = "%1-%2%3";
 constexpr int FirstDuplicateCaptureSuffix = 2;
+constexpr auto MemoryTab = "Emulation.Tab.Ram";
+constexpr auto VideoTab = "Emulation.Tab.Video";
+constexpr auto DisplayMemorySuffix = "_display_memory";
+constexpr auto ChipsetSuffix = ".Chipset";
+constexpr auto VideoChipSuffix = ".Video.Chip";
+constexpr auto AlternateVideoChipSuffix = ".VideoChip";
+constexpr auto VideoModelId = "configuration.model.video";
+constexpr auto ChipsetId = "machine.chipset";
+constexpr const char* VideoHardwareKeys[] = {
+    "Emulation.Memory.Video", "Emulation.Watara.Memory.Video", "Emulation.Acorn.Atom.VideoRam",
+    "Emulation.Acorn.Video.Controller", "Emulation.Acorn.Video.Pixels", "Emulation.Acorn.Video.Teletext"
+};
 
 QDir settingsDirectory() {
     return QDir(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation));
 }
+}
+
+QList<Emulation::SettingsBlock> machineSettingsEditorBlocks(QList<Emulation::SettingsBlock> blocks,
+    const Emulation::SettingsDependencies& dependencies) {
+    const QString videoTab = QString::fromLatin1(VideoTab);
+    const QString memoryTab = QString::fromLatin1(MemoryTab);
+    if (dependencies.hiddenTabs.contains(videoTab) ||
+        std::ranges::none_of(blocks, [&](const auto& block) { return block.visible && block.tabResourceKey == videoTab; }))
+        return blocks;
+
+    QList<Emulation::SettingsBlock> moved;
+    for (auto& block : blocks) {
+        if (!block.visible) continue;
+        const auto isVideoHardware = [&](const Emulation::SettingsField& field) {
+            const auto& label = field.labelResourceKey;
+            return std::ranges::any_of(VideoHardwareKeys, [&](const char* key) {
+                return label == QLatin1String(key);
+            }) || (block.tabResourceKey == memoryTab && field.id.endsWith(QLatin1String(DisplayMemorySuffix))) ||
+                (block.tabResourceKey == videoTab &&
+                    (field.id == QLatin1String(VideoModelId) || field.id == QLatin1String(ChipsetId) ||
+                        label.endsWith(QLatin1String(ChipsetSuffix)) || label.endsWith(QLatin1String(VideoChipSuffix)) ||
+                        label.endsWith(QLatin1String(AlternateVideoChipSuffix))));
+        };
+        auto video = block;
+        video.fields.removeIf([&](const auto& field) { return !isVideoHardware(field); });
+        if (video.fields.isEmpty()) continue;
+        block.fields.removeIf(isVideoHardware);
+        if (block.fields.isEmpty()) block.visible = false;
+        video.tabResourceKey = videoTab;
+        video.titleResourceKey = QLatin1String(MachineVideoHardwareKey);
+        moved.append(std::move(video));
+    }
+    blocks.append(std::move(moved));
+    return blocks;
 }
 
 EmulationFolders resolveEmulationFolders(const EmulationFolders& folders) {
@@ -88,7 +135,7 @@ MachineSettingsResult saveMachineSettings(Emulation::Host& host, Emulation::Sess
     const QString& module, Emulation::Configuration& configuration, QJsonObject changes,
     const QList<Emulation::ControllerPortFeedback>& feedback, const QList<Emulation::FirmwareCandidate>& firmware,
     const Emulation::StorageSettings* storage, const Emulation::InputSettings* input, const QString& requestedEmulator,
-    MachineSettingsSave save) {
+    MachineSettingsSave save, Emulation::GraphicsApi graphicsApi) {
     for (const auto& candidate : firmware) changes.remove(candidate.destinationFieldId);
     auto draft = input ? std::optional(*input) : std::nullopt;
     if (draft) {
@@ -111,7 +158,7 @@ MachineSettingsResult saveMachineSettings(Emulation::Host& host, Emulation::Sess
         updated = host.useFirmware(module, std::move(updated), candidate);
     if (updated.id.isNull()) return MachineSettingsResult::Rejected;
     if (storage) {
-        updated = host.applyStorageSettings(module, std::move(updated), *storage);
+        updated = host.applyStorageSettings(module, std::move(updated), *storage, graphicsApi);
         if (updated.id.isNull()) return MachineSettingsResult::Rejected;
     }
     if (!requestedEmulator.isEmpty()) {

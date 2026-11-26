@@ -27,6 +27,7 @@ struct UserPreferences {
     EmulationFolders emulationFolders;
     QJsonObject emulationShortcuts;
     bool showFullscreenEmulationStatistics = false;
+    int fullscreenOsdTransparency = DisplayConstants::DefaultOsdTransparency;
 };
 class PreferencesStore final {
 public:

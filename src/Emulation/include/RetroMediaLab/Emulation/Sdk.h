@@ -3,19 +3,25 @@
 #include <QByteArray>
 #include <QJsonObject>
 #include <QList>
+#include <QMap>
+#include <QVector>
 #include <QSet>
 #include <QStringList>
 #include <QUuid>
+#include <array>
 #include <chrono>
 #include <cstdint>
 #include <memory>
+#include <exception>
+#include <functional>
+#include <iosfwd>
 #include <optional>
 #include <stop_token>
 #include <utility>
 
 namespace RetroMediaLab::Emulation {
 inline constexpr auto HostApiMajor = 2;
-inline constexpr auto HostApiMinor = 2;
+inline constexpr auto HostApiMinor = 3;
 inline constexpr auto FactorySymbol = "rml_emulation_factory_v2";
 
 enum class MachineState { Created, Starting, Running, Paused, Stopping, Stopped, Faulted };
@@ -143,7 +149,10 @@ struct Configuration {
     QJsonObject values;
 };
 
-enum class SettingsEditor { Text, Multiline, Toggle, Choice, File, Folder, Information, Slider, FirmwareFile };
+enum class SettingsEditor {
+    Text, Multiline, Toggle, Choice, File, Folder, Information, Slider, FirmwareFile, Number, IPv4,
+    OpenDirectory
+};
 
 struct SettingsChoice {
     QString id;
@@ -155,6 +164,7 @@ struct SettingsField {
     QString id;
     QString labelResourceKey;
     SettingsEditor editor = SettingsEditor::Text;
+    // OpenDirectory uses an absolute local path and is an action, not a saved setting.
     QString value;
     QList<SettingsChoice> choices;
     bool enabled = true;
@@ -210,6 +220,36 @@ struct DiskSector {
     std::optional<bool> deletedDataMark;
 };
 
+struct DiskSectorDetails {
+    DiskSector sector;
+    std::optional<quint8> diagnosticCode;
+    QByteArray recordedErrorCheckCode;
+    QByteArray recordedDataPrefix;
+    std::optional<bool> headerIntegrityValid;
+    std::optional<bool> dataIntegrityValid;
+    std::optional<quint8> recordedSizeCode;
+};
+
+struct DiskRevolution {
+    quint32 indexTimeNanoseconds = 0;
+    QVector<quint32> intervalsNanoseconds;
+};
+
+class IEmulationDriveMechanics {
+public:
+    virtual ~IEmulationDriveMechanics() = default;
+    virtual bool hasPendingAudio() const = 0;
+    virtual void configure(const QString& profile, double volumePercent, bool enabled) = 0;
+    virtual void setTapeOperation(const QString& operation) = 0;
+    virtual void insert() = 0;
+    virtual void eject() = 0;
+    virtual void setMotor(bool running) = 0;
+    virtual void setActivity(bool reading, bool writing) = 0;
+    virtual void seek(int cylinder, int head, int sector = -1, qint64 logicalBlock = -1) = 0;
+    virtual QVector<qint16> renderAudio(int sampleRate, int sampleCount) = 0;
+    virtual void reset() = 0;
+};
+
 class IEmulationDiskImage {
 public:
     virtual ~IEmulationDiskImage() = default;
@@ -222,6 +262,19 @@ public:
     virtual void write(qint64 index, const QByteArray&, std::optional<bool> deleted) = 0;
     virtual void flush(std::stop_token) = 0;
     virtual void close() = 0;
+    virtual std::shared_ptr<IEmulationDriveMechanics> mechanics() const = 0;
+    virtual QMap<QString, QString> metadata() const = 0;
+    virtual void updateMetadata(const QMap<QString, QString>&) = 0;
+    virtual void prepareBlockFormat(const DiskGeometry&) = 0;
+    virtual QList<qint64> trackSectors(int cylinder, int head) const = 0;
+    virtual DiskSectorDetails readDetails(qint64 index, std::stop_token) const = 0;
+    virtual QList<DiskRevolution> readTrack(int cylinder, int head, const QString& encodingId,
+        quint32 bitCellNanoseconds, quint32 indexTimeNanoseconds, const QMap<QString, int>& attributes = {}) const = 0;
+    virtual void writeTrackWindow(int cylinder, int head, const QString& encodingId, quint32 bitCellNanoseconds,
+        quint32 indexTimeNanoseconds, quint32 startNanoseconds, quint32 durationNanoseconds,
+        const QVector<quint32>& transitions, const QMap<QString, int>& attributes = {}, bool includeEndingInstant = false) = 0;
+    virtual void formatTrack(int cylinder, int head, const QList<DiskSectorDetails>& sectors,
+        std::optional<int> dataRate = {}, std::optional<bool> mfm = {}) = 0;
 };
 
 struct OpticalTrack {
@@ -240,6 +293,42 @@ public:
     virtual QByteArray readSubchannel(int trackIndex, qint64 relativeSector, std::stop_token) const = 0;
 };
 
+struct HardDiskImageGeometry;
+
+struct TapeBlock {
+    int samplePosition = 0;
+    QByteArray data;
+    std::optional<bool> integrityValid;
+    QMap<QString, QString> metadata;
+};
+
+struct TapeSignal {
+    QVector<qint16> samples;
+    int sampleRate = 0;
+    std::optional<QList<int>> blockPositions;
+    std::optional<QList<TapeBlock>> blocks;
+};
+
+struct OpticalSectorSizes {
+    int raw = 0;
+    int audio = 0;
+    int subchannel = 0;
+};
+
+inline constexpr double DefaultMechanicalSoundVolumePercent = 50;
+
+class IEmulationCueSheet {
+public:
+    virtual ~IEmulationCueSheet() = default;
+    virtual QStringList declaredFiles() const = 0;
+    virtual bool isSingleBinaryRawAudio(int maximumTracks) const = 0;
+    virtual std::unique_ptr<IEmulationCueSheet> withSingleFile(const QString& declaredPath) const = 0;
+    virtual void write(std::ostream&, std::stop_token = {}) const = 0;
+};
+
+using CueStageFile = std::function<QString(const QString& source)>;
+using CueUnsupported = std::function<std::exception_ptr()>;
+
 class IMediaPreparation {
 public:
     virtual ~IMediaPreparation() = default;
@@ -248,6 +337,30 @@ public:
         const QString& format, std::stop_token) const = 0;
     virtual std::unique_ptr<IEmulationOpticalDisc> openOptical(const QString& path, std::stop_token) const = 0;
     virtual void createBlankDisk(const QString& path, const QString& format, std::stop_token) const = 0;
+    virtual std::shared_ptr<IEmulationDriveMechanics> createDriveMechanics(const QString& device) const = 0;
+    virtual std::unique_ptr<IEmulationDiskImage> openDiskWithMechanics(const QString& path, bool writable,
+        const QString& format, std::shared_ptr<IEmulationDriveMechanics>, std::stop_token) const = 0;
+    virtual std::shared_ptr<IEmulationDriveMechanics> createHostDriveMechanics(const QString& device) const = 0;
+    virtual TapeSignal readTape(const QString& path, std::stop_token = {}, const QString& machineId = {},
+        const QMap<QString, QString>& parameters = {}) const = 0;
+    virtual void writeTape(const QString& path, const TapeSignal&, std::stop_token = {},
+        const QMap<QString, QString>& parameters = {}) const = 0;
+    virtual QStringList tapeRecordingExtensions() const = 0;
+    virtual QStringList mechanicalSoundProfiles(MediaKind) const = 0;
+    virtual QString mechanicalSoundProfileDisplayName(const QString& profile) const = 0;
+    virtual QVector<qint16> renderMechanicalSound(MediaKind, const QString& operation, int sampleRate, int sampleCount,
+        qint64 offset, const QString& profile = {}, double volumePercent = DefaultMechanicalSoundVolumePercent) const = 0;
+    virtual double mechanicalSoundDurationSeconds(MediaKind, const QString& operation, const QString& profile = {}) const = 0;
+    virtual QVector<qint16> protectMechanicalAudioMix(const QVector<double>& samples) const = 0;
+    virtual void createHardDisk(const QString& path, const QString& formatId, const HardDiskImageGeometry&,
+        const QString& fileSystemId = {}, bool preallocate = false, std::stop_token = {}) const = 0;
+    virtual QMap<QString, QString> mediaFileExtensions() const = 0;
+    virtual OpticalSectorSizes opticalSectorSizes() const noexcept = 0;
+    virtual void convertScp(const QString& source, const QString& destination, const QString& outputExtension,
+        std::stop_token = {}) const = 0;
+    virtual std::unique_ptr<IEmulationCueSheet> readCueSheet(const QStringList& lines, std::stop_token = {}) const = 0;
+    virtual void prepareCueWaveFiles(const QString& source, const QString& destination, CueStageFile,
+        int copyBufferBytes, std::stop_token = {}, CueUnsupported = {}) const = 0;
 };
 
 struct RuntimeServices {
@@ -300,6 +413,34 @@ public:
     virtual CoreRuntimeStatus coreRuntimeStatus() const = 0;
 };
 
+struct VideoSegmentLevels {
+    quint8 offRed = 0, onRed = 0;
+    bool operator==(const VideoSegmentLevels&) const = default;
+};
+
+// The levels describe this exact immutable XRGB8888 frame. Red zero is background.
+class IMachineNativeSegments {
+public:
+    virtual ~IMachineNativeSegments() = default;
+    virtual std::optional<VideoSegmentLevels> segmentLevels(const VideoFrame&) const = 0;
+};
+
+// Coordinates are normalized from the top left. Color is linear RGB.
+struct VideoVectorSegment {
+    std::array<float, 2> start{}, end{};
+    std::array<float, 3> color{};
+    float intensity = 1.f;
+};
+
+using VideoVectorSegments = std::shared_ptr<const QList<VideoVectorSegment>>;
+
+class IMachineNativeVectors {
+public:
+    virtual ~IMachineNativeVectors() = default;
+    // An empty vector list represents a native frame with no beam excitation.
+    virtual VideoVectorSegments vectorSegments(const VideoFrame&) const = 0;
+};
+
 class IEmulationModule {
 public:
     virtual ~IEmulationModule() = default;
@@ -325,6 +466,14 @@ struct RuntimeOption {
     QString id;
     QString currentValue;
     bool requiresRestart = false;
+};
+
+enum class GraphicsApi { Automatic, OpenGL, Vulkan, Direct3D11 };
+
+class IModuleVideoSettingsManager {
+public:
+    virtual ~IModuleVideoSettingsManager() = default;
+    virtual Configuration applyVideoSettings(Configuration, GraphicsApi) const = 0;
 };
 
 class IModuleRuntimeOptions {
@@ -390,6 +539,14 @@ public:
     virtual void setOption(const QString& id, const QString& value, std::stop_token) = 0;
 };
 
+// Optional adapter contract for a file selected at runtime, before the mounted media changes.
+class IModuleMediaPreparation {
+public:
+    virtual ~IModuleMediaPreparation() = default;
+    virtual MountedMedia prepareMedia(const Configuration&, const RuntimeServices&,
+        const MountedMedia&, std::stop_token) const = 0;
+};
+
 class IModuleMountedMedia {
 public:
     virtual ~IModuleMountedMedia() = default;
@@ -432,6 +589,23 @@ class IModuleEditableNumericSettings {
 public:
     virtual ~IModuleEditableNumericSettings() = default;
     virtual QHash<QString, EditableNumericSetting> editableNumericSettings(const Configuration&) const = 0;
+};
+
+class IModuleAudioMixerBlocks {
+public:
+    virtual ~IModuleAudioMixerBlocks() = default;
+    virtual QSet<QString> audioMixerBlocks(const Configuration&) const = 0;
+};
+
+struct SettingsPresentation {
+    QSet<QString> compactBlocks;
+    QHash<QString, QString> detailedHelpResourceKeys;
+};
+
+class IModuleSettingsPresentation {
+public:
+    virtual ~IModuleSettingsPresentation() = default;
+    virtual SettingsPresentation settingsPresentation(const Configuration&) const = 0;
 };
 
 enum class SettingsRuleCategory { MutuallyExclusive, VisibleWhenSourceDiffers };

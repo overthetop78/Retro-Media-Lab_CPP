@@ -53,6 +53,7 @@ add_library(RetroMediaLab.Theme.RetroMediaLab SHARED
   Themes/RetroMediaLab/Views/ThemePreview.cpp
   Themes/RetroMediaLab/Views/WorkspaceTabs.cpp
   Themes/RetroMediaLab/Views/EmulationPage.cpp
+  Themes/RetroMediaLab/Views/EmulationErrorDialog.cpp
   Themes/RetroMediaLab/Views/EmulationStoragePanel.cpp
   Themes/RetroMediaLab/Views/MachineControllerPorts.cpp
   Themes/RetroMediaLab/Views/EmulationConfigurationsPanel.cpp

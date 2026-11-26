@@ -17,6 +17,10 @@ struct WorkspaceState;
 RETROMEDIALAB_APP_API EmulationFolders resolveEmulationFolders(const EmulationFolders&);
 RETROMEDIALAB_APP_API void ensureEmulationHost(WorkspaceState&);
 RETROMEDIALAB_APP_API VideoPresentation::ProfileStore emulationVideoProfiles();
+inline constexpr auto MachineVideoHardwareKey = "Emulation.Video.Hardware";
+
+RETROMEDIALAB_APP_API QList<Emulation::SettingsBlock> machineSettingsEditorBlocks(
+    QList<Emulation::SettingsBlock>, const Emulation::SettingsDependencies&);
 
 RETROMEDIALAB_APP_API QString saveEmulationScreenshot(const QImage&, const QString& directory);
 
@@ -42,5 +46,5 @@ RETROMEDIALAB_APP_API MachineSettingsResult saveMachineSettings(
     QJsonObject changes, const QList<Emulation::ControllerPortFeedback>&,
     const QList<Emulation::FirmwareCandidate>&, const Emulation::StorageSettings*,
     const Emulation::InputSettings*, const QString& requestedEmulator,
-    MachineSettingsSave = MachineSettingsSave::Persist);
+    MachineSettingsSave, Emulation::GraphicsApi);
 }

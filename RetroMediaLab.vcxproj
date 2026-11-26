@@ -678,6 +678,8 @@
     <ClCompile Include="src\App\Shared\Controls\MachineInputBindings.cpp" />
     <ClInclude Include="src\App\Shared\Controls\MachineInputBindings.h" />
     <ClInclude Include="src\App\Shared\Controls\ModuleEditableSlider.h" />
+    <ClInclude Include="src\App\Shared\Controls\ModuleIpv4Edit.h" />
+    <ClInclude Include="src\App\Shared\Controls\ModuleNumberEdit.h" />
     <ClInclude Include="src\App\Shared\Controls\RememberedFileDialog.h" />
     <ClInclude Include="src\App\Shared\Controls\RememberedFileDialogConstants.h" />
     <ClCompile Include="src\App\Shared\Controls\StatusIndicator.cpp" />
@@ -693,6 +695,7 @@
     <ClCompile Include="src\App\Shared\Emulation\EmulationWorkspace.cpp" />
     <ClInclude Include="src\App\Shared\Emulation\EmulationWorkspace.h" />
     <ClInclude Include="src\App\Shared\Emulation\ModuleNumericSetting.h" />
+    <ClInclude Include="src\App\Shared\Emulation\TapeTransportPresentation.h" />
     <ClCompile Include="src\App\Shared\Localization\MediaText.cpp" />
     <ClInclude Include="src\App\Shared\Localization\MediaText.h" />
     <ClCompile Include="src\App\Shared\Navigation\WorkspacePages.cpp" />
@@ -740,6 +743,8 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationCommandIcons.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationConfigurationsPanel.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationConfigurationsPanel.h" />
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationErrorDialog.cpp" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationErrorDialog.h" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationMachineTabs.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationNetworkPanel.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationNetworkPanel.h" />
@@ -788,6 +793,7 @@
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\MigrationDialog.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\MigrationDialog.h" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\MigrationDialogConstants.h" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ModuleSettingPresentation.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ProfileSettingsPage.cpp" />
@@ -796,6 +802,7 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\SequentialGraph.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\StatusBar.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\StatusBar.h" />
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\TapeTransportButton.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemePreview.cpp" />
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ThemePreview.h" />
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemeSettingsPage.cpp" />
@@ -820,6 +827,7 @@
     <ClInclude Include="src\Common\StorageProbeConstants.h" />
     <None Include="src\Emulation\CMakeLists.txt" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioBuffer.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ConfigurationFiles.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ControllerFeedback.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\CoreDiagnostics.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulationExport.h" />
@@ -827,6 +835,7 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\EmulatorManager.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ExecutionRate.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Firmware.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\HardwareSettings.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Host.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\HostedCoreSession.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\HostedCoreTransport.h" />
@@ -835,6 +844,7 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\InputProcessing.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\InputSettings.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\MachineExecution.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Messages.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreContent.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreDiskControl.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreEnvironment.h" />
@@ -845,16 +855,19 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreSession.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Networks.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Sdk.h" />
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\SessionDirectories.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\SettingsRules.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\StateFile.h" />
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\StorageSettings.h" />
     <ClCompile Include="src\Emulation\src\AudioBuffer.cpp" />
     <ClCompile Include="src\Emulation\src\AudioOutput.cpp" />
     <ClInclude Include="src\Emulation\src\AudioOutput.h" />
+    <ClCompile Include="src\Emulation\src\ConfigurationFiles.cpp" />
     <ClCompile Include="src\Emulation\src\ControllerFeedback.cpp" />
     <ClCompile Include="src\Emulation\src\CoreDiagnostics.cpp" />
     <ClCompile Include="src\Emulation\src\ExecutionRate.cpp" />
     <ClCompile Include="src\Emulation\src\Firmware.cpp" />
+    <ClCompile Include="src\Emulation\src\HardwareSettings.cpp" />
     <ClCompile Include="src\Emulation\src\Host.cpp" />
     <ClCompile Include="src\Emulation\src\HostedCoreSession.cpp" />
     <ClCompile Include="src\Emulation\src\HostedCoreTransport.cpp" />
@@ -864,6 +877,7 @@
     <ClCompile Include="src\Emulation\src\MachineExecution.cpp" />
     <ClCompile Include="src\Emulation\src\MediaPreparation.cpp" />
     <ClInclude Include="src\Emulation\src\MediaPreparation.h" />
+    <ClCompile Include="src\Emulation\src\Messages.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreContent.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreDiskControl.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreEnvironment.cpp" />
@@ -873,6 +887,7 @@
     <ClCompile Include="src\Emulation\src\NativeCoreOptions.cpp" />
     <ClCompile Include="src\Emulation\src\NativeCoreSession.cpp" />
     <ClCompile Include="src\Emulation\src\Networks.cpp" />
+    <ClCompile Include="src\Emulation\src\SessionDirectories.cpp" />
     <ClCompile Include="src\Emulation\src\StateFile.cpp" />
     <ClCompile Include="src\Emulation\src\StorageSettings.cpp" />
     <None Include="src\Infrastructure\CMakeLists.txt" />
@@ -4256,8 +4271,10 @@
     <None Include="src\Translations\Catalogs\Constants\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Constants\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-osd.json" />
@@ -4274,7 +4291,6 @@
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Constants\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Constants\App\emulation.json" />
@@ -4503,8 +4519,10 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-osd.json" />
@@ -4521,7 +4539,6 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation.json" />
@@ -4750,8 +4767,10 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-osd.json" />
@@ -4768,7 +4787,6 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation.json" />
@@ -4997,8 +5015,10 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-osd.json" />
@@ -5015,7 +5035,6 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation.json" />
@@ -5244,8 +5263,10 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-osd.json" />
@@ -5262,7 +5283,6 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation.json" />
@@ -5491,8 +5511,10 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-osd.json" />
@@ -5509,7 +5531,6 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation.json" />
@@ -5738,8 +5759,10 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-osd.json" />
@@ -5756,7 +5779,6 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation.json" />
@@ -5985,8 +6007,10 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-osd.json" />
@@ -6003,7 +6027,6 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation.json" />
@@ -6232,8 +6255,10 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-osd.json" />
@@ -6250,7 +6275,6 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation.json" />
@@ -6479,8 +6503,10 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-osd.json" />
@@ -6497,7 +6523,6 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation.json" />
@@ -6726,8 +6751,10 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-osd.json" />
@@ -6744,7 +6771,6 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation.json" />
@@ -6973,8 +6999,10 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-osd.json" />
@@ -6991,7 +7019,6 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation.json" />
@@ -7220,8 +7247,10 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-osd.json" />
@@ -7238,7 +7267,6 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation.json" />
@@ -7467,8 +7495,10 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-osd.json" />
@@ -7485,7 +7515,6 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation.json" />
@@ -7714,8 +7743,10 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-osd.json" />
@@ -7732,7 +7763,6 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation.json" />
@@ -7961,8 +7991,10 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-osd.json" />
@@ -7979,7 +8011,6 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation.json" />
@@ -8208,8 +8239,10 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-osd.json" />
@@ -8226,7 +8259,6 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation.json" />
@@ -8455,8 +8487,10 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-osd.json" />
@@ -8473,7 +8507,6 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation.json" />
@@ -8702,8 +8735,10 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-osd.json" />
@@ -8720,7 +8755,6 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation.json" />
@@ -8949,8 +8983,10 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-osd.json" />
@@ -8967,7 +9003,6 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation.json" />
@@ -9196,8 +9231,10 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-osd.json" />
@@ -9214,7 +9251,6 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation.json" />
@@ -9443,8 +9479,10 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-osd.json" />
@@ -9461,7 +9499,6 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation.json" />
@@ -9690,8 +9727,10 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-osd.json" />
@@ -9708,7 +9747,6 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation.json" />
@@ -9937,8 +9975,10 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-osd.json" />
@@ -9955,7 +9995,6 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation.json" />
@@ -10184,8 +10223,10 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-osd.json" />
@@ -10202,7 +10243,6 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation.json" />
@@ -10431,8 +10471,10 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-osd.json" />
@@ -10449,7 +10491,6 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation.json" />
@@ -10678,8 +10719,10 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-osd.json" />
@@ -10696,7 +10739,6 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation.json" />
@@ -10925,8 +10967,10 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-osd.json" />
@@ -10943,7 +10987,6 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation.json" />
@@ -11172,8 +11215,10 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-osd.json" />
@@ -11190,7 +11235,6 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation.json" />
@@ -11419,8 +11463,10 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-configurations.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-controller-feedback.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-core.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-firmware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-folders.json" />
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-hardware.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-network-errors.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-network.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-osd.json" />
@@ -11437,7 +11483,6 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-restoration.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-segment-display.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-signal.json" />
-    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-stylistic.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-vector.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-vfd.json" />
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation.json" />
@@ -11669,10 +11714,22 @@
     <ClInclude Include="src\VideoPresentation\include\RetroMediaLab\VideoPresentation\Presentation.h" />
     <None Include="src\VideoPresentation\shaders\crt.frag" />
     <None Include="src\VideoPresentation\shaders\crt.glsl" />
+    <None Include="src\VideoPresentation\shaders\display-filter.glsl" />
+    <None Include="src\VideoPresentation\shaders\dot-matrix.glsl" />
+    <None Include="src\VideoPresentation\shaders\epaper.glsl" />
+    <None Include="src\VideoPresentation\shaders\fixed-pixel.glsl" />
     <None Include="src\VideoPresentation\shaders\image-adjustments.glsl" />
     <None Include="src\VideoPresentation\shaders\image-restoration.glsl" />
+    <None Include="src\VideoPresentation\shaders\led-matrix.glsl" />
+    <None Include="src\VideoPresentation\shaders\native-segments.glsl" />
+    <None Include="src\VideoPresentation\shaders\panel-grid.glsl" />
+    <None Include="src\VideoPresentation\shaders\plasma.glsl" />
+    <None Include="src\VideoPresentation\shaders\projection.glsl" />
+    <None Include="src\VideoPresentation\shaders\raster-segments.glsl" />
     <None Include="src\VideoPresentation\shaders\sampling.frag" />
     <None Include="src\VideoPresentation\shaders\sampling.vert" />
+    <None Include="src\VideoPresentation\shaders\vector-raster.glsl" />
+    <None Include="src\VideoPresentation\shaders\vfd-cells.glsl" />
     <ClCompile Include="src\VideoPresentation\src\AnalogSignal.cpp" />
     <ClInclude Include="src\VideoPresentation\src\AnalogSignal.h" />
     <ClInclude Include="src\VideoPresentation\src\BlackFrameCadence.h" />
@@ -11683,6 +11740,7 @@
     <ClInclude Include="src\VideoPresentation\src\CrtProcessing.h" />
     <ClCompile Include="src\VideoPresentation\src\Direct3DSurface.cpp" />
     <ClInclude Include="src\VideoPresentation\src\Direct3DSurface.h" />
+    <ClInclude Include="src\VideoPresentation\src\DisplayShaderParameters.h" />
     <ClCompile Include="src\VideoPresentation\src\DotMatrixProcessing.cpp" />
     <ClInclude Include="src\VideoPresentation\src\DotMatrixProcessing.h" />
     <ClInclude Include="src\VideoPresentation\src\EdgeAwareSampling.h" />
@@ -11712,8 +11770,6 @@
     <ClInclude Include="src\VideoPresentation\src\SoftwareFrameWorker.h" />
     <ClCompile Include="src\VideoPresentation\src\SoftwareProcessing.cpp" />
     <ClInclude Include="src\VideoPresentation\src\SoftwareProcessing.h" />
-    <ClCompile Include="src\VideoPresentation\src\StylisticProcessing.cpp" />
-    <ClInclude Include="src\VideoPresentation\src\StylisticProcessing.h" />
     <ClCompile Include="src\VideoPresentation\src\VectorProcessing.cpp" />
     <ClInclude Include="src\VideoPresentation\src\VectorProcessing.h" />
     <ClCompile Include="src\VideoPresentation\src\VfdProcessing.cpp" />

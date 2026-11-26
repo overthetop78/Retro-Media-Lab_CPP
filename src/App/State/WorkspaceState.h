@@ -45,6 +45,8 @@ struct WorkspaceState {
     RETROMEDIALAB_APP_API void setEmulationShortcuts(QJsonObject);
     bool showFullscreenEmulationStatistics() const noexcept { return showFullscreenEmulationStatistics_; }
     RETROMEDIALAB_APP_API void setShowFullscreenEmulationStatistics(bool);
+    int fullscreenOsdTransparency() const noexcept { return fullscreenOsdTransparency_; }
+    RETROMEDIALAB_APP_API void setFullscreenOsdTransparency(int);
     bool preferencesOpen = false;
     bool migrationOpen = false;
     QByteArray migrationGeometry;
@@ -81,6 +83,7 @@ struct WorkspaceState {
     RETROMEDIALAB_APP_API void setFileDialogDirectory(const QString& scope, const QString& directory);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToFileDialogDirectories(std::function<void()>);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToEmulationStatistics(std::function<void()>);
+    RETROMEDIALAB_APP_API DirectorySubscription subscribeToOsdTransparency(std::function<void()>);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToEmulationFolders(std::function<void()>);
     RETROMEDIALAB_APP_API DirectorySubscription subscribeToEmulationShortcuts(std::function<void()>);
     using LoggingSubscription = DirectorySubscription;
@@ -105,6 +108,8 @@ private:
     QJsonObject emulationShortcuts_;
     std::vector<std::weak_ptr<const std::function<void()>>> emulationShortcutObservers_;
     bool showFullscreenEmulationStatistics_ = false;
+    int fullscreenOsdTransparency_ = DisplayConstants::DefaultOsdTransparency;
+    std::vector<std::weak_ptr<const std::function<void()>>> osdTransparencyObservers_;
     std::vector<std::weak_ptr<const std::function<void()>>> emulationStatisticsObservers_;
     int interfaceScale_ = DisplayConstants::DefaultPercent;
     std::vector<std::weak_ptr<const std::function<void()>>> scaleObservers_;

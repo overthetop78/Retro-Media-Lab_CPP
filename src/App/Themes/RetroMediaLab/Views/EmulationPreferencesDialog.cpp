@@ -16,10 +16,12 @@
 #include <QKeySequenceEdit>
 #include <QLabel>
 #include <QLineEdit>
+#include <QLocale>
 #include <QPushButton>
 #include <QScrollArea>
 #include <QSet>
 #include <QSignalBlocker>
+#include <QSlider>
 #include <QTabWidget>
 #include <QStyle>
 #include <QToolButton>
@@ -79,6 +81,8 @@ constexpr ShortcutRow ShortcutRows[] = {
     {Keys::QuickLoad, "Emulation.Shortcut.QuickLoad"},
     {Keys::Screenshot, "Emulation.Shortcut.Screenshot"},
     {Keys::ToggleMute, "Emulation.Shortcut.Mute"},
+    {Keys::VolumeDown, "Emulation.Shortcut.VolumeDown"},
+    {Keys::VolumeUp, "Emulation.Shortcut.VolumeUp"},
     {Keys::OsdWithPause, "Emulation.Shortcut.OsdWithPause"},
     {Keys::OsdWithoutPause, "Emulation.Shortcut.OsdWithoutPause"},
     {Keys::OsdStatistics, "Emulation.Shortcut.OsdStatistics"},
@@ -159,6 +163,37 @@ void EmulationPreferencesDialog::open(QWidget* parent, Translations::Translation
             saveFolder(field, *input);
         });
     }
+    auto* transparencyRow = new QWidget(folderContent);
+    auto* transparencyLayout = new QHBoxLayout(transparencyRow);
+    transparencyLayout->setContentsMargins({});
+    auto* transparency = new QSlider(Qt::Horizontal, transparencyRow);
+    transparency->setRange(DisplayConstants::MinimumOsdTransparency, DisplayConstants::MaximumOsdTransparency);
+    transparency->setTracking(false);
+    transparency->setValue(state.fullscreenOsdTransparency());
+    auto* percent = new QLabel(transparencyRow);
+    const auto showPercent = [percent, &text](int value) {
+        percent->setText(text(DisplayConstants::PercentLabel)
+            .replace(DisplayConstants::Argument, QLocale().toString(value)));
+    };
+    showPercent(transparency->value());
+    transparencyLayout->addWidget(transparency, 1);
+    transparencyLayout->addWidget(percent);
+    auto* transparencyLabel = new QLabel(text(DisplayConstants::OsdTransparencyLabel), folderContent);
+    transparencyLabel->setBuddy(transparency);
+    folders->addRow(transparencyLabel, transparencyRow);
+    QObject::connect(transparency, &QSlider::sliderMoved, transparencyRow, showPercent);
+    QObject::connect(transparency, &QSlider::valueChanged, transparencyRow, [&, showPercent](int value) {
+        try {
+            state.setFullscreenOsdTransparency(value);
+            folderError->hide();
+        } catch (...) {
+            const QSignalBlocker block(transparency);
+            transparency->setValue(state.fullscreenOsdTransparency());
+            folderError->setText(text(ErrorKeys::CannotSavePreferences));
+            folderError->show();
+        }
+        showPercent(transparency->value());
+    });
     folders->addRow(folderError);
     general->setWidget(folderContent);
     tabs->addTab(general, text(GeneralKey));

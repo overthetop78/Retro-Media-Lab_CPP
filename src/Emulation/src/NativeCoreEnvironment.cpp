@@ -163,8 +163,13 @@ bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
             *static_cast<unsigned*>(data) = uiLocale_.language() == QLocale::French ? FrenchLanguage : EnglishLanguage;
             return true;
         case Command::GetVariable: return options_.returnValue(static_cast<NativeCoreVariable*>(data));
-        case Command::GetVfsInterface:
-            return interfaces_.files && interfaces_.files->provide(static_cast<NativeCoreVfsRequest*>(data));
+        case Command::GetVfsInterface: {
+            auto* request = static_cast<NativeCoreVfsRequest*>(data);
+            if (interfaces_.files) return interfaces_.files->provide(request);
+            if (request->requiredInterfaceVersion > NativeCoreFileSystem::InterfaceVersion) return false;
+            if (!defaultFiles_) defaultFiles_ = std::make_unique<NativeCoreFileSystem>();
+            return defaultFiles_->provide(request);
+        }
         case Command::GetDiskControlVersion:
             if (!interfaces_.disks) return false;
             *static_cast<unsigned*>(data) = NativeCoreDiskControlVersion;
@@ -319,6 +324,7 @@ unsigned NativeCoreEnvironment::rotation() const noexcept { return rotation_; }
 unsigned NativeCoreEnvironment::performanceLevel() const noexcept { return performanceLevel_; }
 
 void NativeCoreEnvironment::clearBorrowedReferences() noexcept {
+    defaultFiles_.reset();
     previousKeys_.clear();
     keyboard_ = nullptr;
     audioBufferStatus_ = nullptr;

@@ -1,7 +1,12 @@
 #include <RetroMediaLab/VideoPresentation/FullscreenOsd.h>
 
+#include <QApplication>
 #include <QCloseEvent>
 #include <QFrame>
+#include <QGraphicsDropShadowEffect>
+#include <QHBoxLayout>
+#include <QScrollBar>
+#include <QScrollArea>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QListWidget>
@@ -27,8 +32,23 @@ constexpr int EntryHeight = 40;
 constexpr int IdleMilliseconds = 15000;
 constexpr int CaptionSpacing = 4;
 constexpr int EditorWidth = 420;
+constexpr int InformationMargin = 24;
+constexpr int MixerCardWidth = 76;
+constexpr int MixerSliderHeight = 124;
+constexpr int MixerGroupGap = 13;
+constexpr int MixerCardPadding = 6;
+constexpr int MixerLabelHeight = 52;
+constexpr auto MixerAccentStyle = "color: lightskyblue";
+constexpr auto MixerSelectionStyle = "QFrame#rmlMixerFader { border: 1px solid lightskyblue; border-radius: 8px; }";
+constexpr auto MixerFaderName = "rmlMixerFader";
+constexpr int InformationMaximumWidth = 1100;
+constexpr int InformationMaximumHeight = 720;
 constexpr int EditorBottomMargin = 28;
 constexpr int HitTestAlpha = 1;
+constexpr int FullOpacity = 255;
+constexpr int FullTransparency = 100;
+constexpr int MenuStartAlpha = 248;
+constexpr int MenuEndAlpha = 242;
 constexpr auto PanelName = "rmlFullscreenOsdPanel";
 constexpr auto VideoShaderBadgeName = "rmlVideoShaderBadge";
 constexpr auto WindowedShaderBadgeStyle = R"(
@@ -37,7 +57,7 @@ QFrame#rmlVideoShaderBadge QLabel { color: white; background: transparent; }
 )";
 constexpr auto FullscreenShaderBadgeStyle = R"(
 QFrame#rmlVideoShaderBadge {
-    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #0b1c40,stop:1 #0f2a41);
+    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(11,28,64,%1),stop:1 rgba(15,42,65,%1));
     border: 1px solid #4da9db; border-radius: 10px;
 }
 QFrame#rmlVideoShaderBadge QLabel { color: white; background: transparent; font-size: 22px; }
@@ -46,7 +66,7 @@ QFrame#rmlVideoShaderBadge QProgressBar::chunk { background: #1bb0f8; }
 )";
 constexpr auto Style = R"(
 QFrame#rmlFullscreenOsdPanel {
-    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(8,18,46,248),stop:1 rgba(11,27,52,242));
+    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(8,18,46,%1),stop:1 rgba(11,27,52,%2));
     border-right: 1px solid rgba(84,159,211,166);
 }
 QFrame#rmlFullscreenOsdPanel QLabel { color: #d5e2f6; background: transparent; }
@@ -58,7 +78,50 @@ QFrame#rmlFullscreenOsdPanel QListWidget::item:selected {
 }
 QFrame#rmlFullscreenOsdPanel QListWidget::item:disabled { color: #a1aec5; }
 )";
+constexpr auto StatisticsBadgeName = "rmlFullscreenStatisticsBadge";
+constexpr auto StatisticsBadgeStyle = R"(
+QFrame#rmlFullscreenStatisticsBadge { background: rgba(33,37,43,%1); border-radius: 5px; }
+QFrame#rmlFullscreenStatisticsBadge QLabel { background: transparent; font-size: 14px; }
+)";
+constexpr int StatisticsInset = 12;
+constexpr int StatisticsRowHeight = 26;
+constexpr int StatisticsMinWidth = 124;
+constexpr int StatisticsIconWidth = 23;
+constexpr int StatisticsIconSize = 16;
+constexpr int StatisticsTopBottomPadding = 5;
+constexpr int StatisticsLeftPadding = 9;
+constexpr int StatisticsRightPadding = 11;
+constexpr std::array StatisticsColors{
+    qRgb(155, 211, 218), qRgb(185, 213, 239), qRgb(174, 218, 188), qRgb(227, 202, 158), qRgb(208, 189, 229)};
+constexpr int MuteInset = 44;
+constexpr int MuteIconSize = 44;
+constexpr int MuteShadowBlur = 5;
+constexpr qreal MuteShadowOffset = 1.0;
+constexpr int MuteShadowAlpha = 204;
+constexpr auto VolumeBadgeName = "rmlFullscreenVolumeBadge";
+constexpr int VolumeWidth = 288;
+constexpr int VolumeBottomMargin = 25;
+constexpr int VolumeHideMilliseconds = 2000;
+constexpr int VolumeIconPixels = 19;
+constexpr int VolumeBarHeight = 5;
+constexpr int VolumeBarGap = 10;
+constexpr int VolumeHeaderGap = 12;
+constexpr int VolumeTopPadding = 12;
+constexpr int VolumeBottomPadding = 14;
+constexpr auto VolumeBadgeStyle = R"(
+QFrame#rmlFullscreenVolumeBadge {
+    background: rgba(15,29,49,%1); border: 1px solid lightskyblue; border-radius: 12px;
+}
+QFrame#rmlFullscreenVolumeBadge QLabel { color: white; background: transparent; font-size: 17px; }
+QFrame#rmlFullscreenVolumeBadge QLabel#rmlVolumeValue { color: lightskyblue; font-size: 16px; font-weight: 600; }
+QFrame#rmlFullscreenVolumeBadge QProgressBar { border: 0; background: #26384e; }
+QFrame#rmlFullscreenVolumeBadge QProgressBar::chunk { background: lightskyblue; }
+)";
+constexpr auto VolumeValueName = "rmlVolumeValue";
 constexpr auto SubmenuLabel = "%1  ›";
+constexpr int SettingRole = Qt::UserRole;
+constexpr int ActivationRole = Qt::UserRole + 1;
+constexpr QRgb UnavailableEntryColor = qRgb(161, 174, 197);
 constexpr auto SettingLabel = "%1\n%2";
 constexpr auto FooterKey = "<span style=\"background-color:#263957\">&nbsp;%1&nbsp;</span> ";
 constexpr auto FooterLabel = "%1&nbsp;&nbsp;";
@@ -85,7 +148,8 @@ ShaderLoadingBadge::ShaderLoadingBadge(bool fullscreen, QWidget* parent, Qt::Win
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_TransparentForMouseEvents);
     setFocusPolicy(Qt::NoFocus);
-    setStyleSheet(QString::fromLatin1(fullscreen ? FullscreenShaderBadgeStyle : WindowedShaderBadgeStyle));
+    if (fullscreen) setTransparency(0);
+    else setStyleSheet(QString::fromLatin1(WindowedShaderBadgeStyle));
     auto* content = new QVBoxLayout(this);
     const int insetX = fullscreen ? FullscreenInsetX : WindowInsetX;
     const int insetY = fullscreen ? FullscreenInsetY : WindowInsetY;
@@ -105,6 +169,12 @@ ShaderLoadingBadge::ShaderLoadingBadge(bool fullscreen, QWidget* parent, Qt::Win
     content->addWidget(progress);
 }
 
+void ShaderLoadingBadge::setTransparency(int percent) {
+    const int alpha = FullOpacity * (FullTransparency - std::clamp(percent, 0, FullTransparency)) / FullTransparency;
+    const auto sheet = QString::fromLatin1(FullscreenShaderBadgeStyle).arg(alpha);
+    if (sheet != styleSheet()) setStyleSheet(sheet);
+}
+
 void ShaderLoadingBadge::setCaption(const QString& caption) {
     label_->setText(caption);
 }
@@ -116,12 +186,170 @@ void ShaderLoadingBadge::centerOn(const QWidget& anchor) {
     move(isWindow() ? anchor.mapToGlobal(offset) : offset);
 }
 
+FullscreenStatisticsBadge::FullscreenStatisticsBadge(QWidget& host, const Icons& icons)
+    : QFrame(&host, Qt::Tool | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint |
+        Qt::WindowDoesNotAcceptFocus | Qt::WindowTransparentForInput) {
+    setObjectName(QLatin1String(StatisticsBadgeName));
+    setAttribute(Qt::WA_ShowWithoutActivating);
+    setAttribute(Qt::WA_TransparentForMouseEvents);
+    setAttribute(Qt::WA_TranslucentBackground);
+    auto* layout = new QVBoxLayout(this);
+    layout->setContentsMargins(StatisticsLeftPadding, StatisticsTopBottomPadding,
+        StatisticsRightPadding, StatisticsTopBottomPadding);
+    layout->setSpacing(0);
+    for (std::size_t index = 0; index < values_.size(); ++index) {
+        auto* row = new QWidget(this);
+        row->setMinimumWidth(StatisticsMinWidth);
+        row->setFixedHeight(StatisticsRowHeight);
+        auto* columns = new QHBoxLayout(row);
+        columns->setContentsMargins({});
+        columns->setSpacing(0);
+        auto* icon = new QLabel(row);
+        icon->setFixedWidth(StatisticsIconWidth);
+        auto glyph = icons[index].pixmap(QSize(StatisticsIconSize, StatisticsIconSize), devicePixelRatioF());
+        if (!glyph.isNull()) {
+            QPainter painter(&glyph);
+            painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+            painter.fillRect(QRectF(QPointF(), glyph.deviceIndependentSize()), QColor::fromRgb(StatisticsColors[index]));
+        }
+        icon->setPixmap(glyph);
+        columns->addWidget(icon);
+        auto* value = values_[index] = new QLabel(row);
+        value->setTextFormat(Qt::PlainText);
+        auto palette = value->palette();
+        palette.setColor(QPalette::WindowText, QColor::fromRgb(StatisticsColors[index]));
+        value->setPalette(palette);
+        columns->addWidget(value, 1);
+        layout->addWidget(row);
+    }
+    setTransparency(0);
+}
+
+void FullscreenStatisticsBadge::setValues(const QWidget& anchor, const Values& values) {
+    bool changed = false;
+    for (std::size_t index = 0; index < values_.size(); ++index) {
+        if (values_[index]->text() == values[index]) continue;
+        values_[index]->setText(values[index]);
+        changed = true;
+    }
+    if (changed || !isVisible()) reposition(anchor);
+}
+
+void FullscreenStatisticsBadge::setTransparency(int percent) {
+    const int alpha = FullOpacity * (FullTransparency - std::clamp(percent, 0, FullTransparency)) / FullTransparency;
+    const auto sheet = QString::fromLatin1(StatisticsBadgeStyle).arg(alpha);
+    if (sheet != styleSheet()) setStyleSheet(sheet);
+}
+
+void FullscreenStatisticsBadge::reposition(const QWidget& anchor) {
+    adjustSize();
+    move(anchor.mapToGlobal(QPoint(std::max(0, anchor.width() - width() - StatisticsInset), StatisticsInset)));
+}
+
+FullscreenMuteBadge::FullscreenMuteBadge(QWidget& host, const QIcon& icon)
+    : QWidget(&host, Qt::Tool | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint |
+        Qt::WindowDoesNotAcceptFocus | Qt::WindowTransparentForInput) {
+    setAttribute(Qt::WA_ShowWithoutActivating);
+    setAttribute(Qt::WA_TransparentForMouseEvents);
+    setAttribute(Qt::WA_TranslucentBackground);
+    constexpr int padding = MuteShadowBlur + int(MuteShadowOffset);
+    auto* label = new QLabel(this);
+    label->setGeometry(padding, padding, MuteIconSize, MuteIconSize);
+    auto glyph = icon.pixmap(QSize(MuteIconSize, MuteIconSize), devicePixelRatioF());
+    if (!glyph.isNull()) {
+        QPainter tint(&glyph);
+        tint.setCompositionMode(QPainter::CompositionMode_SourceIn);
+        tint.fillRect(QRect(0, 0, MuteIconSize, MuteIconSize), Qt::white);
+    }
+    label->setPixmap(glyph);
+    auto* shadow = new QGraphicsDropShadowEffect(label);
+    shadow->setBlurRadius(MuteShadowBlur);
+    shadow->setOffset(0.0, MuteShadowOffset);
+    shadow->setColor(QColor(0, 0, 0, MuteShadowAlpha));
+    label->setGraphicsEffect(shadow);
+    setFixedSize(MuteIconSize + 2 * padding, MuteIconSize + 2 * padding);
+}
+
+void FullscreenMuteBadge::reposition(const QWidget& anchor) {
+    constexpr int inset = MuteInset - MuteShadowBlur - int(MuteShadowOffset);
+    move(anchor.mapToGlobal(QPoint(std::max(0, anchor.width() - width() - inset),
+        std::max(0, anchor.height() - height() - inset))));
+}
+
+FullscreenVolumeBadge::FullscreenVolumeBadge(QWidget& host, const QIcon& icon)
+    : QFrame(&host, Qt::Tool | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint |
+        Qt::WindowDoesNotAcceptFocus | Qt::WindowTransparentForInput),
+      title_(new QLabel(this)), value_(new QLabel(this)), level_(new QProgressBar(this)), hideTimer_(new QTimer(this)) {
+    setObjectName(QLatin1String(VolumeBadgeName));
+    setAttribute(Qt::WA_ShowWithoutActivating);
+    setAttribute(Qt::WA_TransparentForMouseEvents);
+    setAttribute(Qt::WA_TranslucentBackground);
+    title_->setTextFormat(Qt::PlainText);
+    value_->setTextFormat(Qt::PlainText);
+    value_->setObjectName(QLatin1String(VolumeValueName));
+    auto* marker = new QLabel(this);
+    marker->setPixmap(icon.pixmap(QSize(VolumeIconPixels, VolumeIconPixels), devicePixelRatioF()));
+    auto* header = new QHBoxLayout;
+    header->setSpacing(VolumeHeaderGap);
+    header->addWidget(marker);
+    header->addWidget(title_, 1);
+    header->addWidget(value_, 0, Qt::AlignRight);
+    auto* layout = new QVBoxLayout(this);
+    layout->setContentsMargins(PanelMargin, VolumeTopPadding, PanelMargin, VolumeBottomPadding);
+    layout->setSpacing(VolumeBarGap);
+    layout->addLayout(header);
+    level_->setRange(0, FullTransparency);
+    level_->setFixedHeight(VolumeBarHeight);
+    level_->setTextVisible(false);
+    layout->addWidget(level_);
+    hideTimer_->setSingleShot(true);
+    hideTimer_->setInterval(VolumeHideMilliseconds);
+    connect(hideTimer_, &QTimer::timeout, this, &QWidget::hide);
+    setTransparency(0);
+}
+
+void FullscreenVolumeBadge::setTransparency(int percent) {
+    const int alpha = FullOpacity * (FullTransparency - std::clamp(percent, 0, FullTransparency)) / FullTransparency;
+    const auto sheet = QString::fromLatin1(VolumeBadgeStyle).arg(alpha);
+    if (sheet != styleSheet()) setStyleSheet(sheet);
+}
+
+void FullscreenVolumeBadge::reposition(const QWidget& anchor) {
+    setFixedWidth(std::min(VolumeWidth, std::max(1, anchor.width())));
+    adjustSize();
+    move(anchor.mapToGlobal(QPoint{std::max(0, (anchor.width() - width()) / 2),
+        std::max(0, anchor.height() - height() - VolumeBottomMargin)}));
+}
+
+void FullscreenVolumeBadge::showVolume(const QWidget& anchor, const QString& title, const QString& value, int percent) {
+    title_->setText(title);
+    value_->setText(value);
+    level_->setValue(percent);
+    reposition(anchor);
+    show();
+    raise();
+    hideTimer_->start();
+}
+
 struct FullscreenOsd::State {
     struct Level {
         const std::vector<Entry>* entries;
         QFrame* panel;
         QListWidget* rows;
         const Entry* parent;
+        struct Fader {
+            const Entry* entry;
+            QFrame* card;
+            QSlider* slider;
+            QLabel* value;
+        };
+        struct MixerSection {
+            QWidget* widget;
+            std::vector<Fader> faders;
+        };
+        QScrollArea* mixer = nullptr;
+        std::vector<MixerSection> sections{};
+        QSlider* selected = nullptr;
     };
 
     QWidget& host;
@@ -136,6 +364,7 @@ struct FullscreenOsd::State {
     bool externalKeyboardNavigation = false;
     QFrame* editor = nullptr;
     ShaderLoadingBadge* shaderBadge = nullptr;
+    int transparency = 0;
     QLabel* editorTitle = nullptr;
     QLabel* editorValue = nullptr;
     QLabel* editorHints = nullptr;
@@ -156,14 +385,14 @@ FullscreenOsd::FullscreenOsd(QWidget& host, QString machine, QString media, QStr
       state_(new State{host, std::move(footer), std::move(entries), std::move(dismissed)}) {
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_TranslucentBackground);
+    setMouseTracking(true);
     setFocusPolicy(Qt::StrongFocus);
-    setStyleSheet(QString::fromLatin1(Style));
-    installEventFilter(this);
+    setTransparency(0);
     state_->idle = new QTimer(this);
     state_->idle->setInterval(IdleMilliseconds);
     state_->idle->setSingleShot(true);
     connect(state_->idle, &QTimer::timeout, this, [this] {
-        if (state_->slider->isSliderDown()) state_->idle->start();
+        if (hasPointerCapture()) state_->idle->start();
         else close();
     });
     state_->settingSave = new QTimer(this);
@@ -183,7 +412,6 @@ FullscreenOsd::FullscreenOsd(QWidget& host, QString machine, QString media, QStr
     state_->slider = new QSlider(Qt::Horizontal, state_->editor);
     state_->slider->setFocusPolicy(Qt::NoFocus);
     editorLayout->addWidget(state_->slider);
-    state_->slider->installEventFilter(this);
     state_->editorHints = new QLabel(state_->editor);
     state_->editorHints->setTextFormat(Qt::RichText);
     state_->editorHints->setWordWrap(true);
@@ -192,15 +420,18 @@ FullscreenOsd::FullscreenOsd(QWidget& host, QString machine, QString media, QStr
     state_->editorBack->setFocusPolicy(Qt::NoFocus);
     editorLayout->addWidget(state_->editorBack, 0, Qt::AlignLeft);
     connect(state_->editorBack, &QPushButton::clicked, this, [this] { navigate(Navigation::Cancel); });
-    state_->editor->installEventFilter(this);
+    state_->editor->setMouseTracking(true);
+    for (auto* child : state_->editor->findChildren<QWidget*>()) child->setMouseTracking(true);
     state_->editor->hide();
     connect(state_->slider, &QSlider::valueChanged, this, &FullscreenOsd::adjustValue);
     openLevel(state_->entries, machine, media);
-    host.installEventFilter(this);
+    qApp->installEventFilter(this);
     fitHost();
 }
 
-FullscreenOsd::~FullscreenOsd() = default;
+FullscreenOsd::~FullscreenOsd() {
+    qApp->removeEventFilter(this);
+}
 
 void FullscreenOsd::activate() {
     fitHost();
@@ -217,12 +448,24 @@ void FullscreenOsd::setGameName(const QString& name) {
     state_->gameName->setVisible(!name.isEmpty());
 }
 
+void FullscreenOsd::setTransparency(int percent) {
+    state_->transparency = std::clamp(percent, 0, FullTransparency);
+    const int opacity = FullTransparency - state_->transparency;
+    const auto sheet = QString::fromLatin1(Style)
+        .arg(MenuStartAlpha * opacity / FullTransparency).arg(MenuEndAlpha * opacity / FullTransparency);
+    if (sheet != styleSheet()) setStyleSheet(sheet);
+    if (state_->shaderBadge) state_->shaderBadge->setTransparency(state_->transparency);
+}
+
 void FullscreenOsd::setShaderLoading(bool loading, const QString& caption) {
     if (!loading) {
         if (state_->shaderBadge) state_->shaderBadge->hide();
         return;
     }
-    if (!state_->shaderBadge) state_->shaderBadge = new ShaderLoadingBadge(true, this);
+    if (!state_->shaderBadge) {
+        state_->shaderBadge = new ShaderLoadingBadge(true, this);
+        state_->shaderBadge->setTransparency(state_->transparency);
+    }
     state_->shaderBadge->setCaption(caption);
     state_->shaderBadge->centerOn(*this);
     state_->shaderBadge->show();
@@ -266,7 +509,12 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     }
     auto* rows = new QListWidget(panel);
     rows->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    rows->setTextElideMode(Qt::ElideRight);
+    const bool information = parent && parent->centeredInformation;
+    rows->setTextElideMode(information ? Qt::ElideNone : Qt::ElideRight);
+    if (information) {
+        rows->setSelectionMode(QAbstractItemView::NoSelection);
+        rows->setWordWrap(true);
+    }
     for (const auto& entry : entries) {
         if (entry.separatorBefore) {
             auto* separator = new QListWidgetItem(rows);
@@ -277,8 +525,14 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
         }
         auto* row = new QListWidgetItem(entry.icon,
             entry.children.empty() ? entry.label : QString::fromUtf8(SubmenuLabel).arg(entry.label), rows);
-        row->setSizeHint({0, EntryHeight});
-        row->setData(Qt::UserRole, entry.setting.has_value());
+        if (information && !entry.status) {
+            auto heading = row->font();
+            heading.setWeight(QFont::DemiBold);
+            row->setFont(heading);
+        }
+        if (!information) row->setSizeHint({0, EntryHeight});
+        row->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+        row->setData(SettingRole, entry.setting.has_value());
     }
     content->addWidget(rows, 1);
     if (state_->levels.empty()) {
@@ -291,14 +545,173 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     }
     const auto level = state_->levels.size();
     state_->levels.push_back({&entries, panel, rows, parent});
-    rows->installEventFilter(this);
-    rows->viewport()->installEventFilter(this);
-    rows->viewport()->setMouseTracking(true);
+    panel->setMouseTracking(true);
     connect(rows, &QListWidget::itemClicked, this, [this, level, rows](QListWidgetItem* item) {
         invoke(level, rows->row(item), false);
     });
+    if (parent && parent->centeredMixer) buildMixer();
+    for (auto* child : panel->findChildren<QWidget*>()) child->setMouseTracking(true);
     refresh();
-    state_->levels.back().rows->setFocus();
+    focusLevel();
+}
+
+void FullscreenOsd::focusLevel() {
+    const auto& level = state_->levels.back();
+    if (level.mixer) setFocus();
+    else level.rows->setFocus();
+}
+
+void FullscreenOsd::buildMixer() {
+    auto& level = state_->levels.back();
+    level.rows->hide();
+    auto* layout = static_cast<QVBoxLayout*>(level.panel->layout());
+    layout->setContentsMargins(PanelMargin, PanelMargin, PanelMargin, PanelMargin);
+    auto* area = new QScrollArea(level.panel);
+    area->setFrameShape(QFrame::NoFrame);
+    area->setWidgetResizable(true);
+    area->setFocusPolicy(Qt::NoFocus);
+    area->setStyleSheet(QStringLiteral("QScrollArea { background: transparent; }"));
+    area->viewport()->setAutoFillBackground(false);
+    auto* body = new QWidget(area);
+    auto* groups = new QHBoxLayout(body);
+    groups->setContentsMargins({});
+    groups->setSpacing(MixerGroupGap);
+    level.mixer = area;
+    std::vector<QString> titles;
+    for (const auto& entry : *level.entries) {
+        const auto existing = std::ranges::find(titles, entry.mixerSection);
+        const auto sectionIndex = std::size_t(existing - titles.begin());
+        if (existing == titles.end()) {
+            titles.push_back(entry.mixerSection);
+            auto* section = new QWidget(body);
+            auto* sectionLayout = new QVBoxLayout(section);
+            sectionLayout->setContentsMargins({});
+            auto* heading = new QLabel(entry.mixerSection, section);
+            heading->setTextFormat(Qt::PlainText);
+            heading->setStyleSheet(QString::fromLatin1(MixerAccentStyle));
+            heading->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+            heading->setToolTip(entry.mixerSection);
+            sectionLayout->addWidget(heading);
+            auto* cards = new QHBoxLayout;
+            cards->setSpacing(0);
+            sectionLayout->addLayout(cards);
+            groups->addWidget(section);
+            level.sections.push_back({section, {}});
+        }
+        auto& section = level.sections[sectionIndex];
+        auto* cards = static_cast<QVBoxLayout*>(section.widget->layout())->itemAt(1)->layout();
+        auto* card = new QFrame(section.widget);
+        card->setObjectName(QLatin1String(MixerFaderName));
+        card->setFixedWidth(MixerCardWidth);
+        auto* cardLayout = new QVBoxLayout(card);
+        cardLayout->setContentsMargins(0, MixerCardPadding, 0, MixerCardPadding);
+        auto* value = new QLabel(card);
+        value->setTextFormat(Qt::PlainText);
+        value->setStyleSheet(QString::fromLatin1(MixerAccentStyle));
+        auto* slider = new QSlider(Qt::Vertical, card);
+        const auto& setting = *entry.setting;
+        slider->setRange(setting.minimum, setting.maximum);
+        slider->setFixedHeight(MixerSliderHeight);
+        slider->setTracking(false);
+        slider->setFocusPolicy(Qt::NoFocus);
+        slider->setAccessibleName(entry.label);
+        slider->setToolTip(entry.label);
+        auto* name = new QLabel(entry.label, card);
+        name->setTextFormat(Qt::PlainText);
+        name->setWordWrap(true);
+        name->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+        name->setFixedHeight(MixerLabelHeight);
+        cardLayout->addWidget(value, 0, Qt::AlignHCenter);
+        cardLayout->addWidget(slider, 0, Qt::AlignHCenter);
+        cardLayout->addWidget(name);
+        cards->addWidget(card);
+        section.faders.push_back({&entry, card, slider, value});
+        connect(slider, &QSlider::sliderPressed, this, [this, slider] {
+            if (!state_->levels.back().mixer || !state_->levels.back().panel->isAncestorOf(slider)) return;
+            state_->levels.back().selected = slider;
+            refreshMixer();
+        });
+        connect(slider, &QSlider::sliderMoved, this, [this, value, &setting](int draft) {
+            state_->idle->start();
+            value->setText(setting.format(draft));
+            if (setting.preview) setting.preview(draft);
+        });
+        connect(slider, &QSlider::valueChanged, this, [this, slider, &setting](int draft) {
+            if (!state_->levels.back().mixer || !state_->levels.back().panel->isAncestorOf(slider)) return;
+            state_->idle->start();
+            state_->levels.back().selected = slider;
+            if (setting.preview) setting.preview(draft);
+            if (setting.read() != draft) setting.save(draft);
+            const int current = setting.read();
+            if (current != draft && setting.preview) setting.preview(current);
+            refresh();
+        });
+    }
+    groups->addStretch();
+    area->setWidget(body);
+    layout->addWidget(area, 1);
+    auto* back = new QPushButton(state_->hints.backLabel, level.panel);
+    back->setFocusPolicy(Qt::NoFocus);
+    connect(back, &QPushButton::clicked, this, [this] { navigate(Navigation::Cancel); });
+    layout->addWidget(back, 0, Qt::AlignRight);
+}
+
+void FullscreenOsd::refreshMixer() {
+    auto& level = state_->levels.back();
+    if (!level.mixer) return;
+    QSlider* first = nullptr;
+    bool selectionVisible = false;
+    for (auto& section : level.sections) {
+        bool sectionVisible = false;
+        for (auto& fader : section.faders) {
+            const auto& entry = *fader.entry;
+            const auto& setting = *entry.setting;
+            const bool visible = !entry.visible || entry.visible();
+            fader.card->setVisible(visible);
+            sectionVisible |= visible;
+            if (visible && !first) first = fader.slider;
+            selectionVisible |= visible && fader.slider == level.selected;
+            fader.slider->setEnabled(!entry.enabled || entry.enabled());
+            if (!visible || fader.slider->isSliderDown()) continue;
+            const QSignalBlocker block(fader.slider);
+            fader.slider->setValue(setting.read());
+            fader.value->setText(setting.format(fader.slider->value()));
+        }
+        section.widget->setVisible(sectionVisible);
+    }
+    if (!selectionVisible) level.selected = first;
+    for (auto& section : level.sections) {
+        for (auto& fader : section.faders) {
+            const auto sheet = fader.slider == level.selected ? QString::fromLatin1(MixerSelectionStyle) : QString{};
+            if (fader.card->styleSheet() != sheet) fader.card->setStyleSheet(sheet);
+        }
+    }
+}
+
+void FullscreenOsd::navigateMixer(Navigation direction) {
+    auto& level = state_->levels.back();
+    if (direction == Navigation::Cancel || direction == Navigation::Confirm) {
+        retainLevels(state_->levels.size() - 1);
+        return;
+    }
+    if (!level.selected) return;
+    if (direction == Navigation::Up || direction == Navigation::Down) {
+        if (level.selected->isEnabled())
+            level.selected->triggerAction(direction == Navigation::Up
+                ? QAbstractSlider::SliderSingleStepAdd : QAbstractSlider::SliderSingleStepSub);
+        return;
+    }
+    std::vector<QSlider*> visible;
+    for (const auto& section : level.sections)
+        for (const auto& fader : section.faders)
+            if (fader.card->isVisible()) visible.push_back(fader.slider);
+    const auto found = std::ranges::find(visible, level.selected);
+    if (found == visible.end()) return;
+    const auto index = std::clamp(found - visible.begin() + (direction == Navigation::Left ? -1 : 1),
+        std::ptrdiff_t{}, std::ssize(visible) - 1);
+    level.selected = visible[std::size_t(index)];
+    refreshMixer();
+    level.mixer->ensureWidgetVisible(level.selected);
 }
 
 void FullscreenOsd::retainLevels(std::size_t count) {
@@ -316,7 +729,7 @@ void FullscreenOsd::restoreMenu(std::size_t count) {
         panel->deleteLater();
     }
     positionPanels();
-    state_->levels.back().rows->setFocus();
+    focusLevel();
 }
 
 void FullscreenOsd::positionPanels() {
@@ -326,12 +739,40 @@ void FullscreenOsd::positionPanels() {
     const int rootWidth = std::min(PanelWidth,
         hasSubmenu ? width() * PanelWidth / (PanelWidth + SubmenuWidth) : width());
     root.panel->setGeometry(0, 0, rootWidth, height());
-    root.panel->setVisible(!state_->edited);
+    const auto* parent = state_->levels.back().parent;
+    const bool information = parent && parent->centeredInformation;
+    const bool mixer = parent && parent->centeredMixer;
+    root.panel->setVisible(!state_->edited && !information && !mixer);
     for (std::size_t index = 1; index < state_->levels.size(); ++index) {
         auto& level = state_->levels[index];
         const bool current = index + 1 == state_->levels.size() && !state_->edited;
         level.panel->setVisible(current);
         if (!current) continue;
+        if (mixer) {
+            const auto preferred = level.mixer->widget()->sizeHint();
+            const auto chrome = level.panel->layout()->sizeHint() - level.mixer->sizeHint();
+            const int panelWidth = std::min(preferred.width() + chrome.width(),
+                std::max(1, width() - 2 * PanelMargin));
+            const int scrollHeight = panelWidth < preferred.width() + chrome.width()
+                ? level.mixer->horizontalScrollBar()->sizeHint().height() : 0;
+            const int panelHeight = std::min(preferred.height() + chrome.height() + scrollHeight,
+                std::max(1, height() - 2 * InformationMargin));
+            level.panel->setGeometry((width() - panelWidth) / 2, (height() - panelHeight) / 2, panelWidth, panelHeight);
+            continue;
+        }
+        if (information) {
+            const int panelWidth = std::min(InformationMaximumWidth, std::max(1, width() - 2 * InformationMargin));
+            int contentHeight = 0;
+            for (int row = 0; row < level.rows->count(); ++row) {
+                if (!level.rows->item(row)->isHidden())
+                    contentHeight += std::max(0, level.rows->sizeHintForRow(row));
+            }
+            const int chrome = level.panel->layout()->sizeHint().height() - level.rows->sizeHint().height();
+            const int panelHeight = std::min({InformationMaximumHeight, std::max(1, height() - 2 * InformationMargin),
+                contentHeight + chrome});
+            level.panel->setGeometry((width() - panelWidth) / 2, (height() - panelHeight) / 2, panelWidth, panelHeight);
+            continue;
+        }
         const int top = std::clamp(state_->submenuTop, 0, std::max(0, height() - EntryHeight));
         const int available = height() - top;
         int panelHeight = available;
@@ -363,10 +804,12 @@ void FullscreenOsd::refresh() {
             const bool visible = !entry.visible || entry.visible();
             if (entry.separatorBefore) level.rows->item(index++)->setHidden(!visible);
             auto* item = level.rows->item(index);
-            const bool enabled = !entry.enabled || entry.enabled();
+            const bool information = level.parent && level.parent->centeredInformation;
+            const bool enabled = information || !entry.enabled || entry.enabled();
             item->setHidden(!visible);
-            item->setFlags(enabled ? Qt::ItemIsEnabled | Qt::ItemIsSelectable : Qt::NoItemFlags);
-            if (visible && enabled) {
+            item->setData(ActivationRole, enabled);
+            item->setForeground(enabled ? QBrush{} : QBrush(QColor::fromRgb(UnavailableEntryColor)));
+            if (visible) {
                 if (index < previous) before = index;
                 else if (next == -1) next = index;
             }
@@ -392,6 +835,7 @@ void FullscreenOsd::refresh() {
         restoreMenu(validLevels);
         return;
     }
+    refreshMixer();
     positionPanels();
     refreshEditorHints();
 }
@@ -404,6 +848,7 @@ void FullscreenOsd::invoke(std::size_t levelIndex, int row, bool enterOnly) {
     for (const auto& entry : *level.entries) {
         if (entry.separatorBefore && row-- == 0) return;
         if (row-- != 0) continue;
+        if (entry.enabled && !entry.enabled()) return;
         if (entry.children.empty() && (enterOnly || (!entry.command && !entry.setting))) return;
         retainLevels(levelIndex + 1);
         if (!entry.children.empty()) {
@@ -519,7 +964,7 @@ void FullscreenOsd::editAdjacent(int direction) {
     int row = previous + direction;
     while (row >= 0 && row < rows->count()) {
         auto* item = rows->item(row);
-        if (item->data(Qt::UserRole).toBool() && !item->isHidden() && item->flags().testFlag(Qt::ItemIsEnabled)) {
+        if (item->data(SettingRole).toBool() && item->data(ActivationRole).toBool() && !item->isHidden()) {
             rows->setCurrentRow(row);
             invoke(index, row, false);
             return;
@@ -548,6 +993,19 @@ void FullscreenOsd::navigate(Navigation direction) {
             return;
         }
     }
+    const auto* parent = state_->levels.back().parent;
+    if (parent && parent->centeredMixer) {
+        navigateMixer(direction);
+        return;
+    }
+    if (parent && parent->centeredInformation) {
+        if (direction == Navigation::Confirm || direction == Navigation::Cancel || direction == Navigation::Left)
+            retainLevels(index);
+        else if (direction == Navigation::Up || direction == Navigation::Down)
+            rows->verticalScrollBar()->triggerAction(direction == Navigation::Up
+                ? QAbstractSlider::SliderSingleStepSub : QAbstractSlider::SliderSingleStepAdd);
+        return;
+    }
     switch (direction) {
     case Navigation::Cancel:
         if (index == 0) close();
@@ -574,7 +1032,29 @@ void FullscreenOsd::navigate(Navigation direction) {
     }
 }
 
-bool FullscreenOsd::isEditing() const noexcept { return state_->edited != nullptr; }
+bool FullscreenOsd::isEditing() const noexcept {
+    return state_->edited || (!state_->levels.empty() && state_->levels.back().mixer);
+}
+
+bool FullscreenOsd::hasPointerCapture() const {
+    const auto* grabbed = QWidget::mouseGrabber();
+    if (state_->slider->isSliderDown() || (grabbed && isAncestorOf(grabbed))) return true;
+    if (state_->levels.empty()) return false;
+    const auto& level = state_->levels.back();
+    if (level.mixer) return (level.selected && level.selected->isSliderDown()) ||
+        level.mixer->horizontalScrollBar()->isSliderDown() || level.mixer->verticalScrollBar()->isSliderDown();
+    return level.parent && level.parent->centeredInformation && level.rows->verticalScrollBar()->isSliderDown();
+}
+
+bool FullscreenOsd::usesPointerAt(const QPoint& globalPosition) const {
+    if (hasPointerCapture()) return true;
+    const auto contains = [&](const QWidget* panel) {
+        return panel->isVisible() && panel->rect().contains(panel->mapFromGlobal(globalPosition));
+    };
+    return contains(state_->editor) || std::ranges::any_of(state_->levels, [&](const auto& level) {
+        return contains(level.panel);
+    });
+}
 
 void FullscreenOsd::setExternalKeyboardNavigation(bool enabled) noexcept {
     state_->externalKeyboardNavigation = enabled;
@@ -585,19 +1065,22 @@ bool FullscreenOsd::eventFilter(QObject* object, QEvent* event) {
         if (event->type() == QEvent::Move || event->type() == QEvent::Resize) fitHost();
         return false;
     }
-    if (!isVisible()) return false;
-    if (event->type() == QEvent::MouseMove || event->type() == QEvent::MouseButtonPress ||
-        event->type() == QEvent::Wheel || event->type() == QEvent::KeyPress) {
-        if (!state_->runningCommand) state_->idle->start();
-    }
+    const auto* target = qobject_cast<QWidget*>(object);
+    if (!isVisible() || !target || (target != this && !isAncestorOf(target))) return false;
+    const auto type = event->type();
+    const bool pointerActivity = type == QEvent::MouseMove || type == QEvent::MouseButtonPress ||
+        type == QEvent::MouseButtonRelease || type == QEvent::MouseButtonDblClick || type == QEvent::Wheel;
+    if (!state_->runningCommand && (type == QEvent::KeyPress ||
+        (pointerActivity && usesPointerAt(static_cast<QSinglePointEvent*>(event)->globalPosition().toPoint()))))
+        state_->idle->start();
     if (object == state_->editor && event->type() == QEvent::Wheel && state_->edited) {
         const auto delta = static_cast<QWheelEvent*>(event)->angleDelta().y();
         if (delta != 0) adjustValue(state_->draft + (delta < 0 ? -1 : 1));
         return true;
     }
-    if (event->type() == QEvent::KeyPress) {
+    if (type == QEvent::KeyPress && !state_->externalKeyboardNavigation) {
         const auto navigateDefault = [this](Navigation direction) {
-            if (!state_->externalKeyboardNavigation) navigate(direction);
+            navigate(direction);
             return true;
         };
         switch (static_cast<QKeyEvent*>(event)->key()) {
@@ -638,6 +1121,5 @@ void FullscreenOsd::paintEvent(QPaintEvent*) {
 
 void FullscreenOsd::mousePressEvent(QMouseEvent* event) {
     event->accept();
-    close();
 }
 }

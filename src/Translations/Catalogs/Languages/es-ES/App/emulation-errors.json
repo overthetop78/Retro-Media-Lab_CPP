@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "El emulador necesita un medio antes de poder encender esta máquina. Inserte o configure uno de los medios necesarios que se muestran a continuación.",
+    "Emulation.Error.PowerFailureTitle": "No se pudo encender la máquina",
+    "Emulation.Error.Machine": "Máquina",
+    "Emulation.Error.RequiredMedia": "Medios necesarios",
+    "Emulation.Error.Title": "Error de emulación",
+    "Emulation.Error.EmulatorNotInstalled": "El emulador requerido no está instalado.",
+    "Emulation.Error.EmulatorUpdateBlocked": "El emulador no puede ser actualizado mientras se utiliza.",
+    "Emulation.Error.FirmwareMissing": "Falta firmware obligatorio.",
+    "Emulation.Error.FirmwareIncompatible": "El firmware seleccionado es incompatible con esta máquina.",
+    "Emulation.Error.MediaNotFound": "No se encontró el archivo multimedia configurado.",
+    "Emulation.Error.MediaUnsupported": "Este emulador no admite los medios seleccionados.",
+    "Emulation.Error.OptionInvalid": "Una opción emulador es inválida.",
+    "Emulation.Error.HostCommunicationFailed": "La comunicación con el proceso emulador falló.",
+    "Emulation.Error.MachineStartFailed": "La máquina emulada no podía ser iniciada.",
+    "Emulation.Error.MediaOperationFailed": "La operación de medios falló.",
+    "Emulation.Error.SavedStateInvalid": "El estado salvado es inválido o dañado.",
+    "Emulation.Error.SavedStateIncompatible": "El estado guardado no es compatible con esta configuración de la máquina.",
+    "Emulation.Error.SavedStateOperationFailed": "La operación del estado salvado falló."
+  }
+}

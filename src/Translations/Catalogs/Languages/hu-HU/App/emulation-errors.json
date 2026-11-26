@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "Az emulátornak adathordozóra van szüksége a gép bekapcsolása előtt. Helyezze be vagy állítsa be az alább látható szükséges adathordozók egyikét.",
+    "Emulation.Error.PowerFailureTitle": "A gépet nem sikerült bekapcsolni",
+    "Emulation.Error.Machine": "Gép",
+    "Emulation.Error.RequiredMedia": "Szükséges adathordozók",
+    "Emulation.Error.Title": "Emulációs hiba",
+    "Emulation.Error.EmulatorNotInstalled": "A szükséges emulátor nincs telepítve.",
+    "Emulation.Error.EmulatorUpdateBlocked": "Az emulátor használata közben nem frissíthető.",
+    "Emulation.Error.FirmwareMissing": "A szükséges firmware hiányzik.",
+    "Emulation.Error.FirmwareIncompatible": "A kiválasztott firmware nem kompatibilis ezzel a géppel.",
+    "Emulation.Error.MediaNotFound": "A beállított médiafájl nem található.",
+    "Emulation.Error.MediaUnsupported": "A kiválasztott médiumot nem támogatja ez az emulátor.",
+    "Emulation.Error.OptionInvalid": "Az emulátor opció érvénytelen.",
+    "Emulation.Error.HostCommunicationFailed": "Az emulátor-folyamattal való kommunikáció nem sikerült.",
+    "Emulation.Error.MachineStartFailed": "Az emulált gépet nem sikerült elindítani.",
+    "Emulation.Error.MediaOperationFailed": "A média nem működött.",
+    "Emulation.Error.SavedStateInvalid": "A mentett állapot érvénytelen vagy sérült.",
+    "Emulation.Error.SavedStateIncompatible": "A mentett állapot nem kompatibilis ezzel a gép konfigurációjával.",
+    "Emulation.Error.SavedStateOperationFailed": "A védett állam akciója sikertelen."
+  }
+}

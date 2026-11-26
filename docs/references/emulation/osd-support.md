@@ -634,3 +634,509 @@ Le CRT matériel applique la netteté sur les couleurs ajustées avant le décod
 ### État des processus de cœurs hébergés
 
 Le type HostProcessState du SDK reprend les états de osd-support. HostedCoreSession fournit l’état courant et conserve le dernier PID démarré même après une fermeture, une réponse invalide ou une absence de connexion du processus lancé. La sortie est détectée sur le fil du propriétaire, y compris sans boucle Qt active. Une sonde Windows Release entre deux processus a vérifié le démarrage, la fermeture, la sortie spontanée après Stop, le défaut de protocole et le défaut de connexion. Elle a aussi vérifié la reprise après défaut. La sonde a été supprimée et les empreintes de Emulation.dll concordent.
+
+### Informations d’exécution communes du cœur
+
+Le contrat facultatif du SDK reprend IEmulationCoreRuntimeStatus.cs de osd-support. La session hébergée publie la région, la disponibilité des sauvegardes, les compteurs audio et l’identité du processus. La session native publie la région et les mesures audio locales. La vue utilise l’horloge nominale fournie par la machine et conserve le repli sur son contrat d’horloge existant.
+
+La sonde Windows Release entre deux processus a vérifié la région PAL, la capacité de sauvegarde, les trois valeurs audio et la conservation du PID après fermeture. La sonde a été supprimée et les DLL Emulation et RetroMediaLab déployées concordent avec la compilation. Le chemin natif et la vue ont été compilés en Release.
+
+### Retour de force des cœurs natifs
+
+La session native reprend le rappel de ExternalCoreEnvironmentCallbackHost et le stockage de EmulationControllerFeedbackAccumulator sur osd-support. Le rappel est lié à la session et utilise les deux effets déjà définis par le SDK. Un rappel fourni par le module reste prioritaire. La réaffectation efface le port concerné et la fermeture libère les états.
+
+Le test Windows Release a chargé une DLL temporaire et transmis deux effets. Il a vérifié le rejet d’un effet invalide, la réaffectation d’un port, la fermeture et les informations natives NTSC et sauvegarde. La DLL temporaire a été supprimée et Emulation.dll déployée a été vérifiée par empreinte. L’essai sur une manette physique reste ouvert.
+
+### Retour de force des cœurs hébergés
+
+HostedCoreSession expose aux adaptateurs les effets reçus du processus actif par le protocole des cœurs de osd-support. Une réaffectation acceptée retire immédiatement les anciens effets du port correspondant. Un refus distant conserve le dernier état valide. La fermeture ou la sortie du processus rend les effets indisponibles. Les trames suivantes continuent à fournir les états du cœur.
+
+La sonde Windows Release entre deux processus a vérifié les deux ports en vibration, la réaffectation, le refus distant, la fermeture et la sortie spontanée. Elle a été supprimée et la DLL Emulation déployée a été vérifiée par empreinte.
+
+### Réinitialisation du retour de force
+
+ExternalCore.State.cs efface les sorties, dont le retour de force, après une réinitialisation ou une restauration réussie. Les sessions natives et hébergées exposent un état de vibration vide après ces opérations. Un refus distant conserve le dernier instantané valide.
+
+La compilation Windows Release et les sondes avec une DLL native temporaire et un processus hébergé ont vérifié les deux réinitialisations distantes, la restauration native et distante et le refus distant. Les deux sondes ont été supprimées. La DLL déployée correspond à la DLL compilée.
+
+### Sorties du cœur hébergé après une commande de cycle de vie
+
+Le cœur de référence de osd-support efface les sorties lors de la restauration, de la réinitialisation et de l’arrêt. La session C++ efface l’image, le nombre de trames audio en attente et les vibrations dès la confirmation de la commande. Les compteurs audio cumulés sont conservés. Une réponse de trame sans nouvelle image garde la dernière image, comme ProcessCore.Host.cs.
+
+Une sonde Windows Release entre deux processus, avec une image transmise en mémoire partagée, a contrôlé les quatre opérations, la réponse sans nouvelle image et le retour de la vidéo à la trame suivante. La sonde a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Table et événements du clavier natif
+
+InputProcessing reprend les 44 touches explicites et les quatre plages de ExternalCoreKeyboardFunctions.cs sur osd-support. NativeCoreSession expose la publication des pressions et relâchements dans le rappel enregistré par le cœur. La fermeture efface la mémoire des touches détenue par le contexte natif.
+
+Une sonde Windows Release avec une DLL temporaire a contrôlé Maj+A, l’ordre des pressions et des relâchements, la casse, l’absence de répétition sur un instantané identique et la première pression après réouverture. La sonde a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Instantané des entrées pour les cœurs natifs
+
+NativeCoreSession transmet les événements clavier et conserve les entrées interrogées par le cœur à partir du même instantané. InputProcessing partage les correspondances natives entre interrogation et événements, comme EmulationInputProcessingService.cs sur osd-support. Un rappel fourni par un adaptateur conserve la priorité.
+
+Une sonde Windows Release a contrôlé les valeurs clavier, souris et manette lues par une DLL native temporaire, leur remise à zéro et la conservation de l’instantané après modification de l’objet fourni par l’appelant. Elle a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Options à chaud des cœurs natifs
+
+NativeCoreSession expose les options et catégories de la session active. La validation et le signal de mise à jour restent dans le gestionnaire des options, comme dans ExternalCoreEnvironmentCallbackHost.cs et EmulationLegacyOptionHost.cs de osd-support.
+
+Une DLL temporaire a vérifié le choix initial, le rejet d’une valeur absente du catalogue, la notification au cœur et la prise en compte de la nouvelle valeur à la trame suivante. La compilation Windows Release a réussi, la sonde a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Commandes de disque dans la session native
+
+Les opérations du contrôleur commun de osd-support sont accessibles à travers NativeCoreSession. Le choix de la politique et de la fabrique de contenu reste au module. La session vérifie que le cœur est chargé avant de relayer les appels et détache les rappels à la fermeture.
+
+Une DLL native temporaire a vérifié le statut, la sélection, le rejet d’un index hors limites, l’éjection, l’insertion et l’ajout d’un emplacement. La compilation Windows Release a réussi. La sonde a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Installation sans dossier de modules vide
+
+CMake crée les répertoires des contenus effectivement installés. Le paquet actuel omet Modules. Host::discover accepte un répertoire absent, qui ne fournit aucune entrée. La compilation et le déploiement Windows Release ont confirmé que Modules reste absent. Les 595 PNG de src/App/Assets ont été comparés par empreinte à leur copie dans Assets, avec leurs chemins relatifs.
+
+### Définition de dalle du papier électronique
+
+Le profil C++ reprend la définition du contrat EmulationEPaperVideoConfiguration sur osd-support. Le rendu logiciel relie directement image source, définition de dalle et taille de sortie par les deux projections au plus proche de ResampleForLcd. Le dialogue et l’OSD reprennent les libellés des définitions LCD.
+
+La sonde Windows Release a vérifié la valeur native par défaut, la sauvegarde et le rechargement de VGA et le changement des pixels échantillonnés sur une mire. Elle a été supprimée. Les DLL du thème et de la bibliothèque vidéo déployées ont été vérifiées par empreinte. Les sélecteurs ont été compilés.
+
+### Définitions de grille des afficheurs matriciels
+
+Les matrices LED, les afficheurs à points et les VFD partagent les neuf définitions fixes du catalogue EmulationVideoProcessingCatalog.LedMatrix.cs sur osd-support. Les profils anciens gardent la définition native par défaut. Le dialogue et l’OSD utilisent les dimensions du RESX anglais de référence, communes à toutes les langues. Les grilles fixes alimentent le moteur logiciel existant. Pour le VFD, la grille est visible en mode matriciel.
+
+Le test Windows Release a vérifié les dimensions natives et fixes, la sauvegarde des trois réglages et l’effet d’une grille 32 × 16 sur les trois rendus logiciels. La sonde a été supprimée et les DLL vidéo et du thème déployées ont été vérifiées par empreinte. Les contrôles du dialogue et de l’OSD ont été compilés.
+
+### Échantillonnage des cellules LED depuis la trame source
+
+Le chemin logiciel reprend les cinq prises de FilterLedMatrixCellStructure.cs sur osd-support. Chaque cellule échantillonne le centre dans la trame source et, lorsque la grille réduit un axe, les quatre positions décalées avec une moitié du poids réservée au centre. La composition conserve les réglages C++ existants de taille en mode natif, de séparation, de luminosité et de halo.
+
+Une sonde Windows Release a réduit une trame à bandes de 64 × 64 vers une grille et une sortie de 16 × 16. Elle a vérifié que les bandes visibles seulement dans les prises décalées contribuent à toutes les cellules. La sonde a été supprimée et VideoPresentation.dll déployée vérifiée par empreinte.
+
+### Formes et couleurs LED
+
+Le filtre C# `FilterLedMatrixCellStructure` combine le rouge et la moitié du vert source pour `RedGreen`. `RoundedSquare` utilise une distance signée avec des coins de rayon 0,10 en unités de cellule. Le portage expose et enregistre ces choix dans les profils. La fenêtre et l’OSD partagent les clés traduites de la branche `osd-support`.
+
+Le contrôle Windows Release hors écran a vérifié l’enregistrement et la relecture du profil, les canaux rouge et vert et l’atténuation dans les coins. Les fichiers du contrôle ont été supprimés.
+
+### Composition des matrices LED
+
+Le rendu logiciel reprend la géométrie, le halo et la transition vers la couleur uniforme de FilterLedMatrixCellStructure.cs. EmulationLedMatrixVideoConfiguration.cs et EmulationLedMatrixSettingsBlock.cs limitent les commandes à la couleur, à la définition et à la forme. Le dialogue et l’OSD suivent ces trois choix. Les anciens profils restent lisibles et ces trois valeurs restent enregistrées.
+
+La sonde Windows Release hors écran a vérifié le rechargement du profil, la couleur à un pixel par cellule, et la différence entre les coins carrés et arrondis avec agrandissement. La sonde a été supprimée. Le rendu matériel de ce filtre reste à porter.
+
+### Filtre matériel de la matrice LED
+
+Le shader de FilterLedMatrixCellStructure.cs et FilterLedMatrixColor.cs est commun à Direct3D 11, Vulkan et OpenGL. La passe reçoit la définition, la couleur et la forme du profil. Elle compose les cellules à la résolution d’affichage, avec l’échantillonnage de la trame source. Les combinaisons avec netteté, restauration, simulation de signal ou effets stylistiques utilisent encore le traitement logiciel.
+
+Sous Windows Release, la sonde a confirmé le chemin matériel puis comparé une capture de chaque moteur au modèle logiciel. La scène combinait une réduction de la grille, un dégradé rouge et vert et des cellules à coins arrondis. La tolérance était de trois niveaux par canal. La sonde a été supprimée et la DLL installée vérifiée par empreinte.
+
+### Cellules VFD
+
+EmulationVfdVideoConfiguration.cs et EmulationVfdSettingsBlock.cs définissent les six couleurs, les trois formes et la définition de grille. Les profils C++ enregistrent ces trois paramètres. Les champs de couleur et de définition existants restent lisibles. Les profils sans forme utilisent les cellules rondes. Le dialogue et l’OSD reprennent le même ordre dans les 29 langues.
+
+VfdVideoShaderParameters.cs fournit les teintes et FilterVfdCellStructure.cs définit l’échantillonnage, la couverture, le verre et le halo. Le rendu logiciel et le shader de Direct3D 11, Vulkan et OpenGL reprennent ces calculs. Les filtres matriciels LED et VFD partagent les prises de la trame source. Avec restauration, netteté, simulation de signal ou effets stylistiques, le chemin VFD reste logiciel.
+
+La sonde Windows Release a vérifié l’enregistrement du profil, les cellules rectangulaires et carrées et les phosphores bleu-vert et blanc. Les trois moteurs matériels ont activé le shader et leurs captures sont restées à trois niveaux par canal au plus du logiciel. La sonde a été supprimée et les DLL installées vérifiées par empreinte.
+
+### Optique des matrices de points
+
+FilterDotMatrix.cs et DotMatrixVideoShaderParameters.cs définissent les écrans réfléchissants, rétroéclairés et émissifs. Le rendu logiciel et matériel partagent les mêmes fonds, teintes, coefficients de transmission et poids d’échantillonnage que la branche source. Le dialogue et l’OSD reprennent les quatre réglages de EmulationDotMatrixSettingsBlock.cs. Les anciens profils qui spécifiaient la palette blanche sont chargés en gris neutre. Sans technologie enregistrée, le profil utilise le mode réfléchissant du C#.
+
+La sonde Windows Release a rechargé la configuration pour chaque technologie et vérifié que les trois rendus diffèrent. Les captures Direct3D 11, Vulkan et OpenGL sont restées à trois niveaux par canal au plus du rendu logiciel. Les 30 DLL de catalogue, ainsi que les DLL de thème et de présentation déployées, correspondent aux sorties de compilation. La sonde a été supprimée. Les combinaisons avec restauration, netteté, simulation de signal ou effets stylistiques passent encore par le rendu logiciel.
+
+### Optique des afficheurs à segments
+
+EmulationSegmentDisplaySettingsBlock.cs expose la disposition, la technologie et la couleur. Le dialogue et l’OSD reprennent les palettes propres au LCD, à la LED et au VFD. Une couleur incompatible adopte la première valeur de sa palette. Les profils antérieurs utilisent la technologie LED par défaut. Le rendu logiciel reprend les fonds, le contraste d’émission, le halo et les formes d’extrémité forcées par FilterSegmentDisplay.cs et FilterSegmentDisplayEndShape.cs.
+
+La sonde Windows Release hors écran a validé les trois rendus distincts, la persistance du profil et le passage au noir pour un choix LCD incompatible. La sonde a été supprimée et les DLL installées vérifiées par empreinte. La transmission des niveaux de segments natifs, la passe matérielle et la parité temporelle restent ouvertes.
+
+### Segments natifs des machines
+
+VideoFrame.cs associe deux niveaux rouges à une trame XRGB8888. Dans le SDK natif, IMachineNativeSegments expose ces niveaux pour la trame demandée sans modifier la structure VideoFrame ni la table virtuelle d’IEmulatedMachine. L’onglet machine transmet les niveaux à VideoSurface avec la trame. Le rendu logiciel reprend l’interprétation de FilterSegmentDisplay.cs et remet à zéro la persistance des segments simulés lorsqu’il compose des segments natifs.
+
+La sonde Windows Release a vérifié une trame avec remplissage de ligne, le fond, les trois niveaux de segment, le rejet de niveaux inversés et le retour à l’analyse raster sur la même trame. La sonde a été supprimée. Les DLL Emulation, VideoPresentation et le thème déployés correspondent aux sorties de compilation. Le passage par un module chargé, le transport interprocessus et les shaders de segments restent à vérifier ou à porter.
+
+### Shader des segments natifs
+
+La passe matérielle utilise les niveaux rouges de la source XRGB8888 progressive, comme FilterSegmentDisplay.cs. Elle gère les optiques LCD, LED et VFD. Le halo VFD reprend les quatre prises voisines du shader C#. Les trames entrelacées et les configurations avec effets stylistiques passent par le traitement logiciel. Le rendu des segments reconstruits à partir d’une image raster reste logiciel.
+
+Sous Windows Release, les captures Direct3D 11, Vulkan et OpenGL ont vérifié le fond, les trois niveaux et le halo VFD ainsi que le retour au rendu logiciel pour des niveaux invalides. Les quatre prises de référence s’écartent d’au plus deux niveaux par canal du rendu logiciel. La sonde a été supprimée et la DLL déployée vérifiée par empreinte.
+
+### Afficheurs à segments reconstruits
+
+Le filtre matériel reprend FilterSegmentDisplay.cs de la branche osd-support. La géométrie des segments est partagée avec le filtre logiciel. Le shader trouve le segment le plus proche, prélève les niveaux dans le raster et applique le temps de réponse et la rémanence avant la composition LED, LCD ou VFD. L’historique utilise les deux dernières trames admissibles et les horodatages du flux. Le traitement logiciel prend le relais quand les effets combinés ne sont pas pris en charge par cette passe.
+
+Vérification Windows en Release sur Direct3D 11, Vulkan et OpenGL. La sonde a vérifié la sélection matérielle, les transitions clair et sombre sur quatre trames, la stabilité des captures répétées, la disposition à seize segments avec points et deux-points, ainsi que la remise à zéro. La DLL construite et la DLL distribuée ont la même empreinte. Le dossier de la sonde a été supprimé.
+
+### Afficheurs à papier électronique
+
+FilterEPaper.cs et EPaperRefresh.cs définissent les six modes et leur cadence. Le C++ reprend les pigments, la grille de dalle, la trace résiduelle et son effacement, ainsi que l’inversion des pixels modifiés au rafraîchissement complet. Les lecteurs JSON conservent le mode et la définition des anciens profils. Le dialogue et l’OSD présentent les deux réglages de EmulationEPaperSettingsBlock.cs et reprennent les libellés des catalogues C#.
+
+Une sonde Windows Release a vérifié les six modes, l’encre jaune, la disparition de la trace entre deux rafraîchissements, l’inversion complète et la stabilité des captures répétées sur Direct3D 11, Vulkan, OpenGL et le moteur logiciel. Le dossier de la sonde a été supprimé.
+
+### Projection sur les moteurs matériels
+
+ProjectionVideoShader.cs définit l’échantillonnage à la résolution de la dalle, l’ouverture des cellules, la diffusion et la convergence CRT. Les paramètres optiques de ProjectionVideoParameters.cs sont partagés avec le rendu logiciel. Le filtre de connexion et la séparation colorée du DLP mono-puce préparent l’image avant le shader. Une combinaison avec un traitement de signal global, la netteté ou un effet stylistique utilise le moteur logiciel.
+
+La sonde Windows Release a vérifié la frange DLP sur un front en mouvement, sa disparition sur le front immobile, la réflexion de la toile grise avec lumière ambiante, la diffusion du CRT et la fermeture de la surface sur Direct3D 11, Vulkan et OpenGL. La DLL compilée correspond à celle du paquet Release. Le dossier temporaire a été supprimé.
+
+### Plasma sur les moteurs matériels
+
+Les filtres plasma de osd-support pilotent le phosphore, la limitation par luminance moyenne, le tramage par phase et le seuil de noir. Le shader reprend la persistance sur la trame précédente et les structures Stripe, Waffle, Delta et Monochrome. La grille d’échantillonnage et le calcul de couverture sont partagés avec la projection. Le filtre de connexion prépare la source que lit le shader.
+
+La vérification Windows Release sur Direct3D 11, Vulkan et OpenGL a contrôlé les quatre structures, la teinte ambrée, la différence de luminance entre une petite zone et l’écran entier, ainsi que la trace de la trame précédente quand le numéro de trame progresse avec un horodatage identique. Le dossier temporaire a été supprimé.
+
+### Afficheur vectoriel natif et raster
+
+FilterVectorDisplay.cs définit les profils de phosphore, les points et segments gaussiens, l’excitation d’un raster et la décroissance selon les horodatages. Le SDK expose les segments normalisés et le RVB linéaire au moyen d’une interface facultative jointe à la trame. Une liste native vide laisse décroître le phosphore. Le dialogue et l’OSD reprennent la couleur, la largeur de faisceau de −20 à 20 et la courbure. L’ancien choix Gris est chargé en Blanc.
+
+VectorRasterVideoShader.cs définit la synthèse matérielle du raster. Les trois moteurs utilisent les mêmes paramètres de faisceau que le traitement logiciel. La boucle de netteté garde une seule expression d’échantillonnage pour réduire la compilation du shader Direct3D 11. Le rendu des segments natifs utilise le traitement logiciel, comme dans la branche C#.
+
+La sonde Windows Release a vérifié une trame sans raster avec un segment et un point fixe, trois états de décroissance, les transitions entre raster et segments, la courbure et la capture répétée, sur les moteurs logiciel, Direct3D 11, Vulkan et OpenGL. La sonde temporaire a été supprimée.
+
+### LCD, LCD à rétroéclairage LED et OLED sur les moteurs matériels
+
+Les filtres C# FilterLcdDisplay.cs, FilterLedBacklitLcdDisplay.cs, FilterFixedPixelResponse.cs, FilterOledDisplay.cs et FilterOledPixelStructure.cs définissent les ouvertures de sous-pixels, la fuite lumineuse et le noir des dalles, la réponse temporelle, le rétroéclairage local et la limitation de luminance. Les rendus C++ partagent les paramètres des dalles avec le moteur logiciel. Le signal et les zones de rétroéclairage local sont préparés avant le shader. Les effets stylistiques et la netteté générale restent traités par le moteur logiciel lorsqu’ils sont combinés avec ces dalles.
+
+La sonde Windows Release a comparé la réponse TN et VA à 5 ms, le noir du rétroéclairage direct et Mini LED, le limiteur WOLED et les motifs de sous-pixels sur Direct3D 11, Vulkan et OpenGL. Lors du premier essai Direct3D 11, le compilateur dépassait 30 s. Le shader d’affichage chargé à partir du HLSL utilise désormais un niveau de compilation rapide et garde le cache de bytecode. L’initialisation à froid a pris environ 11 s lors du nouvel essai. La sonde temporaire a été supprimée.
+
+### Décodage du signal de dalle dans le shader
+
+PanelSignalVideoShader.cs applique le décodeur CRT au signal synchronisé sur les LCD, les LCD à rétroéclairage périphérique ou direct et les projecteurs hors DLP mono-puce. Le shader C++ décode les trames présente et précédente à la résolution source et arrondit chaque canal avant les réglages d’image, suivant la branche C#. La désynchronisation reste calculée par trame côté CPU. Les zones LED, la mesure de luminance OLED et la séparation DLP mono-puce utilisent toujours leur source préparée côté CPU.
+
+La sonde Windows Release a vérifié sur Direct3D 11, Vulkan et OpenGL le rendu numérique, la réception monochrome, les trois décodeurs composite PAL, NTSC et SECAM, et la différence de rendu en désynchronisation. Le build Release passe et la DLL déployée correspond au produit compilé. Le dossier de la sonde a été supprimé.
+
+### Bytecode du shader d’affichage Direct3D 11
+
+Le build Windows extrait le HLSL 5.0 du paquet Qt et appelle fxc avec le même réglage de compilation que le secours à l’exécution. Le fichier DXBC est intégré aux ressources du binaire avec le paquet Qt qui fournit le SPIR-V et la table des liaisons HLSL. Les builds sans fxc gardent la compilation de secours à l’exécution. Le shader demande explicitement le niveau zéro de la texture, qui n’a pas de niveaux supplémentaires. Cela évite les avertissements de gradients implicites dans les boucles. [Manuel QSB de Qt](https://doc.qt.io/qt-6/qtshadertools-qsb.html)
+
+Le paquet Windows Release contient exactement le bytecode produit par fxc. L’initialisation de Direct3D 11 a pris environ 250 ms sur cette machine. Les essais de décodage et de désynchronisation passent sur Direct3D 11, Vulkan et OpenGL. fxc émet encore des avertissements X4000 dans le HLSL généré. La sonde a été supprimée.
+
+### Dossiers de session possédés par un module
+
+EmulationSessionDirectoryFunctions.cs fournit au module deux opérations, à appeler après destruction du cœur. Le SDK C++ reprend le nettoyage ordinaire et celui des dossiers générés à nom GUID, avec remise en écriture des fichiers ordinaires en lecture seule sous Windows. Le module fournit en plus sa racine de session, ce qui permet de refuser un chemin hors de ce dossier. Les liens dans le dossier sont retirés sans parcourir leur cible. La fermeture du runtime et l’appel du nettoyage restent sous la responsabilité du propriétaire, comme dans le C#.
+
+La sonde Windows Release a vérifié les GUID avec tirets et au format compact, le nettoyage d’un fichier en lecture seule, le refus de la racine et des chemins externes, et la conservation d’un fichier atteint par une jonction. La DLL déployée correspond au build. La sonde a été supprimée.
+
+### Constructeurs de réglages matériels
+
+HardwareSettings reprend les blocs CPU, mémoire et résolution de EmulationHardwareSettingsFunctions.cs et les formats MHz, kHz, B et KiB. Les champs utilisent les descripteurs existants du SDK. Le format numérique MHz expose la précision minimale et maximale au moyen de QLocale. Les choix audio numériques conservent des identifiants invariants et affichent les valeurs dans la langue fournie. Les cinq libellés proviennent de EmulationCpu.resx, EmulationMemory.resx et EmulationVideo.resx dans les 30 catalogues. RAM reste dans Constants.
+
+La sonde Windows Release a contrôlé les blocs facultatifs, le modèle CPU localisable, les noms et les valeurs des choix et interrupteurs, et les formats français. Elle a été supprimée. Les aides détaillées, la présentation compacte et l’éditeur numérique dédié de la branche C# restent à raccorder aux descripteurs.
+
+### Éditeur numérique des réglages de module
+
+Le champ Number suit EmulationSettingsFieldControlFunctions.Inputs.cs et ConstrainedTextBox.cs. Il utilise la plage existante du SDK, filtre les caractères et le collage, conserve la dernière valeur complète pendant une saisie partielle et applique le pas avec les flèches haut et bas. Le dialogue utilise la langue active pour le séparateur et normalise la valeur transmise au module. L’OSD conserve les catégories d’éditeur de MachineController.OsdModuleSettings.cs.
+
+La sonde Qt Windows Release a vérifié la saisie française, les bornes, le retour à la dernière valeur valide, les pas au clavier et le rejet des collages incompatibles. La compilation Release du SDK et du thème a réussi. Le répertoire de la sonde a été supprimé.
+
+### Aide et cartes compactes dans les réglages du module
+
+IModuleSettingsPresentation expose les blocs compacts et les clés d’aide détaillée par champ sans changement des descripteurs existants. RetroMediaLab reprend le seuil de 760 unités logiques de EmulationSettingsLayout.cs et la limite de huit champs par carte CPU de EmulationModuleHardwareSettingsSection.cs. Une action d’information présente l’aide courte au survol et ouvre un encart défilant pour l’aide détaillée, selon EmulationSettingsFieldLabel.cs. Le thème utilise un menu Qt pour cet encart.
+
+La sonde Qt Windows Release a vérifié le passage d’une colonne à deux, le retrait d’une carte masquée, le libellé accessible, les textes de l’encart et le comportement avec l’aide courte seule. Le SDK et le thème ont compilé et le dossier temporaire a été supprimé.
+
+### Fichiers de configuration des machines
+
+ConfigurationFileAccessFunctions.cs définit le chemin GUID/machine.json, l’ordre des documents et la conversion des chemins par rapport à la base. Le SDK C++ expose ces opérations et laisse au module l’interprétation de son schéma JSON. Sous Windows, la lecture et l’écriture utilisent le nom de mutex calculé selon la convention de la branche C#. QSaveFile gère le fichier temporaire et la publication atomique. Un échec de publication renvoie IoFailure et conserve le document précédent.
+
+La sonde Windows Release a vérifié la création et le remplacement d’un document, les chemins internes et externes, l’ordre de lecture, l’omission d’un document invalide et l’annulation d’une écriture pendant l’attente du mutex. Le dossier temporaire a été supprimé.
+
+### Messages structurés
+
+Le contrat C# `EmulationErrorService` fournit les catégories, codes, cibles et contextes. Le port C++ garde la cause d’origine et laisse passer les exceptions déjà structurées et les annulations. L’ouverture d’une session et le démarrage direct transmettent leurs erreurs à la vue, qui affiche le message localisé et les médias requis lorsqu’ils sont fournis. Les 30 catalogues reprennent les chaînes d’`EmulationError.resx`.
+
+La compilation Windows Release et la sonde native ont vérifié le code d’erreur, le contexte, la cause, le texte natif et l’annulation. L’affichage utilise les surfaces d’erreur Qt existantes. Le dialogue détaillé du C# et la vérification avec un module réel restent à couvrir.
+
+Le thème RetroMediaLab affiche maintenant le dialogue d’erreur du socle avec un titre localisé, le message, le nom de configuration de la machine et les icônes dédupliquées des médias requis. Les messages de statut utilisent l’indicateur de la vue et les messages silencieux restent dans le diagnostic Qt. Windows Release et une sonde Qt hors écran ont vérifié les trois cibles, les libellés français, les deux icônes et la fermeture du dialogue. La sonde injecte un message structuré côté application. La validation de bout en bout avec un module de machine reste à faire.
+
+### Commandes de médias et sauvegardes
+
+Les exceptions du démarrage, y compris après recréation du moteur, de l’insertion, de l’éjection, de l’enregistrement de cassette et des sauvegardes traversent le contrat de messages. Les commandes de sauvegarde directe et rapide passent par la même session. L’interface affiche les clés du C# selon la catégorie. Les exceptions déjà structurées et les annulations conservent leur identité.
+
+La lecture vérifiée des fichiers d’état distingue la corruption, une identité différente et les erreurs d’accès. Windows Release a compilé les commandes et une sonde native a vérifié les quatre résultats de lecture, dont la conservation de la cause d’une erreur d’accès. La vérification des commandes avec un module de machine reste ouverte.
+
+La validation Windows Release charge une DLL de test via son manifeste et son export SDK. Elle couvre les exceptions à la création, au démarrage et à la recréation de la machine, un montage refusé, une annulation d’éjection qui préserve le média monté, une sauvegarde rapide en échec et une incompatibilité d’état signalée par le module. Une exception de média requis émise par la DLL arrive au dialogue Qt hors écran avec son titre français, le nom et l’icône du média. Le manifeste, la DLL et la sonde ont été supprimés après exécution. Ce contrôle valide le raccordement du socle avec un module synthétique.
+
+### Commandes de transport de cassette
+
+TapeTransportPresentationFunctions.cs définit les règles d’activation et MachineView.cs définit la face compacte, les glyphes, les couleurs et le clignotement. Le thème Qt dessine les six commandes dans la barre des médias. En pause, la touche Pause indique l’état et la commande Lecture ou Enregistrement en cours alterne entre opacité pleine et 25 % toutes les 400 ms. Le modèle partagé préserve l’état par défaut du contrat IEmulationTapeTransport lorsque le SDK ne renseigne pas l’opération en cours.
+
+Windows Release et une sonde Qt hors écran ont vérifié les états, les dimensions, les couleurs actives et le changement d’opacité. La sonde a été retirée. L’essai du transport d’une cassette avec une machine reste à faire.
+
+### Préparation lors de l’insertion d’un fichier
+
+MachineController.InsertMediaAsync appelle PrepareMediaAsync avant de monter le fichier. Les adaptateurs de la branche C# reçoivent le répertoire des médias convertis et peuvent adapter le chemin et les paramètres. Le contrat facultatif C++ IModuleMediaPreparation reçoit la configuration, les services d’exécution et le média à préparer. Session valide le résultat avant de toucher au montage courant et l’interface utilise ce parcours pour ouvrir un fichier. Les parcours de création de cassette et de configuration des cartes mémoire conservent leur appel d’insertion directe comme dans le C#.
+
+Windows Release et un module de test chargé par manifeste ont vérifié le chemin converti, les paramètres, la protection en écriture, le rejet d’un changement d’emplacement et le maintien du montage après refus ou annulation. Le module de test et ses fichiers ont été supprimés.
+
+### Dix emplacements de sauvegarde par configuration
+
+Chaque configuration a dix emplacements indexés par l’identifiant du module et le GUID de la configuration. Le premier conserve le chemin historique utilisé par les raccourcis rapides. La barre de commandes et le menu plein écran affichent les dix choix d’écriture et de lecture. La date distingue les emplacements occupés et seuls ceux-ci sont activés à la lecture. L’écriture utilise un fichier de travail de même extension et publie la sauvegarde atomiquement après réussite du module.
+
+Windows Release a compilé l’interface. Une DLL de test a vérifié les dix écritures et relectures après réouverture, l’isolation entre deux configurations, la compatibilité du fichier historique, la conservation après échec et annulation, et le retrait des fichiers temporaires. L’exercice visuel des menus avec une machine réelle reste à faire.
+
+### Fermeture de session en erreur
+
+MachineSession.DisposeAsync retire toujours la session et libère la machine en fin d’arrêt. Le port C++ retire la session de l’hôte avant de tenter l’arrêt, coupe sa sortie audio et limite l’arrêt de fermeture à une tentative même si la DLL lève une exception. La machine est détruite à la libération du dernier propriétaire et garde sa bibliothèque chargée jusque-là. Le thème retire l’onglet et signale l’échec dans la vue.
+
+Windows Release et une DLL de test ont vérifié le retrait après exception, la réouverture de la configuration et l’ordre arrêt–destruction. L’arrêt à la destruction de l’hôte a aussi été vérifié avec une session encore référencée. La DLL et la sonde ont été supprimées.
+
+La sonde Qt hors écran a chargé la DLL du thème Windows Release et ouvert une machine de test avec un état dans l’emplacement 10. Les menus de la barre de commandes et du plein écran présentent chacun les dix numéros pour les deux actions. Les dix choix sont actifs en sauvegarde et seul le dixième est actif en chargement. La date du fichier occupé a été vérifiée dans le menu de la barre. Le module et les ressources de la sonde ont été supprimés.
+
+### Échec au démarrage d’une machine
+
+Comme dans MachineSession.PowerOnAsync et DisposeCurrentMachineAsync, un démarrage en erreur provoque une tentative d’arrêt puis la destruction du moteur. Le C++ conserve les emplacements de médias dans la vue à l’arrêt et recrée le moteur au prochain démarrage. L’interface reçoit l’erreur du démarrage, y compris lorsque l’arrêt échoue aussi.
+
+La Release Windows a compilé. Un module temporaire a confirmé la destruction après les deux exceptions, la conservation des emplacements de médias, puis le démarrage d’un moteur neuf dans la même session.
+
+### Extinction d’une machine
+
+PowerOffAsync détruit le moteur à l’extinction. Le C++ libère la sortie audio et le moteur, conserve les emplacements et les médias de la session, puis crée un moteur neuf au rallumage. Si l’arrêt lève une exception, la destruction a lieu et l’erreur remonte à l’interface.
+
+Release Windows compilée. Un module temporaire a vérifié l’extinction normale, la destruction après une erreur d’arrêt, le remontage du média et la fermeture sans second appel au moteur détruit.
+
+### Mécanique et pistes dans le SDK natif
+
+Le vocabulaire du service MediaEngine pour les lecteurs est Floppy, HardDisk, Optical et Tape. Le SDK 2.3 expose la mécanique et permet de partager la même instance entre le contrôleur et son image, comme dans EmulationMediaProcessingService.Drives.cs et .Disks.cs. Le module pilote les signaux mécaniques et peut produire du PCM mono depuis son horloge. Le relais audio hôte est décrit ci-dessous.
+
+Les types SDK couvrent également les métadonnées, la géométrie des supports à blocs, les diagnostics des secteurs et le formatage, la lecture et la réécriture partielle des pistes. Les signatures des méthodes 2.2 sont conservées. Un module utilisant ces nouveaux contrats doit déclarer une plage de versions qui inclut le SDK 2.3.
+
+La Release Windows a compilé. Un module temporaire a vérifié la mécanique partagée, les neuf secteurs de la piste d’une image 720 Kio, la concordance entre la lecture simple et détaillée et la lecture d’une révolution MFM. La sonde et son image ont été supprimées.
+
+### Sortie hôte des bruitages mécaniques
+
+Le SDK expose createHostDriveMechanics pour le cas hostAudio de EmulationMediaProcessingService.Drives.cs. Les notifications de MediaDriveService réveillent la sortie Qt à la première activité. Les fragments de 20 ms sont mélangés hors du fil Qt avec la protection de MediaEngine. La sortie essaie le mono à 44,1 kHz, puis le format du périphérique en PCM 16 bits. Elle vide son tampon durant une seconde au maximum après la dernière activité. La mécanique reste possédée par le module, comme dans MediaDriveAudioController.cs.
+
+La Release Windows a compilé et un module temporaire a émis deux événements de cassette depuis un fil secondaire. Avec la sortie Windows disponible, le bruitage hôte s’est vidé tandis que celui destiné au rendu PCM par le module est resté en attente. La sonde a aussi fermé la session avec la sortie encore en cours de vidange. Tous ses fichiers ont été supprimés.
+
+### Préparation des médias dans le SDK
+
+Les opérations de IEmulationMediaProcessing.cs sont exposées par le service média du SDK natif. Les modules peuvent préparer des CUE et leurs fichiers WAVE de session, interroger les tailles optiques et les extensions, lire et écrire les signaux de bandes, créer des disques durs et convertir les SCP. Les blocs de bande conservent position, données, intégrité et métadonnées. Les profils, le rendu et la protection du mélange des sons mécaniques utilisent le moteur existant.
+
+Release Windows compilée. Un module temporaire a vérifié le changement de fichier CUE avec préservation du document initial et de son titre, les tailles optiques, les catalogues et la lecture après écriture d’un signal PCM WAV. La sonde et tous ses fichiers ont été supprimés.
+
+### Recréation après changement de média
+
+MachineSession.RecreateRunningMachineAsync détruit le moteur avant d’appeler la fabrique. Le C++ suit cet ordre lorsqu’un montage ou une réinitialisation exige une recréation. Si la fabrique, le démarrage ou l’enregistrement échoue, la session reste à l’arrêt avec sa précédente configuration de montage. Le moteur de remplacement est arrêté avant sa destruction.
+
+La Release Windows a compilé. Une DLL temporaire a simulé une ressource exclusive, puis un échec de démarrage pendant une réinitialisation à froid. Elle a confirmé l’ordre de destruction, la conservation du montage et la reprise au démarrage suivant.
+
+### Présentation des erreurs de session et de réglages
+
+Les parcours d’ouverture, d’édition et de fermeture transmettent les erreurs structurées au dialogue du thème. Le nom donné par l’utilisateur reste prioritaire. Quand la configuration est anonyme, le nom de la machine est résolu dans la langue active, comme dans le sélecteur. Le diagnostic Qt utilise la gravité et consigne la cause native disponible, suivant les informations utilisées par ControlErrorPresenter.cs.
+
+La Release Windows compile. Une sonde Qt hors écran avec un module chargé a contrôlé le nom traduit dans l’onglet et dans l’erreur de média requis déclenchée par le bouton de démarrage. La sonde a été supprimée.
+
+### Clavier et manettes dans l’OSD sans pause
+
+MachineInputController.SetOsdFocus laisse circuler les entrées de jeu pendant l’OSD sans pause. Le thème C++ maintient le clavier, les manettes et leur retour de force dans ce mode. Les commandes de navigation reconnues sont retirées du clavier et de la manette jusqu’au relâchement. Le filtre couvre boutons, axes normalisés et contrôles bruts comme dans OsdControllerReleaseFilter. Le routage de la souris hors des panneaux reste à rapprocher du C#.
+
+Release Windows compilée. Une sonde hors écran a envoyé A et Flèche bas au thème avec un module temporaire. La machine a reçu A, la flèche de navigation a été filtrée et les relâchements ont vidé les entrées. Une manette synthétique a vérifié le masque d’un bouton et d’un axe brut. La sonde a été supprimée.
+
+### Souris dans l’OSD sans pause
+
+Comme dans le C#, les panneaux et les contrôles qui capturent la souris gardent la priorité. Hors des panneaux, l’émulation reçoit le déplacement relatif, les boutons et les deux axes de molette. Un bouton utilisé sur le menu reste masqué pour le jeu jusqu’à son relâchement. Qt fournit les déplacements depuis la position du pointeur pendant l’OSD.
+
+La sonde du thème Windows Release a vérifié le passage des clics et de la molette hors des panneaux, le maintien de l’OSD ouvert, le filtrage à l’entrée du menu et la reprise après relâchement. Le dossier de la sonde a été supprimé.
+
+### Informations machine dans l’OSD
+
+Le panneau central reprend les rubriques de MachineController.OsdModuleSettings.cs dans osd-support. Il affiche les champs informatifs du module en lecture seule et masque le menu tant que le panneau est ouvert. Les rubriques sans information visible sont masquées. Haut et Bas font défiler les informations. Entrée, Échap ou Gauche ramènent au menu.
+
+Windows Release a compilé. La sonde du thème a vérifié le centrage, la valeur fournie par le module, l’absence des champs masqués ou modifiables et le retour au menu. La sonde a été supprimée.
+
+### Transparence de l’OSD
+
+Le réglage global est accessible depuis le menu plein écran et les préférences d’émulation. La plage de 0 à 100 % et la valeur initiale de 5 % reprennent MachineController.cs et AppSettings.cs de la branche osd-support. Le profil utilisateur enregistre fullscreenOsdTransparency. L’aperçu agit sur le fond du menu, de l’éditeur, du panneau central, des statistiques et des indicateurs plein écran, en gardant les textes lisibles. Les libellés proviennent d’EmulationVideo.resx dans les trente catalogues source. Le popup de volume dédié du C# reste à porter.
+
+Windows Release a compilé. La sonde du thème a vérifié la valeur initiale, l’aperçu du fond à 100 %, la sauvegarde et la relecture du JSON, puis l’enregistrement de 0 % en fermant le menu. La sonde a été supprimée.
+
+### Volume de la machine en plein écran
+
+Le menu Audio reprend le réglage de 0 à 100 % de MachineController.OsdModuleSettings.cs. Les raccourcis configurables Ctrl+Maj+Gauche et Ctrl+Maj+Droite changent le volume d’un point et affichent pendant deux secondes l’indicateur de FullscreenVolumeOsd.cs, centré en bas de l’écran. Le fond suit la transparence de l’OSD. Le volume s’applique à la sortie audio de la session et une valeur positive réactive le son s’il était coupé. Le mixeur des canaux et l’indicateur permanent de sourdine restent distincts.
+
+Le build Windows Release et une sonde du thème hors écran ont vérifié le réglage dans le menu Audio, l’action du raccourci, la valeur et la transparence de l’indicateur puis sa disparition. La sonde a été supprimée.
+
+### Sourdine en plein écran
+
+FullscreenMuteOsd.cs place un pictogramme blanc ombré à 44 pixels logiques des bords inférieur et droit. Le portage utilise le pictogramme du thème et le libellé accessible du C#. L’indicateur persiste tant que la sourdine est active ou que le gain audio est nul, puis disparaît quand le son est rétabli. Un gain positif très faible peut s’arrondir à 0 % dans le réglage de volume tout en restant audible.
+
+Windows Release a compilé. La sonde du thème a contrôlé la sourdine, le gain nul, le placement, la conservation du focus à l’affichage de la sourdine, la persistance après fermeture de l’indicateur de volume et la disparition en quittant le plein écran. Le backend hors écran a requis de réactiver la fenêtre avant le raccourci suivant après l’expiration de l’indicateur de volume. Le comportement du focus sur un bureau Windows reste à confirmer. La sonde a été supprimée.
+
+### Mixeur audio de l’OSD
+
+Le menu Audio ouvre un panneau central de curseurs verticaux comme dans FullscreenOsdWindow.CenterPanel.cs. Le volume général précède les réglages numériques du module, repérés par leur identifiant ou les groupes de mixage déclarés via IModuleAudioMixerBlocks. Gauche et Droite sélectionnent une voie, Haut et Bas ajustent sa valeur, et Entrée ou Échap reviennent au menu Audio. Le déplacement à la souris valide un réglage de module au relâchement pour limiter les écritures. Le volume général réagit pendant le déplacement. Un défilement horizontal garde accessibles les voies qui dépassent la largeur disponible.
+
+Windows Release a compilé. Une sonde hors écran a vérifié le volume général, la valeur d’un canal fourni par un module temporaire, sa mise à jour par les flèches, la valeur enregistrée dans la configuration de session, l’exclusion d’un canal masqué et le retour au menu. La sonde a été supprimée.
+
+### Statistiques en plein écran
+
+FullscreenStatisticsOsd.cs et MachinePresentationFunctions.cs définissent cinq lignes colorées en haut à droite. Le portage affiche le moteur réellement actif, la taille de l’image, les images par seconde mesurées, la fréquence attendue et la vitesse d’exécution du processeur. La fréquence nominale du processeur sert de repli avant la mesure. Le panneau reprend le réglage de transparence de l’OSD et la préférence existante d’affichage des statistiques.
+
+Windows Release a compilé. La sonde avec une machine temporaire a vérifié les cinq lignes en français, le format de l’image, la fréquence vidéo, la présence de la fréquence CPU, l’alignement et la désactivation du panneau. La sonde a été supprimée.
+
+### Fermeture automatique et capture dans l’OSD
+
+Le délai de 15 secondes suit FullscreenOsdWindow.cs. La capture d’un curseur ou d’une barre de défilement du panneau central maintient le menu ouvert. Les événements de souris des contrôles relancent le délai, y compris au relâchement. Un clic dans la zone vidéo laisse le menu ouvert. En mode sans pause, cette zone transmet toujours les événements de souris au jeu.
+
+Windows Release a compilé. Les sondes du thème ont vérifié l’expiration du délai avec et sans capture dans l’éditeur et le mixeur, le clic hors menu et le routage du pointeur en mode sans pause. Les sondes ont été supprimées.
+
+Les canaux à choix discrets reprennent OsdModuleEditor dans MachineController.OsdModuleSettings.cs. Les curseurs suivent l’ordre et affichent les libellés du module. La valeur sauvegardée est l’identifiant du choix. Les contrôles à choix hors du mixeur conservent leur présentation. La sonde Windows Release a vérifié les deux valeurs d’un canal à choix, la limite du curseur, le libellé et les identifiants dans la configuration de la session.
+
+### Navigation dans les listes en lecture seule de l’OSD
+
+FullscreenOsdWindow.Menu.cs déplace la sélection sur toutes les entrées visibles, puis vérifie séparément si l’entrée peut être activée. Le C++ reprend ce comportement, notamment pour parcourir et faire défiler les affectations de touches et les commandes indisponibles. Les séparateurs et les lignes masquées sont sautés. L’éditeur continue de naviguer uniquement entre les réglages modifiables.
+
+Le build Windows Release et la sonde hors écran ont vérifié le défilement de trente lignes, le saut d’une entrée masquée et d’un séparateur ainsi que le blocage de l’activation sur une ligne indisponible. La sonde a été supprimée.
+
+### Répétition des raccourcis et du mixeur plein écran
+
+Le maintien du volume et des directions en édition reprend le délai initial de 300 ms et l’intervalle de 35 ms de `MachineInputController.cs`. Le mixeur est considéré comme un éditeur, comme dans `FullscreenOsdWindow.Menu.cs`. Le volume et la sourdine restent utilisables lorsque l’OSD a le focus.
+
+La sonde Windows Release a exercé la touche Bas dans le mixeur et Ctrl+Maj+Gauche dans le menu, puis vérifié que le relâchement arrête les répétitions. La sonde a été supprimée. Le backend Qt hors écran désactive l’OSD lors de l’apparition de l’indicateur de volume, ce qui limite cette vérification au backend Windows.
+
+
+### Portée des raccourcis du plein écran
+
+Le menu applique la liste de `EmulationShortcutMap.cs` aux raccourcis Qt et aux raccourcis physiques. Quand le menu a le focus, seules ses commandes, la sourdine et le volume peuvent être déclenchés. Les raccourcis de session reprennent leur portée lorsque le menu est fermé.
+
+La sonde Windows Release a vérifié que Ctrl+Maj+F11 laisse le menu et le plein écran ouverts, que Ctrl+Maj+Gauche ajuste le volume, puis que Ctrl+Maj+F11 quitte le plein écran après fermeture du menu avec Échap. La sonde a été supprimée.
+
+
+### Retour à la machine après un OSD avec pause
+
+Comme dans `MachineInputController.SetOsdFocus`, la sortie du menu avec pause efface les touches ordinaires suivies par les raccourcis. Une touche dont le relâchement ne parvient pas à la vue ne bloque plus le prochain raccourci clavier. Les boutons de souris encore enfoncés rejoignent le masque existant de reprise du pointeur. Le mode sans pause conserve les entrées en cours.
+
+La sonde Windows Release a ouvert le menu avec pause, laissé une touche enfoncée et fermé le menu. La machine a repris et le volume a répondu au maintien de Ctrl+Maj+Gauche, puis s’est arrêté au relâchement. La partie souris a été compilée. La sonde a été supprimée.
+
+
+### Priorité des raccourcis sur les entrées de la machine
+
+Les touches du volume et des bascules du plein écran sont filtrées avant l’exécution de la commande, comme dans `MachineInputController.HandleKeyDown`. Les modificateurs déjà transmis sont retirés de l’état reçu par la machine tant que la combinaison est maintenue. Les raccourcis de bascule du menu utilisent également le filtre des sources de souris et de manette. Les entrées ordinaires restent utilisables dans le menu sans pause.
+
+La sonde Windows Release a vérifié le réglage du volume hors du menu, l’ouverture sans pause depuis le pavé numérique, la remise d’un état clavier filtré à la machine et la transmission de la touche A dans les deux vues. Les sources physiques de souris et de manette ont été compilées. La sonde a été supprimée.
+
+
+### Alias des commandes de manette
+
+Le routage des raccourcis et le filtre des entrées du jeu reconnaissent les alias des boutons et gâchettes standard définis dans `EmulationInputMappingFunctions.cs`. L’éditeur conserve les noms canoniques pour les nouvelles affectations. La sonde a vérifié les quatorze paires de noms, les pressions analogiques de L2 et R2, les entrées capturées pour le filtrage, la sélection du périphérique et l’absence de doublons dans la capture. Le build Windows Release a réussi. La sonde a été supprimée.
+
+
+### Capture des axes bruts
+
+La capture reconnaît un déplacement de 0,35 depuis la position initiale, d’après `ControllerBindingCaptureFunctions.cs`. Le signe du déplacement choisit le sens. Le maintien et la reprise utilisent la zone neutre des axes bruts, comme `OsdControllerReleaseFilter.cs`. Les noms d’axes bruts numérotés sont reconnus indépendamment de la casse.
+
+La compilation Windows Release et la sonde avec des états simulés ont vérifié les deux sens depuis des positions décentrées, les mouvements sous le seuil, le retour au repos et la zone neutre utilisée par le filtre. La sonde a été supprimée.
+
+
+### Boutons système des manettes
+
+Le backend Windows reprend la réception des états Guide et Share de `GameInputDeviceMonitor.cs`. Il publie les boutons pris en charge dans les contrôles nommés du périphérique, retire leurs états à la déconnexion et attend la fin des callbacks avant de libérer GameInput. La capture enregistre les noms XboxButton et Share. Guide est accepté comme alias de XboxButton. La voie RawGameController conserve son mappage XboxButton existant. [Microsoft GameInput v2](https://learn.microsoft.com/en-us/gaming/gdk/docs/reference/input/gameinput-v2/interfaces/igameinput/methods/igameinput_registersystembuttoncallback-v2)
+
+Windows Release a compilé. La sonde avec des états simulés a vérifié la capture en présence de contrôles bruts, le nom retenu par le filtre, l’alias, le relâchement et le ciblage de la manette. La réception physique des événements reste à vérifier sur une manette compatible. La sonde a été supprimée.
+
+
+Le service InputProcessing lit aussi les boutons système dans les contrôles nommés fournis à la machine, avec les alias Guide et XboxButton. Les adaptateurs qui exposent ces boutons dans leur masque numérique continuent de fonctionner. La sonde liée à Emulation.dll en Windows Release a vérifié les commandes simples, les combinaisons, le ciblage du périphérique, le relâchement et la lecture du masque numérique. La sonde a été supprimée.
+
+
+### Système de fichiers virtuel par défaut
+
+L’environnement d’un cœur natif fournit un VFS à la demande, comme `ExternalCoreEnvironmentCallbackHost.cs`. Le fournisseur personnalisé conserve la priorité et reste détenu par l’appelant. La session libère son propre fournisseur après la désinitialisation du cœur.
+
+La sonde avec un cœur natif dans la Release Windows a vérifié le refus d’une version inconnue, la lecture via la table par défaut, la disponibilité du fichier pendant la désinitialisation et la fermeture du fournisseur ensuite. Le fournisseur personnalisé reste utilisable après l’arrêt de la session. La sonde a été supprimée.
+
+### Accès au système de fichiers virtuel natif
+
+Le mode demandé par le cœur détermine les droits du fichier. Une écriture en mode mise à jour conserve les données existantes. Le partage de suppression Windows suit ExternalCoreVirtualFileSystem.cs du C#. La vérification Release sous Windows a couvert les accès en écriture seule, le maintien des octets non modifiés et le renommage puis la suppression avec un descripteur ouvert.
+
+[CreateFileW et modes de partage](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew) · [QFile et possession du descripteur](https://doc.qt.io/qt-6/qfile.html)
+
+Le VFS ouvre aussi les chemins absolus longs sous Windows, en ajoutant le préfixe d’extension lors de l’appel Win32. Le chemin communiqué au cœur conserve sa forme d’origine. La sonde Windows Release a écrit puis relu un nom Unicode au-delà de MAX_PATH sur le disque local et a été supprimée. Les chemins UNC n’ont pas été testés sur un partage. [Limites des chemins Windows](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation)
+
+### Fermeture de la préparation OpenGL
+
+La surface possède la tâche de compilation du contexte partagé. À la fermeture, au changement de moteur et à la destruction du contexte, elle demande l’interruption et attend la fin de la tâche avant de libérer les ressources. Le pilote termine la compilation déjà engagée. Les réponses mises en file par un contexte détruit sont ignorées. [QThread](https://doc.qt.io/qt-6/qthread.html) · [QOffscreenSurface](https://doc.qt.io/qt-6/qoffscreensurface.html)
+
+Windows Release a compilé. La vérification avec une surface Qt OpenGL a couvert la fin normale, le passage au moteur logiciel en cours de préparation et la destruction de la dernière surface pendant une préparation. La sonde a été supprimée.
+
+### Aides dans les réglages de stockage
+
+Les panneaux de configuration des lecteurs et cartouches reprennent la présentation de StorageConfigurationFieldFunctions.Present de la branche osd-support pour les aides courtes et détaillées. Les champs informatifs affichent le libellé du choix dans la langue active, selon le même traitement que les réglages de machine. Le build Windows Release a compilé les panneaux. La vérification visuelle avec un module déclarant ces réglages reste à faire.
+
+### Saisie IPv4 dans les réglages
+
+L’éditeur IPv4 reprend CreateIpv4 et ConstrainedTextBox sur osd-support. Il filtre les quatre octets décimaux, le collage et les zéros initiaux, en gardant la dernière adresse complète pendant la saisie. Qt peut ainsi finir une saisie partielle, et le dialogue applique la valeur complète. [QLineEdit](https://doc.qt.io/qt-6/qlineedit.html)
+
+Windows Release a compilé. La sonde Qt hors écran a vérifié les collages valides et invalides, la saisie partielle, la restauration par Entrée et les bornes 0 et 255. Elle a été supprimée.
+
+### Ouverture de dossier dans les réglages de machine
+
+Le bouton Ouvrir le dossier reprend CreateOpenDirectory de la branche osd-support. Le SDK C++ reçoit le chemin absolu dans la description du module. Le thème crée le répertoire au clic et demande son ouverture à l’hôte. Le bouton ne fournit aucune valeur à la sauvegarde des réglages. Les 30 catalogues reprennent Common.OpenFolder de Actions.resx. Windows Release a compilé le socle et ses catalogues. L’ouverture depuis une machine réelle reste à vérifier lors du portage des modules.
+
+### Indication de préparation lors des changements de vue
+
+Le chargement reste lié au moteur, comme dans MachineController.VideoShaderLoadingChanged de la branche osd-support. Masquer la surface ou effacer une trame ne termine plus cet état. Le thème masque le badge avec la surface et le réaffiche à son retour si le moteur travaille encore. Windows Release a compilé. La sonde OpenGL a vérifié le masquage, l’effacement, la réapparition de la surface pendant la préparation et la fin normale. Elle a été supprimée.
+
+### Réinitialisation des entrées après modification de session
+
+La vue reprend MachineInputController.RefreshBindings de la branche osd-support. Après la sauvegarde des affectations ou le remplacement du moteur, elle remet à zéro la saisie, les raccourcis et l’état des manettes avant le prochain relevé des périphériques. La capture de la souris est relâchée si la politique du moteur ne la permet plus. Windows Release a compilé. La transition avec une machine réelle et des touches maintenues reste à vérifier.
+
+### Restauration des médias au premier démarrage
+
+MachineSession, dans osd-support, expose les médias déclarés insérés dès l’ouverture. Le socle C++ utilise la même liste pour la barre des médias, la synchronisation avant le premier démarrage et la recréation. La Release Windows a compilé. Une DLL temporaire a vérifié le montage déclaré, l’éjection d’un montage initial marqué éjecté et la répétition au redémarrage. La sonde a été supprimée.
+
+MachineController.Open.cs passe runtime.MountedMedia à runtime.CreateMachine lors de l'ouverture. MachineSession conserve les médias marqués insérés, appelle Lifecycle.StartAsync à la mise sous tension et transmet les montages à la fabrique lorsqu'elle recrée la machine. Dans Acorn/Common/Services/Engine.cs, la fabrique transforme la liste reçue en médias de la configuration de la machine. Le socle C++ emploie createRuntimeWithMedia dès l’ouverture et lors de la recréation lorsque le module fournit la fabrique avec son contrat de stockage. Les modules qui fournissent seulement la configuration de stockage continuent à recevoir les montages avant Start. Windows Release et les deux variantes de la DLL temporaire ont vérifié les deux parcours, avec un lecteur déclaré éjecté. Les DLL temporaires ont été supprimées.
+
+### API graphique de la configuration d’exécution
+
+EmulationVideoConfigurationFunctions et MachineController.OsdVideo.cs sur osd-support transmettent le moteur du profil au module avant de créer le moteur d’émulation ou de calculer ses options à chaud. Le SDK C++ propose la même interface facultative et les valeurs Automatique, OpenGL, Vulkan et Direct3D 11. Le dialogue et l’OSD transmettent les changements de profil à la session. La configuration d’exécution dérivée ne remplace pas la configuration sauvegardée.
+
+Windows Release a compilé. Une DLL temporaire a vérifié OpenGL à l’ouverture, le passage de l’option modifiable à chaud vers Vulkan, l’application différée de l’option de démarrage, la recréation avec la nouvelle API et la conservation de la configuration du profil. La DLL temporaire a été supprimée.
+
+### Description des réglages selon le moteur vidéo
+
+EmulationModuleSettingsSection.Layout.cs applique le moteur du profil à la configuration avant Describe. L’éditeur C++ utilise la même préparation que la fabrique pour obtenir les champs, leurs plages et leurs règles. L’OSD actualise ses descriptions au changement de moteur. Le stockage de la configuration continue de passer par la sauvegarde habituelle. La compilation et le déploiement Windows Release ont réussi.
+
+Les modifications unitaires de l’OSD évaluent les dépendances avec la configuration préparée pour le moteur vidéo actif, comme lors de la description des champs. Seules les modifications de réglages résultantes sont transmises à la sauvegarde. La Release Windows a compilé et a été déployée localement.
+
+Dans EmulationModuleSettingsSection.Layout.cs, choisir le moteur capture les valeurs de l’éditeur, enregistre le profil et reconstruit les réglages. L’onglet Vidéo du C++ permet maintenant cette sélection et reste sélectionné après reconstruction. La session active reçoit aussi le nouveau moteur. Les trois commandes vidéo partagent la liste des moteurs disponibles. La compilation et le déploiement Windows Release ont réussi.
+
+Le sélecteur du moteur respecte la visibilité de Vidéo déclarée par le module, comme dans EmulationModuleSettingsSection.Layout.cs. Les aides courte et détaillée reprennent EmulationHelp.resx pour la base et les 29 langues. Les valeurs JSON ont été comparées aux ressources sources. La Release Windows a compilé et a été déployée localement.
+
+L’éditeur de machine applique les critères Mémoire d’EmulationVideoConfigurationFunctions.cs pour présenter les réglages de mémoire d’affichage et de matériel vidéo dans l’onglet Vidéo. Le déplacement conserve les identifiants, les groupes d’origine et les dépendances des champs. Mémoire conserve ces réglages si Vidéo est masqué ou absent. La Release Windows a compilé et a été déployée localement.
+
+EmulationVideoConfigurationFunctions.cs et EmulationVideoProcessingSettingsSection.Layout.cs regroupent les commandes de matériel vidéo à droite des réglages de rendu. Le thème C++ présente ce volet avec la mémoire vidéo, les contrôleurs et les jeux de puces identifiés par les mêmes critères. Les règles de visibilité restent calculées par groupe et par champ. Le titre reprend les ressources C# des 29 langues. La Release Windows a compilé et a été déployée localement.
+
+Dans osd-support, BuildVideoSettingsTab rend le traitement vidéo accessible dans les réglages de la configuration. Le port C++ réutilise les contrôles du dialogue vidéo de session et les rend accessibles depuis Vidéo par un bouton dédié. Les changements sont enregistrés dans le profil de la configuration et transmis à la session si elle est ouverte. Annuler le dialogue de traitement abandonne ses modifications. La Release Windows a compilé et a été déployée localement.
+
+Le dialogue de traitement C++ reprend les deux onglets communs Affichage et Image d’EmulationVideoProcessingSettingsSection.cs. Le choix de technologie est dans Affichage. Les ajustements, la restauration, le désentrelacement et les options propres à la technologie sont dans Image. Le dialogue conserve également les commandes de signal et les effets sous forme de groupes dans Image. Les libellés des onglets reprennent les catalogues C# des 29 langues. La Release Windows a compilé et a été déployée localement.
+
+Dans osd-support, les changements de traitement mettent à jour le profil vidéo, tandis qu’un nouveau moteur reconstruit les réglages du module. Le dialogue C++ enregistre les changements de traitement sur place et conserve les éditions en cours dans la fenêtre de machine. Le changement de moteur reconstruit les réglages. La Release Windows a compilé et a été déployée localement.
+
+MachineController.ApplyConfigurationAsync et MachineSession.UpdateMachineFactoryAsync actualisent les médias de session d’après la nouvelle configuration. Après une sauvegarde du stockage, le C++ actualise la liste des montages et écarte les emplacements qui ne sont plus configurés. La barre des médias et les descriptions de l’OSD sont rafraîchies après la sauvegarde. La prochaine mise sous tension recrée le moteur à partir de la configuration enregistrée. La Release Windows a compilé et a été déployée localement.
+
+La sonde Windows Release a sauvegardé un nouvel emplacement pendant que la machine de test tournait. La liste de session reflète le nouvel emplacement, le moteur courant conserve son média jusqu’à l’arrêt et le moteur recréé monte uniquement le nouveau média au démarrage. La DLL, le programme de test et leur dossier temporaire ont été supprimés.
+
+Dans osd-support, RebuildMediaDevices utilise les lecteurs exposés par la nouvelle configuration de la session. Le C++ présente les lecteurs déclarés par le module et activés dans la configuration. Les commandes d’insertion consultent la même liste. La sonde Windows Release a vérifié le passage de deux lecteurs à un, le refus d’insérer dans le lecteur retiré et le montage au redémarrage. La sonde a été supprimée. La Release Windows a compilé et a été déployée.
+
+Sur osd-support, la sauvegarde d’un réglage de module et le changement de moteur vidéo passent par MachineController.ApplyConfigurationAsync, qui renouvelle les médias exposés. Le C++ recalcule les montages dans les deux cas et actualise la barre après le changement de moteur. Un module temporaire Windows Release a fait varier les lecteurs avec un réglage, puis avec le moteur vidéo. La vérification couvre la liste de session, le refus d’insertion dans un lecteur retiré et le remontage au redémarrage. Le dossier de la sonde a été supprimé.
+
+EmulationMachineRuntimeService utilise la configuration vidéo préparée par le module pour décrire les lecteurs. Le port applique cette configuration à la description et à la validation des lecteurs en session et dans les réglages d’une machine arrêtée. La barre reconstruit aussi ses commandes si les propriétés du lecteur changent à identifiant égal. La Release Windows et la sonde SDK vérifient la description selon le moteur, les deux chemins de sauvegarde et le remontage. La sonde a été supprimée.
+
+MachineController et TapeTransportPresentationFunctions limitent l’enregistrement à une machine sous tension, à un lecteur configuré et à un transport qui propose Record. Session::recordTape vérifie ces conditions à son point d’entrée avant de créer un fichier, ainsi que la présence du lecteur dans le moteur courant et l’annulation en cours. Le nettoyage d’un enregistrement déjà actif reste piloté par les commandes de transport. La Release Windows a compilé et a été déployée localement.
+
+Le C# conserve les lecteurs décrits par la configuration hors de la boucle d’actualisation des voyants. La session C++ conserve maintenant la description des lecteurs pour les interrogations répétées. Le module est de nouveau interrogé après un changement de configuration, de moteur vidéo ou une recréation de la machine. La sonde Windows Release a vérifié les trois cas et la stabilité entre appels. Elle a été supprimée. La Release Windows a compilé et a été déployée.
+
+La sonde Qt hors écran a chargé le thème Windows Release avec un module SDK temporaire. Elle a vérifié la présence des lecteurs déclarés, le retrait d’un lecteur après un changement de configuration, la section du matériel vidéo et les onglets Affichage et Image. Le dossier de la sonde a été supprimé.
+
+Le relevé périodique des boutons de souris suit MachineInputController.Publish dans osd-support. Un panneau de l’OSD sans pause peut prendre la priorité sous un pointeur immobile. Un bouton absorbé reste masqué jusqu’à son relâchement et les événements de mouvement conservent leur propre delta. La Release Windows a compilé et a été déployée. Le scénario avec une souris physique reste à vérifier.
+
+### Alignement sur les dernières modifications d’osd-support
+
+Le commit C# 1c797743d retire le grain, le VHS, l’aberration chromatique, le halo et le sépia. Le C++ a retiré les filtres, leurs catalogues et leurs contrôles. Les groupes d’effets déclarés par les modules restent accessibles dans l’OSD. Un ancien profil est chargé normalement et perd sa section stylistique lorsqu’il est réécrit. Le contrat commun reprend aussi SegaSc3000Caret (262) et SegaSc3000Reset (263) du commit e5271d13f. Windows Release a compilé et a été déployée. Une sonde a vérifié les identifiants Qt, le rechargement d’un ancien profil et la conservation des autres paramètres. La sonde a été supprimée.
+
+### Affectations clavier déclarées par une machine
+
+Le contrat facultatif IMachineKeyboardBindings reprend la propriété KeyboardBindings de IEmulationInput. L’application traite les sources composites au moment de publier les entrées, comme MachineInputController.Publish. Une affectation explicite retire le caractère hôte de la touche cible. Les sources physiques déjà affectées à un raccourci global sont écartées et le masque du menu plein écran est appliqué à la souris et aux manettes. Windows Release a compilé et a été déployée. La sonde du code partagé a vérifié une combinaison clavier et souris, la molette, une manette nommée, l’exclusion d’une source réservée et la conservation du caractère d’une touche ordinaire. La sonde a été supprimée. La validation avec un module réel et ses périphériques reste ouverte.
+
+La sonde Qt hors écran a ensuite exercé le thème Windows Release avec une machine temporaire qui enregistrait les instantanés reçus. Elle a vérifié que la combinaison clavier et molette transmet la commande à la machine, que le relevé suivant la relâche en gardant la touche ordinaire, et que la molette affectée au volume global ne déclenche pas la commande concurrente. Le défilement utilisé comme raccourci clavier hors capture ne devient pas un déplacement de la souris émulée. La sonde a été supprimée.

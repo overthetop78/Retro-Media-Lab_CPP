@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "Der Emulator benötigt ein Medium, bevor diese Maschine eingeschaltet werden kann. Legen Sie eines der unten aufgeführten erforderlichen Medien ein oder richten Sie es ein.",
+    "Emulation.Error.PowerFailureTitle": "Die Maschine konnte nicht eingeschaltet werden",
+    "Emulation.Error.Machine": "Maschine",
+    "Emulation.Error.RequiredMedia": "Erforderliche Medien",
+    "Emulation.Error.Title": "Emulationsfehler",
+    "Emulation.Error.EmulatorNotInstalled": "Der erforderliche Emulator ist nicht installiert.",
+    "Emulation.Error.EmulatorUpdateBlocked": "Der Emulator kann nicht aktualisiert werden, während er verwendet wird.",
+    "Emulation.Error.FirmwareMissing": "Erforderliche Firmware fehlt.",
+    "Emulation.Error.FirmwareIncompatible": "Die ausgewählte Firmware ist mit dieser Maschine nicht kompatibel.",
+    "Emulation.Error.MediaNotFound": "Die konfigurierte Mediendatei wurde nicht gefunden.",
+    "Emulation.Error.MediaUnsupported": "Das ausgewählte Medium wird von diesem Emulator nicht unterstützt.",
+    "Emulation.Error.OptionInvalid": "Eine Emulator-Option ist ungültig.",
+    "Emulation.Error.HostCommunicationFailed": "Die Kommunikation mit dem Emulatorprozess ist fehlgeschlagen.",
+    "Emulation.Error.MachineStartFailed": "Die emulierte Maschine konnte nicht gestartet werden.",
+    "Emulation.Error.MediaOperationFailed": "Die Medienoperation ist gescheitert.",
+    "Emulation.Error.SavedStateInvalid": "Der gespeicherte Zustand ist ungültig oder beschädigt.",
+    "Emulation.Error.SavedStateIncompatible": "Der gespeicherte Zustand ist mit dieser Maschinenkonfiguration nicht kompatibel.",
+    "Emulation.Error.SavedStateOperationFailed": "Die Save-State-Operation ist gescheitert."
+  }
+}

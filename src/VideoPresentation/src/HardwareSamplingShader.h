@@ -1,7 +1,7 @@
 #pragma once
 
 #include "SoftwareProcessing.h"
-#include "CrtProcessing.h"
+#include "DisplayShaderParameters.h"
 #include "RestorationProcessing.h"
 #include <QFile>
 #include <rhi/qshader.h>
@@ -20,13 +20,13 @@ struct Parameters {
     qint32 settings[4];
     float adjustments[4];
     float corrections[4];
-    SoftwareProcessing::CrtShaderParameters crt;
+    SoftwareProcessing::DisplayShaderParameters crt;
 };
-static_assert(sizeof(Parameters) == 128);
+static_assert(sizeof(Parameters) == 864);
 
 inline Parameters makeParameters(QSize size, Sampling sampling, int ySign, bool overlay, ImageAdjustments settings,
-        ImageRestoration restoration, const SoftwareProcessing::CrtShaderParameters& crt = {}) {
-    if (crt.enabled()) settings.brightness = 0;
+        ImageRestoration restoration, const SoftwareProcessing::DisplayShaderParameters& crt = {}) {
+    if (crt.crt.enabled() || crt.vectorSource[0] > 0.f) settings.brightness = 0;
     const auto image = SoftwareProcessing::adjustmentParameters(settings);
     restoration = SoftwareProcessing::normalized(restoration);
     const auto maximum = float(ImageRestoration::MaximumIntensity);

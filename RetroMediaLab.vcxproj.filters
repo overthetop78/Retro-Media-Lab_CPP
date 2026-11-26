@@ -4353,6 +4353,12 @@
     <ClInclude Include="src\App\Shared\Controls\ModuleEditableSlider.h">
       <Filter>src\App\Shared\Controls</Filter>
     </ClInclude>
+    <ClInclude Include="src\App\Shared\Controls\ModuleIpv4Edit.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Shared\Controls\ModuleNumberEdit.h">
+      <Filter>src\App\Shared\Controls</Filter>
+    </ClInclude>
     <ClInclude Include="src\App\Shared\Controls\RememberedFileDialog.h">
       <Filter>src\App\Shared\Controls</Filter>
     </ClInclude>
@@ -4396,6 +4402,9 @@
       <Filter>src\App\Shared\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\App\Shared\Emulation\ModuleNumericSetting.h">
+      <Filter>src\App\Shared\Emulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Shared\Emulation\TapeTransportPresentation.h">
       <Filter>src\App\Shared\Emulation</Filter>
     </ClInclude>
     <ClCompile Include="src\App\Shared\Localization\MediaText.cpp">
@@ -4537,6 +4546,12 @@
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationConfigurationsPanel.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClCompile Include="src\App\Themes\RetroMediaLab\Views\EmulationErrorDialog.cpp">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClCompile>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationErrorDialog.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\EmulationMachineTabs.h">
@@ -4683,6 +4698,9 @@
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\MigrationDialogConstants.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\ModuleSettingPresentation.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\PreferencesDialog.cpp">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
@@ -4705,6 +4723,9 @@
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClCompile>
     <ClInclude Include="src\App\Themes\RetroMediaLab\Views\StatusBar.h">
+      <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
+    </ClInclude>
+    <ClInclude Include="src\App\Themes\RetroMediaLab\Views\TapeTransportButton.h">
       <Filter>src\App\Themes\RetroMediaLab\Views</Filter>
     </ClInclude>
     <ClCompile Include="src\App\Themes\RetroMediaLab\Views\ThemePreview.cpp">
@@ -4779,6 +4800,9 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\AudioBuffer.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ConfigurationFiles.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\ControllerFeedback.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
@@ -4798,6 +4822,9 @@
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Firmware.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\HardwareSettings.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Host.h">
@@ -4822,6 +4849,9 @@
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\MachineExecution.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Messages.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\NativeCoreContent.h">
@@ -4854,6 +4884,9 @@
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\Sdk.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\SessionDirectories.h">
+      <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
+    </ClInclude>
     <ClInclude Include="src\Emulation\include\RetroMediaLab\Emulation\SettingsRules.h">
       <Filter>src\Emulation\include\RetroMediaLab\Emulation</Filter>
     </ClInclude>
@@ -4872,6 +4905,9 @@
     <ClInclude Include="src\Emulation\src\AudioOutput.h">
       <Filter>src\Emulation\src</Filter>
     </ClInclude>
+    <ClCompile Include="src\Emulation\src\ConfigurationFiles.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Emulation\src\ControllerFeedback.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
@@ -4882,6 +4918,9 @@
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\Firmware.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Emulation\src\HardwareSettings.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\Host.cpp">
@@ -4911,6 +4950,9 @@
     <ClInclude Include="src\Emulation\src\MediaPreparation.h">
       <Filter>src\Emulation\src</Filter>
     </ClInclude>
+    <ClCompile Include="src\Emulation\src\Messages.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Emulation\src\NativeCoreContent.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
@@ -4936,6 +4978,9 @@
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\Networks.cpp">
+      <Filter>src\Emulation\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Emulation\src\SessionDirectories.cpp">
       <Filter>src\Emulation\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Emulation\src\StateFile.cpp">
@@ -15087,10 +15132,16 @@
     <None Include="src\Translations\Catalogs\Constants\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Constants\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Constants\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Constants\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Constants\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\emulation-network-errors.json">
@@ -15139,9 +15190,6 @@
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Constants\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Constants\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Constants\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Constants\App\emulation-video-vector.json">
@@ -15828,10 +15876,16 @@
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-network-errors.json">
@@ -15880,9 +15934,6 @@
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\ar-SA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ar-SA\App\emulation-video-vector.json">
@@ -16569,10 +16620,16 @@
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-network-errors.json">
@@ -16621,9 +16678,6 @@
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\cs-CZ\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\cs-CZ\App\emulation-video-vector.json">
@@ -17310,10 +17364,16 @@
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-network-errors.json">
@@ -17362,9 +17422,6 @@
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\da-DK\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\da-DK\App\emulation-video-vector.json">
@@ -18051,10 +18108,16 @@
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-network-errors.json">
@@ -18103,9 +18166,6 @@
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\de-DE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\de-DE\App\emulation-video-vector.json">
@@ -18792,10 +18852,16 @@
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-network-errors.json">
@@ -18844,9 +18910,6 @@
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\el-GR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\el-GR\App\emulation-video-vector.json">
@@ -19533,10 +19596,16 @@
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-network-errors.json">
@@ -19585,9 +19654,6 @@
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\en-US\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\en-US\App\emulation-video-vector.json">
@@ -20274,10 +20340,16 @@
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-network-errors.json">
@@ -20326,9 +20398,6 @@
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\es-ES\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\es-ES\App\emulation-video-vector.json">
@@ -21015,10 +21084,16 @@
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-network-errors.json">
@@ -21067,9 +21142,6 @@
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\fi-FI\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fi-FI\App\emulation-video-vector.json">
@@ -21756,10 +21828,16 @@
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-network-errors.json">
@@ -21808,9 +21886,6 @@
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\fr-FR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\fr-FR\App\emulation-video-vector.json">
@@ -22497,10 +22572,16 @@
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-network-errors.json">
@@ -22549,9 +22630,6 @@
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\he-IL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\he-IL\App\emulation-video-vector.json">
@@ -23238,10 +23316,16 @@
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-network-errors.json">
@@ -23290,9 +23374,6 @@
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\hu-HU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\hu-HU\App\emulation-video-vector.json">
@@ -23979,10 +24060,16 @@
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-network-errors.json">
@@ -24031,9 +24118,6 @@
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\id-ID\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\id-ID\App\emulation-video-vector.json">
@@ -24720,10 +24804,16 @@
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-network-errors.json">
@@ -24772,9 +24862,6 @@
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\it-IT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\it-IT\App\emulation-video-vector.json">
@@ -25461,10 +25548,16 @@
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-network-errors.json">
@@ -25513,9 +25606,6 @@
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\ja-JP\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ja-JP\App\emulation-video-vector.json">
@@ -26202,10 +26292,16 @@
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-network-errors.json">
@@ -26254,9 +26350,6 @@
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\ko-KR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ko-KR\App\emulation-video-vector.json">
@@ -26943,10 +27036,16 @@
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-network-errors.json">
@@ -26995,9 +27094,6 @@
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\nb-NO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nb-NO\App\emulation-video-vector.json">
@@ -27684,10 +27780,16 @@
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-network-errors.json">
@@ -27736,9 +27838,6 @@
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\nl-NL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\nl-NL\App\emulation-video-vector.json">
@@ -28425,10 +28524,16 @@
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-network-errors.json">
@@ -28477,9 +28582,6 @@
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\pl-PL\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pl-PL\App\emulation-video-vector.json">
@@ -29166,10 +29268,16 @@
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-network-errors.json">
@@ -29218,9 +29326,6 @@
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\pt-BR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-BR\App\emulation-video-vector.json">
@@ -29907,10 +30012,16 @@
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-network-errors.json">
@@ -29959,9 +30070,6 @@
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\pt-PT\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\pt-PT\App\emulation-video-vector.json">
@@ -30648,10 +30756,16 @@
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-network-errors.json">
@@ -30700,9 +30814,6 @@
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\ro-RO\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ro-RO\App\emulation-video-vector.json">
@@ -31389,10 +31500,16 @@
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-network-errors.json">
@@ -31441,9 +31558,6 @@
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\ru-RU\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\ru-RU\App\emulation-video-vector.json">
@@ -32130,10 +32244,16 @@
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-network-errors.json">
@@ -32182,9 +32302,6 @@
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\sv-SE\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\sv-SE\App\emulation-video-vector.json">
@@ -32871,10 +32988,16 @@
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-network-errors.json">
@@ -32923,9 +33046,6 @@
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\th-TH\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\th-TH\App\emulation-video-vector.json">
@@ -33612,10 +33732,16 @@
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-network-errors.json">
@@ -33664,9 +33790,6 @@
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\tr-TR\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\tr-TR\App\emulation-video-vector.json">
@@ -34353,10 +34476,16 @@
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-network-errors.json">
@@ -34405,9 +34534,6 @@
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\uk-UA\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\uk-UA\App\emulation-video-vector.json">
@@ -35094,10 +35220,16 @@
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-network-errors.json">
@@ -35146,9 +35278,6 @@
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\vi-VN\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\vi-VN\App\emulation-video-vector.json">
@@ -35835,10 +35964,16 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-network-errors.json">
@@ -35887,9 +36022,6 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hans\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hans\App\emulation-video-vector.json">
@@ -36576,10 +36708,16 @@
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-core.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-errors.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-firmware.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-folders.json">
+      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
+    </None>
+    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-hardware.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-network-errors.json">
@@ -36628,9 +36766,6 @@
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-signal.json">
-      <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
-    </None>
-    <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-stylistic.json">
       <Filter>src\Translations\Catalogs\Languages\zh-Hant\App</Filter>
     </None>
     <None Include="src\Translations\Catalogs\Languages\zh-Hant\App\emulation-video-vector.json">
@@ -37326,16 +37461,52 @@
     <None Include="src\VideoPresentation\shaders\crt.glsl">
       <Filter>src\VideoPresentation\shaders</Filter>
     </None>
+    <None Include="src\VideoPresentation\shaders\display-filter.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\dot-matrix.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\epaper.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\fixed-pixel.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
     <None Include="src\VideoPresentation\shaders\image-adjustments.glsl">
       <Filter>src\VideoPresentation\shaders</Filter>
     </None>
     <None Include="src\VideoPresentation\shaders\image-restoration.glsl">
       <Filter>src\VideoPresentation\shaders</Filter>
     </None>
+    <None Include="src\VideoPresentation\shaders\led-matrix.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\native-segments.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\panel-grid.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\plasma.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\projection.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\raster-segments.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
     <None Include="src\VideoPresentation\shaders\sampling.frag">
       <Filter>src\VideoPresentation\shaders</Filter>
     </None>
     <None Include="src\VideoPresentation\shaders\sampling.vert">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\vector-raster.glsl">
+      <Filter>src\VideoPresentation\shaders</Filter>
+    </None>
+    <None Include="src\VideoPresentation\shaders\vfd-cells.glsl">
       <Filter>src\VideoPresentation\shaders</Filter>
     </None>
     <ClCompile Include="src\VideoPresentation\src\AnalogSignal.cpp">
@@ -37366,6 +37537,9 @@
       <Filter>src\VideoPresentation\src</Filter>
     </ClCompile>
     <ClInclude Include="src\VideoPresentation\src\Direct3DSurface.h">
+      <Filter>src\VideoPresentation\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoPresentation\src\DisplayShaderParameters.h">
       <Filter>src\VideoPresentation\src</Filter>
     </ClInclude>
     <ClCompile Include="src\VideoPresentation\src\DotMatrixProcessing.cpp">
@@ -37453,12 +37627,6 @@
       <Filter>src\VideoPresentation\src</Filter>
     </ClCompile>
     <ClInclude Include="src\VideoPresentation\src\SoftwareProcessing.h">
-      <Filter>src\VideoPresentation\src</Filter>
-    </ClInclude>
-    <ClCompile Include="src\VideoPresentation\src\StylisticProcessing.cpp">
-      <Filter>src\VideoPresentation\src</Filter>
-    </ClCompile>
-    <ClInclude Include="src\VideoPresentation\src\StylisticProcessing.h">
       <Filter>src\VideoPresentation\src</Filter>
     </ClInclude>
     <ClCompile Include="src\VideoPresentation\src\VectorProcessing.cpp">

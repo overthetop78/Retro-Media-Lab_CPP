@@ -1214,9 +1214,495 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
   - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour exposer le PID conservé et distinguer la sortie de l’échec du transport.
   - [x] Créer puis supprimer build/emulation-host-process-state-check pour vérifier les transitions et la conservation du PID.
 
-- [ ] Informations d’exécution communes du cœur
-  - [ ] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer le contrat facultatif et les données d’exécution du cœur.
-  - [ ] Modifier HostedCoreSession.h et HostedCoreSession.cpp pour publier les mesures reçues du processus hôte.
-  - [ ] Modifier NativeCoreSession.h, NativeCoreSession.cpp, NativeCoreFrames.h et NativeCoreFrames.cpp pour publier les mesures du cœur exécuté dans le processus courant.
-  - [ ] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour lire l’horloge nominale de ce contrat avec le repli existant.
-  - [ ] Créer puis supprimer build/emulation-core-runtime-status-check pour vérifier les mesures et le cycle du cœur hébergé.
+- [x] Informations d’exécution communes du cœur
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer le contrat facultatif et les données d’exécution du cœur.
+  - [x] Modifier HostedCoreSession.h et HostedCoreSession.cpp pour publier les mesures reçues du processus hôte.
+  - [x] Modifier NativeCoreSession.h, NativeCoreSession.cpp, NativeCoreFrames.h et NativeCoreFrames.cpp pour publier les mesures du cœur exécuté dans le processus courant.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour lire l’horloge nominale de ce contrat avec le repli existant.
+  - [x] Créer puis supprimer build/emulation-core-runtime-status-check pour vérifier les mesures et le cycle du cœur hébergé.
+
+- [x] Retour de force des cœurs natifs
+  - [x] Modifier src/Emulation/src/NativeCoreSession.cpp et src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h pour raccorder le rappel natif à un accumulateur propre à la session, publier son état et effacer celui du port réaffecté.
+  - [x] Créer puis supprimer build/emulation-native-feedback-check pour vérifier la vibration et les mesures natives en chargeant une DLL temporaire.
+
+- [x] Retour de force des cœurs hébergés
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour fournir les effets du processus actif aux adaptateurs et écarter ceux du port après réaffectation réussie.
+  - [x] Créer puis supprimer build/emulation-hosted-feedback-check pour vérifier les effets reçus, la réaffectation, le refus distant et la sortie du processus.
+
+- [x] Réinitialisation du retour de force
+  - [x] Modifier src/Emulation/src/NativeCoreSession.cpp et src/Emulation/src/HostedCoreSession.cpp pour libérer les effets après réinitialisation et restauration réussies.
+  - [x] Créer puis supprimer build/emulation-native-reset-feedback-check et build/emulation-hosted-reset-feedback-check pour vérifier les transitions.
+
+- [x] Sorties du cœur hébergé après une commande de cycle de vie
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/HostedCoreSession.h et src/Emulation/src/HostedCoreSession.cpp pour invalider les sorties après réinitialisation, restauration ou arrêt confirmé.
+  - [x] Créer puis supprimer build/emulation-hosted-output-lifecycle-check pour vérifier la dernière image, le retour de force et le statut après ces commandes.
+
+- [x] Table et événements du clavier natif
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/InputProcessing.h et src/Emulation/src/InputProcessing.cpp pour exposer les correspondances natives de osd-support.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h, src/Emulation/src/NativeCoreSession.cpp et src/Emulation/src/NativeCoreEnvironment.cpp pour transmettre les événements et réinitialiser leur historique à la fermeture.
+  - [x] Créer puis supprimer build/emulation-native-keyboard-session-check pour exercer le rappel avec la table commune.
+
+- [x] Instantané des entrées pour les cœurs natifs
+  - [x] Modifier src/Emulation/src/InputProcessing.cpp pour alimenter la table des événements et la lecture par interrogation à partir des mêmes correspondances.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h et src/Emulation/src/NativeCoreSession.cpp pour transmettre clavier, souris et contrôleurs depuis un instantané.
+  - [x] Créer puis supprimer build/emulation-native-input-snapshot-check pour vérifier les rappels du cœur.
+
+- [x] Options à chaud des cœurs natifs
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h et src/Emulation/src/NativeCoreSession.cpp pour publier les options actives et relayer les changements validés ainsi que les erreurs du cœur.
+  - [x] Créer puis supprimer build/emulation-native-session-options-check pour vérifier les changements depuis le SDK jusqu’au cœur.
+
+- [x] Commandes de disque dans la session native
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreSession.h et src/Emulation/src/NativeCoreSession.cpp pour exposer le statut, la sélection, l’insertion et l’éjection avec le contrôleur de disque existant.
+  - [x] Créer puis supprimer build/emulation-native-session-disk-check pour vérifier les opérations à travers un cœur natif.
+
+- [x] Installation sans dossier de modules vide
+  - [x] Modifier CMakeLists.txt pour omettre la création systématique du dossier Modules tant qu’aucun module ne fait partie du paquet.
+  - [x] Supprimer build/Release/Retro Media Lab/Modules et build/Debug/Retro Media Lab/Modules lorsqu’ils sont vides et vérifier le paquet Release après installation.
+
+- [x] Définition de dalle du papier électronique
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour lire et enregistrer la définition sélectionnée.
+  - [x] Modifier src/VideoPresentation/src/SoftwareProcessing.cpp pour appliquer la grille du papier électronique dans la passe de rééchantillonnage existante.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour exposer la définition dans le dialogue et l’OSD avec les libellés existants.
+  - [x] Créer puis supprimer build/emulation-epaper-definition-check pour contrôler le profil et la grille de rendu.
+
+- [x] Définitions de grille des afficheurs matriciels
+  - [x] Modifier Presentation.h et Presentation.cpp dans src/VideoPresentation pour porter les neuf résolutions fixes et leur persistance.
+  - [x] Modifier DotMatrixProcessing.cpp, LedMatrixProcessing.cpp et VfdProcessing.cpp dans src/VideoPresentation/src pour appliquer la grille choisie.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et src/Translations/Catalogs/Constants/App/emulation-video-fixed-pixel.json pour exposer les réglages et leurs dimensions.
+  - [x] Créer puis supprimer build/emulation-matrix-definition-check pour contrôler les grilles et la persistance.
+
+- [x] Échantillonnage des cellules LED depuis la trame source
+  - [x] Modifier src/VideoPresentation/src/LedMatrixProcessing.cpp et src/VideoPresentation/src/SoftwareProcessing.cpp pour appliquer la prise centrale et les quatre prises de réduction du C# avant toute mise à l’échelle.
+  - [x] Créer puis supprimer build/emulation-led-source-sampling-check pour vérifier la restitution de détails qui disparaîtraient dans le viewport.
+
+- [x] Couleur rouge/vert et cellules LED à coins arrondis
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour exposer et enregistrer RedGreen et RoundedSquare.
+  - [x] Modifier src/VideoPresentation/src/LedMatrixProcessing.cpp pour appliquer les deux canaux et la géométrie des coins du C#.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et les catalogues App/emulation-video-led-matrix.json pour proposer les réglages dans la fenêtre et dans l’OSD.
+  - [x] Créer puis supprimer build/emulation-led-matrix-choices-check pour contrôler le rendu et la persistance.
+
+- [x] Composition des matrices LED selon osd-support
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h et src/VideoPresentation/src/Presentation.cpp pour conserver couleur, définition et forme dans le profil.
+  - [x] Modifier src/VideoPresentation/src/LedMatrixProcessing.cpp, LedMatrixProcessing.h et SoftwareProcessing.cpp pour reprendre la composition et sa transition selon la taille des cellules.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre les trois choix du C# dans le dialogue et dans l’OSD.
+  - [x] Créer puis supprimer build/emulation-led-composition-check pour vérifier les couleurs à faible agrandissement et le rendu des formes.
+
+- [x] Rendu matériel des matrices LED
+  - [x] Créer src/VideoPresentation/shaders/led-matrix.glsl et l’inclure dans la passe de rendu d’affichage et les ressources CMake.
+  - [x] Créer src/VideoPresentation/src/DisplayShaderParameters.h et modifier OpenGlSurface, Direct3DSurface, VulkanSurface et HardwareSamplingShader dans le même dossier pour relayer les paramètres de grille.
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp et include/RetroMediaLab/VideoPresentation/Presentation.h pour sélectionner la passe matérielle et conserver le rendu logiciel des combinaisons non prises en charge.
+  - [x] Créer puis supprimer build/emulation-led-hardware-check pour comparer le rendu des moteurs disponibles au rendu logiciel.
+
+- [x] Portage des cellules VFD de osd-support
+  - [x] Modifier Presentation.h et Presentation.cpp dans src/VideoPresentation pour enregistrer les six couleurs et les trois formes.
+  - [x] Modifier src/VideoPresentation/src/{VfdProcessing,LedMatrixProcessing,MatrixCells,SoftwareProcessing} pour partager les prises sur la trame source et composer les cellules VFD.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et les catalogues App/emulation-video-vfd.json pour reprendre les trois commandes du C#.
+  - [x] Créer src/VideoPresentation/shaders/vfd-cells.glsl et raccorder la passe VFD aux paramètres de rendu Direct3D 11, Vulkan et OpenGL.
+  - [x] Créer puis supprimer build/emulation-vfd-cells-check pour vérifier les profils et la composition.
+
+- [x] Matrices de points réfléchissantes, rétroéclairées et émissives
+  - [x] Modifier Presentation.h et Presentation.cpp dans src/VideoPresentation pour enregistrer la technologie et les réglages de grille du C#.
+  - [x] Modifier src/VideoPresentation/src/{DotMatrixProcessing,MatrixCells,SoftwareProcessing} pour appliquer le filtre optique de osd-support.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et les catalogues App/emulation-video-dot-matrix.json pour reprendre les choix du C#.
+  - [x] Créer src/VideoPresentation/shaders/dot-matrix.glsl et l’intégrer à la passe partagée des moteurs matériels.
+  - [x] Créer puis supprimer build/emulation-dot-matrix-optics-check pour comparer les trois technologies sur les moteurs disponibles.
+
+- [x] Technologies LCD, LED et VFD des afficheurs à segments
+  - [x] Modifier Presentation.h, Presentation.cpp et SegmentDisplayProcessing.cpp dans src/VideoPresentation pour enregistrer la technologie et composer le rendu logiciel par optique.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et les catalogues App/emulation-video-segment-display.json pour reprendre les choix de technologie et de couleur.
+  - [x] Créer puis supprimer build/emulation-segment-optics-check pour vérifier la persistance et les trois compositions.
+
+- [x] Niveaux de segments natifs dans les modules
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer les niveaux associés à une trame par une interface facultative.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h pour transmettre ensemble la trame et ses niveaux.
+  - [x] Modifier src/VideoPresentation/src/{Presentation.cpp,SoftwareFrameWorker.h,SoftwareProcessing.h,SoftwareProcessing.cpp,SegmentDisplayProcessing.h,SegmentDisplayProcessing.cpp} pour composer les niveaux bruts et réinitialiser le suivi temporel.
+  - [x] Créer puis supprimer build/emulation-native-segment-check pour vérifier les niveaux et le retour au traitement matriciel.
+
+- [x] Rendu matériel des segments natifs
+  - [x] Créer src/VideoPresentation/shaders/native-segments.glsl et le raccorder à Direct3D 11, Vulkan et OpenGL.
+  - [x] Modifier src/VideoPresentation/src/{Presentation.cpp,SegmentDisplayProcessing.cpp,SegmentDisplayProcessing.h,DisplayShaderParameters.h,HardwareSamplingShader.h,OpenGlSurface.cpp} pour transmettre niveaux et teinte et conserver le repli logiciel.
+  - [x] Créer puis supprimer build/emulation-native-segment-gpu-check pour comparer les niveaux et vérifier le halo VFD.
+
+- [x] Rendu matériel des segments reconstruits depuis le raster
+  - [x] Modifier `src/VideoPresentation/src/{SegmentDisplayProcessing,DisplayShaderParameters,HardwareSamplingShader,Presentation,OpenGlSurface}` pour partager la géométrie des segments et fournir la trame précédente au filtre matériel.
+  - [x] Créer `src/VideoPresentation/shaders/raster-segments.glsl` et modifier le programme de rendu commun, `src/VideoPresentation/CMakeLists.txt`, `RetroMediaLab.vcxproj` et `RetroMediaLab.vcxproj.filters` pour raccorder la reconstruction.
+  - [x] Créer puis supprimer `build/emulation-raster-segment-check` pour vérifier le rendu et la réponse temporelle sur les moteurs disponibles.
+
+- [x] Afficheurs à papier électronique de osd-support
+  - [x] Modifier src/VideoPresentation/src/{PaperProjectionProcessing,SoftwareProcessing,Presentation} et Presentation.h pour porter les six encres, la cadence de rafraîchissement et la trace de pigment.
+  - [x] Créer src/VideoPresentation/shaders/epaper.glsl et modifier les paramètres du shader partagé, OpenGlSurface.cpp et les manifestes de compilation pour intégrer le rendu matériel.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et les catalogues App/emulation-video-paper-projection.json pour afficher les modes et la définition du C# dans le dialogue et l’OSD.
+  - [x] Créer puis supprimer build/emulation-epaper-check pour vérifier les pigments et la cadence en logiciel et sur les moteurs matériels.
+
+- [x] Projection vidéo matérielle de osd-support
+  - [x] Modifier src/VideoPresentation/src/{PaperProjectionProcessing,Presentation} pour partager les paramètres optiques entre moteurs et préparer le signal et la séparation colorée DLP.
+  - [x] Créer src/VideoPresentation/shaders/projection.glsl et modifier le programme commun, les paramètres de rendu et les manifestes Qt et Visual Studio.
+  - [x] Créer puis supprimer build/emulation-projection-gpu-check pour vérifier l’optique et la séparation colorée sur les moteurs disponibles.
+
+- [x] Rendu plasma matériel de osd-support
+  - [x] Modifier src/VideoPresentation/src/{PlasmaProcessing,Presentation} pour partager le réglage du phosphore, la mesure de luminance et l’historique des trames.
+  - [x] Créer src/VideoPresentation/shaders/{panel-grid,plasma}.glsl et modifier le shader commun, les paramètres de rendu et les manifestes Qt et Visual Studio.
+  - [x] Créer puis supprimer build/emulation-plasma-gpu-check pour vérifier les structures, la limitation de luminosité et la persistance.
+
+- [x] Afficheur vectoriel natif et logiciel de osd-support
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour joindre les segments natifs à la trame sans changer le contrat binaire existant.
+  - [x] Modifier src/VideoPresentation/src/{VectorProcessing,SoftwareProcessing,SoftwareFrameWorker,Presentation} et Presentation.h pour composer le faisceau, la courbure et la rémanence.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et le profil JSON pour exposer les trois réglages du C#.
+  - [x] Créer puis supprimer build/emulation-vector-check pour vérifier les segments natifs et le chemin raster logiciel.
+
+- [x] Afficheur vectoriel raster matériel de osd-support
+  - [x] Modifier src/VideoPresentation/src/{VectorProcessing,Presentation,DisplayShaderParameters,HardwareSamplingShader,OpenGlSurface} pour partager le faisceau et fournir la trame raster précédente au shader.
+  - [x] Créer src/VideoPresentation/shaders/vector-raster.glsl et modifier le shader commun et les manifestes Qt et Visual Studio.
+  - [x] Utiliser la sonde build/emulation-vector-check du bloc précédent pour vérifier aussi l’afficheur raster matériel.
+
+- [x] Rendu matériel des dalles LCD et OLED de osd-support
+  - [x] Modifier src/VideoPresentation/src/{FixedPixelProcessing,Presentation} pour partager les paramètres de dalle, préparer le rétroéclairage local et transmettre l’historique LCD.
+  - [x] Créer src/VideoPresentation/shaders/fixed-pixel.glsl et modifier le shader et ses paramètres partagés, les moteurs matériels et les manifestes Qt et Visual Studio.
+  - [x] Créer puis supprimer build/emulation-fixed-pixel-check pour vérifier l’éclairage local, les sous-pixels, le limiteur OLED et la réponse LCD.
+  - [x] Modifier src/VideoPresentation/src/Direct3DSurface.cpp pour réduire le temps de compilation de secours du shader d’affichage et vérifier l’initialisation à froid.
+
+- [x] Décodage matériel du signal de dalle de osd-support
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp pour transmettre le signal synchronisé à la dalle LCD et à la projection selon les conditions C#.
+  - [x] Modifier src/VideoPresentation/shaders/{panel-grid,fixed-pixel,projection}.glsl pour décoder la source et son historique avant les réglages d’image.
+  - [x] Créer puis supprimer build/emulation-panel-signal-check pour vérifier le rendu des décodeurs et de la désynchronisation.
+
+- [x] Précompilation du shader d’affichage Direct3D 11
+  - [x] Modifier src/VideoPresentation/CMakeLists.txt pour produire et intégrer le DXBC avec les options compatibles avec le shader complet.
+  - [x] Modifier src/VideoPresentation/src/Direct3DSurface.cpp pour charger ce bytecode avec les liaisons du paquet Qt.
+  - [x] Modifier src/VideoPresentation/shaders/crt.frag pour échantillonner explicitement le niveau de texture utilisé et éviter le déroulage imposé par les gradients implicites.
+  - [x] Créer puis supprimer build/emulation-precompiled-shader-check pour vérifier le paquet Release et l’initialisation du rendu à froid.
+
+- [x] Nettoyage des dossiers de session du SDK
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/SessionDirectories.h et src/Emulation/src/SessionDirectories.cpp pour retirer les dossiers de session possédés, y compris les dossiers générés à nom GUID avec fichiers en lecture seule.
+  - [x] Modifier src/Emulation/CMakeLists.txt et régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour exposer le service.
+  - [x] Créer puis supprimer build/emulation-session-directories-check pour vérifier les dossiers générés, la portée du nettoyage et les liens.
+
+- [x] Construction des blocs matériels et des choix audio numériques de osd-support
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/HardwareSettings.h et src/Emulation/src/HardwareSettings.cpp pour fournir les blocs CPU, mémoire et résolution, les champs d’information, les choix et les interrupteurs.
+  - [x] Créer les catalogues App/emulation-hardware.json dans src/Translations/Catalogs/Constants et chaque dossier de langue avec les libellés C# et l’invariant RAM.
+  - [x] Modifier src/Emulation/CMakeLists.txt et régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour exposer les nouveaux constructeurs.
+  - [x] Créer puis supprimer build/emulation-hardware-settings-check pour vérifier la description, les choix, les identifiants persistés et les unités.
+
+- [x] Éditeur numérique des réglages de module
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/{Sdk,HardwareSettings}.h et src/Emulation/src/HardwareSettings.cpp pour exposer le champ numérique et conserver les anciens identifiants du SDK.
+  - [x] Créer src/App/Shared/Controls/ModuleNumberEdit.h et modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reproduire la saisie contrainte et les pas clavier du C#.
+  - [x] Régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters, puis créer et supprimer build/emulation-number-edit-check pour vérifier la saisie et la valeur transmise.
+
+- [x] Aides détaillées et cartes compactes des réglages de module
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/{Sdk,Host,HardwareSettings}.h et src/Emulation/src/{Host,HardwareSettings}.cpp pour exposer les métadonnées facultatives sans changer les descripteurs existants.
+  - [x] Créer src/App/Themes/RetroMediaLab/Views/ModuleSettingPresentation.h et modifier EmulationPage.cpp pour afficher les aides et regrouper les cartes compactes selon la largeur.
+  - [x] Régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters et créer puis supprimer build/emulation-module-presentation-check pour vérifier les cartes et l’aide dans Qt.
+
+- [x] Fichiers de configuration des machines
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/ConfigurationFiles.h et src/Emulation/src/ConfigurationFiles.cpp pour porter les chemins, les documents JSON, l’accès coordonné sous Windows et l’écriture atomique.
+  - [x] Modifier src/Emulation/CMakeLists.txt et régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters.
+  - [x] Créer puis supprimer build/emulation-configuration-files-check pour vérifier les chemins, l’ordre de lecture, le verrou et l’annulation d’une écriture.
+
+- [x] Messages structurés du socle d’émulation
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/Messages.h et src/Emulation/src/Messages.cpp pour porter les codes, contextes, causes et règles d’enveloppement d’erreurs du C#.
+  - [x] Modifier src/Emulation/src/Host.cpp et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre puis afficher les erreurs structurées à l’ouverture et au lancement.
+  - [x] Créer les catalogues App/emulation-errors.json dans src/Translations/Catalogs/Constants et chaque dossier de langue avec les clés et textes C#.
+  - [x] Modifier src/Emulation/CMakeLists.txt et régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters.
+  - [x] Créer puis supprimer build/emulation-messages-check pour vérifier les codes, le contexte, la cause, le texte natif et l’annulation.
+
+- [x] Dialogue détaillé des erreurs d’émulation
+  - [x] Créer src/App/Themes/RetroMediaLab/Views/EmulationErrorDialog.h et EmulationErrorDialog.cpp pour afficher le titre, le message, les détails et les icônes des médias du dialogue C#.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour respecter les cibles des messages pendant l’ouverture et les commandes de session.
+  - [x] Modifier src/App/CMakeLists.txt et régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour inclure le dialogue.
+  - [x] Créer puis supprimer build/emulation-error-dialog-check pour vérifier les cibles, les détails et les icônes dans Qt.
+
+- [x] Diagnostics des médias et des états sauvegardés
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour faire remonter les erreurs des commandes de démarrage, de médias et d’états sauvegardés en préservant les causes et les annulations.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/StateFile.h et src/Emulation/src/StateFile.cpp pour exposer une lecture vérifiée distinguant un état invalide, incompatible ou inaccessible.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser les commandes de session et les messages localisés correspondants.
+  - [x] Créer puis supprimer build/emulation-state-errors-check pour vérifier la lecture et les codes d’erreur.
+
+- [x] Validation des erreurs à travers un module chargé
+  - [x] Créer puis supprimer build/emulation-module-errors-check avec une DLL de test et son manifeste, puis vérifier les commandes du SDK et le même dialogue Qt avec les exceptions émises par la DLL.
+
+- [x] Présentation du transport de cassette de RetroMediaLab
+  - [x] Créer src/App/Shared/Emulation/TapeTransportPresentation.h pour calculer les états des six commandes selon les règles C#.
+  - [x] Créer src/App/Themes/RetroMediaLab/Views/TapeTransportButton.h pour dessiner les glyphes, les bordures et le clignotement du thème.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser les commandes de transport et les états du SDK, puis régénérer RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters.
+  - [x] Créer puis supprimer build/emulation-tape-buttons-check pour vérifier les états et le rendu Qt.
+
+- [x] Préparation des médias lors du montage interactif
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour déclarer la préparation facultative d’un fichier par l’adaptateur du module.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour préparer le média avant son insertion et transmettre le résultat au parcours de montage commun.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser ce parcours à l’ouverture d’un fichier de média.
+  - [x] Créer puis supprimer build/emulation-media-prepare-check pour vérifier le chargement d’un module et l’insertion avec préparation, refus et annulation.
+
+- [x] Dix emplacements de sauvegarde par configuration de machine
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour localiser, dater, écrire et relire les dix emplacements en préservant la sauvegarde rapide existante.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour présenter les dix emplacements à l’écriture et à la lecture dans la barre et dans l’OSD, et conserver les raccourcis rapides.
+  - [x] Créer puis supprimer build/emulation-state-slots-check avec une DLL de test pour vérifier l’isolation des emplacements et des configurations, le rechargement et la préservation après échec.
+
+- [x] Fermeture d’une session après une erreur du moteur
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour retirer la session fermée, arrêter sa sortie audio et tenter l’arrêt du moteur une seule fois.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour retirer l’onglet et signaler un arrêt en erreur.
+  - [x] Créer puis supprimer build/emulation-session-close-check avec une DLL de test qui échoue à l’arrêt, pour vérifier la fermeture et la réouverture.
+
+- [x] Vérification des emplacements dans le thème
+  - [x] Créer puis supprimer build/emulation-state-menus-check pour charger le thème Release et vérifier les dix choix de sauvegarde et les dix choix de chargement avec une machine de test.
+
+- [x] Libération du moteur après un échec au démarrage
+  - [x] Modifier src/Emulation/src/Host.cpp pour arrêter et détruire le moteur dont le démarrage échoue, garder les périphériques configurables et recréer le moteur au prochain démarrage.
+  - [x] Créer puis supprimer build/emulation-session-start-check pour vérifier la destruction après un échec du démarrage et de l’arrêt, puis le démarrage d’un nouveau moteur.
+
+- [x] Libération du moteur à l’extinction
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour partager la destruction entre extinction et échec de démarrage et préserver les médias au redémarrage.
+  - [x] Créer puis supprimer build/emulation-power-off-check pour vérifier les deux chemins de l’extinction et le remontage au redémarrage.
+
+- [x] Pistes magnétiques et mécanique des lecteurs dans le SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer la mécanique et les opérations de disque manquantes, en ajoutant les méthodes après les contrats existants.
+  - [x] Modifier src/Emulation/src/MediaPreparation.h et src/Emulation/src/MediaPreparation.cpp pour relier ces opérations à MediaEngine et partager la mécanique entre le contrôleur et son image.
+  - [x] Créer puis supprimer build/emulation-drive-sdk-check pour vérifier le SDK depuis un module natif, avec une image temporaire et un lecteur partagé.
+
+- [x] Sortie hôte des bruitages mécaniques
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h et src/Emulation/src/MediaPreparation.h et .cpp pour laisser le module choisir le rendu PCM ou la sortie hôte.
+  - [x] Modifier src/Emulation/src/AudioOutput.h et .cpp pour réveiller, mélanger et libérer la sortie des lecteurs selon le cycle du C#.
+  - [x] Créer puis supprimer build/emulation-host-audio-check pour vérifier les événements transmis depuis un module et distinguer le rendu hôte du rendu PCM.
+
+- [x] Préparation des médias dans le SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour exposer les contrats de préparation des bandes, CUE, disques et sons mécaniques.
+  - [x] Modifier src/Emulation/src/MediaPreparation.h et .cpp pour raccorder les méthodes au moteur média et préserver les métadonnées des blocs de bande.
+  - [x] Créer puis supprimer build/emulation-media-preparation-check pour vérifier les CUE, les tailles de secteurs, les catalogues et la lecture et l’écriture d’une bande depuis un module natif.
+
+- [x] Recréation du moteur après changement de média
+  - [x] Modifier src/Emulation/src/Host.cpp pour détruire le moteur avant la fabrique et conserver le montage précédent en cas de refus ou d’annulation.
+  - [x] Créer puis supprimer build/emulation-runtime-replacement-check pour exercer un moteur qui exige une ressource exclusive et une recréation en erreur.
+
+- [x] Présentation des erreurs dans les réglages et les sessions
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre les erreurs structurées et utiliser le nom de la machine lorsque la configuration est anonyme.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationErrorDialog.cpp pour consigner la gravité et la cause technique des erreurs.
+  - [x] Créer puis supprimer build/emulation-machine-error-check pour ouvrir le dialogue avec une machine de test et vérifier le nom de la machine.
+
+- [x] Clavier et manettes avec l’OSD sans pause
+  - [x] Modifier src/App/Shared/Emulation/EmulationPhysicalShortcuts.h pour identifier les commandes de manette consommées par un raccourci.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre les entrées de jeu pendant l’OSD sans pause et filtrer les commandes de navigation jusqu’au relâchement.
+  - [x] Créer puis supprimer build/emulation-live-osd-input-check pour vérifier le clavier dans le thème Release et le masque des sources de manette.
+
+- [x] Souris dans l’OSD sans pause
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour détecter les panneaux actifs et les contrôles qui capturent la souris.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre la souris au jeu hors des panneaux et neutraliser les boutons consommés jusqu’à leur relâchement.
+  - [x] Créer puis supprimer build/emulation-live-osd-pointer-check pour vérifier les panneaux, le passage de la souris au jeu et le relâchement des boutons.
+
+- [x] Informations machine dans le menu plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre l’ordre des rubriques et regrouper les champs informatifs exposés par le module.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour présenter les informations en lecture seule dans un panneau central défilant.
+  - [x] Créer puis supprimer build/emulation-osd-information-check pour vérifier les informations du module, la visibilité des champs et le retour au menu.
+
+- [x] Transparence du menu plein écran
+  - [x] Modifier src/Common/Constants/DisplayConstants.h, src/Infrastructure/State/PreferencesStore.h et .cpp, src/App/State/WorkspaceState.h et .cpp et src/App/Bootstrap/Application.cpp pour enregistrer la transparence globale, 5 % par défaut et bornée de 0 à 100 %.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et Presentation.h et les sources homonymes dans src/VideoPresentation/src pour appliquer le réglage à l’arrière-plan des panneaux et indicateurs plein écran.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et EmulationPreferencesDialog.cpp pour proposer le réglage dans l’OSD et les préférences.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-osd.json et les fichiers App/emulation-osd.json des langues correspondantes pour y reprendre le libellé du C#.
+  - [x] Créer puis supprimer build/emulation-osd-transparency-check pour vérifier le réglage par défaut, l’aperçu et la relecture après écriture.
+
+- [x] Volume de la machine en plein écran
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour appliquer le volume de session à la sortie audio, y compris après recréation du moteur.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour afficher l’indicateur temporaire de volume et appliquer la transparence de l’OSD.
+  - [x] Modifier src/App/Shared/Emulation/EmulationKeyboardShortcuts.h et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et EmulationPreferencesDialog.cpp pour raccorder le volume dans le menu Audio et les deux raccourcis configurables.
+  - [x] Modifier les catalogues App/emulation-shortcuts.json dans src/Translations/Catalogs pour ajouter les libellés repris du C#.
+  - [x] Créer puis supprimer build/emulation-osd-volume-check pour vérifier le volume de session, le raccourci, la transparence et la disparition de l’indicateur.
+
+- [x] Indicateur de sourdine en plein écran
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour distinguer un gain nul d’un faible volume arrondi à zéro.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour afficher le pictogramme de sourdine en bas à droite selon FullscreenMuteOsd.cs.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour piloter l’indicateur avec le volume, la commande de sourdine et le cycle plein écran.
+  - [x] Créer puis supprimer build/emulation-osd-mute-check pour vérifier la sourdine, le gain nul, le placement, la conservation du focus et la fermeture.
+
+- [x] Mixeur audio dans le menu plein écran
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h et Host.h ainsi que src/Emulation/src/Host.cpp pour lire les groupes de mixage déclarés par le module.
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour présenter les curseurs verticaux, la navigation et la sauvegarde des valeurs.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour raccorder le volume général et les canaux du module dans le mixeur.
+  - [x] Modifier les fichiers App/emulation-osd.json dans src/Translations/Catalogs pour réutiliser la traduction du mixeur de la branche C#.
+  - [x] Créer puis supprimer build/emulation-osd-mixer-check pour vérifier le volume général, les canaux de module, la visibilité, la navigation et l’écriture.
+
+- [x] Statistiques en plein écran
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour afficher les cinq lignes colorées du C# dans un panneau en haut à droite.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour alimenter le panneau avec le moteur réellement actif, la taille, les trames par seconde, la fréquence et le processeur.
+  - [x] Créer puis supprimer build/emulation-osd-statistics-check pour vérifier le contenu du panneau, sa position, sa transparence et sa désactivation.
+
+- [x] Temporisation et capture de la souris dans l’OSD
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h et src/VideoPresentation/src/FullscreenOsd.cpp pour suspendre la fermeture pendant la capture et relancer le délai uniquement lors des interactions dans le menu.
+  - [x] Créer puis supprimer build/emulation-osd-idle-check pour vérifier la capture dans l’éditeur, le mixeur, le clic hors menu et la fermeture automatique.
+
+- [x] Canaux à choix discrets dans le mixeur plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour présenter les choix nommés de mixage en curseurs verticaux, comme le C#, et écrire leur identifiant.
+  - [x] Créer puis supprimer build/emulation-osd-mixer-choices-check pour vérifier les libellés nommés, les bornes et l’écriture de l’identifiant choisi.
+
+- [x] Navigation dans les listes en lecture seule de l’OSD
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour parcourir à la manette ou au clavier les entrées visibles, y compris les informations et les commandes indisponibles, tout en bloquant leur activation.
+  - [x] Créer puis supprimer build/emulation-osd-readonly-check pour vérifier la navigation sur les lignes informatives, le saut des séparateurs et le blocage des commandes indisponibles.
+
+- [x] Raccourcis audio et répétition dans l’OSD
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour traiter le mixeur comme un éditeur lors du maintien d’une direction.
+  - [x] Modifier src/App/Shared/Emulation/EmulationKeyboardShortcuts.h et EmulationPhysicalShortcuts.h ainsi que src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre les raccourcis audio actifs dans l’OSD et le délai de répétition du C#.
+  - [x] Créer puis supprimer build/emulation-osd-repeat-check pour vérifier le maintien d’une direction dans le mixeur et la répétition du volume.
+
+- [x] Portée des raccourcis pendant l’ouverture de l’OSD
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour rattacher au menu plein écran uniquement ses raccourcis, le volume et la sourdine.
+  - [x] Créer puis supprimer build/emulation-osd-shortcut-focus-check pour vérifier que les commandes de session restent inactives pendant l’ouverture du menu et redeviennent accessibles après sa fermeture.
+
+- [x] Restitution des entrées après un OSD avec pause
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour vider les touches ordinaires suivies par les raccourcis et mémoriser les boutons de souris encore enfoncés au retour à la machine.
+  - [x] Créer puis supprimer build/emulation-osd-input-return-check pour vérifier le retour au jeu et la répétition du volume quand le jeu ne reçoit pas le relâchement de la touche.
+
+- [x] Priorité des raccourcis de volume et du plein écran sur le jeu
+  - [x] Modifier src/App/Shared/Emulation/EmulationKeyboardShortcuts.h et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour retirer les touches des raccourcis de volume et de bascule OSD des entrées remises à la machine.
+  - [x] Créer puis supprimer build/emulation-osd-shortcut-input-check pour vérifier les entrées du jeu, le volume et l’ouverture du menu sans pause.
+
+- [x] Alias de commandes des manettes dans les raccourcis
+  - [x] Modifier src/App/Shared/Emulation/EmulationPhysicalShortcuts.h pour reconnaître les noms de boutons et de gâchettes également acceptés par le C# et les filtrer de la même façon que les noms capturés par le C++.
+  - [x] Créer puis supprimer build/emulation-gamepad-alias-check pour vérifier la pression, le filtrage et le ciblage avec des états de manette contrôlés.
+
+- [x] Capture des axes analogiques de manette
+  - [x] Modifier src/App/Shared/Emulation/EmulationPhysicalShortcuts.h pour mesurer le mouvement brut depuis la position initiale comme dans le C#.
+  - [x] Modifier src/Platform/include/RetroMediaLab/Platform/Gamepads.h pour reconnaître les axes bruts numérotés indépendamment de la casse dans la capture et la reprise des entrées.
+  - [x] Créer puis supprimer build/emulation-gamepad-axis-check pour vérifier les mouvements depuis une position décentrée, la direction et le seuil de reprise.
+
+- [x] Boutons système des manettes Windows
+  - [x] Modifier src/Platform/Windows/Gamepads.cpp et src/Platform/include/RetroMediaLab/Platform/Gamepads.h pour publier les états Guide et Share reçus de GameInput et libérer les deux callbacks à la fermeture.
+  - [x] Modifier src/App/Shared/Emulation/EmulationPhysicalShortcuts.h pour reconnaître Guide comme alias de XboxButton dans le filtre des contrôles bruts.
+  - [x] Créer puis supprimer build/emulation-gamepad-system-check pour vérifier les états transmis à la capture et au filtre de raccourcis.
+
+- [x] Boutons système dans le mappage des machines
+  - [x] Modifier src/Emulation/src/InputProcessing.cpp pour interpréter les contrôles nommés XboxButton et Share reçus du backend dans les mappages et combinaisons du SDK.
+  - [x] Créer puis supprimer build/emulation-system-mapping-check pour vérifier les commandes simples, les combinaisons et les états encodés en bits.
+
+- [x] Système de fichiers virtuel par défaut pour les cœurs natifs
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreEnvironment.h et src/Emulation/src/NativeCoreEnvironment.cpp pour fournir un VFS détenu par la session quand aucun fournisseur personnalisé ne lui est prêté et le libérer après la désinitialisation du cœur.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreFileSystem.h et src/Emulation/src/NativeCoreFileSystem.cpp pour partager la version de négociation avant allocation.
+  - [x] Créer puis supprimer build/emulation-native-default-vfs-check pour vérifier la lecture par un cœur natif et la libération à sa fermeture.
+
+- [x] Modes d’accès du VFS des cœurs natifs
+  - [x] Modifier src/Emulation/src/NativeCoreFileSystem.cpp pour ouvrir les fichiers avec le mode exact, éviter la troncature en mise à jour et autoriser le partage de suppression sous Windows comme en C#.
+  - [x] Créer puis supprimer build/emulation-native-vfs-access-check pour vérifier les accès, la conservation des données et le renommage avec un fichier ouvert.
+
+- [x] Chemins longs du VFS des cœurs natifs
+  - [x] Modifier src/Emulation/src/NativeCoreFileSystem.cpp pour ouvrir les chemins absolus longs sous Windows et conserver le chemin ordinaire exposé au cœur.
+  - [x] Créer puis supprimer build/emulation-native-vfs-long-path-check pour vérifier ouverture, écriture, relecture et chemin exposé au-delà de MAX_PATH.
+
+- [x] Fermeture de la préparation OpenGL
+  - [x] Modifier src/VideoPresentation/src/OpenGlSurface.h et src/VideoPresentation/src/OpenGlSurface.cpp pour que la surface possède et libère la tâche de compilation avant le contexte.
+  - [x] Créer puis supprimer build/emulation-opengl-lifecycle-check pour vérifier la préparation, le changement de moteur et la fermeture de la vue.
+
+- [x] Présentation des réglages de stockage d’un module
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et EmulationStoragePanel.h pour transmettre les clés d’aide détaillée déclarées par le module.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationStoragePanel.cpp pour utiliser les aides du thème et présenter les valeurs informatives avec les libellés du module.
+
+- [x] Saisie IPv4 des réglages de machine
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour déclarer l’éditeur IPv4.
+  - [x] Créer src/App/Shared/Controls/ModuleIpv4Edit.h et modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp, RetroMediaLab.vcxproj et RetroMediaLab.vcxproj.filters pour raccorder l’éditeur au dialogue de la machine.
+  - [x] Créer puis supprimer build/emulation-ipv4-edit-check pour vérifier la saisie, le collage et la conservation de la dernière adresse complète.
+
+- [x] Ouverture de dossier dans les réglages de machine
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h pour définir l’action et son chemin absolu fourni par le module.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour créer et ouvrir ce dossier par le gestionnaire de fichiers et afficher une erreur localisée en cas d’échec.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-folders.json et les catalogues Languages correspondants pour reprendre le texte d’action de la branche C#.
+
+- [x] Indication de préparation vidéo lors des changements de vue
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp pour conserver le chargement jusqu’à la réponse du moteur lors du masquage et de l’effacement de l’image.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour masquer et réafficher l’indicateur au changement de visibilité de la surface.
+  - [x] Créer puis supprimer build/emulation-shader-visibility-check pour vérifier la préparation pendant le masquage, l’effacement et le retour à la vue.
+
+- [x] Réinitialisation des entrées lors d’une modification de session
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour vider les entrées avant la première lecture du nouveau moteur et après la sauvegarde des affectations.
+
+- [x] Restauration des médias à la première mise sous tension
+  - [x] Modifier src/Emulation/src/Host.cpp pour partager les montages de la configuration entre l’ouverture de la session, la première mise sous tension et la recréation du moteur.
+  - [x] Créer puis supprimer build/emulation-initial-mounts-check pour exercer le premier démarrage et le redémarrage avec un module temporaire.
+
+- [x] Transmission des médias à la fabrique de machines comme dans le C#
+  - [x] Modifier src/Emulation/src/Host.cpp pour transmettre les montages à createRuntimeWithMedia dès l’ouverture et à la recréation quand le module fournit les deux contrats.
+  - [x] Créer puis supprimer build/emulation-mount-factory-check pour vérifier la construction initiale et la recréation sans insertion tardive.
+
+- [x] Transmission du moteur vidéo au module
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h, Host.h et src/Emulation/src/Host.cpp pour appliquer l’API graphique à la configuration d’exécution et aux options à chaud.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre le moteur enregistré à l’ouverture et après un changement dans le dialogue ou l’OSD.
+  - [x] Créer puis supprimer build/emulation-graphics-api-check pour vérifier la configuration transmise à la fabrique, les options à chaud et la recréation.
+
+- [x] Prise en compte du moteur vidéo dans la description des réglages
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour exposer la préparation vidéo déjà utilisée à l’exécution.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour décrire les options avec le moteur du profil dans l’éditeur et l’OSD.
+
+- [x] Règles des réglages modifiés depuis la session
+  - [x] Modifier src/Emulation/src/Host.cpp pour calculer la modification et ses dépendances avec le même moteur vidéo que celui de l’éditeur de session.
+
+- [x] Choix du moteur vidéo dans les réglages de machine
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour proposer le moteur dans l’onglet Vidéo, conserver les modifications, enregistrer le profil et reconstruire les réglages en restant sur Vidéo.
+
+- [x] Visibilité et aide du sélecteur vidéo de machine
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour respecter la visibilité de l’onglet déclarée par le module et reprendre l’aide du sélecteur de moteur du C#.
+  - [x] Modifier src/Translations/Catalogs/Constants/App/emulation-video-processing.json et les catalogues de langues correspondants avec les deux aides du C#.
+
+- [x] Présentation du matériel vidéo dans les réglages de machine
+  - [x] Modifier src/App/Shared/Emulation/EmulationWorkspace.h et EmulationWorkspace.cpp pour appliquer aux réglages Mémoire les critères du C# sur le matériel vidéo.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour présenter ces réglages dans Vidéo lorsque ce volet est visible.
+
+- [x] Volet Matériel vidéo des réglages de machine
+  - [x] Modifier src/App/Shared/Emulation/EmulationWorkspace.h et EmulationWorkspace.cpp pour identifier aussi les jeux de puces vidéo du C# et conserver les dépendances de leurs groupes.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour afficher le volet matériel à droite du rendu.
+  - [x] Modifier les catalogues App/emulation-video-processing.json avec le titre du volet repris du C#.
+
+- [x] Réglages de traitement vidéo avant la mise sous tension
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour réutiliser les contrôles vidéo existants depuis les réglages de machine et sauvegarder le profil avec ou sans session active.
+
+- [x] Onglets Affichage et Image des réglages de traitement
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour placer le choix de technologie dans Affichage et les paramètres d’image et de technologie dans Image, avec défilement vertical.
+  - [x] Modifier les catalogues App/emulation-video-processing.json avec les deux libellés du C#.
+
+- [x] Sauvegarde du traitement vidéo dans l’éditeur de machine
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour enregistrer les paramètres de traitement sur place et réserver la reconstruction de l’éditeur aux changements de moteur.
+
+- [x] Actualisation des montages après modification du stockage
+  - [x] Modifier src/Emulation/src/Host.cpp pour actualiser les médias de la session depuis les emplacements configurés après la sauvegarde.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour rafraîchir la barre des médias et les réglages OSD après une sauvegarde.
+
+- [x] Vérification de la sauvegarde du stockage et du redémarrage
+  - [x] Créer puis supprimer build/emulation-storage-refresh-check/check.cpp, sa DLL et son exécutable pour vérifier le changement de montage via le SDK et le moteur recréé.
+
+- [x] Affichage des lecteurs configurés dans la barre des médias
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour exposer les lecteurs de la configuration aux commandes de session.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour utiliser la liste de la session dans la barre des médias.
+  - [x] Créer puis supprimer build/emulation-storage-slots-check pour vérifier le changement de lecteurs avant le redémarrage.
+
+- [x] Synchronisation des montages lors des changements de configuration
+  - [x] Modifier src/Emulation/src/Host.cpp pour recalculer les montages lorsqu’une option de machine ou le moteur vidéo fait évoluer les lecteurs.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour actualiser la barre après le changement de moteur vidéo.
+  - [x] Créer puis supprimer build/emulation-storage-configuration-check pour vérifier les deux changements et le redémarrage.
+
+- [x] Description et validation communes des lecteurs
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour utiliser la configuration préparée pour le moteur vidéo dans la description et la validation des lecteurs.
+  - [x] Modifier src/App/Shared/Emulation/EmulationWorkspace.h, EmulationWorkspace.cpp et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre le moteur du profil et reconstruire la barre lorsque les propriétés du lecteur changent.
+  - [x] Créer puis supprimer build/emulation-storage-description-check pour vérifier la description et la validation des lecteurs avec et sans session.
+
+- [x] Validation du lecteur et du transport avant l’enregistrement d’une cassette
+  - [x] Modifier src/Emulation/src/Host.cpp pour vérifier le lecteur configuré, la mise sous tension et la commande d’enregistrement avant de créer le fichier.
+
+- [x] Réutilisation de la description des lecteurs pendant le rafraîchissement
+  - [x] Modifier src/Emulation/src/Host.cpp pour garder la description du stockage jusqu’au prochain changement de configuration, de moteur vidéo ou de machine d’exécution.
+  - [x] Créer puis supprimer build/emulation-storage-cache-check pour vérifier la réutilisation et les trois invalidations de la description.
+
+- [x] Vérification de la barre des médias et du dialogue dans le thème
+  - [x] Créer puis supprimer build/emulation-video-storage-view-check pour charger le thème Release et exercer l’actualisation des lecteurs, le matériel vidéo et les onglets de traitement.
+
+- [x] Suivi des boutons de souris pendant le menu plein écran sans pause
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour filtrer les boutons au relevé des entrées lorsque les panneaux bougent sous le pointeur, avec le même masque que les événements de souris.
+
+- [x] Aligner la présentation vidéo et les nouvelles touches sur osd-support
+  - [x] Modifier src/VideoPresentation/include/RetroMediaLab/VideoPresentation/Presentation.h, src/VideoPresentation/src/Presentation.cpp et SoftwareProcessing.cpp pour retirer les effets stylistiques du profil et du rendu.
+  - [x] Supprimer src/VideoPresentation/src/StylisticProcessing.cpp et StylisticProcessing.h, retirer leur entrée de src/VideoPresentation/CMakeLists.txt et retirer les contrôles du dialogue et de l’OSD dans src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp.
+  - [x] Supprimer les catalogues emulation-video-stylistic.json de src/Translations/Catalogs/Constants/App et src/Translations/Catalogs/Languages/*/App.
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/EmulationKey.h pour reprendre les deux identifiants Sega communs.
+  - [x] Créer puis supprimer build/osd-support-profile-check pour vérifier le chargement et la réécriture d’un ancien profil sans effets stylistiques.
+
+- [x] Relayer les affectations clavier déclarées par la machine
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/InputSettings.h pour exposer les associations clavier de la session par contrat facultatif.
+  - [x] Modifier src/App/Shared/Emulation/EmulationHostKeyboard.h et EmulationHostKeyboard.cpp pour séparer les caractères hôte des commandes clavier et évaluer les sources composites avec les règles communes.
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour transmettre les boutons, molettes et manettes filtrés et donner priorité aux raccourcis de l’application.
+  - [x] Créer puis supprimer build/emulation-keyboard-bindings-check pour vérifier les sources physiques, la priorité des raccourcis et les caractères du clavier.
+
+- [x] Vérifier la publication des affectations depuis la vue Émulation
+  - [x] Créer puis supprimer build/emulation-keyboard-bindings-view-check pour vérifier la combinaison clavier et molette, le relâchement et la priorité des raccourcis dans le thème Release.

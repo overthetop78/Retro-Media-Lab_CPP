@@ -3,6 +3,18 @@
 #include <QDirIterator>
 #include <QFile>
 #include <QFileInfo>
+#include <QScopeGuard>
+#ifdef Q_OS_WIN
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#include <windows.h>
+#undef interface
+#include <io.h>
+#else
+#include <unistd.h>
+#endif
+#include <fcntl.h>
 #include <algorithm>
 #include <array>
 #include <atomic>
@@ -15,7 +27,6 @@
 
 namespace RetroMediaLab::Emulation {
 namespace {
-constexpr unsigned InterfaceVersion = 3;
 constexpr unsigned ReadAccess = 1, WriteAccess = 2, UpdateExisting = 4;
 constexpr int Failure = -1, DirectoryAlreadyExists = -2;
 constexpr int StatInvalid = 0, StatValid = 1, StatDirectory = 2;
@@ -30,9 +41,57 @@ void* newHandle() {
     return reinterpret_cast<void*>(nextHandle.fetch_add(1, std::memory_order_relaxed));
 }
 
+#ifdef Q_OS_WIN
+QString windowsFilePath(const QString& absolutePath) {
+    constexpr auto extendedPrefix = R"(\\?\)";
+    constexpr auto devicePrefix = R"(\\.\)";
+    constexpr auto uncPrefix = R"(\\)";
+    constexpr auto extendedUncPrefix = R"(\\?\UNC\)";
+    auto path = QDir::toNativeSeparators(absolutePath);
+    if (path.size() < MAX_PATH || path.startsWith(QLatin1String(extendedPrefix)) ||
+        path.startsWith(QLatin1String(devicePrefix))) return path;
+    path = QDir::toNativeSeparators(QDir::cleanPath(absolutePath));
+    if (path.startsWith(QLatin1String(uncPrefix)))
+        return QLatin1String(extendedUncPrefix) + path.sliced(QLatin1String(uncPrefix).size());
+    return QLatin1String(extendedPrefix) + path;
+}
+#endif
+
+bool openNativeFile(QFile& file, const QString& path, bool reads, bool writes, bool update) {
+    const auto accessMode = reads && writes ? QIODevice::ReadWrite : reads ? QIODevice::ReadOnly : QIODevice::WriteOnly;
+#ifdef Q_OS_WIN
+    const auto nativePath = windowsFilePath(path);
+    const DWORD desired = (reads ? GENERIC_READ : 0) | (writes ? GENERIC_WRITE : 0);
+    const DWORD disposition = writes ? (update ? OPEN_ALWAYS : CREATE_ALWAYS) : OPEN_EXISTING;
+    constexpr DWORD sharing = FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE;
+    const auto handle = CreateFileW(reinterpret_cast<LPCWSTR>(nativePath.utf16()), desired,
+        sharing, nullptr, disposition, FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (handle == INVALID_HANDLE_VALUE) return false;
+    auto closeHandle = qScopeGuard([handle] { CloseHandle(handle); });
+    if (GetFileType(handle) != FILE_TYPE_DISK) return false;
+    const int flags = _O_BINARY | _O_NOINHERIT | (reads && writes ? _O_RDWR : reads ? _O_RDONLY : _O_WRONLY);
+    const int descriptor = _open_osfhandle(reinterpret_cast<intptr_t>(handle), flags);
+    if (descriptor < 0) return false;
+    closeHandle.dismiss();
+    auto closeDescriptor = qScopeGuard([descriptor] { _close(descriptor); });
+#else
+    const int access = reads && writes ? O_RDWR : reads ? O_RDONLY : O_WRONLY;
+    const int flags = access | O_CLOEXEC | (writes ? (O_CREAT | (update ? 0 : O_TRUNC)) : 0);
+    constexpr int filePermissions = 0666;
+    const auto nativePath = QFile::encodeName(path);
+    const int descriptor = ::open(nativePath.constData(), flags, filePermissions);
+    if (descriptor < 0) return false;
+    auto closeDescriptor = qScopeGuard([descriptor] { ::close(descriptor); });
+#endif
+    if (!file.open(descriptor, accessMode, QFileDevice::AutoCloseHandle)) return false;
+    closeDescriptor.dismiss();
+    return true;
+}
+
 struct OpenFile {
     QFile file;
     QByteArray exposedPath;
+    QString fullPath;
     bool reads = false;
     bool writes = false;
 };
@@ -71,14 +130,10 @@ struct NativeCoreFileSystem::State {
         file->reads = (mode & ReadAccess) != 0;
         file->writes = (mode & WriteAccess) != 0 && !resolved.readOnly;
         if (!file->reads && !file->writes) return nullptr;
-        const auto absolute = QFileInfo(resolved.path).absoluteFilePath();
-        file->file.setFileName(absolute);
-        file->exposedPath = resolver ? QByteArray(path) : absolute.toUtf8();
-        QIODevice::OpenMode flags = file->writes ? QIODevice::ReadWrite : QIODevice::ReadOnly;
-        if (file->writes && (mode & UpdateExisting) == 0) {
-            flags = (file->reads ? QIODevice::ReadWrite : QIODevice::WriteOnly) | QIODevice::Truncate;
-        }
-        if (!file->file.open(flags)) return nullptr;
+        file->fullPath = QFileInfo(resolved.path).absoluteFilePath();
+        file->exposedPath = resolver ? QByteArray(path) : QDir::toNativeSeparators(file->fullPath).toUtf8();
+        if (!openNativeFile(file->file, file->fullPath, file->reads, file->writes, (mode & UpdateExisting) != 0))
+            return nullptr;
         const auto handle = newHandle();
         std::lock_guard lock(gate);
         files.emplace(handle, std::move(file));
@@ -120,7 +175,7 @@ struct NativeCoreFileSystem::State {
         QString path;
         const auto count = withFile(handle, [&](OpenFile& entry) -> std::int64_t {
             if (!entry.reads) return Failure;
-            if (observer) path = entry.file.fileName();
+            if (observer) path = entry.fullPath;
             return entry.file.read(static_cast<char*>(buffer), static_cast<qint64>(length));
         });
         if (observer && count > 0) observer(path, count);

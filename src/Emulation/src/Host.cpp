@@ -1,4 +1,5 @@
 #include <RetroMediaLab/Emulation/Host.h>
+#include <RetroMediaLab/Emulation/Messages.h>
 #include <RetroMediaLab/Emulation/Firmware.h>
 #include <RetroMediaLab/Emulation/ControllerFeedback.h>
 #include <RetroMediaLab/Emulation/SettingsRules.h>
@@ -16,11 +17,14 @@
 #include <QLibrary>
 #include <QMap>
 #include <QRegularExpression>
+#include <QSaveFile>
+#include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QUrl>
 #include <QVersionNumber>
 #include <algorithm>
+#include <cmath>
 #include <stdexcept>
 
 namespace RetroMediaLab::Emulation {
@@ -46,6 +50,9 @@ void applyControllerFeedback(IEmulatedMachine& machine, const IEmulationModule& 
 
 constexpr auto QuickStateDirectory = "Retro Media Lab/Emulation/States";
 constexpr auto QuickStateFile = "%1-%2.gwas";
+constexpr auto NumberedStateFile = "%1-%2.%3";
+constexpr auto SlotStagingDirectory = ".rml-state-XXXXXX";
+constexpr qsizetype SlotCopyBlockSize = 64 * 1024;
 constexpr auto SessionDirectory = "Sessions";
 constexpr auto RuntimeStateDirectory = "States";
 constexpr auto ConvertedDirectory = "Converted";
@@ -86,7 +93,6 @@ bool sameSlot(const MediaSlot& left, const MediaSlot& right) {
 }
 
 Configuration applyStorageDraft(IModuleStorageSettingsManager& manager, Configuration configuration, StorageSettings settings) {
-    settings.availableDevices = manager.describeStorageSettings(configuration).availableDevices;
     if (!StorageRules::validSlots(settings, settings.availableDevices) ||
         !std::ranges::all_of(settings.mountedMedia, [&](const auto& mount) {
             return StorageRules::validMount(mount, settings.availableDevices, settings.configuredSlots);
@@ -99,6 +105,30 @@ Configuration applyStorageDraft(IModuleStorageSettingsManager& manager, Configur
 
 bool isPowered(MachineState state) {
     return state == MachineState::Running || state == MachineState::Paused;
+}
+
+Configuration runtimeConfiguration(const IEmulationModule& module, const Configuration& configuration, GraphicsApi api) {
+    const auto* video = dynamic_cast<const IModuleVideoSettingsManager*>(&module);
+    if (!video) return configuration;
+    auto updated = video->applyVideoSettings(configuration, api);
+    if (updated.id != configuration.id || updated.machineId != configuration.machineId)
+        throw std::invalid_argument(EmulatorRejected);
+    return updated;
+}
+
+bool applyRuntimeOptions(IEmulatedMachine& machine, const IEmulationModule& module,
+    const Configuration& configuration, std::stop_token token) {
+    const auto* configured = dynamic_cast<const IModuleRuntimeOptions*>(&module);
+    auto* runtime = dynamic_cast<IMachineRuntimeOptions*>(&machine);
+    if (!configured || !runtime) return true;
+    const auto options = configured->runtimeOptions(configuration);
+    for (const auto& option : runtime->availableOptions()) {
+        if (token.stop_requested()) return false;
+        const auto desired = options.constFind(option.id);
+        if (!option.requiresRestart && desired != options.constEnd() && *desired != option.currentValue)
+            runtime->setOption(option.id, *desired, token);
+    }
+    return true;
 }
 
 bool sameMedia(const MountedMedia& left, const MountedMedia& right) {
@@ -116,6 +146,19 @@ QList<MountedMedia> matchDevices(const QList<MediaSlot>& devices, const QList<Mo
         matched.append(std::move(copy));
     }
     return matched;
+}
+
+QList<MountedMedia> configuredMounts(const IModuleStorageSettingsManager& storage, const Configuration& configuration) {
+    const auto settings = storage.describeStorageSettings(configuration);
+    QList<MountedMedia> desired;
+    for (const auto& mount : settings.mountedMedia)
+        if (mount.inserted) desired.append(mount.media);
+    for (const auto& device : settings.deviceSettings) {
+        if (device.slot.kind == MediaKind::MemoryCard && !device.memoryCardPath.isEmpty() &&
+            std::ranges::any_of(settings.configuredSlots, [&](const auto& slot) { return sameSlot(slot, device.slot); }))
+            desired.append({device.slot, device.memoryCardPath, false});
+    }
+    return matchDevices(settings.configuredSlots, desired);
 }
 
 bool mountBeforeStart(IEmulatedMachine& runtime, const QList<MountedMedia>& desired, std::stop_token token) {
@@ -204,6 +247,22 @@ std::optional<ModuleIssue> readModule(const QFileInfo& folder, const QString& co
 }
 }
 
+namespace {
+class StoppedMachine final : public IEmulatedMachine {
+public:
+    explicit StoppedMachine(QList<MediaSlot> devices) : slots_(std::move(devices)) {}
+    MachineState state() const override { return MachineState::Stopped; }
+    void execute(LifecycleCommand, std::stop_token) override {}
+    std::shared_ptr<const VideoFrame> latestFrame() const override { return {}; }
+    double framesPerSecond() const override { return 0; }
+    void setInput(const InputSnapshot&) override {}
+    QList<MediaSlot> mediaSlots() const override { return slots_; }
+
+private:
+    QList<MediaSlot> slots_;
+};
+}
+
 struct Session::Data {
     std::shared_ptr<Module> module;
     std::shared_ptr<MediaPreparation> media;
@@ -215,132 +274,199 @@ struct Session::Data {
     bool recreateOnStart = false;
     quint64 runtimeRevision = 0;
     AudioOutput audio;
+    std::optional<int> volumePercent;
+    bool closeRequested = false;
+    GraphicsApi graphicsApi = GraphicsApi::Automatic;
+    std::optional<StorageSettings> storageDescription;
+
+    void updateConfiguration(Configuration updated) {
+        configuration = std::move(updated);
+        storageDescription.reset();
+    }
 };
 
 Session::Session(std::unique_ptr<Data> data) : data_(std::move(data)) {}
 Session::~Session() {
-    stopAudio();
-    try {
-        if (data_->machine->state() != MachineState::Stopped)
-            data_->machine->execute(LifecycleCommand::Stop, {});
-    } catch (...) {
+    try { stopForClose(); }
+    catch (...) {
         // The machine is still destroyed before the module library unloads.
     }
 }
+
+void Session::stopForClose() {
+    if (data_->closeRequested) return;
+    data_->closeRequested = true;
+    stopAudio();
+    data_->machine->execute(LifecycleCommand::Stop, {});
+}
+void Session::disposeRuntime(std::unique_ptr<IEmulatedMachine> stopped, std::stop_token token) {
+    stopAudio();
+    auto previous = std::exchange(data_->machine, std::move(stopped));
+    data_->recreateOnStart = true;
+    ++data_->runtimeRevision;
+    previous->execute(LifecycleCommand::Stop, token);
+}
+
 const Configuration& Session::configuration() const noexcept { return data_->configuration; }
 const QString& Session::moduleId() const noexcept { return data_->module->info.id; }
 IEmulatedMachine& Session::machine() noexcept { return *data_->machine; }
 quint64 Session::runtimeRevision() const noexcept { return data_->runtimeRevision; }
+namespace {
+constexpr int MaximumVolumePercent = 100;
+}
+
+int Session::volumePercent() const {
+    if (data_->volumePercent) return *data_->volumePercent;
+    const auto configured = audioOutputSelection(*data_->module->instance, data_->configuration).volume;
+    return std::isfinite(configured)
+        ? qRound(std::clamp(configured, 0.0f, 1.0f) * MaximumVolumePercent) : MaximumVolumePercent;
+}
+
+bool Session::audioVolumeIsZero() const {
+    if (data_->volumePercent) return *data_->volumePercent == 0;
+    const float configured = audioOutputSelection(*data_->module->instance, data_->configuration).volume;
+    return std::isfinite(configured) && configured <= 0.0f;
+}
+
+void Session::setVolumePercent(int percent) noexcept {
+    data_->volumePercent = std::clamp(percent, 0, MaximumVolumePercent);
+}
+
 void Session::pumpAudio(bool audible) {
-    const auto selection = audioOutputSelection(*data_->module->instance, data_->configuration);
+    auto selection = audioOutputSelection(*data_->module->instance, data_->configuration);
+    if (data_->volumePercent) selection.volume = float(*data_->volumePercent) / MaximumVolumePercent;
     data_->audio.pump(*data_->machine, audible, selection);
 }
 void Session::stopAudio() noexcept { data_->audio.stop(*data_->machine); }
+void Session::setGraphicsApi(GraphicsApi api) {
+    if (data_->graphicsApi == api) return;
+    auto& module = *data_->module->instance;
+    if (dynamic_cast<const IModuleVideoSettingsManager*>(&module)) {
+        const auto configured = runtimeConfiguration(module, data_->configuration, api);
+        if (const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(&module))
+            data_->mounted = configuredMounts(*storage, configured);
+        data_->graphicsApi = api;
+        data_->storageDescription.reset();
+        data_->recreateOnStart = true;
+        if (isPowered(data_->machine->state())) applyRuntimeOptions(*data_->machine, module, configured, {});
+    } else {
+        data_->graphicsApi = api;
+    }
+}
+
+std::optional<StorageSettings> Session::storageSettings() const {
+    const auto& module = *data_->module->instance;
+    const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(&module);
+    if (!storage) return std::nullopt;
+    if (!data_->storageDescription) {
+        const auto configuration = runtimeConfiguration(module, data_->configuration, data_->graphicsApi);
+        data_->storageDescription = storage->describeStorageSettings(configuration);
+    }
+    return data_->storageDescription;
+}
+
+QList<MediaSlot> Session::mediaSlots() const {
+    const auto settings = storageSettings();
+    if (!settings) return data_->machine->mediaSlots();
+
+    QList<MediaSlot> devices;
+    for (const auto& device : settings->availableDevices) {
+        if (std::ranges::any_of(settings->configuredSlots, [&](const auto& slot) { return sameSlot(slot, device.slot); }))
+            devices.append(device.slot);
+    }
+    return devices;
+}
+
 const QList<MountedMedia>& Session::mountedMedia() const noexcept { return data_->mounted; }
 
 bool Session::requiresRecreation(const MediaSlot& slot) const {
-    const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(data_->module->instance);
-    if (!storage) return false;
-    const auto settings = storage->describeStorageSettings(data_->configuration);
-    return std::ranges::any_of(settings.availableDevices, [&](const auto& device) {
+    const auto settings = storageSettings();
+    return settings && std::ranges::any_of(settings->availableDevices, [&](const auto& device) {
         return device.requiresMachineRecreation && sameSlot(device.slot, slot);
     });
 }
 
-bool Session::execute(LifecycleCommand command, std::stop_token token) {
+bool Session::execute(LifecycleCommand command, std::stop_token token) try {
     if (token.stop_requested()) return false;
     const auto state = data_->machine->state();
     if (command == LifecycleCommand::HardReset && isPowered(state) &&
         std::ranges::any_of(data_->mounted, [this](const auto& mount) { return requiresRecreation(mount.slot); }))
         return replaceRuntime(data_->mounted, {}, token);
+    if (command == LifecycleCommand::Stop) {
+        if (state != MachineState::Created && state != MachineState::Stopped)
+            disposeRuntime(std::make_unique<StoppedMachine>(data_->machine->mediaSlots()), token);
+        return true;
+    }
+    if (command == LifecycleCommand::Start && !data_->recreateOnStart && !isPowered(state)) {
+        auto stopped = std::make_unique<StoppedMachine>(data_->machine->mediaSlots());
+        try {
+            if (dynamic_cast<const IModuleStorageSettingsManager*>(data_->module->instance) &&
+                !dynamic_cast<const IModuleMountedMedia*>(data_->module->instance) &&
+                (!mountBeforeStart(*data_->machine, data_->mounted, token) || token.stop_requested())) {
+                disposeRuntime(std::move(stopped), {});
+                return false;
+            }
+            data_->machine->execute(command, token);
+        } catch (...) {
+            if (stopped) {
+                try { disposeRuntime(std::move(stopped), {}); } catch (...) {}
+            }
+            throw;
+        }
+        return true;
+    }
     if (command != LifecycleCommand::Start || !data_->recreateOnStart) {
         data_->machine->execute(command, token);
-        if (command == LifecycleCommand::Stop && data_->machine->state() == MachineState::Stopped) {
-            data_->recreateOnStart = true;
-            stopAudio();
-        } else if (command == LifecycleCommand::Pause && data_->machine->state() == MachineState::Paused) {
+        if (command == LifecycleCommand::Pause && data_->machine->state() == MachineState::Paused) {
             stopAudio();
         }
         return true;
     }
     if (state != MachineState::Created && state != MachineState::Stopped) return false;
-    const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(data_->module->instance);
-    if (!storage) return replaceRuntime(data_->mounted, {}, token);
-    QList<MountedMedia> desired;
-    const auto configured = storage->describeStorageSettings(data_->configuration);
-    for (const auto& mount : configured.mountedMedia)
-        if (mount.inserted) desired.append(mount.media);
-    for (const auto& device : configured.deviceSettings) {
-        if (device.slot.kind == MediaKind::MemoryCard && !device.memoryCardPath.isEmpty() &&
-            std::ranges::any_of(configured.configuredSlots, [&](const auto& slot) { return sameSlot(slot, device.slot); }))
-            desired.append({device.slot, device.memoryCardPath, false});
-    }
-    return replaceRuntime(desired, {}, token);
+    return replaceRuntime(std::nullopt, {}, token);
+} catch (...) {
+    if (command != LifecycleCommand::Start) throw;
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::Machine,
+        MessageCode::MachineStartFailed, {moduleId(), configuration().machineId, {}, {}}));
 }
 
-bool Session::replaceRuntime(const QList<MountedMedia>& desired, std::optional<Configuration> configuration,
+bool Session::replaceRuntime(std::optional<QList<MountedMedia>> desired, std::optional<Configuration> configuration,
     std::stop_token token) {
     if (token.stop_requested()) return false;
     auto& module = *data_->module->instance;
     auto* mediaFactory = dynamic_cast<IModuleMountedMedia*>(&module);
-    if (dynamic_cast<IModuleStorageSettingsManager*>(&module)) mediaFactory = nullptr;
-    const auto previousState = data_->machine->state();
-    const bool wasPowered = isPowered(previousState);
+    const bool wasPowered = isPowered(data_->machine->state());
     const auto& next = configuration ? *configuration : data_->configuration;
-    std::unique_ptr<IEmulatedMachine> replacement;
-    const auto stopReplacement = [&] {
+    const auto configured = runtimeConfiguration(module, next, data_->graphicsApi);
+    const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(&module);
+    const auto mounts = desired ? std::move(*desired) : storage ? configuredMounts(*storage, configured) : data_->mounted;
+
+    if (!dynamic_cast<StoppedMachine*>(data_->machine.get())) {
+        disposeRuntime(std::make_unique<StoppedMachine>(data_->machine->mediaSlots()), token);
+        if (token.stop_requested()) return false;
+    }
+
+    auto replacement = mediaFactory ? mediaFactory->createRuntimeWithMedia(configured, data_->services, mounts, token) :
+        module.createRuntime(configured, data_->services, token);
+    if (!replacement) return false;
+    const auto stopReplacement = qScopeGuard([&] {
         if (!replacement) return;
         try { replacement->execute(LifecycleCommand::Stop, {}); } catch (...) {}
-        replacement.reset();
-    };
-    const auto restore = [&] {
-        stopReplacement();
-        if (!wasPowered) return;
-        try {
-            if (!isPowered(data_->machine->state())) data_->machine->execute(LifecycleCommand::Start, {});
-            if (previousState == MachineState::Paused && data_->machine->state() == MachineState::Running)
-                data_->machine->execute(LifecycleCommand::Pause, {});
-        } catch (...) {}
-        data_->recreateOnStart = !isPowered(data_->machine->state());
-    };
+    });
 
-    QList<MountedMedia> compatible;
-    try {
-        if (wasPowered) {
-            data_->machine->execute(LifecycleCommand::Stop, token);
-            if (token.stop_requested() || data_->machine->state() != MachineState::Stopped) {
-                restore();
-                return false;
-            }
-        }
-        replacement = mediaFactory ? mediaFactory->createRuntimeWithMedia(next, data_->services, desired, token) :
-            module.createRuntime(next, data_->services, token);
-        if (!replacement) {
-            restore();
-            return false;
-        }
-        applyControllerFeedback(*replacement, module, next);
-        compatible = matchDevices(replacement->mediaSlots(), desired);
-        if (token.stop_requested() || (wasPowered && compatible.size() != desired.size()) ||
-            (!mediaFactory && !mountBeforeStart(*replacement, compatible, token))) {
-            restore();
-            return false;
-        }
-        replacement->execute(LifecycleCommand::Start, token);
-        if (token.stop_requested() || !isPowered(replacement->state())) {
-            restore();
-            return false;
-        }
-        if (configuration) module.saveConfiguration(*configuration, token);
-    } catch (...) {
-        restore();
-        throw;
-    }
-    stopAudio();
+    applyControllerFeedback(*replacement, module, next);
+    auto compatible = matchDevices(replacement->mediaSlots(), mounts);
+    if (token.stop_requested() || (wasPowered && compatible.size() != mounts.size()) ||
+        (!mediaFactory && !mountBeforeStart(*replacement, compatible, token))) return false;
+    replacement->execute(LifecycleCommand::Start, token);
+    if (token.stop_requested() || !isPowered(replacement->state())) return false;
+    if (configuration) module.saveConfiguration(*configuration, token);
+
     data_->machine = std::move(replacement);
     ++data_->runtimeRevision;
     data_->mounted = std::move(compatible);
-    if (configuration) data_->configuration = std::move(*configuration);
+    data_->storageDescription.reset();
+    if (configuration) data_->updateConfiguration(std::move(*configuration));
     data_->recreateOnStart = false;
     return true;
 }
@@ -358,7 +484,8 @@ std::optional<Configuration> Session::prepareMountedMedia(const QList<MountedMed
     const auto& latest = found == saved.end() ? current : *found;
     Configuration updated;
     if (settingsManager) {
-        auto settings = settingsManager->describeStorageSettings(latest);
+        const auto configured = runtimeConfiguration(module, latest, data_->graphicsApi);
+        auto settings = settingsManager->describeStorageSettings(configured);
         if (slot.kind == MediaKind::MemoryCard) {
             const auto device = std::ranges::find_if(settings.availableDevices,
                 [&](const auto& item) { return sameSlot(item.slot, slot); });
@@ -412,16 +539,32 @@ std::optional<Configuration> Session::prepareMountedMedia(const QList<MountedMed
 void Session::persistMountedMedia(const MediaSlot& slot, const QString& ejectedPath, std::stop_token token) {
     if (auto configuration = prepareMountedMedia(data_->mounted, slot, ejectedPath, token)) {
         data_->module->instance->saveConfiguration(*configuration, token);
-        data_->configuration = std::move(*configuration);
+        data_->updateConfiguration(std::move(*configuration));
     }
 }
 
 bool Session::insertMedia(MountedMedia media, std::stop_token token) {
+    return insertMediaImpl(std::move(media), false, token);
+}
+
+bool Session::insertMediaFile(MountedMedia media, std::stop_token token) {
+    return insertMediaImpl(std::move(media), true, token);
+}
+
+bool Session::insertMediaImpl(MountedMedia media, bool prepareFile, std::stop_token token) try {
     if (token.stop_requested() || media.path.isEmpty()) return false;
-    const auto devices = data_->machine->mediaSlots();
+    const auto devices = mediaSlots();
     const auto slot = std::ranges::find_if(devices, [&](const auto& entry) { return sameSlot(entry, media.slot); });
     if (slot == devices.end()) return false;
     media.slot = *slot;
+    if (prepareFile) {
+        const auto* adapter = dynamic_cast<const IModuleMediaPreparation*>(data_->module->instance);
+        if (adapter) {
+            media = adapter->prepareMedia(data_->configuration, data_->services, media, token);
+            if (token.stop_requested() || media.path.isEmpty() || !sameSlot(*slot, media.slot)) return false;
+            media.slot = *slot;
+        }
+    }
     const bool powered = isPowered(data_->machine->state());
     const bool recreate = requiresRecreation(*slot);
     const bool card = slot->kind == MediaKind::MemoryCard &&
@@ -435,7 +578,7 @@ bool Session::insertMedia(MountedMedia media, std::stop_token token) {
         if (powered && recreate) return replaceRuntime(desired, std::move(configuration), token);
         if (powered && !data_->machine->insert(media, token)) return false;
         data_->module->instance->saveConfiguration(*configuration, token);
-        data_->configuration = std::move(*configuration);
+        data_->updateConfiguration(std::move(*configuration));
         data_->mounted = std::move(desired);
         if (!powered) data_->recreateOnStart = true;
         return true;
@@ -451,9 +594,12 @@ bool Session::insertMedia(MountedMedia media, std::stop_token token) {
     else *existing = std::move(media);
     persistMountedMedia(*slot, {}, token);
     return true;
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::Media,
+        MessageCode::MediaOperationFailed, {moduleId(), configuration().machineId, {}, {}}));
 }
 
-bool Session::ejectMedia(const MediaSlot& slot, std::stop_token token) {
+bool Session::ejectMedia(const MediaSlot& slot, std::stop_token token) try {
     if (token.stop_requested()) return false;
     auto& mounted = data_->mounted;
     const auto existing = std::ranges::find_if(mounted, [&](const auto& media) { return sameSlot(media.slot, slot); });
@@ -473,21 +619,33 @@ bool Session::ejectMedia(const MediaSlot& slot, std::stop_token token) {
     mounted.erase(existing);
     persistMountedMedia(removed.slot, removed.path, token);
     return true;
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::Media,
+        MessageCode::MediaOperationFailed, {moduleId(), configuration().machineId, {}, {}}));
 }
 
 bool Session::recordTape(const MediaSlot& slot, const QString& path, const std::optional<TapePcmSettings>& pcm,
-    std::stop_token token) {
+    std::stop_token token) try {
     if (token.stop_requested() || slot.kind != MediaKind::Tape || path.isEmpty()) return false;
     auto& runtime = *data_->machine;
-    const auto devices = runtime.mediaSlots();
-    const auto device = std::ranges::find_if(devices, [&](const auto& candidate) { return sameSlot(candidate, slot); });
-    if (device == devices.end()) return false;
+    if (!isPowered(runtime.state())) return false;
+    const auto transport = runtime.tapeTransportStatus();
+    if (!transport.availableCommands.contains(TapeCommand::Record) || transport.state == TapeState::Recording ||
+        (transport.state == TapeState::Paused && transport.activeOperation == TapeCommand::Record)) return false;
+
+    const auto configured = mediaSlots();
+    const auto device = std::ranges::find_if(configured, [&](const auto& candidate) { return sameSlot(candidate, slot); });
+    if (device == configured.end()) return false;
+    const auto liveDevices = runtime.mediaSlots();
+    const auto live = std::ranges::find_if(liveDevices, [&](const auto& candidate) { return sameSlot(candidate, slot); });
+    if (live == liveDevices.end()) return false;
+
     QFileInfo file(path);
     const auto suffix = QLatin1Char('.') + file.suffix();
     if (!data_->media->tapeRecordingExtensions(*device).contains(suffix, Qt::CaseInsensitive)) return false;
-    if (runtime.tapeTransportStatus().availableCommands.contains(TapeCommand::Stop) &&
-        !runtime.tape(TapeCommand::Stop, token)) return false;
-    if (runtime.hasUnsavedChanges(*device, token) && !runtime.saveChanges(*device, token)) return false;
+    if (transport.availableCommands.contains(TapeCommand::Stop) && !runtime.tape(TapeCommand::Stop, token)) return false;
+    if (runtime.hasUnsavedChanges(*live, token) && !runtime.saveChanges(*live, token)) return false;
+    if (token.stop_requested()) return false;
 
     const auto target = file.absoluteFilePath();
     data_->media->createBlankTape(target, pcm, token);
@@ -502,6 +660,9 @@ bool Session::recordTape(const MediaSlot& slot, const QString& path, const std::
         if (!insertMedia({*device, target, !file.isWritable(), parameters}, token)) return false;
     }
     return data_->machine->tape(TapeCommand::Record, token);
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::Media,
+        MessageCode::MediaOperationFailed, {moduleId(), configuration().machineId, {}, {}}));
 }
 
 bool Session::updateSettings(const QJsonObject& changes, std::stop_token token) {
@@ -544,7 +705,7 @@ bool Session::applySettings(const QJsonObject& changes, const QString& changedFi
     if (feedbackChanged && !feedback) return false;
     auto* firmwareManager = firmwareChanged ? dynamic_cast<IModuleFirmwareManager*>(&module) : nullptr;
     if (firmwareChanged && !firmwareManager) return false;
-    auto* storageManager = storage ? dynamic_cast<IModuleStorageSettingsManager*>(&module) : nullptr;
+    auto* storageManager = dynamic_cast<IModuleStorageSettingsManager*>(&module);
     if (storage && !storageManager) return false;
     auto* inputManager = input ? dynamic_cast<IModuleInputSettingsManager*>(&module) : nullptr;
     if (input && !inputManager) return false;
@@ -555,9 +716,10 @@ bool Session::applySettings(const QJsonObject& changes, const QString& changedFi
     const auto& latest = found == saved.end() ? current : *found;
     auto patch = changes;
     if (!changedField.isEmpty()) {
-        const auto dependencies = dependenciesFor(module, latest);
+        const auto described = runtimeConfiguration(module, latest, data_->graphicsApi);
+        const auto dependencies = dependenciesFor(module, described);
         if (!dependencies.rules.isEmpty()) {
-            const auto blocks = module.describe(latest.machineId, &latest);
+            const auto blocks = module.describe(described.machineId, &described);
             patch = SettingsRules::changesFor(dependencies, SettingsRules::values(blocks), changedField,
                 changes.value(changedField).toString());
         }
@@ -570,12 +732,21 @@ bool Session::applySettings(const QJsonObject& changes, const QString& changedFi
         }
     }
     if (feedback) updated = feedback->applyControllerFeedbackSettings(std::move(updated), *controllerPorts);
-    if (storageManager) updated = applyStorageDraft(*storageManager, std::move(updated), *storage);
+    if (storage) {
+        auto draft = *storage;
+        const auto configured = runtimeConfiguration(module, updated, data_->graphicsApi);
+        draft.availableDevices = storageManager->describeStorageSettings(configured).availableDevices;
+        updated = applyStorageDraft(*storageManager, std::move(updated), std::move(draft));
+    }
     if (inputManager) updated = inputManager->applyInputSettings(std::move(updated), *input);
     if (updated.id != current.id || updated.machineId != current.machineId ||
         !preservesEmulator(module, updated, {latest}, token)) return false;
+    const auto configured = runtimeConfiguration(module, updated, data_->graphicsApi);
+    std::optional<QList<MountedMedia>> mounts;
+    if (storageManager) mounts = configuredMounts(*storageManager, configured);
     module.saveConfiguration(updated, token);
-    data_->configuration = std::move(updated);
+    data_->updateConfiguration(std::move(updated));
+    if (mounts) data_->mounted = std::move(*mounts);
     data_->recreateOnStart = true;
     if (inputManager) inputManager->saveInputSettings(data_->configuration, token);
     if (feedback || inputManager) applyControllerFeedback(*data_->machine, module, data_->configuration);
@@ -585,17 +756,7 @@ bool Session::applySettings(const QJsonObject& changes, const QString& changedFi
     if (token.stop_requested()) return false;
     if (auto* bindings = dynamic_cast<IMachineInputBindings*>(data_->machine.get()))
         bindings->updateInputBindings(data_->configuration);
-    const auto* configured = dynamic_cast<const IModuleRuntimeOptions*>(&module);
-    auto* runtime = dynamic_cast<IMachineRuntimeOptions*>(data_->machine.get());
-    if (!configured || !runtime) return true;
-    const auto options = configured->runtimeOptions(data_->configuration);
-    for (const auto& option : runtime->availableOptions()) {
-        if (token.stop_requested()) return false;
-        const auto desired = options.constFind(option.id);
-        if (!option.requiresRestart && desired != options.constEnd() && *desired != option.currentValue)
-            runtime->setOption(option.id, *desired, token);
-    }
-    return true;
+    return applyRuntimeOptions(*data_->machine, module, configured, token);
 }
 
 std::optional<bool> Session::controllerPointerMode() const {
@@ -616,20 +777,73 @@ bool Session::canQuickSave() const {
     return isPowered(state) && data_->machine->supportsSavedStates();
 }
 
+QString Session::stateSlotPath(int slot) const {
+    if (slot < FirstStateSlot || slot > StateSlotCount) return {};
+    if (slot == FirstStateSlot) return data_->quickStatePath;
+    const QFileInfo first(data_->quickStatePath);
+    return QDir(first.absolutePath()).filePath(QString::fromLatin1(NumberedStateFile)
+        .arg(first.completeBaseName()).arg(slot).arg(first.suffix()));
+}
+
+QDateTime Session::stateSlotModified(int slot) const {
+    const QFileInfo file(stateSlotPath(slot));
+    return file.isFile() ? file.lastModified() : QDateTime{};
+}
+
 bool Session::canQuickLoad() const {
-    return canQuickSave() && QFileInfo(data_->quickStatePath).isFile();
+    return canQuickSave() && stateSlotModified(FirstStateSlot).isValid();
+}
+
+bool Session::saveState(const QString& path, std::stop_token token) try {
+    if (token.stop_requested() || path.isEmpty()) return false;
+    return data_->machine->saveState(path, token);
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::SavedState,
+        MessageCode::SavedStateOperationFailed, {moduleId(), configuration().machineId, {}, {}}));
+}
+
+bool Session::loadState(const QString& path, std::stop_token token) try {
+    if (token.stop_requested() || path.isEmpty()) return false;
+    return data_->machine->loadState(path, token);
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::SavedState,
+        MessageCode::SavedStateOperationFailed, {moduleId(), configuration().machineId, {}, {}}));
+}
+
+bool Session::saveStateSlot(int slot, std::stop_token token) {
+    const auto path = stateSlotPath(slot);
+    if (token.stop_requested() || path.isEmpty() || !canQuickSave()) return false;
+    const QFileInfo target(path);
+    const QDir directory(target.absolutePath());
+    if (!QDir().mkpath(directory.absolutePath())) return false;
+    QTemporaryDir staging(directory.filePath(QLatin1String(SlotStagingDirectory)));
+    if (!staging.isValid()) return false;
+
+    const auto stagedPath = staging.filePath(target.fileName());
+    if (!saveState(stagedPath, token) || token.stop_requested()) return false;
+    QFile input(stagedPath);
+    QSaveFile output(path);
+    if (!input.open(QIODevice::ReadOnly) || !output.open(QIODevice::WriteOnly)) return false;
+    while (!input.atEnd()) {
+        if (token.stop_requested()) return false;
+        const auto bytes = input.read(SlotCopyBlockSize);
+        if (bytes.isEmpty() || output.write(bytes) != bytes.size()) return false;
+    }
+    return !token.stop_requested() && output.commit();
+}
+
+bool Session::loadStateSlot(int slot, std::stop_token token) {
+    if (token.stop_requested() || !canQuickSave()) return false;
+    const auto path = stateSlotPath(slot);
+    return QFileInfo(path).isFile() && loadState(path, token);
 }
 
 bool Session::quickSave(std::stop_token token) {
-    if (token.stop_requested() || !canQuickSave()) return false;
-    const auto directory = QFileInfo(data_->quickStatePath).absolutePath();
-    if (!QDir().mkpath(directory)) return false;
-    return data_->machine->saveState(data_->quickStatePath, token);
+    return saveStateSlot(FirstStateSlot, token);
 }
 
 bool Session::quickLoad(std::stop_token token) {
-    if (token.stop_requested() || !canQuickLoad()) return false;
-    return data_->machine->loadState(data_->quickStatePath, token);
+    return loadStateSlot(FirstStateSlot, token);
 }
 
 struct Host::Data {
@@ -651,7 +865,12 @@ Host::Host(QString modules, QString configurations, QString states) : data_(std:
     data_->storageDirectory = QFileInfo(states).absolutePath();
     data_->stateDirectory = std::move(states);
 }
-Host::~Host() = default;
+Host::~Host() {
+    const auto sessions = std::move(data_->sessions);
+    for (const auto& session : sessions) {
+        try { session->stopForClose(); } catch (...) {}
+    }
+}
 
 void Host::setStorageDirectories(QString storage, QString states) {
     data_->storageDirectory = std::move(storage);
@@ -810,6 +1029,11 @@ Configuration Host::newConfiguration(const QString& id, const QString& machineId
         [&](const auto& machine) { return machine.id == machineId; })) return {};
     return module->instance->createConfiguration(machineId);
 }
+Configuration Host::configurationForGraphicsApi(const QString& id, const Configuration& configuration, GraphicsApi api) const {
+    const auto module = data_->modules.value(id);
+    return module ? runtimeConfiguration(*module->instance, configuration, api) : configuration;
+}
+
 QList<SettingsBlock> Host::describe(const QString& id, const Configuration& configuration) const {
     const auto module = data_->modules.value(id);
     if (!module) return {};
@@ -841,6 +1065,18 @@ QHash<QString, EditableNumericSetting> Host::editableNumericSettings(const QStri
     const auto module = data_->modules.value(id);
     const auto* editor = module ? dynamic_cast<const IModuleEditableNumericSettings*>(module->instance) : nullptr;
     return editor ? editor->editableNumericSettings(configuration) : QHash<QString, EditableNumericSetting>{};
+}
+
+QSet<QString> Host::audioMixerBlocks(const QString& id, const Configuration& configuration) const {
+    const auto module = data_->modules.value(id);
+    const auto* mixer = module ? dynamic_cast<const IModuleAudioMixerBlocks*>(module->instance) : nullptr;
+    return mixer ? mixer->audioMixerBlocks(configuration) : QSet<QString>{};
+}
+
+SettingsPresentation Host::settingsPresentation(const QString& id, const Configuration& configuration) const {
+    const auto module = data_->modules.value(id);
+    const auto* presentation = module ? dynamic_cast<const IModuleSettingsPresentation*>(module->instance) : nullptr;
+    return presentation ? presentation->settingsPresentation(configuration) : SettingsPresentation{};
 }
 
 QHash<QString, VideoSettingsSection> Host::videoSettingsSections(const QString& id, const Configuration& configuration) const {
@@ -948,7 +1184,20 @@ Configuration Host::applyStorageSettings(const QString& id, Configuration config
     const auto module = data_->modules.value(id);
     auto* manager = module ? dynamic_cast<IModuleStorageSettingsManager*>(module->instance) : nullptr;
     if (!manager || configuration.id.isNull()) return {};
-    return applyStorageDraft(*manager, std::move(configuration), settings);
+    auto draft = settings;
+    draft.availableDevices = manager->describeStorageSettings(configuration).availableDevices;
+    return applyStorageDraft(*manager, std::move(configuration), std::move(draft));
+}
+
+Configuration Host::applyStorageSettings(const QString& id, Configuration configuration, const StorageSettings& settings,
+    GraphicsApi api) {
+    const auto module = data_->modules.value(id);
+    auto* manager = module ? dynamic_cast<IModuleStorageSettingsManager*>(module->instance) : nullptr;
+    if (!manager || configuration.id.isNull()) return {};
+    auto draft = settings;
+    const auto configured = runtimeConfiguration(*module->instance, configuration, api);
+    draft.availableDevices = manager->describeStorageSettings(configured).availableDevices;
+    return applyStorageDraft(*manager, std::move(configuration), std::move(draft));
 }
 
 std::optional<InputSettings> Host::inputSettings(const QString& id, const Configuration& configuration) const {
@@ -1016,11 +1265,19 @@ void Host::deleteConfiguration(const QString& id, const QUuid& configuration, st
     if (!token.stop_requested() && dynamic_cast<IEmulationNetworkManager*>(module->instance)) configurations(id, token);
 }
 std::shared_ptr<Session> Host::open(const QString& id, const Configuration& configuration, std::stop_token token) {
+    return openWithGraphicsApi(id, configuration, GraphicsApi::Automatic, token);
+}
+
+std::shared_ptr<Session> Host::openWithGraphicsApi(const QString& id, const Configuration& configuration,
+    GraphicsApi api, std::stop_token token) try {
     if (configuration.id.isNull() || token.stop_requested()) return {};
     for (const auto& session : data_->sessions)
         if (session->moduleId() == id && session->configuration().id == configuration.id) return session;
     const auto module = data_->modules.value(id);
-    if (!module) return {};
+    if (!module) {
+        throw EmulationMessageException({MessageCategory::Emulator, MessageCode::EmulatorNotInstalled,
+            MessageSeverity::Error, MessageTarget::Dialog, {id, configuration.machineId, {}, {}}, {}});
+    }
     auto quickState = QDir(data_->stateDirectory).filePath(QString::fromLatin1(QuickStateFile)
         .arg(id, configuration.id.toString(QUuid::Id128)));
     const QDir moduleRoot(QDir(data_->storageDirectory).filePath(id));
@@ -1029,18 +1286,29 @@ std::shared_ptr<Session> Host::open(const QString& id, const Configuration& conf
         QCoreApplication::applicationFilePath()};
     auto state = std::make_unique<Session::Data>(Session::Data{module, data_->media, std::move(services), configuration,
         std::move(quickState), {}, {}});
-    state->machine = module->instance->createRuntime(configuration, state->services, token);
+    state->graphicsApi = api;
+    const auto configured = runtimeConfiguration(*module->instance, configuration, api);
+    const auto* storage = dynamic_cast<const IModuleStorageSettingsManager*>(module->instance);
+    auto* mediaFactory = dynamic_cast<IModuleMountedMedia*>(module->instance);
+    const auto desired = storage ? configuredMounts(*storage, configured) : QList<MountedMedia>{};
+    state->machine = storage && mediaFactory
+        ? mediaFactory->createRuntimeWithMedia(configured, state->services, desired, token)
+        : module->instance->createRuntime(configured, state->services, token);
     if (!state->machine) return {};
     applyControllerFeedback(*state->machine, *module->instance, configuration);
-    state->mounted = state->machine->mountedMedia();
+    state->mounted = storage ? matchDevices(state->machine->mediaSlots(), desired)
+        : state->machine->mountedMedia();
     auto session = std::shared_ptr<Session>(new Session(std::move(state)));
     data_->sessions.push_back(session);
     return session;
+} catch (...) {
+    std::rethrow_exception(translateError(std::current_exception(), MessageCategory::Machine,
+        MessageCode::MachineStartFailed, {id, configuration.machineId, {}, {}}));
 }
 const QList<std::shared_ptr<Session>>& Host::sessions() const noexcept { return data_->sessions; }
 void Host::close(const std::shared_ptr<Session>& session) {
-    if (!data_->sessions.contains(session)) return;
-    session->machine().execute(LifecycleCommand::Stop, {});
-    data_->sessions.removeAll(session);
+    const auto closing = session;
+    if (data_->sessions.removeAll(closing) == 0) return;
+    closing->stopForClose();
 }
 }

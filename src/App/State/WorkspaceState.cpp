@@ -119,6 +119,27 @@ WorkspaceState::DirectorySubscription WorkspaceState::subscribeToEmulationStatis
     emulationStatisticsObservers_.push_back(subscription);
     return subscription;
 }
+void WorkspaceState::setFullscreenOsdTransparency(int percent) {
+    percent = std::clamp(percent, DisplayConstants::MinimumOsdTransparency, DisplayConstants::MaximumOsdTransparency);
+    if (percent == fullscreenOsdTransparency_) return;
+    const auto observers = osdTransparencyObservers_;
+    const int previous = std::exchange(fullscreenOsdTransparency_, percent);
+    std::erase_if(osdTransparencyObservers_, [](const auto& observer) { return observer.expired(); });
+    try {
+        for (const auto& observer : observers)
+            if (const auto live = observer.lock()) (*live)();
+    } catch (...) {
+        fullscreenOsdTransparency_ = previous;
+        throw;
+    }
+}
+
+WorkspaceState::DirectorySubscription WorkspaceState::subscribeToOsdTransparency(std::function<void()> observer) {
+    auto subscription = std::make_shared<const std::function<void()>>(std::move(observer));
+    osdTransparencyObservers_.push_back(subscription);
+    return subscription;
+}
+
 LoggingSettings WorkspaceState::logging() const {
     const std::lock_guard lock(loggingMutex_);return logging_;
 }

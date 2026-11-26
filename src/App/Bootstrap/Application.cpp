@@ -76,6 +76,7 @@ int Application::run(int argc, char** argv) {
     state.setEmulationFolders(selected.emulationFolders);
     state.setEmulationShortcuts(selected.emulationShortcuts);
     state.setShowFullscreenEmulationStatistics(selected.showFullscreenEmulationStatistics);
+    state.setFullscreenOsdTransparency(selected.fullscreenOsdTransparency);
     state.restoreFileDialogDirectories(selected.fileDialogDirectories.value_or(QJsonObject{}));
     const auto savePreferences = [&] {
         selected.language = QString::fromStdString(translations.language());
@@ -85,6 +86,7 @@ int Application::run(int argc, char** argv) {
         selected.emulationFolders = state.emulationFolders();
         selected.emulationShortcuts = state.emulationShortcuts();
         selected.showFullscreenEmulationStatistics = state.showFullscreenEmulationStatistics();
+        selected.fullscreenOsdTransparency = state.fullscreenOsdTransparency();
         selected.logging = state.logging();
         selected.conversion = state.conversion();
         selected.hardware = state.hardware();
@@ -101,6 +103,7 @@ int Application::run(int argc, char** argv) {
     const auto emulationFolderPreference = state.subscribeToEmulationFolders(savePreferences);
     const auto emulationShortcutPreference = state.subscribeToEmulationShortcuts(savePreferences);
     const auto emulationStatisticsPreference = state.subscribeToEmulationStatistics(savePreferences);
+    const auto osdTransparencyPreference = state.subscribeToOsdTransparency(savePreferences);
     const auto hardwarePreference = state.subscribeToHardware(savePreferences);
     const auto displayPreference = state.subscribeToInterfaceScale(savePreferences);
     const auto enginePreference = state.subscribeToEngines(savePreferences);

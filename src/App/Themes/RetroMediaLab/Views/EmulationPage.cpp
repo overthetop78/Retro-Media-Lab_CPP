@@ -1,4 +1,5 @@
 #include "EmulationPage.h"
+#include <ErrorKeys.h>
 #include <RetroMediaLab/Emulation/ExecutionRate.h>
 #include "EmulationCommandIcons.h"
 #include "EmulationMachineTabs.h"
@@ -22,6 +23,12 @@
 #include "Shared/Emulation/EmulationKeyboardShortcuts.h"
 #include "Shared/Emulation/EmulationPhysicalShortcuts.h"
 #include "Shared/Controls/ModuleEditableSlider.h"
+#include "Shared/Controls/ModuleNumberEdit.h"
+#include "Shared/Controls/ModuleIpv4Edit.h"
+#include "EmulationErrorDialog.h"
+#include "TapeTransportButton.h"
+#include <RetroMediaLab/Emulation/Messages.h>
+#include "ModuleSettingPresentation.h"
 #include "Shared/Emulation/ModuleNumericSetting.h"
 #include "Shared/Controls/RememberedFileDialog.h"
 #include "State/WorkspaceState.h"
@@ -45,6 +52,7 @@
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QMessageBox>
 #include <QFormLayout>
 #include <QFrame>
 #include <QHBoxLayout>
@@ -80,6 +88,7 @@
 #include <cmath>
 #include <iterator>
 #include <stdexcept>
+#include <system_error>
 #include <array>
 #include <atomic>
 #include <thread>
@@ -98,16 +107,34 @@ constexpr std::array OsdControlTabs{KeyboardTabKey, MouseTabKey, ControllerTabKe
 constexpr std::array OsdMachineTabs{
     "Emulation.Tab.General", "Emulation.Tab.Cpu", "Emulation.Tab.Rom", "Emulation.Tab.Ram",
     "Emulation.Tab.Extensions", "Emulation.Tab.Storage", "Emulation.Tab.Cheats", "Emulation.Tab.Ethernet"};
-constexpr auto OsdMutedStatus = u"✓";
-constexpr auto OsdUnmutedStatus = u"—";
 using VideoPresentation::FullscreenOsd;
 using VideoPresentation::VideoSurface;
+
+GraphicsApi graphicsApi(VideoPresentation::Renderer renderer) {
+    using VideoPresentation::Renderer;
+    switch (renderer) {
+    case Renderer::OpenGL: return GraphicsApi::OpenGL;
+    case Renderer::Vulkan: return GraphicsApi::Vulkan;
+    case Renderer::Direct3D11: return GraphicsApi::Direct3D11;
+    case Renderer::Software: break;
+    }
+    return GraphicsApi::Automatic;
+}
 using Translation = Translations::TranslationService;
 
 constexpr int FramePollMilliseconds = 16;
 constexpr int MediaPollMilliseconds = 200;
 constexpr int TapeBlinkMilliseconds = 400;
 constexpr auto VideoKey = "Emulation.Tab.Video";
+constexpr auto VideoRendererKey = "Emulation.Video.Settings.Rendering";
+constexpr std::array VideoRenderers{
+#ifdef Q_OS_WIN
+    std::pair{VideoPresentation::Renderer::Direct3D11, "Emulation.Video.Renderer.Direct3D11"},
+#endif
+    std::pair{VideoPresentation::Renderer::Software, "Qt"},
+    std::pair{VideoPresentation::Renderer::Vulkan, "Emulation.Video.Renderer.Vulkan"},
+    std::pair{VideoPresentation::Renderer::OpenGL, "Emulation.Video.Renderer.OpenGL"}
+};
 constexpr auto VideoShaderLoadingKey = "Emulation.Video.Shader.Loading";
 constexpr auto AspectKey = "Emulation.Video.AspectRatio";
 constexpr auto SamplingKey = "Emulation.Video.Sampling";
@@ -152,8 +179,11 @@ constexpr auto OsdConfirmKey = "Emulation.Shortcut.OsdConfirmHint";
 constexpr auto OsdBackKey = "Emulation.Shortcut.OsdBackHint";
 constexpr auto OsdVideoSettingsKey = "Emulation.Shortcut.OsdVideoSettings";
 constexpr auto AudioTabKey = "Emulation.Tab.Audio";
+constexpr auto OsdInformationKey = "Menu.Information";
+constexpr std::array OsdInformationTabs{
+    "Emulation.Tab.General", "Emulation.Tab.Cpu", "Emulation.Tab.Ram", "Emulation.Tab.Rom",
+    VideoKey, AudioTabKey, "Emulation.Tab.Extensions"};
 constexpr auto OsdAudioKey = "Emulation.Shortcut.OsdAudioSettings";
-constexpr auto OsdMuteKey = "Emulation.Shortcut.Mute";
 constexpr auto AutomaticSettingKey = "Emulation.Controller.Automatic";
 constexpr auto ModuleAudioEnabledKey = "Emulation.Audio.Enabled";
 constexpr auto AudioOutputKey = "Emulation.Audio.Output";
@@ -181,12 +211,32 @@ constexpr auto StatisticsKey = "Emulation.Native.Statistics";
 constexpr auto FpsKey = "Emulation.Native.Fps";
 constexpr auto ExecutionRateKey = "Emulation.Status.ExecutionRate";
 constexpr auto FrameStatisticsFormat = "%1 × %2 · %3 Hz · %4";
+constexpr auto StatisticsSizeFormat = "%1 × %2";
+constexpr auto StatisticsFrequencyFormat = "%1 Hz";
+constexpr auto StatisticsClockFormat = "%1 MHz";
+constexpr auto StatisticsRendererKey = "Emulation.Video.Renderer.Direct3D11";
+constexpr auto StatisticsVulkanKey = "Emulation.Video.Renderer.Vulkan";
+constexpr auto StatisticsOpenGlKey = "Emulation.Video.Renderer.OpenGL";
+constexpr auto SoftwareRendererName = "Qt";
+constexpr double HertzPerMegahertz = 1'000'000.0;
 constexpr double PercentScale = 100;
+constexpr auto VolumeLabelKey = "Explorer.Volume";
+constexpr auto AudioMixerKey = "Emulation.Audio.Mixer";
+constexpr auto AudioPsgKey = "Emulation.Sega.Audio.Psg";
+constexpr auto AudioFmKey = "Emulation.Sega.Audio.Fm";
+constexpr auto Ym2413CoreId = "segaemu_ym2413_core";
+constexpr auto MixerVolumeSuffix = "_volume";
+constexpr auto MixerPreampSuffix = "_preamp";
+constexpr auto MixerEqualizerInfix = "_audio_eq_";
+constexpr auto MuteIndicatorKey = "Emulation.Shortcut.Mute";
+constexpr int MinimumVolume = 0, MaximumVolume = 100, VolumeStep = 1;
 constexpr auto QuickSaveKey = "Emulation.Shortcut.QuickSave";
 constexpr auto QuickLoadKey = "Emulation.Shortcut.QuickLoad";
 constexpr auto SaveStateKey = "Emulation.Native.SaveState";
 constexpr auto LoadStateKey = "Emulation.Native.LoadState";
 constexpr auto ErrorKey = "Emulation.Error.EmulatorRejected";
+constexpr auto MediaOperationFailedKey = "Emulation.Error.MediaOperationFailed";
+constexpr auto StateOperationFailedKey = "Emulation.Error.SavedStateOperationFailed";
 constexpr auto SaveKey = "Common.Save";
 constexpr auto InsertKey = "Emulation.Media.Insert";
 constexpr auto AssociatedMediaKey = "Emulation.Storage.Media.Associated";
@@ -220,15 +270,14 @@ constexpr std::array TapeSampleSizes{8, 16, 24, 32};
 struct TapeControl {
     TapeCommand command;
     const char* label;
-    QStyle::StandardPixmap icon;
 };
 constexpr std::array TapeControls{
-    TapeControl{TapeCommand::Record, "Emulation.Tape.Command.Record", QStyle::SP_DialogSaveButton},
-    TapeControl{TapeCommand::Play, "Emulation.Tape.Command.Play", QStyle::SP_MediaPlay},
-    TapeControl{TapeCommand::Rewind, "Emulation.Tape.Command.Rewind", QStyle::SP_MediaSeekBackward},
-    TapeControl{TapeCommand::FastForward, "Emulation.Tape.Command.FastForward", QStyle::SP_MediaSeekForward},
-    TapeControl{TapeCommand::Stop, "Emulation.Tape.Command.Stop", QStyle::SP_MediaStop},
-    TapeControl{TapeCommand::Pause, "Emulation.Tape.Command.Pause", QStyle::SP_MediaPause}
+    TapeControl{TapeCommand::Record, "Emulation.Tape.Command.Record"},
+    TapeControl{TapeCommand::Play, "Emulation.Tape.Command.Play"},
+    TapeControl{TapeCommand::Rewind, "Emulation.Tape.Command.Rewind"},
+    TapeControl{TapeCommand::FastForward, "Emulation.Tape.Command.FastForward"},
+    TapeControl{TapeCommand::Stop, "Emulation.Tape.Command.Stop"},
+    TapeControl{TapeCommand::Pause, "Emulation.Tape.Command.Pause"}
 };
 constexpr std::array TapeStates{"Emulation.Tape.State.Empty", "Emulation.Tape.State.Stopped",
     "Emulation.Tape.State.Playing", "Emulation.Tape.State.Paused", "Emulation.Tape.State.Recording",
@@ -236,76 +285,17 @@ constexpr std::array TapeStates{"Emulation.Tape.State.Empty", "Emulation.Tape.St
 
 using namespace VideoPresentation;
 
-constexpr std::array segmentFields{
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayCellSize", &SegmentDisplayProfile::cellSize},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayHorizontalGap", &SegmentDisplayProfile::horizontalGap},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayVerticalGap", &SegmentDisplayProfile::verticalGap},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayThickness", &SegmentDisplayProfile::thickness},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplaySegmentGap", &SegmentDisplayProfile::segmentGap},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayBrightness", &SegmentDisplayProfile::brightness},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayActivationThreshold", &SegmentDisplayProfile::activationThreshold},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayContrast", &SegmentDisplayProfile::contrast},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayOffSegmentVisibility", &SegmentDisplayProfile::offSegmentVisibility},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayBlackDepth", &SegmentDisplayProfile::blackDepth},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayGlow", &SegmentDisplayProfile::glow},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayHaloRadius", &SegmentDisplayProfile::haloRadius},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayResponseTime", &SegmentDisplayProfile::responseTimeMilliseconds},
-    std::pair{"Emulation.Video.Parameter.SegmentDisplayPersistence", &SegmentDisplayProfile::persistenceMilliseconds}
-};
-constexpr auto DotCellsResource = "Emulation.Video.DotMatrix.Group.Cells";
-constexpr auto DotLightResource = "Emulation.Video.DotMatrix.Group.Light";
-constexpr auto DotTimingResource = "Emulation.Video.DotMatrix.Group.Temporal";
-constexpr size_t DotCellFields = 3, DotLightFields = 3;
-constexpr std::array dotFields{
-    std::pair{"Emulation.Video.Parameter.DotMatrixCellSize", &DotMatrixProfile::cellSize},
-    std::pair{"Emulation.Video.Parameter.DotMatrixDotSize", &DotMatrixProfile::dotSize},
-    std::pair{"Emulation.Video.Parameter.DotMatrixCellGap", &DotMatrixProfile::cellGap},
-    std::pair{"Emulation.Video.Parameter.DotMatrixBrightness", &DotMatrixProfile::brightness},
-    std::pair{"Emulation.Video.Parameter.DotMatrixContrast", &DotMatrixProfile::contrast},
-    std::pair{"Emulation.Video.Parameter.DotMatrixHaloIntensity", &DotMatrixProfile::haloIntensity},
-    std::pair{"Emulation.Video.Parameter.DotMatrixResponseTime", &DotMatrixProfile::responseTimeMilliseconds},
-    std::pair{"Emulation.Video.Parameter.DotMatrixPersistence", &DotMatrixProfile::persistenceMilliseconds}
-};
-constexpr auto LedMatrixStructureResource = "Emulation.Video.LedMatrix.Group.Structure";
-constexpr auto LedMatrixEmissionResource = "Emulation.Video.LedMatrix.Group.Emission";
-constexpr size_t LedStructureFields = 2;
-constexpr std::array ledFields{
-    std::pair{"Emulation.Video.Parameter.LedMatrixCellSize", &LedMatrixProfile::cellSize},
-    std::pair{"Emulation.Video.Parameter.LedMatrixCellGap", &LedMatrixProfile::cellGap},
-    std::pair{"Emulation.Video.Parameter.LedMatrixBrightness", &LedMatrixProfile::brightness},
-    std::pair{"Emulation.Video.Parameter.LedMatrixDiffusion", &LedMatrixProfile::diffusion},
-    std::pair{"Emulation.Video.Parameter.LedMatrixHaloRadius", &LedMatrixProfile::haloRadius},
-    std::pair{"Emulation.Video.Parameter.LedMatrixBlackDepth", &LedMatrixProfile::blackDepth}
-};
-constexpr auto VfdPhosphorResource = "Emulation.Video.Vfd.Group.PhosphorAndGlass";
-constexpr auto VfdAnodesResource = "Emulation.Video.Vfd.Group.Anodes";
-constexpr auto VfdResponseResource = "Emulation.Video.Vfd.Group.GlowAndResponse";
+constexpr auto DotMatrixTechnologyResource = "Emulation.Video.Technology.DotMatrix";
+constexpr auto DotPaletteResource = "Emulation.Video.Parameter.DotMatrixPalette";
+constexpr auto DotShapeResource = "Emulation.Video.Parameter.DotMatrixShape";
+constexpr auto DotTechnologyResource = "Emulation.Video.Parameter.DotMatrixTechnology";
+constexpr auto VfdTechnologyResource = "Emulation.Video.Technology.Vfd";
 constexpr auto VfdColorResource = "Emulation.Video.Parameter.VfdColor";
-constexpr auto VfdStructureResource = "Emulation.Video.Parameter.VfdStructure";
-constexpr size_t VfdPhosphorFields = 3, VfdAnodeFields = 2;
-constexpr std::array vfdFields{
-    std::pair{"Emulation.Video.Parameter.VfdPhosphorIntensity", &VfdProfile::phosphorIntensity},
-    std::pair{"Emulation.Video.Parameter.VfdEmissionThreshold", &VfdProfile::emissionThreshold},
-    std::pair{"Emulation.Video.Parameter.VfdGlassDarkening", &VfdProfile::glassDarkening},
-    std::pair{"Emulation.Video.Parameter.VfdCellSize", &VfdProfile::cellSize},
-    std::pair{"Emulation.Video.Parameter.VfdCellGap", &VfdProfile::cellGap},
-    std::pair{"Emulation.Video.Parameter.VfdHaloIntensity", &VfdProfile::haloIntensity},
-    std::pair{"Emulation.Video.Parameter.VfdHaloRadius", &VfdProfile::haloRadius},
-    std::pair{"Emulation.Video.Parameter.VfdPersistence", &VfdProfile::persistenceMilliseconds}
-};
-constexpr auto VectorDrawingResource = "Emulation.Video.Vector.Group.Drawing";
-constexpr auto VectorGlowResource = "Emulation.Video.Vector.Group.Glow";
+constexpr auto VfdShapeResource = "Emulation.Video.Parameter.VfdShape";
 constexpr auto VectorPhosphorResource = "Emulation.Video.Parameter.VectorPhosphorColor";
-constexpr size_t VectorDrawingFields = 4;
-constexpr std::array vectorFields{
-    std::pair{"Emulation.Video.Parameter.VectorLineThreshold", &VectorProfile::lineThreshold},
-    std::pair{"Emulation.Video.Parameter.VectorLineIntensity", &VectorProfile::lineIntensity},
-    std::pair{"Emulation.Video.Parameter.VectorBeamWidth", &VectorProfile::beamWidth},
-    std::pair{"Emulation.Video.Parameter.VectorBeamFocus", &VectorProfile::beamFocus},
-    std::pair{"Emulation.Video.Parameter.VectorHaloIntensity", &VectorProfile::haloIntensity},
-    std::pair{"Emulation.Video.Parameter.VectorHaloRadius", &VectorProfile::haloRadius},
-    std::pair{"Emulation.Video.Parameter.VectorPersistence", &VectorProfile::persistenceIntensity}
-};
+constexpr auto VectorBeamWidthResource = "Emulation.Video.Parameter.VectorBeamWidth";
+constexpr auto VectorCurvatureResource = "Emulation.Video.Parameter.CrtCurvature";
+constexpr auto VectorScreenResource = "Emulation.Video.Screen.Vector";
 constexpr auto PlasmaCellStructureResource = "Emulation.Video.Parameter.PlasmaCellStructure";
 constexpr std::array plasmaCellChoices{
     std::pair{PlasmaCellStructure::Stripe, "Emulation.Video.Plasma.CellStructure.Stripe"},
@@ -404,12 +394,27 @@ constexpr std::array lcdStructures{"Emulation.Video.Lcd.NoGrid", "Emulation.Vide
     "Emulation.Video.Subpixels.Bgr", "Emulation.Video.Subpixels.Monochrome"};
 constexpr std::array lcdOrientations{"Emulation.Video.Lcd.Vertical", "Emulation.Video.Lcd.Horizontal"};
 constexpr std::array segmentLayoutLabels{"Emulation.Video.SegmentDisplay.Layout.Seven", "Emulation.Video.SegmentDisplay.Layout.Fourteen", "Emulation.Video.SegmentDisplay.Layout.Sixteen"};
-constexpr std::array segmentEndShapeLabels{"Emulation.Video.SegmentDisplay.EndShape.Beveled", "Emulation.Video.SegmentDisplay.EndShape.Rounded", "Emulation.Video.SegmentDisplay.EndShape.Straight"};
-constexpr std::array segmentColorLabels{"Emulation.Video.SegmentDisplay.Color.Red", "Emulation.Video.SegmentDisplay.Color.Green", "Emulation.Video.SegmentDisplay.Color.Amber", "Emulation.Video.SegmentDisplay.Color.Blue", "Emulation.Video.SegmentDisplay.Color.White"};
+constexpr auto SegmentTechnologyResource = "Emulation.Video.Parameter.SegmentDisplayTechnology";
+constexpr auto SegmentColorResource = "Emulation.Video.Parameter.SegmentDisplayColor";
+constexpr auto SegmentLayoutResource = "Emulation.Video.Parameter.SegmentDisplayLayout";
+constexpr auto SegmentDisplayResource = "Emulation.Video.Technology.SegmentDisplay";
+constexpr std::array segmentTechnologies{
+    std::pair{SegmentDisplayTechnology::Lcd, "Emulation.Video.SegmentDisplay.Technology.Lcd"},
+    std::pair{SegmentDisplayTechnology::Led, "Emulation.Video.SegmentDisplay.Technology.Led"},
+    std::pair{SegmentDisplayTechnology::Vfd, "Emulation.Video.SegmentDisplay.Technology.Vfd"}
+};
+constexpr std::array segmentColorLabels{
+    "Emulation.Video.SegmentDisplay.Color.Red", "Emulation.Video.SegmentDisplay.Color.Green",
+    "Emulation.Video.SegmentDisplay.Color.Amber", "Emulation.Video.SegmentDisplay.Color.Blue",
+    "Emulation.Video.SegmentDisplay.Color.White", "Emulation.Video.SegmentDisplay.Color.Black",
+    "Emulation.Video.SegmentDisplay.Color.Gray", "Emulation.Video.SegmentDisplay.Color.BlueGreen"
+};
 constexpr std::array vectorColors{"Emulation.Video.Crt.Color.Color", "Emulation.Video.Crt.Color.Green",
-    "Emulation.Video.Crt.Color.Amber", "Emulation.Video.Crt.Color.White", "Emulation.Video.Crt.Color.Gray"};
+    "Emulation.Video.Crt.Color.Amber", "Emulation.Video.Crt.Color.White"};
 constexpr std::array inkModes{"Emulation.Video.EPaper.ColorMode.Monochrome",
-    "Emulation.Video.EPaper.ColorMode.Grayscale16", "Emulation.Video.EPaper.ColorMode.Color4096"};
+    "Emulation.Video.EPaper.ColorMode.Grayscale16", "Emulation.Video.EPaper.ColorMode.Color4096",
+    "Emulation.Video.EPaper.ColorMode.TricolorRed", "Emulation.Video.EPaper.ColorMode.TricolorYellow",
+    "Emulation.Video.EPaper.ColorMode.Gallery"};
 constexpr std::array displayTypes{
     std::pair{DisplayTechnology::Normal, "Emulation.Video.Technology.Normal"},
     std::pair{DisplayTechnology::Crt, "Emulation.Video.Screen.Crt"},
@@ -440,16 +445,32 @@ constexpr std::array osdScreenTypes{
     std::pair{ScreenType::EPaper, "Emulation.Video.Screen.EPaper"}
 };
 
-constexpr std::array vfdColors{"Emulation.Video.Vfd.Color.Blue", "Emulation.Video.Vfd.Color.Green",
+constexpr std::array vfdColors{"Emulation.Video.Vfd.Color.BlueGreen", "Emulation.Video.Vfd.Color.Green",
+    "Emulation.Video.Vfd.Color.Blue", "Emulation.Video.SegmentDisplay.Color.White",
     "Emulation.Video.Vfd.Color.Amber", "Emulation.Video.Vfd.Color.Red"};
-constexpr std::array vfdStructures{"Emulation.Video.Vfd.Structure.Graphic", "Emulation.Video.Vfd.Structure.DotMatrix"};
+constexpr std::array matrixDefinitionChoices{
+    std::pair{MatrixDefinition::Native, "Emulation.Video.Lcd.Definition.Native"},
+    std::pair{MatrixDefinition::Size16x16, "Emulation.Video.LedMatrix.Definition.Size16x16"},
+    std::pair{MatrixDefinition::Size32x16, "Emulation.Video.LedMatrix.Definition.Size32x16"},
+    std::pair{MatrixDefinition::Size32x32, "Emulation.Video.LedMatrix.Definition.Size32x32"},
+    std::pair{MatrixDefinition::Size64x32, "Emulation.Video.LedMatrix.Definition.Size64x32"},
+    std::pair{MatrixDefinition::Size64x64, "Emulation.Video.LedMatrix.Definition.Size64x64"},
+    std::pair{MatrixDefinition::Size128x64, "Emulation.Video.LedMatrix.Definition.Size128x64"},
+    std::pair{MatrixDefinition::Size128x128, "Emulation.Video.LedMatrix.Definition.Size128x128"},
+    std::pair{MatrixDefinition::Size256x128, "Emulation.Video.LedMatrix.Definition.Size256x128"},
+    std::pair{MatrixDefinition::Size256x256, "Emulation.Video.LedMatrix.Definition.Size256x256"}
+};
+constexpr auto LedMatrixTechnologyResource = "Emulation.Video.Technology.LedMatrix";
 constexpr std::array ledColors{"Emulation.Video.LedMatrix.Color.Rgb", "Emulation.Video.LedMatrix.Color.Red",
     "Emulation.Video.LedMatrix.Color.Green", "Emulation.Video.LedMatrix.Color.Amber", "Emulation.Video.LedMatrix.Color.Blue",
-    "Emulation.Video.LedMatrix.Color.White"};
-constexpr std::array ledShapes{"Emulation.Video.LedMatrix.Shape.Round", "Emulation.Video.LedMatrix.Shape.Square"};
-constexpr std::array dotPalettes{"Emulation.Video.DotMatrix.Palette.Green", "Emulation.Video.DotMatrix.Palette.Gray",
-    "Emulation.Video.DotMatrix.Palette.Amber", "Emulation.Video.DotMatrix.Palette.Blue", "Emulation.Video.DotMatrix.Palette.Rgb",
-    "Emulation.Video.DotMatrix.Palette.Red", "Emulation.Video.DotMatrix.Palette.White"};
+    "Emulation.Video.LedMatrix.Color.White", "Emulation.Video.LedMatrix.Color.RedGreen"};
+constexpr std::array ledShapes{"Emulation.Video.LedMatrix.Shape.Round", "Emulation.Video.LedMatrix.Shape.Square",
+    "Emulation.Video.LedMatrix.Shape.RoundedSquare"};
+constexpr std::array dotPalettes{"Emulation.Video.DotMatrix.Color.Black", "Emulation.Video.DotMatrix.Color.Gray",
+    "Emulation.Video.DotMatrix.Color.Green", "Emulation.Video.DotMatrix.Color.Amber", "Emulation.Video.DotMatrix.Color.Red",
+    "Emulation.Video.DotMatrix.Color.Blue", "Emulation.Video.DotMatrix.Color.Rgb"};
+constexpr std::array dotTechnologies{"Emulation.Video.DotMatrix.Display.Reflective",
+    "Emulation.Video.DotMatrix.Display.Backlit", "Emulation.Video.DotMatrix.Display.Emissive"};
 constexpr std::array dotShapes{"Emulation.Video.DotMatrix.Shape.Round", "Emulation.Video.DotMatrix.Shape.Square",
     "Emulation.Video.DotMatrix.Shape.Rectangle"};
 constexpr std::array phosphorChoices{
@@ -482,6 +503,7 @@ constexpr std::array standards{
 QString text(const Translation& translations, const char* key) {
     return QString::fromStdString(translations.text(key));
 }
+
 
 class EmulatorPanel final : public QWidget {
 public:
@@ -792,6 +814,574 @@ std::optional<FirmwareCandidate> pickFirmware(QWidget* parent, const Translation
     return result == QDialog::Accepted && selected >= 0 ? std::optional{candidates.at(selected)} : std::nullopt;
 }
 
+QString emulationMachineName(const Host& host, const Translation& translations, const QString& moduleId,
+    const Configuration& configuration) {
+    if (!configuration.name.trimmed().isEmpty()) return configuration.name;
+    const auto installed = host.modules();
+    const auto module = std::ranges::find(installed, moduleId, &ModuleInfo::id);
+    if (module == installed.cend()) return configuration.machineId;
+    const auto machine = std::ranges::find(module->machines, configuration.machineId, &MachineDefinition::id);
+    if (machine == module->machines.cend() || machine->displayResourceKey.isEmpty()) return configuration.machineId;
+    const auto& key = machine->displayResourceKey;
+    const auto localized = host.translate(moduleId, key, QString::fromStdString(translations.language()));
+    if (localized != key) return localized;
+    const auto shared = QString::fromStdString(translations.text(key.toStdString()));
+    return shared.startsWith(QLatin1Char('[')) ? configuration.machineId : shared;
+}
+
+std::optional<Profile> editVideoProfile(QWidget* parent, const Translation& translations, const Profile& profile,
+    const std::function<QWidget*(QWidget*)>& createShaderStatus = {}) {
+    QDialog dialog(parent);
+    dialog.setWindowTitle(text(translations, VideoKey));
+    auto* container = new QVBoxLayout(&dialog);
+    auto* tabs = new QTabWidget(&dialog);
+    container->addWidget(tabs);
+    constexpr auto DisplayTabKey = "Emulation.Video.Tab.Display";
+    constexpr auto ImageTabKey = "Emulation.Video.Tab.Image";
+    const auto addPage = [&](const char* key) {
+        auto* scroll = new QScrollArea(tabs);
+        scroll->setWidgetResizable(true);
+        auto* page = new QWidget(scroll);
+        scroll->setWidget(page);
+        tabs->addTab(scroll, text(translations, key));
+        return page;
+    };
+    auto* appearance = addPage(DisplayTabKey);
+    auto* form = new QFormLayout(appearance);
+    auto* image = addPage(ImageTabKey);
+    auto* imageLayout = new QVBoxLayout(image);
+    auto* imageForm = new QFormLayout;
+    imageLayout->addLayout(imageForm);
+    if (createShaderStatus) form->addRow(createShaderStatus(appearance));
+    auto* renderer = new QComboBox(&dialog);
+    for (const auto& [value, key] : VideoRenderers)
+        renderer->addItem(text(translations, key), static_cast<int>(value));
+    const auto configuredRenderer = renderer->findData(static_cast<int>(profile.renderer));
+    renderer->setCurrentIndex(configuredRenderer >= 0 ? configuredRenderer : renderer->findData(static_cast<int>(Renderer::Software)));
+    const auto currentRenderer = static_cast<Renderer>(renderer->currentData().toInt());
+    form->addRow(text(translations, VideoRendererKey), renderer);
+    auto* aspect = new QComboBox(&dialog);
+    auto aspectDraft = profile.aspectRatio;
+    QObject::connect(aspect, &QComboBox::activated, &dialog, [aspect, &aspectDraft] {
+        aspectDraft = AspectRatio(aspect->currentData().toInt());
+    });
+    const auto updateAspects = [&](ScreenType screen) {
+        aspect->clear();
+        for (const auto ratio : aspectRatioChoices(screen)) {
+            const auto dimensions = aspectRatioDimensions(ratio);
+            const auto label = ratio == AspectRatio::Original
+                ? text(translations, "Emulation.Native.AspectOriginal")
+                : QString::number(dimensions.width()) + QLatin1Char('/') + QString::number(dimensions.height());
+            aspect->addItem(label, int(ratio));
+        }
+        const int configured = aspect->findData(int(aspectDraft));
+        aspect->setCurrentIndex(configured >= 0 ? configured : aspect->findData(int(AspectRatio::Original)));
+    };
+    form->addRow(text(translations, AspectKey), aspect);
+    auto* sampling = new QComboBox(&dialog);
+    for (const auto& [mode, label] : videoSamplers(profile.sampling))
+        sampling->addItem(text(translations, label), static_cast<int>(mode));
+    sampling->setCurrentIndex(sampling->findData(static_cast<int>(profile.sampling)));
+    form->addRow(text(translations, SamplingKey), sampling);
+    auto* blackFrame = new QCheckBox(&dialog);
+    blackFrame->setChecked(profile.blackFrameInsertion);
+    form->addRow(text(translations, BlackFrameKey), blackFrame);
+    auto* deinterlacing = new QComboBox(&dialog);
+    for (const auto& [mode, label] : modes) deinterlacing->addItem(text(translations, label), static_cast<int>(mode));
+    const auto configured = profile.deinterlacing;
+    const auto visibleMode = configured == Deinterlacing::BobEvenLines || configured == Deinterlacing::BobOddLines
+        ? Deinterlacing::Bob : configured;
+    deinterlacing->setCurrentIndex(deinterlacing->findData(static_cast<int>(visibleMode)));
+    imageForm->addRow(text(translations, "Emulation.Video.Parameter.Deinterlacing"), deinterlacing);
+    constexpr std::array levels{"Emulation.Video.Restoration.Level.None", "Emulation.Video.Restoration.Level.Light",
+        "Emulation.Video.Restoration.Level.Medium", "Emulation.Video.Restoration.Level.Strong"};
+    auto* dedithering = new QComboBox(&dialog);
+    for (size_t index = 0; index < levels.size(); ++index)
+        dedithering->addItem(text(translations, levels[index]), ImageRestoration::DeditheringLevels[index]);
+    const int level = qRound(double(profile.restoration.dedithering) * (levels.size() - 1) / ImageRestoration::MaximumIntensity);
+    dedithering->setCurrentIndex(level);
+    imageForm->addRow(text(translations, "Emulation.Video.Parameter.Dedithering"), dedithering);
+    const auto restorationValue = [&](const char* key, int value) {
+        auto* spin = new QSpinBox(&dialog);
+        spin->setRange(0, ImageRestoration::MaximumIntensity);
+        spin->setValue(value);
+        imageForm->addRow(text(translations, key), spin);
+        return spin;
+    };
+    auto* debanding = restorationValue("Emulation.Video.Parameter.Debanding", profile.restoration.debanding);
+    auto* detailRecovery = restorationValue("Emulation.Video.Parameter.DetailRecovery", profile.restoration.detailRecovery);
+    detailRecovery->setToolTip(text(translations, "Emulation.Video.Parameter.FineDetails"));
+    const auto adjustment = [&](const char* key, int value) {
+        auto* edit = new QSpinBox(&dialog);
+        edit->setRange(ImageAdjustments::Minimum, ImageAdjustments::Maximum);
+        edit->setValue(value);
+        imageForm->addRow(text(translations, key), edit);
+        return edit;
+    };
+    auto adjustmentDraft = profile;
+    auto adjustmentScreen = adjustmentDraft.screenType();
+    const auto initialAdjustments = adjustmentDraft.imageAdjustments(adjustmentScreen);
+    auto* brightness = adjustment("Emulation.Video.Parameter.Brightness", initialAdjustments.brightness);
+    auto* contrast = adjustment("Emulation.Video.Parameter.Contrast", initialAdjustments.contrast);
+    auto* gamma = new QComboBox(&dialog);
+    for (const auto curve : ImageAdjustments::GammaCurves) {
+        const auto label = curve == 0 ? text(translations, "Emulation.Video.Gamma.Original") :
+            curve == ImageAdjustments::Bt1886 ? QStringLiteral("BT.1886") : QLocale().toString(curve / 100.0, 'f', 1);
+        gamma->addItem(label, curve);
+    }
+    gamma->setCurrentIndex(gamma->findData(initialAdjustments.gamma));
+    imageForm->addRow(text(translations, "Emulation.Video.Gamma"), gamma);
+    auto* saturation = adjustment("Emulation.Video.Parameter.Saturation", initialAdjustments.saturation);
+    auto* sharpness = adjustment("Emulation.Video.Parameter.Sharpness", initialAdjustments.sharpness);
+    auto* signalPage = new QGroupBox(text(translations, "Emulation.Video.Tab.Signal"), image);
+    auto* signalForm = new QFormLayout(signalPage);
+    const auto signalChoice = [&](const auto& choices, auto active, const char* label) {
+        auto* combo = new QComboBox(signalPage);
+        for (const auto& [value, key] : choices) combo->addItem(text(translations, key), static_cast<int>(value));
+        combo->setCurrentIndex(combo->findData(static_cast<int>(active)));
+        signalForm->addRow(text(translations, label), combo);
+        return combo;
+    };
+    const auto intensity = [&](const char* key, int value) {
+        auto* spin = new QSpinBox(signalPage);
+        spin->setRange(0, SignalSimulation::MaximumIntensity);
+        spin->setValue(value);
+        signalForm->addRow(text(translations, key), spin);
+        return spin;
+    };
+    const auto* connection = signalChoice(connections, profile.signal.connection, "Emulation.Video.Parameter.SignalConnection");
+    const auto* connectionIntensity = intensity("Emulation.Video.Parameter.SignalConnectionIntensity", profile.signal.connectionIntensity);
+    const auto* standard = signalChoice(standards, profile.signal.standard, "Emulation.Video.Parameter.SignalStandard");
+    const auto* standardIntensity = intensity("Emulation.Video.Parameter.SignalStandardIntensity", profile.signal.standardIntensity);
+    auto* crtPage = new QWidget(image);
+    imageLayout->addWidget(crtPage);
+    imageLayout->addWidget(signalPage);
+    imageLayout->addStretch();
+    auto* technologyLayout = new QVBoxLayout(crtPage);
+    technologyLayout->setContentsMargins({});
+    auto* displayType = new QComboBox(appearance);
+    for (const auto& [technology, key] : displayTypes)
+        displayType->addItem(text(translations, key), int(technology));
+    displayType->setCurrentIndex(displayType->findData(int(profile.displayTechnology())));
+    form->insertRow(0, text(translations, "Emulation.Video.Technology"), displayType);
+    auto* crtSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(crtSettings);
+    auto* crtForm = new QFormLayout(crtSettings);
+    const auto displayInputChoice = [&](QFormLayout* placement, const auto& options, auto selected, const char* key) {
+        auto* combo = new QComboBox(placement->parentWidget());
+        for (const auto& [value, label] : options) combo->addItem(text(translations, label), static_cast<int>(value));
+        combo->setCurrentIndex(combo->findData(static_cast<int>(selected)));
+        placement->addRow(text(translations, key), combo);
+        return combo;
+    };
+    const auto crtChoice = [&](const auto& options, auto selected, const char* key) {
+        return displayInputChoice(crtForm, options, selected, key);
+    };
+    const auto* crtmask = crtChoice(maskChoices, profile.crt.mask, "Emulation.Video.Parameter.CrtMask");
+    const auto* crtphosphor = crtChoice(phosphorChoices, profile.crt.phosphor, "Emulation.Video.Parameter.VectorPhosphorColor");
+    const auto* crtrate = crtChoice(rateChoices, profile.crt.fieldRate, "Emulation.Video.Parameter.CrtFieldRate");
+    const auto* crtdecoder = crtChoice(decoderChoices, profile.crt.colorStandards, "Emulation.Video.Parameter.CrtColorStandards");
+    auto* crtconnection = crtChoice(connectionChoices, profile.crt.connection, "Emulation.Video.Parameter.CrtConnection");
+    auto* crtPalette = crtChoice(palettes, profile.crt.monitorPalette, "Emulation.Video.Parameter.CrtMonitorPalette");
+    const auto crtValue = [&](const char* key, int value, int low, int high) {
+        auto* spin = new QSpinBox(crtPage);
+        spin->setRange(low, high);
+        spin->setValue(value);
+        crtForm->addRow(text(translations, key), spin);
+        return spin;
+    };
+    auto* crtDegradation = crtValue("Emulation.Video.Parameter.CrtConnectionDegradation", profile.crt.connectionDegradation,
+        0, CrtProfile::MaximumConnectionDegradation);
+    const auto updateConnection = [crtconnection, crtPalette, crtDegradation] {
+        const auto mode = static_cast<CrtConnection>(crtconnection->currentData().toInt());
+        crtPalette->setEnabled(mode == CrtConnection::LegacyMonitor);
+        crtDegradation->setEnabled(mode >= CrtConnection::Scart && mode <= CrtConnection::AnalogRf);
+    };
+    QObject::connect(crtconnection, &QComboBox::currentIndexChanged, &dialog, updateConnection);
+    updateConnection();
+    const auto* crtBeam = crtValue("Emulation.Video.Parameter.VectorBeamWidth", profile.crt.beamWidth,
+        ImageAdjustments::Minimum, ImageAdjustments::Maximum);
+    const auto* crtCurvature = crtValue("Emulation.Video.Parameter.CrtCurvature", profile.crt.curvature, 0, CrtProfile::MaximumCurvature);
+    auto* fixedSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(fixedSettings);
+    auto* plasmaSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(plasmaSettings);
+    auto* vectorSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(vectorSettings);
+    auto* vfdSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(vfdSettings);
+    auto* ledSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(ledSettings);
+    auto* dotSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(dotSettings);
+    auto* segmentSettings = new QWidget(crtPage);
+    technologyLayout->addWidget(segmentSettings);
+    technologyLayout->addStretch();
+    auto* ePaperSettings = new QWidget(crtPage);
+    technologyLayout->insertWidget(technologyLayout->count() - 1, ePaperSettings);
+    auto* projectionSettings = new QWidget(crtPage);
+    technologyLayout->insertWidget(technologyLayout->count() - 1, projectionSettings);
+    auto* segmentGrid = new QGridLayout(segmentSettings);
+    const auto segmentChoice = [&](QFormLayout* placement, const auto& labels, int selected, const char* key) {
+        auto* combo = new QComboBox(placement->parentWidget());
+        for (const auto* label : labels) combo->addItem(text(translations, label));
+        combo->setCurrentIndex(selected);
+        placement->addRow(text(translations, key), combo);
+        return combo;
+    };
+    const auto addTechnologyGroup = [&](QGridLayout* grid, const char* key, int row, int column, int span = 1) {
+        auto* group = new QGroupBox(text(translations, key), grid->parentWidget());
+        grid->addWidget(group, row, column, 1, span);
+        return new QFormLayout(group);
+    };
+    const auto addTechnologyValue = [&](QFormLayout* form, const char* key, int value, int maximum) {
+        auto* field = new QSpinBox(form->parentWidget());
+        field->setRange(0, maximum);
+        field->setValue(value);
+        form->addRow(text(translations, key), field);
+        return field;
+    };
+    auto* ink = new QFormLayout(ePaperSettings);
+    const auto* inkMode = segmentChoice(ink, inkModes, int(profile.ePaper.colorMode), "Emulation.Video.Parameter.EPaperColorMode");
+    const auto* ePaperDefinition = displayInputChoice(ink, panelDefinitionChoices, profile.ePaper.definition, PanelDefinitionResource);
+    auto* projectionForm = new QFormLayout(projectionSettings);
+    const auto* projectionTechnology = segmentChoice(projectionForm, projectionTechnologies,
+        int(profile.projection.technology), ProjectionTechnologyResource);
+    const auto* projectionSurface = segmentChoice(projectionForm, projectionSurfaces,
+        int(profile.projection.surface), ProjectionSurfaceResource);
+    const auto* projectionAmbientLight = addTechnologyValue(projectionForm, "Emulation.Video.Parameter.ProjectionAmbientLight",
+        profile.projection.ambientLight, ProjectionProfile::MaximumAmbientLight);
+    auto* segmentForm = addTechnologyGroup(segmentGrid, SegmentDisplayResource, 0, 0);
+    const auto* segmentLayoutChoice = segmentChoice(segmentForm, segmentLayoutLabels, int(profile.segmentDisplay.layout), SegmentLayoutResource);
+    auto* segmentTechnologyChoice = new QComboBox(segmentForm->parentWidget());
+    for (const auto& [value, key] : segmentTechnologies)
+        segmentTechnologyChoice->addItem(text(translations, key), int(value));
+    segmentTechnologyChoice->setCurrentIndex(segmentTechnologyChoice->findData(int(profile.segmentDisplay.technology)));
+    segmentForm->addRow(text(translations, SegmentTechnologyResource), segmentTechnologyChoice);
+    auto* segmentColorChoice = new QComboBox(segmentForm->parentWidget());
+    segmentForm->addRow(text(translations, SegmentColorResource), segmentColorChoice);
+    const auto updateSegmentColors = [=, &translations] {
+        const auto previous = segmentColorChoice->count() ? segmentColorChoice->currentData().toInt() : int(profile.segmentDisplay.color);
+        segmentColorChoice->clear();
+        const auto technology = SegmentDisplayTechnology(segmentTechnologyChoice->currentData().toInt());
+        for (const auto value : segmentColors(technology))
+            segmentColorChoice->addItem(text(translations, segmentColorLabels[size_t(value)]), int(value));
+        segmentColorChoice->setCurrentIndex(std::max(0, segmentColorChoice->findData(previous)));
+    };
+    QObject::connect(segmentTechnologyChoice, &QComboBox::currentIndexChanged, &dialog, updateSegmentColors);
+    updateSegmentColors();
+    const auto displayGroups = [](QWidget* parent) {
+        auto* layout = new QHBoxLayout(parent);
+        layout->setContentsMargins(0, 0, 0, 0);
+        return layout;
+    };
+    const auto displayGroup = [&](QHBoxLayout* layout, const char* key) {
+        auto* group = new QGroupBox(text(translations, key), layout->parentWidget());
+        layout->addWidget(group, 1);
+        return new QFormLayout(group);
+    };
+    const auto displayChoice = [&](QFormLayout* place, const auto& labels, int selected, const char* key) {
+        auto* control = new QComboBox(place->parentWidget());
+        for (const auto* label : labels) control->addItem(text(translations, label));
+        control->setCurrentIndex(selected);
+        place->addRow(text(translations, key), control);
+        return control;
+    };
+    const auto displaySlider = [&](QFormLayout* place, const char* key, int value, int minimum, int maximum) {
+        auto* row = new QWidget(place->parentWidget());
+        auto* rowLayout = new QHBoxLayout(row);
+        rowLayout->setContentsMargins(0, 0, 0, 0);
+        auto* control = new QSlider(Qt::Horizontal, row);
+        control->setRange(minimum, maximum);
+        control->setValue(value);
+        if (maximum > FixedPixelProfile::PercentMaximum) {
+            constexpr int DurationStepMilliseconds = 5;
+            control->setSingleStep(DurationStepMilliseconds);
+            QObject::connect(control, &QSlider::actionTriggered, control, [control] {
+                const int position = control->sliderPosition();
+                control->setSliderPosition(
+                    (position + DurationStepMilliseconds / 2) / DurationStepMilliseconds * DurationStepMilliseconds);
+            });
+        }
+        auto* number = new QLabel(QLocale().toString(control->value()), row);
+        number->setMinimumWidth(number->fontMetrics().horizontalAdvance(QLocale().toString(maximum)));
+        number->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        QObject::connect(control, &QSlider::valueChanged, number, [number](int current) {
+            number->setText(QLocale().toString(current));
+        });
+        rowLayout->addWidget(control, 1);
+        rowLayout->addWidget(number);
+        auto* label = new QLabel(text(translations, key), place->parentWidget());
+        label->setBuddy(control);
+        control->setAccessibleName(label->text());
+        place->addRow(label, row);
+        return control;
+    };
+
+    auto* dotLayout = displayGroups(dotSettings);
+    auto* dotForm = displayGroup(dotLayout, DotMatrixTechnologyResource);
+    const auto* dotPalette = displayChoice(dotForm, dotPalettes, int(profile.dotMatrix.palette), DotPaletteResource);
+    const auto* dotDefinition = displayInputChoice(dotForm, matrixDefinitionChoices, profile.dotMatrix.definition, PanelDefinitionResource);
+    const auto* dotShape = displayChoice(dotForm, dotShapes, int(profile.dotMatrix.shape), DotShapeResource);
+    const auto* dotTechnology = displayChoice(dotForm, dotTechnologies, int(profile.dotMatrix.technology), DotTechnologyResource);
+    auto* ledLayout = displayGroups(ledSettings);
+    auto* ledForm = displayGroup(ledLayout, LedMatrixTechnologyResource);
+    const auto* ledColor = displayChoice(ledForm, ledColors, int(profile.ledMatrix.color), "Emulation.Video.Parameter.LedMatrixColor");
+    const auto* ledDefinition = displayInputChoice(ledForm, matrixDefinitionChoices, profile.ledMatrix.definition, PanelDefinitionResource);
+    const auto* ledShape = displayChoice(ledForm, ledShapes, int(profile.ledMatrix.shape), "Emulation.Video.Parameter.LedMatrixShape");
+    auto* vfdLayout = displayGroups(vfdSettings);
+    auto* vfdForm = displayGroup(vfdLayout, VfdTechnologyResource);
+    const auto* vfdColor = displayChoice(vfdForm, vfdColors, int(profile.vfd.color), VfdColorResource);
+    const auto* vfdDefinition = displayInputChoice(vfdForm, matrixDefinitionChoices, profile.vfd.definition, PanelDefinitionResource);
+    const auto* vfdShape = displayChoice(vfdForm, dotShapes, int(profile.vfd.shape), VfdShapeResource);
+
+    auto* vectorForm = new QFormLayout(vectorSettings);
+    const auto* vectorPhosphor = displayChoice(vectorForm, vectorColors, int(profile.vector.phosphorColor), VectorPhosphorResource);
+    const auto* vectorBeamWidth = displaySlider(vectorForm, VectorBeamWidthResource, profile.vector.beamWidth,
+        VectorProfile::MinimumBeamWidth, VectorProfile::MaximumBeamWidth);
+    const auto* vectorCurvature = displaySlider(vectorForm, VectorCurvatureResource, profile.vector.curvature,
+        0, CrtProfile::MaximumCurvature);
+    auto* plasmaForm = new QFormLayout(plasmaSettings);
+    auto* plasmaStructure = displayInputChoice(plasmaForm, plasmaCellChoices, profile.plasma.cellStructure,
+        PlasmaCellStructureResource);
+    auto* fixedForm = new QFormLayout(fixedSettings);
+    const auto fixedChoice = [&](const auto& labels, int selected, const char* key) {
+        auto* combo = new QComboBox(fixedSettings);
+        for (const auto* label : labels) combo->addItem(text(translations, label));
+        combo->setCurrentIndex(selected);
+        fixedForm->addRow(text(translations, key), combo);
+        return combo;
+    };
+    auto fixedProfiles = profile.fixedPixelProfiles;
+    auto fixedDraft = profile.fixedPixel;
+    auto lcd = profile.lcd;
+    auto ledBacklight = profile.ledBacklight;
+    auto* fixedType = fixedChoice(fixedTypes, int(fixedDraft.technology), "Emulation.Video.Parameter.FixedPixelTechnology");
+    auto* lcdStructure = fixedChoice(lcdStructures, int(lcd.pixelStructure), LcdPixelStructureResource);
+    auto* lcdOrientation = fixedChoice(lcdOrientations, int(lcd.orientation), LcdOrientationResource);
+    auto* lcdPanel = fixedChoice(lcdPanelTypes, int(lcd.panelType), LcdPanelTypeResource);
+    auto* backlight = addTechnologyValue(fixedForm, "Emulation.Video.Parameter.FixedPixelBacklight",
+        lcd.intensity, FixedPixelProfile::PercentMaximum);
+    auto* ledBacklightType = fixedChoice(ledBacklightTypes, int(ledBacklight.type), LedBacklightTypeResource);
+    auto* oledPanel = fixedChoice(oledPanels, int(profile.oled.panelType), LcdPanelTypeResource);
+    auto* oledStructure = fixedChoice(oledStructures, int(profile.oled.pixelStructure), LcdPixelStructureResource);
+    const auto currentLcd = [&]() -> LcdProfile& {
+        return fixedDraft.technology == FixedPixelTechnology::LedBacklitLcd ? static_cast<LcdProfile&>(ledBacklight) : lcd;
+    };
+    const auto showOrientation = [&] {
+        const auto structure = LcdPixelStructure(lcdStructure->currentIndex());
+        fixedForm->setRowVisible(lcdOrientation, fixedDraft.technology != FixedPixelTechnology::Oled &&
+            (structure == LcdPixelStructure::Rgb || structure == LcdPixelStructure::Bgr));
+    };
+    QObject::connect(lcdStructure, &QComboBox::currentIndexChanged, &dialog, showOrientation);
+    const auto showFixed = [&] {
+        const auto& panel = currentLcd();
+        const bool oled = fixedDraft.technology == FixedPixelTechnology::Oled;
+        lcdStructure->setCurrentIndex(int(panel.pixelStructure));
+        lcdOrientation->setCurrentIndex(int(panel.orientation));
+        lcdPanel->setCurrentIndex(int(panel.panelType));
+        backlight->setValue(panel.intensity);
+        fixedForm->setRowVisible(lcdStructure, !oled);
+        fixedForm->setRowVisible(lcdPanel, !oled);
+        fixedForm->setRowVisible(backlight, !oled);
+        fixedForm->setRowVisible(ledBacklightType, fixedDraft.technology == FixedPixelTechnology::LedBacklitLcd);
+        fixedForm->setRowVisible(oledPanel, oled);
+        fixedForm->setRowVisible(oledStructure, oled);
+        showOrientation();
+    };
+    const auto captureFixed = [&] {
+        if (fixedDraft.technology == FixedPixelTechnology::Oled) return;
+        auto& panel = currentLcd();
+        panel.pixelStructure = LcdPixelStructure(lcdStructure->currentIndex());
+        panel.orientation = LcdPixelOrientation(lcdOrientation->currentIndex());
+        panel.panelType = LcdPanelType(lcdPanel->currentIndex());
+        panel.intensity = backlight->value();
+        ledBacklight.type = LedBacklightType(ledBacklightType->currentIndex());
+    };
+    QObject::connect(fixedType, &QComboBox::currentIndexChanged, &dialog, [&](int index) {
+        captureFixed();
+        fixedDraft = fixedProfiles[size_t(index)].value_or(FixedPixelProfile{FixedPixelTechnology(index)});
+        showFixed();
+    });
+    showFixed();
+    const auto showTechnology = [=] {
+        const auto display = DisplayTechnology(displayType->currentData().toInt());
+        crtSettings->setVisible(display == DisplayTechnology::Crt);
+        fixedSettings->setVisible(display == DisplayTechnology::FixedPixel);
+        plasmaSettings->setVisible(display == DisplayTechnology::Plasma);
+        vectorSettings->setVisible(display == DisplayTechnology::Vector);
+        vfdSettings->setVisible(display == DisplayTechnology::Vfd);
+        ledSettings->setVisible(display == DisplayTechnology::LedMatrix);
+        dotSettings->setVisible(display == DisplayTechnology::DotMatrix);
+        segmentSettings->setVisible(display == DisplayTechnology::SegmentDisplay);
+        ePaperSettings->setVisible(display == DisplayTechnology::EPaper);
+        projectionSettings->setVisible(display == DisplayTechnology::Projection);
+    };
+    QObject::connect(displayType, &QComboBox::currentIndexChanged, &dialog, showTechnology);
+    showTechnology();
+    using Adjustment = ImageAdjustmentControl;
+    auto* panelSettings = new QGroupBox(text(translations, "Emulation.Video.Tab.Signal"), crtPage);
+    technologyLayout->insertWidget(technologyLayout->count() - 1, panelSettings);
+    auto* panelForm = new QFormLayout(panelSettings);
+    const DisplaySignalProfile defaultSignal;
+    const auto plasmaDefinitions = orderedChoices(panelDefinitionChoices, plasmaDefinitionChoices());
+    auto* panelStandards = displayInputChoice(panelForm, decoderChoices, defaultSignal.colorStandards, "Emulation.Video.Parameter.CrtColorStandards");
+    auto* panelRate = displayInputChoice(panelForm, rateChoices, defaultSignal.fieldRate, "Emulation.Video.Parameter.CrtFieldRate");
+    auto* panelDefinition = displayInputChoice(panelForm, panelDefinitionChoices, defaultSignal.definition, PanelDefinitionResource);
+    auto* panelConnection = displayInputChoice(panelForm, connectionChoices, defaultSignal.connection, "Emulation.Video.Parameter.CrtConnection");
+    auto* panelPalette = displayInputChoice(panelForm, palettes, defaultSignal.monitorPalette, "Emulation.Video.Parameter.CrtMonitorPalette");
+    auto* panelDegradation = addTechnologyValue(panelForm, "Emulation.Video.Parameter.CrtConnectionDegradation",
+        defaultSignal.connectionDegradation, DisplaySignalProfile::MaximumConnectionDegradation);
+    DisplaySignalProfile* displayedSignal = nullptr;
+    const auto updatePanelFields = [=] {
+        DisplaySignalProfile signal;
+        signal.connection = CrtConnection(panelConnection->currentData().toInt());
+        panelForm->setRowVisible(panelPalette, signal.connection == CrtConnection::LegacyMonitor);
+        panelForm->setRowVisible(panelDegradation, signal.canDegrade());
+    };
+    QObject::connect(panelConnection, &QComboBox::currentIndexChanged, &dialog, updatePanelFields);
+    const auto captureAdjustments = [&] {
+        if (displayedSignal) {
+            displayedSignal->colorStandards = CrtColorStandards(panelStandards->currentData().toInt());
+            displayedSignal->fieldRate = CrtFieldRate(panelRate->currentData().toInt());
+            displayedSignal->definition = PanelDefinition(panelDefinition->currentData().toInt());
+            displayedSignal->connection = CrtConnection(panelConnection->currentData().toInt());
+            displayedSignal->monitorPalette = CrtMonitorPalette(panelPalette->currentData().toInt());
+            displayedSignal->connectionDegradation = panelDegradation->value();
+        }
+        adjustmentDraft.setImageAdjustments(adjustmentScreen, {brightness->value(), contrast->value(),
+            gamma->currentData().toInt(), saturation->value(), sharpness->value()});
+    };
+    const auto updateAdjustments = [&] {
+        captureAdjustments();
+        adjustmentDraft.setDisplayTechnology(DisplayTechnology(displayType->currentData().toInt()));
+        adjustmentDraft.fixedPixel.technology = FixedPixelTechnology(fixedType->currentIndex());
+        adjustmentDraft.ledMatrix.color = LedMatrixColor(ledColor->currentIndex());
+        adjustmentDraft.dotMatrix.palette = DotMatrixPalette(dotPalette->currentIndex());
+        adjustmentScreen = adjustmentDraft.screenType();
+        updateAspects(adjustmentScreen);
+        displayedSignal = adjustmentDraft.panelSignal();
+        panelSettings->setVisible(displayedSignal != nullptr);
+        if (displayedSignal) {
+            panelStandards->setCurrentIndex(panelStandards->findData(int(displayedSignal->colorStandards)));
+            panelRate->setCurrentIndex(panelRate->findData(int(displayedSignal->fieldRate)));
+            {
+                const QSignalBlocker block(panelDefinition);
+                panelDefinition->clear();
+                const auto addDefinition = [&](const auto& choices) {
+                    for (const auto& [definition, key] : choices)
+                        panelDefinition->addItem(text(translations, key), int(definition));
+                };
+                if (adjustmentScreen == ScreenType::Plasma) addDefinition(plasmaDefinitions);
+                else addDefinition(panelDefinitionChoices);
+                panelDefinition->setCurrentIndex(std::max(0, panelDefinition->findData(int(displayedSignal->definition))));
+            }
+            {
+                const QSignalBlocker block(panelConnection);
+                panelConnection->clear();
+                for (const auto& [connection, key] : orderedChoices(connectionChoices, displayConnectionChoices(adjustmentScreen)))
+                    panelConnection->addItem(text(translations, key), int(connection));
+                panelConnection->setCurrentIndex(std::max(0, panelConnection->findData(int(displayedSignal->connection))));
+            }
+            panelPalette->setCurrentIndex(panelPalette->findData(int(displayedSignal->monitorPalette)));
+            panelDegradation->setValue(displayedSignal->connectionDegradation);
+            updatePanelFields();
+        }
+        const auto values = adjustmentDraft.imageAdjustments(adjustmentScreen);
+        brightness->setValue(values.brightness);
+        contrast->setValue(values.contrast);
+        gamma->setCurrentIndex(gamma->findData(values.gamma));
+        saturation->setValue(values.saturation);
+        sharpness->setValue(values.sharpness);
+        form->setRowVisible(sampling, adjustmentDraft.usesHostDisplay());
+        imageForm->setRowVisible(dedithering, adjustmentDraft.supportsDedithering());
+        imageForm->setRowVisible(deinterlacing, adjustmentDraft.supportsDeinterlacing());
+        imageForm->setRowVisible(debanding, adjustmentDraft.usesHostDisplay());
+        imageForm->setRowVisible(detailRecovery, adjustmentDraft.usesHostDisplay());
+        imageForm->setRowVisible(brightness, adjustmentDraft.showsImageAdjustment(Adjustment::Brightness));
+        imageForm->setRowVisible(contrast, adjustmentDraft.showsImageAdjustment(Adjustment::Contrast));
+        imageForm->setRowVisible(gamma, adjustmentDraft.showsImageAdjustment(Adjustment::Gamma));
+        imageForm->setRowVisible(saturation, adjustmentDraft.showsImageAdjustment(Adjustment::Saturation));
+        imageForm->setRowVisible(sharpness, adjustmentDraft.showsImageAdjustment(Adjustment::Sharpness));
+    };
+    for (const auto* control : std::array<const QComboBox*, 4>{displayType, fixedType, ledColor, dotPalette})
+        QObject::connect(control, &QComboBox::currentIndexChanged, &dialog, updateAdjustments);
+    updateAdjustments();
+    auto* buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel, &dialog);
+    buttons->button(QDialogButtonBox::Save)->setText(text(translations, SaveKey));
+    buttons->button(QDialogButtonBox::Cancel)->setText(text(translations, CloseKey));
+    container->addWidget(buttons);
+    QObject::connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
+    QObject::connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
+    if (dialog.exec() != QDialog::Accepted) return std::nullopt;
+    auto updated = profile;
+    const auto chosenRenderer = static_cast<Renderer>(renderer->currentData().toInt());
+    if (chosenRenderer != currentRenderer) updated.renderer = chosenRenderer;
+    updated.aspectRatio = aspectDraft;
+    updated.sampling = static_cast<Sampling>(sampling->currentData().toInt());
+    updated.blackFrameInsertion = blackFrame->isChecked();
+    const auto mode = static_cast<Deinterlacing>(deinterlacing->currentData().toInt());
+    if (mode != visibleMode) updated.deinterlacing = mode;
+    updated.restoration = {dedithering->currentIndex() == level ? profile.restoration.dedithering : dedithering->currentData().toInt(),
+        debanding->value(), detailRecovery->value()};
+    captureAdjustments();
+    updated.adjustments = adjustmentDraft.adjustments;
+    updated.screenAdjustments = std::move(adjustmentDraft.screenAdjustments);
+    updated.lcdSignal = adjustmentDraft.lcdSignal;
+    updated.ledSignal = adjustmentDraft.ledSignal;
+    updated.oledSignal = adjustmentDraft.oledSignal;
+    updated.plasmaSignal = adjustmentDraft.plasmaSignal;
+    updated.projectionSignal = adjustmentDraft.projectionSignal;
+    updated.signal = {static_cast<SignalConnection>(connection->currentData().toInt()), connectionIntensity->value(),
+        static_cast<SignalStandard>(standard->currentData().toInt()), standardIntensity->value()};
+    updated.setDisplayTechnology(DisplayTechnology(displayType->currentData().toInt()));
+    updated.ePaper.colorMode = EPaperColorMode(inkMode->currentIndex());
+    updated.ePaper.definition = PanelDefinition(ePaperDefinition->currentData().toInt());
+    updated.projection.technology = ProjectionTechnology(projectionTechnology->currentIndex());
+    updated.projection.surface = ProjectionSurface(projectionSurface->currentIndex());
+    updated.projection.ambientLight = projectionAmbientLight->value();
+    updated.segmentDisplay.layout = SegmentLayout(segmentLayoutChoice->currentIndex());
+    updated.segmentDisplay.technology = SegmentDisplayTechnology(segmentTechnologyChoice->currentData().toInt());
+    updated.segmentDisplay.color = SegmentColor(segmentColorChoice->currentData().toInt());
+    updated.dotMatrix.palette = DotMatrixPalette(dotPalette->currentIndex());
+    updated.dotMatrix.definition = MatrixDefinition(dotDefinition->currentData().toInt());
+    updated.dotMatrix.shape = DotMatrixShape(dotShape->currentIndex());
+    updated.dotMatrix.technology = DotMatrixTechnology(dotTechnology->currentIndex());
+    updated.ledMatrix.color = LedMatrixColor(ledColor->currentIndex());
+    updated.ledMatrix.definition = MatrixDefinition(ledDefinition->currentData().toInt());
+    updated.ledMatrix.shape = LedMatrixShape(ledShape->currentIndex());
+
+    updated.vfd.color = VfdColor(vfdColor->currentIndex());
+    updated.vfd.definition = MatrixDefinition(vfdDefinition->currentData().toInt());
+    updated.vfd.shape = DotMatrixShape(vfdShape->currentIndex());
+    updated.vector.beamWidth = vectorBeamWidth->value();
+    updated.vector.curvature = vectorCurvature->value();
+    updated.vector.phosphorColor = VectorPhosphor(vectorPhosphor->currentIndex());
+    updated.plasma.cellStructure = PlasmaCellStructure(plasmaStructure->currentData().toInt());
+    captureFixed();
+    updated.fixedPixel = fixedDraft;
+    updated.lcd = lcd;
+    updated.ledBacklight = ledBacklight;
+    updated.oled.panelType = OledPanelType(oledPanel->currentIndex());
+    updated.oled.pixelStructure = OledPixelStructure(oledStructure->currentIndex());
+    updated.fixedPixelProfiles = std::move(fixedProfiles);
+    if (crtmask->currentIndex() >= 0)
+        updated.crt.mask = static_cast<CrtMask>(crtmask->currentData().toInt());
+    if (crtphosphor->currentIndex() >= 0)
+        updated.crt.phosphor = static_cast<CrtPhosphor>(crtphosphor->currentData().toInt());
+    if (crtrate->currentIndex() >= 0)
+        updated.crt.fieldRate = static_cast<CrtFieldRate>(crtrate->currentData().toInt());
+    if (crtdecoder->currentIndex() >= 0)
+        updated.crt.colorStandards = static_cast<CrtColorStandards>(crtdecoder->currentData().toInt());
+    if (crtconnection->currentIndex() >= 0)
+        updated.crt.connection = static_cast<CrtConnection>(crtconnection->currentData().toInt());
+    updated.crt.monitorPalette = static_cast<CrtMonitorPalette>(crtPalette->currentData().toInt());
+    updated.crt.connectionDegradation = crtDegradation->value();
+    updated.crt.beamWidth = crtBeam->value();
+    updated.crt.curvature = crtCurvature->value();
+    return updated;
+}
+
 class SessionView final : public QWidget {
 public:
     using OpenMachineSettings = std::function<void(QWidget*, const std::shared_ptr<Session>&)>;
@@ -800,7 +1390,7 @@ public:
         WorkspaceState& workspace, const VideoPresentation::ProfileStore& profiles,
         const std::shared_ptr<const ThemeData>& theme, OpenMachineSettings openMachineSettings, QWidget* parent)
         : QWidget(parent), session_(std::move(session)), host_(std::move(host)), translations_(translations),
-          workspace_(workspace), profiles_(profiles),
+          workspace_(workspace), theme_(theme), profiles_(profiles),
           profile_(profiles_.load(session_->moduleId(), session_->configuration().id)),
           openMachineSettings_(std::move(openMachineSettings)) {
         auto* root = new QVBoxLayout(this);
@@ -881,8 +1471,8 @@ public:
         reset_->setIcon(Icons::icon(*reset_, Icons::SoftReset, Icons::SoftResetColor));
         hardReset_->setIcon(Icons::icon(*hardReset_, Icons::HardReset, Icons::HardResetColor));
         auto* states = addGroup();
-        quickSave_ = commandButton(states, QuickSaveKey, Icons::Save, [this] { quickState(true); });
-        quickLoad_ = commandButton(states, QuickLoadKey, Icons::Load, [this] { quickState(false); });
+        quickSave_ = commandButton(states, SaveStateKey, Icons::Save, [this] { showStateSlots(true); });
+        quickLoad_ = commandButton(states, LoadStateKey, Icons::Load, [this] { showStateSlots(false); });
         auto* display = addGroup();
         screenshotButton_ = commandButton(display, ScreenshotKey, Icons::Capture, [this] { screenshot(); });
         auto* fullscreenButton = commandButton(display, FullScreenKey, Icons::Fullscreen, [this] { toggleFullScreen(); });
@@ -898,6 +1488,7 @@ public:
         connect(mute_, &QToolButton::toggled, this, [this](bool muted) {
             if (muted) session_->stopAudio();
             mute_->setIcon(Icons::icon(*mute_, muted ? Icons::Muted : Icons::Audio, muted ? Icons::Unpowered : Icons::Audible));
+            updateFullscreenMute();
         });
         controllerPointer_ = commandButton(inputCommands, SwitchControllerPointerKey, Icons::Pointer, [this] {
             run([this] { return session_->switchControllerPointer().has_value(); });
@@ -918,12 +1509,16 @@ public:
         bindCommandShortcut(Keys::SoftReset, reset_);
         bindCommandShortcut(Keys::HardReset, hardReset_);
         bindCommandShortcut(Keys::OpenSettings, settings);
-        bindCommandShortcut(Keys::QuickSave, quickSave_);
-        bindCommandShortcut(Keys::QuickLoad, quickLoad_);
+        commandShortcuts_.insert(quickSave_, &Keys::QuickSave);
+        commandShortcuts_.insert(quickLoad_, &Keys::QuickLoad);
+        bindShortcut(Keys::QuickSave, [this] { quickState(true); });
+        bindShortcut(Keys::QuickLoad, [this] { quickState(false); });
         bindCommandShortcut(Keys::Screenshot, screenshotButton_);
         bindCommandShortcut(Keys::ToggleFullscreen, fullscreenButton);
         bindShortcut(Keys::ReleaseMouse, [this] { releasePointer(); });
         bindCommandShortcut(Keys::ToggleMute, mute_);
+        bindShortcut(Keys::VolumeDown, [this] { stepVolume(-VolumeStep); });
+        bindShortcut(Keys::VolumeUp, [this] { stepVolume(VolumeStep); });
         bindShortcut(Keys::OsdWithPause, [this] { if (fullScreen_) openOsd(true); });
         bindShortcut(Keys::OsdWithoutPause, [this] { if (fullScreen_) openOsd(false); });
         bindShortcut(Keys::OsdStatistics, [this] { if (fullScreen_) toggleFullscreenStatistics(); });
@@ -935,7 +1530,7 @@ public:
         bindNavigation(Keys::OsdConfirm, Navigation::Confirm);
         bindNavigation(Keys::OsdCancel, Navigation::Cancel);
         shortcutSubscription_ = workspace_.subscribeToEmulationShortcuts([this] {
-            osdRepeat_.clear();
+            shortcutRepeat_.clear();
             for (auto& entry : configuredShortcuts_) refreshShortcut(entry);
             physicalShortcutsPrimed_ = false;
             refreshCommandTooltips();
@@ -972,6 +1567,28 @@ public:
         if (fullScreen_) disconnect(fullScreen_, nullptr, this, nullptr);
     }
     const std::shared_ptr<Session>& session() const noexcept { return session_; }
+
+    void refreshMachineSettings() {
+        if (osd_) refreshOsdBlocks();
+        refreshMedia(true);
+    }
+
+    void refreshMachineInput() {
+        physicalShortcutsPrimed_ = false;
+        physicalKeys_.clear();
+        physicalKeypadKeys_.clear();
+        hostKeyboard_.clear();
+        heldOsdKeys_.clear();
+        shortcutModifiers_.clear();
+        shortcutRepeat_.clear();
+        if (!pointerCaptureAllowed()) resetPointer();
+        const bool captured = input_.pointerCaptured;
+        input_ = {};
+        input_.pointerCaptured = captured;
+        rawControllerInput_.clear();
+        sendInput();
+    }
+
     void configureMachine() {
         run([this] {
             openMachineSettings_(fullScreen_ ? static_cast<QWidget*>(fullScreen_) : this, session_);
@@ -1003,665 +1620,14 @@ public:
         return row;
     }
 
+    bool applyVideoProfile(Profile profile) {
+        return saveVideoProfile(std::move(profile), false);
+    }
+
     void configureVideo() {
-        using namespace VideoPresentation;
-        QDialog dialog(fullScreen_ ? static_cast<QWidget*>(fullScreen_) : this);
-        dialog.setWindowTitle(text(translations_, VideoKey));
-        auto* container = new QVBoxLayout(&dialog);
-        auto* tabs = new QTabWidget(&dialog);
-        container->addWidget(tabs);
-        auto* appearance = new QWidget(tabs);
-        tabs->addTab(appearance, text(translations_, "Emulation.Video.Tab.Rendering"));
-        auto* form = new QFormLayout(appearance);
-        form->addRow(createShaderStatusRow(appearance));
-        auto* renderer = new QComboBox(&dialog);
-#ifdef Q_OS_WIN
-        renderer->addItem(text(translations_, "Emulation.Video.Renderer.Direct3D11"), static_cast<int>(Renderer::Direct3D11));
-#endif
-        renderer->addItem(QStringLiteral("Qt"), static_cast<int>(Renderer::Software));
-        renderer->addItem(text(translations_, "Emulation.Video.Renderer.Vulkan"), static_cast<int>(Renderer::Vulkan));
-        renderer->addItem(text(translations_, "Emulation.Video.Renderer.OpenGL"), static_cast<int>(Renderer::OpenGL));
-        const auto configuredRenderer = renderer->findData(static_cast<int>(profile_.renderer));
-        renderer->setCurrentIndex(configuredRenderer >= 0 ? configuredRenderer : renderer->findData(static_cast<int>(Renderer::Software)));
-        const auto currentRenderer = static_cast<Renderer>(renderer->currentData().toInt());
-        form->addRow(text(translations_, "Emulation.Video.Settings.Rendering"), renderer);
-        auto* aspect = new QComboBox(&dialog);
-        auto aspectDraft = profile_.aspectRatio;
-        connect(aspect, &QComboBox::activated, &dialog, [aspect, &aspectDraft] {
-            aspectDraft = AspectRatio(aspect->currentData().toInt());
-        });
-        const auto updateAspects = [&](ScreenType screen) {
-            aspect->clear();
-            for (const auto ratio : aspectRatioChoices(screen)) {
-                const auto dimensions = aspectRatioDimensions(ratio);
-                const auto label = ratio == AspectRatio::Original
-                    ? text(translations_, "Emulation.Native.AspectOriginal")
-                    : QString::number(dimensions.width()) + QLatin1Char('/') + QString::number(dimensions.height());
-                aspect->addItem(label, int(ratio));
-            }
-            const int configured = aspect->findData(int(aspectDraft));
-            aspect->setCurrentIndex(configured >= 0 ? configured : aspect->findData(int(AspectRatio::Original)));
-        };
-        form->addRow(text(translations_, AspectKey), aspect);
-        auto* sampling = new QComboBox(&dialog);
-        for (const auto& [mode, label] : videoSamplers(profile_.sampling))
-            sampling->addItem(text(translations_, label), static_cast<int>(mode));
-        sampling->setCurrentIndex(sampling->findData(static_cast<int>(profile_.sampling)));
-        form->addRow(text(translations_, SamplingKey), sampling);
-        auto* blackFrame = new QCheckBox(&dialog);
-        blackFrame->setChecked(profile_.blackFrameInsertion);
-        form->addRow(text(translations_, BlackFrameKey), blackFrame);
-        auto* deinterlacing = new QComboBox(&dialog);
-        for (const auto& [mode, label] : modes) deinterlacing->addItem(text(translations_, label), static_cast<int>(mode));
-        const auto configured = profile_.deinterlacing;
-        const auto visibleMode = configured == Deinterlacing::BobEvenLines || configured == Deinterlacing::BobOddLines
-            ? Deinterlacing::Bob : configured;
-        deinterlacing->setCurrentIndex(deinterlacing->findData(static_cast<int>(visibleMode)));
-        form->addRow(text(translations_, "Emulation.Video.Parameter.Deinterlacing"), deinterlacing);
-        constexpr std::array levels{"Emulation.Video.Restoration.Level.None", "Emulation.Video.Restoration.Level.Light",
-            "Emulation.Video.Restoration.Level.Medium", "Emulation.Video.Restoration.Level.Strong"};
-        auto* dedithering = new QComboBox(&dialog);
-        for (size_t index = 0; index < levels.size(); ++index)
-            dedithering->addItem(text(translations_, levels[index]), ImageRestoration::DeditheringLevels[index]);
-        const int level = qRound(double(profile_.restoration.dedithering) * (levels.size() - 1) / ImageRestoration::MaximumIntensity);
-        dedithering->setCurrentIndex(level);
-        form->addRow(text(translations_, "Emulation.Video.Parameter.Dedithering"), dedithering);
-        const auto restorationValue = [&](const char* key, int value) {
-            auto* spin = new QSpinBox(&dialog);
-            spin->setRange(0, ImageRestoration::MaximumIntensity);
-            spin->setValue(value);
-            form->addRow(text(translations_, key), spin);
-            return spin;
-        };
-        auto* debanding = restorationValue("Emulation.Video.Parameter.Debanding", profile_.restoration.debanding);
-        auto* detailRecovery = restorationValue("Emulation.Video.Parameter.DetailRecovery", profile_.restoration.detailRecovery);
-        detailRecovery->setToolTip(text(translations_, "Emulation.Video.Parameter.FineDetails"));
-        const auto adjustment = [&](const char* key, int value) {
-            auto* edit = new QSpinBox(&dialog);
-            edit->setRange(ImageAdjustments::Minimum, ImageAdjustments::Maximum);
-            edit->setValue(value);
-            form->addRow(text(translations_, key), edit);
-            return edit;
-        };
-        auto adjustmentDraft = profile_;
-        auto adjustmentScreen = adjustmentDraft.screenType();
-        const auto initialAdjustments = adjustmentDraft.imageAdjustments(adjustmentScreen);
-        auto* brightness = adjustment("Emulation.Video.Parameter.Brightness", initialAdjustments.brightness);
-        auto* contrast = adjustment("Emulation.Video.Parameter.Contrast", initialAdjustments.contrast);
-        auto* gamma = new QComboBox(&dialog);
-        for (const auto curve : ImageAdjustments::GammaCurves) {
-            const auto label = curve == 0 ? text(translations_, "Emulation.Video.Gamma.Original") :
-                curve == ImageAdjustments::Bt1886 ? QStringLiteral("BT.1886") : QLocale().toString(curve / 100.0, 'f', 1);
-            gamma->addItem(label, curve);
-        }
-        gamma->setCurrentIndex(gamma->findData(initialAdjustments.gamma));
-        form->addRow(text(translations_, "Emulation.Video.Gamma"), gamma);
-        auto* saturation = adjustment("Emulation.Video.Parameter.Saturation", initialAdjustments.saturation);
-        auto* sharpness = adjustment("Emulation.Video.Parameter.Sharpness", initialAdjustments.sharpness);
-        auto* signalPage = new QWidget(tabs);
-        tabs->addTab(signalPage, text(translations_, "Emulation.Video.Tab.Signal"));
-        auto* signalForm = new QFormLayout(signalPage);
-        const auto signalChoice = [&](const auto& choices, auto active, const char* label) {
-            auto* combo = new QComboBox(signalPage);
-            for (const auto& [value, key] : choices) combo->addItem(text(translations_, key), static_cast<int>(value));
-            combo->setCurrentIndex(combo->findData(static_cast<int>(active)));
-            signalForm->addRow(text(translations_, label), combo);
-            return combo;
-        };
-        const auto intensity = [&](const char* key, int value) {
-            auto* spin = new QSpinBox(signalPage);
-            spin->setRange(0, SignalSimulation::MaximumIntensity);
-            spin->setValue(value);
-            signalForm->addRow(text(translations_, key), spin);
-            return spin;
-        };
-        const auto* connection = signalChoice(connections, profile_.signal.connection, "Emulation.Video.Parameter.SignalConnection");
-        const auto* connectionIntensity = intensity("Emulation.Video.Parameter.SignalConnectionIntensity", profile_.signal.connectionIntensity);
-        const auto* standard = signalChoice(standards, profile_.signal.standard, "Emulation.Video.Parameter.SignalStandard");
-        const auto* standardIntensity = intensity("Emulation.Video.Parameter.SignalStandardIntensity", profile_.signal.standardIntensity);
-        auto* effectsPage = new QWidget(tabs);
-        tabs->addTab(effectsPage, text(translations_, "Emulation.Video.Settings.Stylistic"));
-        auto* effectsForm = new QFormLayout(effectsPage);
-        const auto effectControl = [&](const char* key, int selected) {
-            auto* spin = new QSpinBox(effectsPage);
-            spin->setRange(0, StylisticEffects::MaximumIntensity);
-            spin->setValue(selected);
-            effectsForm->addRow(text(translations_, key), spin);
-            return spin;
-        };
-        const auto* grain = effectControl("Emulation.Video.Parameter.Grain", profile_.stylistic.grain);
-        const auto* vhs = effectControl("Emulation.Video.Parameter.Vhs", profile_.stylistic.vhs);
-        const auto* aberration = effectControl("Emulation.Video.Parameter.ChromaticAberration", profile_.stylistic.chromaticAberration);
-        const auto* bloom = effectControl("Emulation.Video.Parameter.Bloom", profile_.stylistic.bloom);
-        auto* sepia = new QCheckBox(text(translations_, "Emulation.Video.Parameter.Sepia"), effectsPage);
-        sepia->setChecked(profile_.stylistic.sepia);
-        effectsForm->addRow(sepia);
-        auto* crtPage = new QWidget(tabs);
-        tabs->addTab(crtPage, text(translations_, "Emulation.Video.Tab.Technology"));
-        auto* technologyLayout = new QVBoxLayout(crtPage);
-        auto* displayType = new QComboBox(crtPage);
-        for (const auto& [technology, key] : displayTypes)
-            displayType->addItem(text(translations_, key), int(technology));
-        displayType->setCurrentIndex(displayType->findData(int(profile_.displayTechnology())));
-        technologyLayout->addWidget(displayType);
-        auto* crtSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(crtSettings);
-        auto* crtForm = new QFormLayout(crtSettings);
-        const auto displayInputChoice = [&](QFormLayout* placement, const auto& options, auto selected, const char* key) {
-            auto* combo = new QComboBox(placement->parentWidget());
-            for (const auto& [value, label] : options) combo->addItem(text(translations_, label), static_cast<int>(value));
-            combo->setCurrentIndex(combo->findData(static_cast<int>(selected)));
-            placement->addRow(text(translations_, key), combo);
-            return combo;
-        };
-        const auto crtChoice = [&](const auto& options, auto selected, const char* key) {
-            return displayInputChoice(crtForm, options, selected, key);
-        };
-        const auto* crtmask = crtChoice(maskChoices, profile_.crt.mask, "Emulation.Video.Parameter.CrtMask");
-        const auto* crtphosphor = crtChoice(phosphorChoices, profile_.crt.phosphor, "Emulation.Video.Parameter.VectorPhosphorColor");
-        const auto* crtrate = crtChoice(rateChoices, profile_.crt.fieldRate, "Emulation.Video.Parameter.CrtFieldRate");
-        const auto* crtdecoder = crtChoice(decoderChoices, profile_.crt.colorStandards, "Emulation.Video.Parameter.CrtColorStandards");
-        auto* crtconnection = crtChoice(connectionChoices, profile_.crt.connection, "Emulation.Video.Parameter.CrtConnection");
-        auto* crtPalette = crtChoice(palettes, profile_.crt.monitorPalette, "Emulation.Video.Parameter.CrtMonitorPalette");
-        const auto crtValue = [&](const char* key, int value, int low, int high) {
-            auto* spin = new QSpinBox(crtPage);
-            spin->setRange(low, high);
-            spin->setValue(value);
-            crtForm->addRow(text(translations_, key), spin);
-            return spin;
-        };
-        auto* crtDegradation = crtValue("Emulation.Video.Parameter.CrtConnectionDegradation", profile_.crt.connectionDegradation,
-            0, CrtProfile::MaximumConnectionDegradation);
-        const auto updateConnection = [crtconnection, crtPalette, crtDegradation] {
-            const auto mode = static_cast<CrtConnection>(crtconnection->currentData().toInt());
-            crtPalette->setEnabled(mode == CrtConnection::LegacyMonitor);
-            crtDegradation->setEnabled(mode >= CrtConnection::Scart && mode <= CrtConnection::AnalogRf);
-        };
-        connect(crtconnection, &QComboBox::currentIndexChanged, &dialog, updateConnection);
-        updateConnection();
-        const auto* crtBeam = crtValue("Emulation.Video.Parameter.VectorBeamWidth", profile_.crt.beamWidth,
-            ImageAdjustments::Minimum, ImageAdjustments::Maximum);
-        const auto* crtCurvature = crtValue("Emulation.Video.Parameter.CrtCurvature", profile_.crt.curvature, 0, CrtProfile::MaximumCurvature);
-        auto* fixedSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(fixedSettings);
-        auto* plasmaSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(plasmaSettings);
-        auto* vectorSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(vectorSettings);
-        auto* vfdSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(vfdSettings);
-        auto* ledSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(ledSettings);
-        auto* dotSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(dotSettings);
-        auto* segmentSettings = new QWidget(crtPage);
-        technologyLayout->addWidget(segmentSettings);
-        technologyLayout->addStretch();
-        auto* ePaperSettings = new QWidget(crtPage);
-        technologyLayout->insertWidget(technologyLayout->count() - 1, ePaperSettings);
-        auto* projectionSettings = new QWidget(crtPage);
-        technologyLayout->insertWidget(technologyLayout->count() - 1, projectionSettings);
-        auto* segmentGrid = new QGridLayout(segmentSettings);
-        const auto segmentGroup = [&](const char* key, int row, int column) {
-            auto* group = new QGroupBox(text(translations_, key), segmentSettings);
-            segmentGrid->addWidget(group, row, column);
-            return new QFormLayout(group);
-        };
-        auto* segmentCells = segmentGroup("Emulation.Video.SegmentDisplay.Group.Cells", 0, 0);
-        auto* segmentGeometry = segmentGroup("Emulation.Video.SegmentDisplay.Group.Geometry", 0, 1);
-        auto* segmentEmission = segmentGroup("Emulation.Video.SegmentDisplay.Group.Emission", 1, 0);
-        auto* segmentLightAndResponse = segmentGroup("Emulation.Video.SegmentDisplay.Group.LightAndResponse", 1, 1);
-        const auto segmentChoice = [&](QFormLayout* placement, const auto& labels, int selected, const char* key) {
-            auto* combo = new QComboBox(placement->parentWidget());
-            for (const auto* label : labels) combo->addItem(text(translations_, label));
-            combo->setCurrentIndex(selected);
-            placement->addRow(text(translations_, key), combo);
-            return combo;
-        };
-        const auto addTechnologyGroup = [&](QGridLayout* grid, const char* key, int row, int column, int span = 1) {
-            auto* group = new QGroupBox(text(translations_, key), grid->parentWidget());
-            grid->addWidget(group, row, column, 1, span);
-            return new QFormLayout(group);
-        };
-        const auto addTechnologyValue = [&](QFormLayout* form, const char* key, int value, int maximum) {
-            auto* field = new QSpinBox(form->parentWidget());
-            field->setRange(0, maximum);
-            field->setValue(value);
-            form->addRow(text(translations_, key), field);
-            return field;
-        };
-        auto* ePaperGrid = new QGridLayout(ePaperSettings);
-        auto* ink = addTechnologyGroup(ePaperGrid, "Emulation.Video.EPaper.Group.InkAndColor", 0, 0);
-        auto* paper = addTechnologyGroup(ePaperGrid, "Emulation.Video.EPaper.Group.PaperSurface", 0, 1);
-        auto* refresh = addTechnologyGroup(ePaperGrid, "Emulation.Video.EPaper.Group.Refresh", 1, 0, 2);
-        const auto* inkMode = segmentChoice(ink, inkModes, int(profile_.ePaper.colorMode), "Emulation.Video.Parameter.EPaperColorMode");
-        auto* projectionForm = new QFormLayout(projectionSettings);
-        const auto* ePaperInkDensity = addTechnologyValue(ink, "Emulation.Video.Parameter.EPaperInkDensity",
-            profile_.ePaper.inkDensity, EPaperProfile::MaximumIntensity);
-        const auto* ePaperContrast = addTechnologyValue(ink, "Emulation.Video.Parameter.EPaperContrast",
-            profile_.ePaper.contrast, EPaperProfile::MaximumIntensity);
-        const auto* ePaperDithering = addTechnologyValue(ink, "Emulation.Video.Parameter.EPaperDithering",
-            profile_.ePaper.dithering, EPaperProfile::MaximumIntensity);
-        auto* ePaperColorSaturation = addTechnologyValue(ink, "Emulation.Video.Parameter.EPaperColorSaturation",
-            profile_.ePaper.colorSaturation, EPaperProfile::MaximumIntensity);
-        const auto* ePaperPaperBrightness = addTechnologyValue(paper, "Emulation.Video.Parameter.EPaperPaperBrightness",
-            profile_.ePaper.paperBrightness, EPaperProfile::MaximumIntensity);
-        const auto* ePaperPaperWarmth = addTechnologyValue(paper, "Emulation.Video.Parameter.EPaperPaperWarmth",
-            profile_.ePaper.paperWarmth, EPaperProfile::MaximumIntensity);
-        const auto* ePaperSurfaceTexture = addTechnologyValue(paper, "Emulation.Video.Parameter.EPaperSurfaceTexture",
-            profile_.ePaper.surfaceTexture, EPaperProfile::MaximumIntensity);
-        const auto* ePaperEdgeSoftness = addTechnologyValue(paper, "Emulation.Video.Parameter.EPaperEdgeSoftness",
-            profile_.ePaper.edgeSoftness, EPaperProfile::MaximumIntensity);
-        const auto* ePaperRefreshTime = addTechnologyValue(refresh, "Emulation.Video.Parameter.EPaperRefreshTime",
-            profile_.ePaper.refreshTimeMilliseconds, EPaperProfile::MaximumDurationMilliseconds);
-        const auto* ePaperGhosting = addTechnologyValue(refresh, "Emulation.Video.Parameter.EPaperGhosting",
-            profile_.ePaper.ghosting, EPaperProfile::MaximumIntensity);
-        const auto* projectionTechnology = segmentChoice(projectionForm, projectionTechnologies,
-            int(profile_.projection.technology), ProjectionTechnologyResource);
-        const auto* projectionSurface = segmentChoice(projectionForm, projectionSurfaces,
-            int(profile_.projection.surface), ProjectionSurfaceResource);
-        const auto* projectionAmbientLight = addTechnologyValue(projectionForm, "Emulation.Video.Parameter.ProjectionAmbientLight",
-            profile_.projection.ambientLight, ProjectionProfile::MaximumAmbientLight);
-        const auto updateInkSaturation = [=](int index) {
-            ink->setRowVisible(ePaperColorSaturation, index == int(EPaperColorMode::Color4096));
-        };
-        QObject::connect(inkMode, &QComboBox::currentIndexChanged, ePaperSettings, updateInkSaturation);
-        updateInkSaturation(inkMode->currentIndex());
-        const auto* segmentLayoutChoice = segmentChoice(segmentCells, segmentLayoutLabels,
-            int(profile_.segmentDisplay.layout), "Emulation.Video.Parameter.SegmentDisplayLayout");
-        const auto* segmentEndShapeChoice = segmentChoice(segmentGeometry, segmentEndShapeLabels,
-            int(profile_.segmentDisplay.endShape), "Emulation.Video.Parameter.SegmentDisplayEndShape");
-        const auto* segmentColorChoice = segmentChoice(segmentEmission, segmentColorLabels,
-            int(profile_.segmentDisplay.color), "Emulation.Video.Parameter.SegmentDisplayColor");
-        auto* decimalPoint = new QCheckBox(text(translations_, "Emulation.Video.Parameter.SegmentDisplayDecimalPoint"), segmentSettings);
-        auto* colon = new QCheckBox(text(translations_, "Emulation.Video.Parameter.SegmentDisplayColon"), segmentSettings);
-        decimalPoint->setChecked(profile_.segmentDisplay.decimalPoint);
-        colon->setChecked(profile_.segmentDisplay.colon);
-        segmentGeometry->addRow(decimalPoint);
-        segmentGeometry->addRow(colon);
-        const std::array segmentGroups{segmentCells, segmentCells, segmentCells, segmentGeometry, segmentGeometry, segmentEmission, segmentEmission, segmentEmission, segmentEmission, segmentEmission, segmentLightAndResponse, segmentLightAndResponse, segmentLightAndResponse, segmentLightAndResponse};
-        std::array<QSpinBox*, segmentFields.size()> segmentControls{};
-        for (size_t index = 0; index < segmentFields.size(); ++index) {
-            const auto& [key, field] = segmentFields[index];
-            auto* placement = segmentGroups[index];
-            auto* spin = new QSpinBox(placement->parentWidget());
-            const bool duration = field == &SegmentDisplayProfile::responseTimeMilliseconds ||
-                field == &SegmentDisplayProfile::persistenceMilliseconds;
-            spin->setRange(0, duration ? SegmentDisplayProfile::MaximumDurationMilliseconds : SegmentDisplayProfile::MaximumIntensity);
-            spin->setValue(profile_.segmentDisplay.*field);
-            placement->addRow(text(translations_, key), spin);
-            segmentControls[index] = spin;
-        }
-        const auto displayGroups = [](QWidget* parent) {
-            auto* layout = new QHBoxLayout(parent);
-            layout->setContentsMargins(0, 0, 0, 0);
-            return layout;
-        };
-        const auto displayGroup = [&](QHBoxLayout* layout, const char* key) {
-            auto* group = new QGroupBox(text(translations_, key), layout->parentWidget());
-            layout->addWidget(group, 1);
-            return new QFormLayout(group);
-        };
-        const auto displayChoice = [&](QFormLayout* place, const auto& labels, int selected, const char* key) {
-            auto* control = new QComboBox(place->parentWidget());
-            for (const auto* label : labels) control->addItem(text(translations_, label));
-            control->setCurrentIndex(selected);
-            place->addRow(text(translations_, key), control);
-            return control;
-        };
-        const auto displaySlider = [&](QFormLayout* place, const char* key, int value, int maximum) {
-            auto* row = new QWidget(place->parentWidget());
-            auto* rowLayout = new QHBoxLayout(row);
-            rowLayout->setContentsMargins(0, 0, 0, 0);
-            auto* control = new QSlider(Qt::Horizontal, row);
-            control->setRange(0, maximum);
-            control->setValue(value);
-            if (maximum > FixedPixelProfile::PercentMaximum) {
-                constexpr int DurationStepMilliseconds = 5;
-                control->setSingleStep(DurationStepMilliseconds);
-                connect(control, &QSlider::actionTriggered, control, [control] {
-                    const int position = control->sliderPosition();
-                    control->setSliderPosition(
-                        (position + DurationStepMilliseconds / 2) / DurationStepMilliseconds * DurationStepMilliseconds);
-                });
-            }
-            auto* number = new QLabel(QLocale().toString(control->value()), row);
-            number->setMinimumWidth(number->fontMetrics().horizontalAdvance(QLocale().toString(maximum)));
-            number->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-            connect(control, &QSlider::valueChanged, number, [number](int current) {
-                number->setText(QLocale().toString(current));
-            });
-            rowLayout->addWidget(control, 1);
-            rowLayout->addWidget(number);
-            auto* label = new QLabel(text(translations_, key), place->parentWidget());
-            label->setBuddy(control);
-            control->setAccessibleName(label->text());
-            place->addRow(label, row);
-            return control;
-        };
-
-        auto* dotLayout = displayGroups(dotSettings);
-        auto* dotCells = displayGroup(dotLayout, DotCellsResource);
-        auto* dotLight = displayGroup(dotLayout, DotLightResource);
-        auto* dotTiming = displayGroup(dotLayout, DotTimingResource);
-        const auto* dotPalette = displayChoice(dotLight, dotPalettes, int(profile_.dotMatrix.palette), "Emulation.Video.Parameter.DotMatrixPalette");
-        const auto* dotShape = displayChoice(dotCells, dotShapes, int(profile_.dotMatrix.shape), "Emulation.Video.Parameter.DotMatrixShape");
-        const std::array dotGroups{dotCells, dotCells, dotCells, dotLight, dotLight, dotLight, dotTiming, dotTiming};
-        std::array<QSlider*, dotFields.size()> dotControls{};
-        for (size_t index = 0; index < dotFields.size(); ++index) {
-            const auto& [key, field] = dotFields[index];
-            auto* groupForm = dotGroups[index];
-            dotControls[index] = displaySlider(groupForm, key, profile_.dotMatrix.*field,
-                groupForm == dotTiming ? DotMatrixProfile::MaximumDurationMilliseconds : DotMatrixProfile::MaximumIntensity);
-        }
-
-        auto* ledLayout = displayGroups(ledSettings);
-        auto* ledStructure = displayGroup(ledLayout, LedMatrixStructureResource);
-        auto* ledEmission = displayGroup(ledLayout, LedMatrixEmissionResource);
-        const auto* ledShape = displayChoice(ledStructure, ledShapes, int(profile_.ledMatrix.shape), "Emulation.Video.Parameter.LedMatrixShape");
-        const auto* ledColor = displayChoice(ledEmission, ledColors, int(profile_.ledMatrix.color), "Emulation.Video.Parameter.LedMatrixColor");
-        std::array<QSlider*, ledFields.size()> ledControls{};
-        for (size_t index = 0; index < ledFields.size(); ++index) {
-            const auto& [key, field] = ledFields[index];
-            auto* groupForm = index < LedStructureFields ? ledStructure : ledEmission;
-            ledControls[index] = displaySlider(groupForm, key, profile_.ledMatrix.*field, LedMatrixProfile::MaximumIntensity);
-        }
-
-        auto* vfdLayout = displayGroups(vfdSettings);
-        auto* vfdPhosphor = displayGroup(vfdLayout, VfdPhosphorResource);
-        auto* vfdAnodes = displayGroup(vfdLayout, VfdAnodesResource);
-        auto* vfdResponse = displayGroup(vfdLayout, VfdResponseResource);
-        const auto* vfdColor = displayChoice(vfdPhosphor, vfdColors, int(profile_.vfd.color), VfdColorResource);
-        auto* vfdStructure = displayChoice(vfdAnodes, vfdStructures, int(profile_.vfd.structure), VfdStructureResource);
-        const std::array vfdGroups{vfdPhosphor, vfdPhosphor, vfdPhosphor, vfdAnodes, vfdAnodes, vfdResponse, vfdResponse, vfdResponse};
-        std::array<QSlider*, vfdFields.size()> vfdControls{};
-        for (size_t index = 0; index < vfdFields.size(); ++index) {
-            const auto& [key, field] = vfdFields[index];
-            const int maximum = field == &VfdProfile::persistenceMilliseconds ? VfdProfile::MaximumPersistenceMilliseconds :
-                VfdProfile::MaximumIntensity;
-            vfdControls[index] = displaySlider(vfdGroups[index], key, profile_.vfd.*field, maximum);
-        }
-        const auto updateVfdCells = [=] {
-            const bool enabled = vfdStructure->currentIndex() == int(VfdStructure::DotMatrix);
-            for (auto* control : std::span(vfdControls).subspan<VfdPhosphorFields, VfdAnodeFields>()) {
-                auto* row = control->parentWidget();
-                row->setEnabled(enabled);
-                vfdAnodes->labelForField(row)->setEnabled(enabled);
-            }
-        };
-        connect(vfdStructure, &QComboBox::currentIndexChanged, &dialog, updateVfdCells);
-        updateVfdCells();
-
-        auto* vectorGroups = displayGroups(vectorSettings);
-        auto* vectorDrawingForm = displayGroup(vectorGroups, VectorDrawingResource);
-        auto* vectorGlowForm = displayGroup(vectorGroups, VectorGlowResource);
-        std::array<QSlider*, vectorFields.size()> vectorControls{};
-        for (size_t index = 0; index < vectorFields.size(); ++index) {
-            const auto& [key, field] = vectorFields[index];
-            auto* groupForm = index < VectorDrawingFields ? vectorDrawingForm : vectorGlowForm;
-            vectorControls[index] = displaySlider(groupForm, key, profile_.vector.*field, VectorProfile::MaximumIntensity);
-        }
-        auto* vectorPhosphor = displayChoice(vectorDrawingForm, vectorColors, int(profile_.vector.phosphorColor), VectorPhosphorResource);
-        auto* plasmaForm = new QFormLayout(plasmaSettings);
-        auto* plasmaStructure = displayInputChoice(plasmaForm, plasmaCellChoices, profile_.plasma.cellStructure,
-            PlasmaCellStructureResource);
-        auto* fixedForm = new QFormLayout(fixedSettings);
-        const auto fixedChoice = [&](const auto& labels, int selected, const char* key) {
-            auto* combo = new QComboBox(fixedSettings);
-            for (const auto* label : labels) combo->addItem(text(translations_, label));
-            combo->setCurrentIndex(selected);
-            fixedForm->addRow(text(translations_, key), combo);
-            return combo;
-        };
-        auto fixedProfiles = profile_.fixedPixelProfiles;
-        auto fixedDraft = profile_.fixedPixel;
-        auto lcd = profile_.lcd;
-        auto ledBacklight = profile_.ledBacklight;
-        auto* fixedType = fixedChoice(fixedTypes, int(fixedDraft.technology), "Emulation.Video.Parameter.FixedPixelTechnology");
-        auto* lcdStructure = fixedChoice(lcdStructures, int(lcd.pixelStructure), LcdPixelStructureResource);
-        auto* lcdOrientation = fixedChoice(lcdOrientations, int(lcd.orientation), LcdOrientationResource);
-        auto* lcdPanel = fixedChoice(lcdPanelTypes, int(lcd.panelType), LcdPanelTypeResource);
-        auto* backlight = addTechnologyValue(fixedForm, "Emulation.Video.Parameter.FixedPixelBacklight",
-            lcd.intensity, FixedPixelProfile::PercentMaximum);
-        auto* ledBacklightType = fixedChoice(ledBacklightTypes, int(ledBacklight.type), LedBacklightTypeResource);
-        auto* oledPanel = fixedChoice(oledPanels, int(profile_.oled.panelType), LcdPanelTypeResource);
-        auto* oledStructure = fixedChoice(oledStructures, int(profile_.oled.pixelStructure), LcdPixelStructureResource);
-        const auto currentLcd = [&]() -> LcdProfile& {
-            return fixedDraft.technology == FixedPixelTechnology::LedBacklitLcd ? static_cast<LcdProfile&>(ledBacklight) : lcd;
-        };
-        const auto showOrientation = [&] {
-            const auto structure = LcdPixelStructure(lcdStructure->currentIndex());
-            fixedForm->setRowVisible(lcdOrientation, fixedDraft.technology != FixedPixelTechnology::Oled &&
-                (structure == LcdPixelStructure::Rgb || structure == LcdPixelStructure::Bgr));
-        };
-        connect(lcdStructure, &QComboBox::currentIndexChanged, &dialog, showOrientation);
-        const auto showFixed = [&] {
-            const auto& panel = currentLcd();
-            const bool oled = fixedDraft.technology == FixedPixelTechnology::Oled;
-            lcdStructure->setCurrentIndex(int(panel.pixelStructure));
-            lcdOrientation->setCurrentIndex(int(panel.orientation));
-            lcdPanel->setCurrentIndex(int(panel.panelType));
-            backlight->setValue(panel.intensity);
-            fixedForm->setRowVisible(lcdStructure, !oled);
-            fixedForm->setRowVisible(lcdPanel, !oled);
-            fixedForm->setRowVisible(backlight, !oled);
-            fixedForm->setRowVisible(ledBacklightType, fixedDraft.technology == FixedPixelTechnology::LedBacklitLcd);
-            fixedForm->setRowVisible(oledPanel, oled);
-            fixedForm->setRowVisible(oledStructure, oled);
-            showOrientation();
-        };
-        const auto captureFixed = [&] {
-            if (fixedDraft.technology == FixedPixelTechnology::Oled) return;
-            auto& panel = currentLcd();
-            panel.pixelStructure = LcdPixelStructure(lcdStructure->currentIndex());
-            panel.orientation = LcdPixelOrientation(lcdOrientation->currentIndex());
-            panel.panelType = LcdPanelType(lcdPanel->currentIndex());
-            panel.intensity = backlight->value();
-            ledBacklight.type = LedBacklightType(ledBacklightType->currentIndex());
-        };
-        connect(fixedType, &QComboBox::currentIndexChanged, &dialog, [&](int index) {
-            captureFixed();
-            fixedDraft = fixedProfiles[size_t(index)].value_or(FixedPixelProfile{FixedPixelTechnology(index)});
-            showFixed();
-        });
-        showFixed();
-        const auto showTechnology = [=] {
-            const auto display = DisplayTechnology(displayType->currentData().toInt());
-            crtSettings->setVisible(display == DisplayTechnology::Crt);
-            fixedSettings->setVisible(display == DisplayTechnology::FixedPixel);
-            plasmaSettings->setVisible(display == DisplayTechnology::Plasma);
-            vectorSettings->setVisible(display == DisplayTechnology::Vector);
-            vfdSettings->setVisible(display == DisplayTechnology::Vfd);
-            ledSettings->setVisible(display == DisplayTechnology::LedMatrix);
-            dotSettings->setVisible(display == DisplayTechnology::DotMatrix);
-            segmentSettings->setVisible(display == DisplayTechnology::SegmentDisplay);
-            ePaperSettings->setVisible(display == DisplayTechnology::EPaper);
-            projectionSettings->setVisible(display == DisplayTechnology::Projection);
-        };
-        connect(displayType, &QComboBox::currentIndexChanged, &dialog, showTechnology);
-        showTechnology();
-        using Adjustment = ImageAdjustmentControl;
-        auto* panelSettings = new QGroupBox(text(translations_, "Emulation.Video.Tab.Signal"), crtPage);
-        technologyLayout->insertWidget(technologyLayout->count() - 1, panelSettings);
-        auto* panelForm = new QFormLayout(panelSettings);
-        const DisplaySignalProfile defaultSignal;
-        const auto plasmaDefinitions = orderedChoices(panelDefinitionChoices, plasmaDefinitionChoices());
-        auto* panelStandards = displayInputChoice(panelForm, decoderChoices, defaultSignal.colorStandards, "Emulation.Video.Parameter.CrtColorStandards");
-        auto* panelRate = displayInputChoice(panelForm, rateChoices, defaultSignal.fieldRate, "Emulation.Video.Parameter.CrtFieldRate");
-        auto* panelDefinition = displayInputChoice(panelForm, panelDefinitionChoices, defaultSignal.definition, PanelDefinitionResource);
-        auto* panelConnection = displayInputChoice(panelForm, connectionChoices, defaultSignal.connection, "Emulation.Video.Parameter.CrtConnection");
-        auto* panelPalette = displayInputChoice(panelForm, palettes, defaultSignal.monitorPalette, "Emulation.Video.Parameter.CrtMonitorPalette");
-        auto* panelDegradation = addTechnologyValue(panelForm, "Emulation.Video.Parameter.CrtConnectionDegradation",
-            defaultSignal.connectionDegradation, DisplaySignalProfile::MaximumConnectionDegradation);
-        DisplaySignalProfile* displayedSignal = nullptr;
-        const auto updatePanelFields = [=] {
-            DisplaySignalProfile signal;
-            signal.connection = CrtConnection(panelConnection->currentData().toInt());
-            panelForm->setRowVisible(panelPalette, signal.connection == CrtConnection::LegacyMonitor);
-            panelForm->setRowVisible(panelDegradation, signal.canDegrade());
-        };
-        connect(panelConnection, &QComboBox::currentIndexChanged, &dialog, updatePanelFields);
-        const auto captureAdjustments = [&] {
-            if (displayedSignal) {
-                displayedSignal->colorStandards = CrtColorStandards(panelStandards->currentData().toInt());
-                displayedSignal->fieldRate = CrtFieldRate(panelRate->currentData().toInt());
-                displayedSignal->definition = PanelDefinition(panelDefinition->currentData().toInt());
-                displayedSignal->connection = CrtConnection(panelConnection->currentData().toInt());
-                displayedSignal->monitorPalette = CrtMonitorPalette(panelPalette->currentData().toInt());
-                displayedSignal->connectionDegradation = panelDegradation->value();
-            }
-            adjustmentDraft.setImageAdjustments(adjustmentScreen, {brightness->value(), contrast->value(),
-                gamma->currentData().toInt(), saturation->value(), sharpness->value()});
-        };
-        const auto updateAdjustments = [&] {
-            captureAdjustments();
-            adjustmentDraft.setDisplayTechnology(DisplayTechnology(displayType->currentData().toInt()));
-            adjustmentDraft.fixedPixel.technology = FixedPixelTechnology(fixedType->currentIndex());
-            adjustmentDraft.ledMatrix.color = LedMatrixColor(ledColor->currentIndex());
-            adjustmentDraft.dotMatrix.palette = DotMatrixPalette(dotPalette->currentIndex());
-            adjustmentScreen = adjustmentDraft.screenType();
-            updateAspects(adjustmentScreen);
-            displayedSignal = adjustmentDraft.panelSignal();
-            panelSettings->setVisible(displayedSignal != nullptr);
-            if (displayedSignal) {
-                panelStandards->setCurrentIndex(panelStandards->findData(int(displayedSignal->colorStandards)));
-                panelRate->setCurrentIndex(panelRate->findData(int(displayedSignal->fieldRate)));
-                {
-                    const QSignalBlocker block(panelDefinition);
-                    panelDefinition->clear();
-                    const auto addDefinition = [&](const auto& choices) {
-                        for (const auto& [definition, key] : choices)
-                            panelDefinition->addItem(text(translations_, key), int(definition));
-                    };
-                    if (adjustmentScreen == ScreenType::Plasma) addDefinition(plasmaDefinitions);
-                    else addDefinition(panelDefinitionChoices);
-                    panelDefinition->setCurrentIndex(std::max(0, panelDefinition->findData(int(displayedSignal->definition))));
-                }
-                {
-                    const QSignalBlocker block(panelConnection);
-                    panelConnection->clear();
-                    for (const auto& [connection, key] : orderedChoices(connectionChoices, displayConnectionChoices(adjustmentScreen)))
-                        panelConnection->addItem(text(translations_, key), int(connection));
-                    panelConnection->setCurrentIndex(std::max(0, panelConnection->findData(int(displayedSignal->connection))));
-                }
-                panelPalette->setCurrentIndex(panelPalette->findData(int(displayedSignal->monitorPalette)));
-                panelDegradation->setValue(displayedSignal->connectionDegradation);
-                updatePanelFields();
-            }
-            const auto values = adjustmentDraft.imageAdjustments(adjustmentScreen);
-            brightness->setValue(values.brightness);
-            contrast->setValue(values.contrast);
-            gamma->setCurrentIndex(gamma->findData(values.gamma));
-            saturation->setValue(values.saturation);
-            sharpness->setValue(values.sharpness);
-            form->setRowVisible(sampling, adjustmentDraft.usesHostDisplay());
-            form->setRowVisible(dedithering, adjustmentDraft.supportsDedithering());
-            form->setRowVisible(deinterlacing, adjustmentDraft.supportsDeinterlacing());
-            form->setRowVisible(debanding, adjustmentDraft.usesHostDisplay());
-            form->setRowVisible(detailRecovery, adjustmentDraft.usesHostDisplay());
-            form->setRowVisible(brightness, adjustmentDraft.showsImageAdjustment(Adjustment::Brightness));
-            form->setRowVisible(contrast, adjustmentDraft.showsImageAdjustment(Adjustment::Contrast));
-            form->setRowVisible(gamma, adjustmentDraft.showsImageAdjustment(Adjustment::Gamma));
-            form->setRowVisible(saturation, adjustmentDraft.showsImageAdjustment(Adjustment::Saturation));
-            form->setRowVisible(sharpness, adjustmentDraft.showsImageAdjustment(Adjustment::Sharpness));
-        };
-        for (const auto* control : std::array<const QComboBox*, 4>{displayType, fixedType, ledColor, dotPalette})
-            connect(control, &QComboBox::currentIndexChanged, &dialog, updateAdjustments);
-        updateAdjustments();
-        auto* buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel, &dialog);
-        buttons->button(QDialogButtonBox::Save)->setText(text(translations_, SaveKey));
-        buttons->button(QDialogButtonBox::Cancel)->setText(text(translations_, CloseKey));
-        container->addWidget(buttons);
-        connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
-        connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
-        if (dialog.exec() != QDialog::Accepted) return;
-        auto updated = profile_;
-        const auto chosenRenderer = static_cast<Renderer>(renderer->currentData().toInt());
-        if (chosenRenderer != currentRenderer) updated.renderer = chosenRenderer;
-        updated.aspectRatio = aspectDraft;
-        updated.sampling = static_cast<Sampling>(sampling->currentData().toInt());
-        updated.blackFrameInsertion = blackFrame->isChecked();
-        const auto mode = static_cast<Deinterlacing>(deinterlacing->currentData().toInt());
-        if (mode != visibleMode) updated.deinterlacing = mode;
-        updated.restoration = {dedithering->currentIndex() == level ? profile_.restoration.dedithering : dedithering->currentData().toInt(),
-            debanding->value(), detailRecovery->value()};
-        captureAdjustments();
-        updated.adjustments = adjustmentDraft.adjustments;
-        updated.screenAdjustments = std::move(adjustmentDraft.screenAdjustments);
-        updated.lcdSignal = adjustmentDraft.lcdSignal;
-        updated.ledSignal = adjustmentDraft.ledSignal;
-        updated.oledSignal = adjustmentDraft.oledSignal;
-        updated.plasmaSignal = adjustmentDraft.plasmaSignal;
-        updated.projectionSignal = adjustmentDraft.projectionSignal;
-        updated.signal = {static_cast<SignalConnection>(connection->currentData().toInt()), connectionIntensity->value(),
-            static_cast<SignalStandard>(standard->currentData().toInt()), standardIntensity->value()};
-        updated.setDisplayTechnology(DisplayTechnology(displayType->currentData().toInt()));
-        updated.ePaper.colorMode = EPaperColorMode(inkMode->currentIndex());
-        updated.ePaper.inkDensity = ePaperInkDensity->value();
-        updated.ePaper.contrast = ePaperContrast->value();
-        updated.ePaper.dithering = ePaperDithering->value();
-        updated.ePaper.colorSaturation = ePaperColorSaturation->value();
-        updated.ePaper.paperBrightness = ePaperPaperBrightness->value();
-        updated.ePaper.paperWarmth = ePaperPaperWarmth->value();
-        updated.ePaper.surfaceTexture = ePaperSurfaceTexture->value();
-        updated.ePaper.edgeSoftness = ePaperEdgeSoftness->value();
-        updated.ePaper.refreshTimeMilliseconds = ePaperRefreshTime->value();
-        updated.ePaper.ghosting = ePaperGhosting->value();
-        updated.projection.technology = ProjectionTechnology(projectionTechnology->currentIndex());
-        updated.projection.surface = ProjectionSurface(projectionSurface->currentIndex());
-        updated.projection.ambientLight = projectionAmbientLight->value();
-        updated.segmentDisplay.decimalPoint = decimalPoint->isChecked();
-        updated.segmentDisplay.colon = colon->isChecked();
-        updated.segmentDisplay.layout = SegmentLayout(segmentLayoutChoice->currentIndex());
-        updated.segmentDisplay.endShape = SegmentEndShape(segmentEndShapeChoice->currentIndex());
-        updated.segmentDisplay.color = SegmentColor(segmentColorChoice->currentIndex());
-        for (size_t index = 0; index < segmentFields.size(); ++index)
-            updated.segmentDisplay.*(segmentFields[index].second) = segmentControls[index]->value();
-        updated.dotMatrix.palette = DotMatrixPalette(dotPalette->currentIndex());
-        updated.dotMatrix.shape = DotMatrixShape(dotShape->currentIndex());
-        for (size_t index = 0; index < dotFields.size(); ++index)
-            updated.dotMatrix.*(dotFields[index].second) = dotControls[index]->value();
-        updated.ledMatrix.color = LedMatrixColor(ledColor->currentIndex());
-        updated.ledMatrix.shape = LedMatrixShape(ledShape->currentIndex());
-        for (size_t index = 0; index < ledFields.size(); ++index)
-            updated.ledMatrix.*(ledFields[index].second) = ledControls[index]->value();
-        updated.stylistic = {grain->value(), vhs->value(), aberration->value(), bloom->value(), sepia->isChecked()};
-        updated.vfd.color = VfdColor(vfdColor->currentIndex());
-        updated.vfd.structure = VfdStructure(vfdStructure->currentIndex());
-        for (size_t index = 0; index < vfdFields.size(); ++index)
-            updated.vfd.*(vfdFields[index].second) = vfdControls[index]->value();
-        for (size_t index = 0; index < vectorFields.size(); ++index)
-            updated.vector.*(vectorFields[index].second) = vectorControls[index]->value();
-        updated.vector.phosphorColor = VectorPhosphor(vectorPhosphor->currentIndex());
-        updated.plasma.cellStructure = PlasmaCellStructure(plasmaStructure->currentData().toInt());
-        captureFixed();
-        updated.fixedPixel = fixedDraft;
-        updated.lcd = lcd;
-        updated.ledBacklight = ledBacklight;
-        updated.oled.panelType = OledPanelType(oledPanel->currentIndex());
-        updated.oled.pixelStructure = OledPixelStructure(oledStructure->currentIndex());
-        updated.fixedPixelProfiles = std::move(fixedProfiles);
-        if (crtmask->currentIndex() >= 0)
-            updated.crt.mask = static_cast<CrtMask>(crtmask->currentData().toInt());
-        if (crtphosphor->currentIndex() >= 0)
-            updated.crt.phosphor = static_cast<CrtPhosphor>(crtphosphor->currentData().toInt());
-        if (crtrate->currentIndex() >= 0)
-            updated.crt.fieldRate = static_cast<CrtFieldRate>(crtrate->currentData().toInt());
-        if (crtdecoder->currentIndex() >= 0)
-            updated.crt.colorStandards = static_cast<CrtColorStandards>(crtdecoder->currentData().toInt());
-        if (crtconnection->currentIndex() >= 0)
-            updated.crt.connection = static_cast<CrtConnection>(crtconnection->currentData().toInt());
-        updated.crt.monitorPalette = static_cast<CrtMonitorPalette>(crtPalette->currentData().toInt());
-        updated.crt.connectionDegradation = crtDegradation->value();
-        updated.crt.beamWidth = crtBeam->value();
-        updated.crt.curvature = crtCurvature->value();
-        if (profiles_.save(session_->moduleId(), session_->configuration().id, updated)) {
-            profile_ = std::move(updated);
-            surface_->setProfile(profile_);
-            surface_->setIndicator({});
-        } else {
-            surface_->setIndicator(text(translations_, ErrorKey));
-        }
+        if (auto updated = editVideoProfile(fullScreen_ ? static_cast<QWidget*>(fullScreen_) : this, translations_, profile_,
+            [this](QWidget* parent) { return createShaderStatusRow(parent); }))
+            applyVideoProfile(std::move(*updated));
     }
 protected:
     bool eventFilter(QObject* object, QEvent* event) override {
@@ -1669,23 +1635,55 @@ protected:
         if (shaderBadge_ && shaderBadge_->isVisible() && (object == surface_ || object == surface_->window()) &&
             (type == QEvent::Move || type == QEvent::Resize))
             shaderBadge_->centerOn(*surface_);
+        if (volumeBadge_ && volumeBadge_->isVisible() && (object == surface_ || object == fullScreen_) &&
+            (type == QEvent::Move || type == QEvent::Resize))
+            volumeBadge_->reposition(*surface_);
+        if (statisticsBadge_ && statisticsBadge_->isVisible() && (object == surface_ || object == fullScreen_) &&
+            (type == QEvent::Move || type == QEvent::Resize))
+            statisticsBadge_->reposition(*surface_);
+        if (muteBadge_ && muteBadge_->isVisible() && (object == surface_ || object == fullScreen_) &&
+            (type == QEvent::Move || type == QEvent::Resize))
+            muteBadge_->reposition(*surface_);
         const bool buttonEvent = type == QEvent::MouseButtonPress || type == QEvent::MouseButtonRelease
             || type == QEvent::MouseButtonDblClick;
         const bool keyEvent = type == QEvent::KeyPress || type == QEvent::KeyRelease || type == QEvent::ShortcutOverride;
-        if (buttonEvent || type == QEvent::Wheel || keyEvent) {
+        const bool pointerEvent = buttonEvent || type == QEvent::MouseMove || type == QEvent::Wheel;
+        if (pointerEvent || keyEvent) {
             const auto* widget = qobject_cast<QWidget*>(object);
-            const bool inputTarget = widget && (widget == surface_ || surface_->isAncestorOf(widget) ||
-                (osd_ && (widget == osd_ || osd_->isAncestorOf(widget))));
-            if (inputTarget && keyEvent && trackPhysicalKey(*static_cast<QKeyEvent*>(event))) return true;
-            if (inputTarget && !keyEvent) {
-                const auto buttons = buttonEvent ? static_cast<QMouseEvent*>(event)->buttons()
-                    : static_cast<QWheelEvent*>(event)->buttons();
-                const auto wheel = buttonEvent ? QPoint{} : static_cast<QWheelEvent*>(event)->angleDelta();
-                if (dispatchPhysicalShortcuts(buttons, wheel)) return true;
+            const bool osdTarget = widget && osd_ && (widget == osd_ || osd_->isAncestorOf(widget));
+            const bool inputTarget = widget && (widget == surface_ || surface_->isAncestorOf(widget) || osdTarget);
+            if (inputTarget && keyEvent) {
+                auto& key = *static_cast<QKeyEvent*>(event);
+                const bool routeLiveKey = osd_ && osdPassesInput_ && type != QEvent::ShortcutOverride;
+                if (routeLiveKey) hostKeyboard_.update(key, input_);
+                const bool consumed = trackPhysicalKey(key);
+                if (routeLiveKey) {
+                    const auto native = int(EmulationHostKeyboard::keyFor(key));
+                    if (type == QEvent::KeyRelease) heldOsdKeys_.remove(native);
+                    else if (consumed) heldOsdKeys_.insert(native);
+                    sendInput();
+                }
+                if (consumed) return true;
+            }
+            if (inputTarget && pointerEvent) {
+                const auto& pointer = *static_cast<QSinglePointEvent*>(event);
+                const auto buttons = pointer.buttons();
+                const auto wheel = type == QEvent::Wheel ? static_cast<QWheelEvent*>(event)->angleDelta() : QPoint{};
+                const bool routeLive = osdTarget && osdPassesInput_ && physicalInputActive();
+                if (osdPassesInput_ || !input_.pointerCaptured)
+                    heldPointerButtons_ &= static_cast<quint32>(buttons.toInt());
+                const bool handled = (buttonEvent || type == QEvent::Wheel) && dispatchPhysicalShortcuts(buttons, wheel);
+                if (routeLive && osd_ &&
+                    routeLiveOsdPointer(type, pointer.globalPosition(), buttons, handled ? QPoint{} : wheel))
+                    return true;
+                if (handled) return true;
             }
         }
         if (object != surface_) return QWidget::eventFilter(object, event);
+        if (surface_->isShaderLoading() && (type == QEvent::Show || type == QEvent::Hide))
+            updateShaderBadge();
         if (type == QEvent::FocusOut || type == QEvent::Hide) {
+            if (type == QEvent::FocusOut && osdPassesInput_) return false;
             physicalShortcutsPrimed_ = false;
             physicalKeys_.clear();
             physicalKeypadKeys_.clear();
@@ -1696,6 +1694,8 @@ protected:
         if (type == QEvent::KeyPress || type == QEvent::KeyRelease) {
             const auto* key = static_cast<QKeyEvent*>(event);
             if (fullScreen_ && key->key() == Qt::Key_Escape) return false;
+            if (type == QEvent::KeyRelease)
+                heldOsdKeys_.remove(int(EmulationHostKeyboard::keyFor(*key)));
             if (hostKeyboard_.update(*key, input_)) sendInput();
             return true;
         }
@@ -1736,6 +1736,10 @@ protected:
             input_.wheel = input_.horizontalWheel = 0;
             return true;
         }
+        if (type == QEvent::Wheel && !osd_ && physicalInputActive() &&
+            dynamic_cast<const IMachineKeyboardBindings*>(&session_->machine())) {
+            sendInput(static_cast<QWheelEvent*>(event)->angleDelta());
+        }
         return QWidget::eventFilter(object, event);
     }
 private:
@@ -1746,6 +1750,96 @@ private:
             label->setText(text(translations_, VideoShaderLoadingKey));
             row->setVisible(visible);
         }
+    }
+
+    QString formatPercent(int percent) const {
+        return text(translations_, DisplayConstants::PercentLabel)
+            .replace(DisplayConstants::Argument, QLocale().toString(percent));
+    }
+
+    void updateFullscreenMute() {
+        if (!fullScreen_) return;
+        try {
+            const bool visible = mute_->isChecked() || session_->audioVolumeIsZero();
+            if (visible && !muteBadge_) {
+                namespace Icons = EmulationCommandIcons;
+                muteBadge_ = new VideoPresentation::FullscreenMuteBadge(*fullScreen_,
+                    Icons::icon(*mute_, Icons::Muted, Icons::Unpowered));
+                muteBadge_->setAccessibleName(text(translations_, MuteIndicatorKey));
+            }
+            if (!muteBadge_ || visible == muteBadge_->isVisible()) return;
+            if (visible) {
+                muteBadge_->reposition(*surface_);
+                muteBadge_->show();
+                muteBadge_->raise();
+            } else {
+                muteBadge_->hide();
+            }
+        } catch (...) {
+            if (muteBadge_) muteBadge_->hide();
+            surface_->setIndicator(text(translations_, ErrorKey));
+        }
+    }
+
+    void setSessionVolume(int percent) {
+        session_->setVolumePercent(percent);
+        if (percent > MinimumVolume && mute_->isChecked()) mute_->setChecked(false);
+        else updateFullscreenMute();
+    }
+
+    void stepVolume(int direction) {
+        try {
+            const int percent = std::clamp(session_->volumePercent() + direction, MinimumVolume, MaximumVolume);
+            setSessionVolume(percent);
+            if (!fullScreen_) return;
+            if (!volumeBadge_) {
+                const auto icon = EmulationCommandIcons::icon(*mute_, EmulationCommandIcons::Audio, EmulationCommandIcons::Audible);
+                volumeBadge_ = new VideoPresentation::FullscreenVolumeBadge(*fullScreen_, icon);
+                volumeBadge_->setTransparency(workspace_.fullscreenOsdTransparency());
+            }
+            volumeBadge_->showVolume(*surface_, text(translations_, VolumeLabelKey), formatPercent(percent), percent);
+        } catch (...) {
+            surface_->setIndicator(text(translations_, ErrorKey));
+        }
+    }
+
+    FullscreenOsd::Entry osdVolumeSetting() {
+        FullscreenOsd::Entry entry{text(translations_, VolumeLabelKey)};
+        entry.icon = EmulationCommandIcons::icon(*mute_, EmulationCommandIcons::Audio, EmulationCommandIcons::Audible);
+        entry.setting = FullscreenOsd::Setting{
+            [this] { return session_->volumePercent(); },
+            [this](int percent) { return formatPercent(percent); },
+            [this](int percent) { setSessionVolume(percent); return true; },
+            MinimumVolume, MaximumVolume,
+            true, [this](int percent) { setSessionVolume(percent); }};
+        return entry;
+    }
+
+    void previewOsdTransparency(int percent) {
+        if (osd_) osd_->setTransparency(percent);
+        if (volumeBadge_) volumeBadge_->setTransparency(percent);
+        if (statisticsBadge_) statisticsBadge_->setTransparency(percent);
+        if (fullScreen_ && shaderBadge_) shaderBadge_->setTransparency(percent);
+        surface_->setOsdTransparency(fullScreen_ ? percent : DisplayConstants::MinimumOsdTransparency);
+    }
+
+    FullscreenOsd::Entry osdTransparencySetting() {
+        FullscreenOsd::Entry entry{text(translations_, DisplayConstants::OsdTransparencyLabel)};
+        entry.setting = FullscreenOsd::Setting{
+            [this] { return workspace_.fullscreenOsdTransparency(); },
+            [this](int percent) { return formatPercent(percent); },
+            [this](int percent) {
+                try {
+                    workspace_.setFullscreenOsdTransparency(percent);
+                    return true;
+                } catch (...) {
+                    surface_->setIndicator(text(translations_, ErrorKeys::CannotSavePreferences));
+                    return false;
+                }
+            },
+            DisplayConstants::MinimumOsdTransparency, DisplayConstants::MaximumOsdTransparency,
+            true, [this](int percent) { previewOsdTransparency(percent); }};
+        return entry;
     }
 
     void updateShaderBadge() {
@@ -1763,6 +1857,7 @@ private:
                 Qt::WindowDoesNotAcceptFocus | Qt::WindowTransparentForInput;
             shaderBadge_ = new VideoPresentation::ShaderLoadingBadge(fullScreen_ != nullptr, owner, flags);
         }
+        if (fullScreen_) shaderBadge_->setTransparency(workspace_.fullscreenOsdTransparency());
         shaderBadge_->setCaption(caption);
         shaderBadge_->centerOn(*surface_);
         shaderBadge_->show();
@@ -1772,6 +1867,7 @@ private:
     void localize() {
         if (surface_->isShaderLoading()) updateShaderBadge();
         updateShaderStatusRows();
+        if (muteBadge_) muteBadge_->setAccessibleName(text(translations_, MuteIndicatorKey));
         for (const auto& [button, key] : buttons_) button->setText(text(translations_, key));
         for (const auto& [button, key] : commandButtons_) button->setAccessibleName(text(translations_, key));
         controllerStatus_->setAccessibleName(text(translations_, ControllerStatusKey));
@@ -1857,8 +1953,10 @@ private:
         entry.keyboard->setKeys(Keys::sequences(configured, *entry.binding));
         const auto stored = configured.value(id);
         const bool direction = Keys::isOsdDirection(*entry.binding);
-        entry.primary = Physical::chord(stored.isUndefined() && direction
-            ? QKeySequence(entry.binding->defaultKey).toString(QKeySequence::PortableText) : stored.toString(), direction);
+        const bool trackDefault = direction || Keys::isOsdToggle(*entry.binding) ||
+            Keys::isVolumeShortcut(*entry.binding) || entry.binding == &Keys::ToggleMute;
+        entry.primary = Physical::chord(stored.isUndefined() && trackDefault
+            ? QKeySequence(entry.binding->defaultKey).toString(QKeySequence::PortableText) : stored.toString(), trackDefault);
         if (entry.binding->hasAlternative)
             entry.alternative = Physical::chord(
                 configured.value(id + QLatin1String(Keys::AlternativeSuffix)).toString(), direction);
@@ -1872,8 +1970,8 @@ private:
         configuredShortcuts_.append(ConfiguredShortcut{&binding, shortcut, action});
         refreshShortcut(configuredShortcuts_.last());
         shortcut->setAutoRepeat(false);
-        connect(shortcut, &QShortcut::activated, this, [this, action = std::move(action)] {
-            if (surface_->hasFocus() || osd_) action();
+        connect(shortcut, &QShortcut::activated, this, [this, shortcut, action = std::move(action)] {
+            if (osd_ ? shortcut->parent() == osd_ : surface_->hasFocus()) action();
         });
         return shortcut;
     }
@@ -1894,8 +1992,9 @@ private:
     bool shortcutAvailable(const ConfiguredShortcut& entry) const {
         using namespace EmulationKeyboardShortcuts;
         const auto* binding = entry.binding;
-        const bool fullscreenOnly = binding == &OsdWithPause || binding == &OsdWithoutPause || binding == &OsdStatistics;
-        return entry.keyboard->isEnabled() && (!fullscreenOnly || fullScreen_);
+        const bool fullscreenOnly = isOsdToggle(*binding);
+        return entry.keyboard->isEnabled() && (!fullscreenOnly || fullScreen_) &&
+            (!osd_ || EmulationPhysicalShortcuts::isOsdShortcut(QString::fromLatin1(binding->id)));
     }
 
     QList<Platform::GamepadState> shortcutControllers() const {
@@ -1936,6 +2035,75 @@ private:
         return dispatchPhysicalShortcuts(QApplication::mouseButtons());
     }
 
+    quint32 liveOsdButtons(Qt::MouseButtons buttons, bool overControls) {
+        const auto physical = static_cast<quint32>(buttons.toInt());
+        heldPointerButtons_ &= physical;
+        if (overControls) heldPointerButtons_ |= physical;
+        return physical & ~heldPointerButtons_;
+    }
+
+    bool routeLiveOsdPointer(QEvent::Type type, const QPointF& position, Qt::MouseButtons buttons, const QPoint& wheel) {
+        const auto delta = liveOsdPointerPosition_ ? position - *liveOsdPointerPosition_ : QPointF{};
+        liveOsdPointerPosition_ = position;
+        const bool overControls = osd_->usesPointerAt(position.toPoint());
+        const auto forwarded = liveOsdButtons(buttons, overControls);
+        if (overControls) {
+            if (input_.pointerButtons != forwarded) {
+                input_.pointerButtons = forwarded;
+                sendInput();
+            }
+            return false;
+        }
+        const auto scale = surface_->devicePixelRatioF();
+        if (type == QEvent::MouseMove) {
+            input_.pointerX = qRound(delta.x() * scale);
+            input_.pointerY = qRound(delta.y() * scale);
+        }
+        input_.wheel = wheel.y();
+        input_.horizontalWheel = wheel.x();
+        if (input_.pointerX || input_.pointerY || !wheel.isNull() || input_.pointerButtons != forwarded) {
+            input_.pointerButtons = forwarded;
+            sendInput();
+            input_.pointerX = input_.pointerY = input_.wheel = input_.horizontalWheel = 0;
+        }
+        return true;
+    }
+
+    void consumeShortcutKeys(const EmulationPhysicalShortcuts::Chord& chord) {
+        for (const auto key : chord.keys) {
+            const QKeyEvent event(QEvent::KeyPress, key, chord.modifiers);
+            heldOsdKeys_.insert(int(EmulationHostKeyboard::keyFor(event)));
+        }
+        using Key = EmulationKey;
+        constexpr std::array modifierKeys{
+            std::pair{Qt::ShiftModifier, std::pair{Key::LeftShift, Key::RightShift}},
+            std::pair{Qt::ControlModifier, std::pair{Key::LeftControl, Key::RightControl}},
+            std::pair{Qt::AltModifier, std::pair{Key::LeftAlt, Key::RightAlt}},
+        };
+        for (const auto& [modifier, keys] : modifierKeys) {
+            if (!chord.modifiers.testFlag(modifier)) continue;
+            for (const auto key : {keys.first, keys.second})
+                if (input_.keys.contains(int(key))) heldOsdKeys_.insert(int(key));
+        }
+    }
+
+    void consumeOsdSources(const EmulationPhysicalShortcuts::Chord& chord) {
+        namespace Physical = EmulationPhysicalShortcuts;
+        for (const auto& source : chord.sources) {
+            if (source.startsWith(QLatin1String(Physical::MousePrefix), Qt::CaseInsensitive)) {
+                const auto control = QStringView(source).sliced(QLatin1String(Physical::MousePrefix).size());
+                for (const auto& [name, button] : Physical::MouseButtons)
+                    if (control.compare(name, Qt::CaseInsensitive) == 0) heldPointerButtons_ |= quint32(button);
+                continue;
+            }
+            const auto pad = std::ranges::max_element(gamepadSamples_, {}, [&](const auto& candidate) {
+                return Physical::controllerPressure(source, candidate);
+            });
+            if (pad != gamepadSamples_.end() && Physical::controllerPressure(source, *pad) > Physical::PressedThreshold)
+                Physical::controllerPressure(source, *pad, &heldGamepads_[pad->id]);
+        }
+    }
+
     bool dispatchPhysicalShortcuts(Qt::MouseButtons buttons, const QPoint& wheel = {}) {
         if (dispatchingPhysicalShortcut_ || !physicalInputActive()) return false;
         namespace Physical = EmulationPhysicalShortcuts;
@@ -1949,20 +2117,38 @@ private:
         std::function<void()> action;
         const ConfiguredShortcut* repeating = nullptr;
         const bool editing = osd_ && osd_->isEditing();
+        const auto previouslyFilteredKeys = heldOsdKeys_.size();
         for (auto& entry : configuredShortcuts_) {
-            const bool pressed = Physical::pressed(entry.primary, current) || Physical::pressed(entry.alternative, current);
+            const bool liveNavigation = osdPassesInput_ && Physical::isOsdShortcut(QString::fromLatin1(entry.binding->id));
+            const bool primary = Physical::pressed(entry.primary, current, liveNavigation);
+            const bool alternative = Physical::pressed(entry.alternative, current, liveNavigation);
+            const bool pressed = primary || alternative;
             const bool available = shortcutAvailable(entry);
-            if (!action && physicalShortcutsPrimed_ && available && pressed && !entry.held)
-                action = entry.action;
-            entry.held = Physical::pressed(entry.primary, held) || Physical::pressed(entry.alternative, held);
-            if (!repeating && editing && available && entry.held && EmulationKeyboardShortcuts::isOsdDirection(*entry.binding))
+            const bool triggered = physicalShortcutsPrimed_ && available && pressed && !entry.held;
+            const bool volume = EmulationKeyboardShortcuts::isVolumeShortcut(*entry.binding);
+            const bool osdToggle = EmulationKeyboardShortcuts::isOsdToggle(*entry.binding);
+            if (available && pressed && (liveNavigation || (triggered && (volume || osdToggle)))) {
+                if (primary) consumeShortcutKeys(entry.primary);
+                if (alternative) consumeShortcutKeys(entry.alternative);
+            }
+            if (available && pressed && (liveNavigation || osdToggle)) {
+                if (primary) consumeOsdSources(entry.primary);
+                if (alternative) consumeOsdSources(entry.alternative);
+            }
+            if (!action && triggered) action = entry.action;
+            entry.held = Physical::pressed(entry.primary, held, liveNavigation) ||
+                Physical::pressed(entry.alternative, held, liveNavigation);
+            const bool repeatable = volume ||
+                (editing && EmulationKeyboardShortcuts::isOsdDirection(*entry.binding));
+            if (!repeating && available && entry.held && repeatable)
                 repeating = &entry;
         }
-        if (osdRepeat_.due(repeating ? repeating->binding : nullptr, Physical::OsdDirectionRepeat::Clock::now()) && !action)
+        if (shortcutRepeat_.due(repeating ? repeating->binding : nullptr, Physical::ShortcutRepeat::Clock::now()) && !action)
             action = repeating->action;
         physicalShortcutsPrimed_ = true;
         if (!action) return false;
         const QScopedValueRollback dispatching(dispatchingPhysicalShortcut_, true);
+        if (previouslyFilteredKeys != heldOsdKeys_.size()) sendInput();
         action();
         return true;
     }
@@ -1975,10 +2161,43 @@ private:
         osdNavigationShortcuts_.append(shortcut);
     }
 
-    void sendInput() {
+    Qt::MouseButtons machineBindingMouseButtons() const {
+        if (osd_ || input_.pointerCaptured) return Qt::MouseButtons::fromInt(static_cast<int>(input_.pointerButtons));
+        return physicalInputActive() ? QApplication::mouseButtons() &
+            ~Qt::MouseButtons::fromInt(static_cast<int>(heldPointerButtons_)) : Qt::MouseButtons{};
+    }
+
+    void sendInput(const QPoint& uncapturedWheel = {}) {
         try {
             auto& machine = session_->machine();
-            machine.setInput(input_);
+            const auto* keyboard = dynamic_cast<const IMachineKeyboardBindings*>(&machine);
+            bindingMouseButtons_ = {};
+            bindingWheelPending_ = false;
+            if (heldOsdKeys_.isEmpty() && !keyboard) machine.setInput(input_);
+            else {
+                auto filtered = input_;
+                filtered.keys.subtract(heldOsdKeys_);
+                for (const auto key : heldOsdKeys_) filtered.hostCharacters.remove(key);
+                if (keyboard) {
+                    namespace Physical = EmulationPhysicalShortcuts;
+                    const auto active = physicalInputActive();
+                    const auto reserved = [&](const QString& source) {
+                        if (!active) return true;
+                        const auto chord = Physical::chord(source, true);
+                        return std::ranges::any_of(configuredShortcuts_, [&](const auto& entry) {
+                            return !Physical::isOsdShortcut(QString::fromLatin1(entry.binding->id)) &&
+                                (Physical::conflicts(chord, entry.primary) || Physical::conflicts(chord, entry.alternative));
+                        });
+                    };
+                    bindingMouseButtons_ = machineBindingMouseButtons();
+                    const auto wheel = input_.pointerCaptured || osd_ ? QPoint(input_.horizontalWheel, input_.wheel)
+                                                                      : uncapturedWheel;
+                    bindingWheelPending_ = !wheel.isNull();
+                    EmulationHostKeyboard::applyMachineBindings(filtered, rawControllerInput_,
+                        bindingMouseButtons_, wheel, keyboard->keyboardBindings(), reserved);
+                }
+                machine.setInput(filtered);
+            }
             if (auto* extension = dynamic_cast<IMachineRawControllerInput*>(&machine))
                 extension->setRawControllerInput(rawControllerInput_);
         } catch (...) { surface_->setIndicator(text(translations_, ErrorKey)); }
@@ -2017,9 +2236,12 @@ private:
     void releaseInput() {
         if (gamepadSource_) gamepadSource_->stopRumble();
         hostKeyboard_.clear();
+        heldOsdKeys_.clear();
         shortcutModifiers_.clear();
-        osdRepeat_.clear();
-        if (!input_.pointerCaptured && input_.keys.isEmpty() && input_.pointerButtons == 0 && input_.controllers.isEmpty() && rawControllerInput_.isEmpty()) return;
+        shortcutRepeat_.clear();
+        if (!input_.pointerCaptured && input_.keys.isEmpty() && input_.pointerButtons == 0 &&
+            input_.controllers.isEmpty() && rawControllerInput_.isEmpty() &&
+            !bindingMouseButtons_ && !bindingWheelPending_) return;
         resetPointer();
         input_ = {};
         rawControllerInput_.clear();
@@ -2040,13 +2262,21 @@ private:
             physicalKeys_.clear();
             physicalKeypadKeys_.clear();
             shortcutModifiers_.clear();
-            osdRepeat_.clear();
-            lastGamepads_.clear();
+            shortcutRepeat_.clear();
             gamepadSamples_.clear();
             midiSamples_.clear();
-            if (!input_.controllers.isEmpty() || !rawControllerInput_.isEmpty()) {
+            liveOsdPointerPosition_.reset();
+            if (!input_.controllers.isEmpty() || !rawControllerInput_.isEmpty() || bindingMouseButtons_ || bindingWheelPending_ ||
+                (osdPassesInput_ && (input_.pointerButtons || !input_.keys.isEmpty()))) {
                 input_.controllers.clear();
                 rawControllerInput_.clear();
+                if (osdPassesInput_) {
+                    hostKeyboard_.clear();
+                    heldOsdKeys_.clear();
+                    input_.keys.clear();
+                    input_.hostCharacters.clear();
+                    input_.pointerButtons = 0;
+                }
                 sendInput();
             }
             return;
@@ -2055,12 +2285,18 @@ private:
         if (!gamepadSource_) gamepadSource_ = std::make_unique<Platform::GamepadSource>();
         gamepadSamples_ = gamepadSource_->read();
         if (midiInput_) midiSamples_ = midiInput_->read();
-        QHash<quint64, Platform::GamepadState> latest;
+        const auto mouseButtons = QApplication::mouseButtons();
+        if (osdPassesInput_ || !input_.pointerCaptured)
+            heldPointerButtons_ &= static_cast<quint32>(mouseButtons.toInt());
+        dispatchPhysicalShortcuts(mouseButtons);
+        const auto forwardedButtons = osd_ && osdPassesInput_
+            ? liveOsdButtons(mouseButtons, osd_->usesPointerAt(QCursor::pos())) : input_.pointerButtons;
+        QSet<quint64> connected;
         QList<InputSnapshot::Controller> forwarded;
         QList<RawControllerState> raw;
         for (const auto& current : gamepadSamples_) {
-            latest.insert(current.id, current);
-            if (osd_) continue;
+            connected.insert(current.id);
+            if (osd_ && !osdPassesInput_) continue;
 
             auto filtered = current;
             if (auto held = heldGamepads_.find(current.id); held != heldGamepads_.end()) {
@@ -2088,31 +2324,41 @@ private:
             raw.append(RawControllerState{std::move(filtered.deviceId), std::move(filtered.controls)});
         }
         for (auto held = heldGamepads_.begin(); held != heldGamepads_.end();) {
-            if (latest.contains(held.key())) ++held;
+            if (connected.contains(held.key())) ++held;
             else held = heldGamepads_.erase(held);
         }
-        lastGamepads_ = std::move(latest);
-        if (input_.controllers != forwarded || rawControllerInput_ != raw) {
+        const bool bindingButtonsChanged = !osd_ && !input_.pointerCaptured &&
+            dynamic_cast<const IMachineKeyboardBindings*>(&session_->machine()) &&
+            machineBindingMouseButtons() != bindingMouseButtons_;
+        if (input_.controllers != forwarded || rawControllerInput_ != raw || input_.pointerButtons != forwardedButtons ||
+            bindingButtonsChanged || bindingWheelPending_) {
             input_.controllers = std::move(forwarded);
             rawControllerInput_ = std::move(raw);
+            input_.pointerButtons = forwardedButtons;
             sendInput();
         }
-        dispatchPhysicalShortcuts(QApplication::mouseButtons());
     }
 
     template<class Operation>
-    void run(Operation operation) {
+    void run(Operation operation, const char* fallbackError = ErrorKey) {
         const auto previous = session_->runtimeRevision();
         try {
-            surface_->setIndicator(operation() ? QString{} : text(translations_, ErrorKey));
+            surface_->setIndicator(operation() ? QString{} : text(translations_, fallbackError));
+        } catch (const EmulationMessageException& failure) {
+            const auto& configuration = session_->configuration();
+            auto* owner = fullScreen_ ? static_cast<QWidget*>(fullScreen_) : this;
+            surface_->setIndicator(presentEmulationError(*owner, theme_, translations_, failure,
+                emulationMachineName(*host_, translations_, session_->moduleId(), configuration)));
+        } catch (const std::system_error& failure) {
+            surface_->setIndicator(failure.code() == std::errc::operation_canceled
+                ? QString{} : text(translations_, fallbackError));
         } catch (...) {
-            surface_->setIndicator(text(translations_, ErrorKey));
+            surface_->setIndicator(text(translations_, fallbackError));
         }
         if (previous != session_->runtimeRevision()) {
             executionRate_.reset();
             for (auto& row : rows_) row.activeUntil = {};
             session_->stopAudio();
-            sendInput();
         }
         poll();
         refreshMedia();
@@ -2120,8 +2366,9 @@ private:
     }
     void refreshQuickStates() {
         try {
-            quickSave_->setEnabled(session_->canQuickSave());
-            quickLoad_->setEnabled(session_->canQuickLoad());
+            const bool supported = session_->canQuickSave();
+            quickSave_->setEnabled(supported);
+            quickLoad_->setEnabled(supported);
         } catch (...) {
             quickSave_->setEnabled(false);
             quickLoad_->setEnabled(false);
@@ -2131,7 +2378,45 @@ private:
         run([this, save] {
             if (save) return !session_->canQuickSave() || session_->quickSave();
             return !session_->canQuickLoad() || session_->quickLoad();
-        });
+        }, StateOperationFailedKey);
+    }
+    QString stateSlotTimestamp(int slot) const {
+        const auto modified = session_->stateSlotModified(slot);
+        if (!modified.isValid()) return {};
+        return QLocale(QString::fromStdString(translations_.language())).toString(modified, QLocale::ShortFormat);
+    }
+    void useStateSlot(bool save, int slot) {
+        run([this, save, slot] {
+            return save ? session_->saveStateSlot(slot) : session_->loadStateSlot(slot);
+        }, StateOperationFailedKey);
+    }
+    void showStateSlots(bool save) {
+        auto* button = save ? quickSave_ : quickLoad_;
+        QMenu menu(button);
+        for (int slot = Session::FirstStateSlot; slot <= Session::StateSlotCount; ++slot) {
+            const auto date = stateSlotTimestamp(slot);
+            const auto number = QString::number(slot);
+            auto* action = menu.addAction(date.isEmpty() ? number : QStringLiteral("%1  —  %2").arg(number, date));
+            action->setData(slot);
+            action->setEnabled(save || !date.isEmpty());
+        }
+        if (auto* selected = menu.exec(button->mapToGlobal(QPoint(0, button->height()))))
+            useStateSlot(save, selected->data().toInt());
+    }
+    std::vector<FullscreenOsd::Entry> osdStateSlots(bool save) {
+        std::vector<FullscreenOsd::Entry> entries;
+        entries.reserve(Session::StateSlotCount);
+        for (int slot = Session::FirstStateSlot; slot <= Session::StateSlotCount; ++slot) {
+            FullscreenOsd::Entry entry{};
+            entry.label = QString::number(slot);
+            entry.command = [this, save, slot] { useStateSlot(save, slot); };
+            entry.enabled = [this, save, slot] {
+                return session_->canQuickSave() && (save || session_->stateSlotModified(slot).isValid());
+            };
+            entry.status = [this, slot] { return stateSlotTimestamp(slot); };
+            entries.push_back(std::move(entry));
+        }
+        return entries;
     }
     void stateFile(bool save) {
         const auto title = text(translations_, save ? SaveStateKey : LoadStateKey);
@@ -2139,7 +2424,8 @@ private:
         const auto directory = resolveEmulationFolders(workspace_.emulationFolders()).states;
         const auto path = RememberedFileDialog::choose(owner, workspace_, title, QLatin1String(EmulationStateScope),
             directory, save ? QFileDialog::AnyFile : QFileDialog::ExistingFile, save);
-        if (!path.isEmpty()) run([&] { return save ? session_->machine().saveState(path, {}) : session_->machine().loadState(path, {}); });
+        if (!path.isEmpty())
+            run([&] { return save ? session_->saveState(path) : session_->loadState(path); }, StateOperationFailedKey);
     }
     const StorageDevice* mediaDevice(const MediaSlot& slot) const {
         if (!mediaStorage_) return nullptr;
@@ -2227,7 +2513,7 @@ private:
                 });
             if (!selected || *selected == previous) return;
             if (selected->isEmpty()) ejectMedia(slot);
-            else run([&] { return session_->insertMedia({slot, *selected, false}); });
+            else run([&] { return session_->insertMedia({slot, *selected, false}); }, MediaOperationFailedKey);
             return;
         }
         const bool canSelectReadOnly = slot.kind == MediaKind::Floppy || slot.kind == MediaKind::Tape;
@@ -2255,10 +2541,10 @@ private:
         const QFileInfo file(dialog.selectedFiles().front());
         const bool protect = StorageRules::requiresReadOnly(slot.kind) ||
             (readOnly && readOnly->isChecked()) || !file.isWritable();
-        run([&] { return session_->insertMedia({slot, file.absoluteFilePath(), protect}); });
+        run([&] { return session_->insertMediaFile({slot, file.absoluteFilePath(), protect}); }, MediaOperationFailedKey);
     }
     void ejectMedia(const MediaSlot& slot) {
-        run([&] { return session_->ejectMedia(slot); });
+        run([&] { return session_->ejectMedia(slot); }, MediaOperationFailedKey);
     }
     std::optional<TapePcmSettings> chooseTapePcm(const MediaSlot& slot, QWidget* parent) {
         QDialog dialog(parent);
@@ -2328,7 +2614,7 @@ private:
             pcm = chooseTapePcm(slot, parent);
             if (!pcm) return;
         }
-        run([&] { return session_->recordTape(slot, file.absoluteFilePath(), pcm); });
+        run([&] { return session_->recordTape(slot, file.absoluteFilePath(), pcm); }, MediaOperationFailedKey);
     }
     void rebuildMedia(const QList<MediaSlot>& devices) {
         while (auto* item = mediaLayout_->takeAt(0)) {
@@ -2366,12 +2652,10 @@ private:
                 auto* transport = new QHBoxLayout;
                 for (size_t i = 0; i < TapeControls.size(); ++i) {
                     const auto& definition = TapeControls[i];
-                    auto* button = new QToolButton(group);
-                    button->setIcon(style()->standardIcon(definition.icon));
-                    button->setCheckable(true);
+                    auto* button = new TapeTransportButton(definition.command, group);
                     connect(button, &QToolButton::clicked, this, [this, slot, command = definition.command] {
                         if (command == TapeCommand::Record) { recordTape(slot); return; }
-                        run([&] { return session_->machine().tape(command, {}); });
+                        run([&] { return session_->machine().tape(command, {}); }, MediaOperationFailedKey);
                     });
                     row.tape[i] = button;
                     transport->addWidget(button);
@@ -2385,14 +2669,15 @@ private:
         mediaStrip_->setVisible(!devices.isEmpty());
         devices_ = devices;
     }
-    void refreshMedia() {
+    void refreshMedia(bool rebuild = false) {
+        updateFullscreenMute();
         try {
             auto& machine = session_->machine();
             if (osd_) osd_->setGameName(osdGameName());
-            const auto devices = machine.mediaSlots();
+            const auto devices = session_->mediaSlots();
             const auto& configuration = session_->configuration();
-            if (devices != devices_ || configuration.values != mediaConfigurationValues_) {
-                mediaStorage_ = host_->storageSettings(session_->moduleId(), configuration);
+            if (rebuild || devices != devices_ || configuration.values != mediaConfigurationValues_) {
+                mediaStorage_ = session_->storageSettings();
                 mediaConfigurationValues_ = configuration.values;
                 rebuildMedia(devices);
             }
@@ -2438,23 +2723,10 @@ private:
                     for (size_t buttonIndex = 0; buttonIndex < TapeControls.size(); ++buttonIndex) {
                         const auto& control = TapeControls[buttonIndex];
                         const auto command = control.command;
-                        const bool play = command == TapeCommand::Play;
-                        const bool record = command == TapeCommand::Record;
-                        const bool hold = tape.state == TapeState::Paused;
-                        const bool currentOperation = tape.activeOperation == command ||
-                            (!tape.activeOperation && ((play && tape.state == TapeState::Playing) ||
-                                (record && tape.state == TapeState::Recording)));
-                        const bool playingOrRecording = currentOperation &&
-                            ((play && (hold || tape.state == TapeState::Playing)) ||
-                                (record && (hold || tape.state == TapeState::Recording)));
-                        const bool active = playingOrRecording || (hold && command == TapeCommand::Pause) ||
-                            (currentOperation && (command == TapeCommand::Rewind || command == TapeCommand::FastForward));
-                        const bool blinks = hold && playingOrRecording;
-                        blinking |= blinks;
+                        const auto presentation = tapeButtonState(tape, command, powered, row.canRecord);
+                        blinking |= presentation.blinking;
                         auto* button = row.tape[buttonIndex];
-                        button->setEnabled(powered && tape.availableCommands.contains(command) &&
-                            (tape.state != TapeState::Empty || record) && (!record || row.canRecord) && !playingOrRecording);
-                        button->setChecked(active && (!blinks || tapeBlinkVisible_));
+                        button->present(presentation, tapeBlinkVisible_);
                         button->setToolTip(text(translations_, control.label));
                         button->setAccessibleName(button->toolTip());
                     }
@@ -2478,13 +2750,63 @@ private:
             return true;
         });
     }
-    bool saveOsdVideo(Profile draft, bool previewed) {
+    void updateFullscreenStatistics(const VideoFrame* frame, double frequency, const QString& fps,
+            const QString& execution, std::optional<std::uint64_t> clockHz, const QLocale& locale) {
+        if (!fullScreen_ || !workspace_.showFullscreenEmulationStatistics()) {
+            if (statisticsBadge_) statisticsBadge_->hide();
+            return;
+        }
+        if (!statisticsBadge_) {
+            namespace Icons = EmulationCommandIcons;
+            statisticsBadge_ = new VideoPresentation::FullscreenStatisticsBadge(*fullScreen_, {
+                style()->standardIcon(QStyle::SP_ComputerIcon),
+                style()->standardIcon(QStyle::SP_TitleBarMaxButton),
+                Icons::icon(*this, Icons::Resume, Icons::Inactive),
+                style()->standardIcon(QStyle::SP_BrowserReload),
+                style()->standardIcon(QStyle::SP_DriveHDIcon)});
+        }
+        if (!osd_ || !statisticsBadge_->isVisible()) statisticsBadge_->setTransparency(workspace_.fullscreenOsdTransparency());
+        const QString renderer = surface_->usesDirect3D11() ? text(translations_, StatisticsRendererKey)
+            : surface_->usesVulkan() ? text(translations_, StatisticsVulkanKey)
+            : surface_->usesOpenGl() ? text(translations_, StatisticsOpenGlKey) : QString::fromLatin1(SoftwareRendererName);
+        const QString empty(QChar(0x2014));
+        VideoPresentation::FullscreenStatisticsBadge::Values values{renderer, empty, empty, empty, empty};
+        if (frame) {
+            const auto height = frame->scanMode == ScanMode::Progressive ? qint64(frame->height) : 2LL * frame->height;
+            values[1] = QString::fromUtf8(StatisticsSizeFormat).arg(locale.toString(frame->width), locale.toString(height));
+            values[2] = fps;
+            values[3] = QString::fromLatin1(StatisticsFrequencyFormat).arg(locale.toString(frequency, 'f', 1));
+            if (!execution.isEmpty()) {
+                const auto first = execution.indexOf(QChar(0x00b7));
+                values[4] = (first < 0 ? execution : execution.mid(first + 1)).trimmed();
+            } else if (clockHz && *clockHz > 0) {
+                values[4] = QString::fromLatin1(StatisticsClockFormat).arg(locale.toString(*clockHz / HertzPerMegahertz, 'f', 2));
+            }
+        }
+        statisticsBadge_->setValues(*surface_, values);
+        if (!statisticsBadge_->isVisible()) {
+            statisticsBadge_->show();
+            statisticsBadge_->raise();
+        }
+    }
+
+    bool saveVideoProfile(Profile draft, bool previewed) {
         if (!profiles_.save(session_->moduleId(), session_->configuration().id, draft)) {
             surface_->setIndicator(text(translations_, ErrorKey));
             return false;
         }
+        const bool rendererChanged = profile_.renderer != draft.renderer;
         profile_ = std::move(draft);
         if (!previewed) surface_->setProfile(profile_);
+        if (rendererChanged) {
+            try {
+                session_->setGraphicsApi(graphicsApi(profile_.renderer));
+                refreshMachineSettings();
+            } catch (...) {
+                surface_->setIndicator(text(translations_, ErrorKey));
+                return false;
+            }
+        }
         surface_->setIndicator({});
         return true;
     }
@@ -2503,7 +2825,7 @@ private:
                 return draft;
             };
             entry.setting = FullscreenOsd::Setting{[this, read] { return read(profile_); }, std::move(format),
-                [this, withValue, preview](int value) { return saveOsdVideo(withValue(value), preview); },
+                [this, withValue, preview](int value) { return saveVideoProfile(withValue(value), preview); },
                 low, high, slider};
             if (preview) entry.setting->preview = [this, withValue](int value) { surface_->setProfile(withValue(value)); };
             rows.push_back(std::move(entry));
@@ -2563,14 +2885,7 @@ private:
         const auto hostDisplay = [this] { return profile_.usesHostDisplay(); };
         section("Emulation.Video.Settings.RetroMediaLabProcessing");
         choices("Emulation.Video.Technology", osdScreenTypes, &Profile::screenType, &Profile::selectScreen);
-        constexpr std::array renderers{
-#ifdef Q_OS_WIN
-            std::pair{Renderer::Direct3D11, "Emulation.Video.Renderer.Direct3D11"},
-#endif
-            std::pair{Renderer::Software, "Qt"}, std::pair{Renderer::Vulkan, "Emulation.Video.Renderer.Vulkan"},
-            std::pair{Renderer::OpenGL, "Emulation.Video.Renderer.OpenGL"}
-        };
-        choices("Emulation.Video.Settings.Rendering", renderers, &Profile::renderer,
+        choices(VideoRendererKey, VideoRenderers, &Profile::renderer,
             [](Profile& p, Renderer value) { p.renderer = value; });
         choices(SamplingKey, videoSamplers(profile_.sampling), &Profile::sampling,
             [](Profile& p, Sampling value) { p.sampling = value; }, hostDisplay);
@@ -2705,86 +3020,46 @@ private:
         enumField(PlasmaCellStructureResource, plasmaCellChoices, &Profile::plasma, &PlasmaProfile::cellStructure, plasma);
         panelInput(ScreenType::Plasma, plasma);
         const auto vector = enabled(DisplayTechnology::Vector);
-        const auto vectorParameters = std::span(vectorFields);
-        section(VectorDrawingResource, vector);
-        addFields(vectorParameters.first<VectorDrawingFields>(), &Profile::vector, VectorProfile::MaximumIntensity, vector, noDuration, 0);
+        section(VectorScreenResource, vector);
         labelChoices(VectorPhosphorResource, vectorColors, &Profile::vector, &VectorProfile::phosphorColor, vector);
-        section(VectorGlowResource, vector);
-        addFields(vectorParameters.subspan<VectorDrawingFields>(), &Profile::vector, VectorProfile::MaximumIntensity, vector, noDuration, 0);
+        number(VectorBeamWidthResource, &Profile::vector, &VectorProfile::beamWidth,
+            VectorProfile::MinimumBeamWidth, VectorProfile::MaximumBeamWidth, vector);
+        number(VectorCurvatureResource, &Profile::vector, &VectorProfile::curvature, 0, CrtProfile::MaximumCurvature, vector);
         const auto vfd = enabled(DisplayTechnology::Vfd);
-        const auto vfdParameters = std::span(vfdFields);
-        section(VfdPhosphorResource, vfd);
+        section(VfdTechnologyResource, vfd);
         labelChoices(VfdColorResource, vfdColors, &Profile::vfd, &VfdProfile::color, vfd);
-        addFields(vfdParameters.first<VfdPhosphorFields>(), &Profile::vfd, VfdProfile::MaximumIntensity, vfd, noDuration, 0);
-        section(VfdAnodesResource, vfd);
-        labelChoices(VfdStructureResource, vfdStructures, &Profile::vfd, &VfdProfile::structure, vfd);
-        for (const auto& [key, field] : vfdParameters.subspan<VfdPhosphorFields, VfdAnodeFields>()) {
-            number(key, &Profile::vfd, field, 0, VfdProfile::MaximumIntensity,
-                [this, vfd] { return vfd() && profile_.vfd.structure == VfdStructure::DotMatrix; });
-        }
-        section(VfdResponseResource, vfd);
-        addFields(vfdParameters.subspan<VfdPhosphorFields + VfdAnodeFields>(), &Profile::vfd, VfdProfile::MaximumIntensity, vfd,
-            [](auto field) { return field == &VfdProfile::persistenceMilliseconds; }, VfdProfile::MaximumPersistenceMilliseconds);
-
+        enumField(PanelDefinitionResource, matrixDefinitionChoices, &Profile::vfd, &VfdProfile::definition, vfd);
+        labelChoices(VfdShapeResource, dotShapes, &Profile::vfd, &VfdProfile::shape, vfd);
         const auto led = enabled(DisplayTechnology::LedMatrix);
-        const auto ledParameters = std::span(ledFields);
-        section(LedMatrixStructureResource, led);
-        labelChoices("Emulation.Video.Parameter.LedMatrixShape", ledShapes, &Profile::ledMatrix, &LedMatrixProfile::shape, led);
-        addFields(ledParameters.first<LedStructureFields>(), &Profile::ledMatrix, LedMatrixProfile::MaximumIntensity, led, noDuration, 0);
-        section(LedMatrixEmissionResource, led);
+        section(LedMatrixTechnologyResource, led);
         labelChoices("Emulation.Video.Parameter.LedMatrixColor", ledColors, &Profile::ledMatrix, &LedMatrixProfile::color, led);
-        addFields(ledParameters.subspan<LedStructureFields>(), &Profile::ledMatrix, LedMatrixProfile::MaximumIntensity, led, noDuration, 0);
-
+        enumField(PanelDefinitionResource, matrixDefinitionChoices, &Profile::ledMatrix, &LedMatrixProfile::definition, led);
+        labelChoices("Emulation.Video.Parameter.LedMatrixShape", ledShapes, &Profile::ledMatrix, &LedMatrixProfile::shape, led);
         const auto dot = enabled(DisplayTechnology::DotMatrix);
-        const auto dotParameters = std::span(dotFields);
-        section(DotCellsResource, dot);
-        labelChoices("Emulation.Video.Parameter.DotMatrixShape", dotShapes, &Profile::dotMatrix, &DotMatrixProfile::shape, dot);
-        addFields(dotParameters.first<DotCellFields>(), &Profile::dotMatrix, DotMatrixProfile::MaximumIntensity, dot, noDuration, 0);
-        section(DotLightResource, dot);
-        labelChoices("Emulation.Video.Parameter.DotMatrixPalette", dotPalettes, &Profile::dotMatrix, &DotMatrixProfile::palette, dot);
-        addFields(dotParameters.subspan<DotCellFields, DotLightFields>(), &Profile::dotMatrix, DotMatrixProfile::MaximumIntensity, dot, noDuration, 0);
-        section(DotTimingResource, dot);
-        addFields(dotParameters.subspan<DotCellFields + DotLightFields>(), &Profile::dotMatrix, DotMatrixProfile::MaximumIntensity, dot,
-            [](auto) { return true; }, DotMatrixProfile::MaximumDurationMilliseconds);
+        section(DotMatrixTechnologyResource, dot);
+        labelChoices(DotPaletteResource, dotPalettes, &Profile::dotMatrix, &DotMatrixProfile::palette, dot);
+        enumField(PanelDefinitionResource, matrixDefinitionChoices, &Profile::dotMatrix, &DotMatrixProfile::definition, dot);
+        labelChoices(DotShapeResource, dotShapes, &Profile::dotMatrix, &DotMatrixProfile::shape, dot);
+        labelChoices(DotTechnologyResource, dotTechnologies, &Profile::dotMatrix, &DotMatrixProfile::technology, dot);
         const auto segments = enabled(DisplayTechnology::SegmentDisplay);
-        const auto segmentParameters = std::span(segmentFields);
-        constexpr size_t SegmentCellFields = 3, SegmentGeometryFields = 2, SegmentEmissionFields = 5;
-        constexpr size_t SegmentEmissionOffset = SegmentCellFields + SegmentGeometryFields;
-        constexpr size_t SegmentTimingOffset = SegmentEmissionOffset + SegmentEmissionFields;
-        section("Emulation.Video.SegmentDisplay.Group.Cells", segments);
-        labelChoices("Emulation.Video.Parameter.SegmentDisplayLayout", segmentLayoutLabels, &Profile::segmentDisplay, &SegmentDisplayProfile::layout, segments);
-        addFields(segmentParameters.first<SegmentCellFields>(), &Profile::segmentDisplay, SegmentDisplayProfile::MaximumIntensity, segments, noDuration, 0);
-        section("Emulation.Video.SegmentDisplay.Group.Geometry", segments);
-        addFields(segmentParameters.subspan<SegmentCellFields, SegmentGeometryFields>(), &Profile::segmentDisplay,
-            SegmentDisplayProfile::MaximumIntensity, segments, noDuration, 0);
-        labelChoices("Emulation.Video.Parameter.SegmentDisplayEndShape", segmentEndShapeLabels, &Profile::segmentDisplay, &SegmentDisplayProfile::endShape, segments);
-        toggleSetting("Emulation.Video.Parameter.SegmentDisplayDecimalPoint", [](const Profile& p) { return p.segmentDisplay.decimalPoint; },
-            [](Profile& p, bool value) { p.segmentDisplay.decimalPoint = value; }, segments);
-        toggleSetting("Emulation.Video.Parameter.SegmentDisplayColon", [](const Profile& p) { return p.segmentDisplay.colon; },
-            [](Profile& p, bool value) { p.segmentDisplay.colon = value; }, segments);
-        section("Emulation.Video.SegmentDisplay.Group.Emission", segments);
-        labelChoices("Emulation.Video.Parameter.SegmentDisplayColor", segmentColorLabels, &Profile::segmentDisplay, &SegmentDisplayProfile::color, segments);
-        addFields(segmentParameters.subspan<SegmentEmissionOffset, SegmentEmissionFields>(), &Profile::segmentDisplay,
-            SegmentDisplayProfile::MaximumIntensity, segments, noDuration, 0);
-        section("Emulation.Video.SegmentDisplay.Group.LightAndResponse", segments);
-        addFields(segmentParameters.subspan<SegmentTimingOffset>(), &Profile::segmentDisplay, SegmentDisplayProfile::MaximumIntensity, segments,
-            [](auto field) { return field == &SegmentDisplayProfile::persistenceMilliseconds || field == &SegmentDisplayProfile::responseTimeMilliseconds; },
-            SegmentDisplayProfile::MaximumDurationMilliseconds);
+        section(SegmentDisplayResource, segments);
+        labelChoices(SegmentLayoutResource, segmentLayoutLabels, &Profile::segmentDisplay, &SegmentDisplayProfile::layout, segments);
+        choices(SegmentTechnologyResource, segmentTechnologies, [](const Profile& p) { return p.segmentDisplay.technology; },
+            [](Profile& p, auto technology) {
+                p.segmentDisplay.technology = technology;
+                const auto colors = segmentColors(technology);
+                if (std::ranges::find(colors, p.segmentDisplay.color) == colors.end()) p.segmentDisplay.color = colors.front();
+            }, segments);
+        for (const auto& [technology, key] : segmentTechnologies) {
+            std::vector<std::pair<SegmentColor, const char*>> colors;
+            for (const auto value : segmentColors(technology)) colors.emplace_back(value, segmentColorLabels[size_t(value)]);
+            enumField(SegmentColorResource, colors, &Profile::segmentDisplay, &SegmentDisplayProfile::color,
+                [this, segments, technology] { return segments() && profile_.segmentDisplay.technology == technology; });
+        }
         const auto paper = enabled(DisplayTechnology::EPaper);
-        section("Emulation.Video.EPaper.Group.InkAndColor", paper);
+        section("Emulation.Video.Technology.EPaper", paper);
         labelChoices("Emulation.Video.Parameter.EPaperColorMode", inkModes, &Profile::ePaper, &EPaperProfile::colorMode, paper);
-        number("Emulation.Video.Parameter.EPaperInkDensity", &Profile::ePaper, &EPaperProfile::inkDensity, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperContrast", &Profile::ePaper, &EPaperProfile::contrast, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperDithering", &Profile::ePaper, &EPaperProfile::dithering, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperColorSaturation", &Profile::ePaper, &EPaperProfile::colorSaturation, 0, EPaperProfile::MaximumIntensity, [this, paper] { return paper() && profile_.ePaper.colorMode == EPaperColorMode::Color4096; });
-        section("Emulation.Video.EPaper.Group.PaperSurface", paper);
-        number("Emulation.Video.Parameter.EPaperPaperBrightness", &Profile::ePaper, &EPaperProfile::paperBrightness, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperPaperWarmth", &Profile::ePaper, &EPaperProfile::paperWarmth, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperSurfaceTexture", &Profile::ePaper, &EPaperProfile::surfaceTexture, 0, EPaperProfile::MaximumIntensity, paper);
-        number("Emulation.Video.Parameter.EPaperEdgeSoftness", &Profile::ePaper, &EPaperProfile::edgeSoftness, 0, EPaperProfile::MaximumIntensity, paper);
-        section("Emulation.Video.EPaper.Group.Refresh", paper);
-        number("Emulation.Video.Parameter.EPaperRefreshTime", &Profile::ePaper, &EPaperProfile::refreshTimeMilliseconds, 0, EPaperProfile::MaximumDurationMilliseconds, paper);
-        number("Emulation.Video.Parameter.EPaperGhosting", &Profile::ePaper, &EPaperProfile::ghosting, 0, EPaperProfile::MaximumIntensity, paper);
+        enumField(PanelDefinitionResource, panelDefinitionChoices, &Profile::ePaper, &EPaperProfile::definition, paper);
 
         const auto projection = activeScreen(ScreenType::Projection);
         section("Emulation.Video.Technology.Projection", [projection, showsAdjustments] { return projection() && !showsAdjustments(); });
@@ -2817,16 +3092,6 @@ private:
             }, [](Profile& p, Deinterlacing value) { p.deinterlacing = value; },
             [this] { return profile_.supportsDeinterlacing(); });
         appendOsdVideoModuleSettings(rows, VideoSettingsSection::Image);
-        section("Emulation.Video.Settings.Stylistic");
-        constexpr std::array effects{
-            std::pair{"Emulation.Video.Parameter.Grain", &StylisticEffects::grain},
-            std::pair{"Emulation.Video.Parameter.Vhs", &StylisticEffects::vhs},
-            std::pair{"Emulation.Video.Parameter.ChromaticAberration", &StylisticEffects::chromaticAberration},
-            std::pair{"Emulation.Video.Parameter.Bloom", &StylisticEffects::bloom}
-        };
-        addFields(effects, &Profile::stylistic, StylisticEffects::MaximumIntensity, std::function<bool()>{}, noDuration, 0);
-        toggleSetting("Emulation.Video.Parameter.Sepia", [](const Profile& p) { return p.stylistic.sepia; },
-            [](Profile& p, bool value) { p.stylistic.sepia = value; });
         appendOsdVideoModuleSettings(rows, VideoSettingsSection::Effects);
         return rows;
     }
@@ -2847,11 +3112,13 @@ private:
     }
 
     void refreshOsdBlocks() {
-        const auto& config = session_->configuration();
+        const auto config = host_->configurationForGraphicsApi(session_->moduleId(), session_->configuration(),
+            graphicsApi(profile_.renderer));
         auto blocks = host_->describe(session_->moduleId(), config);
         auto ranges = host_->numericSettings(session_->moduleId(), config);
         auto videoSections = host_->videoSettingsSections(session_->moduleId(), config);
         auto dependencies = host_->settingsDependencies(session_->moduleId(), config);
+        osdAudioMixerBlocks_ = host_->audioMixerBlocks(session_->moduleId(), config);
         osdValues_ = SettingsRules::values(blocks);
         osdDependencies_ = std::move(dependencies);
         osdBlocks_ = std::move(blocks);
@@ -2876,7 +3143,7 @@ private:
         return false;
     }
 
-    FullscreenOsd::Entry osdModuleField(const SettingsBlock& block, const SettingsField& field) {
+    FullscreenOsd::Entry osdModuleField(const SettingsBlock& block, const SettingsField& field, bool fader = false) {
         using Entry = FullscreenOsd::Entry;
         Entry entry;
         entry.label = moduleSettingText(field.labelResourceKey);
@@ -2945,10 +3212,44 @@ private:
                     return moduleChoiceDisplay(choices[index], unitKey,
                         [this](const QString& key) { return moduleSettingText(key); });
                 },
-                [choices, save](int index) { return index < choices.size() && save(choices[index].id); },
-                0, unknown - 1, false};
+                [choices, save](int index) {
+                    return index >= 0 && index < choices.size() && save(choices[index].id);
+                }, 0, unknown - 1, fader};
         }
         return entry;
+    }
+
+    bool isMixerField(const SettingsBlock& block, const SettingsField& field) const {
+        return osdAudioMixerBlocks_.contains(block.id) || block.titleResourceKey == QLatin1String(AudioMixerKey) ||
+            block.titleResourceKey == QLatin1String(AudioPsgKey) || block.titleResourceKey == QLatin1String(AudioFmKey) ||
+            field.id.endsWith(QLatin1String(MixerVolumeSuffix)) || field.id.endsWith(QLatin1String(MixerPreampSuffix)) ||
+            field.id.contains(QLatin1String(MixerEqualizerInfix));
+    }
+
+    FullscreenOsd::Entry osdAudioMixer() {
+        using Entry = FullscreenOsd::Entry;
+        const auto title = text(translations_, AudioMixerKey);
+        auto volume = osdVolumeSetting();
+        volume.mixerSection = title;
+        std::vector<Entry> faders;
+        faders.push_back(std::move(volume));
+        for (const auto& block : osdBlocks_) {
+            if (block.tabResourceKey != QLatin1String(AudioTabKey)) continue;
+            const bool separate = osdAudioMixerBlocks_.contains(block.id) ||
+                block.titleResourceKey == QLatin1String(AudioPsgKey) || block.titleResourceKey == QLatin1String(AudioFmKey);
+            const auto section = separate ? moduleSettingText(block.titleResourceKey) : title;
+            for (const auto& field : block.fields) {
+                if ((field.editor != SettingsEditor::Slider && field.editor != SettingsEditor::Choice) ||
+                    !isMixerField(block, field)) continue;
+                auto fader = osdModuleField(block, field, true);
+                if (!fader.setting || !fader.setting->slider) continue;
+                fader.mixerSection = section;
+                faders.push_back(std::move(fader));
+            }
+        }
+        Entry mixer{title, {}, std::move(faders), {}, style()->standardIcon(QStyle::SP_MediaVolume)};
+        mixer.centeredMixer = true;
+        return mixer;
     }
 
     std::vector<FullscreenOsd::Entry> osdModuleGroups(const QString& tab,
@@ -2965,6 +3266,9 @@ private:
             group.label = selectsAudioOutput ? text(translations_, AudioOutputKey) : moduleSettingText(block.titleResourceKey);
             QStringList fieldIds;
             for (const auto& field : block.fields) {
+                if (tab == QLatin1String(AudioTabKey) && (isMixerField(block, field) ||
+                    field.labelResourceKey == QLatin1String(ModuleAudioEnabledKey) || field.id == QLatin1String(Ym2413CoreId)))
+                    continue;
                 if (videoSection && osdVideoSections_.value(field.id, VideoSettingsSection::Display) != *videoSection) continue;
                 if (field.editor != SettingsEditor::Information && field.editor != SettingsEditor::Toggle &&
                     field.editor != SettingsEditor::Choice && field.editor != SettingsEditor::Slider) continue;
@@ -3081,6 +3385,40 @@ private:
         return controls;
     }
 
+    FullscreenOsd::Entry osdMachineInformation() {
+        using Entry = FullscreenOsd::Entry;
+        std::vector<Entry> rows;
+        std::vector<std::function<bool()>> sections;
+        for (const auto* tab : OsdInformationTabs) {
+            std::vector<Entry> fields;
+            std::vector<std::function<bool()>> visibility;
+            for (const auto& block : osdBlocks_) {
+                if (block.tabResourceKey != QLatin1String(tab)) continue;
+                for (const auto& field : block.fields) {
+                    if (field.editor != SettingsEditor::Information) continue;
+                    auto row = osdModuleField(block, field);
+                    visibility.push_back(row.visible);
+                    fields.push_back(std::move(row));
+                }
+            }
+            if (fields.empty()) continue;
+            Entry heading{moduleSettingText(QLatin1String(tab))};
+            heading.visible = [fields = std::move(visibility)] {
+                return std::ranges::any_of(fields, [](const auto& visible) { return visible(); });
+            };
+            sections.push_back(heading.visible);
+            rows.push_back(std::move(heading));
+            std::ranges::move(fields, std::back_inserter(rows));
+        }
+        Entry information{text(translations_, OsdInformationKey), {}, std::move(rows), {},
+            style()->standardIcon(QStyle::SP_MessageBoxInformation)};
+        information.visible = [sections = std::move(sections)] {
+            return std::ranges::any_of(sections, [](const auto& visible) { return visible(); });
+        };
+        information.centeredInformation = true;
+        return information;
+    }
+
     QString osdGameName() const {
         const auto state = session_->machine().state();
         if (state != MachineState::Running && state != MachineState::Paused) return {};
@@ -3164,10 +3502,12 @@ private:
             };
             refreshQuickStates();
             refreshOsdBlocks();
-            auto save = action(QuickSaveKey, [this] { quickState(true); }, QStyle::SP_DialogSaveButton);
-            save.enabled = [this] { return quickSave_->isEnabled(); };
-            auto load = action(QuickLoadKey, [this] { quickState(false); }, QStyle::SP_DialogOpenButton);
-            load.enabled = [this] { return quickLoad_->isEnabled(); };
+            Entry save{text(translations_, SaveStateKey), {}, osdStateSlots(true),
+                [this] { return quickSave_->isEnabled(); }, style()->standardIcon(QStyle::SP_DialogSaveButton)};
+            Entry load{text(translations_, LoadStateKey), {}, osdStateSlots(false),
+                [this] { return quickLoad_->isEnabled(); }, style()->standardIcon(QStyle::SP_DialogOpenButton)};
+            save.fullHeight = true;
+            load.fullHeight = true;
             std::vector<Entry> entries;
             entries.push_back(action(OsdResumeKey, [this] { if (osd_) osd_->close(); }, QStyle::SP_MediaPlay));
             entries.push_back({text(translations_, OsdSavedStatesKey), {}, {std::move(save), std::move(load)}, {},
@@ -3175,10 +3515,7 @@ private:
             entries.push_back({text(translations_, OsdVideoSettingsKey), {}, videoOsdSettings(), {},
                 style()->standardIcon(QStyle::SP_ComputerIcon), true});
             entries.back().fullHeight = true;
-            auto mute = action(OsdMuteKey, [this] { mute_->toggle(); }, QStyle::SP_MediaVolumeMuted);
-            mute.enabled = [this] { return mute_->isEnabled(); };
-            mute.status = [this] { return QString::fromUtf16(mute_->isChecked() ? OsdMutedStatus : OsdUnmutedStatus); };
-            std::vector<Entry> audioRows{std::move(mute)};
+            std::vector<Entry> audioRows{osdVolumeSetting(), osdAudioMixer()};
             appendOsdModuleSettings(audioRows, QLatin1String(AudioTabKey));
             entries.push_back({text(translations_, OsdAudioKey), {}, std::move(audioRows), {},
                 style()->standardIcon(QStyle::SP_MediaVolume)});
@@ -3215,6 +3552,8 @@ private:
                 return std::ranges::any_of(pages, [](const auto& visible) { return visible(); });
             };
             entries.push_back(std::move(machineSettings));
+            entries.push_back(osdMachineInformation());
+            entries.push_back(osdTransparencySetting());
             auto exit = action(OsdExitKey, [this] { toggleFullScreen(); }, QStyle::SP_DialogCloseButton);
             exit.separatorBefore = true;
             entries.push_back(std::move(exit));
@@ -3224,14 +3563,28 @@ private:
                 machine.execute(LifecycleCommand::Pause, {});
                 pausedForOsd = machine.state() == MachineState::Paused;
             }
-            osd_ = new FullscreenOsd(*fullScreen_, session_->configuration().name, media, {},
+            osdPassesInput_ = !pause;
+            osd_ = new FullscreenOsd(*fullScreen_,
+                emulationMachineName(*host_, translations_, session_->moduleId(), session_->configuration()), media, {},
                 std::move(entries), [this, pausedForOsd, resumeAfterOsd, restorePointer] {
+                    const bool wasPassingInput = std::exchange(osdPassesInput_, false);
+                    liveOsdPointerPosition_.reset();
+                    if (input_.pointerButtons != 0) {
+                        input_.pointerButtons = 0;
+                        sendInput();
+                    }
                     osd_ = nullptr;
-                    osdRepeat_.clear();
+                    shortcutRepeat_.clear();
                     updateShaderBadge();
                     for (const auto& shortcut : configuredShortcuts_) shortcut.keyboard->setParent(surface_);
                     for (auto* shortcut : osdNavigationShortcuts_) shortcut->setEnabled(false);
-                    heldGamepads_ = lastGamepads_;
+                    if (!wasPassingInput) {
+                        physicalKeys_.clear();
+                        physicalKeypadKeys_.clear();
+                        heldPointerButtons_ = static_cast<quint32>(QApplication::mouseButtons().toInt());
+                        heldGamepads_.clear();
+                        for (const auto& pad : gamepadSamples_) heldGamepads_.insert(pad.id, pad);
+                    }
                     for (auto& held : heldGamepads_) {
                         for (auto& axis : held.axes) if (std::abs(axis) <= GamepadReleaseThreshold) axis = 0;
                         held.controls.removeIf([](QHash<QString, float>::iterator control) {
@@ -3246,14 +3599,25 @@ private:
                             heldPointerButtons_ = static_cast<quint32>(QApplication::mouseButtons().toInt());
                     }
                 });
-            releaseInput();
+            if (osdPassesInput_) {
+                releasePointer();
+                heldPointerButtons_ = static_cast<quint32>(QApplication::mouseButtons().toInt());
+                liveOsdPointerPosition_ = QCursor::pos();
+            } else {
+                releaseInput();
+            }
             osd_->setFooterHints(footer);
             osd_->setExternalKeyboardNavigation(true);
-            for (const auto& shortcut : configuredShortcuts_) shortcut.keyboard->setParent(osd_);
+            for (const auto& shortcut : configuredShortcuts_) {
+                if (EmulationPhysicalShortcuts::isOsdShortcut(QString::fromLatin1(shortcut.binding->id)))
+                    shortcut.keyboard->setParent(osd_);
+            }
             for (auto* shortcut : osdNavigationShortcuts_) shortcut->setEnabled(true);
+            previewOsdTransparency(workspace_.fullscreenOsdTransparency());
             osd_->activate();
             updateShaderBadge();
         } catch (...) {
+            osdPassesInput_ = false;
             if (pausedForOsd) resumeAfterOsd();
             surface_->setIndicator(text(translations_, ErrorKey));
         }
@@ -3276,6 +3640,9 @@ private:
         connect(fullScreen_, &QDialog::finished, this, [this] {
             if (osd_) osd_->close();
             layout_->addWidget(surface_, 1);
+            delete volumeBadge_.data();
+            delete muteBadge_.data();
+            delete statisticsBadge_.data();
             fullScreen_ = nullptr;
             midiInput_.reset();
             midiSamples_.clear();
@@ -3298,6 +3665,7 @@ private:
         fullScreen_->showFullScreen();
         updateShaderStatusRows();
         surface_->show();
+        updateFullscreenMute();
         surface_->setFocus();
         updateShaderBadge();
         if (restorePointer) restorePointerAfterHostChange();
@@ -3309,6 +3677,13 @@ private:
     }
     void poll() {
         try {
+            const auto revision = session_->runtimeRevision();
+            if (presentedRuntime_ != revision) {
+                presentedRuntime_ = revision;
+                refreshMachineInput();
+                surface_->clear();
+                executionRate_.reset();
+            }
             const auto inputState = session_->machine().state();
             if (inputState == MachineState::Running || inputState == MachineState::Paused || fullScreen_) pollControllers();
             auto& machine = session_->machine();
@@ -3316,7 +3691,7 @@ private:
             const bool running = state == MachineState::Running;
             const bool paused = state == MachineState::Paused;
             if (gamepadSource_) {
-                const bool active = running && physicalInputActive() && !osd_;
+                const bool active = running && physicalInputActive() && (!osd_ || osdPassesInput_);
                 controllerFeedback_.update(*gamepadSource_,
                     active ? dynamic_cast<const IMachineControllerFeedback*>(&machine) : nullptr,
                     workspace_.logsDirectory, QString::fromStdString(translations_.language()));
@@ -3341,49 +3716,52 @@ private:
             screenshotButton_->setEnabled(running || paused);
             save_->setEnabled((running || paused) && machine.supportsSavedStates());
             load_->setEnabled(save_->isEnabled());
-            const auto revision = session_->runtimeRevision();
-            if (presentedRuntime_ != revision) {
-                presentedRuntime_ = revision;
-                surface_->clear();
-                executionRate_.reset();
-            }
             surface_->setEmulationRunning(running);
             const auto frame = running || paused ? machine.latestFrame() : nullptr;
             if (!frame && !paused) surface_->submit(nullptr);
             const bool visible = surface_->isVisible();
             if (!running || !visible) executionRate_.reset();
+            std::optional<std::uint64_t> clockHz;
             if (frame && visible) {
-                surface_->submit(frame);
-                if (running) {
-                    std::optional<std::uint64_t> clockHz;
+                const auto* nativeSegments = dynamic_cast<const IMachineNativeSegments*>(&machine);
+                const auto* nativeVectors = dynamic_cast<const IMachineNativeVectors*>(&machine);
+                surface_->submit(frame, nativeSegments ? nativeSegments->segmentLevels(*frame) : std::nullopt,
+                    nativeVectors ? nativeVectors->vectorSegments(*frame) : nullptr);
+                if (running || (fullScreen_ && workspace_.showFullscreenEmulationStatistics())) {
                     if (const auto* status = dynamic_cast<const IMachineCoreRuntimeStatus*>(&machine))
                         clockHz = status->coreRuntimeStatus().processorClockHz;
                     if (!clockHz)
                         if (const auto* clock = dynamic_cast<const IMachineProcessorClock*>(&machine))
                             clockHz = clock->processorClockHz();
-                    executionRate_.observe(frame->sequence, frame->timestamp, ExecutionRateWindow::Clock::now(), clockHz);
+                    if (running)
+                        executionRate_.observe(frame->sequence, frame->timestamp, ExecutionRateWindow::Clock::now(), clockHz);
                 }
             }
             const bool audible = running && surface_->isVisible() && !mute_->isChecked();
             session_->pumpAudio(audible);
-            QString statistics;
+            QString statistics, fps, execution;
+            double frequency = 0;
+            const QLocale locale;
+            if (!osd_) surface_->setOsdTransparency(fullScreen_ ? workspace_.fullscreenOsdTransparency()
+                : DisplayConstants::MinimumOsdTransparency);
             const bool showStatistics = fullScreen_ ? workspace_.showFullscreenEmulationStatistics() : statistics_->isChecked();
             if (showStatistics && frame && (running || paused)) {
                 const auto expected = machine.framesPerSecond();
                 const auto measured = executionRate_.measuredFramesPerSecond();
-                const auto frequency = std::isfinite(expected) && expected > 0 ? expected : measured;
-                const QLocale locale;
-                const auto fps = text(translations_, FpsKey).arg(locale.toString(measured, 'f', 1));
+                frequency = std::isfinite(expected) && expected > 0 ? expected : measured;
+                fps = text(translations_, FpsKey).arg(locale.toString(measured, 'f', 1));
                 const auto imageHeight = frame->scanMode == ScanMode::Progressive ? qint64(frame->height) : 2LL * frame->height;
                 statistics = QString::fromUtf8(FrameStatisticsFormat).arg(locale.toString(frame->width),
                     locale.toString(imageHeight), locale.toString(frequency, 'f', 1), fps);
                 if (const auto& rate = executionRate_.rate(); rate && rate->effectiveMegahertz) {
-                    statistics += text(translations_, ExecutionRateKey).arg(
+                    execution = text(translations_, ExecutionRateKey).arg(
                         locale.toString(*rate->effectiveMegahertz, 'f', 2),
                         locale.toString(rate->speedRatio * PercentScale, 'f', 0));
                 }
             }
-            surface_->setStatistics(std::move(statistics));
+            if (!fullScreen_ && !execution.isEmpty()) statistics += execution;
+            updateFullscreenStatistics(frame.get(), frequency, fps, execution, clockHz, locale);
+            surface_->setStatistics(fullScreen_ ? QString{} : std::move(statistics));
         } catch (...) {
             if (gamepadSource_) gamepadSource_->stopRumble();
             session_->stopAudio();
@@ -3395,6 +3773,7 @@ private:
     std::shared_ptr<Host> host_;
     Translation& translations_;
     WorkspaceState& workspace_;
+    std::shared_ptr<const ThemeData> theme_;
     VideoPresentation::ProfileStore profiles_;
     VideoPresentation::Profile profile_;
     OpenMachineSettings openMachineSettings_;
@@ -3403,7 +3782,12 @@ private:
     QVBoxLayout* layout_ = nullptr;
     QDialog* fullScreen_ = nullptr;
     QPointer<FullscreenOsd> osd_;
+    bool osdPassesInput_ = false;
+    QSet<int> heldOsdKeys_;
     QPointer<VideoPresentation::ShaderLoadingBadge> shaderBadge_;
+    QPointer<VideoPresentation::FullscreenVolumeBadge> volumeBadge_;
+    QPointer<VideoPresentation::FullscreenMuteBadge> muteBadge_;
+    QPointer<VideoPresentation::FullscreenStatisticsBadge> statisticsBadge_;
     QList<std::pair<QPointer<QWidget>, QPointer<QLabel>>> shaderStatusRows_;
     QList<QShortcut*> osdNavigationShortcuts_;
     QList<ConfiguredShortcut> configuredShortcuts_;
@@ -3416,6 +3800,7 @@ private:
     WorkspaceState::DirectorySubscription shortcutSubscription_;
     QList<SettingsBlock> osdBlocks_;
     SettingsDependencies osdDependencies_;
+    QSet<QString> osdAudioMixerBlocks_;
     SettingsRules::Values osdValues_;
     QHash<QString, SettingsNumericRange> osdRanges_;
     QHash<QString, VideoSettingsSection> osdVideoSections_;
@@ -3436,7 +3821,7 @@ private:
         StatusIndicator* indicator = nullptr;
         QLabel* label = nullptr;
         QToolButton *insert = nullptr, *eject = nullptr;
-        std::array<QToolButton*, TapeControls.size()> tape{};
+        std::array<TapeTransportButton*, TapeControls.size()> tape{};
         bool canRecord = false;
         std::chrono::steady_clock::time_point activeUntil{};
     };
@@ -3454,12 +3839,14 @@ private:
     InputSnapshot input_;
     EmulationHostKeyboard hostKeyboard_;
     EmulationKeyboardModifiers shortcutModifiers_;
-    EmulationPhysicalShortcuts::OsdDirectionRepeat osdRepeat_;
+    EmulationPhysicalShortcuts::ShortcutRepeat shortcutRepeat_;
     quint32 heldPointerButtons_ = 0;
+    Qt::MouseButtons bindingMouseButtons_;
+    bool bindingWheelPending_ = false;
+    std::optional<QPointF> liveOsdPointerPosition_;
     bool changingVideoHost_ = false;
     std::unique_ptr<Platform::GamepadSource> gamepadSource_;
     EmulationControllerFeedback controllerFeedback_;
-    QHash<quint64, Platform::GamepadState> lastGamepads_;
     QHash<quint64, Platform::GamepadState> heldGamepads_;
     QList<RawControllerState> rawControllerInput_;
 };
@@ -3509,6 +3896,12 @@ struct EmulationPage::Data {
         error->setVisible(!message.isEmpty());
     }
 
+    void showMachineError(QWidget& owner, const EmulationMessageException& failure,
+        const QString& module, const Configuration& configuration) {
+        showError(presentEmulationError(owner, theme, translations, failure,
+            emulationMachineName(*state.emulation, translations, module, configuration)));
+    }
+
     Configuration choice(const QString& machine = {}) const {
         const auto selectedMachine = machine.isEmpty() ? state.emulationMachineId : machine;
         if (selectedMachine.isEmpty()) return {};
@@ -3543,11 +3936,16 @@ struct EmulationPage::Data {
         const auto config = choice();
         if (config.id.isNull()) return;
         try {
-            if (auto session = state.emulation->open(state.emulationModuleId, config)) {
+            const auto profile = profiles.load(state.emulationModuleId, config.id);
+            if (auto session = state.emulation->openWithGraphicsApi(state.emulationModuleId, config,
+                    graphicsApi(profile.renderer))) {
                 addSession(session, true);
                 updateSelection();
                 return;
             }
+        } catch (const EmulationMessageException& failure) {
+            showMachineError(*tabs, failure, state.emulationModuleId, config);
+            return;
         } catch (...) {}
         showError(text(translations, ErrorKey));
     }
@@ -3632,17 +4030,19 @@ struct EmulationPage::Data {
 
     void editConfiguration(QWidget* parent, const std::shared_ptr<Session>& session = {}) {
         const auto module = session ? session->moduleId() : state.emulationModuleId;
+        auto config = session ? session->configuration() : choice();
         try {
-            auto config = session ? session->configuration() : choice();
             if (session) {
                 const auto savedConfigurations = state.emulation->configurations(module);
                 const auto latest = std::ranges::find(savedConfigurations, config.id, &Configuration::id);
                 if (latest != savedConfigurations.end()) config = *latest;
             }
             if (config.id.isNull()) return;
-            bool returningToMotor = false;
-            while (editConfigurationPage(parent, session, module, config, returningToMotor))
-                returningToMotor = true;
+            QString selectedTab;
+            while (editConfigurationPage(parent, session, module, config, selectedTab)) {}
+        } catch (const EmulationMessageException& failure) {
+            if (session) throw;
+            showMachineError(*parent, failure, module, config);
         } catch (...) {
             if (session) throw;
             showError(text(translations, ErrorKey));
@@ -3654,9 +4054,12 @@ struct EmulationPage::Data {
             return session->moduleId() == module && session->configuration().id == config.id;
         });
         const auto session = active == sessions.end() ? std::shared_ptr<Session>{} : *active;
-        bool returningToMotor = false;
-        while (editConfigurationPage(parent, session, module, config, returningToMotor))
-            returningToMotor = true;
+        try {
+            QString selectedTab;
+            while (editConfigurationPage(parent, session, module, config, selectedTab)) {}
+        } catch (const EmulationMessageException& failure) {
+            showMachineError(*parent, failure, module, config);
+        }
     }
 
     void editModuleOptions(QWidget* parent, const QString& id) {
@@ -3685,24 +4088,31 @@ struct EmulationPage::Data {
                     }
                 }
                 QString next;
-                bool returningToMotor = false;
-                while (editConfigurationPage(parent, session, id, config, returningToMotor, &*module, &next, creating ? &draft : nullptr))
-                    returningToMotor = true;
+                QString selectedTab;
+                while (editConfigurationPage(parent, session, id, config, selectedTab, &*module, &next, creating ? &draft : nullptr)) {}
                 machine = std::move(next);
             }
             refreshConfigurations();
+        } catch (const EmulationMessageException& failure) {
+            Configuration selected;
+            selected.machineId = machine;
+            showMachineError(*parent, failure, id, selected);
         } catch (...) {
             showError(text(translations, ErrorKey));
         }
     }
 
     bool editConfigurationPage(QWidget* parent, const std::shared_ptr<Session>& session, const QString& module,
-        Configuration& config, bool returningToMotor, const ModuleInfo* optionsModule = nullptr,
+        Configuration& config, QString& selectedTab, const ModuleInfo* optionsModule = nullptr,
         QString* nextMachine = nullptr, MachineConfigurationDraft* storedDraft = nullptr) {
-        const auto blocks = state.emulation->describe(module, config);
-        const auto ranges = state.emulation->numericSettings(module, config);
-        const auto editableSettings = state.emulation->editableNumericSettings(module, config);
-        const auto dependencies = state.emulation->settingsDependencies(module, config);
+        auto profile = profiles.load(module, config.id);
+        const auto described = state.emulation->configurationForGraphicsApi(module, config, graphicsApi(profile.renderer));
+        const auto describedBlocks = state.emulation->describe(module, described);
+        const auto ranges = state.emulation->numericSettings(module, described);
+        const auto editableSettings = state.emulation->editableNumericSettings(module, described);
+        const auto presentation = state.emulation->settingsPresentation(module, described);
+        const auto dependencies = state.emulation->settingsDependencies(module, described);
+        const auto blocks = machineSettingsEditorBlocks(describedBlocks, dependencies);
         auto feedbackPorts = state.emulation->controllerFeedbackPorts(module, config);
         const auto firmwareDirectory = state.emulation->firmwareDirectory(module, config.machineId);
         QList<FirmwareCandidate> firmware;
@@ -3715,11 +4125,12 @@ struct EmulationPage::Data {
         MachineControllerPorts* controllerPorts = nullptr;
         QSet<QWidget*> inputPages;
         QPushButton* saveButton = nullptr;
+        QLabel* saveError = nullptr;
         const auto inputValid = [&] {
             return (!controllerPorts || controllerPorts->valid()) &&
                 std::ranges::all_of(inputEditors, &MachineInputBindings::valid);
         };
-        auto currentValues = SettingsRules::values(blocks);
+        auto currentValues = SettingsRules::values(describedBlocks);
         QDialog dialog(parent);
         QTimer autosave;
         autosave.setSingleShot(true);
@@ -3769,13 +4180,20 @@ struct EmulationPage::Data {
         };
         struct SettingsGroup {
             const SettingsBlock* block;
-            QGroupBox* widget;
+            QWidget* widget;
             QWidget* page;
+            bool videoHardware;
         };
         QList<SettingControl> controls;
         QList<SettingsGroup> groups;
+        QList<CompactSettingsCards*> compactRuns;
+        QHash<QString, CompactSettingsCards*> openCompactRuns;
         QJsonObject changes;
         QString requestedEmulator;
+        std::optional<Profile> requestedVideoProfile;
+        QWidget* videoPage = nullptr;
+        QGroupBox* videoHardwarePanel = nullptr;
+        QVBoxLayout* videoHardwareLayout = nullptr;
         EmulatorPanel* emulatorPage = nullptr;
         if (const auto selection = state.emulation->emulatorSelection(module, config)) {
             auto scopedSelection = *selection;
@@ -3789,11 +4207,11 @@ struct EmulationPage::Data {
             sections->addTab(emulatorPage, text(translations, "Emulation.Core.Name"));
         }
         EmulationStoragePanel* storagePage = nullptr;
-        if (auto storage = state.emulation->storageSettings(module, config)) {
+        if (auto storage = state.emulation->storageSettings(module, described)) {
             constexpr auto StorageScope = "EmulationStorage/%1/%2";
             storagePage = new EmulationStoragePanel(std::move(*storage), state, translations,
                 QString::fromLatin1(StorageScope).arg(module, config.machineId),
-                [&](const QString& key) { return translated(module, key); }, sections);
+                [&](const QString& key) { return translated(module, key); }, presentation.detailedHelpResourceKeys, sections);
             storagePage->onChanged([&] {
                 storageDirty = true;
                 scheduleSave();
@@ -3805,14 +4223,22 @@ struct EmulationPage::Data {
             if (feedbackPage) visiblePages.insert(feedbackPage);
             if (emulatorPage) visiblePages.insert(emulatorPage);
             if (storagePage) visiblePages.insert(storagePage);
+            if (videoPage && !dependencies.hiddenTabs.contains(QLatin1String(VideoKey))) visiblePages.insert(videoPage);
+            bool showVideoHardware = false;
             for (const auto& group : groups) {
-                const bool visible = SettingsRules::blockVisible(dependencies, currentValues, *group.block);
+                const bool visible = SettingsRules::blockVisible(dependencies, currentValues, *group.block) &&
+                    (!group.videoHardware || std::ranges::any_of(group.block->fields, [&](const auto& field) {
+                        return field.visible && SettingsRules::fieldVisible(dependencies, currentValues, field.id);
+                    }));
+                showVideoHardware |= visible && group.videoHardware;
                 group.widget->setVisible(visible);
                 if (visible) visiblePages.insert(group.page);
             }
+            if (videoHardwarePanel) videoHardwarePanel->setVisible(showVideoHardware);
             for (const auto& field : controls) {
                 field.form->setRowVisible(field.control, SettingsRules::fieldVisible(dependencies, currentValues, field.id));
             }
+            for (auto* compact : compactRuns) compact->reflow();
             for (int index = 0; index < sections->count(); ++index)
                 sections->setTabVisible(index, visiblePages.contains(sections->widget(index)));
         };
@@ -3833,6 +4259,9 @@ struct EmulationPage::Data {
         };
         const int sessionIndex = session ? activeTab(module, config.machineId, config.id) : -1;
         auto* sessionView = sessionIndex > 0 ? static_cast<SessionView*>(tabs->widget(sessionIndex)) : nullptr;
+        const auto saveProfile = [&](const Profile& updated) {
+            return sessionView ? sessionView->applyVideoProfile(updated) : profiles.save(module, config.id, updated);
+        };
         for (const auto& block : blocks) {
             if (!block.visible) continue;
             auto* section = sectionLayouts.value(block.tabResourceKey);
@@ -3841,33 +4270,134 @@ struct EmulationPage::Data {
                 scroll->setWidgetResizable(true);
                 auto* content = new QWidget(scroll);
                 section = new QVBoxLayout(content);
-                if (sessionView && block.tabResourceKey == QLatin1String(VideoKey))
-                    section->addWidget(sessionView->createShaderStatusRow(content));
+                if (block.tabResourceKey == QLatin1String(VideoKey)) {
+                    videoPage = scroll;
+                    if (sessionView) section->addWidget(sessionView->createShaderStatusRow(content));
+                    auto* videoRow = new QHBoxLayout;
+                    auto* rendering = new QFormLayout;
+                    videoRow->addLayout(rendering, 2);
+                    videoHardwarePanel = new QGroupBox(text(translations, MachineVideoHardwareKey), content);
+                    videoHardwareLayout = new QVBoxLayout(videoHardwarePanel);
+                    videoRow->addWidget(videoHardwarePanel, 1, Qt::AlignTop);
+                    section->addLayout(videoRow);
+                    auto* renderer = new QComboBox(content);
+                    for (const auto& [value, key] : VideoRenderers)
+                        renderer->addItem(text(translations, key), static_cast<int>(value));
+                    const auto previous = renderer->findData(static_cast<int>(profile.renderer));
+                    renderer->setCurrentIndex(previous >= 0 ? previous :
+                        renderer->findData(static_cast<int>(VideoPresentation::Renderer::Software)));
+                    const auto initialIndex = renderer->currentIndex();
+                    QObject::connect(renderer, &QComboBox::activated, &dialog, [&, renderer, initialIndex](int index) {
+                        if (index == initialIndex) return;
+                        if (!inputValid()) {
+                            renderer->setCurrentIndex(initialIndex);
+                            return;
+                        }
+                        requestedVideoProfile = profile;
+                        requestedVideoProfile->renderer = static_cast<VideoPresentation::Renderer>(renderer->itemData(index).toInt());
+                        dialog.accept();
+                    });
+                    addModuleSettingRow(*rendering, renderer, text(translations, VideoRendererKey),
+                        text(translations, "Emulation.Help.Video.Rendering.Short"),
+                        text(translations, "Emulation.Help.Video.Rendering.Detailed"));
+                    auto* processing = new QPushButton(text(translations, "Emulation.Video.Settings.RetroMediaLabProcessing"), content);
+                    QObject::connect(processing, &QPushButton::clicked, &dialog, [&] {
+                        if (!inputValid()) return;
+                        std::function<QWidget*(QWidget*)> status;
+                        if (sessionView) status = [sessionView](QWidget* parent) { return sessionView->createShaderStatusRow(parent); };
+                        auto updated = editVideoProfile(&dialog, translations, profile, status);
+                        if (!updated) return;
+                        if (updated->renderer != profile.renderer) {
+                            requestedVideoProfile = std::move(updated);
+                            dialog.accept();
+                            return;
+                        }
+                        try {
+                            if (!saveProfile(*updated)) throw std::runtime_error(ErrorKey);
+                            profile = std::move(*updated);
+                            saveError->hide();
+                        } catch (...) {
+                            saveError->setText(text(translations, ErrorKey));
+                            saveError->show();
+                        }
+                    });
+                    rendering->addRow(processing);
+                }
                 scroll->setWidget(content);
                 sections->addTab(scroll, translated(module, block.tabResourceKey));
                 sectionLayouts.insert(block.tabResourceKey, section);
                 sectionPages.insert(block.tabResourceKey, scroll);
             }
-            auto* group = new QGroupBox(translated(module, block.titleResourceKey), section->parentWidget());
+            constexpr int MaximumCompactCpuFields = 8;
+            constexpr auto CpuTab = "Emulation.Tab.Cpu";
+            const bool videoHardware = block.tabResourceKey == QLatin1String(VideoKey) &&
+                block.titleResourceKey == QLatin1String(MachineVideoHardwareKey);
+            const bool compact = !videoHardware && presentation.compactBlocks.contains(block.id) &&
+                (block.tabResourceKey != QLatin1String(CpuTab) ||
+                    std::ranges::count_if(block.fields, &SettingsField::visible) <= MaximumCompactCpuFields);
+            auto* compactRun = openCompactRuns.value(block.tabResourceKey);
+            if (compact && !compactRun) {
+                compactRun = new CompactSettingsCards(section->parentWidget());
+                section->addWidget(compactRun);
+                openCompactRuns.insert(block.tabResourceKey, compactRun);
+                compactRuns.append(compactRun);
+            } else if (!compact) {
+                openCompactRuns.remove(block.tabResourceKey);
+                compactRun = nullptr;
+            }
+            QWidget* group = nullptr;
+            if (videoHardware) {
+                group = new QWidget(videoHardwarePanel);
+                videoHardwareLayout->addWidget(group);
+            } else {
+                auto* frame = new QGroupBox(translated(module, block.titleResourceKey),
+                    compactRun ? compactRun : section->parentWidget());
+                if (compactRun) compactRun->append(frame);
+                else section->addWidget(frame);
+                group = frame;
+            }
             auto* form = new QFormLayout(group);
-            section->addWidget(group);
-            groups.append({&block, group, sectionPages.value(block.tabResourceKey)});
+            if (videoHardware) form->setContentsMargins({});
+            groups.append({&block, group, sectionPages.value(block.tabResourceKey), videoHardware});
             for (const auto& field : block.fields) {
                 if (!field.visible) continue;
+                const auto addRow = [&](QWidget* control) {
+                    const auto detailed = presentation.detailedHelpResourceKeys.value(field.id);
+                    addModuleSettingRow(*form, control, translated(module, field.labelResourceKey),
+                        field.explanationResourceKey.isEmpty() ? QString{} : translated(module, field.explanationResourceKey),
+                        detailed.isEmpty() ? QString{} : translated(module, detailed));
+                };
                 QWidget* control = nullptr;
                 std::function<QString()> value;
                 std::function<void(const QString&)> write;
                 QWidget* input = nullptr;
                 ModuleEditableSlider* editable = nullptr;
+                ModuleNumberEdit* numberEdit = nullptr;
+                ModuleIpv4Edit* addressEdit = nullptr;
                 const auto range = ranges.constFind(field.id);
                 const auto numeric = field.editor == SettingsEditor::Slider && range != ranges.cend() ?
                     ModuleNumericSetting::from(*range) : std::nullopt;
+                if (field.editor == SettingsEditor::OpenDirectory) {
+                    constexpr auto OpenFolderKey = "Common.OpenFolder";
+                    const auto caption = text(translations, OpenFolderKey);
+                    const auto path = field.value;
+                    auto* open = new QPushButton(caption, group);
+                    open->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Preferred);
+                    open->setEnabled(field.enabled && QFileInfo(path).isAbsolute() && !path.startsWith(u':'));
+                    QObject::connect(open, &QPushButton::clicked, &dialog, [&, path, caption] {
+                        if (!QDir().mkpath(path) || !QDesktopServices::openUrl(QUrl::fromLocalFile(path)))
+                            QMessageBox::warning(&dialog, caption, text(translations, ErrorKey));
+                    });
+                    addRow(open);
+                    controls.append({field.id, form, open, {}, {}});
+                    continue;
+                }
                 if (field.editor == SettingsEditor::Information) {
                     auto* status = new QLabel(moduleFieldDisplay(field, ranges.value(field.id).unitResourceKey,
                         [&](const QString& key) { return translated(module, key); }), group);
                     status->setTextFormat(Qt::PlainText);
                     status->setWordWrap(true);
-                    form->addRow(translated(module, field.labelResourceKey), status);
+                    addRow(status);
                     controls.append({field.id, form, status, {}, {}});
                     continue;
                 }
@@ -3908,6 +4438,17 @@ struct EmulationPage::Data {
                     value = [slider, editor = *numeric, initial, original = field.value] {
                         return slider->value() == initial ? original : editor.value(slider->value());
                     };
+                } else if (field.editor == SettingsEditor::Number) {
+                    numberEdit = new ModuleNumberEdit(range == ranges.cend() ? nullptr : &*range, field.value,
+                        QLocale(QString::fromStdString(translations.language())), group);
+                    control = input = numberEdit;
+                    value = [numberEdit] { return numberEdit->value(); };
+                    write = [numberEdit](const QString& value) { numberEdit->setValue(value); };
+                } else if (field.editor == SettingsEditor::IPv4) {
+                    addressEdit = new ModuleIpv4Edit(field.value, group);
+                    control = input = addressEdit;
+                    value = [addressEdit] { return addressEdit->value(); };
+                    write = [addressEdit](const QString& value) { addressEdit->setValue(value); };
                 } else if (field.editor == SettingsEditor::Toggle) {
                     auto* toggle = new QCheckBox(group);
                     toggle->setChecked(field.value == field.enabledValue);
@@ -3988,9 +4529,7 @@ struct EmulationPage::Data {
                     }
                 }
                 control->setEnabled(field.enabled);
-                if (!field.explanationResourceKey.isEmpty())
-                    control->setToolTip(translated(module, field.explanationResourceKey));
-                form->addRow(translated(module, field.labelResourceKey), control);
+                addRow(control);
                 if (field.enabled) {
                     const auto onChanged = [&, id = field.id, value] { applyChange(id, value()); };
                     const auto commit = [onChanged, &scheduleSave] {
@@ -3998,6 +4537,14 @@ struct EmulationPage::Data {
                         scheduleSave();
                     };
                     if (editable) editable->onValueChanged(commit);
+                    else if (numberEdit) {
+                        numberEdit->onValueChanged(onChanged);
+                        QObject::connect(numberEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
+                    }
+                    else if (addressEdit) {
+                        addressEdit->onValueChanged(onChanged);
+                        QObject::connect(addressEdit, &QLineEdit::editingFinished, &dialog, scheduleSave);
+                    }
                     else if (auto* slider = qobject_cast<QSlider*>(input)) {
                         QObject::connect(slider, &QSlider::valueChanged, &dialog, [&, slider, onChanged] {
                             onChanged();
@@ -4130,7 +4677,9 @@ struct EmulationPage::Data {
                 applyChange(rule.targetFieldId, *target);
         }
         refreshVisibility();
-        if (returningToMotor && emulatorPage) sections->setCurrentWidget(emulatorPage);
+        if (selectedTab == QLatin1String(VideoKey) && videoPage) sections->setCurrentWidget(videoPage);
+        if (selectedTab == QLatin1String("Emulation.Core.Name") && emulatorPage)
+            sections->setCurrentWidget(emulatorPage);
         sections->setVisible(sections->count() > 0);
         auto* buttons = new QDialogButtonBox(QDialogButtonBox::Save | QDialogButtonBox::Cancel, &dialog);
         saveButton = buttons->button(QDialogButtonBox::Save);
@@ -4142,7 +4691,7 @@ struct EmulationPage::Data {
         QObject::connect(buttons, &QDialogButtonBox::accepted, &dialog, &QDialog::accept);
         QObject::connect(buttons, &QDialogButtonBox::rejected, &dialog, &QDialog::reject);
         layout->addWidget(buttons);
-        auto* saveError = new QLabel(&dialog);
+        saveError = new QLabel(&dialog);
         saveError->setTextFormat(Qt::PlainText);
         saveError->setWordWrap(true);
         saveError->hide();
@@ -4163,8 +4712,12 @@ struct EmulationPage::Data {
             const auto* input = emulator.isEmpty() && inputDraft && (inputDirty || stagedInput) ? &*inputDraft : nullptr;
             const auto* storage = storageDirty && storagePage ? &storagePage->settings() : nullptr;
             const auto outcome = saveMachineSettings(*state.emulation, session.get(), module, config, std::move(patch),
-                outputs, firmware, storage, input, emulator, mode);
+                outputs, firmware, storage, input, emulator, mode, graphicsApi(profile.renderer));
             if (outcome == MachineSettingsResult::Rejected) throw std::runtime_error(ErrorKey);
+            if (sessionView && outcome == MachineSettingsResult::Saved) {
+                if (input) sessionView->refreshMachineInput();
+                sessionView->refreshMachineSettings();
+            }
             if (storedDraft && outcome != MachineSettingsResult::Saved) {
                 if (inputDraft && inputDirty) storedDraft->input = inputDraft;
                 state.emulationDrafts->set(module, *storedDraft);
@@ -4196,9 +4749,18 @@ struct EmulationPage::Data {
         const bool accepted = result == QDialog::Accepted;
         if ((!accepted && !optionsModule) || (requestedEmulator.isEmpty() && !inputValid())) return false;
         if (!accepted && !storedDraft && !pending()) return false;
+        if (accepted && requestedVideoProfile) {
+            if (pending()) commitSettings(storedDraft ? MachineSettingsSave::KeepDraft : MachineSettingsSave::Persist, false, {});
+            if (!saveProfile(*requestedVideoProfile)) throw std::runtime_error(ErrorKey);
+            selectedTab = QLatin1String(VideoKey);
+            return true;
+        }
         const auto save = storedDraft && !accepted ? MachineSettingsSave::KeepDraft : MachineSettingsSave::Persist;
         const auto outcome = commitSettings(save, !saveWhileEditing, requestedEmulator);
-        if (outcome == MachineSettingsResult::EmulatorChanged) return true;
+        if (outcome == MachineSettingsResult::EmulatorChanged) {
+            selectedTab = QLatin1String("Emulation.Core.Name");
+            return true;
+        }
         if (outcome == MachineSettingsResult::Drafted) return false;
         if (storedDraft) state.emulationDrafts->remove(module, config.machineId);
         if (nextMachine && accepted) *nextMachine = config.machineId;
@@ -4236,7 +4798,8 @@ struct EmulationPage::Data {
         auto* view = new SessionView(session, state.emulation, translations, state, profiles, theme,
             [this](QWidget* parent, const auto& activeSession) { editConfiguration(parent, activeSession); }, tabs);
         const auto& configuration = session->configuration();
-        const int index = tabs->addTab(view, themeIcon(QLatin1String(AppConstants::Emulation), tabs->palette().color(QPalette::WindowText)), configuration.name.isEmpty() ? configuration.machineId : configuration.name);
+        const int index = tabs->addTab(view, themeIcon(QLatin1String(AppConstants::Emulation), tabs->palette().color(QPalette::WindowText)),
+            emulationMachineName(*state.emulation, translations, session->moduleId(), configuration));
         if (select) tabs->setCurrentIndex(index);
     }
     void localize() {
@@ -4330,6 +4893,7 @@ EmulationPage::EmulationPage(ThemeService& themes, Translation& translations, Wo
     connect(view.open, &QPushButton::clicked, this, [&view] { view.openMachine(); });
     layout->addWidget(selector);
     view.error = new QLabel(this);
+    view.error->setTextFormat(Qt::PlainText);
     view.error->setWordWrap(true);
     view.error->setTextFormat(Qt::PlainText);
     layout->addWidget(view.error);
@@ -4365,14 +4929,17 @@ EmulationPage::EmulationPage(ThemeService& themes, Translation& translations, Wo
     connect(view.tabs, &QTabWidget::tabCloseRequested, this, [&view](int index) {
         if (index <= 0) return;
         auto* sessionView = static_cast<SessionView*>(view.tabs->widget(index));
+        const auto session = sessionView->session();
+        view.tabs->removeTab(index);
+        sessionView->deleteLater();
         try {
-            view.state.emulation->close(sessionView->session());
-            view.tabs->removeTab(index);
-            sessionView->deleteLater();
-            view.updateSelection();
+            view.state.emulation->close(session);
+        } catch (const EmulationMessageException& failure) {
+            view.showMachineError(*view.tabs, failure, session->moduleId(), session->configuration());
         } catch (...) {
             view.showError(text(view.translations, ErrorKey));
         }
+        view.updateSelection();
     });
     view.subscription = translations.subscribe([&view] { view.localize(); });
     view.localize();

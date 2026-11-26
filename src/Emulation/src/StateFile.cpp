@@ -1,4 +1,5 @@
 #include <RetroMediaLab/Emulation/StateFile.h>
+#include <RetroMediaLab/Emulation/Messages.h>
 #include <QCryptographicHash>
 #include <QFile>
 #include <QJsonDocument>
@@ -46,9 +47,9 @@ QString hash(QByteArrayView data) {
     return QString::fromLatin1(QCryptographicHash::hash(data, QCryptographicHash::Sha256).toHex().toUpper());
 }
 
-std::optional<SavedState> read(const QString& path) {
-    QFile file(path);
-    if (!file.open(QIODevice::ReadOnly) || file.read(Magic.size()) != Magic) return std::nullopt;
+namespace {
+std::optional<SavedState> readOpened(QFile& file) {
+    if (file.read(Magic.size()) != Magic) return std::nullopt;
     const auto sizeBytes = file.read(sizeof(qint32));
     if (sizeBytes.size() != sizeof(qint32)) return std::nullopt;
     const auto headerSize = qFromLittleEndian<qint32>(sizeBytes.constData());
@@ -66,6 +67,35 @@ std::optional<SavedState> read(const QString& path) {
     if (payload.size() != payloadSize || !file.atEnd() ||
         !sameHash(header.value(PayloadHash).toString(), hash(payload))) return std::nullopt;
     return SavedState{std::move(identity), std::move(payload)};
+}
+
+EmulationMessageException stateError(MessageCode code, std::exception_ptr cause = {}) {
+    return EmulationMessageException({MessageCategory::SavedState, code,
+        MessageSeverity::Error, MessageTarget::Dialog, {}, {}}, std::move(cause));
+}
+
+EmulationMessageException stateIoError(const QFile& file) {
+    return stateError(MessageCode::SavedStateOperationFailed,
+        std::make_exception_ptr(std::runtime_error(file.errorString().toStdString())));
+}
+}
+
+std::optional<SavedState> read(const QString& path) {
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly)) return std::nullopt;
+    return readOpened(file);
+}
+
+SavedState readCompatible(const QString& path, const StateIdentity& expected) {
+    QFile file(path);
+    if (!file.open(QIODevice::ReadOnly)) throw stateIoError(file);
+    auto state = readOpened(file);
+    if (!state) {
+        if (file.error() != QFileDevice::NoError) throw stateIoError(file);
+        throw stateError(MessageCode::SavedStateInvalid);
+    }
+    if (!isCompatible(state->identity, expected)) throw stateError(MessageCode::SavedStateIncompatible);
+    return std::move(*state);
 }
 
 bool write(const QString& path, const StateIdentity& identity, QByteArrayView payload) {

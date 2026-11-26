@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "Emulatorn kräver ett medium innan den här maskinen kan startas. Sätt in en diskett eller konfigurera en hårddisk.",
+    "Emulation.Error.PowerFailureTitle": "Maskinen kunde inte startas",
+    "Emulation.Error.Machine": "Maskin",
+    "Emulation.Error.RequiredMedia": "Nödvändiga medier",
+    "Emulation.Error.Title": "Emuleringsfel",
+    "Emulation.Error.EmulatorNotInstalled": "Den nödvändiga emulatorn är inte installerad.",
+    "Emulation.Error.EmulatorUpdateBlocked": "Emulatorn kan inte uppdateras medan den används.",
+    "Emulation.Error.FirmwareMissing": "Krävs att firmware saknas.",
+    "Emulation.Error.FirmwareIncompatible": "Den valda firmware är oförenlig med denna maskin.",
+    "Emulation.Error.MediaNotFound": "Den konfigurerade mediefilen hittades inte.",
+    "Emulation.Error.MediaUnsupported": "De utvalda medierna stöds inte av denna emulator.",
+    "Emulation.Error.OptionInvalid": "En emulator alternativ är ogiltig.",
+    "Emulation.Error.HostCommunicationFailed": "Kommunikation med emulatorprocessen misslyckades.",
+    "Emulation.Error.MachineStartFailed": "Den emulerade maskinen kunde inte startas.",
+    "Emulation.Error.MediaOperationFailed": "Media operation misslyckades.",
+    "Emulation.Error.SavedStateInvalid": "Det sparade tillståndet är ogiltigt eller skadat.",
+    "Emulation.Error.SavedStateIncompatible": "Det sparade tillståndet är inte kompatibelt med denna maskinkonfiguration.",
+    "Emulation.Error.SavedStateOperationFailed": "Den sparade statsoperationen misslyckades."
+  }
+}

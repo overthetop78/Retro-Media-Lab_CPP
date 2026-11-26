@@ -322,6 +322,10 @@ enum class EmulationKey : int
     WenquxingGame = 259,
     WenquxingLexicon = 260,
     WenquxingStudy = 261,
+
+    // Sega SC-3000 / SF-7000
+    SegaSc3000Caret = 262,
+    SegaSc3000Reset = 263,
 };
 Q_ENUM_NS(EmulationKey)
 }

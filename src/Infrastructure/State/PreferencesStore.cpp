@@ -11,6 +11,7 @@
 #include <QSaveFile>
 #include <QSettings>
 #include <QStandardPaths>
+#include <algorithm>
 #include <stdexcept>
 namespace RetroMediaLab {
 QString PreferencesStore::defaultPath(){return QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)+AppConstants::PreferencesJson;}
@@ -20,6 +21,8 @@ constexpr auto StorageDirectoryKey = "emulationStorageFolder";
 constexpr auto CaptureDirectoryKey = "emulationCaptureFolder";
 constexpr auto StateDirectoryKey = "emulationStateFolder";
 constexpr auto FullscreenStatisticsKey = "showFullscreenEmulationStatistics";
+
+constexpr auto FullscreenOsdTransparencyKey = "fullscreenOsdTransparency";
 
 void validate(const UserPreferences& value) {
     if (!DisplayConstants::supported(value.interfaceScale)) throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
@@ -101,6 +104,9 @@ UserPreferences PreferencesStore::load(const UserPreferences& defaults) const {
     const auto statistics = data.value(FullscreenStatisticsKey);
     if (!statistics.isUndefined() && !statistics.isBool()) throw std::runtime_error(ErrorKeys::InvalidPreferencesFile);
     result.showFullscreenEmulationStatistics = statistics.toBool(defaults.showFullscreenEmulationStatistics);
+    const auto transparency = data.value(FullscreenOsdTransparencyKey);
+    result.fullscreenOsdTransparency = std::clamp(transparency.toInt(defaults.fullscreenOsdTransparency),
+        DisplayConstants::MinimumOsdTransparency, DisplayConstants::MaximumOsdTransparency);
     validate(result);
     return result;
 }
@@ -124,7 +130,9 @@ void PreferencesStore::save(const UserPreferences& value) const {
         {StorageDirectoryKey, value.emulationFolders.storage},
         {CaptureDirectoryKey, value.emulationFolders.captures},
         {StateDirectoryKey, value.emulationFolders.states},
-        {FullscreenStatisticsKey, value.showFullscreenEmulationStatistics}
+        {FullscreenStatisticsKey, value.showFullscreenEmulationStatistics},
+        {FullscreenOsdTransparencyKey, std::clamp(value.fullscreenOsdTransparency,
+            DisplayConstants::MinimumOsdTransparency, DisplayConstants::MaximumOsdTransparency)}
     }).toJson();
     if (!file.open(QIODevice::WriteOnly) || file.write(bytes) != bytes.size() || !file.commit())
         throw std::runtime_error(ErrorKeys::CannotSavePreferences);

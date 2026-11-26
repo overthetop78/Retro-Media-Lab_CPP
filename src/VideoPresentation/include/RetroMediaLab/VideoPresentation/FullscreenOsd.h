@@ -3,21 +3,59 @@
 #include <RetroMediaLab/VideoPresentation/Presentation.h>
 
 #include <QFrame>
+#include <array>
 #include <functional>
 #include <vector>
 
 class QLabel;
+class QProgressBar;
+class QTimer;
 
 namespace RetroMediaLab::VideoPresentation {
 class RETROMEDIALAB_VIDEO_PRESENTATION_API ShaderLoadingBadge final : public QFrame {
 public:
     explicit ShaderLoadingBadge(bool fullscreen, QWidget* parent, Qt::WindowFlags flags = {});
     void setCaption(const QString&);
+    void setTransparency(int percent);
     void centerOn(const QWidget& anchor);
 
 private:
     QLabel* label_;
     int maximumWidth_;
+};
+
+class RETROMEDIALAB_VIDEO_PRESENTATION_API FullscreenStatisticsBadge final : public QFrame {
+public:
+    static constexpr std::size_t MetricCount = 5;
+    using Icons = std::array<QIcon, MetricCount>;
+    using Values = std::array<QString, MetricCount>;
+    explicit FullscreenStatisticsBadge(QWidget& host, const Icons& icons);
+    void setValues(const QWidget& anchor, const Values&);
+    void setTransparency(int percent);
+    void reposition(const QWidget& anchor);
+
+private:
+    std::array<QLabel*, MetricCount> values_{};
+};
+
+class RETROMEDIALAB_VIDEO_PRESENTATION_API FullscreenMuteBadge final : public QWidget {
+public:
+    explicit FullscreenMuteBadge(QWidget& host, const QIcon& icon);
+    void reposition(const QWidget& anchor);
+};
+
+class RETROMEDIALAB_VIDEO_PRESENTATION_API FullscreenVolumeBadge final : public QFrame {
+public:
+    explicit FullscreenVolumeBadge(QWidget& host, const QIcon& icon);
+    void showVolume(const QWidget& anchor, const QString& title, const QString& value, int percent);
+    void setTransparency(int percent);
+    void reposition(const QWidget& anchor);
+
+private:
+    QLabel* title_;
+    QLabel* value_;
+    QProgressBar* level_;
+    QTimer* hideTimer_;
 };
 
 class RETROMEDIALAB_VIDEO_PRESENTATION_API FullscreenOsd final : public QWidget {
@@ -49,6 +87,9 @@ public:
         std::function<bool()> visible;
         std::function<QString()> status;
         bool fullHeight = false;
+        bool centeredInformation = false;
+        bool centeredMixer = false;
+        QString mixerSection = {};
     };
 
     FullscreenOsd(QWidget& host, QString machine, QString media, QString footer,
@@ -57,11 +98,13 @@ public:
     enum class Navigation { Up, Down, Left, Right, Confirm, Cancel };
     void activate();
     void setGameName(const QString& name);
+    void setTransparency(int percent);
     void setShaderLoading(bool loading, const QString& caption);
     void setFooterHints(const FooterHints&);
     void setExternalKeyboardNavigation(bool enabled) noexcept;
     void navigate(Navigation direction);
     bool isEditing() const noexcept;
+    bool usesPointerAt(const QPoint& globalPosition) const;
     void flushPendingSetting();
 
 protected:
@@ -85,5 +128,10 @@ private:
     void refreshEditorHints();
     void adjustValue(int value);
     void editAdjacent(int direction);
+    void buildMixer();
+    void refreshMixer();
+    void focusLevel();
+    void navigateMixer(Navigation direction);
+    bool hasPointerCapture() const;
 };
 }

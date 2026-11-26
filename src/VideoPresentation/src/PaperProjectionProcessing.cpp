@@ -8,48 +8,60 @@
 namespace RetroMediaLab::VideoPresentation::SoftwareProcessing {
 namespace {
 constexpr int Channels = 3;
-constexpr int BayerWidth = 4;
-constexpr int GrayLevels = 15;
-constexpr int FullIntensity = 100;
-constexpr int Bayer[BayerWidth][BayerWidth]{
-    {0, 8, 2, 10}, {12, 4, 14, 6}, {3, 11, 1, 9}, {15, 7, 13, 5}
-};
-constexpr LinearColor Ink{.015f, .018f, .015f};
-
-float intensity(int value) { return std::clamp(value, 0, FullIntensity) / float(FullIntensity); }
 float unit(float value) { return std::clamp(value, 0.f, 1.f); }
 float luminance(const LinearColor& color) { return color[0] * .2126f + color[1] * .7152f + color[2] * .0722f; }
-float quantize(float value) {
-    const float scaled = unit(value) * GrayLevels;
-    const int low = int(scaled);
-    const float fraction = scaled - float(low);
-    // MathF.Round uses ties to even.
-    return float(low + (fraction > .5f || (fraction == .5f && (low & 1)))) / GrayLevels;
-}
+float quantize(float value, float levels) { return std::floor(value * levels + .5f) / levels; }
 
 std::size_t index(QSize size, int x, int y) {
     return std::size_t(y) * std::size_t(size.width()) + std::size_t(x);
 }
 
-const LinearColor& sample(const std::vector<LinearColor>& source, QSize size, int x, int y) {
-    return source[index(size, std::clamp(x, 0, size.width() - 1), std::clamp(y, 0, size.height() - 1))];
 }
 
-float paperTexture(int x, int y) {
-    constexpr std::uint32_t HashX = 374761393u, HashY = 668265263u, HashMix = 1274126177u;
-    auto hash = std::uint32_t(x) * HashX + std::uint32_t(y) * HashY;
-    hash = (hash ^ (hash >> 13)) * HashMix;
-    return float(hash ^ (hash >> 16)) / float(std::numeric_limits<std::uint32_t>::max());
-}
+std::array<float, 4> ePaperSurface(EPaperColorMode mode) {
+    switch (mode) {
+    case EPaperColorMode::Monochrome: return {.83f, .82f, .76f, .025f};
+    case EPaperColorMode::Grayscale16: return {.82f, .81f, .76f, .035f};
+    case EPaperColorMode::TricolorRed:
+    case EPaperColorMode::TricolorYellow: return {.84f, .83f, .77f, .030f};
+    case EPaperColorMode::Color4096: return {.67f, .67f, .63f, .072f};
+    default: return {.83f, .82f, .77f, .032f};
+    }
 }
 
-EPaperProfile normalized(EPaperProfile profile) {
-    for (auto* value : {&profile.contrast, &profile.dithering, &profile.ghosting, &profile.inkDensity,
-             &profile.paperBrightness, &profile.paperWarmth, &profile.colorSaturation, &profile.surfaceTexture,
-             &profile.edgeSoftness})
-        *value = std::clamp(*value, 0, EPaperProfile::MaximumIntensity);
-    profile.refreshTimeMilliseconds = std::clamp(profile.refreshTimeMilliseconds, 0, EPaperProfile::MaximumDurationMilliseconds);
-    return profile;
+EPaperRefresh EPaperRefreshClock::advance(const EPaperProfile& profile, QSize size, std::chrono::nanoseconds timestamp) {
+    if (profile_ != profile || size_ != size || timestamp < timestamp_) {
+        profile_ = profile;
+        size_ = size;
+        timestamp_ = refreshStarted_ = timestamp;
+        refreshCount_ = 0;
+        return {true, false, 1.f, 0.f};
+    }
+
+    struct Timing { float interval, ghost; int fullEvery; };
+    constexpr std::array timings{
+        Timing{270.f, .28f, 6}, Timing{390.f, .34f, 6}, Timing{450.f, .31f, 6},
+        Timing{720.f, .24f, 4}, Timing{720.f, .24f, 4}, Timing{960.f, .24f, 4}
+    };
+    const auto [interval, ghost, fullEvery] = timings.at(size_t(profile.colorMode));
+    timestamp_ = timestamp;
+    float elapsed = std::chrono::duration<float, std::milli>(timestamp - refreshStarted_).count();
+    const bool captureHistory = elapsed >= interval;
+    if (captureHistory) {
+        refreshStarted_ = timestamp;
+        refreshCount_ = refreshCount_ % fullEvery + 1;
+        elapsed = 0.f;
+    }
+
+    constexpr float inversionHalfDuration = 20.f;
+    constexpr float inversionDuration = inversionHalfDuration * 2.f;
+    const bool fullRefresh = refreshCount_ == fullEvery;
+    const float inversion = fullRefresh
+        ? unit(1.f - std::abs(elapsed - inversionHalfDuration) / inversionHalfDuration) * .35f : 0.f;
+    const float fade = unit((elapsed / interval - .70f) / .30f);
+    float residual = ghost * (1.f - fade * fade * (3.f - 2.f * fade));
+    if (fullRefresh) residual *= unit((elapsed - inversionDuration) / inversionDuration);
+    return {captureHistory, elapsed > 0.f, 1.f - residual, inversion};
 }
 
 ProjectionProfile normalized(ProjectionProfile profile) {
@@ -57,68 +69,53 @@ ProjectionProfile normalized(ProjectionProfile profile) {
     return profile;
 }
 
-void applyEPaper(std::vector<LinearColor>& colors, QSize size, const EPaperProfile& profile) {
-    const float softness = intensity(profile.edgeSoftness) * .65f;
-    const auto source = softness > 0.f ? colors : std::vector<LinearColor>{};
-    const float contrast = .6f + intensity(profile.contrast) * 1.8f;
-    const float brightness = .55f + intensity(profile.paperBrightness) * .4f;
-    const float warmth = intensity(profile.paperWarmth);
-    const LinearColor paper{brightness, brightness * (1.f - warmth * .05f), brightness * (1.f - warmth * .16f)};
-    const float density = intensity(profile.inkDensity);
-    const float saturation = intensity(profile.colorSaturation);
-    const float texture = intensity(profile.surfaceTexture) * .055f;
-    const bool monochrome = profile.colorMode == EPaperColorMode::Monochrome;
-    const float ditherStrength = intensity(profile.dithering) / (monochrome ? 1 : GrayLevels);
-
-    for (int y = 0; y < size.height(); ++y) {
-        for (int x = 0; x < size.width(); ++x) {
-            auto& destination = colors[index(size, x, y)];
-            auto levels = destination;
-            if (softness > 0.f) {
-                const auto& left = sample(source, size, x - 1, y);
-                const auto& right = sample(source, size, x + 1, y);
-                const auto& above = sample(source, size, x, y - 1);
-                const auto& below = sample(source, size, x, y + 1);
-                for (int channel = 0; channel < Channels; ++channel)
-                    levels[channel] = std::lerp(levels[channel],
-                        (left[channel] + right[channel] + above[channel] + below[channel]) * .25f, softness);
-            }
-            for (auto& level : levels) level = unit((level - .5f) * contrast + .5f);
-            const float dither = ((float(Bayer[y % BayerWidth][x % BayerWidth]) + .5f) / (BayerWidth * BayerWidth)
-                - .5f) * ditherStrength;
-            if (profile.colorMode == EPaperColorMode::Color4096) {
-                for (auto& level : levels) level = quantize(level + dither);
-                const float gray = luminance(levels);
-                for (auto& level : levels) level = std::lerp(gray, level, saturation);
-            } else {
-                const float gray = luminance(levels) + dither;
-                levels.fill(monochrome ? (gray >= .5f ? 1.f : 0.f) : quantize(gray));
-            }
-            const float grain = (paperTexture(x, y) - .5f) * texture;
-            for (int channel = 0; channel < Channels; ++channel) {
-                const float dark = std::lerp(paper[channel] * .35f, Ink[channel], density);
-                destination[channel] = unit(std::lerp(dark, paper[channel], levels[channel]) + grain);
-            }
+void applyEPaper(std::vector<LinearColor>& colors, EPaperColorMode mode) {
+    const auto surface = ePaperSurface(mode);
+    for (auto& color : colors) {
+        for (auto& channel : color) channel = unit(channel);
+        const float y = luminance(color);
+        const bool color4096 = mode == EPaperColorMode::Color4096;
+        if (color4096 || mode == EPaperColorMode::Gallery) {
+            const float levels = color4096 ? 15.f : 31.f;
+            for (auto& channel : color) channel = quantize(channel, levels);
+            const float gray = luminance(color);
+            for (auto& channel : color) channel = std::lerp(gray, channel, color4096 ? .56f : .94f);
+        } else if (mode == EPaperColorMode::TricolorRed && color[0] > std::max(color[1], color[2]) + .18f && color[0] > .36f) {
+            color = {.60f, .031f, .026f};
+            continue;
+        } else if (mode == EPaperColorMode::TricolorYellow && std::min(color[0], color[1]) > color[2] + .17f &&
+                   std::min(color[0], color[1]) > .36f) {
+            color = {.81f, .65f, .041f};
+            continue;
+        } else {
+            color.fill(mode == EPaperColorMode::Grayscale16 ? quantize(y, 15.f) : y >= .48f ? 1.f : 0.f);
         }
+        for (int channel = 0; channel < Channels; ++channel)
+            color[channel] = std::lerp(surface[3], surface[channel], color[channel]);
     }
 }
 
 void applyEPaperTemporal(std::vector<LinearColor>& colors, QSize size, std::chrono::nanoseconds timestamp,
-    const EPaperProfile& profile, EPaperHistory& history, bool advance) {
-    if (history.size == size && history.colors.size() == colors.size() && timestamp >= history.timestamp) {
-        if (!advance && timestamp == history.timestamp) {
-            colors = history.colors;
-            return;
+        const EPaperProfile& profile, EPaperHistory& history) {
+    const auto refresh = history.clock.advance(profile, size, timestamp);
+    if (refresh.captureHistory) history.colors = colors;
+    if (!refresh.hasPrevious || history.colors.size() != colors.size()) return;
+
+    const auto surface = ePaperSurface(profile.colorMode);
+    for (size_t pixel = 0; pixel < colors.size(); ++pixel) {
+        auto& color = colors[pixel];
+        const auto& previous = history.colors[pixel];
+        float change = 0.f;
+        for (int channel = 0; channel < Channels; ++channel) {
+            const float delta = color[channel] - previous[channel];
+            change += delta * delta;
         }
-        const auto elapsed = std::chrono::duration<double, std::milli>(timestamp - history.timestamp).count();
-        const float response = profile.refreshTimeMilliseconds == 0 ? 1.f :
-            float(-std::expm1(-std::max(.001, elapsed) / profile.refreshTimeMilliseconds));
-        const float factor = response * (1.f - intensity(profile.ghosting) * .4f);
-        for (std::size_t pixel = 0; pixel < colors.size(); ++pixel)
-            for (int channel = 0; channel < Channels; ++channel)
-                colors[pixel][channel] = std::lerp(history.colors[pixel][channel], colors[pixel][channel], factor);
+        const float inversion = change > .0001f ? refresh.inversion : 0.f;
+        for (int channel = 0; channel < Channels; ++channel) {
+            const float pigment = std::lerp(previous[channel], color[channel], refresh.currentWeight);
+            color[channel] = std::lerp(pigment, unit(surface[channel] + surface[3] - pigment), inversion);
+        }
     }
-    if (advance) history = {size, timestamp, colors};
 }
 
 QImage separateProjectionColors(const QImage& source, const Emulation::VideoFrame& frame,
@@ -174,19 +171,24 @@ QImage separateProjectionColors(const QImage& source, const Emulation::VideoFram
     return history.separated.isNull() ? source : history.separated;
 }
 
-void applyProjection(std::vector<LinearColor>& colors, QSize output, QSize source, QSize panel, const ProjectionProfile& profile) {
-    struct Optics { float black, blur, border, convergence; };
+ProjectionOptics projectionOptics(const ProjectionProfile& profile) {
+    struct ChannelOptics { float black, blur, border, convergence; };
     constexpr std::array opticsByTechnology{
-        Optics{.0007f, .48f, 0.f, .20f},
-        Optics{.009f, 0.f, .065f, 0.f},
-        Optics{.004f, 0.f, .020f, 0.f},
-        Optics{.003f, 0.f, .020f, 0.f},
-        Optics{.0013f, 0.f, .008f, 0.f}
+        ChannelOptics{.0007f, .48f, 0.f, .20f},
+        ChannelOptics{.009f, 0.f, .065f, 0.f},
+        ChannelOptics{.004f, 0.f, .020f, 0.f},
+        ChannelOptics{.003f, 0.f, .020f, 0.f},
+        ChannelOptics{.0013f, 0.f, .008f, 0.f}
     };
     const auto optics = opticsByTechnology[size_t(profile.technology)];
-    const float reflectedLight = profile.surface == ProjectionSurface::GrayScreen ? .62f : 1.f;
+    const float reflection = profile.surface == ProjectionSurface::GrayScreen ? .62f : 1.f;
     const float ambient = .25f * profile.ambientLight / ProjectionProfile::MaximumAmbientLight;
     const float texture = profile.surface == ProjectionSurface::WhiteWall ? .045f : 0.f;
+    return {optics.black, optics.blur, optics.border, optics.convergence, reflection, ambient, texture};
+}
+
+void applyProjection(std::vector<LinearColor>& colors, QSize output, QSize source, QSize panel, const ProjectionProfile& profile) {
+    const auto optics = projectionOptics(profile);
     const float stepX = std::max(1.f, .55f * output.width() / panel.width());
     const float stepY = std::max(1.f, .55f * output.height() / panel.height());
     const float convergence = optics.convergence * output.width() / source.width();
@@ -225,8 +227,8 @@ void applyProjection(std::vector<LinearColor>& colors, QSize output, QSize sourc
             auto& color = colors[index(output, x, y)];
             const float area = columns[size_t(x)] * row;
             const float px = x + .5f, py = y + .5f;
-            const float reflection = texture == 0.f ? reflectedLight : reflectedLight *
-                (1.f - texture * (.5f + .25f * std::sin(px * .71f + py * .31f) + .25f * std::sin(px * .17f - py * .83f)));
+            const float reflection = optics.texture == 0.f ? optics.reflection : optics.reflection *
+                (1.f - optics.texture * (.5f + .25f * std::sin(px * .71f + py * .31f) + .25f * std::sin(px * .17f - py * .83f)));
             for (int channel = 0; channel < Channels; ++channel) {
                 float value = color[channel];
                 if (optics.blur > 0.f) {
@@ -238,7 +240,7 @@ void applyProjection(std::vector<LinearColor>& colors, QSize output, QSize sourc
                     value = std::lerp(center, surround, optics.blur);
                 }
                 const float projected = std::lerp(optics.black, 1.f, value * area);
-                color[channel] = std::lerp(projected, 1.f, ambient) * reflection;
+                color[channel] = std::lerp(projected, 1.f, optics.ambient) * reflection;
             }
         }
     }

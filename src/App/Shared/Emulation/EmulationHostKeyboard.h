@@ -4,9 +4,11 @@
 #include <RetroMediaLab/Emulation/EmulationKey.h>
 #include <RetroMediaLab/Emulation/Sdk.h>
 
+#include <functional>
 #include <optional>
 
 class QKeyEvent;
+class QPoint;
 
 namespace RetroMediaLab {
 class EmulationKeyboardModifiers final {
@@ -28,6 +30,9 @@ public:
     static RETROMEDIALAB_APP_API Emulation::EmulationKey keyFor(const QKeyEvent&);
     static RETROMEDIALAB_APP_API quint64 physicalId(const QKeyEvent&);
     static RETROMEDIALAB_APP_API QKeyCombination hostCombination(QStringView bindingKey);
+    static RETROMEDIALAB_APP_API void applyMachineBindings(Emulation::InputSnapshot&,
+        const QList<Emulation::RawControllerState>&, Qt::MouseButtons, const QPoint&,
+        const QHash<QString, QString>&, const std::function<bool(const QString&)>& reserved);
     RETROMEDIALAB_APP_API bool update(const QKeyEvent&, Emulation::InputSnapshot&);
     RETROMEDIALAB_APP_API void clear();
 

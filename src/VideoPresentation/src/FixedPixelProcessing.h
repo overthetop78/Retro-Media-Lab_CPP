@@ -13,6 +13,11 @@ FixedPixelProfile normalized(FixedPixelProfile);
 float periodicCoverage(float center, float span, float first, float last);
 LinearColor cellAxis(int pixel, int cells, int pixels, bool striped, bool reverse, float gap = 0.f);
 void applyLcdStructure(std::vector<LinearColor>&, QSize output, QSize panel, LcdPixelStructure, LcdPixelOrientation);
+struct LcdOptics {
+    float black, leak, responseMilliseconds;
+};
+LcdOptics lcdOptics(LcdPanelType);
+float oledLimiter(OledPanelType);
 void applyLcdLight(std::vector<LinearColor>&, QSize, const LcdProfile&);
 std::vector<quint8> ledBacklightZones(const QImage& source, LedBacklightType);
 void applyLedBacklight(std::vector<LinearColor>&, QSize output, QSize source, const std::vector<quint8>& zones,

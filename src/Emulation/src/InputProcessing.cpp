@@ -26,6 +26,10 @@ enum Button : quint32 {
     B, Y, Select, Start, Up, Down, Left, Right, A, X, L, R, L2, R2, L3, R3,
     Guide, Share, PaddleLeft1, PaddleLeft2, PaddleRight1, PaddleRight2
 };
+constexpr auto GuideControl = QLatin1String("XboxButton");
+constexpr auto GuideAlias = QLatin1String("Guide");
+constexpr auto ShareControl = QLatin1String("Share");
+
 constexpr std::pair<QLatin1StringView, Button> ButtonNames[]{
     {QLatin1String("B"), B},
     {QLatin1String("ButtonB"), B},
@@ -59,9 +63,9 @@ constexpr std::pair<QLatin1StringView, Button> ButtonNames[]{
     {QLatin1String("LeftStickClick"), L3},
     {QLatin1String("R3"), R3},
     {QLatin1String("RightStickClick"), R3},
-    {QLatin1String("XboxButton"), Guide},
-    {QLatin1String("Guide"), Guide},
-    {QLatin1String("Share"), Share},
+    {GuideControl, Guide},
+    {GuideAlias, Guide},
+    {ShareControl, Share},
     {QLatin1String("PaddleLeft1"), PaddleLeft1},
     {QLatin1String("PaddleLeft2"), PaddleLeft2},
     {QLatin1String("PaddleRight1"), PaddleRight1},
@@ -429,6 +433,18 @@ float controllerSourceValue(QStringView name, const CoreController& controller) 
         if (control != controller.controls.cend()) return applyDeadZone(*control, 0);
         const auto trigger = bit == L2 ? controller.leftTrigger : controller.rightTrigger;
         if (trigger > 0) return static_cast<float>(trigger) / Maximum;
+    }
+    if (bit == Guide || bit == Share) {
+        const auto name = bit == Guide ? GuideControl : ShareControl;
+        if (buttonPressed(controller.buttons, bit)) return 1.0f;
+        const auto matches = [name, bit](QStringView key) {
+            return key.compare(name, Qt::CaseInsensitive) == 0 ||
+                (bit == Guide && key.compare(GuideAlias, Qt::CaseInsensitive) == 0);
+        };
+        float pressure = 0.0f;
+        for (auto value = controller.controls.cbegin(); value != controller.controls.cend(); ++value)
+            if (matches(value.key())) pressure = std::max(pressure, *value);
+        return applyDeadZone(pressure, 0);
     }
     if (bit != InvalidButton) return buttonPressed(controller.buttons, bit) ? 1.0f : 0.0f;
 

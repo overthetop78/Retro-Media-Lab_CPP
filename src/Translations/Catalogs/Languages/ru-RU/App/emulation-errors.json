@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "Перед включением этой машины эмулятору требуется носитель. Вставьте дискету или настройте жёсткий диск.",
+    "Emulation.Error.PowerFailureTitle": "Не удалось включить машину",
+    "Emulation.Error.Machine": "Машина",
+    "Emulation.Error.RequiredMedia": "Необходимые носители",
+    "Emulation.Error.Title": "ошибка эмуляции",
+    "Emulation.Error.EmulatorNotInstalled": "Необходимый эмулятор не устанавливается.",
+    "Emulation.Error.EmulatorUpdateBlocked": "Эмулятор не может быть обновлен, пока он используется.",
+    "Emulation.Error.FirmwareMissing": "Необходимая прошивка отсутствует.",
+    "Emulation.Error.FirmwareIncompatible": "Выбранное прошивка несовместима с этой машиной.",
+    "Emulation.Error.MediaNotFound": "Настроенный медиафайл не найден.",
+    "Emulation.Error.MediaUnsupported": "Выбранные носители не поддерживаются этим эмулятором.",
+    "Emulation.Error.OptionInvalid": "Опция эмулятора недействительна.",
+    "Emulation.Error.HostCommunicationFailed": "Связь с эмулятором не удалась.",
+    "Emulation.Error.MachineStartFailed": "Эмулированная машина не могла быть запущена.",
+    "Emulation.Error.MediaOperationFailed": "Операция СМИ провалилась.",
+    "Emulation.Error.SavedStateInvalid": "Спасенное состояние является недействительным или поврежденным.",
+    "Emulation.Error.SavedStateIncompatible": "Сохраненное состояние не совместимо с этой конфигурацией машины.",
+    "Emulation.Error.SavedStateOperationFailed": "Операция «спасенное государство» провалилась."
+  }
+}

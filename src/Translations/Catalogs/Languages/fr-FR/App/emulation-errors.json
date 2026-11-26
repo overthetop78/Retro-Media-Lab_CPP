@@ -1,0 +1,22 @@
+{
+  "strings": {
+    "Emulation.Error.RequiredMediaMissing": "L’émulateur nécessite un média avant de pouvoir allumer cette machine. Insérez ou configurez l’un des supports requis indiqués ci-dessous.",
+    "Emulation.Error.PowerFailureTitle": "Impossible d’allumer la machine",
+    "Emulation.Error.Machine": "Machine",
+    "Emulation.Error.RequiredMedia": "Supports requis",
+    "Emulation.Error.Title": "Erreur d'émulation",
+    "Emulation.Error.EmulatorNotInstalled": "L'émulateur requis n'est pas installé.",
+    "Emulation.Error.EmulatorUpdateBlocked": "L'émulateur ne peut être mis à jour pendant son utilisation.",
+    "Emulation.Error.FirmwareMissing": "Le firmware requis est manquant.",
+    "Emulation.Error.FirmwareIncompatible": "Le firmware sélectionné est incompatible avec cette machine.",
+    "Emulation.Error.MediaNotFound": "Le fichier multimédia configuré n'a pas été trouvé.",
+    "Emulation.Error.MediaUnsupported": "Le support sélectionné n'est pas supporté par cet émulateur.",
+    "Emulation.Error.OptionInvalid": "Une option d'émulateur est invalide.",
+    "Emulation.Error.HostCommunicationFailed": "La communication avec le processus d'émulateur a échoué.",
+    "Emulation.Error.MachineStartFailed": "La machine à émuler ne pouvait pas être mise en marche.",
+    "Emulation.Error.MediaOperationFailed": "L'opération des médias a échoué.",
+    "Emulation.Error.SavedStateInvalid": "L'état sauvegardé est invalide ou endommagé.",
+    "Emulation.Error.SavedStateIncompatible": "L'état sauvegardé n'est pas compatible avec cette configuration de la machine.",
+    "Emulation.Error.SavedStateOperationFailed": "L'opération de l'état sauvé a échoué."
+  }
+}

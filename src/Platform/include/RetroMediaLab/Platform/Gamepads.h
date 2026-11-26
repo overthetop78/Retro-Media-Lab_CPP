@@ -27,6 +27,8 @@ namespace RawGamepad {
 inline constexpr auto AxisPrefix = "Axis";
 inline constexpr auto ButtonPrefix = "Button";
 inline constexpr auto SwitchPrefix = "Switch";
+inline constexpr auto GuideButton = "XboxButton";
+inline constexpr auto ShareButton = "Share";
 inline constexpr float AxisCenter = 0.5f;
 inline constexpr float NeutralAxisMin = 0.25f;
 inline constexpr float NeutralAxisMax = 0.75f;
@@ -36,7 +38,11 @@ inline QString controlName(QLatin1StringView prefix, qsizetype index) {
 }
 
 inline bool isAxis(QStringView name) {
-    return name.startsWith(QLatin1String(AxisPrefix));
+    constexpr auto prefix = QLatin1String(AxisPrefix);
+    if (!name.startsWith(prefix, Qt::CaseInsensitive)) return false;
+    bool valid = false;
+    const auto index = name.sliced(prefix.size()).toInt(&valid);
+    return valid && index >= 0;
 }
 
 inline int direction(QStringView name, float value) {

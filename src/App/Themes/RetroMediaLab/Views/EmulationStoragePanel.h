@@ -18,7 +18,7 @@ class EmulationStoragePanel final : public QWidget {
 public:
     using Localize = std::function<QString(const QString&)>;
     EmulationStoragePanel(Emulation::StorageSettings, WorkspaceState&, const Translations::TranslationService&,
-        QString scope, Localize, QWidget* parent);
+        QString scope, Localize, QHash<QString, QString> detailedHelpResourceKeys, QWidget* parent);
     static std::optional<QString> selectMemoryCard(QWidget&, const Emulation::StorageDevice&, QString title,
         const QString& current, WorkspaceState&, const Translations::TranslationService&, const QString& scope,
         const Localize&);
@@ -48,6 +48,7 @@ private:
     const Translations::TranslationService& translations_;
     QString scope_;
     Localize localize_;
+    QHash<QString, QString> detailedHelpResourceKeys_;
     QList<int> rows_;
     QListWidget* devices_;
     QPushButton* add_;

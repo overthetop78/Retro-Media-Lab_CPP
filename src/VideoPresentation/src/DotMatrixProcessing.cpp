@@ -2,94 +2,84 @@
 #include "MatrixCells.h"
 
 namespace RetroMediaLab::VideoPresentation::SoftwareProcessing {
-namespace {
-struct Palette {
-    LinearColor background;
-    LinearColor foreground;
-};
 
-constexpr std::array<Palette, 7> Palettes{{
-    {{.16f, .25f, .075f}, {.018f, .045f, .01f}}, {{.64f, .68f, .62f}, {.035f, .035f, .035f}},
-    {{}, {1.f, .42f, .015f}}, {{}, {.32f, .72f, 1.f}}, {{}, {}}, {{}, {1.f, .06f, .025f}}, {{}, {1.f, 1.f, 1.f}}
-}};
-
-float amount(int value) { return float(value) / DotMatrixProfile::MaximumIntensity; }
-float unit(float value) { return std::clamp(value, 0.f, 1.f); }
-
-float distance(float x, float y, DotMatrixShape shape) {
-    switch (shape) {
-    case DotMatrixShape::Square: return std::max(std::abs(x), std::abs(y));
-    case DotMatrixShape::Rectangle: return std::max(.72f * std::abs(x), std::abs(y));
-    default: return std::sqrt(x * x + y * y);
+LinearColor dotMatrixTint(DotMatrixPalette palette) {
+    switch (palette) {
+    case DotMatrixPalette::Gray: return {.55f, .55f, .55f};
+    case DotMatrixPalette::Green: return {.38f, .71f, .025f};
+    case DotMatrixPalette::Amber: return {1.f, .45f, .032f};
+    case DotMatrixPalette::Red: return {1.f, .025f, .015f};
+    case DotMatrixPalette::Blue: return {.035f, .22f, 1.f};
+    default: return {};
     }
-}
-}
-
-DotMatrixProfile normalized(DotMatrixProfile profile) {
-    for (const auto field : {&DotMatrixProfile::dotSize, &DotMatrixProfile::contrast, &DotMatrixProfile::cellSize,
-            &DotMatrixProfile::cellGap, &DotMatrixProfile::brightness, &DotMatrixProfile::haloIntensity})
-        profile.*field = std::clamp(profile.*field, 0, DotMatrixProfile::MaximumIntensity);
-    for (const auto field : {&DotMatrixProfile::responseTimeMilliseconds, &DotMatrixProfile::persistenceMilliseconds})
-        profile.*field = std::clamp(profile.*field, 0, DotMatrixProfile::MaximumDurationMilliseconds);
-    return profile;
 }
 
 void applyDotMatrix(std::vector<LinearColor>& colors, QSize output, QSize source, const DotMatrixProfile& profile) {
     if (colors.empty() || output.isEmpty() || source.isEmpty()) return;
-    const int pitch = 1 + int(std::nearbyint(amount(profile.cellSize) * 15.f));
-    MatrixCells cells(colors, output, source, pitch);
-    const auto palette = Palettes[size_t(profile.palette)];
-    const float contrast = .5f + amount(profile.contrast) * 2.5f;
-    const float brightness = .05f + amount(profile.brightness) * 1.2f;
-    for (auto& cell : cells.averages()) {
-        const auto luminance = matrixLuminance(cell);
-        const float activation = unit((luminance - .5f) * contrast + .5f) * brightness;
-        auto foreground = palette.foreground;
-        if (profile.palette == DotMatrixPalette::Rgb)
-            for (size_t c = 0; c < foreground.size(); ++c) foreground[c] = unit(cell[c] / std::max(.0001f, luminance));
-        for (size_t c = 0; c < cell.size(); ++c) cell[c] = (foreground[c] - palette.background[c]) * activation;
-    }
-    const float radius = .08f + .42f * amount(profile.dotSize) * (1.f - .72f * amount(profile.cellGap));
-    const float haloGain = amount(profile.haloIntensity) * .85f;
+    const auto grid = matrixSize(profile.definition, source);
+    const int columns = grid.width(), rows = grid.height();
+    const bool round = profile.shape == DotMatrixShape::Round;
+    const bool rectangle = profile.shape == DotMatrixShape::Rectangle;
+    const bool rgb = profile.palette == DotMatrixPalette::Rgb;
+    const bool emissive = profile.technology == DotMatrixTechnology::Emissive;
+    const bool backlit = profile.technology == DotMatrixTechnology::Backlit;
+    const auto palette = dotMatrixTint(profile.palette);
+    constexpr LinearColor BacklitBackground{.70f, .72f, .69f};
+    constexpr LinearColor ReflectiveBackground{.462f, .533f, .258f};
+    const auto& background = backlit ? BacklitBackground : ReflectiveBackground;
+    constexpr float MinimumLevel = .0001f;
+    constexpr float EmissiveBlack = .004f, EmissiveBase = .009f, EmissiveGain = .97f, ActivatedBase = .014f;
+    const float transmission = backlit ? .085f : .042f;
+    const float chromaticTransmission = backlit ? .60f : .42f;
+    const float inactiveGain = backlit ? .94f : .96f;
+    struct Cell { LinearColor active; float level; };
+    std::vector<Cell> cells(size_t(columns) * rows);
+    for (int y = 0; y < rows; ++y)
+        for (int x = 0; x < columns; ++x) {
+            const auto sample = sampleMatrixCell(colors, source, grid, x, y);
+            const auto [low, high] = std::minmax_element(sample.begin(), sample.end());
+            auto& cell = cells[size_t(y) * columns + x];
+            cell.level = rgb ? *high : matrixLuminance(sample);
+            const float denominator = std::max(cell.level, MinimumLevel);
+            const float chroma = rgb ? (cell.level - *low) / denominator : 0.f;
+            const float cellTransmission = std::lerp(transmission, chromaticTransmission, chroma);
+            for (size_t channel = 0; channel < cell.active.size(); ++channel) {
+                const float tint = rgb ? sample[channel] / denominator : palette[channel];
+                cell.active[channel] = emissive ? EmissiveBase + EmissiveGain * tint * cell.level
+                    : ActivatedBase + tint * cellTransmission;
+            }
+        }
+
+    constexpr float Radius = .40f, RectangleHalfWidth = .30f;
+    constexpr float RoundArea = .503f, SquareArea = .64f, RectangleArea = .48f;
+    constexpr float MaximumEdge = .20f, DetailStart = 1.f, DetailEnd = 2.5f;
+    const float openArea = round ? RoundArea : rectangle ? RectangleArea : SquareArea;
+    const float halfWidth = rectangle ? RectangleHalfWidth : Radius;
+    const float stepX = float(columns) / output.width(), stepY = float(rows) / output.height();
+    const float scale = 1.f / std::max(stepX, stepY);
+    const float edge = std::min(.5f / std::max(scale, 1.f), MaximumEdge);
+    const float detail = matrixSmoothStep(DetailStart, DetailEnd, scale);
+    colors.resize(size_t(output.width()) * output.height());
     for (int y = 0; y < output.height(); ++y) {
-        const auto row = cells.row(y);
+        const float matrixY = (y + .5f) * stepY;
+        const int row = std::min(rows - 1, int(matrixY));
+        const float dy = std::abs(matrixY - row - .5f);
         for (int x = 0; x < output.width(); ++x) {
-            const auto column = cells.column(x);
-            const float d = distance(column.offset, row.offset, profile.shape);
-            const float core = cells.core(d, radius);
-            const float spatial = core + (haloGain > 0 ? std::exp(-std::max(0.f, d - radius) * 8.f) * haloGain * (1.f - core) : 0.f);
+            const float matrixX = (x + .5f) * stepX;
+            const int column = std::min(columns - 1, int(matrixX));
+            const float dx = std::abs(matrixX - column - .5f);
+            const float distance = round ? std::sqrt(dx * dx + dy * dy) - Radius
+                : std::max(dx - halfWidth, dy - Radius);
+            const float coverage = std::lerp(openArea, 1.f - matrixSmoothStep(-edge, edge, distance), detail);
+            const auto& cell = cells[size_t(row) * columns + column];
             auto& color = colors[size_t(y) * output.width() + x];
-            const auto& cell = cells.averages()[cells.index(column, row)];
-            for (size_t c = 0; c < color.size(); ++c) color[c] = unit(palette.background[c] + cell[c] * spatial);
+            for (size_t channel = 0; channel < color.size(); ++channel) {
+                const float base = background[channel];
+                color[channel] = emissive ? std::lerp(EmissiveBlack, cell.active[channel], coverage)
+                    : std::lerp(base, std::lerp(base * inactiveGain, cell.active[channel], cell.level), coverage);
+            }
         }
     }
 }
 
-void applyDotMatrixTemporal(std::vector<LinearColor>& colors, QSize size, std::chrono::nanoseconds timestamp,
-        const DotMatrixProfile& profile, DotMatrixHistory& history, bool advance) {
-    if (!profile.responseTimeMilliseconds && !profile.persistenceMilliseconds) return;
-    if (history.size == size && history.colors.size() == colors.size() && timestamp >= history.timestamp) {
-        if (!advance && history.timestamp == timestamp) {
-            colors = history.colors;
-            return;
-        }
-        const double elapsed = std::max(.001, std::chrono::duration<double, std::milli>(timestamp - history.timestamp).count());
-        const float response = profile.responseTimeMilliseconds > 0
-            ? float(-std::expm1(-elapsed / profile.responseTimeMilliseconds)) : 1.f;
-        const float decay = profile.persistenceMilliseconds > 0
-            ? std::exp(-float(elapsed) / profile.persistenceMilliseconds) : 0.f;
-        const bool reflective = profile.palette == DotMatrixPalette::Green || profile.palette == DotMatrixPalette::Gray;
-        const auto background = Palettes[size_t(profile.palette)].background;
-        for (size_t i = 0; i < colors.size(); ++i)
-            for (size_t c = 0; c < colors[i].size(); ++c) {
-                const auto previous = history.colors[i][c];
-                auto& value = colors[i][c];
-                value = std::lerp(previous, value, response);
-                if (profile.persistenceMilliseconds > 0)
-                    value = reflective ? std::min(value, background[c] - (background[c] - previous) * decay) :
-                        std::max(value, previous * decay);
-            }
-    }
-    if (advance) history = {size, timestamp, colors};
-}
 }
