@@ -54,6 +54,16 @@ constexpr int FullTransparency = 100;
 constexpr int MenuStartAlpha = 248;
 constexpr int MenuEndAlpha = 242;
 constexpr auto PanelName = "rmlFullscreenOsdPanel";
+constexpr std::array SectionColors{
+    qRgb(18, 38, 72), qRgb(13, 56, 57), qRgb(47, 30, 74),
+    qRgb(64, 43, 24), qRgb(61, 29, 53), qRgb(34, 56, 35)};
+constexpr auto SubmenuColor = qRgb(11, 25, 52);
+constexpr auto SolidPanelBackground = "QFrame#rmlFullscreenOsdPanel { background: rgba(%1,%2,%3,%4); }";
+constexpr auto EditorBackground = R"(
+QFrame#rmlFullscreenOsdPanel {
+    background: qlineargradient(x1:0,y1:0,x2:1,y2:1,stop:0 rgba(14,24,44,%1),stop:1 rgba(20,44,61,%1));
+}
+)";
 constexpr auto VideoShaderBadgeName = "rmlVideoShaderBadge";
 constexpr auto WindowedShaderBadgeStyle = R"(
 QFrame#rmlVideoShaderBadge { background: rgba(20,22,26,190); border-radius: 8px; }
@@ -522,6 +532,7 @@ void FullscreenOsd::setTransparency(int percent) {
         .arg(MenuStartAlpha * opacity / FullTransparency).arg(MenuEndAlpha * opacity / FullTransparency);
     if (sheet != styleSheet()) setStyleSheet(sheet);
     if (state_->shaderBadge) state_->shaderBadge->setTransparency(state_->transparency);
+    for (std::size_t depth = 1; depth < state_->levels.size(); ++depth) updateSectionBackground(depth);
 }
 
 void FullscreenOsd::setShaderLoading(bool loading, const QString& caption) {
@@ -632,6 +643,7 @@ void FullscreenOsd::openLevel(const std::vector<Entry>& entries, const QString& 
     const auto level = state_->levels.size();
     state_->levels.push_back({&entries, panel, rows, parent});
     panel->setMouseTracking(true);
+    connect(rows, &QListWidget::currentRowChanged, this, [this, level] { updateSectionBackground(level); });
     connect(rows, &QListWidget::itemClicked, this, [this, level, rows](QListWidgetItem* item) {
         invoke(level, rows->row(item), false);
     });
@@ -922,6 +934,36 @@ void FullscreenOsd::positionPanels() {
     }
 }
 
+void FullscreenOsd::updateSectionBackground(std::size_t depth) {
+    if (depth == 0 || depth >= state_->levels.size()) return;
+    const auto& level = state_->levels[depth];
+    const int selected = level.rows->currentRow();
+    const int alpha = FullOpacity * (FullTransparency - state_->transparency) / FullTransparency;
+    QString section;
+    std::size_t groups = 0;
+    int row = 0;
+    for (const auto& entry : *level.entries) {
+        row += entry.separatorBefore;
+        if (row > selected) break;
+        if (entry.sectionHeading && !level.rows->item(row)->isHidden() && section != entry.label) {
+            section = entry.label;
+            ++groups;
+        }
+        ++row;
+    }
+    const auto styleFor = [alpha](QRgb color) {
+        return QString::fromLatin1(SolidPanelBackground)
+            .arg(qRed(color)).arg(qGreen(color)).arg(qBlue(color)).arg(alpha);
+    };
+    const auto color = groups ? SectionColors[(groups - 1) % SectionColors.size()] : SubmenuColor;
+    const auto panelStyle = styleFor(color);
+    if (level.panel->styleSheet() != panelStyle) level.panel->setStyleSheet(panelStyle);
+    if (depth + 1 == state_->levels.size() && state_->edited) {
+        const auto editorStyle = groups ? panelStyle : QString::fromLatin1(EditorBackground).arg(alpha);
+        if (state_->editor->styleSheet() != editorStyle) state_->editor->setStyleSheet(editorStyle);
+    }
+}
+
 void FullscreenOsd::refresh() {
     auto validLevels = state_->levels.size();
     bool editedVisible = false;
@@ -959,6 +1001,7 @@ void FullscreenOsd::refresh() {
         }
         const int selected = next == -1 ? before : next;
         if (selected != level.rows->currentRow()) level.rows->setCurrentRow(selected);
+        updateSectionBackground(depth);
         if (child && !childVisible) {
             validLevels = depth + 1;
             break;
@@ -1020,6 +1063,7 @@ void FullscreenOsd::positionEditor() {
 
 void FullscreenOsd::showEditor(const Entry& entry) {
     state_->edited = &entry;
+    updateSectionBackground(state_->levels.size() - 1);
     const auto& setting = *entry.setting;
     const QSignalBlocker blocker(state_->slider);
     state_->draft = setting.read();

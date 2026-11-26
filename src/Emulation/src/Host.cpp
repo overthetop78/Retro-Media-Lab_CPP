@@ -388,6 +388,7 @@ bool Session::requiresRecreation(const MediaSlot& slot) const {
 bool Session::execute(LifecycleCommand command, std::stop_token token) try {
     if (token.stop_requested()) return false;
     const auto state = data_->machine->state();
+    if (command == LifecycleCommand::Start && isPowered(state)) return true;
     if (command == LifecycleCommand::HardReset && isPowered(state) &&
         std::ranges::any_of(data_->mounted, [this](const auto& mount) { return requiresRecreation(mount.slot); }))
         return replaceRuntime(data_->mounted, {}, token);
@@ -396,7 +397,7 @@ bool Session::execute(LifecycleCommand command, std::stop_token token) try {
             disposeRuntime(std::make_unique<StoppedMachine>(data_->machine->mediaSlots()), token);
         return true;
     }
-    if (command == LifecycleCommand::Start && !data_->recreateOnStart && !isPowered(state)) {
+    if (command == LifecycleCommand::Start && !data_->recreateOnStart) {
         auto stopped = std::make_unique<StoppedMachine>(data_->machine->mediaSlots());
         try {
             if (dynamic_cast<const IModuleStorageSettingsManager*>(data_->module->instance) &&
@@ -406,6 +407,10 @@ bool Session::execute(LifecycleCommand command, std::stop_token token) try {
                 return false;
             }
             data_->machine->execute(command, token);
+            if (token.stop_requested() || !isPowered(data_->machine->state())) {
+                disposeRuntime(std::move(stopped), {});
+                return false;
+            }
         } catch (...) {
             if (stopped) {
                 try { disposeRuntime(std::move(stopped), {}); } catch (...) {}
@@ -590,9 +595,8 @@ bool Session::insertMediaImpl(MountedMedia media, bool prepareFile, std::stop_to
         data_->recreateOnStart = true;
     }
     auto& mounted = data_->mounted;
-    const auto existing = std::ranges::find_if(mounted, [&](const auto& entry) { return sameSlot(entry.slot, media.slot); });
-    if (existing == mounted.end()) mounted.append(std::move(media));
-    else *existing = std::move(media);
+    mounted.removeIf([&](const auto& entry) { return sameSlot(entry.slot, media.slot); });
+    mounted.append(std::move(media));
     persistMountedMedia(*slot, {}, token);
     return true;
 } catch (...) {
@@ -877,7 +881,10 @@ void Host::discover() {
     QMap<QString, std::shared_ptr<Module>> discovered;
     QList<ModuleDiagnostic> issues;
     for (const auto& folder : directory.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::Name)) {
-        if (!QFileInfo::exists(QDir(folder.absoluteFilePath()).filePath(QLatin1String(Manifest)))) continue;
+        if (!QFileInfo::exists(QDir(folder.absoluteFilePath()).filePath(QLatin1String(Manifest)))) {
+            issues.push_back({folder.fileName(), ModuleIssue::MissingManifest});
+            continue;
+        }
         const auto existing = data_->modules.value(folder.fileName());
         if (existing) {
             discovered.insert(folder.fileName(), existing);
@@ -896,11 +903,22 @@ void Host::discover() {
         if (discovered.contains(module->info.id)) issues.push_back({folder.fileName(), ModuleIssue::DuplicateId});
         else discovered.insert(module->info.id, module);
     }
+    for (const auto& file : directory.entryInfoList(QDir::Files | QDir::NoSymLinks, QDir::Name))
+        if (QLibrary::isLibrary(file.fileName())) issues.push_back({file.fileName(), ModuleIssue::LooseLibrary});
     data_->modules.swap(discovered);
     data_->diagnostics.swap(issues);
     for (auto it = discovered.cbegin(); it != discovered.cend(); ++it)
         if (!data_->modules.contains(it.key()) && dynamic_cast<IEmulationNetworkManager*>(it.value()->instance))
             networks().setConfigurations(it.key(), {});
+}
+
+std::optional<int> Host::tryHandleHostCommand(const QStringList& arguments) const {
+    for (const auto& module : data_->modules) {
+        auto* handler = dynamic_cast<IModuleHostCommand*>(module->instance);
+        if (!handler) continue;
+        if (auto result = handler->tryHandleHostCommand(arguments)) return result;
+    }
+    return std::nullopt;
 }
 
 QList<ModuleInfo> Host::modules() const {

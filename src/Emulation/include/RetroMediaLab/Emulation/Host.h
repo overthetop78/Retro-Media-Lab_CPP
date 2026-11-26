@@ -13,7 +13,9 @@ struct InputSettings;
 struct StorageDevice;
 struct HardDiskImageFormat;
 struct HardDiskImageRequest;
-enum class ModuleIssue { InvalidManifest, IncompatibleApi, UnsafeLibraryPath, InvalidFactory, DuplicateId, LoadFailed };
+enum class ModuleIssue {
+    InvalidManifest, IncompatibleApi, UnsafeLibraryPath, InvalidFactory, DuplicateId, LoadFailed, MissingManifest, LooseLibrary
+};
 struct ModuleDiagnostic {
     QString directory;
     ModuleIssue issue;
@@ -102,6 +104,7 @@ public:
     Host(const Host&) = delete;
     Host& operator=(const Host&) = delete;
     void discover();
+    std::optional<int> tryHandleHostCommand(const QStringList& arguments) const;
     void setStorageDirectories(QString storage, QString states);
     QList<ModuleInfo> modules() const;
     const QList<ModuleDiagnostic>& diagnostics() const noexcept;

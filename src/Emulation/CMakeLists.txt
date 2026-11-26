@@ -5,6 +5,7 @@ add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/
   src/HardwareSettings.cpp include/RetroMediaLab/Emulation/HardwareSettings.h
   src/ConfigurationFiles.cpp include/RetroMediaLab/Emulation/ConfigurationFiles.h
   src/CoreReleases.cpp include/RetroMediaLab/Emulation/CoreReleases.h
+  include/RetroMediaLab/Emulation/EmulatorAdapter.h
   src/NativeCoreHardwareRender.cpp include/RetroMediaLab/Emulation/NativeCoreHardwareRender.h
   src/Messages.cpp include/RetroMediaLab/Emulation/Messages.h
   src/MachineExecution.cpp src/CoreDiagnostics.cpp src/NativeCoreContent.cpp src/NativeCoreLibrary.cpp src/NativeCoreFrames.cpp src/NativeCoreEnvironment.cpp src/NativeCoreOptions.cpp
@@ -26,10 +27,27 @@ add_library(RetroMediaLab.Emulation SHARED src/Host.cpp src/AudioOutput.cpp src/
   include/RetroMediaLab/Emulation/EmulationKey.h)
 set_target_properties(RetroMediaLab.Emulation PROPERTIES AUTOMOC ON)
 target_compile_definitions(RetroMediaLab.Emulation PRIVATE RETROMEDIALAB_EMULATION_BUILD)
-target_include_directories(RetroMediaLab.Emulation PUBLIC include)
+target_include_directories(RetroMediaLab.Emulation PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(RetroMediaLab.Emulation PUBLIC cxx_std_20)
 target_link_libraries(RetroMediaLab.Emulation PUBLIC Qt6::Core PRIVATE RetroMediaLab.MediaEngine RetroMediaLab.Archives Qt6::Multimedia Qt6::Network)
 if(WIN32)
   target_link_libraries(RetroMediaLab.Emulation PRIVATE opengl32 gdi32 user32 version)
 endif()
 set_target_properties(RetroMediaLab.Emulation PROPERTIES OUTPUT_NAME Emulation)
 install(TARGETS RetroMediaLab.Emulation RUNTIME DESTINATION lib LIBRARY DESTINATION lib)
+
+include(CMakePackageConfigHelpers)
+set(emulation_sdk_config_dir lib/cmake/RetroMediaLabEmulation)
+configure_package_config_file(RetroMediaLabEmulationConfig.cmake.in
+  "${CMAKE_CURRENT_BINARY_DIR}/RetroMediaLabEmulationConfig.cmake"
+  INSTALL_DESTINATION ${emulation_sdk_config_dir})
+install(TARGETS RetroMediaLab.Emulation
+  RUNTIME DESTINATION lib COMPONENT EmulationSDK EXCLUDE_FROM_ALL
+  LIBRARY DESTINATION lib COMPONENT EmulationSDK EXCLUDE_FROM_ALL
+  ARCHIVE DESTINATION lib COMPONENT EmulationSDK EXCLUDE_FROM_ALL)
+install(DIRECTORY include/ DESTINATION include COMPONENT EmulationSDK EXCLUDE_FROM_ALL
+  FILES_MATCHING PATTERN "*.h")
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/RetroMediaLabEmulationConfig.cmake"
+  DESTINATION ${emulation_sdk_config_dir} COMPONENT EmulationSDK EXCLUDE_FROM_ALL)

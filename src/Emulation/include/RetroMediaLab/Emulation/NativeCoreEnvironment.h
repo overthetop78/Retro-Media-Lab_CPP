@@ -106,6 +106,17 @@ struct NativeCoreMemoryDescription {
     QString addressSpace;
 };
 
+RETROMEDIALAB_EMULATION_API QList<NativeCoreInputDescription> copyNativeCoreInputDescriptors(
+    const NativeCoreInputDescriptor*, unsigned maximumCount);
+RETROMEDIALAB_EMULATION_API QList<QList<NativeCoreControllerDescription>> copyNativeCoreControllerPorts(
+    const NativeCoreControllerInfo*, unsigned maximumPorts, unsigned maximumDevices);
+RETROMEDIALAB_EMULATION_API bool tryCopyNativeCoreControllerPorts(
+    const NativeCoreControllerInfo*, unsigned maximumPorts, unsigned maximumDevices,
+    bool rejectOverflow, bool skipEmptyNames, QList<QList<NativeCoreControllerDescription>>& result);
+// Described memory ranges remain owned by the core.
+RETROMEDIALAB_EMULATION_API QList<NativeCoreMemoryDescription> copyNativeCoreMemoryMap(
+    const NativeCoreMemoryMap*, unsigned maximumCount);
+
 struct NativeCoreCallbacks {
     NativeCoreExports::EnvironmentCallback environment;
     NativeCoreExports::VideoCallback video;

@@ -1864,3 +1864,91 @@ Les 329 PNG de RetroMediaLab.App sur osd-support sont présents par contenu. Les
 - [x] Emplacements de sauvegarde dans le menu plein écran
   - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour garder le numéro seul lorsqu’un emplacement n’a pas de date.
   - [x] Créer puis supprimer build/emulation-osd-state-check pour ouvrir les listes de sauvegarde et de chargement du menu plein écran et exercer l’emplacement 10.
+
+- [x] Descripteurs natifs avec limites choisies par le module
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreEnvironment.h et src/Emulation/src/NativeCoreEnvironment.cpp pour exposer les copies bornées des entrées, ports et cartes mémoire, avec les deux politiques de copie des ports du C#.
+  - [x] Créer puis supprimer build/emulation-native-descriptor-check pour vérifier les limites, le rejet du dépassement, les noms vides et la copie des données.
+
+- [x] Langue d’interface des cœurs natifs
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour reprendre la table de langues de osd-support pour GetLanguage.
+  - [x] Créer puis supprimer build/emulation-native-language-check pour vérifier les codes renvoyés, les variantes et le repli anglais.
+
+- [x] Validation des options modernes au démarrage
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreOptions.h et src/Emulation/src/NativeCoreOptions.cpp pour vérifier après déclaration les valeurs configurées et lever l’erreur OptionInvalid.
+  - [x] Modifier src/Emulation/src/NativeCoreSession.cpp pour valider les valeurs après l’initialisation native et avant le chargement du contenu.
+  - [x] Créer puis supprimer build/emulation-native-option-validation-check pour exercer la validation et le parcours de démarrage.
+
+- [x] Erreurs des valeurs natives anciennes et modifiées à chaud
+  - [x] Modifier src/Emulation/src/NativeCoreOptions.cpp pour partager l’erreur OptionInvalid entre l’enregistrement ancien, le réglage côté hôte et la validation du démarrage.
+  - [x] Créer puis supprimer build/emulation-native-option-errors-check pour vérifier le code traduit, le diagnostic, la conservation de la valeur et le refus côté cœur.
+
+- [x] Cadence vidéo et fréquence audio annoncées par le cœur
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour appliquer la géométrie et conserver les dernières fréquences valides selon ApplySystemAvInfo de osd-support.
+  - [x] Créer puis supprimer build/emulation-native-av-timing-check pour vérifier la géométrie, les deux fréquences et leur mise à jour indépendante.
+
+- [x] Libération de la latence et des chaînes d’options natives
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/NativeCoreOptions.h et src/Emulation/src/NativeCoreOptions.cpp pour libérer les chaînes empruntées et le rappel d’affichage à la fermeture.
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour appeler ce nettoyage après la désinitialisation et remettre la latence à zéro.
+  - [x] Créer puis supprimer build/emulation-native-environment-close-check pour vérifier leur disponibilité pendant la désinitialisation et le nettoyage ensuite.
+
+- [x] Diagnostics des messages natifs historiques
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour conserver les messages non vides, y compris les espaces seuls, selon SetMessage dans osd-support.
+
+- [x] Nettoyage des diagnostics à la fermeture du cœur
+  - [x] Modifier src/Emulation/src/NativeCoreEnvironment.cpp pour vider les diagnostics, les messages et l’erreur mémorisée après la désinitialisation.
+  - [x] Créer puis supprimer build/emulation-native-diagnostics-close-check pour vérifier les messages de la session avant et après la fermeture.
+
+- [x] Ordre de montage après remplacement d’un média
+  - [x] Modifier src/Emulation/src/Host.cpp pour déplacer en fin de liste le média remplacé, comme MachineSession.InsertAsync.
+
+- [x] Mise sous tension d’une session
+  - [x] Modifier src/Emulation/src/Host.cpp pour ignorer Start sur une machine déjà sous tension, comme MachineSession.PowerOnAsync, et nettoyer un premier démarrage interrompu.
+  - [x] Créer puis supprimer build/emulation-power-on-check pour contrôler la double mise sous tension, l’annulation et la remise en route avec un module temporaire.
+
+- [x] Réglages image du mode Vectoriel
+  - [x] Modifier src/VideoPresentation/src/Presentation.cpp pour exposer les cinq réglages du mode Vectoriel et les transmettre au rendu, comme sur osd-support.
+  - [x] Créer puis supprimer build/emulation-vector-adjustments-check pour vérifier la disponibilité des commandes et la réponse des pixels.
+
+- [x] Vérification matérielle des réglages vectoriels
+  - [x] Créer puis supprimer build/emulation-vector-gpu-adjustments-check pour vérifier les cinq réglages sur Direct3D 11, Vulkan et OpenGL.
+
+- [x] Courbure et netteté du rendu vectoriel matériel
+  - [x] Modifier src/VideoPresentation/shaders/vector-raster.glsl pour courber le point de sortie avant le filtre de netteté, comme sur osd-support.
+  - [x] Créer puis supprimer build/emulation-vector-edge-check pour vérifier la conservation d’une image uniforme jusqu’aux bords et le masque de courbure.
+
+- [x] Glyphes des commandes du menu plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre les glyphes de MachineCommandGlyphConstants sur le menu, les sauvegardes et le volume.
+  - [x] Créer puis supprimer build/emulation-osd-command-glyphs-check pour contrôler les icônes du menu plein écran dans le thème chargé.
+
+- [x] Ordre des réglages vidéo du menu plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour reprendre l’ordre de MachineController.OsdVideo, avec les réglages généraux, les contrôles du type d’écran et l’échantillonnage.
+  - [x] Modifier src/Translations/Catalogs/{Constants,Languages/*}/App/emulation-video-processing.json pour reprendre le titre des réglages généraux dans les catalogues de la branche C#.
+  - [x] Créer puis supprimer build/emulation-osd-video-order-check pour vérifier l’ordre des commandes avec le thème chargé.
+
+- [x] Couleurs des rubriques du menu vidéo plein écran
+  - [x] Modifier src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp et src/VideoPresentation/include/RetroMediaLab/VideoPresentation/FullscreenOsd.h pour signaler les titres de rubriques vidéo.
+  - [x] Modifier src/VideoPresentation/src/FullscreenOsd.cpp pour reprendre les fonds du sous-menu et de l’éditeur de osd-support et les actualiser avec la sélection et la transparence.
+  - [x] Créer puis supprimer build/emulation-osd-section-colors-check pour vérifier le changement de rubrique dans le thème chargé.
+
+- [x] Contrat des adaptateurs de moteurs
+  - [x] Créer src/Emulation/include/RetroMediaLab/Emulation/EmulatorAdapter.h pour reprendre les opérations et les contextes de IEmulationEmulatorAdapter, ainsi que la construction des fabriques du module.
+  - [x] Modifier src/Emulation/CMakeLists.txt pour déclarer le contrat dans la cible Emulation.
+  - [x] Créer puis supprimer build/emulation-adapter-contract-check pour vérifier le contrat et la découverte avec des fabriques temporaires.
+
+- [x] Catalogues de moteurs et de modèles du SDK
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/EmulatorAdapter.h pour projeter les entrées de catalogue, retrouver un modèle par son identifiant exact et exposer la construction par contrat unique.
+  - [x] Créer puis supprimer build/emulation-adapter-catalog-check pour vérifier les identifiants, la clé de description et la construction des adaptateurs.
+
+- [x] Transmission des commandes aux cœurs hébergés au démarrage
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Sdk.h et Host.h ainsi que src/Emulation/src/Host.cpp pour exposer le contrat facultatif et retourner le premier code de sortie fourni par un module.
+  - [x] Modifier src/App/Bootstrap/Application.cpp pour transmettre les arguments aux modules chargés avant le thème et les préférences, puis quitter si un module les traite.
+  - [x] Créer puis supprimer build/emulation-host-command-check pour vérifier le lancement de l’application avec des modules temporaires.
+
+- [x] Diagnostics de découverte des modules
+  - [x] Modifier src/Emulation/include/RetroMediaLab/Emulation/Host.h et src/Emulation/src/Host.cpp pour signaler les DLL hors paquet et les dossiers sans manifeste.
+  - [x] Modifier src/App/Shared/Emulation/EmulationWorkspace.h, src/App/Bootstrap/Application.cpp et src/App/Themes/RetroMediaLab/Views/EmulationPage.cpp pour partager le message localisé et journaliser les diagnostics au démarrage.
+  - [x] Créer puis supprimer build/emulation-module-diagnostics-check pour vérifier le rejet des paquets invalides et le rafraîchissement des diagnostics.
+
+- [x] Distribution autonome du SDK d’émulation
+  - [x] Modifier src/Emulation/CMakeLists.txt et créer src/Emulation/RetroMediaLabEmulationConfig.cmake.in pour installer le SDK et sa cible importée avec CMake.
+  - [x] Créer puis supprimer build/emulation-sdk-check pour compiler un module à partir du SDK installé et vérifier son chargement par RML.

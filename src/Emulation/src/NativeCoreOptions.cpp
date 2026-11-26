@@ -1,4 +1,5 @@
 #include <RetroMediaLab/Emulation/NativeCoreOptions.h>
+#include <RetroMediaLab/Emulation/Messages.h>
 #include <stdexcept>
 #include <type_traits>
 #include <utility>
@@ -10,7 +11,14 @@ constexpr qsizetype MaximumDefinitions = 1024;
 constexpr qsizetype MaximumCategories = 256;
 constexpr QChar DescriptionSeparator = u';';
 constexpr QChar ValueSeparator = u'|';
+constexpr auto InvalidOptionDiagnostic = "%1 = %2";
 constexpr auto ErrorKey = "Emulation.Error.EmulatorRejected";
+
+[[noreturn]] void throwInvalidOption(const QString& key, const QString& value) {
+    const auto diagnostic = QString::fromLatin1(InvalidOptionDiagnostic).arg(key, value);
+    const auto cause = std::make_exception_ptr(std::invalid_argument(diagnostic.toStdString()));
+    std::rethrow_exception(translateError(cause, MessageCategory::Emulator, MessageCode::OptionInvalid));
+}
 
 QString localized(const char* text, QString fallback) {
     return text ? QString::fromUtf8(text) : std::move(fallback);
@@ -88,7 +96,7 @@ bool NativeCoreLegacyOptions::registerVariables(const NativeCoreVariable* defini
         if (choices.isEmpty()) throw std::invalid_argument(ErrorKey);
         const auto initial = choices.front();
         const auto current = values_.value(key, initial);
-        if (!choices.contains(current, Qt::CaseSensitive)) throw std::invalid_argument(ErrorKey);
+        if (!choices.contains(current, Qt::CaseSensitive)) throwInvalidOption(key, current);
 
         NativeCoreOption option;
         option.key = key;
@@ -190,6 +198,11 @@ void NativeCoreLegacyOptions::captureDisplayUpdate(DisplayUpdate callback) noexc
     displayUpdate_ = callback;
 }
 
+void NativeCoreLegacyOptions::releaseNativeReferences() noexcept {
+    displayUpdate_ = nullptr;
+    strings_.clear();
+}
+
 bool NativeCoreLegacyOptions::setNativeValue(const NativeCoreVariable& variable) {
     const auto key = QString::fromUtf8(variable.key);
     return variable.value && !key.trimmed().isEmpty() && trySetValue(key, QString::fromUtf8(variable.value));
@@ -210,7 +223,18 @@ bool NativeCoreLegacyOptions::trySetValue(const QString& key, const QString& val
 }
 
 void NativeCoreLegacyOptions::setValue(const QString& key, const QString& value) {
-    if (!trySetValue(key, value)) throw std::invalid_argument(ErrorKey);
+    if (!trySetValue(key, value)) throwInvalidOption(key, value);
+}
+
+const QHash<QString, QString>& NativeCoreLegacyOptions::values() const noexcept { return values_; }
+
+void NativeCoreLegacyOptions::validateConfiguredValues(const QHash<QString, QString>& configured) const {
+    for (const auto& option : options_) {
+        if (!configured.contains(option.key) || option.choices.isEmpty() ||
+            option.choices.contains(option.currentValue, Qt::CaseSensitive)) continue;
+
+        throwInvalidOption(option.key, option.currentValue);
+    }
 }
 
 const QList<NativeCoreOption>& NativeCoreLegacyOptions::options() const noexcept { return options_; }

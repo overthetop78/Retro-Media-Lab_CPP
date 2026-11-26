@@ -98,10 +98,14 @@ public:
     void captureDisplayUpdate(DisplayUpdate callback) noexcept;
     bool setNativeValue(const NativeCoreVariable& variable);
     void setValue(const QString& key, const QString& value);
+    const QHash<QString, QString>& values() const noexcept;
+    void validateConfiguredValues(const QHash<QString, QString>& configured) const;
     const QList<NativeCoreOption>& options() const noexcept;
     const QList<NativeCoreOptionCategoryInfo>& categories() const noexcept;
 
 private:
+    friend class NativeCoreEnvironment;
+    void releaseNativeReferences() noexcept;
     void replaceDefinitions(QList<NativeCoreOption> options);
     bool trySetValue(const QString& key, const QString& value);
     QHash<QString, QString> values_;

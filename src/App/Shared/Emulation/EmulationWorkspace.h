@@ -18,6 +18,7 @@ RETROMEDIALAB_APP_API EmulationFolders resolveEmulationFolders(const EmulationFo
 RETROMEDIALAB_APP_API void ensureEmulationHost(WorkspaceState&);
 RETROMEDIALAB_APP_API VideoPresentation::ProfileStore emulationVideoProfiles();
 inline constexpr auto MachineVideoHardwareKey = "Emulation.Video.Hardware";
+inline constexpr auto EmulationModuleIssueKey = "Emulation.Native.ModuleIssue";
 
 RETROMEDIALAB_APP_API QList<Emulation::SettingsBlock> machineSettingsEditorBlocks(
     QList<Emulation::SettingsBlock>, const Emulation::SettingsDependencies&);

@@ -274,11 +274,14 @@ void NativeCoreSession::startSubsystem(unsigned subsystem, const SubsystemConten
 void NativeCoreSession::startWith(const std::function<bool()>& load, const ControllerPorts& ports) {
     if (!library_ || initialized_) std::rethrow_exception(rejection());
     try {
+        const auto configuredOptions = environment_.options_.values();
         installNativeCoreCallbacks(exports_, binding_ ? binding_->callbacks() : callbacks_);
         rethrowCallbackFailure();
         exports_.initialize();
         initialized_ = true;
         rethrowCallbackFailure();
+
+        environment_.options_.validateConfiguredValues(configuredOptions);
 
         loaded_ = load();
         rethrowCallbackFailure();

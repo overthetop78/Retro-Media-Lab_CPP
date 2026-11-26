@@ -12,8 +12,6 @@ namespace {
 constexpr auto ErrorKey = "Emulation.Error.EmulatorRejected";
 constexpr int MaximumAudioLatencyMilliseconds = 512;
 constexpr int FullBufferPercent = 100;
-constexpr unsigned EnglishLanguage = 0;
-constexpr unsigned FrenchLanguage = 2;
 constexpr unsigned MaximumInputDescriptors = 4096;
 constexpr unsigned MaximumControllerPorts = 32;
 constexpr unsigned MaximumControllerTypes = 256;
@@ -21,37 +19,50 @@ constexpr unsigned MaximumMemoryDescriptors = 4096;
 constexpr unsigned LastRotation = 3;
 constexpr unsigned MessageInterfaceVersion = 1;
 
-QList<NativeCoreInputDescription> copyInputs(const NativeCoreInputDescriptor* data) {
+}
+
+QList<NativeCoreInputDescription> copyNativeCoreInputDescriptors(const NativeCoreInputDescriptor* data, unsigned maximumCount) {
     QList<NativeCoreInputDescription> inputs;
     if (!data) return inputs;
-    for (unsigned index = 0; index < MaximumInputDescriptors && data[index].description; ++index) {
+    for (unsigned index = 0; index < maximumCount && data[index].description; ++index) {
         const auto& item = data[index];
         inputs.append({item.port, item.device, item.index, item.id, QString::fromUtf8(item.description)});
     }
     return inputs;
 }
 
-QList<QList<NativeCoreControllerDescription>> copyPorts(const NativeCoreControllerInfo* data) {
+QList<QList<NativeCoreControllerDescription>> copyNativeCoreControllerPorts(
+    const NativeCoreControllerInfo* data, unsigned maximumPorts, unsigned maximumDevices) {
     QList<QList<NativeCoreControllerDescription>> ports;
-    if (!data) return ports;
-    for (unsigned index = 0; index < MaximumControllerPorts && data[index].types && data[index].count; ++index) {
-        const auto& port = data[index];
-        const auto count = std::min(port.count, MaximumControllerTypes);
-        QList<NativeCoreControllerDescription> types;
-        types.reserve(count);
-        for (unsigned device = 0; device < count; ++device) {
-            const auto& type = port.types[device];
-            types.append({type.description ? QString::fromUtf8(type.description) : QStringLiteral(""), type.id});
-        }
-        ports.append(std::move(types));
-    }
+    tryCopyNativeCoreControllerPorts(data, maximumPorts, maximumDevices, false, false, ports);
     return ports;
 }
 
-QList<NativeCoreMemoryDescription> copyMemory(const NativeCoreMemoryMap* map) {
+bool tryCopyNativeCoreControllerPorts(const NativeCoreControllerInfo* data, unsigned maximumPorts,
+    unsigned maximumDevices, bool rejectOverflow, bool skipEmptyNames,
+    QList<QList<NativeCoreControllerDescription>>& result) {
+    result.clear();
+    if (!data) return true;
+    for (unsigned index = 0; index < maximumPorts && data[index].types && data[index].count; ++index) {
+        const auto& port = data[index];
+        if (rejectOverflow && port.count > maximumDevices) return false;
+        const auto count = std::min(port.count, maximumDevices);
+        QList<NativeCoreControllerDescription> types;
+        for (unsigned device = 0; device < count; ++device) {
+            const auto& type = port.types[device];
+            auto name = type.description ? QString::fromUtf8(type.description) : QStringLiteral("");
+            if (!skipEmptyNames || !name.trimmed().isEmpty())
+                types.append({std::move(name), type.id});
+        }
+        result.append(std::move(types));
+    }
+    return true;
+}
+
+QList<NativeCoreMemoryDescription> copyNativeCoreMemoryMap(const NativeCoreMemoryMap* map, unsigned maximumCount) {
     QList<NativeCoreMemoryDescription> memory;
     if (!map || !map->descriptors) return memory;
-    const auto count = std::min(map->count, MaximumMemoryDescriptors);
+    const auto count = std::min(map->count, maximumCount);
     memory.reserve(count);
     for (unsigned index = 0; index < count; ++index) {
         const auto& item = map->descriptors[index];
@@ -61,6 +72,47 @@ QList<NativeCoreMemoryDescription> copyMemory(const NativeCoreMemoryMap* map) {
     return memory;
 }
 
+namespace {
+enum class NativeLanguage : unsigned {
+    English = 0, Japanese = 1, French = 2, Spanish = 3, German = 4, Italian = 5, Dutch = 6,
+    PortugueseBrazil = 7, PortuguesePortugal = 8, Russian = 9, Korean = 10,
+    ChineseTraditional = 11, ChineseSimplified = 12, Polish = 14, Vietnamese = 15,
+    Arabic = 16, Greek = 17, Turkish = 18, Hebrew = 21, Finnish = 23, Indonesian = 24,
+    Swedish = 25, Ukrainian = 26, Czech = 27, Hungarian = 31, Norwegian = 34, Thai = 36
+};
+
+NativeLanguage nativeLanguage(const QLocale& locale) noexcept {
+    switch (locale.language()) {
+    case QLocale::Japanese: return NativeLanguage::Japanese;
+    case QLocale::French: return NativeLanguage::French;
+    case QLocale::Spanish: return NativeLanguage::Spanish;
+    case QLocale::German: return NativeLanguage::German;
+    case QLocale::Italian: return NativeLanguage::Italian;
+    case QLocale::Dutch: return NativeLanguage::Dutch;
+    case QLocale::Portuguese:
+        return locale.territory() == QLocale::Brazil ? NativeLanguage::PortugueseBrazil : NativeLanguage::PortuguesePortugal;
+    case QLocale::Russian: return NativeLanguage::Russian;
+    case QLocale::Korean: return NativeLanguage::Korean;
+    case QLocale::Chinese:
+        return locale.script() == QLocale::TraditionalHanScript ? NativeLanguage::ChineseTraditional : NativeLanguage::ChineseSimplified;
+    case QLocale::Polish: return NativeLanguage::Polish;
+    case QLocale::Vietnamese: return NativeLanguage::Vietnamese;
+    case QLocale::Arabic: return NativeLanguage::Arabic;
+    case QLocale::Greek: return NativeLanguage::Greek;
+    case QLocale::Turkish: return NativeLanguage::Turkish;
+    case QLocale::Hebrew: return NativeLanguage::Hebrew;
+    case QLocale::Finnish: return NativeLanguage::Finnish;
+    case QLocale::Indonesian: return NativeLanguage::Indonesian;
+    case QLocale::Swedish: return NativeLanguage::Swedish;
+    case QLocale::Ukrainian: return NativeLanguage::Ukrainian;
+    case QLocale::Czech: return NativeLanguage::Czech;
+    case QLocale::Hungarian: return NativeLanguage::Hungarian;
+    case QLocale::NorwegianBokmal: return NativeLanguage::Norwegian;
+    case QLocale::Thai: return NativeLanguage::Thai;
+    default: return NativeLanguage::English;
+    }
+}
+
 enum class NativePixelFormat : unsigned { Rgb1555 = 0, Xrgb8888 = 1, Rgb565 = 2 };
 
 QString ensureDirectory(const QString& path) {
@@ -68,15 +120,12 @@ QString ensureDirectory(const QString& path) {
     return QDir::toNativeSeparators(QDir::cleanPath(QFileInfo(path).absoluteFilePath()));
 }
 
-int sampleRate(double value) {
-    if (!std::isfinite(value)) throw std::out_of_range(ErrorKey);
+int roundedSampleRate(double value) {
     const double lower = std::floor(value);
-    const double midpoint = 0.5;
+    constexpr double midpoint = 0.5;
     const double rounded = value - lower == midpoint
         ? (std::fmod(lower, 2.0) == 0.0 ? lower : lower + 1.0)
         : std::round(value);
-    if (rounded < std::numeric_limits<int>::min() || rounded > std::numeric_limits<int>::max())
-        throw std::out_of_range(ErrorKey);
     return static_cast<int>(rounded);
 }
 }
@@ -124,10 +173,15 @@ NativeCoreEnvironment::NativeCoreEnvironment(NativeCoreVideoFrames& video, Nativ
 }
 
 void NativeCoreEnvironment::applyAvInfo(const NativeCoreAvInfo& info) {
-    framesPerSecond_ = info.timing.framesPerSecond;
-    audio_.setSampleRate(sampleRate(info.timing.sampleRate));
     geometry_ = info.geometry;
     video_.applyGeometry(geometry_);
+
+    const auto frames = info.timing.framesPerSecond;
+    if (std::isfinite(frames) && frames > 0) framesPerSecond_ = frames;
+
+    const auto rate = info.timing.sampleRate;
+    if (std::isfinite(rate) && rate > 0 && rate <= std::numeric_limits<int>::max())
+        audio_.setSampleRate(roundedSampleRate(rate));
 }
 
 bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
@@ -152,13 +206,14 @@ bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
     try {
         switch (id) {
         case Command::SetInputDescriptors:
-            inputDescriptions_ = copyInputs(static_cast<const NativeCoreInputDescriptor*>(data));
+            inputDescriptions_ = copyNativeCoreInputDescriptors(static_cast<const NativeCoreInputDescriptor*>(data), MaximumInputDescriptors);
             return data != nullptr;
         case Command::SetControllerInfo:
-            controllerPorts_ = copyPorts(static_cast<const NativeCoreControllerInfo*>(data));
+            controllerPorts_ = copyNativeCoreControllerPorts(static_cast<const NativeCoreControllerInfo*>(data),
+                MaximumControllerPorts, MaximumControllerTypes);
             return data != nullptr;
         case Command::SetMemoryMaps:
-            memoryDescriptions_ = copyMemory(static_cast<const NativeCoreMemoryMap*>(data));
+            memoryDescriptions_ = copyNativeCoreMemoryMap(static_cast<const NativeCoreMemoryMap*>(data), MaximumMemoryDescriptors);
             return data != nullptr;
         case Command::SetSupportAchievements:
             supportsAchievements_ = data && *static_cast<const unsigned char*>(data) != 0;
@@ -180,7 +235,7 @@ bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
         case Command::GetSaveDirectory: *static_cast<const char**>(data) = saveDirectory_.pointer(); return true;
         case Command::GetCanDuplicateFrames: *static_cast<bool*>(data) = true; return true;
         case Command::GetLanguage:
-            *static_cast<unsigned*>(data) = uiLocale_.language() == QLocale::French ? FrenchLanguage : EnglishLanguage;
+            *static_cast<unsigned*>(data) = static_cast<unsigned>(nativeLanguage(uiLocale_));
             return true;
         case Command::GetVariable: return options_.returnValue(static_cast<NativeCoreVariable*>(data));
         case Command::GetVfsInterface: {
@@ -257,7 +312,7 @@ bool NativeCoreEnvironment::dispatch(unsigned command, void* data) noexcept {
         case Command::SetMessage: {
             const auto& message = *static_cast<const NativeCoreMessage*>(data);
             const auto content = QString::fromUtf8(message.text);
-            if (!content.trimmed().isEmpty()) {
+            if (!content.isEmpty()) {
                 diagnostics_.append(content);
                 messages_.append({content, message.frames});
             }
@@ -348,9 +403,14 @@ void NativeCoreEnvironment::clearBorrowedReferences() noexcept {
     previousKeys_.clear();
     keyboard_ = nullptr;
     audioBufferStatus_ = nullptr;
-    options_.captureDisplayUpdate(nullptr);
+    minimumAudioLatency_ = 0;
+    options_.releaseNativeReferences();
     if (interfaces_.disks) interfaces_.disks->clear();
     memoryDescriptions_.clear();
+    diagnostics_.clear();
+    messages_.clear();
+    extendedMessages_.clear();
+    failure_ = nullptr;
 }
 
 void NativeCoreEnvironment::clearOutputs() {

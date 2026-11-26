@@ -1,0 +1,25 @@
+@PACKAGE_INIT@
+
+set_and_check(_rml_emulation_headers "${PACKAGE_PREFIX_DIR}/include")
+set_and_check(_rml_emulation_library "${PACKAGE_PREFIX_DIR}/lib/@CMAKE_SHARED_LIBRARY_PREFIX@Emulation@CMAKE_SHARED_LIBRARY_SUFFIX@")
+if(WIN32)
+  set_and_check(_rml_emulation_import "${PACKAGE_PREFIX_DIR}/lib/@CMAKE_IMPORT_LIBRARY_PREFIX@Emulation@CMAKE_IMPORT_LIBRARY_SUFFIX@")
+endif()
+
+include(CMakeFindDependencyMacro)
+find_dependency(Qt6 @Qt6_VERSION@ EXACT COMPONENTS Core)
+if(NOT TARGET RetroMediaLab::Emulation)
+  add_library(RetroMediaLab::Emulation SHARED IMPORTED)
+  set_target_properties(RetroMediaLab::Emulation PROPERTIES
+    IMPORTED_LOCATION "${_rml_emulation_library}"
+    INTERFACE_INCLUDE_DIRECTORIES "${_rml_emulation_headers}"
+    INTERFACE_COMPILE_FEATURES cxx_std_20
+    INTERFACE_LINK_LIBRARIES Qt6::Core)
+  if(WIN32)
+    set_property(TARGET RetroMediaLab::Emulation PROPERTY IMPORTED_IMPLIB "${_rml_emulation_import}")
+  endif()
+endif()
+unset(_rml_emulation_headers)
+unset(_rml_emulation_library)
+unset(_rml_emulation_import)
+check_required_components(RetroMediaLabEmulation)

@@ -90,6 +90,7 @@ public:
         bool centeredInformation = false;
         bool centeredMixer = false;
         QString mixerSection = {};
+        bool sectionHeading = false;
     };
 
     FullscreenOsd(QWidget& host, QString machine, QString media, QString footer,
@@ -131,6 +132,7 @@ private:
     void editAdjacent(int direction);
     void buildMixer();
     void refreshMixer();
+    void updateSectionBackground(std::size_t depth);
     void flushPendingFaders();
     void focusLevel();
     void navigateMixer(Navigation direction);

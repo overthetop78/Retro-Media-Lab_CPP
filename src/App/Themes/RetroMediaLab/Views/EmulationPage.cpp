@@ -208,7 +208,6 @@ constexpr auto SettingsKey = "Emulation.Machine.Settings";
 constexpr auto OpenKey = "Emulation.Machine.Open";
 constexpr auto WelcomeKey = "Emulation.Tab.Welcome";
 constexpr auto WelcomeTextKey = "Emulation.Welcome.Text";
-constexpr auto ModuleIssueKey = "Emulation.Native.ModuleIssue";
 constexpr auto PowerKey = "Emulation.Shortcut.Power";
 constexpr auto PauseResumeKey = "Emulation.Shortcut.PauseResume";
 constexpr auto SoftResetKey = "Emulation.Native.SoftReset";
@@ -1812,9 +1811,13 @@ private:
         }
     }
 
+    QIcon osdCommandIcon(EmulationCommandIcons::Glyph glyph) const {
+        return EmulationCommandIcons::icon(*this, glyph, qRgb(255, 255, 255));
+    }
+
     FullscreenOsd::Entry osdVolumeSetting() {
         FullscreenOsd::Entry entry{text(translations_, VolumeLabelKey)};
-        entry.icon = EmulationCommandIcons::icon(*mute_, EmulationCommandIcons::Audio, EmulationCommandIcons::Audible);
+        entry.icon = osdCommandIcon(EmulationCommandIcons::Audio);
         entry.setting = FullscreenOsd::Setting{
             [this] { return session_->volumePercent(); },
             [this](int percent) { return formatPercent(percent); },
@@ -2902,6 +2905,7 @@ private:
         const auto section = [&](const char* key, std::function<bool()> visible = {}) {
             Entry entry;
             entry.label = text(translations_, key);
+            entry.sectionHeading = true;
             entry.enabled = [] { return false; };
             entry.visible = std::move(visible);
             rows.push_back(std::move(entry));
@@ -2910,29 +2914,18 @@ private:
             const QLocale locale;
             return (value > 0 ? locale.positiveSign() : QString{}) + locale.toString(value);
         };
-        const auto toggleSetting = [&](const char* key, auto read, auto write, std::function<bool()> visible = {}) {
-            add(key, [read](const Profile& p) { return int(std::invoke(read, p)); },
-                [write](Profile& p, int value) { std::invoke(write, p, value != 0); },
-                [this](int value) { return text(translations_, value ? "Emulation.Value.Enabled" : "Emulation.Value.Disabled"); },
-                0, 1, false, std::move(visible), false);
-        };
         const auto hostDisplay = [this] { return profile_.usesHostDisplay(); };
-        section("Emulation.Video.Settings.RetroMediaLabProcessing");
-        choices("Emulation.Video.Technology", osdScreenTypes, &Profile::screenType, &Profile::selectScreen);
+        constexpr auto ProcessingSection = "Emulation.Video.Settings.RetroMediaLabProcessing";
+        section(ProcessingSection);
         choices(VideoRendererKey, VideoRenderers, &Profile::renderer,
             [](Profile& p, Renderer value) { p.renderer = value; });
-        choices(SamplingKey, videoSamplers(profile_.sampling), &Profile::sampling,
-            [](Profile& p, Sampling value) { p.sampling = value; }, hostDisplay);
-        toggleSetting(BlackFrameKey, &Profile::blackFrameInsertion,
-            [](Profile& p, bool value) { p.blackFrameInsertion = value; });
         using Adjustment = ImageAdjustmentControl;
         const auto showsAdjustments = [this] {
             constexpr std::array controls{Adjustment::Brightness, Adjustment::Contrast, Adjustment::Gamma,
                 Adjustment::Saturation, Adjustment::Sharpness};
             return std::ranges::any_of(controls, [this](Adjustment control) { return profile_.showsImageAdjustment(control); });
         };
-        for (const auto& [screen, label] : osdScreenTypes)
-            section(label, [current = activeScreen(screen), showsAdjustments] { return current() && showsAdjustments(); });
+        section("Emulation.Video.Settings.General", showsAdjustments);
         constexpr std::array adjustments{
             std::tuple{"Emulation.Video.Parameter.Brightness", &ImageAdjustments::brightness, Adjustment::Brightness},
             std::tuple{"Emulation.Video.Parameter.Contrast", &ImageAdjustments::contrast, Adjustment::Contrast},
@@ -2949,9 +2942,7 @@ private:
                 }, signedValue, ImageAdjustments::Minimum, ImageAdjustments::Maximum, true,
                 [this, control] { return profile_.showsImageAdjustment(control); });
         };
-        constexpr size_t AdjustmentsBeforeGamma = 2;
-        const auto adjustmentList = std::span(adjustments);
-        for (const auto& item : adjustmentList.first<AdjustmentsBeforeGamma>()) addAdjustment(item);
+        for (const auto& item : adjustments) addAdjustment(item);
         add("Emulation.Video.Gamma", [](const Profile& p) {
                 const auto found = std::ranges::find(ImageAdjustments::GammaCurves, p.imageAdjustments(p.screenType()).gamma);
                 return found == ImageAdjustments::GammaCurves.end() ? 0 : int(found - ImageAdjustments::GammaCurves.begin());
@@ -2967,14 +2958,15 @@ private:
                 return QLocale().toString(curve / 100.0, 'f', 1);
             }, 0, int(ImageAdjustments::GammaCurves.size()) - 1, false,
             [this] { return profile_.showsImageAdjustment(Adjustment::Gamma); });
-        for (const auto& item : adjustmentList.subspan<AdjustmentsBeforeGamma>()) addAdjustment(item);
+        section(ProcessingSection);
+        choices("Emulation.Video.Technology", osdScreenTypes, &Profile::screenType, &Profile::selectScreen);
         const auto addFields = [&](const auto& fields, auto group, int maximum, auto visible, auto duration, int durationMaximum) {
             for (const auto& [key, field] : fields)
                 number(key, group, field, 0, duration(field) ? durationMaximum : maximum, visible);
         };
         const auto noDuration = [](auto) { return false; };
         const auto crt = activeScreen(ScreenType::Crt);
-        section("Emulation.Video.Screen.Crt", [crt, showsAdjustments] { return crt() && !showsAdjustments(); });
+        section("Emulation.Video.Screen.Crt", crt);
         constexpr auto StandardsKey = "Emulation.Video.Parameter.CrtColorStandards";
         constexpr auto FieldRateKey = "Emulation.Video.Parameter.CrtFieldRate";
         constexpr auto ConnectionKey = "Emulation.Video.Parameter.CrtConnection";
@@ -3023,9 +3015,7 @@ private:
         };
         const auto lcdControls = [&](ScreenType screen, auto member, const char* label) {
             const auto current = activeScreen(screen);
-            section(label, [current, showsAdjustments, screen] {
-                return current() && (screen == ScreenType::LedBacklitLcd || !showsAdjustments());
-            });
+            section(label, current);
             panelSource(panelDefinitionChoices, current);
             labelChoices(LcdPixelStructureResource, lcdStructures, member, &LcdProfile::pixelStructure, current);
             labelChoices(LcdOrientationResource, lcdOrientations, member, &LcdProfile::orientation, [this, member, current] {
@@ -3042,14 +3032,14 @@ private:
         lcdControls(ScreenType::Lcd, &Profile::lcd, "Emulation.Video.FixedPixel.Technology.Lcd");
         lcdControls(ScreenType::LedBacklitLcd, &Profile::ledBacklight, "Emulation.Video.Led.Block");
         const auto oled = activeScreen(ScreenType::Oled);
-        section("Emulation.Video.FixedPixel.Technology.Oled", [oled, showsAdjustments] { return oled() && !showsAdjustments(); });
+        section("Emulation.Video.FixedPixel.Technology.Oled", oled);
         panelSource(panelDefinitionChoices, oled);
         labelChoices(LcdPanelTypeResource, oledPanels, &Profile::oled, &OledProfile::panelType, oled);
         labelChoices(LcdPixelStructureResource, oledStructures, &Profile::oled, &OledProfile::pixelStructure, oled);
         panelInput(ScreenType::Oled, oled);
 
         const auto plasma = activeScreen(ScreenType::Plasma);
-        section("Emulation.Video.Technology.Plasma", [plasma, showsAdjustments] { return plasma() && !showsAdjustments(); });
+        section("Emulation.Video.Technology.Plasma", plasma);
         panelSource(orderedChoices(panelDefinitionChoices, plasmaDefinitionChoices()), plasma);
         enumField(PlasmaCellStructureResource, plasmaCellChoices, &Profile::plasma, &PlasmaProfile::cellStructure, plasma);
         panelInput(ScreenType::Plasma, plasma);
@@ -3096,13 +3086,16 @@ private:
         enumField(PanelDefinitionResource, panelDefinitionChoices, &Profile::ePaper, &EPaperProfile::definition, paper);
 
         const auto projection = activeScreen(ScreenType::Projection);
-        section("Emulation.Video.Technology.Projection", [projection, showsAdjustments] { return projection() && !showsAdjustments(); });
+        section("Emulation.Video.Technology.Projection", projection);
         panelSource(panelDefinitionChoices, projection);
         labelChoices(ProjectionTechnologyResource, projectionTechnologies, &Profile::projection, &ProjectionProfile::technology, projection);
         labelChoices(ProjectionSurfaceResource, projectionSurfaces, &Profile::projection, &ProjectionProfile::surface, projection);
         number("Emulation.Video.Parameter.ProjectionAmbientLight", &Profile::projection, &ProjectionProfile::ambientLight,
             0, ProjectionProfile::MaximumAmbientLight, projection);
         panelInput(ScreenType::Projection, projection);
+        section(ProcessingSection, hostDisplay);
+        choices(SamplingKey, videoSamplers(profile_.sampling), &Profile::sampling,
+            [](Profile& p, Sampling value) { p.sampling = value; }, hostDisplay);
         appendOsdVideoModuleSettings(rows, VideoSettingsSection::Display);
         section("Emulation.Video.Settings.Restoration", [this, hostDisplay] {
             return profile_.supportsDedithering() || hostDisplay() || profile_.supportsDeinterlacing();
@@ -3288,7 +3281,7 @@ private:
                 faders.push_back(std::move(fader));
             }
         }
-        Entry mixer{title, {}, std::move(faders), {}, style()->standardIcon(QStyle::SP_MediaVolume)};
+        Entry mixer{title, {}, std::move(faders), {}, osdCommandIcon(EmulationCommandIcons::Audio)};
         mixer.centeredMixer = true;
         return mixer;
     }
@@ -3347,6 +3340,7 @@ private:
             if (visibility.empty()) continue;
             FullscreenOsd::Entry heading;
             heading.label = std::move(group.label);
+            heading.sectionHeading = true;
             heading.enabled = [] { return false; };
             heading.visible = [visibility = std::move(visibility)] {
                 return std::ranges::any_of(visibility, [](const auto& visible) { return visible(); });
@@ -3381,8 +3375,7 @@ private:
         Entry controls;
         controls.label = text(translations_, OsdControlsKey);
         controls.fullHeight = true;
-        namespace Icons = EmulationCommandIcons;
-        controls.icon = Icons::icon(*this, Icons::Controller, palette().color(QPalette::ButtonText).rgb());
+        controls.icon = osdCommandIcon(EmulationCommandIcons::Controller);
         std::vector<std::function<bool()>> tabVisibility;
         for (const auto* key : OsdControlTabs) {
             const auto tab = QString::fromLatin1(key);
@@ -3444,7 +3437,7 @@ private:
             }
             if (fields.empty()) continue;
             Entry heading{moduleSettingText(QLatin1String(tab))};
-            heading.icon = EmulationCommandIcons::icon(*this, glyph, qRgb(255, 255, 255));
+            heading.icon = osdCommandIcon(glyph);
             heading.visible = [fields = std::move(visibility)] {
                 return std::ranges::any_of(fields, [](const auto& visible) { return visible(); });
             };
@@ -3453,7 +3446,7 @@ private:
             std::ranges::move(fields, std::back_inserter(rows));
         }
         Entry information{text(translations_, OsdInformationKey), {}, std::move(rows), {},
-            EmulationCommandIcons::icon(*this, EmulationCommandIcons::Information, qRgb(255, 255, 255))};
+            osdCommandIcon(EmulationCommandIcons::Information)};
         information.visible = [sections = std::move(sections)] {
             return std::ranges::any_of(sections, [](const auto& visible) { return visible(); });
         };
@@ -3536,31 +3529,32 @@ private:
         try {
             using Entry = FullscreenOsd::Entry;
             auto& machine = session_->machine();
-            const auto action = [&](const char* key, std::function<void()> command, QStyle::StandardPixmap icon) {
+            namespace Icons = EmulationCommandIcons;
+            const auto action = [&](const char* key, std::function<void()> command, Icons::Glyph icon) {
                 return Entry{text(translations_, key), [this, command = std::move(command)] {
                     try { command(); }
                     catch (...) { surface_->setIndicator(text(translations_, ErrorKey)); }
-                }, {}, {}, style()->standardIcon(icon)};
+                }, {}, {}, osdCommandIcon(icon)};
             };
             refreshQuickStates();
             refreshOsdBlocks();
             Entry save{text(translations_, SaveStateKey), {}, osdStateSlots(true),
-                [this] { return quickSave_->isEnabled(); }, style()->standardIcon(QStyle::SP_DialogSaveButton)};
+                [this] { return quickSave_->isEnabled(); }, osdCommandIcon(Icons::Save)};
             Entry load{text(translations_, LoadStateKey), {}, osdStateSlots(false),
-                [this] { return quickLoad_->isEnabled(); }, style()->standardIcon(QStyle::SP_DialogOpenButton)};
+                [this] { return quickLoad_->isEnabled(); }, osdCommandIcon(Icons::Load)};
             save.fullHeight = true;
             load.fullHeight = true;
             std::vector<Entry> entries;
-            entries.push_back(action(OsdResumeKey, [this] { if (osd_) osd_->close(); }, QStyle::SP_MediaPlay));
+            entries.push_back(action(OsdResumeKey, [this] { if (osd_) osd_->close(); }, Icons::Resume));
             entries.push_back({text(translations_, OsdSavedStatesKey), {}, {std::move(save), std::move(load)}, {},
-                style()->standardIcon(QStyle::SP_DialogSaveButton)});
+                osdCommandIcon(Icons::Save)});
             entries.push_back({text(translations_, OsdVideoSettingsKey), {}, videoOsdSettings(), {},
-                style()->standardIcon(QStyle::SP_ComputerIcon), true});
+                osdCommandIcon(Icons::Display), true});
             entries.back().fullHeight = true;
             std::vector<Entry> audioRows{osdVolumeSetting(), osdAudioMixer()};
             appendOsdModuleSettings(audioRows, QLatin1String(AudioTabKey));
             entries.push_back({text(translations_, OsdAudioKey), {}, std::move(audioRows), {},
-                style()->standardIcon(QStyle::SP_MediaVolume)});
+                osdCommandIcon(Icons::Audio)});
             entries.back().fullHeight = true;
             entries.push_back(osdControlsSettings());
             QStringList tabs;
@@ -3586,7 +3580,7 @@ private:
                 machineTabs.push_back(std::move(page));
             }
             Entry machineSettings{text(translations_, SettingsKey), {}, std::move(machineTabs), {},
-                style()->standardIcon(QStyle::SP_FileDialogDetailedView)};
+                osdCommandIcon(Icons::Settings)};
             machineSettings.fullHeight = true;
             std::vector<std::function<bool()>> machineTabVisibility;
             for (const auto& page : machineSettings.children) machineTabVisibility.push_back(page.visible);
@@ -3596,7 +3590,7 @@ private:
             entries.push_back(std::move(machineSettings));
             entries.push_back(osdMachineInformation());
             entries.push_back(osdTransparencySetting());
-            auto exit = action(OsdExitKey, [this] { toggleFullScreen(); }, QStyle::SP_DialogCloseButton);
+            auto exit = action(OsdExitKey, [this] { toggleFullScreen(); }, Icons::Power);
             exit.separatorBefore = true;
             entries.push_back(std::move(exit));
             const auto footer = osdFooterHints();
@@ -4929,7 +4923,10 @@ struct EmulationPage::Data {
         modules = state.emulation->modules();
         saved.clear();
         const auto& issues = state.emulation->diagnostics();
-        showError(issues.isEmpty() ? QString{} : text(translations, ModuleIssueKey).arg(issues.front().directory));
+        const auto issue = std::ranges::find_if(issues, [](const auto& diagnostic) {
+            return diagnostic.issue != Emulation::ModuleIssue::LooseLibrary;
+        });
+        showError(issue == issues.cend() ? QString{} : text(translations, EmulationModuleIssueKey).arg(issue->directory));
         for (const auto& module : modules) {
             try {
                 auto configurations = state.emulation->configurations(module.id);

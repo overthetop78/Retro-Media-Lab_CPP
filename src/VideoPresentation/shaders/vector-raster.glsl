@@ -38,8 +38,6 @@ vec3 vectorEmission(vec2 uv, bool previous)
 
 vec3 vectorAdjustedPixel(vec2 uv)
 {
-    uv = crtScreenUv(uv, Parameters.VectorBeam.z);
-    if (any(lessThan(uv, vec2(0.0))) || any(greaterThan(uv, vec2(1.0)))) return vec3(0.0);
     vec3 color = vectorEmission(uv, false);
     float decay = Parameters.VectorBeam.w;
     if (decay > .001) color += vectorEmission(uv, true) * decay;
@@ -48,6 +46,8 @@ vec3 vectorAdjustedPixel(vec2 uv)
 
 vec3 vectorRasterPixel(vec2 uv)
 {
+    uv = crtScreenUv(uv, Parameters.VectorBeam.z);
+    if (!crtOnScreen(uv)) return vec3(0.0);
     vec3 color = vectorAdjustedPixel(uv);
     float sharpness = Parameters.Corrections.x;
     if (abs(sharpness) > .0001) {

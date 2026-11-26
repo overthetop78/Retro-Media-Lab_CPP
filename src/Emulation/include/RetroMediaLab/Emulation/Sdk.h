@@ -462,6 +462,13 @@ public:
     virtual std::unique_ptr<IEmulatedMachine> createRuntime(const Configuration&, const RuntimeServices&, std::stop_token) = 0;
 };
 
+class IModuleHostCommand {
+public:
+    virtual ~IModuleHostCommand() = default;
+    // No value means the command belongs to another module or to the application.
+    virtual std::optional<int> tryHandleHostCommand(const QStringList& arguments) = 0;
+};
+
 struct RuntimeOption {
     QString id;
     QString currentValue;

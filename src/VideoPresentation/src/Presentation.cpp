@@ -561,7 +561,6 @@ void Profile::setImageAdjustments(ScreenType screen, ImageAdjustments value) {
 bool Profile::showsImageAdjustment(ImageAdjustmentControl control) const {
     using Control = ImageAdjustmentControl;
     switch (screenType()) {
-    case ScreenType::Vector:
     case ScreenType::Vfd:
         return control == Control::Brightness;
     case ScreenType::LedMatrix:

@@ -1280,3 +1280,95 @@ MachineController.CaptureScreenAsync utilise Emulation.Shortcut.Unavailable lors
 ### Capture depuis une session dans le thème RetroMediaLab
 
 Une sonde Windows Release avec un module temporaire a déclenché le signal du raccourci de capture configuré dans le thème. Comme dans MachineController.CaptureScreenAsync et son gestionnaire de raccourcis, une capture sans trame ouvre le dialogue d’erreur de la machine avec le message traduit. La sonde a vérifié ce dialogue en français et l’absence de fichier. Dès qu’une trame est disponible, le PNG écrit contient la même image que la surface vidéo. La sonde et ses fichiers ont été supprimés.
+
+### Limites des descripteurs natifs
+
+Les fonctions publiques de NativeCoreEnvironment.h reprennent CopyInputDescriptors, CopyControllerPorts, TryCopyControllerPorts et CopyMemoryMap de ExternalCoreEnvironmentFunctions.cs. Un module fournit les limites et peut écarter les noms de périphériques vides ou refuser un port qui dépasse la limite, en conservant les ports déjà copiés. Le traitement par défaut des annonces du cœur utilise ces fonctions avec ses limites existantes. Les libellés UTF-8 sont copiés et les plages mémoire restent empruntées au cœur.
+
+La sonde liée à Emulation.dll a vérifié la durée de vie des libellés, les sentinelles, les pointeurs nuls, les limites, le rejet avec résultat partiel et les champs de la carte mémoire. Elle a été supprimée. Windows Release a compilé et la DLL installée correspond à la sortie de compilation.
+
+### Langue annoncée aux cœurs natifs
+
+GetLanguage reprend la table de CurrentLanguage dans ExternalCoreEnvironmentFunctions.cs. La locale fournie à NativeCoreEnvironment distingue pt-BR de pt-PT et zh-Hant de zh-Hans. Les langues sans code dans la table de osd-support utilisent le code anglais. Une sonde a exercé la commande pour 30 locales, dont les variantes et les replis, puis vérifié le rejet d’une destination nulle. Elle a été supprimée. Windows Release a compilé et la DLL installée correspond à la sortie de compilation.
+
+### Validation des options des cœurs au démarrage
+
+ExternalCore.cs et EmulationCoreOptionHost.cs valident après l’initialisation les clés fournies par la configuration que le cœur a déclarées avec des choix. NativeCoreSession suit le même ordre pour le démarrage standard et par sous-système. Une valeur invalide lève l’erreur traduite OptionInvalid, avec la clé et la valeur dans le diagnostic. Le parcours d’erreur désinitialise le cœur avant de retourner au module appelant.
+
+En Windows Release, une DLL temporaire a déclaré ses choix dans retro_init. La sonde a confirmé le refus avant création du contenu et la désinitialisation dans les deux parcours, puis le démarrage avec un choix valide et une clé non déclarée. Les fichiers de la sonde ont été supprimés et la DLL déployée vérifiée par empreinte.
+
+### Erreurs des options natives anciennes et à chaud
+
+Les valeurs refusées par l’hôte utilisent le code OptionInvalid de EmulationLegacyOptionHost.cs et CoreOptionHost.cs. Le même message traduit couvre l’ancien catalogue, le réglage à chaud et le contrôle des catalogues modernes à l’initialisation. La clé et la valeur restent disponibles pour le diagnostic. Le setter natif continue de renvoyer false à son appelant pour une valeur refusée.
+
+La sonde Windows Release a vérifié le code et le diagnostic, la conservation de la valeur active sans notification après refus, et la notification après un changement valide. La DLL Release installée correspond au binaire compilé. La sonde a été supprimée.
+
+### Cadence et fréquence annoncées par les cœurs natifs
+
+ApplySystemAvInfo dans ExternalCoreEnvironmentFunctions.cs applique la géométrie avant les fréquences. La cadence vidéo doit être finie et positive. La fréquence audio doit aussi tenir dans un entier signé avant arrondi à l’entier pair en cas d’égalité. Le démarrage et SetSystemAvInfo partagent ce traitement. Une valeur invalide laisse la dernière valeur valide du canal correspondant.
+
+La sonde Windows Release a vérifié l’application de la géométrie malgré des fréquences invalides, les mises à jour indépendantes, les valeurs hors limites, NaN et l’infini ainsi que l’arrondi des fréquences transportées dans les blocs audio. La sonde a été supprimée et la DLL installée vérifiée par empreinte.
+
+### Fermeture des références natives
+
+Les hôtes C# des callbacks et des options du cœur libèrent leurs références natives à la fermeture. En C++, la latence audio revient à zéro et le rappel et les chaînes natives des options sont libérés après la désinitialisation. La compilation Release et la sonde de fermeture avec un cœur temporaire ont réussi. La sonde a été supprimée.
+
+### Messages natifs historiques
+
+ExternalCoreEnvironmentCallbackHost utilise CopyDiagnostic avec allowWhitespace pour SetMessage. Le C++ conserve donc tout message non vide. La durée en trames reste accessible avec le message. Emulation.dll a compilé en Release Windows.
+
+### Durée de vie des diagnostics natifs
+
+ExternalCoreEnvironmentCallbackHost.Dispose vide les diagnostics et l’erreur mémorisée. Le C++ vide les diagnostics, les messages classiques et étendus et l’erreur mémorisée après retro_deinit. La Release Windows a compilé et a été déployée localement. Avec un cœur temporaire, les trois formes de diagnostic étaient présentes pendant la session et absentes après fermeture. Les fichiers temporaires ont été supprimés.
+
+### Ordre des médias après remplacement en session
+
+MachineSession.InsertAsync retire le montage en place et ajoute le nouveau à la fin. Session::insertMediaImpl reprend cet ordre aussi pour un montage ordinaire, ce qui le conserve lorsque le module reçoit la liste des médias pour l’enregistrement. Emulation.dll a compilé en Release Windows. Le parcours n’a pas été exercé avec un module.
+
+### Mise sous tension d’une session
+
+MachineSession.PowerOnAsync ignore la mise sous tension d’une machine qui est déjà sous tension et libère la machine si StartAsync échoue. Session::execute reprend cette garde et contrôle l’état après le premier démarrage, comme le parcours C++ de recréation. En cas d’annulation, l’arrêt de nettoyage s’exécute avec un jeton indépendant. La Release Windows et la sonde temporaire ont vérifié l’annulation après Start, la remise en route et l’absence de second appel au moteur lorsqu’il tourne déjà. Les fichiers temporaires ont été supprimés.
+
+### Réglages image du mode Vectoriel
+
+AdjustmentControls et ProcessVector sur osd-support appliquent la luminosité au faisceau, puis le contraste, le gamma, la saturation et la netteté à l’image vectorielle. Les commandes du dialogue et du menu plein écran suivent désormais le même profil C++. Sur une mire couleur, chacun des cinq réglages a modifié les pixels du rendu logiciel Windows Release. La DLL a été déployée localement et la sonde temporaire supprimée. La réponse aux réglages sur les moteurs GPU n’a pas été revalidée dans cette sonde.
+
+### Vérification Windows des réglages vectoriels matériels
+
+La mire couleur a confirmé que chacun des cinq réglages modifie les pixels capturés avec Direct3D 11, Vulkan et OpenGL actifs. La première sonde expirait pendant la préparation de Vulkan et OpenGL. La sonde avec une surface intégrée et réutilisée a confirmé les résultats pour ces deux moteurs. Les fichiers temporaires ont été supprimés.
+
+### Bords du rendu vectoriel matériel
+
+VeldridVideoProcessingShaders.FragmentSource et OpenGlVideoShaderSource courbent le point une fois et masquent les pixels hors écran avant vectorPixel. Le shader C++ applique cet ordre. Les voisins du filtre de netteté réutilisent l’échantillonnage borné du signal. La sonde Windows Release échouait en Direct3D 11 avec la DLL précédente. La DLL corrigée conserve les bords d’une mire uniforme et noircit les coins hors tube sur Direct3D 11, Vulkan et OpenGL. Les fichiers de vérification ont été supprimés. fxc continue de signaler des avertissements X4000 dans le HLSL généré.
+
+### Glyphes du menu plein écran
+
+Le thème reprend les glyphes de MachineCommandGlyphConstants pour la reprise, les sauvegardes, la vidéo, les commandes audio, les contrôles, les paramètres et la sortie du plein écran. La couleur suit le texte clair du menu. La sonde du thème Windows Release a ouvert le plein écran et vérifié la présence des icônes principales dans le menu. Le thème a été déployé localement et les fichiers temporaires supprimés.
+
+### Ordre des réglages vidéo en plein écran
+
+MachineController.OsdVideo place le moteur en tête, suivi des réglages généraux (luminosité, contraste, saturation, netteté puis gamma), du type d’écran et de ses réglages, de l’échantillonnage de l’écran hôte, puis de la restauration. Le thème C++ reprend cet ordre et le titre localisé des réglages généraux. L’insertion d’images noires reste disponible dans le dialogue vidéo. La sonde du thème Release a vérifié l’ordre des commandes en français. Le thème et les 30 catalogues ont été déployés et contrôlés par empreinte. Les fichiers de la sonde ont été supprimés.
+
+### Couleurs des rubriques du menu vidéo plein écran
+
+FullscreenOsdWindow.Menu.cs applique la couleur de la rubrique visible au sous-menu et à l’éditeur, avec la transparence choisie. Le port reprend les six couleurs et les fonds par défaut. La Release Windows et une sonde Qt temporaire ont vérifié le passage de la rubrique de traitement aux réglages généraux, le fond partagé avec l’éditeur et la transparence. La sonde a été supprimée.
+
+### Contrat des adaptateurs de moteurs
+
+EmulatorAdapter.h reprend IEmulationEmulatorAdapter et les contextes EmulatorManagementContext et EmulatorCreationContext. Les modules déclarent explicitement leurs fabriques C++ dans leur ordre de découverte. La construction retient les types concrets qui satisfont les deux contrats, comme le parcours de catalogue de EmulationAdapterFunctions.cs. Une sonde temporaire a vérifié le filtrage, l’ordre et la distinction entre une commande hôte ignorée et un code de sortie transmis. La compilation Windows Release a réussi et la sonde a été supprimée.
+
+### Catalogues de moteurs et de modèles
+
+EmulatorAdapter.h reprend la projection de EmulationCoreCatalogEntry.cs, y compris la clé de description par défaut. Le SDK C++ emploie les identifiants de modèle fournis par le module et exige une correspondance unique pour résoudre son libellé, comme EmulationMachineModelFunctions.DisplayResourceKey. Le parcours avec un seul contrat partage la construction existante. L’ordre est fourni par la liste explicite des types du module. Une sonde MSVC x64 a validé les clés, la casse, les doublons et la construction ordonnée des adaptateurs. Elle a été supprimée.
+
+### Transmission des commandes aux cœurs hébergés
+
+App.xaml.cs transmet les arguments aux modules avant le chargement des réglages et quitte au premier code de sortie. Le C++ appelle le même registre qu’en mode graphique et expose IModuleHostCommand comme interface facultative du SDK. Une sonde Release a appelé le point d’entrée App avec des DLL temporaires et sans DLL de thème. Elle a vérifié la priorité du premier module, son code zéro et le passage au module suivant avec restitution de son code 79. La sonde a été supprimée. App.dll et Emulation.dll ont été déployées et vérifiées par empreinte.
+
+### Diagnostics de découverte des modules
+
+EmulationModuleRegistry.cs signale les bibliothèques isolées et les dossiers de modules inutilisables. Le registre C++ distingue les DLL hors paquet, les manifestes absents et les manifestes invalides. App écrit ces diagnostics dans le journal de démarrage avec le message localisé existant. Les DLL isolées sont classées comme avertissements dans le journal. La sonde Release a vérifié les trois cas, l’absence de module chargé et le remplacement des diagnostics lors d’une nouvelle découverte. La sonde a été supprimée. Les DLL Release ont été déployées et contrôlées par empreinte.
+
+### Distribution du SDK
+
+Le composant EmulationSDK installe les en-têtes publics, la bibliothèque Emulation et ses informations de liaison. La vérification Windows Release a déplacé ce paquet, compilé une DLL externe avec sa cible CMake et chargé celle-ci via le registre natif de RML. Le code du module de vérification a utilisé uniquement les en-têtes du SDK installé et le kit Qt. Les fichiers de la sonde ont été supprimés. Le SDK généré reste dans build/release/EmulationSDK.

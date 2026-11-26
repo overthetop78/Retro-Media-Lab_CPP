@@ -64,3 +64,23 @@ Le résultat est un dossier de développement local, pas encore un installateur 
 Les sources communes et les contrats sont distincts des appels DWM Windows. Le lanceur Windows est une adaptation native ; le CMake prévoit une entrée directe et une adaptation sans DWM pour les autres plateformes. Les builds, chemins de plugins, intégrations natives et paquets Linux/macOS restent à vérifier sur ces systèmes.
 
 Les modules d'émulation ne sont pas encore implémentés. Modules est le dossier prévu pour leurs paquets séparés.
+
+## SDK des modules d’émulation
+
+Pour produire le SDK depuis une Release déjà compilée, exécuter
+
+```powershell
+cmake --install build/release --config Release --component EmulationSDK --prefix build/release/EmulationSDK
+```
+
+Le projet du module configure CMake avec le dossier du SDK dans `CMAKE_PREFIX_PATH` et le kit Qt correspondant à la compilation de RML. Il utilise la même architecture, le même type de compilation et une chaîne C++ compatible avec l’application. La cible importée fournit les en-têtes, la liaison et le niveau C++20.
+
+```cmake
+find_package(RetroMediaLabEmulation CONFIG REQUIRED)
+add_library(MyModule MODULE Module.cpp)
+target_link_libraries(MyModule PRIVATE RetroMediaLab::Emulation)
+```
+
+Le module exporte la fabrique déclarée dans `Sdk.h`. Pour le tester, placer sa bibliothèque et `module.json` dans `Modules/<id>` dans la distribution RML de la même version. Le manifeste indique le nom exact de la bibliothèque et la plage d’API prise en charge. Le SDK a été validé sur la Release Windows x64.
+
+L’installation du SDK utilise un composant CMake dédié et un paquet déplaçable. [Installation par composant](https://cmake.org/cmake/help/v3.24/command/install.html) · [Configuration des paquets CMake](https://cmake.org/cmake/help/v3.24/module/CMakePackageConfigHelpers.html)

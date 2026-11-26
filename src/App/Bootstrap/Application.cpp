@@ -4,6 +4,7 @@
 #include "Application.h"
 #include <Errors.h>
 #include "Shared/Presentation/ThemeService.h"
+#include "Shared/Emulation/EmulationWorkspace.h"
 #include "Windows/WindowCoordinator.h"
 #include "State/WorkspaceState.h"
 #include "State/PreferencesStore.h"
@@ -49,12 +50,19 @@ int Application::run(int argc, char** argv) {
     try {
     const auto executableDirectory = QFileInfo(QString::fromUtf8(argv[0])).absolutePath();
     QCoreApplication::setLibraryPaths({executableDirectory + AppConstants::LibQt6Plugins});
+    QStringList arguments;
+    for (int index = 1; index < argc; ++index) arguments.push_back(QString::fromUtf8(argv[index]));
     // Keep executable theme code alive until QApplication has destroyed its style.
-    auto themeModule = ThemeService::loadModule(executableDirectory + AppConstants::LibThemesRetroMediaLab);
+    ThemeModuleHandle themeModule;
     GuardedApplication app(argc, argv);
     app.setApplicationName(AppConstants::RetroMediaLab);
     app.setOrganizationName(AppConstants::RetroMediaLab);
     app.setQuitOnLastWindowClosed(false);
+    WorkspaceState state;
+    ensureEmulationHost(state);
+    if (const auto result = state.emulation->tryHandleHostCommand(arguments)) return *result;
+
+    themeModule = ThemeService::loadModule(executableDirectory + AppConstants::LibThemesRetroMediaLab);
     const auto directory = QApplication::applicationDirPath();
     const auto preferencesPath = PreferencesStore::defaultPath();
     const PreferencesStore preferences(preferencesPath);
@@ -64,9 +72,15 @@ int Application::run(int argc, char** argv) {
     translations.setLanguage(errorLanguage);
     ThemeService themes(themeModule);
     themes.applySettings(selected.themeSettings.value(themes.id()).toObject());
-    WorkspaceState state;
     state.profiles->reset(selected.profiles);
     state.logsDirectory = logsDirectory(executableDirectory);
+    for (const auto& diagnostic : state.emulation->diagnostics()) {
+        const auto severity = diagnostic.issue == Emulation::ModuleIssue::LooseLibrary
+            ? DiagnosticSeverity::Warning : DiagnosticSeverity::Error;
+        const auto detail = QString::fromStdString(translations.text(EmulationModuleIssueKey)).arg(diagnostic.directory);
+        writeDiagnostic(state.logsDirectory, severity, detail, LogConstants::ApplicationContext,
+            QString::fromStdString(errorLanguage), QCoreApplication::applicationFilePath());
+    }
     state.setLogging(selected.logging);
     state.setConversion(selected.conversion);
     state.setHardware(selected.hardware);
